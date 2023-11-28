@@ -28,7 +28,9 @@ ModelCustomizationJobSummary::ModelCustomizationJobSummary() :
     m_creationTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_customModelArnHasBeenSet(false),
-    m_customModelNameHasBeenSet(false)
+    m_customModelNameHasBeenSet(false),
+    m_customizationType(CustomizationType::NOT_SET),
+    m_customizationTypeHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ModelCustomizationJobSummary::ModelCustomizationJobSummary(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_customModelArnHasBeenSet(false),
-    m_customModelNameHasBeenSet(false)
+    m_customModelNameHasBeenSet(false),
+    m_customizationType(CustomizationType::NOT_SET),
+    m_customizationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +116,13 @@ ModelCustomizationJobSummary& ModelCustomizationJobSummary::operator =(JsonView 
     m_customModelNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("customizationType"))
+  {
+    m_customizationType = CustomizationTypeMapper::GetCustomizationTypeForName(jsonValue.GetString("customizationType"));
+
+    m_customizationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -167,6 +178,11 @@ JsonValue ModelCustomizationJobSummary::Jsonize() const
   {
    payload.WithString("customModelName", m_customModelName);
 
+  }
+
+  if(m_customizationTypeHasBeenSet)
+  {
+   payload.WithString("customizationType", CustomizationTypeMapper::GetNameForCustomizationType(m_customizationType));
   }
 
   return payload;

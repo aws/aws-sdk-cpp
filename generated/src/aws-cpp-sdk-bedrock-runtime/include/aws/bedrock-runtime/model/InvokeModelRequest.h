@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/BedrockRuntimeRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -124,9 +124,9 @@ namespace Model
 
   private:
 
+
     Aws::String m_accept;
     bool m_acceptHasBeenSet = false;
-
 
     Aws::String m_modelId;
     bool m_modelIdHasBeenSet = false;

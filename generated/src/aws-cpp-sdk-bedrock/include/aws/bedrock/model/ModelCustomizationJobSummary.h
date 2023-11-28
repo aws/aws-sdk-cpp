@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/ModelCustomizationJobStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock/model/CustomizationType.h>
 #include <utility>
 
 namespace Aws
@@ -367,6 +368,55 @@ namespace Model
      */
     inline ModelCustomizationJobSummary& WithCustomModelName(const char* value) { SetCustomModelName(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to carry out continued pre-training of a model or whether
+     * to fine-tune it. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
+     * models</a>.</p>
+     */
+    inline const CustomizationType& GetCustomizationType() const{ return m_customizationType; }
+
+    /**
+     * <p>Specifies whether to carry out continued pre-training of a model or whether
+     * to fine-tune it. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
+     * models</a>.</p>
+     */
+    inline bool CustomizationTypeHasBeenSet() const { return m_customizationTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to carry out continued pre-training of a model or whether
+     * to fine-tune it. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
+     * models</a>.</p>
+     */
+    inline void SetCustomizationType(const CustomizationType& value) { m_customizationTypeHasBeenSet = true; m_customizationType = value; }
+
+    /**
+     * <p>Specifies whether to carry out continued pre-training of a model or whether
+     * to fine-tune it. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
+     * models</a>.</p>
+     */
+    inline void SetCustomizationType(CustomizationType&& value) { m_customizationTypeHasBeenSet = true; m_customizationType = std::move(value); }
+
+    /**
+     * <p>Specifies whether to carry out continued pre-training of a model or whether
+     * to fine-tune it. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
+     * models</a>.</p>
+     */
+    inline ModelCustomizationJobSummary& WithCustomizationType(const CustomizationType& value) { SetCustomizationType(value); return *this;}
+
+    /**
+     * <p>Specifies whether to carry out continued pre-training of a model or whether
+     * to fine-tune it. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
+     * models</a>.</p>
+     */
+    inline ModelCustomizationJobSummary& WithCustomizationType(CustomizationType&& value) { SetCustomizationType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobArn;
@@ -395,6 +445,9 @@ namespace Model
 
     Aws::String m_customModelName;
     bool m_customModelNameHasBeenSet = false;
+
+    CustomizationType m_customizationType;
+    bool m_customizationTypeHasBeenSet = false;
   };
 
 } // namespace Model

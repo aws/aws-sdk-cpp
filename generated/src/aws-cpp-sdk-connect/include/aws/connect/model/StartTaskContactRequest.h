@@ -160,7 +160,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -171,7 +171,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -182,7 +182,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -193,7 +193,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -204,7 +204,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -215,7 +215,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -226,7 +226,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -237,7 +237,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>

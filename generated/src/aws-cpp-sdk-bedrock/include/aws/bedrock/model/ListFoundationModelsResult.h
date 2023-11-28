@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of bedrock foundation models.</p>
+     * <p>A list of Amazon Bedrock foundation models.</p>
      */
     inline const Aws::Vector<FoundationModelSummary>& GetModelSummaries() const{ return m_modelSummaries; }
 
     /**
-     * <p>A list of bedrock foundation models.</p>
+     * <p>A list of Amazon Bedrock foundation models.</p>
      */
     inline void SetModelSummaries(const Aws::Vector<FoundationModelSummary>& value) { m_modelSummaries = value; }
 
     /**
-     * <p>A list of bedrock foundation models.</p>
+     * <p>A list of Amazon Bedrock foundation models.</p>
      */
     inline void SetModelSummaries(Aws::Vector<FoundationModelSummary>&& value) { m_modelSummaries = std::move(value); }
 
     /**
-     * <p>A list of bedrock foundation models.</p>
+     * <p>A list of Amazon Bedrock foundation models.</p>
      */
     inline ListFoundationModelsResult& WithModelSummaries(const Aws::Vector<FoundationModelSummary>& value) { SetModelSummaries(value); return *this;}
 
     /**
-     * <p>A list of bedrock foundation models.</p>
+     * <p>A list of Amazon Bedrock foundation models.</p>
      */
     inline ListFoundationModelsResult& WithModelSummaries(Aws::Vector<FoundationModelSummary>&& value) { SetModelSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of bedrock foundation models.</p>
+     * <p>A list of Amazon Bedrock foundation models.</p>
      */
     inline ListFoundationModelsResult& AddModelSummaries(const FoundationModelSummary& value) { m_modelSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of bedrock foundation models.</p>
+     * <p>A list of Amazon Bedrock foundation models.</p>
      */
     inline ListFoundationModelsResult& AddModelSummaries(FoundationModelSummary&& value) { m_modelSummaries.push_back(std::move(value)); return *this; }
 

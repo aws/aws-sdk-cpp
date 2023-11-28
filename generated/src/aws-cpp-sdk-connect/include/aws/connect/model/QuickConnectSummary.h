@@ -164,44 +164,44 @@ namespace Model
 
 
     /**
-     * <p>The type of quick connect. In the Amazon Connect console, when you create a
-     * quick connect, you are prompted to assign one of the following types: Agent
-     * (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+     * <p>The type of quick connect. In the Amazon Connect admin website, when you
+     * create a quick connect, you are prompted to assign one of the following types:
+     * Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
      */
     inline const QuickConnectType& GetQuickConnectType() const{ return m_quickConnectType; }
 
     /**
-     * <p>The type of quick connect. In the Amazon Connect console, when you create a
-     * quick connect, you are prompted to assign one of the following types: Agent
-     * (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+     * <p>The type of quick connect. In the Amazon Connect admin website, when you
+     * create a quick connect, you are prompted to assign one of the following types:
+     * Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
      */
     inline bool QuickConnectTypeHasBeenSet() const { return m_quickConnectTypeHasBeenSet; }
 
     /**
-     * <p>The type of quick connect. In the Amazon Connect console, when you create a
-     * quick connect, you are prompted to assign one of the following types: Agent
-     * (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+     * <p>The type of quick connect. In the Amazon Connect admin website, when you
+     * create a quick connect, you are prompted to assign one of the following types:
+     * Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
      */
     inline void SetQuickConnectType(const QuickConnectType& value) { m_quickConnectTypeHasBeenSet = true; m_quickConnectType = value; }
 
     /**
-     * <p>The type of quick connect. In the Amazon Connect console, when you create a
-     * quick connect, you are prompted to assign one of the following types: Agent
-     * (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+     * <p>The type of quick connect. In the Amazon Connect admin website, when you
+     * create a quick connect, you are prompted to assign one of the following types:
+     * Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
      */
     inline void SetQuickConnectType(QuickConnectType&& value) { m_quickConnectTypeHasBeenSet = true; m_quickConnectType = std::move(value); }
 
     /**
-     * <p>The type of quick connect. In the Amazon Connect console, when you create a
-     * quick connect, you are prompted to assign one of the following types: Agent
-     * (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+     * <p>The type of quick connect. In the Amazon Connect admin website, when you
+     * create a quick connect, you are prompted to assign one of the following types:
+     * Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
      */
     inline QuickConnectSummary& WithQuickConnectType(const QuickConnectType& value) { SetQuickConnectType(value); return *this;}
 
     /**
-     * <p>The type of quick connect. In the Amazon Connect console, when you create a
-     * quick connect, you are prompted to assign one of the following types: Agent
-     * (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+     * <p>The type of quick connect. In the Amazon Connect admin website, when you
+     * create a quick connect, you are prompted to assign one of the following types:
+     * Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
      */
     inline QuickConnectSummary& WithQuickConnectType(QuickConnectType&& value) { SetQuickConnectType(std::move(value)); return *this;}
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock/model/CustomizationType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock/model/TrainingDataConfig.h>
 #include <aws/bedrock/model/ValidationDataConfig.h>
@@ -218,6 +219,32 @@ namespace Model
      * <p>ARN of the base model.</p>
      */
     inline GetCustomModelResult& WithBaseModelArn(const char* value) { SetBaseModelArn(value); return *this;}
+
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline const CustomizationType& GetCustomizationType() const{ return m_customizationType; }
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline void SetCustomizationType(const CustomizationType& value) { m_customizationType = value; }
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline void SetCustomizationType(CustomizationType&& value) { m_customizationType = std::move(value); }
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline GetCustomModelResult& WithCustomizationType(const CustomizationType& value) { SetCustomizationType(value); return *this;}
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline GetCustomModelResult& WithCustomizationType(CustomizationType&& value) { SetCustomizationType(std::move(value)); return *this;}
 
 
     /**
@@ -505,6 +532,8 @@ namespace Model
     Aws::String m_jobArn;
 
     Aws::String m_baseModelArn;
+
+    CustomizationType m_customizationType;
 
     Aws::String m_modelKmsKeyArn;
 

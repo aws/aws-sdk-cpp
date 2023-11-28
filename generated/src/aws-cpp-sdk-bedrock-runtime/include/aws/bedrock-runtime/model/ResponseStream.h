@@ -8,9 +8,9 @@
 #include <aws/bedrock-runtime/model/PayloadPart.h>
 #include <aws/bedrock-runtime/model/InternalServerException.h>
 #include <aws/bedrock-runtime/model/ModelStreamErrorException.h>
-#include <aws/bedrock-runtime/model/ModelTimeoutException.h>
-#include <aws/bedrock-runtime/model/ThrottlingException.h>
 #include <aws/bedrock-runtime/model/ValidationException.h>
+#include <aws/bedrock-runtime/model/ThrottlingException.h>
+#include <aws/bedrock-runtime/model/ModelTimeoutException.h>
 #include <utility>
 
 namespace Aws
@@ -112,22 +112,22 @@ namespace Model
 
 
     
-    inline const ModelTimeoutException& GetModelTimeoutException() const{ return m_modelTimeoutException; }
+    inline const ValidationException& GetValidationException() const{ return m_validationException; }
 
     
-    inline bool ModelTimeoutExceptionHasBeenSet() const { return m_modelTimeoutExceptionHasBeenSet; }
+    inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
 
     
-    inline void SetModelTimeoutException(const ModelTimeoutException& value) { m_modelTimeoutExceptionHasBeenSet = true; m_modelTimeoutException = value; }
+    inline void SetValidationException(const ValidationException& value) { m_validationExceptionHasBeenSet = true; m_validationException = value; }
 
     
-    inline void SetModelTimeoutException(ModelTimeoutException&& value) { m_modelTimeoutExceptionHasBeenSet = true; m_modelTimeoutException = std::move(value); }
+    inline void SetValidationException(ValidationException&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::move(value); }
 
     
-    inline ResponseStream& WithModelTimeoutException(const ModelTimeoutException& value) { SetModelTimeoutException(value); return *this;}
+    inline ResponseStream& WithValidationException(const ValidationException& value) { SetValidationException(value); return *this;}
 
     
-    inline ResponseStream& WithModelTimeoutException(ModelTimeoutException&& value) { SetModelTimeoutException(std::move(value)); return *this;}
+    inline ResponseStream& WithValidationException(ValidationException&& value) { SetValidationException(std::move(value)); return *this;}
 
 
     
@@ -150,22 +150,22 @@ namespace Model
 
 
     
-    inline const ValidationException& GetValidationException() const{ return m_validationException; }
+    inline const ModelTimeoutException& GetModelTimeoutException() const{ return m_modelTimeoutException; }
 
     
-    inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
+    inline bool ModelTimeoutExceptionHasBeenSet() const { return m_modelTimeoutExceptionHasBeenSet; }
 
     
-    inline void SetValidationException(const ValidationException& value) { m_validationExceptionHasBeenSet = true; m_validationException = value; }
+    inline void SetModelTimeoutException(const ModelTimeoutException& value) { m_modelTimeoutExceptionHasBeenSet = true; m_modelTimeoutException = value; }
 
     
-    inline void SetValidationException(ValidationException&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::move(value); }
+    inline void SetModelTimeoutException(ModelTimeoutException&& value) { m_modelTimeoutExceptionHasBeenSet = true; m_modelTimeoutException = std::move(value); }
 
     
-    inline ResponseStream& WithValidationException(const ValidationException& value) { SetValidationException(value); return *this;}
+    inline ResponseStream& WithModelTimeoutException(const ModelTimeoutException& value) { SetModelTimeoutException(value); return *this;}
 
     
-    inline ResponseStream& WithValidationException(ValidationException&& value) { SetValidationException(std::move(value)); return *this;}
+    inline ResponseStream& WithModelTimeoutException(ModelTimeoutException&& value) { SetModelTimeoutException(std::move(value)); return *this;}
 
   private:
 
@@ -178,14 +178,14 @@ namespace Model
     ModelStreamErrorException m_modelStreamErrorException;
     bool m_modelStreamErrorExceptionHasBeenSet = false;
 
-    ModelTimeoutException m_modelTimeoutException;
-    bool m_modelTimeoutExceptionHasBeenSet = false;
+    ValidationException m_validationException;
+    bool m_validationExceptionHasBeenSet = false;
 
     ThrottlingException m_throttlingException;
     bool m_throttlingExceptionHasBeenSet = false;
 
-    ValidationException m_validationException;
-    bool m_validationExceptionHasBeenSet = false;
+    ModelTimeoutException m_modelTimeoutException;
+    bool m_modelTimeoutExceptionHasBeenSet = false;
   };
 
 } // namespace Model

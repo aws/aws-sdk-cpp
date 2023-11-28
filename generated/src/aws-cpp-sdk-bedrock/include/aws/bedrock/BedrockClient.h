@@ -16,7 +16,8 @@ namespace Aws
 namespace Bedrock
 {
   /**
-   * <p>Describes the API operations for creating and managing Bedrock models.</p>
+   * <p>Describes the API operations for creating and managing Amazon Bedrock
+   * models.</p>
    */
   class AWS_BEDROCK_API BedrockClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockClient>
   {
@@ -82,7 +83,7 @@ namespace Bedrock
          * model-customization job completes successfully, your custom model resource will
          * be ready to use. Training data contains input and output text for each record in
          * a JSONL format. Optionally, you can specify validation data in the same format
-         * as the training data. Bedrock returns validation loss metrics and output
+         * as the training data. Amazon Bedrock returns validation loss metrics and output
          * generations after the job completes. </p> <p> Model-customization jobs are
          * asynchronous and the completion time depends on the base model and the
          * training/validation data size. To monitor a job, use the
@@ -221,8 +222,8 @@ namespace Bedrock
         }
 
         /**
-         * <p>Get the properties associated with a Bedrock custom model that you have
-         * created.For more information, see <a
+         * <p>Get the properties associated with a Amazon Bedrock custom model that you
+         * have created.For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
          * models</a> in the Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetCustomModel">AWS
@@ -249,7 +250,8 @@ namespace Bedrock
         }
 
         /**
-         * <p>Get details about a Bedrock foundation model.</p><p><h3>See Also:</h3>   <a
+         * <p>Get details about a Amazon Bedrock foundation model.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModel">AWS
          * API Reference</a></p>
          */
@@ -384,8 +386,8 @@ namespace Bedrock
         }
 
         /**
-         * <p>List of Bedrock foundation models that you can use. For more information, see
-         * <a
+         * <p>List of Amazon Bedrock foundation models that you can use. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation
          * models</a> in the Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModels">AWS

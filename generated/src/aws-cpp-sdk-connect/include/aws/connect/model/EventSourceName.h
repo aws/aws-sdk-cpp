@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     OnPostCallAnalysisAvailable,
     OnRealTimeCallAnalysisAvailable,
+    OnRealTimeChatAnalysisAvailable,
     OnPostChatAnalysisAvailable,
     OnZendeskTicketCreate,
     OnZendeskTicketStatusUpdate,

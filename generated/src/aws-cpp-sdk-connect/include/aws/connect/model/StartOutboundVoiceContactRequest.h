@@ -79,10 +79,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -90,10 +90,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -101,10 +101,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -112,10 +112,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -123,10 +123,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -134,10 +134,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -145,10 +145,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -156,10 +156,10 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for the outbound call. To see the ContactFlowId in
-     * the Amazon Connect console user interface, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>,
+     * <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the
+     * flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     * last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */

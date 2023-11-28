@@ -38,49 +38,49 @@ namespace Model
 
     /**
      * <p>Unique token value that you can provide. If this token matches a previous
-     * request, Bedrock ignores the request, but does not return an error.</p>
+     * request, Amazon Bedrock ignores the request, but does not return an error.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>Unique token value that you can provide. If this token matches a previous
-     * request, Bedrock ignores the request, but does not return an error.</p>
+     * request, Amazon Bedrock ignores the request, but does not return an error.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>Unique token value that you can provide. If this token matches a previous
-     * request, Bedrock ignores the request, but does not return an error.</p>
+     * request, Amazon Bedrock ignores the request, but does not return an error.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>Unique token value that you can provide. If this token matches a previous
-     * request, Bedrock ignores the request, but does not return an error.</p>
+     * request, Amazon Bedrock ignores the request, but does not return an error.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>Unique token value that you can provide. If this token matches a previous
-     * request, Bedrock ignores the request, but does not return an error.</p>
+     * request, Amazon Bedrock ignores the request, but does not return an error.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>Unique token value that you can provide. If this token matches a previous
-     * request, Bedrock ignores the request, but does not return an error.</p>
+     * request, Amazon Bedrock ignores the request, but does not return an error.</p>
      */
     inline CreateProvisionedModelThroughputRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>Unique token value that you can provide. If this token matches a previous
-     * request, Bedrock ignores the request, but does not return an error.</p>
+     * request, Amazon Bedrock ignores the request, but does not return an error.</p>
      */
     inline CreateProvisionedModelThroughputRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique token value that you can provide. If this token matches a previous
-     * request, Bedrock ignores the request, but does not return an error.</p>
+     * request, Amazon Bedrock ignores the request, but does not return an error.</p>
      */
     inline CreateProvisionedModelThroughputRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

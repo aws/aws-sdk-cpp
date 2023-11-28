@@ -26,6 +26,7 @@ namespace Aws
         static const int SHARED_HASH = HashingUtils::HashString("SHARED");
         static const int THIRD_PARTY_TF_HASH = HashingUtils::HashString("THIRD_PARTY_TF");
         static const int THIRD_PARTY_DID_HASH = HashingUtils::HashString("THIRD_PARTY_DID");
+        static const int SHORT_CODE_HASH = HashingUtils::HashString("SHORT_CODE");
 
 
         PhoneNumberType GetPhoneNumberTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return PhoneNumberType::THIRD_PARTY_DID;
           }
+          else if (hashCode == SHORT_CODE_HASH)
+          {
+            return PhoneNumberType::SHORT_CODE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "THIRD_PARTY_TF";
           case PhoneNumberType::THIRD_PARTY_DID:
             return "THIRD_PARTY_DID";
+          case PhoneNumberType::SHORT_CODE:
+            return "SHORT_CODE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

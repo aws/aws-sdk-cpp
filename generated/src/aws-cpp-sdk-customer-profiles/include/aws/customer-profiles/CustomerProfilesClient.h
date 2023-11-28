@@ -506,6 +506,32 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>The process of detecting profile object type mapping by using given
+         * objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectProfileObjectTypeOutcome DetectProfileObjectType(const Model::DetectProfileObjectTypeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DetectProfileObjectType that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DetectProfileObjectTypeRequestT = Model::DetectProfileObjectTypeRequest>
+        Model::DetectProfileObjectTypeOutcomeCallable DetectProfileObjectTypeCallable(const DetectProfileObjectTypeRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::DetectProfileObjectType, request);
+        }
+
+        /**
+         * An Async wrapper for DetectProfileObjectType that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DetectProfileObjectTypeRequestT = Model::DetectProfileObjectTypeRequest>
+        void DetectProfileObjectTypeAsync(const DetectProfileObjectTypeRequestT& request, const DetectProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::DetectProfileObjectType, request, handler, context);
+        }
+
+        /**
          * <p>Tests the auto-merging settings of your Identity Resolution Job without
          * merging your data. It randomly selects a sample of matching groups from the
          * existing matching results, and applies the automerging settings that you

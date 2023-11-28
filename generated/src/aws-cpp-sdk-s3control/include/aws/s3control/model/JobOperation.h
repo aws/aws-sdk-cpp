@@ -124,148 +124,172 @@ namespace Model
 
     /**
      * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline const S3SetObjectAclOperation& GetS3PutObjectAcl() const{ return m_s3PutObjectAcl; }
 
     /**
      * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline bool S3PutObjectAclHasBeenSet() const { return m_s3PutObjectAclHasBeenSet; }
 
     /**
      * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline void SetS3PutObjectAcl(const S3SetObjectAclOperation& value) { m_s3PutObjectAclHasBeenSet = true; m_s3PutObjectAcl = value; }
 
     /**
      * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline void SetS3PutObjectAcl(S3SetObjectAclOperation&& value) { m_s3PutObjectAclHasBeenSet = true; m_s3PutObjectAcl = std::move(value); }
 
     /**
      * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline JobOperation& WithS3PutObjectAcl(const S3SetObjectAclOperation& value) { SetS3PutObjectAcl(value); return *this;}
 
     /**
      * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline JobOperation& WithS3PutObjectAcl(S3SetObjectAclOperation&& value) { SetS3PutObjectAcl(std::move(value)); return *this;}
 
 
     /**
      * <p>Directs the specified job to run a PUT Object tagging call on every object in
-     * the manifest.</p>
+     * the manifest.</p>  <p>This functionality is not supported by directory
+     * buckets.</p> 
      */
     inline const S3SetObjectTaggingOperation& GetS3PutObjectTagging() const{ return m_s3PutObjectTagging; }
 
     /**
      * <p>Directs the specified job to run a PUT Object tagging call on every object in
-     * the manifest.</p>
+     * the manifest.</p>  <p>This functionality is not supported by directory
+     * buckets.</p> 
      */
     inline bool S3PutObjectTaggingHasBeenSet() const { return m_s3PutObjectTaggingHasBeenSet; }
 
     /**
      * <p>Directs the specified job to run a PUT Object tagging call on every object in
-     * the manifest.</p>
+     * the manifest.</p>  <p>This functionality is not supported by directory
+     * buckets.</p> 
      */
     inline void SetS3PutObjectTagging(const S3SetObjectTaggingOperation& value) { m_s3PutObjectTaggingHasBeenSet = true; m_s3PutObjectTagging = value; }
 
     /**
      * <p>Directs the specified job to run a PUT Object tagging call on every object in
-     * the manifest.</p>
+     * the manifest.</p>  <p>This functionality is not supported by directory
+     * buckets.</p> 
      */
     inline void SetS3PutObjectTagging(S3SetObjectTaggingOperation&& value) { m_s3PutObjectTaggingHasBeenSet = true; m_s3PutObjectTagging = std::move(value); }
 
     /**
      * <p>Directs the specified job to run a PUT Object tagging call on every object in
-     * the manifest.</p>
+     * the manifest.</p>  <p>This functionality is not supported by directory
+     * buckets.</p> 
      */
     inline JobOperation& WithS3PutObjectTagging(const S3SetObjectTaggingOperation& value) { SetS3PutObjectTagging(value); return *this;}
 
     /**
      * <p>Directs the specified job to run a PUT Object tagging call on every object in
-     * the manifest.</p>
+     * the manifest.</p>  <p>This functionality is not supported by directory
+     * buckets.</p> 
      */
     inline JobOperation& WithS3PutObjectTagging(S3SetObjectTaggingOperation&& value) { SetS3PutObjectTagging(std::move(value)); return *this;}
 
 
     /**
      * <p>Directs the specified job to execute a DELETE Object tagging call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline const S3DeleteObjectTaggingOperation& GetS3DeleteObjectTagging() const{ return m_s3DeleteObjectTagging; }
 
     /**
      * <p>Directs the specified job to execute a DELETE Object tagging call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline bool S3DeleteObjectTaggingHasBeenSet() const { return m_s3DeleteObjectTaggingHasBeenSet; }
 
     /**
      * <p>Directs the specified job to execute a DELETE Object tagging call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline void SetS3DeleteObjectTagging(const S3DeleteObjectTaggingOperation& value) { m_s3DeleteObjectTaggingHasBeenSet = true; m_s3DeleteObjectTagging = value; }
 
     /**
      * <p>Directs the specified job to execute a DELETE Object tagging call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline void SetS3DeleteObjectTagging(S3DeleteObjectTaggingOperation&& value) { m_s3DeleteObjectTaggingHasBeenSet = true; m_s3DeleteObjectTagging = std::move(value); }
 
     /**
      * <p>Directs the specified job to execute a DELETE Object tagging call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline JobOperation& WithS3DeleteObjectTagging(const S3DeleteObjectTaggingOperation& value) { SetS3DeleteObjectTagging(value); return *this;}
 
     /**
      * <p>Directs the specified job to execute a DELETE Object tagging call on every
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline JobOperation& WithS3DeleteObjectTagging(S3DeleteObjectTaggingOperation&& value) { SetS3DeleteObjectTagging(std::move(value)); return *this;}
 
 
     /**
      * <p>Directs the specified job to initiate restore requests for every archived
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline const S3InitiateRestoreObjectOperation& GetS3InitiateRestoreObject() const{ return m_s3InitiateRestoreObject; }
 
     /**
      * <p>Directs the specified job to initiate restore requests for every archived
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline bool S3InitiateRestoreObjectHasBeenSet() const { return m_s3InitiateRestoreObjectHasBeenSet; }
 
     /**
      * <p>Directs the specified job to initiate restore requests for every archived
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline void SetS3InitiateRestoreObject(const S3InitiateRestoreObjectOperation& value) { m_s3InitiateRestoreObjectHasBeenSet = true; m_s3InitiateRestoreObject = value; }
 
     /**
      * <p>Directs the specified job to initiate restore requests for every archived
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline void SetS3InitiateRestoreObject(S3InitiateRestoreObjectOperation&& value) { m_s3InitiateRestoreObjectHasBeenSet = true; m_s3InitiateRestoreObject = std::move(value); }
 
     /**
      * <p>Directs the specified job to initiate restore requests for every archived
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline JobOperation& WithS3InitiateRestoreObject(const S3InitiateRestoreObjectOperation& value) { SetS3InitiateRestoreObject(value); return *this;}
 
     /**
      * <p>Directs the specified job to initiate restore requests for every archived
-     * object in the manifest.</p>
+     * object in the manifest.</p>  <p>This functionality is not supported by
+     * directory buckets.</p> 
      */
     inline JobOperation& WithS3InitiateRestoreObject(S3InitiateRestoreObjectOperation&& value) { SetS3InitiateRestoreObject(std::move(value)); return *this;}
 
@@ -310,37 +334,43 @@ namespace Model
 
     /**
      * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
-     * object in the job's manifest.</p>
+     * object in the job's manifest.</p>  <p>This functionality is not supported
+     * by directory buckets.</p> 
      */
     inline const S3ReplicateObjectOperation& GetS3ReplicateObject() const{ return m_s3ReplicateObject; }
 
     /**
      * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
-     * object in the job's manifest.</p>
+     * object in the job's manifest.</p>  <p>This functionality is not supported
+     * by directory buckets.</p> 
      */
     inline bool S3ReplicateObjectHasBeenSet() const { return m_s3ReplicateObjectHasBeenSet; }
 
     /**
      * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
-     * object in the job's manifest.</p>
+     * object in the job's manifest.</p>  <p>This functionality is not supported
+     * by directory buckets.</p> 
      */
     inline void SetS3ReplicateObject(const S3ReplicateObjectOperation& value) { m_s3ReplicateObjectHasBeenSet = true; m_s3ReplicateObject = value; }
 
     /**
      * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
-     * object in the job's manifest.</p>
+     * object in the job's manifest.</p>  <p>This functionality is not supported
+     * by directory buckets.</p> 
      */
     inline void SetS3ReplicateObject(S3ReplicateObjectOperation&& value) { m_s3ReplicateObjectHasBeenSet = true; m_s3ReplicateObject = std::move(value); }
 
     /**
      * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
-     * object in the job's manifest.</p>
+     * object in the job's manifest.</p>  <p>This functionality is not supported
+     * by directory buckets.</p> 
      */
     inline JobOperation& WithS3ReplicateObject(const S3ReplicateObjectOperation& value) { SetS3ReplicateObject(value); return *this;}
 
     /**
      * <p>Directs the specified job to invoke <code>ReplicateObject</code> on every
-     * object in the job's manifest.</p>
+     * object in the job's manifest.</p>  <p>This functionality is not supported
+     * by directory buckets.</p> 
      */
     inline JobOperation& WithS3ReplicateObject(S3ReplicateObjectOperation&& value) { SetS3ReplicateObject(std::move(value)); return *this;}
 

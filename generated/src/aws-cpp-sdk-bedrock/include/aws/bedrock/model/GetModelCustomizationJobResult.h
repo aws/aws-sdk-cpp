@@ -12,6 +12,7 @@
 #include <aws/bedrock/model/TrainingDataConfig.h>
 #include <aws/bedrock/model/ValidationDataConfig.h>
 #include <aws/bedrock/model/OutputDataConfig.h>
+#include <aws/bedrock/model/CustomizationType.h>
 #include <aws/bedrock/model/TrainingMetrics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/VpcConfig.h>
@@ -445,62 +446,98 @@ namespace Model
 
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParameters = value; }
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParameters = std::move(value); }
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline GetModelCustomizationJobResult& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline GetModelCustomizationJobResult& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline GetModelCustomizationJobResult& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline GetModelCustomizationJobResult& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline GetModelCustomizationJobResult& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The hyperparameter values for the job.</p>
+     * <p>The hyperparameter values for the job. For information about hyperparameters
+     * for specific models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines
+     * for model customization</a>.</p>
      */
     inline GetModelCustomizationJobResult& AddHyperParameters(const char* key, const char* value) { m_hyperParameters.emplace(key, value); return *this; }
 
@@ -561,6 +598,32 @@ namespace Model
      * <p>Output data configuration </p>
      */
     inline GetModelCustomizationJobResult& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline const CustomizationType& GetCustomizationType() const{ return m_customizationType; }
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline void SetCustomizationType(const CustomizationType& value) { m_customizationType = value; }
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline void SetCustomizationType(CustomizationType&& value) { m_customizationType = std::move(value); }
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline GetModelCustomizationJobResult& WithCustomizationType(const CustomizationType& value) { SetCustomizationType(value); return *this;}
+
+    /**
+     * <p>The type of model customization.</p>
+     */
+    inline GetModelCustomizationJobResult& WithCustomizationType(CustomizationType&& value) { SetCustomizationType(std::move(value)); return *this;}
 
 
     /**
@@ -738,6 +801,8 @@ namespace Model
     ValidationDataConfig m_validationDataConfig;
 
     OutputDataConfig m_outputDataConfig;
+
+    CustomizationType m_customizationType;
 
     Aws::String m_outputModelKmsKeyArn;
 

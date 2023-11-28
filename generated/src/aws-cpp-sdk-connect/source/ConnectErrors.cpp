@@ -66,6 +66,7 @@ static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParam
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int OUTPUT_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("OutputTypeNotFoundException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
@@ -148,6 +149,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_IN_USE), false);
+  }
+  else if (hashCode == OUTPUT_TYPE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::OUTPUT_TYPE_NOT_FOUND), false);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
