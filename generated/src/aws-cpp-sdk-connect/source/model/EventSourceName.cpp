@@ -22,6 +22,7 @@ namespace Aws
 
         static const int OnPostCallAnalysisAvailable_HASH = HashingUtils::HashString("OnPostCallAnalysisAvailable");
         static const int OnRealTimeCallAnalysisAvailable_HASH = HashingUtils::HashString("OnRealTimeCallAnalysisAvailable");
+        static const int OnRealTimeChatAnalysisAvailable_HASH = HashingUtils::HashString("OnRealTimeChatAnalysisAvailable");
         static const int OnPostChatAnalysisAvailable_HASH = HashingUtils::HashString("OnPostChatAnalysisAvailable");
         static const int OnZendeskTicketCreate_HASH = HashingUtils::HashString("OnZendeskTicketCreate");
         static const int OnZendeskTicketStatusUpdate_HASH = HashingUtils::HashString("OnZendeskTicketStatusUpdate");
@@ -40,6 +41,10 @@ namespace Aws
           else if (hashCode == OnRealTimeCallAnalysisAvailable_HASH)
           {
             return EventSourceName::OnRealTimeCallAnalysisAvailable;
+          }
+          else if (hashCode == OnRealTimeChatAnalysisAvailable_HASH)
+          {
+            return EventSourceName::OnRealTimeChatAnalysisAvailable;
           }
           else if (hashCode == OnPostChatAnalysisAvailable_HASH)
           {
@@ -85,6 +90,8 @@ namespace Aws
             return "OnPostCallAnalysisAvailable";
           case EventSourceName::OnRealTimeCallAnalysisAvailable:
             return "OnRealTimeCallAnalysisAvailable";
+          case EventSourceName::OnRealTimeChatAnalysisAvailable:
+            return "OnRealTimeChatAnalysisAvailable";
           case EventSourceName::OnPostChatAnalysisAvailable:
             return "OnPostChatAnalysisAvailable";
           case EventSourceName::OnZendeskTicketCreate:

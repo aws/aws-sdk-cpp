@@ -133,7 +133,7 @@ namespace Model
             JsonValue exceptionPayload(GetEventPayloadAsString());
             if (!exceptionPayload.WasParseSuccessful())
             {
-                AWS_LOGSTREAM_ERROR(INVOKEMODELWITHRESPONSESTREAM_HANDLER_CLASS_TAG, "Unable to generate a proper ValidationException object from the response in JSON format.");
+                AWS_LOGSTREAM_ERROR(INVOKEMODELWITHRESPONSESTREAM_HANDLER_CLASS_TAG, "Unable to generate a proper ModelTimeoutException object from the response in JSON format.");
                 auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
                 if (contentTypeIter != headers.end())
                 {

@@ -33,6 +33,7 @@
 #include <aws/customer-profiles/model/DeleteProfileObjectResult.h>
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/DeleteWorkflowResult.h>
+#include <aws/customer-profiles/model/DetectProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/GetAutoMergingPreviewResult.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeDefinitionResult.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeForProfileResult.h>
@@ -124,6 +125,7 @@ namespace Aws
       class DeleteProfileObjectRequest;
       class DeleteProfileObjectTypeRequest;
       class DeleteWorkflowRequest;
+      class DetectProfileObjectTypeRequest;
       class GetAutoMergingPreviewRequest;
       class GetCalculatedAttributeDefinitionRequest;
       class GetCalculatedAttributeForProfileRequest;
@@ -178,6 +180,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteProfileObjectResult, CustomerProfilesError> DeleteProfileObjectOutcome;
       typedef Aws::Utils::Outcome<DeleteProfileObjectTypeResult, CustomerProfilesError> DeleteProfileObjectTypeOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkflowResult, CustomerProfilesError> DeleteWorkflowOutcome;
+      typedef Aws::Utils::Outcome<DetectProfileObjectTypeResult, CustomerProfilesError> DetectProfileObjectTypeOutcome;
       typedef Aws::Utils::Outcome<GetAutoMergingPreviewResult, CustomerProfilesError> GetAutoMergingPreviewOutcome;
       typedef Aws::Utils::Outcome<GetCalculatedAttributeDefinitionResult, CustomerProfilesError> GetCalculatedAttributeDefinitionOutcome;
       typedef Aws::Utils::Outcome<GetCalculatedAttributeForProfileResult, CustomerProfilesError> GetCalculatedAttributeForProfileOutcome;
@@ -232,6 +235,7 @@ namespace Aws
       typedef std::future<DeleteProfileObjectOutcome> DeleteProfileObjectOutcomeCallable;
       typedef std::future<DeleteProfileObjectTypeOutcome> DeleteProfileObjectTypeOutcomeCallable;
       typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
+      typedef std::future<DetectProfileObjectTypeOutcome> DetectProfileObjectTypeOutcomeCallable;
       typedef std::future<GetAutoMergingPreviewOutcome> GetAutoMergingPreviewOutcomeCallable;
       typedef std::future<GetCalculatedAttributeDefinitionOutcome> GetCalculatedAttributeDefinitionOutcomeCallable;
       typedef std::future<GetCalculatedAttributeForProfileOutcome> GetCalculatedAttributeForProfileOutcomeCallable;
@@ -289,6 +293,7 @@ namespace Aws
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileObjectRequest&, const Model::DeleteProfileObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileObjectResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileObjectTypeRequest&, const Model::DeleteProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileObjectTypeResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteWorkflowRequest&, const Model::DeleteWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkflowResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::DetectProfileObjectTypeRequest&, const Model::DetectProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectProfileObjectTypeResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetAutoMergingPreviewRequest&, const Model::GetAutoMergingPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoMergingPreviewResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetCalculatedAttributeDefinitionRequest&, const Model::GetCalculatedAttributeDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalculatedAttributeDefinitionResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetCalculatedAttributeForProfileRequest&, const Model::GetCalculatedAttributeForProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalculatedAttributeForProfileResponseReceivedHandler;

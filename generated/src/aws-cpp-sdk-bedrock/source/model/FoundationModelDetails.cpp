@@ -28,7 +28,8 @@ FoundationModelDetails::FoundationModelDetails() :
     m_responseStreamingSupported(false),
     m_responseStreamingSupportedHasBeenSet(false),
     m_customizationsSupportedHasBeenSet(false),
-    m_inferenceTypesSupportedHasBeenSet(false)
+    m_inferenceTypesSupportedHasBeenSet(false),
+    m_modelLifecycleHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ FoundationModelDetails::FoundationModelDetails(JsonView jsonValue) :
     m_responseStreamingSupported(false),
     m_responseStreamingSupportedHasBeenSet(false),
     m_customizationsSupportedHasBeenSet(false),
-    m_inferenceTypesSupportedHasBeenSet(false)
+    m_inferenceTypesSupportedHasBeenSet(false),
+    m_modelLifecycleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,13 @@ FoundationModelDetails& FoundationModelDetails::operator =(JsonView jsonValue)
     m_inferenceTypesSupportedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("modelLifecycle"))
+  {
+    m_modelLifecycle = jsonValue.GetObject("modelLifecycle");
+
+    m_modelLifecycleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -202,6 +211,12 @@ JsonValue FoundationModelDetails::Jsonize() const
      inferenceTypesSupportedJsonList[inferenceTypesSupportedIndex].AsString(InferenceTypeMapper::GetNameForInferenceType(m_inferenceTypesSupported[inferenceTypesSupportedIndex]));
    }
    payload.WithArray("inferenceTypesSupported", std::move(inferenceTypesSupportedJsonList));
+
+  }
+
+  if(m_modelLifecycleHasBeenSet)
+  {
+   payload.WithObject("modelLifecycle", m_modelLifecycle.Jsonize());
 
   }
 

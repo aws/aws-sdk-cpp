@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock/model/CustomizationType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/TrainingDataConfig.h>
 #include <aws/bedrock/model/ValidationDataConfig.h>
@@ -123,74 +124,74 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to
-     * perform tasks on your behalf. For example, during model training, Bedrock needs
-     * your permission to read input data from an S3 bucket, write model artifacts to
-     * an S3 bucket. To pass this role to Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
+     * to perform tasks on your behalf. For example, during model training, Amazon
+     * Bedrock needs your permission to read input data from an S3 bucket, write model
+     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
+     * this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to
-     * perform tasks on your behalf. For example, during model training, Bedrock needs
-     * your permission to read input data from an S3 bucket, write model artifacts to
-     * an S3 bucket. To pass this role to Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
+     * to perform tasks on your behalf. For example, during model training, Amazon
+     * Bedrock needs your permission to read input data from an S3 bucket, write model
+     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
+     * this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to
-     * perform tasks on your behalf. For example, during model training, Bedrock needs
-     * your permission to read input data from an S3 bucket, write model artifacts to
-     * an S3 bucket. To pass this role to Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
+     * to perform tasks on your behalf. For example, during model training, Amazon
+     * Bedrock needs your permission to read input data from an S3 bucket, write model
+     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
+     * this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to
-     * perform tasks on your behalf. For example, during model training, Bedrock needs
-     * your permission to read input data from an S3 bucket, write model artifacts to
-     * an S3 bucket. To pass this role to Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
+     * to perform tasks on your behalf. For example, during model training, Amazon
+     * Bedrock needs your permission to read input data from an S3 bucket, write model
+     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
+     * this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to
-     * perform tasks on your behalf. For example, during model training, Bedrock needs
-     * your permission to read input data from an S3 bucket, write model artifacts to
-     * an S3 bucket. To pass this role to Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
+     * to perform tasks on your behalf. For example, during model training, Amazon
+     * Bedrock needs your permission to read input data from an S3 bucket, write model
+     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
+     * this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to
-     * perform tasks on your behalf. For example, during model training, Bedrock needs
-     * your permission to read input data from an S3 bucket, write model artifacts to
-     * an S3 bucket. To pass this role to Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
+     * to perform tasks on your behalf. For example, during model training, Amazon
+     * Bedrock needs your permission to read input data from an S3 bucket, write model
+     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
+     * this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline CreateModelCustomizationJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to
-     * perform tasks on your behalf. For example, during model training, Bedrock needs
-     * your permission to read input data from an S3 bucket, write model artifacts to
-     * an S3 bucket. To pass this role to Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
+     * to perform tasks on your behalf. For example, during model training, Amazon
+     * Bedrock needs your permission to read input data from an S3 bucket, write model
+     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
+     * this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline CreateModelCustomizationJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to
-     * perform tasks on your behalf. For example, during model training, Bedrock needs
-     * your permission to read input data from an S3 bucket, write model artifacts to
-     * an S3 bucket. To pass this role to Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission. </p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume
+     * to perform tasks on your behalf. For example, during model training, Amazon
+     * Bedrock needs your permission to read input data from an S3 bucket, write model
+     * artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
+     * this API must have the <code>iam:PassRole</code> permission. </p>
      */
     inline CreateModelCustomizationJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -283,6 +284,37 @@ namespace Model
      * <p>Name of the base model.</p>
      */
     inline CreateModelCustomizationJobRequest& WithBaseModelIdentifier(const char* value) { SetBaseModelIdentifier(value); return *this;}
+
+
+    /**
+     * <p>The customization type.</p>
+     */
+    inline const CustomizationType& GetCustomizationType() const{ return m_customizationType; }
+
+    /**
+     * <p>The customization type.</p>
+     */
+    inline bool CustomizationTypeHasBeenSet() const { return m_customizationTypeHasBeenSet; }
+
+    /**
+     * <p>The customization type.</p>
+     */
+    inline void SetCustomizationType(const CustomizationType& value) { m_customizationTypeHasBeenSet = true; m_customizationType = value; }
+
+    /**
+     * <p>The customization type.</p>
+     */
+    inline void SetCustomizationType(CustomizationType&& value) { m_customizationTypeHasBeenSet = true; m_customizationType = std::move(value); }
+
+    /**
+     * <p>The customization type.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithCustomizationType(const CustomizationType& value) { SetCustomizationType(value); return *this;}
+
+    /**
+     * <p>The customization type.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithCustomizationType(CustomizationType&& value) { SetCustomizationType(std::move(value)); return *this;}
 
 
     /**
@@ -625,6 +657,9 @@ namespace Model
 
     Aws::String m_baseModelIdentifier;
     bool m_baseModelIdentifierHasBeenSet = false;
+
+    CustomizationType m_customizationType;
+    bool m_customizationTypeHasBeenSet = false;
 
     Aws::String m_customModelKmsKeyId;
     bool m_customModelKmsKeyIdHasBeenSet = false;

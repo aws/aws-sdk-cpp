@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>A Bedrock model provider.</p>
+     * <p>A Amazon Bedrock model provider.</p>
      */
     inline const Aws::String& GetByProvider() const{ return m_byProvider; }
 
     /**
-     * <p>A Bedrock model provider.</p>
+     * <p>A Amazon Bedrock model provider.</p>
      */
     inline bool ByProviderHasBeenSet() const { return m_byProviderHasBeenSet; }
 
     /**
-     * <p>A Bedrock model provider.</p>
+     * <p>A Amazon Bedrock model provider.</p>
      */
     inline void SetByProvider(const Aws::String& value) { m_byProviderHasBeenSet = true; m_byProvider = value; }
 
     /**
-     * <p>A Bedrock model provider.</p>
+     * <p>A Amazon Bedrock model provider.</p>
      */
     inline void SetByProvider(Aws::String&& value) { m_byProviderHasBeenSet = true; m_byProvider = std::move(value); }
 
     /**
-     * <p>A Bedrock model provider.</p>
+     * <p>A Amazon Bedrock model provider.</p>
      */
     inline void SetByProvider(const char* value) { m_byProviderHasBeenSet = true; m_byProvider.assign(value); }
 
     /**
-     * <p>A Bedrock model provider.</p>
+     * <p>A Amazon Bedrock model provider.</p>
      */
     inline ListFoundationModelsRequest& WithByProvider(const Aws::String& value) { SetByProvider(value); return *this;}
 
     /**
-     * <p>A Bedrock model provider.</p>
+     * <p>A Amazon Bedrock model provider.</p>
      */
     inline ListFoundationModelsRequest& WithByProvider(Aws::String&& value) { SetByProvider(std::move(value)); return *this;}
 
     /**
-     * <p>A Bedrock model provider.</p>
+     * <p>A Amazon Bedrock model provider.</p>
      */
     inline ListFoundationModelsRequest& WithByProvider(const char* value) { SetByProvider(value); return *this;}
 

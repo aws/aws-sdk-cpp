@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetModelCustomizationJobResult::GetModelCustomizationJobResult() : 
-    m_status(ModelCustomizationJobStatus::NOT_SET)
+    m_status(ModelCustomizationJobStatus::NOT_SET),
+    m_customizationType(CustomizationType::NOT_SET)
 {
 }
 
 GetModelCustomizationJobResult::GetModelCustomizationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ModelCustomizationJobStatus::NOT_SET)
+    m_status(ModelCustomizationJobStatus::NOT_SET),
+    m_customizationType(CustomizationType::NOT_SET)
 {
   *this = result;
 }
@@ -127,6 +129,12 @@ GetModelCustomizationJobResult& GetModelCustomizationJobResult::operator =(const
   if(jsonValue.ValueExists("outputDataConfig"))
   {
     m_outputDataConfig = jsonValue.GetObject("outputDataConfig");
+
+  }
+
+  if(jsonValue.ValueExists("customizationType"))
+  {
+    m_customizationType = CustomizationTypeMapper::GetCustomizationTypeForName(jsonValue.GetString("customizationType"));
 
   }
 

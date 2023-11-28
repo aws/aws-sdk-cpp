@@ -126,6 +126,7 @@ namespace Model
      * <p>Information about the EventBridge action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -135,6 +136,7 @@ namespace Model
      * <p>Information about the EventBridge action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -144,6 +146,7 @@ namespace Model
      * <p>Information about the EventBridge action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>Information about the EventBridge action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -162,6 +166,7 @@ namespace Model
      * <p>Information about the EventBridge action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -171,6 +176,7 @@ namespace Model
      * <p>Information about the EventBridge action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -181,6 +187,7 @@ namespace Model
      * <p>Information about the contact category action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
      * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
      * </p>
@@ -191,6 +198,7 @@ namespace Model
      * <p>Information about the contact category action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
      * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
      * </p>
@@ -201,6 +209,7 @@ namespace Model
      * <p>Information about the contact category action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
      * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
      * </p>
@@ -211,6 +220,7 @@ namespace Model
      * <p>Information about the contact category action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
      * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
      * </p>
@@ -221,6 +231,7 @@ namespace Model
      * <p>Information about the contact category action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
      * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
      * </p>
@@ -231,6 +242,7 @@ namespace Model
      * <p>Information about the contact category action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
      * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
      * </p>
@@ -242,6 +254,7 @@ namespace Model
      * <p>Information about the send notification action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -251,6 +264,7 @@ namespace Model
      * <p>Information about the send notification action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -260,6 +274,7 @@ namespace Model
      * <p>Information about the send notification action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -269,6 +284,7 @@ namespace Model
      * <p>Information about the send notification action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -278,6 +294,7 @@ namespace Model
      * <p>Information about the send notification action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
@@ -287,6 +304,7 @@ namespace Model
      * <p>Information about the send notification action.</p> <p>Supported only for
      * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
      * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnRealTimeChatAnalysisAvailable</code> |
      * <code>OnPostChatAnalysisAvailable</code> |
      * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */

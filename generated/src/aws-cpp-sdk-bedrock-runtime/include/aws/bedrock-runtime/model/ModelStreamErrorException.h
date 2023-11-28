@@ -63,6 +63,27 @@ namespace Model
 
 
     /**
+     * <p>The original status code.</p>
+     */
+    inline int GetOriginalStatusCode() const{ return m_originalStatusCode; }
+
+    /**
+     * <p>The original status code.</p>
+     */
+    inline bool OriginalStatusCodeHasBeenSet() const { return m_originalStatusCodeHasBeenSet; }
+
+    /**
+     * <p>The original status code.</p>
+     */
+    inline void SetOriginalStatusCode(int value) { m_originalStatusCodeHasBeenSet = true; m_originalStatusCode = value; }
+
+    /**
+     * <p>The original status code.</p>
+     */
+    inline ModelStreamErrorException& WithOriginalStatusCode(int value) { SetOriginalStatusCode(value); return *this;}
+
+
+    /**
      * <p>The original message.</p>
      */
     inline const Aws::String& GetOriginalMessage() const{ return m_originalMessage; }
@@ -102,37 +123,16 @@ namespace Model
      */
     inline ModelStreamErrorException& WithOriginalMessage(const char* value) { SetOriginalMessage(value); return *this;}
 
-
-    /**
-     * <p>The original status code.</p>
-     */
-    inline int GetOriginalStatusCode() const{ return m_originalStatusCode; }
-
-    /**
-     * <p>The original status code.</p>
-     */
-    inline bool OriginalStatusCodeHasBeenSet() const { return m_originalStatusCodeHasBeenSet; }
-
-    /**
-     * <p>The original status code.</p>
-     */
-    inline void SetOriginalStatusCode(int value) { m_originalStatusCodeHasBeenSet = true; m_originalStatusCode = value; }
-
-    /**
-     * <p>The original status code.</p>
-     */
-    inline ModelStreamErrorException& WithOriginalStatusCode(int value) { SetOriginalStatusCode(value); return *this;}
-
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::String m_originalMessage;
-    bool m_originalMessageHasBeenSet = false;
-
     int m_originalStatusCode;
     bool m_originalStatusCodeHasBeenSet = false;
+
+    Aws::String m_originalMessage;
+    bool m_originalMessageHasBeenSet = false;
   };
 
 } // namespace Model

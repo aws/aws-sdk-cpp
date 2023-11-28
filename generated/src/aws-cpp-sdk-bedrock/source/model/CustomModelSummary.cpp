@@ -23,7 +23,9 @@ CustomModelSummary::CustomModelSummary() :
     m_modelNameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_baseModelArnHasBeenSet(false),
-    m_baseModelNameHasBeenSet(false)
+    m_baseModelNameHasBeenSet(false),
+    m_customizationType(CustomizationType::NOT_SET),
+    m_customizationTypeHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ CustomModelSummary::CustomModelSummary(JsonView jsonValue) :
     m_modelNameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_baseModelArnHasBeenSet(false),
-    m_baseModelNameHasBeenSet(false)
+    m_baseModelNameHasBeenSet(false),
+    m_customizationType(CustomizationType::NOT_SET),
+    m_customizationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +78,13 @@ CustomModelSummary& CustomModelSummary::operator =(JsonView jsonValue)
     m_baseModelNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("customizationType"))
+  {
+    m_customizationType = CustomizationTypeMapper::GetCustomizationTypeForName(jsonValue.GetString("customizationType"));
+
+    m_customizationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +119,11 @@ JsonValue CustomModelSummary::Jsonize() const
   {
    payload.WithString("baseModelName", m_baseModelName);
 
+  }
+
+  if(m_customizationTypeHasBeenSet)
+  {
+   payload.WithString("customizationType", CustomizationTypeMapper::GetNameForCustomizationType(m_customizationType));
   }
 
   return payload;

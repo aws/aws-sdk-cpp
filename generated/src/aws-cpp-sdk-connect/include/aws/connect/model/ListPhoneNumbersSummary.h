@@ -346,6 +346,104 @@ namespace Model
      */
     inline ListPhoneNumbersSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline const Aws::String& GetPhoneNumberDescription() const{ return m_phoneNumberDescription; }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline bool PhoneNumberDescriptionHasBeenSet() const { return m_phoneNumberDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline void SetPhoneNumberDescription(const Aws::String& value) { m_phoneNumberDescriptionHasBeenSet = true; m_phoneNumberDescription = value; }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline void SetPhoneNumberDescription(Aws::String&& value) { m_phoneNumberDescriptionHasBeenSet = true; m_phoneNumberDescription = std::move(value); }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline void SetPhoneNumberDescription(const char* value) { m_phoneNumberDescriptionHasBeenSet = true; m_phoneNumberDescription.assign(value); }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline ListPhoneNumbersSummary& WithPhoneNumberDescription(const Aws::String& value) { SetPhoneNumberDescription(value); return *this;}
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline ListPhoneNumbersSummary& WithPhoneNumberDescription(Aws::String&& value) { SetPhoneNumberDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline ListPhoneNumbersSummary& WithPhoneNumberDescription(const char* value) { SetPhoneNumberDescription(value); return *this;}
+
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline const Aws::String& GetSourcePhoneNumberArn() const{ return m_sourcePhoneNumberArn; }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline bool SourcePhoneNumberArnHasBeenSet() const { return m_sourcePhoneNumberArnHasBeenSet; }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline void SetSourcePhoneNumberArn(const Aws::String& value) { m_sourcePhoneNumberArnHasBeenSet = true; m_sourcePhoneNumberArn = value; }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline void SetSourcePhoneNumberArn(Aws::String&& value) { m_sourcePhoneNumberArnHasBeenSet = true; m_sourcePhoneNumberArn = std::move(value); }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline void SetSourcePhoneNumberArn(const char* value) { m_sourcePhoneNumberArnHasBeenSet = true; m_sourcePhoneNumberArn.assign(value); }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline ListPhoneNumbersSummary& WithSourcePhoneNumberArn(const Aws::String& value) { SetSourcePhoneNumberArn(value); return *this;}
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline ListPhoneNumbersSummary& WithSourcePhoneNumberArn(Aws::String&& value) { SetSourcePhoneNumberArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline ListPhoneNumbersSummary& WithSourcePhoneNumberArn(const char* value) { SetSourcePhoneNumberArn(value); return *this;}
+
   private:
 
     Aws::String m_phoneNumberId;
@@ -368,6 +466,12 @@ namespace Model
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
+
+    Aws::String m_phoneNumberDescription;
+    bool m_phoneNumberDescriptionHasBeenSet = false;
+
+    Aws::String m_sourcePhoneNumberArn;
+    bool m_sourcePhoneNumberArnHasBeenSet = false;
   };
 
 } // namespace Model

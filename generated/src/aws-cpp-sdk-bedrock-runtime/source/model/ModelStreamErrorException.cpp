@@ -20,17 +20,17 @@ namespace Model
 
 ModelStreamErrorException::ModelStreamErrorException() : 
     m_messageHasBeenSet(false),
-    m_originalMessageHasBeenSet(false),
     m_originalStatusCode(0),
-    m_originalStatusCodeHasBeenSet(false)
+    m_originalStatusCodeHasBeenSet(false),
+    m_originalMessageHasBeenSet(false)
 {
 }
 
 ModelStreamErrorException::ModelStreamErrorException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
-    m_originalMessageHasBeenSet(false),
     m_originalStatusCode(0),
-    m_originalStatusCodeHasBeenSet(false)
+    m_originalStatusCodeHasBeenSet(false),
+    m_originalMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,18 +44,18 @@ ModelStreamErrorException& ModelStreamErrorException::operator =(JsonView jsonVa
     m_messageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("originalMessage"))
-  {
-    m_originalMessage = jsonValue.GetString("originalMessage");
-
-    m_originalMessageHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("originalStatusCode"))
   {
     m_originalStatusCode = jsonValue.GetInteger("originalStatusCode");
 
     m_originalStatusCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("originalMessage"))
+  {
+    m_originalMessage = jsonValue.GetString("originalMessage");
+
+    m_originalMessageHasBeenSet = true;
   }
 
   return *this;
@@ -71,15 +71,15 @@ JsonValue ModelStreamErrorException::Jsonize() const
 
   }
 
-  if(m_originalMessageHasBeenSet)
-  {
-   payload.WithString("originalMessage", m_originalMessage);
-
-  }
-
   if(m_originalStatusCodeHasBeenSet)
   {
    payload.WithInteger("originalStatusCode", m_originalStatusCode);
+
+  }
+
+  if(m_originalMessageHasBeenSet)
+  {
+   payload.WithString("originalMessage", m_originalMessage);
 
   }
 

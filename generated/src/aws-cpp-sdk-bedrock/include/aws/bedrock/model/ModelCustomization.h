@@ -16,7 +16,8 @@ namespace Model
   enum class ModelCustomization
   {
     NOT_SET,
-    FINE_TUNING
+    FINE_TUNING,
+    CONTINUED_PRE_TRAINING
   };
 
 namespace ModelCustomizationMapper

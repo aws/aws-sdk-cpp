@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/FoundationModelLifecycle.h>
 #include <aws/bedrock/model/ModelModality.h>
 #include <aws/bedrock/model/ModelCustomization.h>
 #include <aws/bedrock/model/InferenceType.h>
@@ -389,6 +390,43 @@ namespace Model
      */
     inline FoundationModelSummary& AddInferenceTypesSupported(InferenceType&& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains details about whether a model version is available or
+     * deprecated.</p>
+     */
+    inline const FoundationModelLifecycle& GetModelLifecycle() const{ return m_modelLifecycle; }
+
+    /**
+     * <p>Contains details about whether a model version is available or
+     * deprecated.</p>
+     */
+    inline bool ModelLifecycleHasBeenSet() const { return m_modelLifecycleHasBeenSet; }
+
+    /**
+     * <p>Contains details about whether a model version is available or
+     * deprecated.</p>
+     */
+    inline void SetModelLifecycle(const FoundationModelLifecycle& value) { m_modelLifecycleHasBeenSet = true; m_modelLifecycle = value; }
+
+    /**
+     * <p>Contains details about whether a model version is available or
+     * deprecated.</p>
+     */
+    inline void SetModelLifecycle(FoundationModelLifecycle&& value) { m_modelLifecycleHasBeenSet = true; m_modelLifecycle = std::move(value); }
+
+    /**
+     * <p>Contains details about whether a model version is available or
+     * deprecated.</p>
+     */
+    inline FoundationModelSummary& WithModelLifecycle(const FoundationModelLifecycle& value) { SetModelLifecycle(value); return *this;}
+
+    /**
+     * <p>Contains details about whether a model version is available or
+     * deprecated.</p>
+     */
+    inline FoundationModelSummary& WithModelLifecycle(FoundationModelLifecycle&& value) { SetModelLifecycle(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelArn;
@@ -417,6 +455,9 @@ namespace Model
 
     Aws::Vector<InferenceType> m_inferenceTypesSupported;
     bool m_inferenceTypesSupportedHasBeenSet = false;
+
+    FoundationModelLifecycle m_modelLifecycle;
+    bool m_modelLifecycleHasBeenSet = false;
   };
 
 } // namespace Model

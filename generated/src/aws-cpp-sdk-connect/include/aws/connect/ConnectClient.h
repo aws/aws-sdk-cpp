@@ -118,6 +118,34 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates the specified dataset for a Amazon Connect instance
+         * with the target account. You can associate only one dataset in a single
+         * call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateAnalyticsDataSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateAnalyticsDataSetOutcome AssociateAnalyticsDataSet(const Model::AssociateAnalyticsDataSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateAnalyticsDataSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateAnalyticsDataSetRequestT = Model::AssociateAnalyticsDataSetRequest>
+        Model::AssociateAnalyticsDataSetOutcomeCallable AssociateAnalyticsDataSetCallable(const AssociateAnalyticsDataSetRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::AssociateAnalyticsDataSet, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateAnalyticsDataSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateAnalyticsDataSetRequestT = Model::AssociateAnalyticsDataSetRequest>
+        void AssociateAnalyticsDataSetAsync(const AssociateAnalyticsDataSetRequestT& request, const AssociateAnalyticsDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::AssociateAnalyticsDataSet, request, handler, context);
+        }
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Associates an approved origin to an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">AWS
@@ -195,6 +223,31 @@ namespace Connect
         void AssociateDefaultVocabularyAsync(const AssociateDefaultVocabularyRequestT& request, const AssociateDefaultVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::AssociateDefaultVocabulary, request, handler, context);
+        }
+
+        /**
+         * <p>Associates a connect resource to a flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateFlowOutcome AssociateFlow(const Model::AssociateFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateFlowRequestT = Model::AssociateFlowRequest>
+        Model::AssociateFlowOutcomeCallable AssociateFlowCallable(const AssociateFlowRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::AssociateFlow, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateFlowRequestT = Model::AssociateFlowRequest>
+        void AssociateFlowAsync(const AssociateFlowRequestT& request, const AssociateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::AssociateFlow, request, handler, context);
         }
 
         /**
@@ -423,6 +476,62 @@ namespace Connect
         void AssociateTrafficDistributionGroupUserAsync(const AssociateTrafficDistributionGroupUserRequestT& request, const AssociateTrafficDistributionGroupUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::AssociateTrafficDistributionGroupUser, request, handler, context);
+        }
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Associates a list of analytics datasets for a given Amazon
+         * Connect instance to a target account. You can associate multiple datasets in a
+         * single call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchAssociateAnalyticsDataSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchAssociateAnalyticsDataSetOutcome BatchAssociateAnalyticsDataSet(const Model::BatchAssociateAnalyticsDataSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchAssociateAnalyticsDataSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchAssociateAnalyticsDataSetRequestT = Model::BatchAssociateAnalyticsDataSetRequest>
+        Model::BatchAssociateAnalyticsDataSetOutcomeCallable BatchAssociateAnalyticsDataSetCallable(const BatchAssociateAnalyticsDataSetRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::BatchAssociateAnalyticsDataSet, request);
+        }
+
+        /**
+         * An Async wrapper for BatchAssociateAnalyticsDataSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchAssociateAnalyticsDataSetRequestT = Model::BatchAssociateAnalyticsDataSetRequest>
+        void BatchAssociateAnalyticsDataSetAsync(const BatchAssociateAnalyticsDataSetRequestT& request, const BatchAssociateAnalyticsDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::BatchAssociateAnalyticsDataSet, request, handler, context);
+        }
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Removes a list of analytics datasets associated with a given
+         * Amazon Connect instance. You can disassociate multiple datasets in a single
+         * call.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDisassociateAnalyticsDataSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDisassociateAnalyticsDataSetOutcome BatchDisassociateAnalyticsDataSet(const Model::BatchDisassociateAnalyticsDataSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDisassociateAnalyticsDataSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDisassociateAnalyticsDataSetRequestT = Model::BatchDisassociateAnalyticsDataSetRequest>
+        Model::BatchDisassociateAnalyticsDataSetOutcomeCallable BatchDisassociateAnalyticsDataSetCallable(const BatchDisassociateAnalyticsDataSetRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::BatchDisassociateAnalyticsDataSet, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDisassociateAnalyticsDataSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDisassociateAnalyticsDataSetRequestT = Model::BatchDisassociateAnalyticsDataSetRequest>
+        void BatchDisassociateAnalyticsDataSetAsync(const BatchDisassociateAnalyticsDataSetRequestT& request, const BatchDisassociateAnalyticsDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::BatchDisassociateAnalyticsDataSet, request, handler, context);
         }
 
         /**
@@ -1065,7 +1174,7 @@ namespace Connect
          * required if you are using SAML for identity management. <code>FirstName</code>
          * and <code>LastName</code> are required if you are using Amazon Connect or SAML
          * for identity management.</p>  <p>For information about how to create
-         * user accounts using the Amazon Connect console, see <a
+         * users using the Amazon Connect admin website, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
          * Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2278,7 +2387,7 @@ namespace Connect
         }
 
         /**
-         * <p>Describes the specified user account. You can <a
+         * <p>Describes the specified user. You can <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
          * the instance ID in the Amazon Connect console</a> (it’s the final part of the
          * ARN). The console does not display the user IDs. Instead, list the users and
@@ -2417,6 +2526,33 @@ namespace Connect
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Removes the dataset ID associated with a given Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateAnalyticsDataSetOutcome DisassociateAnalyticsDataSet(const Model::DisassociateAnalyticsDataSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateAnalyticsDataSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateAnalyticsDataSetRequestT = Model::DisassociateAnalyticsDataSetRequest>
+        Model::DisassociateAnalyticsDataSetOutcomeCallable DisassociateAnalyticsDataSetCallable(const DisassociateAnalyticsDataSetRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DisassociateAnalyticsDataSet, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateAnalyticsDataSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateAnalyticsDataSetRequestT = Model::DisassociateAnalyticsDataSetRequest>
+        void DisassociateAnalyticsDataSetAsync(const DisassociateAnalyticsDataSetRequestT& request, const DisassociateAnalyticsDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DisassociateAnalyticsDataSet, request, handler, context);
+        }
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Revokes access to integrated applications from Amazon
          * Connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">AWS
@@ -2467,6 +2603,31 @@ namespace Connect
         void DisassociateBotAsync(const DisassociateBotRequestT& request, const DisassociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DisassociateBot, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates a connect resource from a flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateFlowOutcome DisassociateFlow(const Model::DisassociateFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateFlowRequestT = Model::DisassociateFlowRequest>
+        Model::DisassociateFlowOutcomeCallable DisassociateFlowCallable(const DisassociateFlowRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DisassociateFlow, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateFlowRequestT = Model::DisassociateFlowRequest>
+        void DisassociateFlowAsync(const DisassociateFlowRequestT& request, const DisassociateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DisassociateFlow, request, handler, context);
         }
 
         /**
@@ -2838,6 +2999,32 @@ namespace Connect
         }
 
         /**
+         * <p>Retrieves the flow associated for a given resource.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFlowAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFlowAssociationOutcome GetFlowAssociation(const Model::GetFlowAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFlowAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFlowAssociationRequestT = Model::GetFlowAssociationRequest>
+        Model::GetFlowAssociationOutcomeCallable GetFlowAssociationCallable(const GetFlowAssociationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::GetFlowAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for GetFlowAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFlowAssociationRequestT = Model::GetFlowAssociationRequest>
+        void GetFlowAssociationAsync(const GetFlowAssociationRequestT& request, const GetFlowAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::GetFlowAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Gets historical metric data from the specified Amazon Connect instance.</p>
          * <p>For a description of each historical metric, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
@@ -2988,6 +3175,34 @@ namespace Connect
         }
 
         /**
+         * <p>Imports a claimed phone number from an external service, such as Amazon
+         * Pinpoint, into an Amazon Connect instance. You can call this API only in the
+         * same Amazon Web Services Region where the Amazon Connect instance was
+         * created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportPhoneNumber">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportPhoneNumberOutcome ImportPhoneNumber(const Model::ImportPhoneNumberRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportPhoneNumber that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ImportPhoneNumberRequestT = Model::ImportPhoneNumberRequest>
+        Model::ImportPhoneNumberOutcomeCallable ImportPhoneNumberCallable(const ImportPhoneNumberRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ImportPhoneNumber, request);
+        }
+
+        /**
+         * An Async wrapper for ImportPhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ImportPhoneNumberRequestT = Model::ImportPhoneNumberRequest>
+        void ImportPhoneNumberAsync(const ImportPhoneNumberRequestT& request, const ImportPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ImportPhoneNumber, request, handler, context);
+        }
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Lists agent statuses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAgentStatuses">AWS
@@ -3011,6 +3226,33 @@ namespace Connect
         void ListAgentStatusesAsync(const ListAgentStatusesRequestT& request, const ListAgentStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListAgentStatuses, request, handler, context);
+        }
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Lists the association status of requested dataset ID for a given
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAnalyticsDataAssociationsOutcome ListAnalyticsDataAssociations(const Model::ListAnalyticsDataAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAnalyticsDataAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAnalyticsDataAssociationsRequestT = Model::ListAnalyticsDataAssociationsRequest>
+        Model::ListAnalyticsDataAssociationsOutcomeCallable ListAnalyticsDataAssociationsCallable(const ListAnalyticsDataAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListAnalyticsDataAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListAnalyticsDataAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAnalyticsDataAssociationsRequestT = Model::ListAnalyticsDataAssociationsRequest>
+        void ListAnalyticsDataAssociationsAsync(const ListAnalyticsDataAssociationsRequestT& request, const ListAnalyticsDataAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListAnalyticsDataAssociations, request, handler, context);
         }
 
         /**
@@ -3253,6 +3495,31 @@ namespace Connect
         void ListEvaluationFormsAsync(const ListEvaluationFormsRequestT& request, const ListEvaluationFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListEvaluationForms, request, handler, context);
+        }
+
+        /**
+         * <p>List the flow association based on the filters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListFlowAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlowAssociationsOutcome ListFlowAssociations(const Model::ListFlowAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFlowAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFlowAssociationsRequestT = Model::ListFlowAssociationsRequest>
+        Model::ListFlowAssociationsOutcomeCallable ListFlowAssociationsCallable(const ListFlowAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListFlowAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListFlowAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFlowAssociationsRequestT = Model::ListFlowAssociationsRequest>
+        void ListFlowAssociationsAsync(const ListFlowAssociationsRequestT& request, const ListFlowAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListFlowAssociations, request, handler, context);
         }
 
         /**
@@ -3639,6 +3906,32 @@ namespace Connect
         void ListQuickConnectsAsync(const ListQuickConnectsRequestT& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListQuickConnects, request, handler, context);
+        }
+
+        /**
+         * <p>Provides a list of analysis segments for a real-time analysis session.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRealtimeContactAnalysisSegmentsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRealtimeContactAnalysisSegmentsV2Outcome ListRealtimeContactAnalysisSegmentsV2(const Model::ListRealtimeContactAnalysisSegmentsV2Request& request) const;
+
+        /**
+         * A Callable wrapper for ListRealtimeContactAnalysisSegmentsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRealtimeContactAnalysisSegmentsV2RequestT = Model::ListRealtimeContactAnalysisSegmentsV2Request>
+        Model::ListRealtimeContactAnalysisSegmentsV2OutcomeCallable ListRealtimeContactAnalysisSegmentsV2Callable(const ListRealtimeContactAnalysisSegmentsV2RequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListRealtimeContactAnalysisSegmentsV2, request);
+        }
+
+        /**
+         * An Async wrapper for ListRealtimeContactAnalysisSegmentsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRealtimeContactAnalysisSegmentsV2RequestT = Model::ListRealtimeContactAnalysisSegmentsV2Request>
+        void ListRealtimeContactAnalysisSegmentsV2Async(const ListRealtimeContactAnalysisSegmentsV2RequestT& request, const ListRealtimeContactAnalysisSegmentsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListRealtimeContactAnalysisSegmentsV2, request, handler, context);
         }
 
         /**
@@ -4138,7 +4431,7 @@ namespace Connect
          * traffic distribution group. You can call this API only in the Amazon Web
          * Services Region where the number was claimed.</p>  <p>To release
          * phone numbers from a traffic distribution group, use the
-         * <code>ReleasePhoneNumber</code> API, not the Amazon Connect console.</p>
+         * <code>ReleasePhoneNumber</code> API, not the Amazon Connect admin website.</p>
          * <p>After releasing a phone number, the phone number enters into a cooldown
          * period of 30 days. It cannot be searched for or claimed again until the period
          * has ended. If you accidentally release a phone number, contact Amazon Web
@@ -4505,6 +4798,39 @@ namespace Connect
         }
 
         /**
+         * <p>Processes chat integration events from Amazon Web Services or external
+         * integrations to Amazon Connect. A chat integration event includes:</p> <ul> <li>
+         * <p>SourceId, DestinationId, and Subtype: a set of identifiers, uniquely
+         * representing a chat</p> </li> <li> <p> ChatEvent: details of the chat action to
+         * perform such as sending a message, event, or disconnecting from a chat</p> </li>
+         * </ul> <p>When a chat integration event is sent with chat identifiers that do not
+         * map to an active chat contact, a new chat contact is also created before
+         * handling chat action. </p> <p>Access to this API is currently restricted to
+         * Amazon Pinpoint for supporting SMS integration. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendChatIntegrationEvent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendChatIntegrationEventOutcome SendChatIntegrationEvent(const Model::SendChatIntegrationEventRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendChatIntegrationEvent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SendChatIntegrationEventRequestT = Model::SendChatIntegrationEventRequest>
+        Model::SendChatIntegrationEventOutcomeCallable SendChatIntegrationEventCallable(const SendChatIntegrationEventRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SendChatIntegrationEvent, request);
+        }
+
+        /**
+         * An Async wrapper for SendChatIntegrationEvent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SendChatIntegrationEventRequestT = Model::SendChatIntegrationEventRequest>
+        void SendChatIntegrationEventAsync(const SendChatIntegrationEventRequestT& request, const SendChatIntegrationEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SendChatIntegrationEvent, request, handler, context);
+        }
+
+        /**
          * <p>Initiates a flow to start a new chat for the customer. Response of this API
          * provides a token required to obtain credentials from the <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
@@ -4740,6 +5066,34 @@ namespace Connect
         void StartTaskContactAsync(const StartTaskContactRequestT& request, const StartTaskContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::StartTaskContact, request, handler, context);
+        }
+
+        /**
+         * <p>Places an inbound in-app, web, or video call to a contact, and then initiates
+         * the flow. It performs the actions in the flow that are specified (in
+         * ContactFlowId) and present in the Amazon Connect instance (specified as
+         * InstanceId).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartWebRTCContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartWebRTCContactOutcome StartWebRTCContact(const Model::StartWebRTCContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartWebRTCContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartWebRTCContactRequestT = Model::StartWebRTCContactRequest>
+        Model::StartWebRTCContactOutcomeCallable StartWebRTCContactCallable(const StartWebRTCContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::StartWebRTCContact, request);
+        }
+
+        /**
+         * An Async wrapper for StartWebRTCContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartWebRTCContactRequestT = Model::StartWebRTCContactRequest>
+        void StartWebRTCContactAsync(const StartWebRTCContactRequestT& request, const StartWebRTCContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::StartWebRTCContact, request, handler, context);
         }
 
         /**

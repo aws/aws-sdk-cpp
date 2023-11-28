@@ -42,49 +42,65 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion
-     * report will be stored.</p>
+     * report will be stored.</p>  <p> <b>Directory buckets</b> - Directory
+     * buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.</p> 
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion
-     * report will be stored.</p>
+     * report will be stored.</p>  <p> <b>Directory buckets</b> - Directory
+     * buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.</p> 
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion
-     * report will be stored.</p>
+     * report will be stored.</p>  <p> <b>Directory buckets</b> - Directory
+     * buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.</p> 
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion
-     * report will be stored.</p>
+     * report will be stored.</p>  <p> <b>Directory buckets</b> - Directory
+     * buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.</p> 
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion
-     * report will be stored.</p>
+     * report will be stored.</p>  <p> <b>Directory buckets</b> - Directory
+     * buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.</p> 
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion
-     * report will be stored.</p>
+     * report will be stored.</p>  <p> <b>Directory buckets</b> - Directory
+     * buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.</p> 
      */
     inline JobReport& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion
-     * report will be stored.</p>
+     * report will be stored.</p>  <p> <b>Directory buckets</b> - Directory
+     * buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.</p> 
      */
     inline JobReport& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion
-     * report will be stored.</p>
+     * report will be stored.</p>  <p> <b>Directory buckets</b> - Directory
+     * buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.</p> 
      */
     inline JobReport& WithBucket(const char* value) { SetBucket(value); return *this;}
 

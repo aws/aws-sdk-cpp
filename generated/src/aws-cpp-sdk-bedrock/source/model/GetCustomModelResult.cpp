@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCustomModelResult::GetCustomModelResult()
+GetCustomModelResult::GetCustomModelResult() : 
+    m_customizationType(CustomizationType::NOT_SET)
 {
 }
 
-GetCustomModelResult::GetCustomModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetCustomModelResult::GetCustomModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_customizationType(CustomizationType::NOT_SET)
 {
   *this = result;
 }
@@ -56,6 +58,12 @@ GetCustomModelResult& GetCustomModelResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("baseModelArn"))
   {
     m_baseModelArn = jsonValue.GetString("baseModelArn");
+
+  }
+
+  if(jsonValue.ValueExists("customizationType"))
+  {
+    m_customizationType = CustomizationTypeMapper::GetCustomizationTypeForName(jsonValue.GetString("customizationType"));
 
   }
 

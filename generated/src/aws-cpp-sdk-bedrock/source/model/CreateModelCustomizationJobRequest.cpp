@@ -19,6 +19,8 @@ CreateModelCustomizationJobRequest::CreateModelCustomizationJobRequest() :
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_baseModelIdentifierHasBeenSet(false),
+    m_customizationType(CustomizationType::NOT_SET),
+    m_customizationTypeHasBeenSet(false),
     m_customModelKmsKeyIdHasBeenSet(false),
     m_jobTagsHasBeenSet(false),
     m_customModelTagsHasBeenSet(false),
@@ -62,6 +64,11 @@ Aws::String CreateModelCustomizationJobRequest::SerializePayload() const
   {
    payload.WithString("baseModelIdentifier", m_baseModelIdentifier);
 
+  }
+
+  if(m_customizationTypeHasBeenSet)
+  {
+   payload.WithString("customizationType", CustomizationTypeMapper::GetNameForCustomizationType(m_customizationType));
   }
 
   if(m_customModelKmsKeyIdHasBeenSet)
