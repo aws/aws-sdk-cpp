@@ -17,6 +17,7 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
 using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
+using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class FreeTierEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -30,6 +31,7 @@ struct FreeTierEndpointProviderEndpointTestCase
         struct Endpoint
         {
             Aws::String url;
+            ExpEpAuthScheme authScheme;
             ExpEpProps properties;
             ExpEpHeaders headers;
         } endpoint;
@@ -59,7 +61,8 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", false), EpParam("Region", "aws-global")}, // params
     {}, // tags
     {{/*epUrl*/"https://freetier.us-east-1.api.aws",
-       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "freetier")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 1*/
@@ -67,6 +70,7 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://freetier-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -75,7 +79,8 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://freetier.us-east-1.api.aws",
-       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "freetier")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 3*/
@@ -83,7 +88,8 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", false), EpParam("Region", "aws-cn-global")}, // params
     {}, // tags
     {{/*epUrl*/"https://freetier.cn-northwest-1.api.amazonwebservices.com.cn",
-       {/*properties*/{"authSchemes", {{EpProp("signingRegion", "cn-northwest-1"), EpProp("name", "sigv4"), EpProp("signingName", "freetier")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 4*/
@@ -91,6 +97,7 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://freetier-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -99,6 +106,7 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://freetier.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -107,6 +115,7 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://freetier-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -115,6 +124,7 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://freetier.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -123,6 +133,7 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -131,6 +142,7 @@ static const Aws::Vector<FreeTierEndpointProviderEndpointTestCase> TEST_CASES = 
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com")}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -159,6 +171,8 @@ Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
         sdkSigner = "NullSigner";
     } else if (rulesSignerName == "bearer") {
         sdkSigner = "Bearer";
+    } else if (rulesSignerName == "s3Express") {
+        sdkSigner = "S3ExpressSigner";
     } else {
         sdkSigner = rulesSignerName;
     }
@@ -181,7 +195,7 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const FreeTierEndpoi
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
             // in the list of AuthSchemes, select the one with a highest priority
-            const Aws::Vector<Aws::String> priotityList = {"sigv4a", "sigv4", "bearer", "none", ""};
+            const Aws::Vector<Aws::String> priotityList = {"s3Express", "sigv4a", "sigv4", "bearer", "none", ""};
             const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
                                                                     priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
                                                                     {

@@ -31,6 +31,12 @@
 \#include <aws/${metadata.projectName}/model/${operation.request.shape.name}.h>
 #end
 #end
+#if($serviceModel.metadata.serviceId == "S3")
+\#include <aws/${metadata.projectName}/S3ExpressSignerProvider.h>
+#end
+#if($serviceModel.metadata.namespace == "S3Crt")
+\#include <aws/s3-crt/S3CrtIdentityProviderAdapter.h>
+#end
 
 \#include <smithy/tracing/TracingUtils.h>
 

@@ -19,6 +19,8 @@ namespace Aws
         static const char HTTP_CLIENT_METRICS_TCP_LATENCY[] = "TcpLatency";
         static const char HTTP_CLIENT_METRICS_SSL_LATENCY[] = "SslLatency";
         static const char HTTP_CLIENT_METRICS_THROUGHPUT[] = "Throughput";
+        static const char HTTP_CLIENT_METRICS_DOWNLOAD_SPEED[] = "DownloadSpeed";
+        static const char HTTP_CLIENT_METRICS_UPLOAD_SPEED[] = "UploadSpeed";
         static const char HTTP_CLIENT_METRICS_UNKNOWN[] = "Unknown";
 
         using namespace Aws::Utils;
@@ -36,6 +38,8 @@ namespace Aws
                 std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_TCP_LATENCY), HttpClientMetricsType::TcpLatency),
                 std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_SSL_LATENCY), HttpClientMetricsType::SslLatency),
                 std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_THROUGHPUT), HttpClientMetricsType::Throughput),
+                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_DOWNLOAD_SPEED), HttpClientMetricsType::DownloadSpeed),
+                std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_UPLOAD_SPEED), HttpClientMetricsType::UploadSpeed),
             };
 
             int nameHash = HashingUtils::HashString(name.c_str());
@@ -61,6 +65,8 @@ namespace Aws
                 std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::TcpLatency), HTTP_CLIENT_METRICS_TCP_LATENCY),
                 std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::SslLatency), HTTP_CLIENT_METRICS_SSL_LATENCY),
                 std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::Throughput), HTTP_CLIENT_METRICS_THROUGHPUT),
+                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::DownloadSpeed), HTTP_CLIENT_METRICS_DOWNLOAD_SPEED),
+                std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::UploadSpeed), HTTP_CLIENT_METRICS_UPLOAD_SPEED),
                 std::pair<int, Aws::String>(static_cast<int>(HttpClientMetricsType::Unknown), HTTP_CLIENT_METRICS_UNKNOWN),
             };
 

@@ -64,6 +64,7 @@ if (LEGACY_BUILD)
     option(BUILD_BENCHMARKS "Enables building the benchmark executable" OFF)
     option(BUILD_OPTEL "Enables building the open telemetry implementation of tracing" OFF)
     option(AWS_SDK_WARNINGS_ARE_ERRORS "Compiler warning is treated as an error. Try turning this off when observing errors on a new or uncommon compiler" ON)
+    option(BUILD_OPTEL_OTLP_BENCHMARKS "Enables building the benchmark tests with open telemetry OTLP clients" OFF)
     option(USE_TLS_V1_2 "Set http client to enforce TLS 1.2" ON)
     option(USE_TLS_V1_3 "Set http client to enforce TLS 1.3" OFF)
 

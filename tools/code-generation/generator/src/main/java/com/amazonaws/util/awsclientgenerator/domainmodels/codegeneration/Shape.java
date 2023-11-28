@@ -58,6 +58,7 @@ public class Shape {
     private boolean hasPreSignedUrl;
     private boolean document;
     private boolean hasEmbeddedErrors = false;
+    private boolean overrideStreaming = false;
     private boolean requestCompressionRequired=false;
     private boolean requestCompressionRequiredGzip=false;
 

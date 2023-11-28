@@ -34,6 +34,9 @@ using namespace smithy::components::tracing;
 #if($serviceModel.endpointRules)
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 #end
+#if($serviceModel.metadata.namespace == "S3")
+using namespace Aws::Utils;
+#end
 
 
 #if(!${onlyGeneratedOperations})

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/monitoring/HttpClientMetrics.h>
 #include <memory>
 #include <functional>
@@ -78,6 +79,14 @@ namespace Aws
          * Closure type for handling whether or not a request should be canceled.
          */
         typedef std::function<bool(const HttpRequest*)> ContinueRequestHandler;
+
+        /**
+         * A "grab bag" of anything that requests can dynamically attach to a
+         * request to be used later in the call flow.
+         */
+        struct ServiceSpecificParameters {
+            Aws::Map<Aws::String, Aws::String> parameterMap;
+        };
 
         /**
           * Abstract class for representing an HttpRequest.
@@ -560,6 +569,10 @@ namespace Aws
             }
             const Aws::Vector<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>>& GetResponseValidationHashes() const { return m_responseValidationHashes; }
 
+            inline void SetServiceSpecificParameters(const std::shared_ptr<ServiceSpecificParameters> &serviceSpecificParameters) { m_serviceSpecificParameters = serviceSpecificParameters; }
+
+            inline std::shared_ptr<ServiceSpecificParameters> GetServiceSpecificParameters() { return m_serviceSpecificParameters; }
+
         private:
             URI m_uri;
             HttpMethod m_method;
@@ -573,6 +586,7 @@ namespace Aws
             Aws::Monitoring::HttpClientMetricsCollection m_httpRequestMetrics;
             std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>> m_requestHash;
             Aws::Vector<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>> m_responseValidationHashes;
+            std::shared_ptr<ServiceSpecificParameters> m_serviceSpecificParameters;
         };
 
     } // namespace Http

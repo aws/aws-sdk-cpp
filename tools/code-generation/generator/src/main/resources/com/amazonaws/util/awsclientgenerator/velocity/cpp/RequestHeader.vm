@@ -118,6 +118,10 @@ namespace Model
     ${exportMacro} bool IsChunked() const override { return true; }
 
 #end
+#if($shape.isOverrideStreaming())
+    ${exportMacro} bool IsStreaming() const override { return false; }
+
+#end
 #if($operation.result.shape.hasEventStreamMembers())
     /**
      * Underlying Event Stream Decoder.

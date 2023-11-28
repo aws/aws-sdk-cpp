@@ -17,6 +17,7 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
 using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
+using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class CloudFrontKeyValueStoreEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -30,6 +31,7 @@ struct CloudFrontKeyValueStoreEndpointProviderEndpointTestCase
         struct Endpoint
         {
             Aws::String url;
+            ExpEpAuthScheme authScheme;
             ExpEpProps properties;
             ExpEpHeaders headers;
         } endpoint;
@@ -107,7 +109,8 @@ static const Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase
     {EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.cloudfront-kvs.global.api.aws",
-       {/*properties*/{"authSchemes", {{EpProp("name", "sigv4a"), EpProp("signingName", "cloudfront-keyvaluestore")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 9*/
@@ -115,7 +118,8 @@ static const Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase
     {EpParam("Region", "us-west-2"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.cloudfront-kvs.global.api.aws",
-       {/*properties*/{"authSchemes", {{EpProp("name", "sigv4a"), EpProp("signingName", "cloudfront-keyvaluestore")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 10*/
@@ -135,7 +139,8 @@ static const Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase
     {EpParam("Endpoint", "https://my-override.example.com"), EpParam("Region", "us-east-1"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.my-override.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("name", "sigv4a"), EpProp("signingName", "cloudfront-keyvaluestore")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 13*/
@@ -143,7 +148,8 @@ static const Aws::Vector<CloudFrontKeyValueStoreEndpointProviderEndpointTestCase
     {EpParam("Endpoint", "http://my-override.example.com/custom-path"), EpParam("KvsARN", "arn:aws:cloudfront::123456789012:key-value-store/my-first-kvs-e10b1dce4f394248811e77167e0451ba")}, // params
     {}, // tags
     {{/*epUrl*/"http://123456789012.my-override.example.com/custom-path",
-       {/*properties*/{"authSchemes", {{EpProp("name", "sigv4a"), EpProp("signingName", "cloudfront-keyvaluestore")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 14*/
@@ -165,6 +171,8 @@ Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
         sdkSigner = "NullSigner";
     } else if (rulesSignerName == "bearer") {
         sdkSigner = "Bearer";
+    } else if (rulesSignerName == "s3Express") {
+        sdkSigner = "S3ExpressSigner";
     } else {
         sdkSigner = rulesSignerName;
     }
@@ -187,7 +195,7 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const CloudFrontKeyV
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
             // in the list of AuthSchemes, select the one with a highest priority
-            const Aws::Vector<Aws::String> priotityList = {"sigv4a", "sigv4", "bearer", "none", ""};
+            const Aws::Vector<Aws::String> priotityList = {"s3Express", "sigv4a", "sigv4", "bearer", "none", ""};
             const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
                                                                     priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
                                                                     {

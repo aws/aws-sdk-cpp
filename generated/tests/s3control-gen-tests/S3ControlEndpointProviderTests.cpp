@@ -17,6 +17,7 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
 using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
+using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class S3ControlEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -30,6 +31,7 @@ struct S3ControlEndpointProviderEndpointTestCase
         struct Endpoint
         {
             Aws::String url;
+            ExpEpAuthScheme authScheme;
             ExpEpProps properties;
             ExpEpHeaders headers;
         } endpoint;
@@ -60,7 +62,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 1*/
@@ -69,7 +72,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 2*/
@@ -78,7 +82,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 3*/
@@ -87,7 +92,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.cn-north-1.amazonaws.com.cn",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 4*/
@@ -96,7 +102,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 5*/
@@ -105,7 +112,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 6*/
@@ -114,7 +122,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-gov-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 7*/
@@ -123,7 +132,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.cn-north-1.amazonaws.com.cn",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 8*/
@@ -132,7 +142,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.cn-north-1.amazonaws.com.cn",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 9*/
@@ -141,7 +152,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-gov-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 10*/
@@ -150,7 +162,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.af-south-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 11*/
@@ -159,7 +172,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.af-south-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 12*/
@@ -168,7 +182,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-gov-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 13*/
@@ -177,7 +192,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-east-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 14*/
@@ -185,7 +201,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", false), EpParam("OutpostId", "123"), EpParam("UseFIPS", true), EpParam("Bucket", "blah"), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-east-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 15*/
@@ -193,7 +210,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", false), EpParam("UseFIPS", false), EpParam("Bucket", "blah"), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-control.us-east-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 16*/
@@ -202,7 +220,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-east-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 17*/
@@ -210,7 +229,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.s3-control.us-east-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 18*/
@@ -219,7 +239,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-east-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 19*/
@@ -270,7 +291,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myid-1234.s3-control.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 26*/
@@ -279,7 +301,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("UseArnRegion", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 27*/
@@ -295,7 +318,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 29*/
@@ -305,7 +329,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://beta.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 30*/
@@ -328,7 +353,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://beta.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 33*/
@@ -337,7 +363,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://beta.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 34*/
@@ -346,7 +373,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://beta.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 35*/
@@ -355,7 +383,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://beta.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 36*/
@@ -364,7 +393,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://beta.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 37*/
@@ -387,7 +417,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 40*/
@@ -396,7 +427,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 41*/
@@ -405,7 +437,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-gov-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 42*/
@@ -414,7 +447,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-gov-west-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-west-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 43*/
@@ -423,7 +457,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-east-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 44*/
@@ -439,7 +474,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.cn-north-1.amazonaws.com.cn",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 46*/
@@ -448,7 +484,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 47*/
@@ -457,7 +494,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-gov-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 48*/
@@ -466,7 +504,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-gov-west-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-west-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 49*/
@@ -475,7 +514,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-east-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 50*/
@@ -491,7 +531,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.af-south-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 52*/
@@ -500,7 +541,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 53*/
@@ -509,7 +551,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-gov-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 54*/
@@ -518,7 +561,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-gov-west-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-gov-west-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 55*/
@@ -527,7 +571,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts-fips.us-east-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 56*/
@@ -570,7 +615,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "1234567890"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://1234567890.s3-control.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 62*/
@@ -578,7 +624,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "1234567890"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://1234567890.s3-control.dualstack.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 63*/
@@ -586,7 +633,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "1234567890"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://1234567890.s3-control-fips.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 64*/
@@ -594,7 +642,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.s3-control-fips.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 65*/
@@ -602,7 +651,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-control.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 66*/
@@ -610,7 +660,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-control-fips.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 67*/
@@ -618,7 +669,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-control.dualstack.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 68*/
@@ -626,7 +678,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-control-fips.dualstack.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 69*/
@@ -634,7 +687,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("Region", "cn-north-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-control.cn-north-1.amazonaws.com.cn",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 70*/
@@ -648,7 +702,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.s3-control.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 72*/
@@ -662,7 +717,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.s3-control-fips.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 74*/
@@ -670,7 +726,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.s3-control-fips.dualstack.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 75*/
@@ -678,7 +735,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("AccountId", "123456789012"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 76*/
@@ -704,7 +762,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 80*/
@@ -712,7 +771,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 81*/
@@ -720,7 +780,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 82*/
@@ -780,7 +841,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.beta.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 91*/
@@ -789,7 +851,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://beta.example.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 92*/
@@ -839,7 +902,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("OutpostId", "op-123"), EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 99*/
@@ -862,7 +926,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 102*/
@@ -871,7 +936,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-east-1.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 103*/
@@ -901,7 +967,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-west-2.amazonaws.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"), EpProp("signingName", "s3-outposts")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 107*/
@@ -909,7 +976,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://10.0.1.12:433",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "snow"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 108*/
@@ -917,7 +985,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://10.0.1.12:433",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "snow"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 109*/
@@ -925,7 +994,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://10.0.1.12",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "snow"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 110*/
@@ -933,7 +1003,8 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Endpoint", "http://s3snow.com"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"http://s3snow.com",
-       {/*properties*/{"authSchemes", {{EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "snow"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}}},
+       {/*authScheme*/}, 
+       {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 111*/
@@ -961,6 +1032,8 @@ Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
         sdkSigner = "NullSigner";
     } else if (rulesSignerName == "bearer") {
         sdkSigner = "Bearer";
+    } else if (rulesSignerName == "s3Express") {
+        sdkSigner = "S3ExpressSigner";
     } else {
         sdkSigner = rulesSignerName;
     }
@@ -983,7 +1056,7 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const S3ControlEndpo
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
             // in the list of AuthSchemes, select the one with a highest priority
-            const Aws::Vector<Aws::String> priotityList = {"sigv4a", "sigv4", "bearer", "none", ""};
+            const Aws::Vector<Aws::String> priotityList = {"s3Express", "sigv4a", "sigv4", "bearer", "none", ""};
             const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
                                                                     priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
                                                                     {

@@ -19,6 +19,8 @@ Aws::String CrtToSdkSignerName(const Aws::String& crtSignerName)
         sdkSigner = "NullSigner";
     } else if (crtSignerName == "bearer") {
         sdkSigner = "Bearer";
+    } else if (crtSignerName == "sigv4-s3express") {
+        sdkSigner = "S3ExpressSigner";
     } else {
         AWS_LOG_WARN(ENDPOINT_AUTH_SCHEME_TAG, (Aws::String("Unknown Endpoint authSchemes signer: ") + crtSignerName).c_str());
     }
@@ -36,6 +38,8 @@ size_t GetAuthSchemePriority(const Aws::String& authSchemeName)
         return 2;
     if(authSchemeName == "Bearer")
         return 2;
+    if (authSchemeName == "S3ExpressSigner")
+        return 3;
 
     return 0; // unknown thus unsupported
 }
@@ -46,6 +50,7 @@ Aws::Internal::Endpoint::EndpointAttributes::BuildEndpointAttributesFromJson(con
 {
     Aws::Internal::Endpoint::EndpointAttributes attributes;
     Aws::Internal::Endpoint::EndpointAuthScheme& authScheme = attributes.authScheme;
+    attributes.useS3ExpressAuth = false;
 
     Utils::Json::JsonValue jsonObject(iJsonStr);
     if (jsonObject.WasParseSuccessful())
@@ -90,6 +95,10 @@ Aws::Internal::Endpoint::EndpointAttributes::BuildEndpointAttributesFromJson(con
                         authScheme = std::move(currentAuthScheme);
                     }
                 }
+            } else if (mapItemAttribute.first == "backend" && mapItemAttribute.second.IsString()) {
+                attributes.backend = mapItemAttribute.second.AsString();
+            } else if (mapItemAttribute.first == "useS3ExpressSessionAuth" && mapItemAttribute.second.IsBool()) {
+                attributes.useS3ExpressAuth = mapItemAttribute.second.AsBool();
             } else {
                 AWS_LOG_WARN(ENDPOINT_AUTH_SCHEME_TAG, Aws::String("Unknown Endpoint Attribute: " + mapItemAttribute.first).c_str());
             }
