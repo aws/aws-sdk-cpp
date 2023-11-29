@@ -27,7 +27,10 @@ UserSettings::UserSettings() :
     m_tensorBoardAppSettingsHasBeenSet(false),
     m_rStudioServerProAppSettingsHasBeenSet(false),
     m_rSessionAppSettingsHasBeenSet(false),
-    m_canvasAppSettingsHasBeenSet(false)
+    m_canvasAppSettingsHasBeenSet(false),
+    m_defaultLandingUriHasBeenSet(false),
+    m_studioWebPortal(StudioWebPortal::NOT_SET),
+    m_studioWebPortalHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ UserSettings::UserSettings(JsonView jsonValue) :
     m_tensorBoardAppSettingsHasBeenSet(false),
     m_rStudioServerProAppSettingsHasBeenSet(false),
     m_rSessionAppSettingsHasBeenSet(false),
-    m_canvasAppSettingsHasBeenSet(false)
+    m_canvasAppSettingsHasBeenSet(false),
+    m_defaultLandingUriHasBeenSet(false),
+    m_studioWebPortal(StudioWebPortal::NOT_SET),
+    m_studioWebPortalHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +119,20 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_canvasAppSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultLandingUri"))
+  {
+    m_defaultLandingUri = jsonValue.GetString("DefaultLandingUri");
+
+    m_defaultLandingUriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StudioWebPortal"))
+  {
+    m_studioWebPortal = StudioWebPortalMapper::GetStudioWebPortalForName(jsonValue.GetString("StudioWebPortal"));
+
+    m_studioWebPortalHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -177,6 +197,17 @@ JsonValue UserSettings::Jsonize() const
   {
    payload.WithObject("CanvasAppSettings", m_canvasAppSettings.Jsonize());
 
+  }
+
+  if(m_defaultLandingUriHasBeenSet)
+  {
+   payload.WithString("DefaultLandingUri", m_defaultLandingUri);
+
+  }
+
+  if(m_studioWebPortalHasBeenSet)
+  {
+   payload.WithString("StudioWebPortal", StudioWebPortalMapper::GetNameForStudioWebPortal(m_studioWebPortal));
   }
 
   return payload;

@@ -27,10 +27,10 @@ namespace ApplicationAutoScaling
    * function provisioned concurrency</p> </li> <li> <p>Amazon Managed Streaming for
    * Apache Kafka broker storage</p> </li> <li> <p>Amazon Neptune clusters</p> </li>
    * <li> <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Amazon SageMaker
-   * Serverless endpoint provisioned concurrency</p> </li> <li> <p>Spot Fleets
-   * (Amazon EC2)</p> </li> <li> <p>Custom resources provided by your own
-   * applications or services</p> </li> </ul> <p>To learn more about Application Auto
-   * Scaling, see the <a
+   * Serverless endpoint provisioned concurrency</p> </li> <li> <p>Amazon SageMaker
+   * inference components</p> </li> <li> <p>Spot Fleets (Amazon EC2)</p> </li> <li>
+   * <p>Custom resources provided by your own applications or services</p> </li>
+   * </ul> <p>To learn more about Application Auto Scaling, see the <a
    * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
    * Auto Scaling User Guide</a>.</p> <p> <b>API Summary</b> </p> <p>The Application
    * Auto Scaling service API includes three key sets of actions: </p> <ul> <li>
@@ -113,9 +113,9 @@ namespace ApplicationAutoScaling
          * action, but does not delete the CloudWatch alarm associated with the scaling
          * policy, even if it no longer has an associated action.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete
+         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-step-scaling-policy-cli.html#delete-step-scaling-policy">Delete
          * a step scaling policy</a> and <a
-         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
+         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-target-tracking-policy-cli.html#delete-target-tracking-policy">Delete
          * a target tracking scaling policy</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">AWS

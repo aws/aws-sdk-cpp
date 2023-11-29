@@ -319,6 +319,91 @@ namespace Model
     inline DescribeSpaceResult& WithSpaceSettings(SpaceSettings&& value) { SetSpaceSettings(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
+     */
+    inline void SetUrl(const Aws::String& value) { m_url = value; }
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
+     */
+    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
+     */
+    inline void SetUrl(const char* value) { m_url.assign(value); }
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
+     */
+    inline DescribeSpaceResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
+     */
+    inline DescribeSpaceResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
+     */
+    inline DescribeSpaceResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -359,6 +444,8 @@ namespace Model
     Aws::String m_failureReason;
 
     SpaceSettings m_spaceSettings;
+
+    Aws::String m_url;
 
     Aws::String m_requestId;
   };

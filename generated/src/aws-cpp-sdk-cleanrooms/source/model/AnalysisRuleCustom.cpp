@@ -20,13 +20,15 @@ namespace Model
 
 AnalysisRuleCustom::AnalysisRuleCustom() : 
     m_allowedAnalysesHasBeenSet(false),
-    m_allowedAnalysisProvidersHasBeenSet(false)
+    m_allowedAnalysisProvidersHasBeenSet(false),
+    m_differentialPrivacyHasBeenSet(false)
 {
 }
 
 AnalysisRuleCustom::AnalysisRuleCustom(JsonView jsonValue) : 
     m_allowedAnalysesHasBeenSet(false),
-    m_allowedAnalysisProvidersHasBeenSet(false)
+    m_allowedAnalysisProvidersHasBeenSet(false),
+    m_differentialPrivacyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ AnalysisRuleCustom& AnalysisRuleCustom::operator =(JsonView jsonValue)
       m_allowedAnalysisProviders.push_back(allowedAnalysisProvidersJsonList[allowedAnalysisProvidersIndex].AsString());
     }
     m_allowedAnalysisProvidersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("differentialPrivacy"))
+  {
+    m_differentialPrivacy = jsonValue.GetObject("differentialPrivacy");
+
+    m_differentialPrivacyHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +88,12 @@ JsonValue AnalysisRuleCustom::Jsonize() const
      allowedAnalysisProvidersJsonList[allowedAnalysisProvidersIndex].AsString(m_allowedAnalysisProviders[allowedAnalysisProvidersIndex]);
    }
    payload.WithArray("allowedAnalysisProviders", std::move(allowedAnalysisProvidersJsonList));
+
+  }
+
+  if(m_differentialPrivacyHasBeenSet)
+  {
+   payload.WithObject("differentialPrivacy", m_differentialPrivacy.Jsonize());
 
   }
 

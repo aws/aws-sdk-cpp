@@ -22,6 +22,7 @@ InvokeEndpointWithResponseStreamRequest::InvokeEndpointWithResponseStreamRequest
     m_targetVariantHasBeenSet(false),
     m_targetContainerHostnameHasBeenSet(false),
     m_inferenceIdHasBeenSet(false),
+    m_inferenceComponentNameHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -64,6 +65,13 @@ Aws::Http::HeaderValueCollection InvokeEndpointWithResponseStreamRequest::GetReq
   {
     ss << m_inferenceId;
     headers.emplace("x-amzn-sagemaker-inference-id",  ss.str());
+    ss.str("");
+  }
+
+  if(m_inferenceComponentNameHasBeenSet)
+  {
+    ss << m_inferenceComponentName;
+    headers.emplace("x-amzn-sagemaker-inference-component",  ss.str());
     ss.str("");
   }
 

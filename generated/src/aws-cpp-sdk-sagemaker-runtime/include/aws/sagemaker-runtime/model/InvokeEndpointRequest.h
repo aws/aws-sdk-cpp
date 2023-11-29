@@ -616,6 +616,55 @@ namespace Model
      */
     inline InvokeEndpointRequest& WithEnableExplanations(const char* value) { SetEnableExplanations(value); return *this;}
 
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline const Aws::String& GetInferenceComponentName() const{ return m_inferenceComponentName; }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline bool InferenceComponentNameHasBeenSet() const { return m_inferenceComponentNameHasBeenSet; }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline void SetInferenceComponentName(const Aws::String& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = value; }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline void SetInferenceComponentName(Aws::String&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::move(value); }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline void SetInferenceComponentName(const char* value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName.assign(value); }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline InvokeEndpointRequest& WithInferenceComponentName(const Aws::String& value) { SetInferenceComponentName(value); return *this;}
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline InvokeEndpointRequest& WithInferenceComponentName(Aws::String&& value) { SetInferenceComponentName(std::move(value)); return *this;}
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline InvokeEndpointRequest& WithInferenceComponentName(const char* value) { SetInferenceComponentName(value); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -642,6 +691,9 @@ namespace Model
 
     Aws::String m_enableExplanations;
     bool m_enableExplanationsHasBeenSet = false;
+
+    Aws::String m_inferenceComponentName;
+    bool m_inferenceComponentNameHasBeenSet = false;
   };
 
 } // namespace Model

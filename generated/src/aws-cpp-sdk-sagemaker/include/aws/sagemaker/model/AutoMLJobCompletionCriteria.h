@@ -78,7 +78,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
      * action.</p> <p>For job V2s (jobs created by calling
      * <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
-     * candidate.</p>
+     * candidate.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">TextGenerationJobConfig</a>
+     * problem types, the maximum time defaults to 72 hours (259200 seconds).</p>
      */
     inline int GetMaxRuntimePerTrainingJobInSeconds() const{ return m_maxRuntimePerTrainingJobInSeconds; }
 
@@ -91,7 +93,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
      * action.</p> <p>For job V2s (jobs created by calling
      * <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
-     * candidate.</p>
+     * candidate.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">TextGenerationJobConfig</a>
+     * problem types, the maximum time defaults to 72 hours (259200 seconds).</p>
      */
     inline bool MaxRuntimePerTrainingJobInSecondsHasBeenSet() const { return m_maxRuntimePerTrainingJobInSecondsHasBeenSet; }
 
@@ -104,7 +108,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
      * action.</p> <p>For job V2s (jobs created by calling
      * <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
-     * candidate.</p>
+     * candidate.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">TextGenerationJobConfig</a>
+     * problem types, the maximum time defaults to 72 hours (259200 seconds).</p>
      */
     inline void SetMaxRuntimePerTrainingJobInSeconds(int value) { m_maxRuntimePerTrainingJobInSecondsHasBeenSet = true; m_maxRuntimePerTrainingJobInSeconds = value; }
 
@@ -117,7 +123,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
      * action.</p> <p>For job V2s (jobs created by calling
      * <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
-     * candidate.</p>
+     * candidate.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">TextGenerationJobConfig</a>
+     * problem types, the maximum time defaults to 72 hours (259200 seconds).</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxRuntimePerTrainingJobInSeconds(int value) { SetMaxRuntimePerTrainingJobInSeconds(value); return *this;}
 
