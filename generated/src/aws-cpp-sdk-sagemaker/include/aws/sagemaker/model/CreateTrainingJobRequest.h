@@ -20,6 +20,7 @@
 #include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
+#include <aws/sagemaker/model/InfraCheckConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/DebugRuleConfiguration.h>
@@ -1372,6 +1373,43 @@ namespace Model
      */
     inline CreateTrainingJobRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline const InfraCheckConfig& GetInfraCheckConfig() const{ return m_infraCheckConfig; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline bool InfraCheckConfigHasBeenSet() const { return m_infraCheckConfigHasBeenSet; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline void SetInfraCheckConfig(const InfraCheckConfig& value) { m_infraCheckConfigHasBeenSet = true; m_infraCheckConfig = value; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline void SetInfraCheckConfig(InfraCheckConfig&& value) { m_infraCheckConfigHasBeenSet = true; m_infraCheckConfig = std::move(value); }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline CreateTrainingJobRequest& WithInfraCheckConfig(const InfraCheckConfig& value) { SetInfraCheckConfig(value); return *this;}
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline CreateTrainingJobRequest& WithInfraCheckConfig(InfraCheckConfig&& value) { SetInfraCheckConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1439,6 +1477,9 @@ namespace Model
 
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet = false;
+
+    InfraCheckConfig m_infraCheckConfig;
+    bool m_infraCheckConfigHasBeenSet = false;
   };
 
 } // namespace Model

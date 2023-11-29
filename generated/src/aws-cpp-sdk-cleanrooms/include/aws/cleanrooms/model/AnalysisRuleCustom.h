@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/DifferentialPrivacyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -26,7 +27,8 @@ namespace Model
 
   /**
    * <p>A type of analysis rule that enables the table owner to approve custom SQL
-   * queries on their configured tables.</p><p><h3>See Also:</h3>   <a
+   * queries on their configured tables. It supports differential
+   * privacy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/AnalysisRuleCustom">AWS
    * API Reference</a></p>
    */
@@ -148,6 +150,37 @@ namespace Model
      */
     inline AnalysisRuleCustom& AddAllowedAnalysisProviders(const char* value) { m_allowedAnalysisProvidersHasBeenSet = true; m_allowedAnalysisProviders.push_back(value); return *this; }
 
+
+    /**
+     * <p>The differential privacy configuration.</p>
+     */
+    inline const DifferentialPrivacyConfiguration& GetDifferentialPrivacy() const{ return m_differentialPrivacy; }
+
+    /**
+     * <p>The differential privacy configuration.</p>
+     */
+    inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
+
+    /**
+     * <p>The differential privacy configuration.</p>
+     */
+    inline void SetDifferentialPrivacy(const DifferentialPrivacyConfiguration& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = value; }
+
+    /**
+     * <p>The differential privacy configuration.</p>
+     */
+    inline void SetDifferentialPrivacy(DifferentialPrivacyConfiguration&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::move(value); }
+
+    /**
+     * <p>The differential privacy configuration.</p>
+     */
+    inline AnalysisRuleCustom& WithDifferentialPrivacy(const DifferentialPrivacyConfiguration& value) { SetDifferentialPrivacy(value); return *this;}
+
+    /**
+     * <p>The differential privacy configuration.</p>
+     */
+    inline AnalysisRuleCustom& WithDifferentialPrivacy(DifferentialPrivacyConfiguration&& value) { SetDifferentialPrivacy(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_allowedAnalyses;
@@ -155,6 +188,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_allowedAnalysisProviders;
     bool m_allowedAnalysisProvidersHasBeenSet = false;
+
+    DifferentialPrivacyConfiguration m_differentialPrivacy;
+    bool m_differentialPrivacyHasBeenSet = false;
   };
 
 } // namespace Model

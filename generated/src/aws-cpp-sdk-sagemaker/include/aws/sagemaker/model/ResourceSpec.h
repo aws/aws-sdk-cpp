@@ -122,6 +122,47 @@ namespace Model
 
 
     /**
+     * <p>The SageMakerImageVersionAlias.</p>
+     */
+    inline const Aws::String& GetSageMakerImageVersionAlias() const{ return m_sageMakerImageVersionAlias; }
+
+    /**
+     * <p>The SageMakerImageVersionAlias.</p>
+     */
+    inline bool SageMakerImageVersionAliasHasBeenSet() const { return m_sageMakerImageVersionAliasHasBeenSet; }
+
+    /**
+     * <p>The SageMakerImageVersionAlias.</p>
+     */
+    inline void SetSageMakerImageVersionAlias(const Aws::String& value) { m_sageMakerImageVersionAliasHasBeenSet = true; m_sageMakerImageVersionAlias = value; }
+
+    /**
+     * <p>The SageMakerImageVersionAlias.</p>
+     */
+    inline void SetSageMakerImageVersionAlias(Aws::String&& value) { m_sageMakerImageVersionAliasHasBeenSet = true; m_sageMakerImageVersionAlias = std::move(value); }
+
+    /**
+     * <p>The SageMakerImageVersionAlias.</p>
+     */
+    inline void SetSageMakerImageVersionAlias(const char* value) { m_sageMakerImageVersionAliasHasBeenSet = true; m_sageMakerImageVersionAlias.assign(value); }
+
+    /**
+     * <p>The SageMakerImageVersionAlias.</p>
+     */
+    inline ResourceSpec& WithSageMakerImageVersionAlias(const Aws::String& value) { SetSageMakerImageVersionAlias(value); return *this;}
+
+    /**
+     * <p>The SageMakerImageVersionAlias.</p>
+     */
+    inline ResourceSpec& WithSageMakerImageVersionAlias(Aws::String&& value) { SetSageMakerImageVersionAlias(std::move(value)); return *this;}
+
+    /**
+     * <p>The SageMakerImageVersionAlias.</p>
+     */
+    inline ResourceSpec& WithSageMakerImageVersionAlias(const char* value) { SetSageMakerImageVersionAlias(value); return *this;}
+
+
+    /**
      * <p>The instance type that the image version runs on.</p>  <p>
      * <b>JupyterServer apps</b> only support the <code>system</code> value.</p> <p>For
      * <b>KernelGateway apps</b>, the <code>system</code> value is translated to
@@ -231,6 +272,9 @@ namespace Model
 
     Aws::String m_sageMakerImageVersionArn;
     bool m_sageMakerImageVersionArnHasBeenSet = false;
+
+    Aws::String m_sageMakerImageVersionAlias;
+    bool m_sageMakerImageVersionAliasHasBeenSet = false;
 
     AppInstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet = false;

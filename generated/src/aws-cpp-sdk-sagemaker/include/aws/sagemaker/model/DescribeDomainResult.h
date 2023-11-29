@@ -440,8 +440,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
 
@@ -450,8 +450,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessType = value; }
 
@@ -460,8 +460,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessType = std::move(value); }
 
@@ -470,8 +470,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline DescribeDomainResult& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
 
@@ -480,49 +480,49 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline DescribeDomainResult& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIds = std::move(value); }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& AddSubnetIds(Aws::String&& value) { m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline DescribeDomainResult& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
 
@@ -564,43 +564,43 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline DescribeDomainResult& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline DescribeDomainResult& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline DescribeDomainResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}

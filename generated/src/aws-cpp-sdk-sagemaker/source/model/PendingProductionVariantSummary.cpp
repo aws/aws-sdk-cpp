@@ -35,7 +35,9 @@ PendingProductionVariantSummary::PendingProductionVariantSummary() :
     m_acceleratorTypeHasBeenSet(false),
     m_variantStatusHasBeenSet(false),
     m_currentServerlessConfigHasBeenSet(false),
-    m_desiredServerlessConfigHasBeenSet(false)
+    m_desiredServerlessConfigHasBeenSet(false),
+    m_managedInstanceScalingHasBeenSet(false),
+    m_routingConfigHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ PendingProductionVariantSummary::PendingProductionVariantSummary(JsonView jsonVa
     m_acceleratorTypeHasBeenSet(false),
     m_variantStatusHasBeenSet(false),
     m_currentServerlessConfigHasBeenSet(false),
-    m_desiredServerlessConfigHasBeenSet(false)
+    m_desiredServerlessConfigHasBeenSet(false),
+    m_managedInstanceScalingHasBeenSet(false),
+    m_routingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +150,20 @@ PendingProductionVariantSummary& PendingProductionVariantSummary::operator =(Jso
     m_desiredServerlessConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ManagedInstanceScaling"))
+  {
+    m_managedInstanceScaling = jsonValue.GetObject("ManagedInstanceScaling");
+
+    m_managedInstanceScalingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RoutingConfig"))
+  {
+    m_routingConfig = jsonValue.GetObject("RoutingConfig");
+
+    m_routingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -224,6 +242,18 @@ JsonValue PendingProductionVariantSummary::Jsonize() const
   if(m_desiredServerlessConfigHasBeenSet)
   {
    payload.WithObject("DesiredServerlessConfig", m_desiredServerlessConfig.Jsonize());
+
+  }
+
+  if(m_managedInstanceScalingHasBeenSet)
+  {
+   payload.WithObject("ManagedInstanceScaling", m_managedInstanceScaling.Jsonize());
+
+  }
+
+  if(m_routingConfigHasBeenSet)
+  {
+   payload.WithObject("RoutingConfig", m_routingConfig.Jsonize());
 
   }
 

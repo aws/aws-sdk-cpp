@@ -38,7 +38,9 @@ ProductionVariant::ProductionVariant() :
     m_containerStartupHealthCheckTimeoutInSeconds(0),
     m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false),
     m_enableSSMAccess(false),
-    m_enableSSMAccessHasBeenSet(false)
+    m_enableSSMAccessHasBeenSet(false),
+    m_managedInstanceScalingHasBeenSet(false),
+    m_routingConfigHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ ProductionVariant::ProductionVariant(JsonView jsonValue) :
     m_containerStartupHealthCheckTimeoutInSeconds(0),
     m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false),
     m_enableSSMAccess(false),
-    m_enableSSMAccessHasBeenSet(false)
+    m_enableSSMAccessHasBeenSet(false),
+    m_managedInstanceScalingHasBeenSet(false),
+    m_routingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -153,6 +157,20 @@ ProductionVariant& ProductionVariant::operator =(JsonView jsonValue)
     m_enableSSMAccessHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ManagedInstanceScaling"))
+  {
+    m_managedInstanceScaling = jsonValue.GetObject("ManagedInstanceScaling");
+
+    m_managedInstanceScalingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RoutingConfig"))
+  {
+    m_routingConfig = jsonValue.GetObject("RoutingConfig");
+
+    m_routingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +245,18 @@ JsonValue ProductionVariant::Jsonize() const
   if(m_enableSSMAccessHasBeenSet)
   {
    payload.WithBool("EnableSSMAccess", m_enableSSMAccess);
+
+  }
+
+  if(m_managedInstanceScalingHasBeenSet)
+  {
+   payload.WithObject("ManagedInstanceScaling", m_managedInstanceScaling.Jsonize());
+
+  }
+
+  if(m_routingConfigHasBeenSet)
+  {
+   payload.WithObject("RoutingConfig", m_routingConfig.Jsonize());
 
   }
 

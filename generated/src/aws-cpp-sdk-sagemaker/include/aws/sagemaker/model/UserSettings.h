@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/RStudioServerProAppSettings.h>
 #include <aws/sagemaker/model/RSessionAppSettings.h>
 #include <aws/sagemaker/model/CanvasAppSettings.h>
+#include <aws/sagemaker/model/StudioWebPortal.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +33,12 @@ namespace Model
 {
 
   /**
-   * <p>A collection of settings that apply to users of Amazon SageMaker Studio.
-   * These settings are specified when the <code>CreateUserProfile</code> API is
-   * called, and as <code>DefaultUserSettings</code> when the
-   * <code>CreateDomain</code> API is called.</p> <p> <code>SecurityGroups</code> is
-   * aggregated when specified in both calls. For all other settings in
-   * <code>UserSettings</code>, the values specified in
-   * <code>CreateUserProfile</code> take precedence over those specified in
+   * <p>A collection of settings that apply to users in a domain. These settings are
+   * specified when the <code>CreateUserProfile</code> API is called, and as
+   * <code>DefaultUserSettings</code> when the <code>CreateDomain</code> API is
+   * called.</p> <p> <code>SecurityGroups</code> is aggregated when specified in both
+   * calls. For all other settings in <code>UserSettings</code>, the values specified
+   * in <code>CreateUserProfile</code> take precedence over those specified in
    * <code>CreateDomain</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserSettings">AWS
    * API Reference</a></p>
@@ -94,159 +94,159 @@ namespace Model
 
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
-     * uses for communication.</p> <p>Optional when the
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the
+     * domain uses for communication.</p> <p>Optional when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     * of security groups that you can specify is one less than the maximum number
-     * shown.</p>
+     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     * number of security groups that you can specify is one less than the maximum
+     * number shown.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
-     * uses for communication.</p> <p>Optional when the
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the
+     * domain uses for communication.</p> <p>Optional when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     * of security groups that you can specify is one less than the maximum number
-     * shown.</p>
+     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     * number of security groups that you can specify is one less than the maximum
+     * number shown.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
-     * uses for communication.</p> <p>Optional when the
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the
+     * domain uses for communication.</p> <p>Optional when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     * of security groups that you can specify is one less than the maximum number
-     * shown.</p>
+     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     * number of security groups that you can specify is one less than the maximum
+     * number shown.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
-     * uses for communication.</p> <p>Optional when the
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the
+     * domain uses for communication.</p> <p>Optional when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     * of security groups that you can specify is one less than the maximum number
-     * shown.</p>
+     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     * number of security groups that you can specify is one less than the maximum
+     * number shown.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
-     * uses for communication.</p> <p>Optional when the
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the
+     * domain uses for communication.</p> <p>Optional when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     * of security groups that you can specify is one less than the maximum number
-     * shown.</p>
+     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     * number of security groups that you can specify is one less than the maximum
+     * number shown.</p>
      */
     inline UserSettings& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
-     * uses for communication.</p> <p>Optional when the
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the
+     * domain uses for communication.</p> <p>Optional when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     * of security groups that you can specify is one less than the maximum number
-     * shown.</p>
+     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     * number of security groups that you can specify is one less than the maximum
+     * number shown.</p>
      */
     inline UserSettings& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
-     * uses for communication.</p> <p>Optional when the
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the
+     * domain uses for communication.</p> <p>Optional when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     * of security groups that you can specify is one less than the maximum number
-     * shown.</p>
+     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     * number of security groups that you can specify is one less than the maximum
+     * number shown.</p>
      */
     inline UserSettings& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
-     * uses for communication.</p> <p>Optional when the
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the
+     * domain uses for communication.</p> <p>Optional when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     * of security groups that you can specify is one less than the maximum number
-     * shown.</p>
+     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     * number of security groups that you can specify is one less than the maximum
+     * number shown.</p>
      */
     inline UserSettings& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio
-     * uses for communication.</p> <p>Optional when the
+     * <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the
+     * domain uses for communication.</p> <p>Optional when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     * of security groups that you can specify is one less than the maximum number
-     * shown.</p>
+     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     * number of security groups that you can specify is one less than the maximum
+     * number shown.</p>
      */
     inline UserSettings& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
 
     /**
-     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
+     * <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
      */
     inline const SharingSettings& GetSharingSettings() const{ return m_sharingSettings; }
 
     /**
-     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
+     * <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
      */
     inline bool SharingSettingsHasBeenSet() const { return m_sharingSettingsHasBeenSet; }
 
     /**
-     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
+     * <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
      */
     inline void SetSharingSettings(const SharingSettings& value) { m_sharingSettingsHasBeenSet = true; m_sharingSettings = value; }
 
     /**
-     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
+     * <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
      */
     inline void SetSharingSettings(SharingSettings&& value) { m_sharingSettingsHasBeenSet = true; m_sharingSettings = std::move(value); }
 
     /**
-     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
+     * <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
      */
     inline UserSettings& WithSharingSettings(const SharingSettings& value) { SetSharingSettings(value); return *this;}
 
     /**
-     * <p>Specifies options for sharing SageMaker Studio notebooks.</p>
+     * <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
      */
     inline UserSettings& WithSharingSettings(SharingSettings&& value) { SetSharingSettings(std::move(value)); return *this;}
 
@@ -448,6 +448,130 @@ namespace Model
      */
     inline UserSettings& WithCanvasAppSettings(CanvasAppSettings&& value) { SetCanvasAppSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The default experience that the user is directed to when accessing the
+     * domain. The supported values are:</p> <ul> <li> <p> <code>studio::</code>:
+     * Indicates that Studio is the default experience. This value can only be passed
+     * if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li> <li>
+     * <p> <code>app:JupyterServer:</code>: Indicates that Studio Classic is the
+     * default experience.</p> </li> </ul>
+     */
+    inline const Aws::String& GetDefaultLandingUri() const{ return m_defaultLandingUri; }
+
+    /**
+     * <p>The default experience that the user is directed to when accessing the
+     * domain. The supported values are:</p> <ul> <li> <p> <code>studio::</code>:
+     * Indicates that Studio is the default experience. This value can only be passed
+     * if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li> <li>
+     * <p> <code>app:JupyterServer:</code>: Indicates that Studio Classic is the
+     * default experience.</p> </li> </ul>
+     */
+    inline bool DefaultLandingUriHasBeenSet() const { return m_defaultLandingUriHasBeenSet; }
+
+    /**
+     * <p>The default experience that the user is directed to when accessing the
+     * domain. The supported values are:</p> <ul> <li> <p> <code>studio::</code>:
+     * Indicates that Studio is the default experience. This value can only be passed
+     * if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li> <li>
+     * <p> <code>app:JupyterServer:</code>: Indicates that Studio Classic is the
+     * default experience.</p> </li> </ul>
+     */
+    inline void SetDefaultLandingUri(const Aws::String& value) { m_defaultLandingUriHasBeenSet = true; m_defaultLandingUri = value; }
+
+    /**
+     * <p>The default experience that the user is directed to when accessing the
+     * domain. The supported values are:</p> <ul> <li> <p> <code>studio::</code>:
+     * Indicates that Studio is the default experience. This value can only be passed
+     * if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li> <li>
+     * <p> <code>app:JupyterServer:</code>: Indicates that Studio Classic is the
+     * default experience.</p> </li> </ul>
+     */
+    inline void SetDefaultLandingUri(Aws::String&& value) { m_defaultLandingUriHasBeenSet = true; m_defaultLandingUri = std::move(value); }
+
+    /**
+     * <p>The default experience that the user is directed to when accessing the
+     * domain. The supported values are:</p> <ul> <li> <p> <code>studio::</code>:
+     * Indicates that Studio is the default experience. This value can only be passed
+     * if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li> <li>
+     * <p> <code>app:JupyterServer:</code>: Indicates that Studio Classic is the
+     * default experience.</p> </li> </ul>
+     */
+    inline void SetDefaultLandingUri(const char* value) { m_defaultLandingUriHasBeenSet = true; m_defaultLandingUri.assign(value); }
+
+    /**
+     * <p>The default experience that the user is directed to when accessing the
+     * domain. The supported values are:</p> <ul> <li> <p> <code>studio::</code>:
+     * Indicates that Studio is the default experience. This value can only be passed
+     * if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li> <li>
+     * <p> <code>app:JupyterServer:</code>: Indicates that Studio Classic is the
+     * default experience.</p> </li> </ul>
+     */
+    inline UserSettings& WithDefaultLandingUri(const Aws::String& value) { SetDefaultLandingUri(value); return *this;}
+
+    /**
+     * <p>The default experience that the user is directed to when accessing the
+     * domain. The supported values are:</p> <ul> <li> <p> <code>studio::</code>:
+     * Indicates that Studio is the default experience. This value can only be passed
+     * if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li> <li>
+     * <p> <code>app:JupyterServer:</code>: Indicates that Studio Classic is the
+     * default experience.</p> </li> </ul>
+     */
+    inline UserSettings& WithDefaultLandingUri(Aws::String&& value) { SetDefaultLandingUri(std::move(value)); return *this;}
+
+    /**
+     * <p>The default experience that the user is directed to when accessing the
+     * domain. The supported values are:</p> <ul> <li> <p> <code>studio::</code>:
+     * Indicates that Studio is the default experience. This value can only be passed
+     * if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li> <li>
+     * <p> <code>app:JupyterServer:</code>: Indicates that Studio Classic is the
+     * default experience.</p> </li> </ul>
+     */
+    inline UserSettings& WithDefaultLandingUri(const char* value) { SetDefaultLandingUri(value); return *this;}
+
+
+    /**
+     * <p>Whether the user can access Studio. If this value is set to
+     * <code>DISABLED</code>, the user cannot access Studio, even if that is the
+     * default experience for the domain.</p>
+     */
+    inline const StudioWebPortal& GetStudioWebPortal() const{ return m_studioWebPortal; }
+
+    /**
+     * <p>Whether the user can access Studio. If this value is set to
+     * <code>DISABLED</code>, the user cannot access Studio, even if that is the
+     * default experience for the domain.</p>
+     */
+    inline bool StudioWebPortalHasBeenSet() const { return m_studioWebPortalHasBeenSet; }
+
+    /**
+     * <p>Whether the user can access Studio. If this value is set to
+     * <code>DISABLED</code>, the user cannot access Studio, even if that is the
+     * default experience for the domain.</p>
+     */
+    inline void SetStudioWebPortal(const StudioWebPortal& value) { m_studioWebPortalHasBeenSet = true; m_studioWebPortal = value; }
+
+    /**
+     * <p>Whether the user can access Studio. If this value is set to
+     * <code>DISABLED</code>, the user cannot access Studio, even if that is the
+     * default experience for the domain.</p>
+     */
+    inline void SetStudioWebPortal(StudioWebPortal&& value) { m_studioWebPortalHasBeenSet = true; m_studioWebPortal = std::move(value); }
+
+    /**
+     * <p>Whether the user can access Studio. If this value is set to
+     * <code>DISABLED</code>, the user cannot access Studio, even if that is the
+     * default experience for the domain.</p>
+     */
+    inline UserSettings& WithStudioWebPortal(const StudioWebPortal& value) { SetStudioWebPortal(value); return *this;}
+
+    /**
+     * <p>Whether the user can access Studio. If this value is set to
+     * <code>DISABLED</code>, the user cannot access Studio, even if that is the
+     * default experience for the domain.</p>
+     */
+    inline UserSettings& WithStudioWebPortal(StudioWebPortal&& value) { SetStudioWebPortal(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_executionRole;
@@ -476,6 +600,12 @@ namespace Model
 
     CanvasAppSettings m_canvasAppSettings;
     bool m_canvasAppSettingsHasBeenSet = false;
+
+    Aws::String m_defaultLandingUri;
+    bool m_defaultLandingUriHasBeenSet = false;
+
+    StudioWebPortal m_studioWebPortal;
+    bool m_studioWebPortalHasBeenSet = false;
   };
 
 } // namespace Model

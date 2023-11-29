@@ -11,6 +11,8 @@
 #include <aws/sagemaker/model/DomainSettingsForUpdate.h>
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <utility>
 
 namespace Aws
@@ -238,6 +240,161 @@ namespace Model
      */
     inline UpdateDomainRequest& WithAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { SetAppSecurityGroupManagement(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The VPC subnets that Studio uses for communication.</p> <p>If removing
+     * subnets, ensure there are no apps in the <code>InService</code>,
+     * <code>Pending</code>, or <code>Deleting</code> state.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The VPC subnets that Studio uses for communication.</p> <p>If removing
+     * subnets, ensure there are no apps in the <code>InService</code>,
+     * <code>Pending</code>, or <code>Deleting</code> state.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>The VPC subnets that Studio uses for communication.</p> <p>If removing
+     * subnets, ensure there are no apps in the <code>InService</code>,
+     * <code>Pending</code>, or <code>Deleting</code> state.</p>
+     */
+    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+
+    /**
+     * <p>The VPC subnets that Studio uses for communication.</p> <p>If removing
+     * subnets, ensure there are no apps in the <code>InService</code>,
+     * <code>Pending</code>, or <code>Deleting</code> state.</p>
+     */
+    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
+
+    /**
+     * <p>The VPC subnets that Studio uses for communication.</p> <p>If removing
+     * subnets, ensure there are no apps in the <code>InService</code>,
+     * <code>Pending</code>, or <code>Deleting</code> state.</p>
+     */
+    inline UpdateDomainRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
+
+    /**
+     * <p>The VPC subnets that Studio uses for communication.</p> <p>If removing
+     * subnets, ensure there are no apps in the <code>InService</code>,
+     * <code>Pending</code>, or <code>Deleting</code> state.</p>
+     */
+    inline UpdateDomainRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The VPC subnets that Studio uses for communication.</p> <p>If removing
+     * subnets, ensure there are no apps in the <code>InService</code>,
+     * <code>Pending</code>, or <code>Deleting</code> state.</p>
+     */
+    inline UpdateDomainRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
+    /**
+     * <p>The VPC subnets that Studio uses for communication.</p> <p>If removing
+     * subnets, ensure there are no apps in the <code>InService</code>,
+     * <code>Pending</code>, or <code>Deleting</code> state.</p>
+     */
+    inline UpdateDomainRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The VPC subnets that Studio uses for communication.</p> <p>If removing
+     * subnets, ensure there are no apps in the <code>InService</code>,
+     * <code>Pending</code>, or <code>Deleting</code> state.</p>
+     */
+    inline UpdateDomainRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access.</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets.</p> </li> </ul> <p>This configuration can only be modified if there are
+     * no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided as part of the same request.</p>
+     */
+    inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access.</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets.</p> </li> </ul> <p>This configuration can only be modified if there are
+     * no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided as part of the same request.</p>
+     */
+    inline bool AppNetworkAccessTypeHasBeenSet() const { return m_appNetworkAccessTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access.</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets.</p> </li> </ul> <p>This configuration can only be modified if there are
+     * no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided as part of the same request.</p>
+     */
+    inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = value; }
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access.</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets.</p> </li> </ul> <p>This configuration can only be modified if there are
+     * no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided as part of the same request.</p>
+     */
+    inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = std::move(value); }
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access.</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets.</p> </li> </ul> <p>This configuration can only be modified if there are
+     * no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided as part of the same request.</p>
+     */
+    inline UpdateDomainRequest& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
+
+    /**
+     * <p>Specifies the VPC used for non-EFS traffic.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access.</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets.</p> </li> </ul> <p>This configuration can only be modified if there are
+     * no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided as part of the same request.</p>
+     */
+    inline UpdateDomainRequest& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -254,6 +411,12 @@ namespace Model
 
     AppSecurityGroupManagement m_appSecurityGroupManagement;
     bool m_appSecurityGroupManagementHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_subnetIds;
+    bool m_subnetIdsHasBeenSet = false;
+
+    AppNetworkAccessType m_appNetworkAccessType;
+    bool m_appNetworkAccessTypeHasBeenSet = false;
   };
 
 } // namespace Model

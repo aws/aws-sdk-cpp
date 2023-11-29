@@ -61,56 +61,86 @@ namespace Model
 
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
-     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
+     * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
-     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
-     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
+     * version 1.0 to TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS
+     * version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security
+     * policy which supports TLS version 1.0 to TLS version 1.3</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline const TLSSecurityPolicy& GetTLSSecurityPolicy() const{ return m_tLSSecurityPolicy; }
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
-     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
+     * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
-     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
-     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
+     * version 1.0 to TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS
+     * version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security
+     * policy which supports TLS version 1.0 to TLS version 1.3</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline bool TLSSecurityPolicyHasBeenSet() const { return m_tLSSecurityPolicyHasBeenSet; }
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
-     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
+     * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
-     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
-     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
+     * version 1.0 to TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS
+     * version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security
+     * policy which supports TLS version 1.0 to TLS version 1.3</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline void SetTLSSecurityPolicy(const TLSSecurityPolicy& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = value; }
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
-     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
+     * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
-     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
-     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
+     * version 1.0 to TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS
+     * version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security
+     * policy which supports TLS version 1.0 to TLS version 1.3</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline void SetTLSSecurityPolicy(TLSSecurityPolicy&& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = std::move(value); }
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
-     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
+     * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
-     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
-     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
+     * version 1.0 to TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS
+     * version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security
+     * policy which supports TLS version 1.0 to TLS version 1.3</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline DomainEndpointOptions& WithTLSSecurityPolicy(const TLSSecurityPolicy& value) { SetTLSSecurityPolicy(value); return *this;}
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
-     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
+     * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
-     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
-     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
+     * version 1.0 to TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS
+     * version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security
+     * policy which supports TLS version 1.0 to TLS version 1.3</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline DomainEndpointOptions& WithTLSSecurityPolicy(TLSSecurityPolicy&& value) { SetTLSSecurityPolicy(std::move(value)); return *this;}
 

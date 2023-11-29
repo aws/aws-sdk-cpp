@@ -25,6 +25,7 @@
 #include <aws/sagemaker/model/ProfilingStatus.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
 #include <aws/sagemaker/model/WarmPoolStatus.h>
+#include <aws/sagemaker/model/InfraCheckConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <aws/sagemaker/model/MetricData.h>
@@ -1670,6 +1671,37 @@ namespace Model
     inline DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline const InfraCheckConfig& GetInfraCheckConfig() const{ return m_infraCheckConfig; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline void SetInfraCheckConfig(const InfraCheckConfig& value) { m_infraCheckConfig = value; }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline void SetInfraCheckConfig(InfraCheckConfig&& value) { m_infraCheckConfig = std::move(value); }
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithInfraCheckConfig(const InfraCheckConfig& value) { SetInfraCheckConfig(value); return *this;}
+
+    /**
+     * <p>Contains information about the infrastructure health check configuration for
+     * the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithInfraCheckConfig(InfraCheckConfig&& value) { SetInfraCheckConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1774,6 +1806,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_environment;
 
     WarmPoolStatus m_warmPoolStatus;
+
+    InfraCheckConfig m_infraCheckConfig;
 
     Aws::String m_requestId;
   };

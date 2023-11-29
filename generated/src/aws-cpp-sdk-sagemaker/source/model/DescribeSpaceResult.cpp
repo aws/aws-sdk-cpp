@@ -85,6 +85,12 @@ DescribeSpaceResult& DescribeSpaceResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("Url"))
+  {
+    m_url = jsonValue.GetString("Url");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
