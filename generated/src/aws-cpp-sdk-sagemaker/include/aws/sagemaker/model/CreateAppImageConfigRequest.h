@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/KernelGatewayImageConfig.h>
+#include <aws/sagemaker/model/JupyterLabAppImageConfig.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -161,6 +162,55 @@ namespace Model
      */
     inline CreateAppImageConfigRequest& WithKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { SetKernelGatewayImageConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
+     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
+     * before the image starts. After the image runs, all kernels are visible in
+     * JupyterLab.</p>
+     */
+    inline const JupyterLabAppImageConfig& GetJupyterLabAppImageConfig() const{ return m_jupyterLabAppImageConfig; }
+
+    /**
+     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
+     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
+     * before the image starts. After the image runs, all kernels are visible in
+     * JupyterLab.</p>
+     */
+    inline bool JupyterLabAppImageConfigHasBeenSet() const { return m_jupyterLabAppImageConfigHasBeenSet; }
+
+    /**
+     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
+     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
+     * before the image starts. After the image runs, all kernels are visible in
+     * JupyterLab.</p>
+     */
+    inline void SetJupyterLabAppImageConfig(const JupyterLabAppImageConfig& value) { m_jupyterLabAppImageConfigHasBeenSet = true; m_jupyterLabAppImageConfig = value; }
+
+    /**
+     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
+     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
+     * before the image starts. After the image runs, all kernels are visible in
+     * JupyterLab.</p>
+     */
+    inline void SetJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { m_jupyterLabAppImageConfigHasBeenSet = true; m_jupyterLabAppImageConfig = std::move(value); }
+
+    /**
+     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
+     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
+     * before the image starts. After the image runs, all kernels are visible in
+     * JupyterLab.</p>
+     */
+    inline CreateAppImageConfigRequest& WithJupyterLabAppImageConfig(const JupyterLabAppImageConfig& value) { SetJupyterLabAppImageConfig(value); return *this;}
+
+    /**
+     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
+     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
+     * before the image starts. After the image runs, all kernels are visible in
+     * JupyterLab.</p>
+     */
+    inline CreateAppImageConfigRequest& WithJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { SetJupyterLabAppImageConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appImageConfigName;
@@ -171,6 +221,9 @@ namespace Model
 
     KernelGatewayImageConfig m_kernelGatewayImageConfig;
     bool m_kernelGatewayImageConfigHasBeenSet = false;
+
+    JupyterLabAppImageConfig m_jupyterLabAppImageConfig;
+    bool m_jupyterLabAppImageConfigHasBeenSet = false;
   };
 
 } // namespace Model

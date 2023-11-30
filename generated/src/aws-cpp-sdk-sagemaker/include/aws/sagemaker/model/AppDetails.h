@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/AppType.h>
 #include <aws/sagemaker/model/AppStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/ResourceSpec.h>
 #include <utility>
 
 namespace Aws
@@ -296,6 +297,25 @@ namespace Model
      */
     inline AppDetails& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
 
+
+    
+    inline const ResourceSpec& GetResourceSpec() const{ return m_resourceSpec; }
+
+    
+    inline bool ResourceSpecHasBeenSet() const { return m_resourceSpecHasBeenSet; }
+
+    
+    inline void SetResourceSpec(const ResourceSpec& value) { m_resourceSpecHasBeenSet = true; m_resourceSpec = value; }
+
+    
+    inline void SetResourceSpec(ResourceSpec&& value) { m_resourceSpecHasBeenSet = true; m_resourceSpec = std::move(value); }
+
+    
+    inline AppDetails& WithResourceSpec(const ResourceSpec& value) { SetResourceSpec(value); return *this;}
+
+    
+    inline AppDetails& WithResourceSpec(ResourceSpec&& value) { SetResourceSpec(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -318,6 +338,9 @@ namespace Model
 
     Aws::String m_spaceName;
     bool m_spaceNameHasBeenSet = false;
+
+    ResourceSpec m_resourceSpec;
+    bool m_resourceSpecHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,7 +23,8 @@ AppImageConfigDetails::AppImageConfigDetails() :
     m_appImageConfigNameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_kernelGatewayImageConfigHasBeenSet(false)
+    m_kernelGatewayImageConfigHasBeenSet(false),
+    m_jupyterLabAppImageConfigHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ AppImageConfigDetails::AppImageConfigDetails(JsonView jsonValue) :
     m_appImageConfigNameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_kernelGatewayImageConfigHasBeenSet(false)
+    m_kernelGatewayImageConfigHasBeenSet(false),
+    m_jupyterLabAppImageConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ AppImageConfigDetails& AppImageConfigDetails::operator =(JsonView jsonValue)
     m_kernelGatewayImageConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JupyterLabAppImageConfig"))
+  {
+    m_jupyterLabAppImageConfig = jsonValue.GetObject("JupyterLabAppImageConfig");
+
+    m_jupyterLabAppImageConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -106,6 +115,12 @@ JsonValue AppImageConfigDetails::Jsonize() const
   if(m_kernelGatewayImageConfigHasBeenSet)
   {
    payload.WithObject("KernelGatewayImageConfig", m_kernelGatewayImageConfig.Jsonize());
+
+  }
+
+  if(m_jupyterLabAppImageConfigHasBeenSet)
+  {
+   payload.WithObject("JupyterLabAppImageConfig", m_jupyterLabAppImageConfig.Jsonize());
 
   }
 

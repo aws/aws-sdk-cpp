@@ -100,6 +100,24 @@ GetDataQualityResultResult& GetDataQualityResultResult::operator =(const Aws::Am
     }
   }
 
+  if(jsonValue.ValueExists("AnalyzerResults"))
+  {
+    Aws::Utils::Array<JsonView> analyzerResultsJsonList = jsonValue.GetArray("AnalyzerResults");
+    for(unsigned analyzerResultsIndex = 0; analyzerResultsIndex < analyzerResultsJsonList.GetLength(); ++analyzerResultsIndex)
+    {
+      m_analyzerResults.push_back(analyzerResultsJsonList[analyzerResultsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("Observations"))
+  {
+    Aws::Utils::Array<JsonView> observationsJsonList = jsonValue.GetArray("Observations");
+    for(unsigned observationsIndex = 0; observationsIndex < observationsJsonList.GetLength(); ++observationsIndex)
+    {
+      m_observations.push_back(observationsJsonList[observationsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

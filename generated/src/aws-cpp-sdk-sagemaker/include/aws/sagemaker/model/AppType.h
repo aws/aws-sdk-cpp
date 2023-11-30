@@ -20,7 +20,9 @@ namespace Model
     KernelGateway,
     TensorBoard,
     RStudioServerPro,
-    RSessionGateway
+    RSessionGateway,
+    JupyterLab,
+    CodeEditor
   };
 
 namespace AppTypeMapper

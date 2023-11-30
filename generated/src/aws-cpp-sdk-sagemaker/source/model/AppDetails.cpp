@@ -27,7 +27,8 @@ AppDetails::AppDetails() :
     m_status(AppStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_spaceNameHasBeenSet(false)
+    m_spaceNameHasBeenSet(false),
+    m_resourceSpecHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ AppDetails::AppDetails(JsonView jsonValue) :
     m_status(AppStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_spaceNameHasBeenSet(false)
+    m_spaceNameHasBeenSet(false),
+    m_resourceSpecHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +98,13 @@ AppDetails& AppDetails::operator =(JsonView jsonValue)
     m_spaceNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceSpec"))
+  {
+    m_resourceSpec = jsonValue.GetObject("ResourceSpec");
+
+    m_resourceSpecHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +148,12 @@ JsonValue AppDetails::Jsonize() const
   if(m_spaceNameHasBeenSet)
   {
    payload.WithString("SpaceName", m_spaceName);
+
+  }
+
+  if(m_resourceSpecHasBeenSet)
+  {
+   payload.WithObject("ResourceSpec", m_resourceSpec.Jsonize());
 
   }
 

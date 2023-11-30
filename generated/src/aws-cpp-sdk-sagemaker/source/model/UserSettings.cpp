@@ -28,9 +28,14 @@ UserSettings::UserSettings() :
     m_rStudioServerProAppSettingsHasBeenSet(false),
     m_rSessionAppSettingsHasBeenSet(false),
     m_canvasAppSettingsHasBeenSet(false),
+    m_jupyterLabAppSettingsHasBeenSet(false),
+    m_codeEditorAppSettingsHasBeenSet(false),
+    m_spaceStorageSettingsHasBeenSet(false),
     m_defaultLandingUriHasBeenSet(false),
     m_studioWebPortal(StudioWebPortal::NOT_SET),
-    m_studioWebPortalHasBeenSet(false)
+    m_studioWebPortalHasBeenSet(false),
+    m_customPosixUserConfigHasBeenSet(false),
+    m_customFileSystemConfigsHasBeenSet(false)
 {
 }
 
@@ -44,9 +49,14 @@ UserSettings::UserSettings(JsonView jsonValue) :
     m_rStudioServerProAppSettingsHasBeenSet(false),
     m_rSessionAppSettingsHasBeenSet(false),
     m_canvasAppSettingsHasBeenSet(false),
+    m_jupyterLabAppSettingsHasBeenSet(false),
+    m_codeEditorAppSettingsHasBeenSet(false),
+    m_spaceStorageSettingsHasBeenSet(false),
     m_defaultLandingUriHasBeenSet(false),
     m_studioWebPortal(StudioWebPortal::NOT_SET),
-    m_studioWebPortalHasBeenSet(false)
+    m_studioWebPortalHasBeenSet(false),
+    m_customPosixUserConfigHasBeenSet(false),
+    m_customFileSystemConfigsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +129,27 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_canvasAppSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JupyterLabAppSettings"))
+  {
+    m_jupyterLabAppSettings = jsonValue.GetObject("JupyterLabAppSettings");
+
+    m_jupyterLabAppSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CodeEditorAppSettings"))
+  {
+    m_codeEditorAppSettings = jsonValue.GetObject("CodeEditorAppSettings");
+
+    m_codeEditorAppSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SpaceStorageSettings"))
+  {
+    m_spaceStorageSettings = jsonValue.GetObject("SpaceStorageSettings");
+
+    m_spaceStorageSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DefaultLandingUri"))
   {
     m_defaultLandingUri = jsonValue.GetString("DefaultLandingUri");
@@ -131,6 +162,23 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_studioWebPortal = StudioWebPortalMapper::GetStudioWebPortalForName(jsonValue.GetString("StudioWebPortal"));
 
     m_studioWebPortalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomPosixUserConfig"))
+  {
+    m_customPosixUserConfig = jsonValue.GetObject("CustomPosixUserConfig");
+
+    m_customPosixUserConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomFileSystemConfigs"))
+  {
+    Aws::Utils::Array<JsonView> customFileSystemConfigsJsonList = jsonValue.GetArray("CustomFileSystemConfigs");
+    for(unsigned customFileSystemConfigsIndex = 0; customFileSystemConfigsIndex < customFileSystemConfigsJsonList.GetLength(); ++customFileSystemConfigsIndex)
+    {
+      m_customFileSystemConfigs.push_back(customFileSystemConfigsJsonList[customFileSystemConfigsIndex].AsObject());
+    }
+    m_customFileSystemConfigsHasBeenSet = true;
   }
 
   return *this;
@@ -199,6 +247,24 @@ JsonValue UserSettings::Jsonize() const
 
   }
 
+  if(m_jupyterLabAppSettingsHasBeenSet)
+  {
+   payload.WithObject("JupyterLabAppSettings", m_jupyterLabAppSettings.Jsonize());
+
+  }
+
+  if(m_codeEditorAppSettingsHasBeenSet)
+  {
+   payload.WithObject("CodeEditorAppSettings", m_codeEditorAppSettings.Jsonize());
+
+  }
+
+  if(m_spaceStorageSettingsHasBeenSet)
+  {
+   payload.WithObject("SpaceStorageSettings", m_spaceStorageSettings.Jsonize());
+
+  }
+
   if(m_defaultLandingUriHasBeenSet)
   {
    payload.WithString("DefaultLandingUri", m_defaultLandingUri);
@@ -208,6 +274,23 @@ JsonValue UserSettings::Jsonize() const
   if(m_studioWebPortalHasBeenSet)
   {
    payload.WithString("StudioWebPortal", StudioWebPortalMapper::GetNameForStudioWebPortal(m_studioWebPortal));
+  }
+
+  if(m_customPosixUserConfigHasBeenSet)
+  {
+   payload.WithObject("CustomPosixUserConfig", m_customPosixUserConfig.Jsonize());
+
+  }
+
+  if(m_customFileSystemConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> customFileSystemConfigsJsonList(m_customFileSystemConfigs.size());
+   for(unsigned customFileSystemConfigsIndex = 0; customFileSystemConfigsIndex < customFileSystemConfigsJsonList.GetLength(); ++customFileSystemConfigsIndex)
+   {
+     customFileSystemConfigsJsonList[customFileSystemConfigsIndex].AsObject(m_customFileSystemConfigs[customFileSystemConfigsIndex].Jsonize());
+   }
+   payload.WithArray("CustomFileSystemConfigs", std::move(customFileSystemConfigsJsonList));
+
   }
 
   return payload;
