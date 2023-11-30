@@ -25,6 +25,8 @@ namespace Aws
         static const int TensorBoard_HASH = HashingUtils::HashString("TensorBoard");
         static const int RStudioServerPro_HASH = HashingUtils::HashString("RStudioServerPro");
         static const int RSessionGateway_HASH = HashingUtils::HashString("RSessionGateway");
+        static const int JupyterLab_HASH = HashingUtils::HashString("JupyterLab");
+        static const int CodeEditor_HASH = HashingUtils::HashString("CodeEditor");
 
 
         AppType GetAppTypeForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == RSessionGateway_HASH)
           {
             return AppType::RSessionGateway;
+          }
+          else if (hashCode == JupyterLab_HASH)
+          {
+            return AppType::JupyterLab;
+          }
+          else if (hashCode == CodeEditor_HASH)
+          {
+            return AppType::CodeEditor;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +86,10 @@ namespace Aws
             return "RStudioServerPro";
           case AppType::RSessionGateway:
             return "RSessionGateway";
+          case AppType::JupyterLab:
+            return "JupyterLab";
+          case AppType::CodeEditor:
+            return "CodeEditor";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -8,6 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/SpaceStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/SpaceSettingsSummary.h>
+#include <aws/sagemaker/model/SpaceSharingSettingsSummary.h>
+#include <aws/sagemaker/model/OwnershipSettingsSummary.h>
 #include <utility>
 
 namespace Aws
@@ -213,6 +216,140 @@ namespace Model
      */
     inline SpaceDetails& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline bool SpaceDisplayNameHasBeenSet() const { return m_spaceDisplayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = value; }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = std::move(value); }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName.assign(value); }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline SpaceDetails& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline SpaceDetails& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline SpaceDetails& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
+
+
+    /**
+     * <p>Specifies summary information about the space settings.</p>
+     */
+    inline const SpaceSettingsSummary& GetSpaceSettingsSummary() const{ return m_spaceSettingsSummary; }
+
+    /**
+     * <p>Specifies summary information about the space settings.</p>
+     */
+    inline bool SpaceSettingsSummaryHasBeenSet() const { return m_spaceSettingsSummaryHasBeenSet; }
+
+    /**
+     * <p>Specifies summary information about the space settings.</p>
+     */
+    inline void SetSpaceSettingsSummary(const SpaceSettingsSummary& value) { m_spaceSettingsSummaryHasBeenSet = true; m_spaceSettingsSummary = value; }
+
+    /**
+     * <p>Specifies summary information about the space settings.</p>
+     */
+    inline void SetSpaceSettingsSummary(SpaceSettingsSummary&& value) { m_spaceSettingsSummaryHasBeenSet = true; m_spaceSettingsSummary = std::move(value); }
+
+    /**
+     * <p>Specifies summary information about the space settings.</p>
+     */
+    inline SpaceDetails& WithSpaceSettingsSummary(const SpaceSettingsSummary& value) { SetSpaceSettingsSummary(value); return *this;}
+
+    /**
+     * <p>Specifies summary information about the space settings.</p>
+     */
+    inline SpaceDetails& WithSpaceSettingsSummary(SpaceSettingsSummary&& value) { SetSpaceSettingsSummary(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies summary information about the space sharing settings.</p>
+     */
+    inline const SpaceSharingSettingsSummary& GetSpaceSharingSettingsSummary() const{ return m_spaceSharingSettingsSummary; }
+
+    /**
+     * <p>Specifies summary information about the space sharing settings.</p>
+     */
+    inline bool SpaceSharingSettingsSummaryHasBeenSet() const { return m_spaceSharingSettingsSummaryHasBeenSet; }
+
+    /**
+     * <p>Specifies summary information about the space sharing settings.</p>
+     */
+    inline void SetSpaceSharingSettingsSummary(const SpaceSharingSettingsSummary& value) { m_spaceSharingSettingsSummaryHasBeenSet = true; m_spaceSharingSettingsSummary = value; }
+
+    /**
+     * <p>Specifies summary information about the space sharing settings.</p>
+     */
+    inline void SetSpaceSharingSettingsSummary(SpaceSharingSettingsSummary&& value) { m_spaceSharingSettingsSummaryHasBeenSet = true; m_spaceSharingSettingsSummary = std::move(value); }
+
+    /**
+     * <p>Specifies summary information about the space sharing settings.</p>
+     */
+    inline SpaceDetails& WithSpaceSharingSettingsSummary(const SpaceSharingSettingsSummary& value) { SetSpaceSharingSettingsSummary(value); return *this;}
+
+    /**
+     * <p>Specifies summary information about the space sharing settings.</p>
+     */
+    inline SpaceDetails& WithSpaceSharingSettingsSummary(SpaceSharingSettingsSummary&& value) { SetSpaceSharingSettingsSummary(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies summary information about the ownership settings.</p>
+     */
+    inline const OwnershipSettingsSummary& GetOwnershipSettingsSummary() const{ return m_ownershipSettingsSummary; }
+
+    /**
+     * <p>Specifies summary information about the ownership settings.</p>
+     */
+    inline bool OwnershipSettingsSummaryHasBeenSet() const { return m_ownershipSettingsSummaryHasBeenSet; }
+
+    /**
+     * <p>Specifies summary information about the ownership settings.</p>
+     */
+    inline void SetOwnershipSettingsSummary(const OwnershipSettingsSummary& value) { m_ownershipSettingsSummaryHasBeenSet = true; m_ownershipSettingsSummary = value; }
+
+    /**
+     * <p>Specifies summary information about the ownership settings.</p>
+     */
+    inline void SetOwnershipSettingsSummary(OwnershipSettingsSummary&& value) { m_ownershipSettingsSummaryHasBeenSet = true; m_ownershipSettingsSummary = std::move(value); }
+
+    /**
+     * <p>Specifies summary information about the ownership settings.</p>
+     */
+    inline SpaceDetails& WithOwnershipSettingsSummary(const OwnershipSettingsSummary& value) { SetOwnershipSettingsSummary(value); return *this;}
+
+    /**
+     * <p>Specifies summary information about the ownership settings.</p>
+     */
+    inline SpaceDetails& WithOwnershipSettingsSummary(OwnershipSettingsSummary&& value) { SetOwnershipSettingsSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -229,6 +366,18 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet = false;
+
+    Aws::String m_spaceDisplayName;
+    bool m_spaceDisplayNameHasBeenSet = false;
+
+    SpaceSettingsSummary m_spaceSettingsSummary;
+    bool m_spaceSettingsSummaryHasBeenSet = false;
+
+    SpaceSharingSettingsSummary m_spaceSharingSettingsSummary;
+    bool m_spaceSharingSettingsSummaryHasBeenSet = false;
+
+    OwnershipSettingsSummary m_ownershipSettingsSummary;
+    bool m_ownershipSettingsSummaryHasBeenSet = false;
   };
 
 } // namespace Model

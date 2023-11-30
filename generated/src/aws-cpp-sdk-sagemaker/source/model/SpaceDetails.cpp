@@ -24,7 +24,11 @@ SpaceDetails::SpaceDetails() :
     m_status(SpaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_spaceDisplayNameHasBeenSet(false),
+    m_spaceSettingsSummaryHasBeenSet(false),
+    m_spaceSharingSettingsSummaryHasBeenSet(false),
+    m_ownershipSettingsSummaryHasBeenSet(false)
 {
 }
 
@@ -34,7 +38,11 @@ SpaceDetails::SpaceDetails(JsonView jsonValue) :
     m_status(SpaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_spaceDisplayNameHasBeenSet(false),
+    m_spaceSettingsSummaryHasBeenSet(false),
+    m_spaceSharingSettingsSummaryHasBeenSet(false),
+    m_ownershipSettingsSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +84,34 @@ SpaceDetails& SpaceDetails::operator =(JsonView jsonValue)
     m_lastModifiedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SpaceDisplayName"))
+  {
+    m_spaceDisplayName = jsonValue.GetString("SpaceDisplayName");
+
+    m_spaceDisplayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SpaceSettingsSummary"))
+  {
+    m_spaceSettingsSummary = jsonValue.GetObject("SpaceSettingsSummary");
+
+    m_spaceSettingsSummaryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SpaceSharingSettingsSummary"))
+  {
+    m_spaceSharingSettingsSummary = jsonValue.GetObject("SpaceSharingSettingsSummary");
+
+    m_spaceSharingSettingsSummaryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OwnershipSettingsSummary"))
+  {
+    m_ownershipSettingsSummary = jsonValue.GetObject("OwnershipSettingsSummary");
+
+    m_ownershipSettingsSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +144,30 @@ JsonValue SpaceDetails::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_spaceDisplayNameHasBeenSet)
+  {
+   payload.WithString("SpaceDisplayName", m_spaceDisplayName);
+
+  }
+
+  if(m_spaceSettingsSummaryHasBeenSet)
+  {
+   payload.WithObject("SpaceSettingsSummary", m_spaceSettingsSummary.Jsonize());
+
+  }
+
+  if(m_spaceSharingSettingsSummaryHasBeenSet)
+  {
+   payload.WithObject("SpaceSharingSettingsSummary", m_spaceSharingSettingsSummary.Jsonize());
+
+  }
+
+  if(m_ownershipSettingsSummaryHasBeenSet)
+  {
+   payload.WithObject("OwnershipSettingsSummary", m_ownershipSettingsSummary.Jsonize());
+
   }
 
   return payload;

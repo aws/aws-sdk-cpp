@@ -9,6 +9,8 @@
 #include <aws/sagemaker/model/SpaceStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/SpaceSettings.h>
+#include <aws/sagemaker/model/OwnershipSettings.h>
+#include <aws/sagemaker/model/SpaceSharingSettings.h>
 #include <utility>
 
 namespace Aws
@@ -404,6 +406,94 @@ namespace Model
     inline DescribeSpaceResult& WithUrl(const char* value) { SetUrl(value); return *this;}
 
 
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayName = value; }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayName = std::move(value); }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayName.assign(value); }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline DescribeSpaceResult& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline DescribeSpaceResult& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline DescribeSpaceResult& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
+
+
+    /**
+     * <p>The collection of ownership settings for a space.</p>
+     */
+    inline const OwnershipSettings& GetOwnershipSettings() const{ return m_ownershipSettings; }
+
+    /**
+     * <p>The collection of ownership settings for a space.</p>
+     */
+    inline void SetOwnershipSettings(const OwnershipSettings& value) { m_ownershipSettings = value; }
+
+    /**
+     * <p>The collection of ownership settings for a space.</p>
+     */
+    inline void SetOwnershipSettings(OwnershipSettings&& value) { m_ownershipSettings = std::move(value); }
+
+    /**
+     * <p>The collection of ownership settings for a space.</p>
+     */
+    inline DescribeSpaceResult& WithOwnershipSettings(const OwnershipSettings& value) { SetOwnershipSettings(value); return *this;}
+
+    /**
+     * <p>The collection of ownership settings for a space.</p>
+     */
+    inline DescribeSpaceResult& WithOwnershipSettings(OwnershipSettings&& value) { SetOwnershipSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The collection of space sharing settings for a space.</p>
+     */
+    inline const SpaceSharingSettings& GetSpaceSharingSettings() const{ return m_spaceSharingSettings; }
+
+    /**
+     * <p>The collection of space sharing settings for a space.</p>
+     */
+    inline void SetSpaceSharingSettings(const SpaceSharingSettings& value) { m_spaceSharingSettings = value; }
+
+    /**
+     * <p>The collection of space sharing settings for a space.</p>
+     */
+    inline void SetSpaceSharingSettings(SpaceSharingSettings&& value) { m_spaceSharingSettings = std::move(value); }
+
+    /**
+     * <p>The collection of space sharing settings for a space.</p>
+     */
+    inline DescribeSpaceResult& WithSpaceSharingSettings(const SpaceSharingSettings& value) { SetSpaceSharingSettings(value); return *this;}
+
+    /**
+     * <p>The collection of space sharing settings for a space.</p>
+     */
+    inline DescribeSpaceResult& WithSpaceSharingSettings(SpaceSharingSettings&& value) { SetSpaceSharingSettings(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -446,6 +536,12 @@ namespace Model
     SpaceSettings m_spaceSettings;
 
     Aws::String m_url;
+
+    Aws::String m_spaceDisplayName;
+
+    OwnershipSettings m_ownershipSettings;
+
+    SpaceSharingSettings m_spaceSharingSettings;
 
     Aws::String m_requestId;
   };

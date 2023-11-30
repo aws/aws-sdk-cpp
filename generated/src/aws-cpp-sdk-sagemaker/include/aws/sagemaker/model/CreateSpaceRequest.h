@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/SpaceSettings.h>
+#include <aws/sagemaker/model/OwnershipSettings.h>
+#include <aws/sagemaker/model/SpaceSharingSettings.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -206,6 +208,109 @@ namespace Model
      */
     inline CreateSpaceRequest& WithSpaceSettings(SpaceSettings&& value) { SetSpaceSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline bool SpaceDisplayNameHasBeenSet() const { return m_spaceDisplayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = value; }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = std::move(value); }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName.assign(value); }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline CreateSpaceRequest& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline CreateSpaceRequest& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline CreateSpaceRequest& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
+
+
+    /**
+     * <p>A collection of ownership settings.</p>
+     */
+    inline const OwnershipSettings& GetOwnershipSettings() const{ return m_ownershipSettings; }
+
+    /**
+     * <p>A collection of ownership settings.</p>
+     */
+    inline bool OwnershipSettingsHasBeenSet() const { return m_ownershipSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of ownership settings.</p>
+     */
+    inline void SetOwnershipSettings(const OwnershipSettings& value) { m_ownershipSettingsHasBeenSet = true; m_ownershipSettings = value; }
+
+    /**
+     * <p>A collection of ownership settings.</p>
+     */
+    inline void SetOwnershipSettings(OwnershipSettings&& value) { m_ownershipSettingsHasBeenSet = true; m_ownershipSettings = std::move(value); }
+
+    /**
+     * <p>A collection of ownership settings.</p>
+     */
+    inline CreateSpaceRequest& WithOwnershipSettings(const OwnershipSettings& value) { SetOwnershipSettings(value); return *this;}
+
+    /**
+     * <p>A collection of ownership settings.</p>
+     */
+    inline CreateSpaceRequest& WithOwnershipSettings(OwnershipSettings&& value) { SetOwnershipSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of space sharing settings.</p>
+     */
+    inline const SpaceSharingSettings& GetSpaceSharingSettings() const{ return m_spaceSharingSettings; }
+
+    /**
+     * <p>A collection of space sharing settings.</p>
+     */
+    inline bool SpaceSharingSettingsHasBeenSet() const { return m_spaceSharingSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of space sharing settings.</p>
+     */
+    inline void SetSpaceSharingSettings(const SpaceSharingSettings& value) { m_spaceSharingSettingsHasBeenSet = true; m_spaceSharingSettings = value; }
+
+    /**
+     * <p>A collection of space sharing settings.</p>
+     */
+    inline void SetSpaceSharingSettings(SpaceSharingSettings&& value) { m_spaceSharingSettingsHasBeenSet = true; m_spaceSharingSettings = std::move(value); }
+
+    /**
+     * <p>A collection of space sharing settings.</p>
+     */
+    inline CreateSpaceRequest& WithSpaceSharingSettings(const SpaceSharingSettings& value) { SetSpaceSharingSettings(value); return *this;}
+
+    /**
+     * <p>A collection of space sharing settings.</p>
+     */
+    inline CreateSpaceRequest& WithSpaceSharingSettings(SpaceSharingSettings&& value) { SetSpaceSharingSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -219,6 +324,15 @@ namespace Model
 
     SpaceSettings m_spaceSettings;
     bool m_spaceSettingsHasBeenSet = false;
+
+    Aws::String m_spaceDisplayName;
+    bool m_spaceDisplayNameHasBeenSet = false;
+
+    OwnershipSettings m_ownershipSettings;
+    bool m_ownershipSettingsHasBeenSet = false;
+
+    SpaceSharingSettings m_spaceSharingSettings;
+    bool m_spaceSharingSettingsHasBeenSet = false;
   };
 
 } // namespace Model
