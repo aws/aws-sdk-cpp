@@ -66,131 +66,131 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_ATTACHMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_ATTACHMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_ATTACHMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BATCH_WRITE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::BATCH_WRITE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::BATCH_WRITE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STILL_CONTAINS_LINKS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::STILL_CONTAINS_LINKS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::STILL_CONTAINS_LINKS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TAGGING_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_TAGGING_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_TAGGING_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RULE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_RULE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_RULE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OBJECT_NOT_DETACHED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::OBJECT_NOT_DETACHED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::OBJECT_NOT_DETACHED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LINK_NAME_ALREADY_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::LINK_NAME_ALREADY_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::LINK_NAME_ALREADY_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CANNOT_LIST_PARENT_OF_ROOT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::CANNOT_LIST_PARENT_OF_ROOT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::CANNOT_LIST_PARENT_OF_ROOT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FACET_VALIDATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::FACET_VALIDATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::FACET_VALIDATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INTERNAL_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FACET_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::FACET_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::FACET_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RETRYABLE_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::RETRYABLE_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::RETRYABLE_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_INDEX_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::NOT_INDEX), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::NOT_INDEX), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_NODE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::NOT_NODE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::NOT_NODE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_NOT_DISABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::DIRECTORY_NOT_DISABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::DIRECTORY_NOT_DISABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_INDEX_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::UNSUPPORTED_INDEX_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::UNSUPPORTED_INDEX_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_DELETED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::DIRECTORY_DELETED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::DIRECTORY_DELETED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ARN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_ARN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_ARN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INCOMPATIBLE_SCHEMA_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INCOMPATIBLE_SCHEMA), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INCOMPATIBLE_SCHEMA), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_FACET_UPDATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_FACET_UPDATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_FACET_UPDATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FACET_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::FACET_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::FACET_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INDEXED_ATTRIBUTE_MISSING_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INDEXED_ATTRIBUTE_MISSING), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INDEXED_ATTRIBUTE_MISSING), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::DIRECTORY_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::DIRECTORY_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OBJECT_ALREADY_DETACHED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::OBJECT_ALREADY_DETACHED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::OBJECT_ALREADY_DETACHED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SCHEMA_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::SCHEMA_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::SCHEMA_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FACET_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::FACET_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::FACET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_NOT_ENABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::DIRECTORY_NOT_ENABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::DIRECTORY_NOT_ENABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SCHEMA_ALREADY_PUBLISHED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::SCHEMA_ALREADY_PUBLISHED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::SCHEMA_ALREADY_PUBLISHED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SCHEMA_DOC_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_SCHEMA_DOC), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::INVALID_SCHEMA_DOC), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::NOT_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudDirectoryErrors::NOT_POLICY), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

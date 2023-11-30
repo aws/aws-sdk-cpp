@@ -107,43 +107,43 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INTERNAL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AGENTS_ALREADY_RUNNING_ASSESSMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::AGENTS_ALREADY_RUNNING_ASSESSMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::AGENTS_ALREADY_RUNNING_ASSESSMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PREVIEW_GENERATION_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::PREVIEW_GENERATION_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::PREVIEW_GENERATION_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_FEATURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::UNSUPPORTED_FEATURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::UNSUPPORTED_FEATURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_SUCH_ENTITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::NO_SUCH_ENTITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::NO_SUCH_ENTITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == ASSESSMENT_RUN_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::ASSESSMENT_RUN_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::ASSESSMENT_RUN_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_INPUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_INPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_TEMPORARILY_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::SERVICE_TEMPORARILY_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::SERVICE_TEMPORARILY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CROSS_ACCOUNT_ROLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_CROSS_ACCOUNT_ROLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_CROSS_ACCOUNT_ROLE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -98,35 +98,35 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::SERVICE_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::SERVICE_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::RESOURCE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == THROTTLED_CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::THROTTLED_CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::THROTTLED_CLIENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::UNAUTHORIZED_CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKIdentityErrors::UNAUTHORIZED_CLIENT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -129,47 +129,47 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INVALID_GRANT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_GRANT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_GRANT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SCOPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_SCOPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_SCOPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_REGION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_REQUEST_REGION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_REQUEST_REGION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AUTHORIZATION_PENDING_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::AUTHORIZATION_PENDING), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::AUTHORIZATION_PENDING), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_GRANT_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::UNSUPPORTED_GRANT_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::UNSUPPORTED_GRANT_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EXPIRED_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::EXPIRED_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::EXPIRED_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::UNAUTHORIZED_CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::UNAUTHORIZED_CLIENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_CLIENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLIENT_METADATA_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_CLIENT_METADATA), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_CLIENT_METADATA), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSOOIDCErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

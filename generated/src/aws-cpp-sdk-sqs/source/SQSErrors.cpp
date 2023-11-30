@@ -52,107 +52,107 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == OVER_LIMIT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::OVER_LIMIT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::OVER_LIMIT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_INVALID_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_INVALID_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_INVALID_KEY_USAGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_INVALID_KEY_USAGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_INVALID_KEY_USAGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == QUEUE_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::QUEUE_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::QUEUE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_DISABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_DISABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_DISABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_ACCESS_DENIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_ACCESS_DENIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BATCH_REQUEST_TOO_LONG_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::BATCH_REQUEST_TOO_LONG), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::BATCH_REQUEST_TOO_LONG), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_BATCH_ENTRY_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_BATCH_ENTRY_ID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_BATCH_ENTRY_ID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_OPT_IN_REQUIRED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_OPT_IN_REQUIRED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_OPT_IN_REQUIRED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == QUEUE_DELETED_RECENTLY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::QUEUE_DELETED_RECENTLY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::QUEUE_DELETED_RECENTLY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_ENTRIES_IN_BATCH_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::TOO_MANY_ENTRIES_IN_BATCH_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::TOO_MANY_ENTRIES_IN_BATCH_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ATTRIBUTE_VALUE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_ATTRIBUTE_VALUE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_ATTRIBUTE_VALUE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_THROTTLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_THROTTLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::KMS_THROTTLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == QUEUE_NAME_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::QUEUE_NAME_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::QUEUE_NAME_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SECURITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_SECURITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_SECURITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PURGE_QUEUE_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::PURGE_QUEUE_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::PURGE_QUEUE_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::UNSUPPORTED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BATCH_ENTRY_IDS_NOT_DISTINCT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::BATCH_ENTRY_IDS_NOT_DISTINCT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::BATCH_ENTRY_IDS_NOT_DISTINCT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MESSAGE_NOT_INFLIGHT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::MESSAGE_NOT_INFLIGHT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::MESSAGE_NOT_INFLIGHT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ADDRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_ADDRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_ADDRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ATTRIBUTE_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_ATTRIBUTE_NAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_ATTRIBUTE_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ID_FORMAT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_ID_FORMAT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_ID_FORMAT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EMPTY_BATCH_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::EMPTY_BATCH_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::EMPTY_BATCH_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_MESSAGE_CONTENTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_MESSAGE_CONTENTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::INVALID_MESSAGE_CONTENTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RECEIPT_HANDLE_IS_INVALID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::RECEIPT_HANDLE_IS_INVALID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::RECEIPT_HANDLE_IS_INVALID), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

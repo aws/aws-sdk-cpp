@@ -32,27 +32,27 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::INTERNAL), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::INTERNAL), RetryableType::RETRYABLE);
   }
   else if (hashCode == DISABLED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::DISABLED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::DISABLED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BASE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::BASE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::BASE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::INVALID_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::INVALID_TYPE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -41,31 +41,31 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INVALID_INPUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::INVALID_INPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DOMAIN_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::DOMAIN_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::DOMAIN_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::DUPLICATE_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::DUPLICATE_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::OPERATION_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::OPERATION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == T_L_D_RULES_VIOLATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::T_L_D_RULES_VIOLATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::T_L_D_RULES_VIOLATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_T_L_D_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::UNSUPPORTED_T_L_D), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::UNSUPPORTED_T_L_D), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DNSSEC_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::DNSSEC_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::DNSSEC_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

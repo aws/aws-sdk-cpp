@@ -27,7 +27,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == MARKETPLACE_COMMERCE_ANALYTICS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCommerceAnalyticsErrors::MARKETPLACE_COMMERCE_ANALYTICS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCommerceAnalyticsErrors::MARKETPLACE_COMMERCE_ANALYTICS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

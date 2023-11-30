@@ -61,83 +61,83 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == W_A_F_UNAVAILABLE_ENTITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_UNAVAILABLE_ENTITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_UNAVAILABLE_ENTITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_LIMITS_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_LIMITS_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_LIMITS_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_REFERENCED_ITEM_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_REFERENCED_ITEM), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_REFERENCED_ITEM), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_NON_EMPTY_ENTITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_NON_EMPTY_ENTITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_NON_EMPTY_ENTITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_INVALID_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_DISALLOWED_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_DISALLOWED_NAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_DISALLOWED_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_NONEXISTENT_CONTAINER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_NONEXISTENT_CONTAINER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_NONEXISTENT_CONTAINER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_SUBSCRIPTION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_SUBSCRIPTION_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_SUBSCRIPTION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_ENTITY_MIGRATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_ENTITY_MIGRATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_ENTITY_MIGRATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_INTERNAL_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INTERNAL_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INTERNAL_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_TAG_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_TAG_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_TAG_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_INVALID_PERMISSION_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_PERMISSION_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_PERMISSION_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_NONEXISTENT_ITEM_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_NONEXISTENT_ITEM), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_NONEXISTENT_ITEM), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_INVALID_ACCOUNT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_ACCOUNT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_ACCOUNT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_STALE_DATA_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_STALE_DATA), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_STALE_DATA), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_INVALID_REGEX_PATTERN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_REGEX_PATTERN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_INVALID_REGEX_PATTERN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_TAG_OPERATION_INTERNAL_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_TAG_OPERATION_INTERNAL_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_TAG_OPERATION_INTERNAL_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == W_A_F_SERVICE_LINKED_ROLE_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_SERVICE_LINKED_ROLE_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_SERVICE_LINKED_ROLE_ERROR), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -19,5 +19,5 @@ public class Error {
     private boolean isRetryable;
     private boolean isCoreError;
     private boolean isModeled;
-
+    private boolean isThrottling;
 }
