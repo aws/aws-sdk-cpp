@@ -44,75 +44,75 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == ELASTIC_BEANSTALK_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::ELASTIC_BEANSTALK_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::ELASTIC_BEANSTALK_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S3_LOCATION_NOT_IN_SERVICE_REGION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::S3_LOCATION_NOT_IN_SERVICE_REGION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::S3_LOCATION_NOT_IN_SERVICE_REGION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_APPLICATIONS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATIONS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CODE_BUILD_NOT_IN_SERVICE_REGION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::CODE_BUILD_NOT_IN_SERVICE_REGION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::CODE_BUILD_NOT_IN_SERVICE_REGION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PLATFORM_VERSION_STILL_REFERENCED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::PLATFORM_VERSION_STILL_REFERENCED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::PLATFORM_VERSION_STILL_REFERENCED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_CONFIGURATION_TEMPLATES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_CONFIGURATION_TEMPLATES), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_CONFIGURATION_TEMPLATES), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MANAGED_ACTION_INVALID_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::MANAGED_ACTION_INVALID_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::MANAGED_ACTION_INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_APPLICATION_VERSIONS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATION_VERSIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATION_VERSIONS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATION_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::OPERATION_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::OPERATION_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S3_SUBSCRIPTION_REQUIRED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::S3_SUBSCRIPTION_REQUIRED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::S3_SUBSCRIPTION_REQUIRED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_PRIVILEGES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::INSUFFICIENT_PRIVILEGES), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::INSUFFICIENT_PRIVILEGES), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_TYPE_NOT_SUPPORTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::RESOURCE_TYPE_NOT_SUPPORTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::RESOURCE_TYPE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_ENVIRONMENTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_ENVIRONMENTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_ENVIRONMENTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_BUCKETS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_BUCKETS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_BUCKETS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SOURCE_BUNDLE_DELETION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::SOURCE_BUNDLE_DELETION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::SOURCE_BUNDLE_DELETION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_PLATFORMS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_PLATFORMS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_PLATFORMS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

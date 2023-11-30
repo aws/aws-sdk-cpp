@@ -30,19 +30,19 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GONE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::GONE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::GONE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PAYLOAD_TOO_LARGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::PAYLOAD_TOO_LARGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::PAYLOAD_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

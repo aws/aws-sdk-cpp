@@ -72,71 +72,71 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == COMPUTE_NOT_COMPATIBLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::COMPUTE_NOT_COMPATIBLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::COMPUTE_NOT_COMPATIBLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATION_NOT_SUPPORTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::OPERATION_NOT_SUPPORTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::OPERATION_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_WORKSPACE_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::UNSUPPORTED_WORKSPACE_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::UNSUPPORTED_WORKSPACE_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATION_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::OPERATION_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::OPERATION_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESOURCE_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INVALID_RESOURCE_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INVALID_RESOURCE_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATING_SYSTEM_NOT_COMPATIBLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::OPERATING_SYSTEM_NOT_COMPATIBLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::OPERATING_SYSTEM_NOT_COMPATIBLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_CREATION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_CREATION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_CREATION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_VALUES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INVALID_PARAMETER_VALUES), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INVALID_PARAMETER_VALUES), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_NETWORK_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::UNSUPPORTED_NETWORK_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::UNSUPPORTED_NETWORK_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INCOMPATIBLE_APPLICATIONS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INCOMPATIBLE_APPLICATIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INCOMPATIBLE_APPLICATIONS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == APPLICATION_NOT_SUPPORTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::APPLICATION_NOT_SUPPORTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::APPLICATION_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == WORKSPACES_DEFAULT_ROLE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::WORKSPACES_DEFAULT_ROLE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::WORKSPACES_DEFAULT_ROLE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ASSOCIATED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_ASSOCIATED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_ASSOCIATED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

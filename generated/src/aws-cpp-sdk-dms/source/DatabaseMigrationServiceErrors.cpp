@@ -59,103 +59,103 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == K_M_S_DISABLED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_DISABLED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_DISABLED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STORAGE_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::STORAGE_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::STORAGE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::RESOURCE_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::RESOURCE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S3_ACCESS_DENIED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S3_ACCESS_DENIED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S3_ACCESS_DENIED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CERTIFICATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_CERTIFICATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_CERTIFICATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S3_RESOURCE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S3_RESOURCE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S3_RESOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_RESOURCE_CAPACITY_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INSUFFICIENT_RESOURCE_CAPACITY_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INSUFFICIENT_RESOURCE_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::RESOURCE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::RESOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_ACCESS_DENIED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_ACCESS_DENIED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_ACCESS_DENIED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == COLLECTOR_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::COLLECTOR_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::COLLECTOR_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCESS_DENIED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::ACCESS_DENIED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::ACCESS_DENIED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SUBNET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_SUBNET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_SUBNET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S_N_S_NO_AUTHORIZATION_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S_N_S_NO_AUTHORIZATION_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::UPGRADE_DEPENDENCY_FAILURE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::UPGRADE_DEPENDENCY_FAILURE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::RESOURCE_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::RESOURCE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_INVALID_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_INVALID_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_INVALID_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESOURCE_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_RESOURCE_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_RESOURCE_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_ALREADY_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::SUBNET_ALREADY_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::SUBNET_ALREADY_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S_N_S_INVALID_TOPIC_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S_N_S_INVALID_TOPIC_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S_N_S_INVALID_TOPIC_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_OPERATION_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_OPERATION_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_OPERATION_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_THROTTLING_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_THROTTLING_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::K_M_S_THROTTLING_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REPLICATION_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::REPLICATION_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::REPLICATION_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

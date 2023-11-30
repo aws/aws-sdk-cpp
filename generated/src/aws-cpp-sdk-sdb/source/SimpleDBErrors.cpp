@@ -160,59 +160,59 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == NUMBER_SUBMITTED_ITEMS_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_SUBMITTED_ITEMS_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_SUBMITTED_ITEMS_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NUMBER_PREDICATES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::INVALID_NUMBER_PREDICATES), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::INVALID_NUMBER_PREDICATES), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTED_ATTRIBUTES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::TOO_MANY_REQUESTED_ATTRIBUTES), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::TOO_MANY_REQUESTED_ATTRIBUTES), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_SUCH_DOMAIN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NO_SUCH_DOMAIN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NO_SUCH_DOMAIN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NUMBER_VALUE_TESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::INVALID_NUMBER_VALUE_TESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::INVALID_NUMBER_VALUE_TESTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NUMBER_ITEM_ATTRIBUTES_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_ITEM_ATTRIBUTES_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_ITEM_ATTRIBUTES_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NUMBER_DOMAINS_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_DOMAINS_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_DOMAINS_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_QUERY_EXPRESSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::INVALID_QUERY_EXPRESSION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::INVALID_QUERY_EXPRESSION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_ITEM_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::DUPLICATE_ITEM_NAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::DUPLICATE_ITEM_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ATTRIBUTE_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::ATTRIBUTE_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::ATTRIBUTE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NUMBER_DOMAIN_BYTES_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_DOMAIN_BYTES_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_DOMAIN_BYTES_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NUMBER_SUBMITTED_ATTRIBUTES_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_SUBMITTED_ATTRIBUTES_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_SUBMITTED_ATTRIBUTES_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

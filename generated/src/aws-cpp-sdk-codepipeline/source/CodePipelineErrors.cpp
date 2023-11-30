@@ -60,139 +60,139 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATED_STOP_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::DUPLICATED_STOP_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::DUPLICATED_STOP_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NONCE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_NONCE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_NONCE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLIENT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_CLIENT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_CLIENT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_LATEST_PIPELINE_EXECUTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::NOT_LATEST_PIPELINE_EXECUTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::NOT_LATEST_PIPELINE_EXECUTION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_BLOCKER_DECLARATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_BLOCKER_DECLARATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_BLOCKER_DECLARATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_ACTION_DECLARATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_ACTION_DECLARATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_ACTION_DECLARATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REQUEST_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::REQUEST_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::REQUEST_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PIPELINE_NAME_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_NAME_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_NAME_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == APPROVAL_ALREADY_COMPLETED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::APPROVAL_ALREADY_COMPLETED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::APPROVAL_ALREADY_COMPLETED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_STRUCTURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_STRUCTURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_STRUCTURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PIPELINE_VERSION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_VERSION_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_VERSION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_WEBHOOK_FILTER_PATTERN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_WEBHOOK_FILTER_PATTERN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_WEBHOOK_FILTER_PATTERN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PIPELINE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OUTPUT_VARIABLES_SIZE_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::OUTPUT_VARIABLES_SIZE_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::OUTPUT_VARIABLES_SIZE_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACTION_TYPE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::ACTION_TYPE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::ACTION_TYPE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_APPROVAL_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_APPROVAL_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_APPROVAL_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == JOB_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::JOB_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::JOB_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_JOB_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_JOB), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_JOB), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ARN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_ARN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_ARN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_JOB_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_JOB_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_JOB_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PIPELINE_EXECUTION_NOT_STOPPABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_EXECUTION_NOT_STOPPABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_EXECUTION_NOT_STOPPABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PIPELINE_EXECUTION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_EXECUTION_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_EXECUTION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_WEBHOOK_AUTHENTICATION_PARAMETERS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_WEBHOOK_AUTHENTICATION_PARAMETERS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_WEBHOOK_AUTHENTICATION_PARAMETERS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == WEBHOOK_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::WEBHOOK_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::WEBHOOK_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_STAGE_DECLARATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_STAGE_DECLARATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_STAGE_DECLARATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STAGE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::STAGE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::STAGE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STAGE_NOT_RETRYABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::STAGE_NOT_RETRYABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::STAGE_NOT_RETRYABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACTION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::ACTION_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::ACTION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -73,19 +73,19 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ENDPOINT_TEMPORARILY_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::ENDPOINT_TEMPORARILY_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::ENDPOINT_TEMPORARILY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::SERVICE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53RecoveryClusterErrors::SERVICE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

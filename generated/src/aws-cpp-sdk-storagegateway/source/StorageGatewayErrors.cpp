@@ -49,7 +49,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INVALID_GATEWAY_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(StorageGatewayErrors::INVALID_GATEWAY_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(StorageGatewayErrors::INVALID_GATEWAY_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

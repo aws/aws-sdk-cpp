@@ -61,27 +61,27 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_CAPACITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::INSUFFICIENT_CAPACITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::INSUFFICIENT_CAPACITY), RetryableType::RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PAGINATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::INVALID_PAGINATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::INVALID_PAGINATION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

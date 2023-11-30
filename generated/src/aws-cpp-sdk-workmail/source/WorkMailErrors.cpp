@@ -47,87 +47,87 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == ENTITY_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ENTITY_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ENTITY_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_SERVICE_AUTHENTICATION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::DIRECTORY_SERVICE_AUTHENTICATION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::DIRECTORY_SERVICE_AUTHENTICATION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NAME_AVAILABILITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::NAME_AVAILABILITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::NAME_AVAILABILITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ORGANIZATION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ORGANIZATION_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ORGANIZATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::DIRECTORY_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::DIRECTORY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == MAIL_DOMAIN_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::MAIL_DOMAIN_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::MAIL_DOMAIN_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CUSTOM_SES_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_CUSTOM_SES_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_CUSTOM_SES_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EMAIL_ADDRESS_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::EMAIL_ADDRESS_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::EMAIL_ADDRESS_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESERVED_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::RESERVED_NAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::RESERVED_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ORGANIZATION_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ORGANIZATION_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ORGANIZATION_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ENTITY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ENTITY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ENTITY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MAIL_DOMAIN_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::MAIL_DOMAIN_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::MAIL_DOMAIN_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ENTITY_ALREADY_REGISTERED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ENTITY_ALREADY_REGISTERED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::ENTITY_ALREADY_REGISTERED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::UNSUPPORTED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PASSWORD_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_PASSWORD), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_PASSWORD), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::DIRECTORY_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::DIRECTORY_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MAIL_DOMAIN_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::MAIL_DOMAIN_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::MAIL_DOMAIN_STATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

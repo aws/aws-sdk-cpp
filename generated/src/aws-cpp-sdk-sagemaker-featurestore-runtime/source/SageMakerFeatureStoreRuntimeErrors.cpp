@@ -27,7 +27,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == ACCESS_FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerFeatureStoreRuntimeErrors::ACCESS_FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerFeatureStoreRuntimeErrors::ACCESS_FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

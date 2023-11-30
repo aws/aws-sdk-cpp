@@ -36,43 +36,43 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INSTANCE_REFRESH_IN_PROGRESS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::INSTANCE_REFRESH_IN_PROGRESS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::INSTANCE_REFRESH_IN_PROGRESS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::LIMIT_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_CONTENTION_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_CONTENTION_FAULT), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_CONTENTION_FAULT), RetryableType::RETRYABLE);
   }
   else if (hashCode == SERVICE_LINKED_ROLE_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SERVICE_LINKED_ROLE_FAILURE), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SERVICE_LINKED_ROLE_FAILURE), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SCALING_ACTIVITY_IN_PROGRESS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SCALING_ACTIVITY_IN_PROGRESS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IRREVERSIBLE_INSTANCE_REFRESH_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::IRREVERSIBLE_INSTANCE_REFRESH_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::IRREVERSIBLE_INSTANCE_REFRESH_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_IN_USE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_IN_USE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -818,8 +818,9 @@ public class C2jModelToGeneratorModelTransformer {
                 error.setModeled(true);
             }
 
-            if (shape.getRetryable() != null && shape.getRetryable().getOrDefault("throttling", false)) {
+            if (shape.getRetryable() != null) {
                 error.setRetryable(true);
+                error.setThrottling(shape.getRetryable().getOrDefault("throttling", false));
             }
         }
         error.setDocumentation(formatDocumentation(c2jError.getDocumentation(), 3));

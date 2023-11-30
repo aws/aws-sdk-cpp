@@ -47,27 +47,27 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MODEL_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_TIMEOUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MODEL_STREAM_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_STREAM_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_STREAM_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MODEL_NOT_READY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_NOT_READY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_NOT_READY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MODEL_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockRuntimeErrors::MODEL_ERROR), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

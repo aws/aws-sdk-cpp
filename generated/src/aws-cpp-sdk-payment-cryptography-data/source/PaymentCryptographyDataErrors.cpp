@@ -50,11 +50,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PaymentCryptographyDataErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PaymentCryptographyDataErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == VERIFICATION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PaymentCryptographyDataErrors::VERIFICATION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PaymentCryptographyDataErrors::VERIFICATION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
