@@ -53,7 +53,7 @@ namespace {
 
   class S3ExpressTest : public ::testing::Test {
   public:
-    CreateBucketOutcome CreateBucket(const Aws::String &bucketName = randomString(8) + S3_EXPRESS_SUFFIX) {
+    CreateBucketOutcome CreateBucket(const Aws::String &bucketName = randomString() + S3_EXPRESS_SUFFIX) {
       bucketsToCleanup.push_back(bucketName);
       return client->CreateBucket(CreateBucketRequest()
         .WithBucket(bucketName)
@@ -130,7 +130,7 @@ namespace {
     }
 
     DeleteObjectsOutcome DeleteObjects(const Aws::String &bucketName) {
-      auto verseOne = randomString(8);
+      auto verseOne = randomString();
       auto requestOne = PutObjectRequest().WithBucket(bucketName).WithKey(verseOne);
       std::shared_ptr<Aws::IOStream> inputDataOne = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG,
         "A heart that's full up like a landfill",
@@ -139,7 +139,7 @@ namespace {
       auto outcomeOne = client->PutObject(requestOne);
       AWS_EXPECT_SUCCESS(outcomeOne);
 
-      auto verseTwo = randomString(8);
+      auto verseTwo = randomString();
       auto requestTwo = PutObjectRequest().WithBucket(bucketName).WithKey(verseOne);
       std::shared_ptr<Aws::IOStream> inputDataTwo = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG,
         "A job that slowly kills you",
@@ -202,7 +202,7 @@ namespace {
         .WithChecksumAlgorithm(ChecksumAlgorithm::CRC32));
       AWS_EXPECT_SUCCESS(createOutcome);
 
-      auto copyPartKey = randomString(8);
+      auto copyPartKey = randomString();
       auto putObjectRequest = PutObjectRequest().WithBucket(bucketName).WithKey(copyPartKey);
       std::shared_ptr<Aws::IOStream> inputData = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG,
         "I'll take a quiet life a handshake of carbon monoxide",
@@ -297,20 +297,8 @@ namespace {
       EmptyBucketUtil(bucketsToCleanup);
     }
 
-    static Aws::String randomString(std::size_t length) {
-      const Aws::String CHARACTERS = "abcdefghijklmnopqrstuvwxyz";
-
-      std::random_device random_device;
-      std::mt19937 generator(random_device());
-      std::uniform_int_distribution<> distribution(0, CHARACTERS.size() - 1);
-
-      Aws::String random_string;
-
-      for (std::size_t i = 0; i < length; ++i) {
-        random_string += CHARACTERS[distribution(generator)];
-      }
-
-      return random_string;
+    static Aws::String randomString() {
+      return StringUtils::ToLower(Aws::String(UUID::RandomUUID()).c_str());
     }
 
   private:
@@ -319,7 +307,7 @@ namespace {
   };
 
   TEST_F(S3ExpressTest, ShouldCreateS3ExpressBucket) {
-    auto bucketName = Testing::GetAwsResourcePrefix() + randomString(8) + S3_EXPRESS_SUFFIX;
+    auto bucketName = Testing::GetAwsResourcePrefix() + randomString() + S3_EXPRESS_SUFFIX;
     auto createOutcome = CreateBucket(bucketName);
     AWS_EXPECT_SUCCESS(createOutcome);
     auto headOutcome = HeadBucket(bucketName);
@@ -336,7 +324,7 @@ namespace {
   }
 
   TEST_F(S3ExpressTest, BucketPolicyTest) {
-    auto bucketName = Testing::GetAwsResourcePrefix() + randomString(8) + S3_EXPRESS_SUFFIX;
+    auto bucketName = Testing::GetAwsResourcePrefix() + randomString() + S3_EXPRESS_SUFFIX;
     auto createOutcome = CreateBucket(bucketName);
     AWS_EXPECT_SUCCESS(createOutcome);
     auto putBucketPolicyOutcome = PutBucketPolicy(bucketName);
@@ -350,8 +338,8 @@ namespace {
   }
 
   TEST_F(S3ExpressTest, ObjectTest) {
-    auto bucketName = Testing::GetAwsResourcePrefix() + randomString(8) + S3_EXPRESS_SUFFIX;
-    auto keyName = randomString(8);
+    auto bucketName = Testing::GetAwsResourcePrefix() + randomString() + S3_EXPRESS_SUFFIX;
+    auto keyName = randomString();
     auto createOutcome = CreateBucket(bucketName);
     AWS_EXPECT_SUCCESS(createOutcome);
     auto putObjectOutcome = PutObject(bucketName, keyName);
@@ -373,14 +361,14 @@ namespace {
   }
 
   TEST_F(S3ExpressTest, MultipartUploadTest) {
-    auto bucketName = Testing::GetAwsResourcePrefix() + randomString(8) + S3_EXPRESS_SUFFIX;
+    auto bucketName = Testing::GetAwsResourcePrefix() + randomString() + S3_EXPRESS_SUFFIX;
     auto createOutcome = CreateBucket(bucketName);
     AWS_EXPECT_SUCCESS(createOutcome);
-    auto createMPUOutcome = CreateMultipartUpload(bucketName, randomString(8) + S3_EXPRESS_SUFFIX);
+    auto createMPUOutcome = CreateMultipartUpload(bucketName, randomString() + S3_EXPRESS_SUFFIX);
     AWS_EXPECT_SUCCESS(createMPUOutcome);
-    auto uploadPartCopyOutcome = UploadPartCopy(bucketName, randomString(8) + S3_EXPRESS_SUFFIX);
+    auto uploadPartCopyOutcome = UploadPartCopy(bucketName, randomString() + S3_EXPRESS_SUFFIX);
     AWS_EXPECT_SUCCESS(uploadPartCopyOutcome);
-    auto abortMPUOutcome = AbortMultipartUpload(bucketName, randomString(8) + S3_EXPRESS_SUFFIX);
+    auto abortMPUOutcome = AbortMultipartUpload(bucketName, randomString() + S3_EXPRESS_SUFFIX);
     AWS_EXPECT_SUCCESS(abortMPUOutcome);
     EmptyBucketUtil({bucketName});
   }
