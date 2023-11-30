@@ -27,6 +27,13 @@ namespace Aws
             JSON
         };
 
+        enum class RetryableType
+        {
+          NOT_RETRYABLE,
+          RETRYABLE,
+          RETRYABLE_THROTTLING
+        };
+
         /**
          * Container for Error enumerations with additional exception information. Name, message, retryable etc....
          */
@@ -41,45 +48,76 @@ namespace Aws
             /**
              * Initializes AWSError object as empty with the error not being retryable.
              */
-            AWSError()
-              : m_errorType(),
-                m_responseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE),
-                m_isRetryable(false),
-                m_errorPayloadType(ErrorPayloadType::NOT_SET)
+            AWSError() :
+              AWSError({}, RetryableType::NOT_RETRYABLE)
             {}
+
             /**
-             * Initializes AWSError object with errorType, exceptionName, message, and retryable flag.
+             * Initializes AWSError object with errorType, exceptionName, message, and retryable type.
              */
-            AWSError(ERROR_TYPE errorType, Aws::String exceptionName, Aws::String message, bool isRetryable)
-              : m_errorType(errorType), m_exceptionName(std::move(exceptionName)), m_message(std::move(message)),
-                m_responseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE), m_isRetryable(isRetryable),
-                m_errorPayloadType(ErrorPayloadType::NOT_SET) {}
+            AWSError(ERROR_TYPE errorType,
+                     Aws::String exceptionName,
+                     Aws::String message,
+                     bool isRetryable)  :
+              AWSError(errorType,
+                isRetryable? RetryableType::RETRYABLE : RetryableType::NOT_RETRYABLE,
+                exceptionName,
+                message)
+            {}
+
             /**
              * Initializes AWSError object with errorType and retryable flag. ExceptionName and message are empty.
              */
-            AWSError(ERROR_TYPE errorType, bool isRetryable) :
-                m_errorType(errorType), m_responseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE),
-                m_isRetryable(isRetryable), m_errorPayloadType(ErrorPayloadType::NOT_SET) {}
+            AWSError(ERROR_TYPE errorType,
+                     bool isRetryable) :
+              AWSError(errorType,
+                isRetryable? RetryableType::RETRYABLE : RetryableType::NOT_RETRYABLE)
+            {}
+
+            /**
+             * Initializes AWSError object with errorType and retryable type. ExceptionName and message are empty.
+             */
+            AWSError(ERROR_TYPE errorType,
+                     RetryableType retryableType,
+                     Aws::String exceptionName = "",
+                     Aws::String message = "") :
+              m_errorType(errorType),
+              m_exceptionName(std::move(exceptionName)),
+              m_message(std::move(message)),
+              m_retryableType(retryableType)
+            {}
 
             AWSError(AWSError&&) = default;
             AWSError(const AWSError&) = default;
 
             template<typename OTHER_ERROR_TYPE>
             AWSError(AWSError<OTHER_ERROR_TYPE>&& rhs) :
-                m_errorType(static_cast<ERROR_TYPE>(rhs.m_errorType)), m_exceptionName(std::move(rhs.m_exceptionName)),
-                m_message(std::move(rhs.m_message)), m_remoteHostIpAddress(std::move(rhs.m_remoteHostIpAddress)),
-                m_requestId(std::move(rhs.m_requestId)), m_responseHeaders(std::move(rhs.m_responseHeaders)),
-                m_responseCode(rhs.m_responseCode), m_isRetryable(rhs.m_isRetryable), m_errorPayloadType(rhs.m_errorPayloadType),
-                m_xmlPayload(std::move(rhs.m_xmlPayload)), m_jsonPayload(std::move(rhs.m_jsonPayload))
+                m_errorType(static_cast<ERROR_TYPE>(rhs.m_errorType)),
+                m_exceptionName(std::move(rhs.m_exceptionName)),
+                m_message(std::move(rhs.m_message)),
+                m_remoteHostIpAddress(std::move(rhs.m_remoteHostIpAddress)),
+                m_requestId(std::move(rhs.m_requestId)),
+                m_responseHeaders(std::move(rhs.m_responseHeaders)),
+                m_responseCode(rhs.m_responseCode),
+                m_errorPayloadType(rhs.m_errorPayloadType),
+                m_xmlPayload(std::move(rhs.m_xmlPayload)),
+                m_jsonPayload(std::move(rhs.m_jsonPayload)),
+                m_retryableType(rhs.m_retryableType)
             {}
 
             template<typename OTHER_ERROR_TYPE>
             AWSError(const AWSError<OTHER_ERROR_TYPE>& rhs) :
-                m_errorType(static_cast<ERROR_TYPE>(rhs.m_errorType)), m_exceptionName(rhs.m_exceptionName),
-                m_message(rhs.m_message), m_remoteHostIpAddress(rhs.m_remoteHostIpAddress), m_requestId(rhs.m_requestId),
-                m_responseHeaders(rhs.m_responseHeaders), m_responseCode(rhs.m_responseCode),
-                m_isRetryable(rhs.m_isRetryable), m_errorPayloadType(rhs.m_errorPayloadType),
-                m_xmlPayload(rhs.m_xmlPayload), m_jsonPayload(rhs.m_jsonPayload)
+                m_errorType(static_cast<ERROR_TYPE>(rhs.m_errorType)),
+                m_exceptionName(rhs.m_exceptionName),
+                m_message(rhs.m_message),
+                m_remoteHostIpAddress(rhs.m_remoteHostIpAddress),
+                m_requestId(rhs.m_requestId),
+                m_responseHeaders(rhs.m_responseHeaders),
+                m_responseCode(rhs.m_responseCode),
+                m_errorPayloadType(rhs.m_errorPayloadType),
+                m_xmlPayload(rhs.m_xmlPayload),
+                m_jsonPayload(rhs.m_jsonPayload),
+                m_retryableType(rhs.m_retryableType)
             {}
 
             /**
@@ -145,7 +183,7 @@ namespace Aws
             /**
              * Returns whether or not this error is eligible for retry.
              */
-            inline bool ShouldRetry() const { return m_isRetryable; }
+            inline bool ShouldRetry() const { return m_retryableType == RetryableType::RETRYABLE || m_retryableType == RetryableType::RETRYABLE_THROTTLING; }
             /**
              * Gets the response headers from the http response.
              */
@@ -166,6 +204,10 @@ namespace Aws
              * Sets the response code from the http response
              */
             inline void SetResponseCode(Aws::Http::HttpResponseCode responseCode) { m_responseCode = responseCode; }
+            /**
+             * Return whether or not the error should throttle retry strategies.
+             */
+            inline bool ShouldThrottle() const { return m_retryableType == RetryableType::RETRYABLE_THROTTLING; }
 
         protected:
             inline ErrorPayloadType GetErrorPayloadType() { return m_errorPayloadType; }
@@ -207,11 +249,11 @@ namespace Aws
             Aws::String m_requestId;
             Aws::Http::HeaderValueCollection m_responseHeaders;
             Aws::Http::HttpResponseCode m_responseCode = Aws::Http::HttpResponseCode::REQUEST_NOT_MADE;
-            bool m_isRetryable = false;
 
             ErrorPayloadType m_errorPayloadType = ErrorPayloadType::NOT_SET;
             Aws::Utils::Xml::XmlDocument m_xmlPayload;
             Aws::Utils::Json::JsonValue m_jsonPayload;
+            RetryableType m_retryableType;
         };
 
         template<typename T>

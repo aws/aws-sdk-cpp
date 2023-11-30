@@ -51,103 +51,103 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == TAG_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::TAG_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::TAG_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_GROUP_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_A_R_N_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_A_R_N_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_A_R_N_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLUSTER_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_CLUSTER_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_CLUSTER_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLUSTER_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::CLUSTER_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::CLUSTER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_GROUP_IN_USE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_GROUP_IN_USE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_GROUP_IN_USE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SUBNET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_SUBNET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_SUBNET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_GROUP_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_GROUP_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NODE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::NODE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::NODE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INSUFFICIENT_CLUSTER_CAPACITY_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INSUFFICIENT_CLUSTER_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PARAMETER_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::PARAMETER_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::PARAMETER_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::PARAMETER_GROUP_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::PARAMETER_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SUBNET_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_GROUP_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_PARAMETER_GROUP_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_PARAMETER_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_V_P_C_NETWORK_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_V_P_C_NETWORK_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::INVALID_V_P_C_NETWORK_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SERVICE_LINKED_ROLE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::SERVICE_LINKED_ROLE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::TAG_QUOTA_PER_RESOURCE_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::TAG_QUOTA_PER_RESOURCE_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLUSTER_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::CLUSTER_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DAXErrors::CLUSTER_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -32,27 +32,27 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CLOUD_HSM_INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLOUD_HSM_TAG_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_TAG), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_TAG), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLOUD_HSM_ACCESS_DENIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_ACCESS_DENIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLOUD_HSM_INTERNAL_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_INTERNAL_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_INTERNAL_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLOUD_HSM_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLOUD_HSM_RESOURCE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_RESOURCE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_RESOURCE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

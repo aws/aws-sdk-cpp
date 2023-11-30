@@ -46,23 +46,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BAD_GATEWAY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::BAD_GATEWAY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::BAD_GATEWAY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DEPENDENCY_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::DEPENDENCY_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::DEPENDENCY_FAILED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

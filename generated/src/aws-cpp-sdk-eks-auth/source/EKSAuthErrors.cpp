@@ -31,23 +31,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INVALID_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INVALID_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EXPIRED_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::EXPIRED_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::EXPIRED_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSAuthErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

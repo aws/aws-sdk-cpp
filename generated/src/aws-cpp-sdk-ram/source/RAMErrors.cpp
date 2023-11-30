@@ -52,107 +52,107 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == RESOURCE_SHARE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ARN_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_ARN_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_ARN_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLIENT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_CLIENT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_CLIENT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_MAX_RESULTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_MAX_RESULTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_MAX_RESULTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MISSING_REQUIRED_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MISSING_REQUIRED_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PERMISSION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::PERMISSION_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::PERMISSION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNKNOWN_RESOURCE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::UNKNOWN_RESOURCE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::UNKNOWN_RESOURCE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESOURCE_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_RESOURCE_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_RESOURCE_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_SHARE_INVITATION_EXPIRED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_EXPIRED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_EXPIRED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAG_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::TAG_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::TAG_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_SHARE_INVITATION_ALREADY_REJECTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ALREADY_REJECTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ALREADY_REJECTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_STATE_TRANSITION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_STATE_TRANSITION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_STATE_TRANSITION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::OPERATION_NOT_PERMITTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::OPERATION_NOT_PERMITTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PERMISSION_VERSIONS_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::PERMISSION_VERSIONS_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::PERMISSION_VERSIONS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNMATCHED_POLICY_PERMISSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::UNMATCHED_POLICY_PERMISSION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::UNMATCHED_POLICY_PERMISSION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PERMISSION_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::PERMISSION_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::PERMISSION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MALFORMED_ARN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MALFORMED_ARN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MALFORMED_ARN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVER_INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::SERVER_INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::SERVER_INTERNAL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAG_POLICY_VIOLATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::TAG_POLICY_VIOLATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::TAG_POLICY_VIOLATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MALFORMED_POLICY_TEMPLATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MALFORMED_POLICY_TEMPLATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MALFORMED_POLICY_TEMPLATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

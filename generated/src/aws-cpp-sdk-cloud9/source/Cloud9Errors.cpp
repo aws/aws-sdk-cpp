@@ -34,35 +34,35 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_ACCESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::CONCURRENT_ACCESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::CONCURRENT_ACCESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::INTERNAL_SERVER_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::INTERNAL_SERVER_ERROR), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

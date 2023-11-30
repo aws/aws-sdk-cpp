@@ -229,139 +229,139 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFIGURATION_SET_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CONFIGURATION_SET_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CONFIGURATION_SET_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_FIREHOSE_DESTINATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_FIREHOSE_DESTINATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_FIREHOSE_DESTINATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_TRACKING_OPTIONS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_TRACKING_OPTIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_TRACKING_OPTIONS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SNS_TOPIC_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_SNS_TOPIC), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_SNS_TOPIC), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PRODUCTION_ACCESS_NOT_GRANTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::PRODUCTION_ACCESS_NOT_GRANTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::PRODUCTION_ACCESS_NOT_GRANTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TRACKING_OPTIONS_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::TRACKING_OPTIONS_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::TRACKING_OPTIONS_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFIGURATION_SET_SENDING_PAUSED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CONFIGURATION_SET_SENDING_PAUSED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CONFIGURATION_SET_SENDING_PAUSED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_S3_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_S3_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_S3_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_DESTINATION_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::EVENT_DESTINATION_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::EVENT_DESTINATION_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TEMPLATE_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::TEMPLATE_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::TEMPLATE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MISSING_RENDERING_ATTRIBUTE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MISSING_RENDERING_ATTRIBUTE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MISSING_RENDERING_ATTRIBUTE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFIGURATION_SET_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CONFIGURATION_SET_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CONFIGURATION_SET_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_DELIVERY_OPTIONS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_DELIVERY_OPTIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_DELIVERY_OPTIONS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_DESTINATION_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::EVENT_DESTINATION_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::EVENT_DESTINATION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_LAMBDA_FUNCTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_LAMBDA_FUNCTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_LAMBDA_FUNCTION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_SENDING_PAUSED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::ACCOUNT_SENDING_PAUSED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::ACCOUNT_SENDING_PAUSED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CONFIGURATION_SET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_CONFIGURATION_SET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_CONFIGURATION_SET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLOUD_WATCH_DESTINATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_CLOUD_WATCH_DESTINATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_CLOUD_WATCH_DESTINATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RENDERING_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_RENDERING_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_RENDERING_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_S_N_S_DESTINATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_S_N_S_DESTINATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_S_N_S_DESTINATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TRACKING_OPTIONS_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::TRACKING_OPTIONS_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::TRACKING_OPTIONS_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TEMPLATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_TEMPLATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_TEMPLATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CUSTOM_VERIFICATION_EMAIL_INVALID_CONTENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CUSTOM_VERIFICATION_EMAIL_INVALID_CONTENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CUSTOM_VERIFICATION_EMAIL_INVALID_CONTENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MESSAGE_REJECTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MESSAGE_REJECTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MESSAGE_REJECTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FROM_EMAIL_ADDRESS_NOT_VERIFIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::FROM_EMAIL_ADDRESS_NOT_VERIFIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::FROM_EMAIL_ADDRESS_NOT_VERIFIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MAIL_FROM_DOMAIN_NOT_VERIFIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MAIL_FROM_DOMAIN_NOT_VERIFIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CANNOT_DELETE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CANNOT_DELETE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CANNOT_DELETE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RULE_SET_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::RULE_SET_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::RULE_SET_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CUSTOM_VERIFICATION_EMAIL_TEMPLATE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CUSTOM_VERIFICATION_EMAIL_TEMPLATE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CUSTOM_VERIFICATION_EMAIL_TEMPLATE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RULE_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::RULE_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::RULE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

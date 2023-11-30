@@ -120,39 +120,39 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::SERVICE_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::SERVICE_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::UNAUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNPROCESSABLE_ENTITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::UNPROCESSABLE_ENTITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::UNPROCESSABLE_ENTITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

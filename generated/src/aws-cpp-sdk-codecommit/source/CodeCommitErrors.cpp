@@ -215,612 +215,612 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == REPOSITORY_TRIGGERS_LIST_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGERS_LIST_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGERS_LIST_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PULL_REQUEST_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == BRANCH_NAME_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_NAME_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_NAME_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILE_ENTRY_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_ENTRY_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_ENTRY_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_CONFLICT_RESOLUTION_STRATEGY_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONFLICT_RESOLUTION_STRATEGY), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONFLICT_RESOLUTION_STRATEGY), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PATH_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PATH_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PATH_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILE_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PULL_REQUEST_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMIT_MESSAGE_LENGTH_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_MESSAGE_LENGTH_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_MESSAGE_LENGTH_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REVISION_ID_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REVISION_ID_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REVISION_ID_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMENT_CONTENT_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_CONTENT_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_CONTENT_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_MAX_MERGE_HUNKS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MAX_MERGE_HUNKS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MAX_MERGE_HUNKS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REACTION_VALUE_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REACTION_VALUE_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REACTION_VALUE_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_CONTINUATION_TOKEN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONTINUATION_TOKEN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONTINUATION_TOKEN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MERGE_OPTION_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MERGE_OPTION_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MERGE_OPTION_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_AUTHOR_ARN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_AUTHOR_ARN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_AUTHOR_ARN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TARGET_BRANCH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TARGET_BRANCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TARGET_BRANCH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_COMMIT_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_COMMIT_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_COMMIT_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MULTIPLE_REPOSITORIES_IN_PULL_REQUEST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MULTIPLE_REPOSITORIES_IN_PULL_REQUEST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MULTIPLE_REPOSITORIES_IN_PULL_REQUEST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPLACEMENT_CONTENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPLACEMENT_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPLACEMENT_CONTENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_RULE_TEMPLATE_NAME_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_NAME_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_NAME_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ACTOR_ARN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_ACTOR_ARN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_ACTOR_ARN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPOSITORY_TRIGGER_EVENTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_EVENTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_EVENTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMIT_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REACTION_USER_ARN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REACTION_USER_ARN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REACTION_USER_ARN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == BRANCH_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TAGS_MAP_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TAGS_MAP_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TAGS_MAP_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_TRIGGER_DESTINATION_ARN_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGER_DESTINATION_ARN_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGER_DESTINATION_ARN_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_TRIGGER_EVENTS_LIST_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGER_EVENTS_LIST_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGER_EVENTS_LIST_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_TRIGGER_BRANCH_NAME_LIST_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGER_BRANCH_NAME_LIST_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGER_BRANCH_NAME_LIST_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PULL_REQUEST_STATUS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_STATUS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_STATUS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_APPROVAL_RULE_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMIT_IDS_LIST_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_IDS_LIST_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_IDS_LIST_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_BLOB_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_BLOB_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_BLOB_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DIRECTORY_NAME_CONFLICTS_WITH_FILE_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::DIRECTORY_NAME_CONFLICTS_WITH_FILE_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::DIRECTORY_NAME_CONFLICTS_WITH_FILE_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TAG_POLICY_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TAG_POLICY), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TAG_POLICY), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_COMMIT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_COMMIT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_COMMIT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_RULE_CONTENT_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_CONTENT_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_CONTENT_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_TRIGGER_NAME_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGER_NAME_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGER_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == NUMBER_OF_RULES_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NUMBER_OF_RULES_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NUMBER_OF_RULES_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_BRANCHES_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_BRANCHES_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_BRANCHES_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PARENT_COMMIT_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PARENT_COMMIT_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PARENT_COMMIT_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CLIENT_REQUEST_TOKEN_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::CLIENT_REQUEST_TOKEN_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::CLIENT_REQUEST_TOKEN_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_APPROVAL_RULE_TEMPLATE_DESCRIPTION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_TEMPLATE_DESCRIPTION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_TEMPLATE_DESCRIPTION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_APPROVAL_RULE_TEMPLATE_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_TEMPLATE_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_TEMPLATE_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARENT_COMMIT_ID_OUTDATED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PARENT_COMMIT_ID_OUTDATED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PARENT_COMMIT_ID_OUTDATED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SOURCE_FILE_OR_CONTENT_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SOURCE_FILE_OR_CONTENT_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SOURCE_FILE_OR_CONTENT_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_RULE_NAME_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_NAME_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DEFAULT_BRANCH_CANNOT_BE_DELETED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::DEFAULT_BRANCH_CANNOT_BE_DELETED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::DEFAULT_BRANCH_CANNOT_BE_DELETED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OVERRIDE_ALREADY_SET_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::OVERRIDE_ALREADY_SET), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::OVERRIDE_ALREADY_SET), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PULL_REQUEST_STATUS_UPDATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_STATUS_UPDATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_STATUS_UPDATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ENCRYPTION_KEY_DISABLED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_DISABLED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_DISABLED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_RULE_TEMPLATE_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_APPROVAL_STATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_STATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_STATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TITLE_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TITLE_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TITLE_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_RULE_TEMPLATES_ASSOCIATED_WITH_REPOSITORY_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_RULE_TEMPLATES_ASSOCIATED_WITH_REPOSITORY), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_RULE_TEMPLATES_ASSOCIATED_WITH_REPOSITORY), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TARGETS_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TARGETS_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TARGETS_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMENT_NOT_CREATED_BY_CALLER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_NOT_CREATED_BY_CALLER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_NOT_CREATED_BY_CALLER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REVISION_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REVISION_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REVISION_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == NAME_LENGTH_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NAME_LENGTH_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NAME_LENGTH_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_CONFLICT_RESOLUTION_ENTRIES_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_CONFLICT_RESOLUTION_ENTRIES_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_CONFLICT_RESOLUTION_ENTRIES_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMENT_DELETED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_DELETED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_DELETED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMIT_ID_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_ID_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_ID_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESTRICTED_SOURCE_FILE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::RESTRICTED_SOURCE_FILE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::RESTRICTED_SOURCE_FILE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == IDEMPOTENCY_PARAMETER_MISMATCH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::IDEMPOTENCY_PARAMETER_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::IDEMPOTENCY_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_ITEMS_TO_COMPARE_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_ITEMS_TO_COMPARE_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_ITEMS_TO_COMPARE_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARENT_COMMIT_ID_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PARENT_COMMIT_ID_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PARENT_COMMIT_ID_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPOSITORY_TRIGGER_DESTINATION_ARN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_DESTINATION_ARN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_DESTINATION_ARN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_RULE_TEMPLATE_CONTENT_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_CONTENT_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_CONTENT_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SORT_BY_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SORT_BY), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SORT_BY), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RELATIVE_FILE_VERSION_ENUM_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_RELATIVE_FILE_VERSION_ENUM), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_RELATIVE_FILE_VERSION_ENUM), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_CLIENT_REQUEST_TOKEN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CLIENT_REQUEST_TOKEN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CLIENT_REQUEST_TOKEN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_RULE_TEMPLATE_NAME_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_NAME_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RULE_CONTENT_SHA256_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_RULE_CONTENT_SHA256), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_RULE_CONTENT_SHA256), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == BRANCH_NAME_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_NAME_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILE_CONTENT_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_FILE_CONTENT_TO_LOAD_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_FILE_CONTENT_TO_LOAD_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_FILE_CONTENT_TO_LOAD_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SAME_PATH_REQUEST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SAME_PATH_REQUEST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SAME_PATH_REQUEST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DESCRIPTION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_DESCRIPTION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_DESCRIPTION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPLACEMENT_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPLACEMENT_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPLACEMENT_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ENCRYPTION_KEY_ACCESS_DENIED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_ACCESS_DENIED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RESOURCE_ARN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_RESOURCE_ARN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_RESOURCE_ARN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_APPROVAL_RULE_CONTENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_CONTENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_CONFLICT_RESOLUTION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONFLICT_RESOLUTION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONFLICT_RESOLUTION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == BLOB_ID_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BLOB_ID_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BLOB_ID_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_NAMES_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NAMES_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NAMES_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMENT_CONTENT_SIZE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_CONTENT_SIZE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_CONTENT_SIZE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TARGET_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TARGET), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TARGET), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REFERENCE_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REFERENCE_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REFERENCE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CANNOT_MODIFY_APPROVAL_RULE_FROM_TEMPLATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::CANNOT_MODIFY_APPROVAL_RULE_FROM_TEMPLATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::CANNOT_MODIFY_APPROVAL_RULE_FROM_TEMPLATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == BRANCH_NAME_IS_TAG_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_NAME_IS_TAG_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_NAME_IS_TAG_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_NAME_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NAME_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_APPROVAL_RULE_TEMPLATE_CONTENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_TEMPLATE_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_APPROVAL_RULE_TEMPLATE_CONTENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_RULE_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PULL_REQUEST_STATUS_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_STATUS_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_STATUS_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_RULE_NAME_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_NAME_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_NAME_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_MAX_RESULTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MAX_RESULTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MAX_RESULTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TIP_OF_SOURCE_REFERENCE_IS_DIFFERENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TIP_OF_SOURCE_REFERENCE_IS_DIFFERENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TIP_OF_SOURCE_REFERENCE_IS_DIFFERENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_NUMBER_OF_APPROVALS_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_NUMBER_OF_APPROVALS_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_NUMBER_OF_APPROVALS_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_NAME_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NAME_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NAME_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PULL_REQUEST_CANNOT_BE_APPROVED_BY_AUTHOR_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_CANNOT_BE_APPROVED_BY_AUTHOR), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_CANNOT_BE_APPROVED_BY_AUTHOR), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILE_MODE_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_MODE_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_MODE_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ENCRYPTION_INTEGRITY_CHECKS_FAILED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_INTEGRITY_CHECKS_FAILED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_INTEGRITY_CHECKS_FAILED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REFERENCE_TYPE_NOT_SUPPORTED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REFERENCE_TYPE_NOT_SUPPORTED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REFERENCE_TYPE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPOSITORY_TRIGGER_REGION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_REGION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_REGION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_STATE_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_STATE_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_STATE_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_EMAIL_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_EMAIL), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_EMAIL), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DESTINATION_COMMIT_SPECIFIER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_DESTINATION_COMMIT_SPECIFIER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_DESTINATION_COMMIT_SPECIFIER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMIT_ID_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_ID_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_ID_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PARENT_COMMIT_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PARENT_COMMIT_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PARENT_COMMIT_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TAG_KEYS_LIST_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TAG_KEYS_LIST_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TAG_KEYS_LIST_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ORDER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_ORDER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_ORDER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPOSITORY_TRIGGER_CUSTOM_DATA_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_CUSTOM_DATA), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_CUSTOM_DATA), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REFERENCE_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REFERENCE_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REFERENCE_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PULL_REQUEST_ALREADY_CLOSED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_ALREADY_CLOSED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_ALREADY_CLOSED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SYSTEM_TAG_USAGE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SYSTEM_TAG_USAGE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SYSTEM_TAG_USAGE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OVERRIDE_STATUS_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::OVERRIDE_STATUS_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::OVERRIDE_STATUS_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TAG_KEYS_LIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TAG_KEYS_LIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TAG_KEYS_LIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_MERGE_OPTION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MERGE_OPTION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MERGE_OPTION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMENT_ID_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_ID_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_ID_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_NOT_ASSOCIATED_WITH_PULL_REQUEST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NOT_ASSOCIATED_WITH_PULL_REQUEST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NOT_ASSOCIATED_WITH_PULL_REQUEST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;
@@ -830,317 +830,317 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == INVALID_SOURCE_COMMIT_SPECIFIER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SOURCE_COMMIT_SPECIFIER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SOURCE_COMMIT_SPECIFIER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_ARN_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::RESOURCE_ARN_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::RESOURCE_ARN_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FILE_MODE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_FILE_MODE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_FILE_MODE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPOSITORY_TRIGGER_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TITLE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TITLE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TITLE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SOURCE_AND_DESTINATION_ARE_SAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SOURCE_AND_DESTINATION_ARE_SAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SOURCE_AND_DESTINATION_ARE_SAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PATH_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PATH_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PATH_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DELETION_PARAMETER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_DELETION_PARAMETER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_DELETION_PARAMETER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TAGS_MAP_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TAGS_MAP), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TAGS_MAP), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FILE_LOCATION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_FILE_LOCATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_FILE_LOCATION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_BRANCH_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_BRANCH_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_BRANCH_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_FILE_ENTRIES_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_FILE_ENTRIES_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_FILE_ENTRIES_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_REPOSITORY_NAMES_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_REPOSITORY_NAMES_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_REPOSITORY_NAMES_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_OPEN_PULL_REQUESTS_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_OPEN_PULL_REQUESTS_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_OPEN_PULL_REQUESTS_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ENCRYPTION_KEY_NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REFERENCE_NAME_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REFERENCE_NAME_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REFERENCE_NAME_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_OVERRIDE_STATUS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_OVERRIDE_STATUS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_OVERRIDE_STATUS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TOO_MANY_TAGS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPLACEMENT_CONTENT_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPLACEMENT_CONTENT_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPLACEMENT_CONTENT_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REVISION_NOT_CURRENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REVISION_NOT_CURRENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REVISION_NOT_CURRENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMIT_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ENCRYPTION_KEY_UNAVAILABLE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_UNAVAILABLE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PULL_REQUEST_APPROVAL_RULES_NOT_SATISFIED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_APPROVAL_RULES_NOT_SATISFIED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_APPROVAL_RULES_NOT_SATISFIED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MULTIPLE_CONFLICT_RESOLUTION_ENTRIES_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MULTIPLE_CONFLICT_RESOLUTION_ENTRIES), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MULTIPLE_CONFLICT_RESOLUTION_ENTRIES), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_MAX_CONFLICT_FILES_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MAX_CONFLICT_FILES), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MAX_CONFLICT_FILES), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMENT_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_COMMENT_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_COMMENT_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_COMMENT_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TARGET_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TARGET_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TARGET_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILE_CONTENT_SIZE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_SIZE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_SIZE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PULL_REQUEST_EVENT_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_EVENT_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_EVENT_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPOSITORY_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPOSITORY_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPOSITORY_DESCRIPTION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_DESCRIPTION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_DESCRIPTION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FOLDER_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FOLDER_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FOLDER_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PATH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PATH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PATH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ACTOR_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ACTOR_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ACTOR_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == NO_CHANGE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NO_CHANGE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NO_CHANGE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REPLACEMENT_TYPE_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPLACEMENT_TYPE_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPLACEMENT_TYPE_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MANUAL_MERGE_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MANUAL_MERGE_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MANUAL_MERGE_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILE_TOO_LARGE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_TOO_LARGE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_TOO_LARGE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAXIMUM_REPOSITORY_TRIGGERS_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_REPOSITORY_TRIGGERS_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_REPOSITORY_TRIGGERS_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_CONFLICT_DETAIL_LEVEL_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONFLICT_DETAIL_LEVEL), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONFLICT_DETAIL_LEVEL), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == BLOB_ID_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BLOB_ID_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BLOB_ID_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REACTION_VALUE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REACTION_VALUE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REACTION_VALUE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PUT_FILE_ENTRY_CONFLICT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PUT_FILE_ENTRY_CONFLICT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PUT_FILE_ENTRY_CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REACTION_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REACTION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REACTION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CANNOT_DELETE_APPROVAL_RULE_FROM_TEMPLATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::CANNOT_DELETE_APPROVAL_RULE_FROM_TEMPLATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::CANNOT_DELETE_APPROVAL_RULE_FROM_TEMPLATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == AUTHOR_DOES_NOT_EXIST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::AUTHOR_DOES_NOT_EXIST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::AUTHOR_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILE_NAME_CONFLICTS_WITH_DIRECTORY_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_NAME_CONFLICTS_WITH_DIRECTORY_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_NAME_CONFLICTS_WITH_DIRECTORY_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FOLDER_CONTENT_SIZE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FOLDER_CONTENT_SIZE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FOLDER_CONTENT_SIZE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_TARGETS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TARGETS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TARGETS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == NUMBER_OF_RULE_TEMPLATES_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NUMBER_OF_RULE_TEMPLATES_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NUMBER_OF_RULE_TEMPLATES_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REPOSITORY_TRIGGER_BRANCH_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_BRANCH_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_BRANCH_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == COMMIT_IDS_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_IDS_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_IDS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TIPS_DIVERGENCE_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TIPS_DIVERGENCE_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TIPS_DIVERGENCE_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PULL_REQUEST_ID_REQUIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_ID_REQUIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_ID_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FILE_POSITION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_FILE_POSITION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_FILE_POSITION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILE_CONTENT_AND_SOURCE_FILE_SPECIFIED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_AND_SOURCE_FILE_SPECIFIED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_AND_SOURCE_FILE_SPECIFIED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CONCURRENT_REFERENCE_UPDATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::CONCURRENT_REFERENCE_UPDATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::CONCURRENT_REFERENCE_UPDATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == BEFORE_COMMIT_ID_AND_AFTER_COMMIT_ID_ARE_SAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BEFORE_COMMIT_ID_AND_AFTER_COMMIT_ID_ARE_SAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BEFORE_COMMIT_ID_AND_AFTER_COMMIT_ID_ARE_SAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == APPROVAL_RULE_TEMPLATE_IN_USE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::APPROVAL_RULE_TEMPLATE_IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SAME_FILE_CONTENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SAME_FILE_CONTENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SAME_FILE_CONTENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;

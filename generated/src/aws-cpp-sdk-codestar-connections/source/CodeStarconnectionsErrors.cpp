@@ -40,59 +40,59 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SYNC_CONFIGURATION_STILL_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::SYNC_CONFIGURATION_STILL_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::SYNC_CONFIGURATION_STILL_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONDITIONAL_CHECK_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::CONDITIONAL_CHECK_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::CONDITIONAL_CHECK_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_PROVIDER_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::UNSUPPORTED_PROVIDER_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::UNSUPPORTED_PROVIDER_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_INPUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::INVALID_INPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UPDATE_OUT_OF_SYNC_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::UPDATE_OUT_OF_SYNC), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::UPDATE_OUT_OF_SYNC), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SYNC_BLOCKER_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::SYNC_BLOCKER_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::SYNC_BLOCKER_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::UNSUPPORTED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::RESOURCE_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::RESOURCE_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RETRY_LATEST_COMMIT_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::RETRY_LATEST_COMMIT_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarconnectionsErrors::RETRY_LATEST_COMMIT_FAILED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -36,43 +36,43 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::INTERNAL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATION_DISABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::OPERATION_DISABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::OPERATION_DISABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_EVENT_PATTERN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::INVALID_EVENT_PATTERN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::INVALID_EVENT_PATTERN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MANAGED_RULE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::MANAGED_RULE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::MANAGED_RULE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::POLICY_LENGTH_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::POLICY_LENGTH_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ILLEGAL_STATUS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::ILLEGAL_STATUS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::ILLEGAL_STATUS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::INVALID_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EventBridgeErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

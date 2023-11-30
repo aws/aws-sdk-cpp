@@ -38,51 +38,51 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ARGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_DOMAIN_VALIDATION_OPTIONS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_DOMAIN_VALIDATION_OPTIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_DOMAIN_VALIDATION_OPTIONS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REQUEST_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::REQUEST_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::REQUEST_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ARN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TAG_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_TAG), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_TAG), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAG_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::TAG_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::TAG_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
