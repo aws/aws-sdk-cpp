@@ -71,8 +71,8 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
-     * <code>enable_user_activity_logging</code>, <code>query_group</code>, ,
+     * <code>enable_case_sensitive_identifier</code>,
+     * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
      * available metrics, see <a
@@ -84,8 +84,8 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
-     * <code>enable_user_activity_logging</code>, <code>query_group</code>, ,
+     * <code>enable_case_sensitive_identifier</code>,
+     * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
      * available metrics, see <a
@@ -97,8 +97,8 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
-     * <code>enable_user_activity_logging</code>, <code>query_group</code>, ,
+     * <code>enable_case_sensitive_identifier</code>,
+     * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
      * available metrics, see <a
@@ -110,8 +110,8 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
-     * <code>enable_user_activity_logging</code>, <code>query_group</code>, ,
+     * <code>enable_case_sensitive_identifier</code>,
+     * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
      * available metrics, see <a
@@ -123,8 +123,8 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
-     * <code>enable_user_activity_logging</code>, <code>query_group</code>, ,
+     * <code>enable_case_sensitive_identifier</code>,
+     * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
      * available metrics, see <a
@@ -136,8 +136,8 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
-     * <code>enable_user_activity_logging</code>, <code>query_group</code>, ,
+     * <code>enable_case_sensitive_identifier</code>,
+     * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
      * available metrics, see <a
@@ -149,8 +149,8 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
-     * <code>enable_user_activity_logging</code>, <code>query_group</code>, ,
+     * <code>enable_case_sensitive_identifier</code>,
+     * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
      * available metrics, see <a
@@ -162,8 +162,8 @@ namespace Model
     /**
      * <p>An array of parameters to set for advanced control over a database. The
      * options are <code>auto_mv</code>, <code>datestyle</code>,
-     * <code>enable_case_sensitivity_identifier</code>,
-     * <code>enable_user_activity_logging</code>, <code>query_group</code>, ,
+     * <code>enable_case_sensitive_identifier</code>,
+     * <code>enable_user_activity_logging</code>, <code>query_group</code>,
      * <code>search_path</code>, and query monitoring metrics that let you define
      * performance boundaries. For more information about query monitoring rules and
      * available metrics, see <a
@@ -202,6 +202,70 @@ namespace Model
      * <p>The creation date of the workgroup.</p>
      */
     inline Workgroup& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of VPCs. Each entry is the unique identifier of a virtual private
+     * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
+     * grantee are allowed, it shows an asterisk.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCrossAccountVpcs() const{ return m_crossAccountVpcs; }
+
+    /**
+     * <p>A list of VPCs. Each entry is the unique identifier of a virtual private
+     * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
+     * grantee are allowed, it shows an asterisk.</p>
+     */
+    inline bool CrossAccountVpcsHasBeenSet() const { return m_crossAccountVpcsHasBeenSet; }
+
+    /**
+     * <p>A list of VPCs. Each entry is the unique identifier of a virtual private
+     * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
+     * grantee are allowed, it shows an asterisk.</p>
+     */
+    inline void SetCrossAccountVpcs(const Aws::Vector<Aws::String>& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs = value; }
+
+    /**
+     * <p>A list of VPCs. Each entry is the unique identifier of a virtual private
+     * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
+     * grantee are allowed, it shows an asterisk.</p>
+     */
+    inline void SetCrossAccountVpcs(Aws::Vector<Aws::String>&& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs = std::move(value); }
+
+    /**
+     * <p>A list of VPCs. Each entry is the unique identifier of a virtual private
+     * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
+     * grantee are allowed, it shows an asterisk.</p>
+     */
+    inline Workgroup& WithCrossAccountVpcs(const Aws::Vector<Aws::String>& value) { SetCrossAccountVpcs(value); return *this;}
+
+    /**
+     * <p>A list of VPCs. Each entry is the unique identifier of a virtual private
+     * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
+     * grantee are allowed, it shows an asterisk.</p>
+     */
+    inline Workgroup& WithCrossAccountVpcs(Aws::Vector<Aws::String>&& value) { SetCrossAccountVpcs(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of VPCs. Each entry is the unique identifier of a virtual private
+     * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
+     * grantee are allowed, it shows an asterisk.</p>
+     */
+    inline Workgroup& AddCrossAccountVpcs(const Aws::String& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs.push_back(value); return *this; }
+
+    /**
+     * <p>A list of VPCs. Each entry is the unique identifier of a virtual private
+     * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
+     * grantee are allowed, it shows an asterisk.</p>
+     */
+    inline Workgroup& AddCrossAccountVpcs(Aws::String&& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of VPCs. Each entry is the unique identifier of a virtual private
+     * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
+     * grantee are allowed, it shows an asterisk.</p>
+     */
+    inline Workgroup& AddCrossAccountVpcs(const char* value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs.push_back(value); return *this; }
 
 
     /**
@@ -878,6 +942,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_crossAccountVpcs;
+    bool m_crossAccountVpcsHasBeenSet = false;
 
     Aws::String m_customDomainCertificateArn;
     bool m_customDomainCertificateArnHasBeenSet = false;

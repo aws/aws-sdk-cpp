@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-catalog/model/Sort.h>
 #include <aws/marketplace-catalog/model/OwnershipType.h>
+#include <aws/marketplace-catalog/model/EntityTypeFilters.h>
+#include <aws/marketplace-catalog/model/EntityTypeSort.h>
 #include <aws/marketplace-catalog/model/Filter.h>
 #include <utility>
 
@@ -86,42 +88,82 @@ namespace Model
 
 
     /**
-     * <p>The type of entities to retrieve.</p>
+     * <p>The type of entities to retrieve. Valid values are:
+     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <code>ContainerProduct</code>, <code>DataProduct</code>,
+     * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
+     * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
      */
     inline const Aws::String& GetEntityType() const{ return m_entityType; }
 
     /**
-     * <p>The type of entities to retrieve.</p>
+     * <p>The type of entities to retrieve. Valid values are:
+     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <code>ContainerProduct</code>, <code>DataProduct</code>,
+     * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
+     * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
      */
     inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
 
     /**
-     * <p>The type of entities to retrieve.</p>
+     * <p>The type of entities to retrieve. Valid values are:
+     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <code>ContainerProduct</code>, <code>DataProduct</code>,
+     * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
+     * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
      */
     inline void SetEntityType(const Aws::String& value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
 
     /**
-     * <p>The type of entities to retrieve.</p>
+     * <p>The type of entities to retrieve. Valid values are:
+     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <code>ContainerProduct</code>, <code>DataProduct</code>,
+     * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
+     * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
      */
     inline void SetEntityType(Aws::String&& value) { m_entityTypeHasBeenSet = true; m_entityType = std::move(value); }
 
     /**
-     * <p>The type of entities to retrieve.</p>
+     * <p>The type of entities to retrieve. Valid values are:
+     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <code>ContainerProduct</code>, <code>DataProduct</code>,
+     * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
+     * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
      */
     inline void SetEntityType(const char* value) { m_entityTypeHasBeenSet = true; m_entityType.assign(value); }
 
     /**
-     * <p>The type of entities to retrieve.</p>
+     * <p>The type of entities to retrieve. Valid values are:
+     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <code>ContainerProduct</code>, <code>DataProduct</code>,
+     * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
+     * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
      */
     inline ListEntitiesRequest& WithEntityType(const Aws::String& value) { SetEntityType(value); return *this;}
 
     /**
-     * <p>The type of entities to retrieve.</p>
+     * <p>The type of entities to retrieve. Valid values are:
+     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <code>ContainerProduct</code>, <code>DataProduct</code>,
+     * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
+     * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
      */
     inline ListEntitiesRequest& WithEntityType(Aws::String&& value) { SetEntityType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of entities to retrieve.</p>
+     * <p>The type of entities to retrieve. Valid values are:
+     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <code>ContainerProduct</code>, <code>DataProduct</code>,
+     * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
+     * <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
      */
     inline ListEntitiesRequest& WithEntityType(const char* value) { SetEntityType(value); return *this;}
 
@@ -340,6 +382,104 @@ namespace Model
      */
     inline ListEntitiesRequest& WithOwnershipType(OwnershipType&& value) { SetOwnershipType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A Union object containing filter shapes for all <code>EntityType</code>s.
+     * Each <code>EntityTypeFilter</code> shape will have filters applicable for that
+     * <code>EntityType</code> that can be used to search or filter entities.</p>
+     */
+    inline const EntityTypeFilters& GetEntityTypeFilters() const{ return m_entityTypeFilters; }
+
+    /**
+     * <p>A Union object containing filter shapes for all <code>EntityType</code>s.
+     * Each <code>EntityTypeFilter</code> shape will have filters applicable for that
+     * <code>EntityType</code> that can be used to search or filter entities.</p>
+     */
+    inline bool EntityTypeFiltersHasBeenSet() const { return m_entityTypeFiltersHasBeenSet; }
+
+    /**
+     * <p>A Union object containing filter shapes for all <code>EntityType</code>s.
+     * Each <code>EntityTypeFilter</code> shape will have filters applicable for that
+     * <code>EntityType</code> that can be used to search or filter entities.</p>
+     */
+    inline void SetEntityTypeFilters(const EntityTypeFilters& value) { m_entityTypeFiltersHasBeenSet = true; m_entityTypeFilters = value; }
+
+    /**
+     * <p>A Union object containing filter shapes for all <code>EntityType</code>s.
+     * Each <code>EntityTypeFilter</code> shape will have filters applicable for that
+     * <code>EntityType</code> that can be used to search or filter entities.</p>
+     */
+    inline void SetEntityTypeFilters(EntityTypeFilters&& value) { m_entityTypeFiltersHasBeenSet = true; m_entityTypeFilters = std::move(value); }
+
+    /**
+     * <p>A Union object containing filter shapes for all <code>EntityType</code>s.
+     * Each <code>EntityTypeFilter</code> shape will have filters applicable for that
+     * <code>EntityType</code> that can be used to search or filter entities.</p>
+     */
+    inline ListEntitiesRequest& WithEntityTypeFilters(const EntityTypeFilters& value) { SetEntityTypeFilters(value); return *this;}
+
+    /**
+     * <p>A Union object containing filter shapes for all <code>EntityType</code>s.
+     * Each <code>EntityTypeFilter</code> shape will have filters applicable for that
+     * <code>EntityType</code> that can be used to search or filter entities.</p>
+     */
+    inline ListEntitiesRequest& WithEntityTypeFilters(EntityTypeFilters&& value) { SetEntityTypeFilters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A Union object containing <code>Sort</code> shapes for all
+     * <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have
+     * <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that
+     * <code>EntityType</code>. This can be used to sort the results of the filter
+     * query.</p>
+     */
+    inline const EntityTypeSort& GetEntityTypeSort() const{ return m_entityTypeSort; }
+
+    /**
+     * <p>A Union object containing <code>Sort</code> shapes for all
+     * <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have
+     * <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that
+     * <code>EntityType</code>. This can be used to sort the results of the filter
+     * query.</p>
+     */
+    inline bool EntityTypeSortHasBeenSet() const { return m_entityTypeSortHasBeenSet; }
+
+    /**
+     * <p>A Union object containing <code>Sort</code> shapes for all
+     * <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have
+     * <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that
+     * <code>EntityType</code>. This can be used to sort the results of the filter
+     * query.</p>
+     */
+    inline void SetEntityTypeSort(const EntityTypeSort& value) { m_entityTypeSortHasBeenSet = true; m_entityTypeSort = value; }
+
+    /**
+     * <p>A Union object containing <code>Sort</code> shapes for all
+     * <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have
+     * <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that
+     * <code>EntityType</code>. This can be used to sort the results of the filter
+     * query.</p>
+     */
+    inline void SetEntityTypeSort(EntityTypeSort&& value) { m_entityTypeSortHasBeenSet = true; m_entityTypeSort = std::move(value); }
+
+    /**
+     * <p>A Union object containing <code>Sort</code> shapes for all
+     * <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have
+     * <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that
+     * <code>EntityType</code>. This can be used to sort the results of the filter
+     * query.</p>
+     */
+    inline ListEntitiesRequest& WithEntityTypeSort(const EntityTypeSort& value) { SetEntityTypeSort(value); return *this;}
+
+    /**
+     * <p>A Union object containing <code>Sort</code> shapes for all
+     * <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have
+     * <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that
+     * <code>EntityType</code>. This can be used to sort the results of the filter
+     * query.</p>
+     */
+    inline ListEntitiesRequest& WithEntityTypeSort(EntityTypeSort&& value) { SetEntityTypeSort(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_catalog;
@@ -362,6 +502,12 @@ namespace Model
 
     OwnershipType m_ownershipType;
     bool m_ownershipTypeHasBeenSet = false;
+
+    EntityTypeFilters m_entityTypeFilters;
+    bool m_entityTypeFiltersHasBeenSet = false;
+
+    EntityTypeSort m_entityTypeSort;
+    bool m_entityTypeSortHasBeenSet = false;
   };
 
 } // namespace Model
