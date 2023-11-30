@@ -23,6 +23,7 @@ Workgroup::Workgroup() :
     m_baseCapacityHasBeenSet(false),
     m_configParametersHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_crossAccountVpcsHasBeenSet(false),
     m_customDomainCertificateArnHasBeenSet(false),
     m_customDomainCertificateExpiryTimeHasBeenSet(false),
     m_customDomainNameHasBeenSet(false),
@@ -53,6 +54,7 @@ Workgroup::Workgroup(JsonView jsonValue) :
     m_baseCapacityHasBeenSet(false),
     m_configParametersHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_crossAccountVpcsHasBeenSet(false),
     m_customDomainCertificateArnHasBeenSet(false),
     m_customDomainCertificateExpiryTimeHasBeenSet(false),
     m_customDomainNameHasBeenSet(false),
@@ -103,6 +105,16 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_creationDate = jsonValue.GetString("creationDate");
 
     m_creationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("crossAccountVpcs"))
+  {
+    Aws::Utils::Array<JsonView> crossAccountVpcsJsonList = jsonValue.GetArray("crossAccountVpcs");
+    for(unsigned crossAccountVpcsIndex = 0; crossAccountVpcsIndex < crossAccountVpcsJsonList.GetLength(); ++crossAccountVpcsIndex)
+    {
+      m_crossAccountVpcs.push_back(crossAccountVpcsJsonList[crossAccountVpcsIndex].AsString());
+    }
+    m_crossAccountVpcsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("customDomainCertificateArn"))
@@ -257,6 +269,17 @@ JsonValue Workgroup::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithString("creationDate", m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_crossAccountVpcsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> crossAccountVpcsJsonList(m_crossAccountVpcs.size());
+   for(unsigned crossAccountVpcsIndex = 0; crossAccountVpcsIndex < crossAccountVpcsJsonList.GetLength(); ++crossAccountVpcsIndex)
+   {
+     crossAccountVpcsJsonList[crossAccountVpcsIndex].AsString(m_crossAccountVpcs[crossAccountVpcsIndex]);
+   }
+   payload.WithArray("crossAccountVpcs", std::move(crossAccountVpcsJsonList));
+
   }
 
   if(m_customDomainCertificateArnHasBeenSet)

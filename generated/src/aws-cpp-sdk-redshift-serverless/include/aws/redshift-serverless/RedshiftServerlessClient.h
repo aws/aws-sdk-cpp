@@ -194,6 +194,33 @@ namespace RedshiftServerless
         }
 
         /**
+         * <p>Creates a scheduled action. A scheduled action contains a schedule and an
+         * Amazon Redshift API action. For example, you can create a schedule of when to
+         * run the <code>CreateSnapshot</code> API operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateScheduledAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateScheduledActionOutcome CreateScheduledAction(const Model::CreateScheduledActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateScheduledActionRequestT = Model::CreateScheduledActionRequest>
+        Model::CreateScheduledActionOutcomeCallable CreateScheduledActionCallable(const CreateScheduledActionRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::CreateScheduledAction, request);
+        }
+
+        /**
+         * An Async wrapper for CreateScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateScheduledActionRequestT = Model::CreateScheduledActionRequest>
+        void CreateScheduledActionAsync(const CreateScheduledActionRequestT& request, const CreateScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::CreateScheduledAction, request, handler, context);
+        }
+
+        /**
          * <p>Creates a snapshot of all databases in a namespace. For more information
          * about snapshots, see <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">
@@ -219,6 +246,32 @@ namespace RedshiftServerless
         void CreateSnapshotAsync(const CreateSnapshotRequestT& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftServerlessClient::CreateSnapshot, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a snapshot copy configuration that lets you copy snapshots to another
+         * Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshotCopyConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSnapshotCopyConfigurationOutcome CreateSnapshotCopyConfiguration(const Model::CreateSnapshotCopyConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSnapshotCopyConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSnapshotCopyConfigurationRequestT = Model::CreateSnapshotCopyConfigurationRequest>
+        Model::CreateSnapshotCopyConfigurationOutcomeCallable CreateSnapshotCopyConfigurationCallable(const CreateSnapshotCopyConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::CreateSnapshotCopyConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSnapshotCopyConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSnapshotCopyConfigurationRequestT = Model::CreateSnapshotCopyConfigurationRequest>
+        void CreateSnapshotCopyConfigurationAsync(const CreateSnapshotCopyConfigurationRequestT& request, const CreateSnapshotCopyConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::CreateSnapshotCopyConfiguration, request, handler, context);
         }
 
         /**
@@ -379,6 +432,31 @@ namespace RedshiftServerless
         }
 
         /**
+         * <p>Deletes a scheduled action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteScheduledAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteScheduledActionOutcome DeleteScheduledAction(const Model::DeleteScheduledActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteScheduledActionRequestT = Model::DeleteScheduledActionRequest>
+        Model::DeleteScheduledActionOutcomeCallable DeleteScheduledActionCallable(const DeleteScheduledActionRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::DeleteScheduledAction, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteScheduledActionRequestT = Model::DeleteScheduledActionRequest>
+        void DeleteScheduledActionAsync(const DeleteScheduledActionRequestT& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::DeleteScheduledAction, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a snapshot from Amazon Redshift Serverless.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshot">AWS
@@ -402,6 +480,31 @@ namespace RedshiftServerless
         void DeleteSnapshotAsync(const DeleteSnapshotRequestT& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftServerlessClient::DeleteSnapshot, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a snapshot copy configuration</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshotCopyConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSnapshotCopyConfigurationOutcome DeleteSnapshotCopyConfiguration(const Model::DeleteSnapshotCopyConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSnapshotCopyConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSnapshotCopyConfigurationRequestT = Model::DeleteSnapshotCopyConfigurationRequest>
+        Model::DeleteSnapshotCopyConfigurationOutcomeCallable DeleteSnapshotCopyConfigurationCallable(const DeleteSnapshotCopyConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::DeleteSnapshotCopyConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSnapshotCopyConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSnapshotCopyConfigurationRequestT = Model::DeleteSnapshotCopyConfigurationRequest>
+        void DeleteSnapshotCopyConfigurationAsync(const DeleteSnapshotCopyConfigurationRequestT& request, const DeleteSnapshotCopyConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::DeleteSnapshotCopyConfiguration, request, handler, context);
         }
 
         /**
@@ -618,6 +721,31 @@ namespace RedshiftServerless
         }
 
         /**
+         * <p>Returns information about a scheduled action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetScheduledAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetScheduledActionOutcome GetScheduledAction(const Model::GetScheduledActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetScheduledActionRequestT = Model::GetScheduledActionRequest>
+        Model::GetScheduledActionOutcomeCallable GetScheduledActionCallable(const GetScheduledActionRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::GetScheduledAction, request);
+        }
+
+        /**
+         * An Async wrapper for GetScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetScheduledActionRequestT = Model::GetScheduledActionRequest>
+        void GetScheduledActionAsync(const GetScheduledActionRequestT& request, const GetScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::GetScheduledAction, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about a specific snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetSnapshot">AWS
          * API Reference</a></p>
@@ -819,6 +947,57 @@ namespace RedshiftServerless
         void ListRecoveryPointsAsync(const ListRecoveryPointsRequestT& request, const ListRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListRecoveryPoints, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of scheduled actions. You can use the flags to filter the list
+         * of returned scheduled actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListScheduledActionsOutcome ListScheduledActions(const Model::ListScheduledActionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListScheduledActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListScheduledActionsRequestT = Model::ListScheduledActionsRequest>
+        Model::ListScheduledActionsOutcomeCallable ListScheduledActionsCallable(const ListScheduledActionsRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::ListScheduledActions, request);
+        }
+
+        /**
+         * An Async wrapper for ListScheduledActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListScheduledActionsRequestT = Model::ListScheduledActionsRequest>
+        void ListScheduledActionsAsync(const ListScheduledActionsRequestT& request, const ListScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::ListScheduledActions, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of snapshot copy configurations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSnapshotCopyConfigurationsOutcome ListSnapshotCopyConfigurations(const Model::ListSnapshotCopyConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSnapshotCopyConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSnapshotCopyConfigurationsRequestT = Model::ListSnapshotCopyConfigurationsRequest>
+        Model::ListSnapshotCopyConfigurationsOutcomeCallable ListSnapshotCopyConfigurationsCallable(const ListSnapshotCopyConfigurationsRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::ListSnapshotCopyConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListSnapshotCopyConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSnapshotCopyConfigurationsRequestT = Model::ListSnapshotCopyConfigurationsRequest>
+        void ListSnapshotCopyConfigurationsAsync(const ListSnapshotCopyConfigurationsRequestT& request, const ListSnapshotCopyConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::ListSnapshotCopyConfigurations, request, handler, context);
         }
 
         /**
@@ -1027,6 +1206,33 @@ namespace RedshiftServerless
         }
 
         /**
+         * <p>Restores a table from a recovery point to your Amazon Redshift Serverless
+         * instance. You can't use this operation to restore tables with interleaved sort
+         * keys.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromRecoveryPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestoreTableFromRecoveryPointOutcome RestoreTableFromRecoveryPoint(const Model::RestoreTableFromRecoveryPointRequest& request) const;
+
+        /**
+         * A Callable wrapper for RestoreTableFromRecoveryPoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RestoreTableFromRecoveryPointRequestT = Model::RestoreTableFromRecoveryPointRequest>
+        Model::RestoreTableFromRecoveryPointOutcomeCallable RestoreTableFromRecoveryPointCallable(const RestoreTableFromRecoveryPointRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::RestoreTableFromRecoveryPoint, request);
+        }
+
+        /**
+         * An Async wrapper for RestoreTableFromRecoveryPoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RestoreTableFromRecoveryPointRequestT = Model::RestoreTableFromRecoveryPointRequest>
+        void RestoreTableFromRecoveryPointAsync(const RestoreTableFromRecoveryPointRequestT& request, const RestoreTableFromRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::RestoreTableFromRecoveryPoint, request, handler, context);
+        }
+
+        /**
          * <p>Restores a table from a snapshot to your Amazon Redshift Serverless instance.
          * You can't use this operation to restore tables with <a
          * href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved
@@ -1186,6 +1392,31 @@ namespace RedshiftServerless
         }
 
         /**
+         * <p>Updates a scheduled action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateScheduledAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateScheduledActionOutcome UpdateScheduledAction(const Model::UpdateScheduledActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateScheduledAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateScheduledActionRequestT = Model::UpdateScheduledActionRequest>
+        Model::UpdateScheduledActionOutcomeCallable UpdateScheduledActionCallable(const UpdateScheduledActionRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::UpdateScheduledAction, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateScheduledAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateScheduledActionRequestT = Model::UpdateScheduledActionRequest>
+        void UpdateScheduledActionAsync(const UpdateScheduledActionRequestT& request, const UpdateScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::UpdateScheduledAction, request, handler, context);
+        }
+
+        /**
          * <p>Updates a snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshot">AWS
          * API Reference</a></p>
@@ -1208,6 +1439,31 @@ namespace RedshiftServerless
         void UpdateSnapshotAsync(const UpdateSnapshotRequestT& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftServerlessClient::UpdateSnapshot, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a snapshot copy configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshotCopyConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSnapshotCopyConfigurationOutcome UpdateSnapshotCopyConfiguration(const Model::UpdateSnapshotCopyConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSnapshotCopyConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSnapshotCopyConfigurationRequestT = Model::UpdateSnapshotCopyConfigurationRequest>
+        Model::UpdateSnapshotCopyConfigurationOutcomeCallable UpdateSnapshotCopyConfigurationCallable(const UpdateSnapshotCopyConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::UpdateSnapshotCopyConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSnapshotCopyConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSnapshotCopyConfigurationRequestT = Model::UpdateSnapshotCopyConfigurationRequest>
+        void UpdateSnapshotCopyConfigurationAsync(const UpdateSnapshotCopyConfigurationRequestT& request, const UpdateSnapshotCopyConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::UpdateSnapshotCopyConfiguration, request, handler, context);
         }
 
         /**
