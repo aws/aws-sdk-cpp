@@ -139,8 +139,11 @@ namespace VerifiedPermissions
          * policies that produced each decision.</p> <p>The <code>entities</code> of a
          * <code>BatchIsAuthorized</code> API request can contain up to 100 principals and
          * up to 100 resources. The <code>requests</code> of a
-         * <code>BatchIsAuthorized</code> API request can contain up to 30
-         * requests.</p><p><h3>See Also:</h3>   <a
+         * <code>BatchIsAuthorized</code> API request can contain up to 30 requests.</p>
+         *  <p>The <code>BatchIsAuthorized</code> operation doesn't have its own IAM
+         * permission. To authorize this operation for Amazon Web Services principals,
+         * include the permission <code>verifiedpermissions:IsAuthorized</code> in their
+         * IAM policies.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorized">AWS
          * API Reference</a></p>
          */

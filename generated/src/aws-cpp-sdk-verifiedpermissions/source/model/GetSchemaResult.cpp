@@ -53,6 +53,15 @@ GetSchemaResult& GetSchemaResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("namespaces"))
+  {
+    Aws::Utils::Array<JsonView> namespacesJsonList = jsonValue.GetArray("namespaces");
+    for(unsigned namespacesIndex = 0; namespacesIndex < namespacesJsonList.GetLength(); ++namespacesIndex)
+    {
+      m_namespaces.push_back(namespacesJsonList[namespacesIndex].AsString());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

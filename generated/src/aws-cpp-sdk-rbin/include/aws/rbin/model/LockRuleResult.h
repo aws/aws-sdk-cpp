@@ -329,6 +329,42 @@ namespace Model
     inline LockRuleResult& WithLockState(LockState&& value) { SetLockState(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline const Aws::String& GetRuleArn() const{ return m_ruleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline void SetRuleArn(const Aws::String& value) { m_ruleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline void SetRuleArn(Aws::String&& value) { m_ruleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline void SetRuleArn(const char* value) { m_ruleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline LockRuleResult& WithRuleArn(const Aws::String& value) { SetRuleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline LockRuleResult& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline LockRuleResult& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -367,6 +403,8 @@ namespace Model
     LockConfiguration m_lockConfiguration;
 
     LockState m_lockState;
+
+    Aws::String m_ruleArn;
 
     Aws::String m_requestId;
   };

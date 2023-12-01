@@ -153,6 +153,86 @@ namespace Model
      */
     inline PolicyStoreItem& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The date and time the policy store was most recently updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
+
+    /**
+     * <p>The date and time the policy store was most recently updated.</p>
+     */
+    inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
+
+    /**
+     * <p>The date and time the policy store was most recently updated.</p>
+     */
+    inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
+
+    /**
+     * <p>The date and time the policy store was most recently updated.</p>
+     */
+    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::move(value); }
+
+    /**
+     * <p>The date and time the policy store was most recently updated.</p>
+     */
+    inline PolicyStoreItem& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
+
+    /**
+     * <p>The date and time the policy store was most recently updated.</p>
+     */
+    inline PolicyStoreItem& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline PolicyStoreItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline PolicyStoreItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline PolicyStoreItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
 
     Aws::String m_policyStoreId;
@@ -163,6 +243,12 @@ namespace Model
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdatedDate;
+    bool m_lastUpdatedDateHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model
