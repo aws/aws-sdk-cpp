@@ -1,13 +1,13 @@
 # Advance Topics and tips
 
 __This section includes the following topics:__
-* [Uninstalling (auto build only)](#Uninstalling)
-* [Overriding Your HTTP Client](#Overriding-your-Http-Client)
-* [Error Handling](#Error-Handling)
+* [Uninstalling (auto build only)](#uninstalling)
+* [Overriding Your HTTP Client](#overriding-your-http-client)
+* [Error Handling](#error-handling)
 * [Provided Utilities](#provided-utilities)
-* [Controlling IOStreams used by the HttpClient and the AWSClient](#Controlling-IOStreams-used-by-the-HttpClient-and-the-AWSClient)
-* [Known Limitations](#Known-Limitations)
-
+* [Controlling IOStreams used by the HttpClient and the AWSClient](#controlling-iostreams-used-by-the-httpclient-and-the-awsclient)
+* [Known Limitations](#known-limitations)
+* [Generating custom clients](#generating-custom-clients)
 
 
 ### Uninstalling:
@@ -128,3 +128,17 @@ auto getObjectOutcome = s3Client->GetObject(getObjectRequest);
 #### Aws::StringStream max size
 
 [`Aws::StringStream`](https://github.com/aws/aws-sdk-cpp/blob/main/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSStringStream.h) is an alias to [`std::basic_stringstream`](https://en.cppreference.com/w/cpp/io/basic_stringstream) which effectively stores an instance of std::basic_string and performs the input and output operations on it. That being known the max size limitation of a string stream is the maximum size for a string in that toolchain [`std::basic_string::max_size`](https://en.cppreference.com/w/cpp/string/basic_string/max_size).
+
+### Generating Custom Clients
+#### Requirements
+python3, jdk (1.8+), maven
+#### Steps
+Place your new model files in the correct folders:
+  - c2j model (looks like this: `mycustomservice-2020-08-01.normal.json`)
+    - In this path: `aws-sdk-cpp/tools/code-generation/api-descriptions`
+  - endpoints models (looks like this: `mycustomservice-2020-08-01.endpoint-tests.json mycustomservice-2020-08-01.endpoint-rule-set.json ect.`)
+    - In this path: `aws-sdk-cpp/tools/code-generation/endpoints`
+Run code generation
+```sh
+$ python3 tools/scripts/run_code_generation.py --client_list mycustomservice
+```
