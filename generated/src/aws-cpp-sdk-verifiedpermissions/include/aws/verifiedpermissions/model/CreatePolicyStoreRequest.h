@@ -233,6 +233,55 @@ namespace Model
      */
     inline CreatePolicyStoreRequest& WithValidationSettings(ValidationSettings&& value) { SetValidationSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline CreatePolicyStoreRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline CreatePolicyStoreRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline CreatePolicyStoreRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -240,6 +289,9 @@ namespace Model
 
     ValidationSettings m_validationSettings;
     bool m_validationSettingsHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

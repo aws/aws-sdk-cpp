@@ -59,6 +59,12 @@ GetPolicyStoreResult& GetPolicyStoreResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

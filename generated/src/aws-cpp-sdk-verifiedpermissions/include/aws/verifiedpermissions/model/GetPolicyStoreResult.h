@@ -184,6 +184,49 @@ namespace Model
     inline GetPolicyStoreResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline GetPolicyStoreResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline GetPolicyStoreResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline GetPolicyStoreResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -216,6 +259,8 @@ namespace Model
     Aws::Utils::DateTime m_createdDate;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
+
+    Aws::String m_description;
 
     Aws::String m_requestId;
   };

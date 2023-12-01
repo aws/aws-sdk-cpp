@@ -16,17 +16,22 @@ namespace Aws
 namespace QConnect
 {
   /**
-   * <p>Amazon Q in Connect is a generative AI customer service assistant. It is an
-   * LLM-enhanced evolution of Amazon Connect Wisdom that delivers real-time
-   * recommendations to help contact center agents resolve customer issues quickly
-   * and accurately.</p> <p>Amazon Q automatically detects customer intent during
-   * calls and chats using conversational analytics and natural language
-   * understanding (NLU). It then provides agents with immediate, real-time
-   * generative responses and suggested actions, and links to relevant documents and
-   * articles. Agents can also query Amazon Q directly using natural language or
-   * keywords to answer customer requests.</p> <p>Use the Amazon Q in Connect APIs to
-   * create an assistant and a knowledge base, for example, or manage content by
-   * uploading custom files.</p> <p>For more information, see <a
+   *  <p> <b>Powered by Amazon Bedrock</b>: Amazon Web Services implements <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/abuse-detection.html">automated
+   * abuse detection</a>. Because Amazon Q in Connect is built on Amazon Bedrock,
+   * users can take full advantage of the controls implemented in Amazon Bedrock to
+   * enforce safety, security, and the responsible use of artificial intelligence
+   * (AI).</p>  <p>Amazon Q in Connect is a generative AI customer service
+   * assistant. It is an LLM-enhanced evolution of Amazon Connect Wisdom that
+   * delivers real-time recommendations to help contact center agents resolve
+   * customer issues quickly and accurately.</p> <p>Amazon Q automatically detects
+   * customer intent during calls and chats using conversational analytics and
+   * natural language understanding (NLU). It then provides agents with immediate,
+   * real-time generative responses and suggested actions, and links to relevant
+   * documents and articles. Agents can also query Amazon Q directly using natural
+   * language or keywords to answer customer requests.</p> <p>Use the Amazon Q in
+   * Connect APIs to create an assistant and a knowledge base, for example, or manage
+   * content by uploading custom files.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-q-connect.html">Use
    * Amazon Q in Connect for generative AI powered agent assistance in real-time</a>
    * in the <i>Amazon Connect Administrator Guide</i>.</p>
@@ -209,7 +214,7 @@ namespace QConnect
         }
 
         /**
-         * <p>Creates a Amazon Q quick response.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Q quick response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateQuickResponse">AWS
          * API Reference</a></p>
          */
@@ -861,6 +866,32 @@ namespace QConnect
         }
 
         /**
+         * <p>Provides feedback against the specified assistant for the specified target.
+         * This API only supports generative targets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/PutFeedback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutFeedbackOutcome PutFeedback(const Model::PutFeedbackRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutFeedbackRequestT = Model::PutFeedbackRequest>
+        Model::PutFeedbackOutcomeCallable PutFeedbackCallable(const PutFeedbackRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::PutFeedback, request);
+        }
+
+        /**
+         * An Async wrapper for PutFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutFeedbackRequestT = Model::PutFeedbackRequest>
+        void PutFeedbackAsync(const PutFeedbackRequestT& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::PutFeedback, request, handler, context);
+        }
+
+        /**
          * <p>Performs a manual search against the specified assistant. To retrieve
          * recommendations for an assistant, use <a
          * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.
@@ -940,7 +971,7 @@ namespace QConnect
         }
 
         /**
-         * <p>Searches existing Amazon Q quick responses in a Amazon Q knowledge
+         * <p>Searches existing Amazon Q quick responses in an Amazon Q knowledge
          * base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchQuickResponses">AWS
          * API Reference</a></p>

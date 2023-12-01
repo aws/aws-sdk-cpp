@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The capability configuration for a Amazon Q assistant. </p><p><h3>See
+   * <p>The capability configuration for an Amazon Q assistant. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/AssistantCapabilityConfiguration">AWS
    * API Reference</a></p>
