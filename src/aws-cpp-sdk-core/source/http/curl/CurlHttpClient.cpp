@@ -861,7 +861,11 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::ConnectLatency), static_cast<int64_t>(timep * 1000));
         }
 
+#if LIBCURL_VERSION_NUM >= 0x073700 // 7.55.0
         ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME_T, &timep); // Ssl Latency
+#else
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME, &timep); // Ssl Latency
+#endif
         if (ret == CURLE_OK)
         {
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), static_cast<int64_t>(timep * 1000));
@@ -880,7 +884,11 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::DownloadSpeed), static_cast<int64_t>(speed));
         }
 
+#if LIBCURL_VERSION_NUM >= 0x073700 // 7.55.0
         ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_UPLOAD_T, &speed); // Upload Speed
+#else
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_UPLOAD, &speed); // Upload Speed
+#endif
         if (ret == CURLE_OK)
         {
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::UploadSpeed), static_cast<int64_t>(speed));
