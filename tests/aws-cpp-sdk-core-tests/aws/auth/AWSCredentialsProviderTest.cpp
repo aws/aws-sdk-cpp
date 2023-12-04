@@ -130,7 +130,6 @@ public:
         SaveEnvironmentVariable("AWS_PROFILE");
         SaveEnvironmentVariable("AWS_ACCESS_KEY_ID");
         SaveEnvironmentVariable("AWS_SECRET_ACCESS_KEY");
-        SaveEnvironmentVariable("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
         SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
 
         Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
@@ -292,25 +291,6 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
-TEST_F(EnvironmentModifyingTest, TestProvidersNumberInCredentialsProvidersChain)
-{
-    Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
-    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_DISABLED");
-
-    DefaultAWSCredentialsProviderChain providersChainWith6ProvidersEC2;
-    ASSERT_EQ(6u, providersChainWith6ProvidersEC2.GetProviders().size()); //With EC2 instance metadata, without ECS task role.
-
-    Aws::Environment::SetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "TestVar", 1);
-    DefaultAWSCredentialsProviderChain providersChainWith6ProvidersECS;
-    ASSERT_EQ(6u, providersChainWith6ProvidersECS.GetProviders().size()); //With ECS task role, without ec2
-
-    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "TruE", 1);
-    Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI"); //Without ECS task role, without ec2
-    DefaultAWSCredentialsProviderChain providersChainWith5Providers;
-    ASSERT_EQ(5u, providersChainWith5Providers.GetProviders().size());
-}
-
-
 class InstanceProfileCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 };
@@ -419,107 +399,6 @@ TEST_F(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadDa
     mockClient->SetMockedCredentialsValue(badData);
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 1000 * 60 * 15);
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
-}
-
-class TaskRoleCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTestSuite
-{
-};
-
-TEST_F(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsGoodData)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
-    mockClient->SetMockedCredentialsValue(validCredentials);
-
-    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
-    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    ASSERT_EQ("goodToken", provider.GetAWSCredentials().GetSessionToken());
-}
-
-
-TEST_F(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-
-    Aws::String goodCredentialsPrefix("{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": ");
-    Aws::String betterCredentialsPrefix("{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": ");
-    DateTime now = DateTime::Now();
-    Aws::String dateStringNow = now.ToGmtString(DateFormat::ISO_8601);
-
-    DateTime after = now.Millis() + 1000;
-    Aws::String dateStringAfter = after.ToGmtString(DateFormat::ISO_8601);
-
-    // Set the current credentials expiration date to now, which expires immediately.
-    // Next time when calling GetAWSCredentials, the credentials will be refreshed.
-    Aws::StringStream validCredentials;
-    validCredentials << goodCredentialsPrefix << "\"" << dateStringNow << "\" }";
-
-    mockClient->SetMockedCredentialsValue(validCredentials.str());
-
-    TaskRoleCredentialsProvider provider(mockClient, 10);
-    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-
-    Aws::StringStream nextSetOfCredentials;
-    nextSetOfCredentials << betterCredentialsPrefix << "\"" << dateStringAfter << "\" }";
-    mockClient->SetMockedCredentialsValue(nextSetOfCredentials.str());
-
-    ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-}
-
-TEST_F(TaskRoleCredentialsProviderTest, TestThatProviderDontRefresh)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-
-    Aws::String goodCredentialsPrefix("{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": ");
-    DateTime after = DateTime::Now().Millis() + 60 * 1000;
-    Aws::String dateStringAfter = after.ToGmtString(DateFormat::ISO_8601);
-
-    // Set the credentials expiration date to 60 seconds from now on.
-    Aws::StringStream validCredentials;
-    validCredentials << goodCredentialsPrefix << "\"" << dateStringAfter << "\" }";
-
-    mockClient->SetMockedCredentialsValue(validCredentials.str());
-
-    // Set the refresh frequency to 0s, immediately trying refresh each time GetAWSCredentials() get called.
-    // If the credential has not expired, it will not be refreshed.
-    TaskRoleCredentialsProvider provider(mockClient, 0);
-    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-
-    // After sleeping for 3 seconds, the credentials will not be refreshed.
-    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-}
-
-TEST_F(TaskRoleCredentialsProviderTest, TestECSCrendentialsClientCouldntFindCredentials)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-    const char* emptyCredentials = "";
-    mockClient->SetMockedCredentialsValue(emptyCredentials);
-
-    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
-
-    const char* missingInfo = "{ }";
-    mockClient->SetMockedCredentialsValue(missingInfo);
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
-}
-
-TEST_F(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsBadData)
-{
-    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
-    const char* badData = "blah blah blah, I'm bad";
-    mockClient->SetMockedCredentialsValue(badData);
-
-    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
