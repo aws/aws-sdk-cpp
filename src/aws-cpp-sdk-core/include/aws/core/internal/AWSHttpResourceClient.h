@@ -189,7 +189,14 @@ namespace Aws
              */
             virtual Aws::String GetECSCredentials() const
             {
-                return GetResource(m_endpoint.c_str(), m_resourcePath.c_str(), m_token.c_str());
+                return GetResource(m_endpoint.c_str(),
+                                   m_resourcePath.c_str(),
+                                   m_token.empty() ? nullptr : m_token.c_str());
+            }
+
+            inline void SetToken(Aws::String token)
+            {
+                m_token = std::move(token);
             }
 
         private:
