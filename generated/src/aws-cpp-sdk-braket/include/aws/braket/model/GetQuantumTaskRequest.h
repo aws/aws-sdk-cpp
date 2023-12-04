@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>the ARN of the task to retrieve.</p>
+     * <p>The ARN of the task to retrieve.</p>
      */
     inline const Aws::String& GetQuantumTaskArn() const{ return m_quantumTaskArn; }
 
     /**
-     * <p>the ARN of the task to retrieve.</p>
+     * <p>The ARN of the task to retrieve.</p>
      */
     inline bool QuantumTaskArnHasBeenSet() const { return m_quantumTaskArnHasBeenSet; }
 
     /**
-     * <p>the ARN of the task to retrieve.</p>
+     * <p>The ARN of the task to retrieve.</p>
      */
     inline void SetQuantumTaskArn(const Aws::String& value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn = value; }
 
     /**
-     * <p>the ARN of the task to retrieve.</p>
+     * <p>The ARN of the task to retrieve.</p>
      */
     inline void SetQuantumTaskArn(Aws::String&& value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn = std::move(value); }
 
     /**
-     * <p>the ARN of the task to retrieve.</p>
+     * <p>The ARN of the task to retrieve.</p>
      */
     inline void SetQuantumTaskArn(const char* value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn.assign(value); }
 
     /**
-     * <p>the ARN of the task to retrieve.</p>
+     * <p>The ARN of the task to retrieve.</p>
      */
     inline GetQuantumTaskRequest& WithQuantumTaskArn(const Aws::String& value) { SetQuantumTaskArn(value); return *this;}
 
     /**
-     * <p>the ARN of the task to retrieve.</p>
+     * <p>The ARN of the task to retrieve.</p>
      */
     inline GetQuantumTaskRequest& WithQuantumTaskArn(Aws::String&& value) { SetQuantumTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>the ARN of the task to retrieve.</p>
+     * <p>The ARN of the task to retrieve.</p>
      */
     inline GetQuantumTaskRequest& WithQuantumTaskArn(const char* value) { SetQuantumTaskArn(value); return *this;}
 

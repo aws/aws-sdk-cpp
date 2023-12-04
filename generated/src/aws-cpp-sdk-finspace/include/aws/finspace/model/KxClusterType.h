@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     HDB,
     RDB,
-    GATEWAY
+    GATEWAY,
+    GP
   };
 
 namespace KxClusterTypeMapper

@@ -16,6 +16,7 @@ namespace Model
   enum class KxClusterCodeDeploymentStrategy
   {
     NOT_SET,
+    NO_RESTART,
     ROLLING,
     FORCE
   };

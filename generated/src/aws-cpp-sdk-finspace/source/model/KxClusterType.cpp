@@ -23,6 +23,7 @@ namespace Aws
         static const int HDB_HASH = HashingUtils::HashString("HDB");
         static const int RDB_HASH = HashingUtils::HashString("RDB");
         static const int GATEWAY_HASH = HashingUtils::HashString("GATEWAY");
+        static const int GP_HASH = HashingUtils::HashString("GP");
 
 
         KxClusterType GetKxClusterTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == GATEWAY_HASH)
           {
             return KxClusterType::GATEWAY;
+          }
+          else if (hashCode == GP_HASH)
+          {
+            return KxClusterType::GP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "RDB";
           case KxClusterType::GATEWAY:
             return "GATEWAY";
+          case KxClusterType::GP:
+            return "GP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

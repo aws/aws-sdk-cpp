@@ -183,7 +183,8 @@ namespace Model
      * <p>Specifies a Q program that will be run at launch of a cluster. It is a
      * relative path within <i>.zip</i> file that contains the custom code, which will
      * be loaded on the cluster. It must include the file name itself. For example,
-     * <code>somedir/init.q</code>.</p>
+     * <code>somedir/init.q</code>.</p> <p>You cannot update this parameter for a
+     * <code>NO_RESTART</code> deployment.</p>
      */
     inline const Aws::String& GetInitializationScript() const{ return m_initializationScript; }
 
@@ -191,7 +192,8 @@ namespace Model
      * <p>Specifies a Q program that will be run at launch of a cluster. It is a
      * relative path within <i>.zip</i> file that contains the custom code, which will
      * be loaded on the cluster. It must include the file name itself. For example,
-     * <code>somedir/init.q</code>.</p>
+     * <code>somedir/init.q</code>.</p> <p>You cannot update this parameter for a
+     * <code>NO_RESTART</code> deployment.</p>
      */
     inline bool InitializationScriptHasBeenSet() const { return m_initializationScriptHasBeenSet; }
 
@@ -199,7 +201,8 @@ namespace Model
      * <p>Specifies a Q program that will be run at launch of a cluster. It is a
      * relative path within <i>.zip</i> file that contains the custom code, which will
      * be loaded on the cluster. It must include the file name itself. For example,
-     * <code>somedir/init.q</code>.</p>
+     * <code>somedir/init.q</code>.</p> <p>You cannot update this parameter for a
+     * <code>NO_RESTART</code> deployment.</p>
      */
     inline void SetInitializationScript(const Aws::String& value) { m_initializationScriptHasBeenSet = true; m_initializationScript = value; }
 
@@ -207,7 +210,8 @@ namespace Model
      * <p>Specifies a Q program that will be run at launch of a cluster. It is a
      * relative path within <i>.zip</i> file that contains the custom code, which will
      * be loaded on the cluster. It must include the file name itself. For example,
-     * <code>somedir/init.q</code>.</p>
+     * <code>somedir/init.q</code>.</p> <p>You cannot update this parameter for a
+     * <code>NO_RESTART</code> deployment.</p>
      */
     inline void SetInitializationScript(Aws::String&& value) { m_initializationScriptHasBeenSet = true; m_initializationScript = std::move(value); }
 
@@ -215,7 +219,8 @@ namespace Model
      * <p>Specifies a Q program that will be run at launch of a cluster. It is a
      * relative path within <i>.zip</i> file that contains the custom code, which will
      * be loaded on the cluster. It must include the file name itself. For example,
-     * <code>somedir/init.q</code>.</p>
+     * <code>somedir/init.q</code>.</p> <p>You cannot update this parameter for a
+     * <code>NO_RESTART</code> deployment.</p>
      */
     inline void SetInitializationScript(const char* value) { m_initializationScriptHasBeenSet = true; m_initializationScript.assign(value); }
 
@@ -223,7 +228,8 @@ namespace Model
      * <p>Specifies a Q program that will be run at launch of a cluster. It is a
      * relative path within <i>.zip</i> file that contains the custom code, which will
      * be loaded on the cluster. It must include the file name itself. For example,
-     * <code>somedir/init.q</code>.</p>
+     * <code>somedir/init.q</code>.</p> <p>You cannot update this parameter for a
+     * <code>NO_RESTART</code> deployment.</p>
      */
     inline UpdateKxClusterCodeConfigurationRequest& WithInitializationScript(const Aws::String& value) { SetInitializationScript(value); return *this;}
 
@@ -231,7 +237,8 @@ namespace Model
      * <p>Specifies a Q program that will be run at launch of a cluster. It is a
      * relative path within <i>.zip</i> file that contains the custom code, which will
      * be loaded on the cluster. It must include the file name itself. For example,
-     * <code>somedir/init.q</code>.</p>
+     * <code>somedir/init.q</code>.</p> <p>You cannot update this parameter for a
+     * <code>NO_RESTART</code> deployment.</p>
      */
     inline UpdateKxClusterCodeConfigurationRequest& WithInitializationScript(Aws::String&& value) { SetInitializationScript(std::move(value)); return *this;}
 
@@ -239,48 +246,65 @@ namespace Model
      * <p>Specifies a Q program that will be run at launch of a cluster. It is a
      * relative path within <i>.zip</i> file that contains the custom code, which will
      * be loaded on the cluster. It must include the file name itself. For example,
-     * <code>somedir/init.q</code>.</p>
+     * <code>somedir/init.q</code>.</p> <p>You cannot update this parameter for a
+     * <code>NO_RESTART</code> deployment.</p>
      */
     inline UpdateKxClusterCodeConfigurationRequest& WithInitializationScript(const char* value) { SetInitializationScript(value); return *this;}
 
 
     /**
      * <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+     * <p>You cannot update this parameter for a <code>NO_RESTART</code>
+     * deployment.</p>
      */
     inline const Aws::Vector<KxCommandLineArgument>& GetCommandLineArguments() const{ return m_commandLineArguments; }
 
     /**
      * <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+     * <p>You cannot update this parameter for a <code>NO_RESTART</code>
+     * deployment.</p>
      */
     inline bool CommandLineArgumentsHasBeenSet() const { return m_commandLineArgumentsHasBeenSet; }
 
     /**
      * <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+     * <p>You cannot update this parameter for a <code>NO_RESTART</code>
+     * deployment.</p>
      */
     inline void SetCommandLineArguments(const Aws::Vector<KxCommandLineArgument>& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments = value; }
 
     /**
      * <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+     * <p>You cannot update this parameter for a <code>NO_RESTART</code>
+     * deployment.</p>
      */
     inline void SetCommandLineArguments(Aws::Vector<KxCommandLineArgument>&& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments = std::move(value); }
 
     /**
      * <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+     * <p>You cannot update this parameter for a <code>NO_RESTART</code>
+     * deployment.</p>
      */
     inline UpdateKxClusterCodeConfigurationRequest& WithCommandLineArguments(const Aws::Vector<KxCommandLineArgument>& value) { SetCommandLineArguments(value); return *this;}
 
     /**
      * <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+     * <p>You cannot update this parameter for a <code>NO_RESTART</code>
+     * deployment.</p>
      */
     inline UpdateKxClusterCodeConfigurationRequest& WithCommandLineArguments(Aws::Vector<KxCommandLineArgument>&& value) { SetCommandLineArguments(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+     * <p>You cannot update this parameter for a <code>NO_RESTART</code>
+     * deployment.</p>
      */
     inline UpdateKxClusterCodeConfigurationRequest& AddCommandLineArguments(const KxCommandLineArgument& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments.push_back(value); return *this; }
 
     /**
      * <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+     * <p>You cannot update this parameter for a <code>NO_RESTART</code>
+     * deployment.</p>
      */
     inline UpdateKxClusterCodeConfigurationRequest& AddCommandLineArguments(KxCommandLineArgument&& value) { m_commandLineArgumentsHasBeenSet = true; m_commandLineArguments.push_back(std::move(value)); return *this; }
 

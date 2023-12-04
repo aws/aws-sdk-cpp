@@ -191,7 +191,13 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * </ul>
      */
     inline const KxClusterType& GetClusterType() const{ return m_clusterType; }
 
@@ -208,7 +214,13 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * </ul>
      */
     inline void SetClusterType(const KxClusterType& value) { m_clusterType = value; }
 
@@ -225,7 +237,13 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * </ul>
      */
     inline void SetClusterType(KxClusterType&& value) { m_clusterType = std::move(value); }
 
@@ -242,7 +260,13 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * </ul>
      */
     inline GetKxClusterResult& WithClusterType(const KxClusterType& value) { SetClusterType(value); return *this;}
 
@@ -259,7 +283,13 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * </ul>
      */
     inline GetKxClusterResult& WithClusterType(KxClusterType&& value) { SetClusterType(std::move(value)); return *this;}
 

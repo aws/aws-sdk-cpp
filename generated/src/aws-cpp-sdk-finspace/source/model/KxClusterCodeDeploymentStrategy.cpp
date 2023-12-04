@@ -20,6 +20,7 @@ namespace Aws
       namespace KxClusterCodeDeploymentStrategyMapper
       {
 
+        static const int NO_RESTART_HASH = HashingUtils::HashString("NO_RESTART");
         static const int ROLLING_HASH = HashingUtils::HashString("ROLLING");
         static const int FORCE_HASH = HashingUtils::HashString("FORCE");
 
@@ -27,7 +28,11 @@ namespace Aws
         KxClusterCodeDeploymentStrategy GetKxClusterCodeDeploymentStrategyForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ROLLING_HASH)
+          if (hashCode == NO_RESTART_HASH)
+          {
+            return KxClusterCodeDeploymentStrategy::NO_RESTART;
+          }
+          else if (hashCode == ROLLING_HASH)
           {
             return KxClusterCodeDeploymentStrategy::ROLLING;
           }
@@ -51,6 +56,8 @@ namespace Aws
           {
           case KxClusterCodeDeploymentStrategy::NOT_SET:
             return {};
+          case KxClusterCodeDeploymentStrategy::NO_RESTART:
+            return "NO_RESTART";
           case KxClusterCodeDeploymentStrategy::ROLLING:
             return "ROLLING";
           case KxClusterCodeDeploymentStrategy::FORCE:
