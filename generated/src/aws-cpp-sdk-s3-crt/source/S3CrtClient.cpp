@@ -129,11 +129,11 @@
 #include <aws/crt/Types.h>
 #include <aws/crt/auth/Credentials.h>
 #include <aws/crt/http/HttpRequestResponse.h>
+#include <aws/crt/http/HttpProxyStrategy.h>
 #include <aws/crt/io/Stream.h>
 #include <aws/crt/io/Uri.h>
 #include <aws/http/request_response.h>
 #include <aws/common/string.h>
-#include <aws/crt/http/HttpProxyStrategy.h>
 
 using namespace Aws::Utils;
 
