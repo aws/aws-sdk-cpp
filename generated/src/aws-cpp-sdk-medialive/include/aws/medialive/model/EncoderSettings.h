@@ -9,6 +9,7 @@
 #include <aws/medialive/model/AvailBlanking.h>
 #include <aws/medialive/model/AvailConfiguration.h>
 #include <aws/medialive/model/BlackoutSlate.h>
+#include <aws/medialive/model/ColorCorrectionSettings.h>
 #include <aws/medialive/model/FeatureActivations.h>
 #include <aws/medialive/model/GlobalConfiguration.h>
 #include <aws/medialive/model/MotionGraphicsConfiguration.h>
@@ -207,6 +208,37 @@ namespace Model
      * Settings for caption decriptions
      */
     inline EncoderSettings& AddCaptionDescriptions(CaptionDescription&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Color correction settings
+     */
+    inline const ColorCorrectionSettings& GetColorCorrectionSettings() const{ return m_colorCorrectionSettings; }
+
+    /**
+     * Color correction settings
+     */
+    inline bool ColorCorrectionSettingsHasBeenSet() const { return m_colorCorrectionSettingsHasBeenSet; }
+
+    /**
+     * Color correction settings
+     */
+    inline void SetColorCorrectionSettings(const ColorCorrectionSettings& value) { m_colorCorrectionSettingsHasBeenSet = true; m_colorCorrectionSettings = value; }
+
+    /**
+     * Color correction settings
+     */
+    inline void SetColorCorrectionSettings(ColorCorrectionSettings&& value) { m_colorCorrectionSettingsHasBeenSet = true; m_colorCorrectionSettings = std::move(value); }
+
+    /**
+     * Color correction settings
+     */
+    inline EncoderSettings& WithColorCorrectionSettings(const ColorCorrectionSettings& value) { SetColorCorrectionSettings(value); return *this;}
+
+    /**
+     * Color correction settings
+     */
+    inline EncoderSettings& WithColorCorrectionSettings(ColorCorrectionSettings&& value) { SetColorCorrectionSettings(std::move(value)); return *this;}
 
 
     /**
@@ -460,6 +492,9 @@ namespace Model
 
     Aws::Vector<CaptionDescription> m_captionDescriptions;
     bool m_captionDescriptionsHasBeenSet = false;
+
+    ColorCorrectionSettings m_colorCorrectionSettings;
+    bool m_colorCorrectionSettingsHasBeenSet = false;
 
     FeatureActivations m_featureActivations;
     bool m_featureActivationsHasBeenSet = false;

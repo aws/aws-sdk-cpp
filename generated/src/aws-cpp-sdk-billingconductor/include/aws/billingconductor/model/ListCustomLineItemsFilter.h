@@ -176,6 +176,61 @@ namespace Model
      */
     inline ListCustomLineItemsFilter& AddArns(const char* value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The Amazon Web Services accounts in which this custom line item will be
+     * applied to.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+
+    /**
+     * <p>The Amazon Web Services accounts in which this custom line item will be
+     * applied to.</p>
+     */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services accounts in which this custom line item will be
+     * applied to.</p>
+     */
+    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
+
+    /**
+     * <p>The Amazon Web Services accounts in which this custom line item will be
+     * applied to.</p>
+     */
+    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services accounts in which this custom line item will be
+     * applied to.</p>
+     */
+    inline ListCustomLineItemsFilter& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services accounts in which this custom line item will be
+     * applied to.</p>
+     */
+    inline ListCustomLineItemsFilter& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services accounts in which this custom line item will be
+     * applied to.</p>
+     */
+    inline ListCustomLineItemsFilter& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Web Services accounts in which this custom line item will be
+     * applied to.</p>
+     */
+    inline ListCustomLineItemsFilter& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Web Services accounts in which this custom line item will be
+     * applied to.</p>
+     */
+    inline ListCustomLineItemsFilter& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_names;
@@ -186,6 +241,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_arns;
     bool m_arnsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_accountIds;
+    bool m_accountIdsHasBeenSet = false;
   };
 
 } // namespace Model

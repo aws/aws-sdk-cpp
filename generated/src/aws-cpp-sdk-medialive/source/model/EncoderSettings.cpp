@@ -24,6 +24,7 @@ EncoderSettings::EncoderSettings() :
     m_availConfigurationHasBeenSet(false),
     m_blackoutSlateHasBeenSet(false),
     m_captionDescriptionsHasBeenSet(false),
+    m_colorCorrectionSettingsHasBeenSet(false),
     m_featureActivationsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
     m_motionGraphicsConfigurationHasBeenSet(false),
@@ -41,6 +42,7 @@ EncoderSettings::EncoderSettings(JsonView jsonValue) :
     m_availConfigurationHasBeenSet(false),
     m_blackoutSlateHasBeenSet(false),
     m_captionDescriptionsHasBeenSet(false),
+    m_colorCorrectionSettingsHasBeenSet(false),
     m_featureActivationsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
     m_motionGraphicsConfigurationHasBeenSet(false),
@@ -94,6 +96,13 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
       m_captionDescriptions.push_back(captionDescriptionsJsonList[captionDescriptionsIndex].AsObject());
     }
     m_captionDescriptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("colorCorrectionSettings"))
+  {
+    m_colorCorrectionSettings = jsonValue.GetObject("colorCorrectionSettings");
+
+    m_colorCorrectionSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("featureActivations"))
@@ -202,6 +211,12 @@ JsonValue EncoderSettings::Jsonize() const
      captionDescriptionsJsonList[captionDescriptionsIndex].AsObject(m_captionDescriptions[captionDescriptionsIndex].Jsonize());
    }
    payload.WithArray("captionDescriptions", std::move(captionDescriptionsJsonList));
+
+  }
+
+  if(m_colorCorrectionSettingsHasBeenSet)
+  {
+   payload.WithObject("colorCorrectionSettings", m_colorCorrectionSettings.Jsonize());
 
   }
 

@@ -32,7 +32,8 @@ CustomLineItemListElement::CustomLineItemListElement() :
     m_lastModifiedTime(0),
     m_lastModifiedTimeHasBeenSet(false),
     m_associationSize(0),
-    m_associationSizeHasBeenSet(false)
+    m_associationSizeHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ CustomLineItemListElement::CustomLineItemListElement(JsonView jsonValue) :
     m_lastModifiedTime(0),
     m_lastModifiedTimeHasBeenSet(false),
     m_associationSize(0),
-    m_associationSizeHasBeenSet(false)
+    m_associationSizeHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -127,6 +129,13 @@ CustomLineItemListElement& CustomLineItemListElement::operator =(JsonView jsonVa
     m_associationSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -190,6 +199,12 @@ JsonValue CustomLineItemListElement::Jsonize() const
   if(m_associationSizeHasBeenSet)
   {
    payload.WithInt64("AssociationSize", m_associationSize);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
 
   }
 

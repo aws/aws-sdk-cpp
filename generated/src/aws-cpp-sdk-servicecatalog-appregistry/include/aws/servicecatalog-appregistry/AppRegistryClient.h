@@ -121,7 +121,7 @@ namespace AppRegistry
          * more information, see <a
          * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a>
          * in the AppRegistry Administrator Guide. </p> <ul> <li> <p>
-         * <code>resource-groups:DisassociateResource</code> </p> </li> <li> <p>
+         * <code>resource-groups:AssociateResource</code> </p> </li> <li> <p>
          * <code>cloudformation:UpdateStack</code> </p> </li> <li> <p>
          * <code>cloudformation:DescribeStacks</code> </p> </li> </ul>  <p> In
          * addition, you must have the tagging permission defined by the Amazon Web
