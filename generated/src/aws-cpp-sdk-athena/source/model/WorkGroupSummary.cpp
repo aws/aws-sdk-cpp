@@ -24,7 +24,8 @@ WorkGroupSummary::WorkGroupSummary() :
     m_stateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_identityCenterApplicationArnHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ WorkGroupSummary::WorkGroupSummary(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_identityCenterApplicationArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ WorkGroupSummary& WorkGroupSummary::operator =(JsonView jsonValue)
     m_engineVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdentityCenterApplicationArn"))
+  {
+    m_identityCenterApplicationArn = jsonValue.GetString("IdentityCenterApplicationArn");
+
+    m_identityCenterApplicationArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue WorkGroupSummary::Jsonize() const
   if(m_engineVersionHasBeenSet)
   {
    payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
+
+  }
+
+  if(m_identityCenterApplicationArnHasBeenSet)
+  {
+   payload.WithString("IdentityCenterApplicationArn", m_identityCenterApplicationArn);
 
   }
 

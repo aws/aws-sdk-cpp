@@ -907,7 +907,7 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the stack set imports resources that already exist.</p> 
+     * <p>Indicates if the change set imports resources that already exist.</p> 
      * <p>This parameter can only import resources that have <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom
      * names</a> in templates. To import resources that do not accept custom names,
@@ -918,7 +918,7 @@ namespace Model
     inline bool GetImportExistingResources() const{ return m_importExistingResources; }
 
     /**
-     * <p>Indicates if the stack set imports resources that already exist.</p> 
+     * <p>Indicates if the change set imports resources that already exist.</p> 
      * <p>This parameter can only import resources that have <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom
      * names</a> in templates. To import resources that do not accept custom names,
@@ -929,7 +929,7 @@ namespace Model
     inline void SetImportExistingResources(bool value) { m_importExistingResources = value; }
 
     /**
-     * <p>Indicates if the stack set imports resources that already exist.</p> 
+     * <p>Indicates if the change set imports resources that already exist.</p> 
      * <p>This parameter can only import resources that have <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom
      * names</a> in templates. To import resources that do not accept custom names,

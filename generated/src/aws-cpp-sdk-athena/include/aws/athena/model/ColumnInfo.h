@@ -336,32 +336,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates the column's nullable status.</p>
+     * <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
      */
     inline const ColumnNullable& GetNullable() const{ return m_nullable; }
 
     /**
-     * <p>Indicates the column's nullable status.</p>
+     * <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
      */
     inline bool NullableHasBeenSet() const { return m_nullableHasBeenSet; }
 
     /**
-     * <p>Indicates the column's nullable status.</p>
+     * <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
      */
     inline void SetNullable(const ColumnNullable& value) { m_nullableHasBeenSet = true; m_nullable = value; }
 
     /**
-     * <p>Indicates the column's nullable status.</p>
+     * <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
      */
     inline void SetNullable(ColumnNullable&& value) { m_nullableHasBeenSet = true; m_nullable = std::move(value); }
 
     /**
-     * <p>Indicates the column's nullable status.</p>
+     * <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
      */
     inline ColumnInfo& WithNullable(const ColumnNullable& value) { SetNullable(value); return *this;}
 
     /**
-     * <p>Indicates the column's nullable status.</p>
+     * <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
      */
     inline ColumnInfo& WithNullable(ColumnNullable&& value) { SetNullable(std::move(value)); return *this;}
 

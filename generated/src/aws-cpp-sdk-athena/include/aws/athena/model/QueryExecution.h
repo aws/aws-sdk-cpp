@@ -14,6 +14,7 @@
 #include <aws/athena/model/QueryExecutionStatistics.h>
 #include <aws/athena/model/EngineVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/athena/model/QueryResultsS3AccessGrantsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -550,6 +551,37 @@ namespace Model
      */
     inline QueryExecution& WithSubstatementType(const char* value) { SetSubstatementType(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline const QueryResultsS3AccessGrantsConfiguration& GetQueryResultsS3AccessGrantsConfiguration() const{ return m_queryResultsS3AccessGrantsConfiguration; }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline bool QueryResultsS3AccessGrantsConfigurationHasBeenSet() const { return m_queryResultsS3AccessGrantsConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline void SetQueryResultsS3AccessGrantsConfiguration(const QueryResultsS3AccessGrantsConfiguration& value) { m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true; m_queryResultsS3AccessGrantsConfiguration = value; }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline void SetQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration&& value) { m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true; m_queryResultsS3AccessGrantsConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline QueryExecution& WithQueryResultsS3AccessGrantsConfiguration(const QueryResultsS3AccessGrantsConfiguration& value) { SetQueryResultsS3AccessGrantsConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline QueryExecution& WithQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration&& value) { SetQueryResultsS3AccessGrantsConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_queryExecutionId;
@@ -587,6 +619,9 @@ namespace Model
 
     Aws::String m_substatementType;
     bool m_substatementTypeHasBeenSet = false;
+
+    QueryResultsS3AccessGrantsConfiguration m_queryResultsS3AccessGrantsConfiguration;
+    bool m_queryResultsS3AccessGrantsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

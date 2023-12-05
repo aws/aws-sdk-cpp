@@ -528,22 +528,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the stack set imports resources that already exist.</p>
+     * <p>Indicates if the change set imports resources that already exist.</p>
      */
     inline bool GetImportExistingResources() const{ return m_importExistingResources; }
 
     /**
-     * <p>Indicates if the stack set imports resources that already exist.</p>
+     * <p>Indicates if the change set imports resources that already exist.</p>
      */
     inline bool ImportExistingResourcesHasBeenSet() const { return m_importExistingResourcesHasBeenSet; }
 
     /**
-     * <p>Indicates if the stack set imports resources that already exist.</p>
+     * <p>Indicates if the change set imports resources that already exist.</p>
      */
     inline void SetImportExistingResources(bool value) { m_importExistingResourcesHasBeenSet = true; m_importExistingResources = value; }
 
     /**
-     * <p>Indicates if the stack set imports resources that already exist.</p>
+     * <p>Indicates if the change set imports resources that already exist.</p>
      */
     inline ChangeSetSummary& WithImportExistingResources(bool value) { SetImportExistingResources(value); return *this;}
 
