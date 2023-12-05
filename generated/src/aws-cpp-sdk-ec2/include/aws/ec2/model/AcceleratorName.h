@@ -24,7 +24,10 @@ namespace Model
     radeon_pro_v520,
     t4,
     vu9p,
-    v100
+    v100,
+    a10g,
+    h100,
+    t4g
   };
 
 namespace AcceleratorNameMapper

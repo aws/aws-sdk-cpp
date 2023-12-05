@@ -29,6 +29,9 @@ namespace Aws
         static const int t4_HASH = HashingUtils::HashString("t4");
         static const int vu9p_HASH = HashingUtils::HashString("vu9p");
         static const int v100_HASH = HashingUtils::HashString("v100");
+        static const int a10g_HASH = HashingUtils::HashString("a10g");
+        static const int h100_HASH = HashingUtils::HashString("h100");
+        static const int t4g_HASH = HashingUtils::HashString("t4g");
 
 
         AcceleratorName GetAcceleratorNameForName(const Aws::String& name)
@@ -70,6 +73,18 @@ namespace Aws
           {
             return AcceleratorName::v100;
           }
+          else if (hashCode == a10g_HASH)
+          {
+            return AcceleratorName::a10g;
+          }
+          else if (hashCode == h100_HASH)
+          {
+            return AcceleratorName::h100;
+          }
+          else if (hashCode == t4g_HASH)
+          {
+            return AcceleratorName::t4g;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +119,12 @@ namespace Aws
             return "vu9p";
           case AcceleratorName::v100:
             return "v100";
+          case AcceleratorName::a10g:
+            return "a10g";
+          case AcceleratorName::h100:
+            return "h100";
+          case AcceleratorName::t4g:
+            return "t4g";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

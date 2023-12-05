@@ -161,6 +161,9 @@ namespace Model
      * generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience
      * generation job inherits the tags from the configured audience model, by default.
      * Tags in the <a>StartAudienceGenerationJob</a> will override the default.</p>
+     * <p>When the client is in a different account than the configured audience model,
+     * the tags from the client are never applied to a resource in the caller's
+     * account.</p>
      */
     inline const TagOnCreatePolicy& GetChildResourceTagOnCreatePolicy() const{ return m_childResourceTagOnCreatePolicy; }
 
@@ -171,6 +174,9 @@ namespace Model
      * generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience
      * generation job inherits the tags from the configured audience model, by default.
      * Tags in the <a>StartAudienceGenerationJob</a> will override the default.</p>
+     * <p>When the client is in a different account than the configured audience model,
+     * the tags from the client are never applied to a resource in the caller's
+     * account.</p>
      */
     inline bool ChildResourceTagOnCreatePolicyHasBeenSet() const { return m_childResourceTagOnCreatePolicyHasBeenSet; }
 
@@ -181,6 +187,9 @@ namespace Model
      * generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience
      * generation job inherits the tags from the configured audience model, by default.
      * Tags in the <a>StartAudienceGenerationJob</a> will override the default.</p>
+     * <p>When the client is in a different account than the configured audience model,
+     * the tags from the client are never applied to a resource in the caller's
+     * account.</p>
      */
     inline void SetChildResourceTagOnCreatePolicy(const TagOnCreatePolicy& value) { m_childResourceTagOnCreatePolicyHasBeenSet = true; m_childResourceTagOnCreatePolicy = value; }
 
@@ -191,6 +200,9 @@ namespace Model
      * generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience
      * generation job inherits the tags from the configured audience model, by default.
      * Tags in the <a>StartAudienceGenerationJob</a> will override the default.</p>
+     * <p>When the client is in a different account than the configured audience model,
+     * the tags from the client are never applied to a resource in the caller's
+     * account.</p>
      */
     inline void SetChildResourceTagOnCreatePolicy(TagOnCreatePolicy&& value) { m_childResourceTagOnCreatePolicyHasBeenSet = true; m_childResourceTagOnCreatePolicy = std::move(value); }
 
@@ -201,6 +213,9 @@ namespace Model
      * generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience
      * generation job inherits the tags from the configured audience model, by default.
      * Tags in the <a>StartAudienceGenerationJob</a> will override the default.</p>
+     * <p>When the client is in a different account than the configured audience model,
+     * the tags from the client are never applied to a resource in the caller's
+     * account.</p>
      */
     inline CreateConfiguredAudienceModelRequest& WithChildResourceTagOnCreatePolicy(const TagOnCreatePolicy& value) { SetChildResourceTagOnCreatePolicy(value); return *this;}
 
@@ -211,6 +226,9 @@ namespace Model
      * generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience
      * generation job inherits the tags from the configured audience model, by default.
      * Tags in the <a>StartAudienceGenerationJob</a> will override the default.</p>
+     * <p>When the client is in a different account than the configured audience model,
+     * the tags from the client are never applied to a resource in the caller's
+     * account.</p>
      */
     inline CreateConfiguredAudienceModelRequest& WithChildResourceTagOnCreatePolicy(TagOnCreatePolicy&& value) { SetChildResourceTagOnCreatePolicy(std::move(value)); return *this;}
 

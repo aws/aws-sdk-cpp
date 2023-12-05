@@ -24,6 +24,7 @@ namespace Aws
         static const int amd_HASH = HashingUtils::HashString("amd");
         static const int nvidia_HASH = HashingUtils::HashString("nvidia");
         static const int xilinx_HASH = HashingUtils::HashString("xilinx");
+        static const int habana_HASH = HashingUtils::HashString("habana");
 
 
         AcceleratorManufacturer GetAcceleratorManufacturerForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == xilinx_HASH)
           {
             return AcceleratorManufacturer::xilinx;
+          }
+          else if (hashCode == habana_HASH)
+          {
+            return AcceleratorManufacturer::habana;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "nvidia";
           case AcceleratorManufacturer::xilinx:
             return "xilinx";
+          case AcceleratorManufacturer::habana:
+            return "habana";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

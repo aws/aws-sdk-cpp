@@ -19,7 +19,8 @@ namespace Model
     amazon_web_services,
     amd,
     nvidia,
-    xilinx
+    xilinx,
+    habana
   };
 
 namespace AcceleratorManufacturerMapper
