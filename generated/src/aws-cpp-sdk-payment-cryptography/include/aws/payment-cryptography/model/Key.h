@@ -298,140 +298,116 @@ namespace Model
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline const Aws::String& GetKeyCheckValue() const{ return m_keyCheckValue; }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline bool KeyCheckValueHasBeenSet() const { return m_keyCheckValueHasBeenSet; }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline void SetKeyCheckValue(const Aws::String& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = value; }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline void SetKeyCheckValue(Aws::String&& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = std::move(value); }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline void SetKeyCheckValue(const char* value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue.assign(value); }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline Key& WithKeyCheckValue(const Aws::String& value) { SetKeyCheckValue(value); return *this;}
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline Key& WithKeyCheckValue(Aws::String&& value) { SetKeyCheckValue(std::move(value)); return *this;}
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline Key& WithKeyCheckValue(const char* value) { SetKeyCheckValue(value); return *this;}
 
 
     /**
-     * <p>The algorithm used for calculating key check value (KCV) for DES and AES
-     * keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV
-     * by encrypting 8 bytes, each with value '00', with the key to be checked and
-     * retaining the 3 highest order bytes of the encrypted result. For an AES key,
-     * Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes,
-     * each with value '01', with the key to be checked and retaining the 3 highest
-     * order bytes of the encrypted result.</p>
+     * <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate
+     * the key check value (KCV). It is used to validate the key integrity.</p> <p>For
+     * TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero,
+     * with the key to be checked and retaining the 3 highest order bytes of the
+     * encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where
+     * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
+     * the encrypted result.</p>
      */
     inline const KeyCheckValueAlgorithm& GetKeyCheckValueAlgorithm() const{ return m_keyCheckValueAlgorithm; }
 
     /**
-     * <p>The algorithm used for calculating key check value (KCV) for DES and AES
-     * keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV
-     * by encrypting 8 bytes, each with value '00', with the key to be checked and
-     * retaining the 3 highest order bytes of the encrypted result. For an AES key,
-     * Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes,
-     * each with value '01', with the key to be checked and retaining the 3 highest
-     * order bytes of the encrypted result.</p>
+     * <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate
+     * the key check value (KCV). It is used to validate the key integrity.</p> <p>For
+     * TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero,
+     * with the key to be checked and retaining the 3 highest order bytes of the
+     * encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where
+     * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
+     * the encrypted result.</p>
      */
     inline bool KeyCheckValueAlgorithmHasBeenSet() const { return m_keyCheckValueAlgorithmHasBeenSet; }
 
     /**
-     * <p>The algorithm used for calculating key check value (KCV) for DES and AES
-     * keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV
-     * by encrypting 8 bytes, each with value '00', with the key to be checked and
-     * retaining the 3 highest order bytes of the encrypted result. For an AES key,
-     * Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes,
-     * each with value '01', with the key to be checked and retaining the 3 highest
-     * order bytes of the encrypted result.</p>
+     * <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate
+     * the key check value (KCV). It is used to validate the key integrity.</p> <p>For
+     * TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero,
+     * with the key to be checked and retaining the 3 highest order bytes of the
+     * encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where
+     * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
+     * the encrypted result.</p>
      */
     inline void SetKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = value; }
 
     /**
-     * <p>The algorithm used for calculating key check value (KCV) for DES and AES
-     * keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV
-     * by encrypting 8 bytes, each with value '00', with the key to be checked and
-     * retaining the 3 highest order bytes of the encrypted result. For an AES key,
-     * Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes,
-     * each with value '01', with the key to be checked and retaining the 3 highest
-     * order bytes of the encrypted result.</p>
+     * <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate
+     * the key check value (KCV). It is used to validate the key integrity.</p> <p>For
+     * TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero,
+     * with the key to be checked and retaining the 3 highest order bytes of the
+     * encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where
+     * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
+     * the encrypted result.</p>
      */
     inline void SetKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = std::move(value); }
 
     /**
-     * <p>The algorithm used for calculating key check value (KCV) for DES and AES
-     * keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV
-     * by encrypting 8 bytes, each with value '00', with the key to be checked and
-     * retaining the 3 highest order bytes of the encrypted result. For an AES key,
-     * Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes,
-     * each with value '01', with the key to be checked and retaining the 3 highest
-     * order bytes of the encrypted result.</p>
+     * <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate
+     * the key check value (KCV). It is used to validate the key integrity.</p> <p>For
+     * TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero,
+     * with the key to be checked and retaining the 3 highest order bytes of the
+     * encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where
+     * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
+     * the encrypted result.</p>
      */
     inline Key& WithKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { SetKeyCheckValueAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm used for calculating key check value (KCV) for DES and AES
-     * keys. For a DES key, Amazon Web Services Payment Cryptography computes the KCV
-     * by encrypting 8 bytes, each with value '00', with the key to be checked and
-     * retaining the 3 highest order bytes of the encrypted result. For an AES key,
-     * Amazon Web Services Payment Cryptography computes the KCV by encrypting 8 bytes,
-     * each with value '01', with the key to be checked and retaining the 3 highest
-     * order bytes of the encrypted result.</p>
+     * <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate
+     * the key check value (KCV). It is used to validate the key integrity.</p> <p>For
+     * TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero,
+     * with the key to be checked and retaining the 3 highest order bytes of the
+     * encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where
+     * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
+     * the encrypted result.</p>
      */
     inline Key& WithKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { SetKeyCheckValueAlgorithm(std::move(value)); return *this;}
 

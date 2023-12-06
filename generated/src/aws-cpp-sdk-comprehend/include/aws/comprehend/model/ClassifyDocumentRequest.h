@@ -86,80 +86,104 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt
-     * classification, Amazon Comprehend provides the endpoint ARN:
-     * <code>zzz</code>.</p> <p>For custom classification, you create an endpoint for
-     * your custom model. For more information, see <a
+     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt safety
+     * classification, Amazon Comprehend provides the endpoint ARN. For more
+     * information about prompt safety classifiers, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+     * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+     * <p>For custom classification, you create an endpoint for your custom model. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
      * Amazon Comprehend endpoints</a>.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt
-     * classification, Amazon Comprehend provides the endpoint ARN:
-     * <code>zzz</code>.</p> <p>For custom classification, you create an endpoint for
-     * your custom model. For more information, see <a
+     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt safety
+     * classification, Amazon Comprehend provides the endpoint ARN. For more
+     * information about prompt safety classifiers, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+     * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+     * <p>For custom classification, you create an endpoint for your custom model. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
      * Amazon Comprehend endpoints</a>.</p>
      */
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt
-     * classification, Amazon Comprehend provides the endpoint ARN:
-     * <code>zzz</code>.</p> <p>For custom classification, you create an endpoint for
-     * your custom model. For more information, see <a
+     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt safety
+     * classification, Amazon Comprehend provides the endpoint ARN. For more
+     * information about prompt safety classifiers, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+     * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+     * <p>For custom classification, you create an endpoint for your custom model. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
      * Amazon Comprehend endpoints</a>.</p>
      */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt
-     * classification, Amazon Comprehend provides the endpoint ARN:
-     * <code>zzz</code>.</p> <p>For custom classification, you create an endpoint for
-     * your custom model. For more information, see <a
+     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt safety
+     * classification, Amazon Comprehend provides the endpoint ARN. For more
+     * information about prompt safety classifiers, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+     * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+     * <p>For custom classification, you create an endpoint for your custom model. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
      * Amazon Comprehend endpoints</a>.</p>
      */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt
-     * classification, Amazon Comprehend provides the endpoint ARN:
-     * <code>zzz</code>.</p> <p>For custom classification, you create an endpoint for
-     * your custom model. For more information, see <a
+     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt safety
+     * classification, Amazon Comprehend provides the endpoint ARN. For more
+     * information about prompt safety classifiers, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+     * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+     * <p>For custom classification, you create an endpoint for your custom model. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
      * Amazon Comprehend endpoints</a>.</p>
      */
     inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt
-     * classification, Amazon Comprehend provides the endpoint ARN:
-     * <code>zzz</code>.</p> <p>For custom classification, you create an endpoint for
-     * your custom model. For more information, see <a
+     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt safety
+     * classification, Amazon Comprehend provides the endpoint ARN. For more
+     * information about prompt safety classifiers, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+     * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+     * <p>For custom classification, you create an endpoint for your custom model. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
      * Amazon Comprehend endpoints</a>.</p>
      */
     inline ClassifyDocumentRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt
-     * classification, Amazon Comprehend provides the endpoint ARN:
-     * <code>zzz</code>.</p> <p>For custom classification, you create an endpoint for
-     * your custom model. For more information, see <a
+     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt safety
+     * classification, Amazon Comprehend provides the endpoint ARN. For more
+     * information about prompt safety classifiers, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+     * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+     * <p>For custom classification, you create an endpoint for your custom model. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
      * Amazon Comprehend endpoints</a>.</p>
      */
     inline ClassifyDocumentRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt
-     * classification, Amazon Comprehend provides the endpoint ARN:
-     * <code>zzz</code>.</p> <p>For custom classification, you create an endpoint for
-     * your custom model. For more information, see <a
+     * <p>The Amazon Resource Number (ARN) of the endpoint. </p> <p>For prompt safety
+     * classification, Amazon Comprehend provides the endpoint ARN. For more
+     * information about prompt safety classifiers, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+     * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+     * <p>For custom classification, you create an endpoint for your custom model. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
      * Amazon Comprehend endpoints</a>.</p>
      */
@@ -171,12 +195,12 @@ namespace Model
      * file.</p> <p>When you classify a document using a custom model, you can also use
      * the <code>Bytes</code> parameter to input an Amazon Textract
      * <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-     * <p>To classify a document using the prompt classifier, use the <code>Text</code>
-     * parameter for input.</p> <p>Provide the input document as a sequence of
-     * base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify
-     * documents, the SDK may encode the document file bytes for you. </p> <p>The
-     * maximum length of this field depends on the input document type. For details,
-     * see <a
+     * <p>To classify a document using the prompt safety classifier, use the
+     * <code>Text</code> parameter for input.</p> <p>Provide the input document as a
+     * sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK
+     * to classify documents, the SDK may encode the document file bytes for you. </p>
+     * <p>The maximum length of this field depends on the input document type. For
+     * details, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html">
      * Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
      * <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code>
@@ -189,12 +213,12 @@ namespace Model
      * file.</p> <p>When you classify a document using a custom model, you can also use
      * the <code>Bytes</code> parameter to input an Amazon Textract
      * <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-     * <p>To classify a document using the prompt classifier, use the <code>Text</code>
-     * parameter for input.</p> <p>Provide the input document as a sequence of
-     * base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify
-     * documents, the SDK may encode the document file bytes for you. </p> <p>The
-     * maximum length of this field depends on the input document type. For details,
-     * see <a
+     * <p>To classify a document using the prompt safety classifier, use the
+     * <code>Text</code> parameter for input.</p> <p>Provide the input document as a
+     * sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK
+     * to classify documents, the SDK may encode the document file bytes for you. </p>
+     * <p>The maximum length of this field depends on the input document type. For
+     * details, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html">
      * Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
      * <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code>
@@ -207,12 +231,12 @@ namespace Model
      * file.</p> <p>When you classify a document using a custom model, you can also use
      * the <code>Bytes</code> parameter to input an Amazon Textract
      * <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-     * <p>To classify a document using the prompt classifier, use the <code>Text</code>
-     * parameter for input.</p> <p>Provide the input document as a sequence of
-     * base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify
-     * documents, the SDK may encode the document file bytes for you. </p> <p>The
-     * maximum length of this field depends on the input document type. For details,
-     * see <a
+     * <p>To classify a document using the prompt safety classifier, use the
+     * <code>Text</code> parameter for input.</p> <p>Provide the input document as a
+     * sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK
+     * to classify documents, the SDK may encode the document file bytes for you. </p>
+     * <p>The maximum length of this field depends on the input document type. For
+     * details, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html">
      * Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
      * <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code>
@@ -225,12 +249,12 @@ namespace Model
      * file.</p> <p>When you classify a document using a custom model, you can also use
      * the <code>Bytes</code> parameter to input an Amazon Textract
      * <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-     * <p>To classify a document using the prompt classifier, use the <code>Text</code>
-     * parameter for input.</p> <p>Provide the input document as a sequence of
-     * base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify
-     * documents, the SDK may encode the document file bytes for you. </p> <p>The
-     * maximum length of this field depends on the input document type. For details,
-     * see <a
+     * <p>To classify a document using the prompt safety classifier, use the
+     * <code>Text</code> parameter for input.</p> <p>Provide the input document as a
+     * sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK
+     * to classify documents, the SDK may encode the document file bytes for you. </p>
+     * <p>The maximum length of this field depends on the input document type. For
+     * details, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html">
      * Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
      * <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code>
@@ -243,12 +267,12 @@ namespace Model
      * file.</p> <p>When you classify a document using a custom model, you can also use
      * the <code>Bytes</code> parameter to input an Amazon Textract
      * <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-     * <p>To classify a document using the prompt classifier, use the <code>Text</code>
-     * parameter for input.</p> <p>Provide the input document as a sequence of
-     * base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify
-     * documents, the SDK may encode the document file bytes for you. </p> <p>The
-     * maximum length of this field depends on the input document type. For details,
-     * see <a
+     * <p>To classify a document using the prompt safety classifier, use the
+     * <code>Text</code> parameter for input.</p> <p>Provide the input document as a
+     * sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK
+     * to classify documents, the SDK may encode the document file bytes for you. </p>
+     * <p>The maximum length of this field depends on the input document type. For
+     * details, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html">
      * Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
      * <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code>
@@ -261,12 +285,12 @@ namespace Model
      * file.</p> <p>When you classify a document using a custom model, you can also use
      * the <code>Bytes</code> parameter to input an Amazon Textract
      * <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-     * <p>To classify a document using the prompt classifier, use the <code>Text</code>
-     * parameter for input.</p> <p>Provide the input document as a sequence of
-     * base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify
-     * documents, the SDK may encode the document file bytes for you. </p> <p>The
-     * maximum length of this field depends on the input document type. For details,
-     * see <a
+     * <p>To classify a document using the prompt safety classifier, use the
+     * <code>Text</code> parameter for input.</p> <p>Provide the input document as a
+     * sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK
+     * to classify documents, the SDK may encode the document file bytes for you. </p>
+     * <p>The maximum length of this field depends on the input document type. For
+     * details, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html">
      * Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
      * <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code>

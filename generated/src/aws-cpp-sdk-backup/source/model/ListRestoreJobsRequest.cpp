@@ -20,6 +20,7 @@ ListRestoreJobsRequest::ListRestoreJobsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_byAccountIdHasBeenSet(false),
+    m_byResourceTypeHasBeenSet(false),
     m_byCreatedBeforeHasBeenSet(false),
     m_byCreatedAfterHasBeenSet(false),
     m_byStatus(RestoreJobStatus::NOT_SET),
@@ -56,6 +57,13 @@ void ListRestoreJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_byAccountId;
       uri.AddQueryStringParameter("accountId", ss.str());
+      ss.str("");
+    }
+
+    if(m_byResourceTypeHasBeenSet)
+    {
+      ss << m_byResourceType;
+      uri.AddQueryStringParameter("resourceType", ss.str());
       ss.str("");
     }
 

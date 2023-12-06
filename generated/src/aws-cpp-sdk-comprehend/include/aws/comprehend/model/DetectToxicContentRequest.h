@@ -37,42 +37,50 @@ namespace Model
 
 
     /**
-     * <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+     * <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and
+     * the maximum size of the list is 10 KB.</p>
      */
     inline const Aws::Vector<TextSegment>& GetTextSegments() const{ return m_textSegments; }
 
     /**
-     * <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+     * <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and
+     * the maximum size of the list is 10 KB.</p>
      */
     inline bool TextSegmentsHasBeenSet() const { return m_textSegmentsHasBeenSet; }
 
     /**
-     * <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+     * <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and
+     * the maximum size of the list is 10 KB.</p>
      */
     inline void SetTextSegments(const Aws::Vector<TextSegment>& value) { m_textSegmentsHasBeenSet = true; m_textSegments = value; }
 
     /**
-     * <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+     * <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and
+     * the maximum size of the list is 10 KB.</p>
      */
     inline void SetTextSegments(Aws::Vector<TextSegment>&& value) { m_textSegmentsHasBeenSet = true; m_textSegments = std::move(value); }
 
     /**
-     * <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+     * <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and
+     * the maximum size of the list is 10 KB.</p>
      */
     inline DetectToxicContentRequest& WithTextSegments(const Aws::Vector<TextSegment>& value) { SetTextSegments(value); return *this;}
 
     /**
-     * <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+     * <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and
+     * the maximum size of the list is 10 KB.</p>
      */
     inline DetectToxicContentRequest& WithTextSegments(Aws::Vector<TextSegment>&& value) { SetTextSegments(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+     * <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and
+     * the maximum size of the list is 10 KB.</p>
      */
     inline DetectToxicContentRequest& AddTextSegments(const TextSegment& value) { m_textSegmentsHasBeenSet = true; m_textSegments.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+     * <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and
+     * the maximum size of the list is 10 KB.</p>
      */
     inline DetectToxicContentRequest& AddTextSegments(TextSegment&& value) { m_textSegmentsHasBeenSet = true; m_textSegments.push_back(std::move(value)); return *this; }
 

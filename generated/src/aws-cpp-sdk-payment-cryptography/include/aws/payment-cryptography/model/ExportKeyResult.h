@@ -34,27 +34,32 @@ namespace Model
 
 
     /**
-     * <p>The key material under export as a TR-34 or TR-31 wrapped key block.</p>
+     * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
+     * WrappedKeyBlock. </p>
      */
     inline const WrappedKey& GetWrappedKey() const{ return m_wrappedKey; }
 
     /**
-     * <p>The key material under export as a TR-34 or TR-31 wrapped key block.</p>
+     * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
+     * WrappedKeyBlock. </p>
      */
     inline void SetWrappedKey(const WrappedKey& value) { m_wrappedKey = value; }
 
     /**
-     * <p>The key material under export as a TR-34 or TR-31 wrapped key block.</p>
+     * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
+     * WrappedKeyBlock. </p>
      */
     inline void SetWrappedKey(WrappedKey&& value) { m_wrappedKey = std::move(value); }
 
     /**
-     * <p>The key material under export as a TR-34 or TR-31 wrapped key block.</p>
+     * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
+     * WrappedKeyBlock. </p>
      */
     inline ExportKeyResult& WithWrappedKey(const WrappedKey& value) { SetWrappedKey(value); return *this;}
 
     /**
-     * <p>The key material under export as a TR-34 or TR-31 wrapped key block.</p>
+     * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
+     * WrappedKeyBlock. </p>
      */
     inline ExportKeyResult& WithWrappedKey(WrappedKey&& value) { SetWrappedKey(std::move(value)); return *this;}
 
