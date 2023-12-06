@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Parameter information for key material import.</p><p><h3>See Also:</h3>   <a
+   * <p>Parameter information for key material import into Amazon Web Services
+   * Payment Cryptography using TR-31 or TR-34 key exchange method.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ImportKeyMaterial">AWS
    * API Reference</a></p>
    */
@@ -72,63 +74,75 @@ namespace Model
 
 
     /**
-     * <p>Parameter information for key material import using TR-31 standard.</p>
+     * <p>Parameter information for key material import using symmetric TR-31 key
+     * exchange method.</p>
      */
     inline const ImportTr31KeyBlock& GetTr31KeyBlock() const{ return m_tr31KeyBlock; }
 
     /**
-     * <p>Parameter information for key material import using TR-31 standard.</p>
+     * <p>Parameter information for key material import using symmetric TR-31 key
+     * exchange method.</p>
      */
     inline bool Tr31KeyBlockHasBeenSet() const { return m_tr31KeyBlockHasBeenSet; }
 
     /**
-     * <p>Parameter information for key material import using TR-31 standard.</p>
+     * <p>Parameter information for key material import using symmetric TR-31 key
+     * exchange method.</p>
      */
     inline void SetTr31KeyBlock(const ImportTr31KeyBlock& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = value; }
 
     /**
-     * <p>Parameter information for key material import using TR-31 standard.</p>
+     * <p>Parameter information for key material import using symmetric TR-31 key
+     * exchange method.</p>
      */
     inline void SetTr31KeyBlock(ImportTr31KeyBlock&& value) { m_tr31KeyBlockHasBeenSet = true; m_tr31KeyBlock = std::move(value); }
 
     /**
-     * <p>Parameter information for key material import using TR-31 standard.</p>
+     * <p>Parameter information for key material import using symmetric TR-31 key
+     * exchange method.</p>
      */
     inline ImportKeyMaterial& WithTr31KeyBlock(const ImportTr31KeyBlock& value) { SetTr31KeyBlock(value); return *this;}
 
     /**
-     * <p>Parameter information for key material import using TR-31 standard.</p>
+     * <p>Parameter information for key material import using symmetric TR-31 key
+     * exchange method.</p>
      */
     inline ImportKeyMaterial& WithTr31KeyBlock(ImportTr31KeyBlock&& value) { SetTr31KeyBlock(std::move(value)); return *this;}
 
 
     /**
-     * <p>Parameter information for key material import using TR-34 standard.</p>
+     * <p>Parameter information for key material import using the asymmetric TR-34 key
+     * exchange method.</p>
      */
     inline const ImportTr34KeyBlock& GetTr34KeyBlock() const{ return m_tr34KeyBlock; }
 
     /**
-     * <p>Parameter information for key material import using TR-34 standard.</p>
+     * <p>Parameter information for key material import using the asymmetric TR-34 key
+     * exchange method.</p>
      */
     inline bool Tr34KeyBlockHasBeenSet() const { return m_tr34KeyBlockHasBeenSet; }
 
     /**
-     * <p>Parameter information for key material import using TR-34 standard.</p>
+     * <p>Parameter information for key material import using the asymmetric TR-34 key
+     * exchange method.</p>
      */
     inline void SetTr34KeyBlock(const ImportTr34KeyBlock& value) { m_tr34KeyBlockHasBeenSet = true; m_tr34KeyBlock = value; }
 
     /**
-     * <p>Parameter information for key material import using TR-34 standard.</p>
+     * <p>Parameter information for key material import using the asymmetric TR-34 key
+     * exchange method.</p>
      */
     inline void SetTr34KeyBlock(ImportTr34KeyBlock&& value) { m_tr34KeyBlockHasBeenSet = true; m_tr34KeyBlock = std::move(value); }
 
     /**
-     * <p>Parameter information for key material import using TR-34 standard.</p>
+     * <p>Parameter information for key material import using the asymmetric TR-34 key
+     * exchange method.</p>
      */
     inline ImportKeyMaterial& WithTr34KeyBlock(const ImportTr34KeyBlock& value) { SetTr34KeyBlock(value); return *this;}
 
     /**
-     * <p>Parameter information for key material import using TR-34 standard.</p>
+     * <p>Parameter information for key material import using the asymmetric TR-34 key
+     * exchange method.</p>
      */
     inline ImportKeyMaterial& WithTr34KeyBlock(ImportTr34KeyBlock&& value) { SetTr34KeyBlock(std::move(value)); return *this;}
 

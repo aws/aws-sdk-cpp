@@ -142,87 +142,94 @@ namespace Model
 
 
     /**
-     * <p>The signing key certificate of the public key for signature within the TR-34
-     * key block cryptogram. The certificate expires after 7 days.</p>
+     * <p>The signing key certificate in PEM format (base64 encoded) of the public key
+     * for signature within the TR-34 key block. The certificate expires after 7
+     * days.</p>
      */
     inline const Aws::String& GetSigningKeyCertificate() const{ return m_signingKeyCertificate; }
 
     /**
-     * <p>The signing key certificate of the public key for signature within the TR-34
-     * key block cryptogram. The certificate expires after 7 days.</p>
+     * <p>The signing key certificate in PEM format (base64 encoded) of the public key
+     * for signature within the TR-34 key block. The certificate expires after 7
+     * days.</p>
      */
     inline void SetSigningKeyCertificate(const Aws::String& value) { m_signingKeyCertificate = value; }
 
     /**
-     * <p>The signing key certificate of the public key for signature within the TR-34
-     * key block cryptogram. The certificate expires after 7 days.</p>
+     * <p>The signing key certificate in PEM format (base64 encoded) of the public key
+     * for signature within the TR-34 key block. The certificate expires after 7
+     * days.</p>
      */
     inline void SetSigningKeyCertificate(Aws::String&& value) { m_signingKeyCertificate = std::move(value); }
 
     /**
-     * <p>The signing key certificate of the public key for signature within the TR-34
-     * key block cryptogram. The certificate expires after 7 days.</p>
+     * <p>The signing key certificate in PEM format (base64 encoded) of the public key
+     * for signature within the TR-34 key block. The certificate expires after 7
+     * days.</p>
      */
     inline void SetSigningKeyCertificate(const char* value) { m_signingKeyCertificate.assign(value); }
 
     /**
-     * <p>The signing key certificate of the public key for signature within the TR-34
-     * key block cryptogram. The certificate expires after 7 days.</p>
+     * <p>The signing key certificate in PEM format (base64 encoded) of the public key
+     * for signature within the TR-34 key block. The certificate expires after 7
+     * days.</p>
      */
     inline GetParametersForExportResult& WithSigningKeyCertificate(const Aws::String& value) { SetSigningKeyCertificate(value); return *this;}
 
     /**
-     * <p>The signing key certificate of the public key for signature within the TR-34
-     * key block cryptogram. The certificate expires after 7 days.</p>
+     * <p>The signing key certificate in PEM format (base64 encoded) of the public key
+     * for signature within the TR-34 key block. The certificate expires after 7
+     * days.</p>
      */
     inline GetParametersForExportResult& WithSigningKeyCertificate(Aws::String&& value) { SetSigningKeyCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The signing key certificate of the public key for signature within the TR-34
-     * key block cryptogram. The certificate expires after 7 days.</p>
+     * <p>The signing key certificate in PEM format (base64 encoded) of the public key
+     * for signature within the TR-34 key block. The certificate expires after 7
+     * days.</p>
      */
     inline GetParametersForExportResult& WithSigningKeyCertificate(const char* value) { SetSigningKeyCertificate(value); return *this;}
 
 
     /**
-     * <p>The certificate chain that signed the signing key certificate. This is the
-     * root certificate authority (CA) within your service account.</p>
+     * <p>The root certificate authority (CA) that signed the signing key certificate
+     * in PEM format (base64 encoded).</p>
      */
     inline const Aws::String& GetSigningKeyCertificateChain() const{ return m_signingKeyCertificateChain; }
 
     /**
-     * <p>The certificate chain that signed the signing key certificate. This is the
-     * root certificate authority (CA) within your service account.</p>
+     * <p>The root certificate authority (CA) that signed the signing key certificate
+     * in PEM format (base64 encoded).</p>
      */
     inline void SetSigningKeyCertificateChain(const Aws::String& value) { m_signingKeyCertificateChain = value; }
 
     /**
-     * <p>The certificate chain that signed the signing key certificate. This is the
-     * root certificate authority (CA) within your service account.</p>
+     * <p>The root certificate authority (CA) that signed the signing key certificate
+     * in PEM format (base64 encoded).</p>
      */
     inline void SetSigningKeyCertificateChain(Aws::String&& value) { m_signingKeyCertificateChain = std::move(value); }
 
     /**
-     * <p>The certificate chain that signed the signing key certificate. This is the
-     * root certificate authority (CA) within your service account.</p>
+     * <p>The root certificate authority (CA) that signed the signing key certificate
+     * in PEM format (base64 encoded).</p>
      */
     inline void SetSigningKeyCertificateChain(const char* value) { m_signingKeyCertificateChain.assign(value); }
 
     /**
-     * <p>The certificate chain that signed the signing key certificate. This is the
-     * root certificate authority (CA) within your service account.</p>
+     * <p>The root certificate authority (CA) that signed the signing key certificate
+     * in PEM format (base64 encoded).</p>
      */
     inline GetParametersForExportResult& WithSigningKeyCertificateChain(const Aws::String& value) { SetSigningKeyCertificateChain(value); return *this;}
 
     /**
-     * <p>The certificate chain that signed the signing key certificate. This is the
-     * root certificate authority (CA) within your service account.</p>
+     * <p>The root certificate authority (CA) that signed the signing key certificate
+     * in PEM format (base64 encoded).</p>
      */
     inline GetParametersForExportResult& WithSigningKeyCertificateChain(Aws::String&& value) { SetSigningKeyCertificateChain(std::move(value)); return *this;}
 
     /**
-     * <p>The certificate chain that signed the signing key certificate. This is the
-     * root certificate authority (CA) within your service account.</p>
+     * <p>The root certificate authority (CA) that signed the signing key certificate
+     * in PEM format (base64 encoded).</p>
      */
     inline GetParametersForExportResult& WithSigningKeyCertificateChain(const char* value) { SetSigningKeyCertificateChain(value); return *this;}
 

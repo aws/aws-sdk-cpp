@@ -40,143 +40,143 @@ namespace Model
 
 
     /**
-     * <p>The classes used by the document being analyzed. These are used for
-     * multi-class trained models. Individual classes are mutually exclusive and each
+     * <p>The classes used by the document being analyzed. These are used for models
+     * trained in multi-class mode. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
      * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
-     * classification, the response includes a single class
-     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
-     * confidence score indicates that the input prompt is undesired in nature.</p>
+     * safety classification, the response includes only two classes (SAFE_PROMPT and
+     * UNSAFE_PROMPT), along with a confidence score for each class. The value range of
+     * the score is zero to one, where one is the highest confidence.</p>
      */
     inline const Aws::Vector<DocumentClass>& GetClasses() const{ return m_classes; }
 
     /**
-     * <p>The classes used by the document being analyzed. These are used for
-     * multi-class trained models. Individual classes are mutually exclusive and each
+     * <p>The classes used by the document being analyzed. These are used for models
+     * trained in multi-class mode. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
      * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
-     * classification, the response includes a single class
-     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
-     * confidence score indicates that the input prompt is undesired in nature.</p>
+     * safety classification, the response includes only two classes (SAFE_PROMPT and
+     * UNSAFE_PROMPT), along with a confidence score for each class. The value range of
+     * the score is zero to one, where one is the highest confidence.</p>
      */
     inline void SetClasses(const Aws::Vector<DocumentClass>& value) { m_classes = value; }
 
     /**
-     * <p>The classes used by the document being analyzed. These are used for
-     * multi-class trained models. Individual classes are mutually exclusive and each
+     * <p>The classes used by the document being analyzed. These are used for models
+     * trained in multi-class mode. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
      * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
-     * classification, the response includes a single class
-     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
-     * confidence score indicates that the input prompt is undesired in nature.</p>
+     * safety classification, the response includes only two classes (SAFE_PROMPT and
+     * UNSAFE_PROMPT), along with a confidence score for each class. The value range of
+     * the score is zero to one, where one is the highest confidence.</p>
      */
     inline void SetClasses(Aws::Vector<DocumentClass>&& value) { m_classes = std::move(value); }
 
     /**
-     * <p>The classes used by the document being analyzed. These are used for
-     * multi-class trained models. Individual classes are mutually exclusive and each
+     * <p>The classes used by the document being analyzed. These are used for models
+     * trained in multi-class mode. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
      * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
-     * classification, the response includes a single class
-     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
-     * confidence score indicates that the input prompt is undesired in nature.</p>
+     * safety classification, the response includes only two classes (SAFE_PROMPT and
+     * UNSAFE_PROMPT), along with a confidence score for each class. The value range of
+     * the score is zero to one, where one is the highest confidence.</p>
      */
     inline ClassifyDocumentResult& WithClasses(const Aws::Vector<DocumentClass>& value) { SetClasses(value); return *this;}
 
     /**
-     * <p>The classes used by the document being analyzed. These are used for
-     * multi-class trained models. Individual classes are mutually exclusive and each
+     * <p>The classes used by the document being analyzed. These are used for models
+     * trained in multi-class mode. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
      * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
-     * classification, the response includes a single class
-     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
-     * confidence score indicates that the input prompt is undesired in nature.</p>
+     * safety classification, the response includes only two classes (SAFE_PROMPT and
+     * UNSAFE_PROMPT), along with a confidence score for each class. The value range of
+     * the score is zero to one, where one is the highest confidence.</p>
      */
     inline ClassifyDocumentResult& WithClasses(Aws::Vector<DocumentClass>&& value) { SetClasses(std::move(value)); return *this;}
 
     /**
-     * <p>The classes used by the document being analyzed. These are used for
-     * multi-class trained models. Individual classes are mutually exclusive and each
+     * <p>The classes used by the document being analyzed. These are used for models
+     * trained in multi-class mode. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
      * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
-     * classification, the response includes a single class
-     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
-     * confidence score indicates that the input prompt is undesired in nature.</p>
+     * safety classification, the response includes only two classes (SAFE_PROMPT and
+     * UNSAFE_PROMPT), along with a confidence score for each class. The value range of
+     * the score is zero to one, where one is the highest confidence.</p>
      */
     inline ClassifyDocumentResult& AddClasses(const DocumentClass& value) { m_classes.push_back(value); return *this; }
 
     /**
-     * <p>The classes used by the document being analyzed. These are used for
-     * multi-class trained models. Individual classes are mutually exclusive and each
+     * <p>The classes used by the document being analyzed. These are used for models
+     * trained in multi-class mode. Individual classes are mutually exclusive and each
      * document is expected to have only a single class assigned to it. For example, an
      * animal can be a dog or a cat, but not both at the same time. </p> <p>For prompt
-     * classification, the response includes a single class
-     * (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher
-     * confidence score indicates that the input prompt is undesired in nature.</p>
+     * safety classification, the response includes only two classes (SAFE_PROMPT and
+     * UNSAFE_PROMPT), along with a confidence score for each class. The value range of
+     * the score is zero to one, where one is the highest confidence.</p>
      */
     inline ClassifyDocumentResult& AddClasses(DocumentClass&& value) { m_classes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The labels used the document being analyzed. These are used for multi-label
-     * trained models. Individual labels represent different categories that are
-     * related in some manner and are not mutually exclusive. For example, a movie can
-     * be just an action movie, or it can be an action movie, a science fiction movie,
-     * and a comedy, all at the same time. </p>
+     * <p>The labels used in the document being analyzed. These are used for
+     * multi-label trained models. Individual labels represent different categories
+     * that are related in some manner and are not mutually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science
+     * fiction movie, and a comedy, all at the same time. </p>
      */
     inline const Aws::Vector<DocumentLabel>& GetLabels() const{ return m_labels; }
 
     /**
-     * <p>The labels used the document being analyzed. These are used for multi-label
-     * trained models. Individual labels represent different categories that are
-     * related in some manner and are not mutually exclusive. For example, a movie can
-     * be just an action movie, or it can be an action movie, a science fiction movie,
-     * and a comedy, all at the same time. </p>
+     * <p>The labels used in the document being analyzed. These are used for
+     * multi-label trained models. Individual labels represent different categories
+     * that are related in some manner and are not mutually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science
+     * fiction movie, and a comedy, all at the same time. </p>
      */
     inline void SetLabels(const Aws::Vector<DocumentLabel>& value) { m_labels = value; }
 
     /**
-     * <p>The labels used the document being analyzed. These are used for multi-label
-     * trained models. Individual labels represent different categories that are
-     * related in some manner and are not mutually exclusive. For example, a movie can
-     * be just an action movie, or it can be an action movie, a science fiction movie,
-     * and a comedy, all at the same time. </p>
+     * <p>The labels used in the document being analyzed. These are used for
+     * multi-label trained models. Individual labels represent different categories
+     * that are related in some manner and are not mutually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science
+     * fiction movie, and a comedy, all at the same time. </p>
      */
     inline void SetLabels(Aws::Vector<DocumentLabel>&& value) { m_labels = std::move(value); }
 
     /**
-     * <p>The labels used the document being analyzed. These are used for multi-label
-     * trained models. Individual labels represent different categories that are
-     * related in some manner and are not mutually exclusive. For example, a movie can
-     * be just an action movie, or it can be an action movie, a science fiction movie,
-     * and a comedy, all at the same time. </p>
+     * <p>The labels used in the document being analyzed. These are used for
+     * multi-label trained models. Individual labels represent different categories
+     * that are related in some manner and are not mutually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science
+     * fiction movie, and a comedy, all at the same time. </p>
      */
     inline ClassifyDocumentResult& WithLabels(const Aws::Vector<DocumentLabel>& value) { SetLabels(value); return *this;}
 
     /**
-     * <p>The labels used the document being analyzed. These are used for multi-label
-     * trained models. Individual labels represent different categories that are
-     * related in some manner and are not mutually exclusive. For example, a movie can
-     * be just an action movie, or it can be an action movie, a science fiction movie,
-     * and a comedy, all at the same time. </p>
+     * <p>The labels used in the document being analyzed. These are used for
+     * multi-label trained models. Individual labels represent different categories
+     * that are related in some manner and are not mutually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science
+     * fiction movie, and a comedy, all at the same time. </p>
      */
     inline ClassifyDocumentResult& WithLabels(Aws::Vector<DocumentLabel>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
-     * <p>The labels used the document being analyzed. These are used for multi-label
-     * trained models. Individual labels represent different categories that are
-     * related in some manner and are not mutually exclusive. For example, a movie can
-     * be just an action movie, or it can be an action movie, a science fiction movie,
-     * and a comedy, all at the same time. </p>
+     * <p>The labels used in the document being analyzed. These are used for
+     * multi-label trained models. Individual labels represent different categories
+     * that are related in some manner and are not mutually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science
+     * fiction movie, and a comedy, all at the same time. </p>
      */
     inline ClassifyDocumentResult& AddLabels(const DocumentLabel& value) { m_labels.push_back(value); return *this; }
 
     /**
-     * <p>The labels used the document being analyzed. These are used for multi-label
-     * trained models. Individual labels represent different categories that are
-     * related in some manner and are not mutually exclusive. For example, a movie can
-     * be just an action movie, or it can be an action movie, a science fiction movie,
-     * and a comedy, all at the same time. </p>
+     * <p>The labels used in the document being analyzed. These are used for
+     * multi-label trained models. Individual labels represent different categories
+     * that are related in some manner and are not mutually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science
+     * fiction movie, and a comedy, all at the same time. </p>
      */
     inline ClassifyDocumentResult& AddLabels(DocumentLabel&& value) { m_labels.push_back(std::move(value)); return *this; }
 

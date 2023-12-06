@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Parameter information for key material import using TR-34
-   * standard.</p><p><h3>See Also:</h3>   <a
+   * <p>Parameter information for key material import using the asymmetric TR-34 key
+   * exchange method.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ImportTr34KeyBlock">AWS
    * API Reference</a></p>
    */
@@ -89,58 +89,66 @@ namespace Model
 
 
     /**
-     * <p>The import token that initiates key import into Amazon Web Services Payment
-     * Cryptography. It expires after 7 days. You can use the same import token to
-     * import multiple keys to the same service account.</p>
+     * <p>The import token that initiates key import using the asymmetric TR-34 key
+     * exchange method into Amazon Web Services Payment Cryptography. It expires after
+     * 7 days. You can use the same import token to import multiple keys to the same
+     * service account.</p>
      */
     inline const Aws::String& GetImportToken() const{ return m_importToken; }
 
     /**
-     * <p>The import token that initiates key import into Amazon Web Services Payment
-     * Cryptography. It expires after 7 days. You can use the same import token to
-     * import multiple keys to the same service account.</p>
+     * <p>The import token that initiates key import using the asymmetric TR-34 key
+     * exchange method into Amazon Web Services Payment Cryptography. It expires after
+     * 7 days. You can use the same import token to import multiple keys to the same
+     * service account.</p>
      */
     inline bool ImportTokenHasBeenSet() const { return m_importTokenHasBeenSet; }
 
     /**
-     * <p>The import token that initiates key import into Amazon Web Services Payment
-     * Cryptography. It expires after 7 days. You can use the same import token to
-     * import multiple keys to the same service account.</p>
+     * <p>The import token that initiates key import using the asymmetric TR-34 key
+     * exchange method into Amazon Web Services Payment Cryptography. It expires after
+     * 7 days. You can use the same import token to import multiple keys to the same
+     * service account.</p>
      */
     inline void SetImportToken(const Aws::String& value) { m_importTokenHasBeenSet = true; m_importToken = value; }
 
     /**
-     * <p>The import token that initiates key import into Amazon Web Services Payment
-     * Cryptography. It expires after 7 days. You can use the same import token to
-     * import multiple keys to the same service account.</p>
+     * <p>The import token that initiates key import using the asymmetric TR-34 key
+     * exchange method into Amazon Web Services Payment Cryptography. It expires after
+     * 7 days. You can use the same import token to import multiple keys to the same
+     * service account.</p>
      */
     inline void SetImportToken(Aws::String&& value) { m_importTokenHasBeenSet = true; m_importToken = std::move(value); }
 
     /**
-     * <p>The import token that initiates key import into Amazon Web Services Payment
-     * Cryptography. It expires after 7 days. You can use the same import token to
-     * import multiple keys to the same service account.</p>
+     * <p>The import token that initiates key import using the asymmetric TR-34 key
+     * exchange method into Amazon Web Services Payment Cryptography. It expires after
+     * 7 days. You can use the same import token to import multiple keys to the same
+     * service account.</p>
      */
     inline void SetImportToken(const char* value) { m_importTokenHasBeenSet = true; m_importToken.assign(value); }
 
     /**
-     * <p>The import token that initiates key import into Amazon Web Services Payment
-     * Cryptography. It expires after 7 days. You can use the same import token to
-     * import multiple keys to the same service account.</p>
+     * <p>The import token that initiates key import using the asymmetric TR-34 key
+     * exchange method into Amazon Web Services Payment Cryptography. It expires after
+     * 7 days. You can use the same import token to import multiple keys to the same
+     * service account.</p>
      */
     inline ImportTr34KeyBlock& WithImportToken(const Aws::String& value) { SetImportToken(value); return *this;}
 
     /**
-     * <p>The import token that initiates key import into Amazon Web Services Payment
-     * Cryptography. It expires after 7 days. You can use the same import token to
-     * import multiple keys to the same service account.</p>
+     * <p>The import token that initiates key import using the asymmetric TR-34 key
+     * exchange method into Amazon Web Services Payment Cryptography. It expires after
+     * 7 days. You can use the same import token to import multiple keys to the same
+     * service account.</p>
      */
     inline ImportTr34KeyBlock& WithImportToken(Aws::String&& value) { SetImportToken(std::move(value)); return *this;}
 
     /**
-     * <p>The import token that initiates key import into Amazon Web Services Payment
-     * Cryptography. It expires after 7 days. You can use the same import token to
-     * import multiple keys to the same service account.</p>
+     * <p>The import token that initiates key import using the asymmetric TR-34 key
+     * exchange method into Amazon Web Services Payment Cryptography. It expires after
+     * 7 days. You can use the same import token to import multiple keys to the same
+     * service account.</p>
      */
     inline ImportTr34KeyBlock& WithImportToken(const char* value) { SetImportToken(value); return *this;}
 
@@ -241,49 +249,49 @@ namespace Model
 
     /**
      * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 wrapped key block.</p>
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
      */
     inline const Aws::String& GetSigningKeyCertificate() const{ return m_signingKeyCertificate; }
 
     /**
      * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 wrapped key block.</p>
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
      */
     inline bool SigningKeyCertificateHasBeenSet() const { return m_signingKeyCertificateHasBeenSet; }
 
     /**
      * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 wrapped key block.</p>
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
      */
     inline void SetSigningKeyCertificate(const Aws::String& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = value; }
 
     /**
      * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 wrapped key block.</p>
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
      */
     inline void SetSigningKeyCertificate(Aws::String&& value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate = std::move(value); }
 
     /**
      * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 wrapped key block.</p>
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
      */
     inline void SetSigningKeyCertificate(const char* value) { m_signingKeyCertificateHasBeenSet = true; m_signingKeyCertificate.assign(value); }
 
     /**
      * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 wrapped key block.</p>
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
      */
     inline ImportTr34KeyBlock& WithSigningKeyCertificate(const Aws::String& value) { SetSigningKeyCertificate(value); return *this;}
 
     /**
      * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 wrapped key block.</p>
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
      */
     inline ImportTr34KeyBlock& WithSigningKeyCertificate(Aws::String&& value) { SetSigningKeyCertificate(std::move(value)); return *this;}
 
     /**
      * <p>The public key component in PEM certificate format of the private key that
-     * signs the KDH TR-34 wrapped key block.</p>
+     * signs the KDH TR-34 WrappedKeyBlock.</p>
      */
     inline ImportTr34KeyBlock& WithSigningKeyCertificate(const char* value) { SetSigningKeyCertificate(value); return *this;}
 

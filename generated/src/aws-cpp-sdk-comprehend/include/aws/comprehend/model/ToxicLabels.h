@@ -28,7 +28,7 @@ namespace Model
    * <p>Toxicity analysis result for one string. For more information about toxicity
    * detection, see <a
    * href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity
-   * detection</a> in the <i>Amazon Comprehend Developer Guide</i> </p><p><h3>See
+   * detection</a> in the <i>Amazon Comprehend Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ToxicLabels">AWS
    * API Reference</a></p>
@@ -84,22 +84,26 @@ namespace Model
 
 
     /**
-     * <p>Overall toxicity score for the string.</p>
+     * <p>Overall toxicity score for the string. Value range is zero to one, where one
+     * is the highest confidence.</p>
      */
     inline double GetToxicity() const{ return m_toxicity; }
 
     /**
-     * <p>Overall toxicity score for the string.</p>
+     * <p>Overall toxicity score for the string. Value range is zero to one, where one
+     * is the highest confidence.</p>
      */
     inline bool ToxicityHasBeenSet() const { return m_toxicityHasBeenSet; }
 
     /**
-     * <p>Overall toxicity score for the string.</p>
+     * <p>Overall toxicity score for the string. Value range is zero to one, where one
+     * is the highest confidence.</p>
      */
     inline void SetToxicity(double value) { m_toxicityHasBeenSet = true; m_toxicity = value; }
 
     /**
-     * <p>Overall toxicity score for the string.</p>
+     * <p>Overall toxicity score for the string. Value range is zero to one, where one
+     * is the highest confidence.</p>
      */
     inline ToxicLabels& WithToxicity(double value) { SetToxicity(value); return *this;}
 

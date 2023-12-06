@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ArchitectureType.h>
 #include <aws/ec2/model/SupportedAdditionalProcessorFeature.h>
 #include <utility>
@@ -176,6 +177,47 @@ namespace Model
      */
     inline ProcessorInfo& AddSupportedFeatures(SupportedAdditionalProcessorFeature&& value) { m_supportedFeaturesHasBeenSet = true; m_supportedFeatures.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The manufacturer of the processor.</p>
+     */
+    inline const Aws::String& GetManufacturer() const{ return m_manufacturer; }
+
+    /**
+     * <p>The manufacturer of the processor.</p>
+     */
+    inline bool ManufacturerHasBeenSet() const { return m_manufacturerHasBeenSet; }
+
+    /**
+     * <p>The manufacturer of the processor.</p>
+     */
+    inline void SetManufacturer(const Aws::String& value) { m_manufacturerHasBeenSet = true; m_manufacturer = value; }
+
+    /**
+     * <p>The manufacturer of the processor.</p>
+     */
+    inline void SetManufacturer(Aws::String&& value) { m_manufacturerHasBeenSet = true; m_manufacturer = std::move(value); }
+
+    /**
+     * <p>The manufacturer of the processor.</p>
+     */
+    inline void SetManufacturer(const char* value) { m_manufacturerHasBeenSet = true; m_manufacturer.assign(value); }
+
+    /**
+     * <p>The manufacturer of the processor.</p>
+     */
+    inline ProcessorInfo& WithManufacturer(const Aws::String& value) { SetManufacturer(value); return *this;}
+
+    /**
+     * <p>The manufacturer of the processor.</p>
+     */
+    inline ProcessorInfo& WithManufacturer(Aws::String&& value) { SetManufacturer(std::move(value)); return *this;}
+
+    /**
+     * <p>The manufacturer of the processor.</p>
+     */
+    inline ProcessorInfo& WithManufacturer(const char* value) { SetManufacturer(value); return *this;}
+
   private:
 
     Aws::Vector<ArchitectureType> m_supportedArchitectures;
@@ -186,6 +228,9 @@ namespace Model
 
     Aws::Vector<SupportedAdditionalProcessorFeature> m_supportedFeatures;
     bool m_supportedFeaturesHasBeenSet = false;
+
+    Aws::String m_manufacturer;
+    bool m_manufacturerHasBeenSet = false;
   };
 
 } // namespace Model

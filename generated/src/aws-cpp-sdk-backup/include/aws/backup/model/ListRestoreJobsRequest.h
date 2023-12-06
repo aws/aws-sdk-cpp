@@ -176,6 +176,167 @@ namespace Model
 
 
     /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline ListRestoreJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline ListRestoreJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline ListRestoreJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
+
+
+    /**
      * <p>Returns only restore jobs that were created before the specified date.</p>
      */
     inline const Aws::Utils::DateTime& GetByCreatedBefore() const{ return m_byCreatedBefore; }
@@ -400,6 +561,9 @@ namespace Model
 
     Aws::String m_byAccountId;
     bool m_byAccountIdHasBeenSet = false;
+
+    Aws::String m_byResourceType;
+    bool m_byResourceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedBefore;
     bool m_byCreatedBeforeHasBeenSet = false;
