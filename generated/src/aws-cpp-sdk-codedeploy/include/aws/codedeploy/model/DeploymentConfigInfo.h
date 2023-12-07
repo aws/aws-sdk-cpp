@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/codedeploy/model/ComputePlatform.h>
 #include <aws/codedeploy/model/TrafficRoutingConfig.h>
+#include <aws/codedeploy/model/ZonalConfig.h>
 #include <utility>
 
 namespace Aws
@@ -124,32 +125,32 @@ namespace Model
 
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instance.</p>
+     * <p>Information about the number or percentage of minimum healthy instances.</p>
      */
     inline const MinimumHealthyHosts& GetMinimumHealthyHosts() const{ return m_minimumHealthyHosts; }
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instance.</p>
+     * <p>Information about the number or percentage of minimum healthy instances.</p>
      */
     inline bool MinimumHealthyHostsHasBeenSet() const { return m_minimumHealthyHostsHasBeenSet; }
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instance.</p>
+     * <p>Information about the number or percentage of minimum healthy instances.</p>
      */
     inline void SetMinimumHealthyHosts(const MinimumHealthyHosts& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = value; }
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instance.</p>
+     * <p>Information about the number or percentage of minimum healthy instances.</p>
      */
     inline void SetMinimumHealthyHosts(MinimumHealthyHosts&& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = std::move(value); }
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instance.</p>
+     * <p>Information about the number or percentage of minimum healthy instances.</p>
      */
     inline DeploymentConfigInfo& WithMinimumHealthyHosts(const MinimumHealthyHosts& value) { SetMinimumHealthyHosts(value); return *this;}
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instance.</p>
+     * <p>Information about the number or percentage of minimum healthy instances.</p>
      */
     inline DeploymentConfigInfo& WithMinimumHealthyHosts(MinimumHealthyHosts&& value) { SetMinimumHealthyHosts(std::move(value)); return *this;}
 
@@ -258,6 +259,37 @@ namespace Model
      */
     inline DeploymentConfigInfo& WithTrafficRoutingConfig(TrafficRoutingConfig&& value) { SetTrafficRoutingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about a zonal configuration.</p>
+     */
+    inline const ZonalConfig& GetZonalConfig() const{ return m_zonalConfig; }
+
+    /**
+     * <p>Information about a zonal configuration.</p>
+     */
+    inline bool ZonalConfigHasBeenSet() const { return m_zonalConfigHasBeenSet; }
+
+    /**
+     * <p>Information about a zonal configuration.</p>
+     */
+    inline void SetZonalConfig(const ZonalConfig& value) { m_zonalConfigHasBeenSet = true; m_zonalConfig = value; }
+
+    /**
+     * <p>Information about a zonal configuration.</p>
+     */
+    inline void SetZonalConfig(ZonalConfig&& value) { m_zonalConfigHasBeenSet = true; m_zonalConfig = std::move(value); }
+
+    /**
+     * <p>Information about a zonal configuration.</p>
+     */
+    inline DeploymentConfigInfo& WithZonalConfig(const ZonalConfig& value) { SetZonalConfig(value); return *this;}
+
+    /**
+     * <p>Information about a zonal configuration.</p>
+     */
+    inline DeploymentConfigInfo& WithZonalConfig(ZonalConfig&& value) { SetZonalConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deploymentConfigId;
@@ -277,6 +309,9 @@ namespace Model
 
     TrafficRoutingConfig m_trafficRoutingConfig;
     bool m_trafficRoutingConfigHasBeenSet = false;
+
+    ZonalConfig m_zonalConfig;
+    bool m_zonalConfigHasBeenSet = false;
   };
 
 } // namespace Model

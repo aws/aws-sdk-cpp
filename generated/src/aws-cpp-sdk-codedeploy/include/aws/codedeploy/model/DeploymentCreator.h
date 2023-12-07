@@ -22,7 +22,8 @@ namespace Model
     CodeDeploy,
     CodeDeployAutoUpdate,
     CloudFormation,
-    CloudFormationRollback
+    CloudFormationRollback,
+    autoscalingTermination
   };
 
 namespace DeploymentCreatorMapper

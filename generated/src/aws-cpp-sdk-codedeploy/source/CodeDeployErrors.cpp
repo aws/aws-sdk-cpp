@@ -99,6 +99,7 @@ static const int INVALID_LOAD_BALANCER_INFO_HASH = HashingUtils::HashString("Inv
 static const int INVALID_INSTANCE_NAME_HASH = HashingUtils::HashString("InvalidInstanceNameException");
 static const int RESOURCE_VALIDATION_HASH = HashingUtils::HashString("ResourceValidationException");
 static const int INVALID_DEPLOYMENT_STYLE_HASH = HashingUtils::HashString("InvalidDeploymentStyleException");
+static const int INVALID_ZONAL_DEPLOYMENT_CONFIGURATION_HASH = HashingUtils::HashString("InvalidZonalDeploymentConfigurationException");
 static const int INVALID_APPLICATION_NAME_HASH = HashingUtils::HashString("InvalidApplicationNameException");
 static const int BATCH_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("BatchLimitExceededException");
 static const int LIFECYCLE_HOOK_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LifecycleHookLimitExceededException");
@@ -113,6 +114,7 @@ static const int BUCKET_NAME_FILTER_REQUIRED_HASH = HashingUtils::HashString("Bu
 static const int INVALID_TAG_FILTER_HASH = HashingUtils::HashString("InvalidTagFilterException");
 static const int INVALID_BUCKET_NAME_FILTER_HASH = HashingUtils::HashString("InvalidBucketNameFilterException");
 static const int INVALID_ALARM_CONFIG_HASH = HashingUtils::HashString("InvalidAlarmConfigException");
+static const int INVALID_TARGET_FILTER_NAME_HASH = HashingUtils::HashString("InvalidTargetFilterNameException");
 static const int IAM_ARN_REQUIRED_HASH = HashingUtils::HashString("IamArnRequiredException");
 static const int APPLICATION_NAME_REQUIRED_HASH = HashingUtils::HashString("ApplicationNameRequiredException");
 static const int INSTANCE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("InstanceDoesNotExistException");
@@ -454,6 +456,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_DEPLOYMENT_STYLE), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == INVALID_ZONAL_DEPLOYMENT_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ZONAL_DEPLOYMENT_CONFIGURATION), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == INVALID_APPLICATION_NAME_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_APPLICATION_NAME), RetryableType::NOT_RETRYABLE);
@@ -509,6 +515,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_ALARM_CONFIG_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ALARM_CONFIG), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INVALID_TARGET_FILTER_NAME_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TARGET_FILTER_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IAM_ARN_REQUIRED_HASH)
   {
