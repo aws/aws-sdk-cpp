@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about minimum healthy instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the minimum number of healthy instances.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/MinimumHealthyHosts">AWS
    * API Reference</a></p>
    */
