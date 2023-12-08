@@ -155,6 +155,34 @@ namespace finspace
         }
 
         /**
+         * <p> Creates a snapshot of kdb database with tiered storage capabilities and a
+         * pre-warmed cache, ready for mounting on kdb clusters. Dataviews are only
+         * available for clusters running on a scaling group. They are not supported on
+         * dedicated clusters. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxDataview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateKxDataviewOutcome CreateKxDataview(const Model::CreateKxDataviewRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateKxDataview that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateKxDataviewRequestT = Model::CreateKxDataviewRequest>
+        Model::CreateKxDataviewOutcomeCallable CreateKxDataviewCallable(const CreateKxDataviewRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::CreateKxDataview, request);
+        }
+
+        /**
+         * An Async wrapper for CreateKxDataview that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateKxDataviewRequestT = Model::CreateKxDataviewRequest>
+        void CreateKxDataviewAsync(const CreateKxDataviewRequestT& request, const CreateKxDataviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::CreateKxDataview, request, handler, context);
+        }
+
+        /**
          * <p>Creates a managed kdb environment for the account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxEnvironment">AWS
@@ -181,6 +209,31 @@ namespace finspace
         }
 
         /**
+         * <p>Creates a new scaling group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxScalingGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateKxScalingGroupOutcome CreateKxScalingGroup(const Model::CreateKxScalingGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateKxScalingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateKxScalingGroupRequestT = Model::CreateKxScalingGroupRequest>
+        Model::CreateKxScalingGroupOutcomeCallable CreateKxScalingGroupCallable(const CreateKxScalingGroupRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::CreateKxScalingGroup, request);
+        }
+
+        /**
+         * An Async wrapper for CreateKxScalingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateKxScalingGroupRequestT = Model::CreateKxScalingGroupRequest>
+        void CreateKxScalingGroupAsync(const CreateKxScalingGroupRequestT& request, const CreateKxScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::CreateKxScalingGroup, request, handler, context);
+        }
+
+        /**
          * <p>Creates a user in FinSpace kdb environment with an associated IAM
          * role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxUser">AWS
@@ -204,6 +257,32 @@ namespace finspace
         void CreateKxUserAsync(const CreateKxUserRequestT& request, const CreateKxUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FinspaceClient::CreateKxUser, request, handler, context);
+        }
+
+        /**
+         * <p> Creates a new volume with a specific amount of throughput and storage
+         * capacity. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateKxVolumeOutcome CreateKxVolume(const Model::CreateKxVolumeRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateKxVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateKxVolumeRequestT = Model::CreateKxVolumeRequest>
+        Model::CreateKxVolumeOutcomeCallable CreateKxVolumeCallable(const CreateKxVolumeRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::CreateKxVolume, request);
+        }
+
+        /**
+         * An Async wrapper for CreateKxVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateKxVolumeRequestT = Model::CreateKxVolumeRequest>
+        void CreateKxVolumeAsync(const CreateKxVolumeRequestT& request, const CreateKxVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::CreateKxVolume, request, handler, context);
         }
 
         /**
@@ -259,6 +338,32 @@ namespace finspace
         }
 
         /**
+         * <p> Deletes the specified dataview. Before deleting a dataview, make sure that
+         * it is not in use by any cluster. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxDataview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKxDataviewOutcome DeleteKxDataview(const Model::DeleteKxDataviewRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteKxDataview that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteKxDataviewRequestT = Model::DeleteKxDataviewRequest>
+        Model::DeleteKxDataviewOutcomeCallable DeleteKxDataviewCallable(const DeleteKxDataviewRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::DeleteKxDataview, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteKxDataview that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteKxDataviewRequestT = Model::DeleteKxDataviewRequest>
+        void DeleteKxDataviewAsync(const DeleteKxDataviewRequestT& request, const DeleteKxDataviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::DeleteKxDataview, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the kdb environment. This action is irreversible. Deleting a kdb
          * environment will remove all the associated data and any services running in it.
          * </p><p><h3>See Also:</h3>   <a
@@ -286,6 +391,33 @@ namespace finspace
         }
 
         /**
+         * <p> Deletes the specified scaling group. This action is irreversible. You cannot
+         * delete a scaling group until all the clusters running on it have been
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxScalingGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKxScalingGroupOutcome DeleteKxScalingGroup(const Model::DeleteKxScalingGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteKxScalingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteKxScalingGroupRequestT = Model::DeleteKxScalingGroupRequest>
+        Model::DeleteKxScalingGroupOutcomeCallable DeleteKxScalingGroupCallable(const DeleteKxScalingGroupRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::DeleteKxScalingGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteKxScalingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteKxScalingGroupRequestT = Model::DeleteKxScalingGroupRequest>
+        void DeleteKxScalingGroupAsync(const DeleteKxScalingGroupRequestT& request, const DeleteKxScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::DeleteKxScalingGroup, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a user in the specified kdb environment.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxUser">AWS
@@ -309,6 +441,33 @@ namespace finspace
         void DeleteKxUserAsync(const DeleteKxUserRequestT& request, const DeleteKxUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FinspaceClient::DeleteKxUser, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes a volume. You can only delete a volume if it's not attached to a
+         * cluster or a dataview. When a volume is deleted, any data on the volume is lost.
+         * This action is irreversible. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKxVolumeOutcome DeleteKxVolume(const Model::DeleteKxVolumeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteKxVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteKxVolumeRequestT = Model::DeleteKxVolumeRequest>
+        Model::DeleteKxVolumeOutcomeCallable DeleteKxVolumeCallable(const DeleteKxVolumeRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::DeleteKxVolume, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteKxVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteKxVolumeRequestT = Model::DeleteKxVolumeRequest>
+        void DeleteKxVolumeAsync(const DeleteKxVolumeRequestT& request, const DeleteKxVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::DeleteKxVolume, request, handler, context);
         }
 
         /**
@@ -415,6 +574,31 @@ namespace finspace
         }
 
         /**
+         * <p> Retrieves details of the dataview. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxDataview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetKxDataviewOutcome GetKxDataview(const Model::GetKxDataviewRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetKxDataview that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetKxDataviewRequestT = Model::GetKxDataviewRequest>
+        Model::GetKxDataviewOutcomeCallable GetKxDataviewCallable(const GetKxDataviewRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::GetKxDataview, request);
+        }
+
+        /**
+         * An Async wrapper for GetKxDataview that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetKxDataviewRequestT = Model::GetKxDataviewRequest>
+        void GetKxDataviewAsync(const GetKxDataviewRequestT& request, const GetKxDataviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::GetKxDataview, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves all the information for the specified kdb
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxEnvironment">AWS
@@ -441,6 +625,31 @@ namespace finspace
         }
 
         /**
+         * <p> Retrieves details of a scaling group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxScalingGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetKxScalingGroupOutcome GetKxScalingGroup(const Model::GetKxScalingGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetKxScalingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetKxScalingGroupRequestT = Model::GetKxScalingGroupRequest>
+        Model::GetKxScalingGroupOutcomeCallable GetKxScalingGroupCallable(const GetKxScalingGroupRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::GetKxScalingGroup, request);
+        }
+
+        /**
+         * An Async wrapper for GetKxScalingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetKxScalingGroupRequestT = Model::GetKxScalingGroupRequest>
+        void GetKxScalingGroupAsync(const GetKxScalingGroupRequestT& request, const GetKxScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::GetKxScalingGroup, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about the specified kdb user.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxUser">AWS
@@ -464,6 +673,31 @@ namespace finspace
         void GetKxUserAsync(const GetKxUserRequestT& request, const GetKxUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FinspaceClient::GetKxUser, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves the information about the volume. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetKxVolumeOutcome GetKxVolume(const Model::GetKxVolumeRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetKxVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetKxVolumeRequestT = Model::GetKxVolumeRequest>
+        Model::GetKxVolumeOutcomeCallable GetKxVolumeCallable(const GetKxVolumeRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::GetKxVolume, request);
+        }
+
+        /**
+         * An Async wrapper for GetKxVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetKxVolumeRequestT = Model::GetKxVolumeRequest>
+        void GetKxVolumeAsync(const GetKxVolumeRequestT& request, const GetKxVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::GetKxVolume, request, handler, context);
         }
 
         /**
@@ -569,6 +803,32 @@ namespace finspace
         }
 
         /**
+         * <p> Returns a list of all the dataviews in the database.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxDataviews">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListKxDataviewsOutcome ListKxDataviews(const Model::ListKxDataviewsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListKxDataviews that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListKxDataviewsRequestT = Model::ListKxDataviewsRequest>
+        Model::ListKxDataviewsOutcomeCallable ListKxDataviewsCallable(const ListKxDataviewsRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::ListKxDataviews, request);
+        }
+
+        /**
+         * An Async wrapper for ListKxDataviews that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListKxDataviewsRequestT = Model::ListKxDataviewsRequest>
+        void ListKxDataviewsAsync(const ListKxDataviewsRequestT& request, const ListKxDataviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::ListKxDataviews, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of kdb environments created in an account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxEnvironments">AWS
@@ -595,6 +855,32 @@ namespace finspace
         }
 
         /**
+         * <p> Returns a list of scaling groups in a kdb environment.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxScalingGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListKxScalingGroupsOutcome ListKxScalingGroups(const Model::ListKxScalingGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListKxScalingGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListKxScalingGroupsRequestT = Model::ListKxScalingGroupsRequest>
+        Model::ListKxScalingGroupsOutcomeCallable ListKxScalingGroupsCallable(const ListKxScalingGroupsRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::ListKxScalingGroups, request);
+        }
+
+        /**
+         * An Async wrapper for ListKxScalingGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListKxScalingGroupsRequestT = Model::ListKxScalingGroupsRequest>
+        void ListKxScalingGroupsAsync(const ListKxScalingGroupsRequestT& request, const ListKxScalingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::ListKxScalingGroups, request, handler, context);
+        }
+
+        /**
          * <p>Lists all the users in a kdb environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxUsers">AWS
          * API Reference</a></p>
@@ -617,6 +903,31 @@ namespace finspace
         void ListKxUsersAsync(const ListKxUsersRequestT& request, const ListKxUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FinspaceClient::ListKxUsers, request, handler, context);
+        }
+
+        /**
+         * <p> Lists all the volumes in a kdb environment. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxVolumes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListKxVolumesOutcome ListKxVolumes(const Model::ListKxVolumesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListKxVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListKxVolumesRequestT = Model::ListKxVolumesRequest>
+        Model::ListKxVolumesOutcomeCallable ListKxVolumesCallable(const ListKxVolumesRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::ListKxVolumes, request);
+        }
+
+        /**
+         * An Async wrapper for ListKxVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListKxVolumesRequestT = Model::ListKxVolumesRequest>
+        void ListKxVolumesAsync(const ListKxVolumesRequestT& request, const ListKxVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::ListKxVolumes, request, handler, context);
         }
 
         /**
@@ -779,6 +1090,34 @@ namespace finspace
         }
 
         /**
+         * <p> Updates the specified dataview. The dataviews get automatically updated when
+         * any new changesets are ingested. Each update of the dataview creates a new
+         * version, including changeset details and cache configurations</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxDataview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKxDataviewOutcome UpdateKxDataview(const Model::UpdateKxDataviewRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKxDataview that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKxDataviewRequestT = Model::UpdateKxDataviewRequest>
+        Model::UpdateKxDataviewOutcomeCallable UpdateKxDataviewCallable(const UpdateKxDataviewRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::UpdateKxDataview, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKxDataview that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKxDataviewRequestT = Model::UpdateKxDataviewRequest>
+        void UpdateKxDataviewAsync(const UpdateKxDataviewRequestT& request, const UpdateKxDataviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::UpdateKxDataview, request, handler, context);
+        }
+
+        /**
          * <p>Updates information for the given kdb environment.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxEnvironment">AWS
@@ -858,6 +1197,33 @@ namespace finspace
         void UpdateKxUserAsync(const UpdateKxUserRequestT& request, const UpdateKxUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&FinspaceClient::UpdateKxUser, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the throughput or capacity of a volume. During the update process,
+         * the filesystem might be unavailable for a few minutes. You can retry any
+         * operations after the update is complete. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKxVolumeOutcome UpdateKxVolume(const Model::UpdateKxVolumeRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKxVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKxVolumeRequestT = Model::UpdateKxVolumeRequest>
+        Model::UpdateKxVolumeOutcomeCallable UpdateKxVolumeCallable(const UpdateKxVolumeRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::UpdateKxVolume, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKxVolume that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKxVolumeRequestT = Model::UpdateKxVolumeRequest>
+        void UpdateKxVolumeAsync(const UpdateKxVolumeRequestT& request, const UpdateKxVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::UpdateKxVolume, request, handler, context);
         }
 
 

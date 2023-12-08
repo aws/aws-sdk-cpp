@@ -19,7 +19,8 @@ namespace Model
     HDB,
     RDB,
     GATEWAY,
-    GP
+    GP,
+    TICKERPLANT
   };
 
 namespace KxClusterTypeMapper

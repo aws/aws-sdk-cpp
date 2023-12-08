@@ -8,8 +8,10 @@
 #include <aws/finspace/model/KxClusterStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/finspace/model/KxClusterType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/finspace/model/KxAzMode.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/finspace/model/Volume.h>
 #include <utility>
 
 namespace Aws
@@ -215,7 +217,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline const KxClusterType& GetClusterType() const{ return m_clusterType; }
 
@@ -238,7 +244,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
 
@@ -261,7 +271,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline void SetClusterType(const KxClusterType& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
 
@@ -284,7 +298,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline void SetClusterType(KxClusterType&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
 
@@ -307,7 +325,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline KxCluster& WithClusterType(const KxClusterType& value) { SetClusterType(value); return *this;}
 
@@ -330,7 +352,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline KxCluster& WithClusterType(KxClusterType&& value) { SetClusterType(std::move(value)); return *this;}
 
@@ -415,6 +441,47 @@ namespace Model
      * <p>A version of the FinSpace managed kdb to run.</p>
      */
     inline KxCluster& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline KxCluster& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline KxCluster& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline KxCluster& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline KxCluster& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -733,6 +800,9 @@ namespace Model
 
     Aws::String m_releaseLabel;
     bool m_releaseLabelHasBeenSet = false;
+
+    Aws::Vector<Volume> m_volumes;
+    bool m_volumesHasBeenSet = false;
 
     Aws::String m_initializationScript;
     bool m_initializationScriptHasBeenSet = false;

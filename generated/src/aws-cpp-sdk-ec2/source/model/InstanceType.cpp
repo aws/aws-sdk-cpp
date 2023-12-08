@@ -792,6 +792,15 @@ namespace Aws
         static const int r7i_24xlarge_HASH = HashingUtils::HashString("r7i.24xlarge");
         static const int r7i_48xlarge_HASH = HashingUtils::HashString("r7i.48xlarge");
         static const int dl2q_24xlarge_HASH = HashingUtils::HashString("dl2q.24xlarge");
+        static const int mac2_m2_metal_HASH = HashingUtils::HashString("mac2-m2.metal");
+        static const int i4i_12xlarge_HASH = HashingUtils::HashString("i4i.12xlarge");
+        static const int i4i_24xlarge_HASH = HashingUtils::HashString("i4i.24xlarge");
+        static const int c7i_metal_24xl_HASH = HashingUtils::HashString("c7i.metal-24xl");
+        static const int c7i_metal_48xl_HASH = HashingUtils::HashString("c7i.metal-48xl");
+        static const int m7i_metal_24xl_HASH = HashingUtils::HashString("m7i.metal-24xl");
+        static const int m7i_metal_48xl_HASH = HashingUtils::HashString("m7i.metal-48xl");
+        static const int r7i_metal_24xl_HASH = HashingUtils::HashString("r7i.metal-24xl");
+        static const int r7i_metal_48xl_HASH = HashingUtils::HashString("r7i.metal-48xl");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -4684,6 +4693,51 @@ namespace Aws
             enumValue = InstanceType::dl2q_24xlarge;
             return true;
           }
+          else if (hashCode == mac2_m2_metal_HASH)
+          {
+            enumValue = InstanceType::mac2_m2_metal;
+            return true;
+          }
+          else if (hashCode == i4i_12xlarge_HASH)
+          {
+            enumValue = InstanceType::i4i_12xlarge;
+            return true;
+          }
+          else if (hashCode == i4i_24xlarge_HASH)
+          {
+            enumValue = InstanceType::i4i_24xlarge;
+            return true;
+          }
+          else if (hashCode == c7i_metal_24xl_HASH)
+          {
+            enumValue = InstanceType::c7i_metal_24xl;
+            return true;
+          }
+          else if (hashCode == c7i_metal_48xl_HASH)
+          {
+            enumValue = InstanceType::c7i_metal_48xl;
+            return true;
+          }
+          else if (hashCode == m7i_metal_24xl_HASH)
+          {
+            enumValue = InstanceType::m7i_metal_24xl;
+            return true;
+          }
+          else if (hashCode == m7i_metal_48xl_HASH)
+          {
+            enumValue = InstanceType::m7i_metal_48xl;
+            return true;
+          }
+          else if (hashCode == r7i_metal_24xl_HASH)
+          {
+            enumValue = InstanceType::r7i_metal_24xl;
+            return true;
+          }
+          else if (hashCode == r7i_metal_48xl_HASH)
+          {
+            enumValue = InstanceType::r7i_metal_48xl;
+            return true;
+          }
           return false;
         }
 
@@ -7054,6 +7108,33 @@ namespace Aws
             return true;
           case InstanceType::dl2q_24xlarge:
             value = "dl2q.24xlarge";
+            return true;
+          case InstanceType::mac2_m2_metal:
+            value = "mac2-m2.metal";
+            return true;
+          case InstanceType::i4i_12xlarge:
+            value = "i4i.12xlarge";
+            return true;
+          case InstanceType::i4i_24xlarge:
+            value = "i4i.24xlarge";
+            return true;
+          case InstanceType::c7i_metal_24xl:
+            value = "c7i.metal-24xl";
+            return true;
+          case InstanceType::c7i_metal_48xl:
+            value = "c7i.metal-48xl";
+            return true;
+          case InstanceType::m7i_metal_24xl:
+            value = "m7i.metal-24xl";
+            return true;
+          case InstanceType::m7i_metal_48xl:
+            value = "m7i.metal-48xl";
+            return true;
+          case InstanceType::r7i_metal_24xl:
+            value = "r7i.metal-24xl";
+            return true;
+          case InstanceType::r7i_metal_48xl:
+            value = "r7i.metal-48xl";
             return true;
           default:
             return false;

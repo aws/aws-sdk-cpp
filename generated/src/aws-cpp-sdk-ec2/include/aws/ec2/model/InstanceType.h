@@ -787,7 +787,16 @@ namespace Model
     r7i_16xlarge,
     r7i_24xlarge,
     r7i_48xlarge,
-    dl2q_24xlarge
+    dl2q_24xlarge,
+    mac2_m2_metal,
+    i4i_12xlarge,
+    i4i_24xlarge,
+    c7i_metal_24xl,
+    c7i_metal_48xl,
+    m7i_metal_24xl,
+    m7i_metal_48xl,
+    r7i_metal_24xl,
+    r7i_metal_48xl
   };
 
 namespace InstanceTypeMapper

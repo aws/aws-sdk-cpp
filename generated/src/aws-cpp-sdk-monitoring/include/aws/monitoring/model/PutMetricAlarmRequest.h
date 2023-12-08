@@ -912,8 +912,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -924,8 +924,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -936,8 +936,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -948,8 +948,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -960,8 +960,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -972,8 +972,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -984,8 +984,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -996,8 +996,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -1413,15 +1413,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
@@ -1431,15 +1433,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
@@ -1449,15 +1453,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
@@ -1467,15 +1473,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
@@ -1485,15 +1493,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline PutMetricAlarmRequest& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
@@ -1503,15 +1513,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline PutMetricAlarmRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
@@ -1916,8 +1928,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1936,8 +1948,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1956,8 +1968,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1976,8 +1988,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1996,8 +2008,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -2016,8 +2028,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -2036,8 +2048,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -2056,8 +2068,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>

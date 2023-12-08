@@ -16,7 +16,8 @@ UpdateKxUserRequest::UpdateKxUserRequest() :
     m_environmentIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_iamRoleHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
