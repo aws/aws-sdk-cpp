@@ -99,7 +99,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline const KxClusterType& GetClusterType() const{ return m_clusterType; }
 
@@ -122,7 +126,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
 
@@ -145,7 +153,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline void SetClusterType(const KxClusterType& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
 
@@ -168,7 +180,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline void SetClusterType(KxClusterType&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
 
@@ -191,7 +207,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline ListKxClustersRequest& WithClusterType(const KxClusterType& value) { SetClusterType(value); return *this;}
 
@@ -214,7 +234,11 @@ namespace Model
      * This cluster type can optionally mount databases including cache and savedown
      * storage. For this cluster type, the node count is fixed at 1. It does not
      * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
-     * </ul>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline ListKxClustersRequest& WithClusterType(KxClusterType&& value) { SetClusterType(std::move(value)); return *this;}
 

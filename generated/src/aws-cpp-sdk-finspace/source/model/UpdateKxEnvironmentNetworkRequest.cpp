@@ -16,7 +16,8 @@ UpdateKxEnvironmentNetworkRequest::UpdateKxEnvironmentNetworkRequest() :
     m_environmentIdHasBeenSet(false),
     m_transitGatewayConfigurationHasBeenSet(false),
     m_customDNSConfigurationHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 

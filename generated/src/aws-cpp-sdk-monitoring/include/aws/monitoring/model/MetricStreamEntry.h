@@ -291,38 +291,38 @@ namespace Model
 
 
     /**
-     * <p>The output format of this metric stream. Valid values are <code>json</code>
-     * and <code>opentelemetry0.7</code>.</p>
+     * <p>The output format of this metric stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
      */
     inline const MetricStreamOutputFormat& GetOutputFormat() const{ return m_outputFormat; }
 
     /**
-     * <p>The output format of this metric stream. Valid values are <code>json</code>
-     * and <code>opentelemetry0.7</code>.</p>
+     * <p>The output format of this metric stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
      */
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
 
     /**
-     * <p>The output format of this metric stream. Valid values are <code>json</code>
-     * and <code>opentelemetry0.7</code>.</p>
+     * <p>The output format of this metric stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
      */
     inline void SetOutputFormat(const MetricStreamOutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
 
     /**
-     * <p>The output format of this metric stream. Valid values are <code>json</code>
-     * and <code>opentelemetry0.7</code>.</p>
+     * <p>The output format of this metric stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
      */
     inline void SetOutputFormat(MetricStreamOutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
 
     /**
-     * <p>The output format of this metric stream. Valid values are <code>json</code>
-     * and <code>opentelemetry0.7</code>.</p>
+     * <p>The output format of this metric stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
      */
     inline MetricStreamEntry& WithOutputFormat(const MetricStreamOutputFormat& value) { SetOutputFormat(value); return *this;}
 
     /**
-     * <p>The output format of this metric stream. Valid values are <code>json</code>
-     * and <code>opentelemetry0.7</code>.</p>
+     * <p>The output format of this metric stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
      */
     inline MetricStreamEntry& WithOutputFormat(MetricStreamOutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
 

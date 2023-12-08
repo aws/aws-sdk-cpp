@@ -7,6 +7,7 @@
 #include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/finspace/model/KxDataviewConfiguration.h>
 #include <aws/finspace/model/KxDatabaseCacheConfiguration.h>
 #include <utility>
 
@@ -178,6 +179,86 @@ namespace Model
      */
     inline KxDatabaseConfiguration& WithChangesetId(const char* value) { SetChangesetId(value); return *this;}
 
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline const Aws::String& GetDataviewName() const{ return m_dataviewName; }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline bool DataviewNameHasBeenSet() const { return m_dataviewNameHasBeenSet; }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline void SetDataviewName(const Aws::String& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = value; }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline void SetDataviewName(Aws::String&& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = std::move(value); }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline void SetDataviewName(const char* value) { m_dataviewNameHasBeenSet = true; m_dataviewName.assign(value); }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline KxDatabaseConfiguration& WithDataviewName(const Aws::String& value) { SetDataviewName(value); return *this;}
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline KxDatabaseConfiguration& WithDataviewName(Aws::String&& value) { SetDataviewName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline KxDatabaseConfiguration& WithDataviewName(const char* value) { SetDataviewName(value); return *this;}
+
+
+    /**
+     * <p> The configuration of the dataview to be used with specified cluster. </p>
+     */
+    inline const KxDataviewConfiguration& GetDataviewConfiguration() const{ return m_dataviewConfiguration; }
+
+    /**
+     * <p> The configuration of the dataview to be used with specified cluster. </p>
+     */
+    inline bool DataviewConfigurationHasBeenSet() const { return m_dataviewConfigurationHasBeenSet; }
+
+    /**
+     * <p> The configuration of the dataview to be used with specified cluster. </p>
+     */
+    inline void SetDataviewConfiguration(const KxDataviewConfiguration& value) { m_dataviewConfigurationHasBeenSet = true; m_dataviewConfiguration = value; }
+
+    /**
+     * <p> The configuration of the dataview to be used with specified cluster. </p>
+     */
+    inline void SetDataviewConfiguration(KxDataviewConfiguration&& value) { m_dataviewConfigurationHasBeenSet = true; m_dataviewConfiguration = std::move(value); }
+
+    /**
+     * <p> The configuration of the dataview to be used with specified cluster. </p>
+     */
+    inline KxDatabaseConfiguration& WithDataviewConfiguration(const KxDataviewConfiguration& value) { SetDataviewConfiguration(value); return *this;}
+
+    /**
+     * <p> The configuration of the dataview to be used with specified cluster. </p>
+     */
+    inline KxDatabaseConfiguration& WithDataviewConfiguration(KxDataviewConfiguration&& value) { SetDataviewConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_databaseName;
@@ -188,6 +269,12 @@ namespace Model
 
     Aws::String m_changesetId;
     bool m_changesetIdHasBeenSet = false;
+
+    Aws::String m_dataviewName;
+    bool m_dataviewNameHasBeenSet = false;
+
+    KxDataviewConfiguration m_dataviewConfiguration;
+    bool m_dataviewConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

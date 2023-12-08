@@ -21,14 +21,18 @@ namespace Model
 KxDatabaseConfiguration::KxDatabaseConfiguration() : 
     m_databaseNameHasBeenSet(false),
     m_cacheConfigurationsHasBeenSet(false),
-    m_changesetIdHasBeenSet(false)
+    m_changesetIdHasBeenSet(false),
+    m_dataviewNameHasBeenSet(false),
+    m_dataviewConfigurationHasBeenSet(false)
 {
 }
 
 KxDatabaseConfiguration::KxDatabaseConfiguration(JsonView jsonValue) : 
     m_databaseNameHasBeenSet(false),
     m_cacheConfigurationsHasBeenSet(false),
-    m_changesetIdHasBeenSet(false)
+    m_changesetIdHasBeenSet(false),
+    m_dataviewNameHasBeenSet(false),
+    m_dataviewConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +63,20 @@ KxDatabaseConfiguration& KxDatabaseConfiguration::operator =(JsonView jsonValue)
     m_changesetIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataviewName"))
+  {
+    m_dataviewName = jsonValue.GetString("dataviewName");
+
+    m_dataviewNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataviewConfiguration"))
+  {
+    m_dataviewConfiguration = jsonValue.GetObject("dataviewConfiguration");
+
+    m_dataviewConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +104,18 @@ JsonValue KxDatabaseConfiguration::Jsonize() const
   if(m_changesetIdHasBeenSet)
   {
    payload.WithString("changesetId", m_changesetId);
+
+  }
+
+  if(m_dataviewNameHasBeenSet)
+  {
+   payload.WithString("dataviewName", m_dataviewName);
+
+  }
+
+  if(m_dataviewConfigurationHasBeenSet)
+  {
+   payload.WithObject("dataviewConfiguration", m_dataviewConfiguration.Jsonize());
 
   }
 
