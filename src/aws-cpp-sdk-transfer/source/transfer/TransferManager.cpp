@@ -361,15 +361,14 @@ namespace Aws
             if (!isRetry)
             {
                 Aws::S3::Model::CreateMultipartUploadRequest createMultipartRequest = m_transferConfig.createMultipartUploadTemplate;
+                createMultipartRequest.SetChecksumAlgorithm(m_transferConfig.computeContentMD5
+                                                            ? S3::Model::ChecksumAlgorithm::NOT_SET
+                                                            : m_transferConfig.checksumAlgorithm);
                 createMultipartRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                 createMultipartRequest.SetBucket(handle->GetBucketName());
                 createMultipartRequest.SetContentType(handle->GetContentType());
                 createMultipartRequest.SetKey(handle->GetKey());
                 createMultipartRequest.SetMetadata(handle->GetMetadata());
-
-                if (!m_transferConfig.computeContentMD5) {
-                    createMultipartRequest.SetChecksumAlgorithm(m_transferConfig.checksumAlgorithm);
-                }
 
                 auto createMultipartResponse = m_transferConfig.s3Client->CreateMultipartUpload(createMultipartRequest);
                 if (createMultipartResponse.IsSuccess())
@@ -444,16 +443,15 @@ namespace Aws
                     auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
                     PartPointer partPtr = partsIter->second;
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
+                    uploadPartRequest.SetChecksumAlgorithm(m_transferConfig.computeContentMD5
+                                                           ? S3::Model::ChecksumAlgorithm::NOT_SET
+                                                           : m_transferConfig.checksumAlgorithm);
                     uploadPartRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                     uploadPartRequest.SetBucket(handle->GetBucketName());
                     uploadPartRequest.SetContentLength(static_cast<long long>(lengthToWrite));
                     uploadPartRequest.SetKey(handle->GetKey());
                     uploadPartRequest.SetPartNumber(partsIter->first);
                     uploadPartRequest.SetUploadId(handle->GetMultiPartId());
-
-                    if (!m_transferConfig.computeContentMD5) {
-                        uploadPartRequest.SetChecksumAlgorithm(m_transferConfig.checksumAlgorithm);
-                    }
 
                     uploadPartRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     uploadPartRequest.SetDataSentEventHandler([self, handle, partPtr](const Aws::Http::HttpRequest*, long long amount){ partPtr->OnDataTransferred(amount, handle); self->TriggerUploadProgressCallback(handle); });
@@ -463,9 +461,6 @@ namespace Aws
 
                     uploadPartRequest.SetBody(preallocatedStreamReader);
                     uploadPartRequest.SetContentType(handle->GetContentType());
-                    if (m_transferConfig.computeContentMD5) {
-                        uploadPartRequest.SetContentMD5(Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(*preallocatedStreamReader)));
-                    }
 
                     auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
                     asyncContext->handle = handle;
@@ -526,6 +521,9 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(handle);
 
             auto putObjectRequest = m_transferConfig.putObjectTemplate;
+            putObjectRequest.SetChecksumAlgorithm(m_transferConfig.computeContentMD5
+                                                  ? S3::Model::ChecksumAlgorithm::NOT_SET
+                                                  : m_transferConfig.checksumAlgorithm);
             putObjectRequest.SetChecksumAlgorithm(m_transferConfig.checksumAlgorithm);
             putObjectRequest.SetBucket(handle->GetBucketName());
             putObjectRequest.SetKey(handle->GetKey());
@@ -545,9 +543,6 @@ namespace Aws
             auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
             putObjectRequest.SetBody(preallocatedStreamReader);
-            if (m_transferConfig.computeContentMD5) {
-                putObjectRequest.SetContentMD5(Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(*preallocatedStreamReader)));
-            }
 
             auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
             auto uploadProgressCallback = [self, partState, handle](const Aws::Http::HttpRequest*, long long progress)
@@ -666,10 +661,7 @@ namespace Aws
                             .WithPartNumber(part.first)
                             .WithETag(part.second->GetETag());
 
-                        if(!m_transferConfig.computeContentMD5) {
-                            SetChecksumForAlgorithm(part.second, completedPart);
-                        }
-
+                        SetChecksumForAlgorithm(part.second, completedPart);
                         completedUpload.AddParts(completedPart);
                     }
 
