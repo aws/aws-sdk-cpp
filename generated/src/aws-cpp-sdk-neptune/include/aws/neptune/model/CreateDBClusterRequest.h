@@ -1302,56 +1302,83 @@ namespace Model
 
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -1484,6 +1511,87 @@ namespace Model
 
 
     /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -1605,6 +1713,9 @@ namespace Model
 
     Aws::String m_globalClusterIdentifier;
     bool m_globalClusterIdentifierHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

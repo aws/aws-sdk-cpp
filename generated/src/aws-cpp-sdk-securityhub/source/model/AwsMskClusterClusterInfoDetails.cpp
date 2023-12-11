@@ -24,7 +24,8 @@ AwsMskClusterClusterInfoDetails::AwsMskClusterClusterInfoDetails() :
     m_numberOfBrokerNodes(0),
     m_numberOfBrokerNodesHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false)
+    m_clientAuthenticationHasBeenSet(false),
+    m_enhancedMonitoringHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ AwsMskClusterClusterInfoDetails::AwsMskClusterClusterInfoDetails(JsonView jsonVa
     m_numberOfBrokerNodes(0),
     m_numberOfBrokerNodesHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false)
+    m_clientAuthenticationHasBeenSet(false),
+    m_enhancedMonitoringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ AwsMskClusterClusterInfoDetails& AwsMskClusterClusterInfoDetails::operator =(Jso
     m_clientAuthenticationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnhancedMonitoring"))
+  {
+    m_enhancedMonitoring = jsonValue.GetString("EnhancedMonitoring");
+
+    m_enhancedMonitoringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +119,12 @@ JsonValue AwsMskClusterClusterInfoDetails::Jsonize() const
   if(m_clientAuthenticationHasBeenSet)
   {
    payload.WithObject("ClientAuthentication", m_clientAuthentication.Jsonize());
+
+  }
+
+  if(m_enhancedMonitoringHasBeenSet)
+  {
+   payload.WithString("EnhancedMonitoring", m_enhancedMonitoring);
 
   }
 

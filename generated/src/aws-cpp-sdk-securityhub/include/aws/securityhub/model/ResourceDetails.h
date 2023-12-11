@@ -102,6 +102,8 @@
 #include <aws/securityhub/model/AwsDmsReplicationInstanceDetails.h>
 #include <aws/securityhub/model/AwsRoute53HostedZoneDetails.h>
 #include <aws/securityhub/model/AwsMskClusterDetails.h>
+#include <aws/securityhub/model/AwsS3AccessPointDetails.h>
+#include <aws/securityhub/model/AwsEc2ClientVpnEndpointDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -3454,6 +3456,92 @@ namespace Model
      */
     inline ResourceDetails& WithAwsMskCluster(AwsMskClusterDetails&& value) { SetAwsMskCluster(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline const AwsS3AccessPointDetails& GetAwsS3AccessPoint() const{ return m_awsS3AccessPoint; }
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline bool AwsS3AccessPointHasBeenSet() const { return m_awsS3AccessPointHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline void SetAwsS3AccessPoint(const AwsS3AccessPointDetails& value) { m_awsS3AccessPointHasBeenSet = true; m_awsS3AccessPoint = value; }
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline void SetAwsS3AccessPoint(AwsS3AccessPointDetails&& value) { m_awsS3AccessPointHasBeenSet = true; m_awsS3AccessPoint = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline ResourceDetails& WithAwsS3AccessPoint(const AwsS3AccessPointDetails& value) { SetAwsS3AccessPoint(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access
+     * point. S3 access points are named network endpoints that are attached to S3
+     * buckets that you can use to perform S3 object operations. </p>
+     */
+    inline ResourceDetails& WithAwsS3AccessPoint(AwsS3AccessPointDetails&& value) { SetAwsS3AccessPoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline const AwsEc2ClientVpnEndpointDetails& GetAwsEc2ClientVpnEndpoint() const{ return m_awsEc2ClientVpnEndpoint; }
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline bool AwsEc2ClientVpnEndpointHasBeenSet() const { return m_awsEc2ClientVpnEndpointHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline void SetAwsEc2ClientVpnEndpoint(const AwsEc2ClientVpnEndpointDetails& value) { m_awsEc2ClientVpnEndpointHasBeenSet = true; m_awsEc2ClientVpnEndpoint = value; }
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline void SetAwsEc2ClientVpnEndpoint(AwsEc2ClientVpnEndpointDetails&& value) { m_awsEc2ClientVpnEndpointHasBeenSet = true; m_awsEc2ClientVpnEndpoint = std::move(value); }
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline ResourceDetails& WithAwsEc2ClientVpnEndpoint(const AwsEc2ClientVpnEndpointDetails& value) { SetAwsEc2ClientVpnEndpoint(value); return *this;}
+
+    /**
+     * <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the
+     * resource that you create and configure to enable and manage client VPN sessions.
+     * It's the termination point for all client VPN sessions. </p>
+     */
+    inline ResourceDetails& WithAwsEc2ClientVpnEndpoint(AwsEc2ClientVpnEndpointDetails&& value) { SetAwsEc2ClientVpnEndpoint(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -3746,6 +3834,12 @@ namespace Model
 
     AwsMskClusterDetails m_awsMskCluster;
     bool m_awsMskClusterHasBeenSet = false;
+
+    AwsS3AccessPointDetails m_awsS3AccessPoint;
+    bool m_awsS3AccessPointHasBeenSet = false;
+
+    AwsEc2ClientVpnEndpointDetails m_awsEc2ClientVpnEndpoint;
+    bool m_awsEc2ClientVpnEndpointHasBeenSet = false;
   };
 
 } // namespace Model

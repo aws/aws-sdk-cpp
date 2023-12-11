@@ -1606,56 +1606,83 @@ namespace Model
 
 
     /**
-     * <p>A list of log types that this DB cluster is configured to export to
-     * CloudWatch Logs.</p>
+     * <p>A list of the log types that this DB cluster is configured to export to
+     * CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs
+     * to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
 
     /**
-     * <p>A list of log types that this DB cluster is configured to export to
-     * CloudWatch Logs.</p>
+     * <p>A list of the log types that this DB cluster is configured to export to
+     * CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs
+     * to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline bool EnabledCloudwatchLogsExportsHasBeenSet() const { return m_enabledCloudwatchLogsExportsHasBeenSet; }
 
     /**
-     * <p>A list of log types that this DB cluster is configured to export to
-     * CloudWatch Logs.</p>
+     * <p>A list of the log types that this DB cluster is configured to export to
+     * CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs
+     * to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
 
     /**
-     * <p>A list of log types that this DB cluster is configured to export to
-     * CloudWatch Logs.</p>
+     * <p>A list of the log types that this DB cluster is configured to export to
+     * CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs
+     * to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
 
     /**
-     * <p>A list of log types that this DB cluster is configured to export to
-     * CloudWatch Logs.</p>
+     * <p>A list of the log types that this DB cluster is configured to export to
+     * CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs
+     * to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline DBCluster& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
 
     /**
-     * <p>A list of log types that this DB cluster is configured to export to
-     * CloudWatch Logs.</p>
+     * <p>A list of the log types that this DB cluster is configured to export to
+     * CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs
+     * to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline DBCluster& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
-     * <p>A list of log types that this DB cluster is configured to export to
-     * CloudWatch Logs.</p>
+     * <p>A list of the log types that this DB cluster is configured to export to
+     * CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs
+     * to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
-     * <p>A list of log types that this DB cluster is configured to export to
-     * CloudWatch Logs.</p>
+     * <p>A list of the log types that this DB cluster is configured to export to
+     * CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs
+     * to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of log types that this DB cluster is configured to export to
-     * CloudWatch Logs.</p>
+     * <p>A list of the log types that this DB cluster is configured to export to
+     * CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs
+     * to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -1881,6 +1908,84 @@ namespace Model
      */
     inline DBCluster& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
 
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the <code>iopt1</code>
+     * storage type.</p>
+     */
+    inline const Aws::Utils::DateTime& GetIOOptimizedNextAllowedModificationTime() const{ return m_iOOptimizedNextAllowedModificationTime; }
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the <code>iopt1</code>
+     * storage type.</p>
+     */
+    inline bool IOOptimizedNextAllowedModificationTimeHasBeenSet() const { return m_iOOptimizedNextAllowedModificationTimeHasBeenSet; }
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the <code>iopt1</code>
+     * storage type.</p>
+     */
+    inline void SetIOOptimizedNextAllowedModificationTime(const Aws::Utils::DateTime& value) { m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true; m_iOOptimizedNextAllowedModificationTime = value; }
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the <code>iopt1</code>
+     * storage type.</p>
+     */
+    inline void SetIOOptimizedNextAllowedModificationTime(Aws::Utils::DateTime&& value) { m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true; m_iOOptimizedNextAllowedModificationTime = std::move(value); }
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the <code>iopt1</code>
+     * storage type.</p>
+     */
+    inline DBCluster& WithIOOptimizedNextAllowedModificationTime(const Aws::Utils::DateTime& value) { SetIOOptimizedNextAllowedModificationTime(value); return *this;}
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the <code>iopt1</code>
+     * storage type.</p>
+     */
+    inline DBCluster& WithIOOptimizedNextAllowedModificationTime(Aws::Utils::DateTime&& value) { SetIOOptimizedNextAllowedModificationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p>
+     */
+    inline DBCluster& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p>
+     */
+    inline DBCluster& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p>
+     */
+    inline DBCluster& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -2011,6 +2116,12 @@ namespace Model
 
     Aws::String m_globalClusterIdentifier;
     bool m_globalClusterIdentifierHasBeenSet = false;
+
+    Aws::Utils::DateTime m_iOOptimizedNextAllowedModificationTime;
+    bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model
