@@ -678,37 +678,49 @@ namespace Model
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const{ return m_cloudwatchLogsExportConfiguration; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline bool CloudwatchLogsExportConfigurationHasBeenSet() const { return m_cloudwatchLogsExportConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline void SetCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = value; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline void SetCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = std::move(value); }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline ModifyDBClusterRequest& WithCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { SetCloudwatchLogsExportConfiguration(value); return *this;}
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline ModifyDBClusterRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { SetCloudwatchLogsExportConfiguration(std::move(value)); return *this;}
 
@@ -1034,6 +1046,63 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -1092,6 +1161,9 @@ namespace Model
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
     bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

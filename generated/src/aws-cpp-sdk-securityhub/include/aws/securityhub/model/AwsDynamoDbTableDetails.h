@@ -816,6 +816,31 @@ namespace Model
      */
     inline AwsDynamoDbTableDetails& WithTableStatus(const char* value) { SetTableStatus(value); return *this;}
 
+
+    /**
+     * <p> Indicates whether deletion protection is to be enabled (true) or disabled
+     * (false) on the table. </p>
+     */
+    inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
+
+    /**
+     * <p> Indicates whether deletion protection is to be enabled (true) or disabled
+     * (false) on the table. </p>
+     */
+    inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
+
+    /**
+     * <p> Indicates whether deletion protection is to be enabled (true) or disabled
+     * (false) on the table. </p>
+     */
+    inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
+
+    /**
+     * <p> Indicates whether deletion protection is to be enabled (true) or disabled
+     * (false) on the table. </p>
+     */
+    inline AwsDynamoDbTableDetails& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
+
   private:
 
     Aws::Vector<AwsDynamoDbTableAttributeDefinition> m_attributeDefinitions;
@@ -874,6 +899,9 @@ namespace Model
 
     Aws::String m_tableStatus;
     bool m_tableStatusHasBeenSet = false;
+
+    bool m_deletionProtectionEnabled;
+    bool m_deletionProtectionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

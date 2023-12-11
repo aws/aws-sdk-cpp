@@ -115,7 +115,9 @@ ResourceDetails::ResourceDetails() :
     m_awsDmsReplicationTaskHasBeenSet(false),
     m_awsDmsReplicationInstanceHasBeenSet(false),
     m_awsRoute53HostedZoneHasBeenSet(false),
-    m_awsMskClusterHasBeenSet(false)
+    m_awsMskClusterHasBeenSet(false),
+    m_awsS3AccessPointHasBeenSet(false),
+    m_awsEc2ClientVpnEndpointHasBeenSet(false)
 {
 }
 
@@ -216,7 +218,9 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsDmsReplicationTaskHasBeenSet(false),
     m_awsDmsReplicationInstanceHasBeenSet(false),
     m_awsRoute53HostedZoneHasBeenSet(false),
-    m_awsMskClusterHasBeenSet(false)
+    m_awsMskClusterHasBeenSet(false),
+    m_awsS3AccessPointHasBeenSet(false),
+    m_awsEc2ClientVpnEndpointHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -905,6 +909,20 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsMskClusterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsS3AccessPoint"))
+  {
+    m_awsS3AccessPoint = jsonValue.GetObject("AwsS3AccessPoint");
+
+    m_awsS3AccessPointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2ClientVpnEndpoint"))
+  {
+    m_awsEc2ClientVpnEndpoint = jsonValue.GetObject("AwsEc2ClientVpnEndpoint");
+
+    m_awsEc2ClientVpnEndpointHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1496,6 +1514,18 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsMskClusterHasBeenSet)
   {
    payload.WithObject("AwsMskCluster", m_awsMskCluster.Jsonize());
+
+  }
+
+  if(m_awsS3AccessPointHasBeenSet)
+  {
+   payload.WithObject("AwsS3AccessPoint", m_awsS3AccessPoint.Jsonize());
+
+  }
+
+  if(m_awsEc2ClientVpnEndpointHasBeenSet)
+  {
+   payload.WithObject("AwsEc2ClientVpnEndpoint", m_awsEc2ClientVpnEndpoint.Jsonize());
 
   }
 

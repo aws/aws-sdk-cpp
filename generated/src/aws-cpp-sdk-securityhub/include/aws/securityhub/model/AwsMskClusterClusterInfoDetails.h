@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p> Provide details about an Amazon MSK cluster.</p><p><h3>See Also:</h3>   <a
+   * <p> Provide details about an Amazon Managed Streaming for Apache Kafka (Amazon
+   * MSK) cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsMskClusterClusterInfoDetails">AWS
    * API Reference</a></p>
    */
@@ -83,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p> The current version of the MSK cluster.</p>
+     * <p> The current version of the cluster.</p>
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
 
     /**
-     * <p> The current version of the MSK cluster.</p>
+     * <p> The current version of the cluster.</p>
      */
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
 
     /**
-     * <p> The current version of the MSK cluster.</p>
+     * <p> The current version of the cluster.</p>
      */
     inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
 
     /**
-     * <p> The current version of the MSK cluster.</p>
+     * <p> The current version of the cluster.</p>
      */
     inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
 
     /**
-     * <p> The current version of the MSK cluster.</p>
+     * <p> The current version of the cluster.</p>
      */
     inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
 
     /**
-     * <p> The current version of the MSK cluster.</p>
+     * <p> The current version of the cluster.</p>
      */
     inline AwsMskClusterClusterInfoDetails& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
 
     /**
-     * <p> The current version of the MSK cluster.</p>
+     * <p> The current version of the cluster.</p>
      */
     inline AwsMskClusterClusterInfoDetails& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
 
     /**
-     * <p> The current version of the MSK cluster.</p>
+     * <p> The current version of the cluster.</p>
      */
     inline AwsMskClusterClusterInfoDetails& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
 
@@ -215,6 +216,47 @@ namespace Model
      */
     inline AwsMskClusterClusterInfoDetails& WithClientAuthentication(AwsMskClusterClusterInfoClientAuthenticationDetails&& value) { SetClientAuthentication(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Specifies the level of monitoring for the cluster. </p>
+     */
+    inline const Aws::String& GetEnhancedMonitoring() const{ return m_enhancedMonitoring; }
+
+    /**
+     * <p> Specifies the level of monitoring for the cluster. </p>
+     */
+    inline bool EnhancedMonitoringHasBeenSet() const { return m_enhancedMonitoringHasBeenSet; }
+
+    /**
+     * <p> Specifies the level of monitoring for the cluster. </p>
+     */
+    inline void SetEnhancedMonitoring(const Aws::String& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = value; }
+
+    /**
+     * <p> Specifies the level of monitoring for the cluster. </p>
+     */
+    inline void SetEnhancedMonitoring(Aws::String&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = std::move(value); }
+
+    /**
+     * <p> Specifies the level of monitoring for the cluster. </p>
+     */
+    inline void SetEnhancedMonitoring(const char* value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring.assign(value); }
+
+    /**
+     * <p> Specifies the level of monitoring for the cluster. </p>
+     */
+    inline AwsMskClusterClusterInfoDetails& WithEnhancedMonitoring(const Aws::String& value) { SetEnhancedMonitoring(value); return *this;}
+
+    /**
+     * <p> Specifies the level of monitoring for the cluster. </p>
+     */
+    inline AwsMskClusterClusterInfoDetails& WithEnhancedMonitoring(Aws::String&& value) { SetEnhancedMonitoring(std::move(value)); return *this;}
+
+    /**
+     * <p> Specifies the level of monitoring for the cluster. </p>
+     */
+    inline AwsMskClusterClusterInfoDetails& WithEnhancedMonitoring(const char* value) { SetEnhancedMonitoring(value); return *this;}
+
   private:
 
     AwsMskClusterClusterInfoEncryptionInfoDetails m_encryptionInfo;
@@ -231,6 +273,9 @@ namespace Model
 
     AwsMskClusterClusterInfoClientAuthenticationDetails m_clientAuthentication;
     bool m_clientAuthenticationHasBeenSet = false;
+
+    Aws::String m_enhancedMonitoring;
+    bool m_enhancedMonitoringHasBeenSet = false;
   };
 
 } // namespace Model

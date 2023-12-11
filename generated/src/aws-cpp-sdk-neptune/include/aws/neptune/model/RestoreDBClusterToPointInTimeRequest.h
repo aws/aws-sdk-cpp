@@ -956,6 +956,63 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>standard</code>, <code>iopt1</code> </p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>standard</code>, <code>iopt1</code> </p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>standard</code>, <code>iopt1</code> </p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>standard</code>, <code>iopt1</code> </p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>standard</code>, <code>iopt1</code> </p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>standard</code>, <code>iopt1</code> </p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>standard</code>, <code>iopt1</code> </p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>standard</code>, <code>iopt1</code> </p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -1005,6 +1062,9 @@ namespace Model
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
     bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model
