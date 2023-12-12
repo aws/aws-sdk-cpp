@@ -18,7 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/PooledThreadExecutor.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/platform/Environment.h>
