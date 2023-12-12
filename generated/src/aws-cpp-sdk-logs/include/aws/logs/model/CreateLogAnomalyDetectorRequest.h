@@ -38,56 +38,56 @@ namespace Model
 
 
     /**
-     * <p>An array containing the ARNs of the log groups that this anomaly detector
-     * will watch. You must specify at least one ARN.</p>
+     * <p>An array containing the ARN of the log group that this anomaly detector will
+     * watch. You can specify only one log group ARN.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogGroupArnList() const{ return m_logGroupArnList; }
 
     /**
-     * <p>An array containing the ARNs of the log groups that this anomaly detector
-     * will watch. You must specify at least one ARN.</p>
+     * <p>An array containing the ARN of the log group that this anomaly detector will
+     * watch. You can specify only one log group ARN.</p>
      */
     inline bool LogGroupArnListHasBeenSet() const { return m_logGroupArnListHasBeenSet; }
 
     /**
-     * <p>An array containing the ARNs of the log groups that this anomaly detector
-     * will watch. You must specify at least one ARN.</p>
+     * <p>An array containing the ARN of the log group that this anomaly detector will
+     * watch. You can specify only one log group ARN.</p>
      */
     inline void SetLogGroupArnList(const Aws::Vector<Aws::String>& value) { m_logGroupArnListHasBeenSet = true; m_logGroupArnList = value; }
 
     /**
-     * <p>An array containing the ARNs of the log groups that this anomaly detector
-     * will watch. You must specify at least one ARN.</p>
+     * <p>An array containing the ARN of the log group that this anomaly detector will
+     * watch. You can specify only one log group ARN.</p>
      */
     inline void SetLogGroupArnList(Aws::Vector<Aws::String>&& value) { m_logGroupArnListHasBeenSet = true; m_logGroupArnList = std::move(value); }
 
     /**
-     * <p>An array containing the ARNs of the log groups that this anomaly detector
-     * will watch. You must specify at least one ARN.</p>
+     * <p>An array containing the ARN of the log group that this anomaly detector will
+     * watch. You can specify only one log group ARN.</p>
      */
     inline CreateLogAnomalyDetectorRequest& WithLogGroupArnList(const Aws::Vector<Aws::String>& value) { SetLogGroupArnList(value); return *this;}
 
     /**
-     * <p>An array containing the ARNs of the log groups that this anomaly detector
-     * will watch. You must specify at least one ARN.</p>
+     * <p>An array containing the ARN of the log group that this anomaly detector will
+     * watch. You can specify only one log group ARN.</p>
      */
     inline CreateLogAnomalyDetectorRequest& WithLogGroupArnList(Aws::Vector<Aws::String>&& value) { SetLogGroupArnList(std::move(value)); return *this;}
 
     /**
-     * <p>An array containing the ARNs of the log groups that this anomaly detector
-     * will watch. You must specify at least one ARN.</p>
+     * <p>An array containing the ARN of the log group that this anomaly detector will
+     * watch. You can specify only one log group ARN.</p>
      */
     inline CreateLogAnomalyDetectorRequest& AddLogGroupArnList(const Aws::String& value) { m_logGroupArnListHasBeenSet = true; m_logGroupArnList.push_back(value); return *this; }
 
     /**
-     * <p>An array containing the ARNs of the log groups that this anomaly detector
-     * will watch. You must specify at least one ARN.</p>
+     * <p>An array containing the ARN of the log group that this anomaly detector will
+     * watch. You can specify only one log group ARN.</p>
      */
     inline CreateLogAnomalyDetectorRequest& AddLogGroupArnList(Aws::String&& value) { m_logGroupArnListHasBeenSet = true; m_logGroupArnList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array containing the ARNs of the log groups that this anomaly detector
-     * will watch. You must specify at least one ARN.</p>
+     * <p>An array containing the ARN of the log group that this anomaly detector will
+     * watch. You can specify only one log group ARN.</p>
      */
     inline CreateLogAnomalyDetectorRequest& AddLogGroupArnList(const char* value) { m_logGroupArnListHasBeenSet = true; m_logGroupArnList.push_back(value); return *this; }
 

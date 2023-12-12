@@ -43,7 +43,7 @@ namespace Model
    * that represents the actual delivery destination. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.</p>
    * </li> <li> <p>If you are delivering logs cross-account, you must use <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>
    * in the destination account to assign an IAM policy to the destination. This
    * policy allows delivery to that destination. </p> </li> <li> <p>Create a
    * <i>delivery</i> by pairing exactly one delivery source and one delivery

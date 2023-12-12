@@ -22,7 +22,8 @@ namespace Model
     COMPLETED,
     FAILED,
     ROLLBACK_IN_PROGRESS,
-    ROLLBACK_COMPLETED
+    ROLLBACK_COMPLETED,
+    CANCELLED
   };
 
 namespace WorkflowExecutionStatusMapper

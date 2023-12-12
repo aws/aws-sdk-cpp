@@ -28,6 +28,7 @@
 #include <aws/imagebuilder/model/CreateImageRecipeResult.h>
 #include <aws/imagebuilder/model/CreateInfrastructureConfigurationResult.h>
 #include <aws/imagebuilder/model/CreateLifecyclePolicyResult.h>
+#include <aws/imagebuilder/model/CreateWorkflowResult.h>
 #include <aws/imagebuilder/model/DeleteComponentResult.h>
 #include <aws/imagebuilder/model/DeleteContainerRecipeResult.h>
 #include <aws/imagebuilder/model/DeleteDistributionConfigurationResult.h>
@@ -36,6 +37,7 @@
 #include <aws/imagebuilder/model/DeleteImageRecipeResult.h>
 #include <aws/imagebuilder/model/DeleteInfrastructureConfigurationResult.h>
 #include <aws/imagebuilder/model/DeleteLifecyclePolicyResult.h>
+#include <aws/imagebuilder/model/DeleteWorkflowResult.h>
 #include <aws/imagebuilder/model/GetComponentResult.h>
 #include <aws/imagebuilder/model/GetComponentPolicyResult.h>
 #include <aws/imagebuilder/model/GetContainerRecipeResult.h>
@@ -49,6 +51,7 @@
 #include <aws/imagebuilder/model/GetInfrastructureConfigurationResult.h>
 #include <aws/imagebuilder/model/GetLifecycleExecutionResult.h>
 #include <aws/imagebuilder/model/GetLifecyclePolicyResult.h>
+#include <aws/imagebuilder/model/GetWorkflowResult.h>
 #include <aws/imagebuilder/model/GetWorkflowExecutionResult.h>
 #include <aws/imagebuilder/model/GetWorkflowStepExecutionResult.h>
 #include <aws/imagebuilder/model/ImportComponentResult.h>
@@ -70,12 +73,16 @@
 #include <aws/imagebuilder/model/ListLifecycleExecutionsResult.h>
 #include <aws/imagebuilder/model/ListLifecyclePoliciesResult.h>
 #include <aws/imagebuilder/model/ListTagsForResourceResult.h>
+#include <aws/imagebuilder/model/ListWaitingWorkflowStepsResult.h>
+#include <aws/imagebuilder/model/ListWorkflowBuildVersionsResult.h>
 #include <aws/imagebuilder/model/ListWorkflowExecutionsResult.h>
 #include <aws/imagebuilder/model/ListWorkflowStepExecutionsResult.h>
+#include <aws/imagebuilder/model/ListWorkflowsResult.h>
 #include <aws/imagebuilder/model/PutComponentPolicyResult.h>
 #include <aws/imagebuilder/model/PutContainerRecipePolicyResult.h>
 #include <aws/imagebuilder/model/PutImagePolicyResult.h>
 #include <aws/imagebuilder/model/PutImageRecipePolicyResult.h>
+#include <aws/imagebuilder/model/SendWorkflowStepActionResult.h>
 #include <aws/imagebuilder/model/StartImagePipelineExecutionResult.h>
 #include <aws/imagebuilder/model/StartResourceStateUpdateResult.h>
 #include <aws/imagebuilder/model/TagResourceResult.h>
@@ -134,6 +141,7 @@ namespace Aws
       class CreateImageRecipeRequest;
       class CreateInfrastructureConfigurationRequest;
       class CreateLifecyclePolicyRequest;
+      class CreateWorkflowRequest;
       class DeleteComponentRequest;
       class DeleteContainerRecipeRequest;
       class DeleteDistributionConfigurationRequest;
@@ -142,6 +150,7 @@ namespace Aws
       class DeleteImageRecipeRequest;
       class DeleteInfrastructureConfigurationRequest;
       class DeleteLifecyclePolicyRequest;
+      class DeleteWorkflowRequest;
       class GetComponentRequest;
       class GetComponentPolicyRequest;
       class GetContainerRecipeRequest;
@@ -155,6 +164,7 @@ namespace Aws
       class GetInfrastructureConfigurationRequest;
       class GetLifecycleExecutionRequest;
       class GetLifecyclePolicyRequest;
+      class GetWorkflowRequest;
       class GetWorkflowExecutionRequest;
       class GetWorkflowStepExecutionRequest;
       class ImportComponentRequest;
@@ -176,12 +186,16 @@ namespace Aws
       class ListLifecycleExecutionsRequest;
       class ListLifecyclePoliciesRequest;
       class ListTagsForResourceRequest;
+      class ListWaitingWorkflowStepsRequest;
+      class ListWorkflowBuildVersionsRequest;
       class ListWorkflowExecutionsRequest;
       class ListWorkflowStepExecutionsRequest;
+      class ListWorkflowsRequest;
       class PutComponentPolicyRequest;
       class PutContainerRecipePolicyRequest;
       class PutImagePolicyRequest;
       class PutImageRecipePolicyRequest;
+      class SendWorkflowStepActionRequest;
       class StartImagePipelineExecutionRequest;
       class StartResourceStateUpdateRequest;
       class TagResourceRequest;
@@ -203,6 +217,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateImageRecipeResult, ImagebuilderError> CreateImageRecipeOutcome;
       typedef Aws::Utils::Outcome<CreateInfrastructureConfigurationResult, ImagebuilderError> CreateInfrastructureConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateLifecyclePolicyResult, ImagebuilderError> CreateLifecyclePolicyOutcome;
+      typedef Aws::Utils::Outcome<CreateWorkflowResult, ImagebuilderError> CreateWorkflowOutcome;
       typedef Aws::Utils::Outcome<DeleteComponentResult, ImagebuilderError> DeleteComponentOutcome;
       typedef Aws::Utils::Outcome<DeleteContainerRecipeResult, ImagebuilderError> DeleteContainerRecipeOutcome;
       typedef Aws::Utils::Outcome<DeleteDistributionConfigurationResult, ImagebuilderError> DeleteDistributionConfigurationOutcome;
@@ -211,6 +226,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteImageRecipeResult, ImagebuilderError> DeleteImageRecipeOutcome;
       typedef Aws::Utils::Outcome<DeleteInfrastructureConfigurationResult, ImagebuilderError> DeleteInfrastructureConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, ImagebuilderError> DeleteLifecyclePolicyOutcome;
+      typedef Aws::Utils::Outcome<DeleteWorkflowResult, ImagebuilderError> DeleteWorkflowOutcome;
       typedef Aws::Utils::Outcome<GetComponentResult, ImagebuilderError> GetComponentOutcome;
       typedef Aws::Utils::Outcome<GetComponentPolicyResult, ImagebuilderError> GetComponentPolicyOutcome;
       typedef Aws::Utils::Outcome<GetContainerRecipeResult, ImagebuilderError> GetContainerRecipeOutcome;
@@ -224,6 +240,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetInfrastructureConfigurationResult, ImagebuilderError> GetInfrastructureConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetLifecycleExecutionResult, ImagebuilderError> GetLifecycleExecutionOutcome;
       typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, ImagebuilderError> GetLifecyclePolicyOutcome;
+      typedef Aws::Utils::Outcome<GetWorkflowResult, ImagebuilderError> GetWorkflowOutcome;
       typedef Aws::Utils::Outcome<GetWorkflowExecutionResult, ImagebuilderError> GetWorkflowExecutionOutcome;
       typedef Aws::Utils::Outcome<GetWorkflowStepExecutionResult, ImagebuilderError> GetWorkflowStepExecutionOutcome;
       typedef Aws::Utils::Outcome<ImportComponentResult, ImagebuilderError> ImportComponentOutcome;
@@ -245,12 +262,16 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListLifecycleExecutionsResult, ImagebuilderError> ListLifecycleExecutionsOutcome;
       typedef Aws::Utils::Outcome<ListLifecyclePoliciesResult, ImagebuilderError> ListLifecyclePoliciesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ImagebuilderError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListWaitingWorkflowStepsResult, ImagebuilderError> ListWaitingWorkflowStepsOutcome;
+      typedef Aws::Utils::Outcome<ListWorkflowBuildVersionsResult, ImagebuilderError> ListWorkflowBuildVersionsOutcome;
       typedef Aws::Utils::Outcome<ListWorkflowExecutionsResult, ImagebuilderError> ListWorkflowExecutionsOutcome;
       typedef Aws::Utils::Outcome<ListWorkflowStepExecutionsResult, ImagebuilderError> ListWorkflowStepExecutionsOutcome;
+      typedef Aws::Utils::Outcome<ListWorkflowsResult, ImagebuilderError> ListWorkflowsOutcome;
       typedef Aws::Utils::Outcome<PutComponentPolicyResult, ImagebuilderError> PutComponentPolicyOutcome;
       typedef Aws::Utils::Outcome<PutContainerRecipePolicyResult, ImagebuilderError> PutContainerRecipePolicyOutcome;
       typedef Aws::Utils::Outcome<PutImagePolicyResult, ImagebuilderError> PutImagePolicyOutcome;
       typedef Aws::Utils::Outcome<PutImageRecipePolicyResult, ImagebuilderError> PutImageRecipePolicyOutcome;
+      typedef Aws::Utils::Outcome<SendWorkflowStepActionResult, ImagebuilderError> SendWorkflowStepActionOutcome;
       typedef Aws::Utils::Outcome<StartImagePipelineExecutionResult, ImagebuilderError> StartImagePipelineExecutionOutcome;
       typedef Aws::Utils::Outcome<StartResourceStateUpdateResult, ImagebuilderError> StartResourceStateUpdateOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ImagebuilderError> TagResourceOutcome;
@@ -272,6 +293,7 @@ namespace Aws
       typedef std::future<CreateImageRecipeOutcome> CreateImageRecipeOutcomeCallable;
       typedef std::future<CreateInfrastructureConfigurationOutcome> CreateInfrastructureConfigurationOutcomeCallable;
       typedef std::future<CreateLifecyclePolicyOutcome> CreateLifecyclePolicyOutcomeCallable;
+      typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
       typedef std::future<DeleteComponentOutcome> DeleteComponentOutcomeCallable;
       typedef std::future<DeleteContainerRecipeOutcome> DeleteContainerRecipeOutcomeCallable;
       typedef std::future<DeleteDistributionConfigurationOutcome> DeleteDistributionConfigurationOutcomeCallable;
@@ -280,6 +302,7 @@ namespace Aws
       typedef std::future<DeleteImageRecipeOutcome> DeleteImageRecipeOutcomeCallable;
       typedef std::future<DeleteInfrastructureConfigurationOutcome> DeleteInfrastructureConfigurationOutcomeCallable;
       typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
+      typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
       typedef std::future<GetComponentOutcome> GetComponentOutcomeCallable;
       typedef std::future<GetComponentPolicyOutcome> GetComponentPolicyOutcomeCallable;
       typedef std::future<GetContainerRecipeOutcome> GetContainerRecipeOutcomeCallable;
@@ -293,6 +316,7 @@ namespace Aws
       typedef std::future<GetInfrastructureConfigurationOutcome> GetInfrastructureConfigurationOutcomeCallable;
       typedef std::future<GetLifecycleExecutionOutcome> GetLifecycleExecutionOutcomeCallable;
       typedef std::future<GetLifecyclePolicyOutcome> GetLifecyclePolicyOutcomeCallable;
+      typedef std::future<GetWorkflowOutcome> GetWorkflowOutcomeCallable;
       typedef std::future<GetWorkflowExecutionOutcome> GetWorkflowExecutionOutcomeCallable;
       typedef std::future<GetWorkflowStepExecutionOutcome> GetWorkflowStepExecutionOutcomeCallable;
       typedef std::future<ImportComponentOutcome> ImportComponentOutcomeCallable;
@@ -314,12 +338,16 @@ namespace Aws
       typedef std::future<ListLifecycleExecutionsOutcome> ListLifecycleExecutionsOutcomeCallable;
       typedef std::future<ListLifecyclePoliciesOutcome> ListLifecyclePoliciesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListWaitingWorkflowStepsOutcome> ListWaitingWorkflowStepsOutcomeCallable;
+      typedef std::future<ListWorkflowBuildVersionsOutcome> ListWorkflowBuildVersionsOutcomeCallable;
       typedef std::future<ListWorkflowExecutionsOutcome> ListWorkflowExecutionsOutcomeCallable;
       typedef std::future<ListWorkflowStepExecutionsOutcome> ListWorkflowStepExecutionsOutcomeCallable;
+      typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
       typedef std::future<PutComponentPolicyOutcome> PutComponentPolicyOutcomeCallable;
       typedef std::future<PutContainerRecipePolicyOutcome> PutContainerRecipePolicyOutcomeCallable;
       typedef std::future<PutImagePolicyOutcome> PutImagePolicyOutcomeCallable;
       typedef std::future<PutImageRecipePolicyOutcome> PutImageRecipePolicyOutcomeCallable;
+      typedef std::future<SendWorkflowStepActionOutcome> SendWorkflowStepActionOutcomeCallable;
       typedef std::future<StartImagePipelineExecutionOutcome> StartImagePipelineExecutionOutcomeCallable;
       typedef std::future<StartResourceStateUpdateOutcome> StartResourceStateUpdateOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -344,6 +372,7 @@ namespace Aws
     typedef std::function<void(const ImagebuilderClient*, const Model::CreateImageRecipeRequest&, const Model::CreateImageRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageRecipeResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::CreateInfrastructureConfigurationRequest&, const Model::CreateInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInfrastructureConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::CreateLifecyclePolicyRequest&, const Model::CreateLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::CreateWorkflowRequest&, const Model::CreateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkflowResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteComponentRequest&, const Model::DeleteComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComponentResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteContainerRecipeRequest&, const Model::DeleteContainerRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerRecipeResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteDistributionConfigurationRequest&, const Model::DeleteDistributionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDistributionConfigurationResponseReceivedHandler;
@@ -352,6 +381,7 @@ namespace Aws
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteImageRecipeRequest&, const Model::DeleteImageRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageRecipeResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteInfrastructureConfigurationRequest&, const Model::DeleteInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInfrastructureConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::DeleteLifecyclePolicyRequest&, const Model::DeleteLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::DeleteWorkflowRequest&, const Model::DeleteWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkflowResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetComponentRequest&, const Model::GetComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetComponentPolicyRequest&, const Model::GetComponentPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentPolicyResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetContainerRecipeRequest&, const Model::GetContainerRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerRecipeResponseReceivedHandler;
@@ -365,6 +395,7 @@ namespace Aws
     typedef std::function<void(const ImagebuilderClient*, const Model::GetInfrastructureConfigurationRequest&, const Model::GetInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInfrastructureConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetLifecycleExecutionRequest&, const Model::GetLifecycleExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecycleExecutionResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetLifecyclePolicyRequest&, const Model::GetLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::GetWorkflowRequest&, const Model::GetWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetWorkflowExecutionRequest&, const Model::GetWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowExecutionResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetWorkflowStepExecutionRequest&, const Model::GetWorkflowStepExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowStepExecutionResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ImportComponentRequest&, const Model::ImportComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportComponentResponseReceivedHandler;
@@ -386,12 +417,16 @@ namespace Aws
     typedef std::function<void(const ImagebuilderClient*, const Model::ListLifecycleExecutionsRequest&, const Model::ListLifecycleExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLifecycleExecutionsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListLifecyclePoliciesRequest&, const Model::ListLifecyclePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLifecyclePoliciesResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::ListWaitingWorkflowStepsRequest&, const Model::ListWaitingWorkflowStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWaitingWorkflowStepsResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::ListWorkflowBuildVersionsRequest&, const Model::ListWorkflowBuildVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowBuildVersionsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListWorkflowExecutionsRequest&, const Model::ListWorkflowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowExecutionsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListWorkflowStepExecutionsRequest&, const Model::ListWorkflowStepExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowStepExecutionsResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::PutComponentPolicyRequest&, const Model::PutComponentPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutComponentPolicyResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::PutContainerRecipePolicyRequest&, const Model::PutContainerRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutContainerRecipePolicyResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::PutImagePolicyRequest&, const Model::PutImagePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImagePolicyResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::PutImageRecipePolicyRequest&, const Model::PutImageRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageRecipePolicyResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::SendWorkflowStepActionRequest&, const Model::SendWorkflowStepActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendWorkflowStepActionResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::StartImagePipelineExecutionRequest&, const Model::StartImagePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImagePipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::StartResourceStateUpdateRequest&, const Model::StartResourceStateUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartResourceStateUpdateResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

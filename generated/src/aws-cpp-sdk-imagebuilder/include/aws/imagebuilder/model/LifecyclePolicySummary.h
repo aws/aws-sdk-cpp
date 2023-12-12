@@ -197,50 +197,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the IAM role that Image Builder uses to run the lifecycle
-     * policy.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
+     * uses to run the lifecycle policy.</p>
      */
     inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
 
     /**
-     * <p>The name of the IAM role that Image Builder uses to run the lifecycle
-     * policy.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
+     * uses to run the lifecycle policy.</p>
      */
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
 
     /**
-     * <p>The name of the IAM role that Image Builder uses to run the lifecycle
-     * policy.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
+     * uses to run the lifecycle policy.</p>
      */
     inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
 
     /**
-     * <p>The name of the IAM role that Image Builder uses to run the lifecycle
-     * policy.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
+     * uses to run the lifecycle policy.</p>
      */
     inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
 
     /**
-     * <p>The name of the IAM role that Image Builder uses to run the lifecycle
-     * policy.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
+     * uses to run the lifecycle policy.</p>
      */
     inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
 
     /**
-     * <p>The name of the IAM role that Image Builder uses to run the lifecycle
-     * policy.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
+     * uses to run the lifecycle policy.</p>
      */
     inline LifecyclePolicySummary& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
 
     /**
-     * <p>The name of the IAM role that Image Builder uses to run the lifecycle
-     * policy.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
+     * uses to run the lifecycle policy.</p>
      */
     inline LifecyclePolicySummary& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the IAM role that Image Builder uses to run the lifecycle
-     * policy.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder
+     * uses to run the lifecycle policy.</p>
      */
     inline LifecyclePolicySummary& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
 

@@ -241,57 +241,57 @@ namespace Model
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline const Aws::String& GetChangeDescription() const{ return m_changeDescription; }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline bool ChangeDescriptionHasBeenSet() const { return m_changeDescriptionHasBeenSet; }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline void SetChangeDescription(const Aws::String& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = value; }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline void SetChangeDescription(Aws::String&& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = std::move(value); }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline void SetChangeDescription(const char* value) { m_changeDescriptionHasBeenSet = true; m_changeDescription.assign(value); }
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline CreateComponentRequest& WithChangeDescription(const Aws::String& value) { SetChangeDescription(value); return *this;}
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline CreateComponentRequest& WithChangeDescription(Aws::String&& value) { SetChangeDescription(std::move(value)); return *this;}
 
     /**
      * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * in this version, or what makes this version different from other versions of the
+     * component.</p>
      */
     inline CreateComponentRequest& WithChangeDescription(const char* value) { SetChangeDescription(value); return *this;}
 
