@@ -11,7 +11,6 @@
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/threading/Semaphore.h>
-#include <aws/core/utils/threading/Executor.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/http/HttpTypes.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
