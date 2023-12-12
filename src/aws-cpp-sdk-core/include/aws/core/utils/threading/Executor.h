@@ -48,6 +48,11 @@ namespace Aws
                     return SubmitToThread(std::move(callable));
                 }
 
+                /**
+                 * Call to wait until all tasks have finished.
+                 */
+                virtual void WaitUntilStopped() { return; };
+
             protected:
                 /**
                 * To implement your own executor implementation, then simply subclass Executor and implement this method.
@@ -64,6 +69,8 @@ namespace Aws
             public:
                 DefaultExecutor() : m_state(State::Free) {}
                 ~DefaultExecutor();
+
+                void WaitUntilStopped() override;
             protected:
                 enum class State
                 {
@@ -102,25 +109,25 @@ namespace Aws
                 /**
                 * Call to ensure the threadpool can be safely destroyed. It blocks until all threads finished.
                 */
-                void WaitUntilStopped();
+                void WaitUntilStopped() override;
 
             protected:
                 bool SubmitToThread(std::function<void()>&&) override;
 
             private:
                 Aws::Queue<std::function<void()>*> m_tasks;
-                std::mutex m_queueLock;
+                mutable std::mutex m_queueLock;
                 Aws::Utils::Threading::Semaphore m_sync;
                 Aws::Vector<ThreadTask*> m_threadTaskHandles;
-                size_t m_poolSize;
-                OverflowPolicy m_overflowPolicy;
+                size_t m_poolSize = 0;
+                OverflowPolicy m_overflowPolicy = OverflowPolicy::QUEUE_TASKS_EVENLY_ACROSS_THREADS;
                 bool m_stopped{false};
 
                 /**
                  * Once you call this, you are responsible for freeing the memory pointed to by task.
                  */
                 std::function<void()>* PopTask();
-                bool HasTasks();
+                bool HasTasks() const;
 
                 friend class ThreadTask;
             };
