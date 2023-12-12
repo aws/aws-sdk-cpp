@@ -60,15 +60,20 @@ void DefaultExecutor::Detach(std::thread::id id)
     while(expected != State::Shutdown);
 }
 
-DefaultExecutor::~DefaultExecutor()
+void DefaultExecutor::WaitUntilStopped()
 {
     auto expected = State::Free;
     while(!m_state.compare_exchange_strong(expected, State::Shutdown))
     {
         //spin while currently detaching threads finish
         assert(expected == State::Locked);
-        expected = State::Free; 
+        expected = State::Free;
     }
+}
+
+DefaultExecutor::~DefaultExecutor()
+{
+    WaitUntilStopped();
 
     auto it = m_threads.begin();
     while(!m_threads.empty())
@@ -162,7 +167,7 @@ std::function<void()>* PooledThreadExecutor::PopTask()
     return nullptr;
 }
 
-bool PooledThreadExecutor::HasTasks()
+bool PooledThreadExecutor::HasTasks() const
 {
     std::lock_guard<std::mutex> locker(m_queueLock);
     return m_tasks.size() > 0;
