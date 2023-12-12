@@ -34,32 +34,32 @@ namespace Model
 
 
     /**
-     * <p>The geomerty used to filter device positions.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
     inline const TrackingFilterGeometry& GetFilterGeometry() const{ return m_filterGeometry; }
 
     /**
-     * <p>The geomerty used to filter device positions.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
     inline bool FilterGeometryHasBeenSet() const { return m_filterGeometryHasBeenSet; }
 
     /**
-     * <p>The geomerty used to filter device positions.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
     inline void SetFilterGeometry(const TrackingFilterGeometry& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = value; }
 
     /**
-     * <p>The geomerty used to filter device positions.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
     inline void SetFilterGeometry(TrackingFilterGeometry&& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = std::move(value); }
 
     /**
-     * <p>The geomerty used to filter device positions.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
     inline ListDevicePositionsRequest& WithFilterGeometry(const TrackingFilterGeometry& value) { SetFilterGeometry(value); return *this;}
 
     /**
-     * <p>The geomerty used to filter device positions.</p>
+     * <p>The geometry used to filter device positions.</p>
      */
     inline ListDevicePositionsRequest& WithFilterGeometry(TrackingFilterGeometry&& value) { SetFilterGeometry(std::move(value)); return *this;}
 

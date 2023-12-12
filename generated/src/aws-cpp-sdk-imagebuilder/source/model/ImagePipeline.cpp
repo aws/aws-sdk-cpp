@@ -39,7 +39,9 @@ ImagePipeline::ImagePipeline() :
     m_dateLastRunHasBeenSet(false),
     m_dateNextRunHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false)
+    m_imageScanningConfigurationHasBeenSet(false),
+    m_executionRoleHasBeenSet(false),
+    m_workflowsHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ ImagePipeline::ImagePipeline(JsonView jsonValue) :
     m_dateLastRunHasBeenSet(false),
     m_dateNextRunHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false)
+    m_imageScanningConfigurationHasBeenSet(false),
+    m_executionRoleHasBeenSet(false),
+    m_workflowsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +204,23 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
     m_imageScanningConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("executionRole"))
+  {
+    m_executionRole = jsonValue.GetString("executionRole");
+
+    m_executionRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("workflows"))
+  {
+    Aws::Utils::Array<JsonView> workflowsJsonList = jsonValue.GetArray("workflows");
+    for(unsigned workflowsIndex = 0; workflowsIndex < workflowsJsonList.GetLength(); ++workflowsIndex)
+    {
+      m_workflows.push_back(workflowsJsonList[workflowsIndex].AsObject());
+    }
+    m_workflowsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -315,6 +336,23 @@ JsonValue ImagePipeline::Jsonize() const
   if(m_imageScanningConfigurationHasBeenSet)
   {
    payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
+
+  }
+
+  if(m_executionRoleHasBeenSet)
+  {
+   payload.WithString("executionRole", m_executionRole);
+
+  }
+
+  if(m_workflowsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> workflowsJsonList(m_workflows.size());
+   for(unsigned workflowsIndex = 0; workflowsIndex < workflowsJsonList.GetLength(); ++workflowsIndex)
+   {
+     workflowsJsonList[workflowsIndex].AsObject(m_workflows[workflowsIndex].Jsonize());
+   }
+   payload.WithArray("workflows", std::move(workflowsJsonList));
 
   }
 

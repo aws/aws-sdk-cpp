@@ -31,6 +31,7 @@ Place::Place() :
     m_postalCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_streetHasBeenSet(false),
+    m_subMunicipalityHasBeenSet(false),
     m_subRegionHasBeenSet(false),
     m_supplementalCategoriesHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
@@ -52,6 +53,7 @@ Place::Place(JsonView jsonValue) :
     m_postalCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_streetHasBeenSet(false),
+    m_subMunicipalityHasBeenSet(false),
     m_subRegionHasBeenSet(false),
     m_supplementalCategoriesHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
@@ -141,6 +143,13 @@ Place& Place::operator =(JsonView jsonValue)
     m_street = jsonValue.GetString("Street");
 
     m_streetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SubMunicipality"))
+  {
+    m_subMunicipality = jsonValue.GetString("SubMunicipality");
+
+    m_subMunicipalityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SubRegion"))
@@ -256,6 +265,12 @@ JsonValue Place::Jsonize() const
   if(m_streetHasBeenSet)
   {
    payload.WithString("Street", m_street);
+
+  }
+
+  if(m_subMunicipalityHasBeenSet)
+  {
+   payload.WithString("SubMunicipality", m_subMunicipality);
 
   }
 

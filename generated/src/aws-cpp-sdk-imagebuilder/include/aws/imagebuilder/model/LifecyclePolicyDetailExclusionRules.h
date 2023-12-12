@@ -42,79 +42,79 @@ namespace Model
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTagMap() const{ return m_tagMap; }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline bool TagMapHasBeenSet() const { return m_tagMapHasBeenSet; }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline void SetTagMap(const Aws::Map<Aws::String, Aws::String>& value) { m_tagMapHasBeenSet = true; m_tagMap = value; }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline void SetTagMap(Aws::Map<Aws::String, Aws::String>&& value) { m_tagMapHasBeenSet = true; m_tagMap = std::move(value); }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline LifecyclePolicyDetailExclusionRules& WithTagMap(const Aws::Map<Aws::String, Aws::String>& value) { SetTagMap(value); return *this;}
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline LifecyclePolicyDetailExclusionRules& WithTagMap(Aws::Map<Aws::String, Aws::String>&& value) { SetTagMap(std::move(value)); return *this;}
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline LifecyclePolicyDetailExclusionRules& AddTagMap(const Aws::String& key, const Aws::String& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(key, value); return *this; }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline LifecyclePolicyDetailExclusionRules& AddTagMap(Aws::String&& key, const Aws::String& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline LifecyclePolicyDetailExclusionRules& AddTagMap(const Aws::String& key, Aws::String&& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline LifecyclePolicyDetailExclusionRules& AddTagMap(Aws::String&& key, Aws::String&& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline LifecyclePolicyDetailExclusionRules& AddTagMap(const char* key, Aws::String&& value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline LifecyclePolicyDetailExclusionRules& AddTagMap(Aws::String&& key, const char* value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for
-     * AMIs that have them.</p>
+     * resources that have them.</p>
      */
     inline LifecyclePolicyDetailExclusionRules& AddTagMap(const char* key, const char* value) { m_tagMapHasBeenSet = true; m_tagMap.emplace(key, value); return *this; }
 

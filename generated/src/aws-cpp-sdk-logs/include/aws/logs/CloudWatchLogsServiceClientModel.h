@@ -165,6 +165,7 @@ namespace Aws
       class PutResourcePolicyRequest;
       class PutRetentionPolicyRequest;
       class PutSubscriptionFilterRequest;
+      class StartLiveTailRequest;
       class StartQueryRequest;
       class StopQueryRequest;
       class TagResourceRequest;
@@ -238,6 +239,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutResourcePolicyResult, CloudWatchLogsError> PutResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutRetentionPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutSubscriptionFilterOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> StartLiveTailOutcome;
       typedef Aws::Utils::Outcome<StartQueryResult, CloudWatchLogsError> StartQueryOutcome;
       typedef Aws::Utils::Outcome<StopQueryResult, CloudWatchLogsError> StopQueryOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> TagResourceOutcome;
@@ -311,6 +313,7 @@ namespace Aws
       typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
       typedef std::future<PutRetentionPolicyOutcome> PutRetentionPolicyOutcomeCallable;
       typedef std::future<PutSubscriptionFilterOutcome> PutSubscriptionFilterOutcomeCallable;
+      typedef std::future<StartLiveTailOutcome> StartLiveTailOutcomeCallable;
       typedef std::future<StartQueryOutcome> StartQueryOutcomeCallable;
       typedef std::future<StopQueryOutcome> StopQueryOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -387,6 +390,7 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutRetentionPolicyRequest&, const Model::PutRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutSubscriptionFilterRequest&, const Model::PutSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSubscriptionFilterResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::StartLiveTailRequest&, const Model::StartLiveTailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLiveTailResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::StartQueryRequest&, const Model::StartQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::StopQueryRequest&, const Model::StopQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopQueryResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

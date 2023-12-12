@@ -344,8 +344,9 @@ namespace Model
      * all CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent
      * Access</code> log class supports a subset of CloudWatch Logs features and incurs
      * lower costs.</p> </li> </ul> <p>If you omit this parameter, the default of
-     * <code>STANDARD</code> is used.</p> <p>For details about the features supported
-     * by each class, see <a
+     * <code>STANDARD</code> is used.</p>  <p>After a log group is created,
+     * its class can't be changed.</p>  <p>For details about the features
+     * supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
      * classes</a> </p>
      */
@@ -357,8 +358,9 @@ namespace Model
      * all CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent
      * Access</code> log class supports a subset of CloudWatch Logs features and incurs
      * lower costs.</p> </li> </ul> <p>If you omit this parameter, the default of
-     * <code>STANDARD</code> is used.</p> <p>For details about the features supported
-     * by each class, see <a
+     * <code>STANDARD</code> is used.</p>  <p>After a log group is created,
+     * its class can't be changed.</p>  <p>For details about the features
+     * supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
      * classes</a> </p>
      */
@@ -370,8 +372,9 @@ namespace Model
      * all CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent
      * Access</code> log class supports a subset of CloudWatch Logs features and incurs
      * lower costs.</p> </li> </ul> <p>If you omit this parameter, the default of
-     * <code>STANDARD</code> is used.</p> <p>For details about the features supported
-     * by each class, see <a
+     * <code>STANDARD</code> is used.</p>  <p>After a log group is created,
+     * its class can't be changed.</p>  <p>For details about the features
+     * supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
      * classes</a> </p>
      */
@@ -383,8 +386,9 @@ namespace Model
      * all CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent
      * Access</code> log class supports a subset of CloudWatch Logs features and incurs
      * lower costs.</p> </li> </ul> <p>If you omit this parameter, the default of
-     * <code>STANDARD</code> is used.</p> <p>For details about the features supported
-     * by each class, see <a
+     * <code>STANDARD</code> is used.</p>  <p>After a log group is created,
+     * its class can't be changed.</p>  <p>For details about the features
+     * supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
      * classes</a> </p>
      */
@@ -396,8 +400,9 @@ namespace Model
      * all CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent
      * Access</code> log class supports a subset of CloudWatch Logs features and incurs
      * lower costs.</p> </li> </ul> <p>If you omit this parameter, the default of
-     * <code>STANDARD</code> is used.</p> <p>For details about the features supported
-     * by each class, see <a
+     * <code>STANDARD</code> is used.</p>  <p>After a log group is created,
+     * its class can't be changed.</p>  <p>For details about the features
+     * supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
      * classes</a> </p>
      */
@@ -409,8 +414,9 @@ namespace Model
      * all CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent
      * Access</code> log class supports a subset of CloudWatch Logs features and incurs
      * lower costs.</p> </li> </ul> <p>If you omit this parameter, the default of
-     * <code>STANDARD</code> is used.</p> <p>For details about the features supported
-     * by each class, see <a
+     * <code>STANDARD</code> is used.</p>  <p>After a log group is created,
+     * its class can't be changed.</p>  <p>For details about the features
+     * supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
      * classes</a> </p>
      */

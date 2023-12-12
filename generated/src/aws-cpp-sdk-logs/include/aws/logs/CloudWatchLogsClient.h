@@ -211,7 +211,7 @@ namespace CloudWatchLogs
          * that represents the actual delivery destination. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.</p>
          * </li> <li> <p>If you are delivering logs cross-account, you must use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>
          * in the destination account to assign an IAM policy to the destination. This
          * policy allows delivery to that destination. </p> </li> <li> <p>Use
          * <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
@@ -1118,9 +1118,10 @@ namespace CloudWatchLogs
 
         /**
          * <p>This operation returns a paginated list of your saved CloudWatch Logs
-         * Insights query definitions.</p> <p>You can use the
-         * <code>queryDefinitionNamePrefix</code> parameter to limit the results to only
-         * the query definitions that have names that start with a certain
+         * Insights query definitions. You can retrieve query definitions from the current
+         * account or from a source account that is linked to the current account.</p>
+         * <p>You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the
+         * results to only the query definitions that have names that start with a certain
          * string.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueryDefinitions">AWS
          * API Reference</a></p>
@@ -1802,7 +1803,7 @@ namespace CloudWatchLogs
          * destination</i>, which is a logical object that represents the actual delivery
          * destination. </p> </li> <li> <p>If you are delivering logs cross-account, you
          * must use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>
          * in the destination account to assign an IAM policy to the destination. This
          * policy allows delivery to that destination. </p> </li> <li> <p>Use
          * <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
@@ -1904,7 +1905,7 @@ namespace CloudWatchLogs
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.</p>
          * </li> <li> <p>If you are delivering logs cross-account, you must use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a>
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a>
          * in the destination account to assign an IAM policy to the destination. This
          * policy allows delivery to that destination. </p> </li> <li> <p>Use
          * <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
@@ -2258,6 +2259,62 @@ namespace CloudWatchLogs
         void PutSubscriptionFilterAsync(const PutSubscriptionFilterRequestT& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::PutSubscriptionFilter, request, handler, context);
+        }
+
+        /**
+         * <p>Starts a Live Tail streaming session for one or more log groups. A Live Tail
+         * session returns a stream of log events that have been recently ingested in the
+         * log groups. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html">Use
+         * Live Tail to view logs in near real time</a>. </p> <p>The response to this
+         * operation is a response stream, over which the server sends live log events and
+         * the client receives them.</p> <p>The following objects are sent over the
+         * stream:</p> <ul> <li> <p>A single <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LiveTailSessionStart.html">LiveTailSessionStart</a>
+         * object is sent at the start of the session.</p> </li> <li> <p>Every second, a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LiveTailSessionUpdate.html">LiveTailSessionUpdate</a>
+         * object is sent. Each of these objects contains an array of the actual log
+         * events.</p> <p>If no new log events were ingested in the past second, the
+         * <code>LiveTailSessionUpdate</code> object will contain an empty array.</p>
+         * <p>The array of log events contained in a <code>LiveTailSessionUpdate</code> can
+         * include as many as 500 log events. If the number of log events matching the
+         * request exceeds 500 per second, the log events are sampled down to 500 log
+         * events to be included in each <code>LiveTailSessionUpdate</code> object.</p>
+         * <p>If your client consumes the log events slower than the server produces them,
+         * CloudWatch Logs buffers up to 10 <code>LiveTailSessionUpdate</code> events or
+         * 5000 log events, after which it starts dropping the oldest events.</p> </li>
+         * <li> <p>A <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionStreamingException.html">SessionStreamingException</a>
+         * object is returned if an unknown error occurs on the server side.</p> </li> <li>
+         * <p>A <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionTimeoutException.html">SessionTimeoutException</a>
+         * object is returned when the session times out, after it has been kept open for
+         * three hours.</p> </li> </ul>  <p>You can end a session before it
+         * times out by closing the session stream or by closing the client that is
+         * receiving the stream. The session also ends if the established connection
+         * between the client and the server breaks.</p> <p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartLiveTail">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartLiveTailOutcome StartLiveTail(Model::StartLiveTailRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartLiveTail that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartLiveTailRequestT = Model::StartLiveTailRequest>
+        Model::StartLiveTailOutcomeCallable StartLiveTailCallable(StartLiveTailRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::StartLiveTail, request);
+        }
+
+        /**
+         * An Async wrapper for StartLiveTail that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartLiveTailRequestT = Model::StartLiveTailRequest>
+        void StartLiveTailAsync(StartLiveTailRequestT& request, const StartLiveTailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::StartLiveTail, request, handler, context);
         }
 
         /**
