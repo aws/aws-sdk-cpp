@@ -14,6 +14,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import lombok.Value;
 import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
@@ -99,6 +102,21 @@ public class C2jModelToGeneratorModelTransformer {
         LEGACY_SERVICE_IDS.add("transcribestreaming");
         LEGACY_SERVICE_IDS.add("dynamodbstreams");
     }
+
+    /**
+     * Type representing what a member should be remapped to and services that it
+     * cannot be renamed to, to preserve backwards compat.
+     */
+    @Value
+    private static class MemberMapping {
+        String remappingName;
+        Set<String> servicesToSkip;
+    }
+
+    private static final Map<String, MemberMapping> RESERVED_REQUEST_MEMBER_MAPPING = ImmutableMap.of(
+        "body", new MemberMapping("requestBody", ImmutableSet.of("amplifyuibuilder", "apigateway", "apigateway2", "bedrock-runtime", "glacier", "repostspace")),
+        "headers", new MemberMapping("headerValues", ImmutableSet.of("apigateway"))
+    );
 
     /**
      * There was a bug with namespace collision detection where customers
@@ -665,6 +683,7 @@ public class C2jModelToGeneratorModelTransformer {
             newName = baseName + suffixIt.next();
 
             if (shape.getName().equals(newName)) {
+                renameReservedFields(shape);
                 return shape;
             }
 
@@ -703,8 +722,27 @@ public class C2jModelToGeneratorModelTransformer {
 
         Shape cloned = cloneShape(shape);
         cloned.setName(newName);
+        renameReservedFields(cloned);
         shapes.put(newName, cloned);
         return cloned;
+    }
+
+    void renameReservedFields(Shape shape) {
+        if (shape.getName().endsWith("Request")) {
+            final Map<String, ShapeMember> members = shape.getMembers();
+            RESERVED_REQUEST_MEMBER_MAPPING.entrySet().stream()
+                .filter(reservedMapping -> members.containsKey(reservedMapping.getKey()))
+                .filter(reservedMapping -> !reservedMapping.getValue().servicesToSkip.contains(c2jServiceModel.getServiceName()))
+                .forEach(reservedMapping -> {
+                    final ShapeMember member = members.get(reservedMapping.getKey());
+                    renameShapeMember(shape,
+                            reservedMapping.getKey(),
+                            member.getShape().getName(),
+                            reservedMapping.getValue().remappingName,
+                            member.getShape().getName(),
+                            false);
+                });
+        }
     }
 
     Shape cloneShape(Shape shape) {
@@ -756,11 +794,15 @@ public class C2jModelToGeneratorModelTransformer {
             throw new NoSuchElementException("Requested to rename non-existent child shape key "
                     + originalMemberKey + " of a Shape type " + originalShapeName);
         }
-        shapes.get(originalShapeName).setName(newShapeName);
-        shapes.put(newShapeName, shapes.get(originalShapeName));
-        shapes.remove(originalShapeName);
-        parentShape.getMembers().put(newMemberKey, parentShape.getMembers().get(originalMemberKey));
-        parentShape.RemoveMember(originalMemberKey);
+        if (!Objects.equals(originalShapeName, newShapeName)) {
+            shapes.get(originalShapeName).setName(newShapeName);
+            shapes.put(newShapeName, shapes.get(originalShapeName));
+            shapes.remove(originalShapeName);
+        }
+        if (!Objects.equals(originalMemberKey, newMemberKey)) {
+            parentShape.getMembers().put(newMemberKey, parentShape.getMembers().get(originalMemberKey));
+            parentShape.RemoveMember(originalMemberKey);
+        }
         if (isPayload)
         {
             parentShape.setPayload(newMemberKey);
