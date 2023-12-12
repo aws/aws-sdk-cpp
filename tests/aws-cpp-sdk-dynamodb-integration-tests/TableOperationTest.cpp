@@ -18,7 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/PooledThreadExecutor.h>
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBErrors.h>
 #include <aws/dynamodb/model/CreateTableRequest.h>
