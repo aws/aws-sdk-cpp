@@ -55,7 +55,7 @@ namespace {
   public:
     CreateBucketOutcome CreateBucket(const Aws::String &bucketName = randomString() + S3_EXPRESS_SUFFIX) {
       bucketsToCleanup.push_back(bucketName);
-      return client->CreateBucket(CreateBucketRequest()
+      CreateBucketOutcome outcome = client->CreateBucket(CreateBucketRequest()
         .WithBucket(bucketName)
         .WithCreateBucketConfiguration(CreateBucketConfiguration()
           .WithLocation(LocationInfo()
@@ -64,6 +64,13 @@ namespace {
           .WithBucket(BucketInfo()
             .WithType(BucketType::Directory)
             .WithDataRedundancy(DataRedundancy::SingleAvailabilityZone))));
+
+      if (!outcome.IsSuccess() && outcome.GetError().GetResponseCode() == Aws::Http::HttpResponseCode::CONFLICT &&
+                                  outcome.GetError().GetExceptionName() == "BucketAlreadyOwnedByYou") {
+        return CreateBucketOutcome(CreateBucketResult());
+      }
+
+      return outcome;
     }
 
     DeleteBucketOutcome DeleteBucket(const Aws::String &bucketName) {
