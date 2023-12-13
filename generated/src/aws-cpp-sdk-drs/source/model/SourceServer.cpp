@@ -20,6 +20,7 @@ namespace Model
 {
 
 SourceServer::SourceServer() : 
+    m_agentVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
     m_lastLaunchResult(LastLaunchResult::NOT_SET),
@@ -40,6 +41,7 @@ SourceServer::SourceServer() :
 }
 
 SourceServer::SourceServer(JsonView jsonValue) : 
+    m_agentVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
     m_lastLaunchResult(LastLaunchResult::NOT_SET),
@@ -62,6 +64,13 @@ SourceServer::SourceServer(JsonView jsonValue) :
 
 SourceServer& SourceServer::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("agentVersion"))
+  {
+    m_agentVersion = jsonValue.GetString("agentVersion");
+
+    m_agentVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -162,6 +171,12 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
 JsonValue SourceServer::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("agentVersion", m_agentVersion);
+
+  }
 
   if(m_arnHasBeenSet)
   {

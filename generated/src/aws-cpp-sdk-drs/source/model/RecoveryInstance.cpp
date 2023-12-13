@@ -19,6 +19,7 @@ namespace Model
 {
 
 RecoveryInstance::RecoveryInstance() : 
+    m_agentVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
     m_ec2InstanceIDHasBeenSet(false),
@@ -40,6 +41,7 @@ RecoveryInstance::RecoveryInstance() :
 }
 
 RecoveryInstance::RecoveryInstance(JsonView jsonValue) : 
+    m_agentVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
     m_ec2InstanceIDHasBeenSet(false),
@@ -63,6 +65,13 @@ RecoveryInstance::RecoveryInstance(JsonView jsonValue) :
 
 RecoveryInstance& RecoveryInstance::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("agentVersion"))
+  {
+    m_agentVersion = jsonValue.GetString("agentVersion");
+
+    m_agentVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -170,6 +179,12 @@ RecoveryInstance& RecoveryInstance::operator =(JsonView jsonValue)
 JsonValue RecoveryInstance::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_agentVersionHasBeenSet)
+  {
+   payload.WithString("agentVersion", m_agentVersion);
+
+  }
 
   if(m_arnHasBeenSet)
   {
