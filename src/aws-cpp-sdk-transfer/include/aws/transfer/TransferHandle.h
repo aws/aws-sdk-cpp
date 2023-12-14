@@ -81,17 +81,17 @@ namespace Aws
                 void SetChecksum(const Aws::String& checksum) { m_checksum = checksum; }
             private:
 
-                int m_partId;
+                int m_partId = 0;
 
                 Aws::String m_eTag;
-                uint64_t m_currentProgressInBytes;
-                uint64_t m_bestProgressInBytes;
-                uint64_t m_sizeInBytes;
-                uint64_t m_rangeBegin;
+                uint64_t m_currentProgressInBytes = 0;
+                uint64_t m_bestProgressInBytes = 0;
+                uint64_t m_sizeInBytes = 0;
+                uint64_t m_rangeBegin = 0;
 
                 std::atomic<Aws::IOStream *> m_downloadPartStream;
                 std::atomic<unsigned char*> m_downloadBuffer;
-                bool m_lastPart;
+                bool m_lastPart = false;
                 Aws::String m_checksum;
         };
 
