@@ -36,7 +36,8 @@ Contact::Contact() :
     m_lastUpdateTimestampHasBeenSet(false),
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
-    m_wisdomInfoHasBeenSet(false)
+    m_wisdomInfoHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Contact::Contact(JsonView jsonValue) :
     m_lastUpdateTimestampHasBeenSet(false),
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
-    m_wisdomInfoHasBeenSet(false)
+    m_wisdomInfoHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -177,6 +179,16 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_wisdomInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -271,6 +283,17 @@ JsonValue Contact::Jsonize() const
   if(m_wisdomInfoHasBeenSet)
   {
    payload.WithObject("WisdomInfo", m_wisdomInfo.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

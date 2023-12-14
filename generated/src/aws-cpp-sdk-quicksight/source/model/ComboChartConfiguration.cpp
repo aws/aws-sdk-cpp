@@ -29,6 +29,7 @@ ComboChartConfiguration::ComboChartConfiguration() :
     m_primaryYAxisLabelOptionsHasBeenSet(false),
     m_secondaryYAxisDisplayOptionsHasBeenSet(false),
     m_secondaryYAxisLabelOptionsHasBeenSet(false),
+    m_singleAxisOptionsHasBeenSet(false),
     m_colorLabelOptionsHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_barDataLabelsHasBeenSet(false),
@@ -50,6 +51,7 @@ ComboChartConfiguration::ComboChartConfiguration(JsonView jsonValue) :
     m_primaryYAxisLabelOptionsHasBeenSet(false),
     m_secondaryYAxisDisplayOptionsHasBeenSet(false),
     m_secondaryYAxisLabelOptionsHasBeenSet(false),
+    m_singleAxisOptionsHasBeenSet(false),
     m_colorLabelOptionsHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_barDataLabelsHasBeenSet(false),
@@ -124,6 +126,13 @@ ComboChartConfiguration& ComboChartConfiguration::operator =(JsonView jsonValue)
     m_secondaryYAxisLabelOptions = jsonValue.GetObject("SecondaryYAxisLabelOptions");
 
     m_secondaryYAxisLabelOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SingleAxisOptions"))
+  {
+    m_singleAxisOptions = jsonValue.GetObject("SingleAxisOptions");
+
+    m_singleAxisOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ColorLabelOptions"))
@@ -235,6 +244,12 @@ JsonValue ComboChartConfiguration::Jsonize() const
   if(m_secondaryYAxisLabelOptionsHasBeenSet)
   {
    payload.WithObject("SecondaryYAxisLabelOptions", m_secondaryYAxisLabelOptions.Jsonize());
+
+  }
+
+  if(m_singleAxisOptionsHasBeenSet)
+  {
+   payload.WithObject("SingleAxisOptions", m_singleAxisOptions.Jsonize());
 
   }
 

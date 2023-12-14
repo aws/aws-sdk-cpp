@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>The name of the data source to modify.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>The name of the data source to modify.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>The name of the data source to modify.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>The name of the data source to modify.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>The name of the data source to modify.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>The name of the data source to modify.</p>
      */
     inline UpdateDataSourceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>The name of the data source to modify.</p>
      */
     inline UpdateDataSourceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>The name of the data source to modify.</p>
      */
     inline UpdateDataSourceRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -151,42 +151,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the data source.</p>
+     * <p>A new description of the data source.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the data source.</p>
+     * <p>A new description of the data source.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the data source.</p>
+     * <p>A new description of the data source.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the data source.</p>
+     * <p>A new description of the data source.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the data source.</p>
+     * <p>A new description of the data source.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the data source.</p>
+     * <p>A new description of the data source.</p>
      */
     inline UpdateDataSourceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the data source.</p>
+     * <p>A new description of the data source.</p>
      */
     inline UpdateDataSourceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the data source.</p>
+     * <p>A new description of the data source.</p>
      */
     inline UpdateDataSourceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

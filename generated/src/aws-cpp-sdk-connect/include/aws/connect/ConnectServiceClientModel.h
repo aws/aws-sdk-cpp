@@ -167,7 +167,9 @@
 #include <aws/connect/model/StopContactStreamingResult.h>
 #include <aws/connect/model/SubmitContactEvaluationResult.h>
 #include <aws/connect/model/SuspendContactRecordingResult.h>
+#include <aws/connect/model/TagContactResult.h>
 #include <aws/connect/model/TransferContactResult.h>
+#include <aws/connect/model/UntagContactResult.h>
 #include <aws/connect/model/UpdateContactResult.h>
 #include <aws/connect/model/UpdateContactAttributesResult.h>
 #include <aws/connect/model/UpdateContactEvaluationResult.h>
@@ -407,8 +409,10 @@ namespace Aws
       class StopContactStreamingRequest;
       class SubmitContactEvaluationRequest;
       class SuspendContactRecordingRequest;
+      class TagContactRequest;
       class TagResourceRequest;
       class TransferContactRequest;
+      class UntagContactRequest;
       class UntagResourceRequest;
       class UpdateAgentStatusRequest;
       class UpdateContactRequest;
@@ -637,8 +641,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<StopContactStreamingResult, ConnectError> StopContactStreamingOutcome;
       typedef Aws::Utils::Outcome<SubmitContactEvaluationResult, ConnectError> SubmitContactEvaluationOutcome;
       typedef Aws::Utils::Outcome<SuspendContactRecordingResult, ConnectError> SuspendContactRecordingOutcome;
+      typedef Aws::Utils::Outcome<TagContactResult, ConnectError> TagContactOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<TransferContactResult, ConnectError> TransferContactOutcome;
+      typedef Aws::Utils::Outcome<UntagContactResult, ConnectError> UntagContactOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateAgentStatusOutcome;
       typedef Aws::Utils::Outcome<UpdateContactResult, ConnectError> UpdateContactOutcome;
@@ -867,8 +873,10 @@ namespace Aws
       typedef std::future<StopContactStreamingOutcome> StopContactStreamingOutcomeCallable;
       typedef std::future<SubmitContactEvaluationOutcome> SubmitContactEvaluationOutcomeCallable;
       typedef std::future<SuspendContactRecordingOutcome> SuspendContactRecordingOutcomeCallable;
+      typedef std::future<TagContactOutcome> TagContactOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<TransferContactOutcome> TransferContactOutcomeCallable;
+      typedef std::future<UntagContactOutcome> UntagContactOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAgentStatusOutcome> UpdateAgentStatusOutcomeCallable;
       typedef std::future<UpdateContactOutcome> UpdateContactOutcomeCallable;
@@ -1100,8 +1108,10 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::StopContactStreamingRequest&, const Model::StopContactStreamingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactStreamingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SubmitContactEvaluationRequest&, const Model::SubmitContactEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitContactEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SuspendContactRecordingRequest&, const Model::SuspendContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendContactRecordingResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::TagContactRequest&, const Model::TagContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::TransferContactRequest&, const Model::TransferContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransferContactResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UntagContactRequest&, const Model::UntagContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateAgentStatusRequest&, const Model::UpdateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactRequest&, const Model::UpdateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactResponseReceivedHandler;

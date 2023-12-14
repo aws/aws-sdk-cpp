@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>A message associated with the data source.</p>
+     * <p>A message associated with the updated data source.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>A message associated with the data source.</p>
+     * <p>A message associated with the updated data source.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_message = value; }
 
     /**
-     * <p>A message associated with the data source.</p>
+     * <p>A message associated with the updated data source.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
-     * <p>A message associated with the data source.</p>
+     * <p>A message associated with the updated data source.</p>
      */
     inline void SetMessage(const char* value) { m_message.assign(value); }
 
     /**
-     * <p>A message associated with the data source.</p>
+     * <p>A message associated with the updated data source.</p>
      */
     inline UpdateDataSourceResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>A message associated with the data source.</p>
+     * <p>A message associated with the updated data source.</p>
      */
     inline UpdateDataSourceResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A message associated with the data source.</p>
+     * <p>A message associated with the updated data source.</p>
      */
     inline UpdateDataSourceResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 

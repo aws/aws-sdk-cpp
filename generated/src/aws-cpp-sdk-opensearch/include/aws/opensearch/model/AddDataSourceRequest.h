@@ -38,83 +38,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name of the domain to add the data source to.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name of the domain to add the data source to.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name of the domain to add the data source to.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name of the domain to add the data source to.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name of the domain to add the data source to.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name of the domain to add the data source to.</p>
      */
     inline AddDataSourceRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name of the domain to add the data source to.</p>
      */
     inline AddDataSourceRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name of the domain to add the data source to.</p>
      */
     inline AddDataSourceRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>A name for the data source.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>A name for the data source.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>A name for the data source.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>A name for the data source.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>A name for the data source.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>A name for the data source.</p>
      */
     inline AddDataSourceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>A name for the data source.</p>
      */
     inline AddDataSourceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data source.</p>
+     * <p>A name for the data source.</p>
      */
     inline AddDataSourceRequest& WithName(const char* value) { SetName(value); return *this;}
 

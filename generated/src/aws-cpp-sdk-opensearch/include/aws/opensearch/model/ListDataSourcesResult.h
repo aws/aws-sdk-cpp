@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>A list of the data sources.</p>
+     * <p>A list of data sources associated with specified domain.</p>
      */
     inline const Aws::Vector<DataSourceDetails>& GetDataSources() const{ return m_dataSources; }
 
     /**
-     * <p>A list of the data sources.</p>
+     * <p>A list of data sources associated with specified domain.</p>
      */
     inline void SetDataSources(const Aws::Vector<DataSourceDetails>& value) { m_dataSources = value; }
 
     /**
-     * <p>A list of the data sources.</p>
+     * <p>A list of data sources associated with specified domain.</p>
      */
     inline void SetDataSources(Aws::Vector<DataSourceDetails>&& value) { m_dataSources = std::move(value); }
 
     /**
-     * <p>A list of the data sources.</p>
+     * <p>A list of data sources associated with specified domain.</p>
      */
     inline ListDataSourcesResult& WithDataSources(const Aws::Vector<DataSourceDetails>& value) { SetDataSources(value); return *this;}
 
     /**
-     * <p>A list of the data sources.</p>
+     * <p>A list of data sources associated with specified domain.</p>
      */
     inline ListDataSourcesResult& WithDataSources(Aws::Vector<DataSourceDetails>&& value) { SetDataSources(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the data sources.</p>
+     * <p>A list of data sources associated with specified domain.</p>
      */
     inline ListDataSourcesResult& AddDataSources(const DataSourceDetails& value) { m_dataSources.push_back(value); return *this; }
 
     /**
-     * <p>A list of the data sources.</p>
+     * <p>A list of data sources associated with specified domain.</p>
      */
     inline ListDataSourcesResult& AddDataSources(DataSourceDetails&& value) { m_dataSources.push_back(std::move(value)); return *this; }
 

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about the data sources.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about a direct-query data source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DataSourceDetails">AWS
    * API Reference</a></p>
    */

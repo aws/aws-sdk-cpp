@@ -23,6 +23,7 @@ namespace Aws
         static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
         static const int WINDOWS_SERVER_2016_HASH = HashingUtils::HashString("WINDOWS_SERVER_2016");
         static const int WINDOWS_SERVER_2019_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019");
+        static const int WINDOWS_SERVER_2022_HASH = HashingUtils::HashString("WINDOWS_SERVER_2022");
         static const int AMAZON_LINUX2_HASH = HashingUtils::HashString("AMAZON_LINUX2");
 
 
@@ -40,6 +41,10 @@ namespace Aws
           else if (hashCode == WINDOWS_SERVER_2019_HASH)
           {
             return PlatformType::WINDOWS_SERVER_2019;
+          }
+          else if (hashCode == WINDOWS_SERVER_2022_HASH)
+          {
+            return PlatformType::WINDOWS_SERVER_2022;
           }
           else if (hashCode == AMAZON_LINUX2_HASH)
           {
@@ -67,6 +72,8 @@ namespace Aws
             return "WINDOWS_SERVER_2016";
           case PlatformType::WINDOWS_SERVER_2019:
             return "WINDOWS_SERVER_2019";
+          case PlatformType::WINDOWS_SERVER_2022:
+            return "WINDOWS_SERVER_2022";
           case PlatformType::AMAZON_LINUX2:
             return "AMAZON_LINUX2";
           default:

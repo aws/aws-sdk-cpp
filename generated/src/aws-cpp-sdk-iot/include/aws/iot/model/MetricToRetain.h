@@ -112,26 +112,26 @@ namespace Model
 
 
     /**
-     * <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if
-     * Device Defender Detect should export the corresponding metrics.</p>
+     * <p>The value indicates exporting metrics related to the <code>MetricToRetain
+     * </code> when it's true.</p>
      */
     inline bool GetExportMetric() const{ return m_exportMetric; }
 
     /**
-     * <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if
-     * Device Defender Detect should export the corresponding metrics.</p>
+     * <p>The value indicates exporting metrics related to the <code>MetricToRetain
+     * </code> when it's true.</p>
      */
     inline bool ExportMetricHasBeenSet() const { return m_exportMetricHasBeenSet; }
 
     /**
-     * <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if
-     * Device Defender Detect should export the corresponding metrics.</p>
+     * <p>The value indicates exporting metrics related to the <code>MetricToRetain
+     * </code> when it's true.</p>
      */
     inline void SetExportMetric(bool value) { m_exportMetricHasBeenSet = true; m_exportMetric = value; }
 
     /**
-     * <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if
-     * Device Defender Detect should export the corresponding metrics.</p>
+     * <p>The value indicates exporting metrics related to the <code>MetricToRetain
+     * </code> when it's true.</p>
      */
     inline MetricToRetain& WithExportMetric(bool value) { SetExportMetric(value); return *this;}
 

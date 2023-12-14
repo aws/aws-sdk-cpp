@@ -89,9 +89,9 @@ namespace B2BI
         virtual ~B2BIClient();
 
         /**
-         * <p>Instantiates a capability based on the specified parameters. Capabilities
-         * contain the information necessary to process incoming EDI (electronic data
-         * interchange) documents.</p><p><h3>See Also:</h3>   <a
+         * <p>Instantiates a capability based on the specified parameters. A trading
+         * capability contains the information required to transform incoming EDI documents
+         * into JSON or XML outputs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateCapability">AWS
          * API Reference</a></p>
          */
@@ -117,10 +117,9 @@ namespace B2BI
 
         /**
          * <p>Creates a partnership between a customer and a trading partner, based on the
-         * supplied parameters. Partnerships link trading partners with your profile and a
-         * specific transformer, so that the EDI (electronic data interchange) documents
-         * that they upload to Amazon S3 can be processed according to their
-         * specifications.</p><p><h3>See Also:</h3>   <a
+         * supplied parameters. A partnership represents the connection between you and
+         * your trading partner. It ties together a profile and one or more trading
+         * capabilities.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreatePartnership">AWS
          * API Reference</a></p>
          */
@@ -146,8 +145,8 @@ namespace B2BI
 
         /**
          * <p>Creates a customer profile. You can have up to five customer profiles, each
-         * representing a distinct private network. Profiles contain basic information
-         * about you and your business.</p><p><h3>See Also:</h3>   <a
+         * representing a distinct private network. A profile is the mechanism used to
+         * create the concept of a private network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateProfile">AWS
          * API Reference</a></p>
          */
@@ -172,9 +171,9 @@ namespace B2BI
         }
 
         /**
-         * <p>Creates a transformer. Transformers describe how to process the incoming EDI
-         * (electronic data interchange) documents, and extract the necessary
-         * information.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a transformer. A transformer describes how to process the incoming
+         * EDI documents and extract the necessary information to the output
+         * file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateTransformer">AWS
          * API Reference</a></p>
          */
@@ -199,9 +198,9 @@ namespace B2BI
         }
 
         /**
-         * <p>Deletes the specified capability. Capabilities contain the information
-         * necessary to process incoming EDI (electronic data interchange)
-         * documents.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified capability. A trading capability contains the
+         * information required to transform incoming EDI documents into JSON or XML
+         * outputs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteCapability">AWS
          * API Reference</a></p>
          */
@@ -226,10 +225,9 @@ namespace B2BI
         }
 
         /**
-         * <p>Deletes the specified partnership. Partnerships link trading partners with
-         * your profile and a specific transformer, so that the EDI (electronic data
-         * interchange) documents that they upload to Amazon S3 can be processed according
-         * to their specifications.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified partnership. A partnership represents the connection
+         * between you and your trading partner. It ties together a profile and one or more
+         * trading capabilities.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeletePartnership">AWS
          * API Reference</a></p>
          */
@@ -254,8 +252,8 @@ namespace B2BI
         }
 
         /**
-         * <p>Deletes the specified profile. Profiles contain basic information about you
-         * and your business.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified profile. A profile is the mechanism used to create the
+         * concept of a private network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteProfile">AWS
          * API Reference</a></p>
          */
@@ -280,9 +278,9 @@ namespace B2BI
         }
 
         /**
-         * <p>Deletes the specified transformer. Transformers describe how to process the
-         * incoming EDI (electronic data interchange) documents, and extract the necessary
-         * information.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified transformer. A transformer describes how to process the
+         * incoming EDI documents and extract the necessary information to the output
+         * file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteTransformer">AWS
          * API Reference</a></p>
          */
@@ -307,9 +305,9 @@ namespace B2BI
         }
 
         /**
-         * <p>Retrieves the details for the specified capability. Capabilities contain the
-         * information necessary to process incoming EDI (electronic data interchange)
-         * documents.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the details for the specified capability. A trading capability
+         * contains the information required to transform incoming EDI documents into JSON
+         * or XML outputs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetCapability">AWS
          * API Reference</a></p>
          */
@@ -335,10 +333,9 @@ namespace B2BI
 
         /**
          * <p>Retrieves the details for a partnership, based on the partner and profile IDs
-         * specified. Partnerships link trading partners with your profile and a specific
-         * transformer, so that the EDI (electronic data interchange) documents that they
-         * upload to Amazon S3 can be processed according to their
-         * specifications.</p><p><h3>See Also:</h3>   <a
+         * specified. A partnership represents the connection between you and your trading
+         * partner. It ties together a profile and one or more trading
+         * capabilities.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetPartnership">AWS
          * API Reference</a></p>
          */
@@ -363,10 +360,11 @@ namespace B2BI
         }
 
         /**
-         * <p>Retrieves the details for the profile specified by the profile ID. Profiles
-         * contain basic information about you and your business.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetProfile">AWS
-         * API Reference</a></p>
+         * <p>Retrieves the details for the profile specified by the profile ID. A profile
+         * is the mechanism used to create the concept of a private network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetProfile">AWS API
+         * Reference</a></p>
          */
         virtual Model::GetProfileOutcome GetProfile(const Model::GetProfileRequest& request) const;
 
@@ -389,10 +387,9 @@ namespace B2BI
         }
 
         /**
-         * <p>Retrieves the details for the transformer specified by the transformer ID.
-         * Transformers describe how to process the incoming EDI (electronic data
-         * interchange) documents, and extract the necessary information.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the details for the transformer specified by the transformer ID. A
+         * transformer describes how to process the incoming EDI documents and extract the
+         * necessary information to the output file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformer">AWS
          * API Reference</a></p>
          */
@@ -444,9 +441,9 @@ namespace B2BI
 
         /**
          * <p>Lists the capabilities associated with your Amazon Web Services account for
-         * your current or specified region. Capabilities contain the information necessary
-         * to process incoming EDI (electronic data interchange) documents.</p><p><h3>See
-         * Also:</h3>   <a
+         * your current or specified region. A trading capability contains the information
+         * required to transform incoming EDI documents into JSON or XML
+         * outputs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListCapabilities">AWS
          * API Reference</a></p>
          */
@@ -472,10 +469,9 @@ namespace B2BI
 
         /**
          * <p>Lists the partnerships associated with your Amazon Web Services account for
-         * your current or specified region. Partnerships link trading partners with your
-         * profile and a specific transformer, so that the EDI (electronic data
-         * interchange) documents that they upload to Amazon S3 can be processed according
-         * to their specifications.</p><p><h3>See Also:</h3>   <a
+         * your current or specified region. A partnership represents the connection
+         * between you and your trading partner. It ties together a profile and one or more
+         * trading capabilities.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListPartnerships">AWS
          * API Reference</a></p>
          */
@@ -501,8 +497,8 @@ namespace B2BI
 
         /**
          * <p>Lists the profiles associated with your Amazon Web Services account for your
-         * current or specified region. Profiles contain basic information about you and
-         * your business.</p><p><h3>See Also:</h3>   <a
+         * current or specified region. A profile is the mechanism used to create the
+         * concept of a private network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListProfiles">AWS
          * API Reference</a></p>
          */
@@ -554,9 +550,9 @@ namespace B2BI
         }
 
         /**
-         * <p>Lists the available transformers. Transformers describe how to process the
-         * incoming EDI (electronic data interchange) documents, and extract the necessary
-         * information.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the available transformers. A transformer describes how to process the
+         * incoming EDI documents and extract the necessary information to the output
+         * file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">AWS
          * API Reference</a></p>
          */
@@ -583,7 +579,11 @@ namespace B2BI
         /**
          * <p>Runs a job, using a transformer, to parse input EDI (electronic data
          * interchange) file into the output structures used by Amazon Web Services B2BI
-         * Data Interchange.</p><p><h3>See Also:</h3>   <a
+         * Data Interchange.</p> <p>If you only want to transform EDI (electronic data
+         * interchange) documents, you don't need to create profiles, partnerships or
+         * capabilities. Just create and configure a transformer, and then run the
+         * <code>StartTransformerJob</code> API to process your files.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/StartTransformerJob">AWS
          * API Reference</a></p>
          */
@@ -636,7 +636,9 @@ namespace B2BI
         }
 
         /**
-         * <p>Maps the input file according to the provided template file.</p><p><h3>See
+         * <p>Maps the input file according to the provided template file. The API call
+         * downloads the file contents from the Amazon S3 location, and passes the contents
+         * in as a string, to the <code>inputFileContent</code> parameter.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestMapping">AWS
          * API Reference</a></p>
@@ -716,8 +718,8 @@ namespace B2BI
 
         /**
          * <p>Updates some of the parameters for a capability, based on the specified
-         * parameters. Capabilities contain the information necessary to process incoming
-         * EDI (electronic data interchange) documents.</p><p><h3>See Also:</h3>   <a
+         * parameters. A trading capability contains the information required to transform
+         * incoming EDI documents into JSON or XML outputs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateCapability">AWS
          * API Reference</a></p>
          */
@@ -743,10 +745,9 @@ namespace B2BI
 
         /**
          * <p>Updates some of the parameters for a partnership between a customer and
-         * trading partner. Partnerships link trading partners with your profile and a
-         * specific transformer, so that the EDI (electronic data interchange) documents
-         * that they upload to Amazon S3 can be processed according to their
-         * specifications.</p><p><h3>See Also:</h3>   <a
+         * trading partner. A partnership represents the connection between you and your
+         * trading partner. It ties together a profile and one or more trading
+         * capabilities.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdatePartnership">AWS
          * API Reference</a></p>
          */
@@ -771,8 +772,8 @@ namespace B2BI
         }
 
         /**
-         * <p>Updates the specified parameters for a profile. Profiles contain basic
-         * information about you and your business.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified parameters for a profile. A profile is the mechanism
+         * used to create the concept of a private network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateProfile">AWS
          * API Reference</a></p>
          */
@@ -797,9 +798,9 @@ namespace B2BI
         }
 
         /**
-         * <p>Updates the specified parameters for a transformer. Transformers describe how
-         * to process the incoming EDI (electronic data interchange) documents, and extract
-         * the necessary information.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified parameters for a transformer. A transformer describes
+         * how to process the incoming EDI documents and extract the necessary information
+         * to the output file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateTransformer">AWS
          * API Reference</a></p>
          */

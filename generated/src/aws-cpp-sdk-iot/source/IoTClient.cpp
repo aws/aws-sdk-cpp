@@ -21,7 +21,6 @@
 #include <aws/iot/IoTClient.h>
 #include <aws/iot/IoTErrorMarshaller.h>
 #include <aws/iot/IoTEndpointProvider.h>
-#include <aws/iot/model/DescribeJobRequest.h>
 #include <aws/iot/model/DeleteThingGroupRequest.h>
 #include <aws/iot/model/DeleteAuditSuppressionRequest.h>
 #include <aws/iot/model/DeleteCustomMetricRequest.h>
@@ -38,10 +37,12 @@
 #include <aws/iot/model/CreateRoleAliasRequest.h>
 #include <aws/iot/model/CreateJobTemplateRequest.h>
 #include <aws/iot/model/CreateCustomMetricRequest.h>
+#include <aws/iot/model/DescribeCertificateProviderRequest.h>
 #include <aws/iot/model/DeleteDimensionRequest.h>
 #include <aws/iot/model/DeleteCertificateRequest.h>
 #include <aws/iot/model/DescribeIndexRequest.h>
 #include <aws/iot/model/DescribeEventConfigurationsRequest.h>
+#include <aws/iot/model/DeleteCertificateProviderRequest.h>
 #include <aws/iot/model/CreateThingTypeRequest.h>
 #include <aws/iot/model/CreateSecurityProfileRequest.h>
 #include <aws/iot/model/DeleteV2LoggingLevelRequest.h>
@@ -56,7 +57,6 @@
 #include <aws/iot/model/CancelAuditMitigationActionsTaskRequest.h>
 #include <aws/iot/model/DeleteStreamRequest.h>
 #include <aws/iot/model/DeleteJobExecutionRequest.h>
-#include <aws/iot/model/DescribeJobExecutionRequest.h>
 #include <aws/iot/model/DeleteRoleAliasRequest.h>
 #include <aws/iot/model/CreateScheduledAuditRequest.h>
 #include <aws/iot/model/CreateTopicRuleRequest.h>
@@ -87,13 +87,13 @@
 #include <aws/iot/model/DescribeDefaultAuthorizerRequest.h>
 #include <aws/iot/model/DeletePackageRequest.h>
 #include <aws/iot/model/DescribeAuthorizerRequest.h>
+#include <aws/iot/model/CreateCertificateProviderRequest.h>
 #include <aws/iot/model/DescribeAuditMitigationActionsTaskRequest.h>
 #include <aws/iot/model/AcceptCertificateTransferRequest.h>
 #include <aws/iot/model/CancelDetectMitigationActionsTaskRequest.h>
 #include <aws/iot/model/AddThingToThingGroupRequest.h>
 #include <aws/iot/model/CreateThingGroupRequest.h>
 #include <aws/iot/model/AddThingToBillingGroupRequest.h>
-#include <aws/iot/model/DescribeJobTemplateRequest.h>
 #include <aws/iot/model/CreateAuthorizerRequest.h>
 #include <aws/iot/model/ClearDefaultAuthorizerRequest.h>
 #include <aws/iot/model/DeletePolicyRequest.h>
@@ -252,39 +252,6 @@ void IoTClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
-}
-
-DescribeJobOutcome IoTClient::DescribeJob(const DescribeJobRequest& request) const
-{
-  AWS_OPERATION_GUARD(DescribeJob);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeJob", "Required field: JobId, is not set");
-    return DescribeJobOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeJob",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeJobOutcome>(
-    [&]()-> DescribeJobOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-      return DescribeJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 DeleteThingGroupOutcome IoTClient::DeleteThingGroup(const DeleteThingGroupRequest& request) const
@@ -812,6 +779,39 @@ CreateCustomMetricOutcome IoTClient::CreateCustomMetric(const CreateCustomMetric
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeCertificateProviderOutcome IoTClient::DescribeCertificateProvider(const DescribeCertificateProviderRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeCertificateProvider);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCertificateProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CertificateProviderNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCertificateProvider", "Required field: CertificateProviderName, is not set");
+    return DescribeCertificateProviderOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateProviderName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeCertificateProvider, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeCertificateProvider, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeCertificateProvider",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeCertificateProviderOutcome>(
+    [&]()-> DescribeCertificateProviderOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCertificateProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/certificate-providers/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateProviderName());
+      return DescribeCertificateProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteDimensionOutcome IoTClient::DeleteDimension(const DeleteDimensionRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteDimension);
@@ -932,6 +932,39 @@ DescribeEventConfigurationsOutcome IoTClient::DescribeEventConfigurations(const 
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEventConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/event-configurations");
       return DescribeEventConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteCertificateProviderOutcome IoTClient::DeleteCertificateProvider(const DeleteCertificateProviderRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteCertificateProvider);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCertificateProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CertificateProviderNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCertificateProvider", "Required field: CertificateProviderName, is not set");
+    return DeleteCertificateProviderOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateProviderName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteCertificateProvider, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteCertificateProvider, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteCertificateProvider",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteCertificateProviderOutcome>(
+    [&]()-> DeleteCertificateProviderOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCertificateProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/certificate-providers/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateProviderName());
+      return DeleteCertificateProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1408,46 +1441,6 @@ DeleteJobExecutionOutcome IoTClient::DeleteJobExecution(const DeleteJobExecution
       endpointResolutionOutcome.GetResult().AddPathSegments("/executionNumber/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionNumber());
       return DeleteJobExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeJobExecutionOutcome IoTClient::DescribeJobExecution(const DescribeJobExecutionRequest& request) const
-{
-  AWS_OPERATION_GUARD(DescribeJobExecution);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.JobIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeJobExecution", "Required field: JobId, is not set");
-    return DescribeJobExecutionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
-  }
-  if (!request.ThingNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeJobExecution", "Required field: ThingName, is not set");
-    return DescribeJobExecutionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeJobExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeJobExecution, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeJobExecution",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeJobExecutionOutcome>(
-    [&]()-> DescribeJobExecutionOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/things/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingName());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
-      return DescribeJobExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2457,6 +2450,39 @@ DescribeAuthorizerOutcome IoTClient::DescribeAuthorizer(const DescribeAuthorizer
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateCertificateProviderOutcome IoTClient::CreateCertificateProvider(const CreateCertificateProviderRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateCertificateProvider);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCertificateProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CertificateProviderNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateCertificateProvider", "Required field: CertificateProviderName, is not set");
+    return CreateCertificateProviderOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateProviderName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateCertificateProvider, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateCertificateProvider, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateCertificateProvider",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateCertificateProviderOutcome>(
+    [&]()-> CreateCertificateProviderOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCertificateProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/certificate-providers/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateProviderName());
+      return CreateCertificateProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeAuditMitigationActionsTaskOutcome IoTClient::DescribeAuditMitigationActionsTask(const DescribeAuditMitigationActionsTaskRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeAuditMitigationActionsTask);
@@ -2638,39 +2664,6 @@ AddThingToBillingGroupOutcome IoTClient::AddThingToBillingGroup(const AddThingTo
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddThingToBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/billing-groups/addThingToBillingGroup");
       return AddThingToBillingGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeJobTemplateOutcome IoTClient::DescribeJobTemplate(const DescribeJobTemplateRequest& request) const
-{
-  AWS_OPERATION_GUARD(DescribeJobTemplate);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.JobTemplateIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeJobTemplate", "Required field: JobTemplateId, is not set");
-    return DescribeJobTemplateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobTemplateId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeJobTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeJobTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeJobTemplate",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeJobTemplateOutcome>(
-    [&]()-> DescribeJobTemplateOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/job-templates/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobTemplateId());
-      return DescribeJobTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
