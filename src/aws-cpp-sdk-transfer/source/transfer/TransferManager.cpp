@@ -276,10 +276,16 @@ namespace Aws
         void TransferManager::UploadDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix, const Aws::Map<Aws::String, Aws::String>& metadata)
         {
             assert(m_transferConfig.transferInitiatedCallback);
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, prefix); // fake handle
 
             auto self = shared_from_this();
-            auto visitor = [self, bucketName, prefix, metadata](const Aws::FileSystem::DirectoryTree*, const Aws::FileSystem::DirectoryEntry& entry)
+            auto visitor = [self, bucketName, prefix, metadata, handle](const Aws::FileSystem::DirectoryTree*, const Aws::FileSystem::DirectoryEntry& entry)
             {
+                if (!handle || !handle->ShouldContinue())
+                {
+                    return false; // Allow to cancel directory upload
+                }
+
                 if (entry && entry.fileType == Aws::FileSystem::FileType::File)
                 {
                     Aws::StringStream ssKey;
@@ -298,7 +304,6 @@ namespace Aws
                 return true;
             };
 
-            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, prefix); // fake handle
             AddTask(handle);
             m_transferConfig.transferExecutor->Submit(
                     [directory, visitor, self, handle]()
