@@ -35,9 +35,9 @@ GetGeneratedPolicyResult& GetGeneratedPolicyResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("GeneratedPolicyResults"))
+  if(jsonValue.ValueExists("generatedPolicyResult"))
   {
-    m_generatedPolicyResults = jsonValue.GetObject("GeneratedPolicyResults");
+    m_generatedPolicyResults = jsonValue.GetObject("generatedPolicyResult");
 
   }
 

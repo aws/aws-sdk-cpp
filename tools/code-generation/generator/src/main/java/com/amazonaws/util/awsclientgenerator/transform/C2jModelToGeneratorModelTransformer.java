@@ -800,7 +800,9 @@ public class C2jModelToGeneratorModelTransformer {
             shapes.remove(originalShapeName);
         }
         if (!Objects.equals(originalMemberKey, newMemberKey)) {
-            parentShape.getMembers().put(newMemberKey, parentShape.getMembers().get(originalMemberKey));
+            final ShapeMember member = parentShape.getMembers().get(originalMemberKey);
+            member.setLocationName(originalMemberKey);
+            parentShape.getMembers().put(newMemberKey, member);
             parentShape.RemoveMember(originalMemberKey);
         }
         if (isPayload)
