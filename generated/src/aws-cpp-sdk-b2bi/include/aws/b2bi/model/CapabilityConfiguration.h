@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>A capability object. Currently, only EDI (electronic data interchange)
-   * capabilities are supported. Capabilities contain the information necessary to
-   * process incoming EDI (electronic data interchange) documents.</p><p><h3>See
-   * Also:</h3>   <a
+   * capabilities are supported. A trading capability contains the information
+   * required to transform incoming EDI documents into JSON or XML
+   * outputs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CapabilityConfiguration">AWS
    * API Reference</a></p>
    */

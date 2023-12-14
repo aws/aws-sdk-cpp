@@ -117,7 +117,11 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Adds the data source on the domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new direct-query data source to the specified domain. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Creating
+         * Amazon OpenSearch Service data source integrations with Amazon
+         * S3</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDataSource">AWS
          * API Reference</a></p>
          */
@@ -365,7 +369,10 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Deletes the data source.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a direct-query data source. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-delete.html">Deleting
+         * an Amazon OpenSearch Service data source with Amazon S3</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDataSource">AWS
          * API Reference</a></p>
          */
@@ -993,7 +1000,8 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Describes the data source details.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a direct query data source.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDataSource">AWS
          * API Reference</a></p>
          */
@@ -1125,8 +1133,11 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>A list of the data source details of the domain.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists direct-query data sources for a specific domain. For more information,
+         * see For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3.html">Working
+         * with Amazon OpenSearch Service direct queries with Amazon S3</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDataSources">AWS
          * API Reference</a></p>
          */
@@ -1608,7 +1619,10 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Updates the data source on the domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a direct-query data source. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Working
+         * with Amazon OpenSearch Service data source integrations with Amazon
+         * S3</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDataSource">AWS
          * API Reference</a></p>
          */

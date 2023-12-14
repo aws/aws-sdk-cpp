@@ -5248,6 +5248,35 @@ namespace Connect
         }
 
         /**
+         * <p>Adds the specified tags to the contact resource. For more information about
+         * this API is used, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
+         * up granular billing for a detailed view of your Amazon Connect usage</a>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagContactOutcome TagContact(const Model::TagContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagContactRequestT = Model::TagContactRequest>
+        Model::TagContactOutcomeCallable TagContactCallable(const TagContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::TagContact, request);
+        }
+
+        /**
+         * An Async wrapper for TagContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagContactRequestT = Model::TagContactRequest>
+        void TagContactAsync(const TagContactRequestT& request, const TagContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::TagContact, request, handler, context);
+        }
+
+        /**
          * <p>Adds the specified tags to the specified resource.</p> <p>Some of the
          * supported resource types are agents, routing profiles, queues, quick connects,
          * contact flows, agent statuses, hours of operation, phone numbers, security
@@ -5315,6 +5344,35 @@ namespace Connect
         void TransferContactAsync(const TransferContactRequestT& request, const TransferContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::TransferContact, request, handler, context);
+        }
+
+        /**
+         * <p>Removes the specified tags from the contact resource. For more information
+         * about this API is used, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
+         * up granular billing for a detailed view of your Amazon Connect
+         * usage</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagContactOutcome UntagContact(const Model::UntagContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagContactRequestT = Model::UntagContactRequest>
+        Model::UntagContactOutcomeCallable UntagContactCallable(const UntagContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UntagContact, request);
+        }
+
+        /**
+         * An Async wrapper for UntagContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagContactRequestT = Model::UntagContactRequest>
+        void UntagContactAsync(const UntagContactRequestT& request, const UntagContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UntagContact, request, handler, context);
         }
 
         /**

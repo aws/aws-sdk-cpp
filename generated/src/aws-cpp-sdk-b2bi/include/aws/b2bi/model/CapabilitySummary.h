@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Returns the capability summary details. Capabilities contain the information
-   * necessary to process incoming EDI (electronic data interchange)
-   * documents.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns the capability summary details. A trading capability contains the
+   * information required to transform incoming EDI documents into JSON or XML
+   * outputs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CapabilitySummary">AWS
    * API Reference</a></p>
    */

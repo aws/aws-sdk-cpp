@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>Specify the EDI (electronic data interchange) file that is used as input for
-     * the transform.</p>
+     * <p>Specify the contents of the EDI (electronic data interchange) XML or JSON
+     * file that is used as input for the transform.</p>
      */
     inline const Aws::String& GetInputFileContent() const{ return m_inputFileContent; }
 
     /**
-     * <p>Specify the EDI (electronic data interchange) file that is used as input for
-     * the transform.</p>
+     * <p>Specify the contents of the EDI (electronic data interchange) XML or JSON
+     * file that is used as input for the transform.</p>
      */
     inline bool InputFileContentHasBeenSet() const { return m_inputFileContentHasBeenSet; }
 
     /**
-     * <p>Specify the EDI (electronic data interchange) file that is used as input for
-     * the transform.</p>
+     * <p>Specify the contents of the EDI (electronic data interchange) XML or JSON
+     * file that is used as input for the transform.</p>
      */
     inline void SetInputFileContent(const Aws::String& value) { m_inputFileContentHasBeenSet = true; m_inputFileContent = value; }
 
     /**
-     * <p>Specify the EDI (electronic data interchange) file that is used as input for
-     * the transform.</p>
+     * <p>Specify the contents of the EDI (electronic data interchange) XML or JSON
+     * file that is used as input for the transform.</p>
      */
     inline void SetInputFileContent(Aws::String&& value) { m_inputFileContentHasBeenSet = true; m_inputFileContent = std::move(value); }
 
     /**
-     * <p>Specify the EDI (electronic data interchange) file that is used as input for
-     * the transform.</p>
+     * <p>Specify the contents of the EDI (electronic data interchange) XML or JSON
+     * file that is used as input for the transform.</p>
      */
     inline void SetInputFileContent(const char* value) { m_inputFileContentHasBeenSet = true; m_inputFileContent.assign(value); }
 
     /**
-     * <p>Specify the EDI (electronic data interchange) file that is used as input for
-     * the transform.</p>
+     * <p>Specify the contents of the EDI (electronic data interchange) XML or JSON
+     * file that is used as input for the transform.</p>
      */
     inline TestMappingRequest& WithInputFileContent(const Aws::String& value) { SetInputFileContent(value); return *this;}
 
     /**
-     * <p>Specify the EDI (electronic data interchange) file that is used as input for
-     * the transform.</p>
+     * <p>Specify the contents of the EDI (electronic data interchange) XML or JSON
+     * file that is used as input for the transform.</p>
      */
     inline TestMappingRequest& WithInputFileContent(Aws::String&& value) { SetInputFileContent(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the EDI (electronic data interchange) file that is used as input for
-     * the transform.</p>
+     * <p>Specify the contents of the EDI (electronic data interchange) XML or JSON
+     * file that is used as input for the transform.</p>
      */
     inline TestMappingRequest& WithInputFileContent(const char* value) { SetInputFileContent(value); return *this;}
 

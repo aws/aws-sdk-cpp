@@ -31,6 +31,7 @@ LineChartConfiguration::LineChartConfiguration() :
     m_primaryYAxisLabelOptionsHasBeenSet(false),
     m_secondaryYAxisDisplayOptionsHasBeenSet(false),
     m_secondaryYAxisLabelOptionsHasBeenSet(false),
+    m_singleAxisOptionsHasBeenSet(false),
     m_defaultSeriesSettingsHasBeenSet(false),
     m_seriesHasBeenSet(false),
     m_legendHasBeenSet(false),
@@ -55,6 +56,7 @@ LineChartConfiguration::LineChartConfiguration(JsonView jsonValue) :
     m_primaryYAxisLabelOptionsHasBeenSet(false),
     m_secondaryYAxisDisplayOptionsHasBeenSet(false),
     m_secondaryYAxisLabelOptionsHasBeenSet(false),
+    m_singleAxisOptionsHasBeenSet(false),
     m_defaultSeriesSettingsHasBeenSet(false),
     m_seriesHasBeenSet(false),
     m_legendHasBeenSet(false),
@@ -147,6 +149,13 @@ LineChartConfiguration& LineChartConfiguration::operator =(JsonView jsonValue)
     m_secondaryYAxisLabelOptions = jsonValue.GetObject("SecondaryYAxisLabelOptions");
 
     m_secondaryYAxisLabelOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SingleAxisOptions"))
+  {
+    m_singleAxisOptions = jsonValue.GetObject("SingleAxisOptions");
+
+    m_singleAxisOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DefaultSeriesSettings"))
@@ -288,6 +297,12 @@ JsonValue LineChartConfiguration::Jsonize() const
   if(m_secondaryYAxisLabelOptionsHasBeenSet)
   {
    payload.WithObject("SecondaryYAxisLabelOptions", m_secondaryYAxisLabelOptions.Jsonize());
+
+  }
+
+  if(m_singleAxisOptionsHasBeenSet)
+  {
+   payload.WithObject("SingleAxisOptions", m_singleAxisOptions.Jsonize());
 
   }
 

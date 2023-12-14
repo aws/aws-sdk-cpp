@@ -154,38 +154,38 @@ namespace Model
 
 
     /**
-     * <p>The landing zone <code>manifest.yaml</code> text file that specifies the
-     * landing zone configurations. </p>
+     * <p>The landing zone manifest JSON text file that specifies the landing zone
+     * configurations. </p>
      */
     inline Aws::Utils::DocumentView GetManifest() const{ return m_manifest; }
 
     /**
-     * <p>The landing zone <code>manifest.yaml</code> text file that specifies the
-     * landing zone configurations. </p>
+     * <p>The landing zone manifest JSON text file that specifies the landing zone
+     * configurations. </p>
      */
     inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
 
     /**
-     * <p>The landing zone <code>manifest.yaml</code> text file that specifies the
-     * landing zone configurations. </p>
+     * <p>The landing zone manifest JSON text file that specifies the landing zone
+     * configurations. </p>
      */
     inline void SetManifest(const Aws::Utils::Document& value) { m_manifestHasBeenSet = true; m_manifest = value; }
 
     /**
-     * <p>The landing zone <code>manifest.yaml</code> text file that specifies the
-     * landing zone configurations. </p>
+     * <p>The landing zone manifest JSON text file that specifies the landing zone
+     * configurations. </p>
      */
     inline void SetManifest(Aws::Utils::Document&& value) { m_manifestHasBeenSet = true; m_manifest = std::move(value); }
 
     /**
-     * <p>The landing zone <code>manifest.yaml</code> text file that specifies the
-     * landing zone configurations. </p>
+     * <p>The landing zone manifest JSON text file that specifies the landing zone
+     * configurations. </p>
      */
     inline LandingZoneDetail& WithManifest(const Aws::Utils::Document& value) { SetManifest(value); return *this;}
 
     /**
-     * <p>The landing zone <code>manifest.yaml</code> text file that specifies the
-     * landing zone configurations. </p>
+     * <p>The landing zone manifest JSON text file that specifies the landing zone
+     * configurations. </p>
      */
     inline LandingZoneDetail& WithManifest(Aws::Utils::Document&& value) { SetManifest(std::move(value)); return *this;}
 

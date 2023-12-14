@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details for a transformer object. Transformers describe how to
-   * process the incoming EDI (electronic data interchange) documents, and extract
-   * the necessary information.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details for a transformer object. A transformer describes how to
+   * process the incoming EDI documents and extract the necessary information to the
+   * output file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TransformerSummary">AWS
    * API Reference</a></p>
    */

@@ -26,10 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A structure that contains the details for a partnership. Partnerships link
-   * trading partners with your profile and a specific transformer, so that the EDI
-   * (electronic data interchange) documents that they upload to Amazon S3 can be
-   * processed according to their specifications.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure that contains the details for a partnership. A partnership
+   * represents the connection between you and your trading partner. It ties together
+   * a profile and one or more trading capabilities.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/PartnershipSummary">AWS
    * API Reference</a></p>
    */

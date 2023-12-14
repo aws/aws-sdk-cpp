@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details for a profile. Profiles contain basic information about
-   * you and your business.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details for a profile. A profile is the mechanism used to create
+   * the concept of a private network.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ProfileSummary">AWS
    * API Reference</a></p>
    */

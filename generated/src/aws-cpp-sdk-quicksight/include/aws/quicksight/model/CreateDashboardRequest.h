@@ -842,6 +842,61 @@ namespace Model
      */
     inline CreateDashboardRequest& WithLinkSharingConfiguration(LinkSharingConfiguration&& value) { SetLinkSharingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLinkEntities() const{ return m_linkEntities; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline bool LinkEntitiesHasBeenSet() const { return m_linkEntitiesHasBeenSet; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline void SetLinkEntities(const Aws::Vector<Aws::String>& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities = value; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline void SetLinkEntities(Aws::Vector<Aws::String>&& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities = std::move(value); }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline CreateDashboardRequest& WithLinkEntities(const Aws::Vector<Aws::String>& value) { SetLinkEntities(value); return *this;}
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline CreateDashboardRequest& WithLinkEntities(Aws::Vector<Aws::String>&& value) { SetLinkEntities(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline CreateDashboardRequest& AddLinkEntities(const Aws::String& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities.push_back(value); return *this; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline CreateDashboardRequest& AddLinkEntities(Aws::String&& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline CreateDashboardRequest& AddLinkEntities(const char* value) { m_linkEntitiesHasBeenSet = true; m_linkEntities.push_back(value); return *this; }
+
   private:
 
     Aws::String m_awsAccountId;
@@ -885,6 +940,9 @@ namespace Model
 
     LinkSharingConfiguration m_linkSharingConfiguration;
     bool m_linkSharingConfigurationHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_linkEntities;
+    bool m_linkEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

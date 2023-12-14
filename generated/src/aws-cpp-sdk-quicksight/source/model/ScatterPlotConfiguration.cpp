@@ -20,6 +20,7 @@ namespace Model
 
 ScatterPlotConfiguration::ScatterPlotConfiguration() : 
     m_fieldWellsHasBeenSet(false),
+    m_sortConfigurationHasBeenSet(false),
     m_xAxisLabelOptionsHasBeenSet(false),
     m_xAxisDisplayOptionsHasBeenSet(false),
     m_yAxisLabelOptionsHasBeenSet(false),
@@ -33,6 +34,7 @@ ScatterPlotConfiguration::ScatterPlotConfiguration() :
 
 ScatterPlotConfiguration::ScatterPlotConfiguration(JsonView jsonValue) : 
     m_fieldWellsHasBeenSet(false),
+    m_sortConfigurationHasBeenSet(false),
     m_xAxisLabelOptionsHasBeenSet(false),
     m_xAxisDisplayOptionsHasBeenSet(false),
     m_yAxisLabelOptionsHasBeenSet(false),
@@ -52,6 +54,13 @@ ScatterPlotConfiguration& ScatterPlotConfiguration::operator =(JsonView jsonValu
     m_fieldWells = jsonValue.GetObject("FieldWells");
 
     m_fieldWellsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SortConfiguration"))
+  {
+    m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
+
+    m_sortConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("XAxisLabelOptions"))
@@ -120,6 +129,12 @@ JsonValue ScatterPlotConfiguration::Jsonize() const
   if(m_fieldWellsHasBeenSet)
   {
    payload.WithObject("FieldWells", m_fieldWells.Jsonize());
+
+  }
+
+  if(m_sortConfigurationHasBeenSet)
+  {
+   payload.WithObject("SortConfiguration", m_sortConfiguration.Jsonize());
 
   }
 

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/DashboardVersion.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -285,6 +286,61 @@ namespace Model
      */
     inline Dashboard& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLinkEntities() const{ return m_linkEntities; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline bool LinkEntitiesHasBeenSet() const { return m_linkEntitiesHasBeenSet; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline void SetLinkEntities(const Aws::Vector<Aws::String>& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities = value; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline void SetLinkEntities(Aws::Vector<Aws::String>&& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities = std::move(value); }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline Dashboard& WithLinkEntities(const Aws::Vector<Aws::String>& value) { SetLinkEntities(value); return *this;}
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline Dashboard& WithLinkEntities(Aws::Vector<Aws::String>&& value) { SetLinkEntities(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline Dashboard& AddLinkEntities(const Aws::String& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities.push_back(value); return *this; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline Dashboard& AddLinkEntities(Aws::String&& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
+     * dashboard.</p>
+     */
+    inline Dashboard& AddLinkEntities(const char* value) { m_linkEntitiesHasBeenSet = true; m_linkEntities.push_back(value); return *this; }
+
   private:
 
     Aws::String m_dashboardId;
@@ -307,6 +363,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_linkEntities;
+    bool m_linkEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

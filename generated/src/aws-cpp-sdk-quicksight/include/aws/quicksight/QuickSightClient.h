@@ -156,11 +156,9 @@ namespace QuickSight
         /**
          * <p>Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight
          * Q.</p> <p>The Amazon Web Services Region for the account is derived from what is
-         * configured in the CLI or SDK. This operation isn't supported in the US East
-         * (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific (Singapore)
-         * Region. </p> <p>Before you use this operation, make sure that you can connect to
-         * an existing Amazon Web Services account. If you don't have an Amazon Web
-         * Services account, see <a
+         * configured in the CLI or SDK.</p> <p>Before you use this operation, make sure
+         * that you can connect to an existing Amazon Web Services account. If you don't
+         * have an Amazon Web Services account, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign
          * up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The
          * person who signs up for Amazon QuickSight needs to have the correct Identity and
@@ -4102,6 +4100,31 @@ namespace QuickSight
         void UpdateDashboardAsync(const UpdateDashboardRequestT& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdateDashboard, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the linked analyses on a dashboard.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDashboardLinksOutcome UpdateDashboardLinks(const Model::UpdateDashboardLinksRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDashboardLinks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDashboardLinksRequestT = Model::UpdateDashboardLinksRequest>
+        Model::UpdateDashboardLinksOutcomeCallable UpdateDashboardLinksCallable(const UpdateDashboardLinksRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateDashboardLinks, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDashboardLinks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDashboardLinksRequestT = Model::UpdateDashboardLinksRequest>
+        void UpdateDashboardLinksAsync(const UpdateDashboardLinksRequestT& request, const UpdateDashboardLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateDashboardLinks, request, handler, context);
         }
 
         /**

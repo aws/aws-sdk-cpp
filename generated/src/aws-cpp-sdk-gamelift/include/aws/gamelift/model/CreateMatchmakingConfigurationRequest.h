@@ -543,98 +543,74 @@ namespace Model
 
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new
-     * <code>GameSession</code> object that is created for a successful match. This
-     * parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
+     * is added to the new <code>GameSession</code> object that is created for a
+     * successful match. This parameter is not used if <code>FlexMatchMode</code> is
+     * set to <code>STANDALONE</code>.</p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new
-     * <code>GameSession</code> object that is created for a successful match. This
-     * parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
+     * is added to the new <code>GameSession</code> object that is created for a
+     * successful match. This parameter is not used if <code>FlexMatchMode</code> is
+     * set to <code>STANDALONE</code>.</p>
      */
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new
-     * <code>GameSession</code> object that is created for a successful match. This
-     * parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
+     * is added to the new <code>GameSession</code> object that is created for a
+     * successful match. This parameter is not used if <code>FlexMatchMode</code> is
+     * set to <code>STANDALONE</code>.</p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new
-     * <code>GameSession</code> object that is created for a successful match. This
-     * parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
+     * is added to the new <code>GameSession</code> object that is created for a
+     * successful match. This parameter is not used if <code>FlexMatchMode</code> is
+     * set to <code>STANDALONE</code>.</p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new
-     * <code>GameSession</code> object that is created for a successful match. This
-     * parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
+     * is added to the new <code>GameSession</code> object that is created for a
+     * successful match. This parameter is not used if <code>FlexMatchMode</code> is
+     * set to <code>STANDALONE</code>.</p>
      */
     inline CreateMatchmakingConfigurationRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new
-     * <code>GameSession</code> object that is created for a successful match. This
-     * parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
+     * is added to the new <code>GameSession</code> object that is created for a
+     * successful match. This parameter is not used if <code>FlexMatchMode</code> is
+     * set to <code>STANDALONE</code>.</p>
      */
     inline CreateMatchmakingConfigurationRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new
-     * <code>GameSession</code> object that is created for a successful match. This
-     * parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
+     * is added to the new <code>GameSession</code> object that is created for a
+     * successful match. This parameter is not used if <code>FlexMatchMode</code> is
+     * set to <code>STANDALONE</code>.</p>
      */
     inline CreateMatchmakingConfigurationRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new
-     * <code>GameSession</code> object that is created for a successful match. This
-     * parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
+     * is added to the new <code>GameSession</code> object that is created for a
+     * successful match. This parameter is not used if <code>FlexMatchMode</code> is
+     * set to <code>STANDALONE</code>.</p>
      */
     inline CreateMatchmakingConfigurationRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
