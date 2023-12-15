@@ -218,47 +218,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the space that appears in the Studio UI.</p>
-     */
-    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
-
-    /**
-     * <p>The name of the space that appears in the Studio UI.</p>
-     */
-    inline bool SpaceDisplayNameHasBeenSet() const { return m_spaceDisplayNameHasBeenSet; }
-
-    /**
-     * <p>The name of the space that appears in the Studio UI.</p>
-     */
-    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = value; }
-
-    /**
-     * <p>The name of the space that appears in the Studio UI.</p>
-     */
-    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = std::move(value); }
-
-    /**
-     * <p>The name of the space that appears in the Studio UI.</p>
-     */
-    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName.assign(value); }
-
-    /**
-     * <p>The name of the space that appears in the Studio UI.</p>
-     */
-    inline SpaceDetails& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of the space that appears in the Studio UI.</p>
-     */
-    inline SpaceDetails& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space that appears in the Studio UI.</p>
-     */
-    inline SpaceDetails& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
-
-
-    /**
      * <p>Specifies summary information about the space settings.</p>
      */
     inline const SpaceSettingsSummary& GetSpaceSettingsSummary() const{ return m_spaceSettingsSummary; }
@@ -350,6 +309,47 @@ namespace Model
      */
     inline SpaceDetails& WithOwnershipSettingsSummary(OwnershipSettingsSummary&& value) { SetOwnershipSettingsSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline bool SpaceDisplayNameHasBeenSet() const { return m_spaceDisplayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = value; }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = std::move(value); }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName.assign(value); }
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline SpaceDetails& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline SpaceDetails& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Studio UI.</p>
+     */
+    inline SpaceDetails& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -367,9 +367,6 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::String m_spaceDisplayName;
-    bool m_spaceDisplayNameHasBeenSet = false;
-
     SpaceSettingsSummary m_spaceSettingsSummary;
     bool m_spaceSettingsSummaryHasBeenSet = false;
 
@@ -378,6 +375,9 @@ namespace Model
 
     OwnershipSettingsSummary m_ownershipSettingsSummary;
     bool m_ownershipSettingsSummaryHasBeenSet = false;
+
+    Aws::String m_spaceDisplayName;
+    bool m_spaceDisplayNameHasBeenSet = false;
   };
 
 } // namespace Model

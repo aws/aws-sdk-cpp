@@ -13,6 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartOutboundVoiceContactRequest::StartOutboundVoiceContactRequest() : 
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_referencesHasBeenSet(false),
+    m_relatedContactIdHasBeenSet(false),
     m_destinationPhoneNumberHasBeenSet(false),
     m_contactFlowIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
@@ -31,6 +35,35 @@ StartOutboundVoiceContactRequest::StartOutboundVoiceContactRequest() :
 Aws::String StartOutboundVoiceContactRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_referencesHasBeenSet)
+  {
+   JsonValue referencesJsonMap;
+   for(auto& referencesItem : m_references)
+   {
+     referencesJsonMap.WithObject(referencesItem.first, referencesItem.second.Jsonize());
+   }
+   payload.WithObject("References", std::move(referencesJsonMap));
+
+  }
+
+  if(m_relatedContactIdHasBeenSet)
+  {
+   payload.WithString("RelatedContactId", m_relatedContactId);
+
+  }
 
   if(m_destinationPhoneNumberHasBeenSet)
   {

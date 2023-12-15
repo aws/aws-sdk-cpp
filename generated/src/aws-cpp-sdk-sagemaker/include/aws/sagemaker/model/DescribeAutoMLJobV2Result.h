@@ -10,17 +10,17 @@
 #include <aws/sagemaker/model/AutoMLOutputDataConfig.h>
 #include <aws/sagemaker/model/AutoMLJobObjective.h>
 #include <aws/sagemaker/model/AutoMLProblemTypeConfig.h>
+#include <aws/sagemaker/model/AutoMLProblemTypeConfigName.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/AutoMLCandidate.h>
 #include <aws/sagemaker/model/AutoMLJobStatus.h>
 #include <aws/sagemaker/model/AutoMLJobSecondaryStatus.h>
+#include <aws/sagemaker/model/AutoMLJobArtifacts.h>
+#include <aws/sagemaker/model/AutoMLResolvedAttributes.h>
 #include <aws/sagemaker/model/ModelDeployConfig.h>
 #include <aws/sagemaker/model/ModelDeployResult.h>
 #include <aws/sagemaker/model/AutoMLDataSplitConfig.h>
 #include <aws/sagemaker/model/AutoMLSecurityConfig.h>
-#include <aws/sagemaker/model/AutoMLJobArtifacts.h>
-#include <aws/sagemaker/model/AutoMLResolvedAttributes.h>
-#include <aws/sagemaker/model/AutoMLProblemTypeConfigName.h>
 #include <aws/sagemaker/model/AutoMLJobChannel.h>
 #include <aws/sagemaker/model/AutoMLPartialFailureReason.h>
 #include <utility>
@@ -298,6 +298,37 @@ namespace Model
 
 
     /**
+     * <p>Returns the name of the problem type configuration set for the AutoML job
+     * V2.</p>
+     */
+    inline const AutoMLProblemTypeConfigName& GetAutoMLProblemTypeConfigName() const{ return m_autoMLProblemTypeConfigName; }
+
+    /**
+     * <p>Returns the name of the problem type configuration set for the AutoML job
+     * V2.</p>
+     */
+    inline void SetAutoMLProblemTypeConfigName(const AutoMLProblemTypeConfigName& value) { m_autoMLProblemTypeConfigName = value; }
+
+    /**
+     * <p>Returns the name of the problem type configuration set for the AutoML job
+     * V2.</p>
+     */
+    inline void SetAutoMLProblemTypeConfigName(AutoMLProblemTypeConfigName&& value) { m_autoMLProblemTypeConfigName = std::move(value); }
+
+    /**
+     * <p>Returns the name of the problem type configuration set for the AutoML job
+     * V2.</p>
+     */
+    inline DescribeAutoMLJobV2Result& WithAutoMLProblemTypeConfigName(const AutoMLProblemTypeConfigName& value) { SetAutoMLProblemTypeConfigName(value); return *this;}
+
+    /**
+     * <p>Returns the name of the problem type configuration set for the AutoML job
+     * V2.</p>
+     */
+    inline DescribeAutoMLJobV2Result& WithAutoMLProblemTypeConfigName(AutoMLProblemTypeConfigName&& value) { SetAutoMLProblemTypeConfigName(std::move(value)); return *this;}
+
+
+    /**
      * <p>Returns the creation time of the AutoML job V2.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -530,6 +561,48 @@ namespace Model
     inline DescribeAutoMLJobV2Result& WithAutoMLJobSecondaryStatus(AutoMLJobSecondaryStatus&& value) { SetAutoMLJobSecondaryStatus(std::move(value)); return *this;}
 
 
+    
+    inline const AutoMLJobArtifacts& GetAutoMLJobArtifacts() const{ return m_autoMLJobArtifacts; }
+
+    
+    inline void SetAutoMLJobArtifacts(const AutoMLJobArtifacts& value) { m_autoMLJobArtifacts = value; }
+
+    
+    inline void SetAutoMLJobArtifacts(AutoMLJobArtifacts&& value) { m_autoMLJobArtifacts = std::move(value); }
+
+    
+    inline DescribeAutoMLJobV2Result& WithAutoMLJobArtifacts(const AutoMLJobArtifacts& value) { SetAutoMLJobArtifacts(value); return *this;}
+
+    
+    inline DescribeAutoMLJobV2Result& WithAutoMLJobArtifacts(AutoMLJobArtifacts&& value) { SetAutoMLJobArtifacts(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
+     */
+    inline const AutoMLResolvedAttributes& GetResolvedAttributes() const{ return m_resolvedAttributes; }
+
+    /**
+     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
+     */
+    inline void SetResolvedAttributes(const AutoMLResolvedAttributes& value) { m_resolvedAttributes = value; }
+
+    /**
+     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
+     */
+    inline void SetResolvedAttributes(AutoMLResolvedAttributes&& value) { m_resolvedAttributes = std::move(value); }
+
+    /**
+     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
+     */
+    inline DescribeAutoMLJobV2Result& WithResolvedAttributes(const AutoMLResolvedAttributes& value) { SetResolvedAttributes(value); return *this;}
+
+    /**
+     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
+     */
+    inline DescribeAutoMLJobV2Result& WithResolvedAttributes(AutoMLResolvedAttributes&& value) { SetResolvedAttributes(std::move(value)); return *this;}
+
+
     /**
      * <p>Indicates whether the model was deployed automatically to an endpoint and the
      * name of that endpoint if deployed automatically.</p>
@@ -650,79 +723,6 @@ namespace Model
 
 
     
-    inline const AutoMLJobArtifacts& GetAutoMLJobArtifacts() const{ return m_autoMLJobArtifacts; }
-
-    
-    inline void SetAutoMLJobArtifacts(const AutoMLJobArtifacts& value) { m_autoMLJobArtifacts = value; }
-
-    
-    inline void SetAutoMLJobArtifacts(AutoMLJobArtifacts&& value) { m_autoMLJobArtifacts = std::move(value); }
-
-    
-    inline DescribeAutoMLJobV2Result& WithAutoMLJobArtifacts(const AutoMLJobArtifacts& value) { SetAutoMLJobArtifacts(value); return *this;}
-
-    
-    inline DescribeAutoMLJobV2Result& WithAutoMLJobArtifacts(AutoMLJobArtifacts&& value) { SetAutoMLJobArtifacts(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
-     */
-    inline const AutoMLResolvedAttributes& GetResolvedAttributes() const{ return m_resolvedAttributes; }
-
-    /**
-     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
-     */
-    inline void SetResolvedAttributes(const AutoMLResolvedAttributes& value) { m_resolvedAttributes = value; }
-
-    /**
-     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
-     */
-    inline void SetResolvedAttributes(AutoMLResolvedAttributes&& value) { m_resolvedAttributes = std::move(value); }
-
-    /**
-     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
-     */
-    inline DescribeAutoMLJobV2Result& WithResolvedAttributes(const AutoMLResolvedAttributes& value) { SetResolvedAttributes(value); return *this;}
-
-    /**
-     * <p>Returns the resolved attributes used by the AutoML job V2.</p>
-     */
-    inline DescribeAutoMLJobV2Result& WithResolvedAttributes(AutoMLResolvedAttributes&& value) { SetResolvedAttributes(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Returns the name of the problem type configuration set for the AutoML job
-     * V2.</p>
-     */
-    inline const AutoMLProblemTypeConfigName& GetAutoMLProblemTypeConfigName() const{ return m_autoMLProblemTypeConfigName; }
-
-    /**
-     * <p>Returns the name of the problem type configuration set for the AutoML job
-     * V2.</p>
-     */
-    inline void SetAutoMLProblemTypeConfigName(const AutoMLProblemTypeConfigName& value) { m_autoMLProblemTypeConfigName = value; }
-
-    /**
-     * <p>Returns the name of the problem type configuration set for the AutoML job
-     * V2.</p>
-     */
-    inline void SetAutoMLProblemTypeConfigName(AutoMLProblemTypeConfigName&& value) { m_autoMLProblemTypeConfigName = std::move(value); }
-
-    /**
-     * <p>Returns the name of the problem type configuration set for the AutoML job
-     * V2.</p>
-     */
-    inline DescribeAutoMLJobV2Result& WithAutoMLProblemTypeConfigName(const AutoMLProblemTypeConfigName& value) { SetAutoMLProblemTypeConfigName(value); return *this;}
-
-    /**
-     * <p>Returns the name of the problem type configuration set for the AutoML job
-     * V2.</p>
-     */
-    inline DescribeAutoMLJobV2Result& WithAutoMLProblemTypeConfigName(AutoMLProblemTypeConfigName&& value) { SetAutoMLProblemTypeConfigName(std::move(value)); return *this;}
-
-
-    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     
@@ -759,6 +759,8 @@ namespace Model
 
     AutoMLProblemTypeConfig m_autoMLProblemTypeConfig;
 
+    AutoMLProblemTypeConfigName m_autoMLProblemTypeConfigName;
+
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_endTime;
@@ -775,6 +777,10 @@ namespace Model
 
     AutoMLJobSecondaryStatus m_autoMLJobSecondaryStatus;
 
+    AutoMLJobArtifacts m_autoMLJobArtifacts;
+
+    AutoMLResolvedAttributes m_resolvedAttributes;
+
     ModelDeployConfig m_modelDeployConfig;
 
     ModelDeployResult m_modelDeployResult;
@@ -782,12 +788,6 @@ namespace Model
     AutoMLDataSplitConfig m_dataSplitConfig;
 
     AutoMLSecurityConfig m_securityConfig;
-
-    AutoMLJobArtifacts m_autoMLJobArtifacts;
-
-    AutoMLResolvedAttributes m_resolvedAttributes;
-
-    AutoMLProblemTypeConfigName m_autoMLProblemTypeConfigName;
 
     Aws::String m_requestId;
   };

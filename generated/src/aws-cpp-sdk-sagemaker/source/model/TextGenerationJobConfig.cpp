@@ -21,14 +21,16 @@ namespace Model
 TextGenerationJobConfig::TextGenerationJobConfig() : 
     m_completionCriteriaHasBeenSet(false),
     m_baseModelNameHasBeenSet(false),
-    m_textGenerationHyperParametersHasBeenSet(false)
+    m_textGenerationHyperParametersHasBeenSet(false),
+    m_modelAccessConfigHasBeenSet(false)
 {
 }
 
 TextGenerationJobConfig::TextGenerationJobConfig(JsonView jsonValue) : 
     m_completionCriteriaHasBeenSet(false),
     m_baseModelNameHasBeenSet(false),
-    m_textGenerationHyperParametersHasBeenSet(false)
+    m_textGenerationHyperParametersHasBeenSet(false),
+    m_modelAccessConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ TextGenerationJobConfig& TextGenerationJobConfig::operator =(JsonView jsonValue)
     m_textGenerationHyperParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelAccessConfig"))
+  {
+    m_modelAccessConfig = jsonValue.GetObject("ModelAccessConfig");
+
+    m_modelAccessConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +95,12 @@ JsonValue TextGenerationJobConfig::Jsonize() const
      textGenerationHyperParametersJsonMap.WithString(textGenerationHyperParametersItem.first, textGenerationHyperParametersItem.second);
    }
    payload.WithObject("TextGenerationHyperParameters", std::move(textGenerationHyperParametersJsonMap));
+
+  }
+
+  if(m_modelAccessConfigHasBeenSet)
+  {
+   payload.WithObject("ModelAccessConfig", m_modelAccessConfig.Jsonize());
 
   }
 

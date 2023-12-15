@@ -23,8 +23,10 @@ namespace Aws
         static const int lambda_HASH = HashingUtils::HashString("lambda");
         static const int ml_m4_HASH = HashingUtils::HashString("ml_m4");
         static const int ml_m5_HASH = HashingUtils::HashString("ml_m5");
+        static const int ml_m6g_HASH = HashingUtils::HashString("ml_m6g");
         static const int ml_c4_HASH = HashingUtils::HashString("ml_c4");
         static const int ml_c5_HASH = HashingUtils::HashString("ml_c5");
+        static const int ml_c6g_HASH = HashingUtils::HashString("ml_c6g");
         static const int ml_p2_HASH = HashingUtils::HashString("ml_p2");
         static const int ml_p3_HASH = HashingUtils::HashString("ml_p3");
         static const int ml_g4dn_HASH = HashingUtils::HashString("ml_g4dn");
@@ -37,6 +39,7 @@ namespace Aws
         static const int jetson_nano_HASH = HashingUtils::HashString("jetson_nano");
         static const int jetson_xavier_HASH = HashingUtils::HashString("jetson_xavier");
         static const int rasp3b_HASH = HashingUtils::HashString("rasp3b");
+        static const int rasp4b_HASH = HashingUtils::HashString("rasp4b");
         static const int imx8qm_HASH = HashingUtils::HashString("imx8qm");
         static const int deeplens_HASH = HashingUtils::HashString("deeplens");
         static const int rk3399_HASH = HashingUtils::HashString("rk3399");
@@ -71,6 +74,10 @@ namespace Aws
           {
             return TargetDevice::ml_m5;
           }
+          else if (hashCode == ml_m6g_HASH)
+          {
+            return TargetDevice::ml_m6g;
+          }
           else if (hashCode == ml_c4_HASH)
           {
             return TargetDevice::ml_c4;
@@ -78,6 +85,10 @@ namespace Aws
           else if (hashCode == ml_c5_HASH)
           {
             return TargetDevice::ml_c5;
+          }
+          else if (hashCode == ml_c6g_HASH)
+          {
+            return TargetDevice::ml_c6g;
           }
           else if (hashCode == ml_p2_HASH)
           {
@@ -126,6 +137,10 @@ namespace Aws
           else if (hashCode == rasp3b_HASH)
           {
             return TargetDevice::rasp3b;
+          }
+          else if (hashCode == rasp4b_HASH)
+          {
+            return TargetDevice::rasp4b;
           }
           else if (hashCode == imx8qm_HASH)
           {
@@ -217,10 +232,14 @@ namespace Aws
             return "ml_m4";
           case TargetDevice::ml_m5:
             return "ml_m5";
+          case TargetDevice::ml_m6g:
+            return "ml_m6g";
           case TargetDevice::ml_c4:
             return "ml_c4";
           case TargetDevice::ml_c5:
             return "ml_c5";
+          case TargetDevice::ml_c6g:
+            return "ml_c6g";
           case TargetDevice::ml_p2:
             return "ml_p2";
           case TargetDevice::ml_p3:
@@ -245,6 +264,8 @@ namespace Aws
             return "jetson_xavier";
           case TargetDevice::rasp3b:
             return "rasp3b";
+          case TargetDevice::rasp4b:
+            return "rasp4b";
           case TargetDevice::imx8qm:
             return "imx8qm";
           case TargetDevice::deeplens:

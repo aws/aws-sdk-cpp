@@ -141,6 +141,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("WarmPoolStatus"))
+  {
+    m_warmPoolStatus = jsonValue.GetObject("WarmPoolStatus");
+
+  }
+
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
@@ -297,12 +303,6 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   }
 
-  if(jsonValue.ValueExists("RetryStrategy"))
-  {
-    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
-
-  }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -312,9 +312,9 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
     }
   }
 
-  if(jsonValue.ValueExists("WarmPoolStatus"))
+  if(jsonValue.ValueExists("RetryStrategy"))
   {
-    m_warmPoolStatus = jsonValue.GetObject("WarmPoolStatus");
+    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
 
   }
 

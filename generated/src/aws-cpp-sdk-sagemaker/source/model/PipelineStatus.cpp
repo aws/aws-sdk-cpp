@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int Active_HASH = HashingUtils::HashString("Active");
+        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 
 
         PipelineStatus GetPipelineStatusForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == Active_HASH)
           {
             return PipelineStatus::Active;
+          }
+          else if (hashCode == Deleting_HASH)
+          {
+            return PipelineStatus::Deleting;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case PipelineStatus::Active:
             return "Active";
+          case PipelineStatus::Deleting:
+            return "Deleting";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

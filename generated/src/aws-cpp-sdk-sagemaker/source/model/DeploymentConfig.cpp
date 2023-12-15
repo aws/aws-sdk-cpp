@@ -20,15 +20,15 @@ namespace Model
 
 DeploymentConfig::DeploymentConfig() : 
     m_blueGreenUpdatePolicyHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false),
-    m_rollingUpdatePolicyHasBeenSet(false)
+    m_rollingUpdatePolicyHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false)
 {
 }
 
 DeploymentConfig::DeploymentConfig(JsonView jsonValue) : 
     m_blueGreenUpdatePolicyHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false),
-    m_rollingUpdatePolicyHasBeenSet(false)
+    m_rollingUpdatePolicyHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,18 +42,18 @@ DeploymentConfig& DeploymentConfig::operator =(JsonView jsonValue)
     m_blueGreenUpdatePolicyHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("AutoRollbackConfiguration"))
-  {
-    m_autoRollbackConfiguration = jsonValue.GetObject("AutoRollbackConfiguration");
-
-    m_autoRollbackConfigurationHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("RollingUpdatePolicy"))
   {
     m_rollingUpdatePolicy = jsonValue.GetObject("RollingUpdatePolicy");
 
     m_rollingUpdatePolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutoRollbackConfiguration"))
+  {
+    m_autoRollbackConfiguration = jsonValue.GetObject("AutoRollbackConfiguration");
+
+    m_autoRollbackConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -69,15 +69,15 @@ JsonValue DeploymentConfig::Jsonize() const
 
   }
 
-  if(m_autoRollbackConfigurationHasBeenSet)
-  {
-   payload.WithObject("AutoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
-
-  }
-
   if(m_rollingUpdatePolicyHasBeenSet)
   {
    payload.WithObject("RollingUpdatePolicy", m_rollingUpdatePolicy.Jsonize());
+
+  }
+
+  if(m_autoRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("AutoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
 
   }
 

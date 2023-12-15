@@ -290,35 +290,6 @@ namespace Model
 
 
     /**
-     * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for SageMaker Pipelines steps</a>.</p>
-     */
-    inline int GetAttemptCount() const{ return m_attemptCount; }
-
-    /**
-     * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for SageMaker Pipelines steps</a>.</p>
-     */
-    inline bool AttemptCountHasBeenSet() const { return m_attemptCountHasBeenSet; }
-
-    /**
-     * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for SageMaker Pipelines steps</a>.</p>
-     */
-    inline void SetAttemptCount(int value) { m_attemptCountHasBeenSet = true; m_attemptCount = value; }
-
-    /**
-     * <p>The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-     * Policy for SageMaker Pipelines steps</a>.</p>
-     */
-    inline PipelineExecutionStep& WithAttemptCount(int value) { SetAttemptCount(value); return *this;}
-
-
-    /**
      * <p>The reason why the step failed execution. This is only returned if the step
      * failed its execution.</p>
      */
@@ -399,6 +370,35 @@ namespace Model
 
 
     /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
+     */
+    inline int GetAttemptCount() const{ return m_attemptCount; }
+
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
+     */
+    inline bool AttemptCountHasBeenSet() const { return m_attemptCountHasBeenSet; }
+
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
+     */
+    inline void SetAttemptCount(int value) { m_attemptCountHasBeenSet = true; m_attemptCount = value; }
+
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for SageMaker Pipelines steps</a>.</p>
+     */
+    inline PipelineExecutionStep& WithAttemptCount(int value) { SetAttemptCount(value); return *this;}
+
+
+    /**
      * <p>The ARN from an execution of the current pipeline from which results are
      * reused for this step.</p>
      */
@@ -457,14 +457,14 @@ namespace Model
     CacheHitResult m_cacheHitResult;
     bool m_cacheHitResultHasBeenSet = false;
 
-    int m_attemptCount;
-    bool m_attemptCountHasBeenSet = false;
-
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
 
     PipelineExecutionStepMetadata m_metadata;
     bool m_metadataHasBeenSet = false;
+
+    int m_attemptCount;
+    bool m_attemptCountHasBeenSet = false;
 
     SelectiveExecutionResult m_selectiveExecutionResult;
     bool m_selectiveExecutionResultHasBeenSet = false;

@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ResourceConfig.h>
+#include <aws/sagemaker/model/WarmPoolStatus.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/core/utils/DateTime.h>
@@ -24,7 +25,6 @@
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ProfilingStatus.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
-#include <aws/sagemaker/model/WarmPoolStatus.h>
 #include <aws/sagemaker/model/InfraCheckConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
@@ -793,6 +793,32 @@ namespace Model
 
 
     /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline const WarmPoolStatus& GetWarmPoolStatus() const{ return m_warmPoolStatus; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(const WarmPoolStatus& value) { m_warmPoolStatus = value; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(WarmPoolStatus&& value) { m_warmPoolStatus = std::move(value); }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithWarmPoolStatus(const WarmPoolStatus& value) { SetWarmPoolStatus(value); return *this;}
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
      * object that specifies the VPC that this training job has access to. For more
@@ -1554,37 +1580,6 @@ namespace Model
 
 
     /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
-
-    /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategy = value; }
-
-    /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategy = std::move(value); }
-
-    /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline DescribeTrainingJobResult& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
-
-    /**
-     * <p>The number of times to retry the job when the job fails due to an
-     * <code>InternalServerError</code>.</p>
-     */
-    inline DescribeTrainingJobResult& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
-
-
-    /**
      * <p>The environment variables to set in the Docker container.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
@@ -1646,29 +1641,34 @@ namespace Model
 
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline const WarmPoolStatus& GetWarmPoolStatus() const{ return m_warmPoolStatus; }
+    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline void SetWarmPoolStatus(const WarmPoolStatus& value) { m_warmPoolStatus = value; }
+    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategy = value; }
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline void SetWarmPoolStatus(WarmPoolStatus&& value) { m_warmPoolStatus = std::move(value); }
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategy = std::move(value); }
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline DescribeTrainingJobResult& WithWarmPoolStatus(const WarmPoolStatus& value) { SetWarmPoolStatus(value); return *this;}
+    inline DescribeTrainingJobResult& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
 
     /**
-     * <p>The status of the warm pool associated with the training job.</p>
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
      */
-    inline DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
+    inline DescribeTrainingJobResult& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -1755,6 +1755,8 @@ namespace Model
 
     ResourceConfig m_resourceConfig;
 
+    WarmPoolStatus m_warmPoolStatus;
+
     VpcConfig m_vpcConfig;
 
     StoppingCondition m_stoppingCondition;
@@ -1801,11 +1803,9 @@ namespace Model
 
     ProfilingStatus m_profilingStatus;
 
-    RetryStrategy m_retryStrategy;
-
     Aws::Map<Aws::String, Aws::String> m_environment;
 
-    WarmPoolStatus m_warmPoolStatus;
+    RetryStrategy m_retryStrategy;
 
     InfraCheckConfig m_infraCheckConfig;
 

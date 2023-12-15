@@ -21,11 +21,11 @@ namespace Model
 SpaceSettings::SpaceSettings() : 
     m_jupyterServerAppSettingsHasBeenSet(false),
     m_kernelGatewayAppSettingsHasBeenSet(false),
-    m_jupyterLabAppSettingsHasBeenSet(false),
     m_codeEditorAppSettingsHasBeenSet(false),
-    m_spaceStorageSettingsHasBeenSet(false),
+    m_jupyterLabAppSettingsHasBeenSet(false),
     m_appType(AppType::NOT_SET),
     m_appTypeHasBeenSet(false),
+    m_spaceStorageSettingsHasBeenSet(false),
     m_customFileSystemsHasBeenSet(false)
 {
 }
@@ -33,11 +33,11 @@ SpaceSettings::SpaceSettings() :
 SpaceSettings::SpaceSettings(JsonView jsonValue) : 
     m_jupyterServerAppSettingsHasBeenSet(false),
     m_kernelGatewayAppSettingsHasBeenSet(false),
-    m_jupyterLabAppSettingsHasBeenSet(false),
     m_codeEditorAppSettingsHasBeenSet(false),
-    m_spaceStorageSettingsHasBeenSet(false),
+    m_jupyterLabAppSettingsHasBeenSet(false),
     m_appType(AppType::NOT_SET),
     m_appTypeHasBeenSet(false),
+    m_spaceStorageSettingsHasBeenSet(false),
     m_customFileSystemsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -59,13 +59,6 @@ SpaceSettings& SpaceSettings::operator =(JsonView jsonValue)
     m_kernelGatewayAppSettingsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("JupyterLabAppSettings"))
-  {
-    m_jupyterLabAppSettings = jsonValue.GetObject("JupyterLabAppSettings");
-
-    m_jupyterLabAppSettingsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("CodeEditorAppSettings"))
   {
     m_codeEditorAppSettings = jsonValue.GetObject("CodeEditorAppSettings");
@@ -73,11 +66,11 @@ SpaceSettings& SpaceSettings::operator =(JsonView jsonValue)
     m_codeEditorAppSettingsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SpaceStorageSettings"))
+  if(jsonValue.ValueExists("JupyterLabAppSettings"))
   {
-    m_spaceStorageSettings = jsonValue.GetObject("SpaceStorageSettings");
+    m_jupyterLabAppSettings = jsonValue.GetObject("JupyterLabAppSettings");
 
-    m_spaceStorageSettingsHasBeenSet = true;
+    m_jupyterLabAppSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AppType"))
@@ -85,6 +78,13 @@ SpaceSettings& SpaceSettings::operator =(JsonView jsonValue)
     m_appType = AppTypeMapper::GetAppTypeForName(jsonValue.GetString("AppType"));
 
     m_appTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SpaceStorageSettings"))
+  {
+    m_spaceStorageSettings = jsonValue.GetObject("SpaceStorageSettings");
+
+    m_spaceStorageSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CustomFileSystems"))
@@ -116,27 +116,27 @@ JsonValue SpaceSettings::Jsonize() const
 
   }
 
-  if(m_jupyterLabAppSettingsHasBeenSet)
-  {
-   payload.WithObject("JupyterLabAppSettings", m_jupyterLabAppSettings.Jsonize());
-
-  }
-
   if(m_codeEditorAppSettingsHasBeenSet)
   {
    payload.WithObject("CodeEditorAppSettings", m_codeEditorAppSettings.Jsonize());
 
   }
 
-  if(m_spaceStorageSettingsHasBeenSet)
+  if(m_jupyterLabAppSettingsHasBeenSet)
   {
-   payload.WithObject("SpaceStorageSettings", m_spaceStorageSettings.Jsonize());
+   payload.WithObject("JupyterLabAppSettings", m_jupyterLabAppSettings.Jsonize());
 
   }
 
   if(m_appTypeHasBeenSet)
   {
    payload.WithString("AppType", AppTypeMapper::GetNameForAppType(m_appType));
+  }
+
+  if(m_spaceStorageSettingsHasBeenSet)
+  {
+   payload.WithObject("SpaceStorageSettings", m_spaceStorageSettings.Jsonize());
+
   }
 
   if(m_customFileSystemsHasBeenSet)

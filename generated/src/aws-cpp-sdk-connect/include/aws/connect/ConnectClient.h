@@ -4395,6 +4395,31 @@ namespace Connect
         }
 
         /**
+         * <p>Allows pausing an ongoing task contact.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PauseContactOutcome PauseContact(const Model::PauseContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for PauseContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PauseContactRequestT = Model::PauseContactRequest>
+        Model::PauseContactOutcomeCallable PauseContactCallable(const PauseContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::PauseContact, request);
+        }
+
+        /**
+         * An Async wrapper for PauseContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PauseContactRequestT = Model::PauseContactRequest>
+        void PauseContactAsync(const PauseContactRequestT& request, const PauseContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::PauseContact, request, handler, context);
+        }
+
+        /**
          * <p>Changes the current status of a user or agent in Amazon Connect. If the agent
          * is currently handling a contact, this sets the agent's next status.</p> <p>For
          * more information, see <a
@@ -4501,6 +4526,32 @@ namespace Connect
         void ReplicateInstanceAsync(const ReplicateInstanceRequestT& request, const ReplicateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ReplicateInstance, request, handler, context);
+        }
+
+        /**
+         * <p>Allows resuming a task contact in a paused state.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResumeContactOutcome ResumeContact(const Model::ResumeContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResumeContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResumeContactRequestT = Model::ResumeContactRequest>
+        Model::ResumeContactOutcomeCallable ResumeContactCallable(const ResumeContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ResumeContact, request);
+        }
+
+        /**
+         * An Async wrapper for ResumeContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResumeContactRequestT = Model::ResumeContactRequest>
+        void ResumeContactAsync(const ResumeContactRequestT& request, const ResumeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ResumeContact, request, handler, context);
         }
 
         /**

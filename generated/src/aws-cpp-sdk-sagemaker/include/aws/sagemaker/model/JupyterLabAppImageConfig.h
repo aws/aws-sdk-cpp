@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/FileSystemConfig.h>
 #include <aws/sagemaker/model/ContainerConfig.h>
 #include <utility>
 
@@ -39,6 +40,25 @@ namespace Model
 
 
     
+    inline const FileSystemConfig& GetFileSystemConfig() const{ return m_fileSystemConfig; }
+
+    
+    inline bool FileSystemConfigHasBeenSet() const { return m_fileSystemConfigHasBeenSet; }
+
+    
+    inline void SetFileSystemConfig(const FileSystemConfig& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = value; }
+
+    
+    inline void SetFileSystemConfig(FileSystemConfig&& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = std::move(value); }
+
+    
+    inline JupyterLabAppImageConfig& WithFileSystemConfig(const FileSystemConfig& value) { SetFileSystemConfig(value); return *this;}
+
+    
+    inline JupyterLabAppImageConfig& WithFileSystemConfig(FileSystemConfig&& value) { SetFileSystemConfig(std::move(value)); return *this;}
+
+
+    
     inline const ContainerConfig& GetContainerConfig() const{ return m_containerConfig; }
 
     
@@ -57,6 +77,9 @@ namespace Model
     inline JupyterLabAppImageConfig& WithContainerConfig(ContainerConfig&& value) { SetContainerConfig(std::move(value)); return *this;}
 
   private:
+
+    FileSystemConfig m_fileSystemConfig;
+    bool m_fileSystemConfigHasBeenSet = false;
 
     ContainerConfig m_containerConfig;
     bool m_containerConfigHasBeenSet = false;

@@ -578,6 +578,110 @@ namespace Model
 
 
     /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastPausedTimestamp() const{ return m_lastPausedTimestamp; }
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline bool LastPausedTimestampHasBeenSet() const { return m_lastPausedTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline void SetLastPausedTimestamp(const Aws::Utils::DateTime& value) { m_lastPausedTimestampHasBeenSet = true; m_lastPausedTimestamp = value; }
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline void SetLastPausedTimestamp(Aws::Utils::DateTime&& value) { m_lastPausedTimestampHasBeenSet = true; m_lastPausedTimestamp = std::move(value); }
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline Contact& WithLastPausedTimestamp(const Aws::Utils::DateTime& value) { SetLastPausedTimestamp(value); return *this;}
+
+    /**
+     * <p>The timestamp when the contact was last paused.</p>
+     */
+    inline Contact& WithLastPausedTimestamp(Aws::Utils::DateTime&& value) { SetLastPausedTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastResumedTimestamp() const{ return m_lastResumedTimestamp; }
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline bool LastResumedTimestampHasBeenSet() const { return m_lastResumedTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline void SetLastResumedTimestamp(const Aws::Utils::DateTime& value) { m_lastResumedTimestampHasBeenSet = true; m_lastResumedTimestamp = value; }
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline void SetLastResumedTimestamp(Aws::Utils::DateTime&& value) { m_lastResumedTimestampHasBeenSet = true; m_lastResumedTimestamp = std::move(value); }
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline Contact& WithLastResumedTimestamp(const Aws::Utils::DateTime& value) { SetLastResumedTimestamp(value); return *this;}
+
+    /**
+     * <p>The timestamp when the contact was last resumed.</p>
+     */
+    inline Contact& WithLastResumedTimestamp(Aws::Utils::DateTime&& value) { SetLastResumedTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Total pause count for a contact.</p>
+     */
+    inline int GetTotalPauseCount() const{ return m_totalPauseCount; }
+
+    /**
+     * <p>Total pause count for a contact.</p>
+     */
+    inline bool TotalPauseCountHasBeenSet() const { return m_totalPauseCountHasBeenSet; }
+
+    /**
+     * <p>Total pause count for a contact.</p>
+     */
+    inline void SetTotalPauseCount(int value) { m_totalPauseCountHasBeenSet = true; m_totalPauseCount = value; }
+
+    /**
+     * <p>Total pause count for a contact.</p>
+     */
+    inline Contact& WithTotalPauseCount(int value) { SetTotalPauseCount(value); return *this;}
+
+
+    /**
+     * <p>Total pause duration for a contact in seconds.</p>
+     */
+    inline int GetTotalPauseDurationInSeconds() const{ return m_totalPauseDurationInSeconds; }
+
+    /**
+     * <p>Total pause duration for a contact in seconds.</p>
+     */
+    inline bool TotalPauseDurationInSecondsHasBeenSet() const { return m_totalPauseDurationInSecondsHasBeenSet; }
+
+    /**
+     * <p>Total pause duration for a contact in seconds.</p>
+     */
+    inline void SetTotalPauseDurationInSeconds(int value) { m_totalPauseDurationInSecondsHasBeenSet = true; m_totalPauseDurationInSeconds = value; }
+
+    /**
+     * <p>Total pause duration for a contact in seconds.</p>
+     */
+    inline Contact& WithTotalPauseDurationInSeconds(int value) { SetTotalPauseDurationInSeconds(value); return *this;}
+
+
+    /**
      * <p>The timestamp, in Unix epoch time format, at which to start running the
      * inbound flow. </p>
      */
@@ -820,6 +924,18 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTimestamp;
     bool m_lastUpdateTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastPausedTimestamp;
+    bool m_lastPausedTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastResumedTimestamp;
+    bool m_lastResumedTimestampHasBeenSet = false;
+
+    int m_totalPauseCount;
+    bool m_totalPauseCountHasBeenSet = false;
+
+    int m_totalPauseDurationInSeconds;
+    bool m_totalPauseDurationInSecondsHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTimestamp;
     bool m_scheduledTimestampHasBeenSet = false;

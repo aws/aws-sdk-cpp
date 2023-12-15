@@ -817,6 +817,8 @@ namespace Model
      * Hierarchy</p> </dd> <dt>AVG_ABANDON_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>AVG_ACTIVE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
+     * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
      * <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid metric
      * filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters:
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
@@ -828,7 +830,9 @@ namespace Model
      * <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p>  <p>The <code>Negate</code> key in Metric Level Filters is
-     * not applicable for this metric.</p>  </dd> <dt>AVG_CONTACT_DURATION</dt>
+     * not applicable for this metric.</p>  </dd> <dt>AVG_AGENT_PAUSE_TIME</dt>
+     * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
+     * Routing Profile, Agent, Agent Hierarchy</p> </dd> <dt>AVG_CONTACT_DURATION</dt>
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
@@ -1047,6 +1051,8 @@ namespace Model
      * Hierarchy</p> </dd> <dt>AVG_ABANDON_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>AVG_ACTIVE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
+     * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
      * <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid metric
      * filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters:
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
@@ -1058,7 +1064,9 @@ namespace Model
      * <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p>  <p>The <code>Negate</code> key in Metric Level Filters is
-     * not applicable for this metric.</p>  </dd> <dt>AVG_CONTACT_DURATION</dt>
+     * not applicable for this metric.</p>  </dd> <dt>AVG_AGENT_PAUSE_TIME</dt>
+     * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
+     * Routing Profile, Agent, Agent Hierarchy</p> </dd> <dt>AVG_CONTACT_DURATION</dt>
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
@@ -1277,6 +1285,8 @@ namespace Model
      * Hierarchy</p> </dd> <dt>AVG_ABANDON_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>AVG_ACTIVE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
+     * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
      * <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid metric
      * filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters:
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
@@ -1288,7 +1298,9 @@ namespace Model
      * <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p>  <p>The <code>Negate</code> key in Metric Level Filters is
-     * not applicable for this metric.</p>  </dd> <dt>AVG_CONTACT_DURATION</dt>
+     * not applicable for this metric.</p>  </dd> <dt>AVG_AGENT_PAUSE_TIME</dt>
+     * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
+     * Routing Profile, Agent, Agent Hierarchy</p> </dd> <dt>AVG_CONTACT_DURATION</dt>
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
@@ -1507,6 +1519,8 @@ namespace Model
      * Hierarchy</p> </dd> <dt>AVG_ABANDON_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>AVG_ACTIVE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
+     * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
      * <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid metric
      * filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters:
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
@@ -1518,7 +1532,9 @@ namespace Model
      * <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p>  <p>The <code>Negate</code> key in Metric Level Filters is
-     * not applicable for this metric.</p>  </dd> <dt>AVG_CONTACT_DURATION</dt>
+     * not applicable for this metric.</p>  </dd> <dt>AVG_AGENT_PAUSE_TIME</dt>
+     * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
+     * Routing Profile, Agent, Agent Hierarchy</p> </dd> <dt>AVG_CONTACT_DURATION</dt>
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
@@ -1737,6 +1753,8 @@ namespace Model
      * Hierarchy</p> </dd> <dt>AVG_ABANDON_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>AVG_ACTIVE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
+     * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
      * <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid metric
      * filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters:
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
@@ -1748,7 +1766,9 @@ namespace Model
      * <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p>  <p>The <code>Negate</code> key in Metric Level Filters is
-     * not applicable for this metric.</p>  </dd> <dt>AVG_CONTACT_DURATION</dt>
+     * not applicable for this metric.</p>  </dd> <dt>AVG_AGENT_PAUSE_TIME</dt>
+     * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
+     * Routing Profile, Agent, Agent Hierarchy</p> </dd> <dt>AVG_CONTACT_DURATION</dt>
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
@@ -1967,6 +1987,8 @@ namespace Model
      * Hierarchy</p> </dd> <dt>AVG_ABANDON_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>AVG_ACTIVE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
+     * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
      * <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid metric
      * filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters:
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
@@ -1978,7 +2000,9 @@ namespace Model
      * <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p>  <p>The <code>Negate</code> key in Metric Level Filters is
-     * not applicable for this metric.</p>  </dd> <dt>AVG_CONTACT_DURATION</dt>
+     * not applicable for this metric.</p>  </dd> <dt>AVG_AGENT_PAUSE_TIME</dt>
+     * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
+     * Routing Profile, Agent, Agent Hierarchy</p> </dd> <dt>AVG_CONTACT_DURATION</dt>
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
@@ -2197,6 +2221,8 @@ namespace Model
      * Hierarchy</p> </dd> <dt>AVG_ABANDON_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>AVG_ACTIVE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
+     * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
      * <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid metric
      * filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters:
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
@@ -2208,7 +2234,9 @@ namespace Model
      * <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p>  <p>The <code>Negate</code> key in Metric Level Filters is
-     * not applicable for this metric.</p>  </dd> <dt>AVG_CONTACT_DURATION</dt>
+     * not applicable for this metric.</p>  </dd> <dt>AVG_AGENT_PAUSE_TIME</dt>
+     * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
+     * Routing Profile, Agent, Agent Hierarchy</p> </dd> <dt>AVG_CONTACT_DURATION</dt>
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
@@ -2427,6 +2455,8 @@ namespace Model
      * Hierarchy</p> </dd> <dt>AVG_ABANDON_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>AVG_ACTIVE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
+     * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> </dd>
      * <dt>AVG_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid metric
      * filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters:
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
@@ -2438,7 +2468,9 @@ namespace Model
      * <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p>  <p>The <code>Negate</code> key in Metric Level Filters is
-     * not applicable for this metric.</p>  </dd> <dt>AVG_CONTACT_DURATION</dt>
+     * not applicable for this metric.</p>  </dd> <dt>AVG_AGENT_PAUSE_TIME</dt>
+     * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
+     * Routing Profile, Agent, Agent Hierarchy</p> </dd> <dt>AVG_CONTACT_DURATION</dt>
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid

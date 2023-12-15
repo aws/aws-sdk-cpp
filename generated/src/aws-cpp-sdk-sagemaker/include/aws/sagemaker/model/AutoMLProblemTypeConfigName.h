@@ -18,8 +18,8 @@ namespace Model
     NOT_SET,
     ImageClassification,
     TextClassification,
-    Tabular,
     TimeSeriesForecasting,
+    Tabular,
     TextGeneration
   };
 

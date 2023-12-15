@@ -86,6 +86,7 @@ namespace Aws
         static const int ml_inf1_2xlarge_HASH = HashingUtils::HashString("ml.inf1.2xlarge");
         static const int ml_inf1_6xlarge_HASH = HashingUtils::HashString("ml.inf1.6xlarge");
         static const int ml_inf1_24xlarge_HASH = HashingUtils::HashString("ml.inf1.24xlarge");
+        static const int ml_dl1_24xlarge_HASH = HashingUtils::HashString("ml.dl1.24xlarge");
         static const int ml_c6i_large_HASH = HashingUtils::HashString("ml.c6i.large");
         static const int ml_c6i_xlarge_HASH = HashingUtils::HashString("ml.c6i.xlarge");
         static const int ml_c6i_2xlarge_HASH = HashingUtils::HashString("ml.c6i.2xlarge");
@@ -163,11 +164,39 @@ namespace Aws
         static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xlarge");
         static const int ml_trn1_2xlarge_HASH = HashingUtils::HashString("ml.trn1.2xlarge");
         static const int ml_trn1_32xlarge_HASH = HashingUtils::HashString("ml.trn1.32xlarge");
+        static const int ml_trn1n_32xlarge_HASH = HashingUtils::HashString("ml.trn1n.32xlarge");
         static const int ml_inf2_xlarge_HASH = HashingUtils::HashString("ml.inf2.xlarge");
         static const int ml_inf2_8xlarge_HASH = HashingUtils::HashString("ml.inf2.8xlarge");
         static const int ml_inf2_24xlarge_HASH = HashingUtils::HashString("ml.inf2.24xlarge");
         static const int ml_inf2_48xlarge_HASH = HashingUtils::HashString("ml.inf2.48xlarge");
         static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
+        static const int ml_m7i_large_HASH = HashingUtils::HashString("ml.m7i.large");
+        static const int ml_m7i_xlarge_HASH = HashingUtils::HashString("ml.m7i.xlarge");
+        static const int ml_m7i_2xlarge_HASH = HashingUtils::HashString("ml.m7i.2xlarge");
+        static const int ml_m7i_4xlarge_HASH = HashingUtils::HashString("ml.m7i.4xlarge");
+        static const int ml_m7i_8xlarge_HASH = HashingUtils::HashString("ml.m7i.8xlarge");
+        static const int ml_m7i_12xlarge_HASH = HashingUtils::HashString("ml.m7i.12xlarge");
+        static const int ml_m7i_16xlarge_HASH = HashingUtils::HashString("ml.m7i.16xlarge");
+        static const int ml_m7i_24xlarge_HASH = HashingUtils::HashString("ml.m7i.24xlarge");
+        static const int ml_m7i_48xlarge_HASH = HashingUtils::HashString("ml.m7i.48xlarge");
+        static const int ml_c7i_large_HASH = HashingUtils::HashString("ml.c7i.large");
+        static const int ml_c7i_xlarge_HASH = HashingUtils::HashString("ml.c7i.xlarge");
+        static const int ml_c7i_2xlarge_HASH = HashingUtils::HashString("ml.c7i.2xlarge");
+        static const int ml_c7i_4xlarge_HASH = HashingUtils::HashString("ml.c7i.4xlarge");
+        static const int ml_c7i_8xlarge_HASH = HashingUtils::HashString("ml.c7i.8xlarge");
+        static const int ml_c7i_12xlarge_HASH = HashingUtils::HashString("ml.c7i.12xlarge");
+        static const int ml_c7i_16xlarge_HASH = HashingUtils::HashString("ml.c7i.16xlarge");
+        static const int ml_c7i_24xlarge_HASH = HashingUtils::HashString("ml.c7i.24xlarge");
+        static const int ml_c7i_48xlarge_HASH = HashingUtils::HashString("ml.c7i.48xlarge");
+        static const int ml_r7i_large_HASH = HashingUtils::HashString("ml.r7i.large");
+        static const int ml_r7i_xlarge_HASH = HashingUtils::HashString("ml.r7i.xlarge");
+        static const int ml_r7i_2xlarge_HASH = HashingUtils::HashString("ml.r7i.2xlarge");
+        static const int ml_r7i_4xlarge_HASH = HashingUtils::HashString("ml.r7i.4xlarge");
+        static const int ml_r7i_8xlarge_HASH = HashingUtils::HashString("ml.r7i.8xlarge");
+        static const int ml_r7i_12xlarge_HASH = HashingUtils::HashString("ml.r7i.12xlarge");
+        static const int ml_r7i_16xlarge_HASH = HashingUtils::HashString("ml.r7i.16xlarge");
+        static const int ml_r7i_24xlarge_HASH = HashingUtils::HashString("ml.r7i.24xlarge");
+        static const int ml_r7i_48xlarge_HASH = HashingUtils::HashString("ml.r7i.48xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -506,6 +535,11 @@ namespace Aws
             enumValue = ProductionVariantInstanceType::ml_inf1_24xlarge;
             return true;
           }
+          else if (hashCode == ml_dl1_24xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_dl1_24xlarge;
+            return true;
+          }
           else if (hashCode == ml_c6i_large_HASH)
           {
             enumValue = ProductionVariantInstanceType::ml_c6i_large;
@@ -781,16 +815,16 @@ namespace Aws
             enumValue = ProductionVariantInstanceType::ml_c6gn_xlarge;
             return true;
           }
-          else if (hashCode == ml_c6gn_2xlarge_HASH)
-          {
-            enumValue = ProductionVariantInstanceType::ml_c6gn_2xlarge;
-            return true;
-          }
           return false;
         }
         static bool GetEnumForNameHelper1(int hashCode, ProductionVariantInstanceType& enumValue)
         {
-          if (hashCode == ml_c6gn_4xlarge_HASH)
+          if (hashCode == ml_c6gn_2xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c6gn_2xlarge;
+            return true;
+          }
+          else if (hashCode == ml_c6gn_4xlarge_HASH)
           {
             enumValue = ProductionVariantInstanceType::ml_c6gn_4xlarge;
             return true;
@@ -895,6 +929,11 @@ namespace Aws
             enumValue = ProductionVariantInstanceType::ml_trn1_32xlarge;
             return true;
           }
+          else if (hashCode == ml_trn1n_32xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_trn1n_32xlarge;
+            return true;
+          }
           else if (hashCode == ml_inf2_xlarge_HASH)
           {
             enumValue = ProductionVariantInstanceType::ml_inf2_xlarge;
@@ -918,6 +957,141 @@ namespace Aws
           else if (hashCode == ml_p5_48xlarge_HASH)
           {
             enumValue = ProductionVariantInstanceType::ml_p5_48xlarge;
+            return true;
+          }
+          else if (hashCode == ml_m7i_large_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_m7i_large;
+            return true;
+          }
+          else if (hashCode == ml_m7i_xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_m7i_xlarge;
+            return true;
+          }
+          else if (hashCode == ml_m7i_2xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_m7i_2xlarge;
+            return true;
+          }
+          else if (hashCode == ml_m7i_4xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_m7i_4xlarge;
+            return true;
+          }
+          else if (hashCode == ml_m7i_8xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_m7i_8xlarge;
+            return true;
+          }
+          else if (hashCode == ml_m7i_12xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_m7i_12xlarge;
+            return true;
+          }
+          else if (hashCode == ml_m7i_16xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_m7i_16xlarge;
+            return true;
+          }
+          else if (hashCode == ml_m7i_24xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_m7i_24xlarge;
+            return true;
+          }
+          else if (hashCode == ml_m7i_48xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_m7i_48xlarge;
+            return true;
+          }
+          else if (hashCode == ml_c7i_large_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c7i_large;
+            return true;
+          }
+          else if (hashCode == ml_c7i_xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c7i_xlarge;
+            return true;
+          }
+          else if (hashCode == ml_c7i_2xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c7i_2xlarge;
+            return true;
+          }
+          else if (hashCode == ml_c7i_4xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c7i_4xlarge;
+            return true;
+          }
+          else if (hashCode == ml_c7i_8xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c7i_8xlarge;
+            return true;
+          }
+          else if (hashCode == ml_c7i_12xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c7i_12xlarge;
+            return true;
+          }
+          else if (hashCode == ml_c7i_16xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c7i_16xlarge;
+            return true;
+          }
+          else if (hashCode == ml_c7i_24xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c7i_24xlarge;
+            return true;
+          }
+          else if (hashCode == ml_c7i_48xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_c7i_48xlarge;
+            return true;
+          }
+          else if (hashCode == ml_r7i_large_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_r7i_large;
+            return true;
+          }
+          else if (hashCode == ml_r7i_xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_r7i_xlarge;
+            return true;
+          }
+          else if (hashCode == ml_r7i_2xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_r7i_2xlarge;
+            return true;
+          }
+          else if (hashCode == ml_r7i_4xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_r7i_4xlarge;
+            return true;
+          }
+          else if (hashCode == ml_r7i_8xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_r7i_8xlarge;
+            return true;
+          }
+          else if (hashCode == ml_r7i_12xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_r7i_12xlarge;
+            return true;
+          }
+          else if (hashCode == ml_r7i_16xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_r7i_16xlarge;
+            return true;
+          }
+          else if (hashCode == ml_r7i_24xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_r7i_24xlarge;
+            return true;
+          }
+          else if (hashCode == ml_r7i_48xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_r7i_48xlarge;
             return true;
           }
           return false;
@@ -1125,6 +1299,9 @@ namespace Aws
           case ProductionVariantInstanceType::ml_inf1_24xlarge:
             value = "ml.inf1.24xlarge";
             return true;
+          case ProductionVariantInstanceType::ml_dl1_24xlarge:
+            value = "ml.dl1.24xlarge";
+            return true;
           case ProductionVariantInstanceType::ml_c6i_large:
             value = "ml.c6i.large";
             return true;
@@ -1290,9 +1467,6 @@ namespace Aws
           case ProductionVariantInstanceType::ml_c6gn_xlarge:
             value = "ml.c6gn.xlarge";
             return true;
-          case ProductionVariantInstanceType::ml_c6gn_2xlarge:
-            value = "ml.c6gn.2xlarge";
-            return true;
           default:
             return false;
           }
@@ -1301,6 +1475,9 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProductionVariantInstanceType::ml_c6gn_2xlarge:
+            value = "ml.c6gn.2xlarge";
+            return true;
           case ProductionVariantInstanceType::ml_c6gn_4xlarge:
             value = "ml.c6gn.4xlarge";
             return true;
@@ -1364,6 +1541,9 @@ namespace Aws
           case ProductionVariantInstanceType::ml_trn1_32xlarge:
             value = "ml.trn1.32xlarge";
             return true;
+          case ProductionVariantInstanceType::ml_trn1n_32xlarge:
+            value = "ml.trn1n.32xlarge";
+            return true;
           case ProductionVariantInstanceType::ml_inf2_xlarge:
             value = "ml.inf2.xlarge";
             return true;
@@ -1378,6 +1558,87 @@ namespace Aws
             return true;
           case ProductionVariantInstanceType::ml_p5_48xlarge:
             value = "ml.p5.48xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_m7i_large:
+            value = "ml.m7i.large";
+            return true;
+          case ProductionVariantInstanceType::ml_m7i_xlarge:
+            value = "ml.m7i.xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_m7i_2xlarge:
+            value = "ml.m7i.2xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_m7i_4xlarge:
+            value = "ml.m7i.4xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_m7i_8xlarge:
+            value = "ml.m7i.8xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_m7i_12xlarge:
+            value = "ml.m7i.12xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_m7i_16xlarge:
+            value = "ml.m7i.16xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_m7i_24xlarge:
+            value = "ml.m7i.24xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_m7i_48xlarge:
+            value = "ml.m7i.48xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_c7i_large:
+            value = "ml.c7i.large";
+            return true;
+          case ProductionVariantInstanceType::ml_c7i_xlarge:
+            value = "ml.c7i.xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_c7i_2xlarge:
+            value = "ml.c7i.2xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_c7i_4xlarge:
+            value = "ml.c7i.4xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_c7i_8xlarge:
+            value = "ml.c7i.8xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_c7i_12xlarge:
+            value = "ml.c7i.12xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_c7i_16xlarge:
+            value = "ml.c7i.16xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_c7i_24xlarge:
+            value = "ml.c7i.24xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_c7i_48xlarge:
+            value = "ml.c7i.48xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_r7i_large:
+            value = "ml.r7i.large";
+            return true;
+          case ProductionVariantInstanceType::ml_r7i_xlarge:
+            value = "ml.r7i.xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_r7i_2xlarge:
+            value = "ml.r7i.2xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_r7i_4xlarge:
+            value = "ml.r7i.4xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_r7i_8xlarge:
+            value = "ml.r7i.8xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_r7i_12xlarge:
+            value = "ml.r7i.12xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_r7i_16xlarge:
+            value = "ml.r7i.16xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_r7i_24xlarge:
+            value = "ml.r7i.24xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_r7i_48xlarge:
+            value = "ml.r7i.48xlarge";
             return true;
           default:
             return false;

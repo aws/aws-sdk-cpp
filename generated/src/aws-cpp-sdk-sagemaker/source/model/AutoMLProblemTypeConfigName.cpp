@@ -22,8 +22,8 @@ namespace Aws
 
         static const int ImageClassification_HASH = HashingUtils::HashString("ImageClassification");
         static const int TextClassification_HASH = HashingUtils::HashString("TextClassification");
-        static const int Tabular_HASH = HashingUtils::HashString("Tabular");
         static const int TimeSeriesForecasting_HASH = HashingUtils::HashString("TimeSeriesForecasting");
+        static const int Tabular_HASH = HashingUtils::HashString("Tabular");
         static const int TextGeneration_HASH = HashingUtils::HashString("TextGeneration");
 
 
@@ -38,13 +38,13 @@ namespace Aws
           {
             return AutoMLProblemTypeConfigName::TextClassification;
           }
-          else if (hashCode == Tabular_HASH)
-          {
-            return AutoMLProblemTypeConfigName::Tabular;
-          }
           else if (hashCode == TimeSeriesForecasting_HASH)
           {
             return AutoMLProblemTypeConfigName::TimeSeriesForecasting;
+          }
+          else if (hashCode == Tabular_HASH)
+          {
+            return AutoMLProblemTypeConfigName::Tabular;
           }
           else if (hashCode == TextGeneration_HASH)
           {
@@ -70,10 +70,10 @@ namespace Aws
             return "ImageClassification";
           case AutoMLProblemTypeConfigName::TextClassification:
             return "TextClassification";
-          case AutoMLProblemTypeConfigName::Tabular:
-            return "Tabular";
           case AutoMLProblemTypeConfigName::TimeSeriesForecasting:
             return "TimeSeriesForecasting";
+          case AutoMLProblemTypeConfigName::Tabular:
+            return "Tabular";
           case AutoMLProblemTypeConfigName::TextGeneration:
             return "TextGeneration";
           default:

@@ -14,8 +14,8 @@
 #include <aws/sagemaker/model/RStudioServerProAppSettings.h>
 #include <aws/sagemaker/model/RSessionAppSettings.h>
 #include <aws/sagemaker/model/CanvasAppSettings.h>
-#include <aws/sagemaker/model/JupyterLabAppSettings.h>
 #include <aws/sagemaker/model/CodeEditorAppSettings.h>
+#include <aws/sagemaker/model/JupyterLabAppSettings.h>
 #include <aws/sagemaker/model/DefaultSpaceStorageSettings.h>
 #include <aws/sagemaker/model/StudioWebPortal.h>
 #include <aws/sagemaker/model/CustomPosixUserConfig.h>
@@ -455,37 +455,6 @@ namespace Model
 
 
     /**
-     * <p>The settings for the JupyterLab application.</p>
-     */
-    inline const JupyterLabAppSettings& GetJupyterLabAppSettings() const{ return m_jupyterLabAppSettings; }
-
-    /**
-     * <p>The settings for the JupyterLab application.</p>
-     */
-    inline bool JupyterLabAppSettingsHasBeenSet() const { return m_jupyterLabAppSettingsHasBeenSet; }
-
-    /**
-     * <p>The settings for the JupyterLab application.</p>
-     */
-    inline void SetJupyterLabAppSettings(const JupyterLabAppSettings& value) { m_jupyterLabAppSettingsHasBeenSet = true; m_jupyterLabAppSettings = value; }
-
-    /**
-     * <p>The settings for the JupyterLab application.</p>
-     */
-    inline void SetJupyterLabAppSettings(JupyterLabAppSettings&& value) { m_jupyterLabAppSettingsHasBeenSet = true; m_jupyterLabAppSettings = std::move(value); }
-
-    /**
-     * <p>The settings for the JupyterLab application.</p>
-     */
-    inline UserSettings& WithJupyterLabAppSettings(const JupyterLabAppSettings& value) { SetJupyterLabAppSettings(value); return *this;}
-
-    /**
-     * <p>The settings for the JupyterLab application.</p>
-     */
-    inline UserSettings& WithJupyterLabAppSettings(JupyterLabAppSettings&& value) { SetJupyterLabAppSettings(std::move(value)); return *this;}
-
-
-    /**
      * <p>The Code Editor application settings.</p>
      */
     inline const CodeEditorAppSettings& GetCodeEditorAppSettings() const{ return m_codeEditorAppSettings; }
@@ -514,6 +483,37 @@ namespace Model
      * <p>The Code Editor application settings.</p>
      */
     inline UserSettings& WithCodeEditorAppSettings(CodeEditorAppSettings&& value) { SetCodeEditorAppSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the JupyterLab application.</p>
+     */
+    inline const JupyterLabAppSettings& GetJupyterLabAppSettings() const{ return m_jupyterLabAppSettings; }
+
+    /**
+     * <p>The settings for the JupyterLab application.</p>
+     */
+    inline bool JupyterLabAppSettingsHasBeenSet() const { return m_jupyterLabAppSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the JupyterLab application.</p>
+     */
+    inline void SetJupyterLabAppSettings(const JupyterLabAppSettings& value) { m_jupyterLabAppSettingsHasBeenSet = true; m_jupyterLabAppSettings = value; }
+
+    /**
+     * <p>The settings for the JupyterLab application.</p>
+     */
+    inline void SetJupyterLabAppSettings(JupyterLabAppSettings&& value) { m_jupyterLabAppSettingsHasBeenSet = true; m_jupyterLabAppSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the JupyterLab application.</p>
+     */
+    inline UserSettings& WithJupyterLabAppSettings(const JupyterLabAppSettings& value) { SetJupyterLabAppSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the JupyterLab application.</p>
+     */
+    inline UserSettings& WithJupyterLabAppSettings(JupyterLabAppSettings&& value) { SetJupyterLabAppSettings(std::move(value)); return *this;}
 
 
     /**
@@ -779,11 +779,11 @@ namespace Model
     CanvasAppSettings m_canvasAppSettings;
     bool m_canvasAppSettingsHasBeenSet = false;
 
-    JupyterLabAppSettings m_jupyterLabAppSettings;
-    bool m_jupyterLabAppSettingsHasBeenSet = false;
-
     CodeEditorAppSettings m_codeEditorAppSettings;
     bool m_codeEditorAppSettingsHasBeenSet = false;
+
+    JupyterLabAppSettings m_jupyterLabAppSettings;
+    bool m_jupyterLabAppSettingsHasBeenSet = false;
 
     DefaultSpaceStorageSettings m_spaceStorageSettings;
     bool m_spaceStorageSettingsHasBeenSet = false;

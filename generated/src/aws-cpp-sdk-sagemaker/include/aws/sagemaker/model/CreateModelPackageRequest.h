@@ -604,127 +604,6 @@ namespace Model
 
 
     /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline bool CustomerMetadataPropertiesHasBeenSet() const { return m_customerMetadataPropertiesHasBeenSet; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = value; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = std::move(value); }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline CreateModelPackageRequest& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline CreateModelPackageRequest& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
-
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline const DriftCheckBaselines& GetDriftCheckBaselines() const{ return m_driftCheckBaselines; }
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline bool DriftCheckBaselinesHasBeenSet() const { return m_driftCheckBaselinesHasBeenSet; }
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline void SetDriftCheckBaselines(const DriftCheckBaselines& value) { m_driftCheckBaselinesHasBeenSet = true; m_driftCheckBaselines = value; }
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline void SetDriftCheckBaselines(DriftCheckBaselines&& value) { m_driftCheckBaselinesHasBeenSet = true; m_driftCheckBaselines = std::move(value); }
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline CreateModelPackageRequest& WithDriftCheckBaselines(const DriftCheckBaselines& value) { SetDriftCheckBaselines(value); return *this;}
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline CreateModelPackageRequest& WithDriftCheckBaselines(DriftCheckBaselines&& value) { SetDriftCheckBaselines(std::move(value)); return *this;}
-
-
-    /**
      * <p>The machine learning domain of your model package and its components. Common
      * machine learning domains include computer vision and natural language
      * processing.</p>
@@ -960,6 +839,127 @@ namespace Model
 
 
     /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline bool CustomerMetadataPropertiesHasBeenSet() const { return m_customerMetadataPropertiesHasBeenSet; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = value; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = std::move(value); }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline const DriftCheckBaselines& GetDriftCheckBaselines() const{ return m_driftCheckBaselines; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline bool DriftCheckBaselinesHasBeenSet() const { return m_driftCheckBaselinesHasBeenSet; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline void SetDriftCheckBaselines(const DriftCheckBaselines& value) { m_driftCheckBaselinesHasBeenSet = true; m_driftCheckBaselines = value; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline void SetDriftCheckBaselines(DriftCheckBaselines&& value) { m_driftCheckBaselinesHasBeenSet = true; m_driftCheckBaselines = std::move(value); }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline CreateModelPackageRequest& WithDriftCheckBaselines(const DriftCheckBaselines& value) { SetDriftCheckBaselines(value); return *this;}
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline CreateModelPackageRequest& WithDriftCheckBaselines(DriftCheckBaselines&& value) { SetDriftCheckBaselines(std::move(value)); return *this;}
+
+
+    /**
      * <p>An array of additional Inference Specification objects. Each additional
      * Inference Specification specifies artifacts based on this model package that can
      * be used on inference endpoints. Generally used with SageMaker Neo to store the
@@ -1092,12 +1092,6 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-    bool m_customerMetadataPropertiesHasBeenSet = false;
-
-    DriftCheckBaselines m_driftCheckBaselines;
-    bool m_driftCheckBaselinesHasBeenSet = false;
-
     Aws::String m_domain;
     bool m_domainHasBeenSet = false;
 
@@ -1106,6 +1100,12 @@ namespace Model
 
     Aws::String m_samplePayloadUrl;
     bool m_samplePayloadUrlHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
+    bool m_customerMetadataPropertiesHasBeenSet = false;
+
+    DriftCheckBaselines m_driftCheckBaselines;
+    bool m_driftCheckBaselinesHasBeenSet = false;
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
     bool m_additionalInferenceSpecificationsHasBeenSet = false;

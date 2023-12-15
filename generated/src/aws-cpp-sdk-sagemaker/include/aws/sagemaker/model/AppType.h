@@ -18,11 +18,19 @@ namespace Model
     NOT_SET,
     JupyterServer,
     KernelGateway,
+    DetailedProfiler,
     TensorBoard,
-    RStudioServerPro,
-    RSessionGateway,
+    VSCode,
+    Savitur,
+    CodeEditor,
     JupyterLab,
-    CodeEditor
+    RStudioServerPro,
+    RSession,
+    RSessionGateway,
+    Canvas,
+    DatasetManager,
+    SageMakerLite,
+    Local
   };
 
 namespace AppTypeMapper

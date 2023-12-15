@@ -21,7 +21,9 @@ namespace Model
     COMPLETED,
     FAILED,
     STOPPING,
-    STOPPED
+    STOPPED,
+    DELETING,
+    DELETED
   };
 
 namespace RecommendationJobStatusMapper

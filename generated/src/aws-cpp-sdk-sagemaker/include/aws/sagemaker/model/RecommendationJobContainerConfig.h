@@ -424,6 +424,55 @@ namespace Model
 
 
     /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline const RecommendationJobSupportedEndpointType& GetSupportedEndpointType() const{ return m_supportedEndpointType; }
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline bool SupportedEndpointTypeHasBeenSet() const { return m_supportedEndpointTypeHasBeenSet; }
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline void SetSupportedEndpointType(const RecommendationJobSupportedEndpointType& value) { m_supportedEndpointTypeHasBeenSet = true; m_supportedEndpointType = value; }
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline void SetSupportedEndpointType(RecommendationJobSupportedEndpointType&& value) { m_supportedEndpointTypeHasBeenSet = true; m_supportedEndpointType = std::move(value); }
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline RecommendationJobContainerConfig& WithSupportedEndpointType(const RecommendationJobSupportedEndpointType& value) { SetSupportedEndpointType(value); return *this;}
+
+    /**
+     * <p>The endpoint type to receive recommendations for. By default this is null,
+     * and the results of the inference recommendation job return a combined list of
+     * both real-time and serverless benchmarks. By specifying a value for this field,
+     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
+     */
+    inline RecommendationJobContainerConfig& WithSupportedEndpointType(RecommendationJobSupportedEndpointType&& value) { SetSupportedEndpointType(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
      * model with a JSON dictionary form. This field is used for optimizing your model
      * using SageMaker Neo. For more information, see <a
@@ -486,55 +535,6 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
      */
     inline RecommendationJobContainerConfig& WithDataInputConfig(const char* value) { SetDataInputConfig(value); return *this;}
-
-
-    /**
-     * <p>The endpoint type to receive recommendations for. By default this is null,
-     * and the results of the inference recommendation job return a combined list of
-     * both real-time and serverless benchmarks. By specifying a value for this field,
-     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
-     */
-    inline const RecommendationJobSupportedEndpointType& GetSupportedEndpointType() const{ return m_supportedEndpointType; }
-
-    /**
-     * <p>The endpoint type to receive recommendations for. By default this is null,
-     * and the results of the inference recommendation job return a combined list of
-     * both real-time and serverless benchmarks. By specifying a value for this field,
-     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
-     */
-    inline bool SupportedEndpointTypeHasBeenSet() const { return m_supportedEndpointTypeHasBeenSet; }
-
-    /**
-     * <p>The endpoint type to receive recommendations for. By default this is null,
-     * and the results of the inference recommendation job return a combined list of
-     * both real-time and serverless benchmarks. By specifying a value for this field,
-     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
-     */
-    inline void SetSupportedEndpointType(const RecommendationJobSupportedEndpointType& value) { m_supportedEndpointTypeHasBeenSet = true; m_supportedEndpointType = value; }
-
-    /**
-     * <p>The endpoint type to receive recommendations for. By default this is null,
-     * and the results of the inference recommendation job return a combined list of
-     * both real-time and serverless benchmarks. By specifying a value for this field,
-     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
-     */
-    inline void SetSupportedEndpointType(RecommendationJobSupportedEndpointType&& value) { m_supportedEndpointTypeHasBeenSet = true; m_supportedEndpointType = std::move(value); }
-
-    /**
-     * <p>The endpoint type to receive recommendations for. By default this is null,
-     * and the results of the inference recommendation job return a combined list of
-     * both real-time and serverless benchmarks. By specifying a value for this field,
-     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
-     */
-    inline RecommendationJobContainerConfig& WithSupportedEndpointType(const RecommendationJobSupportedEndpointType& value) { SetSupportedEndpointType(value); return *this;}
-
-    /**
-     * <p>The endpoint type to receive recommendations for. By default this is null,
-     * and the results of the inference recommendation job return a combined list of
-     * both real-time and serverless benchmarks. By specifying a value for this field,
-     * you can receive a longer list of benchmarks for the desired endpoint type.</p>
-     */
-    inline RecommendationJobContainerConfig& WithSupportedEndpointType(RecommendationJobSupportedEndpointType&& value) { SetSupportedEndpointType(std::move(value)); return *this;}
 
 
     /**
@@ -605,11 +605,11 @@ namespace Model
     Aws::Vector<Aws::String> m_supportedInstanceTypes;
     bool m_supportedInstanceTypesHasBeenSet = false;
 
-    Aws::String m_dataInputConfig;
-    bool m_dataInputConfigHasBeenSet = false;
-
     RecommendationJobSupportedEndpointType m_supportedEndpointType;
     bool m_supportedEndpointTypeHasBeenSet = false;
+
+    Aws::String m_dataInputConfig;
+    bool m_dataInputConfigHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedResponseMIMETypes;
     bool m_supportedResponseMIMETypesHasBeenSet = false;

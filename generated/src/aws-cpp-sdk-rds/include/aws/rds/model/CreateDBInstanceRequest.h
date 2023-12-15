@@ -577,8 +577,8 @@ namespace Model
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> </dd>
      * <dt>RDS for Db2</dt> <dd> <p>Constraints to the amount of storage for each
      * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
-     * (gp2, gp3): Must be an integer from 20 to 64000.</p> </li> <li> <p>Provisioned
-     * IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li> </ul> </dd>
+     * (gp3): Must be an integer from 20 to 64000.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 64000.</p> </li> </ul> </dd>
      * <dt>RDS for MariaDB</dt> <dd> <p>Constraints to the amount of storage for each
      * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
      * (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned
@@ -627,8 +627,8 @@ namespace Model
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> </dd>
      * <dt>RDS for Db2</dt> <dd> <p>Constraints to the amount of storage for each
      * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
-     * (gp2, gp3): Must be an integer from 20 to 64000.</p> </li> <li> <p>Provisioned
-     * IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li> </ul> </dd>
+     * (gp3): Must be an integer from 20 to 64000.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 64000.</p> </li> </ul> </dd>
      * <dt>RDS for MariaDB</dt> <dd> <p>Constraints to the amount of storage for each
      * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
      * (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned
@@ -677,8 +677,8 @@ namespace Model
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> </dd>
      * <dt>RDS for Db2</dt> <dd> <p>Constraints to the amount of storage for each
      * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
-     * (gp2, gp3): Must be an integer from 20 to 64000.</p> </li> <li> <p>Provisioned
-     * IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li> </ul> </dd>
+     * (gp3): Must be an integer from 20 to 64000.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 64000.</p> </li> </ul> </dd>
      * <dt>RDS for MariaDB</dt> <dd> <p>Constraints to the amount of storage for each
      * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
      * (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned
@@ -727,8 +727,8 @@ namespace Model
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> </dd>
      * <dt>RDS for Db2</dt> <dd> <p>Constraints to the amount of storage for each
      * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
-     * (gp2, gp3): Must be an integer from 20 to 64000.</p> </li> <li> <p>Provisioned
-     * IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li> </ul> </dd>
+     * (gp3): Must be an integer from 20 to 64000.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 64000.</p> </li> </ul> </dd>
      * <dt>RDS for MariaDB</dt> <dd> <p>Constraints to the amount of storage for each
      * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
      * (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned
