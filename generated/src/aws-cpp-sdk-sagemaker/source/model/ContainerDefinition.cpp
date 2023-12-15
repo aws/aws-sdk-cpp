@@ -25,11 +25,11 @@ ContainerDefinition::ContainerDefinition() :
     m_mode(ContainerMode::NOT_SET),
     m_modeHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
+    m_modelDataSourceHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_modelPackageNameHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
-    m_multiModelConfigHasBeenSet(false),
-    m_modelDataSourceHasBeenSet(false)
+    m_multiModelConfigHasBeenSet(false)
 {
 }
 
@@ -40,11 +40,11 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_mode(ContainerMode::NOT_SET),
     m_modeHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
+    m_modelDataSourceHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_modelPackageNameHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
-    m_multiModelConfigHasBeenSet(false),
-    m_modelDataSourceHasBeenSet(false)
+    m_multiModelConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +86,13 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_modelDataUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelDataSource"))
+  {
+    m_modelDataSource = jsonValue.GetObject("ModelDataSource");
+
+    m_modelDataSourceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -115,13 +122,6 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_multiModelConfig = jsonValue.GetObject("MultiModelConfig");
 
     m_multiModelConfigHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("ModelDataSource"))
-  {
-    m_modelDataSource = jsonValue.GetObject("ModelDataSource");
-
-    m_modelDataSourceHasBeenSet = true;
   }
 
   return *this;
@@ -160,6 +160,12 @@ JsonValue ContainerDefinition::Jsonize() const
 
   }
 
+  if(m_modelDataSourceHasBeenSet)
+  {
+   payload.WithObject("ModelDataSource", m_modelDataSource.Jsonize());
+
+  }
+
   if(m_environmentHasBeenSet)
   {
    JsonValue environmentJsonMap;
@@ -186,12 +192,6 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_multiModelConfigHasBeenSet)
   {
    payload.WithObject("MultiModelConfig", m_multiModelConfig.Jsonize());
-
-  }
-
-  if(m_modelDataSourceHasBeenSet)
-  {
-   payload.WithObject("ModelDataSource", m_modelDataSource.Jsonize());
 
   }
 

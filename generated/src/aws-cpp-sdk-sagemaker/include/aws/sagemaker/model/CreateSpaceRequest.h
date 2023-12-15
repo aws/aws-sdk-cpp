@@ -210,47 +210,6 @@ namespace Model
 
 
     /**
-     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
-     */
-    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
-
-    /**
-     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
-     */
-    inline bool SpaceDisplayNameHasBeenSet() const { return m_spaceDisplayNameHasBeenSet; }
-
-    /**
-     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
-     */
-    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = value; }
-
-    /**
-     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
-     */
-    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = std::move(value); }
-
-    /**
-     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
-     */
-    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName.assign(value); }
-
-    /**
-     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
-     */
-    inline CreateSpaceRequest& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
-     */
-    inline CreateSpaceRequest& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
-     */
-    inline CreateSpaceRequest& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
-
-
-    /**
      * <p>A collection of ownership settings.</p>
      */
     inline const OwnershipSettings& GetOwnershipSettings() const{ return m_ownershipSettings; }
@@ -311,6 +270,47 @@ namespace Model
      */
     inline CreateSpaceRequest& WithSpaceSharingSettings(SpaceSharingSettings&& value) { SetSpaceSharingSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline bool SpaceDisplayNameHasBeenSet() const { return m_spaceDisplayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = value; }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = std::move(value); }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName.assign(value); }
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline CreateSpaceRequest& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline CreateSpaceRequest& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+     */
+    inline CreateSpaceRequest& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -325,14 +325,14 @@ namespace Model
     SpaceSettings m_spaceSettings;
     bool m_spaceSettingsHasBeenSet = false;
 
-    Aws::String m_spaceDisplayName;
-    bool m_spaceDisplayNameHasBeenSet = false;
-
     OwnershipSettings m_ownershipSettings;
     bool m_ownershipSettingsHasBeenSet = false;
 
     SpaceSharingSettings m_spaceSharingSettings;
     bool m_spaceSharingSettingsHasBeenSet = false;
+
+    Aws::String m_spaceDisplayName;
+    bool m_spaceDisplayNameHasBeenSet = false;
   };
 
 } // namespace Model

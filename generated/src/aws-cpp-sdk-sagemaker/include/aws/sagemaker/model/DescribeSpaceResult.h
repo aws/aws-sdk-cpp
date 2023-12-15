@@ -322,127 +322,6 @@ namespace Model
 
 
     /**
-     * <p>Returns the URL of the space. If the space is created with Amazon Web
-     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
-     * authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web
-     * Services IAM Identity Center.</p> <p>The following application types are
-     * supported:</p> <ul> <li> <p>Studio Classic:
-     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
-     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
-     */
-    inline const Aws::String& GetUrl() const{ return m_url; }
-
-    /**
-     * <p>Returns the URL of the space. If the space is created with Amazon Web
-     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
-     * authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web
-     * Services IAM Identity Center.</p> <p>The following application types are
-     * supported:</p> <ul> <li> <p>Studio Classic:
-     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
-     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
-     */
-    inline void SetUrl(const Aws::String& value) { m_url = value; }
-
-    /**
-     * <p>Returns the URL of the space. If the space is created with Amazon Web
-     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
-     * authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web
-     * Services IAM Identity Center.</p> <p>The following application types are
-     * supported:</p> <ul> <li> <p>Studio Classic:
-     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
-     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
-     */
-    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
-
-    /**
-     * <p>Returns the URL of the space. If the space is created with Amazon Web
-     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
-     * authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web
-     * Services IAM Identity Center.</p> <p>The following application types are
-     * supported:</p> <ul> <li> <p>Studio Classic:
-     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
-     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
-     */
-    inline void SetUrl(const char* value) { m_url.assign(value); }
-
-    /**
-     * <p>Returns the URL of the space. If the space is created with Amazon Web
-     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
-     * authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web
-     * Services IAM Identity Center.</p> <p>The following application types are
-     * supported:</p> <ul> <li> <p>Studio Classic:
-     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
-     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
-     */
-    inline DescribeSpaceResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-
-    /**
-     * <p>Returns the URL of the space. If the space is created with Amazon Web
-     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
-     * authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web
-     * Services IAM Identity Center.</p> <p>The following application types are
-     * supported:</p> <ul> <li> <p>Studio Classic:
-     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
-     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
-     */
-    inline DescribeSpaceResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the URL of the space. If the space is created with Amazon Web
-     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
-     * authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web
-     * Services IAM Identity Center.</p> <p>The following application types are
-     * supported:</p> <ul> <li> <p>Studio Classic:
-     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
-     * <code>&amp;redirect=JupyterLab</code> </p> </li> </ul>
-     */
-    inline DescribeSpaceResult& WithUrl(const char* value) { SetUrl(value); return *this;}
-
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
-    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
-    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayName = value; }
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
-    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayName = std::move(value); }
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
-    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayName.assign(value); }
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
-    inline DescribeSpaceResult& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
-    inline DescribeSpaceResult& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
-    inline DescribeSpaceResult& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
-
-
-    /**
      * <p>The collection of ownership settings for a space.</p>
      */
     inline const OwnershipSettings& GetOwnershipSettings() const{ return m_ownershipSettings; }
@@ -494,6 +373,141 @@ namespace Model
     inline DescribeSpaceResult& WithSpaceSharingSettings(SpaceSharingSettings&& value) { SetSpaceSharingSettings(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayName = value; }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayName = std::move(value); }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayName.assign(value); }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline DescribeSpaceResult& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline DescribeSpaceResult& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline DescribeSpaceResult& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
+
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> <li> <p>Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source:
+     * <code>&amp;redirect=CodeEditor</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> <li> <p>Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source:
+     * <code>&amp;redirect=CodeEditor</code> </p> </li> </ul>
+     */
+    inline void SetUrl(const Aws::String& value) { m_url = value; }
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> <li> <p>Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source:
+     * <code>&amp;redirect=CodeEditor</code> </p> </li> </ul>
+     */
+    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> <li> <p>Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source:
+     * <code>&amp;redirect=CodeEditor</code> </p> </li> </ul>
+     */
+    inline void SetUrl(const char* value) { m_url.assign(value); }
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> <li> <p>Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source:
+     * <code>&amp;redirect=CodeEditor</code> </p> </li> </ul>
+     */
+    inline DescribeSpaceResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> <li> <p>Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source:
+     * <code>&amp;redirect=CodeEditor</code> </p> </li> </ul>
+     */
+    inline DescribeSpaceResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the URL of the space. If the space is created with Amazon Web
+     * Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On)
+     * authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web
+     * Services IAM Identity Center.</p> <p>The following application types are
+     * supported:</p> <ul> <li> <p>Studio Classic:
+     * <code>&amp;redirect=JupyterServer</code> </p> </li> <li> <p>JupyterLab:
+     * <code>&amp;redirect=JupyterLab</code> </p> </li> <li> <p>Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source:
+     * <code>&amp;redirect=CodeEditor</code> </p> </li> </ul>
+     */
+    inline DescribeSpaceResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -535,13 +549,13 @@ namespace Model
 
     SpaceSettings m_spaceSettings;
 
-    Aws::String m_url;
-
-    Aws::String m_spaceDisplayName;
-
     OwnershipSettings m_ownershipSettings;
 
     SpaceSharingSettings m_spaceSharingSettings;
+
+    Aws::String m_spaceDisplayName;
+
+    Aws::String m_url;
 
     Aws::String m_requestId;
   };

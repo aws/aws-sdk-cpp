@@ -9,8 +9,8 @@
 #include <aws/sagemaker/model/ModelRegisterSettings.h>
 #include <aws/sagemaker/model/WorkspaceSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sagemaker/model/KendraSettings.h>
 #include <aws/sagemaker/model/DirectDeploySettings.h>
+#include <aws/sagemaker/model/KendraSettings.h>
 #include <aws/sagemaker/model/IdentityProviderOAuthSetting.h>
 #include <utility>
 
@@ -178,37 +178,6 @@ namespace Model
 
 
     /**
-     * <p>The settings for document querying.</p>
-     */
-    inline const KendraSettings& GetKendraSettings() const{ return m_kendraSettings; }
-
-    /**
-     * <p>The settings for document querying.</p>
-     */
-    inline bool KendraSettingsHasBeenSet() const { return m_kendraSettingsHasBeenSet; }
-
-    /**
-     * <p>The settings for document querying.</p>
-     */
-    inline void SetKendraSettings(const KendraSettings& value) { m_kendraSettingsHasBeenSet = true; m_kendraSettings = value; }
-
-    /**
-     * <p>The settings for document querying.</p>
-     */
-    inline void SetKendraSettings(KendraSettings&& value) { m_kendraSettingsHasBeenSet = true; m_kendraSettings = std::move(value); }
-
-    /**
-     * <p>The settings for document querying.</p>
-     */
-    inline CanvasAppSettings& WithKendraSettings(const KendraSettings& value) { SetKendraSettings(value); return *this;}
-
-    /**
-     * <p>The settings for document querying.</p>
-     */
-    inline CanvasAppSettings& WithKendraSettings(KendraSettings&& value) { SetKendraSettings(std::move(value)); return *this;}
-
-
-    /**
      * <p>The model deployment settings for the SageMaker Canvas application.</p>
      */
     inline const DirectDeploySettings& GetDirectDeploySettings() const{ return m_directDeploySettings; }
@@ -238,6 +207,37 @@ namespace Model
      */
     inline CanvasAppSettings& WithDirectDeploySettings(DirectDeploySettings&& value) { SetDirectDeploySettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline const KendraSettings& GetKendraSettings() const{ return m_kendraSettings; }
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline bool KendraSettingsHasBeenSet() const { return m_kendraSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline void SetKendraSettings(const KendraSettings& value) { m_kendraSettingsHasBeenSet = true; m_kendraSettings = value; }
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline void SetKendraSettings(KendraSettings&& value) { m_kendraSettingsHasBeenSet = true; m_kendraSettings = std::move(value); }
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline CanvasAppSettings& WithKendraSettings(const KendraSettings& value) { SetKendraSettings(value); return *this;}
+
+    /**
+     * <p>The settings for document querying.</p>
+     */
+    inline CanvasAppSettings& WithKendraSettings(KendraSettings&& value) { SetKendraSettings(std::move(value)); return *this;}
+
   private:
 
     TimeSeriesForecastingSettings m_timeSeriesForecastingSettings;
@@ -252,11 +252,11 @@ namespace Model
     Aws::Vector<IdentityProviderOAuthSetting> m_identityProviderOAuthSettings;
     bool m_identityProviderOAuthSettingsHasBeenSet = false;
 
-    KendraSettings m_kendraSettings;
-    bool m_kendraSettingsHasBeenSet = false;
-
     DirectDeploySettings m_directDeploySettings;
     bool m_directDeploySettingsHasBeenSet = false;
+
+    KendraSettings m_kendraSettings;
+    bool m_kendraSettingsHasBeenSet = false;
   };
 
 } // namespace Model

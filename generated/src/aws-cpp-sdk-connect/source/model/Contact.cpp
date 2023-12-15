@@ -34,6 +34,12 @@ Contact::Contact() :
     m_initiationTimestampHasBeenSet(false),
     m_disconnectTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
+    m_lastPausedTimestampHasBeenSet(false),
+    m_lastResumedTimestampHasBeenSet(false),
+    m_totalPauseCount(0),
+    m_totalPauseCountHasBeenSet(false),
+    m_totalPauseDurationInSeconds(0),
+    m_totalPauseDurationInSecondsHasBeenSet(false),
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
     m_wisdomInfoHasBeenSet(false),
@@ -57,6 +63,12 @@ Contact::Contact(JsonView jsonValue) :
     m_initiationTimestampHasBeenSet(false),
     m_disconnectTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
+    m_lastPausedTimestampHasBeenSet(false),
+    m_lastResumedTimestampHasBeenSet(false),
+    m_totalPauseCount(0),
+    m_totalPauseCountHasBeenSet(false),
+    m_totalPauseDurationInSeconds(0),
+    m_totalPauseDurationInSecondsHasBeenSet(false),
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
     m_wisdomInfoHasBeenSet(false),
@@ -156,6 +168,34 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_lastUpdateTimestamp = jsonValue.GetDouble("LastUpdateTimestamp");
 
     m_lastUpdateTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastPausedTimestamp"))
+  {
+    m_lastPausedTimestamp = jsonValue.GetDouble("LastPausedTimestamp");
+
+    m_lastPausedTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastResumedTimestamp"))
+  {
+    m_lastResumedTimestamp = jsonValue.GetDouble("LastResumedTimestamp");
+
+    m_lastResumedTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalPauseCount"))
+  {
+    m_totalPauseCount = jsonValue.GetInteger("TotalPauseCount");
+
+    m_totalPauseCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalPauseDurationInSeconds"))
+  {
+    m_totalPauseDurationInSeconds = jsonValue.GetInteger("TotalPauseDurationInSeconds");
+
+    m_totalPauseDurationInSecondsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ScheduledTimestamp"))
@@ -267,6 +307,28 @@ JsonValue Contact::Jsonize() const
   if(m_lastUpdateTimestampHasBeenSet)
   {
    payload.WithDouble("LastUpdateTimestamp", m_lastUpdateTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_lastPausedTimestampHasBeenSet)
+  {
+   payload.WithDouble("LastPausedTimestamp", m_lastPausedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_lastResumedTimestampHasBeenSet)
+  {
+   payload.WithDouble("LastResumedTimestamp", m_lastResumedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_totalPauseCountHasBeenSet)
+  {
+   payload.WithInteger("TotalPauseCount", m_totalPauseCount);
+
+  }
+
+  if(m_totalPauseDurationInSecondsHasBeenSet)
+  {
+   payload.WithInteger("TotalPauseDurationInSeconds", m_totalPauseDurationInSeconds);
+
   }
 
   if(m_scheduledTimestampHasBeenSet)

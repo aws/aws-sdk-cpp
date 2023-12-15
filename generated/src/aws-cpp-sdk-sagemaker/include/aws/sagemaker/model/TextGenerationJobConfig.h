@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/AutoMLJobCompletionCriteria.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/sagemaker/model/ModelAccessConfig.h>
 #include <utility>
 
 namespace Aws
@@ -494,6 +495,25 @@ namespace Model
      */
     inline TextGenerationJobConfig& AddTextGenerationHyperParameters(const char* key, const char* value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters.emplace(key, value); return *this; }
 
+
+    
+    inline const ModelAccessConfig& GetModelAccessConfig() const{ return m_modelAccessConfig; }
+
+    
+    inline bool ModelAccessConfigHasBeenSet() const { return m_modelAccessConfigHasBeenSet; }
+
+    
+    inline void SetModelAccessConfig(const ModelAccessConfig& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = value; }
+
+    
+    inline void SetModelAccessConfig(ModelAccessConfig&& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = std::move(value); }
+
+    
+    inline TextGenerationJobConfig& WithModelAccessConfig(const ModelAccessConfig& value) { SetModelAccessConfig(value); return *this;}
+
+    
+    inline TextGenerationJobConfig& WithModelAccessConfig(ModelAccessConfig&& value) { SetModelAccessConfig(std::move(value)); return *this;}
+
   private:
 
     AutoMLJobCompletionCriteria m_completionCriteria;
@@ -504,6 +524,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_textGenerationHyperParameters;
     bool m_textGenerationHyperParametersHasBeenSet = false;
+
+    ModelAccessConfig m_modelAccessConfig;
+    bool m_modelAccessConfigHasBeenSet = false;
   };
 
 } // namespace Model

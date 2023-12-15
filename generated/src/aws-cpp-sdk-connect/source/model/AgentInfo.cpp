@@ -20,13 +20,17 @@ namespace Model
 
 AgentInfo::AgentInfo() : 
     m_idHasBeenSet(false),
-    m_connectedToAgentTimestampHasBeenSet(false)
+    m_connectedToAgentTimestampHasBeenSet(false),
+    m_agentPauseDurationInSeconds(0),
+    m_agentPauseDurationInSecondsHasBeenSet(false)
 {
 }
 
 AgentInfo::AgentInfo(JsonView jsonValue) : 
     m_idHasBeenSet(false),
-    m_connectedToAgentTimestampHasBeenSet(false)
+    m_connectedToAgentTimestampHasBeenSet(false),
+    m_agentPauseDurationInSeconds(0),
+    m_agentPauseDurationInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ AgentInfo& AgentInfo::operator =(JsonView jsonValue)
     m_connectedToAgentTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AgentPauseDurationInSeconds"))
+  {
+    m_agentPauseDurationInSeconds = jsonValue.GetInteger("AgentPauseDurationInSeconds");
+
+    m_agentPauseDurationInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +74,12 @@ JsonValue AgentInfo::Jsonize() const
   if(m_connectedToAgentTimestampHasBeenSet)
   {
    payload.WithDouble("ConnectedToAgentTimestamp", m_connectedToAgentTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_agentPauseDurationInSecondsHasBeenSet)
+  {
+   payload.WithInteger("AgentPauseDurationInSeconds", m_agentPauseDurationInSeconds);
+
   }
 
   return payload;

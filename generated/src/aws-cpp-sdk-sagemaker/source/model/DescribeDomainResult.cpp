@@ -97,6 +97,12 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("SecurityGroupIdForDomainBoundary"))
+  {
+    m_securityGroupIdForDomainBoundary = jsonValue.GetString("SecurityGroupIdForDomainBoundary");
+
+  }
+
   if(jsonValue.ValueExists("AuthMode"))
   {
     m_authMode = AuthModeMapper::GetAuthModeForName(jsonValue.GetString("AuthMode"));
@@ -106,6 +112,12 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("DefaultUserSettings"))
   {
     m_defaultUserSettings = jsonValue.GetObject("DefaultUserSettings");
+
+  }
+
+  if(jsonValue.ValueExists("DomainSettings"))
+  {
+    m_domainSettings = jsonValue.GetObject("DomainSettings");
 
   }
 
@@ -142,21 +154,9 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("DomainSettings"))
-  {
-    m_domainSettings = jsonValue.GetObject("DomainSettings");
-
-  }
-
   if(jsonValue.ValueExists("AppSecurityGroupManagement"))
   {
     m_appSecurityGroupManagement = AppSecurityGroupManagementMapper::GetAppSecurityGroupManagementForName(jsonValue.GetString("AppSecurityGroupManagement"));
-
-  }
-
-  if(jsonValue.ValueExists("SecurityGroupIdForDomainBoundary"))
-  {
-    m_securityGroupIdForDomainBoundary = jsonValue.GetString("SecurityGroupIdForDomainBoundary");
 
   }
 

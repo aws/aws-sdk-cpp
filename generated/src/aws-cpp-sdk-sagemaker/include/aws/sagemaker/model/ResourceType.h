@@ -21,16 +21,18 @@ namespace Model
     ExperimentTrial,
     ExperimentTrialComponent,
     Endpoint,
+    Model,
     ModelPackage,
     ModelPackageGroup,
     Pipeline,
     PipelineExecution,
     FeatureGroup,
-    Project,
     FeatureMetadata,
+    Image,
+    ImageVersion,
+    Project,
     HyperParameterTuningJob,
-    ModelCard,
-    Model
+    ModelCard
   };
 
 namespace ResourceTypeMapper

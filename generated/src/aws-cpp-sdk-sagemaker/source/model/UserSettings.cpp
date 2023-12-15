@@ -28,8 +28,8 @@ UserSettings::UserSettings() :
     m_rStudioServerProAppSettingsHasBeenSet(false),
     m_rSessionAppSettingsHasBeenSet(false),
     m_canvasAppSettingsHasBeenSet(false),
-    m_jupyterLabAppSettingsHasBeenSet(false),
     m_codeEditorAppSettingsHasBeenSet(false),
+    m_jupyterLabAppSettingsHasBeenSet(false),
     m_spaceStorageSettingsHasBeenSet(false),
     m_defaultLandingUriHasBeenSet(false),
     m_studioWebPortal(StudioWebPortal::NOT_SET),
@@ -49,8 +49,8 @@ UserSettings::UserSettings(JsonView jsonValue) :
     m_rStudioServerProAppSettingsHasBeenSet(false),
     m_rSessionAppSettingsHasBeenSet(false),
     m_canvasAppSettingsHasBeenSet(false),
-    m_jupyterLabAppSettingsHasBeenSet(false),
     m_codeEditorAppSettingsHasBeenSet(false),
+    m_jupyterLabAppSettingsHasBeenSet(false),
     m_spaceStorageSettingsHasBeenSet(false),
     m_defaultLandingUriHasBeenSet(false),
     m_studioWebPortal(StudioWebPortal::NOT_SET),
@@ -129,18 +129,18 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_canvasAppSettingsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("JupyterLabAppSettings"))
-  {
-    m_jupyterLabAppSettings = jsonValue.GetObject("JupyterLabAppSettings");
-
-    m_jupyterLabAppSettingsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("CodeEditorAppSettings"))
   {
     m_codeEditorAppSettings = jsonValue.GetObject("CodeEditorAppSettings");
 
     m_codeEditorAppSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JupyterLabAppSettings"))
+  {
+    m_jupyterLabAppSettings = jsonValue.GetObject("JupyterLabAppSettings");
+
+    m_jupyterLabAppSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SpaceStorageSettings"))
@@ -247,15 +247,15 @@ JsonValue UserSettings::Jsonize() const
 
   }
 
-  if(m_jupyterLabAppSettingsHasBeenSet)
-  {
-   payload.WithObject("JupyterLabAppSettings", m_jupyterLabAppSettings.Jsonize());
-
-  }
-
   if(m_codeEditorAppSettingsHasBeenSet)
   {
    payload.WithObject("CodeEditorAppSettings", m_codeEditorAppSettings.Jsonize());
+
+  }
+
+  if(m_jupyterLabAppSettingsHasBeenSet)
+  {
+   payload.WithObject("JupyterLabAppSettings", m_jupyterLabAppSettings.Jsonize());
 
   }
 

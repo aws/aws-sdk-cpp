@@ -207,6 +207,49 @@ namespace Model
 
 
     /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline void SetSpaceName(const Aws::String& value) { m_spaceName = value; }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline void SetSpaceName(Aws::String&& value) { m_spaceName = std::move(value); }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline void SetSpaceName(const char* value) { m_spaceName.assign(value); }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline DescribeAppResult& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline DescribeAppResult& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline DescribeAppResult& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+
+
+    /**
      * <p>The status.</p>
      */
     inline const AppStatus& GetStatus() const{ return m_status; }
@@ -392,49 +435,6 @@ namespace Model
     inline DescribeAppResult& WithResourceSpec(ResourceSpec&& value) { SetResourceSpec(std::move(value)); return *this;}
 
 
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline void SetSpaceName(const Aws::String& value) { m_spaceName = value; }
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline void SetSpaceName(Aws::String&& value) { m_spaceName = std::move(value); }
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline void SetSpaceName(const char* value) { m_spaceName.assign(value); }
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline DescribeAppResult& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline DescribeAppResult& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline DescribeAppResult& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -468,6 +468,8 @@ namespace Model
 
     Aws::String m_userProfileName;
 
+    Aws::String m_spaceName;
+
     AppStatus m_status;
 
     Aws::Utils::DateTime m_lastHealthCheckTimestamp;
@@ -479,8 +481,6 @@ namespace Model
     Aws::String m_failureReason;
 
     ResourceSpec m_resourceSpec;
-
-    Aws::String m_spaceName;
 
     Aws::String m_requestId;
   };

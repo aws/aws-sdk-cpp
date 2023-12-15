@@ -9,8 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/UserSettings.h>
 #include <aws/sagemaker/model/DomainSettingsForUpdate.h>
-#include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
+#include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <utility>
@@ -150,37 +150,6 @@ namespace Model
 
 
     /**
-     * <p>The default settings used to create a space within the Domain.</p>
-     */
-    inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
-
-    /**
-     * <p>The default settings used to create a space within the Domain.</p>
-     */
-    inline bool DefaultSpaceSettingsHasBeenSet() const { return m_defaultSpaceSettingsHasBeenSet; }
-
-    /**
-     * <p>The default settings used to create a space within the Domain.</p>
-     */
-    inline void SetDefaultSpaceSettings(const DefaultSpaceSettings& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = value; }
-
-    /**
-     * <p>The default settings used to create a space within the Domain.</p>
-     */
-    inline void SetDefaultSpaceSettings(DefaultSpaceSettings&& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = std::move(value); }
-
-    /**
-     * <p>The default settings used to create a space within the Domain.</p>
-     */
-    inline UpdateDomainRequest& WithDefaultSpaceSettings(const DefaultSpaceSettings& value) { SetDefaultSpaceSettings(value); return *this;}
-
-    /**
-     * <p>The default settings used to create a space within the Domain.</p>
-     */
-    inline UpdateDomainRequest& WithDefaultSpaceSettings(DefaultSpaceSettings&& value) { SetDefaultSpaceSettings(std::move(value)); return *this;}
-
-
-    /**
      * <p>The entity that creates and manages the required security groups for
      * inter-app communication in <code>VPCOnly</code> mode. Required when
      * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
@@ -239,6 +208,37 @@ namespace Model
      * set to <code>Service</code>.</p>
      */
     inline UpdateDomainRequest& WithAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { SetAppSecurityGroupManagement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline bool DefaultSpaceSettingsHasBeenSet() const { return m_defaultSpaceSettingsHasBeenSet; }
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline void SetDefaultSpaceSettings(const DefaultSpaceSettings& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = value; }
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline void SetDefaultSpaceSettings(DefaultSpaceSettings&& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = std::move(value); }
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline UpdateDomainRequest& WithDefaultSpaceSettings(const DefaultSpaceSettings& value) { SetDefaultSpaceSettings(value); return *this;}
+
+    /**
+     * <p>The default settings used to create a space within the Domain.</p>
+     */
+    inline UpdateDomainRequest& WithDefaultSpaceSettings(DefaultSpaceSettings&& value) { SetDefaultSpaceSettings(std::move(value)); return *this;}
 
 
     /**
@@ -406,11 +406,11 @@ namespace Model
     DomainSettingsForUpdate m_domainSettingsForUpdate;
     bool m_domainSettingsForUpdateHasBeenSet = false;
 
-    DefaultSpaceSettings m_defaultSpaceSettings;
-    bool m_defaultSpaceSettingsHasBeenSet = false;
-
     AppSecurityGroupManagement m_appSecurityGroupManagement;
     bool m_appSecurityGroupManagementHasBeenSet = false;
+
+    DefaultSpaceSettings m_defaultSpaceSettings;
+    bool m_defaultSpaceSettingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;

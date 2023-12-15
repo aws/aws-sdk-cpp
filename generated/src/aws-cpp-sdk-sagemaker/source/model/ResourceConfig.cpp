@@ -26,9 +26,9 @@ ResourceConfig::ResourceConfig() :
     m_volumeSizeInGB(0),
     m_volumeSizeInGBHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false),
     m_keepAlivePeriodInSeconds(0),
-    m_keepAlivePeriodInSecondsHasBeenSet(false)
+    m_keepAlivePeriodInSecondsHasBeenSet(false),
+    m_instanceGroupsHasBeenSet(false)
 {
 }
 
@@ -40,9 +40,9 @@ ResourceConfig::ResourceConfig(JsonView jsonValue) :
     m_volumeSizeInGB(0),
     m_volumeSizeInGBHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false),
     m_keepAlivePeriodInSeconds(0),
-    m_keepAlivePeriodInSecondsHasBeenSet(false)
+    m_keepAlivePeriodInSecondsHasBeenSet(false),
+    m_instanceGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +77,13 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
     m_volumeKmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeepAlivePeriodInSeconds"))
+  {
+    m_keepAlivePeriodInSeconds = jsonValue.GetInteger("KeepAlivePeriodInSeconds");
+
+    m_keepAlivePeriodInSecondsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("InstanceGroups"))
   {
     Aws::Utils::Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
@@ -85,13 +92,6 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
       m_instanceGroups.push_back(instanceGroupsJsonList[instanceGroupsIndex].AsObject());
     }
     m_instanceGroupsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("KeepAlivePeriodInSeconds"))
-  {
-    m_keepAlivePeriodInSeconds = jsonValue.GetInteger("KeepAlivePeriodInSeconds");
-
-    m_keepAlivePeriodInSecondsHasBeenSet = true;
   }
 
   return *this;
@@ -124,6 +124,12 @@ JsonValue ResourceConfig::Jsonize() const
 
   }
 
+  if(m_keepAlivePeriodInSecondsHasBeenSet)
+  {
+   payload.WithInteger("KeepAlivePeriodInSeconds", m_keepAlivePeriodInSeconds);
+
+  }
+
   if(m_instanceGroupsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
@@ -132,12 +138,6 @@ JsonValue ResourceConfig::Jsonize() const
      instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
    }
    payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
-
-  }
-
-  if(m_keepAlivePeriodInSecondsHasBeenSet)
-  {
-   payload.WithInteger("KeepAlivePeriodInSeconds", m_keepAlivePeriodInSeconds);
 
   }
 

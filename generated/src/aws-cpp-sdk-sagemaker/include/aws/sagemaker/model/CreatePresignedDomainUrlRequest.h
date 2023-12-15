@@ -214,8 +214,10 @@ namespace Model
      * relative path in the JupyterLab application.</p> </li> <li> <p>
      * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
      * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
-     * Canvas application.</p> </li> </ul>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
+     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
+     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
+     * users to the relative path in the Canvas application.</p> </li> </ul>
      */
     inline const Aws::String& GetLandingUri() const{ return m_landingUri; }
 
@@ -230,8 +232,10 @@ namespace Model
      * relative path in the JupyterLab application.</p> </li> <li> <p>
      * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
      * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
-     * Canvas application.</p> </li> </ul>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
+     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
+     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
+     * users to the relative path in the Canvas application.</p> </li> </ul>
      */
     inline bool LandingUriHasBeenSet() const { return m_landingUriHasBeenSet; }
 
@@ -246,8 +250,10 @@ namespace Model
      * relative path in the JupyterLab application.</p> </li> <li> <p>
      * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
      * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
-     * Canvas application.</p> </li> </ul>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
+     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
+     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
+     * users to the relative path in the Canvas application.</p> </li> </ul>
      */
     inline void SetLandingUri(const Aws::String& value) { m_landingUriHasBeenSet = true; m_landingUri = value; }
 
@@ -262,8 +268,10 @@ namespace Model
      * relative path in the JupyterLab application.</p> </li> <li> <p>
      * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
      * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
-     * Canvas application.</p> </li> </ul>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
+     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
+     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
+     * users to the relative path in the Canvas application.</p> </li> </ul>
      */
     inline void SetLandingUri(Aws::String&& value) { m_landingUriHasBeenSet = true; m_landingUri = std::move(value); }
 
@@ -278,8 +286,10 @@ namespace Model
      * relative path in the JupyterLab application.</p> </li> <li> <p>
      * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
      * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
-     * Canvas application.</p> </li> </ul>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
+     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
+     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
+     * users to the relative path in the Canvas application.</p> </li> </ul>
      */
     inline void SetLandingUri(const char* value) { m_landingUriHasBeenSet = true; m_landingUri.assign(value); }
 
@@ -294,8 +304,10 @@ namespace Model
      * relative path in the JupyterLab application.</p> </li> <li> <p>
      * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
      * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
-     * Canvas application.</p> </li> </ul>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
+     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
+     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
+     * users to the relative path in the Canvas application.</p> </li> </ul>
      */
     inline CreatePresignedDomainUrlRequest& WithLandingUri(const Aws::String& value) { SetLandingUri(value); return *this;}
 
@@ -310,8 +322,10 @@ namespace Model
      * relative path in the JupyterLab application.</p> </li> <li> <p>
      * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
      * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
-     * Canvas application.</p> </li> </ul>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
+     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
+     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
+     * users to the relative path in the Canvas application.</p> </li> </ul>
      */
     inline CreatePresignedDomainUrlRequest& WithLandingUri(Aws::String&& value) { SetLandingUri(std::move(value)); return *this;}
 
@@ -326,8 +340,10 @@ namespace Model
      * relative path in the JupyterLab application.</p> </li> <li> <p>
      * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative
      * path in the RStudio application.</p> </li> <li> <p>
-     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the
-     * Canvas application.</p> </li> </ul>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in
+     * the Code Editor, based on Code-OSS, Visual Studio Code - Open Source
+     * application.</p> </li> <li> <p> <code>app:Canvas:relative/path</code>: Directs
+     * users to the relative path in the Canvas application.</p> </li> </ul>
      */
     inline CreatePresignedDomainUrlRequest& WithLandingUri(const char* value) { SetLandingUri(value); return *this;}
 

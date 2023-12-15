@@ -9,10 +9,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/UserSettings.h>
+#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
-#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -179,6 +179,37 @@ namespace Model
      * <code>CreateDomain</code>.</p>
      */
     inline CreateDomainRequest& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline bool DomainSettingsHasBeenSet() const { return m_domainSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = value; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = std::move(value); }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline CreateDomainRequest& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline CreateDomainRequest& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
 
 
     /**
@@ -521,37 +552,6 @@ namespace Model
 
 
     /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline bool DomainSettingsHasBeenSet() const { return m_domainSettingsHasBeenSet; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = value; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = std::move(value); }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline CreateDomainRequest& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline CreateDomainRequest& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
-
-
-    /**
      * <p>The default settings used to create a space.</p>
      */
     inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
@@ -592,6 +592,9 @@ namespace Model
     UserSettings m_defaultUserSettings;
     bool m_defaultUserSettingsHasBeenSet = false;
 
+    DomainSettings m_domainSettings;
+    bool m_domainSettingsHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
 
@@ -609,9 +612,6 @@ namespace Model
 
     AppSecurityGroupManagement m_appSecurityGroupManagement;
     bool m_appSecurityGroupManagementHasBeenSet = false;
-
-    DomainSettings m_domainSettings;
-    bool m_domainSettingsHasBeenSet = false;
 
     DefaultSpaceSettings m_defaultSpaceSettings;
     bool m_defaultSpaceSettingsHasBeenSet = false;

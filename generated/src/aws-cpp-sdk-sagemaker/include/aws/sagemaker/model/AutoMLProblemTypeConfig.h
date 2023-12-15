@@ -7,8 +7,8 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ImageClassificationJobConfig.h>
 #include <aws/sagemaker/model/TextClassificationJobConfig.h>
-#include <aws/sagemaker/model/TabularJobConfig.h>
 #include <aws/sagemaker/model/TimeSeriesForecastingJobConfig.h>
+#include <aws/sagemaker/model/TabularJobConfig.h>
 #include <aws/sagemaker/model/TextGenerationJobConfig.h>
 #include <utility>
 
@@ -118,43 +118,6 @@ namespace Model
 
 
     /**
-     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
-     * (regression, classification).</p>
-     */
-    inline const TabularJobConfig& GetTabularJobConfig() const{ return m_tabularJobConfig; }
-
-    /**
-     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
-     * (regression, classification).</p>
-     */
-    inline bool TabularJobConfigHasBeenSet() const { return m_tabularJobConfigHasBeenSet; }
-
-    /**
-     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
-     * (regression, classification).</p>
-     */
-    inline void SetTabularJobConfig(const TabularJobConfig& value) { m_tabularJobConfigHasBeenSet = true; m_tabularJobConfig = value; }
-
-    /**
-     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
-     * (regression, classification).</p>
-     */
-    inline void SetTabularJobConfig(TabularJobConfig&& value) { m_tabularJobConfigHasBeenSet = true; m_tabularJobConfig = std::move(value); }
-
-    /**
-     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
-     * (regression, classification).</p>
-     */
-    inline AutoMLProblemTypeConfig& WithTabularJobConfig(const TabularJobConfig& value) { SetTabularJobConfig(value); return *this;}
-
-    /**
-     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
-     * (regression, classification).</p>
-     */
-    inline AutoMLProblemTypeConfig& WithTabularJobConfig(TabularJobConfig&& value) { SetTabularJobConfig(std::move(value)); return *this;}
-
-
-    /**
      * <p>Settings used to configure an AutoML job V2 for the time-series forecasting
      * problem type.</p>
      */
@@ -189,6 +152,43 @@ namespace Model
      * problem type.</p>
      */
     inline AutoMLProblemTypeConfig& WithTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfig&& value) { SetTimeSeriesForecastingJobConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
+     * (regression, classification).</p>
+     */
+    inline const TabularJobConfig& GetTabularJobConfig() const{ return m_tabularJobConfig; }
+
+    /**
+     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
+     * (regression, classification).</p>
+     */
+    inline bool TabularJobConfigHasBeenSet() const { return m_tabularJobConfigHasBeenSet; }
+
+    /**
+     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
+     * (regression, classification).</p>
+     */
+    inline void SetTabularJobConfig(const TabularJobConfig& value) { m_tabularJobConfigHasBeenSet = true; m_tabularJobConfig = value; }
+
+    /**
+     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
+     * (regression, classification).</p>
+     */
+    inline void SetTabularJobConfig(TabularJobConfig&& value) { m_tabularJobConfigHasBeenSet = true; m_tabularJobConfig = std::move(value); }
+
+    /**
+     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
+     * (regression, classification).</p>
+     */
+    inline AutoMLProblemTypeConfig& WithTabularJobConfig(const TabularJobConfig& value) { SetTabularJobConfig(value); return *this;}
+
+    /**
+     * <p>Settings used to configure an AutoML job V2 for the tabular problem type
+     * (regression, classification).</p>
+     */
+    inline AutoMLProblemTypeConfig& WithTabularJobConfig(TabularJobConfig&& value) { SetTabularJobConfig(std::move(value)); return *this;}
 
 
     /**
@@ -259,11 +259,11 @@ namespace Model
     TextClassificationJobConfig m_textClassificationJobConfig;
     bool m_textClassificationJobConfigHasBeenSet = false;
 
-    TabularJobConfig m_tabularJobConfig;
-    bool m_tabularJobConfigHasBeenSet = false;
-
     TimeSeriesForecastingJobConfig m_timeSeriesForecastingJobConfig;
     bool m_timeSeriesForecastingJobConfigHasBeenSet = false;
+
+    TabularJobConfig m_tabularJobConfig;
+    bool m_tabularJobConfigHasBeenSet = false;
 
     TextGenerationJobConfig m_textGenerationJobConfig;
     bool m_textGenerationJobConfigHasBeenSet = false;

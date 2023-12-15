@@ -25,10 +25,10 @@ SpaceDetails::SpaceDetails() :
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_spaceDisplayNameHasBeenSet(false),
     m_spaceSettingsSummaryHasBeenSet(false),
     m_spaceSharingSettingsSummaryHasBeenSet(false),
-    m_ownershipSettingsSummaryHasBeenSet(false)
+    m_ownershipSettingsSummaryHasBeenSet(false),
+    m_spaceDisplayNameHasBeenSet(false)
 {
 }
 
@@ -39,10 +39,10 @@ SpaceDetails::SpaceDetails(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_spaceDisplayNameHasBeenSet(false),
     m_spaceSettingsSummaryHasBeenSet(false),
     m_spaceSharingSettingsSummaryHasBeenSet(false),
-    m_ownershipSettingsSummaryHasBeenSet(false)
+    m_ownershipSettingsSummaryHasBeenSet(false),
+    m_spaceDisplayNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,13 +84,6 @@ SpaceDetails& SpaceDetails::operator =(JsonView jsonValue)
     m_lastModifiedTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SpaceDisplayName"))
-  {
-    m_spaceDisplayName = jsonValue.GetString("SpaceDisplayName");
-
-    m_spaceDisplayNameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("SpaceSettingsSummary"))
   {
     m_spaceSettingsSummary = jsonValue.GetObject("SpaceSettingsSummary");
@@ -110,6 +103,13 @@ SpaceDetails& SpaceDetails::operator =(JsonView jsonValue)
     m_ownershipSettingsSummary = jsonValue.GetObject("OwnershipSettingsSummary");
 
     m_ownershipSettingsSummaryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SpaceDisplayName"))
+  {
+    m_spaceDisplayName = jsonValue.GetString("SpaceDisplayName");
+
+    m_spaceDisplayNameHasBeenSet = true;
   }
 
   return *this;
@@ -146,12 +146,6 @@ JsonValue SpaceDetails::Jsonize() const
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_spaceDisplayNameHasBeenSet)
-  {
-   payload.WithString("SpaceDisplayName", m_spaceDisplayName);
-
-  }
-
   if(m_spaceSettingsSummaryHasBeenSet)
   {
    payload.WithObject("SpaceSettingsSummary", m_spaceSettingsSummary.Jsonize());
@@ -167,6 +161,12 @@ JsonValue SpaceDetails::Jsonize() const
   if(m_ownershipSettingsSummaryHasBeenSet)
   {
    payload.WithObject("OwnershipSettingsSummary", m_ownershipSettingsSummary.Jsonize());
+
+  }
+
+  if(m_spaceDisplayNameHasBeenSet)
+  {
+   payload.WithString("SpaceDisplayName", m_spaceDisplayName);
 
   }
 

@@ -10,9 +10,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/UserSettings.h>
+#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <utility>
@@ -223,43 +223,43 @@ namespace Model
 
     /**
      * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
-     * value is only returned for domains created after September 19, 2023.</p>
+     * value is only returned for domains created after October 1, 2023.</p>
      */
     inline const Aws::String& GetSingleSignOnApplicationArn() const{ return m_singleSignOnApplicationArn; }
 
     /**
      * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
-     * value is only returned for domains created after September 19, 2023.</p>
+     * value is only returned for domains created after October 1, 2023.</p>
      */
     inline void SetSingleSignOnApplicationArn(const Aws::String& value) { m_singleSignOnApplicationArn = value; }
 
     /**
      * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
-     * value is only returned for domains created after September 19, 2023.</p>
+     * value is only returned for domains created after October 1, 2023.</p>
      */
     inline void SetSingleSignOnApplicationArn(Aws::String&& value) { m_singleSignOnApplicationArn = std::move(value); }
 
     /**
      * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
-     * value is only returned for domains created after September 19, 2023.</p>
+     * value is only returned for domains created after October 1, 2023.</p>
      */
     inline void SetSingleSignOnApplicationArn(const char* value) { m_singleSignOnApplicationArn.assign(value); }
 
     /**
      * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
-     * value is only returned for domains created after September 19, 2023.</p>
+     * value is only returned for domains created after October 1, 2023.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnApplicationArn(const Aws::String& value) { SetSingleSignOnApplicationArn(value); return *this;}
 
     /**
      * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
-     * value is only returned for domains created after September 19, 2023.</p>
+     * value is only returned for domains created after October 1, 2023.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnApplicationArn(Aws::String&& value) { SetSingleSignOnApplicationArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the application managed by SageMaker in IAM Identity Center. This
-     * value is only returned for domains created after September 19, 2023.</p>
+     * value is only returned for domains created after October 1, 2023.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnApplicationArn(const char* value) { SetSingleSignOnApplicationArn(value); return *this;}
 
@@ -379,6 +379,49 @@ namespace Model
 
 
     /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline const Aws::String& GetSecurityGroupIdForDomainBoundary() const{ return m_securityGroupIdForDomainBoundary; }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetSecurityGroupIdForDomainBoundary(const Aws::String& value) { m_securityGroupIdForDomainBoundary = value; }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetSecurityGroupIdForDomainBoundary(Aws::String&& value) { m_securityGroupIdForDomainBoundary = std::move(value); }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetSecurityGroupIdForDomainBoundary(const char* value) { m_securityGroupIdForDomainBoundary.assign(value); }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const Aws::String& value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(Aws::String&& value) { SetSecurityGroupIdForDomainBoundary(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const char* value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
+
+
+    /**
      * <p>The domain's authentication mode.</p>
      */
     inline const AuthMode& GetAuthMode() const{ return m_authMode; }
@@ -433,6 +476,32 @@ namespace Model
      * explicitly specified in a given UserProfile. </p>
      */
     inline DescribeDomainResult& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettings = value; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettings = std::move(value); }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline DescribeDomainResult& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline DescribeDomainResult& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
 
 
     /**
@@ -650,32 +719,6 @@ namespace Model
 
 
     /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettings = value; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettings = std::move(value); }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline DescribeDomainResult& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline DescribeDomainResult& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
-
-
-    /**
      * <p>The entity that creates and manages the required security groups for
      * inter-app communication in <code>VPCOnly</code> mode. Required when
      * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
@@ -719,49 +762,6 @@ namespace Model
      * is provided.</p>
      */
     inline DescribeDomainResult& WithAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { SetAppSecurityGroupManagement(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline const Aws::String& GetSecurityGroupIdForDomainBoundary() const{ return m_securityGroupIdForDomainBoundary; }
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline void SetSecurityGroupIdForDomainBoundary(const Aws::String& value) { m_securityGroupIdForDomainBoundary = value; }
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline void SetSecurityGroupIdForDomainBoundary(Aws::String&& value) { m_securityGroupIdForDomainBoundary = std::move(value); }
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline void SetSecurityGroupIdForDomainBoundary(const char* value) { m_securityGroupIdForDomainBoundary.assign(value); }
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const Aws::String& value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(Aws::String&& value) { SetSecurityGroupIdForDomainBoundary(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the security group that authorizes traffic between the
-     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-     */
-    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const char* value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
 
 
     /**
@@ -833,9 +833,13 @@ namespace Model
 
     Aws::String m_failureReason;
 
+    Aws::String m_securityGroupIdForDomainBoundary;
+
     AuthMode m_authMode;
 
     UserSettings m_defaultUserSettings;
+
+    DomainSettings m_domainSettings;
 
     AppNetworkAccessType m_appNetworkAccessType;
 
@@ -847,11 +851,7 @@ namespace Model
 
     Aws::String m_kmsKeyId;
 
-    DomainSettings m_domainSettings;
-
     AppSecurityGroupManagement m_appSecurityGroupManagement;
-
-    Aws::String m_securityGroupIdForDomainBoundary;
 
     DefaultSpaceSettings m_defaultSpaceSettings;
 

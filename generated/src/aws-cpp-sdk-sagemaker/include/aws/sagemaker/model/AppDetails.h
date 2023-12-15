@@ -124,6 +124,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the space.</p>
+     */
+    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline AppDetails& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline AppDetails& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline AppDetails& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+
+
+    /**
      * <p>The type of app.</p>
      */
     inline const AppType& GetAppType() const{ return m_appType; }
@@ -257,47 +298,6 @@ namespace Model
     inline AppDetails& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
-    /**
-     * <p>The name of the space.</p>
-     */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
-    inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
-    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
-    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
-    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
-    inline AppDetails& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
-    inline AppDetails& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
-    inline AppDetails& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
-
-
     
     inline const ResourceSpec& GetResourceSpec() const{ return m_resourceSpec; }
 
@@ -324,6 +324,9 @@ namespace Model
     Aws::String m_userProfileName;
     bool m_userProfileNameHasBeenSet = false;
 
+    Aws::String m_spaceName;
+    bool m_spaceNameHasBeenSet = false;
+
     AppType m_appType;
     bool m_appTypeHasBeenSet = false;
 
@@ -335,9 +338,6 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet = false;
-
-    Aws::String m_spaceName;
-    bool m_spaceNameHasBeenSet = false;
 
     ResourceSpec m_resourceSpec;
     bool m_resourceSpecHasBeenSet = false;

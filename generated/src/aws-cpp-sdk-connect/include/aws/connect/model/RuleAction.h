@@ -10,6 +10,9 @@
 #include <aws/connect/model/EventBridgeActionDefinition.h>
 #include <aws/connect/model/AssignContactCategoryActionDefinition.h>
 #include <aws/connect/model/SendNotificationActionDefinition.h>
+#include <aws/connect/model/CreateCaseActionDefinition.h>
+#include <aws/connect/model/UpdateCaseActionDefinition.h>
+#include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -310,6 +313,129 @@ namespace Model
      */
     inline RuleAction& WithSendNotificationAction(SendNotificationActionDefinition&& value) { SetSendNotificationAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the create case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnPostChatAnalysisAvailable</code>.</p>
+     */
+    inline const CreateCaseActionDefinition& GetCreateCaseAction() const{ return m_createCaseAction; }
+
+    /**
+     * <p>Information about the create case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnPostChatAnalysisAvailable</code>.</p>
+     */
+    inline bool CreateCaseActionHasBeenSet() const { return m_createCaseActionHasBeenSet; }
+
+    /**
+     * <p>Information about the create case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnPostChatAnalysisAvailable</code>.</p>
+     */
+    inline void SetCreateCaseAction(const CreateCaseActionDefinition& value) { m_createCaseActionHasBeenSet = true; m_createCaseAction = value; }
+
+    /**
+     * <p>Information about the create case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnPostChatAnalysisAvailable</code>.</p>
+     */
+    inline void SetCreateCaseAction(CreateCaseActionDefinition&& value) { m_createCaseActionHasBeenSet = true; m_createCaseAction = std::move(value); }
+
+    /**
+     * <p>Information about the create case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnPostChatAnalysisAvailable</code>.</p>
+     */
+    inline RuleAction& WithCreateCaseAction(const CreateCaseActionDefinition& value) { SetCreateCaseAction(value); return *this;}
+
+    /**
+     * <p>Information about the create case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnPostChatAnalysisAvailable</code>.</p>
+     */
+    inline RuleAction& WithCreateCaseAction(CreateCaseActionDefinition&& value) { SetCreateCaseAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the update case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> |
+     * <code>OnCaseUpdate</code>.</p>
+     */
+    inline const UpdateCaseActionDefinition& GetUpdateCaseAction() const{ return m_updateCaseAction; }
+
+    /**
+     * <p>Information about the update case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> |
+     * <code>OnCaseUpdate</code>.</p>
+     */
+    inline bool UpdateCaseActionHasBeenSet() const { return m_updateCaseActionHasBeenSet; }
+
+    /**
+     * <p>Information about the update case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> |
+     * <code>OnCaseUpdate</code>.</p>
+     */
+    inline void SetUpdateCaseAction(const UpdateCaseActionDefinition& value) { m_updateCaseActionHasBeenSet = true; m_updateCaseAction = value; }
+
+    /**
+     * <p>Information about the update case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> |
+     * <code>OnCaseUpdate</code>.</p>
+     */
+    inline void SetUpdateCaseAction(UpdateCaseActionDefinition&& value) { m_updateCaseActionHasBeenSet = true; m_updateCaseAction = std::move(value); }
+
+    /**
+     * <p>Information about the update case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> |
+     * <code>OnCaseUpdate</code>.</p>
+     */
+    inline RuleAction& WithUpdateCaseAction(const UpdateCaseActionDefinition& value) { SetUpdateCaseAction(value); return *this;}
+
+    /**
+     * <p>Information about the update case action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> |
+     * <code>OnCaseUpdate</code>.</p>
+     */
+    inline RuleAction& WithUpdateCaseAction(UpdateCaseActionDefinition&& value) { SetUpdateCaseAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the end associated tasks action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+     */
+    inline const EndAssociatedTasksActionDefinition& GetEndAssociatedTasksAction() const{ return m_endAssociatedTasksAction; }
+
+    /**
+     * <p>Information about the end associated tasks action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+     */
+    inline bool EndAssociatedTasksActionHasBeenSet() const { return m_endAssociatedTasksActionHasBeenSet; }
+
+    /**
+     * <p>Information about the end associated tasks action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+     */
+    inline void SetEndAssociatedTasksAction(const EndAssociatedTasksActionDefinition& value) { m_endAssociatedTasksActionHasBeenSet = true; m_endAssociatedTasksAction = value; }
+
+    /**
+     * <p>Information about the end associated tasks action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+     */
+    inline void SetEndAssociatedTasksAction(EndAssociatedTasksActionDefinition&& value) { m_endAssociatedTasksActionHasBeenSet = true; m_endAssociatedTasksAction = std::move(value); }
+
+    /**
+     * <p>Information about the end associated tasks action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+     */
+    inline RuleAction& WithEndAssociatedTasksAction(const EndAssociatedTasksActionDefinition& value) { SetEndAssociatedTasksAction(value); return *this;}
+
+    /**
+     * <p>Information about the end associated tasks action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+     */
+    inline RuleAction& WithEndAssociatedTasksAction(EndAssociatedTasksActionDefinition&& value) { SetEndAssociatedTasksAction(std::move(value)); return *this;}
+
   private:
 
     ActionType m_actionType;
@@ -326,6 +452,15 @@ namespace Model
 
     SendNotificationActionDefinition m_sendNotificationAction;
     bool m_sendNotificationActionHasBeenSet = false;
+
+    CreateCaseActionDefinition m_createCaseAction;
+    bool m_createCaseActionHasBeenSet = false;
+
+    UpdateCaseActionDefinition m_updateCaseAction;
+    bool m_updateCaseActionHasBeenSet = false;
+
+    EndAssociatedTasksActionDefinition m_endAssociatedTasksAction;
+    bool m_endAssociatedTasksActionHasBeenSet = false;
   };
 
 } // namespace Model

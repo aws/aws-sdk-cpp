@@ -19,11 +19,13 @@ namespace Model
 {
 
 JupyterLabAppImageConfig::JupyterLabAppImageConfig() : 
+    m_fileSystemConfigHasBeenSet(false),
     m_containerConfigHasBeenSet(false)
 {
 }
 
 JupyterLabAppImageConfig::JupyterLabAppImageConfig(JsonView jsonValue) : 
+    m_fileSystemConfigHasBeenSet(false),
     m_containerConfigHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ JupyterLabAppImageConfig::JupyterLabAppImageConfig(JsonView jsonValue) :
 
 JupyterLabAppImageConfig& JupyterLabAppImageConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("FileSystemConfig"))
+  {
+    m_fileSystemConfig = jsonValue.GetObject("FileSystemConfig");
+
+    m_fileSystemConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ContainerConfig"))
   {
     m_containerConfig = jsonValue.GetObject("ContainerConfig");
@@ -44,6 +53,12 @@ JupyterLabAppImageConfig& JupyterLabAppImageConfig::operator =(JsonView jsonValu
 JsonValue JupyterLabAppImageConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_fileSystemConfigHasBeenSet)
+  {
+   payload.WithObject("FileSystemConfig", m_fileSystemConfig.Jsonize());
+
+  }
 
   if(m_containerConfigHasBeenSet)
   {

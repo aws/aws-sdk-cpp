@@ -36,6 +36,7 @@ namespace Aws
         static const int MaxWaitTimeExceeded_HASH = HashingUtils::HashString("MaxWaitTimeExceeded");
         static const int Updating_HASH = HashingUtils::HashString("Updating");
         static const int Restarting_HASH = HashingUtils::HashString("Restarting");
+        static const int Pending_HASH = HashingUtils::HashString("Pending");
 
 
         SecondaryStatus GetSecondaryStatusForName(const Aws::String& name)
@@ -105,6 +106,10 @@ namespace Aws
           {
             return SecondaryStatus::Restarting;
           }
+          else if (hashCode == Pending_HASH)
+          {
+            return SecondaryStatus::Pending;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -153,6 +158,8 @@ namespace Aws
             return "Updating";
           case SecondaryStatus::Restarting:
             return "Restarting";
+          case SecondaryStatus::Pending:
+            return "Pending";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -122,42 +122,50 @@ namespace Model
 
 
     /**
-     * <p>The SageMakerImageVersionAlias.</p>
+     * <p>The SageMakerImageVersionAlias of the image to launch with. This value is in
+     * SemVer 2.0.0 versioning format.</p>
      */
     inline const Aws::String& GetSageMakerImageVersionAlias() const{ return m_sageMakerImageVersionAlias; }
 
     /**
-     * <p>The SageMakerImageVersionAlias.</p>
+     * <p>The SageMakerImageVersionAlias of the image to launch with. This value is in
+     * SemVer 2.0.0 versioning format.</p>
      */
     inline bool SageMakerImageVersionAliasHasBeenSet() const { return m_sageMakerImageVersionAliasHasBeenSet; }
 
     /**
-     * <p>The SageMakerImageVersionAlias.</p>
+     * <p>The SageMakerImageVersionAlias of the image to launch with. This value is in
+     * SemVer 2.0.0 versioning format.</p>
      */
     inline void SetSageMakerImageVersionAlias(const Aws::String& value) { m_sageMakerImageVersionAliasHasBeenSet = true; m_sageMakerImageVersionAlias = value; }
 
     /**
-     * <p>The SageMakerImageVersionAlias.</p>
+     * <p>The SageMakerImageVersionAlias of the image to launch with. This value is in
+     * SemVer 2.0.0 versioning format.</p>
      */
     inline void SetSageMakerImageVersionAlias(Aws::String&& value) { m_sageMakerImageVersionAliasHasBeenSet = true; m_sageMakerImageVersionAlias = std::move(value); }
 
     /**
-     * <p>The SageMakerImageVersionAlias.</p>
+     * <p>The SageMakerImageVersionAlias of the image to launch with. This value is in
+     * SemVer 2.0.0 versioning format.</p>
      */
     inline void SetSageMakerImageVersionAlias(const char* value) { m_sageMakerImageVersionAliasHasBeenSet = true; m_sageMakerImageVersionAlias.assign(value); }
 
     /**
-     * <p>The SageMakerImageVersionAlias.</p>
+     * <p>The SageMakerImageVersionAlias of the image to launch with. This value is in
+     * SemVer 2.0.0 versioning format.</p>
      */
     inline ResourceSpec& WithSageMakerImageVersionAlias(const Aws::String& value) { SetSageMakerImageVersionAlias(value); return *this;}
 
     /**
-     * <p>The SageMakerImageVersionAlias.</p>
+     * <p>The SageMakerImageVersionAlias of the image to launch with. This value is in
+     * SemVer 2.0.0 versioning format.</p>
      */
     inline ResourceSpec& WithSageMakerImageVersionAlias(Aws::String&& value) { SetSageMakerImageVersionAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The SageMakerImageVersionAlias.</p>
+     * <p>The SageMakerImageVersionAlias of the image to launch with. This value is in
+     * SemVer 2.0.0 versioning format.</p>
      */
     inline ResourceSpec& WithSageMakerImageVersionAlias(const char* value) { SetSageMakerImageVersionAlias(value); return *this;}
 

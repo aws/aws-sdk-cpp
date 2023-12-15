@@ -21,22 +21,22 @@ namespace Aws
       {
 
         static const int Starting_HASH = HashingUtils::HashString("Starting");
-        static const int AnalyzingData_HASH = HashingUtils::HashString("AnalyzingData");
-        static const int FeatureEngineering_HASH = HashingUtils::HashString("FeatureEngineering");
-        static const int ModelTuning_HASH = HashingUtils::HashString("ModelTuning");
         static const int MaxCandidatesReached_HASH = HashingUtils::HashString("MaxCandidatesReached");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
         static const int MaxAutoMLJobRuntimeReached_HASH = HashingUtils::HashString("MaxAutoMLJobRuntimeReached");
         static const int Stopping_HASH = HashingUtils::HashString("Stopping");
         static const int CandidateDefinitionsGenerated_HASH = HashingUtils::HashString("CandidateDefinitionsGenerated");
-        static const int GeneratingExplainabilityReport_HASH = HashingUtils::HashString("GeneratingExplainabilityReport");
         static const int Completed_HASH = HashingUtils::HashString("Completed");
         static const int ExplainabilityError_HASH = HashingUtils::HashString("ExplainabilityError");
         static const int DeployingModel_HASH = HashingUtils::HashString("DeployingModel");
         static const int ModelDeploymentError_HASH = HashingUtils::HashString("ModelDeploymentError");
         static const int GeneratingModelInsightsReport_HASH = HashingUtils::HashString("GeneratingModelInsightsReport");
         static const int ModelInsightsError_HASH = HashingUtils::HashString("ModelInsightsError");
+        static const int AnalyzingData_HASH = HashingUtils::HashString("AnalyzingData");
+        static const int FeatureEngineering_HASH = HashingUtils::HashString("FeatureEngineering");
+        static const int ModelTuning_HASH = HashingUtils::HashString("ModelTuning");
+        static const int GeneratingExplainabilityReport_HASH = HashingUtils::HashString("GeneratingExplainabilityReport");
         static const int TrainingModels_HASH = HashingUtils::HashString("TrainingModels");
         static const int PreTraining_HASH = HashingUtils::HashString("PreTraining");
 
@@ -47,18 +47,6 @@ namespace Aws
           if (hashCode == Starting_HASH)
           {
             return AutoMLJobSecondaryStatus::Starting;
-          }
-          else if (hashCode == AnalyzingData_HASH)
-          {
-            return AutoMLJobSecondaryStatus::AnalyzingData;
-          }
-          else if (hashCode == FeatureEngineering_HASH)
-          {
-            return AutoMLJobSecondaryStatus::FeatureEngineering;
-          }
-          else if (hashCode == ModelTuning_HASH)
-          {
-            return AutoMLJobSecondaryStatus::ModelTuning;
           }
           else if (hashCode == MaxCandidatesReached_HASH)
           {
@@ -84,10 +72,6 @@ namespace Aws
           {
             return AutoMLJobSecondaryStatus::CandidateDefinitionsGenerated;
           }
-          else if (hashCode == GeneratingExplainabilityReport_HASH)
-          {
-            return AutoMLJobSecondaryStatus::GeneratingExplainabilityReport;
-          }
           else if (hashCode == Completed_HASH)
           {
             return AutoMLJobSecondaryStatus::Completed;
@@ -111,6 +95,22 @@ namespace Aws
           else if (hashCode == ModelInsightsError_HASH)
           {
             return AutoMLJobSecondaryStatus::ModelInsightsError;
+          }
+          else if (hashCode == AnalyzingData_HASH)
+          {
+            return AutoMLJobSecondaryStatus::AnalyzingData;
+          }
+          else if (hashCode == FeatureEngineering_HASH)
+          {
+            return AutoMLJobSecondaryStatus::FeatureEngineering;
+          }
+          else if (hashCode == ModelTuning_HASH)
+          {
+            return AutoMLJobSecondaryStatus::ModelTuning;
+          }
+          else if (hashCode == GeneratingExplainabilityReport_HASH)
+          {
+            return AutoMLJobSecondaryStatus::GeneratingExplainabilityReport;
           }
           else if (hashCode == TrainingModels_HASH)
           {
@@ -138,12 +138,6 @@ namespace Aws
             return {};
           case AutoMLJobSecondaryStatus::Starting:
             return "Starting";
-          case AutoMLJobSecondaryStatus::AnalyzingData:
-            return "AnalyzingData";
-          case AutoMLJobSecondaryStatus::FeatureEngineering:
-            return "FeatureEngineering";
-          case AutoMLJobSecondaryStatus::ModelTuning:
-            return "ModelTuning";
           case AutoMLJobSecondaryStatus::MaxCandidatesReached:
             return "MaxCandidatesReached";
           case AutoMLJobSecondaryStatus::Failed:
@@ -156,8 +150,6 @@ namespace Aws
             return "Stopping";
           case AutoMLJobSecondaryStatus::CandidateDefinitionsGenerated:
             return "CandidateDefinitionsGenerated";
-          case AutoMLJobSecondaryStatus::GeneratingExplainabilityReport:
-            return "GeneratingExplainabilityReport";
           case AutoMLJobSecondaryStatus::Completed:
             return "Completed";
           case AutoMLJobSecondaryStatus::ExplainabilityError:
@@ -170,6 +162,14 @@ namespace Aws
             return "GeneratingModelInsightsReport";
           case AutoMLJobSecondaryStatus::ModelInsightsError:
             return "ModelInsightsError";
+          case AutoMLJobSecondaryStatus::AnalyzingData:
+            return "AnalyzingData";
+          case AutoMLJobSecondaryStatus::FeatureEngineering:
+            return "FeatureEngineering";
+          case AutoMLJobSecondaryStatus::ModelTuning:
+            return "ModelTuning";
+          case AutoMLJobSecondaryStatus::GeneratingExplainabilityReport:
+            return "GeneratingExplainabilityReport";
           case AutoMLJobSecondaryStatus::TrainingModels:
             return "TrainingModels";
           case AutoMLJobSecondaryStatus::PreTraining:

@@ -170,9 +170,9 @@ namespace Model
      * <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except
      * RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1
      * wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key
-     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported
-     * only for symmetric encryption key material (and only in legacy mode).</p> </li>
-     * </ul>
+     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of
+     * October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.</p> </li> </ul>
      */
     inline const AlgorithmSpec& GetWrappingAlgorithm() const{ return m_wrappingAlgorithm; }
 
@@ -197,9 +197,9 @@ namespace Model
      * <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except
      * RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1
      * wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key
-     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported
-     * only for symmetric encryption key material (and only in legacy mode).</p> </li>
-     * </ul>
+     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of
+     * October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.</p> </li> </ul>
      */
     inline bool WrappingAlgorithmHasBeenSet() const { return m_wrappingAlgorithmHasBeenSet; }
 
@@ -224,9 +224,9 @@ namespace Model
      * <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except
      * RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1
      * wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key
-     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported
-     * only for symmetric encryption key material (and only in legacy mode).</p> </li>
-     * </ul>
+     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of
+     * October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.</p> </li> </ul>
      */
     inline void SetWrappingAlgorithm(const AlgorithmSpec& value) { m_wrappingAlgorithmHasBeenSet = true; m_wrappingAlgorithm = value; }
 
@@ -251,9 +251,9 @@ namespace Model
      * <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except
      * RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1
      * wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key
-     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported
-     * only for symmetric encryption key material (and only in legacy mode).</p> </li>
-     * </ul>
+     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of
+     * October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.</p> </li> </ul>
      */
     inline void SetWrappingAlgorithm(AlgorithmSpec&& value) { m_wrappingAlgorithmHasBeenSet = true; m_wrappingAlgorithm = std::move(value); }
 
@@ -278,9 +278,9 @@ namespace Model
      * <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except
      * RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1
      * wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key
-     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported
-     * only for symmetric encryption key material (and only in legacy mode).</p> </li>
-     * </ul>
+     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of
+     * October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.</p> </li> </ul>
      */
     inline GetParametersForImportRequest& WithWrappingAlgorithm(const AlgorithmSpec& value) { SetWrappingAlgorithm(value); return *this;}
 
@@ -305,9 +305,9 @@ namespace Model
      * <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except
      * RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1
      * wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key
-     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported
-     * only for symmetric encryption key material (and only in legacy mode).</p> </li>
-     * </ul>
+     * material.</p> </li> <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of
+     * October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.</p> </li> </ul>
      */
     inline GetParametersForImportRequest& WithWrappingAlgorithm(AlgorithmSpec&& value) { SetWrappingAlgorithm(std::move(value)); return *this;}
 

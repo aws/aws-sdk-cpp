@@ -391,6 +391,7 @@ namespace Aws
       class DeleteAssociationRequest;
       class DeleteClusterRequest;
       class DeleteCodeRepositoryRequest;
+      class DeleteCompilationJobRequest;
       class DeleteContextRequest;
       class DeleteDataQualityJobDefinitionRequest;
       class DeleteDeviceFleetRequest;
@@ -711,6 +712,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteAssociationResult, SageMakerError> DeleteAssociationOutcome;
       typedef Aws::Utils::Outcome<DeleteClusterResult, SageMakerError> DeleteClusterOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteCodeRepositoryOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteCompilationJobOutcome;
       typedef Aws::Utils::Outcome<DeleteContextResult, SageMakerError> DeleteContextOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteDataQualityJobDefinitionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteDeviceFleetOutcome;
@@ -1031,6 +1033,7 @@ namespace Aws
       typedef std::future<DeleteAssociationOutcome> DeleteAssociationOutcomeCallable;
       typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
       typedef std::future<DeleteCodeRepositoryOutcome> DeleteCodeRepositoryOutcomeCallable;
+      typedef std::future<DeleteCompilationJobOutcome> DeleteCompilationJobOutcomeCallable;
       typedef std::future<DeleteContextOutcome> DeleteContextOutcomeCallable;
       typedef std::future<DeleteDataQualityJobDefinitionOutcome> DeleteDataQualityJobDefinitionOutcomeCallable;
       typedef std::future<DeleteDeviceFleetOutcome> DeleteDeviceFleetOutcomeCallable;
@@ -1354,6 +1357,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DeleteAssociationRequest&, const Model::DeleteAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssociationResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteCodeRepositoryRequest&, const Model::DeleteCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCodeRepositoryResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteCompilationJobRequest&, const Model::DeleteCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCompilationJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteContextRequest&, const Model::DeleteContextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContextResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteDataQualityJobDefinitionRequest&, const Model::DeleteDataQualityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataQualityJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteDeviceFleetRequest&, const Model::DeleteDeviceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceFleetResponseReceivedHandler;

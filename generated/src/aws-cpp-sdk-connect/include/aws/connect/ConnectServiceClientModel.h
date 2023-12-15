@@ -141,8 +141,10 @@
 #include <aws/connect/model/ListViewVersionsResult.h>
 #include <aws/connect/model/ListViewsResult.h>
 #include <aws/connect/model/MonitorContactResult.h>
+#include <aws/connect/model/PauseContactResult.h>
 #include <aws/connect/model/PutUserStatusResult.h>
 #include <aws/connect/model/ReplicateInstanceResult.h>
+#include <aws/connect/model/ResumeContactResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
 #include <aws/connect/model/SearchHoursOfOperationsResult.h>
@@ -382,9 +384,11 @@ namespace Aws
       class ListViewVersionsRequest;
       class ListViewsRequest;
       class MonitorContactRequest;
+      class PauseContactRequest;
       class PutUserStatusRequest;
       class ReleasePhoneNumberRequest;
       class ReplicateInstanceRequest;
+      class ResumeContactRequest;
       class ResumeContactRecordingRequest;
       class SearchAvailablePhoneNumbersRequest;
       class SearchHoursOfOperationsRequest;
@@ -614,9 +618,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListViewVersionsResult, ConnectError> ListViewVersionsOutcome;
       typedef Aws::Utils::Outcome<ListViewsResult, ConnectError> ListViewsOutcome;
       typedef Aws::Utils::Outcome<MonitorContactResult, ConnectError> MonitorContactOutcome;
+      typedef Aws::Utils::Outcome<PauseContactResult, ConnectError> PauseContactOutcome;
       typedef Aws::Utils::Outcome<PutUserStatusResult, ConnectError> PutUserStatusOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> ReleasePhoneNumberOutcome;
       typedef Aws::Utils::Outcome<ReplicateInstanceResult, ConnectError> ReplicateInstanceOutcome;
+      typedef Aws::Utils::Outcome<ResumeContactResult, ConnectError> ResumeContactOutcome;
       typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
       typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
       typedef Aws::Utils::Outcome<SearchHoursOfOperationsResult, ConnectError> SearchHoursOfOperationsOutcome;
@@ -846,9 +852,11 @@ namespace Aws
       typedef std::future<ListViewVersionsOutcome> ListViewVersionsOutcomeCallable;
       typedef std::future<ListViewsOutcome> ListViewsOutcomeCallable;
       typedef std::future<MonitorContactOutcome> MonitorContactOutcomeCallable;
+      typedef std::future<PauseContactOutcome> PauseContactOutcomeCallable;
       typedef std::future<PutUserStatusOutcome> PutUserStatusOutcomeCallable;
       typedef std::future<ReleasePhoneNumberOutcome> ReleasePhoneNumberOutcomeCallable;
       typedef std::future<ReplicateInstanceOutcome> ReplicateInstanceOutcomeCallable;
+      typedef std::future<ResumeContactOutcome> ResumeContactOutcomeCallable;
       typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
       typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
       typedef std::future<SearchHoursOfOperationsOutcome> SearchHoursOfOperationsOutcomeCallable;
@@ -1081,9 +1089,11 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ListViewVersionsRequest&, const Model::ListViewVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListViewVersionsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListViewsRequest&, const Model::ListViewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListViewsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::MonitorContactRequest&, const Model::MonitorContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorContactResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::PauseContactRequest&, const Model::PauseContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PauseContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::PutUserStatusRequest&, const Model::PutUserStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUserStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ReleasePhoneNumberRequest&, const Model::ReleasePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleasePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ReplicateInstanceRequest&, const Model::ReplicateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplicateInstanceResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ResumeContactRequest&, const Model::ResumeContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchHoursOfOperationsRequest&, const Model::SearchHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchHoursOfOperationsResponseReceivedHandler;
