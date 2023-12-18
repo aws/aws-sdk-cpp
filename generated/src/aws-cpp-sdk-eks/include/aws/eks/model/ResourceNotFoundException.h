@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>The specified resource could not be found. You can view your available
-   * clusters with <a>ListClusters</a>. You can view your available managed node
-   * groups with <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-   * Region-specific.</p><p><h3>See Also:</h3>   <a
+   * clusters with <code>ListClusters</code>. You can view your available managed
+   * node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node
+   * groups are Amazon Web Services Region specific.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */

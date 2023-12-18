@@ -16,26 +16,37 @@ namespace Aws
 namespace CognitoIdentityProvider
 {
   /**
-   * <p>With the Amazon Cognito user pools API, you can set up user pools and app
-   * clients, and authenticate users. To authenticate users from third-party identity
-   * providers (IdPs) in this API, you can <a
+   * <p>With the Amazon Cognito user pools API, you can configure user pools and
+   * authenticate users. To authenticate users from third-party identity providers
+   * (IdPs) in this API, you can <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">link
    * IdP users to native user profiles</a>. Learn more about the authentication and
-   * authorization of federated users in the <a
-   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html">Using
-   * the Amazon Cognito user pools API and user pool endpoints</a>.</p> <p>This API
-   * reference provides detailed information about API operations and object types in
-   * Amazon Cognito. At the bottom of the page for each API operation and object,
-   * under <i>See Also</i>, you can learn how to use it in an Amazon Web Services SDK
-   * in the language of your choice.</p> <p>Along with resource management
-   * operations, the Amazon Cognito user pools API includes classes of operations and
-   * authorization models for client-side and server-side user operations. For more
-   * information, see <a
+   * authorization of federated users at <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">Adding
+   * user pool sign-in through a third party</a> and in the <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html">User
+   * pool federation endpoints and hosted UI reference</a>.</p> <p>This API reference
+   * provides detailed information about API operations and object types in Amazon
+   * Cognito.</p> <p>Along with resource management operations, the Amazon Cognito
+   * user pools API includes classes of operations and authorization models for
+   * client-side and server-side authentication of users. You can interact with
+   * operations in the Amazon Cognito user pools API as any of the following
+   * subjects.</p> <ol> <li> <p>An administrator who wants to configure user pools,
+   * app clients, users, groups, or other user pool functions.</p> </li> <li> <p>A
+   * server-side app, like a web application, that wants to use its Amazon Web
+   * Services privileges to manage, authenticate, or authorize a user.</p> </li> <li>
+   * <p>A client-side app, like a mobile app, that wants to make unauthenticated
+   * requests to manage, authenticate, or authorize a user.</p> </li> </ol> <p>For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-   * the Amazon Cognito native and OIDC APIs</a> in the <i>Amazon Cognito Developer
-   * Guide</i>.</p> <p>You can also start reading about the
-   * <code>CognitoIdentityProvider</code> client in the following SDK guides.</p>
-   * <ul> <li> <p> <a
+   * the Amazon Cognito user pools API and user pool endpoints</a> in the <i>Amazon
+   * Cognito Developer Guide</i>.</p> <p>With your Amazon Web Services SDK, you can
+   * build the logic to support operational flows in every use case for this API. You
+   * can also make direct REST API requests to <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/cognito_identity.html#cognito_identity_your_user_pools_region">Amazon
+   * Cognito user pools service endpoints</a>. The following links can get you
+   * started with the <code>CognitoIdentityProvider</code> client in other supported
+   * Amazon Web Services SDKs.</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/cli/latest/reference/cognito-idp/index.html#cli-aws-cognito-idp">Amazon
    * Web Services Command Line Interface</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/CognitoIdentityProvider/TCognitoIdentityProviderClient.html">Amazon
@@ -154,8 +165,10 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Adds the specified user to the specified group.</p>  <p>Amazon Cognito
-         * evaluates Identity and Access Management (IAM) policies in requests for this API
+         * <p>Adds a user to a group. A user who is in a group can present a preferred-role
+         * claim to an identity pool, and populates a <code>cognito:groups</code> claim to
+         * their access and identity tokens.</p>  <p>Amazon Cognito evaluates
+         * Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you must use IAM credentials to authorize
          * requests, and you must grant yourself the corresponding IAM permission in a
          * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
@@ -188,12 +201,20 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Confirms user registration as an admin without using a confirmation code.
-         * Works on any user.</p>  <p>Amazon Cognito evaluates Identity and Access
-         * Management (IAM) policies in requests for this API operation. For this
-         * operation, you must use IAM credentials to authorize requests, and you must
-         * grant yourself the corresponding IAM permission in a policy.</p> <p
-         * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * <p>This IAM-authenticated API operation provides a code that Amazon Cognito sent
+         * to your user when they signed up in your user pool. After your user enters their
+         * code, they confirm ownership of the email address or phone number that they
+         * provided, and their user account becomes active. Depending on your user pool
+         * configuration, your users will receive their confirmation code in an email or
+         * SMS message.</p> <p>Local users who signed up in your user pool are the only
+         * type of user who can confirm sign-up with a code. Users who federate through an
+         * external identity provider (IdP) have already been confirmed by their IdP.
+         * Administrator-created users confirm their accounts when they respond to their
+         * invitation email message and choose a password.</p>  <p>Amazon Cognito
+         * evaluates Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you must use IAM credentials to authorize
+         * requests, and you must grant yourself the corresponding IAM permission in a
+         * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
          * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
@@ -717,7 +738,7 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Lists the groups that the user belongs to.</p>  <p>Amazon Cognito
+         * <p>Lists the groups that a user belongs to.</p>  <p>Amazon Cognito
          * evaluates Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you must use IAM credentials to authorize
          * requests, and you must grant yourself the corresponding IAM permission in a
@@ -879,11 +900,19 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Responds to an authentication challenge, as an administrator.</p> 
-         * <p>This action might generate an SMS text message. Starting June 1, 2021, US
-         * telecom carriers require you to register an origination phone number before you
-         * can send SMS messages to US phone numbers. If you use SMS text messages in
-         * Amazon Cognito, you must register a phone number with <a
+         * <p>Some API operations in a user pool generate a challenge, like a prompt for an
+         * MFA code, for device authentication that bypasses MFA, or for a custom
+         * authentication challenge. An <code>AdminRespondToAuthChallenge</code> API
+         * request provides the answer to that challenge, like a code or a secure remote
+         * password (SRP). The parameters of a response to an authentication challenge vary
+         * with the type of challenge.</p> <p>For more information about custom
+         * authentication challenges, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom
+         * authentication challenge Lambda triggers</a>.</p>  <p>This action might
+         * generate an SMS text message. Starting June 1, 2021, US telecom carriers require
+         * you to register an origination phone number before you can send SMS messages to
+         * US phone numbers. If you use SMS text messages in Amazon Cognito, you must
+         * register a phone number with <a
          * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
@@ -1187,14 +1216,25 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Signs out a user from all devices. <code>AdminUserGlobalSignOut</code>
-         * invalidates all identity, access and refresh tokens that Amazon Cognito has
-         * issued to a user. A user can still use a hosted UI cookie to retrieve new tokens
-         * for the duration of the 1-hour cookie validity period.</p> <p>Your app isn't
-         * aware that a user's access token is revoked unless it attempts to authorize a
-         * user pools API request with an access token that contains the scope
-         * <code>aws.cognito.signin.user.admin</code>. Your app might otherwise accept
-         * access tokens until they expire.</p>  <p>Amazon Cognito evaluates Identity
+         * <p>Invalidates the identity, access, and refresh tokens that Amazon Cognito
+         * issued to a user. Call this operation with your administrative credentials when
+         * your user signs out of your app. This results in the following behavior. </p>
+         * <ul> <li> <p>Amazon Cognito no longer accepts <i>token-authorized</i> user
+         * operations that you authorize with a signed-out user's access tokens. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p> <p>Amazon
+         * Cognito returns an <code>Access Token has been revoked</code> error when your
+         * app attempts to authorize a user pools API request with a revoked access token
+         * that contains the scope <code>aws.cognito.signin.user.admin</code>.</p> </li>
+         * <li> <p>Amazon Cognito no longer accepts a signed-out user's ID token in a <a
+         * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html">GetId
+         * </a> request to an identity pool with <code>ServerSideTokenCheck</code> enabled
+         * for its user pool IdP configuration in <a
+         * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.</p>
+         * </li> <li> <p>Amazon Cognito no longer accepts a signed-out user's refresh
+         * tokens in refresh requests.</p> </li> </ul> <p>Other requests might be valid
+         * until your user's token expires.</p>  <p>Amazon Cognito evaluates Identity
          * and Access Management (IAM) policies in requests for this API operation. For
          * this operation, you must use IAM credentials to authorize requests, and you must
          * grant yourself the corresponding IAM permission in a policy.</p> <p
@@ -1375,7 +1415,20 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Confirms registration of a new user.</p>  <p>Amazon Cognito doesn't
+         * <p>This public API operation provides a code that Amazon Cognito sent to your
+         * user when they signed up in your user pool via the <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html">SignUp</a>
+         * API operation. After your user enters their code, they confirm ownership of the
+         * email address or phone number that they provided, and their user account becomes
+         * active. Depending on your user pool configuration, your users will receive their
+         * confirmation code in an email or SMS message.</p> <p>Local users who signed up
+         * in your user pool are the only type of user who can confirm sign-up with a code.
+         * Users who federate through an external identity provider (IdP) have already been
+         * confirmed by their IdP. Administrator-created users, users created with the <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html">AdminCreateUser</a>
+         * API operation, confirm their accounts when they respond to their invitation
+         * email message and choose a password. They do not receive a confirmation code.
+         * Instead, they receive a temporary password.</p>  <p>Amazon Cognito doesn't
          * evaluate Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you can't use IAM credentials to authorize
          * requests, and you can't grant IAM permissions in policies. For more information
@@ -2476,14 +2529,24 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Signs out a user from all devices. <code>GlobalSignOut</code> invalidates all
-         * identity, access and refresh tokens that Amazon Cognito has issued to a user. A
-         * user can still use a hosted UI cookie to retrieve new tokens for the duration of
-         * the 1-hour cookie validity period.</p> <p>Your app isn't aware that a user's
-         * access token is revoked unless it attempts to authorize a user pools API request
-         * with an access token that contains the scope
-         * <code>aws.cognito.signin.user.admin</code>. Your app might otherwise accept
-         * access tokens until they expire.</p>  <p>Amazon Cognito doesn't evaluate
+         * <p>Invalidates the identity, access, and refresh tokens that Amazon Cognito
+         * issued to a user. Call this operation when your user signs out of your app. This
+         * results in the following behavior. </p> <ul> <li> <p>Amazon Cognito no longer
+         * accepts <i>token-authorized</i> user operations that you authorize with a
+         * signed-out user's access tokens. For more information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p> <p>Amazon
+         * Cognito returns an <code>Access Token has been revoked</code> error when your
+         * app attempts to authorize a user pools API request with a revoked access token
+         * that contains the scope <code>aws.cognito.signin.user.admin</code>.</p> </li>
+         * <li> <p>Amazon Cognito no longer accepts a signed-out user's ID token in a <a
+         * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html">GetId
+         * </a> request to an identity pool with <code>ServerSideTokenCheck</code> enabled
+         * for its user pool IdP configuration in <a
+         * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.</p>
+         * </li> <li> <p>Amazon Cognito no longer accepts a signed-out user's refresh
+         * tokens in refresh requests.</p> </li> </ul> <p>Other requests might be valid
+         * until your user's token expires.</p>  <p>Amazon Cognito doesn't evaluate
          * Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you can't use IAM credentials to authorize
          * requests, and you can't grant IAM permissions in policies. For more information
@@ -2952,7 +3015,15 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Responds to the authentication challenge.</p>  <p>Amazon Cognito
+         * <p>Some API operations in a user pool generate a challenge, like a prompt for an
+         * MFA code, for device authentication that bypasses MFA, or for a custom
+         * authentication challenge. A <code>RespondToAuthChallenge</code> API request
+         * provides the answer to that challenge, like a code or a secure remote password
+         * (SRP). The parameters of a response to an authentication challenge vary with the
+         * type of challenge.</p> <p>For more information about custom authentication
+         * challenges, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom
+         * authentication challenge Lambda triggers</a>.</p>  <p>Amazon Cognito
          * doesn't evaluate Identity and Access Management (IAM) policies in requests for
          * this API operation. For this operation, you can't use IAM credentials to
          * authorize requests, and you can't grant IAM permissions in policies. For more
@@ -3578,12 +3649,15 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Allows a user to update a specific attribute (one at a time).</p> 
-         * <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies
-         * in requests for this API operation. For this operation, you can't use IAM
-         * credentials to authorize requests, and you can't grant IAM permissions in
-         * policies. For more information about authorization models in Amazon Cognito, see
-         * <a
+         * <p>With this operation, your users can update one or more of their attributes
+         * with their own credentials. You authorize this API request with the user's
+         * access token. To delete an attribute from your user, submit the attribute in
+         * your API request with a blank value. Custom attribute values in this request
+         * must include the <code>custom:</code> prefix.</p>  <p>Amazon Cognito
+         * doesn't evaluate Identity and Access Management (IAM) policies in requests for
+         * this API operation. For this operation, you can't use IAM credentials to
+         * authorize requests, and you can't grant IAM permissions in policies. For more
+         * information about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
          * the Amazon Cognito native and OIDC APIs</a>.</p>   <p>This action
          * might generate an SMS text message. Starting June 1, 2021, US telecom carriers

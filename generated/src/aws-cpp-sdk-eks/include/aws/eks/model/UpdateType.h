@@ -24,7 +24,8 @@ namespace Model
     DisassociateIdentityProviderConfig,
     AssociateEncryptionConfig,
     AddonUpdate,
-    VpcConfigUpdate
+    VpcConfigUpdate,
+    AccessConfigUpdate
   };
 
 namespace UpdateTypeMapper

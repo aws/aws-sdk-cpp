@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cognito-idp/model/PreTokenGenerationVersionConfigType.h>
 #include <aws/cognito-idp/model/CustomSMSLambdaVersionConfigType.h>
 #include <aws/cognito-idp/model/CustomEmailLambdaVersionConfigType.h>
 #include <utility>
@@ -369,44 +370,127 @@ namespace Model
 
 
     /**
-     * <p>A Lambda trigger that is invoked before token generation.</p>
+     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
+     * your Lambda trigger.</p> <p>Set this parameter for legacy purposes. If you also
+     * set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical
+     * to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     * triggers, set the <code>LambdaArn</code> of
+     * <code>PreTokenGenerationConfig</code>.</p> <p>You can set <code/> </p>
      */
     inline const Aws::String& GetPreTokenGeneration() const{ return m_preTokenGeneration; }
 
     /**
-     * <p>A Lambda trigger that is invoked before token generation.</p>
+     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
+     * your Lambda trigger.</p> <p>Set this parameter for legacy purposes. If you also
+     * set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical
+     * to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     * triggers, set the <code>LambdaArn</code> of
+     * <code>PreTokenGenerationConfig</code>.</p> <p>You can set <code/> </p>
      */
     inline bool PreTokenGenerationHasBeenSet() const { return m_preTokenGenerationHasBeenSet; }
 
     /**
-     * <p>A Lambda trigger that is invoked before token generation.</p>
+     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
+     * your Lambda trigger.</p> <p>Set this parameter for legacy purposes. If you also
+     * set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical
+     * to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     * triggers, set the <code>LambdaArn</code> of
+     * <code>PreTokenGenerationConfig</code>.</p> <p>You can set <code/> </p>
      */
     inline void SetPreTokenGeneration(const Aws::String& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = value; }
 
     /**
-     * <p>A Lambda trigger that is invoked before token generation.</p>
+     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
+     * your Lambda trigger.</p> <p>Set this parameter for legacy purposes. If you also
+     * set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical
+     * to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     * triggers, set the <code>LambdaArn</code> of
+     * <code>PreTokenGenerationConfig</code>.</p> <p>You can set <code/> </p>
      */
     inline void SetPreTokenGeneration(Aws::String&& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = std::move(value); }
 
     /**
-     * <p>A Lambda trigger that is invoked before token generation.</p>
+     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
+     * your Lambda trigger.</p> <p>Set this parameter for legacy purposes. If you also
+     * set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical
+     * to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     * triggers, set the <code>LambdaArn</code> of
+     * <code>PreTokenGenerationConfig</code>.</p> <p>You can set <code/> </p>
      */
     inline void SetPreTokenGeneration(const char* value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration.assign(value); }
 
     /**
-     * <p>A Lambda trigger that is invoked before token generation.</p>
+     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
+     * your Lambda trigger.</p> <p>Set this parameter for legacy purposes. If you also
+     * set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical
+     * to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     * triggers, set the <code>LambdaArn</code> of
+     * <code>PreTokenGenerationConfig</code>.</p> <p>You can set <code/> </p>
      */
     inline LambdaConfigType& WithPreTokenGeneration(const Aws::String& value) { SetPreTokenGeneration(value); return *this;}
 
     /**
-     * <p>A Lambda trigger that is invoked before token generation.</p>
+     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
+     * your Lambda trigger.</p> <p>Set this parameter for legacy purposes. If you also
+     * set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical
+     * to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     * triggers, set the <code>LambdaArn</code> of
+     * <code>PreTokenGenerationConfig</code>.</p> <p>You can set <code/> </p>
      */
     inline LambdaConfigType& WithPreTokenGeneration(Aws::String&& value) { SetPreTokenGeneration(std::move(value)); return *this;}
 
     /**
-     * <p>A Lambda trigger that is invoked before token generation.</p>
+     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
+     * your Lambda trigger.</p> <p>Set this parameter for legacy purposes. If you also
+     * set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical
+     * to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     * triggers, set the <code>LambdaArn</code> of
+     * <code>PreTokenGenerationConfig</code>.</p> <p>You can set <code/> </p>
      */
     inline LambdaConfigType& WithPreTokenGeneration(const char* value) { SetPreTokenGeneration(value); return *this;}
+
+
+    /**
+     * <p>The detailed configuration of a pre token generation trigger. If you also set
+     * an ARN in <code>PreTokenGeneration</code>, its value must be identical to
+     * <code>PreTokenGenerationConfig</code>.</p>
+     */
+    inline const PreTokenGenerationVersionConfigType& GetPreTokenGenerationConfig() const{ return m_preTokenGenerationConfig; }
+
+    /**
+     * <p>The detailed configuration of a pre token generation trigger. If you also set
+     * an ARN in <code>PreTokenGeneration</code>, its value must be identical to
+     * <code>PreTokenGenerationConfig</code>.</p>
+     */
+    inline bool PreTokenGenerationConfigHasBeenSet() const { return m_preTokenGenerationConfigHasBeenSet; }
+
+    /**
+     * <p>The detailed configuration of a pre token generation trigger. If you also set
+     * an ARN in <code>PreTokenGeneration</code>, its value must be identical to
+     * <code>PreTokenGenerationConfig</code>.</p>
+     */
+    inline void SetPreTokenGenerationConfig(const PreTokenGenerationVersionConfigType& value) { m_preTokenGenerationConfigHasBeenSet = true; m_preTokenGenerationConfig = value; }
+
+    /**
+     * <p>The detailed configuration of a pre token generation trigger. If you also set
+     * an ARN in <code>PreTokenGeneration</code>, its value must be identical to
+     * <code>PreTokenGenerationConfig</code>.</p>
+     */
+    inline void SetPreTokenGenerationConfig(PreTokenGenerationVersionConfigType&& value) { m_preTokenGenerationConfigHasBeenSet = true; m_preTokenGenerationConfig = std::move(value); }
+
+    /**
+     * <p>The detailed configuration of a pre token generation trigger. If you also set
+     * an ARN in <code>PreTokenGeneration</code>, its value must be identical to
+     * <code>PreTokenGenerationConfig</code>.</p>
+     */
+    inline LambdaConfigType& WithPreTokenGenerationConfig(const PreTokenGenerationVersionConfigType& value) { SetPreTokenGenerationConfig(value); return *this;}
+
+    /**
+     * <p>The detailed configuration of a pre token generation trigger. If you also set
+     * an ARN in <code>PreTokenGeneration</code>, its value must be identical to
+     * <code>PreTokenGenerationConfig</code>.</p>
+     */
+    inline LambdaConfigType& WithPreTokenGenerationConfig(PreTokenGenerationVersionConfigType&& value) { SetPreTokenGenerationConfig(std::move(value)); return *this;}
 
 
     /**
@@ -604,6 +688,9 @@ namespace Model
 
     Aws::String m_preTokenGeneration;
     bool m_preTokenGenerationHasBeenSet = false;
+
+    PreTokenGenerationVersionConfigType m_preTokenGenerationConfig;
+    bool m_preTokenGenerationConfigHasBeenSet = false;
 
     Aws::String m_userMigration;
     bool m_userMigrationHasBeenSet = false;

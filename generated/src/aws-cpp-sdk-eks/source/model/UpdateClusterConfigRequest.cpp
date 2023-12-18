@@ -17,7 +17,8 @@ UpdateClusterConfigRequest::UpdateClusterConfigRequest() :
     m_resourcesVpcConfigHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_accessConfigHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,12 @@ Aws::String UpdateClusterConfigRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_accessConfigHasBeenSet)
+  {
+   payload.WithObject("accessConfig", m_accessConfig.Jsonize());
 
   }
 
