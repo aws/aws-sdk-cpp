@@ -117,22 +117,22 @@ namespace Model
 
 
     /**
-     * <p>The limit of the request to list users.</p>
+     * <p>The maximum number of users that you want to retrieve before pagination.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The limit of the request to list users.</p>
+     * <p>The maximum number of users that you want to retrieve before pagination.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>The limit of the request to list users.</p>
+     * <p>The maximum number of users that you want to retrieve before pagination.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The limit of the request to list users.</p>
+     * <p>The maximum number of users that you want to retrieve before pagination.</p>
      */
     inline ListUsersInGroupRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

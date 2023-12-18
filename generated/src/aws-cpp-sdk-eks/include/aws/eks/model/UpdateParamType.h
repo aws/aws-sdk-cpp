@@ -41,7 +41,8 @@ namespace Model
     MaxUnavailablePercentage,
     ConfigurationValues,
     SecurityGroups,
-    Subnets
+    Subnets,
+    AuthenticationMode
   };
 
 namespace UpdateParamTypeMapper

@@ -81,42 +81,66 @@ namespace Model
 
 
     /**
-     * <p>The user name.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline AdminUpdateDeviceStatusRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline AdminUpdateDeviceStatusRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline AdminUpdateDeviceStatusRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
