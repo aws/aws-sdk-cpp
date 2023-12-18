@@ -49,81 +49,161 @@ namespace Model
 
 
     /**
-     * <p>The name of your user pool attribute, for example <code>username</code> or
-     * <code>custom:costcenter</code>.</p>
+     * <p>The name of your user pool attribute. When you create or update a user pool,
+     * adding a schema attribute creates a custom or developer-only attribute. When you
+     * add an attribute with a <code>Name</code> value of <code>MyAttribute</code>,
+     * Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>.
+     * When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito
+     * creates your attribute as <code>dev:MyAttribute</code>. In an operation that
+     * describes a user pool, Amazon Cognito returns this value as <code>value</code>
+     * for standard attributes, <code>custom:value</code> for custom attributes, and
+     * <code>dev:value</code> for developer-only attributes..</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of your user pool attribute, for example <code>username</code> or
-     * <code>custom:costcenter</code>.</p>
+     * <p>The name of your user pool attribute. When you create or update a user pool,
+     * adding a schema attribute creates a custom or developer-only attribute. When you
+     * add an attribute with a <code>Name</code> value of <code>MyAttribute</code>,
+     * Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>.
+     * When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito
+     * creates your attribute as <code>dev:MyAttribute</code>. In an operation that
+     * describes a user pool, Amazon Cognito returns this value as <code>value</code>
+     * for standard attributes, <code>custom:value</code> for custom attributes, and
+     * <code>dev:value</code> for developer-only attributes..</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of your user pool attribute, for example <code>username</code> or
-     * <code>custom:costcenter</code>.</p>
+     * <p>The name of your user pool attribute. When you create or update a user pool,
+     * adding a schema attribute creates a custom or developer-only attribute. When you
+     * add an attribute with a <code>Name</code> value of <code>MyAttribute</code>,
+     * Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>.
+     * When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito
+     * creates your attribute as <code>dev:MyAttribute</code>. In an operation that
+     * describes a user pool, Amazon Cognito returns this value as <code>value</code>
+     * for standard attributes, <code>custom:value</code> for custom attributes, and
+     * <code>dev:value</code> for developer-only attributes..</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of your user pool attribute, for example <code>username</code> or
-     * <code>custom:costcenter</code>.</p>
+     * <p>The name of your user pool attribute. When you create or update a user pool,
+     * adding a schema attribute creates a custom or developer-only attribute. When you
+     * add an attribute with a <code>Name</code> value of <code>MyAttribute</code>,
+     * Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>.
+     * When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito
+     * creates your attribute as <code>dev:MyAttribute</code>. In an operation that
+     * describes a user pool, Amazon Cognito returns this value as <code>value</code>
+     * for standard attributes, <code>custom:value</code> for custom attributes, and
+     * <code>dev:value</code> for developer-only attributes..</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of your user pool attribute, for example <code>username</code> or
-     * <code>custom:costcenter</code>.</p>
+     * <p>The name of your user pool attribute. When you create or update a user pool,
+     * adding a schema attribute creates a custom or developer-only attribute. When you
+     * add an attribute with a <code>Name</code> value of <code>MyAttribute</code>,
+     * Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>.
+     * When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito
+     * creates your attribute as <code>dev:MyAttribute</code>. In an operation that
+     * describes a user pool, Amazon Cognito returns this value as <code>value</code>
+     * for standard attributes, <code>custom:value</code> for custom attributes, and
+     * <code>dev:value</code> for developer-only attributes..</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of your user pool attribute, for example <code>username</code> or
-     * <code>custom:costcenter</code>.</p>
+     * <p>The name of your user pool attribute. When you create or update a user pool,
+     * adding a schema attribute creates a custom or developer-only attribute. When you
+     * add an attribute with a <code>Name</code> value of <code>MyAttribute</code>,
+     * Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>.
+     * When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito
+     * creates your attribute as <code>dev:MyAttribute</code>. In an operation that
+     * describes a user pool, Amazon Cognito returns this value as <code>value</code>
+     * for standard attributes, <code>custom:value</code> for custom attributes, and
+     * <code>dev:value</code> for developer-only attributes..</p>
      */
     inline SchemaAttributeType& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of your user pool attribute, for example <code>username</code> or
-     * <code>custom:costcenter</code>.</p>
+     * <p>The name of your user pool attribute. When you create or update a user pool,
+     * adding a schema attribute creates a custom or developer-only attribute. When you
+     * add an attribute with a <code>Name</code> value of <code>MyAttribute</code>,
+     * Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>.
+     * When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito
+     * creates your attribute as <code>dev:MyAttribute</code>. In an operation that
+     * describes a user pool, Amazon Cognito returns this value as <code>value</code>
+     * for standard attributes, <code>custom:value</code> for custom attributes, and
+     * <code>dev:value</code> for developer-only attributes..</p>
      */
     inline SchemaAttributeType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of your user pool attribute, for example <code>username</code> or
-     * <code>custom:costcenter</code>.</p>
+     * <p>The name of your user pool attribute. When you create or update a user pool,
+     * adding a schema attribute creates a custom or developer-only attribute. When you
+     * add an attribute with a <code>Name</code> value of <code>MyAttribute</code>,
+     * Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>.
+     * When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito
+     * creates your attribute as <code>dev:MyAttribute</code>. In an operation that
+     * describes a user pool, Amazon Cognito returns this value as <code>value</code>
+     * for standard attributes, <code>custom:value</code> for custom attributes, and
+     * <code>dev:value</code> for developer-only attributes..</p>
      */
     inline SchemaAttributeType& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The data format of the values for your attribute.</p>
+     * <p>The data format of the values for your attribute. When you choose an
+     * <code>AttributeDataType</code>, Amazon Cognito validates the input against the
+     * data type. A custom attribute value in your user's ID token is always a string,
+     * for example <code>"custom:isMember" : "true"</code> or
+     * <code>"custom:YearsAsMember" : "12"</code>. </p>
      */
     inline const AttributeDataType& GetAttributeDataType() const{ return m_attributeDataType; }
 
     /**
-     * <p>The data format of the values for your attribute.</p>
+     * <p>The data format of the values for your attribute. When you choose an
+     * <code>AttributeDataType</code>, Amazon Cognito validates the input against the
+     * data type. A custom attribute value in your user's ID token is always a string,
+     * for example <code>"custom:isMember" : "true"</code> or
+     * <code>"custom:YearsAsMember" : "12"</code>. </p>
      */
     inline bool AttributeDataTypeHasBeenSet() const { return m_attributeDataTypeHasBeenSet; }
 
     /**
-     * <p>The data format of the values for your attribute.</p>
+     * <p>The data format of the values for your attribute. When you choose an
+     * <code>AttributeDataType</code>, Amazon Cognito validates the input against the
+     * data type. A custom attribute value in your user's ID token is always a string,
+     * for example <code>"custom:isMember" : "true"</code> or
+     * <code>"custom:YearsAsMember" : "12"</code>. </p>
      */
     inline void SetAttributeDataType(const AttributeDataType& value) { m_attributeDataTypeHasBeenSet = true; m_attributeDataType = value; }
 
     /**
-     * <p>The data format of the values for your attribute.</p>
+     * <p>The data format of the values for your attribute. When you choose an
+     * <code>AttributeDataType</code>, Amazon Cognito validates the input against the
+     * data type. A custom attribute value in your user's ID token is always a string,
+     * for example <code>"custom:isMember" : "true"</code> or
+     * <code>"custom:YearsAsMember" : "12"</code>. </p>
      */
     inline void SetAttributeDataType(AttributeDataType&& value) { m_attributeDataTypeHasBeenSet = true; m_attributeDataType = std::move(value); }
 
     /**
-     * <p>The data format of the values for your attribute.</p>
+     * <p>The data format of the values for your attribute. When you choose an
+     * <code>AttributeDataType</code>, Amazon Cognito validates the input against the
+     * data type. A custom attribute value in your user's ID token is always a string,
+     * for example <code>"custom:isMember" : "true"</code> or
+     * <code>"custom:YearsAsMember" : "12"</code>. </p>
      */
     inline SchemaAttributeType& WithAttributeDataType(const AttributeDataType& value) { SetAttributeDataType(value); return *this;}
 
     /**
-     * <p>The data format of the values for your attribute.</p>
+     * <p>The data format of the values for your attribute. When you choose an
+     * <code>AttributeDataType</code>, Amazon Cognito validates the input against the
+     * data type. A custom attribute value in your user's ID token is always a string,
+     * for example <code>"custom:isMember" : "true"</code> or
+     * <code>"custom:YearsAsMember" : "12"</code>. </p>
      */
     inline SchemaAttributeType& WithAttributeDataType(AttributeDataType&& value) { SetAttributeDataType(std::move(value)); return *this;}
 

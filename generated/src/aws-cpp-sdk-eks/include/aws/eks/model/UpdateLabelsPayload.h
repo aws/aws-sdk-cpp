@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a Kubernetes label change for a managed node
-   * group.</p><p><h3>See Also:</h3>   <a
+   * <p>An object representing a Kubernetes <code>label</code> change for a managed
+   * node group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateLabelsPayload">AWS
    * API Reference</a></p>
    */
@@ -41,113 +41,113 @@ namespace Model
 
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAddOrUpdateLabels() const{ return m_addOrUpdateLabels; }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline bool AddOrUpdateLabelsHasBeenSet() const { return m_addOrUpdateLabelsHasBeenSet; }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline void SetAddOrUpdateLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels = value; }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline void SetAddOrUpdateLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels = std::move(value); }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline UpdateLabelsPayload& WithAddOrUpdateLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetAddOrUpdateLabels(value); return *this;}
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline UpdateLabelsPayload& WithAddOrUpdateLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetAddOrUpdateLabels(std::move(value)); return *this;}
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline UpdateLabelsPayload& AddAddOrUpdateLabels(const Aws::String& key, const Aws::String& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(key, value); return *this; }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline UpdateLabelsPayload& AddAddOrUpdateLabels(Aws::String&& key, const Aws::String& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline UpdateLabelsPayload& AddAddOrUpdateLabels(const Aws::String& key, Aws::String&& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline UpdateLabelsPayload& AddAddOrUpdateLabels(Aws::String&& key, Aws::String&& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline UpdateLabelsPayload& AddAddOrUpdateLabels(const char* key, Aws::String&& value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline UpdateLabelsPayload& AddAddOrUpdateLabels(Aws::String&& key, const char* value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Kubernetes labels to be added or updated.</p>
+     * <p>The Kubernetes <code>labels</code> to add or update.</p>
      */
     inline UpdateLabelsPayload& AddAddOrUpdateLabels(const char* key, const char* value) { m_addOrUpdateLabelsHasBeenSet = true; m_addOrUpdateLabels.emplace(key, value); return *this; }
 
 
     /**
-     * <p>Kubernetes labels to be removed.</p>
+     * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveLabels() const{ return m_removeLabels; }
 
     /**
-     * <p>Kubernetes labels to be removed.</p>
+     * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
     inline bool RemoveLabelsHasBeenSet() const { return m_removeLabelsHasBeenSet; }
 
     /**
-     * <p>Kubernetes labels to be removed.</p>
+     * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
     inline void SetRemoveLabels(const Aws::Vector<Aws::String>& value) { m_removeLabelsHasBeenSet = true; m_removeLabels = value; }
 
     /**
-     * <p>Kubernetes labels to be removed.</p>
+     * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
     inline void SetRemoveLabels(Aws::Vector<Aws::String>&& value) { m_removeLabelsHasBeenSet = true; m_removeLabels = std::move(value); }
 
     /**
-     * <p>Kubernetes labels to be removed.</p>
+     * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
     inline UpdateLabelsPayload& WithRemoveLabels(const Aws::Vector<Aws::String>& value) { SetRemoveLabels(value); return *this;}
 
     /**
-     * <p>Kubernetes labels to be removed.</p>
+     * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
     inline UpdateLabelsPayload& WithRemoveLabels(Aws::Vector<Aws::String>&& value) { SetRemoveLabels(std::move(value)); return *this;}
 
     /**
-     * <p>Kubernetes labels to be removed.</p>
+     * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
     inline UpdateLabelsPayload& AddRemoveLabels(const Aws::String& value) { m_removeLabelsHasBeenSet = true; m_removeLabels.push_back(value); return *this; }
 
     /**
-     * <p>Kubernetes labels to be removed.</p>
+     * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
     inline UpdateLabelsPayload& AddRemoveLabels(Aws::String&& value) { m_removeLabelsHasBeenSet = true; m_removeLabels.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Kubernetes labels to be removed.</p>
+     * <p>The Kubernetes <code>labels</code> to remove.</p>
      */
     inline UpdateLabelsPayload& AddRemoveLabels(const char* value) { m_removeLabelsHasBeenSet = true; m_removeLabels.push_back(value); return *this; }
 

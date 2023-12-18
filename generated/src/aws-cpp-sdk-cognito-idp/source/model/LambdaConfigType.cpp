@@ -28,6 +28,7 @@ LambdaConfigType::LambdaConfigType() :
     m_createAuthChallengeHasBeenSet(false),
     m_verifyAuthChallengeResponseHasBeenSet(false),
     m_preTokenGenerationHasBeenSet(false),
+    m_preTokenGenerationConfigHasBeenSet(false),
     m_userMigrationHasBeenSet(false),
     m_customSMSSenderHasBeenSet(false),
     m_customEmailSenderHasBeenSet(false),
@@ -45,6 +46,7 @@ LambdaConfigType::LambdaConfigType(JsonView jsonValue) :
     m_createAuthChallengeHasBeenSet(false),
     m_verifyAuthChallengeResponseHasBeenSet(false),
     m_preTokenGenerationHasBeenSet(false),
+    m_preTokenGenerationConfigHasBeenSet(false),
     m_userMigrationHasBeenSet(false),
     m_customSMSSenderHasBeenSet(false),
     m_customEmailSenderHasBeenSet(false),
@@ -116,6 +118,13 @@ LambdaConfigType& LambdaConfigType::operator =(JsonView jsonValue)
     m_preTokenGeneration = jsonValue.GetString("PreTokenGeneration");
 
     m_preTokenGenerationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreTokenGenerationConfig"))
+  {
+    m_preTokenGenerationConfig = jsonValue.GetObject("PreTokenGenerationConfig");
+
+    m_preTokenGenerationConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UserMigration"))
@@ -204,6 +213,12 @@ JsonValue LambdaConfigType::Jsonize() const
   if(m_preTokenGenerationHasBeenSet)
   {
    payload.WithString("PreTokenGeneration", m_preTokenGeneration);
+
+  }
+
+  if(m_preTokenGenerationConfigHasBeenSet)
+  {
+   payload.WithObject("PreTokenGenerationConfig", m_preTokenGenerationConfig.Jsonize());
 
   }
 

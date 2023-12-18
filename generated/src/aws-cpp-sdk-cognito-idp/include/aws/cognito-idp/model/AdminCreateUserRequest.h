@@ -431,98 +431,122 @@ namespace Model
 
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline const Aws::Vector<AttributeType>& GetValidationData() const{ return m_validationData; }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline bool ValidationDataHasBeenSet() const { return m_validationDataHasBeenSet; }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline void SetValidationData(const Aws::Vector<AttributeType>& value) { m_validationDataHasBeenSet = true; m_validationData = value; }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline void SetValidationData(Aws::Vector<AttributeType>&& value) { m_validationDataHasBeenSet = true; m_validationData = std::move(value); }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline AdminCreateUserRequest& WithValidationData(const Aws::Vector<AttributeType>& value) { SetValidationData(value); return *this;}
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline AdminCreateUserRequest& WithValidationData(Aws::Vector<AttributeType>&& value) { SetValidationData(std::move(value)); return *this;}
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline AdminCreateUserRequest& AddValidationData(const AttributeType& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(value); return *this; }
 
     /**
-     * <p>The user's validation data. This is an array of name-value pairs that contain
-     * user attributes and attribute values that you can use for custom validation,
-     * such as restricting the types of user accounts that can be registered. For
-     * example, you might choose to allow or disallow user sign-up based on the user's
-     * domain.</p> <p>To configure custom validation, you must create a Pre Sign-up
-     * Lambda trigger for the user pool as described in the Amazon Cognito Developer
-     * Guide. The Lambda trigger receives the validation data and uses it in the
-     * validation process.</p> <p>The user's validation data isn't persisted.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline AdminCreateUserRequest& AddValidationData(AttributeType&& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(std::move(value)); return *this; }
 

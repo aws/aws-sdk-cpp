@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline UpdateAddonRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline UpdateAddonRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline UpdateAddonRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
@@ -398,107 +398,107 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateAddonRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateAddonRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateAddonRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
      * <p>The set of configuration values for the add-on that's created. The values
-     * that you provide are validated against the schema in <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     * that you provide are validated against the schema returned by
+     * <code>DescribeAddonConfiguration</code>.</p>
      */
     inline const Aws::String& GetConfigurationValues() const{ return m_configurationValues; }
 
     /**
      * <p>The set of configuration values for the add-on that's created. The values
-     * that you provide are validated against the schema in <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     * that you provide are validated against the schema returned by
+     * <code>DescribeAddonConfiguration</code>.</p>
      */
     inline bool ConfigurationValuesHasBeenSet() const { return m_configurationValuesHasBeenSet; }
 
     /**
      * <p>The set of configuration values for the add-on that's created. The values
-     * that you provide are validated against the schema in <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     * that you provide are validated against the schema returned by
+     * <code>DescribeAddonConfiguration</code>.</p>
      */
     inline void SetConfigurationValues(const Aws::String& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = value; }
 
     /**
      * <p>The set of configuration values for the add-on that's created. The values
-     * that you provide are validated against the schema in <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     * that you provide are validated against the schema returned by
+     * <code>DescribeAddonConfiguration</code>.</p>
      */
     inline void SetConfigurationValues(Aws::String&& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = std::move(value); }
 
     /**
      * <p>The set of configuration values for the add-on that's created. The values
-     * that you provide are validated against the schema in <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     * that you provide are validated against the schema returned by
+     * <code>DescribeAddonConfiguration</code>.</p>
      */
     inline void SetConfigurationValues(const char* value) { m_configurationValuesHasBeenSet = true; m_configurationValues.assign(value); }
 
     /**
      * <p>The set of configuration values for the add-on that's created. The values
-     * that you provide are validated against the schema in <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     * that you provide are validated against the schema returned by
+     * <code>DescribeAddonConfiguration</code>.</p>
      */
     inline UpdateAddonRequest& WithConfigurationValues(const Aws::String& value) { SetConfigurationValues(value); return *this;}
 
     /**
      * <p>The set of configuration values for the add-on that's created. The values
-     * that you provide are validated against the schema in <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     * that you provide are validated against the schema returned by
+     * <code>DescribeAddonConfiguration</code>.</p>
      */
     inline UpdateAddonRequest& WithConfigurationValues(Aws::String&& value) { SetConfigurationValues(std::move(value)); return *this;}
 
     /**
      * <p>The set of configuration values for the add-on that's created. The values
-     * that you provide are validated against the schema in <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     * that you provide are validated against the schema returned by
+     * <code>DescribeAddonConfiguration</code>.</p>
      */
     inline UpdateAddonRequest& WithConfigurationValues(const char* value) { SetConfigurationValues(value); return *this;}
 

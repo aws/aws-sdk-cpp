@@ -133,42 +133,58 @@ namespace Model
 
 
     /**
-     * <p>The user name of the user you want to register.</p>
+     * <p>The username of the user that you want to sign up. The value of this
+     * parameter is typically a username, but can be any alias attribute in your user
+     * pool.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user you want to register.</p>
+     * <p>The username of the user that you want to sign up. The value of this
+     * parameter is typically a username, but can be any alias attribute in your user
+     * pool.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name of the user you want to register.</p>
+     * <p>The username of the user that you want to sign up. The value of this
+     * parameter is typically a username, but can be any alias attribute in your user
+     * pool.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user you want to register.</p>
+     * <p>The username of the user that you want to sign up. The value of this
+     * parameter is typically a username, but can be any alias attribute in your user
+     * pool.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user you want to register.</p>
+     * <p>The username of the user that you want to sign up. The value of this
+     * parameter is typically a username, but can be any alias attribute in your user
+     * pool.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user you want to register.</p>
+     * <p>The username of the user that you want to sign up. The value of this
+     * parameter is typically a username, but can be any alias attribute in your user
+     * pool.</p>
      */
     inline SignUpRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user you want to register.</p>
+     * <p>The username of the user that you want to sign up. The value of this
+     * parameter is typically a username, but can be any alias attribute in your user
+     * pool.</p>
      */
     inline SignUpRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user you want to register.</p>
+     * <p>The username of the user that you want to sign up. The value of this
+     * parameter is typically a username, but can be any alias attribute in your user
+     * pool.</p>
      */
     inline SignUpRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
@@ -272,42 +288,122 @@ namespace Model
 
 
     /**
-     * <p>The validation data in the request to register a user.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline const Aws::Vector<AttributeType>& GetValidationData() const{ return m_validationData; }
 
     /**
-     * <p>The validation data in the request to register a user.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline bool ValidationDataHasBeenSet() const { return m_validationDataHasBeenSet; }
 
     /**
-     * <p>The validation data in the request to register a user.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline void SetValidationData(const Aws::Vector<AttributeType>& value) { m_validationDataHasBeenSet = true; m_validationData = value; }
 
     /**
-     * <p>The validation data in the request to register a user.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline void SetValidationData(Aws::Vector<AttributeType>&& value) { m_validationDataHasBeenSet = true; m_validationData = std::move(value); }
 
     /**
-     * <p>The validation data in the request to register a user.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline SignUpRequest& WithValidationData(const Aws::Vector<AttributeType>& value) { SetValidationData(value); return *this;}
 
     /**
-     * <p>The validation data in the request to register a user.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline SignUpRequest& WithValidationData(Aws::Vector<AttributeType>&& value) { SetValidationData(std::move(value)); return *this;}
 
     /**
-     * <p>The validation data in the request to register a user.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline SignUpRequest& AddValidationData(const AttributeType& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(value); return *this; }
 
     /**
-     * <p>The validation data in the request to register a user.</p>
+     * <p>Temporary user attributes that contribute to the outcomes of your pre sign-up
+     * Lambda trigger. This set of key-value pairs are for custom validation of
+     * information that you collect from your users but don't need to retain.</p>
+     * <p>Your Lambda function can analyze this additional data and act on it. Your
+     * function might perform external API operations like logging user attributes and
+     * validation data to Amazon CloudWatch Logs. Validation data might also affect the
+     * response that your function returns to Amazon Cognito, like automatically
+     * confirming the user if they sign up from within your network.</p> <p>For more
+     * information about the pre sign-up Lambda trigger, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre
+     * sign-up Lambda trigger</a>.</p>
      */
     inline SignUpRequest& AddValidationData(AttributeType&& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(std::move(value)); return *this; }
 

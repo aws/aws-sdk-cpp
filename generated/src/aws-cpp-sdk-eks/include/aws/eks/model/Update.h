@@ -188,32 +188,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline Update& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline Update& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

@@ -10,6 +10,7 @@
 #include <aws/route53resolver/model/ResolverEndpointType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53resolver/model/UpdateIpAddress.h>
+#include <aws/route53resolver/model/Protocol.h>
 #include <utility>
 
 namespace Aws
@@ -218,6 +219,159 @@ namespace Model
      */
     inline UpdateResolverEndpointRequest& AddUpdateIpAddresses(UpdateIpAddress&& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>  <p>
+     * You can't change the protocol of an inbound endpoint directly from only Do53 to
+     * only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming
+     * traffic that relies on Do53. To change the protocol from Do53 to DoH, or
+     * DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make
+     * sure that all incoming traffic has transferred to using the DoH protocol, or
+     * DoH-FIPS, and then remove the Do53.</p> 
+     */
+    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>  <p>
+     * You can't change the protocol of an inbound endpoint directly from only Do53 to
+     * only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming
+     * traffic that relies on Do53. To change the protocol from Do53 to DoH, or
+     * DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make
+     * sure that all incoming traffic has transferred to using the DoH protocol, or
+     * DoH-FIPS, and then remove the Do53.</p> 
+     */
+    inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>  <p>
+     * You can't change the protocol of an inbound endpoint directly from only Do53 to
+     * only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming
+     * traffic that relies on Do53. To change the protocol from Do53 to DoH, or
+     * DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make
+     * sure that all incoming traffic has transferred to using the DoH protocol, or
+     * DoH-FIPS, and then remove the Do53.</p> 
+     */
+    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>  <p>
+     * You can't change the protocol of an inbound endpoint directly from only Do53 to
+     * only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming
+     * traffic that relies on Do53. To change the protocol from Do53 to DoH, or
+     * DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make
+     * sure that all incoming traffic has transferred to using the DoH protocol, or
+     * DoH-FIPS, and then remove the Do53.</p> 
+     */
+    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>  <p>
+     * You can't change the protocol of an inbound endpoint directly from only Do53 to
+     * only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming
+     * traffic that relies on Do53. To change the protocol from Do53 to DoH, or
+     * DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make
+     * sure that all incoming traffic has transferred to using the DoH protocol, or
+     * DoH-FIPS, and then remove the Do53.</p> 
+     */
+    inline UpdateResolverEndpointRequest& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>  <p>
+     * You can't change the protocol of an inbound endpoint directly from only Do53 to
+     * only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming
+     * traffic that relies on Do53. To change the protocol from Do53 to DoH, or
+     * DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make
+     * sure that all incoming traffic has transferred to using the DoH protocol, or
+     * DoH-FIPS, and then remove the Do53.</p> 
+     */
+    inline UpdateResolverEndpointRequest& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>  <p>
+     * You can't change the protocol of an inbound endpoint directly from only Do53 to
+     * only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming
+     * traffic that relies on Do53. To change the protocol from Do53 to DoH, or
+     * DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make
+     * sure that all incoming traffic has transferred to using the DoH protocol, or
+     * DoH-FIPS, and then remove the Do53.</p> 
+     */
+    inline UpdateResolverEndpointRequest& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
+
+    /**
+     * <p> The protocols you want to use for the endpoint. DoH-FIPS is applicable for
+     * inbound endpoints only. </p> <p>For an inbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p>
+     * </li> <li> <p>DoH alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li>
+     * <p>None, which is treated as Do53.</p> </li> </ul> <p>For an outbound endpoint
+     * you can apply the protocols as follows:</p> <ul> <li> <p> Do53 and DoH in
+     * combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p>
+     * </li> <li> <p>None, which is treated as Do53.</p> </li> </ul>  <p>
+     * You can't change the protocol of an inbound endpoint directly from only Do53 to
+     * only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming
+     * traffic that relies on Do53. To change the protocol from Do53 to DoH, or
+     * DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make
+     * sure that all incoming traffic has transferred to using the DoH protocol, or
+     * DoH-FIPS, and then remove the Do53.</p> 
+     */
+    inline UpdateResolverEndpointRequest& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_resolverEndpointId;
@@ -231,6 +385,9 @@ namespace Model
 
     Aws::Vector<UpdateIpAddress> m_updateIpAddresses;
     bool m_updateIpAddressesHasBeenSet = false;
+
+    Aws::Vector<Protocol> m_protocols;
+    bool m_protocolsHasBeenSet = false;
   };
 
 } // namespace Model

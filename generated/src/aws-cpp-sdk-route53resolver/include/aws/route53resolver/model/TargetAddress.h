@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/model/Protocol.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,85 @@ namespace Model
      */
     inline TargetAddress& WithIpv6(const char* value) { SetIpv6(value); return *this;}
 
+
+    /**
+     * <p> The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound
+     * endpoints only. </p> <p>For an inbound endpoint you can apply the protocols as
+     * follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li> <li> <p>Do53
+     * and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH
+     * alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li> <p>None, which is
+     * treated as Do53.</p> </li> </ul> <p>For an outbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p> </li> <li> <p>None, which
+     * is treated as Do53.</p> </li> </ul>
+     */
+    inline const Protocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p> The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound
+     * endpoints only. </p> <p>For an inbound endpoint you can apply the protocols as
+     * follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li> <li> <p>Do53
+     * and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH
+     * alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li> <p>None, which is
+     * treated as Do53.</p> </li> </ul> <p>For an outbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p> </li> <li> <p>None, which
+     * is treated as Do53.</p> </li> </ul>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p> The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound
+     * endpoints only. </p> <p>For an inbound endpoint you can apply the protocols as
+     * follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li> <li> <p>Do53
+     * and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH
+     * alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li> <p>None, which is
+     * treated as Do53.</p> </li> </ul> <p>For an outbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p> </li> <li> <p>None, which
+     * is treated as Do53.</p> </li> </ul>
+     */
+    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+
+    /**
+     * <p> The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound
+     * endpoints only. </p> <p>For an inbound endpoint you can apply the protocols as
+     * follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li> <li> <p>Do53
+     * and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH
+     * alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li> <p>None, which is
+     * treated as Do53.</p> </li> </ul> <p>For an outbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p> </li> <li> <p>None, which
+     * is treated as Do53.</p> </li> </ul>
+     */
+    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
+
+    /**
+     * <p> The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound
+     * endpoints only. </p> <p>For an inbound endpoint you can apply the protocols as
+     * follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li> <li> <p>Do53
+     * and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH
+     * alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li> <p>None, which is
+     * treated as Do53.</p> </li> </ul> <p>For an outbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p> </li> <li> <p>None, which
+     * is treated as Do53.</p> </li> </ul>
+     */
+    inline TargetAddress& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
+
+    /**
+     * <p> The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound
+     * endpoints only. </p> <p>For an inbound endpoint you can apply the protocols as
+     * follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li> <li> <p>Do53
+     * and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH
+     * alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li> <p>None, which is
+     * treated as Do53.</p> </li> </ul> <p>For an outbound endpoint you can apply the
+     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
+     * <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p> </li> <li> <p>None, which
+     * is treated as Do53.</p> </li> </ul>
+     */
+    inline TargetAddress& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ip;
@@ -152,6 +232,9 @@ namespace Model
 
     Aws::String m_ipv6;
     bool m_ipv6HasBeenSet = false;
+
+    Protocol m_protocol;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model
