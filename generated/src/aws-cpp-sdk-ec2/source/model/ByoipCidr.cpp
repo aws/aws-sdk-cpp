@@ -26,7 +26,8 @@ ByoipCidr::ByoipCidr() :
     m_asnAssociationsHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_state(ByoipCidrState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_networkBorderGroupHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ ByoipCidr::ByoipCidr(const XmlNode& xmlNode) :
     m_asnAssociationsHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_state(ByoipCidrState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_networkBorderGroupHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -83,6 +85,12 @@ ByoipCidr& ByoipCidr::operator =(const XmlNode& xmlNode)
       m_state = ByoipCidrStateMapper::GetByoipCidrStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
+    XmlNode networkBorderGroupNode = resultNode.FirstChild("networkBorderGroup");
+    if(!networkBorderGroupNode.IsNull())
+    {
+      m_networkBorderGroup = Aws::Utils::Xml::DecodeEscapedXmlText(networkBorderGroupNode.GetText());
+      m_networkBorderGroupHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +129,11 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".State=" << ByoipCidrStateMapper::GetNameForByoipCidrState(m_state) << "&";
   }
 
+  if(m_networkBorderGroupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
+  }
+
 }
 
 void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -150,6 +163,10 @@ void ByoipCidr::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << ByoipCidrStateMapper::GetNameForByoipCidrState(m_state) << "&";
+  }
+  if(m_networkBorderGroupHasBeenSet)
+  {
+      oStream << location << ".NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 }
 

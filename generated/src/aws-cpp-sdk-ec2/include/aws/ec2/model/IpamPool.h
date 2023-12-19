@@ -1127,22 +1127,34 @@ namespace Model
     inline IpamPool& WithPublicIpSource(IpamPoolPublicIpSource&& value) { SetPublicIpSource(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
     inline const IpamPoolSourceResource& GetSourceResource() const{ return m_sourceResource; }
 
-    
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
     inline bool SourceResourceHasBeenSet() const { return m_sourceResourceHasBeenSet; }
 
-    
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
     inline void SetSourceResource(const IpamPoolSourceResource& value) { m_sourceResourceHasBeenSet = true; m_sourceResource = value; }
 
-    
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
     inline void SetSourceResource(IpamPoolSourceResource&& value) { m_sourceResourceHasBeenSet = true; m_sourceResource = std::move(value); }
 
-    
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
     inline IpamPool& WithSourceResource(const IpamPoolSourceResource& value) { SetSourceResource(value); return *this;}
 
-    
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
     inline IpamPool& WithSourceResource(IpamPoolSourceResource&& value) { SetSourceResource(std::move(value)); return *this;}
 
   private:

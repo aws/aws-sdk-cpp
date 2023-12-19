@@ -9,6 +9,7 @@
 #include <aws/fsx/model/OpenZFSDataCompressionType.h>
 #include <aws/fsx/model/OpenZFSOriginSnapshotConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fsx/model/OpenZFSCopyStrategy.h>
 #include <aws/fsx/model/OpenZFSNfsExport.h>
 #include <aws/fsx/model/OpenZFSUserOrGroupQuota.h>
 #include <utility>
@@ -701,6 +702,109 @@ namespace Model
      */
     inline OpenZFSVolumeConfiguration& WithDestinationSnapshot(const char* value) { SetDestinationSnapshot(value); return *this;}
 
+
+    /**
+     * <p>Specifies the strategy used when copying data from the snapshot to the new
+     * volume. </p> <ul> <li> <p> <code>CLONE</code> - The new volume references the
+     * data in the origin snapshot. Cloning a snapshot is faster than copying data from
+     * the snapshot to a new volume and doesn't consume disk throughput. However, the
+     * origin snapshot can't be deleted if there is a volume using its copied data.</p>
+     * </li> <li> <p> <code>FULL_COPY</code> - Copies all data from the snapshot to the
+     * new volume.</p> <p>Specify this option to create the volume from a snapshot on
+     * another FSx for OpenZFS file system.</p> </li> </ul>  <p>The
+     * <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
+     * using a snapshot from another FSx for OpenZFS file system. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
+     * 
+     */
+    inline const OpenZFSCopyStrategy& GetCopyStrategy() const{ return m_copyStrategy; }
+
+    /**
+     * <p>Specifies the strategy used when copying data from the snapshot to the new
+     * volume. </p> <ul> <li> <p> <code>CLONE</code> - The new volume references the
+     * data in the origin snapshot. Cloning a snapshot is faster than copying data from
+     * the snapshot to a new volume and doesn't consume disk throughput. However, the
+     * origin snapshot can't be deleted if there is a volume using its copied data.</p>
+     * </li> <li> <p> <code>FULL_COPY</code> - Copies all data from the snapshot to the
+     * new volume.</p> <p>Specify this option to create the volume from a snapshot on
+     * another FSx for OpenZFS file system.</p> </li> </ul>  <p>The
+     * <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
+     * using a snapshot from another FSx for OpenZFS file system. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
+     * 
+     */
+    inline bool CopyStrategyHasBeenSet() const { return m_copyStrategyHasBeenSet; }
+
+    /**
+     * <p>Specifies the strategy used when copying data from the snapshot to the new
+     * volume. </p> <ul> <li> <p> <code>CLONE</code> - The new volume references the
+     * data in the origin snapshot. Cloning a snapshot is faster than copying data from
+     * the snapshot to a new volume and doesn't consume disk throughput. However, the
+     * origin snapshot can't be deleted if there is a volume using its copied data.</p>
+     * </li> <li> <p> <code>FULL_COPY</code> - Copies all data from the snapshot to the
+     * new volume.</p> <p>Specify this option to create the volume from a snapshot on
+     * another FSx for OpenZFS file system.</p> </li> </ul>  <p>The
+     * <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
+     * using a snapshot from another FSx for OpenZFS file system. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
+     * 
+     */
+    inline void SetCopyStrategy(const OpenZFSCopyStrategy& value) { m_copyStrategyHasBeenSet = true; m_copyStrategy = value; }
+
+    /**
+     * <p>Specifies the strategy used when copying data from the snapshot to the new
+     * volume. </p> <ul> <li> <p> <code>CLONE</code> - The new volume references the
+     * data in the origin snapshot. Cloning a snapshot is faster than copying data from
+     * the snapshot to a new volume and doesn't consume disk throughput. However, the
+     * origin snapshot can't be deleted if there is a volume using its copied data.</p>
+     * </li> <li> <p> <code>FULL_COPY</code> - Copies all data from the snapshot to the
+     * new volume.</p> <p>Specify this option to create the volume from a snapshot on
+     * another FSx for OpenZFS file system.</p> </li> </ul>  <p>The
+     * <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
+     * using a snapshot from another FSx for OpenZFS file system. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
+     * 
+     */
+    inline void SetCopyStrategy(OpenZFSCopyStrategy&& value) { m_copyStrategyHasBeenSet = true; m_copyStrategy = std::move(value); }
+
+    /**
+     * <p>Specifies the strategy used when copying data from the snapshot to the new
+     * volume. </p> <ul> <li> <p> <code>CLONE</code> - The new volume references the
+     * data in the origin snapshot. Cloning a snapshot is faster than copying data from
+     * the snapshot to a new volume and doesn't consume disk throughput. However, the
+     * origin snapshot can't be deleted if there is a volume using its copied data.</p>
+     * </li> <li> <p> <code>FULL_COPY</code> - Copies all data from the snapshot to the
+     * new volume.</p> <p>Specify this option to create the volume from a snapshot on
+     * another FSx for OpenZFS file system.</p> </li> </ul>  <p>The
+     * <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
+     * using a snapshot from another FSx for OpenZFS file system. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
+     * 
+     */
+    inline OpenZFSVolumeConfiguration& WithCopyStrategy(const OpenZFSCopyStrategy& value) { SetCopyStrategy(value); return *this;}
+
+    /**
+     * <p>Specifies the strategy used when copying data from the snapshot to the new
+     * volume. </p> <ul> <li> <p> <code>CLONE</code> - The new volume references the
+     * data in the origin snapshot. Cloning a snapshot is faster than copying data from
+     * the snapshot to a new volume and doesn't consume disk throughput. However, the
+     * origin snapshot can't be deleted if there is a volume using its copied data.</p>
+     * </li> <li> <p> <code>FULL_COPY</code> - Copies all data from the snapshot to the
+     * new volume.</p> <p>Specify this option to create the volume from a snapshot on
+     * another FSx for OpenZFS file system.</p> </li> </ul>  <p>The
+     * <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
+     * using a snapshot from another FSx for OpenZFS file system. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.</p>
+     * 
+     */
+    inline OpenZFSVolumeConfiguration& WithCopyStrategy(OpenZFSCopyStrategy&& value) { SetCopyStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_parentVolumeId;
@@ -753,6 +857,9 @@ namespace Model
 
     Aws::String m_destinationSnapshot;
     bool m_destinationSnapshotHasBeenSet = false;
+
+    OpenZFSCopyStrategy m_copyStrategy;
+    bool m_copyStrategyHasBeenSet = false;
   };
 
 } // namespace Model

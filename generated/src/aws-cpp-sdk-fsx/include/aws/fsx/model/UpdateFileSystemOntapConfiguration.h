@@ -443,10 +443,13 @@ namespace Model
      * and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096
      * MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or
      * 6144 MBps.</p> </li> </ul> <p>Amazon FSx responds with an HTTP status code 400
-     * (Bad Request) for the following conditions:</p> <p>The value of
+     * (Bad Request) for the following conditions:</p> <ul> <li> <p>The value of
      * <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are
-     * not the same value.</p> <p>The value of <code>ThroughputCapacityPerHAPair</code>
-     * is not a valid value.</p>
+     * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
+     * value of deployment type is <code>SINGLE_AZ_2</code> and
+     * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
+     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
     inline int GetThroughputCapacityPerHAPair() const{ return m_throughputCapacityPerHAPair; }
 
@@ -459,10 +462,13 @@ namespace Model
      * and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096
      * MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or
      * 6144 MBps.</p> </li> </ul> <p>Amazon FSx responds with an HTTP status code 400
-     * (Bad Request) for the following conditions:</p> <p>The value of
+     * (Bad Request) for the following conditions:</p> <ul> <li> <p>The value of
      * <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are
-     * not the same value.</p> <p>The value of <code>ThroughputCapacityPerHAPair</code>
-     * is not a valid value.</p>
+     * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
+     * value of deployment type is <code>SINGLE_AZ_2</code> and
+     * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
+     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
     inline bool ThroughputCapacityPerHAPairHasBeenSet() const { return m_throughputCapacityPerHAPairHasBeenSet; }
 
@@ -475,10 +481,13 @@ namespace Model
      * and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096
      * MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or
      * 6144 MBps.</p> </li> </ul> <p>Amazon FSx responds with an HTTP status code 400
-     * (Bad Request) for the following conditions:</p> <p>The value of
+     * (Bad Request) for the following conditions:</p> <ul> <li> <p>The value of
      * <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are
-     * not the same value.</p> <p>The value of <code>ThroughputCapacityPerHAPair</code>
-     * is not a valid value.</p>
+     * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
+     * value of deployment type is <code>SINGLE_AZ_2</code> and
+     * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
+     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
     inline void SetThroughputCapacityPerHAPair(int value) { m_throughputCapacityPerHAPairHasBeenSet = true; m_throughputCapacityPerHAPair = value; }
 
@@ -491,10 +500,13 @@ namespace Model
      * and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096
      * MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or
      * 6144 MBps.</p> </li> </ul> <p>Amazon FSx responds with an HTTP status code 400
-     * (Bad Request) for the following conditions:</p> <p>The value of
+     * (Bad Request) for the following conditions:</p> <ul> <li> <p>The value of
      * <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are
-     * not the same value.</p> <p>The value of <code>ThroughputCapacityPerHAPair</code>
-     * is not a valid value.</p>
+     * not the same value for file systems with one HA pair.</p> </li> <li> <p>The
+     * value of deployment type is <code>SINGLE_AZ_2</code> and
+     * <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a
+     * valid HA pair (a value between 2 and 6).</p> </li> <li> <p>The value of
+     * <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li> </ul>
      */
     inline UpdateFileSystemOntapConfiguration& WithThroughputCapacityPerHAPair(int value) { SetThroughputCapacityPerHAPair(value); return *this;}
 

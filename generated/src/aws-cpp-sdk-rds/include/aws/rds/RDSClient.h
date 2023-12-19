@@ -2431,6 +2431,32 @@ namespace Aws
         }
 
         /**
+         * <p>Describes the recommendations to resolve the issues for your DB instances, DB
+         * clusters, and DB parameter groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBRecommendationsOutcome DescribeDBRecommendations(const Model::DescribeDBRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDBRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDBRecommendationsRequestT = Model::DescribeDBRecommendationsRequest>
+        Model::DescribeDBRecommendationsOutcomeCallable DescribeDBRecommendationsCallable(const DescribeDBRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeDBRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDBRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDBRecommendationsRequestT = Model::DescribeDBRecommendationsRequest>
+        void DescribeDBRecommendationsAsync(const DescribeDBRecommendationsRequestT& request, const DescribeDBRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeDBRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of <code>DBSecurityGroup</code> descriptions. If a
          * <code>DBSecurityGroupName</code> is specified, the list will contain only the
          * descriptions of the specified DB security group.</p>  <p>EC2-Classic was
@@ -3675,6 +3701,32 @@ namespace Aws
         void ModifyDBProxyTargetGroupAsync(const ModifyDBProxyTargetGroupRequestT& request, const ModifyDBProxyTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::ModifyDBProxyTargetGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the recommendation status and recommended action status for the
+         * specified recommendation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyDBRecommendationOutcome ModifyDBRecommendation(const Model::ModifyDBRecommendationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyDBRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyDBRecommendationRequestT = Model::ModifyDBRecommendationRequest>
+        Model::ModifyDBRecommendationOutcomeCallable ModifyDBRecommendationCallable(const ModifyDBRecommendationRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::ModifyDBRecommendation, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyDBRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyDBRecommendationRequestT = Model::ModifyDBRecommendationRequest>
+        void ModifyDBRecommendationAsync(const ModifyDBRecommendationRequestT& request, const ModifyDBRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::ModifyDBRecommendation, request, handler, context);
         }
 
         /**

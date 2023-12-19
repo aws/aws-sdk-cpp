@@ -186,6 +186,39 @@ namespace Model
     
     inline DescribeSnapshotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Set to <code>false</code> (default) if you want to only see the snapshots in
+     * your Amazon Web Services account. Set to <code>true</code> if you want to see
+     * the snapshots in your account and the ones shared with you from another
+     * account.</p>
+     */
+    inline bool GetIncludeShared() const{ return m_includeShared; }
+
+    /**
+     * <p>Set to <code>false</code> (default) if you want to only see the snapshots in
+     * your Amazon Web Services account. Set to <code>true</code> if you want to see
+     * the snapshots in your account and the ones shared with you from another
+     * account.</p>
+     */
+    inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
+
+    /**
+     * <p>Set to <code>false</code> (default) if you want to only see the snapshots in
+     * your Amazon Web Services account. Set to <code>true</code> if you want to see
+     * the snapshots in your account and the ones shared with you from another
+     * account.</p>
+     */
+    inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
+
+    /**
+     * <p>Set to <code>false</code> (default) if you want to only see the snapshots in
+     * your Amazon Web Services account. Set to <code>true</code> if you want to see
+     * the snapshots in your account and the ones shared with you from another
+     * account.</p>
+     */
+    inline DescribeSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_snapshotIds;
@@ -199,6 +232,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    bool m_includeShared;
+    bool m_includeSharedHasBeenSet = false;
   };
 
 } // namespace Model
