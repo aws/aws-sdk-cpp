@@ -11,6 +11,7 @@
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
 
+\#include <aws/${metadata.projectName}/model/${operation.name}InitialResponse.h>
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShape = $eventMemberEntry.value.shape)
 #if(!$eventShape.members.isEmpty() && !$eventShape.isException())
@@ -26,6 +27,7 @@ namespace Model
 {
     enum class ${operation.name}EventType
     {
+        INITIAL_RESPONSE,
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())
         ${eventMemberEntry.key.toUpperCase()},
@@ -36,6 +38,8 @@ namespace Model
 
     class ${operation.name}Handler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const ${operation.name}InitialResponse&)> ${operation.name}InitialResponseCallback;
+        
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShape = $eventMemberEntry.value.shape)
 #if($eventShape.isException())
@@ -56,6 +60,8 @@ namespace Model
 
         ${exportMacro} virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const ${operation.name}InitialResponseCallback& callback) { m_onInitialResponse = callback; }
+
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())
 #set($eventShapeName = $eventMemberEntry.value.shape.name)
@@ -68,6 +74,8 @@ namespace Model
         ${exportMacro} void HandleEventInMessage();
         ${exportMacro} void HandleErrorInMessage();
         ${exportMacro} void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
+
+        ${operation.name}InitialResponseCallback m_onInitialResponse;
 
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShapeName = $eventMemberEntry.value.shape.name)
