@@ -88,8 +88,7 @@ namespace Model
 
 
     /**
-     * <p>The type of entities to retrieve. Valid values are:
-     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>,
      * <code>ContainerProduct</code>, <code>DataProduct</code>,
      * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
      * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
@@ -98,8 +97,7 @@ namespace Model
     inline const Aws::String& GetEntityType() const{ return m_entityType; }
 
     /**
-     * <p>The type of entities to retrieve. Valid values are:
-     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>,
      * <code>ContainerProduct</code>, <code>DataProduct</code>,
      * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
      * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
@@ -108,8 +106,7 @@ namespace Model
     inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
 
     /**
-     * <p>The type of entities to retrieve. Valid values are:
-     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>,
      * <code>ContainerProduct</code>, <code>DataProduct</code>,
      * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
      * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
@@ -118,8 +115,7 @@ namespace Model
     inline void SetEntityType(const Aws::String& value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
 
     /**
-     * <p>The type of entities to retrieve. Valid values are:
-     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>,
      * <code>ContainerProduct</code>, <code>DataProduct</code>,
      * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
      * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
@@ -128,8 +124,7 @@ namespace Model
     inline void SetEntityType(Aws::String&& value) { m_entityTypeHasBeenSet = true; m_entityType = std::move(value); }
 
     /**
-     * <p>The type of entities to retrieve. Valid values are:
-     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>,
      * <code>ContainerProduct</code>, <code>DataProduct</code>,
      * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
      * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
@@ -138,8 +133,7 @@ namespace Model
     inline void SetEntityType(const char* value) { m_entityTypeHasBeenSet = true; m_entityType.assign(value); }
 
     /**
-     * <p>The type of entities to retrieve. Valid values are:
-     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>,
      * <code>ContainerProduct</code>, <code>DataProduct</code>,
      * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
      * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
@@ -148,8 +142,7 @@ namespace Model
     inline ListEntitiesRequest& WithEntityType(const Aws::String& value) { SetEntityType(value); return *this;}
 
     /**
-     * <p>The type of entities to retrieve. Valid values are:
-     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>,
      * <code>ContainerProduct</code>, <code>DataProduct</code>,
      * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
      * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,
@@ -158,8 +151,7 @@ namespace Model
     inline ListEntitiesRequest& WithEntityType(Aws::String&& value) { SetEntityType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of entities to retrieve. Valid values are:
-     * <code>ServerProduct</code>, <code>AmiProduct</code>,
+     * <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>,
      * <code>ContainerProduct</code>, <code>DataProduct</code>,
      * <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
      * <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>,

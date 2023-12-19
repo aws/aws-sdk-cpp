@@ -29,7 +29,13 @@ CreateGraphqlApiRequest::CreateGraphqlApiRequest() :
     m_apiType(GraphQLApiType::NOT_SET),
     m_apiTypeHasBeenSet(false),
     m_mergedApiExecutionRoleArnHasBeenSet(false),
-    m_ownerContactHasBeenSet(false)
+    m_ownerContactHasBeenSet(false),
+    m_introspectionConfig(GraphQLApiIntrospectionConfig::NOT_SET),
+    m_introspectionConfigHasBeenSet(false),
+    m_queryDepthLimit(0),
+    m_queryDepthLimitHasBeenSet(false),
+    m_resolverCountLimit(0),
+    m_resolverCountLimitHasBeenSet(false)
 {
 }
 
@@ -119,6 +125,23 @@ Aws::String CreateGraphqlApiRequest::SerializePayload() const
   if(m_ownerContactHasBeenSet)
   {
    payload.WithString("ownerContact", m_ownerContact);
+
+  }
+
+  if(m_introspectionConfigHasBeenSet)
+  {
+   payload.WithString("introspectionConfig", GraphQLApiIntrospectionConfigMapper::GetNameForGraphQLApiIntrospectionConfig(m_introspectionConfig));
+  }
+
+  if(m_queryDepthLimitHasBeenSet)
+  {
+   payload.WithInteger("queryDepthLimit", m_queryDepthLimit);
+
+  }
+
+  if(m_resolverCountLimitHasBeenSet)
+  {
+   payload.WithInteger("resolverCountLimit", m_resolverCountLimit);
 
   }
 

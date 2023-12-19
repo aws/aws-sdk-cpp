@@ -15,6 +15,7 @@
 #include <aws/appsync/model/LambdaAuthorizerConfig.h>
 #include <aws/appsync/model/GraphQLApiVisibility.h>
 #include <aws/appsync/model/GraphQLApiType.h>
+#include <aws/appsync/model/GraphQLApiIntrospectionConfig.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
@@ -886,6 +887,159 @@ namespace Model
      */
     inline GraphqlApi& WithOwnerContact(const char* value) { SetOwnerContact(value); return *this;}
 
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline const GraphQLApiIntrospectionConfig& GetIntrospectionConfig() const{ return m_introspectionConfig; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline bool IntrospectionConfigHasBeenSet() const { return m_introspectionConfigHasBeenSet; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline void SetIntrospectionConfig(const GraphQLApiIntrospectionConfig& value) { m_introspectionConfigHasBeenSet = true; m_introspectionConfig = value; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline void SetIntrospectionConfig(GraphQLApiIntrospectionConfig&& value) { m_introspectionConfigHasBeenSet = true; m_introspectionConfig = std::move(value); }
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline GraphqlApi& WithIntrospectionConfig(const GraphQLApiIntrospectionConfig& value) { SetIntrospectionConfig(value); return *this;}
+
+    /**
+     * <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable
+     * (<code>DISABLED</code>) introspection. If no value is provided, the
+     * introspection configuration will be set to <code>ENABLED</code> by default. This
+     * field will produce an error if the operation attempts to use the introspection
+     * feature while this field is disabled.</p> <p>For more information about
+     * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.</p>
+     */
+    inline GraphqlApi& WithIntrospectionConfig(GraphQLApiIntrospectionConfig&& value) { SetIntrospectionConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum depth a query can have in a single request. Depth refers to the
+     * amount of nested levels allowed in the body of query. The default value is
+     * <code>0</code> (or unspecified), which indicates there's no depth limit. If you
+     * set a limit, it can be between <code>1</code> and <code>75</code> nested levels.
+     * This field will produce a limit error if the operation falls out of bounds.</p>
+     * <p>Note that fields can still be set to nullable or non-nullable. If a
+     * non-nullable field produces an error, the error will be thrown upwards to the
+     * first nullable field available.</p>
+     */
+    inline int GetQueryDepthLimit() const{ return m_queryDepthLimit; }
+
+    /**
+     * <p>The maximum depth a query can have in a single request. Depth refers to the
+     * amount of nested levels allowed in the body of query. The default value is
+     * <code>0</code> (or unspecified), which indicates there's no depth limit. If you
+     * set a limit, it can be between <code>1</code> and <code>75</code> nested levels.
+     * This field will produce a limit error if the operation falls out of bounds.</p>
+     * <p>Note that fields can still be set to nullable or non-nullable. If a
+     * non-nullable field produces an error, the error will be thrown upwards to the
+     * first nullable field available.</p>
+     */
+    inline bool QueryDepthLimitHasBeenSet() const { return m_queryDepthLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum depth a query can have in a single request. Depth refers to the
+     * amount of nested levels allowed in the body of query. The default value is
+     * <code>0</code> (or unspecified), which indicates there's no depth limit. If you
+     * set a limit, it can be between <code>1</code> and <code>75</code> nested levels.
+     * This field will produce a limit error if the operation falls out of bounds.</p>
+     * <p>Note that fields can still be set to nullable or non-nullable. If a
+     * non-nullable field produces an error, the error will be thrown upwards to the
+     * first nullable field available.</p>
+     */
+    inline void SetQueryDepthLimit(int value) { m_queryDepthLimitHasBeenSet = true; m_queryDepthLimit = value; }
+
+    /**
+     * <p>The maximum depth a query can have in a single request. Depth refers to the
+     * amount of nested levels allowed in the body of query. The default value is
+     * <code>0</code> (or unspecified), which indicates there's no depth limit. If you
+     * set a limit, it can be between <code>1</code> and <code>75</code> nested levels.
+     * This field will produce a limit error if the operation falls out of bounds.</p>
+     * <p>Note that fields can still be set to nullable or non-nullable. If a
+     * non-nullable field produces an error, the error will be thrown upwards to the
+     * first nullable field available.</p>
+     */
+    inline GraphqlApi& WithQueryDepthLimit(int value) { SetQueryDepthLimit(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of resolvers that can be invoked in a single request. The
+     * default value is <code>0</code> (or unspecified), which will set the limit to
+     * <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if
+     * the operation falls out of bounds.</p>
+     */
+    inline int GetResolverCountLimit() const{ return m_resolverCountLimit; }
+
+    /**
+     * <p>The maximum number of resolvers that can be invoked in a single request. The
+     * default value is <code>0</code> (or unspecified), which will set the limit to
+     * <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if
+     * the operation falls out of bounds.</p>
+     */
+    inline bool ResolverCountLimitHasBeenSet() const { return m_resolverCountLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of resolvers that can be invoked in a single request. The
+     * default value is <code>0</code> (or unspecified), which will set the limit to
+     * <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if
+     * the operation falls out of bounds.</p>
+     */
+    inline void SetResolverCountLimit(int value) { m_resolverCountLimitHasBeenSet = true; m_resolverCountLimit = value; }
+
+    /**
+     * <p>The maximum number of resolvers that can be invoked in a single request. The
+     * default value is <code>0</code> (or unspecified), which will set the limit to
+     * <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if
+     * the operation falls out of bounds.</p>
+     */
+    inline GraphqlApi& WithResolverCountLimit(int value) { SetResolverCountLimit(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -944,6 +1098,15 @@ namespace Model
 
     Aws::String m_ownerContact;
     bool m_ownerContactHasBeenSet = false;
+
+    GraphQLApiIntrospectionConfig m_introspectionConfig;
+    bool m_introspectionConfigHasBeenSet = false;
+
+    int m_queryDepthLimit;
+    bool m_queryDepthLimitHasBeenSet = false;
+
+    int m_resolverCountLimit;
+    bool m_resolverCountLimitHasBeenSet = false;
   };
 
 } // namespace Model

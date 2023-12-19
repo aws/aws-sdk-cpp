@@ -82,6 +82,32 @@ namespace MarketplaceCatalog
         virtual ~MarketplaceCatalogClient();
 
         /**
+         * <p>Returns metadata and content for multiple entities.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDescribeEntitiesOutcome BatchDescribeEntities(const Model::BatchDescribeEntitiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDescribeEntities that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDescribeEntitiesRequestT = Model::BatchDescribeEntitiesRequest>
+        Model::BatchDescribeEntitiesOutcomeCallable BatchDescribeEntitiesCallable(const BatchDescribeEntitiesRequestT& request) const
+        {
+            return SubmitCallable(&MarketplaceCatalogClient::BatchDescribeEntities, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDescribeEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDescribeEntitiesRequestT = Model::BatchDescribeEntitiesRequest>
+        void BatchDescribeEntitiesAsync(const BatchDescribeEntitiesRequestT& request, const BatchDescribeEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MarketplaceCatalogClient::BatchDescribeEntities, request, handler, context);
+        }
+
+        /**
          * <p>Used to cancel an open change request. Must be sent before the status of the
          * request changes to <code>APPLYING</code>, the final stage of completing your
          * change request. You can describe a change during the 60-day request history
