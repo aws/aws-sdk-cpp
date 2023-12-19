@@ -131,10 +131,20 @@ namespace Aws
         AmazonWebServiceResult<Aws::String> AWSHttpResourceClient::GetResourceWithAWSWebServiceResult(const std::shared_ptr<HttpRequest> &httpRequest) const
         {
             AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Retrieving credentials from " << httpRequest->GetURIString());
+            if (!m_httpClient)
+            {
+                AWS_LOGSTREAM_FATAL(m_logtag.c_str(), "Unable to get a response: missing http client!");
+                return {{}, {}, HttpResponseCode::REQUEST_NOT_MADE};
+            }
 
             for (long retries = 0;; retries++)
             {
                 std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(httpRequest));
+                if (!response)
+                {
+                    AWS_LOGSTREAM_FATAL(m_logtag.c_str(), "Unable to get a response: http client returned a nullptr!");
+                    return {{}, {}, HttpResponseCode::NO_RESPONSE};
+                }
 
                 if (response->GetResponseCode() == HttpResponseCode::OK)
                 {
