@@ -928,114 +928,50 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline const Aws::Vector<LaunchTemplateTagSpecificationRequest>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecificationRequest>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<LaunchTemplateTagSpecificationRequest>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& WithTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecificationRequest>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& WithTagSpecifications(Aws::Vector<LaunchTemplateTagSpecificationRequest>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& AddTagSpecifications(const LaunchTemplateTagSpecificationRequest& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& AddTagSpecifications(LaunchTemplateTagSpecificationRequest&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

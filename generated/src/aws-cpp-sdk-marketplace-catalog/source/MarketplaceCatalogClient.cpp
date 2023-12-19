@@ -21,6 +21,7 @@
 #include <aws/marketplace-catalog/MarketplaceCatalogClient.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogErrorMarshaller.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogEndpointProvider.h>
+#include <aws/marketplace-catalog/model/BatchDescribeEntitiesRequest.h>
 #include <aws/marketplace-catalog/model/CancelChangeSetRequest.h>
 #include <aws/marketplace-catalog/model/DeleteResourcePolicyRequest.h>
 #include <aws/marketplace-catalog/model/DescribeChangeSetRequest.h>
@@ -164,6 +165,33 @@ void MarketplaceCatalogClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+BatchDescribeEntitiesOutcome MarketplaceCatalogClient::BatchDescribeEntities(const BatchDescribeEntitiesRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchDescribeEntities);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDescribeEntities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchDescribeEntities, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchDescribeEntities, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchDescribeEntities",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchDescribeEntitiesOutcome>(
+    [&]()-> BatchDescribeEntitiesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDescribeEntities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/BatchDescribeEntities");
+      return BatchDescribeEntitiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelChangeSetRequest& request) const

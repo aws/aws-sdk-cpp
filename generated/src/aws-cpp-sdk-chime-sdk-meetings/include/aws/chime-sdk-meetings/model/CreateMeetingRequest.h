@@ -95,8 +95,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
-     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
-     * <code>us-gov-west-1</code>.</p>
+     * <p>Available values in Amazon Web Services GovCloud (US) Regions:
+     * <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
      */
     inline const Aws::String& GetMediaRegion() const{ return m_mediaRegion; }
 
@@ -109,8 +109,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
-     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
-     * <code>us-gov-west-1</code>.</p>
+     * <p>Available values in Amazon Web Services GovCloud (US) Regions:
+     * <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
      */
     inline bool MediaRegionHasBeenSet() const { return m_mediaRegionHasBeenSet; }
 
@@ -123,8 +123,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
-     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
-     * <code>us-gov-west-1</code>.</p>
+     * <p>Available values in Amazon Web Services GovCloud (US) Regions:
+     * <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
      */
     inline void SetMediaRegion(const Aws::String& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = value; }
 
@@ -137,8 +137,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
-     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
-     * <code>us-gov-west-1</code>.</p>
+     * <p>Available values in Amazon Web Services GovCloud (US) Regions:
+     * <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
      */
     inline void SetMediaRegion(Aws::String&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::move(value); }
 
@@ -151,8 +151,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
-     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
-     * <code>us-gov-west-1</code>.</p>
+     * <p>Available values in Amazon Web Services GovCloud (US) Regions:
+     * <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
      */
     inline void SetMediaRegion(const char* value) { m_mediaRegionHasBeenSet = true; m_mediaRegion.assign(value); }
 
@@ -165,8 +165,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
-     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
-     * <code>us-gov-west-1</code>.</p>
+     * <p>Available values in Amazon Web Services GovCloud (US) Regions:
+     * <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
      */
     inline CreateMeetingRequest& WithMediaRegion(const Aws::String& value) { SetMediaRegion(value); return *this;}
 
@@ -179,8 +179,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
-     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
-     * <code>us-gov-west-1</code>.</p>
+     * <p>Available values in Amazon Web Services GovCloud (US) Regions:
+     * <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
      */
     inline CreateMeetingRequest& WithMediaRegion(Aws::String&& value) { SetMediaRegion(std::move(value)); return *this;}
 
@@ -193,8 +193,8 @@ namespace Model
      * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
      * <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
-     * <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>,
-     * <code>us-gov-west-1</code>.</p>
+     * <p>Available values in Amazon Web Services GovCloud (US) Regions:
+     * <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
      */
     inline CreateMeetingRequest& WithMediaRegion(const char* value) { SetMediaRegion(value); return *this;}
 
@@ -495,20 +495,20 @@ namespace Model
      * limits, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
      * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-     * <li> <p>You can only tag resources that are located in the specified AWS Region
-     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
-     * necessary permissions for the service that the resource belongs to as well as
-     * permissions for adding tags. For more information, see the documentation for
-     * each service.</p> </li> </ul>  <p>Do not store personally
-     * identifiable information (PII) or other confidential or sensitive information in
-     * tags. We use tags to provide you with billing and administration services. Tags
-     * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p>In addition to the
-     * <code>tag:TagResources</code> permission required by this operation, you must
-     * also have the tagging permission defined by the service that created the
-     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
-     * <code>TagResources</code> operation, you must have both of the following
-     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <li> <p>You can only tag resources that are located in the specified Amazon Web
+     * Services Region for the Amazon Web Services account.</p> </li> <li> <p>To add
+     * tags to a resource, you need the necessary permissions for the service that the
+     * resource belongs to as well as permissions for adding tags. For more
+     * information, see the documentation for each service.</p> </li> </ul> 
+     * <p>Do not store personally identifiable information (PII) or other confidential
+     * or sensitive information in tags. We use tags to provide you with billing and
+     * administration services. Tags are not intended to be used for private or
+     * sensitive data.</p>  <p> <b>Minimum permissions</b> </p> <p>In
+     * addition to the <code>tag:TagResources</code> permission required by this
+     * operation, you must also have the tagging permission defined by the service that
+     * created the resource. For example, to tag a <code>ChimeSDKMeetings</code>
+     * instance using the <code>TagResources</code> operation, you must have both of
+     * the following permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
      * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
      * specific requirements for tagging some resources. For example, to tag an Amazon
      * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
@@ -529,20 +529,20 @@ namespace Model
      * limits, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
      * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-     * <li> <p>You can only tag resources that are located in the specified AWS Region
-     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
-     * necessary permissions for the service that the resource belongs to as well as
-     * permissions for adding tags. For more information, see the documentation for
-     * each service.</p> </li> </ul>  <p>Do not store personally
-     * identifiable information (PII) or other confidential or sensitive information in
-     * tags. We use tags to provide you with billing and administration services. Tags
-     * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p>In addition to the
-     * <code>tag:TagResources</code> permission required by this operation, you must
-     * also have the tagging permission defined by the service that created the
-     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
-     * <code>TagResources</code> operation, you must have both of the following
-     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <li> <p>You can only tag resources that are located in the specified Amazon Web
+     * Services Region for the Amazon Web Services account.</p> </li> <li> <p>To add
+     * tags to a resource, you need the necessary permissions for the service that the
+     * resource belongs to as well as permissions for adding tags. For more
+     * information, see the documentation for each service.</p> </li> </ul> 
+     * <p>Do not store personally identifiable information (PII) or other confidential
+     * or sensitive information in tags. We use tags to provide you with billing and
+     * administration services. Tags are not intended to be used for private or
+     * sensitive data.</p>  <p> <b>Minimum permissions</b> </p> <p>In
+     * addition to the <code>tag:TagResources</code> permission required by this
+     * operation, you must also have the tagging permission defined by the service that
+     * created the resource. For example, to tag a <code>ChimeSDKMeetings</code>
+     * instance using the <code>TagResources</code> operation, you must have both of
+     * the following permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
      * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
      * specific requirements for tagging some resources. For example, to tag an Amazon
      * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
@@ -563,20 +563,20 @@ namespace Model
      * limits, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
      * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-     * <li> <p>You can only tag resources that are located in the specified AWS Region
-     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
-     * necessary permissions for the service that the resource belongs to as well as
-     * permissions for adding tags. For more information, see the documentation for
-     * each service.</p> </li> </ul>  <p>Do not store personally
-     * identifiable information (PII) or other confidential or sensitive information in
-     * tags. We use tags to provide you with billing and administration services. Tags
-     * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p>In addition to the
-     * <code>tag:TagResources</code> permission required by this operation, you must
-     * also have the tagging permission defined by the service that created the
-     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
-     * <code>TagResources</code> operation, you must have both of the following
-     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <li> <p>You can only tag resources that are located in the specified Amazon Web
+     * Services Region for the Amazon Web Services account.</p> </li> <li> <p>To add
+     * tags to a resource, you need the necessary permissions for the service that the
+     * resource belongs to as well as permissions for adding tags. For more
+     * information, see the documentation for each service.</p> </li> </ul> 
+     * <p>Do not store personally identifiable information (PII) or other confidential
+     * or sensitive information in tags. We use tags to provide you with billing and
+     * administration services. Tags are not intended to be used for private or
+     * sensitive data.</p>  <p> <b>Minimum permissions</b> </p> <p>In
+     * addition to the <code>tag:TagResources</code> permission required by this
+     * operation, you must also have the tagging permission defined by the service that
+     * created the resource. For example, to tag a <code>ChimeSDKMeetings</code>
+     * instance using the <code>TagResources</code> operation, you must have both of
+     * the following permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
      * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
      * specific requirements for tagging some resources. For example, to tag an Amazon
      * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
@@ -597,20 +597,20 @@ namespace Model
      * limits, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
      * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-     * <li> <p>You can only tag resources that are located in the specified AWS Region
-     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
-     * necessary permissions for the service that the resource belongs to as well as
-     * permissions for adding tags. For more information, see the documentation for
-     * each service.</p> </li> </ul>  <p>Do not store personally
-     * identifiable information (PII) or other confidential or sensitive information in
-     * tags. We use tags to provide you with billing and administration services. Tags
-     * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p>In addition to the
-     * <code>tag:TagResources</code> permission required by this operation, you must
-     * also have the tagging permission defined by the service that created the
-     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
-     * <code>TagResources</code> operation, you must have both of the following
-     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <li> <p>You can only tag resources that are located in the specified Amazon Web
+     * Services Region for the Amazon Web Services account.</p> </li> <li> <p>To add
+     * tags to a resource, you need the necessary permissions for the service that the
+     * resource belongs to as well as permissions for adding tags. For more
+     * information, see the documentation for each service.</p> </li> </ul> 
+     * <p>Do not store personally identifiable information (PII) or other confidential
+     * or sensitive information in tags. We use tags to provide you with billing and
+     * administration services. Tags are not intended to be used for private or
+     * sensitive data.</p>  <p> <b>Minimum permissions</b> </p> <p>In
+     * addition to the <code>tag:TagResources</code> permission required by this
+     * operation, you must also have the tagging permission defined by the service that
+     * created the resource. For example, to tag a <code>ChimeSDKMeetings</code>
+     * instance using the <code>TagResources</code> operation, you must have both of
+     * the following permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
      * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
      * specific requirements for tagging some resources. For example, to tag an Amazon
      * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
@@ -631,20 +631,20 @@ namespace Model
      * limits, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
      * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-     * <li> <p>You can only tag resources that are located in the specified AWS Region
-     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
-     * necessary permissions for the service that the resource belongs to as well as
-     * permissions for adding tags. For more information, see the documentation for
-     * each service.</p> </li> </ul>  <p>Do not store personally
-     * identifiable information (PII) or other confidential or sensitive information in
-     * tags. We use tags to provide you with billing and administration services. Tags
-     * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p>In addition to the
-     * <code>tag:TagResources</code> permission required by this operation, you must
-     * also have the tagging permission defined by the service that created the
-     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
-     * <code>TagResources</code> operation, you must have both of the following
-     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <li> <p>You can only tag resources that are located in the specified Amazon Web
+     * Services Region for the Amazon Web Services account.</p> </li> <li> <p>To add
+     * tags to a resource, you need the necessary permissions for the service that the
+     * resource belongs to as well as permissions for adding tags. For more
+     * information, see the documentation for each service.</p> </li> </ul> 
+     * <p>Do not store personally identifiable information (PII) or other confidential
+     * or sensitive information in tags. We use tags to provide you with billing and
+     * administration services. Tags are not intended to be used for private or
+     * sensitive data.</p>  <p> <b>Minimum permissions</b> </p> <p>In
+     * addition to the <code>tag:TagResources</code> permission required by this
+     * operation, you must also have the tagging permission defined by the service that
+     * created the resource. For example, to tag a <code>ChimeSDKMeetings</code>
+     * instance using the <code>TagResources</code> operation, you must have both of
+     * the following permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
      * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
      * specific requirements for tagging some resources. For example, to tag an Amazon
      * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
@@ -665,20 +665,20 @@ namespace Model
      * limits, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
      * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-     * <li> <p>You can only tag resources that are located in the specified AWS Region
-     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
-     * necessary permissions for the service that the resource belongs to as well as
-     * permissions for adding tags. For more information, see the documentation for
-     * each service.</p> </li> </ul>  <p>Do not store personally
-     * identifiable information (PII) or other confidential or sensitive information in
-     * tags. We use tags to provide you with billing and administration services. Tags
-     * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p>In addition to the
-     * <code>tag:TagResources</code> permission required by this operation, you must
-     * also have the tagging permission defined by the service that created the
-     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
-     * <code>TagResources</code> operation, you must have both of the following
-     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <li> <p>You can only tag resources that are located in the specified Amazon Web
+     * Services Region for the Amazon Web Services account.</p> </li> <li> <p>To add
+     * tags to a resource, you need the necessary permissions for the service that the
+     * resource belongs to as well as permissions for adding tags. For more
+     * information, see the documentation for each service.</p> </li> </ul> 
+     * <p>Do not store personally identifiable information (PII) or other confidential
+     * or sensitive information in tags. We use tags to provide you with billing and
+     * administration services. Tags are not intended to be used for private or
+     * sensitive data.</p>  <p> <b>Minimum permissions</b> </p> <p>In
+     * addition to the <code>tag:TagResources</code> permission required by this
+     * operation, you must also have the tagging permission defined by the service that
+     * created the resource. For example, to tag a <code>ChimeSDKMeetings</code>
+     * instance using the <code>TagResources</code> operation, you must have both of
+     * the following permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
      * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
      * specific requirements for tagging some resources. For example, to tag an Amazon
      * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
@@ -699,20 +699,20 @@ namespace Model
      * limits, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
      * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-     * <li> <p>You can only tag resources that are located in the specified AWS Region
-     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
-     * necessary permissions for the service that the resource belongs to as well as
-     * permissions for adding tags. For more information, see the documentation for
-     * each service.</p> </li> </ul>  <p>Do not store personally
-     * identifiable information (PII) or other confidential or sensitive information in
-     * tags. We use tags to provide you with billing and administration services. Tags
-     * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p>In addition to the
-     * <code>tag:TagResources</code> permission required by this operation, you must
-     * also have the tagging permission defined by the service that created the
-     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
-     * <code>TagResources</code> operation, you must have both of the following
-     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <li> <p>You can only tag resources that are located in the specified Amazon Web
+     * Services Region for the Amazon Web Services account.</p> </li> <li> <p>To add
+     * tags to a resource, you need the necessary permissions for the service that the
+     * resource belongs to as well as permissions for adding tags. For more
+     * information, see the documentation for each service.</p> </li> </ul> 
+     * <p>Do not store personally identifiable information (PII) or other confidential
+     * or sensitive information in tags. We use tags to provide you with billing and
+     * administration services. Tags are not intended to be used for private or
+     * sensitive data.</p>  <p> <b>Minimum permissions</b> </p> <p>In
+     * addition to the <code>tag:TagResources</code> permission required by this
+     * operation, you must also have the tagging permission defined by the service that
+     * created the resource. For example, to tag a <code>ChimeSDKMeetings</code>
+     * instance using the <code>TagResources</code> operation, you must have both of
+     * the following permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
      * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
      * specific requirements for tagging some resources. For example, to tag an Amazon
      * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.
@@ -733,20 +733,20 @@ namespace Model
      * limits, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
      * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
-     * <li> <p>You can only tag resources that are located in the specified AWS Region
-     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
-     * necessary permissions for the service that the resource belongs to as well as
-     * permissions for adding tags. For more information, see the documentation for
-     * each service.</p> </li> </ul>  <p>Do not store personally
-     * identifiable information (PII) or other confidential or sensitive information in
-     * tags. We use tags to provide you with billing and administration services. Tags
-     * are not intended to be used for private or sensitive data.</p>  <p>
-     * <b>Minimum permissions</b> </p> <p>In addition to the
-     * <code>tag:TagResources</code> permission required by this operation, you must
-     * also have the tagging permission defined by the service that created the
-     * resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the
-     * <code>TagResources</code> operation, you must have both of the following
-     * permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
+     * <li> <p>You can only tag resources that are located in the specified Amazon Web
+     * Services Region for the Amazon Web Services account.</p> </li> <li> <p>To add
+     * tags to a resource, you need the necessary permissions for the service that the
+     * resource belongs to as well as permissions for adding tags. For more
+     * information, see the documentation for each service.</p> </li> </ul> 
+     * <p>Do not store personally identifiable information (PII) or other confidential
+     * or sensitive information in tags. We use tags to provide you with billing and
+     * administration services. Tags are not intended to be used for private or
+     * sensitive data.</p>  <p> <b>Minimum permissions</b> </p> <p>In
+     * addition to the <code>tag:TagResources</code> permission required by this
+     * operation, you must also have the tagging permission defined by the service that
+     * created the resource. For example, to tag a <code>ChimeSDKMeetings</code>
+     * instance using the <code>TagResources</code> operation, you must have both of
+     * the following permissions:</p> <p> <code>tag:TagResources</code> </p> <p>
      * <code>ChimeSDKMeetings:CreateTags</code> </p>  <p>Some services might have
      * specific requirements for tagging some resources. For example, to tag an Amazon
      * S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission.

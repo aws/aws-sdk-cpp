@@ -84,6 +84,7 @@
 #include <aws/rds/model/DescribeDBProxyEndpointsResult.h>
 #include <aws/rds/model/DescribeDBProxyTargetGroupsResult.h>
 #include <aws/rds/model/DescribeDBProxyTargetsResult.h>
+#include <aws/rds/model/DescribeDBRecommendationsResult.h>
 #include <aws/rds/model/DescribeDBSecurityGroupsResult.h>
 #include <aws/rds/model/DescribeDBSnapshotAttributesResult.h>
 #include <aws/rds/model/DescribeDBSnapshotTenantDatabasesResult.h>
@@ -123,6 +124,7 @@
 #include <aws/rds/model/ModifyDBProxyResult.h>
 #include <aws/rds/model/ModifyDBProxyEndpointResult.h>
 #include <aws/rds/model/ModifyDBProxyTargetGroupResult.h>
+#include <aws/rds/model/ModifyDBRecommendationResult.h>
 #include <aws/rds/model/ModifyDBSnapshotResult.h>
 #include <aws/rds/model/ModifyDBSnapshotAttributeResult.h>
 #include <aws/rds/model/ModifyDBSubnetGroupResult.h>
@@ -274,6 +276,7 @@ namespace Aws
       class DescribeDBProxyEndpointsRequest;
       class DescribeDBProxyTargetGroupsRequest;
       class DescribeDBProxyTargetsRequest;
+      class DescribeDBRecommendationsRequest;
       class DescribeDBSecurityGroupsRequest;
       class DescribeDBSnapshotAttributesRequest;
       class DescribeDBSnapshotTenantDatabasesRequest;
@@ -313,6 +316,7 @@ namespace Aws
       class ModifyDBProxyRequest;
       class ModifyDBProxyEndpointRequest;
       class ModifyDBProxyTargetGroupRequest;
+      class ModifyDBRecommendationRequest;
       class ModifyDBSnapshotRequest;
       class ModifyDBSnapshotAttributeRequest;
       class ModifyDBSubnetGroupRequest;
@@ -429,6 +433,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeDBProxyEndpointsResult, RDSError> DescribeDBProxyEndpointsOutcome;
       typedef Aws::Utils::Outcome<DescribeDBProxyTargetGroupsResult, RDSError> DescribeDBProxyTargetGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeDBProxyTargetsResult, RDSError> DescribeDBProxyTargetsOutcome;
+      typedef Aws::Utils::Outcome<DescribeDBRecommendationsResult, RDSError> DescribeDBRecommendationsOutcome;
       typedef Aws::Utils::Outcome<DescribeDBSecurityGroupsResult, RDSError> DescribeDBSecurityGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeDBSnapshotAttributesResult, RDSError> DescribeDBSnapshotAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeDBSnapshotTenantDatabasesResult, RDSError> DescribeDBSnapshotTenantDatabasesOutcome;
@@ -468,6 +473,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ModifyDBProxyResult, RDSError> ModifyDBProxyOutcome;
       typedef Aws::Utils::Outcome<ModifyDBProxyEndpointResult, RDSError> ModifyDBProxyEndpointOutcome;
       typedef Aws::Utils::Outcome<ModifyDBProxyTargetGroupResult, RDSError> ModifyDBProxyTargetGroupOutcome;
+      typedef Aws::Utils::Outcome<ModifyDBRecommendationResult, RDSError> ModifyDBRecommendationOutcome;
       typedef Aws::Utils::Outcome<ModifyDBSnapshotResult, RDSError> ModifyDBSnapshotOutcome;
       typedef Aws::Utils::Outcome<ModifyDBSnapshotAttributeResult, RDSError> ModifyDBSnapshotAttributeOutcome;
       typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, RDSError> ModifyDBSubnetGroupOutcome;
@@ -584,6 +590,7 @@ namespace Aws
       typedef std::future<DescribeDBProxyEndpointsOutcome> DescribeDBProxyEndpointsOutcomeCallable;
       typedef std::future<DescribeDBProxyTargetGroupsOutcome> DescribeDBProxyTargetGroupsOutcomeCallable;
       typedef std::future<DescribeDBProxyTargetsOutcome> DescribeDBProxyTargetsOutcomeCallable;
+      typedef std::future<DescribeDBRecommendationsOutcome> DescribeDBRecommendationsOutcomeCallable;
       typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
       typedef std::future<DescribeDBSnapshotAttributesOutcome> DescribeDBSnapshotAttributesOutcomeCallable;
       typedef std::future<DescribeDBSnapshotTenantDatabasesOutcome> DescribeDBSnapshotTenantDatabasesOutcomeCallable;
@@ -623,6 +630,7 @@ namespace Aws
       typedef std::future<ModifyDBProxyOutcome> ModifyDBProxyOutcomeCallable;
       typedef std::future<ModifyDBProxyEndpointOutcome> ModifyDBProxyEndpointOutcomeCallable;
       typedef std::future<ModifyDBProxyTargetGroupOutcome> ModifyDBProxyTargetGroupOutcomeCallable;
+      typedef std::future<ModifyDBRecommendationOutcome> ModifyDBRecommendationOutcomeCallable;
       typedef std::future<ModifyDBSnapshotOutcome> ModifyDBSnapshotOutcomeCallable;
       typedef std::future<ModifyDBSnapshotAttributeOutcome> ModifyDBSnapshotAttributeOutcomeCallable;
       typedef std::future<ModifyDBSubnetGroupOutcome> ModifyDBSubnetGroupOutcomeCallable;
@@ -742,6 +750,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DescribeDBProxyEndpointsRequest&, const Model::DescribeDBProxyEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBProxyEndpointsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBProxyTargetGroupsRequest&, const Model::DescribeDBProxyTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBProxyTargetGroupsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBProxyTargetsRequest&, const Model::DescribeDBProxyTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBProxyTargetsResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DescribeDBRecommendationsRequest&, const Model::DescribeDBRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBRecommendationsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBSecurityGroupsRequest&, const Model::DescribeDBSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBSnapshotAttributesRequest&, const Model::DescribeDBSnapshotAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBSnapshotAttributesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBSnapshotTenantDatabasesRequest&, const Model::DescribeDBSnapshotTenantDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBSnapshotTenantDatabasesResponseReceivedHandler;
@@ -781,6 +790,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::ModifyDBProxyRequest&, const Model::ModifyDBProxyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBProxyResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBProxyEndpointRequest&, const Model::ModifyDBProxyEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBProxyEndpointResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBProxyTargetGroupRequest&, const Model::ModifyDBProxyTargetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBProxyTargetGroupResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::ModifyDBRecommendationRequest&, const Model::ModifyDBRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBRecommendationResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBSnapshotRequest&, const Model::ModifyDBSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBSnapshotResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBSnapshotAttributeRequest&, const Model::ModifyDBSnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBSnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBSubnetGroupRequest&, const Model::ModifyDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBSubnetGroupResponseReceivedHandler;
