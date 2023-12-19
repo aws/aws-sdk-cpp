@@ -10,6 +10,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsErrors.h>
 
+#include <aws/logs/model/StartLiveTailInitialResponse.h>
 #include <aws/logs/model/LiveTailSessionStart.h>
 #include <aws/logs/model/LiveTailSessionUpdate.h>
 
@@ -21,6 +22,7 @@ namespace Model
 {
     enum class StartLiveTailEventType
     {
+        INITIAL_RESPONSE,
         SESSIONSTART,
         SESSIONUPDATE,
         UNKNOWN
@@ -28,6 +30,8 @@ namespace Model
 
     class StartLiveTailHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const StartLiveTailInitialResponse&)> StartLiveTailInitialResponseCallback;
+        
         typedef std::function<void(const LiveTailSessionStart&)> LiveTailSessionStartCallback;
         typedef std::function<void(const LiveTailSessionUpdate&)> LiveTailSessionUpdateCallback;
         typedef std::function<void(const Aws::Client::AWSError<CloudWatchLogsErrors>& error)> ErrorCallback;
@@ -38,6 +42,8 @@ namespace Model
 
         AWS_CLOUDWATCHLOGS_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const StartLiveTailInitialResponseCallback& callback) { m_onInitialResponse = callback; }
+
         inline void SetLiveTailSessionStartCallback(const LiveTailSessionStartCallback& callback) { m_onLiveTailSessionStart = callback; }
         inline void SetLiveTailSessionUpdateCallback(const LiveTailSessionUpdateCallback& callback) { m_onLiveTailSessionUpdate = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
@@ -46,6 +52,8 @@ namespace Model
         AWS_CLOUDWATCHLOGS_API void HandleEventInMessage();
         AWS_CLOUDWATCHLOGS_API void HandleErrorInMessage();
         AWS_CLOUDWATCHLOGS_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
+
+        StartLiveTailInitialResponseCallback m_onInitialResponse;
 
         LiveTailSessionStartCallback m_onLiveTailSessionStart;
         LiveTailSessionUpdateCallback m_onLiveTailSessionUpdate;

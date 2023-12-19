@@ -29,6 +29,12 @@ namespace Model
 
     StartLiveTailHandler::StartLiveTailHandler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const StartLiveTailInitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(STARTLIVETAIL_HANDLER_CLASS_TAG,
+                "StartLiveTail initial response received.");
+        };
+
         m_onLiveTailSessionStart = [&](const LiveTailSessionStart&)
         {
             AWS_LOGSTREAM_TRACE(STARTLIVETAIL_HANDLER_CLASS_TAG, "LiveTailSessionStart received.");
@@ -93,6 +99,21 @@ namespace Model
         }
         switch (StartLiveTailEventMapper::GetStartLiveTailEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+        
+        case StartLiveTailEventType::INITIAL_RESPONSE: 
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(STARTLIVETAIL_HANDLER_CLASS_TAG, "Unable to generate a proper StartLiveTailInitialResponse object from the response in JSON format.");
+                break;
+            }
+
+            StartLiveTailInitialResponse event(json.View());
+            m_onInitialResponse(event);
+            break;
+        }   
+
         case StartLiveTailEventType::SESSIONSTART:
         {
             JsonValue json(GetEventPayloadAsString());
@@ -209,13 +230,19 @@ namespace Model
 
 namespace StartLiveTailEventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int SESSIONSTART_HASH = Aws::Utils::HashingUtils::HashString("sessionStart");
     static const int SESSIONUPDATE_HASH = Aws::Utils::HashingUtils::HashString("sessionUpdate");
 
     StartLiveTailEventType GetStartLiveTailEventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        if (hashCode == SESSIONSTART_HASH)
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return StartLiveTailEventType::INITIAL_RESPONSE;
+        }
+        else if (hashCode == SESSIONSTART_HASH)
         {
             return StartLiveTailEventType::SESSIONSTART;
         }
@@ -230,6 +257,8 @@ namespace StartLiveTailEventMapper
     {
         switch (value)
         {
+        case StartLiveTailEventType::INITIAL_RESPONSE:
+            return "initial-response";
         case StartLiveTailEventType::SESSIONSTART:
             return "sessionStart";
         case StartLiveTailEventType::SESSIONUPDATE:
