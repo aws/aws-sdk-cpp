@@ -506,10 +506,15 @@ void CurlHttpClient::InitGlobalState()
             << ", ssl version: " << curlVersionData->ssl_version);
         isInit = true;
 #ifdef USE_AWS_MEMORY_MANAGEMENT
-        curl_global_init_mem(CURL_GLOBAL_ALL, &malloc_callback, &free_callback, &realloc_callback, &strdup_callback, &calloc_callback);
+        CURLcode curlResponseCode = curl_global_init_mem(CURL_GLOBAL_ALL, &malloc_callback, &free_callback, &realloc_callback, &strdup_callback, &calloc_callback);
 #else
-        curl_global_init(CURL_GLOBAL_ALL);
+        CURLcode curlResponseCode = curl_global_init(CURL_GLOBAL_ALL);
 #endif
+        if (curlResponseCode != CURLE_OK)
+        {
+            AWS_LOGSTREAM_FATAL(CURL_HTTP_CLIENT_TAG, "Failed to init curl, return code " << curlResponseCode);
+            isInit = false;
+        }
     }
 }
 
@@ -517,6 +522,7 @@ void CurlHttpClient::InitGlobalState()
 void CurlHttpClient::CleanupGlobalState()
 {
     curl_global_cleanup();
+    isInit = false;
 }
 
 Aws::String CurlInfoTypeToString(curl_infotype type)

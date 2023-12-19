@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/internal/AWSHttpResourceClient.h>
 
 #if AWS_SDK_USE_CRT_HTTP
 #include <aws/core/http/crt/CRTHttpClient.h>
@@ -181,6 +182,9 @@ namespace Aws
         {
             if(GetHttpClientFactory())
             {
+                // EC2 metadata client uses http client from a factory, it will be invalidated
+                Aws::Internal::CleanupEC2MetadataClient();
+
                 GetHttpClientFactory()->CleanupStaticState();
                 GetHttpClientFactory() = nullptr;
             }
@@ -188,8 +192,14 @@ namespace Aws
 
         void SetHttpClientFactory(const std::shared_ptr<HttpClientFactory>& factory)
         {
+            bool recreateEC2Client = Aws::Internal::GetEC2MetadataClient() ? true : false;
             CleanupHttp();
             GetHttpClientFactory() = factory;
+
+            if (recreateEC2Client)
+            {
+                Aws::Internal::InitEC2MetadataClient();
+            }
         }
 
         std::shared_ptr<HttpClient> CreateHttpClient(const Aws::Client::ClientConfiguration& clientConfiguration)
