@@ -13,19 +13,18 @@ namespace ManagedBlockchainQuery
 {
 namespace Model
 {
-  enum class QueryTransactionStatus
+  enum class ConfirmationStatus
   {
     NOT_SET,
-    FINAL,
-    FAILED
+    FINAL
   };
 
-namespace QueryTransactionStatusMapper
+namespace ConfirmationStatusMapper
 {
-AWS_MANAGEDBLOCKCHAINQUERY_API QueryTransactionStatus GetQueryTransactionStatusForName(const Aws::String& name);
+AWS_MANAGEDBLOCKCHAINQUERY_API ConfirmationStatus GetConfirmationStatusForName(const Aws::String& name);
 
-AWS_MANAGEDBLOCKCHAINQUERY_API Aws::String GetNameForQueryTransactionStatus(QueryTransactionStatus value);
-} // namespace QueryTransactionStatusMapper
+AWS_MANAGEDBLOCKCHAINQUERY_API Aws::String GetNameForConfirmationStatus(ConfirmationStatus value);
+} // namespace ConfirmationStatusMapper
 } // namespace Model
 } // namespace ManagedBlockchainQuery
 } // namespace Aws

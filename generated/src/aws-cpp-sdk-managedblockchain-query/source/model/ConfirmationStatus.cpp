@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain-query/model/QueryTransactionStatus.h>
+#include <aws/managedblockchain-query/model/ConfirmationStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,44 +17,37 @@ namespace Aws
   {
     namespace Model
     {
-      namespace QueryTransactionStatusMapper
+      namespace ConfirmationStatusMapper
       {
 
         static const int FINAL_HASH = HashingUtils::HashString("FINAL");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
-        QueryTransactionStatus GetQueryTransactionStatusForName(const Aws::String& name)
+        ConfirmationStatus GetConfirmationStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == FINAL_HASH)
           {
-            return QueryTransactionStatus::FINAL;
-          }
-          else if (hashCode == FAILED_HASH)
-          {
-            return QueryTransactionStatus::FAILED;
+            return ConfirmationStatus::FINAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<QueryTransactionStatus>(hashCode);
+            return static_cast<ConfirmationStatus>(hashCode);
           }
 
-          return QueryTransactionStatus::NOT_SET;
+          return ConfirmationStatus::NOT_SET;
         }
 
-        Aws::String GetNameForQueryTransactionStatus(QueryTransactionStatus enumValue)
+        Aws::String GetNameForConfirmationStatus(ConfirmationStatus enumValue)
         {
           switch(enumValue)
           {
-          case QueryTransactionStatus::NOT_SET:
+          case ConfirmationStatus::NOT_SET:
             return {};
-          case QueryTransactionStatus::FINAL:
+          case ConfirmationStatus::FINAL:
             return "FINAL";
-          case QueryTransactionStatus::FAILED:
-            return "FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -66,7 +59,7 @@ namespace Aws
           }
         }
 
-      } // namespace QueryTransactionStatusMapper
+      } // namespace ConfirmationStatusMapper
     } // namespace Model
   } // namespace ManagedBlockchainQuery
 } // namespace Aws
