@@ -124,30 +124,21 @@ public abstract class CppClientGenerator implements ClientGenerator {
     }
 
     protected void addEventStreamInitialResponse(final ServiceModel serviceModel) {
-        for (Map.Entry<String, Operation> entry : serviceModel.getOperations().entrySet()) {
-            ShapeMember result = entry.getValue().getResult();
-            if (result == null) {
-                continue;
-            } 
-
-            Shape resultShape = result.getShape();
-            if (!resultShape.hasEventStreamMembers()) {
-                continue;
-            }
-
-            Shape initialResponseShape = Shape.builder()
-                .name(entry.getKey() + "InitialResponse")
+        serviceModel.getOperations().entrySet().stream()
+            .filter(operation -> Objects.nonNull(operation.getValue().getResult()))
+            .filter(operation -> operation.getValue().getResult().getShape().hasEventStreamMembers())
+            .map(operation -> Shape.builder()
+                .name(operation.getKey() + "InitialResponse")
                 .type("structure")
                 .isReferenced(true)
                 .event(true)
                 .eventPayloadType("structure")
-                .members(resultShape.getMembers().entrySet().stream()          
-                    .filter(member -> !member.getValue().getShape().isEventStream())
-                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
-                .build();
-
-            serviceModel.getShapes().put(entry.getKey() + "InitialResponse", initialResponseShape);      
-        }
+                .members(
+                    operation.getValue().getResult().getShape().getMembers().entrySet().stream()          
+                        .filter(member -> !member.getValue().getShape().isEventStream())
+                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
+                .build())
+            .forEach(shape -> serviceModel.getShapes().put(shape.getName() +  "InitialResponse", shape));
     }
 
     protected void addRequestIdToResults(final ServiceModel serviceModel) {
