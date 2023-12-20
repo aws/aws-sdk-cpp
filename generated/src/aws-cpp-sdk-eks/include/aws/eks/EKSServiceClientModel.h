@@ -44,6 +44,7 @@
 #include <aws/eks/model/DescribeEksAnywhereSubscriptionResult.h>
 #include <aws/eks/model/DescribeFargateProfileResult.h>
 #include <aws/eks/model/DescribeIdentityProviderConfigResult.h>
+#include <aws/eks/model/DescribeInsightResult.h>
 #include <aws/eks/model/DescribeNodegroupResult.h>
 #include <aws/eks/model/DescribePodIdentityAssociationResult.h>
 #include <aws/eks/model/DescribeUpdateResult.h>
@@ -57,6 +58,7 @@
 #include <aws/eks/model/ListEksAnywhereSubscriptionsResult.h>
 #include <aws/eks/model/ListFargateProfilesResult.h>
 #include <aws/eks/model/ListIdentityProviderConfigsResult.h>
+#include <aws/eks/model/ListInsightsResult.h>
 #include <aws/eks/model/ListNodegroupsResult.h>
 #include <aws/eks/model/ListPodIdentityAssociationsResult.h>
 #include <aws/eks/model/ListTagsForResourceResult.h>
@@ -138,6 +140,7 @@ namespace Aws
       class DescribeEksAnywhereSubscriptionRequest;
       class DescribeFargateProfileRequest;
       class DescribeIdentityProviderConfigRequest;
+      class DescribeInsightRequest;
       class DescribeNodegroupRequest;
       class DescribePodIdentityAssociationRequest;
       class DescribeUpdateRequest;
@@ -151,6 +154,7 @@ namespace Aws
       class ListEksAnywhereSubscriptionsRequest;
       class ListFargateProfilesRequest;
       class ListIdentityProviderConfigsRequest;
+      class ListInsightsRequest;
       class ListNodegroupsRequest;
       class ListPodIdentityAssociationsRequest;
       class ListTagsForResourceRequest;
@@ -195,6 +199,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeEksAnywhereSubscriptionResult, EKSError> DescribeEksAnywhereSubscriptionOutcome;
       typedef Aws::Utils::Outcome<DescribeFargateProfileResult, EKSError> DescribeFargateProfileOutcome;
       typedef Aws::Utils::Outcome<DescribeIdentityProviderConfigResult, EKSError> DescribeIdentityProviderConfigOutcome;
+      typedef Aws::Utils::Outcome<DescribeInsightResult, EKSError> DescribeInsightOutcome;
       typedef Aws::Utils::Outcome<DescribeNodegroupResult, EKSError> DescribeNodegroupOutcome;
       typedef Aws::Utils::Outcome<DescribePodIdentityAssociationResult, EKSError> DescribePodIdentityAssociationOutcome;
       typedef Aws::Utils::Outcome<DescribeUpdateResult, EKSError> DescribeUpdateOutcome;
@@ -208,6 +213,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListEksAnywhereSubscriptionsResult, EKSError> ListEksAnywhereSubscriptionsOutcome;
       typedef Aws::Utils::Outcome<ListFargateProfilesResult, EKSError> ListFargateProfilesOutcome;
       typedef Aws::Utils::Outcome<ListIdentityProviderConfigsResult, EKSError> ListIdentityProviderConfigsOutcome;
+      typedef Aws::Utils::Outcome<ListInsightsResult, EKSError> ListInsightsOutcome;
       typedef Aws::Utils::Outcome<ListNodegroupsResult, EKSError> ListNodegroupsOutcome;
       typedef Aws::Utils::Outcome<ListPodIdentityAssociationsResult, EKSError> ListPodIdentityAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, EKSError> ListTagsForResourceOutcome;
@@ -252,6 +258,7 @@ namespace Aws
       typedef std::future<DescribeEksAnywhereSubscriptionOutcome> DescribeEksAnywhereSubscriptionOutcomeCallable;
       typedef std::future<DescribeFargateProfileOutcome> DescribeFargateProfileOutcomeCallable;
       typedef std::future<DescribeIdentityProviderConfigOutcome> DescribeIdentityProviderConfigOutcomeCallable;
+      typedef std::future<DescribeInsightOutcome> DescribeInsightOutcomeCallable;
       typedef std::future<DescribeNodegroupOutcome> DescribeNodegroupOutcomeCallable;
       typedef std::future<DescribePodIdentityAssociationOutcome> DescribePodIdentityAssociationOutcomeCallable;
       typedef std::future<DescribeUpdateOutcome> DescribeUpdateOutcomeCallable;
@@ -265,6 +272,7 @@ namespace Aws
       typedef std::future<ListEksAnywhereSubscriptionsOutcome> ListEksAnywhereSubscriptionsOutcomeCallable;
       typedef std::future<ListFargateProfilesOutcome> ListFargateProfilesOutcomeCallable;
       typedef std::future<ListIdentityProviderConfigsOutcome> ListIdentityProviderConfigsOutcomeCallable;
+      typedef std::future<ListInsightsOutcome> ListInsightsOutcomeCallable;
       typedef std::future<ListNodegroupsOutcome> ListNodegroupsOutcomeCallable;
       typedef std::future<ListPodIdentityAssociationsOutcome> ListPodIdentityAssociationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -312,6 +320,7 @@ namespace Aws
     typedef std::function<void(const EKSClient*, const Model::DescribeEksAnywhereSubscriptionRequest&, const Model::DescribeEksAnywhereSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEksAnywhereSubscriptionResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeFargateProfileRequest&, const Model::DescribeFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFargateProfileResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeIdentityProviderConfigRequest&, const Model::DescribeIdentityProviderConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityProviderConfigResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::DescribeInsightRequest&, const Model::DescribeInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInsightResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeNodegroupRequest&, const Model::DescribeNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNodegroupResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribePodIdentityAssociationRequest&, const Model::DescribePodIdentityAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePodIdentityAssociationResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeUpdateRequest&, const Model::DescribeUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateResponseReceivedHandler;
@@ -325,6 +334,7 @@ namespace Aws
     typedef std::function<void(const EKSClient*, const Model::ListEksAnywhereSubscriptionsRequest&, const Model::ListEksAnywhereSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEksAnywhereSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListFargateProfilesRequest&, const Model::ListFargateProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFargateProfilesResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListIdentityProviderConfigsRequest&, const Model::ListIdentityProviderConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityProviderConfigsResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::ListInsightsRequest&, const Model::ListInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInsightsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListNodegroupsRequest&, const Model::ListNodegroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodegroupsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListPodIdentityAssociationsRequest&, const Model::ListPodIdentityAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPodIdentityAssociationsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;

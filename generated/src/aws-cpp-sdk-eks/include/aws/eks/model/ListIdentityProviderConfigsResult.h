@@ -76,7 +76,9 @@ namespace Model
      * <code>ListIdentityProviderConfigsResponse</code> request exceed
      * <code>maxResults</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to
-     * return.</p>
+     * return.</p>  <p>This token should be treated as an opaque identifier that
+     * is used only to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -86,7 +88,9 @@ namespace Model
      * <code>ListIdentityProviderConfigsResponse</code> request exceed
      * <code>maxResults</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to
-     * return.</p>
+     * return.</p>  <p>This token should be treated as an opaque identifier that
+     * is used only to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -96,7 +100,9 @@ namespace Model
      * <code>ListIdentityProviderConfigsResponse</code> request exceed
      * <code>maxResults</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to
-     * return.</p>
+     * return.</p>  <p>This token should be treated as an opaque identifier that
+     * is used only to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -106,7 +112,9 @@ namespace Model
      * <code>ListIdentityProviderConfigsResponse</code> request exceed
      * <code>maxResults</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to
-     * return.</p>
+     * return.</p>  <p>This token should be treated as an opaque identifier that
+     * is used only to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -116,7 +124,9 @@ namespace Model
      * <code>ListIdentityProviderConfigsResponse</code> request exceed
      * <code>maxResults</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to
-     * return.</p>
+     * return.</p>  <p>This token should be treated as an opaque identifier that
+     * is used only to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline ListIdentityProviderConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -126,7 +136,9 @@ namespace Model
      * <code>ListIdentityProviderConfigsResponse</code> request exceed
      * <code>maxResults</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to
-     * return.</p>
+     * return.</p>  <p>This token should be treated as an opaque identifier that
+     * is used only to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline ListIdentityProviderConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -136,7 +148,9 @@ namespace Model
      * <code>ListIdentityProviderConfigsResponse</code> request exceed
      * <code>maxResults</code>, you can use this value to retrieve the next page of
      * results. This value is <code>null</code> when there are no more results to
-     * return.</p>
+     * return.</p>  <p>This token should be treated as an opaque identifier that
+     * is used only to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> 
      */
     inline ListIdentityProviderConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

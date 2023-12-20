@@ -17,9 +17,9 @@ namespace Model
   {
     NOT_SET,
     ETHEREUM_MAINNET,
+    ETHEREUM_SEPOLIA_TESTNET,
     BITCOIN_MAINNET,
-    BITCOIN_TESTNET,
-    ETHEREUM_SEPOLIA_TESTNET
+    BITCOIN_TESTNET
   };
 
 namespace QueryNetworkMapper
