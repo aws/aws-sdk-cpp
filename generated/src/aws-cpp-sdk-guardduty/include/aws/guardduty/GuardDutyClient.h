@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/guardduty/GuardDutyServiceClientModel.h>
+#include <aws/guardduty/model/GetOrganizationStatisticsRequest.h>
 
 namespace Aws
 {
@@ -252,7 +253,13 @@ namespace GuardDuty
          * <code>CreateMembers</code> will enable GuardDuty in the added member accounts,
          * with the exception of the organization delegated administrator account. A
          * delegated administrator must enable GuardDuty prior to being added as a
-         * member.</p> <p>If you are adding accounts by invitation, before using <a
+         * member.</p> <p>When you use CreateMembers as an Organizations delegated
+         * administrator, GuardDuty applies your organization's auto-enable settings to the
+         * member accounts in this request, irrespective of the accounts being new or
+         * existing members. For more information about the existing auto-enable settings
+         * for your organization, see <a
+         * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeOrganizationConfiguration.html">DescribeOrganizationConfiguration</a>.</p>
+         * <p>If you are adding accounts by invitation, before using <a
          * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>,
          * use <code>CreateMembers</code> after GuardDuty has been enabled in potential
          * member accounts.</p> <p>If you disassociate a member from a GuardDuty delegated
@@ -832,9 +839,9 @@ namespace GuardDuty
         /**
          * <p>Retrieves aggregated statistics for your account. If you are a GuardDuty
          * administrator, you can retrieve the statistics for all the resources associated
-         * with the active member accounts in your organization who have enabled EKS
-         * Runtime Monitoring and have the GuardDuty agent running on their EKS
-         * nodes.</p><p><h3>See Also:</h3>   <a
+         * with the active member accounts in your organization who have enabled Runtime
+         * Monitoring and have the GuardDuty security agent running on their
+         * resources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">AWS
          * API Reference</a></p>
          */
@@ -1106,6 +1113,36 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Retrieves how many active member accounts in your Amazon Web Services
+         * organization have each feature enabled within GuardDuty. Only a delegated
+         * GuardDuty administrator of an organization can run this API.</p> <p>When you
+         * create a new Amazon Web Services organization, it might take up to 24 hours to
+         * generate the statistics for the entire organization.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetOrganizationStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetOrganizationStatisticsOutcome GetOrganizationStatistics(const Model::GetOrganizationStatisticsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetOrganizationStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetOrganizationStatisticsRequestT = Model::GetOrganizationStatisticsRequest>
+        Model::GetOrganizationStatisticsOutcomeCallable GetOrganizationStatisticsCallable(const GetOrganizationStatisticsRequestT& request = {}) const
+        {
+            return SubmitCallable(&GuardDutyClient::GetOrganizationStatistics, request);
+        }
+
+        /**
+         * An Async wrapper for GetOrganizationStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetOrganizationStatisticsRequestT = Model::GetOrganizationStatisticsRequest>
+        void GetOrganizationStatisticsAsync(const GetOrganizationStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetOrganizationStatisticsRequestT& request = {}) const
+        {
+            return SubmitAsync(&GuardDutyClient::GetOrganizationStatistics, request, handler, context);
+        }
+
+        /**
          * <p>Provides the number of days left for each data source used in the free trial
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetRemainingFreeTrialDays">AWS
@@ -1240,8 +1277,8 @@ namespace GuardDuty
         /**
          * <p>Lists coverage details for your GuardDuty account. If you're a GuardDuty
          * administrator, you can retrieve all resources associated with the active member
-         * accounts in your organization.</p> <p>Make sure the accounts have EKS Runtime
-         * Monitoring enabled and GuardDuty agent running on their EKS nodes.</p><p><h3>See
+         * accounts in your organization.</p> <p>Make sure the accounts have Runtime
+         * Monitoring enabled and GuardDuty agent running on their resources.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">AWS
          * API Reference</a></p>

@@ -911,6 +911,32 @@ namespace EKS
         }
 
         /**
+         * <p>Returns details about an insight that you specify using its ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsight">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInsightOutcome DescribeInsight(const Model::DescribeInsightRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeInsight that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInsightRequestT = Model::DescribeInsightRequest>
+        Model::DescribeInsightOutcomeCallable DescribeInsightCallable(const DescribeInsightRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::DescribeInsight, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInsight that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInsightRequestT = Model::DescribeInsightRequest>
+        void DescribeInsightAsync(const DescribeInsightRequestT& request, const DescribeInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::DescribeInsight, request, handler, context);
+        }
+
+        /**
          * <p>Describes a managed node group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">AWS
          * API Reference</a></p>
@@ -1251,6 +1277,33 @@ namespace EKS
         void ListIdentityProviderConfigsAsync(const ListIdentityProviderConfigsRequestT& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EKSClient::ListIdentityProviderConfigs, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of all insights checked for against the specified cluster. You
+         * can filter which insights are returned by category, associated Kubernetes
+         * version, and status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListInsights">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInsightsOutcome ListInsights(const Model::ListInsightsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInsights that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInsightsRequestT = Model::ListInsightsRequest>
+        Model::ListInsightsOutcomeCallable ListInsightsCallable(const ListInsightsRequestT& request) const
+        {
+            return SubmitCallable(&EKSClient::ListInsights, request);
+        }
+
+        /**
+         * An Async wrapper for ListInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInsightsRequestT = Model::ListInsightsRequest>
+        void ListInsightsAsync(const ListInsightsRequestT& request, const ListInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EKSClient::ListInsights, request, handler, context);
         }
 
         /**

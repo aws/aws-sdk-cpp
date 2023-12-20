@@ -28,8 +28,10 @@ namespace Model
   /**
    *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
    * your Amazon EC2 instances (currently in preview release) and is subject to
-   * change.</p>  <p>Contains information about the Amazon EC2 instance
-   * runtime coverage details.</p><p><h3>See Also:</h3>   <a
+   * change. The use of this API is subject to Section 2 of the <a
+   * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+   * Terms</a> ("Betas and Previews").</p>  <p>Contains information about the
+   * Amazon EC2 instance runtime coverage details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CoverageEc2InstanceDetails">AWS
    * API Reference</a></p>
    */
@@ -211,7 +213,7 @@ namespace Model
      * indicates that you are responsible to deploy, update, and manage the GuardDuty
      * security agent updates for this resource.</p> </li> </ul>  <p>The
      * <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon
-     * EKS clusters that run on Amazon EC2 instances.</p> 
+     * EKS clusters.</p> 
      */
     inline const ManagementType& GetManagementType() const{ return m_managementType; }
 
@@ -222,7 +224,7 @@ namespace Model
      * indicates that you are responsible to deploy, update, and manage the GuardDuty
      * security agent updates for this resource.</p> </li> </ul>  <p>The
      * <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon
-     * EKS clusters that run on Amazon EC2 instances.</p> 
+     * EKS clusters.</p> 
      */
     inline bool ManagementTypeHasBeenSet() const { return m_managementTypeHasBeenSet; }
 
@@ -233,7 +235,7 @@ namespace Model
      * indicates that you are responsible to deploy, update, and manage the GuardDuty
      * security agent updates for this resource.</p> </li> </ul>  <p>The
      * <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon
-     * EKS clusters that run on Amazon EC2 instances.</p> 
+     * EKS clusters.</p> 
      */
     inline void SetManagementType(const ManagementType& value) { m_managementTypeHasBeenSet = true; m_managementType = value; }
 
@@ -244,7 +246,7 @@ namespace Model
      * indicates that you are responsible to deploy, update, and manage the GuardDuty
      * security agent updates for this resource.</p> </li> </ul>  <p>The
      * <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon
-     * EKS clusters that run on Amazon EC2 instances.</p> 
+     * EKS clusters.</p> 
      */
     inline void SetManagementType(ManagementType&& value) { m_managementTypeHasBeenSet = true; m_managementType = std::move(value); }
 
@@ -255,7 +257,7 @@ namespace Model
      * indicates that you are responsible to deploy, update, and manage the GuardDuty
      * security agent updates for this resource.</p> </li> </ul>  <p>The
      * <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon
-     * EKS clusters that run on Amazon EC2 instances.</p> 
+     * EKS clusters.</p> 
      */
     inline CoverageEc2InstanceDetails& WithManagementType(const ManagementType& value) { SetManagementType(value); return *this;}
 
@@ -266,7 +268,7 @@ namespace Model
      * indicates that you are responsible to deploy, update, and manage the GuardDuty
      * security agent updates for this resource.</p> </li> </ul>  <p>The
      * <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon
-     * EKS clusters that run on Amazon EC2 instances.</p> 
+     * EKS clusters.</p> 
      */
     inline CoverageEc2InstanceDetails& WithManagementType(ManagementType&& value) { SetManagementType(std::move(value)); return *this;}
 

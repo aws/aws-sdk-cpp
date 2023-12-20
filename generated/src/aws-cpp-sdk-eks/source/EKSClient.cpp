@@ -47,6 +47,7 @@
 #include <aws/eks/model/DescribeEksAnywhereSubscriptionRequest.h>
 #include <aws/eks/model/DescribeFargateProfileRequest.h>
 #include <aws/eks/model/DescribeIdentityProviderConfigRequest.h>
+#include <aws/eks/model/DescribeInsightRequest.h>
 #include <aws/eks/model/DescribeNodegroupRequest.h>
 #include <aws/eks/model/DescribePodIdentityAssociationRequest.h>
 #include <aws/eks/model/DescribeUpdateRequest.h>
@@ -60,6 +61,7 @@
 #include <aws/eks/model/ListEksAnywhereSubscriptionsRequest.h>
 #include <aws/eks/model/ListFargateProfilesRequest.h>
 #include <aws/eks/model/ListIdentityProviderConfigsRequest.h>
+#include <aws/eks/model/ListInsightsRequest.h>
 #include <aws/eks/model/ListNodegroupsRequest.h>
 #include <aws/eks/model/ListPodIdentityAssociationsRequest.h>
 #include <aws/eks/model/ListTagsForResourceRequest.h>
@@ -1124,6 +1126,46 @@ DescribeIdentityProviderConfigOutcome EKSClient::DescribeIdentityProviderConfig(
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeInsightOutcome EKSClient::DescribeInsight(const DescribeInsightRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeInsight);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInsight, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeInsight", "Required field: ClusterName, is not set");
+    return DescribeInsightOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeInsight", "Required field: Id, is not set");
+    return DescribeInsightOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeInsight, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeInsight, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeInsight",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeInsightOutcome>(
+    [&]()-> DescribeInsightOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInsight, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/insights/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+      return DescribeInsightOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeNodegroup);
@@ -1577,6 +1619,40 @@ ListIdentityProviderConfigsOutcome EKSClient::ListIdentityProviderConfigs(const 
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider-configs");
       return ListIdentityProviderConfigsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListInsightsOutcome EKSClient::ListInsights(const ListInsightsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListInsights);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListInsights", "Required field: ClusterName, is not set");
+    return ListInsightsOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListInsights, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListInsights, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListInsights",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListInsightsOutcome>(
+    [&]()-> ListInsightsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/insights");
+      return ListInsightsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
