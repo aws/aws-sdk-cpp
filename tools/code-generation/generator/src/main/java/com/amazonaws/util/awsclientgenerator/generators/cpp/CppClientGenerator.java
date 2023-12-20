@@ -138,7 +138,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
                         .filter(member -> !member.getValue().getShape().isEventStream())
                         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
                 .build())
-            .forEach(shape -> serviceModel.getShapes().put(shape.getName() +  "InitialResponse", shape));
+            .forEach(shape -> serviceModel.getShapes().put(shape.getName(), shape));
     }
 
     protected void addRequestIdToResults(final ServiceModel serviceModel) {

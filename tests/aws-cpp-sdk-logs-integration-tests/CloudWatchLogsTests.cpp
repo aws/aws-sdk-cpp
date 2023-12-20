@@ -16,6 +16,8 @@
 #include <aws/logs/model/GetLogEventsRequest.h>
 #include <aws/logs/model/PutLogEventsRequest.h>
 #include <aws/logs/model/DeleteLogGroupRequest.h>
+#include <aws/logs/model/StartLiveTailHandler.h>
+#include <aws/logs/model/StartLiveTailRequest.h>
 #include <aws/testing/TestingEnvironment.h>
 
 #include <chrono>
@@ -139,6 +141,42 @@ namespace
             retry++;
         }
         ASSERT_EQ(6u, eventsCount);
+    }
+
+    TEST_F(CloudWatchLogsOperationTest, StartLiveTailTest)
+    {
+        CreateLogStreamRequest createStreamRequest;
+        createStreamRequest.WithLogGroupName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP))
+                            .WithLogStreamName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM));
+        auto createStreamOutcome = m_client->CreateLogStream(createStreamRequest);
+        AWS_ASSERT_SUCCESS(createStreamOutcome);
+
+        CloudWatchLogs::Model::StartLiveTailHandler handler;
+
+        auto OnResponseCallback = [](
+            const CloudWatchLogs::CloudWatchLogsClient* /*unused*/,
+            const CloudWatchLogs::Model::StartLiveTailRequest& /*unused*/,
+            const CloudWatchLogs::Model::StartLiveTailOutcome& outcome,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& /*unused*/) {
+            // Pre-stream Exceptions are captured here
+            AWS_ASSERT_SUCCESS(outcome);
+        };
+
+        std::atomic<bool> keep_going = true;
+        request.SetContinueRequestHandler([&keep_going](const Aws::Http::HttpRequest*) {
+            return keep_going.load();
+        });
+
+        client.StartLiveTailAsync(request, handler);
+
+        //let it run for a little bit
+        std::this_thread::sleep_for(std::chrono::seconds(6));
+
+        keep_going.store(false);
+
+        //note: continue request handler takes a while to stop a request, so
+        //wait some time for request to stop before exiting the test
+        std::this_thread::sleep_for(std::chrono::seconds(6));
     }
 }
 
