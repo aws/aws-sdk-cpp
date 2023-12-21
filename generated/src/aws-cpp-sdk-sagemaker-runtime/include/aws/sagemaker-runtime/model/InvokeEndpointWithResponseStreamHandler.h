@@ -10,6 +10,7 @@
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeErrors.h>
 
+#include <aws/sagemaker-runtime/model/InvokeEndpointWithResponseStreamInitialResponse.h>
 #include <aws/sagemaker-runtime/model/PayloadPart.h>
 
 namespace Aws
@@ -20,12 +21,14 @@ namespace Model
 {
     enum class InvokeEndpointWithResponseStreamEventType
     {
+        INITIAL_RESPONSE,
         PAYLOADPART,
         UNKNOWN
     };
 
     class InvokeEndpointWithResponseStreamHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const InvokeEndpointWithResponseStreamInitialResponse&)> InvokeEndpointWithResponseStreamInitialResponseCallback;
         typedef std::function<void(const PayloadPart&)> PayloadPartCallback;
         typedef std::function<void(const Aws::Client::AWSError<SageMakerRuntimeErrors>& error)> ErrorCallback;
 
@@ -35,6 +38,7 @@ namespace Model
 
         AWS_SAGEMAKERRUNTIME_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const InvokeEndpointWithResponseStreamInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetPayloadPartCallback(const PayloadPartCallback& callback) { m_onPayloadPart = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
@@ -43,6 +47,7 @@ namespace Model
         AWS_SAGEMAKERRUNTIME_API void HandleErrorInMessage();
         AWS_SAGEMAKERRUNTIME_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
+        InvokeEndpointWithResponseStreamInitialResponseCallback m_onInitialResponse;
         PayloadPartCallback m_onPayloadPart;
         ErrorCallback m_onError;
     };

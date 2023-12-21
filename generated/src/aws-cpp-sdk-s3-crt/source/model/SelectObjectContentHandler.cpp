@@ -26,6 +26,12 @@ namespace Model
 
     SelectObjectContentHandler::SelectObjectContentHandler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const SelectObjectContentInitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
+                "SelectObjectContent initial response received.");
+        };
+
         m_onRecordsEvent = [&](const RecordsEvent&)
         {
             AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "RecordsEvent received.");
@@ -105,6 +111,13 @@ namespace Model
         }
         switch (SelectObjectContentEventMapper::GetSelectObjectContentEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+
+        case SelectObjectContentEventType::INITIAL_RESPONSE: 
+        {
+            SelectObjectContentInitialResponse event(GetEventPayloadWithOwnership());
+            m_onInitialResponse(event);
+            break;
+        }   
         case SelectObjectContentEventType::RECORDS:
         {
             RecordsEvent event(GetEventPayloadWithOwnership());
@@ -215,6 +228,7 @@ namespace Model
 
 namespace SelectObjectContentEventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int RECORDS_HASH = Aws::Utils::HashingUtils::HashString("Records");
     static const int STATS_HASH = Aws::Utils::HashingUtils::HashString("Stats");
     static const int PROGRESS_HASH = Aws::Utils::HashingUtils::HashString("Progress");
@@ -224,7 +238,13 @@ namespace SelectObjectContentEventMapper
     SelectObjectContentEventType GetSelectObjectContentEventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        if (hashCode == RECORDS_HASH)
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return SelectObjectContentEventType::INITIAL_RESPONSE;
+        }
+
+        else if (hashCode == RECORDS_HASH)
         {
             return SelectObjectContentEventType::RECORDS;
         }
@@ -251,6 +271,8 @@ namespace SelectObjectContentEventMapper
     {
         switch (value)
         {
+        case SelectObjectContentEventType::INITIAL_RESPONSE:
+            return "initial-response";
         case SelectObjectContentEventType::RECORDS:
             return "Records";
         case SelectObjectContentEventType::STATS:

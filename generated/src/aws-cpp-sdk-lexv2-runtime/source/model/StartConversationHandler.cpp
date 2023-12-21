@@ -29,6 +29,12 @@ namespace Model
 
     StartConversationHandler::StartConversationHandler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const StartConversationInitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(STARTCONVERSATION_HANDLER_CLASS_TAG,
+                "StartConversation initial response received.");
+        };
+
         m_onPlaybackInterruptionEvent = [&](const PlaybackInterruptionEvent&)
         {
             AWS_LOGSTREAM_TRACE(STARTCONVERSATION_HANDLER_CLASS_TAG, "PlaybackInterruptionEvent received.");
@@ -113,6 +119,21 @@ namespace Model
         }
         switch (StartConversationEventMapper::GetStartConversationEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+        
+        case StartConversationEventType::INITIAL_RESPONSE: 
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(STARTCONVERSATION_HANDLER_CLASS_TAG, "Unable to generate a proper StartConversationInitialResponse object from the response in JSON format.");
+                break;
+            }
+
+            StartConversationInitialResponse event(json.View());
+            m_onInitialResponse(event);
+            break;
+        }   
+
         case StartConversationEventType::PLAYBACKINTERRUPTIONEVENT:
         {
             JsonValue json(GetEventPayloadAsString());
@@ -277,6 +298,7 @@ namespace Model
 
 namespace StartConversationEventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int PLAYBACKINTERRUPTIONEVENT_HASH = Aws::Utils::HashingUtils::HashString("PlaybackInterruptionEvent");
     static const int TRANSCRIPTEVENT_HASH = Aws::Utils::HashingUtils::HashString("TranscriptEvent");
     static const int INTENTRESULTEVENT_HASH = Aws::Utils::HashingUtils::HashString("IntentResultEvent");
@@ -287,7 +309,12 @@ namespace StartConversationEventMapper
     StartConversationEventType GetStartConversationEventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        if (hashCode == PLAYBACKINTERRUPTIONEVENT_HASH)
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return StartConversationEventType::INITIAL_RESPONSE;
+        }
+        else if (hashCode == PLAYBACKINTERRUPTIONEVENT_HASH)
         {
             return StartConversationEventType::PLAYBACKINTERRUPTIONEVENT;
         }
@@ -318,6 +345,8 @@ namespace StartConversationEventMapper
     {
         switch (value)
         {
+        case StartConversationEventType::INITIAL_RESPONSE:
+            return "initial-response";
         case StartConversationEventType::PLAYBACKINTERRUPTIONEVENT:
             return "PlaybackInterruptionEvent";
         case StartConversationEventType::TRANSCRIPTEVENT:
