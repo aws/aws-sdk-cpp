@@ -199,6 +199,42 @@ namespace Model
     inline CreateWorkspaceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
+    /**
+     * <p>Customer managed KMS key ARN for this workspace</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>Customer managed KMS key ARN for this workspace</p>
+     */
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
+
+    /**
+     * <p>Customer managed KMS key ARN for this workspace</p>
+     */
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
+
+    /**
+     * <p>Customer managed KMS key ARN for this workspace</p>
+     */
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
+
+    /**
+     * <p>Customer managed KMS key ARN for this workspace</p>
+     */
+    inline CreateWorkspaceResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>Customer managed KMS key ARN for this workspace</p>
+     */
+    inline CreateWorkspaceResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Customer managed KMS key ARN for this workspace</p>
+     */
+    inline CreateWorkspaceResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -229,6 +265,8 @@ namespace Model
     WorkspaceStatus m_status;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_kmsKeyArn;
 
     Aws::String m_requestId;
   };

@@ -43,6 +43,10 @@ Contact::Contact() :
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
     m_wisdomInfoHasBeenSet(false),
+    m_queueTimeAdjustmentSeconds(0),
+    m_queueTimeAdjustmentSecondsHasBeenSet(false),
+    m_queuePriority(0),
+    m_queuePriorityHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -72,6 +76,10 @@ Contact::Contact(JsonView jsonValue) :
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
     m_wisdomInfoHasBeenSet(false),
+    m_queueTimeAdjustmentSeconds(0),
+    m_queueTimeAdjustmentSecondsHasBeenSet(false),
+    m_queuePriority(0),
+    m_queuePriorityHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -219,6 +227,20 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_wisdomInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QueueTimeAdjustmentSeconds"))
+  {
+    m_queueTimeAdjustmentSeconds = jsonValue.GetInteger("QueueTimeAdjustmentSeconds");
+
+    m_queueTimeAdjustmentSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QueuePriority"))
+  {
+    m_queuePriority = jsonValue.GetInt64("QueuePriority");
+
+    m_queuePriorityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -345,6 +367,18 @@ JsonValue Contact::Jsonize() const
   if(m_wisdomInfoHasBeenSet)
   {
    payload.WithObject("WisdomInfo", m_wisdomInfo.Jsonize());
+
+  }
+
+  if(m_queueTimeAdjustmentSecondsHasBeenSet)
+  {
+   payload.WithInteger("QueueTimeAdjustmentSeconds", m_queueTimeAdjustmentSeconds);
+
+  }
+
+  if(m_queuePriorityHasBeenSet)
+  {
+   payload.WithInt64("QueuePriority", m_queuePriority);
 
   }
 

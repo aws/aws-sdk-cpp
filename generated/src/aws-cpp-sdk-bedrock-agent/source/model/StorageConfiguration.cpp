@@ -23,7 +23,8 @@ StorageConfiguration::StorageConfiguration() :
     m_typeHasBeenSet(false),
     m_opensearchServerlessConfigurationHasBeenSet(false),
     m_pineconeConfigurationHasBeenSet(false),
-    m_redisEnterpriseCloudConfigurationHasBeenSet(false)
+    m_redisEnterpriseCloudConfigurationHasBeenSet(false),
+    m_rdsConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ StorageConfiguration::StorageConfiguration(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_opensearchServerlessConfigurationHasBeenSet(false),
     m_pineconeConfigurationHasBeenSet(false),
-    m_redisEnterpriseCloudConfigurationHasBeenSet(false)
+    m_redisEnterpriseCloudConfigurationHasBeenSet(false),
+    m_rdsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
     m_redisEnterpriseCloudConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rdsConfiguration"))
+  {
+    m_rdsConfiguration = jsonValue.GetObject("rdsConfiguration");
+
+    m_rdsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue StorageConfiguration::Jsonize() const
   if(m_redisEnterpriseCloudConfigurationHasBeenSet)
   {
    payload.WithObject("redisEnterpriseCloudConfiguration", m_redisEnterpriseCloudConfiguration.Jsonize());
+
+  }
+
+  if(m_rdsConfigurationHasBeenSet)
+  {
+   payload.WithObject("rdsConfiguration", m_rdsConfiguration.Jsonize());
 
   }
 
