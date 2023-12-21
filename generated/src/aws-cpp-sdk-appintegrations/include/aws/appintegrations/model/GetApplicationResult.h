@@ -7,11 +7,9 @@
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/appintegrations/model/Subscription.h>
-#include <aws/appintegrations/model/Publication.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -245,78 +243,6 @@ namespace Model
 
 
     /**
-     * <p>The events that the application subscribes.</p>
-     */
-    inline const Aws::Vector<Subscription>& GetSubscriptions() const{ return m_subscriptions; }
-
-    /**
-     * <p>The events that the application subscribes.</p>
-     */
-    inline void SetSubscriptions(const Aws::Vector<Subscription>& value) { m_subscriptions = value; }
-
-    /**
-     * <p>The events that the application subscribes.</p>
-     */
-    inline void SetSubscriptions(Aws::Vector<Subscription>&& value) { m_subscriptions = std::move(value); }
-
-    /**
-     * <p>The events that the application subscribes.</p>
-     */
-    inline GetApplicationResult& WithSubscriptions(const Aws::Vector<Subscription>& value) { SetSubscriptions(value); return *this;}
-
-    /**
-     * <p>The events that the application subscribes.</p>
-     */
-    inline GetApplicationResult& WithSubscriptions(Aws::Vector<Subscription>&& value) { SetSubscriptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The events that the application subscribes.</p>
-     */
-    inline GetApplicationResult& AddSubscriptions(const Subscription& value) { m_subscriptions.push_back(value); return *this; }
-
-    /**
-     * <p>The events that the application subscribes.</p>
-     */
-    inline GetApplicationResult& AddSubscriptions(Subscription&& value) { m_subscriptions.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline const Aws::Vector<Publication>& GetPublications() const{ return m_publications; }
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline void SetPublications(const Aws::Vector<Publication>& value) { m_publications = value; }
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline void SetPublications(Aws::Vector<Publication>&& value) { m_publications = std::move(value); }
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline GetApplicationResult& WithPublications(const Aws::Vector<Publication>& value) { SetPublications(value); return *this;}
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline GetApplicationResult& WithPublications(Aws::Vector<Publication>&& value) { SetPublications(std::move(value)); return *this;}
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline GetApplicationResult& AddPublications(const Publication& value) { m_publications.push_back(value); return *this; }
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline GetApplicationResult& AddPublications(Publication&& value) { m_publications.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The created time of the Application.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
@@ -441,6 +367,55 @@ namespace Model
     inline GetApplicationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
+    /**
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPermissions() const{ return m_permissions; }
+
+    /**
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
+     */
+    inline void SetPermissions(const Aws::Vector<Aws::String>& value) { m_permissions = value; }
+
+    /**
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
+     */
+    inline void SetPermissions(Aws::Vector<Aws::String>&& value) { m_permissions = std::move(value); }
+
+    /**
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
+     */
+    inline GetApplicationResult& WithPermissions(const Aws::Vector<Aws::String>& value) { SetPermissions(value); return *this;}
+
+    /**
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
+     */
+    inline GetApplicationResult& WithPermissions(Aws::Vector<Aws::String>&& value) { SetPermissions(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
+     */
+    inline GetApplicationResult& AddPermissions(const Aws::String& value) { m_permissions.push_back(value); return *this; }
+
+    /**
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
+     */
+    inline GetApplicationResult& AddPermissions(Aws::String&& value) { m_permissions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
+     */
+    inline GetApplicationResult& AddPermissions(const char* value) { m_permissions.push_back(value); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -476,15 +451,13 @@ namespace Model
 
     ApplicationSourceConfig m_applicationSourceConfig;
 
-    Aws::Vector<Subscription> m_subscriptions;
-
-    Aws::Vector<Publication> m_publications;
-
     Aws::Utils::DateTime m_createdTime;
 
     Aws::Utils::DateTime m_lastModifiedTime;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::Vector<Aws::String> m_permissions;
 
     Aws::String m_requestId;
   };

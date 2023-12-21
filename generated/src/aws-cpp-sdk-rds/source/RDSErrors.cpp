@@ -77,6 +77,7 @@ static const int INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT_HASH = HashingUtils::H
 static const int SOURCE_CLUSTER_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("SourceClusterNotSupportedFault");
 static const int INVALID_D_B_CLUSTER_AUTOMATED_BACKUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterAutomatedBackupStateFault");
 static const int STORAGE_TYPE_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("StorageTypeNotSupported");
+static const int INVALID_RESOURCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidResourceStateFault");
 static const int S_N_S_INVALID_TOPIC_FAULT_HASH = HashingUtils::HashString("SNSInvalidTopic");
 static const int INVALID_D_B_SUBNET_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSubnetStateFault");
 static const int INVALID_D_B_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterCapacityFault");
@@ -461,6 +462,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::STORAGE_TYPE_NOT_SUPPORTED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
+  else if (hashCode == INVALID_RESOURCE_STATE_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_RESOURCE_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
   else if (hashCode == S_N_S_INVALID_TOPIC_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::S_N_S_INVALID_TOPIC_FAULT), RetryableType::NOT_RETRYABLE);
@@ -771,17 +777,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT_HASH)
+  if (hashCode == D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;

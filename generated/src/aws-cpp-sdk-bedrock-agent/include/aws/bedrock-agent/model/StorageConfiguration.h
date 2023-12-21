@@ -9,6 +9,7 @@
 #include <aws/bedrock-agent/model/OpenSearchServerlessConfiguration.h>
 #include <aws/bedrock-agent/model/PineconeConfiguration.h>
 #include <aws/bedrock-agent/model/RedisEnterpriseCloudConfiguration.h>
+#include <aws/bedrock-agent/model/RdsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -116,6 +117,25 @@ namespace Model
     
     inline StorageConfiguration& WithRedisEnterpriseCloudConfiguration(RedisEnterpriseCloudConfiguration&& value) { SetRedisEnterpriseCloudConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const RdsConfiguration& GetRdsConfiguration() const{ return m_rdsConfiguration; }
+
+    
+    inline bool RdsConfigurationHasBeenSet() const { return m_rdsConfigurationHasBeenSet; }
+
+    
+    inline void SetRdsConfiguration(const RdsConfiguration& value) { m_rdsConfigurationHasBeenSet = true; m_rdsConfiguration = value; }
+
+    
+    inline void SetRdsConfiguration(RdsConfiguration&& value) { m_rdsConfigurationHasBeenSet = true; m_rdsConfiguration = std::move(value); }
+
+    
+    inline StorageConfiguration& WithRdsConfiguration(const RdsConfiguration& value) { SetRdsConfiguration(value); return *this;}
+
+    
+    inline StorageConfiguration& WithRdsConfiguration(RdsConfiguration&& value) { SetRdsConfiguration(std::move(value)); return *this;}
+
   private:
 
     KnowledgeBaseStorageType m_type;
@@ -129,6 +149,9 @@ namespace Model
 
     RedisEnterpriseCloudConfiguration m_redisEnterpriseCloudConfiguration;
     bool m_redisEnterpriseCloudConfigurationHasBeenSet = false;
+
+    RdsConfiguration m_rdsConfiguration;
+    bool m_rdsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -107,7 +107,9 @@
 #include <aws/rds/model/DescribeSourceRegionsResult.h>
 #include <aws/rds/model/DescribeTenantDatabasesResult.h>
 #include <aws/rds/model/DescribeValidDBInstanceModificationsResult.h>
+#include <aws/rds/model/DisableHttpEndpointResult.h>
 #include <aws/rds/model/DownloadDBLogFilePortionResult.h>
+#include <aws/rds/model/EnableHttpEndpointResult.h>
 #include <aws/rds/model/FailoverDBClusterResult.h>
 #include <aws/rds/model/FailoverGlobalClusterResult.h>
 #include <aws/rds/model/ListTagsForResourceResult.h>
@@ -299,7 +301,9 @@ namespace Aws
       class DescribeSourceRegionsRequest;
       class DescribeTenantDatabasesRequest;
       class DescribeValidDBInstanceModificationsRequest;
+      class DisableHttpEndpointRequest;
       class DownloadDBLogFilePortionRequest;
+      class EnableHttpEndpointRequest;
       class FailoverDBClusterRequest;
       class FailoverGlobalClusterRequest;
       class ListTagsForResourceRequest;
@@ -456,7 +460,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeSourceRegionsResult, RDSError> DescribeSourceRegionsOutcome;
       typedef Aws::Utils::Outcome<DescribeTenantDatabasesResult, RDSError> DescribeTenantDatabasesOutcome;
       typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, RDSError> DescribeValidDBInstanceModificationsOutcome;
+      typedef Aws::Utils::Outcome<DisableHttpEndpointResult, RDSError> DisableHttpEndpointOutcome;
       typedef Aws::Utils::Outcome<DownloadDBLogFilePortionResult, RDSError> DownloadDBLogFilePortionOutcome;
+      typedef Aws::Utils::Outcome<EnableHttpEndpointResult, RDSError> EnableHttpEndpointOutcome;
       typedef Aws::Utils::Outcome<FailoverDBClusterResult, RDSError> FailoverDBClusterOutcome;
       typedef Aws::Utils::Outcome<FailoverGlobalClusterResult, RDSError> FailoverGlobalClusterOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, RDSError> ListTagsForResourceOutcome;
@@ -613,7 +619,9 @@ namespace Aws
       typedef std::future<DescribeSourceRegionsOutcome> DescribeSourceRegionsOutcomeCallable;
       typedef std::future<DescribeTenantDatabasesOutcome> DescribeTenantDatabasesOutcomeCallable;
       typedef std::future<DescribeValidDBInstanceModificationsOutcome> DescribeValidDBInstanceModificationsOutcomeCallable;
+      typedef std::future<DisableHttpEndpointOutcome> DisableHttpEndpointOutcomeCallable;
       typedef std::future<DownloadDBLogFilePortionOutcome> DownloadDBLogFilePortionOutcomeCallable;
+      typedef std::future<EnableHttpEndpointOutcome> EnableHttpEndpointOutcomeCallable;
       typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
       typedef std::future<FailoverGlobalClusterOutcome> FailoverGlobalClusterOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -773,7 +781,9 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DescribeSourceRegionsRequest&, const Model::DescribeSourceRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSourceRegionsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeTenantDatabasesRequest&, const Model::DescribeTenantDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTenantDatabasesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeValidDBInstanceModificationsRequest&, const Model::DescribeValidDBInstanceModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeValidDBInstanceModificationsResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DisableHttpEndpointRequest&, const Model::DisableHttpEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableHttpEndpointResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DownloadDBLogFilePortionRequest&, const Model::DownloadDBLogFilePortionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DownloadDBLogFilePortionResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::EnableHttpEndpointRequest&, const Model::EnableHttpEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableHttpEndpointResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::FailoverDBClusterRequest&, const Model::FailoverDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::FailoverGlobalClusterRequest&, const Model::FailoverGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;

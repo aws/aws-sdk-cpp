@@ -3091,6 +3091,38 @@ namespace Aws
         }
 
         /**
+         * <p>Disables the HTTP endpoint for the specified DB cluster. Disabling this
+         * endpoint disables RDS Data API.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+         * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+         * operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+         * clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use
+         * the <code>EnableHttpEndpoint</code> parameter of the
+         * <code>ModifyDBCluster</code> operation.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DisableHttpEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableHttpEndpointOutcome DisableHttpEndpoint(const Model::DisableHttpEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableHttpEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableHttpEndpointRequestT = Model::DisableHttpEndpointRequest>
+        Model::DisableHttpEndpointOutcomeCallable DisableHttpEndpointCallable(const DisableHttpEndpointRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DisableHttpEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for DisableHttpEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableHttpEndpointRequestT = Model::DisableHttpEndpointRequest>
+        void DisableHttpEndpointAsync(const DisableHttpEndpointRequestT& request, const DisableHttpEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DisableHttpEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
          * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
@@ -3114,6 +3146,41 @@ namespace Aws
         void DownloadDBLogFilePortionAsync(const DownloadDBLogFilePortionRequestT& request, const DownloadDBLogFilePortionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DownloadDBLogFilePortion, request, handler, context);
+        }
+
+        /**
+         * <p>Enables the HTTP endpoint for the DB cluster. By default, the HTTP endpoint
+         * isn't enabled.</p> <p>When enabled, this endpoint provides a connectionless web
+         * service API (RDS Data API) for running SQL queries on the Aurora DB cluster. You
+         * can also query your database from inside the RDS console with the RDS query
+         * editor.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+         * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+         * operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+         * clusters. To enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use
+         * the <code>EnableHttpEndpoint</code> parameter of the
+         * <code>ModifyDBCluster</code> operation.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EnableHttpEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableHttpEndpointOutcome EnableHttpEndpoint(const Model::EnableHttpEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableHttpEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableHttpEndpointRequestT = Model::EnableHttpEndpointRequest>
+        Model::EnableHttpEndpointOutcomeCallable EnableHttpEndpointCallable(const EnableHttpEndpointRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::EnableHttpEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for EnableHttpEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableHttpEndpointRequestT = Model::EnableHttpEndpointRequest>
+        void EnableHttpEndpointAsync(const EnableHttpEndpointRequestT& request, const EnableHttpEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::EnableHttpEndpoint, request, handler, context);
         }
 
         /**

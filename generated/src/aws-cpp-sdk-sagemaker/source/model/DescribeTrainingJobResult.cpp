@@ -318,6 +318,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("RemoteDebugConfig"))
+  {
+    m_remoteDebugConfig = jsonValue.GetObject("RemoteDebugConfig");
+
+  }
+
   if(jsonValue.ValueExists("InfraCheckConfig"))
   {
     m_infraCheckConfig = jsonValue.GetObject("InfraCheckConfig");
