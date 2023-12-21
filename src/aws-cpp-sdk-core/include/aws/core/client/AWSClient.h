@@ -295,6 +295,10 @@ namespace Aws
             Aws::Client::AWSAuthSigner* GetSignerByName(const char* name) const;
 
             friend Aws::Client::AWSAuthSigner* AWSUrlPresigner::GetSignerByName(const char* name) const;
+
+            std::shared_ptr<Auth::AWSCredentialsProvider> GetCredentialsProvider() const {
+                 return m_signerProvider->GetCredentialsProvider();
+            }
         protected:
 
             /**

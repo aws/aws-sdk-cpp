@@ -18,7 +18,11 @@ const char CLASS_TAG[] = "AuthSignerProvider";
 using namespace Aws::Auth;
 
 DefaultAuthSignerProvider::DefaultAuthSignerProvider(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-        const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signingPolicy, bool urlEscapePath)
+        const Aws::String& serviceName,
+        const Aws::String& region,
+        Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signingPolicy,
+        bool urlEscapePath):
+    m_credentialsProvider(credentialsProvider)
 {
     m_signers.emplace_back(Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(CLASS_TAG, credentialsProvider, serviceName.c_str(), region, signingPolicy, urlEscapePath, AWSSigningAlgorithm::SIGV4));
     m_signers.emplace_back(Aws::MakeShared<Aws::Client::AWSAuthV4Signer>(CLASS_TAG, credentialsProvider, serviceName.c_str(), region, signingPolicy, urlEscapePath, AWSSigningAlgorithm::ASYMMETRIC_SIGV4));

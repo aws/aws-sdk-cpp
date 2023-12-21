@@ -140,7 +140,7 @@ const char* S3Client::ALLOCATION_TAG = "S3Client";
 S3Client::S3Client(const S3Client &rhs) :
     BASECLASS(rhs.m_clientConfiguration,
         Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
-            Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+            rhs.GetCredentialsProvider(),
             rhs.m_clientConfiguration.identityProviderSupplier(*this),
             SERVICE_NAME,
             Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
