@@ -173,8 +173,9 @@ namespace
             const StartLiveTailRequest& /*unused*/,
             const StartLiveTailOutcome& outcome,
             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& /*unused*/) {
-            // Pre-stream Exceptions are captured here
-            AWS_ASSERT_SUCCESS(outcome);
+            // Unfortunately the only way to end stream right now is to cancel
+            // it, so StartLiveTail api currently cannot end successfully. 
+            ASSERT_EQ(outcome.IsSuccess(), false);
         };
 
         StartLiveTailRequest request;
