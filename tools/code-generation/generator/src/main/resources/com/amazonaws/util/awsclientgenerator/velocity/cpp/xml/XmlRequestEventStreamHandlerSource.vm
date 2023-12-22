@@ -108,7 +108,13 @@ namespace Model
 
         case ${operation.name}EventType::INITIAL_RESPONSE: 
         {
-            ${operation.name}InitialResponse event(GetEventPayloadWithOwnership());
+            auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());
+            if (!xmlDoc.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Unable to generate a proper InitialResponse object from the response in XML format.");
+                break;
+            }
+            ${operation.name}InitialResponse event(xmlDoc.GetRootElement());
             m_onInitialResponse(event);
             break;
         }   

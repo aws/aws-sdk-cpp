@@ -114,7 +114,13 @@ namespace Model
 
         case SelectObjectContentEventType::INITIAL_RESPONSE: 
         {
-            SelectObjectContentInitialResponse event(GetEventPayloadWithOwnership());
+            auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());
+            if (!xmlDoc.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "Unable to generate a proper InitialResponse object from the response in XML format.");
+                break;
+            }
+            SelectObjectContentInitialResponse event(xmlDoc.GetRootElement());
             m_onInitialResponse(event);
             break;
         }   
