@@ -1312,8 +1312,9 @@ namespace Omics
         }
 
         /**
-         * <p> Lists all multipart read set uploads and their statuses. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Lists multipart read set uploads and for in progress uploads. Once the
+         * upload is completed, a read set is created and the upload will no longer be
+         * returned in the respone. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">AWS
          * API Reference</a></p>
          */
