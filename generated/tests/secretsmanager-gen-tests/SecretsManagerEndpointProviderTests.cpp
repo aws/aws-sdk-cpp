@@ -303,7 +303,7 @@ static const Aws::Vector<SecretsManagerEndpointProviderEndpointTestCase> TEST_CA
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://secretsmanager-fips.us-east-1.api.aws",
+    {{/*epUrl*/"https://secretsmanager-fips.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -312,7 +312,7 @@ static const Aws::Vector<SecretsManagerEndpointProviderEndpointTestCase> TEST_CA
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://secretsmanager.us-east-1.api.aws",
+    {{/*epUrl*/"https://secretsmanager.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -357,7 +357,7 @@ static const Aws::Vector<SecretsManagerEndpointProviderEndpointTestCase> TEST_CA
   {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://secretsmanager.cn-north-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://secretsmanager.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -402,7 +402,7 @@ static const Aws::Vector<SecretsManagerEndpointProviderEndpointTestCase> TEST_CA
   {"For region us-gov-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://secretsmanager-fips.us-gov-east-1.api.aws",
+    {{/*epUrl*/"https://secretsmanager-fips.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -411,7 +411,7 @@ static const Aws::Vector<SecretsManagerEndpointProviderEndpointTestCase> TEST_CA
   {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://secretsmanager.us-gov-east-1.api.aws",
+    {{/*epUrl*/"https://secretsmanager.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

@@ -729,8 +729,9 @@ namespace Glue
         }
 
         /**
-         * <p>Creates a connection definition in the Data Catalog.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Creates a connection definition in the Data Catalog.</p> <p>Connections used
+         * for creating federated resources require the IAM
+         * <code>glue:PassConnection</code> permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection">AWS
          * API Reference</a></p>
          */
