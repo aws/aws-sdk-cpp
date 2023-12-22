@@ -50,22 +50,6 @@ namespace
 
         Aws::String BuildResourceName(const char *baseName)
         {
-            ClientConfiguration config;
-            config.region = Aws::Region::US_WEST_2;
-            config.scheme = Scheme::HTTPS;
-            config.connectTimeoutMs = 30000;
-            config.requestTimeoutMs = 30000;
-
-            auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
-            if(accountId.empty()) {
-                config.region = Aws::Region::US_EAST_1;
-                auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
-                auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
-                Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
-                accountId = accessManagementClient.GetAccountId();
-            }
-            m_accountId = accountId;
-
             return Aws::Testing::GetAwsResourcePrefix() + baseName + m_UUID;
         }
 
@@ -77,6 +61,16 @@ namespace
             config.region = AWS_TEST_REGION;
             m_client = Aws::MakeUnique<Aws::CloudWatchLogs::CloudWatchLogsClient>(ALLOCATION_TAG, config);
             CreateLogsGroup(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP));
+
+            auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
+            if(accountId.empty()) {
+                config.region = Aws::Region::US_EAST_1;
+                auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
+                auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
+                Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
+                accountId = accessManagementClient.GetAccountId();
+            }
+            m_accountId = accountId;
         }
 
         void TearDown()
@@ -186,7 +180,7 @@ namespace
         StartLiveTailRequest request;
 
         Aws::StringStream ss;
-        ss << "arn:aws:logs:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":log-group:" << BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP);
+        ss << "arn:aws:logs:" << AWS_TEST_REGION << ":" << m_accountId << ":log-group:" << BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP);
         request.SetLogGroupIdentifiers({ss.str()});
         request.SetLogStreamNames({BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM)});
         request.SetLogEventFilterPattern("ERROR");
