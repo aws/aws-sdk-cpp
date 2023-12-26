@@ -153,11 +153,54 @@ S3Client::S3Client(const S3Client &rhs) :
     m_endpointProvider(rhs.m_endpointProvider) {}
 
 S3Client& S3Client::operator=(const S3Client &rhs) {
+    if (&rhs == this) {
+      return *this;
+    }
+    m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+          rhs.GetCredentialsProvider(),
+          rhs.m_clientConfiguration.identityProviderSupplier(*this),
+          SERVICE_NAME,
+          Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+          rhs.m_clientConfiguration.payloadSigningPolicy,
+          /*doubleEncodeValue*/ false);
     m_clientConfiguration = rhs.m_clientConfiguration;
     m_executor = rhs.m_executor;
     m_endpointProvider = rhs.m_endpointProvider;
     init(m_clientConfiguration);
     return *this;
+}
+
+S3Client::S3Client(S3Client &&rhs) :
+    BASECLASS(rhs.m_clientConfiguration,
+        Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+            rhs.GetCredentialsProvider(),
+            rhs.m_clientConfiguration.identityProviderSupplier(*this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+            rhs.m_clientConfiguration.payloadSigningPolicy,
+            /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::Client::ClientWithAsyncTemplateMethods<S3Client>(),
+    m_clientConfiguration(std::move(rhs.m_clientConfiguration)),
+    m_executor(std::move(rhs.m_clientConfiguration.executor)),
+    m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
+
+S3Client& S3Client::operator=(S3Client &&rhs) {
+  if (&rhs == this) {
+    return *this;
+  }
+  m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+        rhs.GetCredentialsProvider(),
+        rhs.m_clientConfiguration.identityProviderSupplier(*this),
+        SERVICE_NAME,
+        Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+        rhs.m_clientConfiguration.payloadSigningPolicy,
+        /*doubleEncodeValue*/ false);
+  m_clientConfiguration = std::move(rhs.m_clientConfiguration);
+  m_executor = std::move(rhs.m_executor);
+  m_endpointProvider = std::move(rhs.m_endpointProvider);
+  init(m_clientConfiguration);
+  return *this;
 }
 
 S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,

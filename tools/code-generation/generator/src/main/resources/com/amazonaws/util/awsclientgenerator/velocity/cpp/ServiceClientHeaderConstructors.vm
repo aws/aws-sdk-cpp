@@ -52,6 +52,21 @@
          * @return the copied client.
          */
         ${className}& operator=(const ${className} &rhs);
+
+        /**
+         * Copy move constructor for a S3Client. Copies all members that do not reference self.
+         * Recreates member that reference self.
+         * @param rhs the source object of the copy.
+         */
+        ${className}(${className} &&rhs);
+
+        /**
+         * Assignment move operator for a S3Client. Copies all members that do not reference self.
+         * Recreates member that reference self.
+         * @param rhs the source object of the copy.
+         * @return the copied client.
+         */
+        ${className}& operator=(${className} &&rhs);
 #end
 #if($serviceModel.endpointRules && $serviceNamespace != "S3Crt")
 #if($serviceModel.hasOnlyBearerAuth())
