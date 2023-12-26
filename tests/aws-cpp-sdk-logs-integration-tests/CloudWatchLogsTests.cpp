@@ -201,7 +201,7 @@ namespace
 
         //note: continue request handler takes a while to stop a request, so
         //wait some time for request to stop before exiting the test
-        std::this_thread::sleep_for(std::chrono::seconds(6));
+        std::this_thread::sleep_for(std::chrono::seconds(30));
     }
 }
 
