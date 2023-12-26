@@ -75,6 +75,21 @@ namespace Aws
          */
         S3CrtClient& operator=(const S3CrtClient &rhs);
 
+        /**
+         * Copy move constructor for a S3Client. Copies all members that do not reference self.
+         * Recreates member that reference self.
+         * @param rhs the source object of the copy.
+         */
+        S3CrtClient(S3CrtClient &&rhs);
+
+        /**
+         * Assignment move operator for a S3Client. Copies all members that do not reference self.
+         * Recreates member that reference self.
+         * @param rhs the source object of the copy.
+         * @return the copied client.
+         */
+        S3CrtClient& operator=(S3CrtClient &&rhs);
+
         /* Legacy constructors due deprecation */
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config

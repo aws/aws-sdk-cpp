@@ -328,6 +328,7 @@ namespace Aws
             static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode);
             static bool DoesResponseGenerateError(const std::shared_ptr<Aws::Http::HttpResponse>& response);
             std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
+            std::shared_ptr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
         private:
             /**
              * Try to adjust signer's clock
@@ -342,7 +343,6 @@ namespace Aws
             std::shared_ptr<Aws::IOStream> GetBodyStream(const Aws::AmazonWebServiceRequest& request) const;
 
             std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
-            std::shared_ptr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
             std::shared_ptr<AWSErrorMarshaller> m_errorMarshaller;
             std::shared_ptr<RetryStrategy> m_retryStrategy;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_writeRateLimiter;
