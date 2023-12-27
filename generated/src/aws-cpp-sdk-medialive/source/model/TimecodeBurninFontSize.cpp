@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimecodeBurninFontSize::NOT_SET:
+            return {};
           case TimecodeBurninFontSize::EXTRA_SMALL_10:
             return "EXTRA_SMALL_10";
           case TimecodeBurninFontSize::LARGE_48:

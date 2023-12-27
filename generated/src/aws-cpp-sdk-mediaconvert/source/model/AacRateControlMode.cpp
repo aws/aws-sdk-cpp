@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AacRateControlMode::NOT_SET:
+            return {};
           case AacRateControlMode::CBR:
             return "CBR";
           case AacRateControlMode::VBR:

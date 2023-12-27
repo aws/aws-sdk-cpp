@@ -33,10 +33,9 @@ namespace Model
 
   /**
    * <p>A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to
-   * identify web requests that you want to allow, block, or count. Each rule
-   * includes one top-level <a>Statement</a> that WAF uses to identify matching web
-   * requests, and parameters that govern how WAF handles them. </p><p><h3>See
-   * Also:</h3>   <a
+   * identify web requests that you want to manage in some way. Each rule includes
+   * one top-level <a>Statement</a> that WAF uses to identify matching web requests,
+   * and parameters that govern how WAF handles them. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Rule">AWS API
    * Reference</a></p>
    */
@@ -50,50 +49,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
-     * you create it. </p>
+     * <p>The name of the rule. </p> <p>If you change the name of a <code>Rule</code>
+     * after you create it and you want the rule's metric name to reflect the change,
+     * update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     * doesn't automatically update the metric name when you update the rule name. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
-     * you create it. </p>
+     * <p>The name of the rule. </p> <p>If you change the name of a <code>Rule</code>
+     * after you create it and you want the rule's metric name to reflect the change,
+     * update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     * doesn't automatically update the metric name when you update the rule name. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
-     * you create it. </p>
+     * <p>The name of the rule. </p> <p>If you change the name of a <code>Rule</code>
+     * after you create it and you want the rule's metric name to reflect the change,
+     * update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     * doesn't automatically update the metric name when you update the rule name. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
-     * you create it. </p>
+     * <p>The name of the rule. </p> <p>If you change the name of a <code>Rule</code>
+     * after you create it and you want the rule's metric name to reflect the change,
+     * update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     * doesn't automatically update the metric name when you update the rule name. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
-     * you create it. </p>
+     * <p>The name of the rule. </p> <p>If you change the name of a <code>Rule</code>
+     * after you create it and you want the rule's metric name to reflect the change,
+     * update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     * doesn't automatically update the metric name when you update the rule name. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
-     * you create it. </p>
+     * <p>The name of the rule. </p> <p>If you change the name of a <code>Rule</code>
+     * after you create it and you want the rule's metric name to reflect the change,
+     * update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     * doesn't automatically update the metric name when you update the rule name. </p>
      */
     inline Rule& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
-     * you create it. </p>
+     * <p>The name of the rule. </p> <p>If you change the name of a <code>Rule</code>
+     * after you create it and you want the rule's metric name to reflect the change,
+     * update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     * doesn't automatically update the metric name when you update the rule name. </p>
      */
     inline Rule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
-     * you create it. </p>
+     * <p>The name of the rule. </p> <p>If you change the name of a <code>Rule</code>
+     * after you create it and you want the rule's metric name to reflect the change,
+     * update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     * doesn't automatically update the metric name when you update the rule name. </p>
      */
     inline Rule& WithName(const char* value) { SetName(value); return *this;}
 
@@ -499,37 +514,49 @@ namespace Model
 
     /**
      * <p>Defines and enables Amazon CloudWatch metrics and web request sample
-     * collection. </p>
+     * collection. </p> <p>If you change the name of a <code>Rule</code> after you
+     * create it and you want the rule's metric name to reflect the change, update the
+     * metric name as well. WAF doesn't automatically update the metric name. </p>
      */
     inline const VisibilityConfig& GetVisibilityConfig() const{ return m_visibilityConfig; }
 
     /**
      * <p>Defines and enables Amazon CloudWatch metrics and web request sample
-     * collection. </p>
+     * collection. </p> <p>If you change the name of a <code>Rule</code> after you
+     * create it and you want the rule's metric name to reflect the change, update the
+     * metric name as well. WAF doesn't automatically update the metric name. </p>
      */
     inline bool VisibilityConfigHasBeenSet() const { return m_visibilityConfigHasBeenSet; }
 
     /**
      * <p>Defines and enables Amazon CloudWatch metrics and web request sample
-     * collection. </p>
+     * collection. </p> <p>If you change the name of a <code>Rule</code> after you
+     * create it and you want the rule's metric name to reflect the change, update the
+     * metric name as well. WAF doesn't automatically update the metric name. </p>
      */
     inline void SetVisibilityConfig(const VisibilityConfig& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = value; }
 
     /**
      * <p>Defines and enables Amazon CloudWatch metrics and web request sample
-     * collection. </p>
+     * collection. </p> <p>If you change the name of a <code>Rule</code> after you
+     * create it and you want the rule's metric name to reflect the change, update the
+     * metric name as well. WAF doesn't automatically update the metric name. </p>
      */
     inline void SetVisibilityConfig(VisibilityConfig&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::move(value); }
 
     /**
      * <p>Defines and enables Amazon CloudWatch metrics and web request sample
-     * collection. </p>
+     * collection. </p> <p>If you change the name of a <code>Rule</code> after you
+     * create it and you want the rule's metric name to reflect the change, update the
+     * metric name as well. WAF doesn't automatically update the metric name. </p>
      */
     inline Rule& WithVisibilityConfig(const VisibilityConfig& value) { SetVisibilityConfig(value); return *this;}
 
     /**
      * <p>Defines and enables Amazon CloudWatch metrics and web request sample
-     * collection. </p>
+     * collection. </p> <p>If you change the name of a <code>Rule</code> after you
+     * create it and you want the rule's metric name to reflect the change, update the
+     * metric name as well. WAF doesn't automatically update the metric name. </p>
      */
     inline Rule& WithVisibilityConfig(VisibilityConfig&& value) { SetVisibilityConfig(std::move(value)); return *this;}
 

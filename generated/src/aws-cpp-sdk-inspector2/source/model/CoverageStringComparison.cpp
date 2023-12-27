@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoverageStringComparison::NOT_SET:
+            return {};
           case CoverageStringComparison::EQUALS:
             return "EQUALS";
           case CoverageStringComparison::NOT_EQUALS:

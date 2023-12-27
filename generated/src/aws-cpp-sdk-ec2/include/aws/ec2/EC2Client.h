@@ -788,6 +788,40 @@ namespace EC2
         }
 
         /**
+         * <p>Associates your Autonomous System Number (ASN) with a BYOIP CIDR that you own
+         * in the same Amazon Web Services Region. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p> <p>After the
+         * association succeeds, the ASN is eligible for advertisement. You can view the
+         * association with <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeByoipCidrs.html">DescribeByoipCidrs</a>.
+         * You can advertise the CIDR with <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AdvertiseByoipCidr.html">AdvertiseByoipCidr</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateIpamByoasnOutcome AssociateIpamByoasn(const Model::AssociateIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateIpamByoasnRequestT = Model::AssociateIpamByoasnRequest>
+        Model::AssociateIpamByoasnOutcomeCallable AssociateIpamByoasnCallable(const AssociateIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::AssociateIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateIpamByoasnRequestT = Model::AssociateIpamByoasnRequest>
+        void AssociateIpamByoasnAsync(const AssociateIpamByoasnRequestT& request, const AssociateIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::AssociateIpamByoasn, request, handler, context);
+        }
+
+        /**
          * <p>Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource
          * discovery is an IPAM component that enables IPAM to manage and monitor resources
          * that belong to the owning account.</p><p><h3>See Also:</h3>   <a
@@ -823,8 +857,17 @@ namespace EC2
          * increase the limit by requesting a quota adjustment. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
-         * IP address quotas</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * IP address quotas</a> in the <i>Amazon VPC User Guide</i>.</p> 
+         * <p>When you associate an EIP or secondary EIPs with a public NAT gateway, the
+         * network border group of the EIPs must match the network border group of the
+         * Availability Zone (AZ) that the public NAT gateway is in. If it's not the same,
+         * the EIP will fail to associate. You can see the network border group for the
+         * subnet's AZ by viewing the details of the subnet. Similarly, you can view the
+         * network border group of an EIP by viewing the details of the EIP address. For
+         * more information about network border groups and EIPs, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+         * an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">AWS
          * API Reference</a></p>
          */
@@ -882,8 +925,7 @@ namespace EC2
 
         /**
          * <p>Associates a CIDR block with your subnet. You can only associate a single
-         * IPv6 CIDR block with your subnet. An IPv6 CIDR block must have a prefix length
-         * of /64.</p><p><h3>See Also:</h3>   <a
+         * IPv6 CIDR block with your subnet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">AWS
          * API Reference</a></p>
          */
@@ -990,8 +1032,6 @@ namespace EC2
         }
 
         /**
-         *  <p>This API action is currently in <b>limited preview only</b>. If you
-         * are interested in using this feature, contact your account manager.</p> 
          * <p>Associates a branch network interface with a trunk network interface.</p>
          * <p>Before you create the association, run the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
@@ -1026,10 +1066,10 @@ namespace EC2
          * CIDR block, an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an
          * IPv6 address pool that you provisioned through bring your own IP addresses (<a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
-         * The IPv6 CIDR block size is fixed at /56.</p> <p>You must specify one of the
-         * following in the request: an IPv4 CIDR block, an IPv6 pool, or an
-         * Amazon-provided IPv6 CIDR block.</p> <p>For more information about associating
-         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * </p> <p>You must specify one of the following in the request: an IPv4 CIDR
+         * block, an IPv6 pool, or an Amazon-provided IPv6 CIDR block.</p> <p>For more
+         * information about associating CIDR blocks with your VPC and applicable
+         * restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
          * addressing for your VPCs and subnets</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1285,7 +1325,12 @@ namespace EC2
          * possible. However, a small delay might occur.</p> <p>For information about VPC
          * security group quotas, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC quotas</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC quotas</a>.</p>  <p>If you want to reference a security group across
+         * VPCs attached to a transit gateway using the <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
+         * group referencing feature</a>, note that you can only reference security groups
+         * for ingress rules. You cannot reference a security group for egress rules.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
          * API Reference</a></p>
          */
@@ -2859,7 +2904,17 @@ namespace EC2
          * IPv4 addresses, and communicating between overlapping networks.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-         * gateways</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * gateways</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>When you
+         * create a public NAT gateway and assign it an EIP or secondary EIPs, the network
+         * border group of the EIPs must match the network border group of the Availability
+         * Zone (AZ) that the public NAT gateway is in. If it's not the same, the NAT
+         * gateway will fail to launch. You can see the network border group for the
+         * subnet's AZ by viewing the details of the subnet. Similarly, you can view the
+         * network border group of an EIP by viewing the details of the EIP address. For
+         * more information about network border groups and EIPs, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+         * an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
          * API Reference</a></p>
          */
@@ -3524,12 +3579,12 @@ namespace EC2
          * reserves both the first four and the last IPv4 address in each subnet's CIDR
          * block. They're not available for your use.</p> <p>If you've associated an IPv6
          * CIDR block with your VPC, you can associate an IPv6 CIDR block with a subnet
-         * when you create it. The allowed block size for an IPv6 subnet is a /64
-         * netmask.</p> <p>If you add more than one subnet to a VPC, they're set up in a
-         * star topology with a logical router in the middle.</p> <p>When you stop an
-         * instance in a subnet, it retains its private IPv4 address. It's therefore
-         * possible to have a subnet with no running instances (they're all stopped), but
-         * no remaining IP addresses available.</p> <p>For more information, see <a
+         * when you create it. </p> <p>If you add more than one subnet to a VPC, they're
+         * set up in a star topology with a logical router in the middle.</p> <p>When you
+         * stop an instance in a subnet, it retains its private IPv4 address. It's
+         * therefore possible to have a subnet with no running instances (they're all
+         * stopped), but no remaining IP addresses available.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a>
          * in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
@@ -3556,10 +3611,12 @@ namespace EC2
         }
 
         /**
-         * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
-         * reservations, see <a
+         * <p>Creates a subnet CIDR reservation. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
-         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User
+         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i> and
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
+         * prefixes to network interfaces</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
          * API Reference</a></p>
@@ -4222,7 +4279,7 @@ namespace EC2
          * addressing for your VPCs and subnets</a> in the <i>Amazon VPC User
          * Guide</i>.</p> <p>You can optionally request an IPv6 CIDR block for the VPC. You
          * can request an Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6
-         * addresses, or an IPv6 CIDR block from an IPv6 address pool that you provisioned
+         * addresses or an IPv6 CIDR block from an IPv6 address pool that you provisioned
          * through bring your own IP addresses (<a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).</p>
          * <p>By default, each instance that you launch in the VPC has the default DHCP
@@ -5053,11 +5110,17 @@ namespace EC2
         }
 
         /**
-         * <p>Deletes one or more versions of a launch template. You cannot delete the
-         * default version of a launch template; you must first assign a different version
-         * as the default. If the default version is the only version for the launch
-         * template, you must delete the entire launch template using
-         * <a>DeleteLaunchTemplate</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more versions of a launch template.</p> <p>You can't delete
+         * the default version of a launch template; you must first assign a different
+         * version as the default. If the default version is the only version for the
+         * launch template, you must delete the entire launch template using
+         * <a>DeleteLaunchTemplate</a>.</p> <p>You can delete up to 200 launch template
+         * versions in a single request. To delete more than 200 versions in a single
+         * request, use <a>DeleteLaunchTemplate</a>, which deletes the launch template and
+         * all of its versions.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-launch-template-versions.html#delete-launch-template-version">Delete
+         * a launch template version</a> in the <i>EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions">AWS
          * API Reference</a></p>
          */
@@ -6280,8 +6343,9 @@ namespace EC2
          * resources that are associated with the VPC before you can delete it. For
          * example, you must terminate all instances running in the VPC, delete all
          * security groups associated with the VPC (except the default one), delete all
-         * route tables associated with the VPC (except the default one), and so
-         * on.</p><p><h3>See Also:</h3>   <a
+         * route tables associated with the VPC (except the default one), and so on. When
+         * you delete the VPC, it deletes the VPC's default security group, network ACL,
+         * and route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">AWS API
          * Reference</a></p>
          */
@@ -6395,8 +6459,8 @@ namespace EC2
          * the owner of the accepter VPC can delete the VPC peering connection if it's in
          * the <code>active</code> state. The owner of the requester VPC can delete a VPC
          * peering connection in the <code>pending-acceptance</code> state. You cannot
-         * delete a VPC peering connection that's in the <code>failed</code>
-         * state.</p><p><h3>See Also:</h3>   <a
+         * delete a VPC peering connection that's in the <code>failed</code> or
+         * <code>rejected</code> state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">AWS
          * API Reference</a></p>
          */
@@ -6540,6 +6604,38 @@ namespace EC2
         void DeprovisionByoipCidrAsync(const DeprovisionByoipCidrRequestT& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DeprovisionByoipCidr, request, handler, context);
+        }
+
+        /**
+         * <p>Deprovisions your Autonomous System Number (ASN) from your Amazon Web
+         * Services account. This action can only be called after any BYOIP CIDR
+         * associations are removed from your Amazon Web Services account with <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIpamByoasn.html">DisassociateIpamByoasn</a>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeprovisionIpamByoasnOutcome DeprovisionIpamByoasn(const Model::DeprovisionIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeprovisionIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeprovisionIpamByoasnRequestT = Model::DeprovisionIpamByoasnRequest>
+        Model::DeprovisionIpamByoasnOutcomeCallable DeprovisionIpamByoasnCallable(const DeprovisionIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeprovisionIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for DeprovisionIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeprovisionIpamByoasnRequestT = Model::DeprovisionIpamByoasnRequest>
+        void DeprovisionIpamByoasnAsync(const DeprovisionIpamByoasnRequestT& request, const DeprovisionIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeprovisionIpamByoasn, request, handler, context);
         }
 
         /**
@@ -7003,6 +7099,33 @@ namespace EC2
         }
 
         /**
+         * <p>Describes Capacity Block offerings available for purchase. With Capacity
+         * Blocks, you purchase a specific instance type for a period of
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityBlockOfferingsOutcome DescribeCapacityBlockOfferings(const Model::DescribeCapacityBlockOfferingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCapacityBlockOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCapacityBlockOfferingsRequestT = Model::DescribeCapacityBlockOfferingsRequest>
+        Model::DescribeCapacityBlockOfferingsOutcomeCallable DescribeCapacityBlockOfferingsCallable(const DescribeCapacityBlockOfferingsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeCapacityBlockOfferings, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCapacityBlockOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCapacityBlockOfferingsRequestT = Model::DescribeCapacityBlockOfferingsRequest>
+        void DescribeCapacityBlockOfferingsAsync(const DescribeCapacityBlockOfferingsRequestT& request, const DescribeCapacityBlockOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeCapacityBlockOfferings, request, handler, context);
+        }
+
+        /**
          * <p>Describes one or more Capacity Reservation Fleets.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">AWS
@@ -7462,8 +7585,8 @@ namespace EC2
         }
 
         /**
-         * <p>Describe details for Windows AMIs that are configured for faster
-         * launching.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe details for Windows AMIs that are configured for Windows fast
+         * launch.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">AWS
          * API Reference</a></p>
          */
@@ -8214,6 +8337,49 @@ namespace EC2
         }
 
         /**
+         * <p>Describes a tree-based hierarchy that represents the physical host placement
+         * of your EC2 instances within an Availability Zone or Local Zone. You can use
+         * this information to determine the relative proximity of your EC2 instances
+         * within the Amazon Web Services network to support your tightly coupled
+         * workloads.</p> <p class="title"> <b>Limitations</b> </p> <ul> <li> <p>Supported
+         * zones</p> <ul> <li> <p>Availability Zone</p> </li> <li> <p>Local Zone</p> </li>
+         * </ul> </li> <li> <p>Supported instance types</p> <ul> <li> <p>
+         * <code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> |
+         * <code>hpc7a.12xlarge</code> | <code>hpc7a.24xlarge</code> |
+         * <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code> |
+         * <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> |
+         * <code>hpc7g.16xlarge</code> </p> </li> <li> <p> <code>p3dn.24xlarge</code> |
+         * <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> |
+         * <code>p5.48xlarge</code> </p> </li> <li> <p> <code>trn1.2xlarge</code> |
+         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> </p> </li> </ul> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
+         * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceTopologyOutcome DescribeInstanceTopology(const Model::DescribeInstanceTopologyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeInstanceTopology that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInstanceTopologyRequestT = Model::DescribeInstanceTopologyRequest>
+        Model::DescribeInstanceTopologyOutcomeCallable DescribeInstanceTopologyCallable(const DescribeInstanceTopologyRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeInstanceTopology, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInstanceTopology that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInstanceTopologyRequestT = Model::DescribeInstanceTopologyRequest>
+        void DescribeInstanceTopologyAsync(const DescribeInstanceTopologyRequestT& request, const DescribeInstanceTopologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeInstanceTopology, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of all instance types offered. The results can be filtered by
          * location (Region or Availability Zone). If no location is specified, the
          * instance types offered in the current Region are returned.</p><p><h3>See
@@ -8331,6 +8497,35 @@ namespace EC2
         void DescribeInternetGatewaysAsync(const DescribeInternetGatewaysRequestT& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DescribeInternetGateways, request, handler, context);
+        }
+
+        /**
+         * <p>Describes your Autonomous System Numbers (ASNs), their provisioning statuses,
+         * and the BYOIP CIDRs with which they are associated. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIpamByoasnOutcome DescribeIpamByoasn(const Model::DescribeIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeIpamByoasnRequestT = Model::DescribeIpamByoasnRequest>
+        Model::DescribeIpamByoasnOutcomeCallable DescribeIpamByoasnCallable(const DescribeIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeIpamByoasnRequestT = Model::DescribeIpamByoasnRequest>
+        void DescribeIpamByoasnAsync(const DescribeIpamByoasnRequestT& request, const DescribeIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeIpamByoasn, request, handler, context);
         }
 
         /**
@@ -8731,6 +8926,31 @@ namespace EC2
         }
 
         /**
+         * <p>Describes the lock status for a snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLockedSnapshotsOutcome DescribeLockedSnapshots(const Model::DescribeLockedSnapshotsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLockedSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeLockedSnapshotsRequestT = Model::DescribeLockedSnapshotsRequest>
+        Model::DescribeLockedSnapshotsOutcomeCallable DescribeLockedSnapshotsCallable(const DescribeLockedSnapshotsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeLockedSnapshots, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeLockedSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeLockedSnapshotsRequestT = Model::DescribeLockedSnapshotsRequest>
+        void DescribeLockedSnapshotsAsync(const DescribeLockedSnapshotsRequestT& request, const DescribeLockedSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeLockedSnapshots, request, handler, context);
+        }
+
+        /**
          * <p>Describes your managed prefix lists and any Amazon Web Services-managed
          * prefix lists.</p> <p>To view the entries for your prefix list, use
          * <a>GetManagedPrefixListEntries</a>.</p><p><h3>See Also:</h3>   <a
@@ -8993,8 +9213,12 @@ namespace EC2
         }
 
         /**
-         * <p>Describes one or more of your network interfaces.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes one or more of your network interfaces.</p> <p>If you have a large
+         * number of network interfaces, the operation fails unless you use pagination or
+         * one of the following filters: <code>group-id</code>, <code>mac-address</code>,
+         * <code>private-dns-name</code>, <code>private-ip-address</code>,
+         * <code>private-dns-name</code>, <code>subnet-id</code>, or
+         * <code>vpc-id</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">AWS
          * API Reference</a></p>
          */
@@ -9428,9 +9652,9 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the VPCs on the other side of a VPC peering connection that are
-         * referencing the security groups you've specified in this request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the VPCs on the other side of a VPC peering connection or the VPCs
+         * attached to a transit gateway that are referencing the security groups you've
+         * specified in this request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">AWS
          * API Reference</a></p>
          */
@@ -9810,8 +10034,12 @@ namespace EC2
         /**
          * <p>Describes the stale security group rules for security groups in a specified
          * VPC. Rules are stale when they reference a deleted security group in the same
-         * VPC or in a peer VPC, or if they reference a security group in a peer VPC for
-         * which the VPC peering connection has been deleted.</p><p><h3>See Also:</h3>   <a
+         * VPC, peered VPC, or in separate VPCs attached to a transit gateway (with <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
+         * group referencing support</a> enabled). Rules can also be stale if they
+         * reference a security group in a peer VPC for which the VPC peering connection
+         * has been deleted or if they reference a security group in a VPC that has been
+         * detached from a transit gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">AWS
          * API Reference</a></p>
          */
@@ -10272,8 +10500,6 @@ namespace EC2
         }
 
         /**
-         *  <p>This API action is currently in <b>limited preview only</b>. If you
-         * are interested in using this feature, contact your account manager.</p> 
          * <p>Describes one or more network interface trunk associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations">AWS
@@ -11196,11 +11422,12 @@ namespace EC2
         }
 
         /**
-         * <p>Discontinue faster launching for a Windows AMI, and clean up existing
-         * pre-provisioned snapshots. When you disable faster launching, the AMI uses the
-         * standard launch process for each instance. All pre-provisioned snapshots must be
-         * removed before you can enable faster launching again.</p>  <p>To change
-         * these settings, you must own the AMI.</p> <p><h3>See Also:</h3>   <a
+         * <p>Discontinue Windows fast launch for a Windows AMI, and clean up existing
+         * pre-provisioned snapshots. After you disable Windows fast launch, the AMI uses
+         * the standard launch process for each new instance. Amazon EC2 must remove all
+         * pre-provisioned snapshots before you can enable Windows fast launch again.</p>
+         *  <p>You can only change these settings for Windows AMIs that you own or
+         * that have been shared with you.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">AWS
          * API Reference</a></p>
          */
@@ -11248,6 +11475,80 @@ namespace EC2
         void DisableFastSnapshotRestoresAsync(const DisableFastSnapshotRestoresRequestT& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DisableFastSnapshotRestores, request, handler, context);
+        }
+
+        /**
+         * <p>Sets the AMI state to <code>disabled</code> and removes all launch
+         * permissions from the AMI. A disabled AMI can't be used for instance
+         * launches.</p> <p>A disabled AMI can't be shared. If an AMI was public or
+         * previously shared, it is made private. If an AMI was shared with an Amazon Web
+         * Services account, organization, or Organizational Unit, they lose access to the
+         * disabled AMI. </p> <p>A disabled AMI does not appear in <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+         * API calls by default.</p> <p>Only the AMI owner can disable an AMI.</p> <p>You
+         * can re-enable a disabled AMI using <a
+         * href="http://amazonaws.com/AWSEC2/latest/APIReference/API_EnableImage.html">EnableImage</a>.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
+         * an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableImageOutcome DisableImage(const Model::DisableImageRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableImage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableImageRequestT = Model::DisableImageRequest>
+        Model::DisableImageOutcomeCallable DisableImageCallable(const DisableImageRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisableImage, request);
+        }
+
+        /**
+         * An Async wrapper for DisableImage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableImageRequestT = Model::DisableImageRequest>
+        void DisableImageAsync(const DisableImageRequestT& request, const DisableImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisableImage, request, handler, context);
+        }
+
+        /**
+         * <p>Disables <i>block public access for AMIs</i> at the account level in the
+         * specified Amazon Web Services Region. This removes the <i>block public
+         * access</i> restriction from your account. With the restriction removed, you can
+         * publicly share your AMIs in the specified Amazon Web Services Region.</p> <p>The
+         * API can take up to 10 minutes to configure this setting. During this time, if
+         * you run <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+         * the response will be <code>block-new-sharing</code>. When the API has completed
+         * the configuration, the response will be <code>unblocked</code>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * public access to your AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableImageBlockPublicAccessOutcome DisableImageBlockPublicAccess(const Model::DisableImageBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableImageBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableImageBlockPublicAccessRequestT = Model::DisableImageBlockPublicAccessRequest>
+        Model::DisableImageBlockPublicAccessOutcomeCallable DisableImageBlockPublicAccessCallable(const DisableImageBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisableImageBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for DisableImageBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableImageBlockPublicAccessRequestT = Model::DisableImageBlockPublicAccessRequest>
+        void DisableImageBlockPublicAccessAsync(const DisableImageBlockPublicAccessRequestT& request, const DisableImageBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisableImageBlockPublicAccess, request, handler, context);
         }
 
         /**
@@ -11334,6 +11635,40 @@ namespace EC2
         void DisableSerialConsoleAccessAsync(const DisableSerialConsoleAccessRequestT& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DisableSerialConsoleAccess, request, handler, context);
+        }
+
+        /**
+         * <p>Disables the <i>block public access for snapshots</i> setting at the account
+         * level for the specified Amazon Web Services Region. After you disable block
+         * public access for snapshots in a Region, users can publicly share snapshots in
+         * that Region.</p> <p>If block public access is enabled in
+         * <code>block-all-sharing</code> mode, and you disable block public access, all
+         * snapshots that were previously publicly shared are no longer treated as private
+         * and they become publicly accessible again.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+         * Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i> .</p> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableSnapshotBlockPublicAccessOutcome DisableSnapshotBlockPublicAccess(const Model::DisableSnapshotBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableSnapshotBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableSnapshotBlockPublicAccessRequestT = Model::DisableSnapshotBlockPublicAccessRequest>
+        Model::DisableSnapshotBlockPublicAccessOutcomeCallable DisableSnapshotBlockPublicAccessCallable(const DisableSnapshotBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisableSnapshotBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for DisableSnapshotBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableSnapshotBlockPublicAccessRequestT = Model::DisableSnapshotBlockPublicAccessRequest>
+        void DisableSnapshotBlockPublicAccessAsync(const DisableSnapshotBlockPublicAccessRequestT& request, const DisableSnapshotBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisableSnapshotBlockPublicAccess, request, handler, context);
         }
 
         /**
@@ -11590,6 +11925,36 @@ namespace EC2
         }
 
         /**
+         * <p>Remove the association between your Autonomous System Number (ASN) and your
+         * BYOIP CIDR. You may want to use this action to disassociate an ASN from a CIDR
+         * or if you want to swap ASNs. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateIpamByoasnOutcome DisassociateIpamByoasn(const Model::DisassociateIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateIpamByoasnRequestT = Model::DisassociateIpamByoasnRequest>
+        Model::DisassociateIpamByoasnOutcomeCallable DisassociateIpamByoasnCallable(const DisassociateIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisassociateIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateIpamByoasnRequestT = Model::DisassociateIpamByoasnRequest>
+        void DisassociateIpamByoasnAsync(const DisassociateIpamByoasnRequestT& request, const DisassociateIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisassociateIpamByoasn, request, handler, context);
+        }
+
+        /**
          * <p>Disassociates a resource discovery from an Amazon VPC IPAM. A resource
          * discovery is an IPAM component that enables IPAM to manage and monitor resources
          * that belong to the owning account.</p><p><h3>See Also:</h3>   <a
@@ -11789,8 +12154,6 @@ namespace EC2
         }
 
         /**
-         *  <p>This API action is currently in <b>limited preview only</b>. If you
-         * are interested in using this feature, contact your account manager.</p> 
          * <p>Removes an association between a branch network interface with a trunk
          * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface">AWS
@@ -11939,14 +12302,15 @@ namespace EC2
         }
 
         /**
-         * <p>When you enable faster launching for a Windows AMI, images are
+         * <p>When you enable Windows fast launch for a Windows AMI, images are
          * pre-provisioned, using snapshots to launch instances up to 65% faster. To create
          * the optimized Windows image, Amazon EC2 launches an instance and runs through
          * Sysprep steps, rebooting as required. Then it creates a set of reserved
          * snapshots that are used for subsequent launches. The reserved snapshots are
          * automatically replenished as they are used, depending on your settings for
-         * launch frequency.</p>  <p>To change these settings, you must own the
-         * AMI.</p> <p><h3>See Also:</h3>   <a
+         * launch frequency.</p>  <p>You can only change these settings for Windows
+         * AMIs that you own or that have been shared with you.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">AWS
          * API Reference</a></p>
          */
@@ -12001,6 +12365,75 @@ namespace EC2
         void EnableFastSnapshotRestoresAsync(const EnableFastSnapshotRestoresRequestT& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::EnableFastSnapshotRestores, request, handler, context);
+        }
+
+        /**
+         * <p>Re-enables a disabled AMI. The re-enabled AMI is marked as
+         * <code>available</code> and can be used for instance launches, appears in
+         * describe operations, and can be shared. Amazon Web Services accounts,
+         * organizations, and Organizational Units that lost access to the AMI when it was
+         * disabled do not regain access automatically. Once the AMI is available, it can
+         * be shared with them again.</p> <p>Only the AMI owner can re-enable a disabled
+         * AMI.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable
+         * an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::EnableImageOutcome EnableImage(const Model::EnableImageRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableImage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableImageRequestT = Model::EnableImageRequest>
+        Model::EnableImageOutcomeCallable EnableImageCallable(const EnableImageRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::EnableImage, request);
+        }
+
+        /**
+         * An Async wrapper for EnableImage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableImageRequestT = Model::EnableImageRequest>
+        void EnableImageAsync(const EnableImageRequestT& request, const EnableImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::EnableImage, request, handler, context);
+        }
+
+        /**
+         * <p>Enables <i>block public access for AMIs</i> at the account level in the
+         * specified Amazon Web Services Region. This prevents the public sharing of your
+         * AMIs. However, if you already have public AMIs, they will remain publicly
+         * available.</p> <p>The API can take up to 10 minutes to configure this setting.
+         * During this time, if you run <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+         * the response will be <code>unblocked</code>. When the API has completed the
+         * configuration, the response will be <code>block-new-sharing</code>.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * public access to your AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableImageBlockPublicAccessOutcome EnableImageBlockPublicAccess(const Model::EnableImageBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableImageBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableImageBlockPublicAccessRequestT = Model::EnableImageBlockPublicAccessRequest>
+        Model::EnableImageBlockPublicAccessOutcomeCallable EnableImageBlockPublicAccessCallable(const EnableImageBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::EnableImageBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for EnableImageBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableImageBlockPublicAccessRequestT = Model::EnableImageBlockPublicAccessRequest>
+        void EnableImageBlockPublicAccessAsync(const EnableImageBlockPublicAccessRequestT& request, const EnableImageBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::EnableImageBlockPublicAccess, request, handler, context);
         }
 
         /**
@@ -12118,6 +12551,43 @@ namespace EC2
         void EnableSerialConsoleAccessAsync(const EnableSerialConsoleAccessRequestT& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::EnableSerialConsoleAccess, request, handler, context);
+        }
+
+        /**
+         * <p>Enables or modifies the <i>block public access for snapshots</i> setting at
+         * the account level for the specified Amazon Web Services Region. After you enable
+         * block public access for snapshots in a Region, users can no longer request
+         * public sharing for snapshots in that Region. Snapshots that are already publicly
+         * shared are either treated as private or they remain publicly shared, depending
+         * on the <b>State</b> that you specify.</p> <p>If block public access is enabled
+         * in <code>block-all-sharing</code> mode, and you change the mode to
+         * <code>block-new-sharing</code>, all snapshots that were previously publicly
+         * shared are no longer treated as private and they become publicly accessible
+         * again.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+         * Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableSnapshotBlockPublicAccessOutcome EnableSnapshotBlockPublicAccess(const Model::EnableSnapshotBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableSnapshotBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableSnapshotBlockPublicAccessRequestT = Model::EnableSnapshotBlockPublicAccessRequest>
+        Model::EnableSnapshotBlockPublicAccessOutcomeCallable EnableSnapshotBlockPublicAccessCallable(const EnableSnapshotBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::EnableSnapshotBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for EnableSnapshotBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableSnapshotBlockPublicAccessRequestT = Model::EnableSnapshotBlockPublicAccessRequest>
+        void EnableSnapshotBlockPublicAccessAsync(const EnableSnapshotBlockPublicAccessRequestT& request, const EnableSnapshotBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::EnableSnapshotBlockPublicAccess, request, handler, context);
         }
 
         /**
@@ -12757,6 +13227,36 @@ namespace EC2
         }
 
         /**
+         * <p>Gets the current state of <i>block public access for AMIs</i> at the account
+         * level in the specified Amazon Web Services Region.</p> <p>For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * public access to your AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImageBlockPublicAccessStateOutcome GetImageBlockPublicAccessState(const Model::GetImageBlockPublicAccessStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetImageBlockPublicAccessState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetImageBlockPublicAccessStateRequestT = Model::GetImageBlockPublicAccessStateRequest>
+        Model::GetImageBlockPublicAccessStateOutcomeCallable GetImageBlockPublicAccessStateCallable(const GetImageBlockPublicAccessStateRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetImageBlockPublicAccessState, request);
+        }
+
+        /**
+         * An Async wrapper for GetImageBlockPublicAccessState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetImageBlockPublicAccessStateRequestT = Model::GetImageBlockPublicAccessStateRequest>
+        void GetImageBlockPublicAccessStateAsync(const GetImageBlockPublicAccessStateRequestT& request, const GetImageBlockPublicAccessStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetImageBlockPublicAccessState, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of instance types with the specified instance attributes. You
          * can use the response to preview the instance types without launching instances.
          * Note that the response does not consider capacity.</p> <p>When you specify
@@ -12892,6 +13392,32 @@ namespace EC2
         void GetIpamDiscoveredAccountsAsync(const GetIpamDiscoveredAccountsRequestT& request, const GetIpamDiscoveredAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::GetIpamDiscoveredAccounts, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the public IP addresses that have been discovered by IPAM.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIpamDiscoveredPublicAddressesOutcome GetIpamDiscoveredPublicAddresses(const Model::GetIpamDiscoveredPublicAddressesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIpamDiscoveredPublicAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIpamDiscoveredPublicAddressesRequestT = Model::GetIpamDiscoveredPublicAddressesRequest>
+        Model::GetIpamDiscoveredPublicAddressesOutcomeCallable GetIpamDiscoveredPublicAddressesCallable(const GetIpamDiscoveredPublicAddressesRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetIpamDiscoveredPublicAddresses, request);
+        }
+
+        /**
+         * An Async wrapper for GetIpamDiscoveredPublicAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIpamDiscoveredPublicAddressesRequestT = Model::GetIpamDiscoveredPublicAddressesRequest>
+        void GetIpamDiscoveredPublicAddressesAsync(const GetIpamDiscoveredPublicAddressesRequestT& request, const GetIpamDiscoveredPublicAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetIpamDiscoveredPublicAddresses, request, handler, context);
         }
 
         /**
@@ -13218,6 +13744,33 @@ namespace EC2
         }
 
         /**
+         * <p>Gets security groups that can be associated by the Amazon Web Services
+         * account making the request with network interfaces in the specified
+         * VPC.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSecurityGroupsForVpcOutcome GetSecurityGroupsForVpc(const Model::GetSecurityGroupsForVpcRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSecurityGroupsForVpc that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSecurityGroupsForVpcRequestT = Model::GetSecurityGroupsForVpcRequest>
+        Model::GetSecurityGroupsForVpcOutcomeCallable GetSecurityGroupsForVpcCallable(const GetSecurityGroupsForVpcRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetSecurityGroupsForVpc, request);
+        }
+
+        /**
+         * An Async wrapper for GetSecurityGroupsForVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSecurityGroupsForVpcRequestT = Model::GetSecurityGroupsForVpcRequest>
+        void GetSecurityGroupsForVpcAsync(const GetSecurityGroupsForVpcRequestT& request, const GetSecurityGroupsForVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetSecurityGroupsForVpc, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the access status of your account to the EC2 serial console of all
          * instances. By default, access to the EC2 serial console is disabled for your
          * account. For more information, see <a
@@ -13245,6 +13798,35 @@ namespace EC2
         void GetSerialConsoleAccessStatusAsync(const GetSerialConsoleAccessStatusRequestT& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::GetSerialConsoleAccessStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the current state of <i>block public access for snapshots</i> setting
+         * for the account and Region.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
+         * Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSnapshotBlockPublicAccessStateOutcome GetSnapshotBlockPublicAccessState(const Model::GetSnapshotBlockPublicAccessStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSnapshotBlockPublicAccessState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSnapshotBlockPublicAccessStateRequestT = Model::GetSnapshotBlockPublicAccessStateRequest>
+        Model::GetSnapshotBlockPublicAccessStateOutcomeCallable GetSnapshotBlockPublicAccessStateCallable(const GetSnapshotBlockPublicAccessStateRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetSnapshotBlockPublicAccessState, request);
+        }
+
+        /**
+         * An Async wrapper for GetSnapshotBlockPublicAccessState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSnapshotBlockPublicAccessStateRequestT = Model::GetSnapshotBlockPublicAccessStateRequest>
+        void GetSnapshotBlockPublicAccessStateAsync(const GetSnapshotBlockPublicAccessStateRequestT& request, const GetSnapshotBlockPublicAccessStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetSnapshotBlockPublicAccessState, request, handler, context);
         }
 
         /**
@@ -13882,6 +14464,42 @@ namespace EC2
         void ListSnapshotsInRecycleBinAsync(const ListSnapshotsInRecycleBinRequestT& request, const ListSnapshotsInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::ListSnapshotsInRecycleBin, request, handler, context);
+        }
+
+        /**
+         * <p>Locks an Amazon EBS snapshot in either <i>governance</i> or <i>compliance</i>
+         * mode to protect it against accidental or malicious deletions for a specific
+         * duration. A locked snapshot can't be deleted.</p> <p>You can also use this
+         * action to modify the lock settings for a snapshot that is already locked. The
+         * allowed modifications depend on the lock mode and lock state:</p> <ul> <li>
+         * <p>If the snapshot is locked in governance mode, you can modify the lock mode
+         * and the lock duration or lock expiration date.</p> </li> <li> <p>If the snapshot
+         * is locked in compliance mode and it is in the cooling-off period, you can modify
+         * the lock mode and the lock duration or lock expiration date.</p> </li> <li>
+         * <p>If the snapshot is locked in compliance mode and the cooling-off period has
+         * lapsed, you can only increase the lock duration or extend the lock expiration
+         * date.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::LockSnapshotOutcome LockSnapshot(const Model::LockSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for LockSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename LockSnapshotRequestT = Model::LockSnapshotRequest>
+        Model::LockSnapshotOutcomeCallable LockSnapshotCallable(const LockSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::LockSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for LockSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename LockSnapshotRequestT = Model::LockSnapshotRequest>
+        void LockSnapshotAsync(const LockSnapshotRequestT& request, const LockSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::LockSnapshot, request, handler, context);
         }
 
         /**
@@ -16026,6 +16644,36 @@ namespace EC2
         }
 
         /**
+         * <p>Provisions your Autonomous System Number (ASN) for use in your Amazon Web
+         * Services account. This action requires authorization context for Amazon to bring
+         * the ASN to an Amazon Web Services account. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial:
+         * Bring your ASN to IPAM</a> in the <i>Amazon VPC IPAM guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ProvisionIpamByoasnOutcome ProvisionIpamByoasn(const Model::ProvisionIpamByoasnRequest& request) const;
+
+        /**
+         * A Callable wrapper for ProvisionIpamByoasn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ProvisionIpamByoasnRequestT = Model::ProvisionIpamByoasnRequest>
+        Model::ProvisionIpamByoasnOutcomeCallable ProvisionIpamByoasnCallable(const ProvisionIpamByoasnRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ProvisionIpamByoasn, request);
+        }
+
+        /**
+         * An Async wrapper for ProvisionIpamByoasn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ProvisionIpamByoasnRequestT = Model::ProvisionIpamByoasnRequest>
+        void ProvisionIpamByoasnAsync(const ProvisionIpamByoasnRequestT& request, const ProvisionIpamByoasnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ProvisionIpamByoasn, request, handler, context);
+        }
+
+        /**
          * <p>Provision a CIDR to an IPAM pool. You can use this action to provision new
          * CIDRs to a top-level pool or to transfer a CIDR from a top-level pool to a pool
          * within it.</p> <p>For more information, see <a
@@ -16082,6 +16730,34 @@ namespace EC2
         void ProvisionPublicIpv4PoolCidrAsync(const ProvisionPublicIpv4PoolCidrRequestT& request, const ProvisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::ProvisionPublicIpv4PoolCidr, request, handler, context);
+        }
+
+        /**
+         * <p>Purchase the Capacity Block for use with your account. With Capacity Blocks
+         * you ensure GPU capacity is available for machine learning (ML) workloads. You
+         * must specify the ID of the Capacity Block offering you are
+         * purchasing.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PurchaseCapacityBlockOutcome PurchaseCapacityBlock(const Model::PurchaseCapacityBlockRequest& request) const;
+
+        /**
+         * A Callable wrapper for PurchaseCapacityBlock that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PurchaseCapacityBlockRequestT = Model::PurchaseCapacityBlockRequest>
+        Model::PurchaseCapacityBlockOutcomeCallable PurchaseCapacityBlockCallable(const PurchaseCapacityBlockRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::PurchaseCapacityBlock, request);
+        }
+
+        /**
+         * An Async wrapper for PurchaseCapacityBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PurchaseCapacityBlockRequestT = Model::PurchaseCapacityBlockRequest>
+        void PurchaseCapacityBlockAsync(const PurchaseCapacityBlockRequestT& request, const PurchaseCapacityBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::PurchaseCapacityBlock, request, handler, context);
         }
 
         /**
@@ -17356,10 +18032,13 @@ namespace EC2
          * specify the description to revoke the rule.</p> <p>For a default VPC, if the
          * values you specify do not match the existing rule's values, no error is
          * returned, and the output describes the security group rules that were not
-         * revoked.</p> <p>Amazon Web Services recommends that you describe the security
-         * group to verify that the rules were removed.</p> <p>Rule changes are propagated
-         * to instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p><p><h3>See Also:</h3>   <a
+         * revoked.</p> <p>For a non-default VPC, if the values you specify do not match
+         * the existing rule's values, an <code>InvalidPermission.NotFound</code> client
+         * error is returned, and no rules are revoked.</p> <p>Amazon Web Services
+         * recommends that you describe the security group to verify that the rules were
+         * removed.</p> <p>Rule changes are propagated to instances within the security
+         * group as quickly as possible. However, a small delay might occur.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
@@ -17962,6 +18641,34 @@ namespace EC2
         void UnassignPrivateNatGatewayAddressAsync(const UnassignPrivateNatGatewayAddressRequestT& request, const UnassignPrivateNatGatewayAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::UnassignPrivateNatGatewayAddress, request, handler, context);
+        }
+
+        /**
+         * <p>Unlocks a snapshot that is locked in governance mode or that is locked in
+         * compliance mode but still in the cooling-off period. You can't unlock a snapshot
+         * that is locked in compliance mode after the cooling-off period has
+         * expired.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UnlockSnapshotOutcome UnlockSnapshot(const Model::UnlockSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for UnlockSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UnlockSnapshotRequestT = Model::UnlockSnapshotRequest>
+        Model::UnlockSnapshotOutcomeCallable UnlockSnapshotCallable(const UnlockSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::UnlockSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for UnlockSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UnlockSnapshotRequestT = Model::UnlockSnapshotRequest>
+        void UnlockSnapshotAsync(const UnlockSnapshotRequestT& request, const UnlockSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::UnlockSnapshot, request, handler, context);
         }
 
         /**

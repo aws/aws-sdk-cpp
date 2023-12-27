@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApiDestinationHttpMethod::NOT_SET:
+            return {};
           case ApiDestinationHttpMethod::POST:
             return "POST";
           case ApiDestinationHttpMethod::GET_:

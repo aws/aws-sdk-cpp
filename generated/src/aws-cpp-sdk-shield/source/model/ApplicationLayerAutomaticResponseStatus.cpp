@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationLayerAutomaticResponseStatus::NOT_SET:
+            return {};
           case ApplicationLayerAutomaticResponseStatus::ENABLED:
             return "ENABLED";
           case ApplicationLayerAutomaticResponseStatus::DISABLED:

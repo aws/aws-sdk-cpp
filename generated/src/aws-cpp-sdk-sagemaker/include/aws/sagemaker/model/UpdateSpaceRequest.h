@@ -147,6 +147,47 @@ namespace Model
      */
     inline UpdateSpaceRequest& WithSpaceSettings(SpaceSettings&& value) { SetSpaceSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline bool SpaceDisplayNameHasBeenSet() const { return m_spaceDisplayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = value; }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = std::move(value); }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName.assign(value); }
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline UpdateSpaceRequest& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline UpdateSpaceRequest& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+     */
+    inline UpdateSpaceRequest& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -157,6 +198,9 @@ namespace Model
 
     SpaceSettings m_spaceSettings;
     bool m_spaceSettingsHasBeenSet = false;
+
+    Aws::String m_spaceDisplayName;
+    bool m_spaceDisplayNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     EXTERNAL,
-    CUSTOM
+    CUSTOM,
+    QUICK_RESPONSES
   };
 
 namespace KnowledgeBaseTypeMapper

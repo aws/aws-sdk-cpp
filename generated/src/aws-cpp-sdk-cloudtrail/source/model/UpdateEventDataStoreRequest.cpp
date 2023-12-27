@@ -24,7 +24,9 @@ UpdateEventDataStoreRequest::UpdateEventDataStoreRequest() :
     m_retentionPeriodHasBeenSet(false),
     m_terminationProtectionEnabled(false),
     m_terminationProtectionEnabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_billingMode(BillingMode::NOT_SET),
+    m_billingModeHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,11 @@ Aws::String UpdateEventDataStoreRequest::SerializePayload() const
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
 
+  }
+
+  if(m_billingModeHasBeenSet)
+  {
+   payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
   }
 
   return payload.View().WriteReadable();

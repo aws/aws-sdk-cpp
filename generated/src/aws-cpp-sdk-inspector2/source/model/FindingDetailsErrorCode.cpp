@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingDetailsErrorCode::NOT_SET:
+            return {};
           case FindingDetailsErrorCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           case FindingDetailsErrorCode::ACCESS_DENIED:

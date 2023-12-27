@@ -85,55 +85,55 @@ namespace Model
 
     /**
      * <p>The contract address or a token identifier on the blockchain network by which
-     * to filter the request. You must specify the contractAddress property of this
-     * container when listing tokens minted by a contract.</p>  <p>You must
-     * always specify the network property of this container when using this
-     * operation.</p> 
+     * to filter the request. You must specify the <code>contractAddress</code>
+     * property of this container when listing tokens minted by a contract.</p> 
+     * <p>You must always specify the network property of this container when using
+     * this operation.</p> 
      */
     inline const TokenFilter& GetTokenFilter() const{ return m_tokenFilter; }
 
     /**
      * <p>The contract address or a token identifier on the blockchain network by which
-     * to filter the request. You must specify the contractAddress property of this
-     * container when listing tokens minted by a contract.</p>  <p>You must
-     * always specify the network property of this container when using this
-     * operation.</p> 
+     * to filter the request. You must specify the <code>contractAddress</code>
+     * property of this container when listing tokens minted by a contract.</p> 
+     * <p>You must always specify the network property of this container when using
+     * this operation.</p> 
      */
     inline bool TokenFilterHasBeenSet() const { return m_tokenFilterHasBeenSet; }
 
     /**
      * <p>The contract address or a token identifier on the blockchain network by which
-     * to filter the request. You must specify the contractAddress property of this
-     * container when listing tokens minted by a contract.</p>  <p>You must
-     * always specify the network property of this container when using this
-     * operation.</p> 
+     * to filter the request. You must specify the <code>contractAddress</code>
+     * property of this container when listing tokens minted by a contract.</p> 
+     * <p>You must always specify the network property of this container when using
+     * this operation.</p> 
      */
     inline void SetTokenFilter(const TokenFilter& value) { m_tokenFilterHasBeenSet = true; m_tokenFilter = value; }
 
     /**
      * <p>The contract address or a token identifier on the blockchain network by which
-     * to filter the request. You must specify the contractAddress property of this
-     * container when listing tokens minted by a contract.</p>  <p>You must
-     * always specify the network property of this container when using this
-     * operation.</p> 
+     * to filter the request. You must specify the <code>contractAddress</code>
+     * property of this container when listing tokens minted by a contract.</p> 
+     * <p>You must always specify the network property of this container when using
+     * this operation.</p> 
      */
     inline void SetTokenFilter(TokenFilter&& value) { m_tokenFilterHasBeenSet = true; m_tokenFilter = std::move(value); }
 
     /**
      * <p>The contract address or a token identifier on the blockchain network by which
-     * to filter the request. You must specify the contractAddress property of this
-     * container when listing tokens minted by a contract.</p>  <p>You must
-     * always specify the network property of this container when using this
-     * operation.</p> 
+     * to filter the request. You must specify the <code>contractAddress</code>
+     * property of this container when listing tokens minted by a contract.</p> 
+     * <p>You must always specify the network property of this container when using
+     * this operation.</p> 
      */
     inline ListTokenBalancesRequest& WithTokenFilter(const TokenFilter& value) { SetTokenFilter(value); return *this;}
 
     /**
      * <p>The contract address or a token identifier on the blockchain network by which
-     * to filter the request. You must specify the contractAddress property of this
-     * container when listing tokens minted by a contract.</p>  <p>You must
-     * always specify the network property of this container when using this
-     * operation.</p> 
+     * to filter the request. You must specify the <code>contractAddress</code>
+     * property of this container when listing tokens minted by a contract.</p> 
+     * <p>You must always specify the network property of this container when using
+     * this operation.</p> 
      */
     inline ListTokenBalancesRequest& WithTokenFilter(TokenFilter&& value) { SetTokenFilter(std::move(value)); return *this;}
 

@@ -154,32 +154,32 @@ namespace Model
 
 
     /**
-     * <p>The time that the incident was detected.</p>
+     * <p>The timestamp for when the incident was detected.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The time that the incident was detected.</p>
+     * <p>The timestamp for when the incident was detected.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
-     * <p>The time that the incident was detected.</p>
+     * <p>The timestamp for when the incident was detected.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The time that the incident was detected.</p>
+     * <p>The timestamp for when the incident was detected.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p>The time that the incident was detected.</p>
+     * <p>The timestamp for when the incident was detected.</p>
      */
     inline TriggerDetails& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>The time that the incident was detected.</p>
+     * <p>The timestamp for when the incident was detected.</p>
      */
     inline TriggerDetails& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 

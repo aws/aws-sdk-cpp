@@ -21,7 +21,8 @@ UpdateDashboardRequest::UpdateDashboardRequest() :
     m_versionDescriptionHasBeenSet(false),
     m_dashboardPublishOptionsHasBeenSet(false),
     m_themeArnHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_validationStrategyHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,12 @@ Aws::String UpdateDashboardRequest::SerializePayload() const
   if(m_definitionHasBeenSet)
   {
    payload.WithObject("Definition", m_definition.Jsonize());
+
+  }
+
+  if(m_validationStrategyHasBeenSet)
+  {
+   payload.WithObject("ValidationStrategy", m_validationStrategy.Jsonize());
 
   }
 

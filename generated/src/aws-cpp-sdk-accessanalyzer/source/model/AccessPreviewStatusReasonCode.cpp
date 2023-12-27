@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessPreviewStatusReasonCode::NOT_SET:
+            return {};
           case AccessPreviewStatusReasonCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           case AccessPreviewStatusReasonCode::INVALID_CONFIGURATION:

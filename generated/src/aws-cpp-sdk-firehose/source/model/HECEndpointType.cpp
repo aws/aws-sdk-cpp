@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HECEndpointType::NOT_SET:
+            return {};
           case HECEndpointType::Raw:
             return "Raw";
           case HECEndpointType::Event:

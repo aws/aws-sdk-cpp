@@ -26,6 +26,7 @@ namespace Aws
         static const int LambdaFunction_HASH = HashingUtils::HashString("LambdaFunction");
         static const int NotApplicable_HASH = HashingUtils::HashString("NotApplicable");
         static const int EcsService_HASH = HashingUtils::HashString("EcsService");
+        static const int License_HASH = HashingUtils::HashString("License");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ResourceType::EcsService;
           }
+          else if (hashCode == License_HASH)
+          {
+            return ResourceType::License;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::Ec2Instance:
             return "Ec2Instance";
           case ResourceType::AutoScalingGroup:
@@ -81,6 +88,8 @@ namespace Aws
             return "NotApplicable";
           case ResourceType::EcsService:
             return "EcsService";
+          case ResourceType::License:
+            return "License";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

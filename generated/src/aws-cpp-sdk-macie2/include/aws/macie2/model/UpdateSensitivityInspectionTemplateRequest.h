@@ -195,37 +195,37 @@ namespace Model
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers to
-     * include (use) when analyzing data.</p>
+     * explicitly include (use) when analyzing data.</p>
      */
     inline const SensitivityInspectionTemplateIncludes& GetIncludes() const{ return m_includes; }
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers to
-     * include (use) when analyzing data.</p>
+     * explicitly include (use) when analyzing data.</p>
      */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers to
-     * include (use) when analyzing data.</p>
+     * explicitly include (use) when analyzing data.</p>
      */
     inline void SetIncludes(const SensitivityInspectionTemplateIncludes& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers to
-     * include (use) when analyzing data.</p>
+     * explicitly include (use) when analyzing data.</p>
      */
     inline void SetIncludes(SensitivityInspectionTemplateIncludes&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers to
-     * include (use) when analyzing data.</p>
+     * explicitly include (use) when analyzing data.</p>
      */
     inline UpdateSensitivityInspectionTemplateRequest& WithIncludes(const SensitivityInspectionTemplateIncludes& value) { SetIncludes(value); return *this;}
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers to
-     * include (use) when analyzing data.</p>
+     * explicitly include (use) when analyzing data.</p>
      */
     inline UpdateSensitivityInspectionTemplateRequest& WithIncludes(SensitivityInspectionTemplateIncludes&& value) { SetIncludes(std::move(value)); return *this;}
 

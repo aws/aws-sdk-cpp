@@ -21,7 +21,8 @@ CreateExperimentTemplateRequest::CreateExperimentTemplateRequest() :
     m_actionsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_experimentOptionsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,12 @@ Aws::String CreateExperimentTemplateRequest::SerializePayload() const
   if(m_logConfigurationHasBeenSet)
   {
    payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_experimentOptionsHasBeenSet)
+  {
+   payload.WithObject("experimentOptions", m_experimentOptions.Jsonize());
 
   }
 

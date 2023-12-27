@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityStatus::NOT_SET:
+            return {};
           case EntityStatus::PENDING:
             return "PENDING";
           case EntityStatus::INPROGRESS:

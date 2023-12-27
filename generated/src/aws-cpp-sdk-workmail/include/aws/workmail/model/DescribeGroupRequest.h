@@ -76,42 +76,82 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the group to be described.</p>
+     * <p>The identifier for the group to be described.</p> <p>The identifier can
+     * accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     * formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>The identifier for the group to be described.</p>
+     * <p>The identifier for the group to be described.</p> <p>The identifier can
+     * accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     * formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the group to be described.</p>
+     * <p>The identifier for the group to be described.</p> <p>The identifier can
+     * accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     * formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>The identifier for the group to be described.</p>
+     * <p>The identifier for the group to be described.</p> <p>The identifier can
+     * accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     * formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>The identifier for the group to be described.</p>
+     * <p>The identifier for the group to be described.</p> <p>The identifier can
+     * accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     * formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>The identifier for the group to be described.</p>
+     * <p>The identifier for the group to be described.</p> <p>The identifier can
+     * accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     * formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline DescribeGroupRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>The identifier for the group to be described.</p>
+     * <p>The identifier for the group to be described.</p> <p>The identifier can
+     * accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     * formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline DescribeGroupRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the group to be described.</p>
+     * <p>The identifier for the group to be described.</p> <p>The identifier can
+     * accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     * formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline DescribeGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 

@@ -17,7 +17,8 @@ CreateKxUserRequest::CreateKxUserRequest() :
     m_userNameHasBeenSet(false),
     m_iamRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 

@@ -16,7 +16,8 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
-using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<EpProp>>;
+using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
+using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class GuardDutyEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -30,6 +31,7 @@ struct GuardDutyEndpointProviderEndpointTestCase
         struct Endpoint
         {
             Aws::String url;
+            ExpEpAuthScheme authScheme;
             ExpEpProps properties;
             ExpEpHeaders headers;
         } endpoint;
@@ -59,6 +61,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.af-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -67,6 +70,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.ap-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -75,6 +79,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.ap-northeast-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -83,6 +88,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.ap-northeast-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -91,6 +97,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.ap-northeast-3.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -99,6 +106,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.ap-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -107,6 +115,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.ap-southeast-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -115,6 +124,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.ap-southeast-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -123,6 +133,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.ap-southeast-3.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -131,6 +142,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.ca-central-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -139,6 +151,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.eu-central-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -147,6 +160,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.eu-north-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -155,6 +169,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "eu-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.eu-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -163,6 +178,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.eu-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -171,6 +187,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.eu-west-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -179,6 +196,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.eu-west-3.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -187,6 +205,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.me-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -195,6 +214,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.sa-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -203,6 +223,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -211,6 +232,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -219,6 +241,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-east-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -227,6 +250,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.us-east-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -235,6 +259,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -243,6 +268,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.us-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -251,6 +277,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -259,6 +286,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -267,6 +295,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -275,6 +304,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -283,6 +313,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -291,6 +322,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.cn-northwest-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -299,6 +331,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -307,6 +340,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -315,6 +349,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -323,6 +358,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -331,6 +367,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -339,6 +376,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-gov-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -347,6 +385,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-gov-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -355,6 +394,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -363,6 +403,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -377,6 +418,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -391,6 +433,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -405,6 +448,7 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty-fips.us-isob-east-1.sc2s.sgov.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -419,15 +463,16 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://guardduty.us-isob-east-1.sc2s.sgov.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 47*/
   {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -436,20 +481,19 @@ static const Aws::Vector<GuardDutyEndpointProviderEndpointTestCase> TEST_CASES =
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 49*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 50*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
@@ -472,6 +516,8 @@ Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
         sdkSigner = "NullSigner";
     } else if (rulesSignerName == "bearer") {
         sdkSigner = "Bearer";
+    } else if (rulesSignerName == "s3Express") {
+        sdkSigner = "S3ExpressSigner";
     } else {
         sdkSigner = rulesSignerName;
     }
@@ -493,9 +539,23 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const GuardDutyEndpo
         const auto expAuthSchemesIt = expect.endpoint.properties.find("authSchemes");
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
+            // in the list of AuthSchemes, select the one with a highest priority
+            const Aws::Vector<Aws::String> priotityList = {"s3Express", "sigv4a", "sigv4", "bearer", "none", ""};
+            const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
+                                                                    priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
+                                                                    {
+                                                                        const auto& propNameIt = std::find_if(props.begin(), props.end(), [](const EpProp& prop)
+                                                                        {
+                                                                            return prop.GetName() == "name";
+                                                                        });
+                                                                        assert(propNameIt != props.end());
+                                                                        return propNameIt->GetStrValueNoCheck() == expName;
+                                                                    });
+            assert(expectedAuthSchemePropsIt != expAuthSchemesIt->second.end());
+
             const auto& endpointResultAttrs = outcome.GetResult().GetAttributes();
             ASSERT_TRUE(endpointResultAttrs) << "Expected non-empty EndpointAttributes (authSchemes)";
-            for (const auto& expProperty : expAuthSchemesIt->second)
+            for (const auto& expProperty : *expectedAuthSchemePropsIt)
             {
                 if (expProperty.GetName() == "name") {
                     ASSERT_TRUE(!endpointResultAttrs->authScheme.GetName().empty());

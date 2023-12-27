@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubtitleFormat::NOT_SET:
+            return {};
           case SubtitleFormat::vtt:
             return "vtt";
           case SubtitleFormat::srt:

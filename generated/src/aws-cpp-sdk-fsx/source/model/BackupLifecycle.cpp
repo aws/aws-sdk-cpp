@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupLifecycle::NOT_SET:
+            return {};
           case BackupLifecycle::AVAILABLE:
             return "AVAILABLE";
           case BackupLifecycle::CREATING:

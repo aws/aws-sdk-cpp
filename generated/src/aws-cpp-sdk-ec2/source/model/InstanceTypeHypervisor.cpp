@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceTypeHypervisor::NOT_SET:
+            return {};
           case InstanceTypeHypervisor::nitro:
             return "nitro";
           case InstanceTypeHypervisor::xen:

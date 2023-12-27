@@ -267,9 +267,10 @@ namespace DataSync
 
         /**
          * <p>Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that
-         * DataSync can access for a transfer. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating
-         * a location for FSx for ONTAP</a>.</p><p><h3>See Also:</h3>   <a
+         * DataSync can use for a data transfer.</p> <p>Before you begin, make sure that
+         * you understand how DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">accesses
+         * an FSx for ONTAP file system</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">AWS
          * API Reference</a></p>
          */
@@ -324,8 +325,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an Amazon FSx for Windows File Server file
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an endpoint for an Amazon FSx for Windows File Server file system
+         * that DataSync can use for a data transfer.</p> <p>Before you begin, make sure
+         * that you understand how DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-location-access">accesses
+         * an FSx for Windows File Server</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">AWS
          * API Reference</a></p>
          */
@@ -376,8 +380,15 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an Network File System (NFS) file server that
-         * DataSync can use for a data transfer.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an endpoint for a Network File System (NFS) file server that DataSync
+         * can use for a data transfer.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
+         * transfers to or from an NFS file server</a>.</p>  <p>If you're copying
+         * data to or from an Snowcone device, you can also use
+         * <code>CreateLocationNfs</code> to create your transfer location. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring
+         * transfers with Snowcone</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
          * API Reference</a></p>
          */
@@ -494,9 +505,9 @@ namespace DataSync
         }
 
         /**
-         * <p>Configures a task, which defines where and how DataSync transfers your
-         * data.</p> <p>A task includes a source location, a destination location, and the
-         * preferences for how and when you want to transfer your data (such as bandwidth
+         * <p>Configures a transfer task, which defines where and how DataSync moves your
+         * data.</p> <p>A task includes a source location, destination location, and the
+         * options for how and when you want to transfer your data (such as bandwidth
          * limits, scheduling, among other options).</p>  <p>If you're planning
          * to transfer data to or from an Amazon S3 location, review <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
@@ -527,11 +538,13 @@ namespace DataSync
         }
 
         /**
-         * <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource
-         * Name (ARN) of the agent in your request. The operation disassociates the agent
-         * from your Amazon Web Services account. However, it doesn't delete the agent
-         * virtual machine (VM) from your on-premises environment.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes an DataSync agent resource from your Amazon Web Services account.</p>
+         * <p>Keep in mind that this operation (which can't be undone) doesn't remove the
+         * agent's virtual machine (VM) or Amazon EC2 instance from your storage
+         * environment. For next steps, you can delete the VM or instance from your storage
+         * environment or reuse it to <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activate
+         * a new agent</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">AWS
          * API Reference</a></p>
          */
@@ -582,7 +595,7 @@ namespace DataSync
         }
 
         /**
-         * <p>Deletes an DataSync task.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an DataSync transfer task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteTask">AWS
          * API Reference</a></p>
          */
@@ -607,8 +620,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata about an DataSync agent, such as its name, endpoint type,
-         * and status.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about an DataSync agent, such as its name, service
+         * endpoint type, and status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeAgent">AWS
          * API Reference</a></p>
          */
@@ -846,8 +859,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata, such as the path information, about an NFS
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for a Network File
+         * System (NFS) file server is configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationNfs">AWS
          * API Reference</a></p>
          */
@@ -1055,8 +1068,9 @@ namespace DataSync
         }
 
         /**
-         * <p>Provides information about an DataSync transfer task that's
-         * running.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides information about an execution of your DataSync task. You can use
+         * this operation to help monitor the progress of an ongoing transfer or check the
+         * results of the transfer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">AWS
          * API Reference</a></p>
          */
@@ -1089,11 +1103,7 @@ namespace DataSync
          * provided by DataSync Discovery</a>.</p> <p>Once generated, you can view your
          * recommendations by using the <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html">DescribeStorageSystemResources</a>
-         * operation.</p>  <p>If your <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">discovery
-         * job completes successfully</a>, you don't need to use this operation. DataSync
-         * Discovery generates the recommendations for you automatically.</p>
-         * <p><h3>See Also:</h3>   <a
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/GenerateRecommendations">AWS
          * API Reference</a></p>
          */
@@ -1371,9 +1381,9 @@ namespace DataSync
         }
 
         /**
-         * <p>Starts an DataSync task. For each task, you can only run one task execution
-         * at a time.</p> <p>There are several phases to a task execution. For more
-         * information, see <a
+         * <p>Starts an DataSync transfer task. For each task, you can only run one task
+         * execution at a time.</p> <p>There are several phases to a task execution. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
          * execution statuses</a>.</p>  <p>If you're planning to transfer data
          * to or from an Amazon S3 location, review <a
@@ -1489,7 +1499,7 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates the name of an agent.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the name of an DataSync agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateAgent">AWS
          * API Reference</a></p>
          */
@@ -1591,10 +1601,10 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates some of the parameters of a previously created location for Network
-         * File System (NFS) access. For information about creating an NFS location, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating
-         * a location for NFS</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies some configurations of the Network File System (NFS) transfer
+         * location that you're using with DataSync.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
+         * transfers to or from an NFS file server</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">AWS
          * API Reference</a></p>
          */
@@ -1648,11 +1658,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates some of the parameters of a previously created location for Server
-         * Message Block (SMB) file system access. For information about creating an SMB
-         * location, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
-         * a location for SMB</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates some of the parameters of a Server Message Block (SMB) file server
+         * location that you can use for DataSync transfers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">AWS
          * API Reference</a></p>
          */
@@ -1703,7 +1710,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates the metadata associated with a task.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the configuration of a DataSync transfer task.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">AWS
          * API Reference</a></p>
          */
@@ -1728,11 +1736,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Modifies a running DataSync task.</p>  <p>Currently, the only
-         * <code>Option</code> that you can modify with <code>UpdateTaskExecution</code> is
-         * <code> <a
+         * <p>Updates the configuration of a running DataSync task execution.</p> 
+         * <p>Currently, the only <code>Option</code> that you can modify with
+         * <code>UpdateTaskExecution</code> is <code> <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
-         * </code>, which throttles bandwidth for a running or queued task.</p>
+         * </code>, which throttles bandwidth for a running or queued task execution.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">AWS
          * API Reference</a></p>

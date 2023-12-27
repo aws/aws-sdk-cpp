@@ -20,17 +20,17 @@ namespace OAM
    * between source accounts and monitoring accounts by using <i>CloudWatch
    * cross-account observability</i>. With CloudWatch cross-account observability,
    * you can monitor and troubleshoot applications that span multiple accounts within
-   * a Region. Seamlessly search, visualize, and analyze your metrics, logs, and
-   * traces in any of the linked accounts without account boundaries.</p> <pre><code>
-   * &lt;p&gt;Set up one or more Amazon Web Services accounts as &lt;i&gt;monitoring
-   * accounts&lt;/i&gt; and link them with multiple &lt;i&gt;source
-   * accounts&lt;/i&gt;. A monitoring account is a central Amazon Web Services
-   * account that can view and interact with observability data generated from source
-   * accounts. A source account is an individual Amazon Web Services account that
-   * generates observability data for the resources that reside in it. Source
-   * accounts share their observability data with the monitoring account. The shared
-   * observability data can include metrics in Amazon CloudWatch, logs in Amazon
-   * CloudWatch Logs, and traces in X-Ray.&lt;/p&gt; </code></pre>
+   * a Region. Seamlessly search, visualize, and analyze your metrics, logs, traces,
+   * and Application Insights applications in any of the linked accounts without
+   * account boundaries.</p> <p>Set up one or more Amazon Web Services accounts as
+   * <i>monitoring accounts</i> and link them with multiple <i>source accounts</i>. A
+   * monitoring account is a central Amazon Web Services account that can view and
+   * interact with observability data generated from source accounts. A source
+   * account is an individual Amazon Web Services account that generates
+   * observability data for the resources that reside in it. Source accounts share
+   * their observability data with the monitoring account. The shared observability
+   * data can include metrics in Amazon CloudWatch, logs in Amazon CloudWatch Logs,
+   * traces in X-Ray, and applications in Amazon CloudWatch Application Insights.</p>
    */
   class AWS_OAM_API OAMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OAMClient>
   {
@@ -415,8 +415,10 @@ namespace OAM
          * <b>Metrics</b> - Specify with <code>AWS::CloudWatch::Metric</code> </p> </li>
          * <li> <p> <b>Log groups</b> - Specify with <code>AWS::Logs::LogGroup</code> </p>
          * </li> <li> <p> <b>Traces</b> - Specify with <code>AWS::XRay::Trace</code> </p>
-         * </li> </ul> <p>See the examples in this section to see how to specify permitted
-         * source accounts and data types.</p><p><h3>See Also:</h3>   <a
+         * </li> <li> <p> <b>Application Insights - Applications</b> - Specify with
+         * <code>AWS::ApplicationInsights::Application</code> </p> </li> </ul> <p>See the
+         * examples in this section to see how to specify permitted source accounts and
+         * data types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/PutSinkPolicy">AWS
          * API Reference</a></p>
          */

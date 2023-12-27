@@ -30,7 +30,7 @@ namespace ECS
    * resource needs, isolation policies, and availability requirements. With Amazon
    * ECS, you don't need to operate your own cluster management and configuration
    * management systems. You also don't need to worry about scaling your management
-   * infrastructure.</p>
+   * infrastructure. </p>
    */
   class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>
   {
@@ -790,7 +790,10 @@ namespace ECS
 
         /**
          * <p>Describes a specified task or tasks.</p> <p>Currently, stopped tasks appear
-         * in the returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
+         * in the returned results for at least one hour.</p> <p>If you have tasks with
+         * tags, and then delete the cluster, the tagged tasks are returned in the
+         * response. If you create a new cluster with the same name as the deleted cluster,
+         * the tagged tasks are not included in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">AWS
          * API Reference</a></p>
          */
@@ -1160,8 +1163,7 @@ namespace ECS
          * <p>Returns a list of tasks. You can filter the results by cluster, task
          * definition family, container instance, launch type, what IAM principal started
          * the task, or by the desired status of the task.</p> <p>Recently stopped tasks
-         * might appear in the returned results. Currently, stopped tasks appear in the
-         * returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
+         * might appear in the returned results. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
          * Reference</a></p>
          */
@@ -1192,22 +1194,23 @@ namespace ECS
          * settings. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
          * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-         * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
-         * <code>containerInstanceLongArnFormat</code> are specified, the Amazon Resource
-         * Name (ARN) and resource ID format of the resource type for a specified user,
-         * role, or the root user for an account is affected. The opt-in and opt-out
-         * account setting must be set for each Amazon ECS resource separately. The ARN and
-         * resource ID format of a resource is defined by the opt-in status of the user or
-         * role that created the resource. You must turn on this setting to use Amazon ECS
-         * features such as resource tagging.</p> <p>When <code>awsvpcTrunking</code> is
-         * specified, the elastic network interface (ENI) limit for any new container
-         * instances that support the feature is changed. If <code>awsvpcTrunking</code> is
-         * turned on, any new container instances that support the feature are launched
-         * have the increased ENI limits available to them. For more information, see <a
+         * <p>When you specify <code>serviceLongArnFormat</code>,
+         * <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code>,
+         * the Amazon Resource Name (ARN) and resource ID format of the resource type for a
+         * specified user, role, or the root user for an account is affected. The opt-in
+         * and opt-out account setting must be set for each Amazon ECS resource separately.
+         * The ARN and resource ID format of a resource is defined by the opt-in status of
+         * the user or role that created the resource. You must turn on this setting to use
+         * Amazon ECS features such as resource tagging.</p> <p>When you specify
+         * <code>awsvpcTrunking</code>, the elastic network interface (ENI) limit for any
+         * new container instances that support the feature is changed. If
+         * <code>awsvpcTrunking</code> is turned on, any new container instances that
+         * support the feature are launched have the increased ENI limits available to
+         * them. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
          * Network Interface Trunking</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p> <p>When <code>containerInsights</code> is specified,
-         * the default setting indicating whether Amazon Web Services CloudWatch Container
+         * Developer Guide</i>.</p> <p>When you specify <code>containerInsights</code>, the
+         * default setting indicating whether Amazon Web Services CloudWatch Container
          * Insights is turned on for your clusters is changed. If
          * <code>containerInsights</code> is turned on, any new clusters that are created
          * will have Container Insights turned on unless you disable it during cluster
@@ -1223,7 +1226,22 @@ namespace ECS
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/supported-iam-actions-tagging.html">Grant
          * permission to tag resources on creation</a> in the <i>Amazon ECS Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>When Amazon Web Services determines that a security or
+         * infrastructure update is needed for an Amazon ECS task hosted on Fargate, the
+         * tasks need to be stopped and new tasks launched to replace them. Use
+         * <code>fargateTaskRetirementWaitPeriod</code> to configure the wait time to
+         * retire a Fargate task. For information about the Fargate tasks maintenance, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-maintenance.html">Amazon
+         * Web Services Fargate task maintenance</a> in the <i>Amazon ECS Developer
+         * Guide</i>.</p> <p>The <code>guardDutyActivate</code> parameter is read-only in
+         * Amazon ECS and indicates whether Amazon ECS Runtime Monitoring is enabled or
+         * disabled by your security administrator in your Amazon ECS account. Amazon
+         * GuardDuty controls this account setting on your behalf. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-guard-duty-integration.html">Protecting
+         * Amazon ECS workloads with Amazon ECS Runtime Monitoring</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          */
@@ -1951,16 +1969,11 @@ namespace ECS
          * Zone (based on the previous steps), favoring container instances with the
          * largest number of running tasks for this service.</p> </li> </ul>  <p>You
          * must have a service-linked role when you update any of the following service
-         * properties. If you specified a custom role when you created the service, Amazon
-         * ECS automatically replaces the <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Service.html#ECS-Type-Service-roleArn">roleARN</a>
-         * associated with the service with the ARN of your service-linked role. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked
-         * roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-         * <ul> <li> <p> <code>loadBalancers,</code> </p> </li> <li> <p>
-         * <code>serviceRegistries</code> </p> </li> </ul> <p><h3>See Also:</h3>  
-         * <a
+         * properties:</p> <ul> <li> <p> <code>loadBalancers</code>,</p> </li> <li> <p>
+         * <code>serviceRegistries</code> </p> </li> </ul> <p>For more information about
+         * the role see the <code>CreateService</code> request parameter <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
+         * <code>role</code> </a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS
          * API Reference</a></p>
          */

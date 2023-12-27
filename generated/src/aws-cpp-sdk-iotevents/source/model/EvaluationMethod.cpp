@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationMethod::NOT_SET:
+            return {};
           case EvaluationMethod::BATCH:
             return "BATCH";
           case EvaluationMethod::SERIAL:

@@ -449,6 +449,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationType::NOT_SET:
+            return {};
           case OperationType::DeleteKnownHostKeys:
             return "DeleteKnownHostKeys";
           case OperationType::DeleteInstance:

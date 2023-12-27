@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailoverMode::NOT_SET:
+            return {};
           case FailoverMode::MERGE:
             return "MERGE";
           case FailoverMode::FAILOVER:

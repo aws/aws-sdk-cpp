@@ -4,10 +4,12 @@
  */
 
 #include <aws/sqs/model/StartMessageMoveTaskRequest.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
 
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartMessageMoveTaskRequest::StartMessageMoveTaskRequest() : 
@@ -20,29 +22,37 @@ StartMessageMoveTaskRequest::StartMessageMoveTaskRequest() :
 
 Aws::String StartMessageMoveTaskRequest::SerializePayload() const
 {
-  Aws::StringStream ss;
-  ss << "Action=StartMessageMoveTask&";
+  JsonValue payload;
+
   if(m_sourceArnHasBeenSet)
   {
-    ss << "SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
+   payload.WithString("SourceArn", m_sourceArn);
+
   }
 
   if(m_destinationArnHasBeenSet)
   {
-    ss << "DestinationArn=" << StringUtils::URLEncode(m_destinationArn.c_str()) << "&";
+   payload.WithString("DestinationArn", m_destinationArn);
+
   }
 
   if(m_maxNumberOfMessagesPerSecondHasBeenSet)
   {
-    ss << "MaxNumberOfMessagesPerSecond=" << m_maxNumberOfMessagesPerSecond << "&";
+   payload.WithInteger("MaxNumberOfMessagesPerSecond", m_maxNumberOfMessagesPerSecond);
+
   }
 
-  ss << "Version=2012-11-05";
-  return ss.str();
+  return payload.View().WriteReadable();
 }
 
-
-void  StartMessageMoveTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+Aws::Http::HeaderValueCollection StartMessageMoveTaskRequest::GetRequestSpecificHeaders() const
 {
-  uri.SetQueryString(SerializePayload());
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.StartMessageMoveTask"));
+  return headers;
+
 }
+
+
+
+

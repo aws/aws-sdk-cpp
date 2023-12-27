@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationJobSupportedEndpointType::NOT_SET:
+            return {};
           case RecommendationJobSupportedEndpointType::RealTime:
             return "RealTime";
           case RecommendationJobSupportedEndpointType::Serverless:

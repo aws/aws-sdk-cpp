@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LabelDetectionFeatureName::NOT_SET:
+            return {};
           case LabelDetectionFeatureName::GENERAL_LABELS:
             return "GENERAL_LABELS";
           default:

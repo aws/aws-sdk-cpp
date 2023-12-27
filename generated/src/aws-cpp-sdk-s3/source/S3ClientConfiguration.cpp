@@ -14,6 +14,8 @@ static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGI
 static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
 static const char S3_DISABLE_MULTIREGION_ACCESS_POINTS_ENV_VAR[] = "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS";
 static const char S3_DISABLE_MULTIREGION_ACCESS_POINTS_CONFIG_VAR[] = "s3_disable_multiregion_access_points";
+static const char S3_DISABLE_EXPRESS_SESSION_ENVIRONMENT_VARIABLE[] = "AWS_S3_DISABLE_S3_EXPRESS_AUTH";
+static const char S3_DISABLE_EXPRESS_SESSION_CONFIG_FILE_OPTION[] = "s3_disable_s3_express_auth";
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 
@@ -43,6 +45,17 @@ void S3ClientConfiguration::LoadS3SpecificConfig(const Aws::String& inputProfile
   {
     disableMultiRegionAccessPoints = true;
   }
+
+  Aws::String disableS3ExpressAuthCfg = ClientConfiguration::LoadConfigFromEnvOrProfile(S3_DISABLE_EXPRESS_SESSION_ENVIRONMENT_VARIABLE,
+                                                                                        inputProfileName,
+                                                                                        S3_DISABLE_EXPRESS_SESSION_CONFIG_FILE_OPTION,
+                                                                                        {"true", "false"},
+                                                                                        "false");
+  if (disableS3ExpressAuthCfg == "true")
+  {
+    disableS3ExpressAuth = true;
+  }
+
   Aws::String useArnRegionCfg = ClientConfiguration::LoadConfigFromEnvOrProfile(S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE,
                                                                                inputProfileName,
                                                                                S3_USE_ARN_REGION_CONFIG_FILE_OPTION,
@@ -54,8 +67,8 @@ void S3ClientConfiguration::LoadS3SpecificConfig(const Aws::String& inputProfile
   }
 }
 
-S3ClientConfiguration::S3ClientConfiguration()
-: BaseClientConfigClass()
+S3ClientConfiguration::S3ClientConfiguration(const Client::ClientConfigurationInitValues &configuration)
+: BaseClientConfigClass(configuration)
 {
   LoadS3SpecificConfig(this->profileName);
 }

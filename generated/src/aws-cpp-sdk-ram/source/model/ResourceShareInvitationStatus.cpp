@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceShareInvitationStatus::NOT_SET:
+            return {};
           case ResourceShareInvitationStatus::PENDING:
             return "PENDING";
           case ResourceShareInvitationStatus::ACCEPTED:

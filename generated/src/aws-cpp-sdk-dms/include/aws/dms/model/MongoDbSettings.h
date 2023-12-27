@@ -132,42 +132,50 @@ namespace Model
 
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline MongoDbSettings& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline MongoDbSettings& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the server on the MongoDB source endpoint. </p>
+     * <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas,
+     * provide the server name for any of the servers in the replication set.</p>
      */
     inline MongoDbSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
 

@@ -25,7 +25,8 @@ WorkspaceDescription::WorkspaceDescription() :
     m_statusHasBeenSet(false),
     m_prometheusEndpointHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_prometheusEndpointHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,6 +154,12 @@ JsonValue WorkspaceDescription::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("kmsKeyArn", m_kmsKeyArn);
 
   }
 

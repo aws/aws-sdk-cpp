@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/finspace/model/KxSavedownStorageType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -83,24 +84,73 @@ namespace Model
 
 
     /**
-     * <p>The size of temporary storage in bytes.</p>
+     * <p>The size of temporary storage in gibibytes.</p>
      */
     inline int GetSize() const{ return m_size; }
 
     /**
-     * <p>The size of temporary storage in bytes.</p>
+     * <p>The size of temporary storage in gibibytes.</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p>The size of temporary storage in bytes.</p>
+     * <p>The size of temporary storage in gibibytes.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>The size of temporary storage in bytes.</p>
+     * <p>The size of temporary storage in gibibytes.</p>
      */
     inline KxSavedownStorageConfiguration& WithSize(int value) { SetSize(value); return *this;}
+
+
+    /**
+     * <p> The name of the kdb volume that you want to use as writeable save-down
+     * storage for clusters. </p>
+     */
+    inline const Aws::String& GetVolumeName() const{ return m_volumeName; }
+
+    /**
+     * <p> The name of the kdb volume that you want to use as writeable save-down
+     * storage for clusters. </p>
+     */
+    inline bool VolumeNameHasBeenSet() const { return m_volumeNameHasBeenSet; }
+
+    /**
+     * <p> The name of the kdb volume that you want to use as writeable save-down
+     * storage for clusters. </p>
+     */
+    inline void SetVolumeName(const Aws::String& value) { m_volumeNameHasBeenSet = true; m_volumeName = value; }
+
+    /**
+     * <p> The name of the kdb volume that you want to use as writeable save-down
+     * storage for clusters. </p>
+     */
+    inline void SetVolumeName(Aws::String&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::move(value); }
+
+    /**
+     * <p> The name of the kdb volume that you want to use as writeable save-down
+     * storage for clusters. </p>
+     */
+    inline void SetVolumeName(const char* value) { m_volumeNameHasBeenSet = true; m_volumeName.assign(value); }
+
+    /**
+     * <p> The name of the kdb volume that you want to use as writeable save-down
+     * storage for clusters. </p>
+     */
+    inline KxSavedownStorageConfiguration& WithVolumeName(const Aws::String& value) { SetVolumeName(value); return *this;}
+
+    /**
+     * <p> The name of the kdb volume that you want to use as writeable save-down
+     * storage for clusters. </p>
+     */
+    inline KxSavedownStorageConfiguration& WithVolumeName(Aws::String&& value) { SetVolumeName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the kdb volume that you want to use as writeable save-down
+     * storage for clusters. </p>
+     */
+    inline KxSavedownStorageConfiguration& WithVolumeName(const char* value) { SetVolumeName(value); return *this;}
 
   private:
 
@@ -109,6 +159,9 @@ namespace Model
 
     int m_size;
     bool m_sizeHasBeenSet = false;
+
+    Aws::String m_volumeName;
+    bool m_volumeNameHasBeenSet = false;
   };
 
 } // namespace Model

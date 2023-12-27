@@ -28,7 +28,8 @@ namespace Model
    * <p>The name of the event source. This field is required if
    * <code>TriggerEventSource</code> is one of the following values:
    * <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> |
-   * <code>OnSalesforceCaseCreate</code> </p><p><h3>See Also:</h3>   <a
+   * <code>OnSalesforceCaseCreate</code> | <code>OnContactEvaluationSubmit</code> |
+   * <code>OnMetricDataUpdate</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RuleTriggerEventSource">AWS
    * API Reference</a></p>
    */

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LineInterpolation::NOT_SET:
+            return {};
           case LineInterpolation::LINEAR:
             return "LINEAR";
           case LineInterpolation::SMOOTH:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CacheType::NOT_SET:
+            return {};
           case CacheType::NO_CACHE:
             return "NO_CACHE";
           case CacheType::S3:

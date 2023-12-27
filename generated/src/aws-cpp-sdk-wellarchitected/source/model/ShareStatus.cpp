@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareStatus::NOT_SET:
+            return {};
           case ShareStatus::ACCEPTED:
             return "ACCEPTED";
           case ShareStatus::REJECTED:

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/model/VpcConfigRequest.h>
 #include <aws/eks/model/Logging.h>
+#include <aws/eks/model/UpdateAccessConfigRequest.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -175,52 +176,83 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateClusterConfigRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateClusterConfigRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateClusterConfigRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline const UpdateAccessConfigRequest& GetAccessConfig() const{ return m_accessConfig; }
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline bool AccessConfigHasBeenSet() const { return m_accessConfigHasBeenSet; }
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline void SetAccessConfig(const UpdateAccessConfigRequest& value) { m_accessConfigHasBeenSet = true; m_accessConfig = value; }
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline void SetAccessConfig(UpdateAccessConfigRequest&& value) { m_accessConfigHasBeenSet = true; m_accessConfig = std::move(value); }
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline UpdateClusterConfigRequest& WithAccessConfig(const UpdateAccessConfigRequest& value) { SetAccessConfig(value); return *this;}
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline UpdateClusterConfigRequest& WithAccessConfig(UpdateAccessConfigRequest&& value) { SetAccessConfig(std::move(value)); return *this;}
 
   private:
 
@@ -235,6 +267,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    UpdateAccessConfigRequest m_accessConfig;
+    bool m_accessConfigHasBeenSet = false;
   };
 
 } // namespace Model

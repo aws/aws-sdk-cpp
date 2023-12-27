@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WrappedKeyMaterialFormat::NOT_SET:
+            return {};
           case WrappedKeyMaterialFormat::KEY_CRYPTOGRAM:
             return "KEY_CRYPTOGRAM";
           case WrappedKeyMaterialFormat::TR31_KEY_BLOCK:

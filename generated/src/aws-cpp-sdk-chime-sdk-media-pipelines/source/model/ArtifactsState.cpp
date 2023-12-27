@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactsState::NOT_SET:
+            return {};
           case ArtifactsState::Enabled:
             return "Enabled";
           case ArtifactsState::Disabled:

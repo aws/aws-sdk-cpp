@@ -68,7 +68,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"ResourceUnavailableException"}
       ],
-      "documentation":"<p>Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.</p> <p>The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific (Singapore) Region. </p> <p>Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you don't have an Amazon Web Services account, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html\">Sign up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The person who signs up for Amazon QuickSight needs to have the correct Identity and Access Management (IAM) permissions. For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html\">IAM Policy Examples for Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code> actions, make sure that both actions are set to <code>Allow</code>. If either action is set to <code>Deny</code>, the <code>Deny</code> action prevails and your API call fails.</p> <p>You can't pass an existing IAM role to access other Amazon Web Services services using this API operation. To pass your existing IAM role to Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role\">Passing IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>You can't set default resource access on the new account from the Amazon QuickSight API. Instead, add default resource access from the Amazon QuickSight console. For more information about setting default resource access to Amazon Web Services services, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html\">Setting default resource access to Amazon Web Services services</a> in the <i>Amazon QuickSight User Guide</i>.</p>"
+      "documentation":"<p>Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.</p> <p>The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK.</p> <p>Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you don't have an Amazon Web Services account, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html\">Sign up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The person who signs up for Amazon QuickSight needs to have the correct Identity and Access Management (IAM) permissions. For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html\">IAM Policy Examples for Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code> actions, make sure that both actions are set to <code>Allow</code>. If either action is set to <code>Deny</code>, the <code>Deny</code> action prevails and your API call fails.</p> <p>You can't pass an existing IAM role to access other Amazon Web Services services using this API operation. To pass your existing IAM role to Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role\">Passing IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>You can't set default resource access on the new account from the Amazon QuickSight API. Instead, add default resource access from the Amazon QuickSight console. For more information about setting default resource access to Amazon Web Services services, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html\">Setting default resource access to Amazon Web Services services</a> in the <i>Amazon QuickSight User Guide</i>.</p>"
     },
     "CreateAnalysis":{
       "name":"CreateAnalysis",
@@ -211,7 +211,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"ResourceUnavailableException"}
       ],
-      "documentation":"<p>Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000 groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact AWS Support.</p> <p>The permissions resource is <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.</p> <p>The response is a group object.</p>"
+      "documentation":"<p>Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000 groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact Amazon Web Services Support.</p> <p>The permissions resource is <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.</p> <p>The response is a group object.</p>"
     },
     "CreateGroupMembership":{
       "name":"CreateGroupMembership",
@@ -311,6 +311,25 @@
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset.</p>"
+    },
+    "CreateRoleMembership":{
+      "name":"CreateRoleMembership",
+      "http":{
+        "method":"POST",
+        "requestUri":"/accounts/{AwsAccountId}/namespaces/{Namespace}/roles/{Role}/members/{MemberName}"
+      },
+      "input":{"shape":"CreateRoleMembershipRequest"},
+      "output":{"shape":"CreateRoleMembershipResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"PreconditionNotMetException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"ResourceUnavailableException"}
+      ],
+      "documentation":"<p>Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to an existing role.</p>"
     },
     "CreateTemplate":{
       "name":"CreateTemplate",
@@ -677,6 +696,23 @@
       ],
       "documentation":"<p>Deletes an existing IAM policy assignment.</p>"
     },
+    "DeleteIdentityPropagationConfig":{
+      "name":"DeleteIdentityPropagationConfig",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/accounts/{AwsAccountId}/identity-propagation-config/{Service}"
+      },
+      "input":{"shape":"DeleteIdentityPropagationConfigRequest"},
+      "output":{"shape":"DeleteIdentityPropagationConfigResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>Deletes all access scopes and authorized targets that are associated with a service from the Amazon QuickSight IAM Identity Center application.</p> <p>This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center.</p>"
+    },
     "DeleteNamespace":{
       "name":"DeleteNamespace",
       "http":{
@@ -713,6 +749,44 @@
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Deletes a refresh schedule from a dataset.</p>"
+    },
+    "DeleteRoleCustomPermission":{
+      "name":"DeleteRoleCustomPermission",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/accounts/{AwsAccountId}/namespaces/{Namespace}/roles/{Role}/custom-permission"
+      },
+      "input":{"shape":"DeleteRoleCustomPermissionRequest"},
+      "output":{"shape":"DeleteRoleCustomPermissionResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"PreconditionNotMetException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"ResourceUnavailableException"}
+      ],
+      "documentation":"<p>Removes custom permissions from the role.</p>"
+    },
+    "DeleteRoleMembership":{
+      "name":"DeleteRoleMembership",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/accounts/{AwsAccountId}/namespaces/{Namespace}/roles/{Role}/members/{MemberName}"
+      },
+      "input":{"shape":"DeleteRoleMembershipRequest"},
+      "output":{"shape":"DeleteRoleMembershipResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"PreconditionNotMetException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"ResourceUnavailableException"}
+      ],
+      "documentation":"<p>Removes a group from a role.</p>"
     },
     "DeleteTemplate":{
       "name":"DeleteTemplate",
@@ -1230,6 +1304,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
+        {"shape":"InvalidNextTokenException"},
         {"shape":"UnsupportedUserEditionException"},
         {"shape":"InternalFailureException"}
       ],
@@ -1248,6 +1323,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
+        {"shape":"InvalidNextTokenException"},
         {"shape":"UnsupportedUserEditionException"},
         {"shape":"InternalFailureException"}
       ],
@@ -1379,6 +1455,25 @@
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Provides a summary of a refresh schedule.</p>"
+    },
+    "DescribeRoleCustomPermission":{
+      "name":"DescribeRoleCustomPermission",
+      "http":{
+        "method":"GET",
+        "requestUri":"/accounts/{AwsAccountId}/namespaces/{Namespace}/roles/{Role}/custom-permission"
+      },
+      "input":{"shape":"DescribeRoleCustomPermissionRequest"},
+      "output":{"shape":"DescribeRoleCustomPermissionResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"PreconditionNotMetException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"ResourceUnavailableException"}
+      ],
+      "documentation":"<p>Describes all custom permissions that are mapped to a role.</p>"
     },
     "DescribeTemplate":{
       "name":"DescribeTemplate",
@@ -1936,6 +2031,23 @@
       ],
       "documentation":"<p>Lists all of the IAM policy assignments, including the Amazon Resource Names (ARNs), for the IAM policies assigned to the specified user and group, or groups that the user belongs to.</p>"
     },
+    "ListIdentityPropagationConfigs":{
+      "name":"ListIdentityPropagationConfigs",
+      "http":{
+        "method":"GET",
+        "requestUri":"/accounts/{AwsAccountId}/identity-propagation-config"
+      },
+      "input":{"shape":"ListIdentityPropagationConfigsRequest"},
+      "output":{"shape":"ListIdentityPropagationConfigsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>Lists all services and authorized targets that the Amazon QuickSight IAM Identity Center application can access.</p> <p>This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center.</p>"
+    },
     "ListIngestions":{
       "name":"ListIngestions",
       "http":{
@@ -1992,6 +2104,27 @@
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules. </p>"
+    },
+    "ListRoleMemberships":{
+      "name":"ListRoleMemberships",
+      "http":{
+        "method":"GET",
+        "requestUri":"/accounts/{AwsAccountId}/namespaces/{Namespace}/roles/{Role}/members"
+      },
+      "input":{"shape":"ListRoleMembershipsRequest"},
+      "output":{"shape":"ListRoleMembershipsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"PreconditionNotMetException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"ResourceUnavailableException"}
+      ],
+      "documentation":"<p>Lists all groups that are associated with a role.</p>"
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -2442,7 +2575,7 @@
         {"shape":"UnsupportedPricingPlanException"},
         {"shape":"InternalFailureException"}
       ],
-      "documentation":"<p>Starts an asynchronous job that generates a dashboard snapshot. You can request up to one paginated PDF and up to five CSVs per API call.</p> <p>Poll job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to obtain the download URIs that the job generates.</p>"
+      "documentation":"<p>Starts an asynchronous job that generates a dashboard snapshot. You can request one of the following format configurations per API call.</p> <ul> <li> <p>1 paginated PDF</p> </li> <li> <p>1 Excel workbook</p> </li> <li> <p>5 CSVs</p> </li> </ul> <p>Poll job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to obtain the download URIs that the job generates.</p>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -2460,7 +2593,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalFailureException"}
       ],
-      "documentation":"<p>Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight resource. </p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values. You can use the <code>TagResource</code> operation with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p> <p>You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging on data set, data source, dashboard, template, and topic. </p> <p>Tagging for Amazon QuickSight works in a similar way to tagging for other Amazon Web Services services, except for the following:</p> <ul> <li> <p>You can't use tags to track costs for Amazon QuickSight. This isn't possible because you can't tag the resources that Amazon QuickSight costs are based on, for example Amazon QuickSight storage capacity (SPICE), number of users, type of users, and usage metrics.</p> </li> <li> <p>Amazon QuickSight doesn't currently support the tag editor for Resource Groups.</p> </li> </ul>"
+      "documentation":"<p>Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight resource. </p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values. You can use the <code>TagResource</code> operation with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p> <p>You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging on data set, data source, dashboard, template, topic, and user. </p> <p>Tagging for Amazon QuickSight works in a similar way to tagging for other Amazon Web Services services, except for the following:</p> <ul> <li> <p>Tags are used to track costs for users in Amazon QuickSight. You can't tag other resources that Amazon QuickSight costs are based on, such as storage capacoty (SPICE), session usage, alert consumption, or reporting units.</p> </li> <li> <p>Amazon QuickSight doesn't currently support the tag editor for Resource Groups.</p> </li> </ul>"
     },
     "UntagResource":{
       "name":"UntagResource",
@@ -2572,6 +2705,24 @@
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Updates a dashboard in an Amazon Web Services account.</p> <note> <p>Updating a Dashboard creates a new dashboard version but does not immediately publish the new version. You can update the published version of a dashboard by using the <code> <a href=\"https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html\">UpdateDashboardPublishedVersion</a> </code> API operation.</p> </note>"
+    },
+    "UpdateDashboardLinks":{
+      "name":"UpdateDashboardLinks",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/accounts/{AwsAccountId}/dashboards/{DashboardId}/linked-entities"
+      },
+      "input":{"shape":"UpdateDashboardLinksRequest"},
+      "output":{"shape":"UpdateDashboardLinksResponse"},
+      "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>Updates the linked analyses on a dashboard.</p>"
     },
     "UpdateDashboardPermissions":{
       "name":"UpdateDashboardPermissions",
@@ -2761,6 +2912,23 @@
       ],
       "documentation":"<p>Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that are specified in the request. This overwrites all of the users included in <code>Identities</code>. </p>"
     },
+    "UpdateIdentityPropagationConfig":{
+      "name":"UpdateIdentityPropagationConfig",
+      "http":{
+        "method":"POST",
+        "requestUri":"/accounts/{AwsAccountId}/identity-propagation-config/{Service}"
+      },
+      "input":{"shape":"UpdateIdentityPropagationConfigRequest"},
+      "output":{"shape":"UpdateIdentityPropagationConfigResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalFailureException"}
+      ],
+      "documentation":"<p>Adds or updates services and authorized targets to configure what the Amazon QuickSight IAM Identity Center application can access.</p> <p>This operation is only supported for Amazon QuickSight accounts using IAM Identity Center</p>"
+    },
     "UpdateIpRestriction":{
       "name":"UpdateIpRestriction",
       "http":{
@@ -2815,6 +2983,25 @@
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Updates a refresh schedule for a dataset.</p>"
+    },
+    "UpdateRoleCustomPermission":{
+      "name":"UpdateRoleCustomPermission",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/accounts/{AwsAccountId}/namespaces/{Namespace}/roles/{Role}/custom-permission"
+      },
+      "input":{"shape":"UpdateRoleCustomPermissionRequest"},
+      "output":{"shape":"UpdateRoleCustomPermissionResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InvalidParameterValueException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"PreconditionNotMetException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"ResourceUnavailableException"}
+      ],
+      "documentation":"<p>Updates the custom permissions that are associated with a role.</p>"
     },
     "UpdateTemplate":{
       "name":"UpdateTemplate",
@@ -3081,9 +3268,19 @@
         "AccountSubscriptionStatus":{
           "shape":"String",
           "documentation":"<p>The status of your account subscription.</p>"
+        },
+        "IAMIdentityCenterInstanceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>"
         }
       },
       "documentation":"<p>A structure that contains the following account information elements:</p> <ul> <li> <p>Your Amazon QuickSight account name.</p> </li> <li> <p>The edition of Amazon QuickSight that your account is using.</p> </li> <li> <p>The notification email address that is associated with the Amazon QuickSight account. </p> </li> <li> <p>The authentication type of the Amazon QuickSight account.</p> </li> <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li> </ul>"
+    },
+    "AccountName":{
+      "type":"string",
+      "max":62,
+      "min":1,
+      "pattern":"^(?!D-|d-)([\\da-zA-Z]+)([-]*[\\da-zA-Z])*"
     },
     "AccountSettings":{
       "type":"structure",
@@ -3118,7 +3315,7 @@
     "ActionList":{
       "type":"list",
       "member":{"shape":"String"},
-      "max":16,
+      "max":20,
       "min":1
     },
     "ActiveIAMPolicyAssignment":{
@@ -3214,6 +3411,12 @@
       "max":2048,
       "min":1,
       "pattern":"[\\w\\-]+|(\\$LATEST)|(\\$PUBLISHED)"
+    },
+    "AllSheetsFilterScopeConfiguration":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The configuration for applying a filter to all sheets. You can apply this filter to all visuals on every sheet.</p> <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>"
     },
     "AmazonElasticsearchParameters":{
       "type":"structure",
@@ -3322,7 +3525,11 @@
           "shape":"ColumnConfigurationList",
           "documentation":"<p> An array of analysis-level column configurations. Column configurations can be used to set default formatting for a column to be used throughout an analysis. </p>"
         },
-        "AnalysisDefaults":{"shape":"AnalysisDefaults"}
+        "AnalysisDefaults":{"shape":"AnalysisDefaults"},
+        "Options":{
+          "shape":"AssetOptions",
+          "documentation":"<p>An array of option definitions for an analysis.</p>"
+        }
       },
       "documentation":"<p>The definition of an analysis.</p>"
     },
@@ -3675,7 +3882,10 @@
     },
     "AssetBundleExportJobAnalysisOverrideProperties":{
       "type":"structure",
-      "required":["Properties"],
+      "required":[
+        "Arn",
+        "Properties"
+      ],
       "members":{
         "Arn":{
           "shape":"Arn",
@@ -3706,7 +3916,10 @@
     },
     "AssetBundleExportJobDashboardOverrideProperties":{
       "type":"structure",
-      "required":["Properties"],
+      "required":[
+        "Arn",
+        "Properties"
+      ],
       "members":{
         "Arn":{
           "shape":"Arn",
@@ -3737,7 +3950,10 @@
     },
     "AssetBundleExportJobDataSetOverrideProperties":{
       "type":"structure",
-      "required":["Properties"],
+      "required":[
+        "Arn",
+        "Properties"
+      ],
       "members":{
         "Arn":{
           "shape":"Arn",
@@ -3768,7 +3984,10 @@
     },
     "AssetBundleExportJobDataSourceOverrideProperties":{
       "type":"structure",
-      "required":["Properties"],
+      "required":[
+        "Arn",
+        "Properties"
+      ],
       "members":{
         "Arn":{
           "shape":"Arn",
@@ -3839,7 +4058,10 @@
     },
     "AssetBundleExportJobRefreshScheduleOverrideProperties":{
       "type":"structure",
-      "required":["Properties"],
+      "required":[
+        "Arn",
+        "Properties"
+      ],
       "members":{
         "Arn":{
           "shape":"Arn",
@@ -3913,6 +4135,14 @@
         "ExportFormat":{
           "shape":"AssetBundleExportFormat",
           "documentation":"<p>The format for the export job.</p>"
+        },
+        "IncludePermissions":{
+          "shape":"Boolean",
+          "documentation":"<p>The flag that determines the inclusion of permissions associated with each resource ARN.</p>"
+        },
+        "IncludeTags":{
+          "shape":"Boolean",
+          "documentation":"<p>The flag that determines the inclusion of tags associated with each resource ARN.</p>"
         }
       },
       "documentation":"<p>A summary of the export job that includes details of the job's configuration and its current status.</p>"
@@ -3923,7 +4153,10 @@
     },
     "AssetBundleExportJobThemeOverrideProperties":{
       "type":"structure",
-      "required":["Properties"],
+      "required":[
+        "Arn",
+        "Properties"
+      ],
       "members":{
         "Arn":{
           "shape":"Arn",
@@ -3954,7 +4187,10 @@
     },
     "AssetBundleExportJobVPCConnectionOverrideProperties":{
       "type":"structure",
-      "required":["Properties"],
+      "required":[
+        "Arn",
+        "Properties"
+      ],
       "members":{
         "Arn":{
           "shape":"Arn",
@@ -3986,6 +4222,34 @@
       "member":{"shape":"AssetBundleExportJobVPCConnectionPropertyToOverride"},
       "max":10,
       "min":1
+    },
+    "AssetBundleExportJobValidationStrategy":{
+      "type":"structure",
+      "members":{
+        "StrictModeForAllResources":{
+          "shape":"Boolean",
+          "documentation":"<p>A Boolean value that indicates whether to export resources under strict or lenient mode.</p>"
+        }
+      },
+      "documentation":"<p>The option to relax the validation that is required to export each asset. When <code>StrictModeForAllResource</code> is set to true, validation is skipped for specific UI errors.</p>"
+    },
+    "AssetBundleExportJobWarning":{
+      "type":"structure",
+      "members":{
+        "Arn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the resource whose processing caused a warning.</p>"
+        },
+        "Message":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>A description of the warning.</p>"
+        }
+      },
+      "documentation":"<p>Describes a warning that occurred during an Asset Bundle export job.</p>"
+    },
+    "AssetBundleExportJobWarningList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleExportJobWarning"}
     },
     "AssetBundleImportBodyBlob":{
       "type":"blob",
@@ -4021,6 +4285,54 @@
       "max":50,
       "min":1
     },
+    "AssetBundleImportJobAnalysisOverridePermissions":{
+      "type":"structure",
+      "required":[
+        "AnalysisIds",
+        "Permissions"
+      ],
+      "members":{
+        "AnalysisIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of analysis IDs that you want to apply overrides to. You can use <code>*</code> to override all analyses in this asset bundle.</p>"
+        },
+        "Permissions":{
+          "shape":"AssetBundleResourcePermissions",
+          "documentation":"<p>A list of permissions for the analyses that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of permissions to be applied to a list of analysis IDs.</p>"
+    },
+    "AssetBundleImportJobAnalysisOverridePermissionsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobAnalysisOverridePermissions"},
+      "max":1,
+      "min":1
+    },
+    "AssetBundleImportJobAnalysisOverrideTags":{
+      "type":"structure",
+      "required":[
+        "AnalysisIds",
+        "Tags"
+      ],
+      "members":{
+        "AnalysisIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of analysis IDs that you want to apply overrides to. You can use <code>*</code> to override all analyses in this asset bundle.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>A list of tags for the analyses that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of tags to be assigned to a list of analysis IDs.</p>"
+    },
+    "AssetBundleImportJobAnalysisOverrideTagsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobAnalysisOverrideTags"},
+      "max":5,
+      "min":1
+    },
     "AssetBundleImportJobDashboardOverrideParameters":{
       "type":"structure",
       "required":["DashboardId"],
@@ -4042,6 +4354,55 @@
       "max":50,
       "min":1
     },
+    "AssetBundleImportJobDashboardOverridePermissions":{
+      "type":"structure",
+      "required":["DashboardIds"],
+      "members":{
+        "DashboardIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of dashboard IDs that you want to apply overrides to. You can use <code>*</code> to override all dashboards in this asset bundle.</p>"
+        },
+        "Permissions":{
+          "shape":"AssetBundleResourcePermissions",
+          "documentation":"<p>A list of permissions for the dashboards that you want to apply overrides to.</p>"
+        },
+        "LinkSharingConfiguration":{
+          "shape":"AssetBundleResourceLinkSharingConfiguration",
+          "documentation":"<p>A structure that contains the link sharing configurations that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of permissions to be applied to a list of dashboard IDs.</p>"
+    },
+    "AssetBundleImportJobDashboardOverridePermissionsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobDashboardOverridePermissions"},
+      "max":2,
+      "min":1
+    },
+    "AssetBundleImportJobDashboardOverrideTags":{
+      "type":"structure",
+      "required":[
+        "DashboardIds",
+        "Tags"
+      ],
+      "members":{
+        "DashboardIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of dashboard IDs that you want to apply overrides to. You can use <code>*</code> to override all dashboards in this asset bundle.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>A list of tags for the dashboards that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of tags to be assigned to a list of dashboard IDs.</p>"
+    },
+    "AssetBundleImportJobDashboardOverrideTagsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobDashboardOverrideTags"},
+      "max":5,
+      "min":1
+    },
     "AssetBundleImportJobDataSetOverrideParameters":{
       "type":"structure",
       "required":["DataSetId"],
@@ -4061,6 +4422,54 @@
       "type":"list",
       "member":{"shape":"AssetBundleImportJobDataSetOverrideParameters"},
       "max":50,
+      "min":1
+    },
+    "AssetBundleImportJobDataSetOverridePermissions":{
+      "type":"structure",
+      "required":[
+        "DataSetIds",
+        "Permissions"
+      ],
+      "members":{
+        "DataSetIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of dataset IDs that you want to apply overrides to. You can use <code>*</code> to override all datasets in this asset bundle.</p>"
+        },
+        "Permissions":{
+          "shape":"AssetBundleResourcePermissions",
+          "documentation":"<p>A list of permissions for the datasets that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of permissions to be applied to a list of dataset IDs.</p>"
+    },
+    "AssetBundleImportJobDataSetOverridePermissionsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobDataSetOverridePermissions"},
+      "max":2,
+      "min":1
+    },
+    "AssetBundleImportJobDataSetOverrideTags":{
+      "type":"structure",
+      "required":[
+        "DataSetIds",
+        "Tags"
+      ],
+      "members":{
+        "DataSetIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of dataset IDs that you want to apply overrides to. You can use <code>*</code> to override all datasets in this asset bundle.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>A list of tags for the datasets that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of tags to be assigned to a list of dataset IDs.</p>"
+    },
+    "AssetBundleImportJobDataSetOverrideTagsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobDataSetOverrideTags"},
+      "max":5,
       "min":1
     },
     "AssetBundleImportJobDataSourceCredentialPair":{
@@ -4124,6 +4533,54 @@
       "max":50,
       "min":1
     },
+    "AssetBundleImportJobDataSourceOverridePermissions":{
+      "type":"structure",
+      "required":[
+        "DataSourceIds",
+        "Permissions"
+      ],
+      "members":{
+        "DataSourceIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>"
+        },
+        "Permissions":{
+          "shape":"AssetBundleResourcePermissions",
+          "documentation":"<p>A list of permissions for the data source that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of permissions to be applied to a list of data source IDs.</p>"
+    },
+    "AssetBundleImportJobDataSourceOverridePermissionsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobDataSourceOverridePermissions"},
+      "max":2,
+      "min":1
+    },
+    "AssetBundleImportJobDataSourceOverrideTags":{
+      "type":"structure",
+      "required":[
+        "DataSourceIds",
+        "Tags"
+      ],
+      "members":{
+        "DataSourceIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>A list of tags for the data source that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of tags to be assigned to a list of data source IDs.</p>"
+    },
+    "AssetBundleImportJobDataSourceOverrideTagsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobDataSourceOverrideTags"},
+      "max":5,
+      "min":1
+    },
     "AssetBundleImportJobError":{
       "type":"structure",
       "members":{
@@ -4183,6 +4640,72 @@
         }
       },
       "documentation":"<p>A list of overrides that modify the asset bundle resource configuration before the resource is imported.</p>"
+    },
+    "AssetBundleImportJobOverridePermissions":{
+      "type":"structure",
+      "members":{
+        "DataSources":{
+          "shape":"AssetBundleImportJobDataSourceOverridePermissionsList",
+          "documentation":"<p>A list of permissions overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>"
+        },
+        "DataSets":{
+          "shape":"AssetBundleImportJobDataSetOverridePermissionsList",
+          "documentation":"<p>A list of permissions overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>"
+        },
+        "Themes":{
+          "shape":"AssetBundleImportJobThemeOverridePermissionsList",
+          "documentation":"<p>A list of permissions overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>"
+        },
+        "Analyses":{
+          "shape":"AssetBundleImportJobAnalysisOverridePermissionsList",
+          "documentation":"<p>A list of permissions overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>"
+        },
+        "Dashboards":{
+          "shape":"AssetBundleImportJobDashboardOverridePermissionsList",
+          "documentation":"<p>A list of permissions overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>"
+        }
+      },
+      "documentation":"<p>A structure that contains the override permission configurations that modify the permissions for specified resources before the resource is imported.</p>"
+    },
+    "AssetBundleImportJobOverrideTags":{
+      "type":"structure",
+      "members":{
+        "VPCConnections":{
+          "shape":"AssetBundleImportJobVPCConnectionOverrideTagsList",
+          "documentation":"<p>A list of tag overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>"
+        },
+        "DataSources":{
+          "shape":"AssetBundleImportJobDataSourceOverrideTagsList",
+          "documentation":"<p>A list of tag overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>"
+        },
+        "DataSets":{
+          "shape":"AssetBundleImportJobDataSetOverrideTagsList",
+          "documentation":"<p>A list of tag overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>"
+        },
+        "Themes":{
+          "shape":"AssetBundleImportJobThemeOverrideTagsList",
+          "documentation":"<p>A list of tag overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>"
+        },
+        "Analyses":{
+          "shape":"AssetBundleImportJobAnalysisOverrideTagsList",
+          "documentation":"<p>A list of tag overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>"
+        },
+        "Dashboards":{
+          "shape":"AssetBundleImportJobDashboardOverrideTagsList",
+          "documentation":"<p>A list of tag overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>"
+        }
+      },
+      "documentation":"<p>A structure that contains the override tag configuration that modify the tags that are assigned to specified resources before the resource is imported.</p>"
+    },
+    "AssetBundleImportJobOverrideValidationStrategy":{
+      "type":"structure",
+      "members":{
+        "StrictModeForAllResources":{
+          "shape":"Boolean",
+          "documentation":"<p>A Boolean value that indicates whether to import all analyses and dashboards under strict or lenient mode.</p>"
+        }
+      },
+      "documentation":"<p>An optional parameter that overrides the validation strategy for all analyses and dashboards before the resource is imported.</p>"
     },
     "AssetBundleImportJobRefreshScheduleOverrideParameters":{
       "type":"structure",
@@ -4285,6 +4808,54 @@
       "max":50,
       "min":1
     },
+    "AssetBundleImportJobThemeOverridePermissions":{
+      "type":"structure",
+      "required":[
+        "ThemeIds",
+        "Permissions"
+      ],
+      "members":{
+        "ThemeIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of theme IDs that you want to apply overrides to. You can use <code>*</code> to override all themes in this asset bundle.</p>"
+        },
+        "Permissions":{
+          "shape":"AssetBundleResourcePermissions",
+          "documentation":"<p>A list of permissions for the themes that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of permissions to be applied to a list of theme IDs.</p>"
+    },
+    "AssetBundleImportJobThemeOverridePermissionsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobThemeOverridePermissions"},
+      "max":2,
+      "min":1
+    },
+    "AssetBundleImportJobThemeOverrideTags":{
+      "type":"structure",
+      "required":[
+        "ThemeIds",
+        "Tags"
+      ],
+      "members":{
+        "ThemeIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of theme IDs that you want to apply overrides to. You can use <code>*</code> to override all themes in this asset bundle.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>A list of tags for the themes that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of tags to be assigned to a list of theme IDs.</p>"
+    },
+    "AssetBundleImportJobThemeOverrideTagsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobThemeOverrideTags"},
+      "max":5,
+      "min":1
+    },
     "AssetBundleImportJobVPCConnectionOverrideParameters":{
       "type":"structure",
       "required":["VPCConnectionId"],
@@ -4322,6 +4893,30 @@
       "max":50,
       "min":1
     },
+    "AssetBundleImportJobVPCConnectionOverrideTags":{
+      "type":"structure",
+      "required":[
+        "VPCConnectionIds",
+        "Tags"
+      ],
+      "members":{
+        "VPCConnectionIds":{
+          "shape":"AssetBundleRestrictiveResourceIdList",
+          "documentation":"<p>A list of VPC connection IDs that you want to apply overrides to. You can use <code>*</code> to override all VPC connections in this asset bundle.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>A list of tags for the VPC connections that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains a list of tags to be assigned to a list of VPC connection IDs.</p>"
+    },
+    "AssetBundleImportJobVPCConnectionOverrideTagsList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleImportJobVPCConnectionOverrideTags"},
+      "max":5,
+      "min":1
+    },
     "AssetBundleImportSource":{
       "type":"structure",
       "members":{
@@ -4340,7 +4935,7 @@
       "type":"structure",
       "members":{
         "Body":{
-          "shape":"String",
+          "shape":"SensitiveS3Uri",
           "documentation":"<p>An HTTPS download URL for the provided asset bundle that you optionally provided at the start of the import job. This URL is valid for five minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed. The downloaded asset bundle is a <code>.qs</code> zip file.</p>"
         },
         "S3Uri":{
@@ -4350,11 +4945,69 @@
       },
       "documentation":"<p>A description of the import source that you provide at the start of an import job. This value is set to either <code>Body</code> or <code>S3Uri</code>, depending on how the <code>StartAssetBundleImportJobRequest</code> is configured.</p>"
     },
+    "AssetBundlePrincipalList":{
+      "type":"list",
+      "member":{"shape":"Principal"},
+      "max":64,
+      "min":1
+    },
     "AssetBundleResourceArns":{
       "type":"list",
       "member":{"shape":"Arn"},
       "max":100,
       "min":1
+    },
+    "AssetBundleResourceLinkSharingConfiguration":{
+      "type":"structure",
+      "members":{
+        "Permissions":{
+          "shape":"AssetBundleResourcePermissions",
+          "documentation":"<p>A list of link sharing permissions for the dashboards that you want to apply overrides to.</p>"
+        }
+      },
+      "documentation":"<p>A structure that contains the configuration of a shared link to an Amazon QuickSight dashboard.</p>"
+    },
+    "AssetBundleResourcePermissions":{
+      "type":"structure",
+      "required":[
+        "Principals",
+        "Actions"
+      ],
+      "members":{
+        "Principals":{
+          "shape":"AssetBundlePrincipalList",
+          "documentation":"<p>A list of principals to grant permissions on.</p>"
+        },
+        "Actions":{
+          "shape":"ActionList",
+          "documentation":"<p>A list of IAM actions to grant permissions on.</p>"
+        }
+      },
+      "documentation":"<p>A structure that contains the permissions for the resource that you want to override in an asset bundle import job.</p>"
+    },
+    "AssetBundleRestrictiveResourceId":{
+      "type":"string",
+      "pattern":"\\*|[\\w\\-]{1,2048}"
+    },
+    "AssetBundleRestrictiveResourceIdList":{
+      "type":"list",
+      "member":{"shape":"AssetBundleRestrictiveResourceId"},
+      "max":50,
+      "min":1
+    },
+    "AssetOptions":{
+      "type":"structure",
+      "members":{
+        "Timezone":{
+          "shape":"String",
+          "documentation":"<p>Determines the timezone for the analysis.</p>"
+        },
+        "WeekStart":{
+          "shape":"DayOfTheWeek",
+          "documentation":"<p>Determines the week start day for an analysis.</p>"
+        }
+      },
+      "documentation":"<p>An array of analysis level configurations.</p>"
     },
     "AssignmentStatus":{
       "type":"string",
@@ -4443,7 +5096,8 @@
       "enum":[
         "IAM_AND_QUICKSIGHT",
         "IAM_ONLY",
-        "ACTIVE_DIRECTORY"
+        "ACTIVE_DIRECTORY",
+        "IAM_IDENTITY_CENTER"
       ]
     },
     "AuthorSpecifiedAggregation":{
@@ -4466,6 +5120,28 @@
     "AuthorSpecifiedAggregations":{
       "type":"list",
       "member":{"shape":"AuthorSpecifiedAggregation"}
+    },
+    "AuthorizedTargetsByService":{
+      "type":"structure",
+      "members":{
+        "Service":{
+          "shape":"ServiceType",
+          "documentation":"<p>The name of the Amazon Web Services service.</p>"
+        },
+        "AuthorizedTargets":{
+          "shape":"AuthorizedTargetsList",
+          "documentation":"<p>Aist of authorized targets that are represented by IAM Identity Center application ARNs.</p>"
+        }
+      },
+      "documentation":"<p>The authorized targets that are associated with a service.</p>"
+    },
+    "AuthorizedTargetsByServices":{
+      "type":"list",
+      "member":{"shape":"AuthorizedTargetsByService"}
+    },
+    "AuthorizedTargetsList":{
+      "type":"list",
+      "member":{"shape":"String"}
     },
     "AwsAccountId":{
       "type":"string",
@@ -4858,6 +5534,21 @@
         "STREET",
         "IMAGERY"
       ]
+    },
+    "BigQueryParameters":{
+      "type":"structure",
+      "required":["ProjectId"],
+      "members":{
+        "ProjectId":{
+          "shape":"ProjectId",
+          "documentation":"<p>The Google Cloud Platform project ID where your datasource was created.</p>"
+        },
+        "DataSetRegion":{
+          "shape":"DataSetRegion",
+          "documentation":"<p>The storage location where you create a Google BigQuery data source.</p>"
+        }
+      },
+      "documentation":"<p>The parameters that are required to connect to a Google BigQuery data source.</p>"
     },
     "BinCountLimit":{
       "type":"long",
@@ -5301,6 +5992,10 @@
           "shape":"ColumnDataType",
           "documentation":"<p>New column data type.</p>"
         },
+        "SubType":{
+          "shape":"ColumnDataSubType",
+          "documentation":"<p>The sub data type of the new column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>"
+        },
         "Format":{
           "shape":"TypeCastFormat",
           "documentation":"<p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>"
@@ -5623,6 +6318,13 @@
       "enum":[
         "DIMENSION",
         "MEASURE"
+      ]
+    },
+    "ColumnDataSubType":{
+      "type":"string",
+      "enum":[
+        "FLOAT",
+        "FIXED"
       ]
     },
     "ColumnDataType":{
@@ -5957,6 +6659,7 @@
           "shape":"ChartAxisLabelOptions",
           "documentation":"<p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's secondary y-axis(line) field well.</p>"
         },
+        "SingleAxisOptions":{"shape":"SingleAxisOptions"},
         "ColorLabelOptions":{
           "shape":"ChartAxisLabelOptions",
           "documentation":"<p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.</p>"
@@ -6442,7 +7145,7 @@
         },
         "AuthenticationMethod":{
           "shape":"AuthenticationMethodOption",
-          "documentation":"<p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p> <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>"
+          "documentation":"<p>The method that you want to use to authenticate your Amazon QuickSight account.</p> <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p> <p>If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM Identity Center account.</p>"
         },
         "AwsAccountId":{
           "shape":"AwsAccountId",
@@ -6451,7 +7154,7 @@
           "locationName":"AwsAccountId"
         },
         "AccountName":{
-          "shape":"String",
+          "shape":"AccountName",
           "documentation":"<p>The name of your Amazon QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon QuickSight account is created.</p>"
         },
         "NotificationEmail":{
@@ -6472,15 +7175,15 @@
         },
         "AdminGroup":{
           "shape":"GroupsList",
-          "documentation":"<p>The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account. For more information about using Active Directory in Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html\">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>"
+          "documentation":"<p>The admin group associated with your Active Directory or IAM Identity Center account. This field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the new Amazon QuickSight account.</p> <p>For more information about using IAM Identity Center in Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html\">Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more information about using Active Directory in Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html\">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>"
         },
         "AuthorGroup":{
           "shape":"GroupsList",
-          "documentation":"<p>The author group associated with your Active Directory. For more information about using Active Directory in Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html\">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>"
+          "documentation":"<p>The author group associated with your Active Directory or IAM Identity Center account.</p> <p>For more information about using IAM Identity Center in Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html\">Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more information about using Active Directory in Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html\">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>"
         },
         "ReaderGroup":{
           "shape":"GroupsList",
-          "documentation":"<p>The reader group associated with your Active Direcrtory. For more information about using Active Directory in Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html\">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.</p>"
+          "documentation":"<p>The reader group associated with your Active Directory or IAM Identity Center account.</p> <p>For more information about using IAM Identity Center in Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html\">Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more information about using Active Directory in Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html\">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>"
         },
         "FirstName":{
           "shape":"String",
@@ -6565,6 +7268,14 @@
         "Definition":{
           "shape":"AnalysisDefinition",
           "documentation":"<p>The definition of an analysis.</p> <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>"
+        },
+        "ValidationStrategy":{
+          "shape":"ValidationStrategy",
+          "documentation":"<p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>"
+        },
+        "FolderArns":{
+          "shape":"FolderArnList",
+          "documentation":"<p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>"
         }
       }
     },
@@ -6660,6 +7371,22 @@
         "Definition":{
           "shape":"DashboardVersionDefinition",
           "documentation":"<p>The definition of a dashboard.</p> <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>"
+        },
+        "ValidationStrategy":{
+          "shape":"ValidationStrategy",
+          "documentation":"<p>The option to relax the validation needed to create a dashboard with definition objects. This option skips the validation step for specific errors.</p>"
+        },
+        "FolderArns":{
+          "shape":"FolderArnList",
+          "documentation":"<p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>"
+        },
+        "LinkSharingConfiguration":{
+          "shape":"LinkSharingConfiguration",
+          "documentation":"<p>A structure that contains the permissions of a shareable link to the dashboard.</p>"
+        },
+        "LinkEntities":{
+          "shape":"LinkEntityArnList",
+          "documentation":"<p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>"
         }
       }
     },
@@ -6761,6 +7488,10 @@
         "DatasetParameters":{
           "shape":"DatasetParameterList",
           "documentation":"<p>The parameter declarations of the dataset.</p>"
+        },
+        "FolderArns":{
+          "shape":"FolderArnList",
+          "documentation":"<p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>"
         }
       }
     },
@@ -6844,6 +7575,10 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>"
+        },
+        "FolderArns":{
+          "shape":"FolderArnList",
+          "documentation":"<p>When you create the data source, Amazon QuickSight adds the data source to these folders.</p>"
         }
       }
     },
@@ -6896,13 +7631,13 @@
         },
         "MemberId":{
           "shape":"RestrictiveResourceId",
-          "documentation":"<p>The ID of the asset (the dashboard, analysis, or dataset).</p>",
+          "documentation":"<p>The ID of the asset that you want to add to the folder.</p>",
           "location":"uri",
           "locationName":"MemberId"
         },
         "MemberType":{
           "shape":"MemberType",
-          "documentation":"<p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>",
+          "documentation":"<p>The member type of the asset that you want to add to a folder.</p>",
           "location":"uri",
           "locationName":"MemberType"
         }
@@ -6963,6 +7698,10 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>Tags for the folder.</p>"
+        },
+        "SharingModel":{
+          "shape":"SharingModel",
+          "documentation":"<p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>"
         }
       }
     },
@@ -7332,6 +8071,55 @@
         }
       }
     },
+    "CreateRoleMembershipRequest":{
+      "type":"structure",
+      "required":[
+        "MemberName",
+        "AwsAccountId",
+        "Namespace",
+        "Role"
+      ],
+      "members":{
+        "MemberName":{
+          "shape":"GroupName",
+          "documentation":"<p>The name of the group that you want to add to the role.</p>",
+          "location":"uri",
+          "locationName":"MemberName"
+        },
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace that the role belongs to.</p>",
+          "location":"uri",
+          "locationName":"Namespace"
+        },
+        "Role":{
+          "shape":"Role",
+          "documentation":"<p>The role that you want to add a group to.</p>",
+          "location":"uri",
+          "locationName":"Role"
+        }
+      }
+    },
+    "CreateRoleMembershipResponse":{
+      "type":"structure",
+      "members":{
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
+        }
+      }
+    },
     "CreateTemplateAliasRequest":{
       "type":"structure",
       "required":[
@@ -7425,6 +8213,10 @@
         "Definition":{
           "shape":"TemplateVersionDefinition",
           "documentation":"<p>The definition of a template.</p> <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p> <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>"
+        },
+        "ValidationStrategy":{
+          "shape":"ValidationStrategy",
+          "documentation":"<p>TThe option to relax the validation needed to create a template with definition objects. This skips the validation step for specific errors.</p>"
         }
       }
     },
@@ -8172,6 +8964,10 @@
         "LastUpdatedTime":{
           "shape":"Timestamp",
           "documentation":"<p>The last time that this dashboard was updated.</p>"
+        },
+        "LinkEntities":{
+          "shape":"LinkEntityArnList",
+          "documentation":"<p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>"
         }
       },
       "documentation":"<p>Dashboard.</p>"
@@ -8463,7 +9259,11 @@
           "shape":"ColumnConfigurationList",
           "documentation":"<p>An array of dashboard-level column configurations. Column configurations are used to set the default formatting for a column that is used throughout a dashboard. </p>"
         },
-        "AnalysisDefaults":{"shape":"AnalysisDefaults"}
+        "AnalysisDefaults":{"shape":"AnalysisDefaults"},
+        "Options":{
+          "shape":"AssetOptions",
+          "documentation":"<p>An array of option definitions for a dashboard.</p>"
+        }
       },
       "documentation":"<p>The contents of a dashboard.</p>"
     },
@@ -8793,12 +9593,18 @@
       },
       "documentation":"<p>Allows data paths to be sorted by a specific data value.</p>"
     },
+    "DataPathType":{
+      "type":"structure",
+      "members":{
+        "PivotTableDataPathType":{
+          "shape":"PivotTableDataPathType",
+          "documentation":"<p>The type of data path value utilized in a pivot table. Choose one of the following options:</p> <ul> <li> <p> <code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p> </li> <li> <p> <code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p> </li> <li> <p> <code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p> </li> <li> <p> <code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>The type of the data path value.</p>"
+    },
     "DataPathValue":{
       "type":"structure",
-      "required":[
-        "FieldId",
-        "FieldValue"
-      ],
       "members":{
         "FieldId":{
           "shape":"FieldId",
@@ -8807,6 +9613,10 @@
         "FieldValue":{
           "shape":"FieldValue",
           "documentation":"<p>The actual value of the field that needs to be sorted.</p>"
+        },
+        "DataPathType":{
+          "shape":"DataPathType",
+          "documentation":"<p>The type configuration of the field.</p>"
         }
       },
       "documentation":"<p>The data path that needs to be sorted.</p>"
@@ -9033,6 +9843,11 @@
         }
       },
       "documentation":"<p>The refresh properties of a dataset.</p>"
+    },
+    "DataSetRegion":{
+      "type":"string",
+      "max":256,
+      "min":1
     },
     "DataSetSchema":{
       "type":"structure",
@@ -9343,7 +10158,19 @@
         },
         "DatabricksParameters":{
           "shape":"DatabricksParameters",
-          "documentation":"<p>The required parameters that are needed to connect to a Databricks data source.</p>"
+          "documentation":"<p>The parameters that are required to connect to a Databricks data source.</p>"
+        },
+        "StarburstParameters":{
+          "shape":"StarburstParameters",
+          "documentation":"<p>The parameters that are required to connect to a Starburst data source.</p>"
+        },
+        "TrinoParameters":{
+          "shape":"TrinoParameters",
+          "documentation":"<p>The parameters that are required to connect to a Trino data source.</p>"
+        },
+        "BigQueryParameters":{
+          "shape":"BigQueryParameters",
+          "documentation":"<p>The parameters that are required to connect to a Google BigQuery data source.</p>"
         }
       },
       "documentation":"<p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>"
@@ -9445,12 +10272,31 @@
         "TIMESTREAM",
         "AMAZON_OPENSEARCH",
         "EXASOL",
-        "DATABRICKS"
+        "DATABRICKS",
+        "STARBURST",
+        "TRINO",
+        "BIGQUERY"
       ]
     },
     "Database":{
       "type":"string",
       "max":128,
+      "min":1
+    },
+    "DatabaseGroup":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
+    "DatabaseGroupList":{
+      "type":"list",
+      "member":{"shape":"DatabaseGroup"},
+      "max":50,
+      "min":1
+    },
+    "DatabaseUser":{
+      "type":"string",
+      "max":64,
       "min":1
     },
     "DatabricksParameters":{
@@ -9474,7 +10320,7 @@
           "documentation":"<p>The HTTP path of the Databricks data source.</p>"
         }
       },
-      "documentation":"<p>The required parameters that are needed to connect to a Databricks data source.</p>"
+      "documentation":"<p>The parameters that are required to connect to a Databricks data source.</p>"
     },
     "DatasetMetadata":{
       "type":"structure",
@@ -9838,6 +10684,18 @@
       "min":1,
       "pattern":"^(?:LAST_DAY_OF_MONTH|1[0-9]|2[0-8]|[12]|[3-9])$"
     },
+    "DayOfTheWeek":{
+      "type":"string",
+      "enum":[
+        "SUNDAY",
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY",
+        "FRIDAY",
+        "SATURDAY"
+      ]
+    },
     "DayOfWeek":{
       "type":"string",
       "enum":[
@@ -10010,7 +10868,12 @@
         "MIN",
         "COUNT",
         "DISTINCT_COUNT",
-        "AVERAGE"
+        "AVERAGE",
+        "MEDIAN",
+        "STDEV",
+        "STDEVP",
+        "VAR",
+        "VARP"
       ]
     },
     "DefaultFormatting":{
@@ -10412,13 +11275,13 @@
         },
         "MemberId":{
           "shape":"RestrictiveResourceId",
-          "documentation":"<p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>",
+          "documentation":"<p>The ID of the asset that you want to delete.</p>",
           "location":"uri",
           "locationName":"MemberId"
         },
         "MemberType":{
           "shape":"MemberType",
-          "documentation":"<p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>",
+          "documentation":"<p>The member type of the asset that you want to delete from a folder.</p>",
           "location":"uri",
           "locationName":"MemberType"
         }
@@ -10617,6 +11480,41 @@
         }
       }
     },
+    "DeleteIdentityPropagationConfigRequest":{
+      "type":"structure",
+      "required":[
+        "AwsAccountId",
+        "Service"
+      ],
+      "members":{
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID of the Amazon Web Services account that you want to delete an identity propagation configuration from.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "Service":{
+          "shape":"ServiceType",
+          "documentation":"<p>The name of the Amazon Web Services service that you want to delete the associated access scopes and authorized targets from.</p>",
+          "location":"uri",
+          "locationName":"Service"
+        }
+      }
+    },
+    "DeleteIdentityPropagationConfigResponse":{
+      "type":"structure",
+      "members":{
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
+        }
+      }
+    },
     "DeleteNamespaceRequest":{
       "type":"structure",
       "required":[
@@ -10699,6 +11597,96 @@
         "Arn":{
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) for the refresh schedule.</p>"
+        }
+      }
+    },
+    "DeleteRoleCustomPermissionRequest":{
+      "type":"structure",
+      "required":[
+        "Role",
+        "AwsAccountId",
+        "Namespace"
+      ],
+      "members":{
+        "Role":{
+          "shape":"Role",
+          "documentation":"<p>The role that you want to remove permissions from.</p>",
+          "location":"uri",
+          "locationName":"Role"
+        },
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace that includes the role.</p>",
+          "location":"uri",
+          "locationName":"Namespace"
+        }
+      }
+    },
+    "DeleteRoleCustomPermissionResponse":{
+      "type":"structure",
+      "members":{
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>"
+        }
+      }
+    },
+    "DeleteRoleMembershipRequest":{
+      "type":"structure",
+      "required":[
+        "MemberName",
+        "Role",
+        "AwsAccountId",
+        "Namespace"
+      ],
+      "members":{
+        "MemberName":{
+          "shape":"GroupName",
+          "documentation":"<p>The name of the group.</p>",
+          "location":"uri",
+          "locationName":"MemberName"
+        },
+        "Role":{
+          "shape":"Role",
+          "documentation":"<p>The role that you want to remove permissions from.</p>",
+          "location":"uri",
+          "locationName":"Role"
+        },
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace that contains the role.</p>",
+          "location":"uri",
+          "locationName":"Namespace"
+        }
+      }
+    },
+    "DeleteRoleMembershipResponse":{
+      "type":"structure",
+      "members":{
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
         }
       }
     },
@@ -11434,7 +12422,7 @@
           "documentation":"<p>Indicates the status of a job through its queuing and execution.</p> <p>Poll this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>"
         },
         "DownloadUrl":{
-          "shape":"String",
+          "shape":"SensitiveS3Uri",
           "documentation":"<p>The URL to download the exported asset bundle data from.</p> <p>This URL is available only after the job has succeeded. This URL is valid for 5 minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed.</p> <p>The downloaded asset bundle is a zip file named <code>assetbundle-{jobId}.qs</code>. The file has a <code>.qs</code> extension.</p> <p>This URL can't be used in a <code>StartAssetBundleImportJob</code> API call and should only be used for download purposes.</p>"
         },
         "Errors":{
@@ -11481,6 +12469,22 @@
           "shape":"StatusCode",
           "documentation":"<p>The HTTP status of the response.</p>",
           "location":"statusCode"
+        },
+        "IncludePermissions":{
+          "shape":"Boolean",
+          "documentation":"<p>The include permissions flag.</p>"
+        },
+        "IncludeTags":{
+          "shape":"Boolean",
+          "documentation":"<p>The include tags flag.</p>"
+        },
+        "ValidationStrategy":{
+          "shape":"AssetBundleExportJobValidationStrategy",
+          "documentation":"<p>The validation strategy that is used to export the analysis or dashboard.</p>"
+        },
+        "Warnings":{
+          "shape":"AssetBundleExportJobWarningList",
+          "documentation":"<p>An array of warning records that describe the analysis or dashboard that is exported. This array includes UI errors that can be skipped during the validation process.</p> <p>This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to <code>FALSE</code>.</p>"
         }
       }
     },
@@ -11542,7 +12546,7 @@
         },
         "OverrideParameters":{
           "shape":"AssetBundleImportJobOverrideParameters",
-          "documentation":"<p>Optional overrides to be applied to the resource configuration before import.</p>"
+          "documentation":"<p>Optional overrides that are applied to the resource configuration before import.</p>"
         },
         "FailureAction":{
           "shape":"AssetBundleImportFailureAction",
@@ -11556,6 +12560,18 @@
           "shape":"StatusCode",
           "documentation":"<p>The HTTP status of the response.</p>",
           "location":"statusCode"
+        },
+        "OverridePermissions":{
+          "shape":"AssetBundleImportJobOverridePermissions",
+          "documentation":"<p>Optional permission overrides that are applied to the resource configuration before import.</p>"
+        },
+        "OverrideTags":{
+          "shape":"AssetBundleImportJobOverrideTags",
+          "documentation":"<p>Optional tag overrides that are applied to the resource configuration before import.</p>"
+        },
+        "OverrideValidationStrategy":{
+          "shape":"AssetBundleImportJobOverrideValidationStrategy",
+          "documentation":"<p>An optional validation strategy override for all analyses and dashboards to be applied to the resource configuration before import.</p>"
         }
       }
     },
@@ -12108,6 +13124,25 @@
           "documentation":"<p>The ID of the folder.</p>",
           "location":"uri",
           "locationName":"FolderId"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace of the folder whose permissions you want described.</p>",
+          "location":"querystring",
+          "locationName":"namespace"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results to be returned per request.</p>",
+          "box":true,
+          "location":"querystring",
+          "locationName":"max-results"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>A pagination token for the next set of results.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
         }
       }
     },
@@ -12134,6 +13169,10 @@
         "RequestId":{
           "shape":"String",
           "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token for the next set of results, or null if there are no more results.</p>"
         }
       }
     },
@@ -12176,6 +13215,25 @@
           "documentation":"<p>The ID of the folder.</p>",
           "location":"uri",
           "locationName":"FolderId"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace of the folder whose permissions you want described.</p>",
+          "location":"querystring",
+          "locationName":"namespace"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results to be returned per request.</p>",
+          "box":true,
+          "location":"querystring",
+          "locationName":"max-results"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>A pagination token for the next set of results.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
         }
       }
     },
@@ -12202,6 +13260,10 @@
         "RequestId":{
           "shape":"String",
           "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>A pagination token for the next set of results, or null if there are no more results.</p>"
         }
       }
     },
@@ -12535,6 +13597,51 @@
         "Arn":{
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) for the refresh schedule.</p>"
+        }
+      }
+    },
+    "DescribeRoleCustomPermissionRequest":{
+      "type":"structure",
+      "required":[
+        "Role",
+        "AwsAccountId",
+        "Namespace"
+      ],
+      "members":{
+        "Role":{
+          "shape":"Role",
+          "documentation":"<p>The name of the role whose permissions you want described.</p>",
+          "location":"uri",
+          "locationName":"Role"
+        },
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace that contains the role.</p>",
+          "location":"uri",
+          "locationName":"Namespace"
+        }
+      }
+    },
+    "DescribeRoleCustomPermissionResponse":{
+      "type":"structure",
+      "members":{
+        "CustomPermissionsName":{
+          "shape":"RoleName",
+          "documentation":"<p>The name of the custom permission that is described.</p>"
+        },
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>"
         }
       }
     },
@@ -13666,7 +14773,7 @@
     "FieldOrderList":{
       "type":"list",
       "member":{"shape":"FieldId"},
-      "max":100
+      "max":200
     },
     "FieldSeriesItem":{
       "type":"structure",
@@ -14121,6 +15228,10 @@
         "SelectAllOptions":{
           "shape":"CategoryFilterSelectAllOptions",
           "documentation":"<p>Select all of the values. Null is not the assigned value of select all.</p> <ul> <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> </ul>"
+        },
+        "NullOption":{
+          "shape":"FilterNullOption",
+          "documentation":"<p>This option determines how null values should be treated when filtering data.</p> <ul> <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li> <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li> <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li> </ul>"
         }
       },
       "documentation":"<p>A list of filter configurations.</p>"
@@ -14251,6 +15362,10 @@
         "SelectedSheets":{
           "shape":"SelectedSheetsFilterScopeConfiguration",
           "documentation":"<p>The configuration for applying a filter to specific sheets.</p>"
+        },
+        "AllSheets":{
+          "shape":"AllSheetsFilterScopeConfiguration",
+          "documentation":"<p>The configuration for applying a filter to all sheets.</p>"
         }
       },
       "documentation":"<p>The scope configuration for a <code>FilterGroup</code>.</p> <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>"
@@ -14411,9 +15526,18 @@
         "LastUpdatedTime":{
           "shape":"Timestamp",
           "documentation":"<p>The time that the folder was last updated.</p>"
+        },
+        "SharingModel":{
+          "shape":"SharingModel",
+          "documentation":"<p>The sharing scope of the folder.</p>"
         }
       },
       "documentation":"<p>A folder in Amazon QuickSight.</p>"
+    },
+    "FolderArnList":{
+      "type":"list",
+      "member":{"shape":"Arn"},
+      "max":1
     },
     "FolderColumnList":{
       "type":"list",
@@ -14505,6 +15629,10 @@
         "LastUpdatedTime":{
           "shape":"Timestamp",
           "documentation":"<p>The time that the folder was last updated.</p>"
+        },
+        "SharingModel":{
+          "shape":"SharingModel",
+          "documentation":"<p>The sharing scope of the folder.</p>"
         }
       },
       "documentation":"<p>A summary of information about an existing Amazon QuickSight folder. </p>"
@@ -14516,7 +15644,10 @@
     },
     "FolderType":{
       "type":"string",
-      "enum":["SHARED"]
+      "enum":[
+        "SHARED",
+        "RESTRICTED"
+      ]
     },
     "Font":{
       "type":"structure",
@@ -14602,10 +15733,7 @@
     },
     "ForecastComputation":{
       "type":"structure",
-      "required":[
-        "ComputationId",
-        "Time"
-      ],
+      "required":["ComputationId"],
       "members":{
         "ComputationId":{
           "shape":"ShortRestrictiveResourceId",
@@ -15922,10 +17050,7 @@
     },
     "GrowthRateComputation":{
       "type":"structure",
-      "required":[
-        "ComputationId",
-        "Time"
-      ],
+      "required":["ComputationId"],
       "members":{
         "ComputationId":{
           "shape":"ShortRestrictiveResourceId",
@@ -16358,6 +17483,17 @@
         "X"
       ]
     },
+    "IdentityCenterConfiguration":{
+      "type":"structure",
+      "members":{
+        "EnableIdentityPropagation":{
+          "shape":"Boolean",
+          "documentation":"<p>A Boolean option that controls whether Trusted Identity Propagation should be used.</p>",
+          "box":true
+        }
+      },
+      "documentation":"<p>The parameters for an IAM Identity Center configuration.</p>"
+    },
     "IdentityMap":{
       "type":"map",
       "key":{"shape":"String"},
@@ -16380,7 +17516,8 @@
       "type":"string",
       "enum":[
         "IAM",
-        "QUICKSIGHT"
+        "QUICKSIGHT",
+        "IAM_IDENTITY_CENTER"
       ]
     },
     "IdentityTypeNotSupportedException":{
@@ -16573,6 +17710,10 @@
         "Type":{
           "shape":"InputColumnDataType",
           "documentation":"<p>The data type of the column.</p>"
+        },
+        "SubType":{
+          "shape":"ColumnDataSubType",
+          "documentation":"<p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>"
         }
       },
       "documentation":"<p>Metadata for a column that is used as the input of a transform operation.</p>"
@@ -16925,6 +18066,34 @@
         "RIGHT"
       ]
     },
+    "KPIActualValueConditionalFormatting":{
+      "type":"structure",
+      "members":{
+        "TextColor":{
+          "shape":"ConditionalFormattingColor",
+          "documentation":"<p>The conditional formatting of the actual value's text color.</p>"
+        },
+        "Icon":{
+          "shape":"ConditionalFormattingIcon",
+          "documentation":"<p>The conditional formatting of the actual value's icon.</p>"
+        }
+      },
+      "documentation":"<p>The conditional formatting for the actual value of a KPI visual.</p>"
+    },
+    "KPIComparisonValueConditionalFormatting":{
+      "type":"structure",
+      "members":{
+        "TextColor":{
+          "shape":"ConditionalFormattingColor",
+          "documentation":"<p>The conditional formatting of the comparison value's text color.</p>"
+        },
+        "Icon":{
+          "shape":"ConditionalFormattingIcon",
+          "documentation":"<p>The conditional formatting of the comparison value's icon.</p>"
+        }
+      },
+      "documentation":"<p>The conditional formatting for the comparison value of a KPI visual.</p>"
+    },
     "KPIConditionalFormatting":{
       "type":"structure",
       "members":{
@@ -16945,6 +18114,14 @@
         "ProgressBar":{
           "shape":"KPIProgressBarConditionalFormatting",
           "documentation":"<p>The conditional formatting for the progress bar of a KPI visual.</p>"
+        },
+        "ActualValue":{
+          "shape":"KPIActualValueConditionalFormatting",
+          "documentation":"<p>The conditional formatting for the actual value of a KPI visual.</p>"
+        },
+        "ComparisonValue":{
+          "shape":"KPIComparisonValueConditionalFormatting",
+          "documentation":"<p>The conditional formatting for the comparison value of a KPI visual.</p>"
         }
       },
       "documentation":"<p>The conditional formatting options of a KPI visual.</p>"
@@ -17020,6 +18197,14 @@
         "SecondaryValueFontConfiguration":{
           "shape":"FontConfiguration",
           "documentation":"<p>The options that determine the secondary value font configuration.</p>"
+        },
+        "Sparkline":{
+          "shape":"KPISparklineOptions",
+          "documentation":"<p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>"
+        },
+        "VisualLayoutOptions":{
+          "shape":"KPIVisualLayoutOptions",
+          "documentation":"<p>The options that determine the layout a KPI visual.</p>"
         }
       },
       "documentation":"<p>The options that determine the presentation of a KPI visual.</p>"
@@ -17058,6 +18243,36 @@
       },
       "documentation":"<p>The sort configuration of a KPI visual.</p>"
     },
+    "KPISparklineOptions":{
+      "type":"structure",
+      "required":["Type"],
+      "members":{
+        "Visibility":{
+          "shape":"Visibility",
+          "documentation":"<p>The visibility of the sparkline.</p>"
+        },
+        "Type":{
+          "shape":"KPISparklineType",
+          "documentation":"<p>The type of the sparkline.</p>"
+        },
+        "Color":{
+          "shape":"HexColor",
+          "documentation":"<p>The color of the sparkline.</p>"
+        },
+        "TooltipVisibility":{
+          "shape":"Visibility",
+          "documentation":"<p>The tooltip visibility of the sparkline.</p>"
+        }
+      },
+      "documentation":"<p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>"
+    },
+    "KPISparklineType":{
+      "type":"string",
+      "enum":[
+        "LINE",
+        "AREA"
+      ]
+    },
     "KPIVisual":{
       "type":"structure",
       "required":["VisualId"],
@@ -17092,6 +18307,34 @@
         }
       },
       "documentation":"<p>A key performance indicator (KPI).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/kpi.html\">Using KPIs</a> in the <i>Amazon QuickSight User Guide</i>.</p>"
+    },
+    "KPIVisualLayoutOptions":{
+      "type":"structure",
+      "members":{
+        "StandardLayout":{
+          "shape":"KPIVisualStandardLayout",
+          "documentation":"<p>The standard layout of the KPI visual.</p>"
+        }
+      },
+      "documentation":"<p>The options that determine the layout a KPI visual.</p>"
+    },
+    "KPIVisualStandardLayout":{
+      "type":"structure",
+      "required":["Type"],
+      "members":{
+        "Type":{
+          "shape":"KPIVisualStandardLayoutType",
+          "documentation":"<p>The standard layout type.</p>"
+        }
+      },
+      "documentation":"<p>The standard layout of the KPI visual.</p>"
+    },
+    "KPIVisualStandardLayoutType":{
+      "type":"string",
+      "enum":[
+        "CLASSIC",
+        "VERTICAL"
+      ]
     },
     "LabelOptions":{
       "type":"structure",
@@ -17289,6 +18532,7 @@
           "shape":"ChartAxisLabelOptions",
           "documentation":"<p>The options that determine the presentation of the secondary y-axis label.</p>"
         },
+        "SingleAxisOptions":{"shape":"SingleAxisOptions"},
         "DefaultSeriesSettings":{
           "shape":"LineChartDefaultSeriesSettings",
           "documentation":"<p>The options that determine the default presentation of all line series in <code>LineChartVisual</code>.</p>"
@@ -17514,6 +18758,17 @@
         }
       },
       "documentation":"<p>The series axis configuration of a line chart.</p>"
+    },
+    "LinkEntityArn":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"^arn:aws:quicksight:[\\w\\-]+:\\d+:analysis/[\\w\\-]{1,512}"
+    },
+    "LinkEntityArnList":{
+      "type":"list",
+      "member":{"shape":"LinkEntityArn"},
+      "max":5
     },
     "LinkSharingConfiguration":{
       "type":"structure",
@@ -18252,6 +19507,58 @@
         }
       }
     },
+    "ListIdentityPropagationConfigsRequest":{
+      "type":"structure",
+      "required":["AwsAccountId"],
+      "members":{
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID of the Amazon Web Services account that contain the identity propagation configurations of.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "MaxResults":{
+          "shape":"ListIdentityPropagationMaxResults",
+          "documentation":"<p>The maximum number of results to be returned.</p>",
+          "box":true,
+          "location":"querystring",
+          "locationName":"max-results"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The token for the next set of results, or null if there are no more results.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
+        }
+      }
+    },
+    "ListIdentityPropagationConfigsResponse":{
+      "type":"structure",
+      "members":{
+        "Services":{
+          "shape":"AuthorizedTargetsByServices",
+          "documentation":"<p>A list of services and their authorized targets that the Amazon QuickSight IAM Identity Center application can access.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The token for the next set of results, or null if there are no more results.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
+        },
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        }
+      }
+    },
+    "ListIdentityPropagationMaxResults":{
+      "type":"integer",
+      "max":10,
+      "min":1
+    },
     "ListIngestionsRequest":{
       "type":"structure",
       "required":[
@@ -18391,6 +19698,69 @@
         "RequestId":{
           "shape":"String",
           "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        }
+      }
+    },
+    "ListRoleMembershipsRequest":{
+      "type":"structure",
+      "required":[
+        "Role",
+        "AwsAccountId",
+        "Namespace"
+      ],
+      "members":{
+        "Role":{
+          "shape":"Role",
+          "documentation":"<p>The name of the role.</p>",
+          "location":"uri",
+          "locationName":"Role"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>A pagination token that can be used in a subsequent request.</p>",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results to return.</p>",
+          "box":true,
+          "location":"querystring",
+          "locationName":"max-results"
+        },
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace that includes the role.</p>",
+          "location":"uri",
+          "locationName":"Namespace"
+        }
+      }
+    },
+    "ListRoleMembershipsResponse":{
+      "type":"structure",
+      "members":{
+        "MembersList":{
+          "shape":"GroupsList",
+          "documentation":"<p>The list of groups associated with a role</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>A pagination token that can be used in a subsequent request.</p>"
+        },
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
         }
       }
     },
@@ -19252,7 +20622,6 @@
       "type":"structure",
       "required":[
         "ComputationId",
-        "Time",
         "Type"
       ],
       "members":{
@@ -19332,17 +20701,14 @@
       "enum":[
         "DASHBOARD",
         "ANALYSIS",
-        "DATASET"
+        "DATASET",
+        "DATASOURCE",
+        "TOPIC"
       ]
     },
     "MetricComparisonComputation":{
       "type":"structure",
-      "required":[
-        "ComputationId",
-        "Time",
-        "FromValue",
-        "TargetValue"
-      ],
+      "required":["ComputationId"],
       "members":{
         "ComputationId":{
           "shape":"ShortRestrictiveResourceId",
@@ -20072,7 +21438,7 @@
       "members":{
         "Name":{
           "shape":"ColumnName",
-          "documentation":"<p>A display name for the dataset.</p>"
+          "documentation":"<p>The display name of the column..</p>"
         },
         "Description":{
           "shape":"ColumnDescriptiveText",
@@ -20080,7 +21446,11 @@
         },
         "Type":{
           "shape":"ColumnDataType",
-          "documentation":"<p>The type.</p>"
+          "documentation":"<p>The data type of the column.</p>"
+        },
+        "SubType":{
+          "shape":"ColumnDataSubType",
+          "documentation":"<p>The sub data type of the column.</p>"
         }
       },
       "documentation":"<p>Output column.</p>"
@@ -20619,10 +21989,7 @@
     },
     "PeriodOverPeriodComputation":{
       "type":"structure",
-      "required":[
-        "ComputationId",
-        "Time"
-      ],
+      "required":["ComputationId"],
       "members":{
         "ComputationId":{
           "shape":"ShortRestrictiveResourceId",
@@ -20645,10 +22012,7 @@
     },
     "PeriodToDateComputation":{
       "type":"structure",
-      "required":[
-        "ComputationId",
-        "Time"
-      ],
+      "required":["ComputationId"],
       "members":{
         "ComputationId":{
           "shape":"ShortRestrictiveResourceId",
@@ -21012,6 +22376,15 @@
       "member":{"shape":"PivotTableDataPathOption"},
       "max":100
     },
+    "PivotTableDataPathType":{
+      "type":"string",
+      "enum":[
+        "HIERARCHY_ROWS_LAYOUT_COLUMN",
+        "MULTIPLE_ROW_METRICS_COLUMN",
+        "EMPTY_COLUMN_HEADER",
+        "COUNT_METRIC_COLUMN"
+      ]
+    },
     "PivotTableDimensionList":{
       "type":"list",
       "member":{"shape":"DimensionField"},
@@ -21173,6 +22546,18 @@
         "CollapsedRowDimensionsVisibility":{
           "shape":"Visibility",
           "documentation":"<p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>"
+        },
+        "RowsLayout":{
+          "shape":"PivotTableRowsLayout",
+          "documentation":"<p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p> <ul> <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li> <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li> </ul>"
+        },
+        "RowsLabelOptions":{
+          "shape":"PivotTableRowsLabelOptions",
+          "documentation":"<p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>"
+        },
+        "DefaultCellWidth":{
+          "shape":"PixelLength",
+          "documentation":"<p>The default cell width of the pivot table.</p>"
         }
       },
       "documentation":"<p>The table options for a pivot table visual.</p>"
@@ -21190,6 +22575,32 @@
         }
       },
       "documentation":"<p>The paginated report options for a pivot table visual.</p>"
+    },
+    "PivotTableRowsLabelOptions":{
+      "type":"structure",
+      "members":{
+        "Visibility":{
+          "shape":"Visibility",
+          "documentation":"<p>The visibility of the rows label.</p>"
+        },
+        "CustomLabel":{
+          "shape":"PivotTableRowsLabelText",
+          "documentation":"<p>The custom label string for the rows label.</p>"
+        }
+      },
+      "documentation":"<p>The options for the label thta is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>"
+    },
+    "PivotTableRowsLabelText":{
+      "type":"string",
+      "max":1024,
+      "min":1
+    },
+    "PivotTableRowsLayout":{
+      "type":"string",
+      "enum":[
+        "TABULAR",
+        "HIERARCHY"
+      ]
     },
     "PivotTableSortBy":{
       "type":"structure",
@@ -21310,6 +22721,10 @@
         "MetricHeaderCellStyle":{
           "shape":"TableCellStyle",
           "documentation":"<p>The cell styling options for the total of header cells.</p>"
+        },
+        "TotalAggregationOptions":{
+          "shape":"TotalAggregationOptionList",
+          "documentation":"<p>The total aggregation options for each value field.</p>"
         }
       },
       "documentation":"<p>The optional configuration of totals cells in a <code>PivotTableVisual</code>.</p>"
@@ -21457,6 +22872,11 @@
         }
       },
       "documentation":"<p>The options that determine the presentation of the progress bar of a KPI visual.</p>"
+    },
+    "ProjectId":{
+      "type":"string",
+      "max":256,
+      "min":1
     },
     "ProjectOperation":{
       "type":"structure",
@@ -21815,6 +23235,32 @@
       "max":30,
       "min":7
     },
+    "RedshiftIAMParameters":{
+      "type":"structure",
+      "required":[
+        "RoleArn",
+        "DatabaseUser"
+      ],
+      "members":{
+        "RoleArn":{
+          "shape":"RoleArn",
+          "documentation":"<p>Use the <code>RoleArn</code> structure to allow Amazon QuickSight to call <code>redshift:GetClusterCredentials</code> on your cluster. The calling principal must have <code>iam:PassRole</code> access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.</p>"
+        },
+        "DatabaseUser":{
+          "shape":"DatabaseUser",
+          "documentation":"<p>The user whose permissions and group memberships will be used by Amazon QuickSight to access the cluster. If this user already exists in your database, Amazon QuickSight is granted the same permissions that the user has. If the user doesn't exist, set the value of <code>AutoCreateDatabaseUser</code> to <code>True</code> to create a new user with PUBLIC permissions.</p>"
+        },
+        "DatabaseGroups":{
+          "shape":"DatabaseGroupList",
+          "documentation":"<p>A list of groups whose permissions will be granted to Amazon QuickSight to access the cluster. These permissions are combined with the permissions granted to Amazon QuickSight by the <code>DatabaseUser</code>. If you choose to include this parameter, the <code>RoleArn</code> must grant access to <code>redshift:JoinGroup</code>.</p>"
+        },
+        "AutoCreateDatabaseUser":{
+          "shape":"Boolean",
+          "documentation":"<p>Automatically creates a database user. If your database doesn't have a <code>DatabaseUser</code>, set this parameter to <code>True</code>. If there is no <code>DatabaseUser</code>, Amazon QuickSight can't connect to your cluster. The <code>RoleArn</code> that you use for this operation must grant access to <code>redshift:CreateClusterUser</code> to successfully create the user.</p>"
+        }
+      },
+      "documentation":"<p>A structure that grants Amazon QuickSight access to your cluster and make a call to the <code>redshift:GetClusterCredentials</code> API. For more information on the <code>redshift:GetClusterCredentials</code> API, see <a href=\"https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html\"> <code>GetClusterCredentials</code> </a>.</p>"
+    },
     "RedshiftParameters":{
       "type":"structure",
       "required":["Database"],
@@ -21834,6 +23280,14 @@
         "ClusterId":{
           "shape":"ClusterId",
           "documentation":"<p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>"
+        },
+        "IAMParameters":{
+          "shape":"RedshiftIAMParameters",
+          "documentation":"<p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href=\"https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html\">DataSourceCredentials</a>.</p>"
+        },
+        "IdentityCenterConfiguration":{
+          "shape":"IdentityCenterConfiguration",
+          "documentation":"<p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p> <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>"
         }
       },
       "documentation":"<p>The parameters for Amazon Redshift. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.</p>"
@@ -21885,7 +23339,11 @@
         },
         "AxisBinding":{
           "shape":"AxisBinding",
-          "documentation":"<p>The axis binding type of the reference line. Choose one of the following options:</p> <ul> <li> <p>PrimaryY</p> </li> <li> <p>SecondaryY</p> </li> </ul>"
+          "documentation":"<p>The axis binding type of the reference line. Choose one of the following options:</p> <ul> <li> <p> <code>PrimaryY</code> </p> </li> <li> <p> <code>SecondaryY</code> </p> </li> </ul>"
+        },
+        "SeriesType":{
+          "shape":"ReferenceLineSeriesType",
+          "documentation":"<p>The series type of the reference line data configuration. Choose one of the following options:</p> <ul> <li> <p> <code>BAR</code> </p> </li> <li> <p> <code>LINE</code> </p> </li> </ul>"
         }
       },
       "documentation":"<p>The data configuration of the reference line.</p>"
@@ -21968,6 +23426,13 @@
         "SOLID",
         "DASHED",
         "DOTTED"
+      ]
+    },
+    "ReferenceLineSeriesType":{
+      "type":"string",
+      "enum":[
+        "BAR",
+        "LINE"
       ]
     },
     "ReferenceLineStaticDataConfiguration":{
@@ -22160,6 +23625,10 @@
         "ExternalLoginId":{
           "shape":"String",
           "documentation":"<p>The identity ID for a user in the external login provider.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to associate with the user.</p>"
         }
       }
     },
@@ -22318,12 +23787,12 @@
     },
     "RelationalTableName":{
       "type":"string",
-      "max":64,
+      "max":256,
       "min":1
     },
     "RelationalTableSchema":{
       "type":"string",
-      "max":64
+      "max":256
     },
     "RelativeDateTimeControlDisplayOptions":{
       "type":"structure",
@@ -22585,6 +24054,14 @@
       "min":1,
       "pattern":"[\\w\\-]+"
     },
+    "Role":{
+      "type":"string",
+      "enum":[
+        "ADMIN",
+        "AUTHOR",
+        "READER"
+      ]
+    },
     "RoleArn":{
       "type":"string",
       "max":2048,
@@ -22632,6 +24109,10 @@
         "RowAlternateColors":{
           "shape":"RowAlternateColorList",
           "documentation":"<p>Determines the list of row alternate colors.</p>"
+        },
+        "UsePrimaryBackgroundColor":{
+          "shape":"WidgetStatus",
+          "documentation":"<p>The primary background color options for alternate rows.</p>"
         }
       },
       "documentation":"<p>Determines the row alternate color options.</p>"
@@ -22985,6 +24466,10 @@
           "shape":"ScatterPlotFieldWells",
           "documentation":"<p>The field wells of the visual.</p>"
         },
+        "SortConfiguration":{
+          "shape":"ScatterPlotSortConfiguration",
+          "documentation":"<p>The sort configuration of a scatter plot.</p>"
+        },
         "XAxisLabelOptions":{
           "shape":"ChartAxisLabelOptions",
           "documentation":"<p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's x-axis.</p>"
@@ -23033,6 +24518,13 @@
         }
       },
       "documentation":"<p>The field well configuration of a scatter plot.</p> <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>"
+    },
+    "ScatterPlotSortConfiguration":{
+      "type":"structure",
+      "members":{
+        "ScatterPlotLimitConfiguration":{"shape":"ItemsLimitConfiguration"}
+      },
+      "documentation":"<p>The sort configuration of a scatter plot.</p>"
     },
     "ScatterPlotUnaggregatedFieldWells":{
       "type":"structure",
@@ -23733,6 +25225,10 @@
       },
       "documentation":"<p>The parameters for ServiceNow.</p>"
     },
+    "ServiceType":{
+      "type":"string",
+      "enum":["REDSHIFT"]
+    },
     "SessionLifetimeInMinutes":{
       "type":"long",
       "max":600,
@@ -23823,6 +25319,13 @@
         }
       },
       "documentation":"<p>The shape conditional formatting of a filled map visual.</p>"
+    },
+    "SharingModel":{
+      "type":"string",
+      "enum":[
+        "ACCOUNT",
+        "NAMESPACE"
+      ]
     },
     "Sheet":{
       "type":"structure",
@@ -24194,6 +25697,31 @@
         "MEDIAN"
       ]
     },
+    "SimpleTotalAggregationFunction":{
+      "type":"string",
+      "enum":[
+        "DEFAULT",
+        "SUM",
+        "AVERAGE",
+        "MIN",
+        "MAX",
+        "NONE"
+      ]
+    },
+    "SingleAxisOptions":{
+      "type":"structure",
+      "members":{
+        "YAxisOptions":{
+          "shape":"YAxisOptions",
+          "documentation":"<p>The Y axis options of a single axis configuration.</p>"
+        }
+      },
+      "documentation":"<p>The settings of a chart's single axis configuration.</p>"
+    },
+    "SingleYAxisOption":{
+      "type":"string",
+      "enum":["PRIMARY_Y_AXIS"]
+    },
     "SiteBaseUrl":{
       "type":"string",
       "max":1024,
@@ -24339,11 +25867,11 @@
       "members":{
         "SheetSelections":{
           "shape":"SnapshotFileSheetSelectionList",
-          "documentation":"<p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>"
+          "documentation":"<p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or 1 configuration for PDF.</p>"
         },
         "FormatType":{
           "shape":"SnapshotFileFormatType",
-          "documentation":"<p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>"
+          "documentation":"<p>The format of the snapshot file to be generated. You can choose between <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>"
         }
       },
       "documentation":"<p>A structure that contains the information for the snapshot that you want to generate. This information is provided by you when you start a new snapshot job.</p>"
@@ -24352,7 +25880,8 @@
       "type":"string",
       "enum":[
         "CSV",
-        "PDF"
+        "PDF",
+        "EXCEL"
       ]
     },
     "SnapshotFileGroup":{
@@ -24368,7 +25897,7 @@
     "SnapshotFileGroupList":{
       "type":"list",
       "member":{"shape":"SnapshotFileGroup"},
-      "max":6,
+      "max":7,
       "min":1
     },
     "SnapshotFileList":{
@@ -24386,15 +25915,15 @@
       "members":{
         "SheetId":{
           "shape":"ShortRestrictiveResourceId",
-          "documentation":"<p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV or PDF format types.</p>"
+          "documentation":"<p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV, Excel, and PDF format types.</p>"
         },
         "SelectionScope":{
           "shape":"SnapshotFileSheetSelectionScope",
-          "documentation":"<p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p> <ul> <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li> <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li> </ul>"
+          "documentation":"<p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p> <ul> <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li> <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p> </li> </ul>"
         },
         "VisualIds":{
           "shape":"SnapshotFileSheetSelectionVisualIdList",
-          "documentation":"<p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV. This value supports a maximum of 1 visual ID. </p>"
+          "documentation":"<p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV or Excel workbook. This value supports a maximum of 1 visual ID for CSV and 5 visual IDs across up to 5 sheet selections for Excel. If you are generating an Excel workbook, the order of the visual IDs provided in this structure determines the order of the worksheets in the Excel file. </p>"
         }
       },
       "documentation":"<p>A structure that contains information that identifies the snapshot that needs to be generated.</p>"
@@ -24402,7 +25931,7 @@
     "SnapshotFileSheetSelectionList":{
       "type":"list",
       "member":{"shape":"SnapshotFileSheetSelection"},
-      "max":1,
+      "max":5,
       "min":1
     },
     "SnapshotFileSheetSelectionScope":{
@@ -24415,7 +25944,7 @@
     "SnapshotFileSheetSelectionVisualIdList":{
       "type":"list",
       "member":{"shape":"ShortRestrictiveResourceId"},
-      "max":1,
+      "max":5,
       "min":1
     },
     "SnapshotJobErrorInfo":{
@@ -24511,6 +26040,7 @@
     },
     "SnapshotS3DestinationConfiguration":{
       "type":"structure",
+      "required":["BucketConfiguration"],
       "members":{
         "BucketConfiguration":{
           "shape":"S3BucketConfiguration",
@@ -24666,6 +26196,40 @@
       },
       "documentation":"<p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>"
     },
+    "StarburstParameters":{
+      "type":"structure",
+      "required":[
+        "Host",
+        "Port",
+        "Catalog"
+      ],
+      "members":{
+        "Host":{
+          "shape":"Host",
+          "documentation":"<p>The host name of the Starburst data source.</p>"
+        },
+        "Port":{
+          "shape":"Port",
+          "documentation":"<p>The port for the Starburst data source.</p>"
+        },
+        "Catalog":{
+          "shape":"Catalog",
+          "documentation":"<p>The catalog name for the Starburst data source.</p>"
+        },
+        "ProductType":{
+          "shape":"StarburstProductType",
+          "documentation":"<p>The product type for the Starburst data source.</p>"
+        }
+      },
+      "documentation":"<p>The parameters that are required to connect to a Starburst data source.</p>"
+    },
+    "StarburstProductType":{
+      "type":"string",
+      "enum":[
+        "GALAXY",
+        "ENTERPRISE"
+      ]
+    },
     "StartAssetBundleExportJobRequest":{
       "type":"structure",
       "required":[
@@ -24700,6 +26264,18 @@
         "CloudFormationOverridePropertyConfiguration":{
           "shape":"AssetBundleCloudFormationOverridePropertyConfiguration",
           "documentation":"<p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p> <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>"
+        },
+        "IncludePermissions":{
+          "shape":"Boolean",
+          "documentation":"<p>A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported. </p>"
+        },
+        "IncludeTags":{
+          "shape":"Boolean",
+          "documentation":"<p> A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.</p>"
+        },
+        "ValidationStrategy":{
+          "shape":"AssetBundleExportJobValidationStrategy",
+          "documentation":"<p>An optional parameter that determines which validation strategy to use for the export job. If <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.</p>"
         }
       }
     },
@@ -24749,11 +26325,23 @@
         },
         "OverrideParameters":{
           "shape":"AssetBundleImportJobOverrideParameters",
-          "documentation":"<p>Optional overrides to be applied to the resource configuration before import.</p>"
+          "documentation":"<p>Optional overrides that are applied to the resource configuration before import.</p>"
         },
         "FailureAction":{
           "shape":"AssetBundleImportFailureAction",
           "documentation":"<p>The failure action for the import job.</p> <p>If you choose <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes caused by the failed job.</p> <p>If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll back any asset changes caused by the failed job, possibly keeping the Amazon QuickSight account in an inconsistent state.</p>"
+        },
+        "OverridePermissions":{
+          "shape":"AssetBundleImportJobOverridePermissions",
+          "documentation":"<p>Optional permission overrides that are applied to the resource configuration before import.</p>"
+        },
+        "OverrideTags":{
+          "shape":"AssetBundleImportJobOverrideTags",
+          "documentation":"<p>Optional tag overrides that are applied to the resource configuration before import.</p>"
+        },
+        "OverrideValidationStrategy":{
+          "shape":"AssetBundleImportJobOverrideValidationStrategy",
+          "documentation":"<p>An optional validation strategy override for all analyses and dashboards that is applied to the resource configuration before import. </p>"
         }
       }
     },
@@ -25007,6 +26595,14 @@
       },
       "documentation":"<p>The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.</p>"
     },
+    "StyledCellType":{
+      "type":"string",
+      "enum":[
+        "TOTAL",
+        "METRIC_HEADER",
+        "VALUE"
+      ]
+    },
     "SubnetId":{
       "type":"string",
       "max":255,
@@ -25049,6 +26645,10 @@
         "MetricHeaderCellStyle":{
           "shape":"TableCellStyle",
           "documentation":"<p>The cell styling options for the subtotals of header cells.</p>"
+        },
+        "StyleTargets":{
+          "shape":"TableStyleTargetList",
+          "documentation":"<p>The style targets options for subtotals.</p>"
         }
       },
       "documentation":"<p>The subtotal options.</p>"
@@ -25354,14 +26954,24 @@
       "members":{
         "SelectedFieldOptions":{
           "shape":"TableFieldOptionList",
-          "documentation":"<p>The selected field options for the table field options.</p>"
+          "documentation":"<p>The field options to be configured to a table.</p>"
         },
         "Order":{
           "shape":"FieldOrderList",
-          "documentation":"<p>The order of field IDs of the field options for a table visual.</p>"
+          "documentation":"<p>The order of the field IDs that are configured as field options for a table visual.</p>"
+        },
+        "PinnedFieldOptions":{
+          "shape":"TablePinnedFieldOptions",
+          "documentation":"<p>The settings for the pinned columns of a table visual.</p>"
         }
       },
-      "documentation":"<p>The field options for a table visual.</p>"
+      "documentation":"<p>The field options of a table visual.</p>"
+    },
+    "TableFieldOrderList":{
+      "type":"list",
+      "member":{"shape":"FieldId"},
+      "documentation":"<p>A list of table field IDs.</p>",
+      "max":201
     },
     "TableFieldURLConfiguration":{
       "type":"structure",
@@ -25449,6 +27059,16 @@
       },
       "documentation":"<p>The paginated report options for a table visual.</p>"
     },
+    "TablePinnedFieldOptions":{
+      "type":"structure",
+      "members":{
+        "PinnedLeftFields":{
+          "shape":"TableFieldOrderList",
+          "documentation":"<p>A list of columns to be pinned to the left of a table visual.</p>"
+        }
+      },
+      "documentation":"<p>The settings for the pinned columns of a table visual.</p>"
+    },
     "TableRowConditionalFormatting":{
       "type":"structure",
       "members":{
@@ -25507,11 +27127,28 @@
       },
       "documentation":"<p>The sort configuration for a <code>TableVisual</code>.</p>"
     },
+    "TableStyleTarget":{
+      "type":"structure",
+      "required":["CellType"],
+      "members":{
+        "CellType":{
+          "shape":"StyledCellType",
+          "documentation":"<p>The cell type of the table style target.</p>"
+        }
+      },
+      "documentation":"<p>The table style target.</p>"
+    },
+    "TableStyleTargetList":{
+      "type":"list",
+      "member":{"shape":"TableStyleTarget"},
+      "max":3
+    },
     "TableTotalsPlacement":{
       "type":"string",
       "enum":[
         "START",
-        "END"
+        "END",
+        "AUTO"
       ]
     },
     "TableTotalsScrollStatus":{
@@ -25901,7 +27538,11 @@
           "shape":"ColumnConfigurationList",
           "documentation":"<p> An array of template-level column configurations. Column configurations are used to set default formatting for a column that's used throughout a template. </p>"
         },
-        "AnalysisDefaults":{"shape":"AnalysisDefaults"}
+        "AnalysisDefaults":{"shape":"AnalysisDefaults"},
+        "Options":{
+          "shape":"AssetOptions",
+          "documentation":"<p>An array of option definitions for a template.</p>"
+        }
       },
       "documentation":"<p>The detailed definition of a template.</p>"
     },
@@ -26359,15 +28000,19 @@
         },
         "Value":{
           "shape":"Timestamp",
-          "documentation":"<p>The value of a <code>TimeEquality</code> filter.</p> <p>This field is mutually exclusive to <code>ParameterName</code>.</p>"
+          "documentation":"<p>The value of a <code>TimeEquality</code> filter.</p> <p>This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.</p>"
         },
         "ParameterName":{
           "shape":"ParameterName",
-          "documentation":"<p>The parameter whose value should be used for the filter value.</p> <p>This field is mutually exclusive to <code>Value</code>.</p>"
+          "documentation":"<p>The parameter whose value should be used for the filter value.</p> <p>This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.</p>"
         },
         "TimeGranularity":{
           "shape":"TimeGranularity",
           "documentation":"<p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>"
+        },
+        "RollingDate":{
+          "shape":"RollingDateConfiguration",
+          "documentation":"<p>The rolling date input for the <code>TimeEquality</code> filter.</p> <p>This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.</p>"
         }
       },
       "documentation":"<p>A <code>TimeEqualityFilter</code> filters values that are equal to a given value.</p>"
@@ -26573,8 +28218,6 @@
       "type":"structure",
       "required":[
         "ComputationId",
-        "Time",
-        "Category",
         "Type"
       ],
       "members":{
@@ -26622,7 +28265,6 @@
       "type":"structure",
       "required":[
         "ComputationId",
-        "Category",
         "Type"
       ],
       "members":{
@@ -26735,6 +28377,10 @@
         "CellValueSynonyms":{
           "shape":"CellValueSynonyms",
           "documentation":"<p>The other names or aliases for the calculated field cell value.</p>"
+        },
+        "NonAdditive":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>The non additive for the table style target.</p>"
         }
       },
       "documentation":"<p>A structure that represents a calculated field.</p>"
@@ -26810,7 +28456,7 @@
         },
         "Aggregation":{
           "shape":"DefaultAggregation",
-          "documentation":"<p>The type of aggregation that is performed on the column data when it's queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>"
+          "documentation":"<p>The type of aggregation that is performed on the column data when it's queried.</p>"
         },
         "IsIncludedInTopic":{
           "shape":"Boolean",
@@ -26851,6 +28497,10 @@
         "CellValueSynonyms":{
           "shape":"CellValueSynonyms",
           "documentation":"<p>The other names or aliases for the column cell value.</p>"
+        },
+        "NonAdditive":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>The non additive value for the column.</p>"
         }
       },
       "documentation":"<p>Represents a column in a dataset.</p>"
@@ -27216,10 +28866,7 @@
     },
     "TotalAggregationComputation":{
       "type":"structure",
-      "required":[
-        "ComputationId",
-        "Value"
-      ],
+      "required":["ComputationId"],
       "members":{
         "ComputationId":{
           "shape":"ShortRestrictiveResourceId",
@@ -27235,6 +28882,39 @@
         }
       },
       "documentation":"<p>The total aggregation computation configuration.</p>"
+    },
+    "TotalAggregationFunction":{
+      "type":"structure",
+      "members":{
+        "SimpleTotalAggregationFunction":{
+          "shape":"SimpleTotalAggregationFunction",
+          "documentation":"<p>A built in aggregation function for total values.</p>"
+        }
+      },
+      "documentation":"<p>An aggregation function that aggregates the total values of a measure.</p>"
+    },
+    "TotalAggregationOption":{
+      "type":"structure",
+      "required":[
+        "FieldId",
+        "TotalAggregationFunction"
+      ],
+      "members":{
+        "FieldId":{
+          "shape":"FieldId",
+          "documentation":"<p>The field id that's associated with the total aggregation option.</p>"
+        },
+        "TotalAggregationFunction":{
+          "shape":"TotalAggregationFunction",
+          "documentation":"<p>The total aggregation function that you want to set for a specified field id.</p>"
+        }
+      },
+      "documentation":"<p>The total aggregation settings map of a field id.</p>"
+    },
+    "TotalAggregationOptionList":{
+      "type":"list",
+      "member":{"shape":"TotalAggregationOption"},
+      "max":200
     },
     "TotalOptions":{
       "type":"structure",
@@ -27258,6 +28938,10 @@
         "TotalCellStyle":{
           "shape":"TableCellStyle",
           "documentation":"<p>Cell styling options for the total cells.</p>"
+        },
+        "TotalAggregationOptions":{
+          "shape":"TotalAggregationOptionList",
+          "documentation":"<p>The total aggregation settings for each value field.</p>"
         }
       },
       "documentation":"<p>The total options for a table visual.</p>"
@@ -27435,6 +29119,29 @@
       },
       "documentation":"<p>The options that determine the presentation of trend arrows in a KPI visual.</p>"
     },
+    "TrinoParameters":{
+      "type":"structure",
+      "required":[
+        "Host",
+        "Port",
+        "Catalog"
+      ],
+      "members":{
+        "Host":{
+          "shape":"Host",
+          "documentation":"<p>The host name of the Trino data source.</p>"
+        },
+        "Port":{
+          "shape":"Port",
+          "documentation":"<p>The port for the Trino data source.</p>"
+        },
+        "Catalog":{
+          "shape":"Catalog",
+          "documentation":"<p>The catalog name for the Trino data source.</p>"
+        }
+      },
+      "documentation":"<p>The parameters that are required to connect to a Trino data source.</p>"
+    },
     "TwitterParameters":{
       "type":"structure",
       "required":[
@@ -27595,10 +29302,7 @@
     },
     "UniqueValuesComputation":{
       "type":"structure",
-      "required":[
-        "ComputationId",
-        "Category"
-      ],
+      "required":["ComputationId"],
       "members":{
         "ComputationId":{
           "shape":"ShortRestrictiveResourceId",
@@ -27888,6 +29592,10 @@
         "Definition":{
           "shape":"AnalysisDefinition",
           "documentation":"<p>The definition of an analysis.</p> <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>"
+        },
+        "ValidationStrategy":{
+          "shape":"ValidationStrategy",
+          "documentation":"<p>The option to relax the validation needed to update an analysis with definition objects. This skips the validation step for specific errors.</p>"
         }
       }
     },
@@ -27914,6 +29622,54 @@
         "RequestId":{
           "shape":"String",
           "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        }
+      }
+    },
+    "UpdateDashboardLinksRequest":{
+      "type":"structure",
+      "required":[
+        "AwsAccountId",
+        "DashboardId",
+        "LinkEntities"
+      ],
+      "members":{
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID of the Amazon Web Services account that contains the dashboard whose links you want to update.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "DashboardId":{
+          "shape":"ShortRestrictiveResourceId",
+          "documentation":"<p>The ID for the dashboard.</p>",
+          "location":"uri",
+          "locationName":"DashboardId"
+        },
+        "LinkEntities":{
+          "shape":"LinkEntityArnList",
+          "documentation":"<p> list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>"
+        }
+      }
+    },
+    "UpdateDashboardLinksResponse":{
+      "type":"structure",
+      "members":{
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
+        },
+        "DashboardArn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the dashboard.</p>"
+        },
+        "LinkEntities":{
+          "shape":"LinkEntityArnList",
+          "documentation":"<p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>"
         }
       }
     },
@@ -28081,6 +29837,10 @@
         "Definition":{
           "shape":"DashboardVersionDefinition",
           "documentation":"<p>The definition of a dashboard.</p> <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>"
+        },
+        "ValidationStrategy":{
+          "shape":"ValidationStrategy",
+          "documentation":"<p>The option to relax the validation needed to update a dashboard with definition objects. This skips the validation step for specific errors.</p>"
         }
       }
     },
@@ -28604,6 +30364,45 @@
         }
       }
     },
+    "UpdateIdentityPropagationConfigRequest":{
+      "type":"structure",
+      "required":[
+        "AwsAccountId",
+        "Service"
+      ],
+      "members":{
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID of the Amazon Web Services account that contains the identity propagation configuration that you want to update.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "Service":{
+          "shape":"ServiceType",
+          "documentation":"<p>The name of the Amazon Web Services service that contains the authorized targets that you want to add or update.</p>",
+          "location":"uri",
+          "locationName":"Service"
+        },
+        "AuthorizedTargets":{
+          "shape":"AuthorizedTargetsList",
+          "documentation":"<p>Specifies a list of application ARNs that represent the authorized targets for a service.</p>"
+        }
+      }
+    },
+    "UpdateIdentityPropagationConfigResponse":{
+      "type":"structure",
+      "members":{
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>",
+          "location":"statusCode"
+        }
+      }
+    },
     "UpdateIpRestrictionRequest":{
       "type":"structure",
       "required":["AwsAccountId"],
@@ -28645,7 +30444,7 @@
     "UpdateLinkPermissionList":{
       "type":"list",
       "member":{"shape":"ResourcePermission"},
-      "max":2
+      "max":100
     },
     "UpdatePublicSharingSettingsRequest":{
       "type":"structure",
@@ -28729,6 +30528,52 @@
       "type":"list",
       "member":{"shape":"ResourcePermission"},
       "max":100
+    },
+    "UpdateRoleCustomPermissionRequest":{
+      "type":"structure",
+      "required":[
+        "CustomPermissionsName",
+        "Role",
+        "AwsAccountId",
+        "Namespace"
+      ],
+      "members":{
+        "CustomPermissionsName":{
+          "shape":"RoleName",
+          "documentation":"<p>The name of the custom permission that you want to update the role with.</p>"
+        },
+        "Role":{
+          "shape":"Role",
+          "documentation":"<p>The name of role tht you want to update.</p>",
+          "location":"uri",
+          "locationName":"Role"
+        },
+        "AwsAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>",
+          "location":"uri",
+          "locationName":"AwsAccountId"
+        },
+        "Namespace":{
+          "shape":"Namespace",
+          "documentation":"<p>The namespace that contains the role that you want to update.</p>",
+          "location":"uri",
+          "locationName":"Namespace"
+        }
+      }
+    },
+    "UpdateRoleCustomPermissionResponse":{
+      "type":"structure",
+      "members":{
+        "RequestId":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services request ID for this operation.</p>"
+        },
+        "Status":{
+          "shape":"StatusCode",
+          "documentation":"<p>The HTTP status of the request.</p>"
+        }
+      }
     },
     "UpdateTemplateAliasRequest":{
       "type":"structure",
@@ -28870,6 +30715,10 @@
         "Definition":{
           "shape":"TemplateVersionDefinition",
           "documentation":"<p>The definition of a template.</p> <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>"
+        },
+        "ValidationStrategy":{
+          "shape":"ValidationStrategy",
+          "documentation":"<p>The option to relax the validation needed to update a template with definition objects. This skips the validation step for specific errors.</p>"
         }
       }
     },
@@ -29636,6 +31485,24 @@
       "type":"list",
       "member":{"shape":"VPCConnectionSummary"}
     },
+    "ValidationStrategy":{
+      "type":"structure",
+      "required":["Mode"],
+      "members":{
+        "Mode":{
+          "shape":"ValidationStrategyMode",
+          "documentation":"<p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>"
+        }
+      },
+      "documentation":"<p>The option to relax the validation that is required to create and update analyses, dashboards, and templates with definition objects. When you set this value to <code>LENIENT</code>, validation is skipped for specific errors.</p>"
+    },
+    "ValidationStrategyMode":{
+      "type":"string",
+      "enum":[
+        "STRICT",
+        "LENIENT"
+      ]
+    },
     "ValueWhenUnsetOption":{
       "type":"string",
       "enum":[
@@ -29657,7 +31524,8 @@
       "enum":[
         "TOP",
         "MIDDLE",
-        "BOTTOM"
+        "BOTTOM",
+        "AUTO"
       ]
     },
     "Visibility":{
@@ -30298,6 +32166,17 @@
       "type":"string",
       "max":128,
       "min":1
+    },
+    "YAxisOptions":{
+      "type":"structure",
+      "required":["YAxis"],
+      "members":{
+        "YAxis":{
+          "shape":"SingleYAxisOption",
+          "documentation":"<p>The Y axis type to be used in the chart.</p> <p>If you choose <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost vertical axis of the chart.</p>"
+        }
+      },
+      "documentation":"<p>The options that are available for a single Y axis in a chart.</p>"
     },
     "boolean":{"type":"boolean"}
   },

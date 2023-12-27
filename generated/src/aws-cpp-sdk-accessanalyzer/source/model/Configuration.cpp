@@ -29,7 +29,8 @@ Configuration::Configuration() :
     m_secretsManagerSecretHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
     m_snsTopicHasBeenSet(false),
-    m_sqsQueueHasBeenSet(false)
+    m_sqsQueueHasBeenSet(false),
+    m_s3ExpressDirectoryBucketHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Configuration::Configuration(JsonView jsonValue) :
     m_secretsManagerSecretHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
     m_snsTopicHasBeenSet(false),
-    m_sqsQueueHasBeenSet(false)
+    m_sqsQueueHasBeenSet(false),
+    m_s3ExpressDirectoryBucketHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +130,13 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     m_sqsQueueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3ExpressDirectoryBucket"))
+  {
+    m_s3ExpressDirectoryBucket = jsonValue.GetObject("s3ExpressDirectoryBucket");
+
+    m_s3ExpressDirectoryBucketHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +207,12 @@ JsonValue Configuration::Jsonize() const
   if(m_sqsQueueHasBeenSet)
   {
    payload.WithObject("sqsQueue", m_sqsQueue.Jsonize());
+
+  }
+
+  if(m_s3ExpressDirectoryBucketHasBeenSet)
+  {
+   payload.WithObject("s3ExpressDirectoryBucket", m_s3ExpressDirectoryBucket.Jsonize());
 
   }
 

@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>A routing control, which is a simple on/off switch that you can use to route
-   * traffic to cells. When a routing control state is On, traffic flows to a cell.
-   * When the state is Off, traffic does not flow. </p><p><h3>See Also:</h3>   <a
+   * traffic to cells. When a routing control state is set to ON, traffic flows to a
+   * cell. When the state is set to OFF, traffic does not flow. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-cluster-2019-12-02/RoutingControl">AWS
    * API Reference</a></p>
    */
@@ -90,42 +91,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the control panel where the routing control is located.</p>
+     * <p>The name of the control panel where the routing control is located. Only
+     * ASCII characters are supported for control panel names.</p>
      */
     inline const Aws::String& GetControlPanelName() const{ return m_controlPanelName; }
 
     /**
-     * <p>The name of the control panel where the routing control is located.</p>
+     * <p>The name of the control panel where the routing control is located. Only
+     * ASCII characters are supported for control panel names.</p>
      */
     inline bool ControlPanelNameHasBeenSet() const { return m_controlPanelNameHasBeenSet; }
 
     /**
-     * <p>The name of the control panel where the routing control is located.</p>
+     * <p>The name of the control panel where the routing control is located. Only
+     * ASCII characters are supported for control panel names.</p>
      */
     inline void SetControlPanelName(const Aws::String& value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName = value; }
 
     /**
-     * <p>The name of the control panel where the routing control is located.</p>
+     * <p>The name of the control panel where the routing control is located. Only
+     * ASCII characters are supported for control panel names.</p>
      */
     inline void SetControlPanelName(Aws::String&& value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName = std::move(value); }
 
     /**
-     * <p>The name of the control panel where the routing control is located.</p>
+     * <p>The name of the control panel where the routing control is located. Only
+     * ASCII characters are supported for control panel names.</p>
      */
     inline void SetControlPanelName(const char* value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName.assign(value); }
 
     /**
-     * <p>The name of the control panel where the routing control is located.</p>
+     * <p>The name of the control panel where the routing control is located. Only
+     * ASCII characters are supported for control panel names.</p>
      */
     inline RoutingControl& WithControlPanelName(const Aws::String& value) { SetControlPanelName(value); return *this;}
 
     /**
-     * <p>The name of the control panel where the routing control is located.</p>
+     * <p>The name of the control panel where the routing control is located. Only
+     * ASCII characters are supported for control panel names.</p>
      */
     inline RoutingControl& WithControlPanelName(Aws::String&& value) { SetControlPanelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the control panel where the routing control is located.</p>
+     * <p>The name of the control panel where the routing control is located. Only
+     * ASCII characters are supported for control panel names.</p>
      */
     inline RoutingControl& WithControlPanelName(const char* value) { SetControlPanelName(value); return *this;}
 
@@ -213,40 +222,87 @@ namespace Model
 
 
     /**
-     * <p>The current state of the routing control. When a routing control state is On,
-     * traffic flows to a cell. When the state is Off, traffic does not flow. </p>
+     * <p>The current state of the routing control. When a routing control state is set
+     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
+     * flow. </p>
      */
     inline const RoutingControlState& GetRoutingControlState() const{ return m_routingControlState; }
 
     /**
-     * <p>The current state of the routing control. When a routing control state is On,
-     * traffic flows to a cell. When the state is Off, traffic does not flow. </p>
+     * <p>The current state of the routing control. When a routing control state is set
+     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
+     * flow. </p>
      */
     inline bool RoutingControlStateHasBeenSet() const { return m_routingControlStateHasBeenSet; }
 
     /**
-     * <p>The current state of the routing control. When a routing control state is On,
-     * traffic flows to a cell. When the state is Off, traffic does not flow. </p>
+     * <p>The current state of the routing control. When a routing control state is set
+     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
+     * flow. </p>
      */
     inline void SetRoutingControlState(const RoutingControlState& value) { m_routingControlStateHasBeenSet = true; m_routingControlState = value; }
 
     /**
-     * <p>The current state of the routing control. When a routing control state is On,
-     * traffic flows to a cell. When the state is Off, traffic does not flow. </p>
+     * <p>The current state of the routing control. When a routing control state is set
+     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
+     * flow. </p>
      */
     inline void SetRoutingControlState(RoutingControlState&& value) { m_routingControlStateHasBeenSet = true; m_routingControlState = std::move(value); }
 
     /**
-     * <p>The current state of the routing control. When a routing control state is On,
-     * traffic flows to a cell. When the state is Off, traffic does not flow. </p>
+     * <p>The current state of the routing control. When a routing control state is set
+     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
+     * flow. </p>
      */
     inline RoutingControl& WithRoutingControlState(const RoutingControlState& value) { SetRoutingControlState(value); return *this;}
 
     /**
-     * <p>The current state of the routing control. When a routing control state is On,
-     * traffic flows to a cell. When the state is Off, traffic does not flow. </p>
+     * <p>The current state of the routing control. When a routing control state is set
+     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
+     * flow. </p>
      */
     inline RoutingControl& WithRoutingControlState(RoutingControlState&& value) { SetRoutingControlState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services account ID of the routing control owner.</p>
+     */
+    inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The Amazon Web Services account ID of the routing control owner.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID of the routing control owner.</p>
+     */
+    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID of the routing control owner.</p>
+     */
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID of the routing control owner.</p>
+     */
+    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID of the routing control owner.</p>
+     */
+    inline RoutingControl& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID of the routing control owner.</p>
+     */
+    inline RoutingControl& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID of the routing control owner.</p>
+     */
+    inline RoutingControl& WithOwner(const char* value) { SetOwner(value); return *this;}
 
   private:
 
@@ -264,6 +320,9 @@ namespace Model
 
     RoutingControlState m_routingControlState;
     bool m_routingControlStateHasBeenSet = false;
+
+    Aws::String m_owner;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

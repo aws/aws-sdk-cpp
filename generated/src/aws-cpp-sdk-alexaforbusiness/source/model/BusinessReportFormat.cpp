@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BusinessReportFormat::NOT_SET:
+            return {};
           case BusinessReportFormat::CSV:
             return "CSV";
           case BusinessReportFormat::CSV_ZIP:

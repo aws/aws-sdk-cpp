@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/StatusReason.h>
 #include <aws/securityhub/model/AssociatedStandard.h>
+#include <aws/securityhub/model/SecurityControlParameter.h>
 #include <utility>
 
 namespace Aws
@@ -375,6 +376,47 @@ namespace Model
      */
     inline Compliance& AddAssociatedStandards(AssociatedStandard&& value) { m_associatedStandardsHasBeenSet = true; m_associatedStandards.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> An object that includes security control parameter names and values. </p>
+     */
+    inline const Aws::Vector<SecurityControlParameter>& GetSecurityControlParameters() const{ return m_securityControlParameters; }
+
+    /**
+     * <p> An object that includes security control parameter names and values. </p>
+     */
+    inline bool SecurityControlParametersHasBeenSet() const { return m_securityControlParametersHasBeenSet; }
+
+    /**
+     * <p> An object that includes security control parameter names and values. </p>
+     */
+    inline void SetSecurityControlParameters(const Aws::Vector<SecurityControlParameter>& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters = value; }
+
+    /**
+     * <p> An object that includes security control parameter names and values. </p>
+     */
+    inline void SetSecurityControlParameters(Aws::Vector<SecurityControlParameter>&& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters = std::move(value); }
+
+    /**
+     * <p> An object that includes security control parameter names and values. </p>
+     */
+    inline Compliance& WithSecurityControlParameters(const Aws::Vector<SecurityControlParameter>& value) { SetSecurityControlParameters(value); return *this;}
+
+    /**
+     * <p> An object that includes security control parameter names and values. </p>
+     */
+    inline Compliance& WithSecurityControlParameters(Aws::Vector<SecurityControlParameter>&& value) { SetSecurityControlParameters(std::move(value)); return *this;}
+
+    /**
+     * <p> An object that includes security control parameter names and values. </p>
+     */
+    inline Compliance& AddSecurityControlParameters(const SecurityControlParameter& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters.push_back(value); return *this; }
+
+    /**
+     * <p> An object that includes security control parameter names and values. </p>
+     */
+    inline Compliance& AddSecurityControlParameters(SecurityControlParameter&& value) { m_securityControlParametersHasBeenSet = true; m_securityControlParameters.push_back(std::move(value)); return *this; }
+
   private:
 
     ComplianceStatus m_status;
@@ -391,6 +433,9 @@ namespace Model
 
     Aws::Vector<AssociatedStandard> m_associatedStandards;
     bool m_associatedStandardsHasBeenSet = false;
+
+    Aws::Vector<SecurityControlParameter> m_securityControlParameters;
+    bool m_securityControlParametersHasBeenSet = false;
   };
 
 } // namespace Model

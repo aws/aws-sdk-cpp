@@ -38,6 +38,7 @@ namespace Aws
         static const int ChangeCalendarOverrideRejected_HASH = HashingUtils::HashString("ChangeCalendarOverrideRejected");
         static const int CompletedWithSuccess_HASH = HashingUtils::HashString("CompletedWithSuccess");
         static const int CompletedWithFailure_HASH = HashingUtils::HashString("CompletedWithFailure");
+        static const int Exited_HASH = HashingUtils::HashString("Exited");
 
 
         AutomationExecutionStatus GetAutomationExecutionStatusForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return AutomationExecutionStatus::CompletedWithFailure;
           }
+          else if (hashCode == Exited_HASH)
+          {
+            return AutomationExecutionStatus::Exited;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -129,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomationExecutionStatus::NOT_SET:
+            return {};
           case AutomationExecutionStatus::Pending:
             return "Pending";
           case AutomationExecutionStatus::InProgress:
@@ -165,6 +172,8 @@ namespace Aws
             return "CompletedWithSuccess";
           case AutomationExecutionStatus::CompletedWithFailure:
             return "CompletedWithFailure";
+          case AutomationExecutionStatus::Exited:
+            return "Exited";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

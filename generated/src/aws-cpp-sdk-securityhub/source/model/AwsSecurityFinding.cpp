@@ -65,7 +65,10 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_actionHasBeenSet(false),
     m_findingProviderFieldsHasBeenSet(false),
     m_sample(false),
-    m_sampleHasBeenSet(false)
+    m_sampleHasBeenSet(false),
+    m_generatorDetailsHasBeenSet(false),
+    m_processedAtHasBeenSet(false),
+    m_awsAccountNameHasBeenSet(false)
 {
 }
 
@@ -116,7 +119,10 @@ AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue) :
     m_actionHasBeenSet(false),
     m_findingProviderFieldsHasBeenSet(false),
     m_sample(false),
-    m_sampleHasBeenSet(false)
+    m_sampleHasBeenSet(false),
+    m_generatorDetailsHasBeenSet(false),
+    m_processedAtHasBeenSet(false),
+    m_awsAccountNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -440,6 +446,27 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_sampleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GeneratorDetails"))
+  {
+    m_generatorDetails = jsonValue.GetObject("GeneratorDetails");
+
+    m_generatorDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProcessedAt"))
+  {
+    m_processedAt = jsonValue.GetString("ProcessedAt");
+
+    m_processedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsAccountName"))
+  {
+    m_awsAccountName = jsonValue.GetString("AwsAccountName");
+
+    m_awsAccountNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -737,6 +764,24 @@ JsonValue AwsSecurityFinding::Jsonize() const
   if(m_sampleHasBeenSet)
   {
    payload.WithBool("Sample", m_sample);
+
+  }
+
+  if(m_generatorDetailsHasBeenSet)
+  {
+   payload.WithObject("GeneratorDetails", m_generatorDetails.Jsonize());
+
+  }
+
+  if(m_processedAtHasBeenSet)
+  {
+   payload.WithString("ProcessedAt", m_processedAt);
+
+  }
+
+  if(m_awsAccountNameHasBeenSet)
+  {
+   payload.WithString("AwsAccountName", m_awsAccountName);
 
   }
 

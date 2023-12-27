@@ -33,11 +33,11 @@ namespace Model
    * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
    * to inspect the request body, WAF inspects only the number of bytes of the body
    * up to the limit for the web ACL. By default, for regional web ACLs, this limit
-   * is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB
-   * (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the
-   * web ACL <code>AssociationConfig</code>, for additional fees. If you know that
-   * the request body for your web requests should never exceed the inspection limit,
-   * you could use a size constraint statement to block requests that have a larger
+   * is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB (16,384
+   * bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
+   * <code>AssociationConfig</code>, for additional fees. If you know that the
+   * request body for your web requests should never exceed the inspection limit, you
+   * could use a size constraint statement to block requests that have a larger
    * request body size.</p> <p>If you choose URI for the value of Part of the request
    * to filter on, the slash (/) in the URI counts as one character. For example, the
    * URI <code>/logo.jpg</code> is nine characters long.</p><p><h3>See Also:</h3>  
@@ -149,7 +149,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
 
@@ -161,7 +161,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
 
@@ -173,7 +173,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
 
@@ -185,7 +185,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
 
@@ -197,7 +197,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline SizeConstraintStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
 
@@ -209,7 +209,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline SizeConstraintStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
 
@@ -221,7 +221,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline SizeConstraintStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
 
@@ -233,7 +233,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline SizeConstraintStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
 

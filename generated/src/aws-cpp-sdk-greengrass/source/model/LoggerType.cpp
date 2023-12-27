@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoggerType::NOT_SET:
+            return {};
           case LoggerType::FileSystem:
             return "FileSystem";
           case LoggerType::AWSCloudWatch:

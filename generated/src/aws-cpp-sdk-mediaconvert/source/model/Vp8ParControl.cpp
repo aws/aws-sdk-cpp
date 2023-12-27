@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Vp8ParControl::NOT_SET:
+            return {};
           case Vp8ParControl::INITIALIZE_FROM_SOURCE:
             return "INITIALIZE_FROM_SOURCE";
           case Vp8ParControl::SPECIFIED:

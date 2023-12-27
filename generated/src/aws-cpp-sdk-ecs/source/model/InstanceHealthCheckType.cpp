@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceHealthCheckType::NOT_SET:
+            return {};
           case InstanceHealthCheckType::CONTAINER_RUNTIME:
             return "CONTAINER_RUNTIME";
           default:

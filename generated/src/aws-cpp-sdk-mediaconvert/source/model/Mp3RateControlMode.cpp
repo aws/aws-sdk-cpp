@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mp3RateControlMode::NOT_SET:
+            return {};
           case Mp3RateControlMode::CBR:
             return "CBR";
           case Mp3RateControlMode::VBR:

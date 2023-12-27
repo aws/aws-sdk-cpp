@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchTemplateInstanceMetadataProtocolIpv6::NOT_SET:
+            return {};
           case LaunchTemplateInstanceMetadataProtocolIpv6::disabled:
             return "disabled";
           case LaunchTemplateInstanceMetadataProtocolIpv6::enabled:

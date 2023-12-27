@@ -30,7 +30,8 @@ namespace Model
    * the location of the mention in the text and the sentiment of the mention.</p>
    * <p>For more information about targeted sentiment, see <a
    * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
-   * sentiment</a>.</p><p><h3>See Also:</h3>   <a
+   * sentiment</a> in the <i>Amazon Comprehend Developer Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TargetedSentimentMention">AWS
    * API Reference</a></p>
    */

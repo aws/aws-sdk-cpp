@@ -7,6 +7,7 @@
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/drs/DrsRequest.h>
 #include <aws/drs/model/LaunchDisposition.h>
+#include <aws/drs/model/LaunchIntoInstanceProperties.h>
 #include <aws/drs/model/Licensing.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/drs/model/TargetInstanceTypeRightSizingMethod.h>
@@ -117,6 +118,37 @@ namespace Model
 
 
     /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline const LaunchIntoInstanceProperties& GetLaunchIntoInstanceProperties() const{ return m_launchIntoInstanceProperties; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline bool LaunchIntoInstancePropertiesHasBeenSet() const { return m_launchIntoInstancePropertiesHasBeenSet; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline void SetLaunchIntoInstanceProperties(const LaunchIntoInstanceProperties& value) { m_launchIntoInstancePropertiesHasBeenSet = true; m_launchIntoInstanceProperties = value; }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline void SetLaunchIntoInstanceProperties(LaunchIntoInstanceProperties&& value) { m_launchIntoInstancePropertiesHasBeenSet = true; m_launchIntoInstanceProperties = std::move(value); }
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithLaunchIntoInstanceProperties(const LaunchIntoInstanceProperties& value) { SetLaunchIntoInstanceProperties(value); return *this;}
+
+    /**
+     * <p>Launch into existing instance properties.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithLaunchIntoInstanceProperties(LaunchIntoInstanceProperties&& value) { SetLaunchIntoInstanceProperties(std::move(value)); return *this;}
+
+
+    /**
      * <p>The licensing configuration to be used for this launch configuration.</p>
      */
     inline const Licensing& GetLicensing() const{ return m_licensing; }
@@ -186,6 +218,27 @@ namespace Model
      * <p>The name of the launch configuration.</p>
      */
     inline UpdateLaunchConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>Whether we want to enable post-launch actions for the Source Server.</p>
+     */
+    inline bool GetPostLaunchEnabled() const{ return m_postLaunchEnabled; }
+
+    /**
+     * <p>Whether we want to enable post-launch actions for the Source Server.</p>
+     */
+    inline bool PostLaunchEnabledHasBeenSet() const { return m_postLaunchEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether we want to enable post-launch actions for the Source Server.</p>
+     */
+    inline void SetPostLaunchEnabled(bool value) { m_postLaunchEnabledHasBeenSet = true; m_postLaunchEnabled = value; }
+
+    /**
+     * <p>Whether we want to enable post-launch actions for the Source Server.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithPostLaunchEnabled(bool value) { SetPostLaunchEnabled(value); return *this;}
 
 
     /**
@@ -284,11 +337,17 @@ namespace Model
     LaunchDisposition m_launchDisposition;
     bool m_launchDispositionHasBeenSet = false;
 
+    LaunchIntoInstanceProperties m_launchIntoInstanceProperties;
+    bool m_launchIntoInstancePropertiesHasBeenSet = false;
+
     Licensing m_licensing;
     bool m_licensingHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    bool m_postLaunchEnabled;
+    bool m_postLaunchEnabledHasBeenSet = false;
 
     Aws::String m_sourceServerID;
     bool m_sourceServerIDHasBeenSet = false;

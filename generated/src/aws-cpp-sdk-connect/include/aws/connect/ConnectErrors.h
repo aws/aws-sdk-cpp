@@ -47,7 +47,8 @@ enum class ConnectErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONTACT_FLOW_NOT_PUBLISHED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONTACT_FLOW_NOT_PUBLISHED,
   CONTACT_NOT_FOUND,
   DESTINATION_NOT_ALLOWED,
   DUPLICATE_RESOURCE,
@@ -60,11 +61,13 @@ enum class ConnectErrors
   LIMIT_EXCEEDED,
   MAXIMUM_RESULT_RETURNED,
   OUTBOUND_CONTACT_NOT_PERMITTED,
+  OUTPUT_TYPE_NOT_FOUND,
   PROPERTY_VALIDATION,
   RESOURCE_CONFLICT,
   RESOURCE_IN_USE,
   RESOURCE_NOT_READY,
   SERVICE_QUOTA_EXCEEDED,
+  TOO_MANY_REQUESTS,
   USER_NOT_FOUND
 };
 

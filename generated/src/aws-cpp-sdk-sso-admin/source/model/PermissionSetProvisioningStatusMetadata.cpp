@@ -19,29 +19,29 @@ namespace Model
 {
 
 PermissionSetProvisioningStatusMetadata::PermissionSetProvisioningStatusMetadata() : 
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
     m_requestIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_status(StatusValues::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
 PermissionSetProvisioningStatusMetadata::PermissionSetProvisioningStatusMetadata(JsonView jsonValue) : 
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
     m_requestIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_status(StatusValues::NOT_SET),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PermissionSetProvisioningStatusMetadata& PermissionSetProvisioningStatusMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("CreatedDate"))
   {
-    m_status = StatusValuesMapper::GetStatusValuesForName(jsonValue.GetString("Status"));
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
 
-    m_statusHasBeenSet = true;
+    m_createdDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RequestId"))
@@ -51,11 +51,11 @@ PermissionSetProvisioningStatusMetadata& PermissionSetProvisioningStatusMetadata
     m_requestIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("CreatedDate"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_createdDate = jsonValue.GetDouble("CreatedDate");
+    m_status = StatusValuesMapper::GetStatusValuesForName(jsonValue.GetString("Status"));
 
-    m_createdDateHasBeenSet = true;
+    m_statusHasBeenSet = true;
   }
 
   return *this;
@@ -65,9 +65,9 @@ JsonValue PermissionSetProvisioningStatusMetadata::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
+  if(m_createdDateHasBeenSet)
   {
-   payload.WithString("Status", StatusValuesMapper::GetNameForStatusValues(m_status));
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   if(m_requestIdHasBeenSet)
@@ -76,9 +76,9 @@ JsonValue PermissionSetProvisioningStatusMetadata::Jsonize() const
 
   }
 
-  if(m_createdDateHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+   payload.WithString("Status", StatusValuesMapper::GetNameForStatusValues(m_status));
   }
 
   return payload;

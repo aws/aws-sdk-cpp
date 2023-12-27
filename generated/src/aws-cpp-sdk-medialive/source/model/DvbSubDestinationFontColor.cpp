@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubDestinationFontColor::NOT_SET:
+            return {};
           case DvbSubDestinationFontColor::BLACK:
             return "BLACK";
           case DvbSubDestinationFontColor::BLUE:

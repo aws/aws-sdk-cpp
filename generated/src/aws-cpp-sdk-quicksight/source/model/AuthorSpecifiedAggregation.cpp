@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthorSpecifiedAggregation::NOT_SET:
+            return {};
           case AuthorSpecifiedAggregation::COUNT:
             return "COUNT";
           case AuthorSpecifiedAggregation::DISTINCT_COUNT:

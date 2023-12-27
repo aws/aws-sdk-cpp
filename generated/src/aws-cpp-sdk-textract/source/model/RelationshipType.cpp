@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationshipType::NOT_SET:
+            return {};
           case RelationshipType::VALUE:
             return "VALUE";
           case RelationshipType::CHILD:

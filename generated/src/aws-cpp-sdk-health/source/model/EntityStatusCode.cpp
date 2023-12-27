@@ -23,6 +23,8 @@ namespace Aws
         static const int IMPAIRED_HASH = HashingUtils::HashString("IMPAIRED");
         static const int UNIMPAIRED_HASH = HashingUtils::HashString("UNIMPAIRED");
         static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
 
 
         EntityStatusCode GetEntityStatusCodeForName(const Aws::String& name)
@@ -40,6 +42,14 @@ namespace Aws
           {
             return EntityStatusCode::UNKNOWN;
           }
+          else if (hashCode == PENDING_HASH)
+          {
+            return EntityStatusCode::PENDING;
+          }
+          else if (hashCode == RESOLVED_HASH)
+          {
+            return EntityStatusCode::RESOLVED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +64,18 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityStatusCode::NOT_SET:
+            return {};
           case EntityStatusCode::IMPAIRED:
             return "IMPAIRED";
           case EntityStatusCode::UNIMPAIRED:
             return "UNIMPAIRED";
           case EntityStatusCode::UNKNOWN:
             return "UNKNOWN";
+          case EntityStatusCode::PENDING:
+            return "PENDING";
+          case EntityStatusCode::RESOLVED:
+            return "RESOLVED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

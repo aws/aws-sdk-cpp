@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColorSpace::NOT_SET:
+            return {};
           case ColorSpace::FOLLOW:
             return "FOLLOW";
           case ColorSpace::REC_601:

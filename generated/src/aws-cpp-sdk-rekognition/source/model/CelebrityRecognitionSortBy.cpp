@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CelebrityRecognitionSortBy::NOT_SET:
+            return {};
           case CelebrityRecognitionSortBy::ID:
             return "ID";
           case CelebrityRecognitionSortBy::TIMESTAMP:

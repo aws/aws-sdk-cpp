@@ -184,26 +184,30 @@ namespace Model
 
 
     /**
-     * <p>Choose whether or not to trigger immediate tunnel replacement.</p> <p>Valid
-     * values: <code>True</code> | <code>False</code> </p>
+     * <p>Choose whether or not to trigger immediate tunnel replacement. This is only
+     * applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
+     * <p>Valid values: <code>True</code> | <code>False</code> </p>
      */
     inline bool GetSkipTunnelReplacement() const{ return m_skipTunnelReplacement; }
 
     /**
-     * <p>Choose whether or not to trigger immediate tunnel replacement.</p> <p>Valid
-     * values: <code>True</code> | <code>False</code> </p>
+     * <p>Choose whether or not to trigger immediate tunnel replacement. This is only
+     * applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
+     * <p>Valid values: <code>True</code> | <code>False</code> </p>
      */
     inline bool SkipTunnelReplacementHasBeenSet() const { return m_skipTunnelReplacementHasBeenSet; }
 
     /**
-     * <p>Choose whether or not to trigger immediate tunnel replacement.</p> <p>Valid
-     * values: <code>True</code> | <code>False</code> </p>
+     * <p>Choose whether or not to trigger immediate tunnel replacement. This is only
+     * applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
+     * <p>Valid values: <code>True</code> | <code>False</code> </p>
      */
     inline void SetSkipTunnelReplacement(bool value) { m_skipTunnelReplacementHasBeenSet = true; m_skipTunnelReplacement = value; }
 
     /**
-     * <p>Choose whether or not to trigger immediate tunnel replacement.</p> <p>Valid
-     * values: <code>True</code> | <code>False</code> </p>
+     * <p>Choose whether or not to trigger immediate tunnel replacement. This is only
+     * applicable when turning on or off <code>EnableTunnelLifecycleControl</code>.</p>
+     * <p>Valid values: <code>True</code> | <code>False</code> </p>
      */
     inline ModifyVpnTunnelOptionsRequest& WithSkipTunnelReplacement(bool value) { SetSkipTunnelReplacement(value); return *this;}
 

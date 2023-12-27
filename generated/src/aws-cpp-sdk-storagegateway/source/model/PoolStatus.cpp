@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PoolStatus::NOT_SET:
+            return {};
           case PoolStatus::ACTIVE:
             return "ACTIVE";
           case PoolStatus::DELETED:

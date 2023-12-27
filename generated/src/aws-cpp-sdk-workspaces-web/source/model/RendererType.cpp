@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RendererType::NOT_SET:
+            return {};
           case RendererType::AppStream:
             return "AppStream";
           default:

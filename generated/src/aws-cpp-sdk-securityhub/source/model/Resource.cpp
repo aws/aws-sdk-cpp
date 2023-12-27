@@ -27,7 +27,9 @@ Resource::Resource() :
     m_resourceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_dataClassificationHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_applicationNameHasBeenSet(false),
+    m_applicationArnHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ Resource::Resource(JsonView jsonValue) :
     m_resourceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_dataClassificationHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_applicationNameHasBeenSet(false),
+    m_applicationArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +110,20 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_detailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationName"))
+  {
+    m_applicationName = jsonValue.GetString("ApplicationName");
+
+    m_applicationNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationArn"))
+  {
+    m_applicationArn = jsonValue.GetString("ApplicationArn");
+
+    m_applicationArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -162,6 +180,18 @@ JsonValue Resource::Jsonize() const
   if(m_detailsHasBeenSet)
   {
    payload.WithObject("Details", m_details.Jsonize());
+
+  }
+
+  if(m_applicationNameHasBeenSet)
+  {
+   payload.WithString("ApplicationName", m_applicationName);
+
+  }
+
+  if(m_applicationArnHasBeenSet)
+  {
+   payload.WithString("ApplicationArn", m_applicationArn);
 
   }
 

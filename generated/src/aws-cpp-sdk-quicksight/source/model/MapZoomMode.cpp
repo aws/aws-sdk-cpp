@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MapZoomMode::NOT_SET:
+            return {};
           case MapZoomMode::AUTO:
             return "AUTO";
           case MapZoomMode::MANUAL:

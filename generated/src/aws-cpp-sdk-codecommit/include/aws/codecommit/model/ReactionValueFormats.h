@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the values for reactions to a comment. AWS CodeCommit
-   * supports a limited set of reactions.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the values for reactions to a comment. CodeCommit supports
+   * a limited set of reactions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ReactionValueFormats">AWS
    * API Reference</a></p>
    */

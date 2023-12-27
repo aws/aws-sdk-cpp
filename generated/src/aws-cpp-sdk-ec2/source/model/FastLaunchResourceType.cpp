@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FastLaunchResourceType::NOT_SET:
+            return {};
           case FastLaunchResourceType::snapshot:
             return "snapshot";
           default:

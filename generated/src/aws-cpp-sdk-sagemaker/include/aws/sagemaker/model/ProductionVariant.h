@@ -10,6 +10,8 @@
 #include <aws/sagemaker/model/ProductionVariantAcceleratorType.h>
 #include <aws/sagemaker/model/ProductionVariantCoreDumpConfig.h>
 #include <aws/sagemaker/model/ProductionVariantServerlessConfig.h>
+#include <aws/sagemaker/model/ProductionVariantManagedInstanceScaling.h>
+#include <aws/sagemaker/model/ProductionVariantRoutingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -485,6 +487,80 @@ namespace Model
      */
     inline ProductionVariant& WithEnableSSMAccess(bool value) { SetEnableSSMAccess(value); return *this;}
 
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline const ProductionVariantManagedInstanceScaling& GetManagedInstanceScaling() const{ return m_managedInstanceScaling; }
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline bool ManagedInstanceScalingHasBeenSet() const { return m_managedInstanceScalingHasBeenSet; }
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline void SetManagedInstanceScaling(const ProductionVariantManagedInstanceScaling& value) { m_managedInstanceScalingHasBeenSet = true; m_managedInstanceScaling = value; }
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline void SetManagedInstanceScaling(ProductionVariantManagedInstanceScaling&& value) { m_managedInstanceScalingHasBeenSet = true; m_managedInstanceScaling = std::move(value); }
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline ProductionVariant& WithManagedInstanceScaling(const ProductionVariantManagedInstanceScaling& value) { SetManagedInstanceScaling(value); return *this;}
+
+    /**
+     * <p>Settings that control the range in the number of instances that the endpoint
+     * provisions as it scales up or down to accommodate traffic. </p>
+     */
+    inline ProductionVariant& WithManagedInstanceScaling(ProductionVariantManagedInstanceScaling&& value) { SetManagedInstanceScaling(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline const ProductionVariantRoutingConfig& GetRoutingConfig() const{ return m_routingConfig; }
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline bool RoutingConfigHasBeenSet() const { return m_routingConfigHasBeenSet; }
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline void SetRoutingConfig(const ProductionVariantRoutingConfig& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline void SetRoutingConfig(ProductionVariantRoutingConfig&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::move(value); }
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline ProductionVariant& WithRoutingConfig(const ProductionVariantRoutingConfig& value) { SetRoutingConfig(value); return *this;}
+
+    /**
+     * <p>Settings that control how the endpoint routes incoming traffic to the
+     * instances that the endpoint hosts.</p>
+     */
+    inline ProductionVariant& WithRoutingConfig(ProductionVariantRoutingConfig&& value) { SetRoutingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_variantName;
@@ -522,6 +598,12 @@ namespace Model
 
     bool m_enableSSMAccess;
     bool m_enableSSMAccessHasBeenSet = false;
+
+    ProductionVariantManagedInstanceScaling m_managedInstanceScaling;
+    bool m_managedInstanceScalingHasBeenSet = false;
+
+    ProductionVariantRoutingConfig m_routingConfig;
+    bool m_routingConfigHasBeenSet = false;
   };
 
 } // namespace Model

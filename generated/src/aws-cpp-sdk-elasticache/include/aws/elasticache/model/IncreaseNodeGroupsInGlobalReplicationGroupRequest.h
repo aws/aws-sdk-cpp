@@ -80,22 +80,22 @@ namespace Model
 
 
     /**
-     * <p>The number of node groups you wish to add</p>
+     * <p>Total number of node groups you want</p>
      */
     inline int GetNodeGroupCount() const{ return m_nodeGroupCount; }
 
     /**
-     * <p>The number of node groups you wish to add</p>
+     * <p>Total number of node groups you want</p>
      */
     inline bool NodeGroupCountHasBeenSet() const { return m_nodeGroupCountHasBeenSet; }
 
     /**
-     * <p>The number of node groups you wish to add</p>
+     * <p>Total number of node groups you want</p>
      */
     inline void SetNodeGroupCount(int value) { m_nodeGroupCountHasBeenSet = true; m_nodeGroupCount = value; }
 
     /**
-     * <p>The number of node groups you wish to add</p>
+     * <p>Total number of node groups you want</p>
      */
     inline IncreaseNodeGroupsInGlobalReplicationGroupRequest& WithNodeGroupCount(int value) { SetNodeGroupCount(value); return *this;}
 

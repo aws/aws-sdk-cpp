@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComponentUpdateType::NOT_SET:
+            return {};
           case ComponentUpdateType::CREATE:
             return "CREATE";
           case ComponentUpdateType::UPDATE:

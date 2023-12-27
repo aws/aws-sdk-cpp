@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileType::NOT_SET:
+            return {};
           case FileType::CSV:
             return "CSV";
           case FileType::JSON:

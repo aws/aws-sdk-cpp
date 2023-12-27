@@ -139,5 +139,8 @@ ListObjectVersionsRequest::EndpointParameters ListObjectVersionsRequest::GetEndp
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
     }
+    if (PrefixHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Prefix"), this->GetPrefix(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
     return parameters;
 }

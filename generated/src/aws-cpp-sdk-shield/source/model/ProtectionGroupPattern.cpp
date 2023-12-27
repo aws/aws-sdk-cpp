@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtectionGroupPattern::NOT_SET:
+            return {};
           case ProtectionGroupPattern::ALL:
             return "ALL";
           case ProtectionGroupPattern::ARBITRARY:

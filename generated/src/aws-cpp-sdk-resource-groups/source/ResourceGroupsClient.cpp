@@ -23,6 +23,7 @@
 #include <aws/resource-groups/ResourceGroupsEndpointProvider.h>
 #include <aws/resource-groups/model/CreateGroupRequest.h>
 #include <aws/resource-groups/model/DeleteGroupRequest.h>
+#include <aws/resource-groups/model/GetAccountSettingsRequest.h>
 #include <aws/resource-groups/model/GetGroupRequest.h>
 #include <aws/resource-groups/model/GetGroupConfigurationRequest.h>
 #include <aws/resource-groups/model/GetGroupQueryRequest.h>
@@ -225,33 +226,31 @@ DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& r
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
-GetAccountSettingsOutcome ResourceGroupsClient::GetAccountSettings() const
+GetAccountSettingsOutcome ResourceGroupsClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
-AWS_OPERATION_GUARD(GetAccountSettings);
+  AWS_OPERATION_GUARD(GetAccountSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAccountSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetAccountSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetAccountSettings",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, "GetAccountSettings" }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAccountSettingsOutcome>(
     [&]()-> GetAccountSettingsOutcome {
-
-        AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-        const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(staticEndpointParameters); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-            *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, "GetAccountSettings"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/get-account-settings");
-      return GetAccountSettingsOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "GetAccountSettings"));
+      return GetAccountSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, "GetAccountSettings"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) const

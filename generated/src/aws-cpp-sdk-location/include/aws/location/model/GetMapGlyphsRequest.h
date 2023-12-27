@@ -40,7 +40,7 @@ namespace Model
 
     /**
      * <p>A comma-separated list of fonts to load glyphs from in order of preference.
-     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font
      * stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
@@ -89,7 +89,7 @@ namespace Model
 
     /**
      * <p>A comma-separated list of fonts to load glyphs from in order of preference.
-     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font
      * stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
@@ -138,7 +138,7 @@ namespace Model
 
     /**
      * <p>A comma-separated list of fonts to load glyphs from in order of preference.
-     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font
      * stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
@@ -187,7 +187,7 @@ namespace Model
 
     /**
      * <p>A comma-separated list of fonts to load glyphs from in order of preference.
-     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font
      * stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
@@ -236,7 +236,7 @@ namespace Model
 
     /**
      * <p>A comma-separated list of fonts to load glyphs from in order of preference.
-     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font
      * stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
@@ -285,7 +285,7 @@ namespace Model
 
     /**
      * <p>A comma-separated list of fonts to load glyphs from in order of preference.
-     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font
      * stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
@@ -334,7 +334,7 @@ namespace Model
 
     /**
      * <p>A comma-separated list of fonts to load glyphs from in order of preference.
-     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font
      * stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
@@ -383,7 +383,7 @@ namespace Model
 
     /**
      * <p>A comma-separated list of fonts to load glyphs from in order of preference.
-     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font
      * stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte35DeviceRestrictions::NOT_SET:
+            return {};
           case Scte35DeviceRestrictions::NONE:
             return "NONE";
           case Scte35DeviceRestrictions::RESTRICT_GROUP0:

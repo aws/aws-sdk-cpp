@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CommitmentLength::NOT_SET:
+            return {};
           case CommitmentLength::SIXTY_DAYS:
             return "SIXTY_DAYS";
           case CommitmentLength::ONE_YEAR:

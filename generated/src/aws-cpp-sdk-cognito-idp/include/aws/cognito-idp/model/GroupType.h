@@ -276,63 +276,87 @@ namespace Model
 
 
     /**
-     * <p>The date the group was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * <p>The date the group was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
-     * <p>The date the group was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * <p>The date the group was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * <p>The date the group was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline GroupType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * <p>The date the group was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline GroupType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date the group was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date the group was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date the group was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date the group was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date the group was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline GroupType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date the group was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline GroupType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 

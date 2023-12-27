@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceAttributeType::NOT_SET:
+            return {};
           case InstanceAttributeType::INBOUND_CALLS:
             return "INBOUND_CALLS";
           case InstanceAttributeType::OUTBOUND_CALLS:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingPublishingFrequency::NOT_SET:
+            return {};
           case FindingPublishingFrequency::FIFTEEN_MINUTES:
             return "FIFTEEN_MINUTES";
           case FindingPublishingFrequency::ONE_HOUR:

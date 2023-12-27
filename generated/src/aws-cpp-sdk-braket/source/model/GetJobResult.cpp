@@ -39,6 +39,15 @@ GetJobResult& GetJobResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   }
 
+  if(jsonValue.ValueExists("associations"))
+  {
+    Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("associations");
+    for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
+    {
+      m_associations.push_back(associationsJsonList[associationsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("billableDuration"))
   {
     m_billableDuration = jsonValue.GetInteger("billableDuration");
@@ -123,6 +132,12 @@ GetJobResult& GetJobResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("outputDataConfig"))
   {
     m_outputDataConfig = jsonValue.GetObject("outputDataConfig");
+
+  }
+
+  if(jsonValue.ValueExists("queueInfo"))
+  {
+    m_queueInfo = jsonValue.GetObject("queueInfo");
 
   }
 

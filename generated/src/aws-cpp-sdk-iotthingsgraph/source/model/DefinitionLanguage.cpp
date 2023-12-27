@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefinitionLanguage::NOT_SET:
+            return {};
           case DefinitionLanguage::GRAPHQL:
             return "GRAPHQL";
           default:

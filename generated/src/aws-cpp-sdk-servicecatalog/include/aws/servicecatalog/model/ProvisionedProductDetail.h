@@ -123,49 +123,65 @@ namespace Model
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     * <code>EXTERNAL</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     * <code>EXTERNAL</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     * <code>EXTERNAL</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     * <code>EXTERNAL</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     * <code>EXTERNAL</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     * <code>EXTERNAL</code>.</p>
      */
     inline ProvisionedProductDetail& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     * <code>EXTERNAL</code>.</p>
      */
     inline ProvisionedProductDetail& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     * <code>EXTERNAL</code>.</p>
      */
     inline ProvisionedProductDetail& WithType(const char* value) { SetType(value); return *this;}
 
@@ -518,7 +534,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -527,7 +543,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -536,7 +552,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -545,7 +561,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -554,7 +570,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -563,7 +579,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -572,7 +588,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -581,7 +597,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -591,7 +607,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -600,7 +616,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -609,7 +625,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -618,7 +634,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -627,7 +643,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -636,7 +652,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -645,7 +661,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -654,7 +670,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>

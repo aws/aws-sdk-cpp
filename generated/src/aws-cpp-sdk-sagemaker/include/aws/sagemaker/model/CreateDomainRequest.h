@@ -9,10 +9,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/UserSettings.h>
+#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
-#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -182,95 +182,126 @@ namespace Model
 
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline bool DomainSettingsHasBeenSet() const { return m_domainSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = value; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = std::move(value); }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline CreateDomainRequest& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline CreateDomainRequest& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline CreateDomainRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline CreateDomainRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The VPC subnets that Studio uses for communication.</p>
+     * <p>The VPC subnets that the domain uses for communication.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline CreateDomainRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline CreateDomainRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
     inline CreateDomainRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
@@ -346,8 +377,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
 
@@ -356,8 +387,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline bool AppNetworkAccessTypeHasBeenSet() const { return m_appNetworkAccessTypeHasBeenSet; }
 
@@ -366,8 +397,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = value; }
 
@@ -376,8 +407,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = std::move(value); }
 
@@ -386,8 +417,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline CreateDomainRequest& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
 
@@ -396,8 +427,8 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
      * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
-     * subnets</p> </li> </ul>
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
+     * </li> </ul>
      */
     inline CreateDomainRequest& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
 
@@ -521,37 +552,6 @@ namespace Model
 
 
     /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline bool DomainSettingsHasBeenSet() const { return m_domainSettingsHasBeenSet; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = value; }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = std::move(value); }
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline CreateDomainRequest& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
-
-    /**
-     * <p>A collection of <code>Domain</code> settings.</p>
-     */
-    inline CreateDomainRequest& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
-
-
-    /**
      * <p>The default settings used to create a space.</p>
      */
     inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
@@ -592,6 +592,9 @@ namespace Model
     UserSettings m_defaultUserSettings;
     bool m_defaultUserSettingsHasBeenSet = false;
 
+    DomainSettings m_domainSettings;
+    bool m_domainSettingsHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
 
@@ -609,9 +612,6 @@ namespace Model
 
     AppSecurityGroupManagement m_appSecurityGroupManagement;
     bool m_appSecurityGroupManagementHasBeenSet = false;
-
-    DomainSettings m_domainSettings;
-    bool m_domainSettingsHasBeenSet = false;
 
     DefaultSpaceSettings m_defaultSpaceSettings;
     bool m_defaultSpaceSettingsHasBeenSet = false;

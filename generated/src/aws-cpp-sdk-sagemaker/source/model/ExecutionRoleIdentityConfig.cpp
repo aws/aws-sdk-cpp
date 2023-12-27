@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionRoleIdentityConfig::NOT_SET:
+            return {};
           case ExecutionRoleIdentityConfig::USER_PROFILE_NAME:
             return "USER_PROFILE_NAME";
           case ExecutionRoleIdentityConfig::DISABLED:

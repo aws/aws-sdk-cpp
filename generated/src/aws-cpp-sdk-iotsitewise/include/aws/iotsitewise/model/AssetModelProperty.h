@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/PropertyDataType.h>
 #include <aws/iotsitewise/model/PropertyType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotsitewise/model/AssetModelPropertyPathSegment.h>
 #include <utility>
 
 namespace Aws
@@ -41,42 +43,138 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset model property.</p>
+     * <p>The ID of the asset model property.</p> <ul> <li> <p>If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     * SiteWise automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p> </li> <li> <p>If you are calling UpdateAssetModel to modify an
+     * <i>existing</i> property: This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the asset model property.</p>
+     * <p>The ID of the asset model property.</p> <ul> <li> <p>If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     * SiteWise automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p> </li> <li> <p>If you are calling UpdateAssetModel to modify an
+     * <i>existing</i> property: This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p> </li>
+     * </ul>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the asset model property.</p>
+     * <p>The ID of the asset model property.</p> <ul> <li> <p>If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     * SiteWise automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p> </li> <li> <p>If you are calling UpdateAssetModel to modify an
+     * <i>existing</i> property: This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the asset model property.</p>
+     * <p>The ID of the asset model property.</p> <ul> <li> <p>If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     * SiteWise automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p> </li> <li> <p>If you are calling UpdateAssetModel to modify an
+     * <i>existing</i> property: This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the asset model property.</p>
+     * <p>The ID of the asset model property.</p> <ul> <li> <p>If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     * SiteWise automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p> </li> <li> <p>If you are calling UpdateAssetModel to modify an
+     * <i>existing</i> property: This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the asset model property.</p>
+     * <p>The ID of the asset model property.</p> <ul> <li> <p>If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     * SiteWise automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p> </li> <li> <p>If you are calling UpdateAssetModel to modify an
+     * <i>existing</i> property: This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p> </li>
+     * </ul>
      */
     inline AssetModelProperty& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the asset model property.</p>
+     * <p>The ID of the asset model property.</p> <ul> <li> <p>If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     * SiteWise automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p> </li> <li> <p>If you are calling UpdateAssetModel to modify an
+     * <i>existing</i> property: This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p> </li>
+     * </ul>
      */
     inline AssetModelProperty& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset model property.</p>
+     * <p>The ID of the asset model property.</p> <ul> <li> <p>If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     * SiteWise automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p> </li> <li> <p>If you are calling UpdateAssetModel to modify an
+     * <i>existing</i> property: This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p> </li>
+     * </ul>
      */
     inline AssetModelProperty& WithId(const char* value) { SetId(value); return *this;}
 
@@ -281,6 +379,168 @@ namespace Model
      */
     inline AssetModelProperty& WithType(PropertyType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The structured path to the property from the root of the asset model.</p>
+     */
+    inline const Aws::Vector<AssetModelPropertyPathSegment>& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The structured path to the property from the root of the asset model.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The structured path to the property from the root of the asset model.</p>
+     */
+    inline void SetPath(const Aws::Vector<AssetModelPropertyPathSegment>& value) { m_pathHasBeenSet = true; m_path = value; }
+
+    /**
+     * <p>The structured path to the property from the root of the asset model.</p>
+     */
+    inline void SetPath(Aws::Vector<AssetModelPropertyPathSegment>&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
+
+    /**
+     * <p>The structured path to the property from the root of the asset model.</p>
+     */
+    inline AssetModelProperty& WithPath(const Aws::Vector<AssetModelPropertyPathSegment>& value) { SetPath(value); return *this;}
+
+    /**
+     * <p>The structured path to the property from the root of the asset model.</p>
+     */
+    inline AssetModelProperty& WithPath(Aws::Vector<AssetModelPropertyPathSegment>&& value) { SetPath(std::move(value)); return *this;}
+
+    /**
+     * <p>The structured path to the property from the root of the asset model.</p>
+     */
+    inline AssetModelProperty& AddPath(const AssetModelPropertyPathSegment& value) { m_pathHasBeenSet = true; m_path.push_back(value); return *this; }
+
+    /**
+     * <p>The structured path to the property from the root of the asset model.</p>
+     */
+    inline AssetModelProperty& AddPath(AssetModelPropertyPathSegment&& value) { m_pathHasBeenSet = true; m_path.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * operation. You can assign an external ID by specifying this value as part of a
+     * call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * operation. You can assign an external ID by specifying this value as part of a
+     * call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * operation. You can assign an external ID by specifying this value as part of a
+     * call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * operation. You can assign an external ID by specifying this value as part of a
+     * call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * operation. You can assign an external ID by specifying this value as part of a
+     * call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * operation. You can assign an external ID by specifying this value as part of a
+     * call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetModelProperty& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * operation. You can assign an external ID by specifying this value as part of a
+     * call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetModelProperty& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
+     * operation. You can assign an external ID by specifying this value as part of a
+     * call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetModelProperty& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -300,6 +560,12 @@ namespace Model
 
     PropertyType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::Vector<AssetModelPropertyPathSegment> m_path;
+    bool m_pathHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

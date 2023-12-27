@@ -37,7 +37,9 @@ Workspace::Workspace() :
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
     m_modificationStatesHasBeenSet(false),
-    m_relatedWorkspacesHasBeenSet(false)
+    m_relatedWorkspacesHasBeenSet(false),
+    m_dataReplicationSettingsHasBeenSet(false),
+    m_standbyWorkspacesPropertiesHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ Workspace::Workspace(JsonView jsonValue) :
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
     m_modificationStatesHasBeenSet(false),
-    m_relatedWorkspacesHasBeenSet(false)
+    m_relatedWorkspacesHasBeenSet(false),
+    m_dataReplicationSettingsHasBeenSet(false),
+    m_standbyWorkspacesPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -185,6 +189,23 @@ Workspace& Workspace::operator =(JsonView jsonValue)
     m_relatedWorkspacesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataReplicationSettings"))
+  {
+    m_dataReplicationSettings = jsonValue.GetObject("DataReplicationSettings");
+
+    m_dataReplicationSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StandbyWorkspacesProperties"))
+  {
+    Aws::Utils::Array<JsonView> standbyWorkspacesPropertiesJsonList = jsonValue.GetArray("StandbyWorkspacesProperties");
+    for(unsigned standbyWorkspacesPropertiesIndex = 0; standbyWorkspacesPropertiesIndex < standbyWorkspacesPropertiesJsonList.GetLength(); ++standbyWorkspacesPropertiesIndex)
+    {
+      m_standbyWorkspacesProperties.push_back(standbyWorkspacesPropertiesJsonList[standbyWorkspacesPropertiesIndex].AsObject());
+    }
+    m_standbyWorkspacesPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -294,6 +315,23 @@ JsonValue Workspace::Jsonize() const
      relatedWorkspacesJsonList[relatedWorkspacesIndex].AsObject(m_relatedWorkspaces[relatedWorkspacesIndex].Jsonize());
    }
    payload.WithArray("RelatedWorkspaces", std::move(relatedWorkspacesJsonList));
+
+  }
+
+  if(m_dataReplicationSettingsHasBeenSet)
+  {
+   payload.WithObject("DataReplicationSettings", m_dataReplicationSettings.Jsonize());
+
+  }
+
+  if(m_standbyWorkspacesPropertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> standbyWorkspacesPropertiesJsonList(m_standbyWorkspacesProperties.size());
+   for(unsigned standbyWorkspacesPropertiesIndex = 0; standbyWorkspacesPropertiesIndex < standbyWorkspacesPropertiesJsonList.GetLength(); ++standbyWorkspacesPropertiesIndex)
+   {
+     standbyWorkspacesPropertiesJsonList[standbyWorkspacesPropertiesIndex].AsObject(m_standbyWorkspacesProperties[standbyWorkspacesPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("StandbyWorkspacesProperties", std::move(standbyWorkspacesPropertiesJsonList));
 
   }
 

@@ -184,7 +184,7 @@ namespace Model
 
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-     * <p>If you don't specify the media sample rate, Amazon Transcribe Medical
+     * <p>If you do not specify the media sample rate, Amazon Transcribe Medical
      * determines it for you. If you specify the sample rate, it must match the rate
      * detected by Amazon Transcribe Medical; if there's a mismatch between the value
      * that you specify and the value detected, your job fails. Therefore, in most
@@ -195,7 +195,7 @@ namespace Model
 
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-     * <p>If you don't specify the media sample rate, Amazon Transcribe Medical
+     * <p>If you do not specify the media sample rate, Amazon Transcribe Medical
      * determines it for you. If you specify the sample rate, it must match the rate
      * detected by Amazon Transcribe Medical; if there's a mismatch between the value
      * that you specify and the value detected, your job fails. Therefore, in most
@@ -206,7 +206,7 @@ namespace Model
 
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-     * <p>If you don't specify the media sample rate, Amazon Transcribe Medical
+     * <p>If you do not specify the media sample rate, Amazon Transcribe Medical
      * determines it for you. If you specify the sample rate, it must match the rate
      * detected by Amazon Transcribe Medical; if there's a mismatch between the value
      * that you specify and the value detected, your job fails. Therefore, in most
@@ -217,7 +217,7 @@ namespace Model
 
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-     * <p>If you don't specify the media sample rate, Amazon Transcribe Medical
+     * <p>If you do not specify the media sample rate, Amazon Transcribe Medical
      * determines it for you. If you specify the sample rate, it must match the rate
      * detected by Amazon Transcribe Medical; if there's a mismatch between the value
      * that you specify and the value detected, your job fails. Therefore, in most
@@ -696,7 +696,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -721,7 +721,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -746,7 +746,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -771,7 +771,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -796,7 +796,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -821,7 +821,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -846,7 +846,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -871,7 +871,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the

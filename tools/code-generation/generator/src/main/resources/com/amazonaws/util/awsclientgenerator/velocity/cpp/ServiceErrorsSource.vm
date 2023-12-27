@@ -68,6 +68,13 @@ because MSVC has a maximum of 122 chained if-else blocks.
 #if ($errorCounter % 122 == 0)
 #set($elseText = "")
 #set ($helperIndex =  $errorCounter / 122)
+#if ($error.throttling && $error.retryable)
+#set($retryableType = "RetryableType::RETRYABLE_TRHOTTLING")
+#elseif ($error.retryable)
+#set($retryableType = "RetryableType::RETRYABLE")
+#else
+#set($retryableType = "RetryableType::NOT_RETRYABLE")
+#end
 
 static bool GetErrorForNameHelper${helperIndex}(int hashCode, AWSError<CoreErrors>& error)
 {
@@ -75,7 +82,7 @@ static bool GetErrorForNameHelper${helperIndex}(int hashCode, AWSError<CoreError
 #set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
   ${elseText}if (hashCode == ${constName}_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(${metadata.classNamePrefix}Errors::$constName), ${error.retryable});
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(${metadata.classNamePrefix}Errors::$constName), ${retryableType});
     return true;
   }
 #set($elseText = "else ")
@@ -94,10 +101,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   int hashCode = HashingUtils::HashString(errorName);
 
 #foreach($error in $nonCoreServiceErrors)
+#if ($error.throttling && $error.retryable)
+#set($retryableType = "RetryableType::RETRYABLE_THROTTLING")
+#elseif ($error.retryable)
+#set($retryableType = "RetryableType::RETRYABLE")
+#else
+#set($retryableType = "RetryableType::NOT_RETRYABLE")
+#end
 #set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
   ${elseText}if (hashCode == ${constName}_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(${metadata.classNamePrefix}Errors::$constName), ${error.retryable});
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(${metadata.classNamePrefix}Errors::$constName), ${retryableType});
   }
 #set($elseText = "else ")
 #end

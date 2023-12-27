@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VoiceRecordingTrack::NOT_SET:
+            return {};
           case VoiceRecordingTrack::FROM_AGENT:
             return "FROM_AGENT";
           case VoiceRecordingTrack::TO_AGENT:

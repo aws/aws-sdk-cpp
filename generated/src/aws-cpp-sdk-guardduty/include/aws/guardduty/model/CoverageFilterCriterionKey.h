@@ -20,7 +20,13 @@ namespace Model
     CLUSTER_NAME,
     RESOURCE_TYPE,
     COVERAGE_STATUS,
-    ADDON_VERSION
+    ADDON_VERSION,
+    MANAGEMENT_TYPE,
+    EKS_CLUSTER_NAME,
+    ECS_CLUSTER_NAME,
+    AGENT_VERSION,
+    INSTANCE_ID,
+    CLUSTER_ARN
   };
 
 namespace CoverageFilterCriterionKeyMapper

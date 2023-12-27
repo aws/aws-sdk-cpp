@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Resources used to host your game servers. A compute resource can be managed
-   * Amazon GameLift Amazon EC2 instances or your own resources.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An Amazon GameLift compute resource for hosting your game servers. A compute
+   * can be an EC2instance in a managed EC2 fleet or a registered compute in an
+   * Anywhere fleet. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Compute">AWS
    * API Reference</a></p>
    */
@@ -44,287 +44,287 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
+     * <p>A unique identifier for the fleet that the compute belongs to.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
+     * <p>A unique identifier for the fleet that the compute belongs to.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
+     * <p>A unique identifier for the fleet that the compute belongs to.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
+     * <p>A unique identifier for the fleet that the compute belongs to.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
+     * <p>A unique identifier for the fleet that the compute belongs to.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
+     * <p>A unique identifier for the fleet that the compute belongs to.</p>
      */
     inline Compute& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
+     * <p>A unique identifier for the fleet that the compute belongs to.</p>
      */
     inline Compute& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
+     * <p>A unique identifier for the fleet that the compute belongs to.</p>
      */
     inline Compute& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered
-     * to.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered
-     * to.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
      */
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered
-     * to.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered
-     * to.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered
-     * to.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered
-     * to.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
      */
     inline Compute& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered
-     * to.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
      */
     inline Compute& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered
-     * to.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet that the compute belongs to.</p>
      */
     inline Compute& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
 
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource. For instances in a managed EC2
+     * fleet, the compute name is an instance ID.</p>
      */
     inline const Aws::String& GetComputeName() const{ return m_computeName; }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource. For instances in a managed EC2
+     * fleet, the compute name is an instance ID.</p>
      */
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource. For instances in a managed EC2
+     * fleet, the compute name is an instance ID.</p>
      */
     inline void SetComputeName(const Aws::String& value) { m_computeNameHasBeenSet = true; m_computeName = value; }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource. For instances in a managed EC2
+     * fleet, the compute name is an instance ID.</p>
      */
     inline void SetComputeName(Aws::String&& value) { m_computeNameHasBeenSet = true; m_computeName = std::move(value); }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource. For instances in a managed EC2
+     * fleet, the compute name is an instance ID.</p>
      */
     inline void SetComputeName(const char* value) { m_computeNameHasBeenSet = true; m_computeName.assign(value); }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource. For instances in a managed EC2
+     * fleet, the compute name is an instance ID.</p>
      */
     inline Compute& WithComputeName(const Aws::String& value) { SetComputeName(value); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource. For instances in a managed EC2
+     * fleet, the compute name is an instance ID.</p>
      */
     inline Compute& WithComputeName(Aws::String&& value) { SetComputeName(std::move(value)); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource. For instances in a managed EC2
+     * fleet, the compute name is an instance ID.</p>
      */
     inline Compute& WithComputeName(const char* value) { SetComputeName(value); return *this;}
 
 
     /**
-     * <p>The ARN that is assigned to the compute resource and uniquely identifies it.
-     * ARNs are unique across locations.</p>
+     * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
+     * ARNs are unique across locations. Instances in managed EC2 fleets are not
+     * assigned a ComputeARN.</p>
      */
     inline const Aws::String& GetComputeArn() const{ return m_computeArn; }
 
     /**
-     * <p>The ARN that is assigned to the compute resource and uniquely identifies it.
-     * ARNs are unique across locations.</p>
+     * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
+     * ARNs are unique across locations. Instances in managed EC2 fleets are not
+     * assigned a ComputeARN.</p>
      */
     inline bool ComputeArnHasBeenSet() const { return m_computeArnHasBeenSet; }
 
     /**
-     * <p>The ARN that is assigned to the compute resource and uniquely identifies it.
-     * ARNs are unique across locations.</p>
+     * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
+     * ARNs are unique across locations. Instances in managed EC2 fleets are not
+     * assigned a ComputeARN.</p>
      */
     inline void SetComputeArn(const Aws::String& value) { m_computeArnHasBeenSet = true; m_computeArn = value; }
 
     /**
-     * <p>The ARN that is assigned to the compute resource and uniquely identifies it.
-     * ARNs are unique across locations.</p>
+     * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
+     * ARNs are unique across locations. Instances in managed EC2 fleets are not
+     * assigned a ComputeARN.</p>
      */
     inline void SetComputeArn(Aws::String&& value) { m_computeArnHasBeenSet = true; m_computeArn = std::move(value); }
 
     /**
-     * <p>The ARN that is assigned to the compute resource and uniquely identifies it.
-     * ARNs are unique across locations.</p>
+     * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
+     * ARNs are unique across locations. Instances in managed EC2 fleets are not
+     * assigned a ComputeARN.</p>
      */
     inline void SetComputeArn(const char* value) { m_computeArnHasBeenSet = true; m_computeArn.assign(value); }
 
     /**
-     * <p>The ARN that is assigned to the compute resource and uniquely identifies it.
-     * ARNs are unique across locations.</p>
+     * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
+     * ARNs are unique across locations. Instances in managed EC2 fleets are not
+     * assigned a ComputeARN.</p>
      */
     inline Compute& WithComputeArn(const Aws::String& value) { SetComputeArn(value); return *this;}
 
     /**
-     * <p>The ARN that is assigned to the compute resource and uniquely identifies it.
-     * ARNs are unique across locations.</p>
+     * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
+     * ARNs are unique across locations. Instances in managed EC2 fleets are not
+     * assigned a ComputeARN.</p>
      */
     inline Compute& WithComputeArn(Aws::String&& value) { SetComputeArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN that is assigned to the compute resource and uniquely identifies it.
-     * ARNs are unique across locations.</p>
+     * <p>The ARN that is assigned to a compute resource and uniquely identifies it.
+     * ARNs are unique across locations. Instances in managed EC2 fleets are not
+     * assigned a ComputeARN.</p>
      */
     inline Compute& WithComputeArn(const char* value) { SetComputeArn(value); return *this;}
 
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or
+     * IP address for a compute.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or
+     * IP address for a compute.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or
+     * IP address for a compute.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or
+     * IP address for a compute.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or
+     * IP address for a compute.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or
+     * IP address for a compute.</p>
      */
     inline Compute& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or
+     * IP address for a compute.</p>
      */
     inline Compute& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of a compute resource. Amazon GameLift requires a DNS name or
+     * IP address for a compute.</p>
      */
     inline Compute& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP
+     * address for a compute.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP
+     * address for a compute.</p>
      */
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP
+     * address for a compute.</p>
      */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP
+     * address for a compute.</p>
      */
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP
+     * address for a compute.</p>
      */
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP
+     * address for a compute.</p>
      */
     inline Compute& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP
+     * address for a compute.</p>
      */
     inline Compute& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of a compute resource. Amazon GameLift requires a DNS name or IP
+     * address for a compute.</p>
      */
     inline Compute& WithDnsName(const char* value) { SetDnsName(value); return *this;}
 
@@ -459,118 +459,126 @@ namespace Model
 
 
     /**
-     * <p>The type of operating system on your compute resource.</p>
+     * <p>The type of operating system on the compute resource.</p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
-     * <p>The type of operating system on your compute resource.</p>
+     * <p>The type of operating system on the compute resource.</p>
      */
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
-     * <p>The type of operating system on your compute resource.</p>
+     * <p>The type of operating system on the compute resource.</p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>The type of operating system on your compute resource.</p>
+     * <p>The type of operating system on the compute resource.</p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
-     * <p>The type of operating system on your compute resource.</p>
+     * <p>The type of operating system on the compute resource.</p>
      */
     inline Compute& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
-     * <p>The type of operating system on your compute resource.</p>
+     * <p>The type of operating system on the compute resource.</p>
      */
     inline Compute& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
 
     /**
-     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources that you own, or use managed Amazon EC2 instances.</p>
+     * <p>The Amazon EC2 instance type that the fleet uses. For registered computes in
+     * an Amazon GameLift Anywhere fleet, this property is empty. </p>
      */
     inline const EC2InstanceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources that you own, or use managed Amazon EC2 instances.</p>
+     * <p>The Amazon EC2 instance type that the fleet uses. For registered computes in
+     * an Amazon GameLift Anywhere fleet, this property is empty. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources that you own, or use managed Amazon EC2 instances.</p>
+     * <p>The Amazon EC2 instance type that the fleet uses. For registered computes in
+     * an Amazon GameLift Anywhere fleet, this property is empty. </p>
      */
     inline void SetType(const EC2InstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources that you own, or use managed Amazon EC2 instances.</p>
+     * <p>The Amazon EC2 instance type that the fleet uses. For registered computes in
+     * an Amazon GameLift Anywhere fleet, this property is empty. </p>
      */
     inline void SetType(EC2InstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources that you own, or use managed Amazon EC2 instances.</p>
+     * <p>The Amazon EC2 instance type that the fleet uses. For registered computes in
+     * an Amazon GameLift Anywhere fleet, this property is empty. </p>
      */
     inline Compute& WithType(const EC2InstanceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources that you own, or use managed Amazon EC2 instances.</p>
+     * <p>The Amazon EC2 instance type that the fleet uses. For registered computes in
+     * an Amazon GameLift Anywhere fleet, this property is empty. </p>
      */
     inline Compute& WithType(EC2InstanceType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
-     * game server connects to.</p>
+     * <p>The Amazon GameLift SDK endpoint connection for a registered compute resource
+     * in an Anywhere fleet. The game servers on the compute use this endpoint to
+     * connect to the Amazon GameLift service.</p>
      */
     inline const Aws::String& GetGameLiftServiceSdkEndpoint() const{ return m_gameLiftServiceSdkEndpoint; }
 
     /**
-     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
-     * game server connects to.</p>
+     * <p>The Amazon GameLift SDK endpoint connection for a registered compute resource
+     * in an Anywhere fleet. The game servers on the compute use this endpoint to
+     * connect to the Amazon GameLift service.</p>
      */
     inline bool GameLiftServiceSdkEndpointHasBeenSet() const { return m_gameLiftServiceSdkEndpointHasBeenSet; }
 
     /**
-     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
-     * game server connects to.</p>
+     * <p>The Amazon GameLift SDK endpoint connection for a registered compute resource
+     * in an Anywhere fleet. The game servers on the compute use this endpoint to
+     * connect to the Amazon GameLift service.</p>
      */
     inline void SetGameLiftServiceSdkEndpoint(const Aws::String& value) { m_gameLiftServiceSdkEndpointHasBeenSet = true; m_gameLiftServiceSdkEndpoint = value; }
 
     /**
-     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
-     * game server connects to.</p>
+     * <p>The Amazon GameLift SDK endpoint connection for a registered compute resource
+     * in an Anywhere fleet. The game servers on the compute use this endpoint to
+     * connect to the Amazon GameLift service.</p>
      */
     inline void SetGameLiftServiceSdkEndpoint(Aws::String&& value) { m_gameLiftServiceSdkEndpointHasBeenSet = true; m_gameLiftServiceSdkEndpoint = std::move(value); }
 
     /**
-     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
-     * game server connects to.</p>
+     * <p>The Amazon GameLift SDK endpoint connection for a registered compute resource
+     * in an Anywhere fleet. The game servers on the compute use this endpoint to
+     * connect to the Amazon GameLift service.</p>
      */
     inline void SetGameLiftServiceSdkEndpoint(const char* value) { m_gameLiftServiceSdkEndpointHasBeenSet = true; m_gameLiftServiceSdkEndpoint.assign(value); }
 
     /**
-     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
-     * game server connects to.</p>
+     * <p>The Amazon GameLift SDK endpoint connection for a registered compute resource
+     * in an Anywhere fleet. The game servers on the compute use this endpoint to
+     * connect to the Amazon GameLift service.</p>
      */
     inline Compute& WithGameLiftServiceSdkEndpoint(const Aws::String& value) { SetGameLiftServiceSdkEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
-     * game server connects to.</p>
+     * <p>The Amazon GameLift SDK endpoint connection for a registered compute resource
+     * in an Anywhere fleet. The game servers on the compute use this endpoint to
+     * connect to the Amazon GameLift service.</p>
      */
     inline Compute& WithGameLiftServiceSdkEndpoint(Aws::String&& value) { SetGameLiftServiceSdkEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
-     * game server connects to.</p>
+     * <p>The Amazon GameLift SDK endpoint connection for a registered compute resource
+     * in an Anywhere fleet. The game servers on the compute use this endpoint to
+     * connect to the Amazon GameLift service.</p>
      */
     inline Compute& WithGameLiftServiceSdkEndpoint(const char* value) { SetGameLiftServiceSdkEndpoint(value); return *this;}
 

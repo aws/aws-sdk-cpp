@@ -27,7 +27,8 @@ MemberSummary::MemberSummary() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false)
+    m_membershipArnHasBeenSet(false),
+    m_paymentConfigurationHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ MemberSummary::MemberSummary(JsonView jsonValue) :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false)
+    m_membershipArnHasBeenSet(false),
+    m_paymentConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +108,13 @@ MemberSummary& MemberSummary::operator =(JsonView jsonValue)
     m_membershipArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("paymentConfiguration"))
+  {
+    m_paymentConfiguration = jsonValue.GetObject("paymentConfiguration");
+
+    m_paymentConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,6 +169,12 @@ JsonValue MemberSummary::Jsonize() const
   if(m_membershipArnHasBeenSet)
   {
    payload.WithString("membershipArn", m_membershipArn);
+
+  }
+
+  if(m_paymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
 
   }
 

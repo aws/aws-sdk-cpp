@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountLevelBpaSyncStatus::NOT_SET:
+            return {};
           case AccountLevelBpaSyncStatus::InSync:
             return "InSync";
           case AccountLevelBpaSyncStatus::Failed:

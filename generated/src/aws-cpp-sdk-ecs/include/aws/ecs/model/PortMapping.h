@@ -133,15 +133,15 @@ namespace Model
      * version.</p> <p>The default ephemeral port range for Docker version 1.6.0 and
      * later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is
-     * unavailable, the default ephemeral port range from 49153 through 65535 is used.
-     * Do not attempt to specify a host port in the ephemeral port range as these are
-     * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <p>The default reserved ports are 22 for SSH, the
-     * Docker ports 2375 and 2376, and the Amazon ECS container agent ports
-     * 51678-51680. Any host port that was previously specified in a running task is
-     * also reserved while the task is running. That is, after a task stops, the host
-     * port is released. The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a
+     * unavailable, the default ephemeral port range from 49153 through 65535 (Linux)
+     * or 49152 through 65535 (Windows) is used. Do not attempt to specify a host port
+     * in the ephemeral port range as these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.</p> <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+     * Amazon ECS container agent ports 51678-51680. Any host port that was previously
+     * specified in a running task is also reserved while the task is running. That is,
+     * after a task stops, the host port is released. The current reserved ports are
+     * displayed in the <code>remainingResources</code> of <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
      * output. A container instance can have up to 100 reserved ports at a time. This
      * number includes the default reserved ports. Automatically assigned ports aren't
@@ -170,15 +170,15 @@ namespace Model
      * version.</p> <p>The default ephemeral port range for Docker version 1.6.0 and
      * later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is
-     * unavailable, the default ephemeral port range from 49153 through 65535 is used.
-     * Do not attempt to specify a host port in the ephemeral port range as these are
-     * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <p>The default reserved ports are 22 for SSH, the
-     * Docker ports 2375 and 2376, and the Amazon ECS container agent ports
-     * 51678-51680. Any host port that was previously specified in a running task is
-     * also reserved while the task is running. That is, after a task stops, the host
-     * port is released. The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a
+     * unavailable, the default ephemeral port range from 49153 through 65535 (Linux)
+     * or 49152 through 65535 (Windows) is used. Do not attempt to specify a host port
+     * in the ephemeral port range as these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.</p> <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+     * Amazon ECS container agent ports 51678-51680. Any host port that was previously
+     * specified in a running task is also reserved while the task is running. That is,
+     * after a task stops, the host port is released. The current reserved ports are
+     * displayed in the <code>remainingResources</code> of <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
      * output. A container instance can have up to 100 reserved ports at a time. This
      * number includes the default reserved ports. Automatically assigned ports aren't
@@ -207,15 +207,15 @@ namespace Model
      * version.</p> <p>The default ephemeral port range for Docker version 1.6.0 and
      * later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is
-     * unavailable, the default ephemeral port range from 49153 through 65535 is used.
-     * Do not attempt to specify a host port in the ephemeral port range as these are
-     * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <p>The default reserved ports are 22 for SSH, the
-     * Docker ports 2375 and 2376, and the Amazon ECS container agent ports
-     * 51678-51680. Any host port that was previously specified in a running task is
-     * also reserved while the task is running. That is, after a task stops, the host
-     * port is released. The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a
+     * unavailable, the default ephemeral port range from 49153 through 65535 (Linux)
+     * or 49152 through 65535 (Windows) is used. Do not attempt to specify a host port
+     * in the ephemeral port range as these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.</p> <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+     * Amazon ECS container agent ports 51678-51680. Any host port that was previously
+     * specified in a running task is also reserved while the task is running. That is,
+     * after a task stops, the host port is released. The current reserved ports are
+     * displayed in the <code>remainingResources</code> of <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
      * output. A container instance can have up to 100 reserved ports at a time. This
      * number includes the default reserved ports. Automatically assigned ports aren't
@@ -244,15 +244,15 @@ namespace Model
      * version.</p> <p>The default ephemeral port range for Docker version 1.6.0 and
      * later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is
-     * unavailable, the default ephemeral port range from 49153 through 65535 is used.
-     * Do not attempt to specify a host port in the ephemeral port range as these are
-     * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <p>The default reserved ports are 22 for SSH, the
-     * Docker ports 2375 and 2376, and the Amazon ECS container agent ports
-     * 51678-51680. Any host port that was previously specified in a running task is
-     * also reserved while the task is running. That is, after a task stops, the host
-     * port is released. The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a
+     * unavailable, the default ephemeral port range from 49153 through 65535 (Linux)
+     * or 49152 through 65535 (Windows) is used. Do not attempt to specify a host port
+     * in the ephemeral port range as these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.</p> <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+     * Amazon ECS container agent ports 51678-51680. Any host port that was previously
+     * specified in a running task is also reserved while the task is running. That is,
+     * after a task stops, the host port is released. The current reserved ports are
+     * displayed in the <code>remainingResources</code> of <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
      * output. A container instance can have up to 100 reserved ports at a time. This
      * number includes the default reserved ports. Automatically assigned ports aren't
@@ -263,37 +263,49 @@ namespace Model
 
     /**
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
-     * <code>udp</code>. The default is <code>tcp</code>.</p>
+     * <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment. </p>
      */
     inline const TransportProtocol& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
-     * <code>udp</code>. The default is <code>tcp</code>.</p>
+     * <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment. </p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
-     * <code>udp</code>. The default is <code>tcp</code>.</p>
+     * <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment. </p>
      */
     inline void SetProtocol(const TransportProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
-     * <code>udp</code>. The default is <code>tcp</code>.</p>
+     * <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment. </p>
      */
     inline void SetProtocol(TransportProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
-     * <code>udp</code>. The default is <code>tcp</code>.</p>
+     * <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment. </p>
      */
     inline PortMapping& WithProtocol(const TransportProtocol& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
-     * <code>udp</code>. The default is <code>tcp</code>.</p>
+     * <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment. </p>
      */
     inline PortMapping& WithProtocol(TransportProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
@@ -403,12 +415,14 @@ namespace Model
      * Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific
      * telemetry in the Amazon ECS console and CloudWatch.</p> <p>If you don't set a
      * value for this parameter, then TCP is used. However, Amazon ECS doesn't add
-     * protocol-specific telemetry for TCP.</p> <p>Tasks that run in a namespace can
-     * use short names to connect to services in the namespace. Tasks can connect to
-     * services across all of the clusters in the namespace. Tasks connect through a
-     * managed proxy container that collects logs and metrics for increased visibility.
-     * Only the tasks that Amazon ECS services create are supported with Service
-     * Connect. For more information, see <a
+     * protocol-specific telemetry for TCP.</p> <p> <code>appProtocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment.</p> <p>Tasks that run in a namespace can use short
+     * names to connect to services in the namespace. Tasks can connect to services
+     * across all of the clusters in the namespace. Tasks connect through a managed
+     * proxy container that collects logs and metrics for increased visibility. Only
+     * the tasks that Amazon ECS services create are supported with Service Connect.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -422,12 +436,14 @@ namespace Model
      * Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific
      * telemetry in the Amazon ECS console and CloudWatch.</p> <p>If you don't set a
      * value for this parameter, then TCP is used. However, Amazon ECS doesn't add
-     * protocol-specific telemetry for TCP.</p> <p>Tasks that run in a namespace can
-     * use short names to connect to services in the namespace. Tasks can connect to
-     * services across all of the clusters in the namespace. Tasks connect through a
-     * managed proxy container that collects logs and metrics for increased visibility.
-     * Only the tasks that Amazon ECS services create are supported with Service
-     * Connect. For more information, see <a
+     * protocol-specific telemetry for TCP.</p> <p> <code>appProtocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment.</p> <p>Tasks that run in a namespace can use short
+     * names to connect to services in the namespace. Tasks can connect to services
+     * across all of the clusters in the namespace. Tasks connect through a managed
+     * proxy container that collects logs and metrics for increased visibility. Only
+     * the tasks that Amazon ECS services create are supported with Service Connect.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -441,12 +457,14 @@ namespace Model
      * Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific
      * telemetry in the Amazon ECS console and CloudWatch.</p> <p>If you don't set a
      * value for this parameter, then TCP is used. However, Amazon ECS doesn't add
-     * protocol-specific telemetry for TCP.</p> <p>Tasks that run in a namespace can
-     * use short names to connect to services in the namespace. Tasks can connect to
-     * services across all of the clusters in the namespace. Tasks connect through a
-     * managed proxy container that collects logs and metrics for increased visibility.
-     * Only the tasks that Amazon ECS services create are supported with Service
-     * Connect. For more information, see <a
+     * protocol-specific telemetry for TCP.</p> <p> <code>appProtocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment.</p> <p>Tasks that run in a namespace can use short
+     * names to connect to services in the namespace. Tasks can connect to services
+     * across all of the clusters in the namespace. Tasks connect through a managed
+     * proxy container that collects logs and metrics for increased visibility. Only
+     * the tasks that Amazon ECS services create are supported with Service Connect.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -460,12 +478,14 @@ namespace Model
      * Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific
      * telemetry in the Amazon ECS console and CloudWatch.</p> <p>If you don't set a
      * value for this parameter, then TCP is used. However, Amazon ECS doesn't add
-     * protocol-specific telemetry for TCP.</p> <p>Tasks that run in a namespace can
-     * use short names to connect to services in the namespace. Tasks can connect to
-     * services across all of the clusters in the namespace. Tasks connect through a
-     * managed proxy container that collects logs and metrics for increased visibility.
-     * Only the tasks that Amazon ECS services create are supported with Service
-     * Connect. For more information, see <a
+     * protocol-specific telemetry for TCP.</p> <p> <code>appProtocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment.</p> <p>Tasks that run in a namespace can use short
+     * names to connect to services in the namespace. Tasks can connect to services
+     * across all of the clusters in the namespace. Tasks connect through a managed
+     * proxy container that collects logs and metrics for increased visibility. Only
+     * the tasks that Amazon ECS services create are supported with Service Connect.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -479,12 +499,14 @@ namespace Model
      * Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific
      * telemetry in the Amazon ECS console and CloudWatch.</p> <p>If you don't set a
      * value for this parameter, then TCP is used. However, Amazon ECS doesn't add
-     * protocol-specific telemetry for TCP.</p> <p>Tasks that run in a namespace can
-     * use short names to connect to services in the namespace. Tasks can connect to
-     * services across all of the clusters in the namespace. Tasks connect through a
-     * managed proxy container that collects logs and metrics for increased visibility.
-     * Only the tasks that Amazon ECS services create are supported with Service
-     * Connect. For more information, see <a
+     * protocol-specific telemetry for TCP.</p> <p> <code>appProtocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment.</p> <p>Tasks that run in a namespace can use short
+     * names to connect to services in the namespace. Tasks can connect to services
+     * across all of the clusters in the namespace. Tasks connect through a managed
+     * proxy container that collects logs and metrics for increased visibility. Only
+     * the tasks that Amazon ECS services create are supported with Service Connect.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -498,12 +520,14 @@ namespace Model
      * Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific
      * telemetry in the Amazon ECS console and CloudWatch.</p> <p>If you don't set a
      * value for this parameter, then TCP is used. However, Amazon ECS doesn't add
-     * protocol-specific telemetry for TCP.</p> <p>Tasks that run in a namespace can
-     * use short names to connect to services in the namespace. Tasks can connect to
-     * services across all of the clusters in the namespace. Tasks connect through a
-     * managed proxy container that collects logs and metrics for increased visibility.
-     * Only the tasks that Amazon ECS services create are supported with Service
-     * Connect. For more information, see <a
+     * protocol-specific telemetry for TCP.</p> <p> <code>appProtocol</code> is
+     * immutable in a Service Connect service. Updating this field requires a service
+     * deletion and redeployment.</p> <p>Tasks that run in a namespace can use short
+     * names to connect to services in the namespace. Tasks can connect to services
+     * across all of the clusters in the namespace. Tasks connect through a managed
+     * proxy container that collects logs and metrics for increased visibility. Only
+     * the tasks that Amazon ECS services create are supported with Service Connect.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -523,20 +547,21 @@ namespace Model
      * 100 port ranges per container.</p> </li> <li> <p>You do not specify a
      * <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set
      * as follows:</p> <ul> <li> <p>For containers in a task with the
-     * <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.</p>
-     * </li> <li> <p>For containers in a task with the <code>bridge</code> network
-     * mode, the Amazon ECS agent finds open host ports from the default ephemeral
-     * range and passes it to docker to bind them to the container ports.</p> </li>
-     * </ul> </li> <li> <p>The <code>containerPortRange</code> valid values are between
-     * 1 and 65535.</p> </li> <li> <p>A port can only be included in one port mapping
-     * per container.</p> </li> <li> <p>You cannot specify overlapping port ranges.</p>
-     * </li> <li> <p>The first port in the range must be less than last port in the
-     * range.</p> </li> <li> <p>Docker recommends that you turn off the docker-proxy in
-     * the Docker daemon config file when you have a large number of ports.</p> <p>For
-     * more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue
-     * #11185</a> on the Github website.</p> <p>For information about how to turn off
-     * the docker-proxy in the Docker daemon config file, see <a
+     * <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping
+     * strategy.</p> </li> <li> <p>For containers in a task with the
+     * <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the
+     * container ports.</p> </li> </ul> </li> <li> <p>The
+     * <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+     * <li> <p>A port can only be included in one port mapping per container.</p> </li>
+     * <li> <p>You cannot specify overlapping port ranges.</p> </li> <li> <p>The first
+     * port in the range must be less than last port in the range.</p> </li> <li>
+     * <p>Docker recommends that you turn off the docker-proxy in the Docker daemon
+     * config file when you have a large number of ports.</p> <p>For more information,
+     * see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     * Github website.</p> <p>For information about how to turn off the docker-proxy in
+     * the Docker daemon config file, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker
      * daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li> </ul> <p>You can
      * call <a
@@ -559,20 +584,21 @@ namespace Model
      * 100 port ranges per container.</p> </li> <li> <p>You do not specify a
      * <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set
      * as follows:</p> <ul> <li> <p>For containers in a task with the
-     * <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.</p>
-     * </li> <li> <p>For containers in a task with the <code>bridge</code> network
-     * mode, the Amazon ECS agent finds open host ports from the default ephemeral
-     * range and passes it to docker to bind them to the container ports.</p> </li>
-     * </ul> </li> <li> <p>The <code>containerPortRange</code> valid values are between
-     * 1 and 65535.</p> </li> <li> <p>A port can only be included in one port mapping
-     * per container.</p> </li> <li> <p>You cannot specify overlapping port ranges.</p>
-     * </li> <li> <p>The first port in the range must be less than last port in the
-     * range.</p> </li> <li> <p>Docker recommends that you turn off the docker-proxy in
-     * the Docker daemon config file when you have a large number of ports.</p> <p>For
-     * more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue
-     * #11185</a> on the Github website.</p> <p>For information about how to turn off
-     * the docker-proxy in the Docker daemon config file, see <a
+     * <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping
+     * strategy.</p> </li> <li> <p>For containers in a task with the
+     * <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the
+     * container ports.</p> </li> </ul> </li> <li> <p>The
+     * <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+     * <li> <p>A port can only be included in one port mapping per container.</p> </li>
+     * <li> <p>You cannot specify overlapping port ranges.</p> </li> <li> <p>The first
+     * port in the range must be less than last port in the range.</p> </li> <li>
+     * <p>Docker recommends that you turn off the docker-proxy in the Docker daemon
+     * config file when you have a large number of ports.</p> <p>For more information,
+     * see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     * Github website.</p> <p>For information about how to turn off the docker-proxy in
+     * the Docker daemon config file, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker
      * daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li> </ul> <p>You can
      * call <a
@@ -595,20 +621,21 @@ namespace Model
      * 100 port ranges per container.</p> </li> <li> <p>You do not specify a
      * <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set
      * as follows:</p> <ul> <li> <p>For containers in a task with the
-     * <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.</p>
-     * </li> <li> <p>For containers in a task with the <code>bridge</code> network
-     * mode, the Amazon ECS agent finds open host ports from the default ephemeral
-     * range and passes it to docker to bind them to the container ports.</p> </li>
-     * </ul> </li> <li> <p>The <code>containerPortRange</code> valid values are between
-     * 1 and 65535.</p> </li> <li> <p>A port can only be included in one port mapping
-     * per container.</p> </li> <li> <p>You cannot specify overlapping port ranges.</p>
-     * </li> <li> <p>The first port in the range must be less than last port in the
-     * range.</p> </li> <li> <p>Docker recommends that you turn off the docker-proxy in
-     * the Docker daemon config file when you have a large number of ports.</p> <p>For
-     * more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue
-     * #11185</a> on the Github website.</p> <p>For information about how to turn off
-     * the docker-proxy in the Docker daemon config file, see <a
+     * <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping
+     * strategy.</p> </li> <li> <p>For containers in a task with the
+     * <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the
+     * container ports.</p> </li> </ul> </li> <li> <p>The
+     * <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+     * <li> <p>A port can only be included in one port mapping per container.</p> </li>
+     * <li> <p>You cannot specify overlapping port ranges.</p> </li> <li> <p>The first
+     * port in the range must be less than last port in the range.</p> </li> <li>
+     * <p>Docker recommends that you turn off the docker-proxy in the Docker daemon
+     * config file when you have a large number of ports.</p> <p>For more information,
+     * see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     * Github website.</p> <p>For information about how to turn off the docker-proxy in
+     * the Docker daemon config file, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker
      * daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li> </ul> <p>You can
      * call <a
@@ -631,20 +658,21 @@ namespace Model
      * 100 port ranges per container.</p> </li> <li> <p>You do not specify a
      * <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set
      * as follows:</p> <ul> <li> <p>For containers in a task with the
-     * <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.</p>
-     * </li> <li> <p>For containers in a task with the <code>bridge</code> network
-     * mode, the Amazon ECS agent finds open host ports from the default ephemeral
-     * range and passes it to docker to bind them to the container ports.</p> </li>
-     * </ul> </li> <li> <p>The <code>containerPortRange</code> valid values are between
-     * 1 and 65535.</p> </li> <li> <p>A port can only be included in one port mapping
-     * per container.</p> </li> <li> <p>You cannot specify overlapping port ranges.</p>
-     * </li> <li> <p>The first port in the range must be less than last port in the
-     * range.</p> </li> <li> <p>Docker recommends that you turn off the docker-proxy in
-     * the Docker daemon config file when you have a large number of ports.</p> <p>For
-     * more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue
-     * #11185</a> on the Github website.</p> <p>For information about how to turn off
-     * the docker-proxy in the Docker daemon config file, see <a
+     * <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping
+     * strategy.</p> </li> <li> <p>For containers in a task with the
+     * <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the
+     * container ports.</p> </li> </ul> </li> <li> <p>The
+     * <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+     * <li> <p>A port can only be included in one port mapping per container.</p> </li>
+     * <li> <p>You cannot specify overlapping port ranges.</p> </li> <li> <p>The first
+     * port in the range must be less than last port in the range.</p> </li> <li>
+     * <p>Docker recommends that you turn off the docker-proxy in the Docker daemon
+     * config file when you have a large number of ports.</p> <p>For more information,
+     * see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     * Github website.</p> <p>For information about how to turn off the docker-proxy in
+     * the Docker daemon config file, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker
      * daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li> </ul> <p>You can
      * call <a
@@ -667,20 +695,21 @@ namespace Model
      * 100 port ranges per container.</p> </li> <li> <p>You do not specify a
      * <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set
      * as follows:</p> <ul> <li> <p>For containers in a task with the
-     * <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.</p>
-     * </li> <li> <p>For containers in a task with the <code>bridge</code> network
-     * mode, the Amazon ECS agent finds open host ports from the default ephemeral
-     * range and passes it to docker to bind them to the container ports.</p> </li>
-     * </ul> </li> <li> <p>The <code>containerPortRange</code> valid values are between
-     * 1 and 65535.</p> </li> <li> <p>A port can only be included in one port mapping
-     * per container.</p> </li> <li> <p>You cannot specify overlapping port ranges.</p>
-     * </li> <li> <p>The first port in the range must be less than last port in the
-     * range.</p> </li> <li> <p>Docker recommends that you turn off the docker-proxy in
-     * the Docker daemon config file when you have a large number of ports.</p> <p>For
-     * more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue
-     * #11185</a> on the Github website.</p> <p>For information about how to turn off
-     * the docker-proxy in the Docker daemon config file, see <a
+     * <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping
+     * strategy.</p> </li> <li> <p>For containers in a task with the
+     * <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the
+     * container ports.</p> </li> </ul> </li> <li> <p>The
+     * <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+     * <li> <p>A port can only be included in one port mapping per container.</p> </li>
+     * <li> <p>You cannot specify overlapping port ranges.</p> </li> <li> <p>The first
+     * port in the range must be less than last port in the range.</p> </li> <li>
+     * <p>Docker recommends that you turn off the docker-proxy in the Docker daemon
+     * config file when you have a large number of ports.</p> <p>For more information,
+     * see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     * Github website.</p> <p>For information about how to turn off the docker-proxy in
+     * the Docker daemon config file, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker
      * daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li> </ul> <p>You can
      * call <a
@@ -703,20 +732,21 @@ namespace Model
      * 100 port ranges per container.</p> </li> <li> <p>You do not specify a
      * <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set
      * as follows:</p> <ul> <li> <p>For containers in a task with the
-     * <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.</p>
-     * </li> <li> <p>For containers in a task with the <code>bridge</code> network
-     * mode, the Amazon ECS agent finds open host ports from the default ephemeral
-     * range and passes it to docker to bind them to the container ports.</p> </li>
-     * </ul> </li> <li> <p>The <code>containerPortRange</code> valid values are between
-     * 1 and 65535.</p> </li> <li> <p>A port can only be included in one port mapping
-     * per container.</p> </li> <li> <p>You cannot specify overlapping port ranges.</p>
-     * </li> <li> <p>The first port in the range must be less than last port in the
-     * range.</p> </li> <li> <p>Docker recommends that you turn off the docker-proxy in
-     * the Docker daemon config file when you have a large number of ports.</p> <p>For
-     * more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue
-     * #11185</a> on the Github website.</p> <p>For information about how to turn off
-     * the docker-proxy in the Docker daemon config file, see <a
+     * <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping
+     * strategy.</p> </li> <li> <p>For containers in a task with the
+     * <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the
+     * container ports.</p> </li> </ul> </li> <li> <p>The
+     * <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+     * <li> <p>A port can only be included in one port mapping per container.</p> </li>
+     * <li> <p>You cannot specify overlapping port ranges.</p> </li> <li> <p>The first
+     * port in the range must be less than last port in the range.</p> </li> <li>
+     * <p>Docker recommends that you turn off the docker-proxy in the Docker daemon
+     * config file when you have a large number of ports.</p> <p>For more information,
+     * see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     * Github website.</p> <p>For information about how to turn off the docker-proxy in
+     * the Docker daemon config file, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker
      * daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li> </ul> <p>You can
      * call <a
@@ -739,20 +769,21 @@ namespace Model
      * 100 port ranges per container.</p> </li> <li> <p>You do not specify a
      * <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set
      * as follows:</p> <ul> <li> <p>For containers in a task with the
-     * <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.</p>
-     * </li> <li> <p>For containers in a task with the <code>bridge</code> network
-     * mode, the Amazon ECS agent finds open host ports from the default ephemeral
-     * range and passes it to docker to bind them to the container ports.</p> </li>
-     * </ul> </li> <li> <p>The <code>containerPortRange</code> valid values are between
-     * 1 and 65535.</p> </li> <li> <p>A port can only be included in one port mapping
-     * per container.</p> </li> <li> <p>You cannot specify overlapping port ranges.</p>
-     * </li> <li> <p>The first port in the range must be less than last port in the
-     * range.</p> </li> <li> <p>Docker recommends that you turn off the docker-proxy in
-     * the Docker daemon config file when you have a large number of ports.</p> <p>For
-     * more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue
-     * #11185</a> on the Github website.</p> <p>For information about how to turn off
-     * the docker-proxy in the Docker daemon config file, see <a
+     * <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping
+     * strategy.</p> </li> <li> <p>For containers in a task with the
+     * <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the
+     * container ports.</p> </li> </ul> </li> <li> <p>The
+     * <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+     * <li> <p>A port can only be included in one port mapping per container.</p> </li>
+     * <li> <p>You cannot specify overlapping port ranges.</p> </li> <li> <p>The first
+     * port in the range must be less than last port in the range.</p> </li> <li>
+     * <p>Docker recommends that you turn off the docker-proxy in the Docker daemon
+     * config file when you have a large number of ports.</p> <p>For more information,
+     * see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     * Github website.</p> <p>For information about how to turn off the docker-proxy in
+     * the Docker daemon config file, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker
      * daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li> </ul> <p>You can
      * call <a
@@ -775,20 +806,21 @@ namespace Model
      * 100 port ranges per container.</p> </li> <li> <p>You do not specify a
      * <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set
      * as follows:</p> <ul> <li> <p>For containers in a task with the
-     * <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
-     * value as the <code>containerPort</code>. This is a static mapping strategy.</p>
-     * </li> <li> <p>For containers in a task with the <code>bridge</code> network
-     * mode, the Amazon ECS agent finds open host ports from the default ephemeral
-     * range and passes it to docker to bind them to the container ports.</p> </li>
-     * </ul> </li> <li> <p>The <code>containerPortRange</code> valid values are between
-     * 1 and 65535.</p> </li> <li> <p>A port can only be included in one port mapping
-     * per container.</p> </li> <li> <p>You cannot specify overlapping port ranges.</p>
-     * </li> <li> <p>The first port in the range must be less than last port in the
-     * range.</p> </li> <li> <p>Docker recommends that you turn off the docker-proxy in
-     * the Docker daemon config file when you have a large number of ports.</p> <p>For
-     * more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue
-     * #11185</a> on the Github website.</p> <p>For information about how to turn off
-     * the docker-proxy in the Docker daemon config file, see <a
+     * <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the
+     * same value as the <code>containerPortRange</code>. This is a static mapping
+     * strategy.</p> </li> <li> <p>For containers in a task with the
+     * <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the
+     * container ports.</p> </li> </ul> </li> <li> <p>The
+     * <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
+     * <li> <p>A port can only be included in one port mapping per container.</p> </li>
+     * <li> <p>You cannot specify overlapping port ranges.</p> </li> <li> <p>The first
+     * port in the range must be less than last port in the range.</p> </li> <li>
+     * <p>Docker recommends that you turn off the docker-proxy in the Docker daemon
+     * config file when you have a large number of ports.</p> <p>For more information,
+     * see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     * Github website.</p> <p>For information about how to turn off the docker-proxy in
+     * the Docker daemon config file, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker
      * daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li> </ul> <p>You can
      * call <a

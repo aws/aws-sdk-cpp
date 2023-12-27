@@ -35,55 +35,109 @@ namespace Model
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * Region.</p>
+     * Region.</p> <p>If resource assignments are only based on tags, then service
+     * opt-in settings are applied. If a resource type is explicitly assigned to a
+     * backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included
+     * in the backup even if the opt-in is not enabled for that particular service. If
+     * both a resource type and tags are specified in a resource assignment, the
+     * resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.</p>
      */
     inline const Aws::Map<Aws::String, bool>& GetResourceTypeOptInPreference() const{ return m_resourceTypeOptInPreference; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * Region.</p>
+     * Region.</p> <p>If resource assignments are only based on tags, then service
+     * opt-in settings are applied. If a resource type is explicitly assigned to a
+     * backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included
+     * in the backup even if the opt-in is not enabled for that particular service. If
+     * both a resource type and tags are specified in a resource assignment, the
+     * resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.</p>
      */
     inline bool ResourceTypeOptInPreferenceHasBeenSet() const { return m_resourceTypeOptInPreferenceHasBeenSet; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * Region.</p>
+     * Region.</p> <p>If resource assignments are only based on tags, then service
+     * opt-in settings are applied. If a resource type is explicitly assigned to a
+     * backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included
+     * in the backup even if the opt-in is not enabled for that particular service. If
+     * both a resource type and tags are specified in a resource assignment, the
+     * resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.</p>
      */
     inline void SetResourceTypeOptInPreference(const Aws::Map<Aws::String, bool>& value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference = value; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * Region.</p>
+     * Region.</p> <p>If resource assignments are only based on tags, then service
+     * opt-in settings are applied. If a resource type is explicitly assigned to a
+     * backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included
+     * in the backup even if the opt-in is not enabled for that particular service. If
+     * both a resource type and tags are specified in a resource assignment, the
+     * resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.</p>
      */
     inline void SetResourceTypeOptInPreference(Aws::Map<Aws::String, bool>&& value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference = std::move(value); }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * Region.</p>
+     * Region.</p> <p>If resource assignments are only based on tags, then service
+     * opt-in settings are applied. If a resource type is explicitly assigned to a
+     * backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included
+     * in the backup even if the opt-in is not enabled for that particular service. If
+     * both a resource type and tags are specified in a resource assignment, the
+     * resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.</p>
      */
     inline UpdateRegionSettingsRequest& WithResourceTypeOptInPreference(const Aws::Map<Aws::String, bool>& value) { SetResourceTypeOptInPreference(value); return *this;}
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * Region.</p>
+     * Region.</p> <p>If resource assignments are only based on tags, then service
+     * opt-in settings are applied. If a resource type is explicitly assigned to a
+     * backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included
+     * in the backup even if the opt-in is not enabled for that particular service. If
+     * both a resource type and tags are specified in a resource assignment, the
+     * resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.</p>
      */
     inline UpdateRegionSettingsRequest& WithResourceTypeOptInPreference(Aws::Map<Aws::String, bool>&& value) { SetResourceTypeOptInPreference(std::move(value)); return *this;}
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * Region.</p>
+     * Region.</p> <p>If resource assignments are only based on tags, then service
+     * opt-in settings are applied. If a resource type is explicitly assigned to a
+     * backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included
+     * in the backup even if the opt-in is not enabled for that particular service. If
+     * both a resource type and tags are specified in a resource assignment, the
+     * resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.</p>
      */
     inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(const Aws::String& key, bool value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(key, value); return *this; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * Region.</p>
+     * Region.</p> <p>If resource assignments are only based on tags, then service
+     * opt-in settings are applied. If a resource type is explicitly assigned to a
+     * backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included
+     * in the backup even if the opt-in is not enabled for that particular service. If
+     * both a resource type and tags are specified in a resource assignment, the
+     * resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.</p>
      */
     inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(Aws::String&& key, bool value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Updates the list of services along with the opt-in preferences for the
-     * Region.</p>
+     * Region.</p> <p>If resource assignments are only based on tags, then service
+     * opt-in settings are applied. If a resource type is explicitly assigned to a
+     * backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included
+     * in the backup even if the opt-in is not enabled for that particular service. If
+     * both a resource type and tags are specified in a resource assignment, the
+     * resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.</p>
      */
     inline UpdateRegionSettingsRequest& AddResourceTypeOptInPreference(const char* key, bool value) { m_resourceTypeOptInPreferenceHasBeenSet = true; m_resourceTypeOptInPreference.emplace(key, value); return *this; }
 

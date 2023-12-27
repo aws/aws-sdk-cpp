@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeatureType::NOT_SET:
+            return {};
           case FeatureType::Integral:
             return "Integral";
           case FeatureType::Fractional:

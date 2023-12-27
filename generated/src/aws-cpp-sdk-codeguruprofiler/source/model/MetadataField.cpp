@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetadataField::NOT_SET:
+            return {};
           case MetadataField::ComputePlatform:
             return "ComputePlatform";
           case MetadataField::AgentId:

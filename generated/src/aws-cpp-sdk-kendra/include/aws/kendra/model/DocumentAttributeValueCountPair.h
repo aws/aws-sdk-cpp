@@ -27,8 +27,8 @@ namespace Model
   class FacetResult;
 
   /**
-   * <p>Provides the count of documents that match a particular attribute when doing
-   * a faceted search.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the count of documents that match a particular document attribute or
+   * field when doing a faceted search.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttributeValueCountPair">AWS
    * API Reference</a></p>
    */
@@ -42,63 +42,63 @@ namespace Model
 
 
     /**
-     * <p>The value of the attribute. For example, "HR".</p>
+     * <p>The value of the attribute/field. For example, "HR".</p>
      */
     inline const DocumentAttributeValue& GetDocumentAttributeValue() const{ return m_documentAttributeValue; }
 
     /**
-     * <p>The value of the attribute. For example, "HR".</p>
+     * <p>The value of the attribute/field. For example, "HR".</p>
      */
     inline bool DocumentAttributeValueHasBeenSet() const { return m_documentAttributeValueHasBeenSet; }
 
     /**
-     * <p>The value of the attribute. For example, "HR".</p>
+     * <p>The value of the attribute/field. For example, "HR".</p>
      */
     inline void SetDocumentAttributeValue(const DocumentAttributeValue& value) { m_documentAttributeValueHasBeenSet = true; m_documentAttributeValue = value; }
 
     /**
-     * <p>The value of the attribute. For example, "HR".</p>
+     * <p>The value of the attribute/field. For example, "HR".</p>
      */
     inline void SetDocumentAttributeValue(DocumentAttributeValue&& value) { m_documentAttributeValueHasBeenSet = true; m_documentAttributeValue = std::move(value); }
 
     /**
-     * <p>The value of the attribute. For example, "HR".</p>
+     * <p>The value of the attribute/field. For example, "HR".</p>
      */
     inline DocumentAttributeValueCountPair& WithDocumentAttributeValue(const DocumentAttributeValue& value) { SetDocumentAttributeValue(value); return *this;}
 
     /**
-     * <p>The value of the attribute. For example, "HR".</p>
+     * <p>The value of the attribute/field. For example, "HR".</p>
      */
     inline DocumentAttributeValueCountPair& WithDocumentAttributeValue(DocumentAttributeValue&& value) { SetDocumentAttributeValue(std::move(value)); return *this;}
 
 
     /**
-     * <p>The number of documents in the response that have the attribute value for the
-     * key.</p>
+     * <p>The number of documents in the response that have the attribute/field value
+     * for the key.</p>
      */
     inline int GetCount() const{ return m_count; }
 
     /**
-     * <p>The number of documents in the response that have the attribute value for the
-     * key.</p>
+     * <p>The number of documents in the response that have the attribute/field value
+     * for the key.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>The number of documents in the response that have the attribute value for the
-     * key.</p>
+     * <p>The number of documents in the response that have the attribute/field value
+     * for the key.</p>
      */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The number of documents in the response that have the attribute value for the
-     * key.</p>
+     * <p>The number of documents in the response that have the attribute/field value
+     * for the key.</p>
      */
     inline DocumentAttributeValueCountPair& WithCount(int value) { SetCount(value); return *this;}
 
 
     /**
-     * <p>Contains the results of a document attribute that is a nested facet. A
+     * <p>Contains the results of a document attribute/field that is a nested facet. A
      * <code>FacetResult</code> contains the counts for each facet nested within a
      * facet.</p> <p>For example, the document attribute or facet "Department" includes
      * a value called "Engineering". In addition, the document attribute or facet
@@ -112,7 +112,7 @@ namespace Model
     inline const Aws::Vector<FacetResult>& GetFacetResults() const{ return m_facetResults; }
 
     /**
-     * <p>Contains the results of a document attribute that is a nested facet. A
+     * <p>Contains the results of a document attribute/field that is a nested facet. A
      * <code>FacetResult</code> contains the counts for each facet nested within a
      * facet.</p> <p>For example, the document attribute or facet "Department" includes
      * a value called "Engineering". In addition, the document attribute or facet
@@ -126,7 +126,7 @@ namespace Model
     inline bool FacetResultsHasBeenSet() const { return m_facetResultsHasBeenSet; }
 
     /**
-     * <p>Contains the results of a document attribute that is a nested facet. A
+     * <p>Contains the results of a document attribute/field that is a nested facet. A
      * <code>FacetResult</code> contains the counts for each facet nested within a
      * facet.</p> <p>For example, the document attribute or facet "Department" includes
      * a value called "Engineering". In addition, the document attribute or facet
@@ -140,7 +140,7 @@ namespace Model
     inline void SetFacetResults(const Aws::Vector<FacetResult>& value) { m_facetResultsHasBeenSet = true; m_facetResults = value; }
 
     /**
-     * <p>Contains the results of a document attribute that is a nested facet. A
+     * <p>Contains the results of a document attribute/field that is a nested facet. A
      * <code>FacetResult</code> contains the counts for each facet nested within a
      * facet.</p> <p>For example, the document attribute or facet "Department" includes
      * a value called "Engineering". In addition, the document attribute or facet
@@ -154,7 +154,7 @@ namespace Model
     inline void SetFacetResults(Aws::Vector<FacetResult>&& value) { m_facetResultsHasBeenSet = true; m_facetResults = std::move(value); }
 
     /**
-     * <p>Contains the results of a document attribute that is a nested facet. A
+     * <p>Contains the results of a document attribute/field that is a nested facet. A
      * <code>FacetResult</code> contains the counts for each facet nested within a
      * facet.</p> <p>For example, the document attribute or facet "Department" includes
      * a value called "Engineering". In addition, the document attribute or facet
@@ -168,7 +168,7 @@ namespace Model
     inline DocumentAttributeValueCountPair& WithFacetResults(const Aws::Vector<FacetResult>& value) { SetFacetResults(value); return *this;}
 
     /**
-     * <p>Contains the results of a document attribute that is a nested facet. A
+     * <p>Contains the results of a document attribute/field that is a nested facet. A
      * <code>FacetResult</code> contains the counts for each facet nested within a
      * facet.</p> <p>For example, the document attribute or facet "Department" includes
      * a value called "Engineering". In addition, the document attribute or facet
@@ -182,7 +182,7 @@ namespace Model
     inline DocumentAttributeValueCountPair& WithFacetResults(Aws::Vector<FacetResult>&& value) { SetFacetResults(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the results of a document attribute that is a nested facet. A
+     * <p>Contains the results of a document attribute/field that is a nested facet. A
      * <code>FacetResult</code> contains the counts for each facet nested within a
      * facet.</p> <p>For example, the document attribute or facet "Department" includes
      * a value called "Engineering". In addition, the document attribute or facet
@@ -196,7 +196,7 @@ namespace Model
     inline DocumentAttributeValueCountPair& AddFacetResults(const FacetResult& value) { m_facetResultsHasBeenSet = true; m_facetResults.push_back(value); return *this; }
 
     /**
-     * <p>Contains the results of a document attribute that is a nested facet. A
+     * <p>Contains the results of a document attribute/field that is a nested facet. A
      * <code>FacetResult</code> contains the counts for each facet nested within a
      * facet.</p> <p>For example, the document attribute or facet "Department" includes
      * a value called "Engineering". In addition, the document attribute or facet

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputLossActionForMsSmoothOut::NOT_SET:
+            return {};
           case InputLossActionForMsSmoothOut::EMIT_OUTPUT:
             return "EMIT_OUTPUT";
           case InputLossActionForMsSmoothOut::PAUSE_OUTPUT:

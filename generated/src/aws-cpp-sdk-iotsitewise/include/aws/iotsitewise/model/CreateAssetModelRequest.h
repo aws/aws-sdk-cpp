@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iotsitewise/model/AssetModelType.h>
 #include <aws/iotsitewise/model/AssetModelPropertyDefinition.h>
 #include <aws/iotsitewise/model/AssetModelHierarchyDefinition.h>
 #include <aws/iotsitewise/model/AssetModelCompositeModelDefinition.h>
@@ -299,66 +300,98 @@ namespace Model
 
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline const Aws::Vector<AssetModelCompositeModelDefinition>& GetAssetModelCompositeModels() const{ return m_assetModelCompositeModels; }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline bool AssetModelCompositeModelsHasBeenSet() const { return m_assetModelCompositeModelsHasBeenSet; }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline void SetAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModelDefinition>& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels = value; }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline void SetAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModelDefinition>&& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels = std::move(value); }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline CreateAssetModelRequest& WithAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModelDefinition>& value) { SetAssetModelCompositeModels(value); return *this;}
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline CreateAssetModelRequest& WithAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModelDefinition>&& value) { SetAssetModelCompositeModels(std::move(value)); return *this;}
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline CreateAssetModelRequest& AddAssetModelCompositeModels(const AssetModelCompositeModelDefinition& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels.push_back(value); return *this; }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline CreateAssetModelRequest& AddAssetModelCompositeModels(AssetModelCompositeModelDefinition&& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels.push_back(std::move(value)); return *this; }
 
@@ -524,6 +557,191 @@ namespace Model
      */
     inline CreateAssetModelRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
+
+    /**
+     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline bool AssetModelIdHasBeenSet() const { return m_assetModelIdHasBeenSet; }
+
+    /**
+     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline void SetAssetModelId(const Aws::String& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = value; }
+
+    /**
+     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline void SetAssetModelId(Aws::String&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::move(value); }
+
+    /**
+     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline void SetAssetModelId(const char* value) { m_assetModelIdHasBeenSet = true; m_assetModelId.assign(value); }
+
+    /**
+     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline CreateAssetModelRequest& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
+
+    /**
+     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline CreateAssetModelRequest& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically
+     * generates a unique ID for you, so this parameter is never required. However, if
+     * you prefer to supply your own ID instead, you can specify it here in UUID
+     * format. If you specify your own ID, it must be globally unique.</p>
+     */
+    inline CreateAssetModelRequest& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
+
+
+    /**
+     * <p>An external ID to assign to the asset model. The external ID must be unique
+     * within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAssetModelExternalId() const{ return m_assetModelExternalId; }
+
+    /**
+     * <p>An external ID to assign to the asset model. The external ID must be unique
+     * within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline bool AssetModelExternalIdHasBeenSet() const { return m_assetModelExternalIdHasBeenSet; }
+
+    /**
+     * <p>An external ID to assign to the asset model. The external ID must be unique
+     * within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetAssetModelExternalId(const Aws::String& value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId = value; }
+
+    /**
+     * <p>An external ID to assign to the asset model. The external ID must be unique
+     * within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetAssetModelExternalId(Aws::String&& value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId = std::move(value); }
+
+    /**
+     * <p>An external ID to assign to the asset model. The external ID must be unique
+     * within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetAssetModelExternalId(const char* value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId.assign(value); }
+
+    /**
+     * <p>An external ID to assign to the asset model. The external ID must be unique
+     * within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline CreateAssetModelRequest& WithAssetModelExternalId(const Aws::String& value) { SetAssetModelExternalId(value); return *this;}
+
+    /**
+     * <p>An external ID to assign to the asset model. The external ID must be unique
+     * within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline CreateAssetModelRequest& WithAssetModelExternalId(Aws::String&& value) { SetAssetModelExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>An external ID to assign to the asset model. The external ID must be unique
+     * within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline CreateAssetModelRequest& WithAssetModelExternalId(const char* value) { SetAssetModelExternalId(value); return *this;}
+
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline const AssetModelType& GetAssetModelType() const{ return m_assetModelType; }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline bool AssetModelTypeHasBeenSet() const { return m_assetModelTypeHasBeenSet; }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline void SetAssetModelType(const AssetModelType& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = value; }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline void SetAssetModelType(AssetModelType&& value) { m_assetModelTypeHasBeenSet = true; m_assetModelType = std::move(value); }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline CreateAssetModelRequest& WithAssetModelType(const AssetModelType& value) { SetAssetModelType(value); return *this;}
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline CreateAssetModelRequest& WithAssetModelType(AssetModelType&& value) { SetAssetModelType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_assetModelName;
@@ -546,6 +764,15 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_assetModelId;
+    bool m_assetModelIdHasBeenSet = false;
+
+    Aws::String m_assetModelExternalId;
+    bool m_assetModelExternalIdHasBeenSet = false;
+
+    AssetModelType m_assetModelType;
+    bool m_assetModelTypeHasBeenSet = false;
   };
 
 } // namespace Model

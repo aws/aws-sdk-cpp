@@ -22,13 +22,17 @@ namespace Model
 
 ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage() : 
     m_storageHasBeenSet(false),
-    m_validProcessorFeaturesHasBeenSet(false)
+    m_validProcessorFeaturesHasBeenSet(false),
+    m_supportsDedicatedLogVolume(false),
+    m_supportsDedicatedLogVolumeHasBeenSet(false)
 {
 }
 
 ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage(const XmlNode& xmlNode) : 
     m_storageHasBeenSet(false),
-    m_validProcessorFeaturesHasBeenSet(false)
+    m_validProcessorFeaturesHasBeenSet(false),
+    m_supportsDedicatedLogVolume(false),
+    m_supportsDedicatedLogVolumeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -63,6 +67,12 @@ ValidDBInstanceModificationsMessage& ValidDBInstanceModificationsMessage::operat
 
       m_validProcessorFeaturesHasBeenSet = true;
     }
+    XmlNode supportsDedicatedLogVolumeNode = resultNode.FirstChild("SupportsDedicatedLogVolume");
+    if(!supportsDedicatedLogVolumeNode.IsNull())
+    {
+      m_supportsDedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDedicatedLogVolumeNode.GetText()).c_str()).c_str());
+      m_supportsDedicatedLogVolumeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -92,6 +102,11 @@ void ValidDBInstanceModificationsMessage::OutputToStream(Aws::OStream& oStream, 
       }
   }
 
+  if(m_supportsDedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsDedicatedLogVolume=" << std::boolalpha << m_supportsDedicatedLogVolume << "&";
+  }
+
 }
 
 void ValidDBInstanceModificationsMessage::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -115,6 +130,10 @@ void ValidDBInstanceModificationsMessage::OutputToStream(Aws::OStream& oStream, 
         validProcessorFeaturesSs << location <<  ".AvailableProcessorFeature." << validProcessorFeaturesIdx++;
         item.OutputToStream(oStream, validProcessorFeaturesSs.str().c_str());
       }
+  }
+  if(m_supportsDedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << ".SupportsDedicatedLogVolume=" << std::boolalpha << m_supportsDedicatedLogVolume << "&";
   }
 }
 

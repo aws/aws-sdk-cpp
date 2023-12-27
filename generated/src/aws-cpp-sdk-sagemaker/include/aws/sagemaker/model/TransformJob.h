@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/TransformInput.h>
 #include <aws/sagemaker/model/TransformOutput.h>
+#include <aws/sagemaker/model/BatchDataCaptureConfig.h>
 #include <aws/sagemaker/model/TransformResources.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/DataProcessing.h>
@@ -563,6 +564,25 @@ namespace Model
 
 
     
+    inline const BatchDataCaptureConfig& GetDataCaptureConfig() const{ return m_dataCaptureConfig; }
+
+    
+    inline bool DataCaptureConfigHasBeenSet() const { return m_dataCaptureConfigHasBeenSet; }
+
+    
+    inline void SetDataCaptureConfig(const BatchDataCaptureConfig& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = value; }
+
+    
+    inline void SetDataCaptureConfig(BatchDataCaptureConfig&& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = std::move(value); }
+
+    
+    inline TransformJob& WithDataCaptureConfig(const BatchDataCaptureConfig& value) { SetDataCaptureConfig(value); return *this;}
+
+    
+    inline TransformJob& WithDataCaptureConfig(BatchDataCaptureConfig&& value) { SetDataCaptureConfig(std::move(value)); return *this;}
+
+
+    
     inline const TransformResources& GetTransformResources() const{ return m_transformResources; }
 
     
@@ -911,6 +931,9 @@ namespace Model
 
     TransformOutput m_transformOutput;
     bool m_transformOutputHasBeenSet = false;
+
+    BatchDataCaptureConfig m_dataCaptureConfig;
+    bool m_dataCaptureConfigHasBeenSet = false;
 
     TransformResources m_transformResources;
     bool m_transformResourcesHasBeenSet = false;

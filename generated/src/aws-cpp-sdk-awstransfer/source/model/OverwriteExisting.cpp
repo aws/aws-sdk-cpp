@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OverwriteExisting::NOT_SET:
+            return {};
           case OverwriteExisting::TRUE:
             return "TRUE";
           case OverwriteExisting::FALSE:

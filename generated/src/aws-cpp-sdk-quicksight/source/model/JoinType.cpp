@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JoinType::NOT_SET:
+            return {};
           case JoinType::INNER:
             return "INNER";
           case JoinType::OUTER:

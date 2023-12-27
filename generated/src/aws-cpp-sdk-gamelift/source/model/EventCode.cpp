@@ -209,6 +209,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventCode::NOT_SET:
+            return {};
           case EventCode::GENERIC_EVENT:
             return "GENERIC_EVENT";
           case EventCode::FLEET_CREATED:

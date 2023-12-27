@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ICD10CMEntityCategory::NOT_SET:
+            return {};
           case ICD10CMEntityCategory::MEDICAL_CONDITION:
             return "MEDICAL_CONDITION";
           default:

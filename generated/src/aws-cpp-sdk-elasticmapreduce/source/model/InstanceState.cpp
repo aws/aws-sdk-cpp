@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceState::NOT_SET:
+            return {};
           case InstanceState::AWAITING_FULFILLMENT:
             return "AWAITING_FULFILLMENT";
           case InstanceState::PROVISIONING:

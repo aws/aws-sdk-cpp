@@ -21,12 +21,16 @@
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/PutBucketVersioningRequest.h>
+#include <aws/s3/model/GetBucketPolicyRequest.h>
+#include <aws/s3/model/PutBucketPolicyRequest.h>
+#include <aws/s3/model/DeleteBucketPolicyRequest.h>
 #include <aws/s3/model/ListObjectVersionsRequest.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/platform/Platform.h>
+#include <aws/core/utils/crypto/Cipher.h>
 #include <aws/testing/TestingEnvironment.h>
 
 #include <aws/transfer/TransferManager.h>
@@ -697,7 +701,9 @@ protected:
         return false;
     }
 
-    static bool WaitForObjectToPropagate(const Aws::String& bucketName, const char* objectKey)
+    static bool WaitForObjectToPropagate(const Aws::String& bucketName,
+                                         const char* objectKey,
+                                         CryptoBuffer const * const pSSECustomerKey = nullptr)
     {
         unsigned timeoutCount = 0;
         while (timeoutCount++ < WAIT_MAX_RETRIES)
@@ -705,6 +711,14 @@ protected:
             GetObjectRequest getObjectRequest;
             getObjectRequest.SetBucket(bucketName);
             getObjectRequest.SetKey(objectKey);
+            if(pSSECustomerKey)
+            {
+                getObjectRequest.SetSSECustomerAlgorithm("AES256");
+                getObjectRequest.SetSSECustomerKey(HashingUtils::Base64Encode(*pSSECustomerKey));
+                Aws::String strBuffer(reinterpret_cast<char*>(pSSECustomerKey->GetUnderlyingData()), pSSECustomerKey->GetLength());
+                getObjectRequest.SetSSECustomerKeyMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
+            }
+
             GetObjectOutcome getObjectOutcome = m_s3Clients[TestType::Https]->GetObject(getObjectRequest);
             if (getObjectOutcome.IsSuccess())
             {
@@ -1163,6 +1177,156 @@ TEST_P(TransferTests, TransferManager_MediumTest)
                        RandomFileName,
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
+}
+
+TEST_F(TransferTests, TransferManager_MediumServerSideEncryptionTest)
+{
+    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
+    const Aws::String testBucketName = GetTestBucketName();
+    Aws::String mediumTestFilePath = MakeFilePath(RandomFileName.c_str());
+    ScopedTestFile testFile(mediumTestFilePath, MEDIUM_TEST_SIZE, testString);
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Clients[TestType::Https];
+    assert(transferManagerConfig.s3Client);
+
+    Aws::String originalBucketPolicy;
+    {
+        Aws::S3::Model::GetBucketPolicyRequest getBucketPolicyRequest;
+        getBucketPolicyRequest.SetBucket(testBucketName);
+        Aws::S3::Model::GetBucketPolicyOutcome getBucketPolicyOutcome = transferManagerConfig.s3Client->GetBucketPolicy(
+                getBucketPolicyRequest);
+        if (getBucketPolicyOutcome.IsSuccess())
+        {
+            Aws::OStringStream ss;
+            ss << getBucketPolicyOutcome.GetResult().GetPolicy().rdbuf();
+            originalBucketPolicy = ss.str();
+        }
+    }
+
+    // Put new policy
+    {
+        const Aws::String newBucketPolicy = \
+R"({
+  "Version": "2012-10-17",
+  "Id": "PutObjectPolicy",
+  "Statement": [
+    {
+      "Sid": "RestrictSSECObjectUploads",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::)" + testBucketName + R"(/*",
+      "Condition": {
+        "Null": {
+          "s3:x-amz-server-side-encryption-customer-algorithm": "true"
+        }
+      }
+    }
+  ]
+})";
+        std::shared_ptr<Aws::StringStream> putBucketPolicyRequestSs = Aws::MakeShared<Aws::StringStream>(
+                ALLOCATION_TAG);
+        *putBucketPolicyRequestSs << newBucketPolicy;
+
+        Aws::S3::Model::PutBucketPolicyRequest putBucketPolicyRequest;
+        putBucketPolicyRequest.SetBucket(testBucketName);
+        putBucketPolicyRequest.SetBody(putBucketPolicyRequestSs);
+        Aws::S3::Model::PutBucketPolicyOutcome putBucketPolicyOutcome = transferManagerConfig.s3Client->PutBucketPolicy(
+                putBucketPolicyRequest);
+        AWS_ASSERT_SUCCESS(putBucketPolicyOutcome);
+    }
+
+    // Set UploadPart template
+    CryptoBuffer key = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
+    ASSERT_EQ(32u, key.GetLength());
+    {
+        UploadPartRequest uploadPartTemplate;
+        uploadPartTemplate.SetSSECustomerAlgorithm("AES256");
+        uploadPartTemplate.SetSSECustomerKey(HashingUtils::Base64Encode(key));
+        Aws::String strBuffer(reinterpret_cast<char*>(key.GetUnderlyingData()), key.GetLength());
+        uploadPartTemplate.SetSSECustomerKeyMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
+        transferManagerConfig.uploadPartTemplate = uploadPartTemplate;
+
+        CreateMultipartUploadRequest createMultipartTemplate;
+        createMultipartTemplate.SetSSECustomerAlgorithm("AES256");
+        createMultipartTemplate.SetSSECustomerKey(HashingUtils::Base64Encode(key));
+        createMultipartTemplate.SetSSECustomerKeyMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
+        transferManagerConfig.createMultipartUploadTemplate = createMultipartTemplate;
+
+        // for download verification
+        GetObjectRequest getObjectTemplate;
+        getObjectTemplate.SetSSECustomerAlgorithm("AES256");
+        getObjectTemplate.SetSSECustomerKey(HashingUtils::Base64Encode(key));
+        getObjectTemplate.SetSSECustomerKeyMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
+        transferManagerConfig.getObjectTemplate = getObjectTemplate;
+
+        HeadObjectRequest headObjectTemplate;
+        headObjectTemplate.SetSSECustomerAlgorithm("AES256");
+        headObjectTemplate.SetSSECustomerKey(HashingUtils::Base64Encode(key));
+        headObjectTemplate.SetSSECustomerKeyMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
+        transferManagerConfig.headObjectTemplate = headObjectTemplate;
+    }
+
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+
+    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(mediumTestFilePath, testBucketName, RandomFileName, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    ASSERT_EQ(true, requestPtr->ShouldContinue());
+    ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
+    ASSERT_STREQ(mediumTestFilePath.c_str(), requestPtr->GetTargetFilePath().c_str());
+    requestPtr->WaitUntilFinished();
+
+    size_t retries = 0;
+    //just make sure we don't fail because a the put object failed. (e.g. network problems or interuptions)
+    while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
+    {
+        transferManager->RetryUpload(mediumTestFilePath, requestPtr);
+        requestPtr->WaitUntilFinished();
+    }
+
+    ASSERT_TRUE(requestPtr->IsMultipart());
+    ASSERT_FALSE(requestPtr->GetMultiPartId().empty());
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // Should be 2
+    ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
+    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
+
+    uint64_t fileSize = requestPtr->GetBytesTotalSize();
+    ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
+
+    ASSERT_TRUE(WaitForObjectToPropagate(testBucketName, RandomFileName.c_str(), &key));
+
+    VerifyUploadedFile(*transferManager,
+                       mediumTestFilePath,
+                       testBucketName,
+                       RandomFileName,
+                       "text/plain",
+                       Aws::Map<Aws::String, Aws::String>());
+
+    // Put original policy back
+    if(!originalBucketPolicy.empty())
+    {
+        std::shared_ptr<Aws::StringStream> putBucketPolicyRequestSs = Aws::MakeShared<Aws::StringStream>(
+                ALLOCATION_TAG);
+        *putBucketPolicyRequestSs << originalBucketPolicy;
+
+        Aws::S3::Model::PutBucketPolicyRequest putBucketPolicyRequest;
+        putBucketPolicyRequest.SetBucket(testBucketName);
+        putBucketPolicyRequest.SetBody(putBucketPolicyRequestSs);
+        Aws::S3::Model::PutBucketPolicyOutcome putBucketPolicyOutcome = transferManagerConfig.s3Client->PutBucketPolicy(
+                putBucketPolicyRequest);
+        AWS_ASSERT_SUCCESS(putBucketPolicyOutcome);
+    } else {
+        Aws::S3::Model::DeleteBucketPolicyRequest deleteBucketPolicyRequest;
+        deleteBucketPolicyRequest.SetBucket(testBucketName);
+        Aws::S3::Model::DeleteBucketPolicyOutcome deleteBucketPolicyOutcome = transferManagerConfig.s3Client->DeleteBucketPolicy(
+                deleteBucketPolicyRequest);
+        AWS_ASSERT_SUCCESS(deleteBucketPolicyOutcome);
+    }
 }
 
 TEST_P(TransferTests, TransferManager_BigTest)

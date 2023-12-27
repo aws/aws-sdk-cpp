@@ -49,7 +49,9 @@ FleetAttributes::FleetAttributes() :
     m_certificateConfigurationHasBeenSet(false),
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
-    m_anywhereConfigurationHasBeenSet(false)
+    m_anywhereConfigurationHasBeenSet(false),
+    m_instanceRoleCredentialsProvider(InstanceRoleCredentialsProvider::NOT_SET),
+    m_instanceRoleCredentialsProviderHasBeenSet(false)
 {
 }
 
@@ -84,7 +86,9 @@ FleetAttributes::FleetAttributes(JsonView jsonValue) :
     m_certificateConfigurationHasBeenSet(false),
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
-    m_anywhereConfigurationHasBeenSet(false)
+    m_anywhereConfigurationHasBeenSet(false),
+    m_instanceRoleCredentialsProvider(InstanceRoleCredentialsProvider::NOT_SET),
+    m_instanceRoleCredentialsProviderHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -275,6 +279,13 @@ FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
     m_anywhereConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceRoleCredentialsProvider"))
+  {
+    m_instanceRoleCredentialsProvider = InstanceRoleCredentialsProviderMapper::GetInstanceRoleCredentialsProviderForName(jsonValue.GetString("InstanceRoleCredentialsProvider"));
+
+    m_instanceRoleCredentialsProviderHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -437,6 +448,11 @@ JsonValue FleetAttributes::Jsonize() const
   {
    payload.WithObject("AnywhereConfiguration", m_anywhereConfiguration.Jsonize());
 
+  }
+
+  if(m_instanceRoleCredentialsProviderHasBeenSet)
+  {
+   payload.WithString("InstanceRoleCredentialsProvider", InstanceRoleCredentialsProviderMapper::GetNameForInstanceRoleCredentialsProvider(m_instanceRoleCredentialsProvider));
   }
 
   return payload;

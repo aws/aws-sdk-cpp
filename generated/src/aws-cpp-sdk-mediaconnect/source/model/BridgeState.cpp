@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BridgeState::NOT_SET:
+            return {};
           case BridgeState::CREATING:
             return "CREATING";
           case BridgeState::STANDBY:

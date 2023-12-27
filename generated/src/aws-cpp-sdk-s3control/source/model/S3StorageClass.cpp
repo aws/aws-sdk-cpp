@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3StorageClass::NOT_SET:
+            return {};
           case S3StorageClass::STANDARD:
             return "STANDARD";
           case S3StorageClass::STANDARD_IA:

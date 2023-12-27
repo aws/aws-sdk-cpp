@@ -1,3 +1,4 @@
+#if(!${onlyGeneratedOperations})
 #set($additionalCtorSignatureArgs = {})
 #set($ctorMemberInitList = [])
 #set($signerCtorArgs = [])
@@ -61,13 +62,16 @@
 #end
 #set($clientConfigurationNamespace = "Client")
 #set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)")
+#set($s3ExpressIdentityProviderParam = "clientConfiguration.identityProviderSupplier(*this)")
 #set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
 #set($hasEventStreamInputOperation = $serviceModel.hasStreamingRequestShapes())
 #set($signerToMake = "AWSAuthV4Signer")
-#if($serviceModel.hasOnlyBearerAuth())
-    #set($signerToMake = "Aws::Auth::BearerTokenAuthSignerProvider")
+#if($metadata.projectName == "s3")
+#set($signerToMake = "Aws::Auth::S3ExpressSignerProvider")
+#elseif($serviceModel.hasOnlyBearerAuth())
+#set($signerToMake = "Aws::Auth::BearerTokenAuthSignerProvider")
 #elseif($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
-    #set($signerToMake = "Aws::Auth::DefaultAuthSignerProvider")
+#set($signerToMake = "Aws::Auth::DefaultAuthSignerProvider")
 #end
 #if($serviceModel.endpointRules)
 #set($clientConfigurationCls = ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
@@ -76,6 +80,74 @@
 #end
 #set($clsWSpace = $className.replaceAll(".", " "))
 #set($signerWSpace = $signerToMake.replaceAll(".", " "))
+#if($serviceNamespace == "S3")
+${className}::${className}(const ${className} &rhs) :
+    BASECLASS(rhs.m_clientConfiguration,
+        Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
+            rhs.GetCredentialsProvider(),
+            rhs.m_clientConfiguration.identityProviderSupplier(*this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+            rhs.m_clientConfiguration.payloadSigningPolicy,
+            /*doubleEncodeValue*/ false),
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::Client::ClientWithAsyncTemplateMethods<${className}>(),
+    m_clientConfiguration(rhs.m_clientConfiguration),
+    m_executor(rhs.m_clientConfiguration.executor),
+    m_endpointProvider(rhs.m_endpointProvider) {}
+
+${className}& ${className}::operator=(const ${className} &rhs) {
+    if (&rhs == this) {
+      return *this;
+    }
+    m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+          rhs.GetCredentialsProvider(),
+          rhs.m_clientConfiguration.identityProviderSupplier(*this),
+          SERVICE_NAME,
+          Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+          rhs.m_clientConfiguration.payloadSigningPolicy,
+          /*doubleEncodeValue*/ false);
+    m_clientConfiguration = rhs.m_clientConfiguration;
+    m_executor = rhs.m_executor;
+    m_endpointProvider = rhs.m_endpointProvider;
+    init(m_clientConfiguration);
+    return *this;
+}
+
+S3Client::S3Client(${className} &&rhs) :
+    BASECLASS(rhs.m_clientConfiguration,
+        Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+            rhs.GetCredentialsProvider(),
+            rhs.m_clientConfiguration.identityProviderSupplier(*this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+            rhs.m_clientConfiguration.payloadSigningPolicy,
+            /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::Client::ClientWithAsyncTemplateMethods<S3Client>(),
+    m_clientConfiguration(std::move(rhs.m_clientConfiguration)),
+    m_executor(std::move(rhs.m_clientConfiguration.executor)),
+    m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
+
+${className}& ${className}::operator=(${className} &&rhs) {
+  if (&rhs == this) {
+    return *this;
+  }
+  m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+        rhs.GetCredentialsProvider(),
+        rhs.m_clientConfiguration.identityProviderSupplier(*this),
+        SERVICE_NAME,
+        Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+        rhs.m_clientConfiguration.payloadSigningPolicy,
+        /*doubleEncodeValue*/ false);
+  m_clientConfiguration = std::move(rhs.m_clientConfiguration);
+  m_executor = std::move(rhs.m_executor);
+  m_endpointProvider = std::move(rhs.m_endpointProvider);
+  init(m_clientConfiguration);
+  return *this;
+}
+
+#end
 #if($serviceModel.hasOnlyBearerAuth())
 ##BEARER TOKEN AUTH PROVIDER C-TOR
 #set($bearerAddCtorArgs = {})
@@ -128,6 +200,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
   BASECLASS(clientConfiguration,
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
                             ${signerWSpace}  ${defaultCredentialsProviderChainParam},
+#if($metadata.projectName == "s3")
+                            ${signerWSpace}  ${s3ExpressIdentityProviderParam},
+#end
                             ${signerWSpace}  SERVICE_NAME,
                             ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
 #end
@@ -169,6 +244,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
   BASECLASS(clientConfiguration,
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
                             ${signerWSpace}  ${simpleCredentialsProviderParam},
+#if($metadata.projectName == "s3")
+                            ${signerWSpace}  ${s3ExpressIdentityProviderParam},
+#end
                             ${signerWSpace}  SERVICE_NAME,
                             ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
 #end
@@ -210,6 +288,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
   BASECLASS(clientConfiguration,
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
                             ${signerWSpace}  credentialsProvider,
+#if($metadata.projectName == "s3")
+                            ${signerWSpace}  ${s3ExpressIdentityProviderParam},
+#end
                             ${signerWSpace}  SERVICE_NAME,
                             ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
 #end
@@ -416,3 +497,4 @@ void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 #end
 #end##-#if($serviceModel.endpointRules)
 }
+#end

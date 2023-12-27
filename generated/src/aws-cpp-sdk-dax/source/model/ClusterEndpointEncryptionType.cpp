@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterEndpointEncryptionType::NOT_SET:
+            return {};
           case ClusterEndpointEncryptionType::NONE:
             return "NONE";
           case ClusterEndpointEncryptionType::TLS:

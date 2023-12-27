@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationSyncCompliance::NOT_SET:
+            return {};
           case AssociationSyncCompliance::AUTO:
             return "AUTO";
           case AssociationSyncCompliance::MANUAL:

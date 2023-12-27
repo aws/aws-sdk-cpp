@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CannedAclForObjectsValue::NOT_SET:
+            return {};
           case CannedAclForObjectsValue::none:
             return "none";
           case CannedAclForObjectsValue::private_:

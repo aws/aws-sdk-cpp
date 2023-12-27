@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkgroupStatus::NOT_SET:
+            return {};
           case WorkgroupStatus::CREATING:
             return "CREATING";
           case WorkgroupStatus::AVAILABLE:

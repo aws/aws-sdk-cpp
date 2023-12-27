@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeServerLifeCycleStateSourceServerLifecycleState::NOT_SET:
+            return {};
           case ChangeServerLifeCycleStateSourceServerLifecycleState::READY_FOR_TEST:
             return "READY_FOR_TEST";
           case ChangeServerLifeCycleStateSourceServerLifecycleState::READY_FOR_CUTOVER:

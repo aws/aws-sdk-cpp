@@ -194,6 +194,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExtraParamName::NOT_SET:
+            return {};
           case ExtraParamName::DUNS_NUMBER:
             return "DUNS_NUMBER";
           case ExtraParamName::BRAND_NUMBER:

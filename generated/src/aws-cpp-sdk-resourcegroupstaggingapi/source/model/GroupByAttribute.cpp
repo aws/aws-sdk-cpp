@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupByAttribute::NOT_SET:
+            return {};
           case GroupByAttribute::TARGET_ID:
             return "TARGET_ID";
           case GroupByAttribute::REGION:

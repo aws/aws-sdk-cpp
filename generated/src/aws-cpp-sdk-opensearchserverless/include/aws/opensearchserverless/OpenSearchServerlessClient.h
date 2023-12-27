@@ -115,6 +115,62 @@ namespace OpenSearchServerless
         }
 
         /**
+         * <p>Returns a list of successful and failed retrievals for the OpenSearch
+         * Serverless indexes. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
+         * data lifecycle policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetEffectiveLifecyclePolicyOutcome BatchGetEffectiveLifecyclePolicy(const Model::BatchGetEffectiveLifecyclePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetEffectiveLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetEffectiveLifecyclePolicyRequestT = Model::BatchGetEffectiveLifecyclePolicyRequest>
+        Model::BatchGetEffectiveLifecyclePolicyOutcomeCallable BatchGetEffectiveLifecyclePolicyCallable(const BatchGetEffectiveLifecyclePolicyRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::BatchGetEffectiveLifecyclePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetEffectiveLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetEffectiveLifecyclePolicyRequestT = Model::BatchGetEffectiveLifecyclePolicyRequest>
+        void BatchGetEffectiveLifecyclePolicyAsync(const BatchGetEffectiveLifecyclePolicyRequestT& request, const BatchGetEffectiveLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::BatchGetEffectiveLifecyclePolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Returns one or more configured OpenSearch Serverless lifecycle policies. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
+         * data lifecycle policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetLifecyclePolicyOutcome BatchGetLifecyclePolicy(const Model::BatchGetLifecyclePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetLifecyclePolicyRequestT = Model::BatchGetLifecyclePolicyRequest>
+        Model::BatchGetLifecyclePolicyOutcomeCallable BatchGetLifecyclePolicyCallable(const BatchGetLifecyclePolicyRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::BatchGetLifecyclePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetLifecyclePolicyRequestT = Model::BatchGetLifecyclePolicyRequest>
+        void BatchGetLifecyclePolicyAsync(const BatchGetLifecyclePolicyRequestT& request, const BatchGetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::BatchGetLifecyclePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Returns attributes for one or more VPC endpoints associated with the current
          * account. For more information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access
@@ -200,6 +256,35 @@ namespace OpenSearchServerless
         void CreateCollectionAsync(const CreateCollectionRequestT& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServerlessClient::CreateCollection, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a lifecyle policy to be applied to OpenSearch Serverless indexes.
+         * Lifecycle policies define the number of days or hours to retain the data on an
+         * OpenSearch Serverless index. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create">Creating
+         * data lifecycle policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLifecyclePolicyOutcome CreateLifecyclePolicy(const Model::CreateLifecyclePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLifecyclePolicyRequestT = Model::CreateLifecyclePolicyRequest>
+        Model::CreateLifecyclePolicyOutcomeCallable CreateLifecyclePolicyCallable(const CreateLifecyclePolicyRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::CreateLifecyclePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLifecyclePolicyRequestT = Model::CreateLifecyclePolicyRequest>
+        void CreateLifecyclePolicyAsync(const CreateLifecyclePolicyRequestT& request, const CreateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::CreateLifecyclePolicy, request, handler, context);
         }
 
         /**
@@ -347,6 +432,34 @@ namespace OpenSearchServerless
         void DeleteCollectionAsync(const DeleteCollectionRequestT& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServerlessClient::DeleteCollection, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an OpenSearch Serverless lifecycle policy. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete">Deleting
+         * data lifecycle policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLifecyclePolicyOutcome DeleteLifecyclePolicy(const Model::DeleteLifecyclePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLifecyclePolicyRequestT = Model::DeleteLifecyclePolicyRequest>
+        Model::DeleteLifecyclePolicyOutcomeCallable DeleteLifecyclePolicyCallable(const DeleteLifecyclePolicyRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::DeleteLifecyclePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLifecyclePolicyRequestT = Model::DeleteLifecyclePolicyRequest>
+        void DeleteLifecyclePolicyAsync(const DeleteLifecyclePolicyRequestT& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::DeleteLifecyclePolicy, request, handler, context);
         }
 
         /**
@@ -629,6 +742,34 @@ namespace OpenSearchServerless
         }
 
         /**
+         * <p>Returns a list of OpenSearch Serverless lifecycle policies. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
+         * data lifecycle policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLifecyclePoliciesOutcome ListLifecyclePolicies(const Model::ListLifecyclePoliciesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLifecyclePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLifecyclePoliciesRequestT = Model::ListLifecyclePoliciesRequest>
+        Model::ListLifecyclePoliciesOutcomeCallable ListLifecyclePoliciesCallable(const ListLifecyclePoliciesRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::ListLifecyclePolicies, request);
+        }
+
+        /**
+         * An Async wrapper for ListLifecyclePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLifecyclePoliciesRequestT = Model::ListLifecyclePoliciesRequest>
+        void ListLifecyclePoliciesAsync(const ListLifecyclePoliciesRequestT& request, const ListLifecyclePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::ListLifecyclePolicies, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about configured OpenSearch Serverless security
          * configurations. For more information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML
@@ -876,6 +1017,33 @@ namespace OpenSearchServerless
         void UpdateCollectionAsync(const UpdateCollectionRequestT& request, const UpdateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServerlessClient::UpdateCollection, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an OpenSearch Serverless access policy. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update">Updating
+         * data lifecycle policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLifecyclePolicyOutcome UpdateLifecyclePolicy(const Model::UpdateLifecyclePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLifecyclePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLifecyclePolicyRequestT = Model::UpdateLifecyclePolicyRequest>
+        Model::UpdateLifecyclePolicyOutcomeCallable UpdateLifecyclePolicyCallable(const UpdateLifecyclePolicyRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServerlessClient::UpdateLifecyclePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLifecyclePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLifecyclePolicyRequestT = Model::UpdateLifecyclePolicyRequest>
+        void UpdateLifecyclePolicyAsync(const UpdateLifecyclePolicyRequestT& request, const UpdateLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServerlessClient::UpdateLifecyclePolicy, request, handler, context);
         }
 
         /**

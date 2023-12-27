@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubDestinationTeletextGridControl::NOT_SET:
+            return {};
           case DvbSubDestinationTeletextGridControl::FIXED:
             return "FIXED";
           case DvbSubDestinationTeletextGridControl::SCALED:

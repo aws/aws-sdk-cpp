@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeConfigurationOptionsFilterName::NOT_SET:
+            return {};
           case NodeConfigurationOptionsFilterName::NodeType:
             return "NodeType";
           case NodeConfigurationOptionsFilterName::NumberOfNodes:

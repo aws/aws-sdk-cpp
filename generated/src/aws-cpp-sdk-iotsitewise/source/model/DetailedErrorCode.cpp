@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetailedErrorCode::NOT_SET:
+            return {};
           case DetailedErrorCode::INCOMPATIBLE_COMPUTE_LOCATION:
             return "INCOMPATIBLE_COMPUTE_LOCATION";
           case DetailedErrorCode::INCOMPATIBLE_FORWARDING_CONFIGURATION:

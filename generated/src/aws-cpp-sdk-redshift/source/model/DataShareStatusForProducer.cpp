@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataShareStatusForProducer::NOT_SET:
+            return {};
           case DataShareStatusForProducer::ACTIVE:
             return "ACTIVE";
           case DataShareStatusForProducer::AUTHORIZED:

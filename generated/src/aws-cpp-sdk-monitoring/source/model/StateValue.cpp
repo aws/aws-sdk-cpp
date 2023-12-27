@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StateValue::NOT_SET:
+            return {};
           case StateValue::OK:
             return "OK";
           case StateValue::ALARM:

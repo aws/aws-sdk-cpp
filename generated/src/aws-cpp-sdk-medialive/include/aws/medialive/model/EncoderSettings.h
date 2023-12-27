@@ -15,6 +15,7 @@
 #include <aws/medialive/model/NielsenConfiguration.h>
 #include <aws/medialive/model/TimecodeConfig.h>
 #include <aws/medialive/model/ThumbnailConfiguration.h>
+#include <aws/medialive/model/ColorCorrectionSettings.h>
 #include <aws/medialive/model/AudioDescription.h>
 #include <aws/medialive/model/CaptionDescription.h>
 #include <aws/medialive/model/OutputGroup.h>
@@ -444,6 +445,37 @@ namespace Model
      */
     inline EncoderSettings& WithThumbnailConfiguration(ThumbnailConfiguration&& value) { SetThumbnailConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * Color Correction Settings
+     */
+    inline const ColorCorrectionSettings& GetColorCorrectionSettings() const{ return m_colorCorrectionSettings; }
+
+    /**
+     * Color Correction Settings
+     */
+    inline bool ColorCorrectionSettingsHasBeenSet() const { return m_colorCorrectionSettingsHasBeenSet; }
+
+    /**
+     * Color Correction Settings
+     */
+    inline void SetColorCorrectionSettings(const ColorCorrectionSettings& value) { m_colorCorrectionSettingsHasBeenSet = true; m_colorCorrectionSettings = value; }
+
+    /**
+     * Color Correction Settings
+     */
+    inline void SetColorCorrectionSettings(ColorCorrectionSettings&& value) { m_colorCorrectionSettingsHasBeenSet = true; m_colorCorrectionSettings = std::move(value); }
+
+    /**
+     * Color Correction Settings
+     */
+    inline EncoderSettings& WithColorCorrectionSettings(const ColorCorrectionSettings& value) { SetColorCorrectionSettings(value); return *this;}
+
+    /**
+     * Color Correction Settings
+     */
+    inline EncoderSettings& WithColorCorrectionSettings(ColorCorrectionSettings&& value) { SetColorCorrectionSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AudioDescription> m_audioDescriptions;
@@ -484,6 +516,9 @@ namespace Model
 
     ThumbnailConfiguration m_thumbnailConfiguration;
     bool m_thumbnailConfigurationHasBeenSet = false;
+
+    ColorCorrectionSettings m_colorCorrectionSettings;
+    bool m_colorCorrectionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

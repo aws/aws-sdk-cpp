@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayRouteType::NOT_SET:
+            return {};
           case TransitGatewayRouteType::static_:
             return "static";
           case TransitGatewayRouteType::propagated:

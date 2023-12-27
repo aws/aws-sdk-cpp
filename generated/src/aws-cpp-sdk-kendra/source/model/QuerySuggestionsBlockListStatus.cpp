@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuerySuggestionsBlockListStatus::NOT_SET:
+            return {};
           case QuerySuggestionsBlockListStatus::ACTIVE:
             return "ACTIVE";
           case QuerySuggestionsBlockListStatus::CREATING:

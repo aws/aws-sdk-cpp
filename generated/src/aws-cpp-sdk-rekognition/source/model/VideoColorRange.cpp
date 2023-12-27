@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VideoColorRange::NOT_SET:
+            return {};
           case VideoColorRange::FULL:
             return "FULL";
           case VideoColorRange::LIMITED:

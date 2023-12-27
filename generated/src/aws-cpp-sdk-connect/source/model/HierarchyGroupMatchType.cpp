@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HierarchyGroupMatchType::NOT_SET:
+            return {};
           case HierarchyGroupMatchType::EXACT:
             return "EXACT";
           case HierarchyGroupMatchType::WITH_CHILD_GROUPS:

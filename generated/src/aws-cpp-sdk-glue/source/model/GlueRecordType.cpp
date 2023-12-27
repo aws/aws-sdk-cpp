@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlueRecordType::NOT_SET:
+            return {};
           case GlueRecordType::DATE:
             return "DATE";
           case GlueRecordType::STRING:

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpAddressType.h>
 #include <aws/ec2/model/DnsOptionsSpecification.h>
+#include <aws/ec2/model/SubnetConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -418,110 +419,110 @@ namespace Model
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to associate with the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddSecurityGroupIds() const{ return m_addSecurityGroupIds; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to associate with the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline bool AddSecurityGroupIdsHasBeenSet() const { return m_addSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to associate with the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline void SetAddSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds = value; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to associate with the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline void SetAddSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds = std::move(value); }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to associate with the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetAddSecurityGroupIds(value); return *this;}
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to associate with the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& WithAddSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetAddSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to associate with the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSecurityGroupIds(const Aws::String& value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to associate with the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSecurityGroupIds(Aws::String&& value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to associate with the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& AddAddSecurityGroupIds(const char* value) { m_addSecurityGroupIdsHasBeenSet = true; m_addSecurityGroupIds.push_back(value); return *this; }
 
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveSecurityGroupIds() const{ return m_removeSecurityGroupIds; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline bool RemoveSecurityGroupIdsHasBeenSet() const { return m_removeSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline void SetRemoveSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds = value; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline void SetRemoveSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds = std::move(value); }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& WithRemoveSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetRemoveSecurityGroupIds(value); return *this;}
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& WithRemoveSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetRemoveSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveSecurityGroupIds(const Aws::String& value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveSecurityGroupIds(Aws::String&& value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(Interface endpoint) The IDs of the security groups to disassociate from the
-     * network interface.</p>
+     * endpoint network interfaces.</p>
      */
     inline ModifyVpcEndpointRequest& AddRemoveSecurityGroupIds(const char* value) { m_removeSecurityGroupIdsHasBeenSet = true; m_removeSecurityGroupIds.push_back(value); return *this; }
 
@@ -612,6 +613,47 @@ namespace Model
      */
     inline ModifyVpcEndpointRequest& WithPrivateDnsEnabled(bool value) { SetPrivateDnsEnabled(value); return *this;}
 
+
+    /**
+     * <p>The subnet configurations for the endpoint.</p>
+     */
+    inline const Aws::Vector<SubnetConfiguration>& GetSubnetConfigurations() const{ return m_subnetConfigurations; }
+
+    /**
+     * <p>The subnet configurations for the endpoint.</p>
+     */
+    inline bool SubnetConfigurationsHasBeenSet() const { return m_subnetConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The subnet configurations for the endpoint.</p>
+     */
+    inline void SetSubnetConfigurations(const Aws::Vector<SubnetConfiguration>& value) { m_subnetConfigurationsHasBeenSet = true; m_subnetConfigurations = value; }
+
+    /**
+     * <p>The subnet configurations for the endpoint.</p>
+     */
+    inline void SetSubnetConfigurations(Aws::Vector<SubnetConfiguration>&& value) { m_subnetConfigurationsHasBeenSet = true; m_subnetConfigurations = std::move(value); }
+
+    /**
+     * <p>The subnet configurations for the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& WithSubnetConfigurations(const Aws::Vector<SubnetConfiguration>& value) { SetSubnetConfigurations(value); return *this;}
+
+    /**
+     * <p>The subnet configurations for the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& WithSubnetConfigurations(Aws::Vector<SubnetConfiguration>&& value) { SetSubnetConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The subnet configurations for the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& AddSubnetConfigurations(const SubnetConfiguration& value) { m_subnetConfigurationsHasBeenSet = true; m_subnetConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The subnet configurations for the endpoint.</p>
+     */
+    inline ModifyVpcEndpointRequest& AddSubnetConfigurations(SubnetConfiguration&& value) { m_subnetConfigurationsHasBeenSet = true; m_subnetConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     bool m_dryRun;
@@ -652,6 +694,9 @@ namespace Model
 
     bool m_privateDnsEnabled;
     bool m_privateDnsEnabledHasBeenSet = false;
+
+    Aws::Vector<SubnetConfiguration> m_subnetConfigurations;
+    bool m_subnetConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -446,26 +446,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the source DB snapshot
-     * to the target DB snapshot. By default, tags aren't copied.</p>
+     * <p>Specifies whether to copy all tags from the source DB snapshot to the target
+     * DB snapshot. By default, tags aren't copied.</p>
      */
     inline bool GetCopyTags() const{ return m_copyTags; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the source DB snapshot
-     * to the target DB snapshot. By default, tags aren't copied.</p>
+     * <p>Specifies whether to copy all tags from the source DB snapshot to the target
+     * DB snapshot. By default, tags aren't copied.</p>
      */
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the source DB snapshot
-     * to the target DB snapshot. By default, tags aren't copied.</p>
+     * <p>Specifies whether to copy all tags from the source DB snapshot to the target
+     * DB snapshot. By default, tags aren't copied.</p>
      */
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the source DB snapshot
-     * to the target DB snapshot. By default, tags aren't copied.</p>
+     * <p>Specifies whether to copy all tags from the source DB snapshot to the target
+     * DB snapshot. By default, tags aren't copied.</p>
      */
     inline CopyDBSnapshotRequest& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
 
@@ -1026,34 +1026,34 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to copy the DB option group associated with
-     * the source DB snapshot to the target Amazon Web Services account and associate
-     * with the target DB snapshot. The associated option group can be copied only with
-     * cross-account snapshot copy calls.</p>
+     * <p>Specifies whether to copy the DB option group associated with the source DB
+     * snapshot to the target Amazon Web Services account and associate with the target
+     * DB snapshot. The associated option group can be copied only with cross-account
+     * snapshot copy calls.</p>
      */
     inline bool GetCopyOptionGroup() const{ return m_copyOptionGroup; }
 
     /**
-     * <p>A value that indicates whether to copy the DB option group associated with
-     * the source DB snapshot to the target Amazon Web Services account and associate
-     * with the target DB snapshot. The associated option group can be copied only with
-     * cross-account snapshot copy calls.</p>
+     * <p>Specifies whether to copy the DB option group associated with the source DB
+     * snapshot to the target Amazon Web Services account and associate with the target
+     * DB snapshot. The associated option group can be copied only with cross-account
+     * snapshot copy calls.</p>
      */
     inline bool CopyOptionGroupHasBeenSet() const { return m_copyOptionGroupHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy the DB option group associated with
-     * the source DB snapshot to the target Amazon Web Services account and associate
-     * with the target DB snapshot. The associated option group can be copied only with
-     * cross-account snapshot copy calls.</p>
+     * <p>Specifies whether to copy the DB option group associated with the source DB
+     * snapshot to the target Amazon Web Services account and associate with the target
+     * DB snapshot. The associated option group can be copied only with cross-account
+     * snapshot copy calls.</p>
      */
     inline void SetCopyOptionGroup(bool value) { m_copyOptionGroupHasBeenSet = true; m_copyOptionGroup = value; }
 
     /**
-     * <p>A value that indicates whether to copy the DB option group associated with
-     * the source DB snapshot to the target Amazon Web Services account and associate
-     * with the target DB snapshot. The associated option group can be copied only with
-     * cross-account snapshot copy calls.</p>
+     * <p>Specifies whether to copy the DB option group associated with the source DB
+     * snapshot to the target Amazon Web Services account and associate with the target
+     * DB snapshot. The associated option group can be copied only with cross-account
+     * snapshot copy calls.</p>
      */
     inline CopyDBSnapshotRequest& WithCopyOptionGroup(bool value) { SetCopyOptionGroup(value); return *this;}
 

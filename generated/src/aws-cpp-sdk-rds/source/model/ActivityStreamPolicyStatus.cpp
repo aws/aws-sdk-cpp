@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActivityStreamPolicyStatus::NOT_SET:
+            return {};
           case ActivityStreamPolicyStatus::locked:
             return "locked";
           case ActivityStreamPolicyStatus::unlocked:

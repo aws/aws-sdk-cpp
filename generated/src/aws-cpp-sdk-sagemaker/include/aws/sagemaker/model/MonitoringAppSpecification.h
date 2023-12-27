@@ -174,65 +174,65 @@ namespace Model
 
     /**
      * <p>An Amazon S3 URI to a script that is called per row prior to running
-     * analysis. It can base64 decode the payload and convert it into a flatted json so
-     * that the built-in container can use the converted data. Applicable only for the
-     * built-in (first party) containers.</p>
+     * analysis. It can base64 decode the payload and convert it into a flattened JSON
+     * so that the built-in container can use the converted data. Applicable only for
+     * the built-in (first party) containers.</p>
      */
     inline const Aws::String& GetRecordPreprocessorSourceUri() const{ return m_recordPreprocessorSourceUri; }
 
     /**
      * <p>An Amazon S3 URI to a script that is called per row prior to running
-     * analysis. It can base64 decode the payload and convert it into a flatted json so
-     * that the built-in container can use the converted data. Applicable only for the
-     * built-in (first party) containers.</p>
+     * analysis. It can base64 decode the payload and convert it into a flattened JSON
+     * so that the built-in container can use the converted data. Applicable only for
+     * the built-in (first party) containers.</p>
      */
     inline bool RecordPreprocessorSourceUriHasBeenSet() const { return m_recordPreprocessorSourceUriHasBeenSet; }
 
     /**
      * <p>An Amazon S3 URI to a script that is called per row prior to running
-     * analysis. It can base64 decode the payload and convert it into a flatted json so
-     * that the built-in container can use the converted data. Applicable only for the
-     * built-in (first party) containers.</p>
+     * analysis. It can base64 decode the payload and convert it into a flattened JSON
+     * so that the built-in container can use the converted data. Applicable only for
+     * the built-in (first party) containers.</p>
      */
     inline void SetRecordPreprocessorSourceUri(const Aws::String& value) { m_recordPreprocessorSourceUriHasBeenSet = true; m_recordPreprocessorSourceUri = value; }
 
     /**
      * <p>An Amazon S3 URI to a script that is called per row prior to running
-     * analysis. It can base64 decode the payload and convert it into a flatted json so
-     * that the built-in container can use the converted data. Applicable only for the
-     * built-in (first party) containers.</p>
+     * analysis. It can base64 decode the payload and convert it into a flattened JSON
+     * so that the built-in container can use the converted data. Applicable only for
+     * the built-in (first party) containers.</p>
      */
     inline void SetRecordPreprocessorSourceUri(Aws::String&& value) { m_recordPreprocessorSourceUriHasBeenSet = true; m_recordPreprocessorSourceUri = std::move(value); }
 
     /**
      * <p>An Amazon S3 URI to a script that is called per row prior to running
-     * analysis. It can base64 decode the payload and convert it into a flatted json so
-     * that the built-in container can use the converted data. Applicable only for the
-     * built-in (first party) containers.</p>
+     * analysis. It can base64 decode the payload and convert it into a flattened JSON
+     * so that the built-in container can use the converted data. Applicable only for
+     * the built-in (first party) containers.</p>
      */
     inline void SetRecordPreprocessorSourceUri(const char* value) { m_recordPreprocessorSourceUriHasBeenSet = true; m_recordPreprocessorSourceUri.assign(value); }
 
     /**
      * <p>An Amazon S3 URI to a script that is called per row prior to running
-     * analysis. It can base64 decode the payload and convert it into a flatted json so
-     * that the built-in container can use the converted data. Applicable only for the
-     * built-in (first party) containers.</p>
+     * analysis. It can base64 decode the payload and convert it into a flattened JSON
+     * so that the built-in container can use the converted data. Applicable only for
+     * the built-in (first party) containers.</p>
      */
     inline MonitoringAppSpecification& WithRecordPreprocessorSourceUri(const Aws::String& value) { SetRecordPreprocessorSourceUri(value); return *this;}
 
     /**
      * <p>An Amazon S3 URI to a script that is called per row prior to running
-     * analysis. It can base64 decode the payload and convert it into a flatted json so
-     * that the built-in container can use the converted data. Applicable only for the
-     * built-in (first party) containers.</p>
+     * analysis. It can base64 decode the payload and convert it into a flattened JSON
+     * so that the built-in container can use the converted data. Applicable only for
+     * the built-in (first party) containers.</p>
      */
     inline MonitoringAppSpecification& WithRecordPreprocessorSourceUri(Aws::String&& value) { SetRecordPreprocessorSourceUri(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon S3 URI to a script that is called per row prior to running
-     * analysis. It can base64 decode the payload and convert it into a flatted json so
-     * that the built-in container can use the converted data. Applicable only for the
-     * built-in (first party) containers.</p>
+     * analysis. It can base64 decode the payload and convert it into a flattened JSON
+     * so that the built-in container can use the converted data. Applicable only for
+     * the built-in (first party) containers.</p>
      */
     inline MonitoringAppSpecification& WithRecordPreprocessorSourceUri(const char* value) { SetRecordPreprocessorSourceUri(value); return *this;}
 

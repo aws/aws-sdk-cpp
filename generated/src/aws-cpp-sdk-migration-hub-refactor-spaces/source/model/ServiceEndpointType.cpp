@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceEndpointType::NOT_SET:
+            return {};
           case ServiceEndpointType::LAMBDA:
             return "LAMBDA";
           case ServiceEndpointType::URL:

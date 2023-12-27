@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricAggregationType::NOT_SET:
+            return {};
           case MetricAggregationType::Average:
             return "Average";
           case MetricAggregationType::Minimum:

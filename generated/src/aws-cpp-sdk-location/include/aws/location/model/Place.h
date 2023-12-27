@@ -573,6 +573,79 @@ namespace Model
 
 
     /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline const Aws::String& GetSubMunicipality() const{ return m_subMunicipality; }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline bool SubMunicipalityHasBeenSet() const { return m_subMunicipalityHasBeenSet; }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline void SetSubMunicipality(const Aws::String& value) { m_subMunicipalityHasBeenSet = true; m_subMunicipality = value; }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline void SetSubMunicipality(Aws::String&& value) { m_subMunicipalityHasBeenSet = true; m_subMunicipality = std::move(value); }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline void SetSubMunicipality(const char* value) { m_subMunicipalityHasBeenSet = true; m_subMunicipality.assign(value); }
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline Place& WithSubMunicipality(const Aws::String& value) { SetSubMunicipality(value); return *this;}
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline Place& WithSubMunicipality(Aws::String&& value) { SetSubMunicipality(std::move(value)); return *this;}
+
+    /**
+     * <p>An area that's part of a larger municipality. For example, <code>Blissville
+     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
+     * property supported by Esri and OpenData. The Esri property is
+     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
+     * 
+     */
+    inline Place& WithSubMunicipality(const char* value) { SetSubMunicipality(value); return *this;}
+
+
+    /**
      * <p>A county, or an area that's part of a larger region. For example, <code>Metro
      * Vancouver</code>.</p>
      */
@@ -868,6 +941,9 @@ namespace Model
 
     Aws::String m_street;
     bool m_streetHasBeenSet = false;
+
+    Aws::String m_subMunicipality;
+    bool m_subMunicipalityHasBeenSet = false;
 
     Aws::String m_subRegion;
     bool m_subRegionHasBeenSet = false;

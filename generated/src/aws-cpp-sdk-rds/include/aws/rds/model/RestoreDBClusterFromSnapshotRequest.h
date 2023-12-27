@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
+#include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -1012,9 +1013,9 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
@@ -1022,9 +1023,9 @@ namespace Model
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
@@ -1032,9 +1033,9 @@ namespace Model
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
@@ -1042,9 +1043,9 @@ namespace Model
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
@@ -1479,71 +1480,71 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters
-     * and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters and
+     * Multi-AZ DB clusters</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters
-     * and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters and
+     * Multi-AZ DB clusters</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters
-     * and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters and
+     * Multi-AZ DB clusters</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters
-     * and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p> <p>Valid for: Aurora DB clusters and
+     * Multi-AZ DB clusters</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p> <p>Valid for:
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p> <p>Valid for:
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p> <p>Valid for:
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p> <p>Valid for:
+     * Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
-     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid
@@ -1552,9 +1553,9 @@ namespace Model
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
-     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid
@@ -1563,9 +1564,9 @@ namespace Model
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
-     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid
@@ -1574,9 +1575,9 @@ namespace Model
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
-     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid
@@ -1585,9 +1586,9 @@ namespace Model
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
-     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid
@@ -1596,9 +1597,9 @@ namespace Model
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
-     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid
@@ -1607,9 +1608,9 @@ namespace Model
     inline RestoreDBClusterFromSnapshotRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
-     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid
@@ -1618,9 +1619,9 @@ namespace Model
     inline RestoreDBClusterFromSnapshotRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB cluster in. The
-     * domain must be created prior to this operation. Currently, only MySQL, Microsoft
-     * SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active
+     * <p>The Active Directory directory ID to restore the DB cluster in. The domain
+     * must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active
      * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid
@@ -1630,50 +1631,50 @@ namespace Model
 
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>Valid for: Aurora DB clusters only</p>
+     * <p>The name of the IAM role to be used when making API calls to the Directory
+     * Service.</p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
@@ -1770,7 +1771,7 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
      * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1780,7 +1781,7 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
      * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1790,7 +1791,7 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
      * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1800,7 +1801,7 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
      * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1810,7 +1811,7 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
      * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1820,7 +1821,7 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
      * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1830,7 +1831,7 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
      * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1840,7 +1841,7 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
      * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * is required.</p> <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1898,16 +1899,16 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB cluster is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access is not permitted if the security group
-     * assigned to the DB cluster doesn't permit it.</p> <p>When the DB cluster isn't
-     * publicly accessible, it is an internal DB cluster with a DNS name that resolves
-     * to a private IP address.</p> <p>Default: The default behavior varies depending
-     * on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB cluster isn't publicly
+     * accessible, it is an internal DB cluster with a DNS name that resolves to a
+     * private IP address.</p> <p>Default: The default behavior varies depending on
+     * whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
      * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
@@ -1924,16 +1925,16 @@ namespace Model
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB cluster is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access is not permitted if the security group
-     * assigned to the DB cluster doesn't permit it.</p> <p>When the DB cluster isn't
-     * publicly accessible, it is an internal DB cluster with a DNS name that resolves
-     * to a private IP address.</p> <p>Default: The default behavior varies depending
-     * on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB cluster isn't publicly
+     * accessible, it is an internal DB cluster with a DNS name that resolves to a
+     * private IP address.</p> <p>Default: The default behavior varies depending on
+     * whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
      * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
@@ -1950,16 +1951,16 @@ namespace Model
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB cluster is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access is not permitted if the security group
-     * assigned to the DB cluster doesn't permit it.</p> <p>When the DB cluster isn't
-     * publicly accessible, it is an internal DB cluster with a DNS name that resolves
-     * to a private IP address.</p> <p>Default: The default behavior varies depending
-     * on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB cluster isn't publicly
+     * accessible, it is an internal DB cluster with a DNS name that resolves to a
+     * private IP address.</p> <p>Default: The default behavior varies depending on
+     * whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
      * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
@@ -1976,16 +1977,16 @@ namespace Model
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB cluster is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access is not permitted if the security group
-     * assigned to the DB cluster doesn't permit it.</p> <p>When the DB cluster isn't
-     * publicly accessible, it is an internal DB cluster with a DNS name that resolves
-     * to a private IP address.</p> <p>Default: The default behavior varies depending
-     * on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <p>Specifies whether the DB cluster is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB cluster isn't publicly
+     * accessible, it is an internal DB cluster with a DNS name that resolves to a
+     * private IP address.</p> <p>Default: The default behavior varies depending on
+     * whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
      * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
      * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
@@ -2022,7 +2023,7 @@ namespace Model
 
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2035,7 +2036,7 @@ namespace Model
     inline const Aws::String& GetNetworkType() const{ return m_networkType; }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2048,7 +2049,7 @@ namespace Model
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2061,7 +2062,7 @@ namespace Model
     inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2074,7 +2075,7 @@ namespace Model
     inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2087,7 +2088,7 @@ namespace Model
     inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2100,7 +2101,7 @@ namespace Model
     inline RestoreDBClusterFromSnapshotRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2113,7 +2114,7 @@ namespace Model
     inline RestoreDBClusterFromSnapshotRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2124,6 +2125,37 @@ namespace Model
      * </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const RdsCustomClusterConfiguration& GetRdsCustomClusterConfiguration() const{ return m_rdsCustomClusterConfiguration; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool RdsCustomClusterConfigurationHasBeenSet() const { return m_rdsCustomClusterConfigurationHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { SetRdsCustomClusterConfiguration(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { SetRdsCustomClusterConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -2210,6 +2242,9 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
+    bool m_rdsCustomClusterConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SessionKeyDerivationMode::NOT_SET:
+            return {};
           case SessionKeyDerivationMode::EMV_COMMON_SESSION_KEY:
             return "EMV_COMMON_SESSION_KEY";
           case SessionKeyDerivationMode::EMV2000:

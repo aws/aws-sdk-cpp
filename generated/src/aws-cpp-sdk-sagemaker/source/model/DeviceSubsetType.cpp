@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceSubsetType::NOT_SET:
+            return {};
           case DeviceSubsetType::PERCENTAGE:
             return "PERCENTAGE";
           case DeviceSubsetType::SELECTION:

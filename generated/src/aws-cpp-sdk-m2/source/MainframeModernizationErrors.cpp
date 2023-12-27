@@ -64,6 +64,7 @@ namespace MainframeModernizationErrorMapper
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int EXECUTION_TIMEOUT_HASH = HashingUtils::HashString("ExecutionTimeoutException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -72,15 +73,19 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MainframeModernizationErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MainframeModernizationErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MainframeModernizationErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MainframeModernizationErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MainframeModernizationErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MainframeModernizationErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
+  }
+  else if (hashCode == EXECUTION_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MainframeModernizationErrors::EXECUTION_TIMEOUT), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

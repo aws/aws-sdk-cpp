@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     PackageID,
     PackageName,
-    PackageStatus
+    PackageStatus,
+    PackageType,
+    EngineVersion
   };
 
 namespace DescribePackagesFilterNameMapper

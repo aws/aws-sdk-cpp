@@ -12,6 +12,7 @@
 #include <aws/kendra/model/TextWithHighlights.h>
 #include <aws/kendra/model/ScoreAttributes.h>
 #include <aws/kendra/model/TableExcerpt.h>
+#include <aws/kendra/model/CollapsedResultDetail.h>
 #include <aws/kendra/model/AdditionalResultAttribute.h>
 #include <aws/kendra/model/DocumentAttribute.h>
 #include <utility>
@@ -619,6 +620,37 @@ namespace Model
      */
     inline QueryResultItem& WithTableExcerpt(TableExcerpt&& value) { SetTableExcerpt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides details about a collapsed group of search results.</p>
+     */
+    inline const CollapsedResultDetail& GetCollapsedResultDetail() const{ return m_collapsedResultDetail; }
+
+    /**
+     * <p>Provides details about a collapsed group of search results.</p>
+     */
+    inline bool CollapsedResultDetailHasBeenSet() const { return m_collapsedResultDetailHasBeenSet; }
+
+    /**
+     * <p>Provides details about a collapsed group of search results.</p>
+     */
+    inline void SetCollapsedResultDetail(const CollapsedResultDetail& value) { m_collapsedResultDetailHasBeenSet = true; m_collapsedResultDetail = value; }
+
+    /**
+     * <p>Provides details about a collapsed group of search results.</p>
+     */
+    inline void SetCollapsedResultDetail(CollapsedResultDetail&& value) { m_collapsedResultDetailHasBeenSet = true; m_collapsedResultDetail = std::move(value); }
+
+    /**
+     * <p>Provides details about a collapsed group of search results.</p>
+     */
+    inline QueryResultItem& WithCollapsedResultDetail(const CollapsedResultDetail& value) { SetCollapsedResultDetail(value); return *this;}
+
+    /**
+     * <p>Provides details about a collapsed group of search results.</p>
+     */
+    inline QueryResultItem& WithCollapsedResultDetail(CollapsedResultDetail&& value) { SetCollapsedResultDetail(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -656,6 +688,9 @@ namespace Model
 
     TableExcerpt m_tableExcerpt;
     bool m_tableExcerptHasBeenSet = false;
+
+    CollapsedResultDetail m_collapsedResultDetail;
+    bool m_collapsedResultDetailHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,37 +38,44 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the input mode to the operation was text or speech. </p>
+     * <p>Indicates whether the input mode to the operation was text, speech, or from a
+     * touch-tone keypad. </p>
      */
     inline const Aws::String& GetInputMode() const{ return m_inputMode; }
 
     /**
-     * <p>Indicates whether the input mode to the operation was text or speech. </p>
+     * <p>Indicates whether the input mode to the operation was text, speech, or from a
+     * touch-tone keypad. </p>
      */
     inline void SetInputMode(const Aws::String& value) { m_inputMode = value; }
 
     /**
-     * <p>Indicates whether the input mode to the operation was text or speech. </p>
+     * <p>Indicates whether the input mode to the operation was text, speech, or from a
+     * touch-tone keypad. </p>
      */
     inline void SetInputMode(Aws::String&& value) { m_inputMode = std::move(value); }
 
     /**
-     * <p>Indicates whether the input mode to the operation was text or speech. </p>
+     * <p>Indicates whether the input mode to the operation was text, speech, or from a
+     * touch-tone keypad. </p>
      */
     inline void SetInputMode(const char* value) { m_inputMode.assign(value); }
 
     /**
-     * <p>Indicates whether the input mode to the operation was text or speech. </p>
+     * <p>Indicates whether the input mode to the operation was text, speech, or from a
+     * touch-tone keypad. </p>
      */
     inline RecognizeUtteranceResult& WithInputMode(const Aws::String& value) { SetInputMode(value); return *this;}
 
     /**
-     * <p>Indicates whether the input mode to the operation was text or speech. </p>
+     * <p>Indicates whether the input mode to the operation was text, speech, or from a
+     * touch-tone keypad. </p>
      */
     inline RecognizeUtteranceResult& WithInputMode(Aws::String&& value) { SetInputMode(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates whether the input mode to the operation was text or speech. </p>
+     * <p>Indicates whether the input mode to the operation was text, speech, or from a
+     * touch-tone keypad. </p>
      */
     inline RecognizeUtteranceResult& WithInputMode(const char* value) { SetInputMode(value); return *this;}
 

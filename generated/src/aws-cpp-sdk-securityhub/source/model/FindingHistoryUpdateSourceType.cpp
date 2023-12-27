@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingHistoryUpdateSourceType::NOT_SET:
+            return {};
           case FindingHistoryUpdateSourceType::BATCH_UPDATE_FINDINGS:
             return "BATCH_UPDATE_FINDINGS";
           case FindingHistoryUpdateSourceType::BATCH_IMPORT_FINDINGS:

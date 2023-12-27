@@ -35,6 +35,12 @@ CheckDomainTransferabilityResult& CheckDomainTransferabilityResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

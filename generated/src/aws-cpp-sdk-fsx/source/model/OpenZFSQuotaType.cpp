@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpenZFSQuotaType::NOT_SET:
+            return {};
           case OpenZFSQuotaType::USER:
             return "USER";
           case OpenZFSQuotaType::GROUP:

@@ -25,6 +25,7 @@ namespace Aws
         static const int GE_HASH = HashingUtils::HashString("GE");
         static const int LT_HASH = HashingUtils::HashString("LT");
         static const int LE_HASH = HashingUtils::HashString("LE");
+        static const int BEGINS_WITH_HASH = HashingUtils::HashString("BEGINS_WITH");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return ComparisonOperator::LE;
           }
+          else if (hashCode == BEGINS_WITH_HASH)
+          {
+            return ComparisonOperator::BEGINS_WITH;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -64,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComparisonOperator::NOT_SET:
+            return {};
           case ComparisonOperator::EQ:
             return "EQ";
           case ComparisonOperator::GT:
@@ -74,6 +81,8 @@ namespace Aws
             return "LT";
           case ComparisonOperator::LE:
             return "LE";
+          case ComparisonOperator::BEGINS_WITH:
+            return "BEGINS_WITH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

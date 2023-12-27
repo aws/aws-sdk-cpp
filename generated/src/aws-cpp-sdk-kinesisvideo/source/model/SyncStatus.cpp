@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SyncStatus::NOT_SET:
+            return {};
           case SyncStatus::SYNCING:
             return "SYNCING";
           case SyncStatus::ACKNOWLEDGED:

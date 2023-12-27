@@ -686,6 +686,67 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS
+     * certificate.</p> <p>By default, the DB instance is restarted when you rotate
+     * your SSL/TLS certificate. The certificate is not updated until the DB instance
+     * is restarted.</p>  <p>Set this parameter only if you are <i>not</i>
+     * using SSL/TLS to connect to the DB instance.</p>  <p>If you are
+     * using SSL/TLS to connect to the DB instance, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline bool GetCertificateRotationRestart() const{ return m_certificateRotationRestart; }
+
+    /**
+     * <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS
+     * certificate.</p> <p>By default, the DB instance is restarted when you rotate
+     * your SSL/TLS certificate. The certificate is not updated until the DB instance
+     * is restarted.</p>  <p>Set this parameter only if you are <i>not</i>
+     * using SSL/TLS to connect to the DB instance.</p>  <p>If you are
+     * using SSL/TLS to connect to the DB instance, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline bool CertificateRotationRestartHasBeenSet() const { return m_certificateRotationRestartHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS
+     * certificate.</p> <p>By default, the DB instance is restarted when you rotate
+     * your SSL/TLS certificate. The certificate is not updated until the DB instance
+     * is restarted.</p>  <p>Set this parameter only if you are <i>not</i>
+     * using SSL/TLS to connect to the DB instance.</p>  <p>If you are
+     * using SSL/TLS to connect to the DB instance, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline void SetCertificateRotationRestart(bool value) { m_certificateRotationRestartHasBeenSet = true; m_certificateRotationRestart = value; }
+
+    /**
+     * <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS
+     * certificate.</p> <p>By default, the DB instance is restarted when you rotate
+     * your SSL/TLS certificate. The certificate is not updated until the DB instance
+     * is restarted.</p>  <p>Set this parameter only if you are <i>not</i>
+     * using SSL/TLS to connect to the DB instance.</p>  <p>If you are
+     * using SSL/TLS to connect to the DB instance, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCertificateRotationRestart(bool value) { SetCertificateRotationRestart(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -720,6 +781,9 @@ namespace Model
 
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
+
+    bool m_certificateRotationRestart;
+    bool m_certificateRotationRestartHasBeenSet = false;
   };
 
 } // namespace Model

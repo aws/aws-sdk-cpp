@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExpirationModelType::NOT_SET:
+            return {};
           case ExpirationModelType::KEY_MATERIAL_EXPIRES:
             return "KEY_MATERIAL_EXPIRES";
           case ExpirationModelType::KEY_MATERIAL_DOES_NOT_EXPIRE:

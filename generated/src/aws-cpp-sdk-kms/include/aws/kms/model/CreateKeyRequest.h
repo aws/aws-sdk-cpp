@@ -1027,8 +1027,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
      * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
      *  <p>Use this parameter only when you intend to prevent the principal
-     * that is making the request from making a subsequent <a>PutKeyPolicy</a> request
-     * on the KMS key.</p>
+     * that is making the request from making a subsequent <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.</p>
      */
     inline bool GetBypassPolicyLockoutSafetyCheck() const{ return m_bypassPolicyLockoutSafetyCheck; }
 
@@ -1040,8 +1041,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
      * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
      *  <p>Use this parameter only when you intend to prevent the principal
-     * that is making the request from making a subsequent <a>PutKeyPolicy</a> request
-     * on the KMS key.</p>
+     * that is making the request from making a subsequent <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.</p>
      */
     inline bool BypassPolicyLockoutSafetyCheckHasBeenSet() const { return m_bypassPolicyLockoutSafetyCheckHasBeenSet; }
 
@@ -1053,8 +1055,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
      * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
      *  <p>Use this parameter only when you intend to prevent the principal
-     * that is making the request from making a subsequent <a>PutKeyPolicy</a> request
-     * on the KMS key.</p>
+     * that is making the request from making a subsequent <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.</p>
      */
     inline void SetBypassPolicyLockoutSafetyCheck(bool value) { m_bypassPolicyLockoutSafetyCheckHasBeenSet = true; m_bypassPolicyLockoutSafetyCheck = value; }
 
@@ -1066,8 +1069,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
      * key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
      *  <p>Use this parameter only when you intend to prevent the principal
-     * that is making the request from making a subsequent <a>PutKeyPolicy</a> request
-     * on the KMS key.</p>
+     * that is making the request from making a subsequent <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.</p>
      */
     inline CreateKeyRequest& WithBypassPolicyLockoutSafetyCheck(bool value) { SetBypassPolicyLockoutSafetyCheck(value); return *this;}
 

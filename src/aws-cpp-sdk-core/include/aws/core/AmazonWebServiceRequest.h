@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
 
 namespace Aws
 {
@@ -179,6 +180,10 @@ namespace Aws
 
         virtual const char* GetServiceRequestName() const = 0;
 
+        inline virtual void SetServiceSpecificParameters(const std::shared_ptr<Http::ServiceSpecificParameters>& serviceSpecificParameters) const { m_serviceSpecificParameters = serviceSpecificParameters; };
+
+        inline virtual std::shared_ptr<Http::ServiceSpecificParameters> GetServiceSpecificParameters() const { return m_serviceSpecificParameters; };
+
         using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
         virtual EndpointParameters GetEndpointContextParams() const;
 
@@ -201,6 +206,7 @@ namespace Aws
         Aws::Http::ContinueRequestHandler m_continueRequest;
         RequestSignedHandler m_onRequestSigned;
         RequestRetryHandler m_requestRetryHandler;
+        mutable std::shared_ptr<Aws::Http::ServiceSpecificParameters> m_serviceSpecificParameters;
     };
 
 } // namespace Aws

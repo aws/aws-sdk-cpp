@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TypeDefinitionFormat::NOT_SET:
+            return {};
           case TypeDefinitionFormat::SDL:
             return "SDL";
           case TypeDefinitionFormat::JSON:

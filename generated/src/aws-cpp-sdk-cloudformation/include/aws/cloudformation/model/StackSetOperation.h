@@ -386,7 +386,7 @@ namespace Model
      * operation.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
@@ -397,7 +397,7 @@ namespace Model
      * operation.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
@@ -408,7 +408,7 @@ namespace Model
      * operation.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
@@ -419,7 +419,7 @@ namespace Model
      * operation.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
@@ -430,7 +430,7 @@ namespace Model
      * operation.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
@@ -441,7 +441,7 @@ namespace Model
      * operation.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
@@ -452,7 +452,7 @@ namespace Model
      * operation.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
@@ -463,7 +463,7 @@ namespace Model
      * operation.</p> <p>Use customized administrator roles to control which users or
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OfflineStoreStatusValue::NOT_SET:
+            return {};
           case OfflineStoreStatusValue::Active:
             return "Active";
           case OfflineStoreStatusValue::Blocked:

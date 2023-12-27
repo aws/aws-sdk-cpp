@@ -16,6 +16,8 @@ static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGI
 static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
 static const char S3_DISABLE_MULTIREGION_ACCESS_POINTS_ENV_VAR[] = "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS";
 static const char S3_DISABLE_MULTIREGION_ACCESS_POINTS_CONFIG_VAR[] = "s3_disable_multiregion_access_points";
+static const char S3_DISABLE_EXPRESS_SESSION_ENVIRONMENT_VARIABLE[] = "AWS_S3_DISABLE_S3_EXPRESS_AUTH";
+static const char S3_DISABLE_EXPRESS_SESSION_CONFIG_FILE_OPTION[] = "s3_disable_s3_express_auth";
 #end
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
@@ -49,6 +51,17 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
   {
     disableMultiRegionAccessPoints = true;
   }
+
+  Aws::String disableS3ExpressAuthCfg = ClientConfiguration::LoadConfigFromEnvOrProfile(S3_DISABLE_EXPRESS_SESSION_ENVIRONMENT_VARIABLE,
+                                                                                        inputProfileName,
+                                                                                        S3_DISABLE_EXPRESS_SESSION_CONFIG_FILE_OPTION,
+                                                                                        {"true", "false"},
+                                                                                        "false");
+  if (disableS3ExpressAuthCfg == "true")
+  {
+    disableS3ExpressAuth = true;
+  }
+
 #end
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
   Aws::String useArnRegionCfg = ClientConfiguration::LoadConfigFromEnvOrProfile(S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE,
@@ -63,8 +76,8 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
 #end
 }
 
-${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration()
-: BaseClientConfigClass()
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const Client::ClientConfigurationInitValues &configuration)
+: BaseClientConfigClass(configuration)
 {
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }

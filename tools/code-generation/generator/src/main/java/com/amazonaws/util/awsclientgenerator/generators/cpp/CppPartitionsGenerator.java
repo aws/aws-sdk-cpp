@@ -20,8 +20,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 public class CppPartitionsGenerator implements PartitionsGenerator {
 
@@ -54,6 +61,8 @@ public class CppPartitionsGenerator implements PartitionsGenerator {
         String shortenedPartitionsBlob = partitionsModel.getPartitionsBlob();
         try {
             jsonNode = objectMapper.readValue(shortenedPartitionsBlob, JsonNode.class);
+            // Remove unused description node from partition blob while we add support for utf-8
+            removeJsonNodeFromTree(jsonNode, "description");
             shortenedPartitionsBlob = jsonNode.toString();
         } catch (JsonProcessingException e) {
             System.err.println("Unable to parse partition file as a json: " + e.getMessage());
@@ -125,5 +134,28 @@ public class CppPartitionsGenerator implements PartitionsGenerator {
         file.setPathRelativeToRoot(path);
         file.setSdkFile(sb);
         return file;
+    }
+
+    private static void removeJsonNodeFromTree(final JsonNode node, final String nodeName) {
+        final Queue<JsonNode> nodes = new LinkedList<>();
+        final Set<JsonNode> seen = new HashSet<>();
+        nodes.add(node);
+        while (!nodes.isEmpty()) {
+            JsonNode currentNode = nodes.poll();
+            Iterator<Map.Entry<String, JsonNode>> fieldIterator = currentNode.fields();
+            while (fieldIterator.hasNext()) {
+                Map.Entry<String, JsonNode> entry = fieldIterator.next();
+                if (nodeName.equals(entry.getKey())) {
+                    fieldIterator.remove();
+                } else {
+                    Iterable<JsonNode> nodeIterable = () -> entry.getValue().elements();
+                    List<JsonNode> childNodes = StreamSupport.stream(nodeIterable.spliterator(), false)
+                            .filter(childNode -> !seen.contains(childNode))
+                            .collect(Collectors.toList());
+                    nodes.addAll(childNodes);
+                    seen.addAll(childNodes);
+                }
+            }
+        }
     }
 }

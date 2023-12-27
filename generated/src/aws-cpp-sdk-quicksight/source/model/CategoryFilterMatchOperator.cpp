@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CategoryFilterMatchOperator::NOT_SET:
+            return {};
           case CategoryFilterMatchOperator::EQUALS:
             return "EQUALS";
           case CategoryFilterMatchOperator::DOES_NOT_EQUAL:

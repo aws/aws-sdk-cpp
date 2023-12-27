@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaStorageConfigurationStatus::NOT_SET:
+            return {};
           case MediaStorageConfigurationStatus::ENABLED:
             return "ENABLED";
           case MediaStorageConfigurationStatus::DISABLED:

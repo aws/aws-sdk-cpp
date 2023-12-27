@@ -29,15 +29,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3OutpostsErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3OutpostsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3OutpostsErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3OutpostsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OUTPOST_OFFLINE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3OutpostsErrors::OUTPOST_OFFLINE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3OutpostsErrors::OUTPOST_OFFLINE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

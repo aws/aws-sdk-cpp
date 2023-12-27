@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SrcCodeOrDbAnalysisStatus::NOT_SET:
+            return {};
           case SrcCodeOrDbAnalysisStatus::ANALYSIS_TO_BE_SCHEDULED:
             return "ANALYSIS_TO_BE_SCHEDULED";
           case SrcCodeOrDbAnalysisStatus::ANALYSIS_STARTED:

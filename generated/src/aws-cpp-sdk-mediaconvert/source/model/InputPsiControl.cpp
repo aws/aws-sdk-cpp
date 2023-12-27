@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputPsiControl::NOT_SET:
+            return {};
           case InputPsiControl::IGNORE_PSI:
             return "IGNORE_PSI";
           case InputPsiControl::USE_PSI:

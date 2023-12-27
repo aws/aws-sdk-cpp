@@ -404,6 +404,31 @@ namespace Model
      */
     inline NetAppONTAPCluster& WithLunCount(long long value) { SetLunCount(value); return *this;}
 
+
+    /**
+     * <p>The amount of space in the cluster that's in cloud storage (for example, if
+     * you're using data tiering).</p>
+     */
+    inline long long GetClusterCloudStorageUsed() const{ return m_clusterCloudStorageUsed; }
+
+    /**
+     * <p>The amount of space in the cluster that's in cloud storage (for example, if
+     * you're using data tiering).</p>
+     */
+    inline bool ClusterCloudStorageUsedHasBeenSet() const { return m_clusterCloudStorageUsedHasBeenSet; }
+
+    /**
+     * <p>The amount of space in the cluster that's in cloud storage (for example, if
+     * you're using data tiering).</p>
+     */
+    inline void SetClusterCloudStorageUsed(long long value) { m_clusterCloudStorageUsedHasBeenSet = true; m_clusterCloudStorageUsed = value; }
+
+    /**
+     * <p>The amount of space in the cluster that's in cloud storage (for example, if
+     * you're using data tiering).</p>
+     */
+    inline NetAppONTAPCluster& WithClusterCloudStorageUsed(long long value) { SetClusterCloudStorageUsed(value); return *this;}
+
   private:
 
     long long m_cifsShareCount;
@@ -438,6 +463,9 @@ namespace Model
 
     long long m_lunCount;
     bool m_lunCountHasBeenSet = false;
+
+    long long m_clusterCloudStorageUsed;
+    bool m_clusterCloudStorageUsedHasBeenSet = false;
   };
 
 } // namespace Model

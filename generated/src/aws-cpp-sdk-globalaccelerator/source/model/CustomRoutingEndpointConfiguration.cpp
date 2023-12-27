@@ -19,12 +19,14 @@ namespace Model
 {
 
 CustomRoutingEndpointConfiguration::CustomRoutingEndpointConfiguration() : 
-    m_endpointIdHasBeenSet(false)
+    m_endpointIdHasBeenSet(false),
+    m_attachmentArnHasBeenSet(false)
 {
 }
 
 CustomRoutingEndpointConfiguration::CustomRoutingEndpointConfiguration(JsonView jsonValue) : 
-    m_endpointIdHasBeenSet(false)
+    m_endpointIdHasBeenSet(false),
+    m_attachmentArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ CustomRoutingEndpointConfiguration& CustomRoutingEndpointConfiguration::operator
     m_endpointIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AttachmentArn"))
+  {
+    m_attachmentArn = jsonValue.GetString("AttachmentArn");
+
+    m_attachmentArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue CustomRoutingEndpointConfiguration::Jsonize() const
   if(m_endpointIdHasBeenSet)
   {
    payload.WithString("EndpointId", m_endpointId);
+
+  }
+
+  if(m_attachmentArnHasBeenSet)
+  {
+   payload.WithString("AttachmentArn", m_attachmentArn);
 
   }
 

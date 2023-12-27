@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DukptDerivationType::NOT_SET:
+            return {};
           case DukptDerivationType::TDES_2KEY:
             return "TDES_2KEY";
           case DukptDerivationType::TDES_3KEY:

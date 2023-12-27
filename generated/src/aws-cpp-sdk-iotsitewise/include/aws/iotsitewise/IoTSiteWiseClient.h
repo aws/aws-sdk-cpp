@@ -386,8 +386,14 @@ namespace IoTSiteWise
          * model inherits the asset model's property and hierarchy definitions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
-         * asset models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>
-         * <a
+         * asset models</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can create
+         * two types of asset models, <code>ASSET_MODEL</code> or
+         * <code>COMPONENT_MODEL</code>.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default)
+         * An asset model that you can use to create assets. Can't be included as a
+         * component in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A
+         * reusable component that you can include in the composite models of other asset
+         * models. You can't create assets directly from this type of asset model. </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">AWS
          * API Reference</a></p>
          */
@@ -412,15 +418,61 @@ namespace IoTSiteWise
         }
 
         /**
+         * <p>Creates a custom composite model from specified property and hierarchy
+         * definitions. There are two types of custom composite models, <code>inline</code>
+         * and <code>component-model-based</code>. </p> <p>Use component-model-based custom
+         * composite models to define standard, reusable components. A
+         * component-model-based custom composite model consists of a name, a description,
+         * and the ID of the component model it references. A component-model-based custom
+         * composite model has no properties of its own; its referenced component model
+         * provides its associated properties to any created assets. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom
+         * composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+         * <p>Use inline custom composite models to organize the properties of an asset
+         * model. The properties of inline custom composite models are local to the asset
+         * model where they are included and can't be used to create multiple assets.</p>
+         * <p>To create a component-model-based model, specify the
+         * <code>composedAssetModelId</code> of an existing asset model with
+         * <code>assetModelType</code> of <code>COMPONENT_MODEL</code>.</p> <p>To create an
+         * inline model, specify the <code>assetModelCompositeModelProperties</code> and
+         * don't include an <code>composedAssetModelId</code>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAssetModelCompositeModelOutcome CreateAssetModelCompositeModel(const Model::CreateAssetModelCompositeModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAssetModelCompositeModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAssetModelCompositeModelRequestT = Model::CreateAssetModelCompositeModelRequest>
+        Model::CreateAssetModelCompositeModelOutcomeCallable CreateAssetModelCompositeModelCallable(const CreateAssetModelCompositeModelRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::CreateAssetModelCompositeModel, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAssetModelCompositeModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAssetModelCompositeModelRequestT = Model::CreateAssetModelCompositeModelRequest>
+        void CreateAssetModelCompositeModelAsync(const CreateAssetModelCompositeModelRequestT& request, const CreateAssetModelCompositeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::CreateAssetModelCompositeModel, request, handler, context);
+        }
+
+        /**
          * <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create
          * a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User
-         * Guide</i>.</p>  <p>You must enable IoT SiteWise to export data to
-         * Amazon S3 before you create a bulk import job. For more information about how to
-         * configure storage settings, see <a
+         * Guide</i>.</p>  <p>Before you create a bulk import job, you must
+         * enable IoT SiteWise warm tier or IoT SiteWise cold tier. For more information
+         * about how to configure storage settings, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Bulk import is designed to store historical data to IoT SiteWise. It does not
+         * trigger computations or notifications on IoT SiteWise warm or cold tier
+         * storage.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">AWS
          * API Reference</a></p>
          */
@@ -587,7 +639,7 @@ namespace IoTSiteWise
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * assets and models</a> in the <i>IoT SiteWise User Guide</i>. </p>  <p>You
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p>  <p>You
          * can't delete an asset that's associated to another asset. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
@@ -645,6 +697,38 @@ namespace IoTSiteWise
         void DeleteAssetModelAsync(const DeleteAssetModelRequestT& request, const DeleteAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::DeleteAssetModel, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a composite model. This action can't be undone. You must delete all
+         * assets created from a composite model before you can delete the model. Also, you
+         * can't delete a composite model if a parent asset model exists that contains a
+         * property formula expression that depends on the asset model that you want to
+         * delete. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAssetModelCompositeModelOutcome DeleteAssetModelCompositeModel(const Model::DeleteAssetModelCompositeModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAssetModelCompositeModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAssetModelCompositeModelRequestT = Model::DeleteAssetModelCompositeModelRequest>
+        Model::DeleteAssetModelCompositeModelOutcomeCallable DeleteAssetModelCompositeModelCallable(const DeleteAssetModelCompositeModelRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::DeleteAssetModelCompositeModel, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAssetModelCompositeModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAssetModelCompositeModelRequestT = Model::DeleteAssetModelCompositeModelRequest>
+        void DeleteAssetModelCompositeModelAsync(const DeleteAssetModelCompositeModelRequestT& request, const DeleteAssetModelCompositeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::DeleteAssetModelCompositeModel, request, handler, context);
         }
 
         /**
@@ -810,6 +894,31 @@ namespace IoTSiteWise
         }
 
         /**
+         * <p>Retrieves information about an action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeActionOutcome DescribeAction(const Model::DescribeActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeActionRequestT = Model::DescribeActionRequest>
+        Model::DescribeActionOutcomeCallable DescribeActionCallable(const DescribeActionRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::DescribeAction, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeActionRequestT = Model::DescribeActionRequest>
+        void DescribeActionAsync(const DescribeActionRequestT& request, const DescribeActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::DescribeAction, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about an asset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAsset">AWS
          * API Reference</a></p>
@@ -835,6 +944,36 @@ namespace IoTSiteWise
         }
 
         /**
+         * <p>Retrieves information about an asset composite model (also known as an asset
+         * component). An <code>AssetCompositeModel</code> is an instance of an
+         * <code>AssetModelCompositeModel</code>. If you want to see information about the
+         * model this is based on, call <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html">DescribeAssetModelCompositeModel</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAssetCompositeModelOutcome DescribeAssetCompositeModel(const Model::DescribeAssetCompositeModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAssetCompositeModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAssetCompositeModelRequestT = Model::DescribeAssetCompositeModelRequest>
+        Model::DescribeAssetCompositeModelOutcomeCallable DescribeAssetCompositeModelCallable(const DescribeAssetCompositeModelRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::DescribeAssetCompositeModel, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAssetCompositeModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAssetCompositeModelRequestT = Model::DescribeAssetCompositeModelRequest>
+        void DescribeAssetCompositeModelAsync(const DescribeAssetCompositeModelRequestT& request, const DescribeAssetCompositeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::DescribeAssetCompositeModel, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about an asset model.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModel">AWS
          * API Reference</a></p>
@@ -857,6 +996,35 @@ namespace IoTSiteWise
         void DescribeAssetModelAsync(const DescribeAssetModelRequestT& request, const DescribeAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::DescribeAssetModel, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about an asset model composite model (also known as an
+         * asset model component). For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom
+         * composite models (Components)</a> in the <i>IoT SiteWise User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAssetModelCompositeModelOutcome DescribeAssetModelCompositeModel(const Model::DescribeAssetModelCompositeModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAssetModelCompositeModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAssetModelCompositeModelRequestT = Model::DescribeAssetModelCompositeModelRequest>
+        Model::DescribeAssetModelCompositeModelOutcomeCallable DescribeAssetModelCompositeModelCallable(const DescribeAssetModelCompositeModelRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::DescribeAssetModelCompositeModel, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAssetModelCompositeModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAssetModelCompositeModelRequestT = Model::DescribeAssetModelCompositeModelRequest>
+        void DescribeAssetModelCompositeModelAsync(const DescribeAssetModelCompositeModelRequestT& request, const DescribeAssetModelCompositeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::DescribeAssetModelCompositeModel, request, handler, context);
         }
 
         /**
@@ -1219,6 +1387,58 @@ namespace IoTSiteWise
         }
 
         /**
+         * <p>Executes an action on a target resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteActionOutcome ExecuteAction(const Model::ExecuteActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExecuteAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExecuteActionRequestT = Model::ExecuteActionRequest>
+        Model::ExecuteActionOutcomeCallable ExecuteActionCallable(const ExecuteActionRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::ExecuteAction, request);
+        }
+
+        /**
+         * An Async wrapper for ExecuteAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExecuteActionRequestT = Model::ExecuteActionRequest>
+        void ExecuteActionAsync(const ExecuteActionRequestT& request, const ExecuteActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::ExecuteAction, request, handler, context);
+        }
+
+        /**
+         * <p>Run SQL queries to retrieve metadata and time-series data from asset models,
+         * assets, measurements, metrics, transforms, and aggregates.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteQueryOutcome ExecuteQuery(const Model::ExecuteQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExecuteQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExecuteQueryRequestT = Model::ExecuteQueryRequest>
+        Model::ExecuteQueryOutcomeCallable ExecuteQueryCallable(const ExecuteQueryRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::ExecuteQuery, request);
+        }
+
+        /**
+         * An Async wrapper for ExecuteQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExecuteQueryRequestT = Model::ExecuteQueryRequest>
+        void ExecuteQueryAsync(const ExecuteQueryRequestT& request, const ExecuteQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::ExecuteQuery, request, handler, context);
+        }
+
+        /**
          * <p>Gets aggregated values for an asset property. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
          * aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an
@@ -1382,6 +1602,58 @@ namespace IoTSiteWise
         void ListAccessPoliciesAsync(const ListAccessPoliciesRequestT& request, const ListAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::ListAccessPolicies, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a paginated list of actions for a specific target
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListActionsOutcome ListActions(const Model::ListActionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListActionsRequestT = Model::ListActionsRequest>
+        Model::ListActionsOutcomeCallable ListActionsCallable(const ListActionsRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::ListActions, request);
+        }
+
+        /**
+         * An Async wrapper for ListActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListActionsRequestT = Model::ListActionsRequest>
+        void ListActionsAsync(const ListActionsRequestT& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::ListActions, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a paginated list of composite models associated with the asset
+         * model</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssetModelCompositeModelsOutcome ListAssetModelCompositeModels(const Model::ListAssetModelCompositeModelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssetModelCompositeModels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAssetModelCompositeModelsRequestT = Model::ListAssetModelCompositeModelsRequest>
+        Model::ListAssetModelCompositeModelsOutcomeCallable ListAssetModelCompositeModelsCallable(const ListAssetModelCompositeModelsRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::ListAssetModelCompositeModels, request);
+        }
+
+        /**
+         * An Async wrapper for ListAssetModelCompositeModels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAssetModelCompositeModelsRequestT = Model::ListAssetModelCompositeModelsRequest>
+        void ListAssetModelCompositeModelsAsync(const ListAssetModelCompositeModelsRequestT& request, const ListAssetModelCompositeModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::ListAssetModelCompositeModels, request, handler, context);
         }
 
         /**
@@ -1578,6 +1850,32 @@ namespace IoTSiteWise
         void ListBulkImportJobsAsync(const ListBulkImportJobsRequestT& request, const ListBulkImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::ListBulkImportJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a paginated list of composition relationships for an asset model of
+         * type <code>COMPONENT_MODEL</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCompositionRelationshipsOutcome ListCompositionRelationships(const Model::ListCompositionRelationshipsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCompositionRelationships that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCompositionRelationshipsRequestT = Model::ListCompositionRelationshipsRequest>
+        Model::ListCompositionRelationshipsOutcomeCallable ListCompositionRelationshipsCallable(const ListCompositionRelationshipsRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::ListCompositionRelationships, request);
+        }
+
+        /**
+         * An Async wrapper for ListCompositionRelationships that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCompositionRelationshipsRequestT = Model::ListCompositionRelationshipsRequest>
+        void ListCompositionRelationshipsAsync(const ListCompositionRelationshipsRequestT& request, const ListCompositionRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::ListCompositionRelationships, request, handler, context);
         }
 
         /**
@@ -1982,6 +2280,45 @@ namespace IoTSiteWise
         void UpdateAssetModelAsync(const UpdateAssetModelRequestT& request, const UpdateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::UpdateAssetModel, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a composite model and all of the assets that were created from the
+         * model. Each asset created from the model inherits the updated asset model's
+         * property and hierarchy definitions. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p> 
+         * <p>If you remove a property from a composite asset model, IoT SiteWise deletes
+         * all previous data for that property. You can’t change the type or data type of
+         * an existing property.</p> <p>To replace an existing composite asset model
+         * property with a new one with the same <code>name</code>, do the following:</p>
+         * <ol> <li> <p>Submit an <code>UpdateAssetModelCompositeModel</code> request with
+         * the entire existing property removed.</p> </li> <li> <p>Submit a second
+         * <code>UpdateAssetModelCompositeModel</code> request that includes the new
+         * property. The new asset property will have the same <code>name</code> as the
+         * previous one and IoT SiteWise will generate a new unique <code>id</code>.</p>
+         * </li> </ol> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAssetModelCompositeModelOutcome UpdateAssetModelCompositeModel(const Model::UpdateAssetModelCompositeModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAssetModelCompositeModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAssetModelCompositeModelRequestT = Model::UpdateAssetModelCompositeModelRequest>
+        Model::UpdateAssetModelCompositeModelOutcomeCallable UpdateAssetModelCompositeModelCallable(const UpdateAssetModelCompositeModelRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::UpdateAssetModelCompositeModel, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAssetModelCompositeModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAssetModelCompositeModelRequestT = Model::UpdateAssetModelCompositeModelRequest>
+        void UpdateAssetModelCompositeModelAsync(const UpdateAssetModelCompositeModelRequestT& request, const UpdateAssetModelCompositeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::UpdateAssetModelCompositeModel, request, handler, context);
         }
 
         /**

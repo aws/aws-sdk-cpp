@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IdentityProviderType::NOT_SET:
+            return {};
           case IdentityProviderType::SERVICE_MANAGED:
             return "SERVICE_MANAGED";
           case IdentityProviderType::API_GATEWAY:

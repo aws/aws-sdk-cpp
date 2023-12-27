@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobFlowExecutionState::NOT_SET:
+            return {};
           case JobFlowExecutionState::STARTING:
             return "STARTING";
           case JobFlowExecutionState::BOOTSTRAPPING:

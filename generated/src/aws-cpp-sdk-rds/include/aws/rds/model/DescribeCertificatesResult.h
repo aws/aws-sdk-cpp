@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/Certificate.h>
 #include <utility>
@@ -39,6 +39,63 @@ namespace Model
     AWS_RDS_API DescribeCertificatesResult();
     AWS_RDS_API DescribeCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DescribeCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+
+    /**
+     * <p>The default root CA for new databases created by your Amazon Web Services
+     * account. This is either the root CA override set on your Amazon Web Services
+     * account or the system default CA for the Region if no override exists. To
+     * override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+     */
+    inline const Aws::String& GetDefaultCertificateForNewLaunches() const{ return m_defaultCertificateForNewLaunches; }
+
+    /**
+     * <p>The default root CA for new databases created by your Amazon Web Services
+     * account. This is either the root CA override set on your Amazon Web Services
+     * account or the system default CA for the Region if no override exists. To
+     * override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+     */
+    inline void SetDefaultCertificateForNewLaunches(const Aws::String& value) { m_defaultCertificateForNewLaunches = value; }
+
+    /**
+     * <p>The default root CA for new databases created by your Amazon Web Services
+     * account. This is either the root CA override set on your Amazon Web Services
+     * account or the system default CA for the Region if no override exists. To
+     * override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+     */
+    inline void SetDefaultCertificateForNewLaunches(Aws::String&& value) { m_defaultCertificateForNewLaunches = std::move(value); }
+
+    /**
+     * <p>The default root CA for new databases created by your Amazon Web Services
+     * account. This is either the root CA override set on your Amazon Web Services
+     * account or the system default CA for the Region if no override exists. To
+     * override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+     */
+    inline void SetDefaultCertificateForNewLaunches(const char* value) { m_defaultCertificateForNewLaunches.assign(value); }
+
+    /**
+     * <p>The default root CA for new databases created by your Amazon Web Services
+     * account. This is either the root CA override set on your Amazon Web Services
+     * account or the system default CA for the Region if no override exists. To
+     * override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+     */
+    inline DescribeCertificatesResult& WithDefaultCertificateForNewLaunches(const Aws::String& value) { SetDefaultCertificateForNewLaunches(value); return *this;}
+
+    /**
+     * <p>The default root CA for new databases created by your Amazon Web Services
+     * account. This is either the root CA override set on your Amazon Web Services
+     * account or the system default CA for the Region if no override exists. To
+     * override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+     */
+    inline DescribeCertificatesResult& WithDefaultCertificateForNewLaunches(Aws::String&& value) { SetDefaultCertificateForNewLaunches(std::move(value)); return *this;}
+
+    /**
+     * <p>The default root CA for new databases created by your Amazon Web Services
+     * account. This is either the root CA override set on your Amazon Web Services
+     * account or the system default CA for the Region if no override exists. To
+     * override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+     */
+    inline DescribeCertificatesResult& WithDefaultCertificateForNewLaunches(const char* value) { SetDefaultCertificateForNewLaunches(value); return *this;}
 
 
     /**
@@ -157,6 +214,8 @@ namespace Model
     inline DescribeCertificatesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_defaultCertificateForNewLaunches;
 
     Aws::Vector<Certificate> m_certificates;
 

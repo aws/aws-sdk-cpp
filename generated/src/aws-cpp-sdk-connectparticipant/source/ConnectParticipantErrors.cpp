@@ -6,15 +6,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/connectparticipant/ConnectParticipantErrors.h>
+#include <aws/connectparticipant/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ConnectParticipant;
+using namespace Aws::ConnectParticipant::Model;
 
 namespace Aws
 {
 namespace ConnectParticipant
 {
+template<> AWS_CONNECTPARTICIPANT_API ResourceNotFoundException ConnectParticipantError::GetModeledError()
+{
+  assert(this->GetErrorType() == ConnectParticipantErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
 namespace ConnectParticipantErrorMapper
 {
 
@@ -29,15 +37,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectParticipantErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectParticipantErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectParticipantErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectParticipantErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectParticipantErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectParticipantErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

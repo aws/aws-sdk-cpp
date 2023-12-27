@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StoreFormat::NOT_SET:
+            return {};
           case StoreFormat::GFF:
             return "GFF";
           case StoreFormat::TSV:

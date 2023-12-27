@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregationTransformationValue::NOT_SET:
+            return {};
           case AggregationTransformationValue::sum:
             return "sum";
           case AggregationTransformationValue::avg:

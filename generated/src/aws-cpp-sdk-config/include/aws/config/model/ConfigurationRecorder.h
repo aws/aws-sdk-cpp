@@ -7,6 +7,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/RecordingGroup.h>
+#include <aws/config/model/RecordingMode.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Records configuration changes to specified resource types. For more
+   * <p>Records configuration changes to your specified resource types. For more
    * information about the configuration recorder, see <a
    * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
    * <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer
@@ -44,73 +45,73 @@ namespace Model
 
     /**
      * <p>The name of the configuration recorder. Config automatically assigns the name
-     * of "default" when creating the configuration recorder.</p> <p>You cannot change
-     * the name of the configuration recorder after it has been created. To change the
-     * configuration recorder name, you must delete it and create a new configuration
-     * recorder with a new name. </p>
+     * of "default" when creating the configuration recorder.</p>  <p>You cannot
+     * change the name of the configuration recorder after it has been created. To
+     * change the configuration recorder name, you must delete it and create a new
+     * configuration recorder with a new name. </p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the configuration recorder. Config automatically assigns the name
-     * of "default" when creating the configuration recorder.</p> <p>You cannot change
-     * the name of the configuration recorder after it has been created. To change the
-     * configuration recorder name, you must delete it and create a new configuration
-     * recorder with a new name. </p>
+     * of "default" when creating the configuration recorder.</p>  <p>You cannot
+     * change the name of the configuration recorder after it has been created. To
+     * change the configuration recorder name, you must delete it and create a new
+     * configuration recorder with a new name. </p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the configuration recorder. Config automatically assigns the name
-     * of "default" when creating the configuration recorder.</p> <p>You cannot change
-     * the name of the configuration recorder after it has been created. To change the
-     * configuration recorder name, you must delete it and create a new configuration
-     * recorder with a new name. </p>
+     * of "default" when creating the configuration recorder.</p>  <p>You cannot
+     * change the name of the configuration recorder after it has been created. To
+     * change the configuration recorder name, you must delete it and create a new
+     * configuration recorder with a new name. </p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the configuration recorder. Config automatically assigns the name
-     * of "default" when creating the configuration recorder.</p> <p>You cannot change
-     * the name of the configuration recorder after it has been created. To change the
-     * configuration recorder name, you must delete it and create a new configuration
-     * recorder with a new name. </p>
+     * of "default" when creating the configuration recorder.</p>  <p>You cannot
+     * change the name of the configuration recorder after it has been created. To
+     * change the configuration recorder name, you must delete it and create a new
+     * configuration recorder with a new name. </p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the configuration recorder. Config automatically assigns the name
-     * of "default" when creating the configuration recorder.</p> <p>You cannot change
-     * the name of the configuration recorder after it has been created. To change the
-     * configuration recorder name, you must delete it and create a new configuration
-     * recorder with a new name. </p>
+     * of "default" when creating the configuration recorder.</p>  <p>You cannot
+     * change the name of the configuration recorder after it has been created. To
+     * change the configuration recorder name, you must delete it and create a new
+     * configuration recorder with a new name. </p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the configuration recorder. Config automatically assigns the name
-     * of "default" when creating the configuration recorder.</p> <p>You cannot change
-     * the name of the configuration recorder after it has been created. To change the
-     * configuration recorder name, you must delete it and create a new configuration
-     * recorder with a new name. </p>
+     * of "default" when creating the configuration recorder.</p>  <p>You cannot
+     * change the name of the configuration recorder after it has been created. To
+     * change the configuration recorder name, you must delete it and create a new
+     * configuration recorder with a new name. </p> 
      */
     inline ConfigurationRecorder& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the configuration recorder. Config automatically assigns the name
-     * of "default" when creating the configuration recorder.</p> <p>You cannot change
-     * the name of the configuration recorder after it has been created. To change the
-     * configuration recorder name, you must delete it and create a new configuration
-     * recorder with a new name. </p>
+     * of "default" when creating the configuration recorder.</p>  <p>You cannot
+     * change the name of the configuration recorder after it has been created. To
+     * change the configuration recorder name, you must delete it and create a new
+     * configuration recorder with a new name. </p> 
      */
     inline ConfigurationRecorder& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration recorder. Config automatically assigns the name
-     * of "default" when creating the configuration recorder.</p> <p>You cannot change
-     * the name of the configuration recorder after it has been created. To change the
-     * configuration recorder name, you must delete it and create a new configuration
-     * recorder with a new name. </p>
+     * of "default" when creating the configuration recorder.</p>  <p>You cannot
+     * change the name of the configuration recorder after it has been created. To
+     * change the configuration recorder name, you must delete it and create a new
+     * configuration recorder with a new name. </p> 
      */
     inline ConfigurationRecorder& WithName(const char* value) { SetName(value); return *this;}
 
@@ -392,6 +393,91 @@ namespace Model
      */
     inline ConfigurationRecorder& WithRecordingGroup(RecordingGroup&& value) { SetRecordingGroup(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the default recording frequency that Config uses to record
+     * configuration changes. Config supports <i>Continuous recording</i> and <i>Daily
+     * recording</i>.</p> <ul> <li> <p>Continuous recording allows you to record
+     * configuration changes continuously whenever a change occurs.</p> </li> <li>
+     * <p>Daily recording allows you record configuration data once every 24 hours,
+     * only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
+     * depends on continuous recording to monitor your resources. If you are using
+     * Firewall Manager, it is recommended that you set the recording frequency to
+     * Continuous.</p>  <p>You can also override the recording frequency for
+     * specific resource types.</p>
+     */
+    inline const RecordingMode& GetRecordingMode() const{ return m_recordingMode; }
+
+    /**
+     * <p>Specifies the default recording frequency that Config uses to record
+     * configuration changes. Config supports <i>Continuous recording</i> and <i>Daily
+     * recording</i>.</p> <ul> <li> <p>Continuous recording allows you to record
+     * configuration changes continuously whenever a change occurs.</p> </li> <li>
+     * <p>Daily recording allows you record configuration data once every 24 hours,
+     * only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
+     * depends on continuous recording to monitor your resources. If you are using
+     * Firewall Manager, it is recommended that you set the recording frequency to
+     * Continuous.</p>  <p>You can also override the recording frequency for
+     * specific resource types.</p>
+     */
+    inline bool RecordingModeHasBeenSet() const { return m_recordingModeHasBeenSet; }
+
+    /**
+     * <p>Specifies the default recording frequency that Config uses to record
+     * configuration changes. Config supports <i>Continuous recording</i> and <i>Daily
+     * recording</i>.</p> <ul> <li> <p>Continuous recording allows you to record
+     * configuration changes continuously whenever a change occurs.</p> </li> <li>
+     * <p>Daily recording allows you record configuration data once every 24 hours,
+     * only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
+     * depends on continuous recording to monitor your resources. If you are using
+     * Firewall Manager, it is recommended that you set the recording frequency to
+     * Continuous.</p>  <p>You can also override the recording frequency for
+     * specific resource types.</p>
+     */
+    inline void SetRecordingMode(const RecordingMode& value) { m_recordingModeHasBeenSet = true; m_recordingMode = value; }
+
+    /**
+     * <p>Specifies the default recording frequency that Config uses to record
+     * configuration changes. Config supports <i>Continuous recording</i> and <i>Daily
+     * recording</i>.</p> <ul> <li> <p>Continuous recording allows you to record
+     * configuration changes continuously whenever a change occurs.</p> </li> <li>
+     * <p>Daily recording allows you record configuration data once every 24 hours,
+     * only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
+     * depends on continuous recording to monitor your resources. If you are using
+     * Firewall Manager, it is recommended that you set the recording frequency to
+     * Continuous.</p>  <p>You can also override the recording frequency for
+     * specific resource types.</p>
+     */
+    inline void SetRecordingMode(RecordingMode&& value) { m_recordingModeHasBeenSet = true; m_recordingMode = std::move(value); }
+
+    /**
+     * <p>Specifies the default recording frequency that Config uses to record
+     * configuration changes. Config supports <i>Continuous recording</i> and <i>Daily
+     * recording</i>.</p> <ul> <li> <p>Continuous recording allows you to record
+     * configuration changes continuously whenever a change occurs.</p> </li> <li>
+     * <p>Daily recording allows you record configuration data once every 24 hours,
+     * only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
+     * depends on continuous recording to monitor your resources. If you are using
+     * Firewall Manager, it is recommended that you set the recording frequency to
+     * Continuous.</p>  <p>You can also override the recording frequency for
+     * specific resource types.</p>
+     */
+    inline ConfigurationRecorder& WithRecordingMode(const RecordingMode& value) { SetRecordingMode(value); return *this;}
+
+    /**
+     * <p>Specifies the default recording frequency that Config uses to record
+     * configuration changes. Config supports <i>Continuous recording</i> and <i>Daily
+     * recording</i>.</p> <ul> <li> <p>Continuous recording allows you to record
+     * configuration changes continuously whenever a change occurs.</p> </li> <li>
+     * <p>Daily recording allows you record configuration data once every 24 hours,
+     * only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
+     * depends on continuous recording to monitor your resources. If you are using
+     * Firewall Manager, it is recommended that you set the recording frequency to
+     * Continuous.</p>  <p>You can also override the recording frequency for
+     * specific resource types.</p>
+     */
+    inline ConfigurationRecorder& WithRecordingMode(RecordingMode&& value) { SetRecordingMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -402,6 +488,9 @@ namespace Model
 
     RecordingGroup m_recordingGroup;
     bool m_recordingGroupHasBeenSet = false;
+
+    RecordingMode m_recordingMode;
+    bool m_recordingModeHasBeenSet = false;
   };
 
 } // namespace Model

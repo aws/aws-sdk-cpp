@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LifecycleEventStatus::NOT_SET:
+            return {};
           case LifecycleEventStatus::Pending:
             return "Pending";
           case LifecycleEventStatus::InProgress:

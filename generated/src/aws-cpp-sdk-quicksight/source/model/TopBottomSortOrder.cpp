@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TopBottomSortOrder::NOT_SET:
+            return {};
           case TopBottomSortOrder::PERCENT_DIFFERENCE:
             return "PERCENT_DIFFERENCE";
           case TopBottomSortOrder::ABSOLUTE_DIFFERENCE:

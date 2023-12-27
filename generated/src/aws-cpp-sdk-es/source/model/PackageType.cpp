@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageType::NOT_SET:
+            return {};
           case PackageType::TXT_DICTIONARY:
             return "TXT-DICTIONARY";
           default:

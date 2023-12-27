@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StrategyRecommendation::NOT_SET:
+            return {};
           case StrategyRecommendation::recommended:
             return "recommended";
           case StrategyRecommendation::viableOption:

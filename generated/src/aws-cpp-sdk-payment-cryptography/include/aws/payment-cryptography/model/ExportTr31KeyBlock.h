@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Parameter information for key material export using TR-31
-   * standard.</p><p><h3>See Also:</h3>   <a
+   * <p>Parameter information for key material export using symmetric TR-31 key
+   * exchange method.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ExportTr31KeyBlock">AWS
    * API Reference</a></p>
    */

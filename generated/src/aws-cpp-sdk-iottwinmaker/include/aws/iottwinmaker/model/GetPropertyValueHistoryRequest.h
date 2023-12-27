@@ -160,6 +160,55 @@ namespace Model
 
 
     /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline const Aws::String& GetComponentPath() const{ return m_componentPath; }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline bool ComponentPathHasBeenSet() const { return m_componentPathHasBeenSet; }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline void SetComponentPath(const Aws::String& value) { m_componentPathHasBeenSet = true; m_componentPath = value; }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline void SetComponentPath(Aws::String&& value) { m_componentPathHasBeenSet = true; m_componentPath = std::move(value); }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline void SetComponentPath(const char* value) { m_componentPathHasBeenSet = true; m_componentPath.assign(value); }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline GetPropertyValueHistoryRequest& WithComponentPath(const Aws::String& value) { SetComponentPath(value); return *this;}
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline GetPropertyValueHistoryRequest& WithComponentPath(Aws::String&& value) { SetComponentPath(std::move(value)); return *this;}
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline GetPropertyValueHistoryRequest& WithComponentPath(const char* value) { SetComponentPath(value); return *this;}
+
+
+    /**
      * <p>The ID of the component type.</p>
      */
     inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
@@ -544,6 +593,9 @@ namespace Model
 
     Aws::String m_componentName;
     bool m_componentNameHasBeenSet = false;
+
+    Aws::String m_componentPath;
+    bool m_componentPathHasBeenSet = false;
 
     Aws::String m_componentTypeId;
     bool m_componentTypeIdHasBeenSet = false;

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MultiRegionAccessPointStatus::NOT_SET:
+            return {};
           case MultiRegionAccessPointStatus::READY:
             return "READY";
           case MultiRegionAccessPointStatus::INCONSISTENT_ACROSS_REGIONS:

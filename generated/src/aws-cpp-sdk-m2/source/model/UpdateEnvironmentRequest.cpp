@@ -19,6 +19,8 @@ UpdateEnvironmentRequest::UpdateEnvironmentRequest() :
     m_desiredCapacityHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
+    m_forceUpdate(false),
+    m_forceUpdateHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false)
 {
@@ -43,6 +45,12 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
   if(m_engineVersionHasBeenSet)
   {
    payload.WithString("engineVersion", m_engineVersion);
+
+  }
+
+  if(m_forceUpdateHasBeenSet)
+  {
+   payload.WithBool("forceUpdate", m_forceUpdate);
 
   }
 

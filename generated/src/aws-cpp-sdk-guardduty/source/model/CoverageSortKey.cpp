@@ -26,6 +26,9 @@ namespace Aws
         static const int ISSUE_HASH = HashingUtils::HashString("ISSUE");
         static const int ADDON_VERSION_HASH = HashingUtils::HashString("ADDON_VERSION");
         static const int UPDATED_AT_HASH = HashingUtils::HashString("UPDATED_AT");
+        static const int EKS_CLUSTER_NAME_HASH = HashingUtils::HashString("EKS_CLUSTER_NAME");
+        static const int ECS_CLUSTER_NAME_HASH = HashingUtils::HashString("ECS_CLUSTER_NAME");
+        static const int INSTANCE_ID_HASH = HashingUtils::HashString("INSTANCE_ID");
 
 
         CoverageSortKey GetCoverageSortKeyForName(const Aws::String& name)
@@ -55,6 +58,18 @@ namespace Aws
           {
             return CoverageSortKey::UPDATED_AT;
           }
+          else if (hashCode == EKS_CLUSTER_NAME_HASH)
+          {
+            return CoverageSortKey::EKS_CLUSTER_NAME;
+          }
+          else if (hashCode == ECS_CLUSTER_NAME_HASH)
+          {
+            return CoverageSortKey::ECS_CLUSTER_NAME;
+          }
+          else if (hashCode == INSTANCE_ID_HASH)
+          {
+            return CoverageSortKey::INSTANCE_ID;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoverageSortKey::NOT_SET:
+            return {};
           case CoverageSortKey::ACCOUNT_ID:
             return "ACCOUNT_ID";
           case CoverageSortKey::CLUSTER_NAME:
@@ -81,6 +98,12 @@ namespace Aws
             return "ADDON_VERSION";
           case CoverageSortKey::UPDATED_AT:
             return "UPDATED_AT";
+          case CoverageSortKey::EKS_CLUSTER_NAME:
+            return "EKS_CLUSTER_NAME";
+          case CoverageSortKey::ECS_CLUSTER_NAME:
+            return "ECS_CLUSTER_NAME";
+          case CoverageSortKey::INSTANCE_ID:
+            return "INSTANCE_ID";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

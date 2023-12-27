@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamResourceDiscoveryAssociationState::NOT_SET:
+            return {};
           case IpamResourceDiscoveryAssociationState::associate_in_progress:
             return "associate-in-progress";
           case IpamResourceDiscoveryAssociationState::associate_complete:

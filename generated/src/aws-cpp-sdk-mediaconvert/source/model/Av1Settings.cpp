@@ -23,6 +23,8 @@ Av1Settings::Av1Settings() :
     m_adaptiveQuantizationHasBeenSet(false),
     m_bitDepth(Av1BitDepth::NOT_SET),
     m_bitDepthHasBeenSet(false),
+    m_filmGrainSynthesis(Av1FilmGrainSynthesis::NOT_SET),
+    m_filmGrainSynthesisHasBeenSet(false),
     m_framerateControl(Av1FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(Av1FramerateConversionAlgorithm::NOT_SET),
@@ -52,6 +54,8 @@ Av1Settings::Av1Settings(JsonView jsonValue) :
     m_adaptiveQuantizationHasBeenSet(false),
     m_bitDepth(Av1BitDepth::NOT_SET),
     m_bitDepthHasBeenSet(false),
+    m_filmGrainSynthesis(Av1FilmGrainSynthesis::NOT_SET),
+    m_filmGrainSynthesisHasBeenSet(false),
     m_framerateControl(Av1FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(Av1FramerateConversionAlgorithm::NOT_SET),
@@ -91,6 +95,13 @@ Av1Settings& Av1Settings::operator =(JsonView jsonValue)
     m_bitDepth = Av1BitDepthMapper::GetAv1BitDepthForName(jsonValue.GetString("bitDepth"));
 
     m_bitDepthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("filmGrainSynthesis"))
+  {
+    m_filmGrainSynthesis = Av1FilmGrainSynthesisMapper::GetAv1FilmGrainSynthesisForName(jsonValue.GetString("filmGrainSynthesis"));
+
+    m_filmGrainSynthesisHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("framerateControl"))
@@ -185,6 +196,11 @@ JsonValue Av1Settings::Jsonize() const
   if(m_bitDepthHasBeenSet)
   {
    payload.WithString("bitDepth", Av1BitDepthMapper::GetNameForAv1BitDepth(m_bitDepth));
+  }
+
+  if(m_filmGrainSynthesisHasBeenSet)
+  {
+   payload.WithString("filmGrainSynthesis", Av1FilmGrainSynthesisMapper::GetNameForAv1FilmGrainSynthesis(m_filmGrainSynthesis));
   }
 
   if(m_framerateControlHasBeenSet)

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Permission::NOT_SET:
+            return {};
           case Permission::FULL_CONTROL:
             return "FULL_CONTROL";
           case Permission::WRITE:

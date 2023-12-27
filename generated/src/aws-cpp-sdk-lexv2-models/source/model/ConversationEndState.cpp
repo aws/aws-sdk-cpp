@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConversationEndState::NOT_SET:
+            return {};
           case ConversationEndState::Success:
             return "Success";
           case ConversationEndState::Failure:

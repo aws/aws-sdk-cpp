@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AwsJobAbortCriteriaFailureType::NOT_SET:
+            return {};
           case AwsJobAbortCriteriaFailureType::FAILED:
             return "FAILED";
           case AwsJobAbortCriteriaFailureType::REJECTED:

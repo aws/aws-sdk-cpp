@@ -27,7 +27,9 @@ namespace Model
    * <p>Contains information about one of the policies that determined an
    * authorization decision.</p> <p>This data type is used as an element in a
    * response parameter for the <a
-   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>
+   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_BatchIsAuthorized.html">BatchIsAuthorized</a>,
    * and <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a>
    * operations.</p> <p>Example:

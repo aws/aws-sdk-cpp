@@ -13,6 +13,8 @@
 #include <aws/compute-optimizer/model/EffectiveRecommendationPreferences.h>
 #include <aws/compute-optimizer/model/InstanceState.h>
 #include <aws/compute-optimizer/model/ExternalMetricStatus.h>
+#include <aws/compute-optimizer/model/GpuInfo.h>
+#include <aws/compute-optimizer/model/InstanceIdle.h>
 #include <aws/compute-optimizer/model/InstanceRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/InstanceRecommendationOption.h>
@@ -1739,6 +1741,68 @@ namespace Model
      */
     inline InstanceRecommendation& WithExternalMetricStatus(ExternalMetricStatus&& value) { SetExternalMetricStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline const GpuInfo& GetCurrentInstanceGpuInfo() const{ return m_currentInstanceGpuInfo; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline bool CurrentInstanceGpuInfoHasBeenSet() const { return m_currentInstanceGpuInfoHasBeenSet; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline void SetCurrentInstanceGpuInfo(const GpuInfo& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = value; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline void SetCurrentInstanceGpuInfo(GpuInfo&& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = std::move(value); }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline InstanceRecommendation& WithCurrentInstanceGpuInfo(const GpuInfo& value) { SetCurrentInstanceGpuInfo(value); return *this;}
+
+    /**
+     * <p> Describes the GPU accelerator settings for the current instance type. </p>
+     */
+    inline InstanceRecommendation& WithCurrentInstanceGpuInfo(GpuInfo&& value) { SetCurrentInstanceGpuInfo(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline const InstanceIdle& GetIdle() const{ return m_idle; }
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline bool IdleHasBeenSet() const { return m_idleHasBeenSet; }
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline void SetIdle(const InstanceIdle& value) { m_idleHasBeenSet = true; m_idle = value; }
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline void SetIdle(InstanceIdle&& value) { m_idleHasBeenSet = true; m_idle = std::move(value); }
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline InstanceRecommendation& WithIdle(const InstanceIdle& value) { SetIdle(value); return *this;}
+
+    /**
+     * <p> Describes if an Amazon EC2 instance is idle. </p>
+     */
+    inline InstanceRecommendation& WithIdle(InstanceIdle&& value) { SetIdle(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceArn;
@@ -1791,6 +1855,12 @@ namespace Model
 
     ExternalMetricStatus m_externalMetricStatus;
     bool m_externalMetricStatusHasBeenSet = false;
+
+    GpuInfo m_currentInstanceGpuInfo;
+    bool m_currentInstanceGpuInfoHasBeenSet = false;
+
+    InstanceIdle m_idle;
+    bool m_idleHasBeenSet = false;
   };
 
 } // namespace Model

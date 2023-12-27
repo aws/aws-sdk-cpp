@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265Tier::NOT_SET:
+            return {};
           case H265Tier::HIGH:
             return "HIGH";
           case H265Tier::MAIN:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchableQueueType::NOT_SET:
+            return {};
           case SearchableQueueType::STANDARD:
             return "STANDARD";
           default:

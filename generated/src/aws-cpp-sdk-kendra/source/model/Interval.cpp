@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Interval::NOT_SET:
+            return {};
           case Interval::THIS_MONTH:
             return "THIS_MONTH";
           case Interval::THIS_WEEK:

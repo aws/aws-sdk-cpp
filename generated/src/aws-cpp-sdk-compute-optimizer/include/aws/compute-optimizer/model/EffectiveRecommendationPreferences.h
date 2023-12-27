@@ -9,7 +9,11 @@
 #include <aws/compute-optimizer/model/EnhancedInfrastructureMetrics.h>
 #include <aws/compute-optimizer/model/InferredWorkloadTypesPreference.h>
 #include <aws/compute-optimizer/model/ExternalMetricsPreference.h>
+#include <aws/compute-optimizer/model/LookBackPeriodPreference.h>
+#include <aws/compute-optimizer/model/InstanceSavingsEstimationMode.h>
 #include <aws/compute-optimizer/model/CpuVendorArchitecture.h>
+#include <aws/compute-optimizer/model/UtilizationPreference.h>
+#include <aws/compute-optimizer/model/EffectivePreferredResource.h>
 #include <utility>
 
 namespace Aws
@@ -341,6 +345,194 @@ namespace Model
      */
     inline EffectiveRecommendationPreferences& WithExternalMetricsPreference(ExternalMetricsPreference&& value) { SetExternalMetricsPreference(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p>
+     */
+    inline const LookBackPeriodPreference& GetLookBackPeriod() const{ return m_lookBackPeriod; }
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p>
+     */
+    inline bool LookBackPeriodHasBeenSet() const { return m_lookBackPeriodHasBeenSet; }
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p>
+     */
+    inline void SetLookBackPeriod(const LookBackPeriodPreference& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = value; }
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p>
+     */
+    inline void SetLookBackPeriod(LookBackPeriodPreference&& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = std::move(value); }
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithLookBackPeriod(const LookBackPeriodPreference& value) { SetLookBackPeriod(value); return *this;}
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithLookBackPeriod(LookBackPeriodPreference&& value) { SetLookBackPeriod(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that are used to generate rightsizing recommendations. </p> 
+     * <p>This preference is only available for the Amazon EC2 instance resource
+     * type.</p> 
+     */
+    inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const{ return m_utilizationPreferences; }
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that are used to generate rightsizing recommendations. </p> 
+     * <p>This preference is only available for the Amazon EC2 instance resource
+     * type.</p> 
+     */
+    inline bool UtilizationPreferencesHasBeenSet() const { return m_utilizationPreferencesHasBeenSet; }
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that are used to generate rightsizing recommendations. </p> 
+     * <p>This preference is only available for the Amazon EC2 instance resource
+     * type.</p> 
+     */
+    inline void SetUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = value; }
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that are used to generate rightsizing recommendations. </p> 
+     * <p>This preference is only available for the Amazon EC2 instance resource
+     * type.</p> 
+     */
+    inline void SetUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = std::move(value); }
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that are used to generate rightsizing recommendations. </p> 
+     * <p>This preference is only available for the Amazon EC2 instance resource
+     * type.</p> 
+     */
+    inline EffectiveRecommendationPreferences& WithUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { SetUtilizationPreferences(value); return *this;}
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that are used to generate rightsizing recommendations. </p> 
+     * <p>This preference is only available for the Amazon EC2 instance resource
+     * type.</p> 
+     */
+    inline EffectiveRecommendationPreferences& WithUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { SetUtilizationPreferences(std::move(value)); return *this;}
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that are used to generate rightsizing recommendations. </p> 
+     * <p>This preference is only available for the Amazon EC2 instance resource
+     * type.</p> 
+     */
+    inline EffectiveRecommendationPreferences& AddUtilizationPreferences(const UtilizationPreference& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(value); return *this; }
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that are used to generate rightsizing recommendations. </p> 
+     * <p>This preference is only available for the Amazon EC2 instance resource
+     * type.</p> 
+     */
+    inline EffectiveRecommendationPreferences& AddUtilizationPreferences(UtilizationPreference&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. </p>
+     */
+    inline const Aws::Vector<EffectivePreferredResource>& GetPreferredResources() const{ return m_preferredResources; }
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. </p>
+     */
+    inline bool PreferredResourcesHasBeenSet() const { return m_preferredResourcesHasBeenSet; }
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. </p>
+     */
+    inline void SetPreferredResources(const Aws::Vector<EffectivePreferredResource>& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = value; }
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. </p>
+     */
+    inline void SetPreferredResources(Aws::Vector<EffectivePreferredResource>&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = std::move(value); }
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithPreferredResources(const Aws::Vector<EffectivePreferredResource>& value) { SetPreferredResources(value); return *this;}
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithPreferredResources(Aws::Vector<EffectivePreferredResource>&& value) { SetPreferredResources(std::move(value)); return *this;}
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. </p>
+     */
+    inline EffectiveRecommendationPreferences& AddPreferredResources(const EffectivePreferredResource& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.push_back(value); return *this; }
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. </p>
+     */
+    inline EffectiveRecommendationPreferences& AddPreferredResources(EffectivePreferredResource&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Describes the savings estimation mode applied for calculating savings
+     * opportunity for a resource. </p>
+     */
+    inline const InstanceSavingsEstimationMode& GetSavingsEstimationMode() const{ return m_savingsEstimationMode; }
+
+    /**
+     * <p> Describes the savings estimation mode applied for calculating savings
+     * opportunity for a resource. </p>
+     */
+    inline bool SavingsEstimationModeHasBeenSet() const { return m_savingsEstimationModeHasBeenSet; }
+
+    /**
+     * <p> Describes the savings estimation mode applied for calculating savings
+     * opportunity for a resource. </p>
+     */
+    inline void SetSavingsEstimationMode(const InstanceSavingsEstimationMode& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = value; }
+
+    /**
+     * <p> Describes the savings estimation mode applied for calculating savings
+     * opportunity for a resource. </p>
+     */
+    inline void SetSavingsEstimationMode(InstanceSavingsEstimationMode&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::move(value); }
+
+    /**
+     * <p> Describes the savings estimation mode applied for calculating savings
+     * opportunity for a resource. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithSavingsEstimationMode(const InstanceSavingsEstimationMode& value) { SetSavingsEstimationMode(value); return *this;}
+
+    /**
+     * <p> Describes the savings estimation mode applied for calculating savings
+     * opportunity for a resource. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithSavingsEstimationMode(InstanceSavingsEstimationMode&& value) { SetSavingsEstimationMode(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<CpuVendorArchitecture> m_cpuVendorArchitectures;
@@ -354,6 +546,18 @@ namespace Model
 
     ExternalMetricsPreference m_externalMetricsPreference;
     bool m_externalMetricsPreferenceHasBeenSet = false;
+
+    LookBackPeriodPreference m_lookBackPeriod;
+    bool m_lookBackPeriodHasBeenSet = false;
+
+    Aws::Vector<UtilizationPreference> m_utilizationPreferences;
+    bool m_utilizationPreferencesHasBeenSet = false;
+
+    Aws::Vector<EffectivePreferredResource> m_preferredResources;
+    bool m_preferredResourcesHasBeenSet = false;
+
+    InstanceSavingsEstimationMode m_savingsEstimationMode;
+    bool m_savingsEstimationModeHasBeenSet = false;
   };
 
 } // namespace Model

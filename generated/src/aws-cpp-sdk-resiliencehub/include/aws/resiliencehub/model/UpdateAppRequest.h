@@ -8,6 +8,9 @@
 #include <aws/resiliencehub/ResilienceHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resiliencehub/model/AppAssessmentScheduleType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/resiliencehub/model/PermissionModel.h>
+#include <aws/resiliencehub/model/EventSubscription.h>
 #include <utility>
 
 namespace Aws
@@ -34,82 +37,90 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 
@@ -208,82 +219,184 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>The list of events you would like to subscribe and get notification for.
+     * Currently, Resilience Hub supports notifications only for <b>Drift detected</b>
+     * and <b>Scheduled assessment failure</b> events.</p>
+     */
+    inline const Aws::Vector<EventSubscription>& GetEventSubscriptions() const{ return m_eventSubscriptions; }
+
+    /**
+     * <p>The list of events you would like to subscribe and get notification for.
+     * Currently, Resilience Hub supports notifications only for <b>Drift detected</b>
+     * and <b>Scheduled assessment failure</b> events.</p>
+     */
+    inline bool EventSubscriptionsHasBeenSet() const { return m_eventSubscriptionsHasBeenSet; }
+
+    /**
+     * <p>The list of events you would like to subscribe and get notification for.
+     * Currently, Resilience Hub supports notifications only for <b>Drift detected</b>
+     * and <b>Scheduled assessment failure</b> events.</p>
+     */
+    inline void SetEventSubscriptions(const Aws::Vector<EventSubscription>& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions = value; }
+
+    /**
+     * <p>The list of events you would like to subscribe and get notification for.
+     * Currently, Resilience Hub supports notifications only for <b>Drift detected</b>
+     * and <b>Scheduled assessment failure</b> events.</p>
+     */
+    inline void SetEventSubscriptions(Aws::Vector<EventSubscription>&& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions = std::move(value); }
+
+    /**
+     * <p>The list of events you would like to subscribe and get notification for.
+     * Currently, Resilience Hub supports notifications only for <b>Drift detected</b>
+     * and <b>Scheduled assessment failure</b> events.</p>
+     */
+    inline UpdateAppRequest& WithEventSubscriptions(const Aws::Vector<EventSubscription>& value) { SetEventSubscriptions(value); return *this;}
+
+    /**
+     * <p>The list of events you would like to subscribe and get notification for.
+     * Currently, Resilience Hub supports notifications only for <b>Drift detected</b>
+     * and <b>Scheduled assessment failure</b> events.</p>
+     */
+    inline UpdateAppRequest& WithEventSubscriptions(Aws::Vector<EventSubscription>&& value) { SetEventSubscriptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of events you would like to subscribe and get notification for.
+     * Currently, Resilience Hub supports notifications only for <b>Drift detected</b>
+     * and <b>Scheduled assessment failure</b> events.</p>
+     */
+    inline UpdateAppRequest& AddEventSubscriptions(const EventSubscription& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions.push_back(value); return *this; }
+
+    /**
+     * <p>The list of events you would like to subscribe and get notification for.
+     * Currently, Resilience Hub supports notifications only for <b>Drift detected</b>
+     * and <b>Scheduled assessment failure</b> events.</p>
+     */
+    inline UpdateAppRequest& AddEventSubscriptions(EventSubscription&& value) { m_eventSubscriptionsHasBeenSet = true; m_eventSubscriptions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Defines the roles and credentials that Resilience Hub would use while
+     * creating an application, importing its resources, and running an assessment.</p>
+     */
+    inline const PermissionModel& GetPermissionModel() const{ return m_permissionModel; }
+
+    /**
+     * <p>Defines the roles and credentials that Resilience Hub would use while
+     * creating an application, importing its resources, and running an assessment.</p>
+     */
+    inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }
+
+    /**
+     * <p>Defines the roles and credentials that Resilience Hub would use while
+     * creating an application, importing its resources, and running an assessment.</p>
+     */
+    inline void SetPermissionModel(const PermissionModel& value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
+
+    /**
+     * <p>Defines the roles and credentials that Resilience Hub would use while
+     * creating an application, importing its resources, and running an assessment.</p>
+     */
+    inline void SetPermissionModel(PermissionModel&& value) { m_permissionModelHasBeenSet = true; m_permissionModel = std::move(value); }
+
+    /**
+     * <p>Defines the roles and credentials that Resilience Hub would use while
+     * creating an application, importing its resources, and running an assessment.</p>
+     */
+    inline UpdateAppRequest& WithPermissionModel(const PermissionModel& value) { SetPermissionModel(value); return *this;}
+
+    /**
+     * <p>Defines the roles and credentials that Resilience Hub would use while
+     * creating an application, importing its resources, and running an assessment.</p>
+     */
+    inline UpdateAppRequest& WithPermissionModel(PermissionModel&& value) { SetPermissionModel(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
@@ -300,6 +413,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<EventSubscription> m_eventSubscriptions;
+    bool m_eventSubscriptionsHasBeenSet = false;
+
+    PermissionModel m_permissionModel;
+    bool m_permissionModelHasBeenSet = false;
 
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet = false;

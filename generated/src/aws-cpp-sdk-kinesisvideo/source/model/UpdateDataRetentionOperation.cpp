@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateDataRetentionOperation::NOT_SET:
+            return {};
           case UpdateDataRetentionOperation::INCREASE_DATA_RETENTION:
             return "INCREASE_DATA_RETENTION";
           case UpdateDataRetentionOperation::DECREASE_DATA_RETENTION:

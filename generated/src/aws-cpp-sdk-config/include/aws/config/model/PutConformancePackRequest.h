@@ -83,7 +83,10 @@ namespace Model
      * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
      * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
      * Region as the conformance pack. </p>  <p>You must have access to read
-     * Amazon S3 bucket.</p> 
+     * Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived
+     * storage class</a> if this parameter is passed.</p> 
      */
     inline const Aws::String& GetTemplateS3Uri() const{ return m_templateS3Uri; }
 
@@ -92,7 +95,10 @@ namespace Model
      * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
      * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
      * Region as the conformance pack. </p>  <p>You must have access to read
-     * Amazon S3 bucket.</p> 
+     * Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived
+     * storage class</a> if this parameter is passed.</p> 
      */
     inline bool TemplateS3UriHasBeenSet() const { return m_templateS3UriHasBeenSet; }
 
@@ -101,7 +107,10 @@ namespace Model
      * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
      * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
      * Region as the conformance pack. </p>  <p>You must have access to read
-     * Amazon S3 bucket.</p> 
+     * Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived
+     * storage class</a> if this parameter is passed.</p> 
      */
     inline void SetTemplateS3Uri(const Aws::String& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = value; }
 
@@ -110,7 +119,10 @@ namespace Model
      * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
      * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
      * Region as the conformance pack. </p>  <p>You must have access to read
-     * Amazon S3 bucket.</p> 
+     * Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived
+     * storage class</a> if this parameter is passed.</p> 
      */
     inline void SetTemplateS3Uri(Aws::String&& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = std::move(value); }
 
@@ -119,7 +131,10 @@ namespace Model
      * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
      * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
      * Region as the conformance pack. </p>  <p>You must have access to read
-     * Amazon S3 bucket.</p> 
+     * Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived
+     * storage class</a> if this parameter is passed.</p> 
      */
     inline void SetTemplateS3Uri(const char* value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri.assign(value); }
 
@@ -128,7 +143,10 @@ namespace Model
      * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
      * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
      * Region as the conformance pack. </p>  <p>You must have access to read
-     * Amazon S3 bucket.</p> 
+     * Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived
+     * storage class</a> if this parameter is passed.</p> 
      */
     inline PutConformancePackRequest& WithTemplateS3Uri(const Aws::String& value) { SetTemplateS3Uri(value); return *this;}
 
@@ -137,7 +155,10 @@ namespace Model
      * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
      * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
      * Region as the conformance pack. </p>  <p>You must have access to read
-     * Amazon S3 bucket.</p> 
+     * Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived
+     * storage class</a> if this parameter is passed.</p> 
      */
     inline PutConformancePackRequest& WithTemplateS3Uri(Aws::String&& value) { SetTemplateS3Uri(std::move(value)); return *this;}
 
@@ -146,7 +167,10 @@ namespace Model
      * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
      * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
      * Region as the conformance pack. </p>  <p>You must have access to read
-     * Amazon S3 bucket.</p> 
+     * Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived
+     * storage class</a> if this parameter is passed.</p> 
      */
     inline PutConformancePackRequest& WithTemplateS3Uri(const char* value) { SetTemplateS3Uri(value); return *this;}
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LifecyclePolicyPreviewStatus::NOT_SET:
+            return {};
           case LifecyclePolicyPreviewStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case LifecyclePolicyPreviewStatus::COMPLETE:

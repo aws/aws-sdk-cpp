@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContributorInsightsStatus::NOT_SET:
+            return {};
           case ContributorInsightsStatus::ENABLING:
             return "ENABLING";
           case ContributorInsightsStatus::ENABLED:

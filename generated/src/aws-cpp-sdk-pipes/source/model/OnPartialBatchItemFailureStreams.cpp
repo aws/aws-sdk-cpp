@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OnPartialBatchItemFailureStreams::NOT_SET:
+            return {};
           case OnPartialBatchItemFailureStreams::AUTOMATIC_BISECT:
             return "AUTOMATIC_BISECT";
           default:

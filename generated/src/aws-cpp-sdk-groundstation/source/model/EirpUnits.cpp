@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EirpUnits::NOT_SET:
+            return {};
           case EirpUnits::dBW:
             return "dBW";
           default:

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int HANA_HASH = HashingUtils::HashString("HANA");
+        static const int SAP_ABAP_HASH = HashingUtils::HashString("SAP_ABAP");
 
 
         ApplicationType GetApplicationTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == HANA_HASH)
           {
             return ApplicationType::HANA;
+          }
+          else if (hashCode == SAP_ABAP_HASH)
+          {
+            return ApplicationType::SAP_ABAP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +49,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationType::NOT_SET:
+            return {};
           case ApplicationType::HANA:
             return "HANA";
+          case ApplicationType::SAP_ABAP:
+            return "SAP_ABAP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

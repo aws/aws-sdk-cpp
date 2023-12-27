@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberProductType::NOT_SET:
+            return {};
           case PhoneNumberProductType::BusinessCalling:
             return "BusinessCalling";
           case PhoneNumberProductType::VoiceConnector:

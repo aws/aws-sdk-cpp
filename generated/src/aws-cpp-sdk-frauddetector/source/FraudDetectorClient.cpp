@@ -62,6 +62,7 @@
 #include <aws/frauddetector/model/GetEventPredictionMetadataRequest.h>
 #include <aws/frauddetector/model/GetEventTypesRequest.h>
 #include <aws/frauddetector/model/GetExternalModelsRequest.h>
+#include <aws/frauddetector/model/GetKMSEncryptionKeyRequest.h>
 #include <aws/frauddetector/model/GetLabelsRequest.h>
 #include <aws/frauddetector/model/GetListElementsRequest.h>
 #include <aws/frauddetector/model/GetListsMetadataRequest.h>
@@ -1292,32 +1293,30 @@ GetExternalModelsOutcome FraudDetectorClient::GetExternalModels(const GetExterna
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
-GetKMSEncryptionKeyOutcome FraudDetectorClient::GetKMSEncryptionKey() const
+GetKMSEncryptionKeyOutcome FraudDetectorClient::GetKMSEncryptionKey(const GetKMSEncryptionKeyRequest& request) const
 {
-AWS_OPERATION_GUARD(GetKMSEncryptionKey);
+  AWS_OPERATION_GUARD(GetKMSEncryptionKey);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetKMSEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetKMSEncryptionKey, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetKMSEncryptionKey, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetKMSEncryptionKey",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, "GetKMSEncryptionKey" }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetKMSEncryptionKeyOutcome>(
     [&]()-> GetKMSEncryptionKeyOutcome {
-
-        AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetKMSEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-        const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(staticEndpointParameters); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-            *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, "GetKMSEncryptionKey"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetKMSEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      return GetKMSEncryptionKeyOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "GetKMSEncryptionKey"));
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetKMSEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return GetKMSEncryptionKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, "GetKMSEncryptionKey"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 GetLabelsOutcome FraudDetectorClient::GetLabels(const GetLabelsRequest& request) const

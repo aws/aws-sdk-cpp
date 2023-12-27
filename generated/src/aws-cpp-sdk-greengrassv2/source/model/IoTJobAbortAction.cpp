@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IoTJobAbortAction::NOT_SET:
+            return {};
           case IoTJobAbortAction::CANCEL:
             return "CANCEL";
           default:

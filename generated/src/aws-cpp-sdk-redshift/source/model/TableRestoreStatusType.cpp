@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableRestoreStatusType::NOT_SET:
+            return {};
           case TableRestoreStatusType::PENDING:
             return "PENDING";
           case TableRestoreStatusType::IN_PROGRESS:

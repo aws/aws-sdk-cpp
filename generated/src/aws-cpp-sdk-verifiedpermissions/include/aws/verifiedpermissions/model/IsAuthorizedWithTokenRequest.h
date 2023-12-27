@@ -91,7 +91,7 @@ namespace Model
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
      * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline const Aws::String& GetIdentityToken() const{ return m_identityToken; }
 
@@ -99,7 +99,7 @@ namespace Model
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
      * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline bool IdentityTokenHasBeenSet() const { return m_identityTokenHasBeenSet; }
 
@@ -107,7 +107,7 @@ namespace Model
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
      * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline void SetIdentityToken(const Aws::String& value) { m_identityTokenHasBeenSet = true; m_identityToken = value; }
 
@@ -115,7 +115,7 @@ namespace Model
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
      * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline void SetIdentityToken(Aws::String&& value) { m_identityTokenHasBeenSet = true; m_identityToken = std::move(value); }
 
@@ -123,7 +123,7 @@ namespace Model
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
      * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline void SetIdentityToken(const char* value) { m_identityTokenHasBeenSet = true; m_identityToken.assign(value); }
 
@@ -131,7 +131,7 @@ namespace Model
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
      * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithIdentityToken(const Aws::String& value) { SetIdentityToken(value); return *this;}
 
@@ -139,7 +139,7 @@ namespace Model
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
      * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithIdentityToken(Aws::String&& value) { SetIdentityToken(std::move(value)); return *this;}
 
@@ -147,7 +147,7 @@ namespace Model
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
      * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithIdentityToken(const char* value) { SetIdentityToken(value); return *this;}
 
@@ -155,64 +155,64 @@ namespace Model
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * identity source. You must specify either an <code>AccessToken</code>, or an
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * identity source. You must specify either an <code>AccessToken</code>, or an
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * identity source. You must specify either an <code>AccessToken</code>, or an
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * identity source. You must specify either an <code>AccessToken</code>, or an
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * identity source. You must specify either an <code>AccessToken</code>, or an
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * identity source. You must specify either an <code>AccessToken</code>, or an
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * identity source. You must specify either an <code>AccessToken</code>, or an
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, but not both.</p>
+     * identity source. You must specify either an <code>AccessToken</code>, or an
+     * <code>IdentityToken</code>, or both.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
@@ -329,56 +329,74 @@ namespace Model
 
 
     /**
-     * <p>Specifies the list of resources and principals and their associated
-     * attributes that Verified Permissions can examine when evaluating the policies.
-     * </p>  <p>You can include only principal and resource entities in this
-     * parameter; you can't include actions. You must specify actions in the
-     * schema.</p> 
+     * <p>Specifies the list of resources and their associated attributes that Verified
+     * Permissions can examine when evaluating the policies. </p>  <p>You can
+     * include only resource and action entities in this parameter; you can't include
+     * principals.</p> <ul> <li> <p>The <code>IsAuthorizedWithToken</code> operation
+     * takes principal attributes from <b> <i>only</i> </b> the
+     * <code>identityToken</code> or <code>accessToken</code> passed to the
+     * operation.</p> </li> <li> <p>For action entities, you can include only their
+     * <code>Identifier</code> and <code>EntityType</code>. </p> </li> </ul> 
      */
     inline const EntitiesDefinition& GetEntities() const{ return m_entities; }
 
     /**
-     * <p>Specifies the list of resources and principals and their associated
-     * attributes that Verified Permissions can examine when evaluating the policies.
-     * </p>  <p>You can include only principal and resource entities in this
-     * parameter; you can't include actions. You must specify actions in the
-     * schema.</p> 
+     * <p>Specifies the list of resources and their associated attributes that Verified
+     * Permissions can examine when evaluating the policies. </p>  <p>You can
+     * include only resource and action entities in this parameter; you can't include
+     * principals.</p> <ul> <li> <p>The <code>IsAuthorizedWithToken</code> operation
+     * takes principal attributes from <b> <i>only</i> </b> the
+     * <code>identityToken</code> or <code>accessToken</code> passed to the
+     * operation.</p> </li> <li> <p>For action entities, you can include only their
+     * <code>Identifier</code> and <code>EntityType</code>. </p> </li> </ul> 
      */
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
 
     /**
-     * <p>Specifies the list of resources and principals and their associated
-     * attributes that Verified Permissions can examine when evaluating the policies.
-     * </p>  <p>You can include only principal and resource entities in this
-     * parameter; you can't include actions. You must specify actions in the
-     * schema.</p> 
+     * <p>Specifies the list of resources and their associated attributes that Verified
+     * Permissions can examine when evaluating the policies. </p>  <p>You can
+     * include only resource and action entities in this parameter; you can't include
+     * principals.</p> <ul> <li> <p>The <code>IsAuthorizedWithToken</code> operation
+     * takes principal attributes from <b> <i>only</i> </b> the
+     * <code>identityToken</code> or <code>accessToken</code> passed to the
+     * operation.</p> </li> <li> <p>For action entities, you can include only their
+     * <code>Identifier</code> and <code>EntityType</code>. </p> </li> </ul> 
      */
     inline void SetEntities(const EntitiesDefinition& value) { m_entitiesHasBeenSet = true; m_entities = value; }
 
     /**
-     * <p>Specifies the list of resources and principals and their associated
-     * attributes that Verified Permissions can examine when evaluating the policies.
-     * </p>  <p>You can include only principal and resource entities in this
-     * parameter; you can't include actions. You must specify actions in the
-     * schema.</p> 
+     * <p>Specifies the list of resources and their associated attributes that Verified
+     * Permissions can examine when evaluating the policies. </p>  <p>You can
+     * include only resource and action entities in this parameter; you can't include
+     * principals.</p> <ul> <li> <p>The <code>IsAuthorizedWithToken</code> operation
+     * takes principal attributes from <b> <i>only</i> </b> the
+     * <code>identityToken</code> or <code>accessToken</code> passed to the
+     * operation.</p> </li> <li> <p>For action entities, you can include only their
+     * <code>Identifier</code> and <code>EntityType</code>. </p> </li> </ul> 
      */
     inline void SetEntities(EntitiesDefinition&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
 
     /**
-     * <p>Specifies the list of resources and principals and their associated
-     * attributes that Verified Permissions can examine when evaluating the policies.
-     * </p>  <p>You can include only principal and resource entities in this
-     * parameter; you can't include actions. You must specify actions in the
-     * schema.</p> 
+     * <p>Specifies the list of resources and their associated attributes that Verified
+     * Permissions can examine when evaluating the policies. </p>  <p>You can
+     * include only resource and action entities in this parameter; you can't include
+     * principals.</p> <ul> <li> <p>The <code>IsAuthorizedWithToken</code> operation
+     * takes principal attributes from <b> <i>only</i> </b> the
+     * <code>identityToken</code> or <code>accessToken</code> passed to the
+     * operation.</p> </li> <li> <p>For action entities, you can include only their
+     * <code>Identifier</code> and <code>EntityType</code>. </p> </li> </ul> 
      */
     inline IsAuthorizedWithTokenRequest& WithEntities(const EntitiesDefinition& value) { SetEntities(value); return *this;}
 
     /**
-     * <p>Specifies the list of resources and principals and their associated
-     * attributes that Verified Permissions can examine when evaluating the policies.
-     * </p>  <p>You can include only principal and resource entities in this
-     * parameter; you can't include actions. You must specify actions in the
-     * schema.</p> 
+     * <p>Specifies the list of resources and their associated attributes that Verified
+     * Permissions can examine when evaluating the policies. </p>  <p>You can
+     * include only resource and action entities in this parameter; you can't include
+     * principals.</p> <ul> <li> <p>The <code>IsAuthorizedWithToken</code> operation
+     * takes principal attributes from <b> <i>only</i> </b> the
+     * <code>identityToken</code> or <code>accessToken</code> passed to the
+     * operation.</p> </li> <li> <p>For action entities, you can include only their
+     * <code>Identifier</code> and <code>EntityType</code>. </p> </li> </ul> 
      */
     inline IsAuthorizedWithTokenRequest& WithEntities(EntitiesDefinition&& value) { SetEntities(std::move(value)); return *this;}
 

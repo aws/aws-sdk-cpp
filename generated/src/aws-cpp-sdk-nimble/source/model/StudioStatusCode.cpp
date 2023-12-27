@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioStatusCode::NOT_SET:
+            return {};
           case StudioStatusCode::STUDIO_CREATED:
             return "STUDIO_CREATED";
           case StudioStatusCode::STUDIO_DELETED:

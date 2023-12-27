@@ -103,44 +103,44 @@ namespace Model
 
     /**
      * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB
-     * instance.</p> <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for
-     * PostgreSQL, the value supplied must be at least 10% greater than the current
-     * value. Values that are not at least 10% greater than the existing value are
-     * rounded up so that they are 10% greater than the current value.</p> <p>For the
-     * valid values for allocated storage for each engine, see
+     * instance.</p> <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and
+     * RDS for PostgreSQL, the value supplied must be at least 10% greater than the
+     * current value. Values that are not at least 10% greater than the existing value
+     * are rounded up so that they are 10% greater than the current value.</p> <p>For
+     * the valid values for allocated storage for each engine, see
      * <code>CreateDBInstance</code>.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB
-     * instance.</p> <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for
-     * PostgreSQL, the value supplied must be at least 10% greater than the current
-     * value. Values that are not at least 10% greater than the existing value are
-     * rounded up so that they are 10% greater than the current value.</p> <p>For the
-     * valid values for allocated storage for each engine, see
+     * instance.</p> <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and
+     * RDS for PostgreSQL, the value supplied must be at least 10% greater than the
+     * current value. Values that are not at least 10% greater than the existing value
+     * are rounded up so that they are 10% greater than the current value.</p> <p>For
+     * the valid values for allocated storage for each engine, see
      * <code>CreateDBInstance</code>.</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
      * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB
-     * instance.</p> <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for
-     * PostgreSQL, the value supplied must be at least 10% greater than the current
-     * value. Values that are not at least 10% greater than the existing value are
-     * rounded up so that they are 10% greater than the current value.</p> <p>For the
-     * valid values for allocated storage for each engine, see
+     * instance.</p> <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and
+     * RDS for PostgreSQL, the value supplied must be at least 10% greater than the
+     * current value. Values that are not at least 10% greater than the existing value
+     * are rounded up so that they are 10% greater than the current value.</p> <p>For
+     * the valid values for allocated storage for each engine, see
      * <code>CreateDBInstance</code>.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB
-     * instance.</p> <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for
-     * PostgreSQL, the value supplied must be at least 10% greater than the current
-     * value. Values that are not at least 10% greater than the existing value are
-     * rounded up so that they are 10% greater than the current value.</p> <p>For the
-     * valid values for allocated storage for each engine, see
+     * instance.</p> <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and
+     * RDS for PostgreSQL, the value supplied must be at least 10% greater than the
+     * current value. Values that are not at least 10% greater than the existing value
+     * are rounded up so that they are 10% greater than the current value.</p> <p>For
+     * the valid values for allocated storage for each engine, see
      * <code>CreateDBInstance</code>.</p>
      */
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
@@ -163,7 +163,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -184,7 +189,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -205,7 +215,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -226,7 +241,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -247,7 +267,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -268,7 +293,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -289,7 +319,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -310,7 +345,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to upgrade the engine version, and then run it again to modify the DB instance
+     * class.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -697,22 +737,24 @@ namespace Model
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.</p> 
-     * <p>Amazon RDS API operations never return the password, so this action provides
-     * a way to regain access to a primary instance user if the password is lost. This
-     * includes restoring privileges that might have been accidentally revoked.</p>
-     *  <p>This setting doesn't apply to the following DB instances:</p> <ul>
-     * <li> <p>Amazon Aurora (The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>.)</p> </li> <li>
-     * <p>RDS Custom</p> </li> </ul> <p>Default: Uses existing setting</p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if
-     * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * <p>Amazon RDS API operations never return the password, so this operation
+     * provides a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been accidentally
+     * revoked.</p>  <p>This setting doesn't apply to the following DB
+     * instances:</p> <ul> <li> <p>Amazon Aurora (The password for the master user is
+     * managed by the DB cluster. For more information, see
+     * <code>ModifyDBCluster</code>.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
+     * <p>Default: Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li>
+     * <p>Can include any printable ASCII character except "/", """, or "@". For RDS
+     * for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 255 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -722,22 +764,24 @@ namespace Model
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.</p> 
-     * <p>Amazon RDS API operations never return the password, so this action provides
-     * a way to regain access to a primary instance user if the password is lost. This
-     * includes restoring privileges that might have been accidentally revoked.</p>
-     *  <p>This setting doesn't apply to the following DB instances:</p> <ul>
-     * <li> <p>Amazon Aurora (The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>.)</p> </li> <li>
-     * <p>RDS Custom</p> </li> </ul> <p>Default: Uses existing setting</p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if
-     * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * <p>Amazon RDS API operations never return the password, so this operation
+     * provides a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been accidentally
+     * revoked.</p>  <p>This setting doesn't apply to the following DB
+     * instances:</p> <ul> <li> <p>Amazon Aurora (The password for the master user is
+     * managed by the DB cluster. For more information, see
+     * <code>ModifyDBCluster</code>.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
+     * <p>Default: Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li>
+     * <p>Can include any printable ASCII character except "/", """, or "@". For RDS
+     * for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 255 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
@@ -747,22 +791,24 @@ namespace Model
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.</p> 
-     * <p>Amazon RDS API operations never return the password, so this action provides
-     * a way to regain access to a primary instance user if the password is lost. This
-     * includes restoring privileges that might have been accidentally revoked.</p>
-     *  <p>This setting doesn't apply to the following DB instances:</p> <ul>
-     * <li> <p>Amazon Aurora (The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>.)</p> </li> <li>
-     * <p>RDS Custom</p> </li> </ul> <p>Default: Uses existing setting</p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if
-     * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * <p>Amazon RDS API operations never return the password, so this operation
+     * provides a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been accidentally
+     * revoked.</p>  <p>This setting doesn't apply to the following DB
+     * instances:</p> <ul> <li> <p>Amazon Aurora (The password for the master user is
+     * managed by the DB cluster. For more information, see
+     * <code>ModifyDBCluster</code>.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
+     * <p>Default: Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li>
+     * <p>Can include any printable ASCII character except "/", """, or "@". For RDS
+     * for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 255 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -772,22 +818,24 @@ namespace Model
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.</p> 
-     * <p>Amazon RDS API operations never return the password, so this action provides
-     * a way to regain access to a primary instance user if the password is lost. This
-     * includes restoring privileges that might have been accidentally revoked.</p>
-     *  <p>This setting doesn't apply to the following DB instances:</p> <ul>
-     * <li> <p>Amazon Aurora (The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>.)</p> </li> <li>
-     * <p>RDS Custom</p> </li> </ul> <p>Default: Uses existing setting</p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if
-     * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * <p>Amazon RDS API operations never return the password, so this operation
+     * provides a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been accidentally
+     * revoked.</p>  <p>This setting doesn't apply to the following DB
+     * instances:</p> <ul> <li> <p>Amazon Aurora (The password for the master user is
+     * managed by the DB cluster. For more information, see
+     * <code>ModifyDBCluster</code>.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
+     * <p>Default: Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li>
+     * <p>Can include any printable ASCII character except "/", """, or "@". For RDS
+     * for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 255 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -797,22 +845,24 @@ namespace Model
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.</p> 
-     * <p>Amazon RDS API operations never return the password, so this action provides
-     * a way to regain access to a primary instance user if the password is lost. This
-     * includes restoring privileges that might have been accidentally revoked.</p>
-     *  <p>This setting doesn't apply to the following DB instances:</p> <ul>
-     * <li> <p>Amazon Aurora (The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>.)</p> </li> <li>
-     * <p>RDS Custom</p> </li> </ul> <p>Default: Uses existing setting</p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if
-     * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * <p>Amazon RDS API operations never return the password, so this operation
+     * provides a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been accidentally
+     * revoked.</p>  <p>This setting doesn't apply to the following DB
+     * instances:</p> <ul> <li> <p>Amazon Aurora (The password for the master user is
+     * managed by the DB cluster. For more information, see
+     * <code>ModifyDBCluster</code>.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
+     * <p>Default: Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li>
+     * <p>Can include any printable ASCII character except "/", """, or "@". For RDS
+     * for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 255 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -822,22 +872,24 @@ namespace Model
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.</p> 
-     * <p>Amazon RDS API operations never return the password, so this action provides
-     * a way to regain access to a primary instance user if the password is lost. This
-     * includes restoring privileges that might have been accidentally revoked.</p>
-     *  <p>This setting doesn't apply to the following DB instances:</p> <ul>
-     * <li> <p>Amazon Aurora (The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>.)</p> </li> <li>
-     * <p>RDS Custom</p> </li> </ul> <p>Default: Uses existing setting</p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if
-     * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * <p>Amazon RDS API operations never return the password, so this operation
+     * provides a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been accidentally
+     * revoked.</p>  <p>This setting doesn't apply to the following DB
+     * instances:</p> <ul> <li> <p>Amazon Aurora (The password for the master user is
+     * managed by the DB cluster. For more information, see
+     * <code>ModifyDBCluster</code>.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
+     * <p>Default: Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li>
+     * <p>Can include any printable ASCII character except "/", """, or "@". For RDS
+     * for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 255 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -847,22 +899,24 @@ namespace Model
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.</p> 
-     * <p>Amazon RDS API operations never return the password, so this action provides
-     * a way to regain access to a primary instance user if the password is lost. This
-     * includes restoring privileges that might have been accidentally revoked.</p>
-     *  <p>This setting doesn't apply to the following DB instances:</p> <ul>
-     * <li> <p>Amazon Aurora (The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>.)</p> </li> <li>
-     * <p>RDS Custom</p> </li> </ul> <p>Default: Uses existing setting</p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if
-     * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * <p>Amazon RDS API operations never return the password, so this operation
+     * provides a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been accidentally
+     * revoked.</p>  <p>This setting doesn't apply to the following DB
+     * instances:</p> <ul> <li> <p>Amazon Aurora (The password for the master user is
+     * managed by the DB cluster. For more information, see
+     * <code>ModifyDBCluster</code>.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
+     * <p>Default: Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li>
+     * <p>Can include any printable ASCII character except "/", """, or "@". For RDS
+     * for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 255 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -872,22 +926,24 @@ namespace Model
      * possible. Between the time of the request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.</p> 
-     * <p>Amazon RDS API operations never return the password, so this action provides
-     * a way to regain access to a primary instance user if the password is lost. This
-     * includes restoring privileges that might have been accidentally revoked.</p>
-     *  <p>This setting doesn't apply to the following DB instances:</p> <ul>
-     * <li> <p>Amazon Aurora (The password for the master user is managed by the DB
-     * cluster. For more information, see <code>ModifyDBCluster</code>.)</p> </li> <li>
-     * <p>RDS Custom</p> </li> </ul> <p>Default: Uses existing setting</p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if
-     * <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li> <p>Can
-     * include any printable ASCII character except "/", """, or "@".</p> </li> </ul>
-     * <p>Length Constraints:</p> <ul> <li> <p>RDS for MariaDB - Must contain from 8 to
-     * 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server - Must contain
-     * from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must contain from 8
-     * to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain from 8 to 30
-     * characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain from 8 to 128
-     * characters.</p> </li> </ul>
+     * <p>Amazon RDS API operations never return the password, so this operation
+     * provides a way to regain access to a primary instance user if the password is
+     * lost. This includes restoring privileges that might have been accidentally
+     * revoked.</p>  <p>This setting doesn't apply to the following DB
+     * instances:</p> <ul> <li> <p>Amazon Aurora (The password for the master user is
+     * managed by the DB cluster. For more information, see
+     * <code>ModifyDBCluster</code>.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
+     * <p>Default: Uses existing setting</p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li> <li>
+     * <p>Can include any printable ASCII character except "/", """, or "@". For RDS
+     * for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes)
+     * character.</p> </li> </ul> <p>Length Constraints:</p> <ul> <li> <p>RDS for Db2 -
+     * Must contain from 8 to 255 characters.</p> </li> <li> <p>RDS for MariaDB - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Microsoft SQL Server
+     * - Must contain from 8 to 128 characters.</p> </li> <li> <p>RDS for MySQL - Must
+     * contain from 8 to 41 characters.</p> </li> <li> <p>RDS for Oracle - Must contain
+     * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
+     * from 8 to 128 characters.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -1465,6 +1521,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1484,6 +1546,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -1503,6 +1571,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1522,6 +1596,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -1541,6 +1621,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -1560,6 +1646,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -1579,6 +1671,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -1598,6 +1696,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to upgrade the
+     * engine version, and then run it again to modify the DB instance class.</p> </li>
+     * </ul>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1699,88 +1803,96 @@ namespace Model
     /**
      * <p>The license model for the DB instance.</p> <p>This setting doesn't apply to
      * Amazon Aurora or RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li>
-     * <p>RDS for MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS
-     * for Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS
-     * for MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for
-     * Oracle - <code>bring-your-own-license | license-included</code> </p> </li> <li>
-     * <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
+     * <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li> <li> <p>RDS for
+     * MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS for
+     * MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for Oracle -
+     * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
+     * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
      * <p>The license model for the DB instance.</p> <p>This setting doesn't apply to
      * Amazon Aurora or RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li>
-     * <p>RDS for MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS
-     * for Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS
-     * for MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for
-     * Oracle - <code>bring-your-own-license | license-included</code> </p> </li> <li>
-     * <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
+     * <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li> <li> <p>RDS for
+     * MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS for
+     * MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for Oracle -
+     * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
+     * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>The license model for the DB instance.</p> <p>This setting doesn't apply to
      * Amazon Aurora or RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li>
-     * <p>RDS for MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS
-     * for Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS
-     * for MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for
-     * Oracle - <code>bring-your-own-license | license-included</code> </p> </li> <li>
-     * <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
+     * <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li> <li> <p>RDS for
+     * MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS for
+     * MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for Oracle -
+     * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
+     * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
      * <p>The license model for the DB instance.</p> <p>This setting doesn't apply to
      * Amazon Aurora or RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li>
-     * <p>RDS for MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS
-     * for Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS
-     * for MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for
-     * Oracle - <code>bring-your-own-license | license-included</code> </p> </li> <li>
-     * <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
+     * <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li> <li> <p>RDS for
+     * MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS for
+     * MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for Oracle -
+     * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
+     * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>The license model for the DB instance.</p> <p>This setting doesn't apply to
      * Amazon Aurora or RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li>
-     * <p>RDS for MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS
-     * for Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS
-     * for MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for
-     * Oracle - <code>bring-your-own-license | license-included</code> </p> </li> <li>
-     * <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
+     * <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li> <li> <p>RDS for
+     * MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS for
+     * MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for Oracle -
+     * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
+     * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
      * <p>The license model for the DB instance.</p> <p>This setting doesn't apply to
      * Amazon Aurora or RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li>
-     * <p>RDS for MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS
-     * for Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS
-     * for MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for
-     * Oracle - <code>bring-your-own-license | license-included</code> </p> </li> <li>
-     * <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
+     * <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li> <li> <p>RDS for
+     * MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS for
+     * MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for Oracle -
+     * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
+     * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
      * <p>The license model for the DB instance.</p> <p>This setting doesn't apply to
      * Amazon Aurora or RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li>
-     * <p>RDS for MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS
-     * for Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS
-     * for MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for
-     * Oracle - <code>bring-your-own-license | license-included</code> </p> </li> <li>
-     * <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
+     * <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li> <li> <p>RDS for
+     * MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS for
+     * MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for Oracle -
+     * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
+     * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>The license model for the DB instance.</p> <p>This setting doesn't apply to
      * Amazon Aurora or RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li>
-     * <p>RDS for MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS
-     * for Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS
-     * for MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for
-     * Oracle - <code>bring-your-own-license | license-included</code> </p> </li> <li>
-     * <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
+     * <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li> <li> <p>RDS for
+     * MariaDB - <code>general-public-license</code> </p> </li> <li> <p>RDS for
+     * Microsoft SQL Server - <code>license-included</code> </p> </li> <li> <p>RDS for
+     * MySQL - <code>general-public-license</code> </p> </li> <li> <p>RDS for Oracle -
+     * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
+     * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
@@ -2491,9 +2603,9 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. You must
-     * create the domain before this operation. Currently, you can create only MySQL,
-     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
-     * Domain.</p> <p>For more information, see <a
+     * create the domain before this operation. Currently, you can create only Db2,
+     * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
+     * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
@@ -2503,9 +2615,9 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. You must
-     * create the domain before this operation. Currently, you can create only MySQL,
-     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
-     * Domain.</p> <p>For more information, see <a
+     * create the domain before this operation. Currently, you can create only Db2,
+     * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
+     * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
@@ -2515,9 +2627,9 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. You must
-     * create the domain before this operation. Currently, you can create only MySQL,
-     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
-     * Domain.</p> <p>For more information, see <a
+     * create the domain before this operation. Currently, you can create only Db2,
+     * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
+     * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
@@ -2527,9 +2639,9 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. You must
-     * create the domain before this operation. Currently, you can create only MySQL,
-     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
-     * Domain.</p> <p>For more information, see <a
+     * create the domain before this operation. Currently, you can create only Db2,
+     * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
+     * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
@@ -2539,9 +2651,9 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. You must
-     * create the domain before this operation. Currently, you can create only MySQL,
-     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
-     * Domain.</p> <p>For more information, see <a
+     * create the domain before this operation. Currently, you can create only Db2,
+     * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
+     * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
@@ -2551,9 +2663,9 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. You must
-     * create the domain before this operation. Currently, you can create only MySQL,
-     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
-     * Domain.</p> <p>For more information, see <a
+     * create the domain before this operation. Currently, you can create only Db2,
+     * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
+     * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
@@ -2563,9 +2675,9 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. You must
-     * create the domain before this operation. Currently, you can create only MySQL,
-     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
-     * Domain.</p> <p>For more information, see <a
+     * create the domain before this operation. Currently, you can create only Db2,
+     * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
+     * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
@@ -2575,9 +2687,9 @@ namespace Model
     /**
      * <p>The Active Directory directory ID to move the DB instance to. Specify
      * <code>none</code> to remove the instance from its current domain. You must
-     * create the domain before this operation. Currently, you can create only MySQL,
-     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
-     * Domain.</p> <p>For more information, see <a
+     * create the domain before this operation. Currently, you can create only Db2,
+     * MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active
+     * Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
@@ -2952,12 +3064,13 @@ namespace Model
      * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
      * doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:
      * <code>1150-65535</code> </p> <p>Default:</p> <ul> <li> <p>Amazon Aurora -
-     * <code>3306</code> </p> </li> <li> <p>RDS for MariaDB - <code>3306</code> </p>
-     * </li> <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li> <li>
-     * <p>RDS for MySQL - <code>3306</code> </p> </li> <li> <p>RDS for Oracle -
-     * <code>1521</code> </p> </li> <li> <p>RDS for PostgreSQL - <code>5432</code> </p>
-     * </li> </ul> <p>Constraints:</p> <ul> <li> <p>For RDS for Microsoft SQL Server,
-     * the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3306</code> </p> </li> <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
+     * <li> <p>RDS for MariaDB - <code>3306</code> </p> </li> <li> <p>RDS for Microsoft
+     * SQL Server - <code>1433</code> </p> </li> <li> <p>RDS for MySQL -
+     * <code>3306</code> </p> </li> <li> <p>RDS for Oracle - <code>1521</code> </p>
+     * </li> <li> <p>RDS for PostgreSQL - <code>5432</code> </p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>For RDS for Microsoft SQL Server, the value
+     * can't be <code>1234</code>, <code>1434</code>, <code>3260</code>,
      * <code>3343</code>, <code>3389</code>, <code>47001</code>, or
      * <code>49152-49156</code>.</p> </li> </ul>
      */
@@ -2971,12 +3084,13 @@ namespace Model
      * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
      * doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:
      * <code>1150-65535</code> </p> <p>Default:</p> <ul> <li> <p>Amazon Aurora -
-     * <code>3306</code> </p> </li> <li> <p>RDS for MariaDB - <code>3306</code> </p>
-     * </li> <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li> <li>
-     * <p>RDS for MySQL - <code>3306</code> </p> </li> <li> <p>RDS for Oracle -
-     * <code>1521</code> </p> </li> <li> <p>RDS for PostgreSQL - <code>5432</code> </p>
-     * </li> </ul> <p>Constraints:</p> <ul> <li> <p>For RDS for Microsoft SQL Server,
-     * the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3306</code> </p> </li> <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
+     * <li> <p>RDS for MariaDB - <code>3306</code> </p> </li> <li> <p>RDS for Microsoft
+     * SQL Server - <code>1433</code> </p> </li> <li> <p>RDS for MySQL -
+     * <code>3306</code> </p> </li> <li> <p>RDS for Oracle - <code>1521</code> </p>
+     * </li> <li> <p>RDS for PostgreSQL - <code>5432</code> </p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>For RDS for Microsoft SQL Server, the value
+     * can't be <code>1234</code>, <code>1434</code>, <code>3260</code>,
      * <code>3343</code>, <code>3389</code>, <code>47001</code>, or
      * <code>49152-49156</code>.</p> </li> </ul>
      */
@@ -2990,12 +3104,13 @@ namespace Model
      * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
      * doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:
      * <code>1150-65535</code> </p> <p>Default:</p> <ul> <li> <p>Amazon Aurora -
-     * <code>3306</code> </p> </li> <li> <p>RDS for MariaDB - <code>3306</code> </p>
-     * </li> <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li> <li>
-     * <p>RDS for MySQL - <code>3306</code> </p> </li> <li> <p>RDS for Oracle -
-     * <code>1521</code> </p> </li> <li> <p>RDS for PostgreSQL - <code>5432</code> </p>
-     * </li> </ul> <p>Constraints:</p> <ul> <li> <p>For RDS for Microsoft SQL Server,
-     * the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3306</code> </p> </li> <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
+     * <li> <p>RDS for MariaDB - <code>3306</code> </p> </li> <li> <p>RDS for Microsoft
+     * SQL Server - <code>1433</code> </p> </li> <li> <p>RDS for MySQL -
+     * <code>3306</code> </p> </li> <li> <p>RDS for Oracle - <code>1521</code> </p>
+     * </li> <li> <p>RDS for PostgreSQL - <code>5432</code> </p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>For RDS for Microsoft SQL Server, the value
+     * can't be <code>1234</code>, <code>1434</code>, <code>3260</code>,
      * <code>3343</code>, <code>3389</code>, <code>47001</code>, or
      * <code>49152-49156</code>.</p> </li> </ul>
      */
@@ -3009,12 +3124,13 @@ namespace Model
      * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
      * doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:
      * <code>1150-65535</code> </p> <p>Default:</p> <ul> <li> <p>Amazon Aurora -
-     * <code>3306</code> </p> </li> <li> <p>RDS for MariaDB - <code>3306</code> </p>
-     * </li> <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li> <li>
-     * <p>RDS for MySQL - <code>3306</code> </p> </li> <li> <p>RDS for Oracle -
-     * <code>1521</code> </p> </li> <li> <p>RDS for PostgreSQL - <code>5432</code> </p>
-     * </li> </ul> <p>Constraints:</p> <ul> <li> <p>For RDS for Microsoft SQL Server,
-     * the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3306</code> </p> </li> <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
+     * <li> <p>RDS for MariaDB - <code>3306</code> </p> </li> <li> <p>RDS for Microsoft
+     * SQL Server - <code>1433</code> </p> </li> <li> <p>RDS for MySQL -
+     * <code>3306</code> </p> </li> <li> <p>RDS for Oracle - <code>1521</code> </p>
+     * </li> <li> <p>RDS for PostgreSQL - <code>5432</code> </p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>For RDS for Microsoft SQL Server, the value
+     * can't be <code>1234</code>, <code>1434</code>, <code>3260</code>,
      * <code>3343</code>, <code>3389</code>, <code>47001</code>, or
      * <code>49152-49156</code>.</p> </li> </ul>
      */
@@ -4726,6 +4842,92 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline ModifyDBInstanceRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the to convert your DB instance from the single-tenant
+     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
+     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
+     * initial tenant database and associates the DB name, master user name, character
+     * set, and national character set metadata with this database. The tags associated
+     * with the instance also propagate to the initial tenant database. You can add
+     * more tenant databases to your DB instance by using the
+     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
+     * to the multi-tenant configuration is permanent and irreversible, so you can't
+     * later convert back to the single-tenant configuration. When you specify this
+     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
+     */
+    inline bool GetMultiTenant() const{ return m_multiTenant; }
+
+    /**
+     * <p>Specifies whether the to convert your DB instance from the single-tenant
+     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
+     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
+     * initial tenant database and associates the DB name, master user name, character
+     * set, and national character set metadata with this database. The tags associated
+     * with the instance also propagate to the initial tenant database. You can add
+     * more tenant databases to your DB instance by using the
+     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
+     * to the multi-tenant configuration is permanent and irreversible, so you can't
+     * later convert back to the single-tenant configuration. When you specify this
+     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
+     */
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the to convert your DB instance from the single-tenant
+     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
+     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
+     * initial tenant database and associates the DB name, master user name, character
+     * set, and national character set metadata with this database. The tags associated
+     * with the instance also propagate to the initial tenant database. You can add
+     * more tenant databases to your DB instance by using the
+     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
+     * to the multi-tenant configuration is permanent and irreversible, so you can't
+     * later convert back to the single-tenant configuration. When you specify this
+     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
+     */
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+
+    /**
+     * <p>Specifies whether the to convert your DB instance from the single-tenant
+     * conﬁguration to the multi-tenant conﬁguration. This parameter is supported only
+     * for RDS for Oracle CDB instances.</p> <p>During the conversion, RDS creates an
+     * initial tenant database and associates the DB name, master user name, character
+     * set, and national character set metadata with this database. The tags associated
+     * with the instance also propagate to the initial tenant database. You can add
+     * more tenant databases to your DB instance by using the
+     * <code>CreateTenantDatabase</code> operation.</p>  <p>The conversion
+     * to the multi-tenant configuration is permanent and irreversible, so you can't
+     * later convert back to the single-tenant configuration. When you specify this
+     * parameter, you must also specify <code>ApplyImmediately</code>.</p> 
+     */
+    inline ModifyDBInstanceRequest& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -4901,6 +5103,12 @@ namespace Model
 
     Aws::String m_engine;
     bool m_engineHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_multiTenant;
+    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model

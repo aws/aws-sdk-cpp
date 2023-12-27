@@ -16,6 +16,7 @@ GetMetricDataV2Request::GetMetricDataV2Request() :
     m_resourceArnHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_intervalHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_groupingsHasBeenSet(false),
     m_metricsHasBeenSet(false),
@@ -43,6 +44,12 @@ Aws::String GetMetricDataV2Request::SerializePayload() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if(m_intervalHasBeenSet)
+  {
+   payload.WithObject("Interval", m_interval.Jsonize());
+
   }
 
   if(m_filtersHasBeenSet)

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainType::NOT_SET:
+            return {};
           case DomainType::ENDPOINT:
             return "ENDPOINT";
           case DomainType::AWS_MANAGED:

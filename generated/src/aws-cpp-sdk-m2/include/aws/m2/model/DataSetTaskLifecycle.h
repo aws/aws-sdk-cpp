@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Creating,
     Running,
-    Completed
+    Completed,
+    Failed
   };
 
 namespace DataSetTaskLifecycleMapper

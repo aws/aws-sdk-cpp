@@ -32,6 +32,42 @@ namespace Model
     AWS_IOTTWINMAKER_API DeleteWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    /**
+     * <p>The string that specifies the delete result for the workspace.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The string that specifies the delete result for the workspace.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_message = value; }
+
+    /**
+     * <p>The string that specifies the delete result for the workspace.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+
+    /**
+     * <p>The string that specifies the delete result for the workspace.</p>
+     */
+    inline void SetMessage(const char* value) { m_message.assign(value); }
+
+    /**
+     * <p>The string that specifies the delete result for the workspace.</p>
+     */
+    inline DeleteWorkspaceResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>The string that specifies the delete result for the workspace.</p>
+     */
+    inline DeleteWorkspaceResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The string that specifies the delete result for the workspace.</p>
+     */
+    inline DeleteWorkspaceResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -54,6 +90,8 @@ namespace Model
     inline DeleteWorkspaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
+
+    Aws::String m_message;
 
     Aws::String m_requestId;
   };

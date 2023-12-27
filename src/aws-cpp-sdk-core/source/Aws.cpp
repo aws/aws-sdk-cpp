@@ -26,8 +26,20 @@ namespace Aws
 {
     static const char* ALLOCATION_TAG = "Aws_Init_Cleanup";
 
+    static std::mutex s_initShutdownMutex;
+    static size_t s_initCount = 0;
+
     void InitAPI(const SDKOptions &options)
     {
+        std::unique_lock<std::mutex> lock(s_initShutdownMutex);
+        s_initCount += 1;
+        if(s_initCount != 1)
+        {
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "AWS-SDK-CPP is already initialized " << s_initCount - 1 << " times. "
+                                                "Consequent calls to InitAPI are ignored.");
+            return;
+        }
+
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {
@@ -153,10 +165,39 @@ namespace Aws
         Aws::Internal::InitEC2MetadataClient();
         Aws::Monitoring::InitMonitoring(options.monitoringOptions.customizedMonitoringFactory_create_fn);
         Aws::Utils::ComponentRegistry::InitComponentRegistry();
+
+        if(options.sdkVersion.major != AWS_SDK_VERSION_MAJOR ||
+            options.sdkVersion.minor != AWS_SDK_VERSION_MINOR ||
+            options.sdkVersion.patch != AWS_SDK_VERSION_PATCH)
+        {
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "AWS-SDK-CPP version mismatch detected.");
+            AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Initialized AWS-SDK-CPP with version "
+              << AWS_SDK_VERSION_MAJOR << "." << AWS_SDK_VERSION_MINOR << "." << AWS_SDK_VERSION_PATCH << "; "
+              << "However, the caller application had been built for AWS-SDK-CPP version "
+              << (int) options.sdkVersion.major << "."
+              << (int) options.sdkVersion.minor << "."
+              << (int) options.sdkVersion.patch << "; "
+              << "ABI is not guaranteed, please don't mix different versions of built libraries "
+              << "and different versions of headers and corresponding built libraries.");
+        }
     }
 
     void ShutdownAPI(const SDKOptions& options)
     {
+        std::unique_lock<std::mutex> lock(s_initShutdownMutex);
+        if(s_initCount != 1)
+        {
+            if(!s_initCount) {
+                AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Unable to ShutdownAPI of AWS-SDK-CPP: the SDK was not initialized.");
+            } else {
+                AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "AWS-SDK-CPP: this call to ShutdownAPI is ignored, current init count = " << s_initCount);
+                s_initCount -= 1;
+            }
+            return;
+        } else {
+            AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Shutdown AWS SDK for C++.");
+        }
+        s_initCount -= 1;
         Aws::Utils::ComponentRegistry::TerminateAllComponents();
         Aws::Utils::ComponentRegistry::ShutdownComponentRegistry();
         Aws::Monitoring::CleanupMonitoring();

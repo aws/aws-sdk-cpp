@@ -19,7 +19,9 @@ CreateRoutingProfileRequest::CreateRoutingProfileRequest() :
     m_defaultOutboundQueueIdHasBeenSet(false),
     m_queueConfigsHasBeenSet(false),
     m_mediaConcurrenciesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_agentAvailabilityTimer(AgentAvailabilityTimer::NOT_SET),
+    m_agentAvailabilityTimerHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,11 @@ Aws::String CreateRoutingProfileRequest::SerializePayload() const
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_agentAvailabilityTimerHasBeenSet)
+  {
+   payload.WithString("AgentAvailabilityTimer", AgentAvailabilityTimerMapper::GetNameForAgentAvailabilityTimer(m_agentAvailabilityTimer));
   }
 
   return payload.View().WriteReadable();

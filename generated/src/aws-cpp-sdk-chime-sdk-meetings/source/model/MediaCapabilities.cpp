@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaCapabilities::NOT_SET:
+            return {};
           case MediaCapabilities::SendReceive:
             return "SendReceive";
           case MediaCapabilities::Send:

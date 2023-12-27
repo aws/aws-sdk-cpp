@@ -97,8 +97,8 @@ namespace Model
      * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete
      * SnapLock Enterprise volumes with unexpired WORM files. The default value is
      * <code>false</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
-     * Deleting a SnapLock volume </a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html">
+     * Deleting a SnapLock volume</a>. </p>
      */
     inline bool GetBypassSnaplockEnterpriseRetention() const{ return m_bypassSnaplockEnterpriseRetention; }
 
@@ -109,8 +109,8 @@ namespace Model
      * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete
      * SnapLock Enterprise volumes with unexpired WORM files. The default value is
      * <code>false</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
-     * Deleting a SnapLock volume </a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html">
+     * Deleting a SnapLock volume</a>. </p>
      */
     inline bool BypassSnaplockEnterpriseRetentionHasBeenSet() const { return m_bypassSnaplockEnterpriseRetentionHasBeenSet; }
 
@@ -121,8 +121,8 @@ namespace Model
      * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete
      * SnapLock Enterprise volumes with unexpired WORM files. The default value is
      * <code>false</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
-     * Deleting a SnapLock volume </a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html">
+     * Deleting a SnapLock volume</a>. </p>
      */
     inline void SetBypassSnaplockEnterpriseRetention(bool value) { m_bypassSnaplockEnterpriseRetentionHasBeenSet = true; m_bypassSnaplockEnterpriseRetention = value; }
 
@@ -133,8 +133,8 @@ namespace Model
      * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete
      * SnapLock Enterprise volumes with unexpired WORM files. The default value is
      * <code>false</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
-     * Deleting a SnapLock volume </a>. </p>
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html">
+     * Deleting a SnapLock volume</a>. </p>
      */
     inline DeleteVolumeOntapConfiguration& WithBypassSnaplockEnterpriseRetention(bool value) { SetBypassSnaplockEnterpriseRetention(value); return *this;}
 

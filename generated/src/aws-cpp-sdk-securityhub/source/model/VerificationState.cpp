@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerificationState::NOT_SET:
+            return {};
           case VerificationState::UNKNOWN:
             return "UNKNOWN";
           case VerificationState::TRUE_POSITIVE:

@@ -21,7 +21,11 @@ UpdateLaunchConfigurationTemplateRequest::UpdateLaunchConfigurationTemplateReque
     m_launchConfigurationTemplateIDHasBeenSet(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
+    m_launchIntoSourceInstance(false),
+    m_launchIntoSourceInstanceHasBeenSet(false),
     m_licensingHasBeenSet(false),
+    m_postLaunchEnabled(false),
+    m_postLaunchEnabledHasBeenSet(false),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
     m_targetInstanceTypeRightSizingMethodHasBeenSet(false)
 {
@@ -60,9 +64,21 @@ Aws::String UpdateLaunchConfigurationTemplateRequest::SerializePayload() const
    payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
   }
 
+  if(m_launchIntoSourceInstanceHasBeenSet)
+  {
+   payload.WithBool("launchIntoSourceInstance", m_launchIntoSourceInstance);
+
+  }
+
   if(m_licensingHasBeenSet)
   {
    payload.WithObject("licensing", m_licensing.Jsonize());
+
+  }
+
+  if(m_postLaunchEnabledHasBeenSet)
+  {
+   payload.WithBool("postLaunchEnabled", m_postLaunchEnabled);
 
   }
 

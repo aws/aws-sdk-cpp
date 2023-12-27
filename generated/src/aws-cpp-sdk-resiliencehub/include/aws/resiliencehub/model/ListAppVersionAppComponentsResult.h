@@ -35,72 +35,79 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const char* value) { m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline ListAppVersionAppComponentsResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline ListAppVersionAppComponentsResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline ListAppVersionAppComponentsResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 
@@ -142,80 +149,73 @@ namespace Model
 
 
     /**
-     * <p>The Resilience Hub application version.</p>
+     * <p>Resilience Hub application version.</p>
      */
     inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
 
     /**
-     * <p>The Resilience Hub application version.</p>
+     * <p>Resilience Hub application version.</p>
      */
     inline void SetAppVersion(const Aws::String& value) { m_appVersion = value; }
 
     /**
-     * <p>The Resilience Hub application version.</p>
+     * <p>Resilience Hub application version.</p>
      */
     inline void SetAppVersion(Aws::String&& value) { m_appVersion = std::move(value); }
 
     /**
-     * <p>The Resilience Hub application version.</p>
+     * <p>Resilience Hub application version.</p>
      */
     inline void SetAppVersion(const char* value) { m_appVersion.assign(value); }
 
     /**
-     * <p>The Resilience Hub application version.</p>
+     * <p>Resilience Hub application version.</p>
      */
     inline ListAppVersionAppComponentsResult& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
 
     /**
-     * <p>The Resilience Hub application version.</p>
+     * <p>Resilience Hub application version.</p>
      */
     inline ListAppVersionAppComponentsResult& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Resilience Hub application version.</p>
+     * <p>Resilience Hub application version.</p>
      */
     inline ListAppVersionAppComponentsResult& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
 
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>Token for the next set of results, or null if there are no more results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>Token for the next set of results, or null if there are no more results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>Token for the next set of results, or null if there are no more results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>Token for the next set of results, or null if there are no more results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>Token for the next set of results, or null if there are no more results.</p>
      */
     inline ListAppVersionAppComponentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>Token for the next set of results, or null if there are no more results.</p>
      */
     inline ListAppVersionAppComponentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>Token for the next set of results, or null if there are no more results.</p>
      */
     inline ListAppVersionAppComponentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

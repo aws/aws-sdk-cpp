@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputePlatform::NOT_SET:
+            return {};
           case ComputePlatform::Server:
             return "Server";
           case ComputePlatform::Lambda:

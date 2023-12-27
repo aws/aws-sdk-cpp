@@ -26,6 +26,9 @@ namespace Aws
         static const int StepExecutionId_HASH = HashingUtils::HashString("StepExecutionId");
         static const int StepName_HASH = HashingUtils::HashString("StepName");
         static const int Action_HASH = HashingUtils::HashString("Action");
+        static const int ParentStepExecutionId_HASH = HashingUtils::HashString("ParentStepExecutionId");
+        static const int ParentStepIteration_HASH = HashingUtils::HashString("ParentStepIteration");
+        static const int ParentStepIteratorValue_HASH = HashingUtils::HashString("ParentStepIteratorValue");
 
 
         StepExecutionFilterKey GetStepExecutionFilterKeyForName(const Aws::String& name)
@@ -55,6 +58,18 @@ namespace Aws
           {
             return StepExecutionFilterKey::Action;
           }
+          else if (hashCode == ParentStepExecutionId_HASH)
+          {
+            return StepExecutionFilterKey::ParentStepExecutionId;
+          }
+          else if (hashCode == ParentStepIteration_HASH)
+          {
+            return StepExecutionFilterKey::ParentStepIteration;
+          }
+          else if (hashCode == ParentStepIteratorValue_HASH)
+          {
+            return StepExecutionFilterKey::ParentStepIteratorValue;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StepExecutionFilterKey::NOT_SET:
+            return {};
           case StepExecutionFilterKey::StartTimeBefore:
             return "StartTimeBefore";
           case StepExecutionFilterKey::StartTimeAfter:
@@ -81,6 +98,12 @@ namespace Aws
             return "StepName";
           case StepExecutionFilterKey::Action:
             return "Action";
+          case StepExecutionFilterKey::ParentStepExecutionId:
+            return "ParentStepExecutionId";
+          case StepExecutionFilterKey::ParentStepIteration:
+            return "ParentStepIteration";
+          case StepExecutionFilterKey::ParentStepIteratorValue:
+            return "ParentStepIteratorValue";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

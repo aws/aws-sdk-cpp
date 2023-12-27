@@ -35,42 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to delete.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * delete.</p>
      */
     inline const Aws::String& GetStudioLifecycleConfigName() const{ return m_studioLifecycleConfigName; }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to delete.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * delete.</p>
      */
     inline bool StudioLifecycleConfigNameHasBeenSet() const { return m_studioLifecycleConfigNameHasBeenSet; }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to delete.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * delete.</p>
      */
     inline void SetStudioLifecycleConfigName(const Aws::String& value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName = value; }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to delete.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * delete.</p>
      */
     inline void SetStudioLifecycleConfigName(Aws::String&& value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName = std::move(value); }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to delete.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * delete.</p>
      */
     inline void SetStudioLifecycleConfigName(const char* value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName.assign(value); }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to delete.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * delete.</p>
      */
     inline DeleteStudioLifecycleConfigRequest& WithStudioLifecycleConfigName(const Aws::String& value) { SetStudioLifecycleConfigName(value); return *this;}
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to delete.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * delete.</p>
      */
     inline DeleteStudioLifecycleConfigRequest& WithStudioLifecycleConfigName(Aws::String&& value) { SetStudioLifecycleConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to delete.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * delete.</p>
      */
     inline DeleteStudioLifecycleConfigRequest& WithStudioLifecycleConfigName(const char* value) { SetStudioLifecycleConfigName(value); return *this;}
 

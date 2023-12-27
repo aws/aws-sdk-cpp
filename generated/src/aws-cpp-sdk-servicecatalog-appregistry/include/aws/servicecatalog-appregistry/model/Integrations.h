@@ -67,10 +67,32 @@ namespace Model
      */
     inline Integrations& WithResourceGroup(ResourceGroup&& value) { SetResourceGroup(std::move(value)); return *this;}
 
+
+    
+    inline const ResourceGroup& GetApplicationTagResourceGroup() const{ return m_applicationTagResourceGroup; }
+
+    
+    inline bool ApplicationTagResourceGroupHasBeenSet() const { return m_applicationTagResourceGroupHasBeenSet; }
+
+    
+    inline void SetApplicationTagResourceGroup(const ResourceGroup& value) { m_applicationTagResourceGroupHasBeenSet = true; m_applicationTagResourceGroup = value; }
+
+    
+    inline void SetApplicationTagResourceGroup(ResourceGroup&& value) { m_applicationTagResourceGroupHasBeenSet = true; m_applicationTagResourceGroup = std::move(value); }
+
+    
+    inline Integrations& WithApplicationTagResourceGroup(const ResourceGroup& value) { SetApplicationTagResourceGroup(value); return *this;}
+
+    
+    inline Integrations& WithApplicationTagResourceGroup(ResourceGroup&& value) { SetApplicationTagResourceGroup(std::move(value)); return *this;}
+
   private:
 
     ResourceGroup m_resourceGroup;
     bool m_resourceGroupHasBeenSet = false;
+
+    ResourceGroup m_applicationTagResourceGroup;
+    bool m_applicationTagResourceGroupHasBeenSet = false;
   };
 
 } // namespace Model

@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageAttributeName::NOT_SET:
+            return {};
           case ImageAttributeName::description:
             return "description";
           case ImageAttributeName::kernel:

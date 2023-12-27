@@ -18,6 +18,7 @@
 #include <aws/firehose/model/HttpEndpointDestinationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/firehose/model/AmazonOpenSearchServerlessDestinationConfiguration.h>
+#include <aws/firehose/model/MSKSourceConfiguration.h>
 #include <aws/firehose/model/Tag.h>
 #include <utility>
 
@@ -585,6 +586,25 @@ namespace Model
      */
     inline CreateDeliveryStreamRequest& WithAmazonOpenSearchServerlessDestinationConfiguration(AmazonOpenSearchServerlessDestinationConfiguration&& value) { SetAmazonOpenSearchServerlessDestinationConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const MSKSourceConfiguration& GetMSKSourceConfiguration() const{ return m_mSKSourceConfiguration; }
+
+    
+    inline bool MSKSourceConfigurationHasBeenSet() const { return m_mSKSourceConfigurationHasBeenSet; }
+
+    
+    inline void SetMSKSourceConfiguration(const MSKSourceConfiguration& value) { m_mSKSourceConfigurationHasBeenSet = true; m_mSKSourceConfiguration = value; }
+
+    
+    inline void SetMSKSourceConfiguration(MSKSourceConfiguration&& value) { m_mSKSourceConfigurationHasBeenSet = true; m_mSKSourceConfiguration = std::move(value); }
+
+    
+    inline CreateDeliveryStreamRequest& WithMSKSourceConfiguration(const MSKSourceConfiguration& value) { SetMSKSourceConfiguration(value); return *this;}
+
+    
+    inline CreateDeliveryStreamRequest& WithMSKSourceConfiguration(MSKSourceConfiguration&& value) { SetMSKSourceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deliveryStreamName;
@@ -622,6 +642,9 @@ namespace Model
 
     AmazonOpenSearchServerlessDestinationConfiguration m_amazonOpenSearchServerlessDestinationConfiguration;
     bool m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet = false;
+
+    MSKSourceConfiguration m_mSKSourceConfiguration;
+    bool m_mSKSourceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

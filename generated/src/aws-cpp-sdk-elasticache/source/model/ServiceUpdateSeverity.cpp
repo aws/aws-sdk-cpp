@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceUpdateSeverity::NOT_SET:
+            return {};
           case ServiceUpdateSeverity::critical:
             return "critical";
           case ServiceUpdateSeverity::important:

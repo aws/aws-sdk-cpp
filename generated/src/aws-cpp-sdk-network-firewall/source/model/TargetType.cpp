@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetType::NOT_SET:
+            return {};
           case TargetType::TLS_SNI:
             return "TLS_SNI";
           case TargetType::HTTP_HOST:

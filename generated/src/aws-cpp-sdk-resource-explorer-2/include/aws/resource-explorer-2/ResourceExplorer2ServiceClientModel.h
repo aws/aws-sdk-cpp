@@ -24,10 +24,12 @@
 #include <aws/resource-explorer-2/model/CreateViewResult.h>
 #include <aws/resource-explorer-2/model/DeleteIndexResult.h>
 #include <aws/resource-explorer-2/model/DeleteViewResult.h>
+#include <aws/resource-explorer-2/model/GetAccountLevelServiceConfigurationResult.h>
 #include <aws/resource-explorer-2/model/GetDefaultViewResult.h>
 #include <aws/resource-explorer-2/model/GetIndexResult.h>
 #include <aws/resource-explorer-2/model/GetViewResult.h>
 #include <aws/resource-explorer-2/model/ListIndexesResult.h>
+#include <aws/resource-explorer-2/model/ListIndexesForMembersResult.h>
 #include <aws/resource-explorer-2/model/ListSupportedResourceTypesResult.h>
 #include <aws/resource-explorer-2/model/ListTagsForResourceResult.h>
 #include <aws/resource-explorer-2/model/ListViewsResult.h>
@@ -83,8 +85,13 @@ namespace Aws
       class CreateViewRequest;
       class DeleteIndexRequest;
       class DeleteViewRequest;
+      class DisassociateDefaultViewRequest;
+      class GetAccountLevelServiceConfigurationRequest;
+      class GetDefaultViewRequest;
+      class GetIndexRequest;
       class GetViewRequest;
       class ListIndexesRequest;
+      class ListIndexesForMembersRequest;
       class ListSupportedResourceTypesRequest;
       class ListTagsForResourceRequest;
       class ListViewsRequest;
@@ -103,10 +110,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteIndexResult, ResourceExplorer2Error> DeleteIndexOutcome;
       typedef Aws::Utils::Outcome<DeleteViewResult, ResourceExplorer2Error> DeleteViewOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ResourceExplorer2Error> DisassociateDefaultViewOutcome;
+      typedef Aws::Utils::Outcome<GetAccountLevelServiceConfigurationResult, ResourceExplorer2Error> GetAccountLevelServiceConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetDefaultViewResult, ResourceExplorer2Error> GetDefaultViewOutcome;
       typedef Aws::Utils::Outcome<GetIndexResult, ResourceExplorer2Error> GetIndexOutcome;
       typedef Aws::Utils::Outcome<GetViewResult, ResourceExplorer2Error> GetViewOutcome;
       typedef Aws::Utils::Outcome<ListIndexesResult, ResourceExplorer2Error> ListIndexesOutcome;
+      typedef Aws::Utils::Outcome<ListIndexesForMembersResult, ResourceExplorer2Error> ListIndexesForMembersOutcome;
       typedef Aws::Utils::Outcome<ListSupportedResourceTypesResult, ResourceExplorer2Error> ListSupportedResourceTypesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ResourceExplorer2Error> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListViewsResult, ResourceExplorer2Error> ListViewsOutcome;
@@ -125,10 +134,12 @@ namespace Aws
       typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
       typedef std::future<DeleteViewOutcome> DeleteViewOutcomeCallable;
       typedef std::future<DisassociateDefaultViewOutcome> DisassociateDefaultViewOutcomeCallable;
+      typedef std::future<GetAccountLevelServiceConfigurationOutcome> GetAccountLevelServiceConfigurationOutcomeCallable;
       typedef std::future<GetDefaultViewOutcome> GetDefaultViewOutcomeCallable;
       typedef std::future<GetIndexOutcome> GetIndexOutcomeCallable;
       typedef std::future<GetViewOutcome> GetViewOutcomeCallable;
       typedef std::future<ListIndexesOutcome> ListIndexesOutcomeCallable;
+      typedef std::future<ListIndexesForMembersOutcome> ListIndexesForMembersOutcomeCallable;
       typedef std::future<ListSupportedResourceTypesOutcome> ListSupportedResourceTypesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListViewsOutcome> ListViewsOutcomeCallable;
@@ -149,11 +160,13 @@ namespace Aws
     typedef std::function<void(const ResourceExplorer2Client*, const Model::CreateViewRequest&, const Model::CreateViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateViewResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::DeleteIndexRequest&, const Model::DeleteIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIndexResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::DeleteViewRequest&, const Model::DeleteViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteViewResponseReceivedHandler;
-    typedef std::function<void(const ResourceExplorer2Client*, const Model::DisassociateDefaultViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDefaultViewResponseReceivedHandler;
-    typedef std::function<void(const ResourceExplorer2Client*, const Model::GetDefaultViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultViewResponseReceivedHandler;
-    typedef std::function<void(const ResourceExplorer2Client*, const Model::GetIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIndexResponseReceivedHandler;
+    typedef std::function<void(const ResourceExplorer2Client*, const Model::DisassociateDefaultViewRequest&, const Model::DisassociateDefaultViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDefaultViewResponseReceivedHandler;
+    typedef std::function<void(const ResourceExplorer2Client*, const Model::GetAccountLevelServiceConfigurationRequest&, const Model::GetAccountLevelServiceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountLevelServiceConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ResourceExplorer2Client*, const Model::GetDefaultViewRequest&, const Model::GetDefaultViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultViewResponseReceivedHandler;
+    typedef std::function<void(const ResourceExplorer2Client*, const Model::GetIndexRequest&, const Model::GetIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIndexResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::GetViewRequest&, const Model::GetViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetViewResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::ListIndexesRequest&, const Model::ListIndexesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndexesResponseReceivedHandler;
+    typedef std::function<void(const ResourceExplorer2Client*, const Model::ListIndexesForMembersRequest&, const Model::ListIndexesForMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndexesForMembersResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::ListSupportedResourceTypesRequest&, const Model::ListSupportedResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSupportedResourceTypesResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::ListViewsRequest&, const Model::ListViewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListViewsResponseReceivedHandler;

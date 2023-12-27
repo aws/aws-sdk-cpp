@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequirePin::NOT_SET:
+            return {};
           case RequirePin::YES:
             return "YES";
           case RequirePin::NO:

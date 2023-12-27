@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamOverlapStatus::NOT_SET:
+            return {};
           case IpamOverlapStatus::overlapping:
             return "overlapping";
           case IpamOverlapStatus::nonoverlapping:

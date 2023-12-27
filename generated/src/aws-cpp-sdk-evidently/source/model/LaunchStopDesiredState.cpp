@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchStopDesiredState::NOT_SET:
+            return {};
           case LaunchStopDesiredState::COMPLETED:
             return "COMPLETED";
           case LaunchStopDesiredState::CANCELLED:

@@ -174,121 +174,145 @@ namespace Model
 
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline CreateContactFlowModuleRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline CreateContactFlowModuleRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>The content of the flow module.</p>
+     * <p>The JSON string that represents the content of the flow. For an example, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
+     * flow in Amazon Connect Flow language</a>. </p>
      */
     inline CreateContactFlowModuleRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateContactFlowModuleRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateContactFlowModuleRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateContactFlowModuleRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateContactFlowModuleRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateContactFlowModuleRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateContactFlowModuleRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateContactFlowModuleRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateContactFlowModuleRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateContactFlowModuleRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

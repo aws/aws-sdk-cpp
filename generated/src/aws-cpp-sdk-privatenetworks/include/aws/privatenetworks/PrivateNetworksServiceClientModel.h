@@ -104,6 +104,7 @@ namespace Aws
       class ListNetworksRequest;
       class ListOrdersRequest;
       class ListTagsForResourceRequest;
+      class PingRequest;
       class StartNetworkResourceUpdateRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -193,7 +194,7 @@ namespace Aws
     typedef std::function<void(const PrivateNetworksClient*, const Model::ListNetworksRequest&, const Model::ListNetworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNetworksResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::ListOrdersRequest&, const Model::ListOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrdersResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const PrivateNetworksClient*, const Model::PingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PingResponseReceivedHandler;
+    typedef std::function<void(const PrivateNetworksClient*, const Model::PingRequest&, const Model::PingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PingResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::StartNetworkResourceUpdateRequest&, const Model::StartNetworkResourceUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNetworkResourceUpdateResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PrivateNetworksClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

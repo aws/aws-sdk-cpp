@@ -44,7 +44,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline const Aws::String& GetLoginPath() const{ return m_loginPath; }
@@ -52,7 +57,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline bool LoginPathHasBeenSet() const { return m_loginPathHasBeenSet; }
@@ -60,7 +70,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline void SetLoginPath(const Aws::String& value) { m_loginPathHasBeenSet = true; m_loginPath = value; }
@@ -68,7 +83,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline void SetLoginPath(Aws::String&& value) { m_loginPathHasBeenSet = true; m_loginPath = std::move(value); }
@@ -76,7 +96,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline void SetLoginPath(const char* value) { m_loginPathHasBeenSet = true; m_loginPath.assign(value); }
@@ -84,7 +109,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline AWSManagedRulesATPRuleSet& WithLoginPath(const Aws::String& value) { SetLoginPath(value); return *this;}
@@ -92,7 +122,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline AWSManagedRulesATPRuleSet& WithLoginPath(Aws::String&& value) { SetLoginPath(std::move(value)); return *this;}
@@ -100,7 +135,12 @@ namespace Model
     /**
      * <p>The path of the login endpoint for your application. For example, for the URL
      * <code>https://example.com/web/login</code>, you would provide the path
-     * <code>/web/login</code>.</p> <p>The rule group inspects only HTTP
+     * <code>/web/login</code>. Login paths that start with the path that you provide
+     * are considered a match. For example <code>/web/login</code> matches the login
+     * paths <code>/web/login</code>, <code>/web/login/</code>,
+     * <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't
+     * match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
     inline AWSManagedRulesATPRuleSet& WithLoginPath(const char* value) { SetLoginPath(value); return *this;}

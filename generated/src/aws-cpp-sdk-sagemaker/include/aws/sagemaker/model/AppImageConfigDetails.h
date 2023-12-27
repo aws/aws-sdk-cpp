@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/KernelGatewayImageConfig.h>
+#include <aws/sagemaker/model/JupyterLabAppImageConfig.h>
 #include <utility>
 
 namespace Aws
@@ -214,6 +215,43 @@ namespace Model
      */
     inline AppImageConfigDetails& WithKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { SetKernelGatewayImageConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline const JupyterLabAppImageConfig& GetJupyterLabAppImageConfig() const{ return m_jupyterLabAppImageConfig; }
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline bool JupyterLabAppImageConfigHasBeenSet() const { return m_jupyterLabAppImageConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline void SetJupyterLabAppImageConfig(const JupyterLabAppImageConfig& value) { m_jupyterLabAppImageConfigHasBeenSet = true; m_jupyterLabAppImageConfig = value; }
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline void SetJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { m_jupyterLabAppImageConfigHasBeenSet = true; m_jupyterLabAppImageConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline AppImageConfigDetails& WithJupyterLabAppImageConfig(const JupyterLabAppImageConfig& value) { SetJupyterLabAppImageConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline AppImageConfigDetails& WithJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { SetJupyterLabAppImageConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appImageConfigArn;
@@ -230,6 +268,9 @@ namespace Model
 
     KernelGatewayImageConfig m_kernelGatewayImageConfig;
     bool m_kernelGatewayImageConfigHasBeenSet = false;
+
+    JupyterLabAppImageConfig m_jupyterLabAppImageConfig;
+    bool m_jupyterLabAppImageConfigHasBeenSet = false;
   };
 
 } // namespace Model

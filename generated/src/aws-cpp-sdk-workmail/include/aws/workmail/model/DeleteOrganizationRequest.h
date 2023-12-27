@@ -141,6 +141,31 @@ namespace Model
      */
     inline DeleteOrganizationRequest& WithDeleteDirectory(bool value) { SetDeleteDirectory(value); return *this;}
 
+
+    /**
+     * <p>Deletes a WorkMail organization even if the organization has enabled
+     * users.</p>
+     */
+    inline bool GetForceDelete() const{ return m_forceDelete; }
+
+    /**
+     * <p>Deletes a WorkMail organization even if the organization has enabled
+     * users.</p>
+     */
+    inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
+
+    /**
+     * <p>Deletes a WorkMail organization even if the organization has enabled
+     * users.</p>
+     */
+    inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
+
+    /**
+     * <p>Deletes a WorkMail organization even if the organization has enabled
+     * users.</p>
+     */
+    inline DeleteOrganizationRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -151,6 +176,9 @@ namespace Model
 
     bool m_deleteDirectory;
     bool m_deleteDirectoryHasBeenSet = false;
+
+    bool m_forceDelete;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

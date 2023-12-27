@@ -242,6 +242,32 @@ namespace ElastiCache
         }
 
         /**
+         * <p>Creates a copy of an existing serverless cache’s snapshot. Available for
+         * Redis only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopyServerlessCacheSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CopyServerlessCacheSnapshotOutcome CopyServerlessCacheSnapshot(const Model::CopyServerlessCacheSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for CopyServerlessCacheSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CopyServerlessCacheSnapshotRequestT = Model::CopyServerlessCacheSnapshotRequest>
+        Model::CopyServerlessCacheSnapshotOutcomeCallable CopyServerlessCacheSnapshotCallable(const CopyServerlessCacheSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::CopyServerlessCacheSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for CopyServerlessCacheSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CopyServerlessCacheSnapshotRequestT = Model::CopyServerlessCacheSnapshotRequest>
+        void CopyServerlessCacheSnapshotAsync(const CopyServerlessCacheSnapshotRequestT& request, const CopyServerlessCacheSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::CopyServerlessCacheSnapshot, request, handler, context);
+        }
+
+        /**
          * <p>Makes a copy of an existing snapshot.</p>  <p>This operation is valid
          * for Redis only.</p>   <p>Users or groups that have permissions
          * to use the <code>CopySnapshot</code> operation can create their own Amazon S3
@@ -527,6 +553,57 @@ namespace ElastiCache
         void CreateReplicationGroupAsync(const CreateReplicationGroupRequestT& request, const CreateReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ElastiCacheClient::CreateReplicationGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a serverless cache.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateServerlessCacheOutcome CreateServerlessCache(const Model::CreateServerlessCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateServerlessCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateServerlessCacheRequestT = Model::CreateServerlessCacheRequest>
+        Model::CreateServerlessCacheOutcomeCallable CreateServerlessCacheCallable(const CreateServerlessCacheRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::CreateServerlessCache, request);
+        }
+
+        /**
+         * An Async wrapper for CreateServerlessCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateServerlessCacheRequestT = Model::CreateServerlessCacheRequest>
+        void CreateServerlessCacheAsync(const CreateServerlessCacheRequestT& request, const CreateServerlessCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::CreateServerlessCache, request, handler, context);
+        }
+
+        /**
+         * <p>This API creates a copy of an entire ServerlessCache at a specific moment in
+         * time. Available for Redis only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCacheSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateServerlessCacheSnapshotOutcome CreateServerlessCacheSnapshot(const Model::CreateServerlessCacheSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateServerlessCacheSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateServerlessCacheSnapshotRequestT = Model::CreateServerlessCacheSnapshotRequest>
+        Model::CreateServerlessCacheSnapshotOutcomeCallable CreateServerlessCacheSnapshotCallable(const CreateServerlessCacheSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::CreateServerlessCacheSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for CreateServerlessCacheSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateServerlessCacheSnapshotRequestT = Model::CreateServerlessCacheSnapshotRequest>
+        void CreateServerlessCacheSnapshotAsync(const CreateServerlessCacheSnapshotRequestT& request, const CreateServerlessCacheSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::CreateServerlessCacheSnapshot, request, handler, context);
         }
 
         /**
@@ -853,6 +930,57 @@ namespace ElastiCache
         void DeleteReplicationGroupAsync(const DeleteReplicationGroupRequestT& request, const DeleteReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ElastiCacheClient::DeleteReplicationGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a specified existing serverless cache.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteServerlessCacheOutcome DeleteServerlessCache(const Model::DeleteServerlessCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteServerlessCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteServerlessCacheRequestT = Model::DeleteServerlessCacheRequest>
+        Model::DeleteServerlessCacheOutcomeCallable DeleteServerlessCacheCallable(const DeleteServerlessCacheRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::DeleteServerlessCache, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteServerlessCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteServerlessCacheRequestT = Model::DeleteServerlessCacheRequest>
+        void DeleteServerlessCacheAsync(const DeleteServerlessCacheRequestT& request, const DeleteServerlessCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::DeleteServerlessCache, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an existing serverless cache snapshot. Available for Redis
+         * only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCacheSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteServerlessCacheSnapshotOutcome DeleteServerlessCacheSnapshot(const Model::DeleteServerlessCacheSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteServerlessCacheSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteServerlessCacheSnapshotRequestT = Model::DeleteServerlessCacheSnapshotRequest>
+        Model::DeleteServerlessCacheSnapshotOutcomeCallable DeleteServerlessCacheSnapshotCallable(const DeleteServerlessCacheSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::DeleteServerlessCacheSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteServerlessCacheSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteServerlessCacheSnapshotRequestT = Model::DeleteServerlessCacheSnapshotRequest>
+        void DeleteServerlessCacheSnapshotAsync(const DeleteServerlessCacheSnapshotRequestT& request, const DeleteServerlessCacheSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::DeleteServerlessCacheSnapshot, request, handler, context);
         }
 
         /**
@@ -1278,6 +1406,61 @@ namespace ElastiCache
         }
 
         /**
+         * <p>Returns information about serverless cache snapshots. By default, this API
+         * lists all of the customer’s serverless cache snapshots. It can also describe a
+         * single serverless cache snapshot, or the snapshots associated with a particular
+         * serverless cache. Available for Redis only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeServerlessCacheSnapshotsOutcome DescribeServerlessCacheSnapshots(const Model::DescribeServerlessCacheSnapshotsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeServerlessCacheSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeServerlessCacheSnapshotsRequestT = Model::DescribeServerlessCacheSnapshotsRequest>
+        Model::DescribeServerlessCacheSnapshotsOutcomeCallable DescribeServerlessCacheSnapshotsCallable(const DescribeServerlessCacheSnapshotsRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::DescribeServerlessCacheSnapshots, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeServerlessCacheSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeServerlessCacheSnapshotsRequestT = Model::DescribeServerlessCacheSnapshotsRequest>
+        void DescribeServerlessCacheSnapshotsAsync(const DescribeServerlessCacheSnapshotsRequestT& request, const DescribeServerlessCacheSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::DescribeServerlessCacheSnapshots, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a specific serverless cache. If no identifier is
+         * specified, then the API returns information on all the serverless caches
+         * belonging to this Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCaches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeServerlessCachesOutcome DescribeServerlessCaches(const Model::DescribeServerlessCachesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeServerlessCaches that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeServerlessCachesRequestT = Model::DescribeServerlessCachesRequest>
+        Model::DescribeServerlessCachesOutcomeCallable DescribeServerlessCachesCallable(const DescribeServerlessCachesRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::DescribeServerlessCaches, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeServerlessCaches that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeServerlessCachesRequestT = Model::DescribeServerlessCachesRequest>
+        void DescribeServerlessCachesAsync(const DescribeServerlessCachesRequestT& request, const DescribeServerlessCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::DescribeServerlessCaches, request, handler, context);
+        }
+
+        /**
          * <p>Returns details of the service updates</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServiceUpdates">AWS
          * API Reference</a></p>
@@ -1432,6 +1615,32 @@ namespace ElastiCache
         void DisassociateGlobalReplicationGroupAsync(const DisassociateGlobalReplicationGroupRequestT& request, const DisassociateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ElastiCacheClient::DisassociateGlobalReplicationGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Provides the functionality to export the serverless cache snapshot data to
+         * Amazon S3. Available for Redis only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ExportServerlessCacheSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportServerlessCacheSnapshotOutcome ExportServerlessCacheSnapshot(const Model::ExportServerlessCacheSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportServerlessCacheSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportServerlessCacheSnapshotRequestT = Model::ExportServerlessCacheSnapshotRequest>
+        Model::ExportServerlessCacheSnapshotOutcomeCallable ExportServerlessCacheSnapshotCallable(const ExportServerlessCacheSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::ExportServerlessCacheSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for ExportServerlessCacheSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportServerlessCacheSnapshotRequestT = Model::ExportServerlessCacheSnapshotRequest>
+        void ExportServerlessCacheSnapshotAsync(const ExportServerlessCacheSnapshotRequestT& request, const ExportServerlessCacheSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::ExportServerlessCacheSnapshot, request, handler, context);
         }
 
         /**
@@ -1683,7 +1892,8 @@ namespace ElastiCache
         }
 
         /**
-         * <p>Modifies the settings for a replication group.</p> <ul> <li> <p> <a
+         * <p>Modifies the settings for a replication group. This is limited to Redis 7 and
+         * newer.</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
          * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
          * User Guide</p> </li> <li> <p> <a
@@ -1738,6 +1948,32 @@ namespace ElastiCache
         void ModifyReplicationGroupShardConfigurationAsync(const ModifyReplicationGroupShardConfigurationRequestT& request, const ModifyReplicationGroupShardConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ElastiCacheClient::ModifyReplicationGroupShardConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>This API modifies the attributes of a serverless cache.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyServerlessCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyServerlessCacheOutcome ModifyServerlessCache(const Model::ModifyServerlessCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyServerlessCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyServerlessCacheRequestT = Model::ModifyServerlessCacheRequest>
+        Model::ModifyServerlessCacheOutcomeCallable ModifyServerlessCacheCallable(const ModifyServerlessCacheRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::ModifyServerlessCache, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyServerlessCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyServerlessCacheRequestT = Model::ModifyServerlessCacheRequest>
+        void ModifyServerlessCacheAsync(const ModifyServerlessCacheRequestT& request, const ModifyServerlessCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::ModifyServerlessCache, request, handler, context);
         }
 
         /**
@@ -2055,6 +2291,32 @@ namespace ElastiCache
         void TestFailoverAsync(const TestFailoverRequestT& request, const TestFailoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ElastiCacheClient::TestFailover, request, handler, context);
+        }
+
+        /**
+         * <p> Async API to test connection between source and target replication group.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestMigrationOutcome TestMigration(const Model::TestMigrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for TestMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TestMigrationRequestT = Model::TestMigrationRequest>
+        Model::TestMigrationOutcomeCallable TestMigrationCallable(const TestMigrationRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::TestMigration, request);
+        }
+
+        /**
+         * An Async wrapper for TestMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TestMigrationRequestT = Model::TestMigrationRequest>
+        void TestMigrationAsync(const TestMigrationRequestT& request, const TestMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::TestMigration, request, handler, context);
         }
 
 

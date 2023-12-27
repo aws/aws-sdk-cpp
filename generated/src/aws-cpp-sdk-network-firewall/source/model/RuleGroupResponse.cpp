@@ -37,7 +37,8 @@ RuleGroupResponse::RuleGroupResponse() :
     m_encryptionConfigurationHasBeenSet(false),
     m_sourceMetadataHasBeenSet(false),
     m_snsTopicHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_analysisResultsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ RuleGroupResponse::RuleGroupResponse(JsonView jsonValue) :
     m_encryptionConfigurationHasBeenSet(false),
     m_sourceMetadataHasBeenSet(false),
     m_snsTopicHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_analysisResultsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -168,6 +170,16 @@ RuleGroupResponse& RuleGroupResponse::operator =(JsonView jsonValue)
     m_lastModifiedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AnalysisResults"))
+  {
+    Aws::Utils::Array<JsonView> analysisResultsJsonList = jsonValue.GetArray("AnalysisResults");
+    for(unsigned analysisResultsIndex = 0; analysisResultsIndex < analysisResultsJsonList.GetLength(); ++analysisResultsIndex)
+    {
+      m_analysisResults.push_back(analysisResultsJsonList[analysisResultsIndex].AsObject());
+    }
+    m_analysisResultsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -259,6 +271,17 @@ JsonValue RuleGroupResponse::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_analysisResultsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> analysisResultsJsonList(m_analysisResults.size());
+   for(unsigned analysisResultsIndex = 0; analysisResultsIndex < analysisResultsJsonList.GetLength(); ++analysisResultsIndex)
+   {
+     analysisResultsJsonList[analysisResultsIndex].AsObject(m_analysisResults[analysisResultsIndex].Jsonize());
+   }
+   payload.WithArray("AnalysisResults", std::move(analysisResultsJsonList));
+
   }
 
   return payload;

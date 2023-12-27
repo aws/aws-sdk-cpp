@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     spot,
-    scheduled
+    scheduled,
+    capacity_block
   };
 
 namespace InstanceLifecycleTypeMapper

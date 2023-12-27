@@ -7,6 +7,7 @@
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-catalog/model/Entity.h>
+#include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-catalog/model/ErrorDetail.h>
 #include <utility>
@@ -164,6 +165,43 @@ namespace Model
 
 
     /**
+     * <p>The JSON value of the details specific to the change type of the requested
+     * change.</p>
+     */
+    inline Aws::Utils::DocumentView GetDetailsDocument() const{ return m_detailsDocument; }
+
+    /**
+     * <p>The JSON value of the details specific to the change type of the requested
+     * change.</p>
+     */
+    inline bool DetailsDocumentHasBeenSet() const { return m_detailsDocumentHasBeenSet; }
+
+    /**
+     * <p>The JSON value of the details specific to the change type of the requested
+     * change.</p>
+     */
+    inline void SetDetailsDocument(const Aws::Utils::Document& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = value; }
+
+    /**
+     * <p>The JSON value of the details specific to the change type of the requested
+     * change.</p>
+     */
+    inline void SetDetailsDocument(Aws::Utils::Document&& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = std::move(value); }
+
+    /**
+     * <p>The JSON value of the details specific to the change type of the requested
+     * change.</p>
+     */
+    inline ChangeSummary& WithDetailsDocument(const Aws::Utils::Document& value) { SetDetailsDocument(value); return *this;}
+
+    /**
+     * <p>The JSON value of the details specific to the change type of the requested
+     * change.</p>
+     */
+    inline ChangeSummary& WithDetailsDocument(Aws::Utils::Document&& value) { SetDetailsDocument(std::move(value)); return *this;}
+
+
+    /**
      * <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
      */
     inline const Aws::Vector<ErrorDetail>& GetErrorDetailList() const{ return m_errorDetailList; }
@@ -254,6 +292,9 @@ namespace Model
 
     Aws::String m_details;
     bool m_detailsHasBeenSet = false;
+
+    Aws::Utils::Document m_detailsDocument;
+    bool m_detailsDocumentHasBeenSet = false;
 
     Aws::Vector<ErrorDetail> m_errorDetailList;
     bool m_errorDetailListHasBeenSet = false;

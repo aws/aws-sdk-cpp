@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Vc3FramerateConversionAlgorithm::NOT_SET:
+            return {};
           case Vc3FramerateConversionAlgorithm::DUPLICATE_DROP:
             return "DUPLICATE_DROP";
           case Vc3FramerateConversionAlgorithm::INTERPOLATE:

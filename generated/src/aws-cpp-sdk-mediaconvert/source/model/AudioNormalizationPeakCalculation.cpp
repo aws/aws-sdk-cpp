@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioNormalizationPeakCalculation::NOT_SET:
+            return {};
           case AudioNormalizationPeakCalculation::TRUE_PEAK:
             return "TRUE_PEAK";
           case AudioNormalizationPeakCalculation::NONE:

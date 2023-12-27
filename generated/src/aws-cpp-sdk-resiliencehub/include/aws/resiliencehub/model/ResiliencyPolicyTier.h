@@ -20,7 +20,8 @@ namespace Model
     Critical,
     Important,
     CoreServices,
-    NonCritical
+    NonCritical,
+    NotApplicable
   };
 
 namespace ResiliencyPolicyTierMapper

@@ -27,7 +27,8 @@ SubtotalOptions::SubtotalOptions() :
     m_fieldLevelOptionsHasBeenSet(false),
     m_totalCellStyleHasBeenSet(false),
     m_valueCellStyleHasBeenSet(false),
-    m_metricHeaderCellStyleHasBeenSet(false)
+    m_metricHeaderCellStyleHasBeenSet(false),
+    m_styleTargetsHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ SubtotalOptions::SubtotalOptions(JsonView jsonValue) :
     m_fieldLevelOptionsHasBeenSet(false),
     m_totalCellStyleHasBeenSet(false),
     m_valueCellStyleHasBeenSet(false),
-    m_metricHeaderCellStyleHasBeenSet(false)
+    m_metricHeaderCellStyleHasBeenSet(false),
+    m_styleTargetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +101,16 @@ SubtotalOptions& SubtotalOptions::operator =(JsonView jsonValue)
     m_metricHeaderCellStyleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StyleTargets"))
+  {
+    Aws::Utils::Array<JsonView> styleTargetsJsonList = jsonValue.GetArray("StyleTargets");
+    for(unsigned styleTargetsIndex = 0; styleTargetsIndex < styleTargetsJsonList.GetLength(); ++styleTargetsIndex)
+    {
+      m_styleTargets.push_back(styleTargetsJsonList[styleTargetsIndex].AsObject());
+    }
+    m_styleTargetsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +160,17 @@ JsonValue SubtotalOptions::Jsonize() const
   if(m_metricHeaderCellStyleHasBeenSet)
   {
    payload.WithObject("MetricHeaderCellStyle", m_metricHeaderCellStyle.Jsonize());
+
+  }
+
+  if(m_styleTargetsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> styleTargetsJsonList(m_styleTargets.size());
+   for(unsigned styleTargetsIndex = 0; styleTargetsIndex < styleTargetsJsonList.GetLength(); ++styleTargetsIndex)
+   {
+     styleTargetsJsonList[styleTargetsIndex].AsObject(m_styleTargets[styleTargetsIndex].Jsonize());
+   }
+   payload.WithArray("StyleTargets", std::move(styleTargetsJsonList));
 
   }
 

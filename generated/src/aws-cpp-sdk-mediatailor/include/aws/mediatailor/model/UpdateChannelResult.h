@@ -11,6 +11,7 @@
 #include <aws/mediatailor/model/SlateSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediatailor/model/TimeShiftConfiguration.h>
 #include <aws/mediatailor/model/ResponseOutputItem.h>
 #include <utility>
 
@@ -467,6 +468,32 @@ namespace Model
     inline UpdateChannelResult& WithTier(const char* value) { SetTier(value); return *this;}
 
 
+    /**
+     * <p> The time-shifted viewing configuration for the channel. </p>
+     */
+    inline const TimeShiftConfiguration& GetTimeShiftConfiguration() const{ return m_timeShiftConfiguration; }
+
+    /**
+     * <p> The time-shifted viewing configuration for the channel. </p>
+     */
+    inline void SetTimeShiftConfiguration(const TimeShiftConfiguration& value) { m_timeShiftConfiguration = value; }
+
+    /**
+     * <p> The time-shifted viewing configuration for the channel. </p>
+     */
+    inline void SetTimeShiftConfiguration(TimeShiftConfiguration&& value) { m_timeShiftConfiguration = std::move(value); }
+
+    /**
+     * <p> The time-shifted viewing configuration for the channel. </p>
+     */
+    inline UpdateChannelResult& WithTimeShiftConfiguration(const TimeShiftConfiguration& value) { SetTimeShiftConfiguration(value); return *this;}
+
+    /**
+     * <p> The time-shifted viewing configuration for the channel. </p>
+     */
+    inline UpdateChannelResult& WithTimeShiftConfiguration(TimeShiftConfiguration&& value) { SetTimeShiftConfiguration(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -509,6 +536,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::String m_tier;
+
+    TimeShiftConfiguration m_timeShiftConfiguration;
 
     Aws::String m_requestId;
   };

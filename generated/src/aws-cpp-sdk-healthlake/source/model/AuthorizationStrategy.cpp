@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthorizationStrategy::NOT_SET:
+            return {};
           case AuthorizationStrategy::SMART_ON_FHIR_V1:
             return "SMART_ON_FHIR_V1";
           case AuthorizationStrategy::AWS_AUTH:

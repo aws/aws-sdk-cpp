@@ -12,24 +12,31 @@
 #include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::Auth;
+using namespace Aws::Utils::Threading;
 
-static const char AWS_ECS_CONTAINER_CREDENTIALS_RELATIVE_URI[] = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
-static const char AWS_ECS_CONTAINER_CREDENTIALS_FULL_URI[] = "AWS_CONTAINER_CREDENTIALS_FULL_URI";
-static const char AWS_ECS_CONTAINER_AUTHORIZATION_TOKEN[] = "AWS_CONTAINER_AUTHORIZATION_TOKEN";
 static const char AWS_EC2_METADATA_DISABLED[] = "AWS_EC2_METADATA_DISABLED";
 static const char DefaultCredentialsProviderChainTag[] = "DefaultAWSCredentialsProviderChain";
 
 AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
 {
+    ReaderLockGuard lock(m_cachedProviderLock);
+    if (m_cachedProvider) {
+      AWSCredentials credentials = m_cachedProvider->GetAWSCredentials();
+      if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
+      {
+        return credentials;
+      }
+    }
+    lock.UpgradeToWriterLock();
     for (auto&& credentialsProvider : m_providerChain)
     {
         AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
         if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
         {
+            m_cachedProvider = credentialsProvider;
             return credentials;
         }
     }
-
     return AWSCredentials();
 }
 
@@ -41,35 +48,35 @@ DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCr
     AddProvider(Aws::MakeShared<STSAssumeRoleWebIdentityCredentialsProvider>(DefaultCredentialsProviderChainTag));
     AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag));
     
-    //ECS TaskRole Credentials only available when ENVIRONMENT VARIABLE is set
-    const auto relativeUri = Aws::Environment::GetEnv(AWS_ECS_CONTAINER_CREDENTIALS_RELATIVE_URI);
-    AWS_LOGSTREAM_DEBUG(DefaultCredentialsProviderChainTag, "The environment variable value " << AWS_ECS_CONTAINER_CREDENTIALS_RELATIVE_URI
+    // General HTTP Credentials (prev. known as ECS TaskRole credentials) only available when ENVIRONMENT VARIABLE is set
+    const auto relativeUri = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI);
+    AWS_LOGSTREAM_DEBUG(DefaultCredentialsProviderChainTag, "The environment variable value " << GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
             << " is " << relativeUri);
 
-    const auto absoluteUri = Aws::Environment::GetEnv(AWS_ECS_CONTAINER_CREDENTIALS_FULL_URI);
-    AWS_LOGSTREAM_DEBUG(DefaultCredentialsProviderChainTag, "The environment variable value " << AWS_ECS_CONTAINER_CREDENTIALS_FULL_URI
+    const auto absoluteUri = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_FULL_URI);
+    AWS_LOGSTREAM_DEBUG(DefaultCredentialsProviderChainTag, "The environment variable value " << GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_FULL_URI
             << " is " << absoluteUri);
 
     const auto ec2MetadataDisabled = Aws::Environment::GetEnv(AWS_EC2_METADATA_DISABLED);
     AWS_LOGSTREAM_DEBUG(DefaultCredentialsProviderChainTag, "The environment variable value " << AWS_EC2_METADATA_DISABLED
             << " is " << ec2MetadataDisabled);
 
-    if (!relativeUri.empty())
+    if (!relativeUri.empty() || !absoluteUri.empty())
     {
-        AddProvider(Aws::MakeShared<TaskRoleCredentialsProvider>(DefaultCredentialsProviderChainTag, relativeUri.c_str()));
-        AWS_LOGSTREAM_INFO(DefaultCredentialsProviderChainTag, "Added ECS metadata service credentials provider with relative path: ["
-                << relativeUri << "] to the provider chain.");
-    }
-    else if (!absoluteUri.empty())
-    {
-        const auto token = Aws::Environment::GetEnv(AWS_ECS_CONTAINER_AUTHORIZATION_TOKEN);
-        AddProvider(Aws::MakeShared<TaskRoleCredentialsProvider>(DefaultCredentialsProviderChainTag,
-                    absoluteUri.c_str(), token.c_str()));
+        const Aws::String token = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_AUTHORIZATION_TOKEN);
+        const Aws::String tokenPath = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE);
 
-        //DO NOT log the value of the authorization token for security purposes.
-        AWS_LOGSTREAM_INFO(DefaultCredentialsProviderChainTag, "Added ECS credentials provider with URI: ["
-                << absoluteUri << "] to the provider chain with a" << (token.empty() ? "n empty " : " non-empty ")
+        auto genProvider = Aws::MakeShared<GeneralHTTPCredentialsProvider>(DefaultCredentialsProviderChainTag,
+                                                                           relativeUri, absoluteUri, token, tokenPath);
+        if (genProvider && genProvider->IsValid()) {
+            AddProvider(std::move(genProvider));
+            auto& uri = !relativeUri.empty() ? relativeUri : absoluteUri;
+            AWS_LOGSTREAM_INFO(DefaultCredentialsProviderChainTag, "Added General HTTP / ECS credentials provider with ur: ["
+                << uri << "] to the provider chain with a" << ((token.empty() && tokenPath.empty()) ? "n empty " : " non-empty ")
                 << "authorization token.");
+        } else {
+            AWS_LOGSTREAM_ERROR(DefaultCredentialsProviderChainTag, "Unable to create GeneralHTTPCredentialsProvider");
+        }
     }
     else if (Aws::Utils::StringUtils::ToLower(ec2MetadataDisabled.c_str()) != "true")
     {

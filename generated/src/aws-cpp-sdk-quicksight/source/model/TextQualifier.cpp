@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TextQualifier::NOT_SET:
+            return {};
           case TextQualifier::DOUBLE_QUOTE:
             return "DOUBLE_QUOTE";
           case TextQualifier::SINGLE_QUOTE:

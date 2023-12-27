@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HandshakePartyType::NOT_SET:
+            return {};
           case HandshakePartyType::ACCOUNT:
             return "ACCOUNT";
           case HandshakePartyType::ORGANIZATION:

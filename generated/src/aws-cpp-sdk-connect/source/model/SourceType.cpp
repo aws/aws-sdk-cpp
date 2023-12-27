@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
         static const int ZENDESK_HASH = HashingUtils::HashString("ZENDESK");
+        static const int CASES_HASH = HashingUtils::HashString("CASES");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ZENDESK_HASH)
           {
             return SourceType::ZENDESK;
+          }
+          else if (hashCode == CASES_HASH)
+          {
+            return SourceType::CASES;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::SALESFORCE:
             return "SALESFORCE";
           case SourceType::ZENDESK:
             return "ZENDESK";
+          case SourceType::CASES:
+            return "CASES";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

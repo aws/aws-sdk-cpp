@@ -24,7 +24,8 @@ WorkspaceSummary::WorkspaceSummary() :
     m_arnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ WorkspaceSummary::WorkspaceSummary(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +139,12 @@ JsonValue WorkspaceSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("kmsKeyArn", m_kmsKeyArn);
 
   }
 

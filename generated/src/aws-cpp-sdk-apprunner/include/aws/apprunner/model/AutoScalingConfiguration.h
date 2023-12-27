@@ -423,6 +423,80 @@ namespace Model
      */
     inline AutoScalingConfiguration& WithDeletedAt(Aws::Utils::DateTime&& value) { SetDeletedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates if this auto scaling configuration has an App Runner service
+     * associated with it. A value of <code>true</code> indicates one or more services
+     * are associated. A value of <code>false</code> indicates no services are
+     * associated.</p>
+     */
+    inline bool GetHasAssociatedService() const{ return m_hasAssociatedService; }
+
+    /**
+     * <p>Indicates if this auto scaling configuration has an App Runner service
+     * associated with it. A value of <code>true</code> indicates one or more services
+     * are associated. A value of <code>false</code> indicates no services are
+     * associated.</p>
+     */
+    inline bool HasAssociatedServiceHasBeenSet() const { return m_hasAssociatedServiceHasBeenSet; }
+
+    /**
+     * <p>Indicates if this auto scaling configuration has an App Runner service
+     * associated with it. A value of <code>true</code> indicates one or more services
+     * are associated. A value of <code>false</code> indicates no services are
+     * associated.</p>
+     */
+    inline void SetHasAssociatedService(bool value) { m_hasAssociatedServiceHasBeenSet = true; m_hasAssociatedService = value; }
+
+    /**
+     * <p>Indicates if this auto scaling configuration has an App Runner service
+     * associated with it. A value of <code>true</code> indicates one or more services
+     * are associated. A value of <code>false</code> indicates no services are
+     * associated.</p>
+     */
+    inline AutoScalingConfiguration& WithHasAssociatedService(bool value) { SetHasAssociatedService(value); return *this;}
+
+
+    /**
+     * <p>Indicates if this auto scaling configuration should be used as the default
+     * for a new App Runner service that does not have an auto scaling configuration
+     * ARN specified during creation. Each account can have only one default
+     * <code>AutoScalingConfiguration</code> per region. The default
+     * <code>AutoScalingConfiguration</code> can be any revision under the same
+     * <code>AutoScalingConfigurationName</code>.</p>
+     */
+    inline bool GetIsDefault() const{ return m_isDefault; }
+
+    /**
+     * <p>Indicates if this auto scaling configuration should be used as the default
+     * for a new App Runner service that does not have an auto scaling configuration
+     * ARN specified during creation. Each account can have only one default
+     * <code>AutoScalingConfiguration</code> per region. The default
+     * <code>AutoScalingConfiguration</code> can be any revision under the same
+     * <code>AutoScalingConfigurationName</code>.</p>
+     */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+
+    /**
+     * <p>Indicates if this auto scaling configuration should be used as the default
+     * for a new App Runner service that does not have an auto scaling configuration
+     * ARN specified during creation. Each account can have only one default
+     * <code>AutoScalingConfiguration</code> per region. The default
+     * <code>AutoScalingConfiguration</code> can be any revision under the same
+     * <code>AutoScalingConfigurationName</code>.</p>
+     */
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
+
+    /**
+     * <p>Indicates if this auto scaling configuration should be used as the default
+     * for a new App Runner service that does not have an auto scaling configuration
+     * ARN specified during creation. Each account can have only one default
+     * <code>AutoScalingConfiguration</code> per region. The default
+     * <code>AutoScalingConfiguration</code> can be any revision under the same
+     * <code>AutoScalingConfigurationName</code>.</p>
+     */
+    inline AutoScalingConfiguration& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingConfigurationArn;
@@ -454,6 +528,12 @@ namespace Model
 
     Aws::Utils::DateTime m_deletedAt;
     bool m_deletedAtHasBeenSet = false;
+
+    bool m_hasAssociatedService;
+    bool m_hasAssociatedServiceHasBeenSet = false;
+
+    bool m_isDefault;
+    bool m_isDefaultHasBeenSet = false;
   };
 
 } // namespace Model

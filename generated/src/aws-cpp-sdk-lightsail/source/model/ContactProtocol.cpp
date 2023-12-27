@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactProtocol::NOT_SET:
+            return {};
           case ContactProtocol::Email:
             return "Email";
           case ContactProtocol::SMS:

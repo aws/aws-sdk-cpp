@@ -41,6 +41,15 @@ AssociateResourceResult& AssociateResourceResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("options"))
+  {
+    Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
+    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
+    {
+      m_options.push_back(AssociationOptionMapper::GetAssociationOptionForName(optionsJsonList[optionsIndex].AsString()));
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

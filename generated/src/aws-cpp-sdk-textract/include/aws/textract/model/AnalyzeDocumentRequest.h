@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/textract/model/HumanLoopConfig.h>
 #include <aws/textract/model/QueriesConfig.h>
+#include <aws/textract/model/AdaptersConfig.h>
 #include <aws/textract/model/FeatureType.h>
 #include <utility>
 
@@ -97,11 +98,10 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected form data. Add SIGNATURES to return the locations of detected
-     * signatures. To perform both forms and table analysis, add TABLES and FORMS to
-     * <code>FeatureTypes</code>. To detect signatures within form data and table data,
-     * add SIGNATURES to either TABLES or FORMS. All lines and words detected in the
-     * document are included in the response (including text that isn't related to the
-     * value of <code>FeatureTypes</code>). </p>
+     * signatures. Add LAYOUT to the list to return information about the layout of the
+     * document. All lines and words detected in the document are included in the
+     * response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline const Aws::Vector<FeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
 
@@ -109,11 +109,10 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected form data. Add SIGNATURES to return the locations of detected
-     * signatures. To perform both forms and table analysis, add TABLES and FORMS to
-     * <code>FeatureTypes</code>. To detect signatures within form data and table data,
-     * add SIGNATURES to either TABLES or FORMS. All lines and words detected in the
-     * document are included in the response (including text that isn't related to the
-     * value of <code>FeatureTypes</code>). </p>
+     * signatures. Add LAYOUT to the list to return information about the layout of the
+     * document. All lines and words detected in the document are included in the
+     * response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
 
@@ -121,11 +120,10 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected form data. Add SIGNATURES to return the locations of detected
-     * signatures. To perform both forms and table analysis, add TABLES and FORMS to
-     * <code>FeatureTypes</code>. To detect signatures within form data and table data,
-     * add SIGNATURES to either TABLES or FORMS. All lines and words detected in the
-     * document are included in the response (including text that isn't related to the
-     * value of <code>FeatureTypes</code>). </p>
+     * signatures. Add LAYOUT to the list to return information about the layout of the
+     * document. All lines and words detected in the document are included in the
+     * response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline void SetFeatureTypes(const Aws::Vector<FeatureType>& value) { m_featureTypesHasBeenSet = true; m_featureTypes = value; }
 
@@ -133,11 +131,10 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected form data. Add SIGNATURES to return the locations of detected
-     * signatures. To perform both forms and table analysis, add TABLES and FORMS to
-     * <code>FeatureTypes</code>. To detect signatures within form data and table data,
-     * add SIGNATURES to either TABLES or FORMS. All lines and words detected in the
-     * document are included in the response (including text that isn't related to the
-     * value of <code>FeatureTypes</code>). </p>
+     * signatures. Add LAYOUT to the list to return information about the layout of the
+     * document. All lines and words detected in the document are included in the
+     * response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline void SetFeatureTypes(Aws::Vector<FeatureType>&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::move(value); }
 
@@ -145,11 +142,10 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected form data. Add SIGNATURES to return the locations of detected
-     * signatures. To perform both forms and table analysis, add TABLES and FORMS to
-     * <code>FeatureTypes</code>. To detect signatures within form data and table data,
-     * add SIGNATURES to either TABLES or FORMS. All lines and words detected in the
-     * document are included in the response (including text that isn't related to the
-     * value of <code>FeatureTypes</code>). </p>
+     * signatures. Add LAYOUT to the list to return information about the layout of the
+     * document. All lines and words detected in the document are included in the
+     * response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline AnalyzeDocumentRequest& WithFeatureTypes(const Aws::Vector<FeatureType>& value) { SetFeatureTypes(value); return *this;}
 
@@ -157,11 +153,10 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected form data. Add SIGNATURES to return the locations of detected
-     * signatures. To perform both forms and table analysis, add TABLES and FORMS to
-     * <code>FeatureTypes</code>. To detect signatures within form data and table data,
-     * add SIGNATURES to either TABLES or FORMS. All lines and words detected in the
-     * document are included in the response (including text that isn't related to the
-     * value of <code>FeatureTypes</code>). </p>
+     * signatures. Add LAYOUT to the list to return information about the layout of the
+     * document. All lines and words detected in the document are included in the
+     * response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline AnalyzeDocumentRequest& WithFeatureTypes(Aws::Vector<FeatureType>&& value) { SetFeatureTypes(std::move(value)); return *this;}
 
@@ -169,11 +164,10 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected form data. Add SIGNATURES to return the locations of detected
-     * signatures. To perform both forms and table analysis, add TABLES and FORMS to
-     * <code>FeatureTypes</code>. To detect signatures within form data and table data,
-     * add SIGNATURES to either TABLES or FORMS. All lines and words detected in the
-     * document are included in the response (including text that isn't related to the
-     * value of <code>FeatureTypes</code>). </p>
+     * signatures. Add LAYOUT to the list to return information about the layout of the
+     * document. All lines and words detected in the document are included in the
+     * response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline AnalyzeDocumentRequest& AddFeatureTypes(const FeatureType& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
 
@@ -181,11 +175,10 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected form data. Add SIGNATURES to return the locations of detected
-     * signatures. To perform both forms and table analysis, add TABLES and FORMS to
-     * <code>FeatureTypes</code>. To detect signatures within form data and table data,
-     * add SIGNATURES to either TABLES or FORMS. All lines and words detected in the
-     * document are included in the response (including text that isn't related to the
-     * value of <code>FeatureTypes</code>). </p>
+     * signatures. Add LAYOUT to the list to return information about the layout of the
+     * document. All lines and words detected in the document are included in the
+     * response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline AnalyzeDocumentRequest& AddFeatureTypes(FeatureType&& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(std::move(value)); return *this; }
 
@@ -263,6 +256,37 @@ namespace Model
      */
     inline AnalyzeDocumentRequest& WithQueriesConfig(QueriesConfig&& value) { SetQueriesConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline const AdaptersConfig& GetAdaptersConfig() const{ return m_adaptersConfig; }
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline bool AdaptersConfigHasBeenSet() const { return m_adaptersConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline void SetAdaptersConfig(const AdaptersConfig& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = value; }
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline void SetAdaptersConfig(AdaptersConfig&& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline AnalyzeDocumentRequest& WithAdaptersConfig(const AdaptersConfig& value) { SetAdaptersConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the adapter to be used when analyzing a document.</p>
+     */
+    inline AnalyzeDocumentRequest& WithAdaptersConfig(AdaptersConfig&& value) { SetAdaptersConfig(std::move(value)); return *this;}
+
   private:
 
     Document m_document;
@@ -276,6 +300,9 @@ namespace Model
 
     QueriesConfig m_queriesConfig;
     bool m_queriesConfigHasBeenSet = false;
+
+    AdaptersConfig m_adaptersConfig;
+    bool m_adaptersConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttributeType::NOT_SET:
+            return {};
           case AttributeType::string:
             return "string";
           case AttributeType::integer:

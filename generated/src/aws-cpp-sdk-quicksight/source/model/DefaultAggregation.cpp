@@ -26,6 +26,11 @@ namespace Aws
         static const int COUNT_HASH = HashingUtils::HashString("COUNT");
         static const int DISTINCT_COUNT_HASH = HashingUtils::HashString("DISTINCT_COUNT");
         static const int AVERAGE_HASH = HashingUtils::HashString("AVERAGE");
+        static const int MEDIAN_HASH = HashingUtils::HashString("MEDIAN");
+        static const int STDEV_HASH = HashingUtils::HashString("STDEV");
+        static const int STDEVP_HASH = HashingUtils::HashString("STDEVP");
+        static const int VAR_HASH = HashingUtils::HashString("VAR");
+        static const int VARP_HASH = HashingUtils::HashString("VARP");
 
 
         DefaultAggregation GetDefaultAggregationForName(const Aws::String& name)
@@ -55,6 +60,26 @@ namespace Aws
           {
             return DefaultAggregation::AVERAGE;
           }
+          else if (hashCode == MEDIAN_HASH)
+          {
+            return DefaultAggregation::MEDIAN;
+          }
+          else if (hashCode == STDEV_HASH)
+          {
+            return DefaultAggregation::STDEV;
+          }
+          else if (hashCode == STDEVP_HASH)
+          {
+            return DefaultAggregation::STDEVP;
+          }
+          else if (hashCode == VAR_HASH)
+          {
+            return DefaultAggregation::VAR;
+          }
+          else if (hashCode == VARP_HASH)
+          {
+            return DefaultAggregation::VARP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefaultAggregation::NOT_SET:
+            return {};
           case DefaultAggregation::SUM:
             return "SUM";
           case DefaultAggregation::MAX:
@@ -81,6 +108,16 @@ namespace Aws
             return "DISTINCT_COUNT";
           case DefaultAggregation::AVERAGE:
             return "AVERAGE";
+          case DefaultAggregation::MEDIAN:
+            return "MEDIAN";
+          case DefaultAggregation::STDEV:
+            return "STDEV";
+          case DefaultAggregation::STDEVP:
+            return "STDEVP";
+          case DefaultAggregation::VAR:
+            return "VAR";
+          case DefaultAggregation::VARP:
+            return "VARP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

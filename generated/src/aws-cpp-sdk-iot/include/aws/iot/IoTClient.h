@@ -617,8 +617,8 @@ namespace IoT
          * </p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
          * action. </p>  <p>The CSR must include a public key that is either an RSA
-         * key with a length of at least 2048 bits or an ECC key from NIST P-256 or NIST
-         * P-384 curves. For supported certificates, consult <a
+         * key with a length of at least 2048 bits or an ECC key from NIST P-256, NIST
+         * P-384, or NIST P-521 curves. For supported certificates, consult <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
          * Certificate signing algorithms supported by IoT</a>. </p>  
          * <p>Reusing the same certificate signing request (CSR) results in a distinct
@@ -666,6 +666,47 @@ namespace IoT
         void CreateCertificateFromCsrAsync(const CreateCertificateFromCsrRequestT& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::CreateCertificateFromCsr, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an Amazon Web Services IoT Core certificate provider. You can use
+         * Amazon Web Services IoT Core certificate provider to customize how to sign a
+         * certificate signing request (CSR) in IoT fleet provisioning. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html">Customizing
+         * certificate signing using Amazon Web Services IoT Core certificate provider</a>
+         * from <i>Amazon Web Services IoT Core Developer Guide</i>.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateProvider</a>
+         * action.</p>  <p>After you create a certificate provider, the behavior
+         * of <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-provision-api.html#create-cert-csr">
+         * <code>CreateCertificateFromCsr</code> API for fleet provisioning</a> will change
+         * and all API calls to <code>CreateCertificateFromCsr</code> will invoke the
+         * certificate provider to create the certificates. It can take up to a few minutes
+         * for this behavior to change after a certificate provider is created.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCertificateProviderOutcome CreateCertificateProvider(const Model::CreateCertificateProviderRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCertificateProvider that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCertificateProviderRequestT = Model::CreateCertificateProviderRequest>
+        Model::CreateCertificateProviderOutcomeCallable CreateCertificateProviderCallable(const CreateCertificateProviderRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::CreateCertificateProvider, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCertificateProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCertificateProviderRequestT = Model::CreateCertificateProviderRequest>
+        void CreateCertificateProviderAsync(const CreateCertificateProviderRequestT& request, const CreateCertificateProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::CreateCertificateProvider, request, handler, context);
         }
 
         /**
@@ -1310,8 +1351,10 @@ namespace IoT
         /**
          * <p>Create a thing group.</p>  <p>This is a control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p>  <p>Requires
-         * permission to access the <a
+         * for information about authorizing control plane actions.</p> <p>If the
+         * <code>ThingGroup</code> that you create has the exact same attributes as an
+         * existing <code>ThingGroup</code>, you will get a 200 success response. </p>
+         *  <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingGroup</a>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
@@ -1589,6 +1632,36 @@ namespace IoT
         void DeleteCertificateAsync(const DeleteCertificateRequestT& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::DeleteCertificate, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a certificate provider.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificateProvider</a>
+         * action. </p> <p>If you delete the certificate provider resource, the behavior of
+         * <code>CreateCertificateFromCsr</code> will resume, and IoT will create
+         * certificates signed by IoT from a certificate signing request
+         * (CSR).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCertificateProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCertificateProviderOutcome DeleteCertificateProvider(const Model::DeleteCertificateProviderRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCertificateProvider that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCertificateProviderRequestT = Model::DeleteCertificateProviderRequest>
+        Model::DeleteCertificateProviderOutcomeCallable DeleteCertificateProviderCallable(const DeleteCertificateProviderRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::DeleteCertificateProvider, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCertificateProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCertificateProviderRequestT = Model::DeleteCertificateProviderRequest>
+        void DeleteCertificateProviderAsync(const DeleteCertificateProviderRequestT& request, const DeleteCertificateProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::DeleteCertificateProvider, request, handler, context);
         }
 
         /**
@@ -1908,7 +1981,8 @@ namespace IoT
         /**
          * <p>Deletes a specific version from a software package.</p> <p> <b>Note:</b> If a
          * package version is designated as default, you must remove the designation from
-         * the package using the <a>UpdatePackage</a> action.</p><p><h3>See Also:</h3>   <a
+         * the software package using the <a>UpdatePackage</a> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackageVersion">AWS
          * API Reference</a></p>
          */
@@ -2636,6 +2710,33 @@ namespace IoT
         void DescribeCertificateAsync(const DescribeCertificateRequestT& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::DescribeCertificate, request, handler, context);
+        }
+
+        /**
+         * <p>Describes a certificate provider.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificateProvider</a>
+         * action. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCertificateProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCertificateProviderOutcome DescribeCertificateProvider(const Model::DescribeCertificateProviderRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCertificateProvider that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCertificateProviderRequestT = Model::DescribeCertificateProviderRequest>
+        Model::DescribeCertificateProviderOutcomeCallable DescribeCertificateProviderCallable(const DescribeCertificateProviderRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::DescribeCertificateProvider, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCertificateProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCertificateProviderRequestT = Model::DescribeCertificateProviderRequest>
+        void DescribeCertificateProviderAsync(const DescribeCertificateProviderRequestT& request, const DescribeCertificateProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::DescribeCertificateProvider, request, handler, context);
         }
 
         /**
@@ -4260,6 +4361,34 @@ namespace IoT
         void ListCACertificatesAsync(const ListCACertificatesRequestT& request, const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::ListCACertificates, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all your certificate providers in your Amazon Web Services account.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificateProviders</a>
+         * action. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificateProviders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCertificateProvidersOutcome ListCertificateProviders(const Model::ListCertificateProvidersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCertificateProviders that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCertificateProvidersRequestT = Model::ListCertificateProvidersRequest>
+        Model::ListCertificateProvidersOutcomeCallable ListCertificateProvidersCallable(const ListCertificateProvidersRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::ListCertificateProviders, request);
+        }
+
+        /**
+         * An Async wrapper for ListCertificateProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCertificateProvidersRequestT = Model::ListCertificateProvidersRequest>
+        void ListCertificateProvidersAsync(const ListCertificateProvidersRequestT& request, const ListCertificateProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::ListCertificateProviders, request, handler, context);
         }
 
         /**
@@ -6496,6 +6625,33 @@ namespace IoT
         }
 
         /**
+         * <p>Updates a certificate provider.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificateProvider</a>
+         * action. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCertificateProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCertificateProviderOutcome UpdateCertificateProvider(const Model::UpdateCertificateProviderRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCertificateProvider that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCertificateProviderRequestT = Model::UpdateCertificateProviderRequest>
+        Model::UpdateCertificateProviderOutcomeCallable UpdateCertificateProviderCallable(const UpdateCertificateProviderRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::UpdateCertificateProvider, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCertificateProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCertificateProviderRequestT = Model::UpdateCertificateProviderRequest>
+        void UpdateCertificateProviderAsync(const UpdateCertificateProviderRequestT& request, const UpdateCertificateProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::UpdateCertificateProvider, request, handler, context);
+        }
+
+        /**
          * <p>Updates a Device Defender detect custom metric. </p> <p>Requires permission
          * to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a>
@@ -6746,7 +6902,7 @@ namespace IoT
         }
 
         /**
-         * <p>Updates the supported fields for a specific package.</p> <p>Requires
+         * <p>Updates the supported fields for a specific software package.</p> <p>Requires
          * permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackage</a>
          * and <a
@@ -6776,8 +6932,8 @@ namespace IoT
         }
 
         /**
-         * <p>Updates the package configuration.</p> <p>Requires permission to access the
-         * <a
+         * <p>Updates the software package configuration.</p> <p>Requires permission to
+         * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageConfiguration</a>
          * and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>

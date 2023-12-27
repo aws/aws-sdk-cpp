@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NoEncryptionConfig::NOT_SET:
+            return {};
           case NoEncryptionConfig::NoEncryption:
             return "NoEncryption";
           default:

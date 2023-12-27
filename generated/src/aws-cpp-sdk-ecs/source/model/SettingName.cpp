@@ -27,6 +27,8 @@ namespace Aws
         static const int containerInsights_HASH = HashingUtils::HashString("containerInsights");
         static const int fargateFIPSMode_HASH = HashingUtils::HashString("fargateFIPSMode");
         static const int tagResourceAuthorization_HASH = HashingUtils::HashString("tagResourceAuthorization");
+        static const int fargateTaskRetirementWaitPeriod_HASH = HashingUtils::HashString("fargateTaskRetirementWaitPeriod");
+        static const int guardDutyActivate_HASH = HashingUtils::HashString("guardDutyActivate");
 
 
         SettingName GetSettingNameForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return SettingName::tagResourceAuthorization;
           }
+          else if (hashCode == fargateTaskRetirementWaitPeriod_HASH)
+          {
+            return SettingName::fargateTaskRetirementWaitPeriod;
+          }
+          else if (hashCode == guardDutyActivate_HASH)
+          {
+            return SettingName::guardDutyActivate;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SettingName::NOT_SET:
+            return {};
           case SettingName::serviceLongArnFormat:
             return "serviceLongArnFormat";
           case SettingName::taskLongArnFormat:
@@ -88,6 +100,10 @@ namespace Aws
             return "fargateFIPSMode";
           case SettingName::tagResourceAuthorization:
             return "tagResourceAuthorization";
+          case SettingName::fargateTaskRetirementWaitPeriod:
+            return "fargateTaskRetirementWaitPeriod";
+          case SettingName::guardDutyActivate:
+            return "guardDutyActivate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

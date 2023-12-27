@@ -6,15 +6,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/entityresolution/EntityResolutionErrors.h>
+#include <aws/entityresolution/model/ExceedsLimitException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::EntityResolution;
+using namespace Aws::EntityResolution::Model;
 
 namespace Aws
 {
 namespace EntityResolution
 {
+template<> AWS_ENTITYRESOLUTION_API ExceedsLimitException EntityResolutionError::GetModeledError()
+{
+  assert(this->GetErrorType() == EntityResolutionErrors::EXCEEDS_LIMIT);
+  return ExceedsLimitException(this->GetJsonPayload().View());
+}
+
 namespace EntityResolutionErrorMapper
 {
 
@@ -29,15 +37,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EntityResolutionErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EntityResolutionErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EntityResolutionErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EntityResolutionErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }
   else if (hashCode == EXCEEDS_LIMIT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EntityResolutionErrors::EXCEEDS_LIMIT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EntityResolutionErrors::EXCEEDS_LIMIT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

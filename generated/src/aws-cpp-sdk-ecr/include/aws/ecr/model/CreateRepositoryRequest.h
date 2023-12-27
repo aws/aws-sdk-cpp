@@ -100,7 +100,9 @@ namespace Model
      * <p>The name to use for the repository. The repository name may be specified on
      * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
      * namespace to group the repository into a category (such as
-     * <code>project-a/nginx-web-app</code>).</p>
+     * <code>project-a/nginx-web-app</code>).</p> <p>The repository name must start
+     * with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
@@ -108,7 +110,9 @@ namespace Model
      * <p>The name to use for the repository. The repository name may be specified on
      * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
      * namespace to group the repository into a category (such as
-     * <code>project-a/nginx-web-app</code>).</p>
+     * <code>project-a/nginx-web-app</code>).</p> <p>The repository name must start
+     * with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.</p>
      */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
@@ -116,7 +120,9 @@ namespace Model
      * <p>The name to use for the repository. The repository name may be specified on
      * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
      * namespace to group the repository into a category (such as
-     * <code>project-a/nginx-web-app</code>).</p>
+     * <code>project-a/nginx-web-app</code>).</p> <p>The repository name must start
+     * with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
@@ -124,7 +130,9 @@ namespace Model
      * <p>The name to use for the repository. The repository name may be specified on
      * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
      * namespace to group the repository into a category (such as
-     * <code>project-a/nginx-web-app</code>).</p>
+     * <code>project-a/nginx-web-app</code>).</p> <p>The repository name must start
+     * with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
@@ -132,7 +140,9 @@ namespace Model
      * <p>The name to use for the repository. The repository name may be specified on
      * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
      * namespace to group the repository into a category (such as
-     * <code>project-a/nginx-web-app</code>).</p>
+     * <code>project-a/nginx-web-app</code>).</p> <p>The repository name must start
+     * with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
@@ -140,7 +150,9 @@ namespace Model
      * <p>The name to use for the repository. The repository name may be specified on
      * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
      * namespace to group the repository into a category (such as
-     * <code>project-a/nginx-web-app</code>).</p>
+     * <code>project-a/nginx-web-app</code>).</p> <p>The repository name must start
+     * with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.</p>
      */
     inline CreateRepositoryRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
@@ -148,7 +160,9 @@ namespace Model
      * <p>The name to use for the repository. The repository name may be specified on
      * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
      * namespace to group the repository into a category (such as
-     * <code>project-a/nginx-web-app</code>).</p>
+     * <code>project-a/nginx-web-app</code>).</p> <p>The repository name must start
+     * with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.</p>
      */
     inline CreateRepositoryRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
@@ -156,7 +170,9 @@ namespace Model
      * <p>The name to use for the repository. The repository name may be specified on
      * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
      * namespace to group the repository into a category (such as
-     * <code>project-a/nginx-web-app</code>).</p>
+     * <code>project-a/nginx-web-app</code>).</p> <p>The repository name must start
+     * with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.</p>
      */
     inline CreateRepositoryRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 

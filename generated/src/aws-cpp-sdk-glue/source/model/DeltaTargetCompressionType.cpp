@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeltaTargetCompressionType::NOT_SET:
+            return {};
           case DeltaTargetCompressionType::uncompressed:
             return "uncompressed";
           case DeltaTargetCompressionType::snappy:

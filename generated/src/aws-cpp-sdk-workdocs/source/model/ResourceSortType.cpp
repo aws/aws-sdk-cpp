@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceSortType::NOT_SET:
+            return {};
           case ResourceSortType::DATE:
             return "DATE";
           case ResourceSortType::NAME:

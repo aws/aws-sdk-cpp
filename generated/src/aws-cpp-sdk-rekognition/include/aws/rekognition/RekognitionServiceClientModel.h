@@ -56,6 +56,7 @@
 #include <aws/rekognition/model/GetFaceLivenessSessionResultsResult.h>
 #include <aws/rekognition/model/GetFaceSearchResult.h>
 #include <aws/rekognition/model/GetLabelDetectionResult.h>
+#include <aws/rekognition/model/GetMediaAnalysisJobResult.h>
 #include <aws/rekognition/model/GetPersonTrackingResult.h>
 #include <aws/rekognition/model/GetSegmentDetectionResult.h>
 #include <aws/rekognition/model/GetTextDetectionResult.h>
@@ -64,6 +65,7 @@
 #include <aws/rekognition/model/ListDatasetEntriesResult.h>
 #include <aws/rekognition/model/ListDatasetLabelsResult.h>
 #include <aws/rekognition/model/ListFacesResult.h>
+#include <aws/rekognition/model/ListMediaAnalysisJobsResult.h>
 #include <aws/rekognition/model/ListProjectPoliciesResult.h>
 #include <aws/rekognition/model/ListStreamProcessorsResult.h>
 #include <aws/rekognition/model/ListTagsForResourceResult.h>
@@ -79,6 +81,7 @@
 #include <aws/rekognition/model/StartFaceDetectionResult.h>
 #include <aws/rekognition/model/StartFaceSearchResult.h>
 #include <aws/rekognition/model/StartLabelDetectionResult.h>
+#include <aws/rekognition/model/StartMediaAnalysisJobResult.h>
 #include <aws/rekognition/model/StartPersonTrackingResult.h>
 #include <aws/rekognition/model/StartProjectVersionResult.h>
 #include <aws/rekognition/model/StartSegmentDetectionResult.h>
@@ -168,6 +171,7 @@ namespace Aws
       class GetFaceLivenessSessionResultsRequest;
       class GetFaceSearchRequest;
       class GetLabelDetectionRequest;
+      class GetMediaAnalysisJobRequest;
       class GetPersonTrackingRequest;
       class GetSegmentDetectionRequest;
       class GetTextDetectionRequest;
@@ -176,6 +180,7 @@ namespace Aws
       class ListDatasetEntriesRequest;
       class ListDatasetLabelsRequest;
       class ListFacesRequest;
+      class ListMediaAnalysisJobsRequest;
       class ListProjectPoliciesRequest;
       class ListStreamProcessorsRequest;
       class ListTagsForResourceRequest;
@@ -191,6 +196,7 @@ namespace Aws
       class StartFaceDetectionRequest;
       class StartFaceSearchRequest;
       class StartLabelDetectionRequest;
+      class StartMediaAnalysisJobRequest;
       class StartPersonTrackingRequest;
       class StartProjectVersionRequest;
       class StartSegmentDetectionRequest;
@@ -243,6 +249,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetFaceLivenessSessionResultsResult, RekognitionError> GetFaceLivenessSessionResultsOutcome;
       typedef Aws::Utils::Outcome<GetFaceSearchResult, RekognitionError> GetFaceSearchOutcome;
       typedef Aws::Utils::Outcome<GetLabelDetectionResult, RekognitionError> GetLabelDetectionOutcome;
+      typedef Aws::Utils::Outcome<GetMediaAnalysisJobResult, RekognitionError> GetMediaAnalysisJobOutcome;
       typedef Aws::Utils::Outcome<GetPersonTrackingResult, RekognitionError> GetPersonTrackingOutcome;
       typedef Aws::Utils::Outcome<GetSegmentDetectionResult, RekognitionError> GetSegmentDetectionOutcome;
       typedef Aws::Utils::Outcome<GetTextDetectionResult, RekognitionError> GetTextDetectionOutcome;
@@ -251,6 +258,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDatasetEntriesResult, RekognitionError> ListDatasetEntriesOutcome;
       typedef Aws::Utils::Outcome<ListDatasetLabelsResult, RekognitionError> ListDatasetLabelsOutcome;
       typedef Aws::Utils::Outcome<ListFacesResult, RekognitionError> ListFacesOutcome;
+      typedef Aws::Utils::Outcome<ListMediaAnalysisJobsResult, RekognitionError> ListMediaAnalysisJobsOutcome;
       typedef Aws::Utils::Outcome<ListProjectPoliciesResult, RekognitionError> ListProjectPoliciesOutcome;
       typedef Aws::Utils::Outcome<ListStreamProcessorsResult, RekognitionError> ListStreamProcessorsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, RekognitionError> ListTagsForResourceOutcome;
@@ -266,6 +274,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartFaceDetectionResult, RekognitionError> StartFaceDetectionOutcome;
       typedef Aws::Utils::Outcome<StartFaceSearchResult, RekognitionError> StartFaceSearchOutcome;
       typedef Aws::Utils::Outcome<StartLabelDetectionResult, RekognitionError> StartLabelDetectionOutcome;
+      typedef Aws::Utils::Outcome<StartMediaAnalysisJobResult, RekognitionError> StartMediaAnalysisJobOutcome;
       typedef Aws::Utils::Outcome<StartPersonTrackingResult, RekognitionError> StartPersonTrackingOutcome;
       typedef Aws::Utils::Outcome<StartProjectVersionResult, RekognitionError> StartProjectVersionOutcome;
       typedef Aws::Utils::Outcome<StartSegmentDetectionResult, RekognitionError> StartSegmentDetectionOutcome;
@@ -318,6 +327,7 @@ namespace Aws
       typedef std::future<GetFaceLivenessSessionResultsOutcome> GetFaceLivenessSessionResultsOutcomeCallable;
       typedef std::future<GetFaceSearchOutcome> GetFaceSearchOutcomeCallable;
       typedef std::future<GetLabelDetectionOutcome> GetLabelDetectionOutcomeCallable;
+      typedef std::future<GetMediaAnalysisJobOutcome> GetMediaAnalysisJobOutcomeCallable;
       typedef std::future<GetPersonTrackingOutcome> GetPersonTrackingOutcomeCallable;
       typedef std::future<GetSegmentDetectionOutcome> GetSegmentDetectionOutcomeCallable;
       typedef std::future<GetTextDetectionOutcome> GetTextDetectionOutcomeCallable;
@@ -326,6 +336,7 @@ namespace Aws
       typedef std::future<ListDatasetEntriesOutcome> ListDatasetEntriesOutcomeCallable;
       typedef std::future<ListDatasetLabelsOutcome> ListDatasetLabelsOutcomeCallable;
       typedef std::future<ListFacesOutcome> ListFacesOutcomeCallable;
+      typedef std::future<ListMediaAnalysisJobsOutcome> ListMediaAnalysisJobsOutcomeCallable;
       typedef std::future<ListProjectPoliciesOutcome> ListProjectPoliciesOutcomeCallable;
       typedef std::future<ListStreamProcessorsOutcome> ListStreamProcessorsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -341,6 +352,7 @@ namespace Aws
       typedef std::future<StartFaceDetectionOutcome> StartFaceDetectionOutcomeCallable;
       typedef std::future<StartFaceSearchOutcome> StartFaceSearchOutcomeCallable;
       typedef std::future<StartLabelDetectionOutcome> StartLabelDetectionOutcomeCallable;
+      typedef std::future<StartMediaAnalysisJobOutcome> StartMediaAnalysisJobOutcomeCallable;
       typedef std::future<StartPersonTrackingOutcome> StartPersonTrackingOutcomeCallable;
       typedef std::future<StartProjectVersionOutcome> StartProjectVersionOutcomeCallable;
       typedef std::future<StartSegmentDetectionOutcome> StartSegmentDetectionOutcomeCallable;
@@ -396,6 +408,7 @@ namespace Aws
     typedef std::function<void(const RekognitionClient*, const Model::GetFaceLivenessSessionResultsRequest&, const Model::GetFaceLivenessSessionResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFaceLivenessSessionResultsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetFaceSearchRequest&, const Model::GetFaceSearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFaceSearchResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetLabelDetectionRequest&, const Model::GetLabelDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLabelDetectionResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::GetMediaAnalysisJobRequest&, const Model::GetMediaAnalysisJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaAnalysisJobResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetPersonTrackingRequest&, const Model::GetPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPersonTrackingResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetSegmentDetectionRequest&, const Model::GetSegmentDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSegmentDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetTextDetectionRequest&, const Model::GetTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTextDetectionResponseReceivedHandler;
@@ -404,6 +417,7 @@ namespace Aws
     typedef std::function<void(const RekognitionClient*, const Model::ListDatasetEntriesRequest&, const Model::ListDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetEntriesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListDatasetLabelsRequest&, const Model::ListDatasetLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetLabelsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListFacesRequest&, const Model::ListFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacesResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::ListMediaAnalysisJobsRequest&, const Model::ListMediaAnalysisJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMediaAnalysisJobsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListProjectPoliciesRequest&, const Model::ListProjectPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectPoliciesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListStreamProcessorsRequest&, const Model::ListStreamProcessorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamProcessorsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -419,6 +433,7 @@ namespace Aws
     typedef std::function<void(const RekognitionClient*, const Model::StartFaceDetectionRequest&, const Model::StartFaceDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFaceDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartFaceSearchRequest&, const Model::StartFaceSearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFaceSearchResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartLabelDetectionRequest&, const Model::StartLabelDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLabelDetectionResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::StartMediaAnalysisJobRequest&, const Model::StartMediaAnalysisJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMediaAnalysisJobResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartPersonTrackingRequest&, const Model::StartPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPersonTrackingResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartProjectVersionRequest&, const Model::StartProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartSegmentDetectionRequest&, const Model::StartSegmentDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSegmentDetectionResponseReceivedHandler;

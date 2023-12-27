@@ -22,7 +22,8 @@ KxSavedownStorageConfiguration::KxSavedownStorageConfiguration() :
     m_type(KxSavedownStorageType::NOT_SET),
     m_typeHasBeenSet(false),
     m_size(0),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_volumeNameHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ KxSavedownStorageConfiguration::KxSavedownStorageConfiguration(JsonView jsonValu
     m_type(KxSavedownStorageType::NOT_SET),
     m_typeHasBeenSet(false),
     m_size(0),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_volumeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ KxSavedownStorageConfiguration& KxSavedownStorageConfiguration::operator =(JsonV
     m_sizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("volumeName"))
+  {
+    m_volumeName = jsonValue.GetString("volumeName");
+
+    m_volumeNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +75,12 @@ JsonValue KxSavedownStorageConfiguration::Jsonize() const
   if(m_sizeHasBeenSet)
   {
    payload.WithInteger("size", m_size);
+
+  }
+
+  if(m_volumeNameHasBeenSet)
+  {
+   payload.WithString("volumeName", m_volumeName);
 
   }
 

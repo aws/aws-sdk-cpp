@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimelineEventSort::NOT_SET:
+            return {};
           case TimelineEventSort::EVENT_TIME:
             return "EVENT_TIME";
           default:

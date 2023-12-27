@@ -106,10 +106,50 @@ namespace Model
      */
     inline DeleteAutoScalingConfigurationRequest& WithAutoScalingConfigurationArn(const char* value) { SetAutoScalingConfigurationArn(value); return *this;}
 
+
+    /**
+     * <p>Set to <code>true</code> to delete all of the revisions associated with the
+     * <code>AutoScalingConfigurationArn</code> parameter value.</p> <p>When
+     * <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid
+     * value for the Amazon Resource Name (ARN) is a partial ARN ending with:
+     * <code>.../name</code>.</p>
+     */
+    inline bool GetDeleteAllRevisions() const{ return m_deleteAllRevisions; }
+
+    /**
+     * <p>Set to <code>true</code> to delete all of the revisions associated with the
+     * <code>AutoScalingConfigurationArn</code> parameter value.</p> <p>When
+     * <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid
+     * value for the Amazon Resource Name (ARN) is a partial ARN ending with:
+     * <code>.../name</code>.</p>
+     */
+    inline bool DeleteAllRevisionsHasBeenSet() const { return m_deleteAllRevisionsHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to delete all of the revisions associated with the
+     * <code>AutoScalingConfigurationArn</code> parameter value.</p> <p>When
+     * <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid
+     * value for the Amazon Resource Name (ARN) is a partial ARN ending with:
+     * <code>.../name</code>.</p>
+     */
+    inline void SetDeleteAllRevisions(bool value) { m_deleteAllRevisionsHasBeenSet = true; m_deleteAllRevisions = value; }
+
+    /**
+     * <p>Set to <code>true</code> to delete all of the revisions associated with the
+     * <code>AutoScalingConfigurationArn</code> parameter value.</p> <p>When
+     * <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid
+     * value for the Amazon Resource Name (ARN) is a partial ARN ending with:
+     * <code>.../name</code>.</p>
+     */
+    inline DeleteAutoScalingConfigurationRequest& WithDeleteAllRevisions(bool value) { SetDeleteAllRevisions(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingConfigurationArn;
     bool m_autoScalingConfigurationArnHasBeenSet = false;
+
+    bool m_deleteAllRevisions;
+    bool m_deleteAllRevisionsHasBeenSet = false;
   };
 
 } // namespace Model

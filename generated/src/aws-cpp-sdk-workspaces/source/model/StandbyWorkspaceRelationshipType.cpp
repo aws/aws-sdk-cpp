@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StandbyWorkspaceRelationshipType::NOT_SET:
+            return {};
           case StandbyWorkspaceRelationshipType::PRIMARY:
             return "PRIMARY";
           case StandbyWorkspaceRelationshipType::STANDBY:

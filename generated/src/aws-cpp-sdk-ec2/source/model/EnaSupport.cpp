@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnaSupport::NOT_SET:
+            return {};
           case EnaSupport::unsupported:
             return "unsupported";
           case EnaSupport::supported:

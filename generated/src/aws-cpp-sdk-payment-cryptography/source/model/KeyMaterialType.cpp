@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyMaterialType::NOT_SET:
+            return {};
           case KeyMaterialType::TR34_KEY_BLOCK:
             return "TR34_KEY_BLOCK";
           case KeyMaterialType::TR31_KEY_BLOCK:

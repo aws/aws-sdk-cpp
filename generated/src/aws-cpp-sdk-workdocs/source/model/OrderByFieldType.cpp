@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrderByFieldType::NOT_SET:
+            return {};
           case OrderByFieldType::RELEVANCE:
             return "RELEVANCE";
           case OrderByFieldType::NAME:

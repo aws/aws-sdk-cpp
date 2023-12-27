@@ -30,6 +30,7 @@ namespace Aws
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
         static const int ROLLING_BACK_HASH = HashingUtils::HashString("ROLLING_BACK");
         static const int CREATING_SNAPSHOT_HASH = HashingUtils::HashString("CREATING_SNAPSHOT");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 
 
         EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return EnvironmentStatus::CREATING_SNAPSHOT;
           }
+          else if (hashCode == PENDING_HASH)
+          {
+            return EnvironmentStatus::PENDING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -89,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentStatus::NOT_SET:
+            return {};
           case EnvironmentStatus::CREATING:
             return "CREATING";
           case EnvironmentStatus::CREATE_FAILED:
@@ -109,6 +116,8 @@ namespace Aws
             return "ROLLING_BACK";
           case EnvironmentStatus::CREATING_SNAPSHOT:
             return "CREATING_SNAPSHOT";
+          case EnvironmentStatus::PENDING:
+            return "PENDING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

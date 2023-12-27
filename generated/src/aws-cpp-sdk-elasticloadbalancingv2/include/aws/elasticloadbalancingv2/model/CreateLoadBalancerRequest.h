@@ -388,56 +388,56 @@ namespace Model
 
 
     /**
-     * <p>[Application Load Balancers] The IDs of the security groups for the load
-     * balancer.</p>
+     * <p>[Application Load Balancers and Network Load Balancers] The IDs of the
+     * security groups for the load balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>[Application Load Balancers] The IDs of the security groups for the load
-     * balancer.</p>
+     * <p>[Application Load Balancers and Network Load Balancers] The IDs of the
+     * security groups for the load balancer.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>[Application Load Balancers] The IDs of the security groups for the load
-     * balancer.</p>
+     * <p>[Application Load Balancers and Network Load Balancers] The IDs of the
+     * security groups for the load balancer.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>[Application Load Balancers] The IDs of the security groups for the load
-     * balancer.</p>
+     * <p>[Application Load Balancers and Network Load Balancers] The IDs of the
+     * security groups for the load balancer.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>[Application Load Balancers] The IDs of the security groups for the load
-     * balancer.</p>
+     * <p>[Application Load Balancers and Network Load Balancers] The IDs of the
+     * security groups for the load balancer.</p>
      */
     inline CreateLoadBalancerRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>[Application Load Balancers] The IDs of the security groups for the load
-     * balancer.</p>
+     * <p>[Application Load Balancers and Network Load Balancers] The IDs of the
+     * security groups for the load balancer.</p>
      */
     inline CreateLoadBalancerRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>[Application Load Balancers] The IDs of the security groups for the load
-     * balancer.</p>
+     * <p>[Application Load Balancers and Network Load Balancers] The IDs of the
+     * security groups for the load balancer.</p>
      */
     inline CreateLoadBalancerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>[Application Load Balancers] The IDs of the security groups for the load
-     * balancer.</p>
+     * <p>[Application Load Balancers and Network Load Balancers] The IDs of the
+     * security groups for the load balancer.</p>
      */
     inline CreateLoadBalancerRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[Application Load Balancers] The IDs of the security groups for the load
-     * balancer.</p>
+     * <p>[Application Load Balancers and Network Load Balancers] The IDs of the
+     * security groups for the load balancer.</p>
      */
     inline CreateLoadBalancerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

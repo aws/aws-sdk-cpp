@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OTAUpdateStatus::NOT_SET:
+            return {};
           case OTAUpdateStatus::CREATE_PENDING:
             return "CREATE_PENDING";
           case OTAUpdateStatus::CREATE_IN_PROGRESS:

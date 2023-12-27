@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapStartOptimizationStatus::NOT_SET:
+            return {};
           case SnapStartOptimizationStatus::On:
             return "On";
           case SnapStartOptimizationStatus::Off:

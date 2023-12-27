@@ -10,6 +10,8 @@
 #include <aws/quicksight/model/TableTotalsScrollStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/TableCellStyle.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/TotalAggregationOption.h>
 #include <utility>
 
 namespace Aws
@@ -268,6 +270,47 @@ namespace Model
      */
     inline PivotTotalOptions& WithMetricHeaderCellStyle(TableCellStyle&& value) { SetMetricHeaderCellStyle(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The total aggregation options for each value field.</p>
+     */
+    inline const Aws::Vector<TotalAggregationOption>& GetTotalAggregationOptions() const{ return m_totalAggregationOptions; }
+
+    /**
+     * <p>The total aggregation options for each value field.</p>
+     */
+    inline bool TotalAggregationOptionsHasBeenSet() const { return m_totalAggregationOptionsHasBeenSet; }
+
+    /**
+     * <p>The total aggregation options for each value field.</p>
+     */
+    inline void SetTotalAggregationOptions(const Aws::Vector<TotalAggregationOption>& value) { m_totalAggregationOptionsHasBeenSet = true; m_totalAggregationOptions = value; }
+
+    /**
+     * <p>The total aggregation options for each value field.</p>
+     */
+    inline void SetTotalAggregationOptions(Aws::Vector<TotalAggregationOption>&& value) { m_totalAggregationOptionsHasBeenSet = true; m_totalAggregationOptions = std::move(value); }
+
+    /**
+     * <p>The total aggregation options for each value field.</p>
+     */
+    inline PivotTotalOptions& WithTotalAggregationOptions(const Aws::Vector<TotalAggregationOption>& value) { SetTotalAggregationOptions(value); return *this;}
+
+    /**
+     * <p>The total aggregation options for each value field.</p>
+     */
+    inline PivotTotalOptions& WithTotalAggregationOptions(Aws::Vector<TotalAggregationOption>&& value) { SetTotalAggregationOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The total aggregation options for each value field.</p>
+     */
+    inline PivotTotalOptions& AddTotalAggregationOptions(const TotalAggregationOption& value) { m_totalAggregationOptionsHasBeenSet = true; m_totalAggregationOptions.push_back(value); return *this; }
+
+    /**
+     * <p>The total aggregation options for each value field.</p>
+     */
+    inline PivotTotalOptions& AddTotalAggregationOptions(TotalAggregationOption&& value) { m_totalAggregationOptionsHasBeenSet = true; m_totalAggregationOptions.push_back(std::move(value)); return *this; }
+
   private:
 
     Visibility m_totalsVisibility;
@@ -290,6 +333,9 @@ namespace Model
 
     TableCellStyle m_metricHeaderCellStyle;
     bool m_metricHeaderCellStyleHasBeenSet = false;
+
+    Aws::Vector<TotalAggregationOption> m_totalAggregationOptions;
+    bool m_totalAggregationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

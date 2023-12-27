@@ -150,6 +150,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the workload.</p>
+     */
+    inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the workload.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+
+
+    /**
      * <p>The recommended configuration type.</p>
      */
     inline const RecommendationType& GetRecommendationType() const{ return m_recommendationType; }
@@ -189,6 +230,9 @@ namespace Model
 
     Tier m_tier;
     bool m_tierHasBeenSet = false;
+
+    Aws::String m_workloadName;
+    bool m_workloadNameHasBeenSet = false;
 
     RecommendationType m_recommendationType;
     bool m_recommendationTypeHasBeenSet = false;

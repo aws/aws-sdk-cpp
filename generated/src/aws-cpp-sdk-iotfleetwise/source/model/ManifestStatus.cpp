@@ -22,6 +22,8 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
+        static const int INVALID_HASH = HashingUtils::HashString("INVALID");
+        static const int VALIDATING_HASH = HashingUtils::HashString("VALIDATING");
 
 
         ManifestStatus GetManifestStatusForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == DRAFT_HASH)
           {
             return ManifestStatus::DRAFT;
+          }
+          else if (hashCode == INVALID_HASH)
+          {
+            return ManifestStatus::INVALID;
+          }
+          else if (hashCode == VALIDATING_HASH)
+          {
+            return ManifestStatus::VALIDATING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManifestStatus::NOT_SET:
+            return {};
           case ManifestStatus::ACTIVE:
             return "ACTIVE";
           case ManifestStatus::DRAFT:
             return "DRAFT";
+          case ManifestStatus::INVALID:
+            return "INVALID";
+          case ManifestStatus::VALIDATING:
+            return "VALIDATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

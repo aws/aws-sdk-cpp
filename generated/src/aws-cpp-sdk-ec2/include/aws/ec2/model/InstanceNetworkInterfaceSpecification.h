@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/EnaSrdSpecificationRequest.h>
+#include <aws/ec2/model/ConnectionTrackingSpecificationRequest.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <aws/ec2/model/Ipv4PrefixSpecificationRequest.h>
@@ -49,7 +51,12 @@ namespace Model
      * in a VPC. The public IP address can only be assigned to a network interface for
      * eth0, and can only be assigned to a new network interface, not an existing one.
      * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p>
+     * into a default subnet, the default value is <code>true</code>.</p> <p>Starting
+     * on February 1, 2024, Amazon Web Services will charge for all public IPv4
+     * addresses, including public IPv4 addresses associated with running instances and
+     * Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
+     * tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing
+     * page</a>.</p>
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
 
@@ -58,7 +65,12 @@ namespace Model
      * in a VPC. The public IP address can only be assigned to a network interface for
      * eth0, and can only be assigned to a new network interface, not an existing one.
      * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p>
+     * into a default subnet, the default value is <code>true</code>.</p> <p>Starting
+     * on February 1, 2024, Amazon Web Services will charge for all public IPv4
+     * addresses, including public IPv4 addresses associated with running instances and
+     * Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
+     * tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing
+     * page</a>.</p>
      */
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
 
@@ -67,7 +79,12 @@ namespace Model
      * in a VPC. The public IP address can only be assigned to a network interface for
      * eth0, and can only be assigned to a new network interface, not an existing one.
      * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p>
+     * into a default subnet, the default value is <code>true</code>.</p> <p>Starting
+     * on February 1, 2024, Amazon Web Services will charge for all public IPv4
+     * addresses, including public IPv4 addresses associated with running instances and
+     * Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
+     * tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing
+     * page</a>.</p>
      */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
@@ -76,7 +93,12 @@ namespace Model
      * in a VPC. The public IP address can only be assigned to a network interface for
      * eth0, and can only be assigned to a new network interface, not an existing one.
      * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p>
+     * into a default subnet, the default value is <code>true</code>.</p> <p>Starting
+     * on February 1, 2024, Amazon Web Services will charge for all public IPv4
+     * addresses, including public IPv4 addresses associated with running instances and
+     * Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
+     * tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing
+     * page</a>.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
@@ -932,6 +954,135 @@ namespace Model
      */
     inline InstanceNetworkInterfaceSpecification& WithIpv6PrefixCount(int value) { SetIpv6PrefixCount(value); return *this;}
 
+
+    /**
+     * <p>The primary IPv6 address of the network interface. When you enable an IPv6
+     * GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline bool GetPrimaryIpv6() const{ return m_primaryIpv6; }
+
+    /**
+     * <p>The primary IPv6 address of the network interface. When you enable an IPv6
+     * GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline bool PrimaryIpv6HasBeenSet() const { return m_primaryIpv6HasBeenSet; }
+
+    /**
+     * <p>The primary IPv6 address of the network interface. When you enable an IPv6
+     * GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline void SetPrimaryIpv6(bool value) { m_primaryIpv6HasBeenSet = true; m_primaryIpv6 = value; }
+
+    /**
+     * <p>The primary IPv6 address of the network interface. When you enable an IPv6
+     * GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithPrimaryIpv6(bool value) { SetPrimaryIpv6(value); return *this;}
+
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline const EnaSrdSpecificationRequest& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(const EnaSrdSpecificationRequest& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline void SetEnaSrdSpecification(EnaSrdSpecificationRequest&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithEnaSrdSpecification(const EnaSrdSpecificationRequest& value) { SetEnaSrdSpecification(value); return *this;}
+
+    /**
+     * <p>Specifies the ENA Express settings for the network interface that's attached
+     * to the instance.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithEnaSrdSpecification(EnaSrdSpecificationRequest&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const ConnectionTrackingSpecificationRequest& GetConnectionTrackingSpecification() const{ return m_connectionTrackingSpecification; }
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool ConnectionTrackingSpecificationHasBeenSet() const { return m_connectionTrackingSpecificationHasBeenSet; }
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetConnectionTrackingSpecification(const ConnectionTrackingSpecificationRequest& value) { m_connectionTrackingSpecificationHasBeenSet = true; m_connectionTrackingSpecification = value; }
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetConnectionTrackingSpecification(ConnectionTrackingSpecificationRequest&& value) { m_connectionTrackingSpecificationHasBeenSet = true; m_connectionTrackingSpecification = std::move(value); }
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithConnectionTrackingSpecification(const ConnectionTrackingSpecificationRequest& value) { SetConnectionTrackingSpecification(value); return *this;}
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithConnectionTrackingSpecification(ConnectionTrackingSpecificationRequest&& value) { SetConnectionTrackingSpecification(std::move(value)); return *this;}
+
   private:
 
     bool m_associatePublicIpAddress;
@@ -990,6 +1141,15 @@ namespace Model
 
     int m_ipv6PrefixCount;
     bool m_ipv6PrefixCountHasBeenSet = false;
+
+    bool m_primaryIpv6;
+    bool m_primaryIpv6HasBeenSet = false;
+
+    EnaSrdSpecificationRequest m_enaSrdSpecification;
+    bool m_enaSrdSpecificationHasBeenSet = false;
+
+    ConnectionTrackingSpecificationRequest m_connectionTrackingSpecification;
+    bool m_connectionTrackingSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

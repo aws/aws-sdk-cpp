@@ -45,6 +45,47 @@ namespace Model
 
 
     /**
+     * <p>The version of the DRS agent installed on the recovery instance</p>
+     */
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
+    /**
+     * <p>The version of the DRS agent installed on the recovery instance</p>
+     */
+    inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the DRS agent installed on the recovery instance</p>
+     */
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    /**
+     * <p>The version of the DRS agent installed on the recovery instance</p>
+     */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
+
+    /**
+     * <p>The version of the DRS agent installed on the recovery instance</p>
+     */
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    /**
+     * <p>The version of the DRS agent installed on the recovery instance</p>
+     */
+    inline RecoveryInstance& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /**
+     * <p>The version of the DRS agent installed on the recovery instance</p>
+     */
+    inline RecoveryInstance& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the DRS agent installed on the recovery instance</p>
+     */
+    inline RecoveryInstance& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
+
+    /**
      * <p>The ARN of the Recovery Instance.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -597,6 +638,9 @@ namespace Model
     inline RecoveryInstance& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;

@@ -20,7 +20,9 @@ namespace Model
     CASE_OPENED,
     APPROVED,
     DENIED,
-    CASE_CLOSED
+    CASE_CLOSED,
+    NOT_APPROVED,
+    INVALID_REQUEST
   };
 
 namespace RequestStatusMapper

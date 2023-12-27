@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ec2InstanceConnectEndpointState::NOT_SET:
+            return {};
           case Ec2InstanceConnectEndpointState::create_in_progress:
             return "create-in-progress";
           case Ec2InstanceConnectEndpointState::create_complete:

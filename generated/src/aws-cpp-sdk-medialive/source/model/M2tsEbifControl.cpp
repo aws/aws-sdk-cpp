@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsEbifControl::NOT_SET:
+            return {};
           case M2tsEbifControl::NONE:
             return "NONE";
           case M2tsEbifControl::PASSTHROUGH:

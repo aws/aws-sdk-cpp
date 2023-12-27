@@ -29,9 +29,9 @@ namespace Model
    * <p>Specifies custom configurations for the associations between the web ACL and
    * protected resources. </p> <p>Use this to customize the maximum size of the
    * request body that your protected CloudFront distributions forward to WAF for
-   * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-   * charged additional fees when your protected resources forward body sizes that
-   * are larger than the default. For more information, see <a
+   * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
+   * additional fees when your protected resources forward body sizes that are larger
+   * than the default. For more information, see <a
    * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociationConfig">AWS
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 
@@ -109,7 +109,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 
@@ -139,7 +139,7 @@ namespace Model
     /**
      * <p>Customizes the maximum size of the request body that your protected
      * CloudFront distributions forward to WAF for inspection. The default size is 16
-     * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+     * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
      * protected resources forward body sizes that are larger than the default. For
      * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
      * Pricing</a>.</p> 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VectorEnrichmentJobExportErrorType::NOT_SET:
+            return {};
           case VectorEnrichmentJobExportErrorType::CLIENT_ERROR:
             return "CLIENT_ERROR";
           case VectorEnrichmentJobExportErrorType::SERVER_ERROR:

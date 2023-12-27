@@ -8,6 +8,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/model/LogGroupClass.h>
 #include <utility>
 
 namespace Aws
@@ -383,6 +384,73 @@ namespace Model
      */
     inline DescribeLogGroupsRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
 
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline const LogGroupClass& GetLogGroupClass() const{ return m_logGroupClass; }
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline bool LogGroupClassHasBeenSet() const { return m_logGroupClassHasBeenSet; }
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline void SetLogGroupClass(const LogGroupClass& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = value; }
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline void SetLogGroupClass(LogGroupClass&& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = std::move(value); }
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline DescribeLogGroupsRequest& WithLogGroupClass(const LogGroupClass& value) { SetLogGroupClass(value); return *this;}
+
+    /**
+     * <p>Specifies the log group class for this log group. There are two classes:</p>
+     * <ul> <li> <p>The <code>Standard</code> log class supports all CloudWatch Logs
+     * features.</p> </li> <li> <p>The <code>Infrequent Access</code> log class
+     * supports a subset of CloudWatch Logs features and incurs lower costs.</p> </li>
+     * </ul> <p>For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline DescribeLogGroupsRequest& WithLogGroupClass(LogGroupClass&& value) { SetLogGroupClass(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_accountIdentifiers;
@@ -402,6 +470,9 @@ namespace Model
 
     bool m_includeLinkedAccounts;
     bool m_includeLinkedAccountsHasBeenSet = false;
+
+    LogGroupClass m_logGroupClass;
+    bool m_logGroupClassHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration about the custom classifier associated with the
-   * flywheel.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration about the model associated with a flywheel.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TaskConfig">AWS
    * API Reference</a></p>
    */
@@ -72,32 +72,32 @@ namespace Model
 
 
     /**
-     * <p>Configuration required for a classification model.</p>
+     * <p>Configuration required for a document classification model.</p>
      */
     inline const DocumentClassificationConfig& GetDocumentClassificationConfig() const{ return m_documentClassificationConfig; }
 
     /**
-     * <p>Configuration required for a classification model.</p>
+     * <p>Configuration required for a document classification model.</p>
      */
     inline bool DocumentClassificationConfigHasBeenSet() const { return m_documentClassificationConfigHasBeenSet; }
 
     /**
-     * <p>Configuration required for a classification model.</p>
+     * <p>Configuration required for a document classification model.</p>
      */
     inline void SetDocumentClassificationConfig(const DocumentClassificationConfig& value) { m_documentClassificationConfigHasBeenSet = true; m_documentClassificationConfig = value; }
 
     /**
-     * <p>Configuration required for a classification model.</p>
+     * <p>Configuration required for a document classification model.</p>
      */
     inline void SetDocumentClassificationConfig(DocumentClassificationConfig&& value) { m_documentClassificationConfigHasBeenSet = true; m_documentClassificationConfig = std::move(value); }
 
     /**
-     * <p>Configuration required for a classification model.</p>
+     * <p>Configuration required for a document classification model.</p>
      */
     inline TaskConfig& WithDocumentClassificationConfig(const DocumentClassificationConfig& value) { SetDocumentClassificationConfig(value); return *this;}
 
     /**
-     * <p>Configuration required for a classification model.</p>
+     * <p>Configuration required for a document classification model.</p>
      */
     inline TaskConfig& WithDocumentClassificationConfig(DocumentClassificationConfig&& value) { SetDocumentClassificationConfig(std::move(value)); return *this;}
 

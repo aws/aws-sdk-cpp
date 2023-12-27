@@ -29,15 +29,15 @@ CreateCampaignResult::CreateCampaignResult(const Aws::AmazonWebServiceResult<Jso
 CreateCampaignResult& CreateCampaignResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
 
   }
 

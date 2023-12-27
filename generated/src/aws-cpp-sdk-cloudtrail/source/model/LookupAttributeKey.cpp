@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LookupAttributeKey::NOT_SET:
+            return {};
           case LookupAttributeKey::EventId:
             return "EventId";
           case LookupAttributeKey::EventName:

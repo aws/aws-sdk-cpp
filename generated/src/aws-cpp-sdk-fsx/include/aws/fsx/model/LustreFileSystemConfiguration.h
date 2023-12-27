@@ -129,10 +129,10 @@ namespace Model
      * encryption of data and higher burst throughput capacity than
      * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> and
      * <code>PERSISTENT_2</code> deployment type is used for longer-term storage and
-     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> is built
-     * on Lustre v2.12 and offers higher <code>PerUnitStorageThroughput</code> (up to
-     * 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600
-     * GiB). To learn more about FSx for Lustre deployment types, see <a
+     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers
+     * higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a
+     * lower minimum storage capacity requirement (600 GiB). To learn more about FSx
+     * for Lustre deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre deployment options</a>.</p> <p>The default is
      * <code>SCRATCH_1</code>.</p>
@@ -148,10 +148,10 @@ namespace Model
      * encryption of data and higher burst throughput capacity than
      * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> and
      * <code>PERSISTENT_2</code> deployment type is used for longer-term storage and
-     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> is built
-     * on Lustre v2.12 and offers higher <code>PerUnitStorageThroughput</code> (up to
-     * 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600
-     * GiB). To learn more about FSx for Lustre deployment types, see <a
+     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers
+     * higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a
+     * lower minimum storage capacity requirement (600 GiB). To learn more about FSx
+     * for Lustre deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre deployment options</a>.</p> <p>The default is
      * <code>SCRATCH_1</code>.</p>
@@ -167,10 +167,10 @@ namespace Model
      * encryption of data and higher burst throughput capacity than
      * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> and
      * <code>PERSISTENT_2</code> deployment type is used for longer-term storage and
-     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> is built
-     * on Lustre v2.12 and offers higher <code>PerUnitStorageThroughput</code> (up to
-     * 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600
-     * GiB). To learn more about FSx for Lustre deployment types, see <a
+     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers
+     * higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a
+     * lower minimum storage capacity requirement (600 GiB). To learn more about FSx
+     * for Lustre deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre deployment options</a>.</p> <p>The default is
      * <code>SCRATCH_1</code>.</p>
@@ -186,10 +186,10 @@ namespace Model
      * encryption of data and higher burst throughput capacity than
      * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> and
      * <code>PERSISTENT_2</code> deployment type is used for longer-term storage and
-     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> is built
-     * on Lustre v2.12 and offers higher <code>PerUnitStorageThroughput</code> (up to
-     * 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600
-     * GiB). To learn more about FSx for Lustre deployment types, see <a
+     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers
+     * higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a
+     * lower minimum storage capacity requirement (600 GiB). To learn more about FSx
+     * for Lustre deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre deployment options</a>.</p> <p>The default is
      * <code>SCRATCH_1</code>.</p>
@@ -205,10 +205,10 @@ namespace Model
      * encryption of data and higher burst throughput capacity than
      * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> and
      * <code>PERSISTENT_2</code> deployment type is used for longer-term storage and
-     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> is built
-     * on Lustre v2.12 and offers higher <code>PerUnitStorageThroughput</code> (up to
-     * 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600
-     * GiB). To learn more about FSx for Lustre deployment types, see <a
+     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers
+     * higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a
+     * lower minimum storage capacity requirement (600 GiB). To learn more about FSx
+     * for Lustre deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre deployment options</a>.</p> <p>The default is
      * <code>SCRATCH_1</code>.</p>
@@ -224,10 +224,10 @@ namespace Model
      * encryption of data and higher burst throughput capacity than
      * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> and
      * <code>PERSISTENT_2</code> deployment type is used for longer-term storage and
-     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> is built
-     * on Lustre v2.12 and offers higher <code>PerUnitStorageThroughput</code> (up to
-     * 1000 MB/s/TiB) along with a lower minimum storage capacity requirement (600
-     * GiB). To learn more about FSx for Lustre deployment types, see <a
+     * workloads and encryption of data in transit. <code>PERSISTENT_2</code> offers
+     * higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB) along with a
+     * lower minimum storage capacity requirement (600 GiB). To learn more about FSx
+     * for Lustre deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre deployment options</a>.</p> <p>The default is
      * <code>SCRATCH_1</code>.</p>

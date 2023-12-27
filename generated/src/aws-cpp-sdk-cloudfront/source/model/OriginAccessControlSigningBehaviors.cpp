@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginAccessControlSigningBehaviors::NOT_SET:
+            return {};
           case OriginAccessControlSigningBehaviors::never:
             return "never";
           case OriginAccessControlSigningBehaviors::always:

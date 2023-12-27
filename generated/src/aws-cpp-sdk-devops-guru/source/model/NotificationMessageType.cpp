@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationMessageType::NOT_SET:
+            return {};
           case NotificationMessageType::NEW_INSIGHT:
             return "NEW_INSIGHT";
           case NotificationMessageType::CLOSED_INSIGHT:

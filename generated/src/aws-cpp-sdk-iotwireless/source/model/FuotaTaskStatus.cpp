@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FuotaTaskStatus::NOT_SET:
+            return {};
           case FuotaTaskStatus::Pending:
             return "Pending";
           case FuotaTaskStatus::FuotaSession_Waiting:

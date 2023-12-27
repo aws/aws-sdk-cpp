@@ -24,7 +24,8 @@ Compliance::Compliance() :
     m_relatedRequirementsHasBeenSet(false),
     m_statusReasonsHasBeenSet(false),
     m_securityControlIdHasBeenSet(false),
-    m_associatedStandardsHasBeenSet(false)
+    m_associatedStandardsHasBeenSet(false),
+    m_securityControlParametersHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ Compliance::Compliance(JsonView jsonValue) :
     m_relatedRequirementsHasBeenSet(false),
     m_statusReasonsHasBeenSet(false),
     m_securityControlIdHasBeenSet(false),
-    m_associatedStandardsHasBeenSet(false)
+    m_associatedStandardsHasBeenSet(false),
+    m_securityControlParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,16 @@ Compliance& Compliance::operator =(JsonView jsonValue)
     m_associatedStandardsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityControlParameters"))
+  {
+    Aws::Utils::Array<JsonView> securityControlParametersJsonList = jsonValue.GetArray("SecurityControlParameters");
+    for(unsigned securityControlParametersIndex = 0; securityControlParametersIndex < securityControlParametersJsonList.GetLength(); ++securityControlParametersIndex)
+    {
+      m_securityControlParameters.push_back(securityControlParametersJsonList[securityControlParametersIndex].AsObject());
+    }
+    m_securityControlParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +145,17 @@ JsonValue Compliance::Jsonize() const
      associatedStandardsJsonList[associatedStandardsIndex].AsObject(m_associatedStandards[associatedStandardsIndex].Jsonize());
    }
    payload.WithArray("AssociatedStandards", std::move(associatedStandardsJsonList));
+
+  }
+
+  if(m_securityControlParametersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> securityControlParametersJsonList(m_securityControlParameters.size());
+   for(unsigned securityControlParametersIndex = 0; securityControlParametersIndex < securityControlParametersJsonList.GetLength(); ++securityControlParametersIndex)
+   {
+     securityControlParametersJsonList[securityControlParametersIndex].AsObject(m_securityControlParameters[securityControlParametersIndex].Jsonize());
+   }
+   payload.WithArray("SecurityControlParameters", std::move(securityControlParametersJsonList));
 
   }
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iottwinmaker/model/PropertyResponse.h>
 #include <aws/iottwinmaker/model/ComponentPropertyGroupResponse.h>
+#include <aws/iottwinmaker/model/ComponentSummary.h>
 #include <utility>
 
 namespace Aws
@@ -411,6 +412,129 @@ namespace Model
      */
     inline ComponentResponse& WithSyncSource(const char* value) { SetSyncSource(value); return *this;}
 
+
+    /**
+     * <p>This flag notes whether all properties of the component are returned in the
+     * API response. The maximum number of properties returned is 800.</p>
+     */
+    inline bool GetAreAllPropertiesReturned() const{ return m_areAllPropertiesReturned; }
+
+    /**
+     * <p>This flag notes whether all properties of the component are returned in the
+     * API response. The maximum number of properties returned is 800.</p>
+     */
+    inline bool AreAllPropertiesReturnedHasBeenSet() const { return m_areAllPropertiesReturnedHasBeenSet; }
+
+    /**
+     * <p>This flag notes whether all properties of the component are returned in the
+     * API response. The maximum number of properties returned is 800.</p>
+     */
+    inline void SetAreAllPropertiesReturned(bool value) { m_areAllPropertiesReturnedHasBeenSet = true; m_areAllPropertiesReturned = value; }
+
+    /**
+     * <p>This flag notes whether all properties of the component are returned in the
+     * API response. The maximum number of properties returned is 800.</p>
+     */
+    inline ComponentResponse& WithAreAllPropertiesReturned(bool value) { SetAreAllPropertiesReturned(value); return *this;}
+
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, ComponentSummary>& GetCompositeComponents() const{ return m_compositeComponents; }
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline bool CompositeComponentsHasBeenSet() const { return m_compositeComponentsHasBeenSet; }
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline void SetCompositeComponents(const Aws::Map<Aws::String, ComponentSummary>& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents = value; }
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline void SetCompositeComponents(Aws::Map<Aws::String, ComponentSummary>&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents = std::move(value); }
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline ComponentResponse& WithCompositeComponents(const Aws::Map<Aws::String, ComponentSummary>& value) { SetCompositeComponents(value); return *this;}
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline ComponentResponse& WithCompositeComponents(Aws::Map<Aws::String, ComponentSummary>&& value) { SetCompositeComponents(std::move(value)); return *this;}
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline ComponentResponse& AddCompositeComponents(const Aws::String& key, const ComponentSummary& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, value); return *this; }
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline ComponentResponse& AddCompositeComponents(Aws::String&& key, const ComponentSummary& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline ComponentResponse& AddCompositeComponents(const Aws::String& key, ComponentSummary&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline ComponentResponse& AddCompositeComponents(Aws::String&& key, ComponentSummary&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline ComponentResponse& AddCompositeComponents(const char* key, ComponentSummary&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This lists objects that contain information about the
+     * <code>compositeComponents</code>.</p>
+     */
+    inline ComponentResponse& AddCompositeComponents(const char* key, const ComponentSummary& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>This flag notes whether all <code>compositeComponents</code> are returned in
+     * the API response.</p>
+     */
+    inline bool GetAreAllCompositeComponentsReturned() const{ return m_areAllCompositeComponentsReturned; }
+
+    /**
+     * <p>This flag notes whether all <code>compositeComponents</code> are returned in
+     * the API response.</p>
+     */
+    inline bool AreAllCompositeComponentsReturnedHasBeenSet() const { return m_areAllCompositeComponentsReturnedHasBeenSet; }
+
+    /**
+     * <p>This flag notes whether all <code>compositeComponents</code> are returned in
+     * the API response.</p>
+     */
+    inline void SetAreAllCompositeComponentsReturned(bool value) { m_areAllCompositeComponentsReturnedHasBeenSet = true; m_areAllCompositeComponentsReturned = value; }
+
+    /**
+     * <p>This flag notes whether all <code>compositeComponents</code> are returned in
+     * the API response.</p>
+     */
+    inline ComponentResponse& WithAreAllCompositeComponentsReturned(bool value) { SetAreAllCompositeComponentsReturned(value); return *this;}
+
   private:
 
     Aws::String m_componentName;
@@ -436,6 +560,15 @@ namespace Model
 
     Aws::String m_syncSource;
     bool m_syncSourceHasBeenSet = false;
+
+    bool m_areAllPropertiesReturned;
+    bool m_areAllPropertiesReturnedHasBeenSet = false;
+
+    Aws::Map<Aws::String, ComponentSummary> m_compositeComponents;
+    bool m_compositeComponentsHasBeenSet = false;
+
+    bool m_areAllCompositeComponentsReturned;
+    bool m_areAllCompositeComponentsReturnedHasBeenSet = false;
   };
 
 } // namespace Model

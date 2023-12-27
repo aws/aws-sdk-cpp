@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsOutputSelection::NOT_SET:
+            return {};
           case HlsOutputSelection::MANIFESTS_AND_SEGMENTS:
             return "MANIFESTS_AND_SEGMENTS";
           case HlsOutputSelection::SEGMENTS_ONLY:

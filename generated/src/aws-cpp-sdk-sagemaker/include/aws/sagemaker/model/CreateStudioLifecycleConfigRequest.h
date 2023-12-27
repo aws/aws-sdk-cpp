@@ -38,91 +38,99 @@ namespace Model
 
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to create.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * create.</p>
      */
     inline const Aws::String& GetStudioLifecycleConfigName() const{ return m_studioLifecycleConfigName; }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to create.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * create.</p>
      */
     inline bool StudioLifecycleConfigNameHasBeenSet() const { return m_studioLifecycleConfigNameHasBeenSet; }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to create.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * create.</p>
      */
     inline void SetStudioLifecycleConfigName(const Aws::String& value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName = value; }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to create.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * create.</p>
      */
     inline void SetStudioLifecycleConfigName(Aws::String&& value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName = std::move(value); }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to create.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * create.</p>
      */
     inline void SetStudioLifecycleConfigName(const char* value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName.assign(value); }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to create.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * create.</p>
      */
     inline CreateStudioLifecycleConfigRequest& WithStudioLifecycleConfigName(const Aws::String& value) { SetStudioLifecycleConfigName(value); return *this;}
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to create.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * create.</p>
      */
     inline CreateStudioLifecycleConfigRequest& WithStudioLifecycleConfigName(Aws::String&& value) { SetStudioLifecycleConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration to create.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * create.</p>
      */
     inline CreateStudioLifecycleConfigRequest& WithStudioLifecycleConfigName(const char* value) { SetStudioLifecycleConfigName(value); return *this;}
 
 
     /**
-     * <p>The content of your Studio Lifecycle Configuration script. This content must
-     * be base64 encoded.</p>
+     * <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script.
+     * This content must be base64 encoded.</p>
      */
     inline const Aws::String& GetStudioLifecycleConfigContent() const{ return m_studioLifecycleConfigContent; }
 
     /**
-     * <p>The content of your Studio Lifecycle Configuration script. This content must
-     * be base64 encoded.</p>
+     * <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script.
+     * This content must be base64 encoded.</p>
      */
     inline bool StudioLifecycleConfigContentHasBeenSet() const { return m_studioLifecycleConfigContentHasBeenSet; }
 
     /**
-     * <p>The content of your Studio Lifecycle Configuration script. This content must
-     * be base64 encoded.</p>
+     * <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script.
+     * This content must be base64 encoded.</p>
      */
     inline void SetStudioLifecycleConfigContent(const Aws::String& value) { m_studioLifecycleConfigContentHasBeenSet = true; m_studioLifecycleConfigContent = value; }
 
     /**
-     * <p>The content of your Studio Lifecycle Configuration script. This content must
-     * be base64 encoded.</p>
+     * <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script.
+     * This content must be base64 encoded.</p>
      */
     inline void SetStudioLifecycleConfigContent(Aws::String&& value) { m_studioLifecycleConfigContentHasBeenSet = true; m_studioLifecycleConfigContent = std::move(value); }
 
     /**
-     * <p>The content of your Studio Lifecycle Configuration script. This content must
-     * be base64 encoded.</p>
+     * <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script.
+     * This content must be base64 encoded.</p>
      */
     inline void SetStudioLifecycleConfigContent(const char* value) { m_studioLifecycleConfigContentHasBeenSet = true; m_studioLifecycleConfigContent.assign(value); }
 
     /**
-     * <p>The content of your Studio Lifecycle Configuration script. This content must
-     * be base64 encoded.</p>
+     * <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script.
+     * This content must be base64 encoded.</p>
      */
     inline CreateStudioLifecycleConfigRequest& WithStudioLifecycleConfigContent(const Aws::String& value) { SetStudioLifecycleConfigContent(value); return *this;}
 
     /**
-     * <p>The content of your Studio Lifecycle Configuration script. This content must
-     * be base64 encoded.</p>
+     * <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script.
+     * This content must be base64 encoded.</p>
      */
     inline CreateStudioLifecycleConfigRequest& WithStudioLifecycleConfigContent(Aws::String&& value) { SetStudioLifecycleConfigContent(std::move(value)); return *this;}
 
     /**
-     * <p>The content of your Studio Lifecycle Configuration script. This content must
-     * be base64 encoded.</p>
+     * <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script.
+     * This content must be base64 encoded.</p>
      */
     inline CreateStudioLifecycleConfigRequest& WithStudioLifecycleConfigContent(const char* value) { SetStudioLifecycleConfigContent(value); return *this;}
 

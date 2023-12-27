@@ -7,6 +7,7 @@
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/ScoreAttributes.h>
 #include <aws/kendra/model/DocumentAttribute.h>
 #include <utility>
 
@@ -300,6 +301,49 @@ namespace Model
      */
     inline RetrieveResultItem& AddDocumentAttributes(DocumentAttribute&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The confidence score bucket for a retrieved passage result. The confidence
+     * bucket provides a relative ranking that indicates how confident Amazon Kendra is
+     * that the response is relevant to the query.</p>
+     */
+    inline const ScoreAttributes& GetScoreAttributes() const{ return m_scoreAttributes; }
+
+    /**
+     * <p>The confidence score bucket for a retrieved passage result. The confidence
+     * bucket provides a relative ranking that indicates how confident Amazon Kendra is
+     * that the response is relevant to the query.</p>
+     */
+    inline bool ScoreAttributesHasBeenSet() const { return m_scoreAttributesHasBeenSet; }
+
+    /**
+     * <p>The confidence score bucket for a retrieved passage result. The confidence
+     * bucket provides a relative ranking that indicates how confident Amazon Kendra is
+     * that the response is relevant to the query.</p>
+     */
+    inline void SetScoreAttributes(const ScoreAttributes& value) { m_scoreAttributesHasBeenSet = true; m_scoreAttributes = value; }
+
+    /**
+     * <p>The confidence score bucket for a retrieved passage result. The confidence
+     * bucket provides a relative ranking that indicates how confident Amazon Kendra is
+     * that the response is relevant to the query.</p>
+     */
+    inline void SetScoreAttributes(ScoreAttributes&& value) { m_scoreAttributesHasBeenSet = true; m_scoreAttributes = std::move(value); }
+
+    /**
+     * <p>The confidence score bucket for a retrieved passage result. The confidence
+     * bucket provides a relative ranking that indicates how confident Amazon Kendra is
+     * that the response is relevant to the query.</p>
+     */
+    inline RetrieveResultItem& WithScoreAttributes(const ScoreAttributes& value) { SetScoreAttributes(value); return *this;}
+
+    /**
+     * <p>The confidence score bucket for a retrieved passage result. The confidence
+     * bucket provides a relative ranking that indicates how confident Amazon Kendra is
+     * that the response is relevant to the query.</p>
+     */
+    inline RetrieveResultItem& WithScoreAttributes(ScoreAttributes&& value) { SetScoreAttributes(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -319,6 +363,9 @@ namespace Model
 
     Aws::Vector<DocumentAttribute> m_documentAttributes;
     bool m_documentAttributesHasBeenSet = false;
+
+    ScoreAttributes m_scoreAttributes;
+    bool m_scoreAttributesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,6 +19,7 @@ namespace Model
 {
 
 ResolutionTechniques::ResolutionTechniques() : 
+    m_providerPropertiesHasBeenSet(false),
     m_resolutionType(ResolutionType::NOT_SET),
     m_resolutionTypeHasBeenSet(false),
     m_ruleBasedPropertiesHasBeenSet(false)
@@ -26,6 +27,7 @@ ResolutionTechniques::ResolutionTechniques() :
 }
 
 ResolutionTechniques::ResolutionTechniques(JsonView jsonValue) : 
+    m_providerPropertiesHasBeenSet(false),
     m_resolutionType(ResolutionType::NOT_SET),
     m_resolutionTypeHasBeenSet(false),
     m_ruleBasedPropertiesHasBeenSet(false)
@@ -35,6 +37,13 @@ ResolutionTechniques::ResolutionTechniques(JsonView jsonValue) :
 
 ResolutionTechniques& ResolutionTechniques::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("providerProperties"))
+  {
+    m_providerProperties = jsonValue.GetObject("providerProperties");
+
+    m_providerPropertiesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("resolutionType"))
   {
     m_resolutionType = ResolutionTypeMapper::GetResolutionTypeForName(jsonValue.GetString("resolutionType"));
@@ -55,6 +64,12 @@ ResolutionTechniques& ResolutionTechniques::operator =(JsonView jsonValue)
 JsonValue ResolutionTechniques::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_providerPropertiesHasBeenSet)
+  {
+   payload.WithObject("providerProperties", m_providerProperties.Jsonize());
+
+  }
 
   if(m_resolutionTypeHasBeenSet)
   {

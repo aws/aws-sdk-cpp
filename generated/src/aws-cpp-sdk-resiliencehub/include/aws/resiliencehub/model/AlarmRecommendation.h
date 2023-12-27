@@ -5,8 +5,9 @@
 
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/model/RecommendationStatus.h>
 #include <aws/resiliencehub/model/AlarmType.h>
 #include <aws/resiliencehub/model/RecommendationItem.h>
 #include <utility>
@@ -42,165 +43,179 @@ namespace Model
 
 
     /**
-     * <p>The Application Component for the CloudWatch alarm recommendation.</p>
+     * <p>List of Application Component names for the CloudWatch alarm
+     * recommendation.</p>
      */
-    inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
+    inline const Aws::Vector<Aws::String>& GetAppComponentNames() const{ return m_appComponentNames; }
 
     /**
-     * <p>The Application Component for the CloudWatch alarm recommendation.</p>
+     * <p>List of Application Component names for the CloudWatch alarm
+     * recommendation.</p>
      */
-    inline bool AppComponentNameHasBeenSet() const { return m_appComponentNameHasBeenSet; }
+    inline bool AppComponentNamesHasBeenSet() const { return m_appComponentNamesHasBeenSet; }
 
     /**
-     * <p>The Application Component for the CloudWatch alarm recommendation.</p>
+     * <p>List of Application Component names for the CloudWatch alarm
+     * recommendation.</p>
      */
-    inline void SetAppComponentName(const Aws::String& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = value; }
+    inline void SetAppComponentNames(const Aws::Vector<Aws::String>& value) { m_appComponentNamesHasBeenSet = true; m_appComponentNames = value; }
 
     /**
-     * <p>The Application Component for the CloudWatch alarm recommendation.</p>
+     * <p>List of Application Component names for the CloudWatch alarm
+     * recommendation.</p>
      */
-    inline void SetAppComponentName(Aws::String&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::move(value); }
+    inline void SetAppComponentNames(Aws::Vector<Aws::String>&& value) { m_appComponentNamesHasBeenSet = true; m_appComponentNames = std::move(value); }
 
     /**
-     * <p>The Application Component for the CloudWatch alarm recommendation.</p>
+     * <p>List of Application Component names for the CloudWatch alarm
+     * recommendation.</p>
      */
-    inline void SetAppComponentName(const char* value) { m_appComponentNameHasBeenSet = true; m_appComponentName.assign(value); }
+    inline AlarmRecommendation& WithAppComponentNames(const Aws::Vector<Aws::String>& value) { SetAppComponentNames(value); return *this;}
 
     /**
-     * <p>The Application Component for the CloudWatch alarm recommendation.</p>
+     * <p>List of Application Component names for the CloudWatch alarm
+     * recommendation.</p>
      */
-    inline AlarmRecommendation& WithAppComponentName(const Aws::String& value) { SetAppComponentName(value); return *this;}
+    inline AlarmRecommendation& WithAppComponentNames(Aws::Vector<Aws::String>&& value) { SetAppComponentNames(std::move(value)); return *this;}
 
     /**
-     * <p>The Application Component for the CloudWatch alarm recommendation.</p>
+     * <p>List of Application Component names for the CloudWatch alarm
+     * recommendation.</p>
      */
-    inline AlarmRecommendation& WithAppComponentName(Aws::String&& value) { SetAppComponentName(std::move(value)); return *this;}
+    inline AlarmRecommendation& AddAppComponentNames(const Aws::String& value) { m_appComponentNamesHasBeenSet = true; m_appComponentNames.push_back(value); return *this; }
 
     /**
-     * <p>The Application Component for the CloudWatch alarm recommendation.</p>
+     * <p>List of Application Component names for the CloudWatch alarm
+     * recommendation.</p>
      */
-    inline AlarmRecommendation& WithAppComponentName(const char* value) { SetAppComponentName(value); return *this;}
+    inline AlarmRecommendation& AddAppComponentNames(Aws::String&& value) { m_appComponentNamesHasBeenSet = true; m_appComponentNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>List of Application Component names for the CloudWatch alarm
+     * recommendation.</p>
+     */
+    inline AlarmRecommendation& AddAppComponentNames(const char* value) { m_appComponentNamesHasBeenSet = true; m_appComponentNames.push_back(value); return *this; }
 
 
     /**
-     * <p>The description of the recommendation.</p>
+     * <p>Description of the alarm recommendation.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the recommendation.</p>
+     * <p>Description of the alarm recommendation.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the recommendation.</p>
+     * <p>Description of the alarm recommendation.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the recommendation.</p>
+     * <p>Description of the alarm recommendation.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the recommendation.</p>
+     * <p>Description of the alarm recommendation.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the recommendation.</p>
+     * <p>Description of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the recommendation.</p>
+     * <p>Description of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the recommendation.</p>
+     * <p>Description of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The list of CloudWatch alarm recommendations.</p>
+     * <p>List of CloudWatch alarm recommendations.</p>
      */
     inline const Aws::Vector<RecommendationItem>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The list of CloudWatch alarm recommendations.</p>
+     * <p>List of CloudWatch alarm recommendations.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
-     * <p>The list of CloudWatch alarm recommendations.</p>
+     * <p>List of CloudWatch alarm recommendations.</p>
      */
     inline void SetItems(const Aws::Vector<RecommendationItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * <p>The list of CloudWatch alarm recommendations.</p>
+     * <p>List of CloudWatch alarm recommendations.</p>
      */
     inline void SetItems(Aws::Vector<RecommendationItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * <p>The list of CloudWatch alarm recommendations.</p>
+     * <p>List of CloudWatch alarm recommendations.</p>
      */
     inline AlarmRecommendation& WithItems(const Aws::Vector<RecommendationItem>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The list of CloudWatch alarm recommendations.</p>
+     * <p>List of CloudWatch alarm recommendations.</p>
      */
     inline AlarmRecommendation& WithItems(Aws::Vector<RecommendationItem>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The list of CloudWatch alarm recommendations.</p>
+     * <p>List of CloudWatch alarm recommendations.</p>
      */
     inline AlarmRecommendation& AddItems(const RecommendationItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * <p>The list of CloudWatch alarm recommendations.</p>
+     * <p>List of CloudWatch alarm recommendations.</p>
      */
     inline AlarmRecommendation& AddItems(RecommendationItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The name of the alarm recommendation.</p>
+     * <p>Name of the alarm recommendation.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the alarm recommendation.</p>
+     * <p>Name of the alarm recommendation.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the alarm recommendation.</p>
+     * <p>Name of the alarm recommendation.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the alarm recommendation.</p>
+     * <p>Name of the alarm recommendation.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the alarm recommendation.</p>
+     * <p>Name of the alarm recommendation.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the alarm recommendation.</p>
+     * <p>Name of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the alarm recommendation.</p>
+     * <p>Name of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the alarm recommendation.</p>
+     * <p>Name of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithName(const char* value) { SetName(value); return *this;}
 
@@ -247,121 +262,152 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the alarm recommendation.</p>
+     * <p>Identifier of the alarm recommendation.</p>
      */
     inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
 
     /**
-     * <p>The identifier of the alarm recommendation.</p>
+     * <p>Identifier of the alarm recommendation.</p>
      */
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the alarm recommendation.</p>
+     * <p>Identifier of the alarm recommendation.</p>
      */
     inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
 
     /**
-     * <p>The identifier of the alarm recommendation.</p>
+     * <p>Identifier of the alarm recommendation.</p>
      */
     inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
 
     /**
-     * <p>The identifier of the alarm recommendation.</p>
+     * <p>Identifier of the alarm recommendation.</p>
      */
     inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
 
     /**
-     * <p>The identifier of the alarm recommendation.</p>
+     * <p>Identifier of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
 
     /**
-     * <p>The identifier of the alarm recommendation.</p>
+     * <p>Identifier of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the alarm recommendation.</p>
+     * <p>Identifier of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
 
 
     /**
-     * <p>The reference identifier of the alarm recommendation.</p>
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline const RecommendationStatus& GetRecommendationStatus() const{ return m_recommendationStatus; }
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline bool RecommendationStatusHasBeenSet() const { return m_recommendationStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline void SetRecommendationStatus(const RecommendationStatus& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline void SetRecommendationStatus(RecommendationStatus&& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = std::move(value); }
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline AlarmRecommendation& WithRecommendationStatus(const RecommendationStatus& value) { SetRecommendationStatus(value); return *this;}
+
+    /**
+     * <p>Status of the recommended Amazon CloudWatch alarm.</p>
+     */
+    inline AlarmRecommendation& WithRecommendationStatus(RecommendationStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Reference identifier of the alarm recommendation.</p>
      */
     inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
 
     /**
-     * <p>The reference identifier of the alarm recommendation.</p>
+     * <p>Reference identifier of the alarm recommendation.</p>
      */
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
 
     /**
-     * <p>The reference identifier of the alarm recommendation.</p>
+     * <p>Reference identifier of the alarm recommendation.</p>
      */
     inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
 
     /**
-     * <p>The reference identifier of the alarm recommendation.</p>
+     * <p>Reference identifier of the alarm recommendation.</p>
      */
     inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
 
     /**
-     * <p>The reference identifier of the alarm recommendation.</p>
+     * <p>Reference identifier of the alarm recommendation.</p>
      */
     inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
 
     /**
-     * <p>The reference identifier of the alarm recommendation.</p>
+     * <p>Reference identifier of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
 
     /**
-     * <p>The reference identifier of the alarm recommendation.</p>
+     * <p>Reference identifier of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
 
     /**
-     * <p>The reference identifier of the alarm recommendation.</p>
+     * <p>Reference identifier of the alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 
 
     /**
-     * <p>The type of alarm recommendation.</p>
+     * <p>Type of alarm recommendation.</p>
      */
     inline const AlarmType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of alarm recommendation.</p>
+     * <p>Type of alarm recommendation.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of alarm recommendation.</p>
+     * <p>Type of alarm recommendation.</p>
      */
     inline void SetType(const AlarmType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of alarm recommendation.</p>
+     * <p>Type of alarm recommendation.</p>
      */
     inline void SetType(AlarmType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of alarm recommendation.</p>
+     * <p>Type of alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithType(const AlarmType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of alarm recommendation.</p>
+     * <p>Type of alarm recommendation.</p>
      */
     inline AlarmRecommendation& WithType(AlarmType&& value) { SetType(std::move(value)); return *this;}
 
   private:
 
-    Aws::String m_appComponentName;
-    bool m_appComponentNameHasBeenSet = false;
+    Aws::Vector<Aws::String> m_appComponentNames;
+    bool m_appComponentNamesHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
@@ -377,6 +423,9 @@ namespace Model
 
     Aws::String m_recommendationId;
     bool m_recommendationIdHasBeenSet = false;
+
+    RecommendationStatus m_recommendationStatus;
+    bool m_recommendationStatusHasBeenSet = false;
 
     Aws::String m_referenceId;
     bool m_referenceIdHasBeenSet = false;

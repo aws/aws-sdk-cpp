@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsOfflineEncrypted::NOT_SET:
+            return {};
           case HlsOfflineEncrypted::ENABLED:
             return "ENABLED";
           case HlsOfflineEncrypted::DISABLED:

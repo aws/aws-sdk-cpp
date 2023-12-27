@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WordCloudWordScaling::NOT_SET:
+            return {};
           case WordCloudWordScaling::EMPHASIZE:
             return "EMPHASIZE";
           case WordCloudWordScaling::NORMAL:

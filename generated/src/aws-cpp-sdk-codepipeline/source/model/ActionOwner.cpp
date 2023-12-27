@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionOwner::NOT_SET:
+            return {};
           case ActionOwner::AWS:
             return "AWS";
           case ActionOwner::ThirdParty:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryErrorCode::NOT_SET:
+            return {};
           case QueryErrorCode::CLOUDFORMATION_STACK_INACTIVE:
             return "CLOUDFORMATION_STACK_INACTIVE";
           case QueryErrorCode::CLOUDFORMATION_STACK_NOT_EXISTING:

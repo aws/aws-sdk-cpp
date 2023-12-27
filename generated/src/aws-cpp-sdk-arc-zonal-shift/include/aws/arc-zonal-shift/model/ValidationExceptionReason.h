@@ -22,7 +22,10 @@ namespace Model
     InvalidToken,
     InvalidResourceIdentifier,
     InvalidAz,
-    UnsupportedAz
+    UnsupportedAz,
+    InvalidAlarmCondition,
+    InvalidConditionType,
+    InvalidPracticeBlocker
   };
 
 namespace ValidationExceptionReasonMapper

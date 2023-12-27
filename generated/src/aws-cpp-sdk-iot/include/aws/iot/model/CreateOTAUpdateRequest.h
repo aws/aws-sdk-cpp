@@ -535,67 +535,80 @@ namespace Model
 
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalParameters() const{ return m_additionalParameters; }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline bool AdditionalParametersHasBeenSet() const { return m_additionalParametersHasBeenSet; }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline void SetAdditionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters = value; }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline void SetAdditionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters = std::move(value); }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline CreateOTAUpdateRequest& WithAdditionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalParameters(value); return *this;}
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline CreateOTAUpdateRequest& WithAdditionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline CreateOTAUpdateRequest& AddAdditionalParameters(const Aws::String& key, const Aws::String& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline CreateOTAUpdateRequest& AddAdditionalParameters(Aws::String&& key, const Aws::String& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline CreateOTAUpdateRequest& AddAdditionalParameters(const Aws::String& key, Aws::String&& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline CreateOTAUpdateRequest& AddAdditionalParameters(Aws::String&& key, Aws::String&& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline CreateOTAUpdateRequest& AddAdditionalParameters(const char* key, Aws::String&& value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline CreateOTAUpdateRequest& AddAdditionalParameters(Aws::String&& key, const char* value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     * <p>A list of additional OTA update parameters, which are name-value pairs. They
+     * won't be sent to devices as a part of the Job document.</p>
      */
     inline CreateOTAUpdateRequest& AddAdditionalParameters(const char* key, const char* value) { m_additionalParametersHasBeenSet = true; m_additionalParameters.emplace(key, value); return *this; }
 

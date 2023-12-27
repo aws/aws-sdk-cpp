@@ -26,7 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Information about a trigger for a repository.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a trigger for a repository. </p>  <p>If you want to
+   * receive notifications about repository events, consider using notifications
+   * instead of triggers. For more information, see <a
+   * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-repository-email.html">Configuring
+   * notifications for repository events</a>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryTrigger">AWS
    * API Reference</a></p>
    */

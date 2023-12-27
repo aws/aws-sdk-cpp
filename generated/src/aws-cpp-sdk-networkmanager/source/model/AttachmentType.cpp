@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttachmentType::NOT_SET:
+            return {};
           case AttachmentType::CONNECT:
             return "CONNECT";
           case AttachmentType::SITE_TO_SITE_VPN:

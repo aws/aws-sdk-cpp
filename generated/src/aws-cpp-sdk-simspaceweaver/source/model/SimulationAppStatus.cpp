@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimulationAppStatus::NOT_SET:
+            return {};
           case SimulationAppStatus::STARTING:
             return "STARTING";
           case SimulationAppStatus::STARTED:

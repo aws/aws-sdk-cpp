@@ -35,37 +35,51 @@ namespace Model
 
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of members.</p>  <p>The values for <code>email</code> and
+     * <code>invitedAt</code> are available only if the member accounts are added by
+     * invitation.</p> 
      */
     inline const Aws::Vector<Member>& GetMembers() const{ return m_members; }
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of members.</p>  <p>The values for <code>email</code> and
+     * <code>invitedAt</code> are available only if the member accounts are added by
+     * invitation.</p> 
      */
     inline void SetMembers(const Aws::Vector<Member>& value) { m_members = value; }
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of members.</p>  <p>The values for <code>email</code> and
+     * <code>invitedAt</code> are available only if the member accounts are added by
+     * invitation.</p> 
      */
     inline void SetMembers(Aws::Vector<Member>&& value) { m_members = std::move(value); }
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of members.</p>  <p>The values for <code>email</code> and
+     * <code>invitedAt</code> are available only if the member accounts are added by
+     * invitation.</p> 
      */
     inline ListMembersResult& WithMembers(const Aws::Vector<Member>& value) { SetMembers(value); return *this;}
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of members.</p>  <p>The values for <code>email</code> and
+     * <code>invitedAt</code> are available only if the member accounts are added by
+     * invitation.</p> 
      */
     inline ListMembersResult& WithMembers(Aws::Vector<Member>&& value) { SetMembers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of members.</p>  <p>The values for <code>email</code> and
+     * <code>invitedAt</code> are available only if the member accounts are added by
+     * invitation.</p> 
      */
     inline ListMembersResult& AddMembers(const Member& value) { m_members.push_back(value); return *this; }
 
     /**
-     * <p>A list of members.</p>
+     * <p>A list of members.</p>  <p>The values for <code>email</code> and
+     * <code>invitedAt</code> are available only if the member accounts are added by
+     * invitation.</p> 
      */
     inline ListMembersResult& AddMembers(Member&& value) { m_members.push_back(std::move(value)); return *this; }
 

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationMode::NOT_SET:
+            return {};
           case ReplicationMode::PRIMARY:
             return "PRIMARY";
           case ReplicationMode::NONE:

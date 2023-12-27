@@ -28,7 +28,7 @@ namespace RecycleBin
    * your account. If the retention period expires and the resource is not restored,
    * the resource is permanently deleted from the Recycle Bin and is no longer
    * available for recovery. For more information about Recycle Bin, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-recycle-bin.html">
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">
    * Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
    */
   class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>

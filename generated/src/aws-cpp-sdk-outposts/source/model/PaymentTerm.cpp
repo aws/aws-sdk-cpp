@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PaymentTerm::NOT_SET:
+            return {};
           case PaymentTerm::THREE_YEARS:
             return "THREE_YEARS";
           case PaymentTerm::ONE_YEAR:

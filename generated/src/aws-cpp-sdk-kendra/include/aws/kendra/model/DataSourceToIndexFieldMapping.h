@@ -24,9 +24,17 @@ namespace Model
 {
 
   /**
-   * <p>Maps a column or attribute in the data source to an index field. You must
-   * first create the fields in the index using the <code>UpdateIndex</code>
-   * API.</p><p><h3>See Also:</h3>   <a
+   * <p>Maps attributes or field names of the documents synced from the data source
+   * to Amazon Kendra index field names. You can set up field mappings for each data
+   * source when calling <a
+   * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CreateDataSource.html">CreateDataSource</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_UpdateDataSource.html">UpdateDataSource</a>
+   * API. To create custom fields, use the <code>UpdateIndex</code> API to first
+   * create an index field and then map to the data source field. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+   * data source fields</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceToIndexFieldMapping">AWS
    * API Reference</a></p>
    */
@@ -40,124 +48,156 @@ namespace Model
 
 
     /**
-     * <p>The name of the column or attribute in the data source.</p>
+     * <p>The name of the field in the data source. You must first create the index
+     * field using the <code>UpdateIndex</code> API.</p>
      */
     inline const Aws::String& GetDataSourceFieldName() const{ return m_dataSourceFieldName; }
 
     /**
-     * <p>The name of the column or attribute in the data source.</p>
+     * <p>The name of the field in the data source. You must first create the index
+     * field using the <code>UpdateIndex</code> API.</p>
      */
     inline bool DataSourceFieldNameHasBeenSet() const { return m_dataSourceFieldNameHasBeenSet; }
 
     /**
-     * <p>The name of the column or attribute in the data source.</p>
+     * <p>The name of the field in the data source. You must first create the index
+     * field using the <code>UpdateIndex</code> API.</p>
      */
     inline void SetDataSourceFieldName(const Aws::String& value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName = value; }
 
     /**
-     * <p>The name of the column or attribute in the data source.</p>
+     * <p>The name of the field in the data source. You must first create the index
+     * field using the <code>UpdateIndex</code> API.</p>
      */
     inline void SetDataSourceFieldName(Aws::String&& value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName = std::move(value); }
 
     /**
-     * <p>The name of the column or attribute in the data source.</p>
+     * <p>The name of the field in the data source. You must first create the index
+     * field using the <code>UpdateIndex</code> API.</p>
      */
     inline void SetDataSourceFieldName(const char* value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName.assign(value); }
 
     /**
-     * <p>The name of the column or attribute in the data source.</p>
+     * <p>The name of the field in the data source. You must first create the index
+     * field using the <code>UpdateIndex</code> API.</p>
      */
     inline DataSourceToIndexFieldMapping& WithDataSourceFieldName(const Aws::String& value) { SetDataSourceFieldName(value); return *this;}
 
     /**
-     * <p>The name of the column or attribute in the data source.</p>
+     * <p>The name of the field in the data source. You must first create the index
+     * field using the <code>UpdateIndex</code> API.</p>
      */
     inline DataSourceToIndexFieldMapping& WithDataSourceFieldName(Aws::String&& value) { SetDataSourceFieldName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the column or attribute in the data source.</p>
+     * <p>The name of the field in the data source. You must first create the index
+     * field using the <code>UpdateIndex</code> API.</p>
      */
     inline DataSourceToIndexFieldMapping& WithDataSourceFieldName(const char* value) { SetDataSourceFieldName(value); return *this;}
 
 
     /**
-     * <p>The type of data stored in the column or attribute.</p>
+     * <p>The format for date fields in the data source. If the field specified in
+     * <code>DataSourceFieldName</code> is a date field, you must specify the date
+     * format. If the field is not a date field, an exception is thrown.</p>
      */
     inline const Aws::String& GetDateFieldFormat() const{ return m_dateFieldFormat; }
 
     /**
-     * <p>The type of data stored in the column or attribute.</p>
+     * <p>The format for date fields in the data source. If the field specified in
+     * <code>DataSourceFieldName</code> is a date field, you must specify the date
+     * format. If the field is not a date field, an exception is thrown.</p>
      */
     inline bool DateFieldFormatHasBeenSet() const { return m_dateFieldFormatHasBeenSet; }
 
     /**
-     * <p>The type of data stored in the column or attribute.</p>
+     * <p>The format for date fields in the data source. If the field specified in
+     * <code>DataSourceFieldName</code> is a date field, you must specify the date
+     * format. If the field is not a date field, an exception is thrown.</p>
      */
     inline void SetDateFieldFormat(const Aws::String& value) { m_dateFieldFormatHasBeenSet = true; m_dateFieldFormat = value; }
 
     /**
-     * <p>The type of data stored in the column or attribute.</p>
+     * <p>The format for date fields in the data source. If the field specified in
+     * <code>DataSourceFieldName</code> is a date field, you must specify the date
+     * format. If the field is not a date field, an exception is thrown.</p>
      */
     inline void SetDateFieldFormat(Aws::String&& value) { m_dateFieldFormatHasBeenSet = true; m_dateFieldFormat = std::move(value); }
 
     /**
-     * <p>The type of data stored in the column or attribute.</p>
+     * <p>The format for date fields in the data source. If the field specified in
+     * <code>DataSourceFieldName</code> is a date field, you must specify the date
+     * format. If the field is not a date field, an exception is thrown.</p>
      */
     inline void SetDateFieldFormat(const char* value) { m_dateFieldFormatHasBeenSet = true; m_dateFieldFormat.assign(value); }
 
     /**
-     * <p>The type of data stored in the column or attribute.</p>
+     * <p>The format for date fields in the data source. If the field specified in
+     * <code>DataSourceFieldName</code> is a date field, you must specify the date
+     * format. If the field is not a date field, an exception is thrown.</p>
      */
     inline DataSourceToIndexFieldMapping& WithDateFieldFormat(const Aws::String& value) { SetDateFieldFormat(value); return *this;}
 
     /**
-     * <p>The type of data stored in the column or attribute.</p>
+     * <p>The format for date fields in the data source. If the field specified in
+     * <code>DataSourceFieldName</code> is a date field, you must specify the date
+     * format. If the field is not a date field, an exception is thrown.</p>
      */
     inline DataSourceToIndexFieldMapping& WithDateFieldFormat(Aws::String&& value) { SetDateFieldFormat(std::move(value)); return *this;}
 
     /**
-     * <p>The type of data stored in the column or attribute.</p>
+     * <p>The format for date fields in the data source. If the field specified in
+     * <code>DataSourceFieldName</code> is a date field, you must specify the date
+     * format. If the field is not a date field, an exception is thrown.</p>
      */
     inline DataSourceToIndexFieldMapping& WithDateFieldFormat(const char* value) { SetDateFieldFormat(value); return *this;}
 
 
     /**
-     * <p>The name of the field in the index.</p>
+     * <p>The name of the index field to map to the data source field. The index field
+     * type must match the data source field type.</p>
      */
     inline const Aws::String& GetIndexFieldName() const{ return m_indexFieldName; }
 
     /**
-     * <p>The name of the field in the index.</p>
+     * <p>The name of the index field to map to the data source field. The index field
+     * type must match the data source field type.</p>
      */
     inline bool IndexFieldNameHasBeenSet() const { return m_indexFieldNameHasBeenSet; }
 
     /**
-     * <p>The name of the field in the index.</p>
+     * <p>The name of the index field to map to the data source field. The index field
+     * type must match the data source field type.</p>
      */
     inline void SetIndexFieldName(const Aws::String& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = value; }
 
     /**
-     * <p>The name of the field in the index.</p>
+     * <p>The name of the index field to map to the data source field. The index field
+     * type must match the data source field type.</p>
      */
     inline void SetIndexFieldName(Aws::String&& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = std::move(value); }
 
     /**
-     * <p>The name of the field in the index.</p>
+     * <p>The name of the index field to map to the data source field. The index field
+     * type must match the data source field type.</p>
      */
     inline void SetIndexFieldName(const char* value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName.assign(value); }
 
     /**
-     * <p>The name of the field in the index.</p>
+     * <p>The name of the index field to map to the data source field. The index field
+     * type must match the data source field type.</p>
      */
     inline DataSourceToIndexFieldMapping& WithIndexFieldName(const Aws::String& value) { SetIndexFieldName(value); return *this;}
 
     /**
-     * <p>The name of the field in the index.</p>
+     * <p>The name of the index field to map to the data source field. The index field
+     * type must match the data source field type.</p>
      */
     inline DataSourceToIndexFieldMapping& WithIndexFieldName(Aws::String&& value) { SetIndexFieldName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the field in the index.</p>
+     * <p>The name of the index field to map to the data source field. The index field
+     * type must match the data source field type.</p>
      */
     inline DataSourceToIndexFieldMapping& WithIndexFieldName(const char* value) { SetIndexFieldName(value); return *this;}
 

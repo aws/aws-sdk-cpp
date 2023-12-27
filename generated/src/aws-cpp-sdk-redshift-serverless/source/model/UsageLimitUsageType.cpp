@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageLimitUsageType::NOT_SET:
+            return {};
           case UsageLimitUsageType::serverless_compute:
             return "serverless-compute";
           case UsageLimitUsageType::cross_region_datasharing:

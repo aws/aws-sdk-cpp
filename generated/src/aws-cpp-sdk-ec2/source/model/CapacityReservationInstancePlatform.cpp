@@ -37,6 +37,7 @@ namespace Aws
         static const int RHEL_with_HA_HASH = HashingUtils::HashString("RHEL with HA");
         static const int RHEL_with_HA_and_SQL_Server_Standard_HASH = HashingUtils::HashString("RHEL with HA and SQL Server Standard");
         static const int RHEL_with_HA_and_SQL_Server_Enterprise_HASH = HashingUtils::HashString("RHEL with HA and SQL Server Enterprise");
+        static const int Ubuntu_Pro_HASH = HashingUtils::HashString("Ubuntu Pro");
 
 
         CapacityReservationInstancePlatform GetCapacityReservationInstancePlatformForName(const Aws::String& name)
@@ -110,6 +111,10 @@ namespace Aws
           {
             return CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Enterprise;
           }
+          else if (hashCode == Ubuntu_Pro_HASH)
+          {
+            return CapacityReservationInstancePlatform::Ubuntu_Pro;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -124,6 +129,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityReservationInstancePlatform::NOT_SET:
+            return {};
           case CapacityReservationInstancePlatform::Linux_UNIX:
             return "Linux/UNIX";
           case CapacityReservationInstancePlatform::Red_Hat_Enterprise_Linux:
@@ -158,6 +165,8 @@ namespace Aws
             return "RHEL with HA and SQL Server Standard";
           case CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Enterprise:
             return "RHEL with HA and SQL Server Enterprise";
+          case CapacityReservationInstancePlatform::Ubuntu_Pro:
+            return "Ubuntu Pro";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

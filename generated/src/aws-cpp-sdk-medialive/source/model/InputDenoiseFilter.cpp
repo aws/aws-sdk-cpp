@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDenoiseFilter::NOT_SET:
+            return {};
           case InputDenoiseFilter::DISABLED:
             return "DISABLED";
           case InputDenoiseFilter::ENABLED:

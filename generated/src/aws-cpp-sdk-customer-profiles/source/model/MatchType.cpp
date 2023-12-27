@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MatchType::NOT_SET:
+            return {};
           case MatchType::RULE_BASED_MATCHING:
             return "RULE_BASED_MATCHING";
           case MatchType::ML_BASED_MATCHING:

@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetBundleExportJobDataSourcePropertyToOverride::NOT_SET:
+            return {};
           case AssetBundleExportJobDataSourcePropertyToOverride::Name:
             return "Name";
           case AssetBundleExportJobDataSourcePropertyToOverride::DisableSsl:

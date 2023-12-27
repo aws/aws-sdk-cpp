@@ -24,7 +24,9 @@ Capacity::Capacity() :
     m_provisioned(0),
     m_provisionedHasBeenSet(false),
     m_logicalUsed(0),
-    m_logicalUsedHasBeenSet(false)
+    m_logicalUsedHasBeenSet(false),
+    m_clusterCloudStorageUsed(0),
+    m_clusterCloudStorageUsedHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ Capacity::Capacity(JsonView jsonValue) :
     m_provisioned(0),
     m_provisionedHasBeenSet(false),
     m_logicalUsed(0),
-    m_logicalUsedHasBeenSet(false)
+    m_logicalUsedHasBeenSet(false),
+    m_clusterCloudStorageUsed(0),
+    m_clusterCloudStorageUsedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +66,13 @@ Capacity& Capacity::operator =(JsonView jsonValue)
     m_logicalUsedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClusterCloudStorageUsed"))
+  {
+    m_clusterCloudStorageUsed = jsonValue.GetInt64("ClusterCloudStorageUsed");
+
+    m_clusterCloudStorageUsedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +95,12 @@ JsonValue Capacity::Jsonize() const
   if(m_logicalUsedHasBeenSet)
   {
    payload.WithInt64("LogicalUsed", m_logicalUsed);
+
+  }
+
+  if(m_clusterCloudStorageUsedHasBeenSet)
+  {
+   payload.WithInt64("ClusterCloudStorageUsed", m_clusterCloudStorageUsed);
 
   }
 

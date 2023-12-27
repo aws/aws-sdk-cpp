@@ -21,7 +21,8 @@ DescribeModelPackageResult::DescribeModelPackageResult() :
     m_modelPackageVersion(0),
     m_modelPackageStatus(ModelPackageStatus::NOT_SET),
     m_certifyForMarketplace(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET)
+    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
+    m_skipModelValidation(SkipModelValidation::NOT_SET)
 {
 }
 
@@ -29,7 +30,8 @@ DescribeModelPackageResult::DescribeModelPackageResult(const Aws::AmazonWebServi
     m_modelPackageVersion(0),
     m_modelPackageStatus(ModelPackageStatus::NOT_SET),
     m_certifyForMarketplace(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET)
+    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
+    m_skipModelValidation(SkipModelValidation::NOT_SET)
 {
   *this = result;
 }
@@ -151,21 +153,6 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
 
   }
 
-  if(jsonValue.ValueExists("CustomerMetadataProperties"))
-  {
-    Aws::Map<Aws::String, JsonView> customerMetadataPropertiesJsonMap = jsonValue.GetObject("CustomerMetadataProperties").GetAllObjects();
-    for(auto& customerMetadataPropertiesItem : customerMetadataPropertiesJsonMap)
-    {
-      m_customerMetadataProperties[customerMetadataPropertiesItem.first] = customerMetadataPropertiesItem.second.AsString();
-    }
-  }
-
-  if(jsonValue.ValueExists("DriftCheckBaselines"))
-  {
-    m_driftCheckBaselines = jsonValue.GetObject("DriftCheckBaselines");
-
-  }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
@@ -184,6 +171,21 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("CustomerMetadataProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> customerMetadataPropertiesJsonMap = jsonValue.GetObject("CustomerMetadataProperties").GetAllObjects();
+    for(auto& customerMetadataPropertiesItem : customerMetadataPropertiesJsonMap)
+    {
+      m_customerMetadataProperties[customerMetadataPropertiesItem.first] = customerMetadataPropertiesItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("DriftCheckBaselines"))
+  {
+    m_driftCheckBaselines = jsonValue.GetObject("DriftCheckBaselines");
+
+  }
+
   if(jsonValue.ValueExists("AdditionalInferenceSpecifications"))
   {
     Aws::Utils::Array<JsonView> additionalInferenceSpecificationsJsonList = jsonValue.GetArray("AdditionalInferenceSpecifications");
@@ -191,6 +193,12 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
     {
       m_additionalInferenceSpecifications.push_back(additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("SkipModelValidation"))
+  {
+    m_skipModelValidation = SkipModelValidationMapper::GetSkipModelValidationForName(jsonValue.GetString("SkipModelValidation"));
+
   }
 
 

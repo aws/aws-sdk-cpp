@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain/model/AccessorType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/managedblockchain/model/AccessorNetworkType.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -327,6 +328,91 @@ namespace Model
      */
     inline CreateAccessorRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>We recommend using the appropriate <code>networkType</code>
+     * value for the blockchain network that you are creating the <code>Accessor</code>
+     * token for. You cannnot use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to
+     * specify a <code>networkType</code> for your Accessor token.</p> <p>The default
+     * value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:</p> <ul> <li>
+     * <p>when the <code>CreateAccessor</code> action does not set a
+     * <code>networkType</code>.</p> </li> <li> <p>to all existing
+     * <code>Accessor</code> tokens that were created before the
+     * <code>networkType</code> property was introduced. </p> </li> </ul> 
+     */
+    inline const AccessorNetworkType& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>We recommend using the appropriate <code>networkType</code>
+     * value for the blockchain network that you are creating the <code>Accessor</code>
+     * token for. You cannnot use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to
+     * specify a <code>networkType</code> for your Accessor token.</p> <p>The default
+     * value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:</p> <ul> <li>
+     * <p>when the <code>CreateAccessor</code> action does not set a
+     * <code>networkType</code>.</p> </li> <li> <p>to all existing
+     * <code>Accessor</code> tokens that were created before the
+     * <code>networkType</code> property was introduced. </p> </li> </ul> 
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>We recommend using the appropriate <code>networkType</code>
+     * value for the blockchain network that you are creating the <code>Accessor</code>
+     * token for. You cannnot use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to
+     * specify a <code>networkType</code> for your Accessor token.</p> <p>The default
+     * value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:</p> <ul> <li>
+     * <p>when the <code>CreateAccessor</code> action does not set a
+     * <code>networkType</code>.</p> </li> <li> <p>to all existing
+     * <code>Accessor</code> tokens that were created before the
+     * <code>networkType</code> property was introduced. </p> </li> </ul> 
+     */
+    inline void SetNetworkType(const AccessorNetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>We recommend using the appropriate <code>networkType</code>
+     * value for the blockchain network that you are creating the <code>Accessor</code>
+     * token for. You cannnot use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to
+     * specify a <code>networkType</code> for your Accessor token.</p> <p>The default
+     * value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:</p> <ul> <li>
+     * <p>when the <code>CreateAccessor</code> action does not set a
+     * <code>networkType</code>.</p> </li> <li> <p>to all existing
+     * <code>Accessor</code> tokens that were created before the
+     * <code>networkType</code> property was introduced. </p> </li> </ul> 
+     */
+    inline void SetNetworkType(AccessorNetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>We recommend using the appropriate <code>networkType</code>
+     * value for the blockchain network that you are creating the <code>Accessor</code>
+     * token for. You cannnot use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to
+     * specify a <code>networkType</code> for your Accessor token.</p> <p>The default
+     * value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:</p> <ul> <li>
+     * <p>when the <code>CreateAccessor</code> action does not set a
+     * <code>networkType</code>.</p> </li> <li> <p>to all existing
+     * <code>Accessor</code> tokens that were created before the
+     * <code>networkType</code> property was introduced. </p> </li> </ul> 
+     */
+    inline CreateAccessorRequest& WithNetworkType(const AccessorNetworkType& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>We recommend using the appropriate <code>networkType</code>
+     * value for the blockchain network that you are creating the <code>Accessor</code>
+     * token for. You cannnot use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to
+     * specify a <code>networkType</code> for your Accessor token.</p> <p>The default
+     * value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:</p> <ul> <li>
+     * <p>when the <code>CreateAccessor</code> action does not set a
+     * <code>networkType</code>.</p> </li> <li> <p>to all existing
+     * <code>Accessor</code> tokens that were created before the
+     * <code>networkType</code> property was introduced. </p> </li> </ul> 
+     */
+    inline CreateAccessorRequest& WithNetworkType(AccessorNetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -337,6 +423,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    AccessorNetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

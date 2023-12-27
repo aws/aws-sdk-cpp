@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectConnectGatewayAttachmentType::NOT_SET:
+            return {};
           case DirectConnectGatewayAttachmentType::TransitVirtualInterface:
             return "TransitVirtualInterface";
           case DirectConnectGatewayAttachmentType::PrivateVirtualInterface:

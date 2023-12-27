@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageFileType::NOT_SET:
+            return {};
           case ImageFileType::PNG:
             return "PNG";
           default:

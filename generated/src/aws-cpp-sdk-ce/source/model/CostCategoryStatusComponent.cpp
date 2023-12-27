@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostCategoryStatusComponent::NOT_SET:
+            return {};
           case CostCategoryStatusComponent::COST_EXPLORER:
             return "COST_EXPLORER";
           default:

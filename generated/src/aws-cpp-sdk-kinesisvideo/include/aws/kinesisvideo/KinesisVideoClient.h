@@ -635,7 +635,10 @@ namespace KinesisVideo
          * during the syncing process, a <code>ResourceInUseException</code> will be
          * thrown. The connectivity of the stream’s edge configuration and the Edge Agent
          * will be retried for 15 minutes. After 15 minutes, the status will transition
-         * into the <code>SYNC_FAILED</code> state.</p><p><h3>See Also:</h3>   <a
+         * into the <code>SYNC_FAILED</code> state.</p> <p>To move an edge configuration
+         * from one device to another, use <a>DeleteEdgeConfiguration</a> to delete the
+         * current edge configuration. You can then invoke StartEdgeConfigurationUpdate
+         * with an updated Hub Device ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">AWS
          * API Reference</a></p>
          */
@@ -781,17 +784,16 @@ namespace KinesisVideo
         }
 
         /**
-         * <p> Increases or decreases the stream's data retention period by the value that
+         * <p>Increases or decreases the stream's data retention period by the value that
          * you specify. To indicate whether you want to increase or decrease the data
          * retention period, specify the <code>Operation</code> parameter in the request
          * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p>  <p>The retention period that you specify
-         * replaces the current value.</p>  <p>This operation requires permission
-         * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
-         * the data retention period affects the data in the stream as follows:</p> <ul>
-         * <li> <p>If the data retention period is increased, existing data is retained for
-         * the new retention period. For example, if the data retention period is increased
-         * from one hour to seven hours, all existing data is retained for seven hours.</p>
+         * <code>StreamARN</code>. </p> <p>This operation requires permission for the
+         * <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing the data
+         * retention period affects the data in the stream as follows:</p> <ul> <li> <p>If
+         * the data retention period is increased, existing data is retained for the new
+         * retention period. For example, if the data retention period is increased from
+         * one hour to seven hours, all existing data is retained for seven hours.</p>
          * </li> <li> <p>If the data retention period is decreased, existing data is
          * retained for the new retention period. For example, if the data retention period
          * is decreased from seven hours to one hour, all existing data is retained for one
@@ -848,11 +850,17 @@ namespace KinesisVideo
 
         /**
          * <p>Associates a <code>SignalingChannel</code> to a stream to store the media.
-         * There are two signaling modes that can specified :</p> <ul> <li> <p>If the
-         * <code>StorageStatus</code> is disabled, no data will be stored, and the
-         * <code>StreamARN</code> parameter will not be needed. </p> </li> <li> <p>If the
+         * There are two signaling modes that you can specify :</p> <ul> <li> <p>If
          * <code>StorageStatus</code> is enabled, the data will be stored in the
-         * <code>StreamARN</code> provided. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>StreamARN</code> provided. In order for WebRTC Ingestion to work, the
+         * stream must have data retention enabled.</p> </li> <li> <p>If
+         * <code>StorageStatus</code> is disabled, no data will be stored, and the
+         * <code>StreamARN</code> parameter will not be needed. </p> </li> </ul>
+         *  <p>If <code>StorageStatus</code> is enabled, direct peer-to-peer
+         * (master-viewer) connections no longer occur. Peers connect directly to the
+         * storage session. You must call the <code>JoinStorageSession</code> API to
+         * trigger an SDP offer send and establish a connection between a peer and the
+         * storage session. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">AWS
          * API Reference</a></p>
          */

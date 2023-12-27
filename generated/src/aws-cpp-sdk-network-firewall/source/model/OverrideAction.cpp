@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OverrideAction::NOT_SET:
+            return {};
           case OverrideAction::DROP_TO_ALERT:
             return "DROP_TO_ALERT";
           default:

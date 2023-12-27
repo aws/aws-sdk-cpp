@@ -21,6 +21,7 @@ UpdateLaunchConfigurationResult::UpdateLaunchConfigurationResult() :
     m_copyPrivateIp(false),
     m_copyTags(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
+    m_postLaunchEnabled(false),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET)
 {
 }
@@ -29,6 +30,7 @@ UpdateLaunchConfigurationResult::UpdateLaunchConfigurationResult(const Aws::Amaz
     m_copyPrivateIp(false),
     m_copyTags(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
+    m_postLaunchEnabled(false),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET)
 {
   *this = result;
@@ -61,6 +63,12 @@ UpdateLaunchConfigurationResult& UpdateLaunchConfigurationResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("launchIntoInstanceProperties"))
+  {
+    m_launchIntoInstanceProperties = jsonValue.GetObject("launchIntoInstanceProperties");
+
+  }
+
   if(jsonValue.ValueExists("licensing"))
   {
     m_licensing = jsonValue.GetObject("licensing");
@@ -70,6 +78,12 @@ UpdateLaunchConfigurationResult& UpdateLaunchConfigurationResult::operator =(con
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("postLaunchEnabled"))
+  {
+    m_postLaunchEnabled = jsonValue.GetBool("postLaunchEnabled");
 
   }
 

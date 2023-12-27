@@ -13,6 +13,7 @@
 #include <aws/opensearch/model/VPCOptions.h>
 #include <aws/opensearch/model/CognitoOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/opensearch/model/IPAddressType.h>
 #include <aws/opensearch/model/EncryptionAtRestOptions.h>
 #include <aws/opensearch/model/DomainEndpointOptions.h>
 #include <aws/opensearch/model/NodeToNodeEncryptionOptions.h>
@@ -608,6 +609,37 @@ namespace Model
 
 
     /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline UpdateDomainConfigRequest& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline UpdateDomainConfigRequest& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
+
+
+    /**
      * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
@@ -999,6 +1031,9 @@ namespace Model
 
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet = false;
+
+    IPAddressType m_iPAddressType;
+    bool m_iPAddressTypeHasBeenSet = false;
 
     Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
     bool m_logPublishingOptionsHasBeenSet = false;

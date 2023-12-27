@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Replacement::NOT_SET:
+            return {};
           case Replacement::TRUE:
             return "TRUE";
           case Replacement::FALSE:

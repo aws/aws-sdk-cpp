@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Operator::NOT_SET:
+            return {};
           case Operator::Equals:
             return "Equals";
           case Operator::NotEquals:

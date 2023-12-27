@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeatureActivationsInputPrepareScheduleActions::NOT_SET:
+            return {};
           case FeatureActivationsInputPrepareScheduleActions::DISABLED:
             return "DISABLED";
           case FeatureActivationsInputPrepareScheduleActions::ENABLED:

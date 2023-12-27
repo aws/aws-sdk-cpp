@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyScopeType::NOT_SET:
+            return {};
           case PolicyScopeType::All:
             return "All";
           case PolicyScopeType::AWS:

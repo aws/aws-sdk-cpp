@@ -147,8 +147,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -196,8 +200,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -245,8 +253,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -294,8 +306,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -343,8 +359,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -392,8 +412,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -441,8 +465,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -490,8 +518,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -539,8 +571,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -588,8 +624,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -637,8 +677,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -686,8 +730,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -735,8 +783,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>. </p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – Adds or updates an
+     * inline policy document to archive messages stored in the specified Amazon SNS
+     * topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is

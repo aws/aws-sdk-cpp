@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictType::NOT_SET:
+            return {};
           case ConflictType::ANOTHER_ACTIVE_STREAM:
             return "ANOTHER_ACTIVE_STREAM";
           case ConflictType::DOMAIN_NOT_ACTIVE:

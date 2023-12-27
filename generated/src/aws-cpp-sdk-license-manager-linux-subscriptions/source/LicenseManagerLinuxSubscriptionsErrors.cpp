@@ -27,7 +27,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerLinuxSubscriptionsErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerLinuxSubscriptionsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

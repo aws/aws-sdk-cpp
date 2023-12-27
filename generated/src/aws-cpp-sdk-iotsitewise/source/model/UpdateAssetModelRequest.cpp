@@ -20,7 +20,8 @@ UpdateAssetModelRequest::UpdateAssetModelRequest() :
     m_assetModelHierarchiesHasBeenSet(false),
     m_assetModelCompositeModelsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_assetModelExternalIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,12 @@ Aws::String UpdateAssetModelRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_assetModelExternalIdHasBeenSet)
+  {
+   payload.WithString("assetModelExternalId", m_assetModelExternalId);
 
   }
 

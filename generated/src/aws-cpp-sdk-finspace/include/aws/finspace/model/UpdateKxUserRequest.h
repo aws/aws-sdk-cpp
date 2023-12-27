@@ -8,6 +8,7 @@
 #include <aws/finspace/FinspaceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

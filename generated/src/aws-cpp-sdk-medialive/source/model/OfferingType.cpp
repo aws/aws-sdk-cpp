@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OfferingType::NOT_SET:
+            return {};
           case OfferingType::NO_UPFRONT:
             return "NO_UPFRONT";
           default:

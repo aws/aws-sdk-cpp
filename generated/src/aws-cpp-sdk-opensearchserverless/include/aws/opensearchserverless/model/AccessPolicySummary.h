@@ -204,37 +204,37 @@ namespace Model
 
 
     /**
-     * <p>The type of access policy. Currently the only available type is
+     * <p>The type of access policy. Currently, the only available type is
      * <code>data</code>.</p>
      */
     inline const AccessPolicyType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of access policy. Currently the only available type is
+     * <p>The type of access policy. Currently, the only available type is
      * <code>data</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of access policy. Currently the only available type is
+     * <p>The type of access policy. Currently, the only available type is
      * <code>data</code>.</p>
      */
     inline void SetType(const AccessPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of access policy. Currently the only available type is
+     * <p>The type of access policy. Currently, the only available type is
      * <code>data</code>.</p>
      */
     inline void SetType(AccessPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of access policy. Currently the only available type is
+     * <p>The type of access policy. Currently, the only available type is
      * <code>data</code>.</p>
      */
     inline AccessPolicySummary& WithType(const AccessPolicyType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of access policy. Currently the only available type is
+     * <p>The type of access policy. Currently, the only available type is
      * <code>data</code>.</p>
      */
     inline AccessPolicySummary& WithType(AccessPolicyType&& value) { SetType(std::move(value)); return *this;}

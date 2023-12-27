@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactSourceIdType::NOT_SET:
+            return {};
           case ArtifactSourceIdType::MD5Hash:
             return "MD5Hash";
           case ArtifactSourceIdType::S3ETag:

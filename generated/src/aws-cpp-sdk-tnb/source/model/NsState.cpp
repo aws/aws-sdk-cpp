@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NsState::NOT_SET:
+            return {};
           case NsState::INSTANTIATED:
             return "INSTANTIATED";
           case NsState::NOT_INSTANTIATED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelativePosition::NOT_SET:
+            return {};
           case RelativePosition::BEFORE_PROGRAM:
             return "BEFORE_PROGRAM";
           case RelativePosition::AFTER_PROGRAM:

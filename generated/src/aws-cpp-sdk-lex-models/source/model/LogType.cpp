@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogType::NOT_SET:
+            return {};
           case LogType::AUDIO:
             return "AUDIO";
           case LogType::TEXT:

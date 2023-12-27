@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetExcessCapacityTerminationPolicy::NOT_SET:
+            return {};
           case FleetExcessCapacityTerminationPolicy::no_termination:
             return "no-termination";
           case FleetExcessCapacityTerminationPolicy::termination:

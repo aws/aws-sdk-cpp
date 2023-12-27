@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsEncryptionType::NOT_SET:
+            return {};
           case HlsEncryptionType::AES128:
             return "AES128";
           case HlsEncryptionType::SAMPLE_AES:

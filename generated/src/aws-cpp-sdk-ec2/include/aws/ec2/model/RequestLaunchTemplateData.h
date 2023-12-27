@@ -928,114 +928,50 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline const Aws::Vector<LaunchTemplateTagSpecificationRequest>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecificationRequest>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<LaunchTemplateTagSpecificationRequest>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& WithTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecificationRequest>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& WithTagSpecifications(Aws::Vector<LaunchTemplateTagSpecificationRequest>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& AddTagSpecifications(const LaunchTemplateTagSpecificationRequest& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& AddTagSpecifications(LaunchTemplateTagSpecificationRequest&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
@@ -1082,179 +1018,240 @@ namespace Model
 
 
     /**
-     * <p> The elastic inference accelerator for the instance. </p>
+     * <p>An elastic inference accelerator to associate with the instance. Elastic
+     * inference accelerators are a resource you can attach to your Amazon EC2
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline const Aws::Vector<LaunchTemplateElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const{ return m_elasticInferenceAccelerators; }
 
     /**
-     * <p> The elastic inference accelerator for the instance. </p>
+     * <p>An elastic inference accelerator to associate with the instance. Elastic
+     * inference accelerators are a resource you can attach to your Amazon EC2
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }
 
     /**
-     * <p> The elastic inference accelerator for the instance. </p>
+     * <p>An elastic inference accelerator to associate with the instance. Elastic
+     * inference accelerators are a resource you can attach to your Amazon EC2
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline void SetElasticInferenceAccelerators(const Aws::Vector<LaunchTemplateElasticInferenceAccelerator>& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = value; }
 
     /**
-     * <p> The elastic inference accelerator for the instance. </p>
+     * <p>An elastic inference accelerator to associate with the instance. Elastic
+     * inference accelerators are a resource you can attach to your Amazon EC2
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline void SetElasticInferenceAccelerators(Aws::Vector<LaunchTemplateElasticInferenceAccelerator>&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::move(value); }
 
     /**
-     * <p> The elastic inference accelerator for the instance. </p>
+     * <p>An elastic inference accelerator to associate with the instance. Elastic
+     * inference accelerators are a resource you can attach to your Amazon EC2
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline RequestLaunchTemplateData& WithElasticInferenceAccelerators(const Aws::Vector<LaunchTemplateElasticInferenceAccelerator>& value) { SetElasticInferenceAccelerators(value); return *this;}
 
     /**
-     * <p> The elastic inference accelerator for the instance. </p>
+     * <p>An elastic inference accelerator to associate with the instance. Elastic
+     * inference accelerators are a resource you can attach to your Amazon EC2
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline RequestLaunchTemplateData& WithElasticInferenceAccelerators(Aws::Vector<LaunchTemplateElasticInferenceAccelerator>&& value) { SetElasticInferenceAccelerators(std::move(value)); return *this;}
 
     /**
-     * <p> The elastic inference accelerator for the instance. </p>
+     * <p>An elastic inference accelerator to associate with the instance. Elastic
+     * inference accelerators are a resource you can attach to your Amazon EC2
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline RequestLaunchTemplateData& AddElasticInferenceAccelerators(const LaunchTemplateElasticInferenceAccelerator& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(value); return *this; }
 
     /**
-     * <p> The elastic inference accelerator for the instance. </p>
+     * <p>An elastic inference accelerator to associate with the instance. Elastic
+     * inference accelerators are a resource you can attach to your Amazon EC2
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline RequestLaunchTemplateData& AddElasticInferenceAccelerators(LaunchTemplateElasticInferenceAccelerator&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
-     * You cannot specify both a security group ID and security name in the same
-     * request.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group names. For a nondefault VPC, you must use security
-     * group IDs instead. You cannot specify both a security group ID and security name
-     * in the same request.</p>
+     * group IDs instead.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafCodecSpecification::NOT_SET:
+            return {};
           case CmafCodecSpecification::RFC_6381:
             return "RFC_6381";
           case CmafCodecSpecification::RFC_4281:

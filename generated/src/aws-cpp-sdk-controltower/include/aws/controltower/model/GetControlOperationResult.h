@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>An operation performed by the control.</p>
      */
     inline const ControlOperation& GetControlOperation() const{ return m_controlOperation; }
 
     /**
-     * <p/>
+     * <p>An operation performed by the control.</p>
      */
     inline void SetControlOperation(const ControlOperation& value) { m_controlOperation = value; }
 
     /**
-     * <p/>
+     * <p>An operation performed by the control.</p>
      */
     inline void SetControlOperation(ControlOperation&& value) { m_controlOperation = std::move(value); }
 
     /**
-     * <p/>
+     * <p>An operation performed by the control.</p>
      */
     inline GetControlOperationResult& WithControlOperation(const ControlOperation& value) { SetControlOperation(value); return *this;}
 
     /**
-     * <p/>
+     * <p>An operation performed by the control.</p>
      */
     inline GetControlOperationResult& WithControlOperation(ControlOperation&& value) { SetControlOperation(std::move(value)); return *this;}
 

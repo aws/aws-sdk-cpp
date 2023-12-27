@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/DataProtectionStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/logs/model/LogGroupClass.h>
 #include <aws/logs/model/InheritedProperty.h>
 #include <utility>
 
@@ -342,6 +343,79 @@ namespace Model
      */
     inline LogGroup& AddInheritedProperties(InheritedProperty&& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline const LogGroupClass& GetLogGroupClass() const{ return m_logGroupClass; }
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline bool LogGroupClassHasBeenSet() const { return m_logGroupClassHasBeenSet; }
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline void SetLogGroupClass(const LogGroupClass& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = value; }
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline void SetLogGroupClass(LogGroupClass&& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = std::move(value); }
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline LogGroup& WithLogGroupClass(const LogGroupClass& value) { SetLogGroupClass(value); return *this;}
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline LogGroup& WithLogGroupClass(LogGroupClass&& value) { SetLogGroupClass(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_logGroupName;
@@ -370,6 +444,9 @@ namespace Model
 
     Aws::Vector<InheritedProperty> m_inheritedProperties;
     bool m_inheritedPropertiesHasBeenSet = false;
+
+    LogGroupClass m_logGroupClass;
+    bool m_logGroupClassHasBeenSet = false;
   };
 
 } // namespace Model

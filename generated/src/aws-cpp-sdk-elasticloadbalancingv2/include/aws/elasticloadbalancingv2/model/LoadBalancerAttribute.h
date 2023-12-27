@@ -67,6 +67,15 @@ namespace Model
      * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>connection_logs.s3.bucket</code> -
+     * The name of the S3 bucket for the connection logs. This attribute is required if
+     * connection logs are enabled. The bucket must exist in the same region as the
+     * load balancer and have a bucket policy that grants Elastic Load Balancing
+     * permissions to write to the bucket.</p> </li> <li> <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3
+     * bucket for the connection logs.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
      * balancer handles requests that might pose a security risk to your application.
      * The possible values are <code>monitor</code>, <code>defensive</code>, and
@@ -115,6 +124,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -146,6 +162,15 @@ namespace Model
      * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>connection_logs.s3.bucket</code> -
+     * The name of the S3 bucket for the connection logs. This attribute is required if
+     * connection logs are enabled. The bucket must exist in the same region as the
+     * load balancer and have a bucket policy that grants Elastic Load Balancing
+     * permissions to write to the bucket.</p> </li> <li> <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3
+     * bucket for the connection logs.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
      * balancer handles requests that might pose a security risk to your application.
      * The possible values are <code>monitor</code>, <code>defensive</code>, and
@@ -194,6 +219,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
@@ -225,6 +257,15 @@ namespace Model
      * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>connection_logs.s3.bucket</code> -
+     * The name of the S3 bucket for the connection logs. This attribute is required if
+     * connection logs are enabled. The bucket must exist in the same region as the
+     * load balancer and have a bucket policy that grants Elastic Load Balancing
+     * permissions to write to the bucket.</p> </li> <li> <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3
+     * bucket for the connection logs.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
      * balancer handles requests that might pose a security risk to your application.
      * The possible values are <code>monitor</code>, <code>defensive</code>, and
@@ -273,6 +314,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -304,6 +352,15 @@ namespace Model
      * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>connection_logs.s3.bucket</code> -
+     * The name of the S3 bucket for the connection logs. This attribute is required if
+     * connection logs are enabled. The bucket must exist in the same region as the
+     * load balancer and have a bucket policy that grants Elastic Load Balancing
+     * permissions to write to the bucket.</p> </li> <li> <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3
+     * bucket for the connection logs.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
      * balancer handles requests that might pose a security risk to your application.
      * The possible values are <code>monitor</code>, <code>defensive</code>, and
@@ -352,6 +409,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -383,6 +447,15 @@ namespace Model
      * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>connection_logs.s3.bucket</code> -
+     * The name of the S3 bucket for the connection logs. This attribute is required if
+     * connection logs are enabled. The bucket must exist in the same region as the
+     * load balancer and have a bucket policy that grants Elastic Load Balancing
+     * permissions to write to the bucket.</p> </li> <li> <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3
+     * bucket for the connection logs.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
      * balancer handles requests that might pose a security risk to your application.
      * The possible values are <code>monitor</code>, <code>defensive</code>, and
@@ -431,6 +504,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -462,6 +542,15 @@ namespace Model
      * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>connection_logs.s3.bucket</code> -
+     * The name of the S3 bucket for the connection logs. This attribute is required if
+     * connection logs are enabled. The bucket must exist in the same region as the
+     * load balancer and have a bucket policy that grants Elastic Load Balancing
+     * permissions to write to the bucket.</p> </li> <li> <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3
+     * bucket for the connection logs.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
      * balancer handles requests that might pose a security risk to your application.
      * The possible values are <code>monitor</code>, <code>defensive</code>, and
@@ -510,6 +599,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -541,6 +637,15 @@ namespace Model
      * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>connection_logs.s3.bucket</code> -
+     * The name of the S3 bucket for the connection logs. This attribute is required if
+     * connection logs are enabled. The bucket must exist in the same region as the
+     * load balancer and have a bucket policy that grants Elastic Load Balancing
+     * permissions to write to the bucket.</p> </li> <li> <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3
+     * bucket for the connection logs.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
      * balancer handles requests that might pose a security risk to your application.
      * The possible values are <code>monitor</code>, <code>defensive</code>, and
@@ -589,6 +694,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -620,6 +732,15 @@ namespace Model
      * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are
+     * enabled. The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>connection_logs.s3.bucket</code> -
+     * The name of the S3 bucket for the connection logs. This attribute is required if
+     * connection logs are enabled. The bucket must exist in the same region as the
+     * load balancer and have a bucket policy that grants Elastic Load Balancing
+     * permissions to write to the bucket.</p> </li> <li> <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3
+     * bucket for the connection logs.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
      * balancer handles requests that might pose a security risk to your application.
      * The possible values are <code>monitor</code>, <code>defensive</code>, and
@@ -668,6 +789,13 @@ namespace Model
      * load balancer to route requests to targets if it is unable to forward the
      * request to Amazon Web Services WAF. The possible values are <code>true</code>
      * and <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <p>The following attributes are supported by only Network Load Balancers:</p>
+     * <ul> <li> <p> <code>dns_record.client_routing_policy</code> - Indicates how
+     * traffic is distributed among the load balancer Availability Zones. The possible
+     * values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
+     * affinity, and <code>any_availability_zone</code> with 0 percent zonal
+     * affinity.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 

@@ -384,27 +384,27 @@ namespace Model
 
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline const BackupJobState& GetState() const{ return m_state; }
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline void SetState(const BackupJobState& value) { m_state = value; }
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline void SetState(BackupJobState&& value) { m_state = std::move(value); }
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline DescribeBackupJobResult& WithState(const BackupJobState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline DescribeBackupJobResult& WithState(BackupJobState&& value) { SetState(std::move(value)); return *this;}
 
@@ -1046,6 +1046,96 @@ namespace Model
     inline DescribeBackupJobResult& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
 
+    /**
+     * <p>This is the date a backup job was initiated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetInitiationDate() const{ return m_initiationDate; }
+
+    /**
+     * <p>This is the date a backup job was initiated.</p>
+     */
+    inline void SetInitiationDate(const Aws::Utils::DateTime& value) { m_initiationDate = value; }
+
+    /**
+     * <p>This is the date a backup job was initiated.</p>
+     */
+    inline void SetInitiationDate(Aws::Utils::DateTime&& value) { m_initiationDate = std::move(value); }
+
+    /**
+     * <p>This is the date a backup job was initiated.</p>
+     */
+    inline DescribeBackupJobResult& WithInitiationDate(const Aws::Utils::DateTime& value) { SetInitiationDate(value); return *this;}
+
+    /**
+     * <p>This is the date a backup job was initiated.</p>
+     */
+    inline DescribeBackupJobResult& WithInitiationDate(Aws::Utils::DateTime&& value) { SetInitiationDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted MessageCategory strings.</p>
+     */
+    inline const Aws::String& GetMessageCategory() const{ return m_messageCategory; }
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted MessageCategory strings.</p>
+     */
+    inline void SetMessageCategory(const Aws::String& value) { m_messageCategory = value; }
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted MessageCategory strings.</p>
+     */
+    inline void SetMessageCategory(Aws::String&& value) { m_messageCategory = std::move(value); }
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted MessageCategory strings.</p>
+     */
+    inline void SetMessageCategory(const char* value) { m_messageCategory.assign(value); }
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted MessageCategory strings.</p>
+     */
+    inline DescribeBackupJobResult& WithMessageCategory(const Aws::String& value) { SetMessageCategory(value); return *this;}
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted MessageCategory strings.</p>
+     */
+    inline DescribeBackupJobResult& WithMessageCategory(Aws::String&& value) { SetMessageCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the job count for the specified message category.</p> <p>Example
+     * strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted MessageCategory strings.</p>
+     */
+    inline DescribeBackupJobResult& WithMessageCategory(const char* value) { SetMessageCategory(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1118,6 +1208,10 @@ namespace Model
     Aws::Map<BackupJobState, long long> m_childJobsInState;
 
     Aws::String m_resourceName;
+
+    Aws::Utils::DateTime m_initiationDate;
+
+    Aws::String m_messageCategory;
 
     Aws::String m_requestId;
   };

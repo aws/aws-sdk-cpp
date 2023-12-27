@@ -85,8 +85,8 @@ namespace Model
      * characters. This value can consist of letters, accented characters, symbols,
      * numbers, and punctuation. This value is specified at the time the user is
      * created and stored as an attribute of the user object in the identity store.
-     * "Administrator" and "AWSAdministrators" are reserved names and can't be used for
-     * users or groups.</p>
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names
+     * and can't be used for users or groups.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
@@ -95,8 +95,8 @@ namespace Model
      * characters. This value can consist of letters, accented characters, symbols,
      * numbers, and punctuation. This value is specified at the time the user is
      * created and stored as an attribute of the user object in the identity store.
-     * "Administrator" and "AWSAdministrators" are reserved names and can't be used for
-     * users or groups.</p>
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names
+     * and can't be used for users or groups.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
@@ -105,8 +105,8 @@ namespace Model
      * characters. This value can consist of letters, accented characters, symbols,
      * numbers, and punctuation. This value is specified at the time the user is
      * created and stored as an attribute of the user object in the identity store.
-     * "Administrator" and "AWSAdministrators" are reserved names and can't be used for
-     * users or groups.</p>
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names
+     * and can't be used for users or groups.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -115,8 +115,8 @@ namespace Model
      * characters. This value can consist of letters, accented characters, symbols,
      * numbers, and punctuation. This value is specified at the time the user is
      * created and stored as an attribute of the user object in the identity store.
-     * "Administrator" and "AWSAdministrators" are reserved names and can't be used for
-     * users or groups.</p>
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names
+     * and can't be used for users or groups.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
@@ -125,8 +125,8 @@ namespace Model
      * characters. This value can consist of letters, accented characters, symbols,
      * numbers, and punctuation. This value is specified at the time the user is
      * created and stored as an attribute of the user object in the identity store.
-     * "Administrator" and "AWSAdministrators" are reserved names and can't be used for
-     * users or groups.</p>
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names
+     * and can't be used for users or groups.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
@@ -135,8 +135,8 @@ namespace Model
      * characters. This value can consist of letters, accented characters, symbols,
      * numbers, and punctuation. This value is specified at the time the user is
      * created and stored as an attribute of the user object in the identity store.
-     * "Administrator" and "AWSAdministrators" are reserved names and can't be used for
-     * users or groups.</p>
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names
+     * and can't be used for users or groups.</p>
      */
     inline CreateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
@@ -145,8 +145,8 @@ namespace Model
      * characters. This value can consist of letters, accented characters, symbols,
      * numbers, and punctuation. This value is specified at the time the user is
      * created and stored as an attribute of the user object in the identity store.
-     * "Administrator" and "AWSAdministrators" are reserved names and can't be used for
-     * users or groups.</p>
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names
+     * and can't be used for users or groups.</p>
      */
     inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
@@ -155,8 +155,8 @@ namespace Model
      * characters. This value can consist of letters, accented characters, symbols,
      * numbers, and punctuation. This value is specified at the time the user is
      * created and stored as an attribute of the user object in the identity store.
-     * "Administrator" and "AWSAdministrators" are reserved names and can't be used for
-     * users or groups.</p>
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names
+     * and can't be used for users or groups.</p>
      */
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

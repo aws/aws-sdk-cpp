@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerCriteria::NOT_SET:
+            return {};
           case ServerCriteria::NOT_DEFINED:
             return "NOT_DEFINED";
           case ServerCriteria::OS_NAME:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SplitType::NOT_SET:
+            return {};
           case SplitType::None:
             return "None";
           case SplitType::Line:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlertManagerDefinitionStatusCode::NOT_SET:
+            return {};
           case AlertManagerDefinitionStatusCode::CREATING:
             return "CREATING";
           case AlertManagerDefinitionStatusCode::ACTIVE:

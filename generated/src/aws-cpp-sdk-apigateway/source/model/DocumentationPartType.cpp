@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentationPartType::NOT_SET:
+            return {};
           case DocumentationPartType::API:
             return "API";
           case DocumentationPartType::AUTHORIZER:

@@ -10,6 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/DataQualityRuleResult.h>
+#include <aws/glue/model/DataQualityAnalyzerResult.h>
+#include <aws/glue/model/DataQualityObservation.h>
 #include <utility>
 
 namespace Aws
@@ -485,6 +487,104 @@ namespace Model
      */
     inline DataQualityResult& AddRuleResults(DataQualityRuleResult&& value) { m_ruleResultsHasBeenSet = true; m_ruleResults.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline const Aws::Vector<DataQualityAnalyzerResult>& GetAnalyzerResults() const{ return m_analyzerResults; }
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline bool AnalyzerResultsHasBeenSet() const { return m_analyzerResultsHasBeenSet; }
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline void SetAnalyzerResults(const Aws::Vector<DataQualityAnalyzerResult>& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults = value; }
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline void SetAnalyzerResults(Aws::Vector<DataQualityAnalyzerResult>&& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults = std::move(value); }
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline DataQualityResult& WithAnalyzerResults(const Aws::Vector<DataQualityAnalyzerResult>& value) { SetAnalyzerResults(value); return *this;}
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline DataQualityResult& WithAnalyzerResults(Aws::Vector<DataQualityAnalyzerResult>&& value) { SetAnalyzerResults(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline DataQualityResult& AddAnalyzerResults(const DataQualityAnalyzerResult& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline DataQualityResult& AddAnalyzerResults(DataQualityAnalyzerResult&& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline const Aws::Vector<DataQualityObservation>& GetObservations() const{ return m_observations; }
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline bool ObservationsHasBeenSet() const { return m_observationsHasBeenSet; }
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline void SetObservations(const Aws::Vector<DataQualityObservation>& value) { m_observationsHasBeenSet = true; m_observations = value; }
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline void SetObservations(Aws::Vector<DataQualityObservation>&& value) { m_observationsHasBeenSet = true; m_observations = std::move(value); }
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline DataQualityResult& WithObservations(const Aws::Vector<DataQualityObservation>& value) { SetObservations(value); return *this;}
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline DataQualityResult& WithObservations(Aws::Vector<DataQualityObservation>&& value) { SetObservations(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline DataQualityResult& AddObservations(const DataQualityObservation& value) { m_observationsHasBeenSet = true; m_observations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline DataQualityResult& AddObservations(DataQualityObservation&& value) { m_observationsHasBeenSet = true; m_observations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_resultId;
@@ -519,6 +619,12 @@ namespace Model
 
     Aws::Vector<DataQualityRuleResult> m_ruleResults;
     bool m_ruleResultsHasBeenSet = false;
+
+    Aws::Vector<DataQualityAnalyzerResult> m_analyzerResults;
+    bool m_analyzerResultsHasBeenSet = false;
+
+    Aws::Vector<DataQualityObservation> m_observations;
+    bool m_observationsHasBeenSet = false;
   };
 
 } // namespace Model

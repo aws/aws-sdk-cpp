@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessType::NOT_SET:
+            return {};
           case AccessType::LAKEFORMATION:
             return "LAKEFORMATION";
           case AccessType::S3:

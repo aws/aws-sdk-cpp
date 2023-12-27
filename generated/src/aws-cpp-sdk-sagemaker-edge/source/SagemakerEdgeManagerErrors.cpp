@@ -27,7 +27,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SagemakerEdgeManagerErrors::INTERNAL_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SagemakerEdgeManagerErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -60,6 +60,7 @@
 #include <aws/codecommit/model/ListApprovalRuleTemplatesResult.h>
 #include <aws/codecommit/model/ListAssociatedApprovalRuleTemplatesForRepositoryResult.h>
 #include <aws/codecommit/model/ListBranchesResult.h>
+#include <aws/codecommit/model/ListFileCommitHistoryResult.h>
 #include <aws/codecommit/model/ListPullRequestsResult.h>
 #include <aws/codecommit/model/ListRepositoriesResult.h>
 #include <aws/codecommit/model/ListRepositoriesForApprovalRuleTemplateResult.h>
@@ -84,6 +85,7 @@
 #include <aws/codecommit/model/UpdatePullRequestDescriptionResult.h>
 #include <aws/codecommit/model/UpdatePullRequestStatusResult.h>
 #include <aws/codecommit/model/UpdatePullRequestTitleResult.h>
+#include <aws/codecommit/model/UpdateRepositoryEncryptionKeyResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CodeCommitClient header */
 
@@ -170,6 +172,7 @@ namespace Aws
       class ListApprovalRuleTemplatesRequest;
       class ListAssociatedApprovalRuleTemplatesForRepositoryRequest;
       class ListBranchesRequest;
+      class ListFileCommitHistoryRequest;
       class ListPullRequestsRequest;
       class ListRepositoriesRequest;
       class ListRepositoriesForApprovalRuleTemplateRequest;
@@ -201,6 +204,7 @@ namespace Aws
       class UpdatePullRequestStatusRequest;
       class UpdatePullRequestTitleRequest;
       class UpdateRepositoryDescriptionRequest;
+      class UpdateRepositoryEncryptionKeyRequest;
       class UpdateRepositoryNameRequest;
       /* End of service model forward declarations required in CodeCommitClient header */
 
@@ -250,6 +254,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListApprovalRuleTemplatesResult, CodeCommitError> ListApprovalRuleTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListAssociatedApprovalRuleTemplatesForRepositoryResult, CodeCommitError> ListAssociatedApprovalRuleTemplatesForRepositoryOutcome;
       typedef Aws::Utils::Outcome<ListBranchesResult, CodeCommitError> ListBranchesOutcome;
+      typedef Aws::Utils::Outcome<ListFileCommitHistoryResult, CodeCommitError> ListFileCommitHistoryOutcome;
       typedef Aws::Utils::Outcome<ListPullRequestsResult, CodeCommitError> ListPullRequestsOutcome;
       typedef Aws::Utils::Outcome<ListRepositoriesResult, CodeCommitError> ListRepositoriesOutcome;
       typedef Aws::Utils::Outcome<ListRepositoriesForApprovalRuleTemplateResult, CodeCommitError> ListRepositoriesForApprovalRuleTemplateOutcome;
@@ -281,6 +286,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdatePullRequestStatusResult, CodeCommitError> UpdatePullRequestStatusOutcome;
       typedef Aws::Utils::Outcome<UpdatePullRequestTitleResult, CodeCommitError> UpdatePullRequestTitleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateRepositoryDescriptionOutcome;
+      typedef Aws::Utils::Outcome<UpdateRepositoryEncryptionKeyResult, CodeCommitError> UpdateRepositoryEncryptionKeyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateRepositoryNameOutcome;
       /* End of service model Outcome class definitions */
 
@@ -330,6 +336,7 @@ namespace Aws
       typedef std::future<ListApprovalRuleTemplatesOutcome> ListApprovalRuleTemplatesOutcomeCallable;
       typedef std::future<ListAssociatedApprovalRuleTemplatesForRepositoryOutcome> ListAssociatedApprovalRuleTemplatesForRepositoryOutcomeCallable;
       typedef std::future<ListBranchesOutcome> ListBranchesOutcomeCallable;
+      typedef std::future<ListFileCommitHistoryOutcome> ListFileCommitHistoryOutcomeCallable;
       typedef std::future<ListPullRequestsOutcome> ListPullRequestsOutcomeCallable;
       typedef std::future<ListRepositoriesOutcome> ListRepositoriesOutcomeCallable;
       typedef std::future<ListRepositoriesForApprovalRuleTemplateOutcome> ListRepositoriesForApprovalRuleTemplateOutcomeCallable;
@@ -361,6 +368,7 @@ namespace Aws
       typedef std::future<UpdatePullRequestStatusOutcome> UpdatePullRequestStatusOutcomeCallable;
       typedef std::future<UpdatePullRequestTitleOutcome> UpdatePullRequestTitleOutcomeCallable;
       typedef std::future<UpdateRepositoryDescriptionOutcome> UpdateRepositoryDescriptionOutcomeCallable;
+      typedef std::future<UpdateRepositoryEncryptionKeyOutcome> UpdateRepositoryEncryptionKeyOutcomeCallable;
       typedef std::future<UpdateRepositoryNameOutcome> UpdateRepositoryNameOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -413,6 +421,7 @@ namespace Aws
     typedef std::function<void(const CodeCommitClient*, const Model::ListApprovalRuleTemplatesRequest&, const Model::ListApprovalRuleTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApprovalRuleTemplatesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListAssociatedApprovalRuleTemplatesForRepositoryRequest&, const Model::ListAssociatedApprovalRuleTemplatesForRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedApprovalRuleTemplatesForRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListBranchesRequest&, const Model::ListBranchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBranchesResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::ListFileCommitHistoryRequest&, const Model::ListFileCommitHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFileCommitHistoryResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListPullRequestsRequest&, const Model::ListPullRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPullRequestsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListRepositoriesRequest&, const Model::ListRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListRepositoriesForApprovalRuleTemplateRequest&, const Model::ListRepositoriesForApprovalRuleTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesForApprovalRuleTemplateResponseReceivedHandler;
@@ -444,6 +453,7 @@ namespace Aws
     typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestStatusRequest&, const Model::UpdatePullRequestStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestStatusResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestTitleRequest&, const Model::UpdatePullRequestTitleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestTitleResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdateRepositoryDescriptionRequest&, const Model::UpdateRepositoryDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryDescriptionResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::UpdateRepositoryEncryptionKeyRequest&, const Model::UpdateRepositoryEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryEncryptionKeyResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdateRepositoryNameRequest&, const Model::UpdateRepositoryNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryNameResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace CodeCommit

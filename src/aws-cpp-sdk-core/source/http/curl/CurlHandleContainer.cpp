@@ -15,9 +15,11 @@ static const char* CURL_HANDLE_CONTAINER_TAG = "CurlHandleContainer";
 
 
 CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long httpRequestTimeout, long connectTimeout, bool enableTcpKeepAlive,
-                                        unsigned long tcpKeepAliveIntervalMs, long lowSpeedTime, unsigned long lowSpeedLimit) :
+                                        unsigned long tcpKeepAliveIntervalMs, long lowSpeedTime, unsigned long lowSpeedLimit,
+                                        Version version) :
                 m_maxPoolSize(maxSize), m_httpRequestTimeout(httpRequestTimeout), m_connectTimeout(connectTimeout), m_enableTcpKeepAlive(enableTcpKeepAlive),
-                m_tcpKeepAliveIntervalMs(tcpKeepAliveIntervalMs), m_lowSpeedTime(lowSpeedTime), m_lowSpeedLimit(lowSpeedLimit), m_poolSize(0)
+                m_tcpKeepAliveIntervalMs(tcpKeepAliveIntervalMs), m_lowSpeedTime(lowSpeedTime), m_lowSpeedLimit(lowSpeedLimit), m_poolSize(0),
+                m_version(version)
 {
     AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Initializing CurlHandleContainer with size " << maxSize);
 }
@@ -150,7 +152,56 @@ void CurlHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
     curl_easy_setopt(handle, CURLOPT_TCP_KEEPALIVE, m_enableTcpKeepAlive ? 1L : 0L);
     curl_easy_setopt(handle, CURLOPT_TCP_KEEPINTVL, m_tcpKeepAliveIntervalMs / 1000);
     curl_easy_setopt(handle, CURLOPT_TCP_KEEPIDLE, m_tcpKeepAliveIntervalMs / 1000);
-#ifdef CURL_HAS_H2
-    curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0);
+    curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, ConvertHttpVersion(m_version));
+    curl_easy_setopt(handle, CURLOPT_MAXCONNECTS, m_maxPoolSize);
+}
+
+long CurlHandleContainer::ConvertHttpVersion(Version version) {
+    if (version == Version::HTTP_VERSION_NONE)
+    {
+        return CURL_HTTP_VERSION_NONE;
+    }
+    else if (version == Version::HTTP_VERSION_1_0)
+    {
+        return CURL_HTTP_VERSION_1_0;
+    }
+    else if (version == Version::HTTP_VERSION_1_1)
+    {
+        return CURL_HTTP_VERSION_1_1;
+    }
+#if LIBCURL_VERSION_NUM >= 0x072100 // 7.33.0
+    else if (version == Version::HTTP_VERSION_2_0)
+    {
+        return CURL_HTTP_VERSION_2_0;
+    }
+#endif
+#if LIBCURL_VERSION_NUM >= 0x072F00 // 7.47.0
+    else if (version == Version::HTTP_VERSION_2TLS)
+    {
+        return CURL_HTTP_VERSION_2TLS;
+    }
+#endif
+#if LIBCURL_VERSION_NUM >= 0x073100 // 7.49.0
+    else if (version == Version::HTTP_VERSION_2_PRIOR_KNOWLEDGE)
+    {
+        return CURL_HTTP_VERSION_2_PRIOR_KNOWLEDGE;
+    }
+#endif
+#if LIBCURL_VERSION_NUM >= 0x074200 // 7.66.0
+    else if (version == Version::HTTP_VERSION_3)
+    {
+        return CURL_HTTP_VERSION_3;
+    }
+#endif
+#if LIBCURL_VERSION_NUM >= 0x075800 // 7.88.0
+    else if (version == Version::HTTP_VERSION_3ONLY)
+    {
+        return CURL_HTTP_VERSION_3ONLY;
+    }
+#endif
+#if LIBCURL_VERSION_NUM >= 0x073E00 // 7.62.0
+    return CURL_HTTP_VERSION_2TLS;
+#else
+    return CURL_HTTP_VERSION_1_1;
 #endif
 }

@@ -8,8 +8,10 @@
 #include <aws/finspace/model/KxClusterStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/finspace/model/KxClusterType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/finspace/model/KxAzMode.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/finspace/model/Volume.h>
 #include <utility>
 
 namespace Aws
@@ -209,7 +211,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline const KxClusterType& GetClusterType() const{ return m_clusterType; }
 
@@ -226,7 +238,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
 
@@ -243,7 +265,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline void SetClusterType(const KxClusterType& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
 
@@ -260,7 +292,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline void SetClusterType(KxClusterType&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
 
@@ -277,7 +319,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline KxCluster& WithClusterType(const KxClusterType& value) { SetClusterType(value); return *this;}
 
@@ -294,7 +346,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline KxCluster& WithClusterType(KxClusterType&& value) { SetClusterType(std::move(value)); return *this;}
 
@@ -379,6 +441,47 @@ namespace Model
      * <p>A version of the FinSpace managed kdb to run.</p>
      */
     inline KxCluster& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline KxCluster& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline KxCluster& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline KxCluster& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
+
+    /**
+     * <p> A list of volumes attached to the cluster. </p>
+     */
+    inline KxCluster& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -505,7 +608,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -513,7 +616,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -521,7 +624,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -529,7 +632,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -537,7 +640,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -545,7 +648,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -697,6 +800,9 @@ namespace Model
 
     Aws::String m_releaseLabel;
     bool m_releaseLabelHasBeenSet = false;
+
+    Aws::Vector<Volume> m_volumes;
+    bool m_volumesHasBeenSet = false;
 
     Aws::String m_initializationScript;
     bool m_initializationScriptHasBeenSet = false;

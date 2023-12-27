@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MaintenanceWindowResourceType::NOT_SET:
+            return {};
           case MaintenanceWindowResourceType::INSTANCE:
             return "INSTANCE";
           case MaintenanceWindowResourceType::RESOURCE_GROUP:

@@ -25,46 +25,63 @@
 #include <aws/cleanrooms/model/BatchGetSchemaRequest.h>
 #include <aws/cleanrooms/model/CreateAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/CreateCollaborationRequest.h>
+#include <aws/cleanrooms/model/CreateConfiguredAudienceModelAssociationRequest.h>
 #include <aws/cleanrooms/model/CreateConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/CreateConfiguredTableAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/CreateConfiguredTableAssociationRequest.h>
 #include <aws/cleanrooms/model/CreateMembershipRequest.h>
+#include <aws/cleanrooms/model/CreatePrivacyBudgetTemplateRequest.h>
 #include <aws/cleanrooms/model/DeleteAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/DeleteCollaborationRequest.h>
+#include <aws/cleanrooms/model/DeleteConfiguredAudienceModelAssociationRequest.h>
 #include <aws/cleanrooms/model/DeleteConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/DeleteConfiguredTableAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/DeleteConfiguredTableAssociationRequest.h>
 #include <aws/cleanrooms/model/DeleteMemberRequest.h>
 #include <aws/cleanrooms/model/DeleteMembershipRequest.h>
+#include <aws/cleanrooms/model/DeletePrivacyBudgetTemplateRequest.h>
 #include <aws/cleanrooms/model/GetAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/GetCollaborationRequest.h>
 #include <aws/cleanrooms/model/GetCollaborationAnalysisTemplateRequest.h>
+#include <aws/cleanrooms/model/GetCollaborationConfiguredAudienceModelAssociationRequest.h>
+#include <aws/cleanrooms/model/GetCollaborationPrivacyBudgetTemplateRequest.h>
+#include <aws/cleanrooms/model/GetConfiguredAudienceModelAssociationRequest.h>
 #include <aws/cleanrooms/model/GetConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/GetConfiguredTableAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/GetConfiguredTableAssociationRequest.h>
 #include <aws/cleanrooms/model/GetMembershipRequest.h>
+#include <aws/cleanrooms/model/GetPrivacyBudgetTemplateRequest.h>
 #include <aws/cleanrooms/model/GetProtectedQueryRequest.h>
 #include <aws/cleanrooms/model/GetSchemaRequest.h>
 #include <aws/cleanrooms/model/GetSchemaAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/ListAnalysisTemplatesRequest.h>
 #include <aws/cleanrooms/model/ListCollaborationAnalysisTemplatesRequest.h>
+#include <aws/cleanrooms/model/ListCollaborationConfiguredAudienceModelAssociationsRequest.h>
+#include <aws/cleanrooms/model/ListCollaborationPrivacyBudgetTemplatesRequest.h>
+#include <aws/cleanrooms/model/ListCollaborationPrivacyBudgetsRequest.h>
 #include <aws/cleanrooms/model/ListCollaborationsRequest.h>
+#include <aws/cleanrooms/model/ListConfiguredAudienceModelAssociationsRequest.h>
 #include <aws/cleanrooms/model/ListConfiguredTableAssociationsRequest.h>
 #include <aws/cleanrooms/model/ListConfiguredTablesRequest.h>
 #include <aws/cleanrooms/model/ListMembersRequest.h>
 #include <aws/cleanrooms/model/ListMembershipsRequest.h>
+#include <aws/cleanrooms/model/ListPrivacyBudgetTemplatesRequest.h>
+#include <aws/cleanrooms/model/ListPrivacyBudgetsRequest.h>
 #include <aws/cleanrooms/model/ListProtectedQueriesRequest.h>
 #include <aws/cleanrooms/model/ListSchemasRequest.h>
 #include <aws/cleanrooms/model/ListTagsForResourceRequest.h>
+#include <aws/cleanrooms/model/PreviewPrivacyImpactRequest.h>
 #include <aws/cleanrooms/model/StartProtectedQueryRequest.h>
 #include <aws/cleanrooms/model/TagResourceRequest.h>
 #include <aws/cleanrooms/model/UntagResourceRequest.h>
 #include <aws/cleanrooms/model/UpdateAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/UpdateCollaborationRequest.h>
+#include <aws/cleanrooms/model/UpdateConfiguredAudienceModelAssociationRequest.h>
 #include <aws/cleanrooms/model/UpdateConfiguredTableRequest.h>
 #include <aws/cleanrooms/model/UpdateConfiguredTableAnalysisRuleRequest.h>
 #include <aws/cleanrooms/model/UpdateConfiguredTableAssociationRequest.h>
 #include <aws/cleanrooms/model/UpdateMembershipRequest.h>
+#include <aws/cleanrooms/model/UpdatePrivacyBudgetTemplateRequest.h>
 #include <aws/cleanrooms/model/UpdateProtectedQueryRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
@@ -328,6 +345,40 @@ CreateCollaborationOutcome CleanRoomsClient::CreateCollaboration(const CreateCol
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateConfiguredAudienceModelAssociationOutcome CleanRoomsClient::CreateConfiguredAudienceModelAssociation(const CreateConfiguredAudienceModelAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateConfiguredAudienceModelAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateConfiguredAudienceModelAssociation", "Required field: MembershipIdentifier, is not set");
+    return CreateConfiguredAudienceModelAssociationOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateConfiguredAudienceModelAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateConfiguredAudienceModelAssociationOutcome>(
+    [&]()-> CreateConfiguredAudienceModelAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations");
+      return CreateConfiguredAudienceModelAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateConfiguredTableOutcome CleanRoomsClient::CreateConfiguredTable(const CreateConfiguredTableRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateConfiguredTable);
@@ -450,6 +501,40 @@ CreateMembershipOutcome CleanRoomsClient::CreateMembership(const CreateMembershi
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreatePrivacyBudgetTemplateOutcome CleanRoomsClient::CreatePrivacyBudgetTemplate(const CreatePrivacyBudgetTemplateRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreatePrivacyBudgetTemplate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePrivacyBudgetTemplate", "Required field: MembershipIdentifier, is not set");
+    return CreatePrivacyBudgetTemplateOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreatePrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreatePrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreatePrivacyBudgetTemplate",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreatePrivacyBudgetTemplateOutcome>(
+    [&]()-> CreatePrivacyBudgetTemplateOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates");
+      return CreatePrivacyBudgetTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteAnalysisTemplateOutcome CleanRoomsClient::DeleteAnalysisTemplate(const DeleteAnalysisTemplateRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteAnalysisTemplate);
@@ -517,6 +602,46 @@ DeleteCollaborationOutcome CleanRoomsClient::DeleteCollaboration(const DeleteCol
       endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
       return DeleteCollaborationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteConfiguredAudienceModelAssociationOutcome CleanRoomsClient::DeleteConfiguredAudienceModelAssociation(const DeleteConfiguredAudienceModelAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteConfiguredAudienceModelAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConfiguredAudienceModelAssociationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfiguredAudienceModelAssociation", "Required field: ConfiguredAudienceModelAssociationIdentifier, is not set");
+    return DeleteConfiguredAudienceModelAssociationOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfiguredAudienceModelAssociationIdentifier]", false));
+  }
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfiguredAudienceModelAssociation", "Required field: MembershipIdentifier, is not set");
+    return DeleteConfiguredAudienceModelAssociationOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteConfiguredAudienceModelAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteConfiguredAudienceModelAssociationOutcome>(
+    [&]()-> DeleteConfiguredAudienceModelAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelAssociationIdentifier());
+      return DeleteConfiguredAudienceModelAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -714,6 +839,46 @@ DeleteMembershipOutcome CleanRoomsClient::DeleteMembership(const DeleteMembershi
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeletePrivacyBudgetTemplateOutcome CleanRoomsClient::DeletePrivacyBudgetTemplate(const DeletePrivacyBudgetTemplateRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeletePrivacyBudgetTemplate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePrivacyBudgetTemplate", "Required field: MembershipIdentifier, is not set");
+    return DeletePrivacyBudgetTemplateOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.PrivacyBudgetTemplateIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePrivacyBudgetTemplate", "Required field: PrivacyBudgetTemplateIdentifier, is not set");
+    return DeletePrivacyBudgetTemplateOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrivacyBudgetTemplateIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeletePrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeletePrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeletePrivacyBudgetTemplate",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeletePrivacyBudgetTemplateOutcome>(
+    [&]()-> DeletePrivacyBudgetTemplateOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrivacyBudgetTemplateIdentifier());
+      return DeletePrivacyBudgetTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetAnalysisTemplateOutcome CleanRoomsClient::GetAnalysisTemplate(const GetAnalysisTemplateRequest& request) const
 {
   AWS_OPERATION_GUARD(GetAnalysisTemplate);
@@ -821,6 +986,126 @@ GetCollaborationAnalysisTemplateOutcome CleanRoomsClient::GetCollaborationAnalys
       endpointResolutionOutcome.GetResult().AddPathSegments("/analysistemplates/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisTemplateArn());
       return GetCollaborationAnalysisTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetCollaborationConfiguredAudienceModelAssociationOutcome CleanRoomsClient::GetCollaborationConfiguredAudienceModelAssociation(const GetCollaborationConfiguredAudienceModelAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetCollaborationConfiguredAudienceModelAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCollaborationConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CollaborationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCollaborationConfiguredAudienceModelAssociation", "Required field: CollaborationIdentifier, is not set");
+    return GetCollaborationConfiguredAudienceModelAssociationOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaborationIdentifier]", false));
+  }
+  if (!request.ConfiguredAudienceModelAssociationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCollaborationConfiguredAudienceModelAssociation", "Required field: ConfiguredAudienceModelAssociationIdentifier, is not set");
+    return GetCollaborationConfiguredAudienceModelAssociationOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfiguredAudienceModelAssociationIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetCollaborationConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetCollaborationConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetCollaborationConfiguredAudienceModelAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetCollaborationConfiguredAudienceModelAssociationOutcome>(
+    [&]()-> GetCollaborationConfiguredAudienceModelAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCollaborationConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelAssociationIdentifier());
+      return GetCollaborationConfiguredAudienceModelAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetCollaborationPrivacyBudgetTemplateOutcome CleanRoomsClient::GetCollaborationPrivacyBudgetTemplate(const GetCollaborationPrivacyBudgetTemplateRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetCollaborationPrivacyBudgetTemplate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCollaborationPrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CollaborationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCollaborationPrivacyBudgetTemplate", "Required field: CollaborationIdentifier, is not set");
+    return GetCollaborationPrivacyBudgetTemplateOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaborationIdentifier]", false));
+  }
+  if (!request.PrivacyBudgetTemplateIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCollaborationPrivacyBudgetTemplate", "Required field: PrivacyBudgetTemplateIdentifier, is not set");
+    return GetCollaborationPrivacyBudgetTemplateOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrivacyBudgetTemplateIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetCollaborationPrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetCollaborationPrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetCollaborationPrivacyBudgetTemplate",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetCollaborationPrivacyBudgetTemplateOutcome>(
+    [&]()-> GetCollaborationPrivacyBudgetTemplateOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCollaborationPrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrivacyBudgetTemplateIdentifier());
+      return GetCollaborationPrivacyBudgetTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetConfiguredAudienceModelAssociationOutcome CleanRoomsClient::GetConfiguredAudienceModelAssociation(const GetConfiguredAudienceModelAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetConfiguredAudienceModelAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConfiguredAudienceModelAssociationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConfiguredAudienceModelAssociation", "Required field: ConfiguredAudienceModelAssociationIdentifier, is not set");
+    return GetConfiguredAudienceModelAssociationOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfiguredAudienceModelAssociationIdentifier]", false));
+  }
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConfiguredAudienceModelAssociation", "Required field: MembershipIdentifier, is not set");
+    return GetConfiguredAudienceModelAssociationOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetConfiguredAudienceModelAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetConfiguredAudienceModelAssociationOutcome>(
+    [&]()-> GetConfiguredAudienceModelAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelAssociationIdentifier());
+      return GetConfiguredAudienceModelAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -967,6 +1252,46 @@ GetMembershipOutcome CleanRoomsClient::GetMembership(const GetMembershipRequest&
       endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
       return GetMembershipOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetPrivacyBudgetTemplateOutcome CleanRoomsClient::GetPrivacyBudgetTemplate(const GetPrivacyBudgetTemplateRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetPrivacyBudgetTemplate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPrivacyBudgetTemplate", "Required field: MembershipIdentifier, is not set");
+    return GetPrivacyBudgetTemplateOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.PrivacyBudgetTemplateIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPrivacyBudgetTemplate", "Required field: PrivacyBudgetTemplateIdentifier, is not set");
+    return GetPrivacyBudgetTemplateOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrivacyBudgetTemplateIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetPrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetPrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetPrivacyBudgetTemplate",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetPrivacyBudgetTemplateOutcome>(
+    [&]()-> GetPrivacyBudgetTemplateOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrivacyBudgetTemplateIdentifier());
+      return GetPrivacyBudgetTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1168,6 +1493,113 @@ ListCollaborationAnalysisTemplatesOutcome CleanRoomsClient::ListCollaborationAna
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListCollaborationConfiguredAudienceModelAssociationsOutcome CleanRoomsClient::ListCollaborationConfiguredAudienceModelAssociations(const ListCollaborationConfiguredAudienceModelAssociationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCollaborationConfiguredAudienceModelAssociations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCollaborationConfiguredAudienceModelAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CollaborationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCollaborationConfiguredAudienceModelAssociations", "Required field: CollaborationIdentifier, is not set");
+    return ListCollaborationConfiguredAudienceModelAssociationsOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaborationIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCollaborationConfiguredAudienceModelAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCollaborationConfiguredAudienceModelAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCollaborationConfiguredAudienceModelAssociations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCollaborationConfiguredAudienceModelAssociationsOutcome>(
+    [&]()-> ListCollaborationConfiguredAudienceModelAssociationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCollaborationConfiguredAudienceModelAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations");
+      return ListCollaborationConfiguredAudienceModelAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListCollaborationPrivacyBudgetTemplatesOutcome CleanRoomsClient::ListCollaborationPrivacyBudgetTemplates(const ListCollaborationPrivacyBudgetTemplatesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCollaborationPrivacyBudgetTemplates);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCollaborationPrivacyBudgetTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CollaborationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCollaborationPrivacyBudgetTemplates", "Required field: CollaborationIdentifier, is not set");
+    return ListCollaborationPrivacyBudgetTemplatesOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaborationIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCollaborationPrivacyBudgetTemplates, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCollaborationPrivacyBudgetTemplates, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCollaborationPrivacyBudgetTemplates",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCollaborationPrivacyBudgetTemplatesOutcome>(
+    [&]()-> ListCollaborationPrivacyBudgetTemplatesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCollaborationPrivacyBudgetTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates");
+      return ListCollaborationPrivacyBudgetTemplatesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListCollaborationPrivacyBudgetsOutcome CleanRoomsClient::ListCollaborationPrivacyBudgets(const ListCollaborationPrivacyBudgetsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCollaborationPrivacyBudgets);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCollaborationPrivacyBudgets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CollaborationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCollaborationPrivacyBudgets", "Required field: CollaborationIdentifier, is not set");
+    return ListCollaborationPrivacyBudgetsOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaborationIdentifier]", false));
+  }
+  if (!request.PrivacyBudgetTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCollaborationPrivacyBudgets", "Required field: PrivacyBudgetType, is not set");
+    return ListCollaborationPrivacyBudgetsOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrivacyBudgetType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCollaborationPrivacyBudgets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCollaborationPrivacyBudgets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCollaborationPrivacyBudgets",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCollaborationPrivacyBudgetsOutcome>(
+    [&]()-> ListCollaborationPrivacyBudgetsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCollaborationPrivacyBudgets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgets");
+      return ListCollaborationPrivacyBudgetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListCollaborationsOutcome CleanRoomsClient::ListCollaborations(const ListCollaborationsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListCollaborations);
@@ -1189,6 +1621,40 @@ ListCollaborationsOutcome CleanRoomsClient::ListCollaborations(const ListCollabo
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCollaborations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations");
       return ListCollaborationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListConfiguredAudienceModelAssociationsOutcome CleanRoomsClient::ListConfiguredAudienceModelAssociations(const ListConfiguredAudienceModelAssociationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListConfiguredAudienceModelAssociations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfiguredAudienceModelAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListConfiguredAudienceModelAssociations", "Required field: MembershipIdentifier, is not set");
+    return ListConfiguredAudienceModelAssociationsOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListConfiguredAudienceModelAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListConfiguredAudienceModelAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListConfiguredAudienceModelAssociations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListConfiguredAudienceModelAssociationsOutcome>(
+    [&]()-> ListConfiguredAudienceModelAssociationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConfiguredAudienceModelAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations");
+      return ListConfiguredAudienceModelAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1317,6 +1783,79 @@ ListMembershipsOutcome CleanRoomsClient::ListMemberships(const ListMembershipsRe
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListPrivacyBudgetTemplatesOutcome CleanRoomsClient::ListPrivacyBudgetTemplates(const ListPrivacyBudgetTemplatesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListPrivacyBudgetTemplates);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPrivacyBudgetTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPrivacyBudgetTemplates", "Required field: MembershipIdentifier, is not set");
+    return ListPrivacyBudgetTemplatesOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListPrivacyBudgetTemplates, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListPrivacyBudgetTemplates, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListPrivacyBudgetTemplates",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListPrivacyBudgetTemplatesOutcome>(
+    [&]()-> ListPrivacyBudgetTemplatesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPrivacyBudgetTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates");
+      return ListPrivacyBudgetTemplatesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListPrivacyBudgetsOutcome CleanRoomsClient::ListPrivacyBudgets(const ListPrivacyBudgetsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListPrivacyBudgets);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPrivacyBudgets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPrivacyBudgets", "Required field: MembershipIdentifier, is not set");
+    return ListPrivacyBudgetsOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.PrivacyBudgetTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPrivacyBudgets", "Required field: PrivacyBudgetType, is not set");
+    return ListPrivacyBudgetsOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrivacyBudgetType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListPrivacyBudgets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListPrivacyBudgets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListPrivacyBudgets",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListPrivacyBudgetsOutcome>(
+    [&]()-> ListPrivacyBudgetsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPrivacyBudgets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgets");
+      return ListPrivacyBudgetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListProtectedQueriesOutcome CleanRoomsClient::ListProtectedQueries(const ListProtectedQueriesRequest& request) const
 {
   AWS_OPERATION_GUARD(ListProtectedQueries);
@@ -1412,6 +1951,40 @@ ListTagsForResourceOutcome CleanRoomsClient::ListTagsForResource(const ListTagsF
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
       return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PreviewPrivacyImpactOutcome CleanRoomsClient::PreviewPrivacyImpact(const PreviewPrivacyImpactRequest& request) const
+{
+  AWS_OPERATION_GUARD(PreviewPrivacyImpact);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PreviewPrivacyImpact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PreviewPrivacyImpact", "Required field: MembershipIdentifier, is not set");
+    return PreviewPrivacyImpactOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PreviewPrivacyImpact, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PreviewPrivacyImpact, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PreviewPrivacyImpact",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PreviewPrivacyImpactOutcome>(
+    [&]()-> PreviewPrivacyImpactOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PreviewPrivacyImpact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/previewprivacyimpact");
+      return PreviewPrivacyImpactOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1596,6 +2169,46 @@ UpdateCollaborationOutcome CleanRoomsClient::UpdateCollaboration(const UpdateCol
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+UpdateConfiguredAudienceModelAssociationOutcome CleanRoomsClient::UpdateConfiguredAudienceModelAssociation(const UpdateConfiguredAudienceModelAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateConfiguredAudienceModelAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConfiguredAudienceModelAssociationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConfiguredAudienceModelAssociation", "Required field: ConfiguredAudienceModelAssociationIdentifier, is not set");
+    return UpdateConfiguredAudienceModelAssociationOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfiguredAudienceModelAssociationIdentifier]", false));
+  }
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConfiguredAudienceModelAssociation", "Required field: MembershipIdentifier, is not set");
+    return UpdateConfiguredAudienceModelAssociationOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateConfiguredAudienceModelAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateConfiguredAudienceModelAssociationOutcome>(
+    [&]()-> UpdateConfiguredAudienceModelAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateConfiguredAudienceModelAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/configuredaudiencemodelassociations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelAssociationIdentifier());
+      return UpdateConfiguredAudienceModelAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 UpdateConfiguredTableOutcome CleanRoomsClient::UpdateConfiguredTable(const UpdateConfiguredTableRequest& request) const
 {
   AWS_OPERATION_GUARD(UpdateConfiguredTable);
@@ -1736,6 +2349,46 @@ UpdateMembershipOutcome CleanRoomsClient::UpdateMembership(const UpdateMembershi
       endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
       return UpdateMembershipOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdatePrivacyBudgetTemplateOutcome CleanRoomsClient::UpdatePrivacyBudgetTemplate(const UpdatePrivacyBudgetTemplateRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdatePrivacyBudgetTemplate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MembershipIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePrivacyBudgetTemplate", "Required field: MembershipIdentifier, is not set");
+    return UpdatePrivacyBudgetTemplateOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MembershipIdentifier]", false));
+  }
+  if (!request.PrivacyBudgetTemplateIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePrivacyBudgetTemplate", "Required field: PrivacyBudgetTemplateIdentifier, is not set");
+    return UpdatePrivacyBudgetTemplateOutcome(Aws::Client::AWSError<CleanRoomsErrors>(CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrivacyBudgetTemplateIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdatePrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdatePrivacyBudgetTemplate, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdatePrivacyBudgetTemplate",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdatePrivacyBudgetTemplateOutcome>(
+    [&]()-> UpdatePrivacyBudgetTemplateOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePrivacyBudgetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/memberships/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/privacybudgettemplates/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrivacyBudgetTemplateIdentifier());
+      return UpdatePrivacyBudgetTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

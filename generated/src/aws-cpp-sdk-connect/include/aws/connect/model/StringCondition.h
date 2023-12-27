@@ -25,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A leaf node condition which can be used to specify a string condition.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>A leaf node condition which can be used to specify a string condition.</p>
+   *  <p>The currently supported values for <code>FieldName</code> are
+   * <code>name</code> and <code>description</code>.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StringCondition">AWS
    * API Reference</a></p>
    */

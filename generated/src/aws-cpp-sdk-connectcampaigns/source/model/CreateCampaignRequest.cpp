@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateCampaignRequest::CreateCampaignRequest() : 
+    m_nameHasBeenSet(false),
     m_connectInstanceIdHasBeenSet(false),
     m_dialerConfigHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_outboundCallConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -24,6 +24,12 @@ CreateCampaignRequest::CreateCampaignRequest() :
 Aws::String CreateCampaignRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_connectInstanceIdHasBeenSet)
   {
@@ -34,12 +40,6 @@ Aws::String CreateCampaignRequest::SerializePayload() const
   if(m_dialerConfigHasBeenSet)
   {
    payload.WithObject("dialerConfig", m_dialerConfig.Jsonize());
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 

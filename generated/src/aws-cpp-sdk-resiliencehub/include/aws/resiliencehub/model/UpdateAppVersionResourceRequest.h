@@ -97,144 +97,152 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 
 
     /**
-     * <p>The list of Application Components that this resource belongs to. If an
+     * <p>List of Application Components that this resource belongs to. If an
      * Application Component is not part of the Resilience Hub application, it will be
      * added.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAppComponents() const{ return m_appComponents; }
 
     /**
-     * <p>The list of Application Components that this resource belongs to. If an
+     * <p>List of Application Components that this resource belongs to. If an
      * Application Component is not part of the Resilience Hub application, it will be
      * added.</p>
      */
     inline bool AppComponentsHasBeenSet() const { return m_appComponentsHasBeenSet; }
 
     /**
-     * <p>The list of Application Components that this resource belongs to. If an
+     * <p>List of Application Components that this resource belongs to. If an
      * Application Component is not part of the Resilience Hub application, it will be
      * added.</p>
      */
     inline void SetAppComponents(const Aws::Vector<Aws::String>& value) { m_appComponentsHasBeenSet = true; m_appComponents = value; }
 
     /**
-     * <p>The list of Application Components that this resource belongs to. If an
+     * <p>List of Application Components that this resource belongs to. If an
      * Application Component is not part of the Resilience Hub application, it will be
      * added.</p>
      */
     inline void SetAppComponents(Aws::Vector<Aws::String>&& value) { m_appComponentsHasBeenSet = true; m_appComponents = std::move(value); }
 
     /**
-     * <p>The list of Application Components that this resource belongs to. If an
+     * <p>List of Application Components that this resource belongs to. If an
      * Application Component is not part of the Resilience Hub application, it will be
      * added.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAppComponents(const Aws::Vector<Aws::String>& value) { SetAppComponents(value); return *this;}
 
     /**
-     * <p>The list of Application Components that this resource belongs to. If an
+     * <p>List of Application Components that this resource belongs to. If an
      * Application Component is not part of the Resilience Hub application, it will be
      * added.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAppComponents(Aws::Vector<Aws::String>&& value) { SetAppComponents(std::move(value)); return *this;}
 
     /**
-     * <p>The list of Application Components that this resource belongs to. If an
+     * <p>List of Application Components that this resource belongs to. If an
      * Application Component is not part of the Resilience Hub application, it will be
      * added.</p>
      */
     inline UpdateAppVersionResourceRequest& AddAppComponents(const Aws::String& value) { m_appComponentsHasBeenSet = true; m_appComponents.push_back(value); return *this; }
 
     /**
-     * <p>The list of Application Components that this resource belongs to. If an
+     * <p>List of Application Components that this resource belongs to. If an
      * Application Component is not part of the Resilience Hub application, it will be
      * added.</p>
      */
     inline UpdateAppVersionResourceRequest& AddAppComponents(Aws::String&& value) { m_appComponentsHasBeenSet = true; m_appComponents.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of Application Components that this resource belongs to. If an
+     * <p>List of Application Components that this resource belongs to. If an
      * Application Component is not part of the Resilience Hub application, it will be
      * added.</p>
      */
@@ -242,83 +250,83 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account that owns the physical resource.</p>
+     * <p>Amazon Web Services account that owns the physical resource.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The Amazon Web Services account that owns the physical resource.</p>
+     * <p>Amazon Web Services account that owns the physical resource.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account that owns the physical resource.</p>
+     * <p>Amazon Web Services account that owns the physical resource.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The Amazon Web Services account that owns the physical resource.</p>
+     * <p>Amazon Web Services account that owns the physical resource.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account that owns the physical resource.</p>
+     * <p>Amazon Web Services account that owns the physical resource.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account that owns the physical resource.</p>
+     * <p>Amazon Web Services account that owns the physical resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account that owns the physical resource.</p>
+     * <p>Amazon Web Services account that owns the physical resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account that owns the physical resource.</p>
+     * <p>Amazon Web Services account that owns the physical resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Web Services region that owns the physical resource.</p>
+     * <p>Amazon Web Services region that owns the physical resource.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The Amazon Web Services region that owns the physical resource.</p>
+     * <p>Amazon Web Services region that owns the physical resource.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services region that owns the physical resource.</p>
+     * <p>Amazon Web Services region that owns the physical resource.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The Amazon Web Services region that owns the physical resource.</p>
+     * <p>Amazon Web Services region that owns the physical resource.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services region that owns the physical resource.</p>
+     * <p>Amazon Web Services region that owns the physical resource.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The Amazon Web Services region that owns the physical resource.</p>
+     * <p>Amazon Web Services region that owns the physical resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services region that owns the physical resource.</p>
+     * <p>Amazon Web Services region that owns the physical resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services region that owns the physical resource.</p>
+     * <p>Amazon Web Services region that owns the physical resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 
@@ -353,155 +361,155 @@ namespace Model
 
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline const LogicalResourceId& GetLogicalResourceId() const{ return m_logicalResourceId; }
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline void SetLogicalResourceId(const LogicalResourceId& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline void SetLogicalResourceId(LogicalResourceId&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithLogicalResourceId(const LogicalResourceId& value) { SetLogicalResourceId(value); return *this;}
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithLogicalResourceId(LogicalResourceId&& value) { SetLogicalResourceId(std::move(value)); return *this;}
 
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Physical identifier of the resource.</p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Physical identifier of the resource.</p>
      */
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Physical identifier of the resource.</p>
      */
     inline void SetPhysicalResourceId(const Aws::String& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Physical identifier of the resource.</p>
      */
     inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Physical identifier of the resource.</p>
      */
     inline void SetPhysicalResourceId(const char* value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId.assign(value); }
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Physical identifier of the resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithPhysicalResourceId(const Aws::String& value) { SetPhysicalResourceId(value); return *this;}
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Physical identifier of the resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Physical identifier of the resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
 
 
     /**
-     * <p>The name of the resource.</p>
+     * <p>Name of the resource.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>The name of the resource.</p>
+     * <p>Name of the resource.</p>
      */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
-     * <p>The name of the resource.</p>
+     * <p>Name of the resource.</p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The name of the resource.</p>
+     * <p>Name of the resource.</p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
-     * <p>The name of the resource.</p>
+     * <p>Name of the resource.</p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>The name of the resource.</p>
+     * <p>Name of the resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The name of the resource.</p>
+     * <p>Name of the resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the resource.</p>
+     * <p>Name of the resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
 
     /**
-     * <p>The type of resource.</p>
+     * <p>Type of resource.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>Type of resource.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>Type of resource.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>Type of resource.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>Type of resource.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of resource.</p>
+     * <p>Type of resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource.</p>
+     * <p>Type of resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of resource.</p>
+     * <p>Type of resource.</p>
      */
     inline UpdateAppVersionResourceRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

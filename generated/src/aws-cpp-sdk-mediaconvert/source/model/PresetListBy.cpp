@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PresetListBy::NOT_SET:
+            return {};
           case PresetListBy::NAME:
             return "NAME";
           case PresetListBy::CREATION_DATE:

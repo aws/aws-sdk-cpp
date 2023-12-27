@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2QualityTuningLevel::NOT_SET:
+            return {};
           case Mpeg2QualityTuningLevel::SINGLE_PASS:
             return "SINGLE_PASS";
           case Mpeg2QualityTuningLevel::MULTI_PASS:

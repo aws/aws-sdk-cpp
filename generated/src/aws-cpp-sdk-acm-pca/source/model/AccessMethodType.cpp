@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessMethodType::NOT_SET:
+            return {};
           case AccessMethodType::CA_REPOSITORY:
             return "CA_REPOSITORY";
           case AccessMethodType::RESOURCE_PKI_MANIFEST:

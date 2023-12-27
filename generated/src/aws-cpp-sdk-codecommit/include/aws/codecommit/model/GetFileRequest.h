@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>The fully quaified reference that identifies the commit that contains the
      * file. For example, you can specify a full commit ID, a tag, a branch name, or a
-     * reference such as refs/heads/master. If none is provided, the head commit is
+     * reference such as refs/heads/main. If none is provided, the head commit is
      * used.</p>
      */
     inline const Aws::String& GetCommitSpecifier() const{ return m_commitSpecifier; }
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>The fully quaified reference that identifies the commit that contains the
      * file. For example, you can specify a full commit ID, a tag, a branch name, or a
-     * reference such as refs/heads/master. If none is provided, the head commit is
+     * reference such as refs/heads/main. If none is provided, the head commit is
      * used.</p>
      */
     inline bool CommitSpecifierHasBeenSet() const { return m_commitSpecifierHasBeenSet; }
@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>The fully quaified reference that identifies the commit that contains the
      * file. For example, you can specify a full commit ID, a tag, a branch name, or a
-     * reference such as refs/heads/master. If none is provided, the head commit is
+     * reference such as refs/heads/main. If none is provided, the head commit is
      * used.</p>
      */
     inline void SetCommitSpecifier(const Aws::String& value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier = value; }
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>The fully quaified reference that identifies the commit that contains the
      * file. For example, you can specify a full commit ID, a tag, a branch name, or a
-     * reference such as refs/heads/master. If none is provided, the head commit is
+     * reference such as refs/heads/main. If none is provided, the head commit is
      * used.</p>
      */
     inline void SetCommitSpecifier(Aws::String&& value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier = std::move(value); }
@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>The fully quaified reference that identifies the commit that contains the
      * file. For example, you can specify a full commit ID, a tag, a branch name, or a
-     * reference such as refs/heads/master. If none is provided, the head commit is
+     * reference such as refs/heads/main. If none is provided, the head commit is
      * used.</p>
      */
     inline void SetCommitSpecifier(const char* value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier.assign(value); }
@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>The fully quaified reference that identifies the commit that contains the
      * file. For example, you can specify a full commit ID, a tag, a branch name, or a
-     * reference such as refs/heads/master. If none is provided, the head commit is
+     * reference such as refs/heads/main. If none is provided, the head commit is
      * used.</p>
      */
     inline GetFileRequest& WithCommitSpecifier(const Aws::String& value) { SetCommitSpecifier(value); return *this;}
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>The fully quaified reference that identifies the commit that contains the
      * file. For example, you can specify a full commit ID, a tag, a branch name, or a
-     * reference such as refs/heads/master. If none is provided, the head commit is
+     * reference such as refs/heads/main. If none is provided, the head commit is
      * used.</p>
      */
     inline GetFileRequest& WithCommitSpecifier(Aws::String&& value) { SetCommitSpecifier(std::move(value)); return *this;}
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>The fully quaified reference that identifies the commit that contains the
      * file. For example, you can specify a full commit ID, a tag, a branch name, or a
-     * reference such as refs/heads/master. If none is provided, the head commit is
+     * reference such as refs/heads/main. If none is provided, the head commit is
      * used.</p>
      */
     inline GetFileRequest& WithCommitSpecifier(const char* value) { SetCommitSpecifier(value); return *this;}

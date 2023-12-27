@@ -103,6 +103,18 @@ GetRunTaskResult& GetRunTaskResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+  }
+
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = jsonValue.GetString("failureReason");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

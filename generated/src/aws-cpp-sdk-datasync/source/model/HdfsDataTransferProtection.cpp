@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HdfsDataTransferProtection::NOT_SET:
+            return {};
           case HdfsDataTransferProtection::DISABLED:
             return "DISABLED";
           case HdfsDataTransferProtection::AUTHENTICATION:

@@ -9,6 +9,7 @@
 #include <aws/opensearch/model/ClusterConfigStatus.h>
 #include <aws/opensearch/model/EBSOptionsStatus.h>
 #include <aws/opensearch/model/AccessPoliciesStatus.h>
+#include <aws/opensearch/model/IPAddressTypeStatus.h>
 #include <aws/opensearch/model/SnapshotOptionsStatus.h>
 #include <aws/opensearch/model/VPCDerivedInfoStatus.h>
 #include <aws/opensearch/model/CognitoOptionsStatus.h>
@@ -176,6 +177,37 @@ namespace Model
      * <p>Specifies the access policies for the domain.</p>
      */
     inline DomainConfig& WithAccessPolicies(AccessPoliciesStatus&& value) { SetAccessPolicies(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline const IPAddressTypeStatus& GetIPAddressType() const{ return m_iPAddressType; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(const IPAddressTypeStatus& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(IPAddressTypeStatus&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline DomainConfig& WithIPAddressType(const IPAddressTypeStatus& value) { SetIPAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline DomainConfig& WithIPAddressType(IPAddressTypeStatus&& value) { SetIPAddressType(std::move(value)); return *this;}
 
 
     /**
@@ -635,6 +667,9 @@ namespace Model
 
     AccessPoliciesStatus m_accessPolicies;
     bool m_accessPoliciesHasBeenSet = false;
+
+    IPAddressTypeStatus m_iPAddressType;
+    bool m_iPAddressTypeHasBeenSet = false;
 
     SnapshotOptionsStatus m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet = false;

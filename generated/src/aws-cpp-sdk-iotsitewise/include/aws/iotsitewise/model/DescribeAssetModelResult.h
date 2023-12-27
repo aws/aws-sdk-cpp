@@ -9,9 +9,11 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotsitewise/model/AssetModelStatus.h>
+#include <aws/iotsitewise/model/AssetModelType.h>
 #include <aws/iotsitewise/model/AssetModelProperty.h>
 #include <aws/iotsitewise/model/AssetModelHierarchy.h>
 #include <aws/iotsitewise/model/AssetModelCompositeModel.h>
+#include <aws/iotsitewise/model/AssetModelCompositeModelSummary.h>
 #include <utility>
 
 namespace Aws
@@ -39,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset model.</p>
+     * <p>The ID of the asset model, in UUID format.</p>
      */
     inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
 
     /**
-     * <p>The ID of the asset model.</p>
+     * <p>The ID of the asset model, in UUID format.</p>
      */
     inline void SetAssetModelId(const Aws::String& value) { m_assetModelId = value; }
 
     /**
-     * <p>The ID of the asset model.</p>
+     * <p>The ID of the asset model, in UUID format.</p>
      */
     inline void SetAssetModelId(Aws::String&& value) { m_assetModelId = std::move(value); }
 
     /**
-     * <p>The ID of the asset model.</p>
+     * <p>The ID of the asset model, in UUID format.</p>
      */
     inline void SetAssetModelId(const char* value) { m_assetModelId.assign(value); }
 
     /**
-     * <p>The ID of the asset model.</p>
+     * <p>The ID of the asset model, in UUID format.</p>
      */
     inline DescribeAssetModelResult& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
 
     /**
-     * <p>The ID of the asset model.</p>
+     * <p>The ID of the asset model, in UUID format.</p>
      */
     inline DescribeAssetModelResult& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset model.</p>
+     * <p>The ID of the asset model, in UUID format.</p>
      */
     inline DescribeAssetModelResult& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
 
@@ -318,37 +320,44 @@ namespace Model
 
 
     /**
-     * <p>The list of composite asset models for the asset model.</p>
+     * <p>The list of built-in composite models for the asset model, such as those with
+     * those of type <code>AWS/ALARMS</code>.</p>
      */
     inline const Aws::Vector<AssetModelCompositeModel>& GetAssetModelCompositeModels() const{ return m_assetModelCompositeModels; }
 
     /**
-     * <p>The list of composite asset models for the asset model.</p>
+     * <p>The list of built-in composite models for the asset model, such as those with
+     * those of type <code>AWS/ALARMS</code>.</p>
      */
     inline void SetAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModel>& value) { m_assetModelCompositeModels = value; }
 
     /**
-     * <p>The list of composite asset models for the asset model.</p>
+     * <p>The list of built-in composite models for the asset model, such as those with
+     * those of type <code>AWS/ALARMS</code>.</p>
      */
     inline void SetAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModel>&& value) { m_assetModelCompositeModels = std::move(value); }
 
     /**
-     * <p>The list of composite asset models for the asset model.</p>
+     * <p>The list of built-in composite models for the asset model, such as those with
+     * those of type <code>AWS/ALARMS</code>.</p>
      */
     inline DescribeAssetModelResult& WithAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModel>& value) { SetAssetModelCompositeModels(value); return *this;}
 
     /**
-     * <p>The list of composite asset models for the asset model.</p>
+     * <p>The list of built-in composite models for the asset model, such as those with
+     * those of type <code>AWS/ALARMS</code>.</p>
      */
     inline DescribeAssetModelResult& WithAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModel>&& value) { SetAssetModelCompositeModels(std::move(value)); return *this;}
 
     /**
-     * <p>The list of composite asset models for the asset model.</p>
+     * <p>The list of built-in composite models for the asset model, such as those with
+     * those of type <code>AWS/ALARMS</code>.</p>
      */
     inline DescribeAssetModelResult& AddAssetModelCompositeModels(const AssetModelCompositeModel& value) { m_assetModelCompositeModels.push_back(value); return *this; }
 
     /**
-     * <p>The list of composite asset models for the asset model.</p>
+     * <p>The list of built-in composite models for the asset model, such as those with
+     * those of type <code>AWS/ALARMS</code>.</p>
      */
     inline DescribeAssetModelResult& AddAssetModelCompositeModels(AssetModelCompositeModel&& value) { m_assetModelCompositeModels.push_back(std::move(value)); return *this; }
 
@@ -436,6 +445,131 @@ namespace Model
     inline DescribeAssetModelResult& WithAssetModelStatus(AssetModelStatus&& value) { SetAssetModelStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline const AssetModelType& GetAssetModelType() const{ return m_assetModelType; }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline void SetAssetModelType(const AssetModelType& value) { m_assetModelType = value; }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline void SetAssetModelType(AssetModelType&& value) { m_assetModelType = std::move(value); }
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline DescribeAssetModelResult& WithAssetModelType(const AssetModelType& value) { SetAssetModelType(value); return *this;}
+
+    /**
+     * <p>The type of asset model.</p> <ul> <li> <p> <b>ASSET_MODEL</b> – (default) An
+     * asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.</p> </li> <li> <p> <b>COMPONENT_MODEL</b> – A reusable
+     * component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model. </p> </li> </ul>
+     */
+    inline DescribeAssetModelResult& WithAssetModelType(AssetModelType&& value) { SetAssetModelType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset model.</p>
+     */
+    inline const Aws::Vector<AssetModelCompositeModelSummary>& GetAssetModelCompositeModelSummaries() const{ return m_assetModelCompositeModelSummaries; }
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset model.</p>
+     */
+    inline void SetAssetModelCompositeModelSummaries(const Aws::Vector<AssetModelCompositeModelSummary>& value) { m_assetModelCompositeModelSummaries = value; }
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset model.</p>
+     */
+    inline void SetAssetModelCompositeModelSummaries(Aws::Vector<AssetModelCompositeModelSummary>&& value) { m_assetModelCompositeModelSummaries = std::move(value); }
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset model.</p>
+     */
+    inline DescribeAssetModelResult& WithAssetModelCompositeModelSummaries(const Aws::Vector<AssetModelCompositeModelSummary>& value) { SetAssetModelCompositeModelSummaries(value); return *this;}
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset model.</p>
+     */
+    inline DescribeAssetModelResult& WithAssetModelCompositeModelSummaries(Aws::Vector<AssetModelCompositeModelSummary>&& value) { SetAssetModelCompositeModelSummaries(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset model.</p>
+     */
+    inline DescribeAssetModelResult& AddAssetModelCompositeModelSummaries(const AssetModelCompositeModelSummary& value) { m_assetModelCompositeModelSummaries.push_back(value); return *this; }
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset model.</p>
+     */
+    inline DescribeAssetModelResult& AddAssetModelCompositeModelSummaries(AssetModelCompositeModelSummary&& value) { m_assetModelCompositeModelSummaries.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The external ID of the asset model, if any.</p>
+     */
+    inline const Aws::String& GetAssetModelExternalId() const{ return m_assetModelExternalId; }
+
+    /**
+     * <p>The external ID of the asset model, if any.</p>
+     */
+    inline void SetAssetModelExternalId(const Aws::String& value) { m_assetModelExternalId = value; }
+
+    /**
+     * <p>The external ID of the asset model, if any.</p>
+     */
+    inline void SetAssetModelExternalId(Aws::String&& value) { m_assetModelExternalId = std::move(value); }
+
+    /**
+     * <p>The external ID of the asset model, if any.</p>
+     */
+    inline void SetAssetModelExternalId(const char* value) { m_assetModelExternalId.assign(value); }
+
+    /**
+     * <p>The external ID of the asset model, if any.</p>
+     */
+    inline DescribeAssetModelResult& WithAssetModelExternalId(const Aws::String& value) { SetAssetModelExternalId(value); return *this;}
+
+    /**
+     * <p>The external ID of the asset model, if any.</p>
+     */
+    inline DescribeAssetModelResult& WithAssetModelExternalId(Aws::String&& value) { SetAssetModelExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external ID of the asset model, if any.</p>
+     */
+    inline DescribeAssetModelResult& WithAssetModelExternalId(const char* value) { SetAssetModelExternalId(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -478,6 +612,12 @@ namespace Model
     Aws::Utils::DateTime m_assetModelLastUpdateDate;
 
     AssetModelStatus m_assetModelStatus;
+
+    AssetModelType m_assetModelType;
+
+    Aws::Vector<AssetModelCompositeModelSummary> m_assetModelCompositeModelSummaries;
+
+    Aws::String m_assetModelExternalId;
 
     Aws::String m_requestId;
   };

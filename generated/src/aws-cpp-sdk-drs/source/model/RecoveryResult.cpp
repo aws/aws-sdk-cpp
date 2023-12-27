@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecoveryResult::NOT_SET:
+            return {};
           case RecoveryResult::NOT_STARTED:
             return "NOT_STARTED";
           case RecoveryResult::IN_PROGRESS:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcEndpointStatus::NOT_SET:
+            return {};
           case VpcEndpointStatus::PENDING:
             return "PENDING";
           case VpcEndpointStatus::DELETING:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scope::NOT_SET:
+            return {};
           case Scope::Availability_Zone:
             return "Availability Zone";
           case Scope::Region:

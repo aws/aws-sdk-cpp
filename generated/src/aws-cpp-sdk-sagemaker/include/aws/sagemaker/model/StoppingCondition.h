@@ -159,6 +159,31 @@ namespace Model
      */
     inline StoppingCondition& WithMaxWaitTimeInSeconds(int value) { SetMaxWaitTimeInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The maximum length of time, in seconds, that a training or compilation job
+     * can be pending before it is stopped.</p>
+     */
+    inline int GetMaxPendingTimeInSeconds() const{ return m_maxPendingTimeInSeconds; }
+
+    /**
+     * <p>The maximum length of time, in seconds, that a training or compilation job
+     * can be pending before it is stopped.</p>
+     */
+    inline bool MaxPendingTimeInSecondsHasBeenSet() const { return m_maxPendingTimeInSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum length of time, in seconds, that a training or compilation job
+     * can be pending before it is stopped.</p>
+     */
+    inline void SetMaxPendingTimeInSeconds(int value) { m_maxPendingTimeInSecondsHasBeenSet = true; m_maxPendingTimeInSeconds = value; }
+
+    /**
+     * <p>The maximum length of time, in seconds, that a training or compilation job
+     * can be pending before it is stopped.</p>
+     */
+    inline StoppingCondition& WithMaxPendingTimeInSeconds(int value) { SetMaxPendingTimeInSeconds(value); return *this;}
+
   private:
 
     int m_maxRuntimeInSeconds;
@@ -166,6 +191,9 @@ namespace Model
 
     int m_maxWaitTimeInSeconds;
     bool m_maxWaitTimeInSecondsHasBeenSet = false;
+
+    int m_maxPendingTimeInSeconds;
+    bool m_maxPendingTimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

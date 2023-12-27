@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtectedQueryType::NOT_SET:
+            return {};
           case ProtectedQueryType::SQL:
             return "SQL";
           default:

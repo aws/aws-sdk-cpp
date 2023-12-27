@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribeMedicalRegion::NOT_SET:
+            return {};
           case TranscribeMedicalRegion::us_east_1:
             return "us-east-1";
           case TranscribeMedicalRegion::us_east_2:

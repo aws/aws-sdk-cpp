@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CSV_HASH = HashingUtils::HashString("CSV");
         static const int PDF_HASH = HashingUtils::HashString("PDF");
+        static const int EXCEL_HASH = HashingUtils::HashString("EXCEL");
 
 
         SnapshotFileFormatType GetSnapshotFileFormatTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == PDF_HASH)
           {
             return SnapshotFileFormatType::PDF;
+          }
+          else if (hashCode == EXCEL_HASH)
+          {
+            return SnapshotFileFormatType::EXCEL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotFileFormatType::NOT_SET:
+            return {};
           case SnapshotFileFormatType::CSV:
             return "CSV";
           case SnapshotFileFormatType::PDF:
             return "PDF";
+          case SnapshotFileFormatType::EXCEL:
+            return "EXCEL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

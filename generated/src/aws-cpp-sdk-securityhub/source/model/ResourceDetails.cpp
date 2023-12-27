@@ -108,7 +108,16 @@ ResourceDetails::ResourceDetails() :
     m_awsEventSchemasRegistryHasBeenSet(false),
     m_awsGuardDutyDetectorHasBeenSet(false),
     m_awsStepFunctionStateMachineHasBeenSet(false),
-    m_awsAthenaWorkGroupHasBeenSet(false)
+    m_awsAthenaWorkGroupHasBeenSet(false),
+    m_awsEventsEventbusHasBeenSet(false),
+    m_awsDmsEndpointHasBeenSet(false),
+    m_awsEventsEndpointHasBeenSet(false),
+    m_awsDmsReplicationTaskHasBeenSet(false),
+    m_awsDmsReplicationInstanceHasBeenSet(false),
+    m_awsRoute53HostedZoneHasBeenSet(false),
+    m_awsMskClusterHasBeenSet(false),
+    m_awsS3AccessPointHasBeenSet(false),
+    m_awsEc2ClientVpnEndpointHasBeenSet(false)
 {
 }
 
@@ -202,7 +211,16 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsEventSchemasRegistryHasBeenSet(false),
     m_awsGuardDutyDetectorHasBeenSet(false),
     m_awsStepFunctionStateMachineHasBeenSet(false),
-    m_awsAthenaWorkGroupHasBeenSet(false)
+    m_awsAthenaWorkGroupHasBeenSet(false),
+    m_awsEventsEventbusHasBeenSet(false),
+    m_awsDmsEndpointHasBeenSet(false),
+    m_awsEventsEndpointHasBeenSet(false),
+    m_awsDmsReplicationTaskHasBeenSet(false),
+    m_awsDmsReplicationInstanceHasBeenSet(false),
+    m_awsRoute53HostedZoneHasBeenSet(false),
+    m_awsMskClusterHasBeenSet(false),
+    m_awsS3AccessPointHasBeenSet(false),
+    m_awsEc2ClientVpnEndpointHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -842,6 +860,69 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsAthenaWorkGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsEventsEventbus"))
+  {
+    m_awsEventsEventbus = jsonValue.GetObject("AwsEventsEventbus");
+
+    m_awsEventsEventbusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsDmsEndpoint"))
+  {
+    m_awsDmsEndpoint = jsonValue.GetObject("AwsDmsEndpoint");
+
+    m_awsDmsEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEventsEndpoint"))
+  {
+    m_awsEventsEndpoint = jsonValue.GetObject("AwsEventsEndpoint");
+
+    m_awsEventsEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsDmsReplicationTask"))
+  {
+    m_awsDmsReplicationTask = jsonValue.GetObject("AwsDmsReplicationTask");
+
+    m_awsDmsReplicationTaskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsDmsReplicationInstance"))
+  {
+    m_awsDmsReplicationInstance = jsonValue.GetObject("AwsDmsReplicationInstance");
+
+    m_awsDmsReplicationInstanceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsRoute53HostedZone"))
+  {
+    m_awsRoute53HostedZone = jsonValue.GetObject("AwsRoute53HostedZone");
+
+    m_awsRoute53HostedZoneHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsMskCluster"))
+  {
+    m_awsMskCluster = jsonValue.GetObject("AwsMskCluster");
+
+    m_awsMskClusterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsS3AccessPoint"))
+  {
+    m_awsS3AccessPoint = jsonValue.GetObject("AwsS3AccessPoint");
+
+    m_awsS3AccessPointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2ClientVpnEndpoint"))
+  {
+    m_awsEc2ClientVpnEndpoint = jsonValue.GetObject("AwsEc2ClientVpnEndpoint");
+
+    m_awsEc2ClientVpnEndpointHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1391,6 +1472,60 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsAthenaWorkGroupHasBeenSet)
   {
    payload.WithObject("AwsAthenaWorkGroup", m_awsAthenaWorkGroup.Jsonize());
+
+  }
+
+  if(m_awsEventsEventbusHasBeenSet)
+  {
+   payload.WithObject("AwsEventsEventbus", m_awsEventsEventbus.Jsonize());
+
+  }
+
+  if(m_awsDmsEndpointHasBeenSet)
+  {
+   payload.WithObject("AwsDmsEndpoint", m_awsDmsEndpoint.Jsonize());
+
+  }
+
+  if(m_awsEventsEndpointHasBeenSet)
+  {
+   payload.WithObject("AwsEventsEndpoint", m_awsEventsEndpoint.Jsonize());
+
+  }
+
+  if(m_awsDmsReplicationTaskHasBeenSet)
+  {
+   payload.WithObject("AwsDmsReplicationTask", m_awsDmsReplicationTask.Jsonize());
+
+  }
+
+  if(m_awsDmsReplicationInstanceHasBeenSet)
+  {
+   payload.WithObject("AwsDmsReplicationInstance", m_awsDmsReplicationInstance.Jsonize());
+
+  }
+
+  if(m_awsRoute53HostedZoneHasBeenSet)
+  {
+   payload.WithObject("AwsRoute53HostedZone", m_awsRoute53HostedZone.Jsonize());
+
+  }
+
+  if(m_awsMskClusterHasBeenSet)
+  {
+   payload.WithObject("AwsMskCluster", m_awsMskCluster.Jsonize());
+
+  }
+
+  if(m_awsS3AccessPointHasBeenSet)
+  {
+   payload.WithObject("AwsS3AccessPoint", m_awsS3AccessPoint.Jsonize());
+
+  }
+
+  if(m_awsEc2ClientVpnEndpointHasBeenSet)
+  {
+   payload.WithObject("AwsEc2ClientVpnEndpoint", m_awsEc2ClientVpnEndpoint.Jsonize());
 
   }
 

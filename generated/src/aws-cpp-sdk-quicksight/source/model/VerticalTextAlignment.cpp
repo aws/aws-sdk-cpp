@@ -23,6 +23,7 @@ namespace Aws
         static const int TOP_HASH = HashingUtils::HashString("TOP");
         static const int MIDDLE_HASH = HashingUtils::HashString("MIDDLE");
         static const int BOTTOM_HASH = HashingUtils::HashString("BOTTOM");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         VerticalTextAlignment GetVerticalTextAlignmentForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return VerticalTextAlignment::BOTTOM;
           }
+          else if (hashCode == AUTO_HASH)
+          {
+            return VerticalTextAlignment::AUTO;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerticalTextAlignment::NOT_SET:
+            return {};
           case VerticalTextAlignment::TOP:
             return "TOP";
           case VerticalTextAlignment::MIDDLE:
             return "MIDDLE";
           case VerticalTextAlignment::BOTTOM:
             return "BOTTOM";
+          case VerticalTextAlignment::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

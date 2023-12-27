@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotType::NOT_SET:
+            return {};
           case SnapshotType::Auto:
             return "Auto";
           case SnapshotType::Manual:

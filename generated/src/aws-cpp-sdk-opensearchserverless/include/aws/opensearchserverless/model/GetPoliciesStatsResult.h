@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/AccessPolicyStats.h>
+#include <aws/opensearchserverless/model/LifecyclePolicyStats.h>
 #include <aws/opensearchserverless/model/SecurityConfigStats.h>
 #include <aws/opensearchserverless/model/SecurityPolicyStats.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -59,6 +60,32 @@ namespace Model
      * <p>Information about the data access policies in your account.</p>
      */
     inline GetPoliciesStatsResult& WithAccessPolicyStats(AccessPolicyStats&& value) { SetAccessPolicyStats(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the lifecycle policies in your account.</p>
+     */
+    inline const LifecyclePolicyStats& GetLifecyclePolicyStats() const{ return m_lifecyclePolicyStats; }
+
+    /**
+     * <p>Information about the lifecycle policies in your account.</p>
+     */
+    inline void SetLifecyclePolicyStats(const LifecyclePolicyStats& value) { m_lifecyclePolicyStats = value; }
+
+    /**
+     * <p>Information about the lifecycle policies in your account.</p>
+     */
+    inline void SetLifecyclePolicyStats(LifecyclePolicyStats&& value) { m_lifecyclePolicyStats = std::move(value); }
+
+    /**
+     * <p>Information about the lifecycle policies in your account.</p>
+     */
+    inline GetPoliciesStatsResult& WithLifecyclePolicyStats(const LifecyclePolicyStats& value) { SetLifecyclePolicyStats(value); return *this;}
+
+    /**
+     * <p>Information about the lifecycle policies in your account.</p>
+     */
+    inline GetPoliciesStatsResult& WithLifecyclePolicyStats(LifecyclePolicyStats&& value) { SetLifecyclePolicyStats(std::move(value)); return *this;}
 
 
     /**
@@ -156,6 +183,8 @@ namespace Model
   private:
 
     AccessPolicyStats m_accessPolicyStats;
+
+    LifecyclePolicyStats m_lifecyclePolicyStats;
 
     SecurityConfigStats m_securityConfigStats;
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamPoolCidrFailureCode::NOT_SET:
+            return {};
           case IpamPoolCidrFailureCode::cidr_not_available:
             return "cidr-not-available";
           case IpamPoolCidrFailureCode::limit_exceeded:

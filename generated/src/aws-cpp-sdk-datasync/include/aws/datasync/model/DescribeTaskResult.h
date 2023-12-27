@@ -11,6 +11,7 @@
 #include <aws/datasync/model/Options.h>
 #include <aws/datasync/model/TaskSchedule.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/datasync/model/TaskReportConfig.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <utility>
 
@@ -763,6 +764,42 @@ namespace Model
     inline DescribeTaskResult& AddIncludes(FilterRule&& value) { m_includes.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The configuration of your task report. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
+     */
+    inline const TaskReportConfig& GetTaskReportConfig() const{ return m_taskReportConfig; }
+
+    /**
+     * <p>The configuration of your task report. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
+     */
+    inline void SetTaskReportConfig(const TaskReportConfig& value) { m_taskReportConfig = value; }
+
+    /**
+     * <p>The configuration of your task report. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
+     */
+    inline void SetTaskReportConfig(TaskReportConfig&& value) { m_taskReportConfig = std::move(value); }
+
+    /**
+     * <p>The configuration of your task report. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
+     */
+    inline DescribeTaskResult& WithTaskReportConfig(const TaskReportConfig& value) { SetTaskReportConfig(value); return *this;}
+
+    /**
+     * <p>The configuration of your task report. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
+     */
+    inline DescribeTaskResult& WithTaskReportConfig(TaskReportConfig&& value) { SetTaskReportConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -817,6 +854,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Vector<FilterRule> m_includes;
+
+    TaskReportConfig m_taskReportConfig;
 
     Aws::String m_requestId;
   };

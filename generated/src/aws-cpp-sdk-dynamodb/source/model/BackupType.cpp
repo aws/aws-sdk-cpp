@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupType::NOT_SET:
+            return {};
           case BackupType::USER:
             return "USER";
           case BackupType::SYSTEM:

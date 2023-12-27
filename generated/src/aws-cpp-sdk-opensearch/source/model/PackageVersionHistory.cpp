@@ -21,14 +21,16 @@ namespace Model
 PackageVersionHistory::PackageVersionHistory() : 
     m_packageVersionHasBeenSet(false),
     m_commitMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_pluginPropertiesHasBeenSet(false)
 {
 }
 
 PackageVersionHistory::PackageVersionHistory(JsonView jsonValue) : 
     m_packageVersionHasBeenSet(false),
     m_commitMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_pluginPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ PackageVersionHistory& PackageVersionHistory::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PluginProperties"))
+  {
+    m_pluginProperties = jsonValue.GetObject("PluginProperties");
+
+    m_pluginPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue PackageVersionHistory::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_pluginPropertiesHasBeenSet)
+  {
+   payload.WithObject("PluginProperties", m_pluginProperties.Jsonize());
+
   }
 
   return payload;

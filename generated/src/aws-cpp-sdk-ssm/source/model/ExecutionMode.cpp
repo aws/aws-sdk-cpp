@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionMode::NOT_SET:
+            return {};
           case ExecutionMode::Auto:
             return "Auto";
           case ExecutionMode::Interactive:

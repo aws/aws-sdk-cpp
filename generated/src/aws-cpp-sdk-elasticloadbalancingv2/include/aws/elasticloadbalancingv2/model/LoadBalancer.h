@@ -603,6 +603,55 @@ namespace Model
      */
     inline LoadBalancer& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline const Aws::String& GetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() const{ return m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic; }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline bool EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet() const { return m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline void SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const Aws::String& value) { m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = true; m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = value; }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline void SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(Aws::String&& value) { m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = true; m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = std::move(value); }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline void SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const char* value) { m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = true; m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic.assign(value); }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline LoadBalancer& WithEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const Aws::String& value) { SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(value); return *this;}
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline LoadBalancer& WithEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(Aws::String&& value) { SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline LoadBalancer& WithEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const char* value) { SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(value); return *this;}
+
   private:
 
     Aws::String m_loadBalancerArn;
@@ -643,6 +692,9 @@ namespace Model
 
     Aws::String m_customerOwnedIpv4Pool;
     bool m_customerOwnedIpv4PoolHasBeenSet = false;
+
+    Aws::String m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
+    bool m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = false;
   };
 
 } // namespace Model

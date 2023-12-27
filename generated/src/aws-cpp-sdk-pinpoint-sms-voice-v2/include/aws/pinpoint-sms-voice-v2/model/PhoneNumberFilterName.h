@@ -24,7 +24,8 @@ namespace Model
     two_way_enabled,
     self_managed_opt_outs_enabled,
     opt_out_list_name,
-    deletion_protection_enabled
+    deletion_protection_enabled,
+    two_way_channel_arn
   };
 
 namespace PhoneNumberFilterNameMapper

@@ -12,6 +12,7 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/VersionConfig.h>
 #include <aws/crt/io/Bootstrap.h>
 #include <aws/crt/io/TlsOptions.h>
 
@@ -242,6 +243,13 @@ namespace Aws
          * Basic usage can be found in aws-cpp-sdk-core-tests/monitoring/MonitoringTest.cpp
          */
         MonitoringOptions monitoringOptions;
+
+        struct SDKVersion
+        {
+            unsigned char major = AWS_SDK_VERSION_MAJOR;
+            unsigned char minor = AWS_SDK_VERSION_MINOR;
+            unsigned short patch = AWS_SDK_VERSION_PATCH;
+        } sdkVersion;
     };
 
     /*

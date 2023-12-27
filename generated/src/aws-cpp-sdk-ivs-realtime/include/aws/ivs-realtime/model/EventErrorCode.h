@@ -16,7 +16,9 @@ namespace Model
   enum class EventErrorCode
   {
     NOT_SET,
-    INSUFFICIENT_CAPABILITIES
+    INSUFFICIENT_CAPABILITIES,
+    QUOTA_EXCEEDED,
+    PUBLISHER_NOT_FOUND
   };
 
 namespace EventErrorCodeMapper

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerifiedAccessLogDeliveryStatusCode::NOT_SET:
+            return {};
           case VerifiedAccessLogDeliveryStatusCode::success:
             return "success";
           case VerifiedAccessLogDeliveryStatusCode::failed:

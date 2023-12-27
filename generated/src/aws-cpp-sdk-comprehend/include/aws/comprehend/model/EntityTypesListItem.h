@@ -43,7 +43,7 @@ namespace Model
      * to train a custom entity recognizer.</p> <p>Entity types must not contain the
      * following invalid characters: \n (line break), \\n (escaped line break, \r
      * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
-     * space, and , (comma).</p>
+     * and , (comma).</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
@@ -52,7 +52,7 @@ namespace Model
      * to train a custom entity recognizer.</p> <p>Entity types must not contain the
      * following invalid characters: \n (line break), \\n (escaped line break, \r
      * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
-     * space, and , (comma).</p>
+     * and , (comma).</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -61,7 +61,7 @@ namespace Model
      * to train a custom entity recognizer.</p> <p>Entity types must not contain the
      * following invalid characters: \n (line break), \\n (escaped line break, \r
      * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
-     * space, and , (comma).</p>
+     * and , (comma).</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -70,7 +70,7 @@ namespace Model
      * to train a custom entity recognizer.</p> <p>Entity types must not contain the
      * following invalid characters: \n (line break), \\n (escaped line break, \r
      * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
-     * space, and , (comma).</p>
+     * and , (comma).</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * to train a custom entity recognizer.</p> <p>Entity types must not contain the
      * following invalid characters: \n (line break), \\n (escaped line break, \r
      * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
-     * space, and , (comma).</p>
+     * and , (comma).</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
@@ -88,7 +88,7 @@ namespace Model
      * to train a custom entity recognizer.</p> <p>Entity types must not contain the
      * following invalid characters: \n (line break), \\n (escaped line break, \r
      * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
-     * space, and , (comma).</p>
+     * and , (comma).</p>
      */
     inline EntityTypesListItem& WithType(const Aws::String& value) { SetType(value); return *this;}
 
@@ -97,7 +97,7 @@ namespace Model
      * to train a custom entity recognizer.</p> <p>Entity types must not contain the
      * following invalid characters: \n (line break), \\n (escaped line break, \r
      * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
-     * space, and , (comma).</p>
+     * and , (comma).</p>
      */
     inline EntityTypesListItem& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
@@ -106,7 +106,7 @@ namespace Model
      * to train a custom entity recognizer.</p> <p>Entity types must not contain the
      * following invalid characters: \n (line break), \\n (escaped line break, \r
      * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
-     * space, and , (comma).</p>
+     * and , (comma).</p>
      */
     inline EntityTypesListItem& WithType(const char* value) { SetType(value); return *this;}
 

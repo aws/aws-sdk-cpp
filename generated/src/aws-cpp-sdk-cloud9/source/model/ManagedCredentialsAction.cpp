@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManagedCredentialsAction::NOT_SET:
+            return {};
           case ManagedCredentialsAction::ENABLE:
             return "ENABLE";
           case ManagedCredentialsAction::DISABLE:

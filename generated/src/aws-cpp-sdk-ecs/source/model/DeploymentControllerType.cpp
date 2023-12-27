@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentControllerType::NOT_SET:
+            return {};
           case DeploymentControllerType::ECS:
             return "ECS";
           case DeploymentControllerType::CODE_DEPLOY:

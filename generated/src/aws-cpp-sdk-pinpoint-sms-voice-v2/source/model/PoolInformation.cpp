@@ -28,6 +28,7 @@ PoolInformation::PoolInformation() :
     m_twoWayEnabled(false),
     m_twoWayEnabledHasBeenSet(false),
     m_twoWayChannelArnHasBeenSet(false),
+    m_twoWayChannelRoleHasBeenSet(false),
     m_selfManagedOptOutsEnabled(false),
     m_selfManagedOptOutsEnabledHasBeenSet(false),
     m_optOutListNameHasBeenSet(false),
@@ -49,6 +50,7 @@ PoolInformation::PoolInformation(JsonView jsonValue) :
     m_twoWayEnabled(false),
     m_twoWayEnabledHasBeenSet(false),
     m_twoWayChannelArnHasBeenSet(false),
+    m_twoWayChannelRoleHasBeenSet(false),
     m_selfManagedOptOutsEnabled(false),
     m_selfManagedOptOutsEnabledHasBeenSet(false),
     m_optOutListNameHasBeenSet(false),
@@ -103,6 +105,13 @@ PoolInformation& PoolInformation::operator =(JsonView jsonValue)
     m_twoWayChannelArn = jsonValue.GetString("TwoWayChannelArn");
 
     m_twoWayChannelArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TwoWayChannelRole"))
+  {
+    m_twoWayChannelRole = jsonValue.GetString("TwoWayChannelRole");
+
+    m_twoWayChannelRoleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SelfManagedOptOutsEnabled"))
@@ -178,6 +187,12 @@ JsonValue PoolInformation::Jsonize() const
   if(m_twoWayChannelArnHasBeenSet)
   {
    payload.WithString("TwoWayChannelArn", m_twoWayChannelArn);
+
+  }
+
+  if(m_twoWayChannelRoleHasBeenSet)
+  {
+   payload.WithString("TwoWayChannelRole", m_twoWayChannelRole);
 
   }
 

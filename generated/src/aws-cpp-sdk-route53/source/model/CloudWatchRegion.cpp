@@ -55,6 +55,7 @@ namespace Aws
         static const int us_isob_east_1_HASH = HashingUtils::HashString("us-isob-east-1");
         static const int ap_southeast_4_HASH = HashingUtils::HashString("ap-southeast-4");
         static const int il_central_1_HASH = HashingUtils::HashString("il-central-1");
+        static const int ca_west_1_HASH = HashingUtils::HashString("ca-west-1");
 
 
         CloudWatchRegion GetCloudWatchRegionForName(const Aws::String& name)
@@ -200,6 +201,10 @@ namespace Aws
           {
             return CloudWatchRegion::il_central_1;
           }
+          else if (hashCode == ca_west_1_HASH)
+          {
+            return CloudWatchRegion::ca_west_1;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -214,6 +219,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudWatchRegion::NOT_SET:
+            return {};
           case CloudWatchRegion::us_east_1:
             return "us-east-1";
           case CloudWatchRegion::us_east_2:
@@ -284,6 +291,8 @@ namespace Aws
             return "ap-southeast-4";
           case CloudWatchRegion::il_central_1:
             return "il-central-1";
+          case CloudWatchRegion::ca_west_1:
+            return "ca-west-1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

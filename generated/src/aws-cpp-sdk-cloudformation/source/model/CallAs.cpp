@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CallAs::NOT_SET:
+            return {};
           case CallAs::SELF:
             return "SELF";
           case CallAs::DELEGATED_ADMIN:

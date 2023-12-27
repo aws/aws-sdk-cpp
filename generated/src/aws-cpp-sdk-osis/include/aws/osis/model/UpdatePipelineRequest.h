@@ -8,6 +8,8 @@
 #include <aws/osis/OSISRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/osis/model/LogPublishingOptions.h>
+#include <aws/osis/model/BufferOptions.h>
+#include <aws/osis/model/EncryptionAtRestOptions.h>
 #include <utility>
 
 namespace Aws
@@ -211,6 +213,74 @@ namespace Model
      */
     inline UpdatePipelineRequest& WithLogPublishingOptions(LogPublishingOptions&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+     */
+    inline const BufferOptions& GetBufferOptions() const{ return m_bufferOptions; }
+
+    /**
+     * <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+     */
+    inline bool BufferOptionsHasBeenSet() const { return m_bufferOptionsHasBeenSet; }
+
+    /**
+     * <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+     */
+    inline void SetBufferOptions(const BufferOptions& value) { m_bufferOptionsHasBeenSet = true; m_bufferOptions = value; }
+
+    /**
+     * <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+     */
+    inline void SetBufferOptions(BufferOptions&& value) { m_bufferOptionsHasBeenSet = true; m_bufferOptions = std::move(value); }
+
+    /**
+     * <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+     */
+    inline UpdatePipelineRequest& WithBufferOptions(const BufferOptions& value) { SetBufferOptions(value); return *this;}
+
+    /**
+     * <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+     */
+    inline UpdatePipelineRequest& WithBufferOptions(BufferOptions&& value) { SetBufferOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Key-value pairs to configure encryption for data that is written to a
+     * persistent buffer.</p>
+     */
+    inline const EncryptionAtRestOptions& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
+
+    /**
+     * <p>Key-value pairs to configure encryption for data that is written to a
+     * persistent buffer.</p>
+     */
+    inline bool EncryptionAtRestOptionsHasBeenSet() const { return m_encryptionAtRestOptionsHasBeenSet; }
+
+    /**
+     * <p>Key-value pairs to configure encryption for data that is written to a
+     * persistent buffer.</p>
+     */
+    inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
+
+    /**
+     * <p>Key-value pairs to configure encryption for data that is written to a
+     * persistent buffer.</p>
+     */
+    inline void SetEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::move(value); }
+
+    /**
+     * <p>Key-value pairs to configure encryption for data that is written to a
+     * persistent buffer.</p>
+     */
+    inline UpdatePipelineRequest& WithEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { SetEncryptionAtRestOptions(value); return *this;}
+
+    /**
+     * <p>Key-value pairs to configure encryption for data that is written to a
+     * persistent buffer.</p>
+     */
+    inline UpdatePipelineRequest& WithEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineName;
@@ -227,6 +297,12 @@ namespace Model
 
     LogPublishingOptions m_logPublishingOptions;
     bool m_logPublishingOptionsHasBeenSet = false;
+
+    BufferOptions m_bufferOptions;
+    bool m_bufferOptionsHasBeenSet = false;
+
+    EncryptionAtRestOptions m_encryptionAtRestOptions;
+    bool m_encryptionAtRestOptionsHasBeenSet = false;
   };
 
 } // namespace Model

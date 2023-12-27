@@ -18,8 +18,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to confirm user registration.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Confirm a user's registration as a user pool administrator.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUpRequest">AWS
    * API Reference</a></p>
    */
@@ -81,42 +81,66 @@ namespace Model
 
 
     /**
-     * <p>The user name for which you want to confirm user registration.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name for which you want to confirm user registration.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name for which you want to confirm user registration.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name for which you want to confirm user registration.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name for which you want to confirm user registration.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name for which you want to confirm user registration.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline AdminConfirmSignUpRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name for which you want to confirm user registration.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline AdminConfirmSignUpRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name for which you want to confirm user registration.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline AdminConfirmSignUpRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

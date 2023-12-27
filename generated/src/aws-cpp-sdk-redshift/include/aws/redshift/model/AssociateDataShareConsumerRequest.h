@@ -207,6 +207,27 @@ namespace Model
      */
     inline AssociateDataShareConsumerRequest& WithConsumerRegion(const char* value) { SetConsumerRegion(value); return *this;}
 
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline bool GetAllowWrites() const{ return m_allowWrites; }
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline bool AllowWritesHasBeenSet() const { return m_allowWritesHasBeenSet; }
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline void SetAllowWrites(bool value) { m_allowWritesHasBeenSet = true; m_allowWrites = value; }
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline AssociateDataShareConsumerRequest& WithAllowWrites(bool value) { SetAllowWrites(value); return *this;}
+
   private:
 
     Aws::String m_dataShareArn;
@@ -220,6 +241,9 @@ namespace Model
 
     Aws::String m_consumerRegion;
     bool m_consumerRegionHasBeenSet = false;
+
+    bool m_allowWrites;
+    bool m_allowWritesHasBeenSet = false;
   };
 
 } // namespace Model

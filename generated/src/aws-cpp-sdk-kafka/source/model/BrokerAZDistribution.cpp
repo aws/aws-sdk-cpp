@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BrokerAZDistribution::NOT_SET:
+            return {};
           case BrokerAZDistribution::DEFAULT:
             return "DEFAULT";
           default:

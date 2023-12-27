@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Payer::NOT_SET:
+            return {};
           case Payer::Requester:
             return "Requester";
           case Payer::BucketOwner:

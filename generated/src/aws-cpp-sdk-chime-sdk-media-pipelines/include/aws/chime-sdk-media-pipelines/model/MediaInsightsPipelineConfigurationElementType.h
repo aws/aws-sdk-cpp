@@ -23,7 +23,8 @@ namespace Model
     LambdaFunctionSink,
     SqsQueueSink,
     SnsTopicSink,
-    S3RecordingSink
+    S3RecordingSink,
+    VoiceEnhancementSink
   };
 
 namespace MediaInsightsPipelineConfigurationElementTypeMapper

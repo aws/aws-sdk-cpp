@@ -388,7 +388,8 @@ namespace Model
      * more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
@@ -447,7 +448,8 @@ namespace Model
      * more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
@@ -506,7 +508,8 @@ namespace Model
      * more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
@@ -565,7 +568,8 @@ namespace Model
      * more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
@@ -624,7 +628,8 @@ namespace Model
      * more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
@@ -683,7 +688,8 @@ namespace Model
      * more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -742,7 +748,8 @@ namespace Model
      * more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
@@ -801,7 +808,8 @@ namespace Model
      * more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -815,8 +823,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
@@ -829,8 +838,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
@@ -843,8 +853,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
@@ -857,8 +868,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
@@ -871,8 +883,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
@@ -885,8 +898,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
@@ -899,8 +913,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -913,8 +928,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
@@ -927,8 +943,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -1674,6 +1691,63 @@ namespace Model
      */
     inline CreateChangeSetRequest& WithOnStackFailure(OnStackFailure&& value) { SetOnStackFailure(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have custom names in templates.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
+     * not accept custom names, such as EC2 instances, use the resource import feature
+     * instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     * existing resources into CloudFormation management</a> in the <i>CloudFormation
+     * User Guide</i>.</p> 
+     */
+    inline bool GetImportExistingResources() const{ return m_importExistingResources; }
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have custom names in templates.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
+     * not accept custom names, such as EC2 instances, use the resource import feature
+     * instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     * existing resources into CloudFormation management</a> in the <i>CloudFormation
+     * User Guide</i>.</p> 
+     */
+    inline bool ImportExistingResourcesHasBeenSet() const { return m_importExistingResourcesHasBeenSet; }
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have custom names in templates.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
+     * not accept custom names, such as EC2 instances, use the resource import feature
+     * instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     * existing resources into CloudFormation management</a> in the <i>CloudFormation
+     * User Guide</i>.</p> 
+     */
+    inline void SetImportExistingResources(bool value) { m_importExistingResourcesHasBeenSet = true; m_importExistingResources = value; }
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have custom names in templates.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
+     * not accept custom names, such as EC2 instances, use the resource import feature
+     * instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     * existing resources into CloudFormation management</a> in the <i>CloudFormation
+     * User Guide</i>.</p> 
+     */
+    inline CreateChangeSetRequest& WithImportExistingResources(bool value) { SetImportExistingResources(value); return *this;}
+
   private:
 
     Aws::String m_stackName;
@@ -1729,6 +1803,9 @@ namespace Model
 
     OnStackFailure m_onStackFailure;
     bool m_onStackFailureHasBeenSet = false;
+
+    bool m_importExistingResources;
+    bool m_importExistingResourcesHasBeenSet = false;
   };
 
 } // namespace Model

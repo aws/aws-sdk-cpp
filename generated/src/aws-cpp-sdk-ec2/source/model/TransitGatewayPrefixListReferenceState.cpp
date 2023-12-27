@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayPrefixListReferenceState::NOT_SET:
+            return {};
           case TransitGatewayPrefixListReferenceState::pending:
             return "pending";
           case TransitGatewayPrefixListReferenceState::available:

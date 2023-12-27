@@ -32,7 +32,8 @@ CreateWorkloadRequest::CreateWorkloadRequest() :
     m_tagsHasBeenSet(false),
     m_discoveryConfigHasBeenSet(false),
     m_applicationsHasBeenSet(false),
-    m_profileArnsHasBeenSet(false)
+    m_profileArnsHasBeenSet(false),
+    m_reviewTemplateArnsHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,17 @@ Aws::String CreateWorkloadRequest::SerializePayload() const
      profileArnsJsonList[profileArnsIndex].AsString(m_profileArns[profileArnsIndex]);
    }
    payload.WithArray("ProfileArns", std::move(profileArnsJsonList));
+
+  }
+
+  if(m_reviewTemplateArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> reviewTemplateArnsJsonList(m_reviewTemplateArns.size());
+   for(unsigned reviewTemplateArnsIndex = 0; reviewTemplateArnsIndex < reviewTemplateArnsJsonList.GetLength(); ++reviewTemplateArnsIndex)
+   {
+     reviewTemplateArnsJsonList[reviewTemplateArnsIndex].AsString(m_reviewTemplateArns[reviewTemplateArnsIndex]);
+   }
+   payload.WithArray("ReviewTemplateArns", std::move(reviewTemplateArnsJsonList));
 
   }
 

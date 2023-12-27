@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ElasticGpuState::NOT_SET:
+            return {};
           case ElasticGpuState::ATTACHED:
             return "ATTACHED";
           default:

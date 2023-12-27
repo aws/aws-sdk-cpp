@@ -13,6 +13,7 @@
 #include <aws/quicksight/model/AxisDisplayOptions.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
 #include <aws/quicksight/model/LineSeriesAxisDisplayOptions.h>
+#include <aws/quicksight/model/SingleAxisOptions.h>
 #include <aws/quicksight/model/LineChartDefaultSeriesSettings.h>
 #include <aws/quicksight/model/LegendOptions.h>
 #include <aws/quicksight/model/DataLabelOptions.h>
@@ -410,6 +411,25 @@ namespace Model
     inline LineChartConfiguration& WithSecondaryYAxisLabelOptions(ChartAxisLabelOptions&& value) { SetSecondaryYAxisLabelOptions(std::move(value)); return *this;}
 
 
+    
+    inline const SingleAxisOptions& GetSingleAxisOptions() const{ return m_singleAxisOptions; }
+
+    
+    inline bool SingleAxisOptionsHasBeenSet() const { return m_singleAxisOptionsHasBeenSet; }
+
+    
+    inline void SetSingleAxisOptions(const SingleAxisOptions& value) { m_singleAxisOptionsHasBeenSet = true; m_singleAxisOptions = value; }
+
+    
+    inline void SetSingleAxisOptions(SingleAxisOptions&& value) { m_singleAxisOptionsHasBeenSet = true; m_singleAxisOptions = std::move(value); }
+
+    
+    inline LineChartConfiguration& WithSingleAxisOptions(const SingleAxisOptions& value) { SetSingleAxisOptions(value); return *this;}
+
+    
+    inline LineChartConfiguration& WithSingleAxisOptions(SingleAxisOptions&& value) { SetSingleAxisOptions(std::move(value)); return *this;}
+
+
     /**
      * <p>The options that determine the default presentation of all line series in
      * <code>LineChartVisual</code>.</p>
@@ -727,6 +747,9 @@ namespace Model
 
     ChartAxisLabelOptions m_secondaryYAxisLabelOptions;
     bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
+
+    SingleAxisOptions m_singleAxisOptions;
+    bool m_singleAxisOptionsHasBeenSet = false;
 
     LineChartDefaultSeriesSettings m_defaultSeriesSettings;
     bool m_defaultSeriesSettingsHasBeenSet = false;

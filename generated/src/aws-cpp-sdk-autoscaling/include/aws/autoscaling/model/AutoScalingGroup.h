@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/autoscaling/model/WarmPoolConfiguration.h>
+#include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/SuspendedProcess.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
@@ -1263,6 +1264,37 @@ namespace Model
      */
     inline AutoScalingGroup& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An instance maintenance policy.</p>
+     */
+    inline const InstanceMaintenancePolicy& GetInstanceMaintenancePolicy() const{ return m_instanceMaintenancePolicy; }
+
+    /**
+     * <p>An instance maintenance policy.</p>
+     */
+    inline bool InstanceMaintenancePolicyHasBeenSet() const { return m_instanceMaintenancePolicyHasBeenSet; }
+
+    /**
+     * <p>An instance maintenance policy.</p>
+     */
+    inline void SetInstanceMaintenancePolicy(const InstanceMaintenancePolicy& value) { m_instanceMaintenancePolicyHasBeenSet = true; m_instanceMaintenancePolicy = value; }
+
+    /**
+     * <p>An instance maintenance policy.</p>
+     */
+    inline void SetInstanceMaintenancePolicy(InstanceMaintenancePolicy&& value) { m_instanceMaintenancePolicyHasBeenSet = true; m_instanceMaintenancePolicy = std::move(value); }
+
+    /**
+     * <p>An instance maintenance policy.</p>
+     */
+    inline AutoScalingGroup& WithInstanceMaintenancePolicy(const InstanceMaintenancePolicy& value) { SetInstanceMaintenancePolicy(value); return *this;}
+
+    /**
+     * <p>An instance maintenance policy.</p>
+     */
+    inline AutoScalingGroup& WithInstanceMaintenancePolicy(InstanceMaintenancePolicy&& value) { SetInstanceMaintenancePolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -1366,6 +1398,9 @@ namespace Model
 
     Aws::Vector<TrafficSourceIdentifier> m_trafficSources;
     bool m_trafficSourcesHasBeenSet = false;
+
+    InstanceMaintenancePolicy m_instanceMaintenancePolicy;
+    bool m_instanceMaintenancePolicyHasBeenSet = false;
   };
 
 } // namespace Model

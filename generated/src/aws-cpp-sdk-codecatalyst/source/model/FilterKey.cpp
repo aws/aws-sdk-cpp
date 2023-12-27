@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int hasAccessTo_HASH = HashingUtils::HashString("hasAccessTo");
+        static const int name_HASH = HashingUtils::HashString("name");
 
 
         FilterKey GetFilterKeyForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == hasAccessTo_HASH)
           {
             return FilterKey::hasAccessTo;
+          }
+          else if (hashCode == name_HASH)
+          {
+            return FilterKey::name;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +49,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterKey::NOT_SET:
+            return {};
           case FilterKey::hasAccessTo:
             return "hasAccessTo";
+          case FilterKey::name:
+            return "name";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

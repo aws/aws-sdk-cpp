@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColumnNullable::NOT_SET:
+            return {};
           case ColumnNullable::NOT_NULL:
             return "NOT_NULL";
           case ColumnNullable::NULLABLE:

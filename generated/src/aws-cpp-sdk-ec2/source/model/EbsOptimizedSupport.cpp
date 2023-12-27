@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EbsOptimizedSupport::NOT_SET:
+            return {};
           case EbsOptimizedSupport::unsupported:
             return "unsupported";
           case EbsOptimizedSupport::supported:

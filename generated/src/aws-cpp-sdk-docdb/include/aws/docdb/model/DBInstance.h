@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/docdb/model/DBSubnetGroup.h>
 #include <aws/docdb/model/PendingModifiedValues.h>
+#include <aws/docdb/model/CertificateDetails.h>
 #include <aws/docdb/model/VpcSecurityGroupMembership.h>
 #include <aws/docdb/model/DBInstanceStatusInfo.h>
 #include <utility>
@@ -1140,6 +1141,37 @@ namespace Model
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline const CertificateDetails& GetCertificateDetails() const{ return m_certificateDetails; }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline bool CertificateDetailsHasBeenSet() const { return m_certificateDetailsHasBeenSet; }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline void SetCertificateDetails(const CertificateDetails& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = value; }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline void SetCertificateDetails(CertificateDetails&& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = std::move(value); }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline DBInstance& WithCertificateDetails(const CertificateDetails& value) { SetCertificateDetails(value); return *this;}
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline DBInstance& WithCertificateDetails(CertificateDetails&& value) { SetCertificateDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -1222,6 +1254,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
     bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
+
+    CertificateDetails m_certificateDetails;
+    bool m_certificateDetailsHasBeenSet = false;
   };
 
 } // namespace Model

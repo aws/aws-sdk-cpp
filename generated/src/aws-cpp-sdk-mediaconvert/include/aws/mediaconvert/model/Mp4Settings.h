@@ -263,44 +263,44 @@ namespace Model
 
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
-     * the archive as required for progressive downloading. Otherwise it is placed
-     * normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for
+     * progressive downloading: Leave blank or choose Progressive download. To place
+     * the MOOV at the end of your output: Choose Normal.
      */
     inline const Mp4MoovPlacement& GetMoovPlacement() const{ return m_moovPlacement; }
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
-     * the archive as required for progressive downloading. Otherwise it is placed
-     * normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for
+     * progressive downloading: Leave blank or choose Progressive download. To place
+     * the MOOV at the end of your output: Choose Normal.
      */
     inline bool MoovPlacementHasBeenSet() const { return m_moovPlacementHasBeenSet; }
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
-     * the archive as required for progressive downloading. Otherwise it is placed
-     * normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for
+     * progressive downloading: Leave blank or choose Progressive download. To place
+     * the MOOV at the end of your output: Choose Normal.
      */
     inline void SetMoovPlacement(const Mp4MoovPlacement& value) { m_moovPlacementHasBeenSet = true; m_moovPlacement = value; }
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
-     * the archive as required for progressive downloading. Otherwise it is placed
-     * normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for
+     * progressive downloading: Leave blank or choose Progressive download. To place
+     * the MOOV at the end of your output: Choose Normal.
      */
     inline void SetMoovPlacement(Mp4MoovPlacement&& value) { m_moovPlacementHasBeenSet = true; m_moovPlacement = std::move(value); }
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
-     * the archive as required for progressive downloading. Otherwise it is placed
-     * normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for
+     * progressive downloading: Leave blank or choose Progressive download. To place
+     * the MOOV at the end of your output: Choose Normal.
      */
     inline Mp4Settings& WithMoovPlacement(const Mp4MoovPlacement& value) { SetMoovPlacement(value); return *this;}
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
-     * the archive as required for progressive downloading. Otherwise it is placed
-     * normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for
+     * progressive downloading: Leave blank or choose Progressive download. To place
+     * the MOOV at the end of your output: Choose Normal.
      */
     inline Mp4Settings& WithMoovPlacement(Mp4MoovPlacement&& value) { SetMoovPlacement(std::move(value)); return *this;}
 

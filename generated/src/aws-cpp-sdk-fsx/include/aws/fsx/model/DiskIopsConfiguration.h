@@ -25,11 +25,12 @@ namespace Model
 
   /**
    * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
-   * FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx
-   * automatically provisions 3 IOPS per GB of storage capacity. You can provision
-   * additional IOPS per GB of storage. The configuration consists of the total
-   * number of provisioned SSD IOPS and how it is was provisioned, or the mode (by
-   * the customer or by Amazon FSx).</p><p><h3>See Also:</h3>   <a
+   * FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS
+   * file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of
+   * storage capacity. You can provision additional IOPS per GB of storage. The
+   * configuration consists of the total number of provisioned SSD IOPS and how it is
+   * was provisioned, or the mode (by the customer or by Amazon FSx).</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DiskIopsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -86,22 +87,50 @@ namespace Model
 
 
     /**
-     * <p>The total number of SSD IOPS provisioned for the file system.</p>
+     * <p>The total number of SSD IOPS provisioned for the file system.</p> <p>The
+     * minimum and maximum values for this property depend on the value of
+     * <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is
+     * calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS
+     * per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     * 200,000 * <code>HAPairs</code>.</p> <p>Amazon FSx responds with an HTTP status
+     * code 400 (Bad Request) if the value of <code>Iops</code> is outside of the
+     * minimum or maximum values.</p>
      */
     inline long long GetIops() const{ return m_iops; }
 
     /**
-     * <p>The total number of SSD IOPS provisioned for the file system.</p>
+     * <p>The total number of SSD IOPS provisioned for the file system.</p> <p>The
+     * minimum and maximum values for this property depend on the value of
+     * <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is
+     * calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS
+     * per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     * 200,000 * <code>HAPairs</code>.</p> <p>Amazon FSx responds with an HTTP status
+     * code 400 (Bad Request) if the value of <code>Iops</code> is outside of the
+     * minimum or maximum values.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The total number of SSD IOPS provisioned for the file system.</p>
+     * <p>The total number of SSD IOPS provisioned for the file system.</p> <p>The
+     * minimum and maximum values for this property depend on the value of
+     * <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is
+     * calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS
+     * per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     * 200,000 * <code>HAPairs</code>.</p> <p>Amazon FSx responds with an HTTP status
+     * code 400 (Bad Request) if the value of <code>Iops</code> is outside of the
+     * minimum or maximum values.</p>
      */
     inline void SetIops(long long value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The total number of SSD IOPS provisioned for the file system.</p>
+     * <p>The total number of SSD IOPS provisioned for the file system.</p> <p>The
+     * minimum and maximum values for this property depend on the value of
+     * <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is
+     * calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS
+     * per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     * 200,000 * <code>HAPairs</code>.</p> <p>Amazon FSx responds with an HTTP status
+     * code 400 (Bad Request) if the value of <code>Iops</code> is outside of the
+     * minimum or maximum values.</p>
      */
     inline DiskIopsConfiguration& WithIops(long long value) { SetIops(value); return *this;}
 

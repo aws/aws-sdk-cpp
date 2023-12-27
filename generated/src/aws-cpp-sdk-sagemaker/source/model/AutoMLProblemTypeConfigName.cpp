@@ -22,8 +22,9 @@ namespace Aws
 
         static const int ImageClassification_HASH = HashingUtils::HashString("ImageClassification");
         static const int TextClassification_HASH = HashingUtils::HashString("TextClassification");
-        static const int Tabular_HASH = HashingUtils::HashString("Tabular");
         static const int TimeSeriesForecasting_HASH = HashingUtils::HashString("TimeSeriesForecasting");
+        static const int Tabular_HASH = HashingUtils::HashString("Tabular");
+        static const int TextGeneration_HASH = HashingUtils::HashString("TextGeneration");
 
 
         AutoMLProblemTypeConfigName GetAutoMLProblemTypeConfigNameForName(const Aws::String& name)
@@ -37,13 +38,17 @@ namespace Aws
           {
             return AutoMLProblemTypeConfigName::TextClassification;
           }
+          else if (hashCode == TimeSeriesForecasting_HASH)
+          {
+            return AutoMLProblemTypeConfigName::TimeSeriesForecasting;
+          }
           else if (hashCode == Tabular_HASH)
           {
             return AutoMLProblemTypeConfigName::Tabular;
           }
-          else if (hashCode == TimeSeriesForecasting_HASH)
+          else if (hashCode == TextGeneration_HASH)
           {
-            return AutoMLProblemTypeConfigName::TimeSeriesForecasting;
+            return AutoMLProblemTypeConfigName::TextGeneration;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -59,14 +64,18 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLProblemTypeConfigName::NOT_SET:
+            return {};
           case AutoMLProblemTypeConfigName::ImageClassification:
             return "ImageClassification";
           case AutoMLProblemTypeConfigName::TextClassification:
             return "TextClassification";
-          case AutoMLProblemTypeConfigName::Tabular:
-            return "Tabular";
           case AutoMLProblemTypeConfigName::TimeSeriesForecasting:
             return "TimeSeriesForecasting";
+          case AutoMLProblemTypeConfigName::Tabular:
+            return "Tabular";
+          case AutoMLProblemTypeConfigName::TextGeneration:
+            return "TextGeneration";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -193,37 +193,37 @@ namespace Model
 
 
     /**
-     * <p>The <code>timestamp</code> of the last transaction at which the balance for
+     * <p>The <code>Timestamp</code> of the last transaction at which the balance for
      * the token in the wallet was updated.</p>
      */
     inline const BlockchainInstant& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>The <code>timestamp</code> of the last transaction at which the balance for
+     * <p>The <code>Timestamp</code> of the last transaction at which the balance for
      * the token in the wallet was updated.</p>
      */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The <code>timestamp</code> of the last transaction at which the balance for
+     * <p>The <code>Timestamp</code> of the last transaction at which the balance for
      * the token in the wallet was updated.</p>
      */
     inline void SetLastUpdatedTime(const BlockchainInstant& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>The <code>timestamp</code> of the last transaction at which the balance for
+     * <p>The <code>Timestamp</code> of the last transaction at which the balance for
      * the token in the wallet was updated.</p>
      */
     inline void SetLastUpdatedTime(BlockchainInstant&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
-     * <p>The <code>timestamp</code> of the last transaction at which the balance for
+     * <p>The <code>Timestamp</code> of the last transaction at which the balance for
      * the token in the wallet was updated.</p>
      */
     inline TokenBalance& WithLastUpdatedTime(const BlockchainInstant& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
-     * <p>The <code>timestamp</code> of the last transaction at which the balance for
+     * <p>The <code>Timestamp</code> of the last transaction at which the balance for
      * the token in the wallet was updated.</p>
      */
     inline TokenBalance& WithLastUpdatedTime(BlockchainInstant&& value) { SetLastUpdatedTime(std::move(value)); return *this;}

@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetManagedResourceResult::GetManagedResourceResult()
+GetManagedResourceResult::GetManagedResourceResult() : 
+    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET)
 {
 }
 
-GetManagedResourceResult::GetManagedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetManagedResourceResult::GetManagedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET)
 {
   *this = result;
 }
@@ -44,9 +46,30 @@ GetManagedResourceResult& GetManagedResourceResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("autoshifts"))
+  {
+    Aws::Utils::Array<JsonView> autoshiftsJsonList = jsonValue.GetArray("autoshifts");
+    for(unsigned autoshiftsIndex = 0; autoshiftsIndex < autoshiftsJsonList.GetLength(); ++autoshiftsIndex)
+    {
+      m_autoshifts.push_back(autoshiftsJsonList[autoshiftsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("practiceRunConfiguration"))
+  {
+    m_practiceRunConfiguration = jsonValue.GetObject("practiceRunConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("zonalAutoshiftStatus"))
+  {
+    m_zonalAutoshiftStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("zonalAutoshiftStatus"));
 
   }
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyUsageType::NOT_SET:
+            return {};
           case KeyUsageType::SIGN_VERIFY:
             return "SIGN_VERIFY";
           case KeyUsageType::ENCRYPT_DECRYPT:

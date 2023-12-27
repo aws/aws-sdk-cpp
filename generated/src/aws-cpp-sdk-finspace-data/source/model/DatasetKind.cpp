@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasetKind::NOT_SET:
+            return {};
           case DatasetKind::TABULAR:
             return "TABULAR";
           case DatasetKind::NON_TABULAR:

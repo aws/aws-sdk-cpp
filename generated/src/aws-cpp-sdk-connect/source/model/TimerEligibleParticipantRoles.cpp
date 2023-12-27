@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimerEligibleParticipantRoles::NOT_SET:
+            return {};
           case TimerEligibleParticipantRoles::CUSTOMER:
             return "CUSTOMER";
           case TimerEligibleParticipantRoles::AGENT:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AwsLogSourceName::NOT_SET:
+            return {};
           case AwsLogSourceName::ROUTE53:
             return "ROUTE53";
           case AwsLogSourceName::VPC_FLOW:

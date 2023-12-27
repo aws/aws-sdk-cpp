@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomerPolicyStatus::NOT_SET:
+            return {};
           case CustomerPolicyStatus::ACTIVE:
             return "ACTIVE";
           case CustomerPolicyStatus::OUT_OF_ADMIN_SCOPE:

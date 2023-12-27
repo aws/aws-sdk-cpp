@@ -704,8 +704,8 @@ namespace Model
     /**
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
-     * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
+     * time out after five minutes. Therefore, if you call <b>IssueCertificate</b>
+     * multiple times with the same idempotency token within five minutes, Amazon Web
      * Services Private CA recognizes that you are requesting only one certificate and
      * will issue only one. If you change the idempotency token for each call, Amazon
      * Web Services Private CA recognizes that you are requesting multiple
@@ -716,8 +716,8 @@ namespace Model
     /**
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
-     * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
+     * time out after five minutes. Therefore, if you call <b>IssueCertificate</b>
+     * multiple times with the same idempotency token within five minutes, Amazon Web
      * Services Private CA recognizes that you are requesting only one certificate and
      * will issue only one. If you change the idempotency token for each call, Amazon
      * Web Services Private CA recognizes that you are requesting multiple
@@ -728,8 +728,8 @@ namespace Model
     /**
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
-     * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
+     * time out after five minutes. Therefore, if you call <b>IssueCertificate</b>
+     * multiple times with the same idempotency token within five minutes, Amazon Web
      * Services Private CA recognizes that you are requesting only one certificate and
      * will issue only one. If you change the idempotency token for each call, Amazon
      * Web Services Private CA recognizes that you are requesting multiple
@@ -740,8 +740,8 @@ namespace Model
     /**
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
-     * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
+     * time out after five minutes. Therefore, if you call <b>IssueCertificate</b>
+     * multiple times with the same idempotency token within five minutes, Amazon Web
      * Services Private CA recognizes that you are requesting only one certificate and
      * will issue only one. If you change the idempotency token for each call, Amazon
      * Web Services Private CA recognizes that you are requesting multiple
@@ -752,8 +752,8 @@ namespace Model
     /**
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
-     * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
+     * time out after five minutes. Therefore, if you call <b>IssueCertificate</b>
+     * multiple times with the same idempotency token within five minutes, Amazon Web
      * Services Private CA recognizes that you are requesting only one certificate and
      * will issue only one. If you change the idempotency token for each call, Amazon
      * Web Services Private CA recognizes that you are requesting multiple
@@ -764,8 +764,8 @@ namespace Model
     /**
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
-     * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
+     * time out after five minutes. Therefore, if you call <b>IssueCertificate</b>
+     * multiple times with the same idempotency token within five minutes, Amazon Web
      * Services Private CA recognizes that you are requesting only one certificate and
      * will issue only one. If you change the idempotency token for each call, Amazon
      * Web Services Private CA recognizes that you are requesting multiple
@@ -776,8 +776,8 @@ namespace Model
     /**
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
-     * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
+     * time out after five minutes. Therefore, if you call <b>IssueCertificate</b>
+     * multiple times with the same idempotency token within five minutes, Amazon Web
      * Services Private CA recognizes that you are requesting only one certificate and
      * will issue only one. If you change the idempotency token for each call, Amazon
      * Web Services Private CA recognizes that you are requesting multiple
@@ -788,8 +788,8 @@ namespace Model
     /**
      * <p>Alphanumeric string that can be used to distinguish between calls to the
      * <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b>
-     * time out after one minute. Therefore, if you call <b>IssueCertificate</b>
-     * multiple times with the same idempotency token within one minute, Amazon Web
+     * time out after five minutes. Therefore, if you call <b>IssueCertificate</b>
+     * multiple times with the same idempotency token within five minutes, Amazon Web
      * Services Private CA recognizes that you are requesting only one certificate and
      * will issue only one. If you change the idempotency token for each call, Amazon
      * Web Services Private CA recognizes that you are requesting multiple

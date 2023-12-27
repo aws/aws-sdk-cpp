@@ -678,37 +678,49 @@ namespace Model
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline const CloudwatchLogsExportConfiguration& GetCloudwatchLogsExportConfiguration() const{ return m_cloudwatchLogsExportConfiguration; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline bool CloudwatchLogsExportConfigurationHasBeenSet() const { return m_cloudwatchLogsExportConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline void SetCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = value; }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline void SetCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { m_cloudwatchLogsExportConfigurationHasBeenSet = true; m_cloudwatchLogsExportConfiguration = std::move(value); }
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline ModifyDBClusterRequest& WithCloudwatchLogsExportConfiguration(const CloudwatchLogsExportConfiguration& value) { SetCloudwatchLogsExportConfiguration(value); return *this;}
 
     /**
      * <p>The configuration setting for the log types to be enabled for export to
-     * CloudWatch Logs for a specific DB cluster.</p>
+     * CloudWatch Logs for a specific DB cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     * the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
      */
     inline ModifyDBClusterRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { SetCloudwatchLogsExportConfiguration(std::move(value)); return *this;}
 
@@ -719,8 +731,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -730,8 +741,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -741,8 +751,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -752,8 +761,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -763,8 +771,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -774,8 +781,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -785,8 +791,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -796,8 +801,7 @@ namespace Model
      * next maintenance window unless the <code>ApplyImmediately</code> parameter is
      * set to true.</p> <p>For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
-     * Releases for Amazon Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+     * Releases for Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -994,23 +998,110 @@ namespace Model
     inline ModifyDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline ModifyDBClusterRequest& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline ModifyDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
   private:
 
@@ -1070,6 +1161,9 @@ namespace Model
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
     bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

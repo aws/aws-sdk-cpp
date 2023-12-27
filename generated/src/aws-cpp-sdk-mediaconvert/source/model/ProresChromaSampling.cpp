@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProresChromaSampling::NOT_SET:
+            return {};
           case ProresChromaSampling::PRESERVE_444_SAMPLING:
             return "PRESERVE_444_SAMPLING";
           case ProresChromaSampling::SUBSAMPLE_TO_422:

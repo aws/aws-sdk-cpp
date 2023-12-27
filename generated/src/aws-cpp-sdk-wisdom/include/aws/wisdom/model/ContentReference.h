@@ -161,42 +161,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline ContentReference& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline ContentReference& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the knowledge base.</p>
+     * <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES
+     * type knowledge base if you're storing Wisdom Content resource to it.</p>
      */
     inline ContentReference& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
 

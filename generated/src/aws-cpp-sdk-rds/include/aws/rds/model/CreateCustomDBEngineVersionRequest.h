@@ -694,6 +694,108 @@ namespace Model
     
     inline CreateCustomDBEngineVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
+     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
+     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
+     * manifest when you specify
+     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
+     */
+    inline const Aws::String& GetSourceCustomDbEngineVersionIdentifier() const{ return m_sourceCustomDbEngineVersionIdentifier; }
+
+    /**
+     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
+     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
+     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
+     * manifest when you specify
+     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
+     */
+    inline bool SourceCustomDbEngineVersionIdentifierHasBeenSet() const { return m_sourceCustomDbEngineVersionIdentifierHasBeenSet; }
+
+    /**
+     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
+     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
+     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
+     * manifest when you specify
+     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
+     */
+    inline void SetSourceCustomDbEngineVersionIdentifier(const Aws::String& value) { m_sourceCustomDbEngineVersionIdentifierHasBeenSet = true; m_sourceCustomDbEngineVersionIdentifier = value; }
+
+    /**
+     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
+     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
+     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
+     * manifest when you specify
+     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
+     */
+    inline void SetSourceCustomDbEngineVersionIdentifier(Aws::String&& value) { m_sourceCustomDbEngineVersionIdentifierHasBeenSet = true; m_sourceCustomDbEngineVersionIdentifier = std::move(value); }
+
+    /**
+     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
+     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
+     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
+     * manifest when you specify
+     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
+     */
+    inline void SetSourceCustomDbEngineVersionIdentifier(const char* value) { m_sourceCustomDbEngineVersionIdentifierHasBeenSet = true; m_sourceCustomDbEngineVersionIdentifier.assign(value); }
+
+    /**
+     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
+     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
+     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
+     * manifest when you specify
+     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
+     */
+    inline CreateCustomDBEngineVersionRequest& WithSourceCustomDbEngineVersionIdentifier(const Aws::String& value) { SetSourceCustomDbEngineVersionIdentifier(value); return *this;}
+
+    /**
+     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
+     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
+     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
+     * manifest when you specify
+     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
+     */
+    inline CreateCustomDBEngineVersionRequest& WithSourceCustomDbEngineVersionIdentifier(Aws::String&& value) { SetSourceCustomDbEngineVersionIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a
+     * different Amazon Machine Imagine (AMI) by using either <code>Source</code> or
+     * <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON
+     * manifest when you specify
+     * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
+     */
+    inline CreateCustomDBEngineVersionRequest& WithSourceCustomDbEngineVersionIdentifier(const char* value) { SetSourceCustomDbEngineVersionIdentifier(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether to use the latest service-provided Amazon Machine Image
+     * (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you
+     * can't also specify <code>ImageId</code>.</p>
+     */
+    inline bool GetUseAwsProvidedLatestImage() const{ return m_useAwsProvidedLatestImage; }
+
+    /**
+     * <p>Specifies whether to use the latest service-provided Amazon Machine Image
+     * (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you
+     * can't also specify <code>ImageId</code>.</p>
+     */
+    inline bool UseAwsProvidedLatestImageHasBeenSet() const { return m_useAwsProvidedLatestImageHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to use the latest service-provided Amazon Machine Image
+     * (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you
+     * can't also specify <code>ImageId</code>.</p>
+     */
+    inline void SetUseAwsProvidedLatestImage(bool value) { m_useAwsProvidedLatestImageHasBeenSet = true; m_useAwsProvidedLatestImage = value; }
+
+    /**
+     * <p>Specifies whether to use the latest service-provided Amazon Machine Image
+     * (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you
+     * can't also specify <code>ImageId</code>.</p>
+     */
+    inline CreateCustomDBEngineVersionRequest& WithUseAwsProvidedLatestImage(bool value) { SetUseAwsProvidedLatestImage(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -722,6 +824,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_sourceCustomDbEngineVersionIdentifier;
+    bool m_sourceCustomDbEngineVersionIdentifierHasBeenSet = false;
+
+    bool m_useAwsProvidedLatestImage;
+    bool m_useAwsProvidedLatestImageHasBeenSet = false;
   };
 
 } // namespace Model

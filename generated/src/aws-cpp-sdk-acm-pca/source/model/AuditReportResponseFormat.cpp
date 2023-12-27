@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuditReportResponseFormat::NOT_SET:
+            return {};
           case AuditReportResponseFormat::JSON:
             return "JSON";
           case AuditReportResponseFormat::CSV:

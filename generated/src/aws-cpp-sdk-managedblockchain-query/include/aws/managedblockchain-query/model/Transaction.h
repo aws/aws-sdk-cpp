@@ -8,7 +8,8 @@
 #include <aws/managedblockchain-query/model/QueryNetwork.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/managedblockchain-query/model/QueryTransactionStatus.h>
+#include <aws/managedblockchain-query/model/ConfirmationStatus.h>
+#include <aws/managedblockchain-query/model/ExecutionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -47,32 +48,32 @@ namespace Model
 
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline const QueryNetwork& GetNetwork() const{ return m_network; }
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline void SetNetwork(const QueryNetwork& value) { m_networkHasBeenSet = true; m_network = value; }
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline void SetNetwork(QueryNetwork&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline Transaction& WithNetwork(const QueryNetwork& value) { SetNetwork(value); return *this;}
 
     /**
-     * <p>The blockchain network where the transaction occured.</p>
+     * <p>The blockchain network where the transaction occurred.</p>
      */
     inline Transaction& WithNetwork(QueryNetwork&& value) { SetNetwork(std::move(value)); return *this;}
 
@@ -295,37 +296,6 @@ namespace Model
      * <p>The number of transactions in the block.</p>
      */
     inline Transaction& WithNumberOfTransactions(long long value) { SetNumberOfTransactions(value); return *this;}
-
-
-    /**
-     * <p>The status of the transaction.</p>
-     */
-    inline const QueryTransactionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the transaction.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the transaction.</p>
-     */
-    inline void SetStatus(const QueryTransactionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the transaction.</p>
-     */
-    inline void SetStatus(QueryTransactionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the transaction.</p>
-     */
-    inline Transaction& WithStatus(const QueryTransactionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the transaction.</p>
-     */
-    inline Transaction& WithStatus(QueryTransactionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -782,6 +752,68 @@ namespace Model
      */
     inline Transaction& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the transaction has reached Finality.</p>
+     */
+    inline const ConfirmationStatus& GetConfirmationStatus() const{ return m_confirmationStatus; }
+
+    /**
+     * <p>Specifies whether the transaction has reached Finality.</p>
+     */
+    inline bool ConfirmationStatusHasBeenSet() const { return m_confirmationStatusHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the transaction has reached Finality.</p>
+     */
+    inline void SetConfirmationStatus(const ConfirmationStatus& value) { m_confirmationStatusHasBeenSet = true; m_confirmationStatus = value; }
+
+    /**
+     * <p>Specifies whether the transaction has reached Finality.</p>
+     */
+    inline void SetConfirmationStatus(ConfirmationStatus&& value) { m_confirmationStatusHasBeenSet = true; m_confirmationStatus = std::move(value); }
+
+    /**
+     * <p>Specifies whether the transaction has reached Finality.</p>
+     */
+    inline Transaction& WithConfirmationStatus(const ConfirmationStatus& value) { SetConfirmationStatus(value); return *this;}
+
+    /**
+     * <p>Specifies whether the transaction has reached Finality.</p>
+     */
+    inline Transaction& WithConfirmationStatus(ConfirmationStatus&& value) { SetConfirmationStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Identifies whether the transaction has succeeded or failed.</p>
+     */
+    inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
+
+    /**
+     * <p>Identifies whether the transaction has succeeded or failed.</p>
+     */
+    inline bool ExecutionStatusHasBeenSet() const { return m_executionStatusHasBeenSet; }
+
+    /**
+     * <p>Identifies whether the transaction has succeeded or failed.</p>
+     */
+    inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
+
+    /**
+     * <p>Identifies whether the transaction has succeeded or failed.</p>
+     */
+    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = std::move(value); }
+
+    /**
+     * <p>Identifies whether the transaction has succeeded or failed.</p>
+     */
+    inline Transaction& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
+
+    /**
+     * <p>Identifies whether the transaction has succeeded or failed.</p>
+     */
+    inline Transaction& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
+
   private:
 
     QueryNetwork m_network;
@@ -804,9 +836,6 @@ namespace Model
 
     long long m_numberOfTransactions;
     bool m_numberOfTransactionsHasBeenSet = false;
-
-    QueryTransactionStatus m_status;
-    bool m_statusHasBeenSet = false;
 
     Aws::String m_to;
     bool m_toHasBeenSet = false;
@@ -840,6 +869,12 @@ namespace Model
 
     Aws::String m_transactionId;
     bool m_transactionIdHasBeenSet = false;
+
+    ConfirmationStatus m_confirmationStatus;
+    bool m_confirmationStatusHasBeenSet = false;
+
+    ExecutionStatus m_executionStatus;
+    bool m_executionStatusHasBeenSet = false;
   };
 
 } // namespace Model

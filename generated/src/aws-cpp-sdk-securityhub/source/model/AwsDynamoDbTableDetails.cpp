@@ -39,7 +39,9 @@ AwsDynamoDbTableDetails::AwsDynamoDbTableDetails() :
     m_tableNameHasBeenSet(false),
     m_tableSizeBytes(0),
     m_tableSizeBytesHasBeenSet(false),
-    m_tableStatusHasBeenSet(false)
+    m_tableStatusHasBeenSet(false),
+    m_deletionProtectionEnabled(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ AwsDynamoDbTableDetails::AwsDynamoDbTableDetails(JsonView jsonValue) :
     m_tableNameHasBeenSet(false),
     m_tableSizeBytes(0),
     m_tableSizeBytesHasBeenSet(false),
-    m_tableStatusHasBeenSet(false)
+    m_tableStatusHasBeenSet(false),
+    m_deletionProtectionEnabled(false),
+    m_deletionProtectionEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -219,6 +223,13 @@ AwsDynamoDbTableDetails& AwsDynamoDbTableDetails::operator =(JsonView jsonValue)
     m_tableStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeletionProtectionEnabled"))
+  {
+    m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
+
+    m_deletionProtectionEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -362,6 +373,12 @@ JsonValue AwsDynamoDbTableDetails::Jsonize() const
   if(m_tableStatusHasBeenSet)
   {
    payload.WithString("TableStatus", m_tableStatus);
+
+  }
+
+  if(m_deletionProtectionEnabledHasBeenSet)
+  {
+   payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
 
   }
 

@@ -27,6 +27,7 @@ namespace Aws
         static const int HIERARCHY_LEVEL_HASH = HashingUtils::HashString("HIERARCHY_LEVEL");
         static const int HIERARCHY_GROUP_HASH = HashingUtils::HashString("HIERARCHY_GROUP");
         static const int USER_HASH = HashingUtils::HashString("USER");
+        static const int PHONE_NUMBER_HASH = HashingUtils::HashString("PHONE_NUMBER");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ResourceType::USER;
           }
+          else if (hashCode == PHONE_NUMBER_HASH)
+          {
+            return ResourceType::PHONE_NUMBER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::CONTACT:
             return "CONTACT";
           case ResourceType::CONTACT_FLOW:
@@ -88,6 +95,8 @@ namespace Aws
             return "HIERARCHY_GROUP";
           case ResourceType::USER:
             return "USER";
+          case ResourceType::PHONE_NUMBER:
+            return "PHONE_NUMBER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Framework::NOT_SET:
+            return {};
           case Framework::TENSORFLOW:
             return "TENSORFLOW";
           case Framework::KERAS:

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +33,37 @@ namespace Model
     AWS_SSOADMIN_API Aws::String SerializePayload() const override;
 
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>Updates the attributes for your ABAC configuration.</p>
+     */
+    inline const InstanceAccessControlAttributeConfiguration& GetInstanceAccessControlAttributeConfiguration() const{ return m_instanceAccessControlAttributeConfiguration; }
+
+    /**
+     * <p>Updates the attributes for your ABAC configuration.</p>
+     */
+    inline bool InstanceAccessControlAttributeConfigurationHasBeenSet() const { return m_instanceAccessControlAttributeConfigurationHasBeenSet; }
+
+    /**
+     * <p>Updates the attributes for your ABAC configuration.</p>
+     */
+    inline void SetInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { m_instanceAccessControlAttributeConfigurationHasBeenSet = true; m_instanceAccessControlAttributeConfiguration = value; }
+
+    /**
+     * <p>Updates the attributes for your ABAC configuration.</p>
+     */
+    inline void SetInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { m_instanceAccessControlAttributeConfigurationHasBeenSet = true; m_instanceAccessControlAttributeConfiguration = std::move(value); }
+
+    /**
+     * <p>Updates the attributes for your ABAC configuration.</p>
+     */
+    inline UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { SetInstanceAccessControlAttributeConfiguration(value); return *this;}
+
+    /**
+     * <p>Updates the attributes for your ABAC configuration.</p>
+     */
+    inline UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { SetInstanceAccessControlAttributeConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -83,44 +114,13 @@ namespace Model
      */
     inline UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 
-
-    /**
-     * <p>Updates the attributes for your ABAC configuration.</p>
-     */
-    inline const InstanceAccessControlAttributeConfiguration& GetInstanceAccessControlAttributeConfiguration() const{ return m_instanceAccessControlAttributeConfiguration; }
-
-    /**
-     * <p>Updates the attributes for your ABAC configuration.</p>
-     */
-    inline bool InstanceAccessControlAttributeConfigurationHasBeenSet() const { return m_instanceAccessControlAttributeConfigurationHasBeenSet; }
-
-    /**
-     * <p>Updates the attributes for your ABAC configuration.</p>
-     */
-    inline void SetInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { m_instanceAccessControlAttributeConfigurationHasBeenSet = true; m_instanceAccessControlAttributeConfiguration = value; }
-
-    /**
-     * <p>Updates the attributes for your ABAC configuration.</p>
-     */
-    inline void SetInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { m_instanceAccessControlAttributeConfigurationHasBeenSet = true; m_instanceAccessControlAttributeConfiguration = std::move(value); }
-
-    /**
-     * <p>Updates the attributes for your ABAC configuration.</p>
-     */
-    inline UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { SetInstanceAccessControlAttributeConfiguration(value); return *this;}
-
-    /**
-     * <p>Updates the attributes for your ABAC configuration.</p>
-     */
-    inline UpdateInstanceAccessControlAttributeConfigurationRequest& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { SetInstanceAccessControlAttributeConfiguration(std::move(value)); return *this;}
-
   private:
-
-    Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet = false;
 
     InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
     bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;
+
+    Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet = false;
   };
 
 } // namespace Model

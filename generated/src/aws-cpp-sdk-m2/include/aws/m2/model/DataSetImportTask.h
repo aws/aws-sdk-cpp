@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/m2/model/DataSetTaskLifecycle.h>
-#include <aws/m2/model/DataSetImportSummary.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/m2/model/DataSetImportSummary.h>
 #include <utility>
 
 namespace Aws
@@ -69,6 +69,47 @@ namespace Model
      * <p>The status of the data set import task.</p>
      */
     inline DataSetImportTask& WithStatus(DataSetTaskLifecycle&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If dataset import failed, the failure reason will show here.</p>
+     */
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>If dataset import failed, the failure reason will show here.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>If dataset import failed, the failure reason will show here.</p>
+     */
+    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>If dataset import failed, the failure reason will show here.</p>
+     */
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>If dataset import failed, the failure reason will show here.</p>
+     */
+    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
+
+    /**
+     * <p>If dataset import failed, the failure reason will show here.</p>
+     */
+    inline DataSetImportTask& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>If dataset import failed, the failure reason will show here.</p>
+     */
+    inline DataSetImportTask& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>If dataset import failed, the failure reason will show here.</p>
+     */
+    inline DataSetImportTask& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
 
     /**
@@ -146,6 +187,9 @@ namespace Model
 
     DataSetTaskLifecycle m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
 
     DataSetImportSummary m_summary;
     bool m_summaryHasBeenSet = false;

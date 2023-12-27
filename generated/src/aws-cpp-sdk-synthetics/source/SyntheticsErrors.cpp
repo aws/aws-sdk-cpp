@@ -33,31 +33,31 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REQUEST_ENTITY_TOO_LARGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::REQUEST_ENTITY_TOO_LARGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::REQUEST_ENTITY_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

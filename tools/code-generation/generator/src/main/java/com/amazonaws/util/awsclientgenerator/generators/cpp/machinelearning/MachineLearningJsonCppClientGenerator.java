@@ -13,6 +13,8 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MachineLearningJsonCppClientGenerator extends JsonCppClientGenerator {
 
@@ -21,14 +23,24 @@ public class MachineLearningJsonCppClientGenerator extends JsonCppClientGenerato
     }
 
     @Override
-    protected SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception {
+    protected List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception {
+        List<SdkFileEntry> sourceFiles = new ArrayList<>();
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/machinelearning/MachineLearningServiceClientSource.vm", StandardCharsets.UTF_8.name());
+        for (int i = 0; i < serviceModels.size(); i++) {
+            VelocityContext context = createContext(serviceModels.get(i));
+            context.put("CppViewHelper", CppViewHelper.class);
 
-        VelocityContext context = createContext(serviceModel);
-        context.put("CppViewHelper", CppViewHelper.class);
+            final String fileName;
+            if (i == 0) {
+                context.put("onlyGeneratedOperations", false);
+                fileName = String.format("source/%sClient.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix());
+            } else {
+                context.put("onlyGeneratedOperations", true);
+                fileName = String.format("source/%sClient%d.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix(), i);
+            }
 
-        String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
-
-        return makeFile(template, context, fileName, true);
+            sourceFiles.add(makeFile(template, context, fileName, true));
+        }
+        return sourceFiles;
     }
 }

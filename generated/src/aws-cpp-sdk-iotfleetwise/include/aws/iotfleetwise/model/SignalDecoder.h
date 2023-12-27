@@ -9,6 +9,7 @@
 #include <aws/iotfleetwise/model/SignalDecoderType.h>
 #include <aws/iotfleetwise/model/CanSignal.h>
 #include <aws/iotfleetwise/model/ObdSignal.h>
+#include <aws/iotfleetwise/model/MessageSignal.h>
 #include <utility>
 
 namespace Aws
@@ -260,6 +261,43 @@ namespace Model
      */
     inline SignalDecoder& WithObdSignal(ObdSignal&& value) { SetObdSignal(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The decoding information for a specific message which supports higher order
+     * data types. </p>
+     */
+    inline const MessageSignal& GetMessageSignal() const{ return m_messageSignal; }
+
+    /**
+     * <p>The decoding information for a specific message which supports higher order
+     * data types. </p>
+     */
+    inline bool MessageSignalHasBeenSet() const { return m_messageSignalHasBeenSet; }
+
+    /**
+     * <p>The decoding information for a specific message which supports higher order
+     * data types. </p>
+     */
+    inline void SetMessageSignal(const MessageSignal& value) { m_messageSignalHasBeenSet = true; m_messageSignal = value; }
+
+    /**
+     * <p>The decoding information for a specific message which supports higher order
+     * data types. </p>
+     */
+    inline void SetMessageSignal(MessageSignal&& value) { m_messageSignalHasBeenSet = true; m_messageSignal = std::move(value); }
+
+    /**
+     * <p>The decoding information for a specific message which supports higher order
+     * data types. </p>
+     */
+    inline SignalDecoder& WithMessageSignal(const MessageSignal& value) { SetMessageSignal(value); return *this;}
+
+    /**
+     * <p>The decoding information for a specific message which supports higher order
+     * data types. </p>
+     */
+    inline SignalDecoder& WithMessageSignal(MessageSignal&& value) { SetMessageSignal(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fullyQualifiedName;
@@ -276,6 +314,9 @@ namespace Model
 
     ObdSignal m_obdSignal;
     bool m_obdSignalHasBeenSet = false;
+
+    MessageSignal m_messageSignal;
+    bool m_messageSignalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingType::NOT_SET:
+            return {};
           case ScalingType::Auto:
             return "Auto";
           case ScalingType::Linear:

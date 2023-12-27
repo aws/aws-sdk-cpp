@@ -265,104 +265,104 @@ namespace Model
 
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline const LogicalResourceId& GetLogicalResourceId() const{ return m_logicalResourceId; }
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline void SetLogicalResourceId(const LogicalResourceId& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline void SetLogicalResourceId(LogicalResourceId&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline PhysicalResource& WithLogicalResourceId(const LogicalResourceId& value) { SetLogicalResourceId(value); return *this;}
 
     /**
-     * <p>The logical identifier of the resource.</p>
+     * <p>Logical identifier of the resource.</p>
      */
     inline PhysicalResource& WithLogicalResourceId(LogicalResourceId&& value) { SetLogicalResourceId(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the parent resource.</p>
+     * <p>Name of the parent resource.</p>
      */
     inline const Aws::String& GetParentResourceName() const{ return m_parentResourceName; }
 
     /**
-     * <p>The name of the parent resource.</p>
+     * <p>Name of the parent resource.</p>
      */
     inline bool ParentResourceNameHasBeenSet() const { return m_parentResourceNameHasBeenSet; }
 
     /**
-     * <p>The name of the parent resource.</p>
+     * <p>Name of the parent resource.</p>
      */
     inline void SetParentResourceName(const Aws::String& value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName = value; }
 
     /**
-     * <p>The name of the parent resource.</p>
+     * <p>Name of the parent resource.</p>
      */
     inline void SetParentResourceName(Aws::String&& value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName = std::move(value); }
 
     /**
-     * <p>The name of the parent resource.</p>
+     * <p>Name of the parent resource.</p>
      */
     inline void SetParentResourceName(const char* value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName.assign(value); }
 
     /**
-     * <p>The name of the parent resource.</p>
+     * <p>Name of the parent resource.</p>
      */
     inline PhysicalResource& WithParentResourceName(const Aws::String& value) { SetParentResourceName(value); return *this;}
 
     /**
-     * <p>The name of the parent resource.</p>
+     * <p>Name of the parent resource.</p>
      */
     inline PhysicalResource& WithParentResourceName(Aws::String&& value) { SetParentResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the parent resource.</p>
+     * <p>Name of the parent resource.</p>
      */
     inline PhysicalResource& WithParentResourceName(const char* value) { SetParentResourceName(value); return *this;}
 
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline const PhysicalResourceId& GetPhysicalResourceId() const{ return m_physicalResourceId; }
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline void SetPhysicalResourceId(const PhysicalResourceId& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline void SetPhysicalResourceId(PhysicalResourceId&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline PhysicalResource& WithPhysicalResourceId(const PhysicalResourceId& value) { SetPhysicalResourceId(value); return *this;}
 
     /**
-     * <p>The physical identifier of the resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline PhysicalResource& WithPhysicalResourceId(PhysicalResourceId&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 
@@ -450,32 +450,32 @@ namespace Model
 
 
     /**
-     * <p>The type of input source.</p>
+     * <p>Type of input source.</p>
      */
     inline const ResourceSourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p>The type of input source.</p>
+     * <p>Type of input source.</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of input source.</p>
+     * <p>Type of input source.</p>
      */
     inline void SetSourceType(const ResourceSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The type of input source.</p>
+     * <p>Type of input source.</p>
      */
     inline void SetSourceType(ResourceSourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p>The type of input source.</p>
+     * <p>Type of input source.</p>
      */
     inline PhysicalResource& WithSourceType(const ResourceSourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The type of input source.</p>
+     * <p>Type of input source.</p>
      */
     inline PhysicalResource& WithSourceType(ResourceSourceType&& value) { SetSourceType(std::move(value)); return *this;}
 

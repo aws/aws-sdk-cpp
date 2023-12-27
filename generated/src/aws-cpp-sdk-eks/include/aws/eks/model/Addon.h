@@ -86,42 +86,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline Addon& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline Addon& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the cluster.</p>
+     * <p>The name of your cluster.</p>
      */
     inline Addon& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
@@ -271,217 +271,204 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the add-on was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The date and time that the add-on was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The date and time that the add-on was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The date and time that the add-on was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The date and time that the add-on was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline Addon& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The date and time that the add-on was created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline Addon& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time that the add-on was last modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
 
     /**
-     * <p>The date and time that the add-on was last modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
 
     /**
-     * <p>The date and time that the add-on was last modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
 
     /**
-     * <p>The date and time that the add-on was last modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
 
     /**
-     * <p>The date and time that the add-on was last modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline Addon& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
 
     /**
-     * <p>The date and time that the add-on was last modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline Addon& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
-     * service account that the add-on uses.</p>
+     * <code>ServiceAccount</code> object that the add-on uses.</p>
      */
     inline const Aws::String& GetServiceAccountRoleArn() const{ return m_serviceAccountRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
-     * service account that the add-on uses.</p>
+     * <code>ServiceAccount</code> object that the add-on uses.</p>
      */
     inline bool ServiceAccountRoleArnHasBeenSet() const { return m_serviceAccountRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
-     * service account that the add-on uses.</p>
+     * <code>ServiceAccount</code> object that the add-on uses.</p>
      */
     inline void SetServiceAccountRoleArn(const Aws::String& value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
-     * service account that the add-on uses.</p>
+     * <code>ServiceAccount</code> object that the add-on uses.</p>
      */
     inline void SetServiceAccountRoleArn(Aws::String&& value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
-     * service account that the add-on uses.</p>
+     * <code>ServiceAccount</code> object that the add-on uses.</p>
      */
     inline void SetServiceAccountRoleArn(const char* value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
-     * service account that the add-on uses.</p>
+     * <code>ServiceAccount</code> object that the add-on uses.</p>
      */
     inline Addon& WithServiceAccountRoleArn(const Aws::String& value) { SetServiceAccountRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
-     * service account that the add-on uses.</p>
+     * <code>ServiceAccount</code> object that the add-on uses.</p>
      */
     inline Addon& WithServiceAccountRoleArn(Aws::String&& value) { SetServiceAccountRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
-     * service account that the add-on uses.</p>
+     * <code>ServiceAccount</code> object that the add-on uses.</p>
      */
     inline Addon& WithServiceAccountRoleArn(const char* value) { SetServiceAccountRoleArn(value); return *this;}
 
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Addon& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Addon& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Addon& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Addon& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Addon& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Addon& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Addon& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Addon& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Add-on tags do not propagate to any other resources associated with the cluster.
-     * </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Addon& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndpointStatus::NOT_SET:
+            return {};
           case EndpointStatus::OutOfService:
             return "OutOfService";
           case EndpointStatus::Creating:

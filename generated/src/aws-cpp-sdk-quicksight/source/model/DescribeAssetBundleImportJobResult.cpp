@@ -101,6 +101,24 @@ DescribeAssetBundleImportJobResult& DescribeAssetBundleImportJobResult::operator
 
   }
 
+  if(jsonValue.ValueExists("OverridePermissions"))
+  {
+    m_overridePermissions = jsonValue.GetObject("OverridePermissions");
+
+  }
+
+  if(jsonValue.ValueExists("OverrideTags"))
+  {
+    m_overrideTags = jsonValue.GetObject("OverrideTags");
+
+  }
+
+  if(jsonValue.ValueExists("OverrideValidationStrategy"))
+  {
+    m_overrideValidationStrategy = jsonValue.GetObject("OverrideValidationStrategy");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

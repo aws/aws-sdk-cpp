@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsRequest.h>
+#include <aws/migrationhubstrategy/model/AssessmentDataSourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/migrationhubstrategy/model/AssessmentTarget.h>
@@ -32,6 +33,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "StartAssessment"; }
 
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The data source type of an assessment to be started.</p>
+     */
+    inline const AssessmentDataSourceType& GetAssessmentDataSourceType() const{ return m_assessmentDataSourceType; }
+
+    /**
+     * <p>The data source type of an assessment to be started.</p>
+     */
+    inline bool AssessmentDataSourceTypeHasBeenSet() const { return m_assessmentDataSourceTypeHasBeenSet; }
+
+    /**
+     * <p>The data source type of an assessment to be started.</p>
+     */
+    inline void SetAssessmentDataSourceType(const AssessmentDataSourceType& value) { m_assessmentDataSourceTypeHasBeenSet = true; m_assessmentDataSourceType = value; }
+
+    /**
+     * <p>The data source type of an assessment to be started.</p>
+     */
+    inline void SetAssessmentDataSourceType(AssessmentDataSourceType&& value) { m_assessmentDataSourceTypeHasBeenSet = true; m_assessmentDataSourceType = std::move(value); }
+
+    /**
+     * <p>The data source type of an assessment to be started.</p>
+     */
+    inline StartAssessmentRequest& WithAssessmentDataSourceType(const AssessmentDataSourceType& value) { SetAssessmentDataSourceType(value); return *this;}
+
+    /**
+     * <p>The data source type of an assessment to be started.</p>
+     */
+    inline StartAssessmentRequest& WithAssessmentDataSourceType(AssessmentDataSourceType&& value) { SetAssessmentDataSourceType(std::move(value)); return *this;}
 
 
     /**
@@ -173,6 +205,9 @@ namespace Model
     inline StartAssessmentRequest& WithS3bucketForReportData(const char* value) { SetS3bucketForReportData(value); return *this;}
 
   private:
+
+    AssessmentDataSourceType m_assessmentDataSourceType;
+    bool m_assessmentDataSourceTypeHasBeenSet = false;
 
     Aws::Vector<AssessmentTarget> m_assessmentTargets;
     bool m_assessmentTargetsHasBeenSet = false;

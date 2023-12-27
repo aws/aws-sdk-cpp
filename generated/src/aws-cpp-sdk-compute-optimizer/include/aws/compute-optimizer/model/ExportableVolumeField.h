@@ -45,7 +45,12 @@ namespace Model
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     RecommendationOptionsEstimatedMonthlySavingsValue,
     RootVolume,
-    Tags
+    Tags,
+    CurrentConfigurationRootVolume,
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
   };
 
 namespace ExportableVolumeFieldMapper

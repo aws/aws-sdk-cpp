@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PredefinedLoadMetricType::NOT_SET:
+            return {};
           case PredefinedLoadMetricType::ASGTotalCPUUtilization:
             return "ASGTotalCPUUtilization";
           case PredefinedLoadMetricType::ASGTotalNetworkIn:

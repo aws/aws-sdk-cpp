@@ -122,9 +122,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
@@ -132,9 +132,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
 
@@ -142,9 +142,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
@@ -152,9 +152,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
@@ -162,9 +162,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
 
@@ -172,9 +172,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline CreateStackRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
@@ -182,9 +182,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline CreateStackRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
@@ -192,9 +192,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline CreateStackRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
@@ -204,9 +204,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
 
@@ -215,9 +215,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
 
@@ -226,9 +226,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
@@ -237,9 +237,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
@@ -248,9 +248,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
 
@@ -259,9 +259,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline CreateStackRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
 
@@ -270,9 +270,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline CreateStackRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
@@ -281,9 +281,9 @@ namespace Model
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the <code>TemplateBody</code> or the
+     * <code>TemplateURL</code> parameter, but not both.</p>
      */
     inline CreateStackRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
@@ -569,7 +569,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
@@ -630,7 +631,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
@@ -691,7 +693,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
@@ -752,7 +755,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
@@ -813,7 +817,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateStackRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
@@ -874,7 +879,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateStackRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -935,7 +941,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateStackRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
@@ -996,7 +1003,8 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -1017,7 +1025,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
@@ -1037,7 +1047,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
@@ -1057,7 +1069,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
@@ -1077,7 +1091,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
@@ -1097,7 +1113,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
@@ -1117,7 +1135,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
@@ -1137,7 +1157,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -1157,7 +1179,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
@@ -1177,7 +1201,9 @@ namespace Model
      * Access Management (IAM) uses this parameter for CloudFormation-specific
      * condition keys in IAM policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
+     * specified.</p> 
      */
     inline CreateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -1746,46 +1772,30 @@ namespace Model
 
 
     /**
-     * <p>This deletion policy deletes newly created resources, but retains existing
-     * resources, when a stack operation is rolled back. This ensures new, empty, and
-     * unused resources are deleted, while critical resources and their data are
-     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     * that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.</p>
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetRetainExceptOnCreate() const{ return m_retainExceptOnCreate; }
 
     /**
-     * <p>This deletion policy deletes newly created resources, but retains existing
-     * resources, when a stack operation is rolled back. This ensures new, empty, and
-     * unused resources are deleted, while critical resources and their data are
-     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     * that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.</p>
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool RetainExceptOnCreateHasBeenSet() const { return m_retainExceptOnCreateHasBeenSet; }
 
     /**
-     * <p>This deletion policy deletes newly created resources, but retains existing
-     * resources, when a stack operation is rolled back. This ensures new, empty, and
-     * unused resources are deleted, while critical resources and their data are
-     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     * that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.</p>
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetRetainExceptOnCreate(bool value) { m_retainExceptOnCreateHasBeenSet = true; m_retainExceptOnCreate = value; }
 
     /**
-     * <p>This deletion policy deletes newly created resources, but retains existing
-     * resources, when a stack operation is rolled back. This ensures new, empty, and
-     * unused resources are deleted, while critical resources and their data are
-     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     * that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.</p>
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline CreateStackRequest& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudWatchLogsInitialPosition::NOT_SET:
+            return {};
           case CloudWatchLogsInitialPosition::start_of_file:
             return "start_of_file";
           case CloudWatchLogsInitialPosition::end_of_file:

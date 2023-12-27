@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThesaurusStatus::NOT_SET:
+            return {};
           case ThesaurusStatus::CREATING:
             return "CREATING";
           case ThesaurusStatus::ACTIVE:

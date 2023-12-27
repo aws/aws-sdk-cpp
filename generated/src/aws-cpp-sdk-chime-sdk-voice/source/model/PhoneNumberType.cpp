@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberType::NOT_SET:
+            return {};
           case PhoneNumberType::Local:
             return "Local";
           case PhoneNumberType::TollFree:

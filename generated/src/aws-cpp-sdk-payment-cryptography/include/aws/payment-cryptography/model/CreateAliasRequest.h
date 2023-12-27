@@ -35,82 +35,90 @@ namespace Model
 
 
     /**
-     * <p>A friendly name that you can use to refer a key. An alias must begin with
+     * <p>A friendly name that you can use to refer to a key. An alias must begin with
      * <code>alias/</code> followed by a name, for example
      * <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-).</p>  <p>Don't
-     * include confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * include personal, confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     * 
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>A friendly name that you can use to refer a key. An alias must begin with
+     * <p>A friendly name that you can use to refer to a key. An alias must begin with
      * <code>alias/</code> followed by a name, for example
      * <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-).</p>  <p>Don't
-     * include confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * include personal, confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     * 
      */
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
-     * <p>A friendly name that you can use to refer a key. An alias must begin with
+     * <p>A friendly name that you can use to refer to a key. An alias must begin with
      * <code>alias/</code> followed by a name, for example
      * <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-).</p>  <p>Don't
-     * include confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * include personal, confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     * 
      */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>A friendly name that you can use to refer a key. An alias must begin with
+     * <p>A friendly name that you can use to refer to a key. An alias must begin with
      * <code>alias/</code> followed by a name, for example
      * <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-).</p>  <p>Don't
-     * include confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * include personal, confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     * 
      */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>A friendly name that you can use to refer a key. An alias must begin with
+     * <p>A friendly name that you can use to refer to a key. An alias must begin with
      * <code>alias/</code> followed by a name, for example
      * <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-).</p>  <p>Don't
-     * include confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * include personal, confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     * 
      */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>A friendly name that you can use to refer a key. An alias must begin with
+     * <p>A friendly name that you can use to refer to a key. An alias must begin with
      * <code>alias/</code> followed by a name, for example
      * <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-).</p>  <p>Don't
-     * include confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * include personal, confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     * 
      */
     inline CreateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>A friendly name that you can use to refer a key. An alias must begin with
+     * <p>A friendly name that you can use to refer to a key. An alias must begin with
      * <code>alias/</code> followed by a name, for example
      * <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-).</p>  <p>Don't
-     * include confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * include personal, confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     * 
      */
     inline CreateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name that you can use to refer a key. An alias must begin with
+     * <p>A friendly name that you can use to refer to a key. An alias must begin with
      * <code>alias/</code> followed by a name, for example
      * <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-).</p>  <p>Don't
-     * include confidential or sensitive information in this field. This field may be
-     * displayed in plaintext in CloudTrail logs and other output.</p> 
+     * include personal, confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     * 
      */
     inline CreateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 

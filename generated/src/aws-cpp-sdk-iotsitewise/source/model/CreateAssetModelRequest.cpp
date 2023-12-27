@@ -20,7 +20,11 @@ CreateAssetModelRequest::CreateAssetModelRequest() :
     m_assetModelCompositeModelsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_assetModelIdHasBeenSet(false),
+    m_assetModelExternalIdHasBeenSet(false),
+    m_assetModelType(AssetModelType::NOT_SET),
+    m_assetModelTypeHasBeenSet(false)
 {
 }
 
@@ -88,6 +92,23 @@ Aws::String CreateAssetModelRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_assetModelIdHasBeenSet)
+  {
+   payload.WithString("assetModelId", m_assetModelId);
+
+  }
+
+  if(m_assetModelExternalIdHasBeenSet)
+  {
+   payload.WithString("assetModelExternalId", m_assetModelExternalId);
+
+  }
+
+  if(m_assetModelTypeHasBeenSet)
+  {
+   payload.WithString("assetModelType", AssetModelTypeMapper::GetNameForAssetModelType(m_assetModelType));
   }
 
   return payload.View().WriteReadable();

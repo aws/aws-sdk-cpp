@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateRevealConfigurationRequest::UpdateRevealConfigurationRequest() : 
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_retrievalConfigurationHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String UpdateRevealConfigurationRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
+
+  }
+
+  if(m_retrievalConfigurationHasBeenSet)
+  {
+   payload.WithObject("retrievalConfiguration", m_retrievalConfiguration.Jsonize());
 
   }
 

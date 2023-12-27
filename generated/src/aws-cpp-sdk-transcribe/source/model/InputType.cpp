@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputType::NOT_SET:
+            return {};
           case InputType::REAL_TIME:
             return "REAL_TIME";
           case InputType::POST_CALL:

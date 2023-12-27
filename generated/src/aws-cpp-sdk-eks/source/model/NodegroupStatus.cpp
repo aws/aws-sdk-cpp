@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodegroupStatus::NOT_SET:
+            return {};
           case NodegroupStatus::CREATING:
             return "CREATING";
           case NodegroupStatus::ACTIVE:

@@ -25,7 +25,8 @@ RestoreDBClusterFromSnapshotRequest::RestoreDBClusterFromSnapshotRequest() :
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
-    m_dBClusterParameterGroupNameHasBeenSet(false)
+    m_dBClusterParameterGroupNameHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,11 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
   if(m_dBClusterParameterGroupNameHasBeenSet)
   {
     ss << "DBClusterParameterGroupName=" << StringUtils::URLEncode(m_dBClusterParameterGroupName.c_str()) << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

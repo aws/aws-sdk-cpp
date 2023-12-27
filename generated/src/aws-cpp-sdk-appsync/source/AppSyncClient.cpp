@@ -49,6 +49,7 @@
 #include <aws/appsync/model/GetApiAssociationRequest.h>
 #include <aws/appsync/model/GetApiCacheRequest.h>
 #include <aws/appsync/model/GetDataSourceRequest.h>
+#include <aws/appsync/model/GetDataSourceIntrospectionRequest.h>
 #include <aws/appsync/model/GetDomainNameRequest.h>
 #include <aws/appsync/model/GetFunctionRequest.h>
 #include <aws/appsync/model/GetGraphqlApiRequest.h>
@@ -68,6 +69,7 @@
 #include <aws/appsync/model/ListTagsForResourceRequest.h>
 #include <aws/appsync/model/ListTypesRequest.h>
 #include <aws/appsync/model/ListTypesByAssociationRequest.h>
+#include <aws/appsync/model/StartDataSourceIntrospectionRequest.h>
 #include <aws/appsync/model/StartSchemaCreationRequest.h>
 #include <aws/appsync/model/StartSchemaMergeRequest.h>
 #include <aws/appsync/model/TagResourceRequest.h>
@@ -1198,6 +1200,39 @@ GetDataSourceOutcome AppSyncClient::GetDataSource(const GetDataSourceRequest& re
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDataSourceIntrospectionOutcome AppSyncClient::GetDataSourceIntrospection(const GetDataSourceIntrospectionRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDataSourceIntrospection);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataSourceIntrospection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IntrospectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDataSourceIntrospection", "Required field: IntrospectionId, is not set");
+    return GetDataSourceIntrospectionOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntrospectionId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDataSourceIntrospection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDataSourceIntrospection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDataSourceIntrospection",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDataSourceIntrospectionOutcome>(
+    [&]()-> GetDataSourceIntrospectionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataSourceIntrospection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datasources/introspections/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntrospectionId());
+      return GetDataSourceIntrospectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetDomainNameOutcome AppSyncClient::GetDomainName(const GetDomainNameRequest& request) const
 {
   AWS_OPERATION_GUARD(GetDomainName);
@@ -1893,6 +1928,33 @@ ListTypesByAssociationOutcome AppSyncClient::ListTypesByAssociation(const ListTy
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/types");
       return ListTypesByAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartDataSourceIntrospectionOutcome AppSyncClient::StartDataSourceIntrospection(const StartDataSourceIntrospectionRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartDataSourceIntrospection);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDataSourceIntrospection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartDataSourceIntrospection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartDataSourceIntrospection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartDataSourceIntrospection",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartDataSourceIntrospectionOutcome>(
+    [&]()-> StartDataSourceIntrospectionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartDataSourceIntrospection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datasources/introspections");
+      return StartDataSourceIntrospectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

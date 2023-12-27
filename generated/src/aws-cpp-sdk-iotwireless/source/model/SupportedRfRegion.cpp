@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SupportedRfRegion::NOT_SET:
+            return {};
           case SupportedRfRegion::EU868:
             return "EU868";
           case SupportedRfRegion::US915:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValueWhenUnsetOption::NOT_SET:
+            return {};
           case ValueWhenUnsetOption::RECOMMENDED_VALUE:
             return "RECOMMENDED_VALUE";
           case ValueWhenUnsetOption::NULL_:

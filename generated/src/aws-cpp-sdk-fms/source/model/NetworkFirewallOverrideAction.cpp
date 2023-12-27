@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkFirewallOverrideAction::NOT_SET:
+            return {};
           case NetworkFirewallOverrideAction::DROP_TO_ALERT:
             return "DROP_TO_ALERT";
           default:

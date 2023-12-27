@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     WORKLOAD,
     LENS,
-    PROFILE
+    PROFILE,
+    TEMPLATE
   };
 
 namespace ShareResourceTypeMapper

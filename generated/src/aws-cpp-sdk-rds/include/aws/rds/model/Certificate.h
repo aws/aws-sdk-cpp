@@ -274,22 +274,26 @@ namespace Model
 
 
     /**
-     * <p>Whether there is an override for the default certificate identifier.</p>
+     * <p>Indicates whether there is an override for the default certificate
+     * identifier.</p>
      */
     inline bool GetCustomerOverride() const{ return m_customerOverride; }
 
     /**
-     * <p>Whether there is an override for the default certificate identifier.</p>
+     * <p>Indicates whether there is an override for the default certificate
+     * identifier.</p>
      */
     inline bool CustomerOverrideHasBeenSet() const { return m_customerOverrideHasBeenSet; }
 
     /**
-     * <p>Whether there is an override for the default certificate identifier.</p>
+     * <p>Indicates whether there is an override for the default certificate
+     * identifier.</p>
      */
     inline void SetCustomerOverride(bool value) { m_customerOverrideHasBeenSet = true; m_customerOverride = value; }
 
     /**
-     * <p>Whether there is an override for the default certificate identifier.</p>
+     * <p>Indicates whether there is an override for the default certificate
+     * identifier.</p>
      */
     inline Certificate& WithCustomerOverride(bool value) { SetCustomerOverride(value); return *this;}
 

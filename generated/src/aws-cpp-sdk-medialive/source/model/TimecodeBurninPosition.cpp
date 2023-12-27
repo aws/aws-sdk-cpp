@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimecodeBurninPosition::NOT_SET:
+            return {};
           case TimecodeBurninPosition::BOTTOM_CENTER:
             return "BOTTOM_CENTER";
           case TimecodeBurninPosition::BOTTOM_LEFT:

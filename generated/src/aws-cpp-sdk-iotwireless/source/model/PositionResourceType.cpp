@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PositionResourceType::NOT_SET:
+            return {};
           case PositionResourceType::WirelessDevice:
             return "WirelessDevice";
           case PositionResourceType::WirelessGateway:

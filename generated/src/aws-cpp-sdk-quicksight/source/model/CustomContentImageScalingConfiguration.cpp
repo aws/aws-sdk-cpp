@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomContentImageScalingConfiguration::NOT_SET:
+            return {};
           case CustomContentImageScalingConfiguration::FIT_TO_HEIGHT:
             return "FIT_TO_HEIGHT";
           case CustomContentImageScalingConfiguration::FIT_TO_WIDTH:

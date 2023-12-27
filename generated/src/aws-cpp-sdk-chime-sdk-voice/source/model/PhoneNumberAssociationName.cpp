@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberAssociationName::NOT_SET:
+            return {};
           case PhoneNumberAssociationName::VoiceConnectorId:
             return "VoiceConnectorId";
           case PhoneNumberAssociationName::VoiceConnectorGroupId:

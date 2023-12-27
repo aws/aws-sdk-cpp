@@ -219,6 +219,49 @@ namespace Model
 
 
     /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionName = value; }
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionName = std::move(value); }
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline void SetVersionName(const char* value) { m_versionName.assign(value); }
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline CreateAnnotationStoreResult& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline CreateAnnotationStoreResult& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline CreateAnnotationStoreResult& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
      * <p>When the store was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -278,6 +321,8 @@ namespace Model
     StoreStatus m_status;
 
     Aws::String m_name;
+
+    Aws::String m_versionName;
 
     Aws::Utils::DateTime m_creationTime;
 

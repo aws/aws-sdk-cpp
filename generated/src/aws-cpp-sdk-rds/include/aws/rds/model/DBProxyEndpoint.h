@@ -504,34 +504,34 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether this endpoint is the default endpoint for the
-     * associated DB proxy. Default DB proxy endpoints always have read/write
-     * capability. Other endpoints that you associate with the DB proxy can be either
-     * read/write or read-only.</p>
+     * <p>Indicates whether this endpoint is the default endpoint for the associated DB
+     * proxy. Default DB proxy endpoints always have read/write capability. Other
+     * endpoints that you associate with the DB proxy can be either read/write or
+     * read-only.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
 
     /**
-     * <p>A value that indicates whether this endpoint is the default endpoint for the
-     * associated DB proxy. Default DB proxy endpoints always have read/write
-     * capability. Other endpoints that you associate with the DB proxy can be either
-     * read/write or read-only.</p>
+     * <p>Indicates whether this endpoint is the default endpoint for the associated DB
+     * proxy. Default DB proxy endpoints always have read/write capability. Other
+     * endpoints that you associate with the DB proxy can be either read/write or
+     * read-only.</p>
      */
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether this endpoint is the default endpoint for the
-     * associated DB proxy. Default DB proxy endpoints always have read/write
-     * capability. Other endpoints that you associate with the DB proxy can be either
-     * read/write or read-only.</p>
+     * <p>Indicates whether this endpoint is the default endpoint for the associated DB
+     * proxy. Default DB proxy endpoints always have read/write capability. Other
+     * endpoints that you associate with the DB proxy can be either read/write or
+     * read-only.</p>
      */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
-     * <p>A value that indicates whether this endpoint is the default endpoint for the
-     * associated DB proxy. Default DB proxy endpoints always have read/write
-     * capability. Other endpoints that you associate with the DB proxy can be either
-     * read/write or read-only.</p>
+     * <p>Indicates whether this endpoint is the default endpoint for the associated DB
+     * proxy. Default DB proxy endpoints always have read/write capability. Other
+     * endpoints that you associate with the DB proxy can be either read/write or
+     * read-only.</p>
      */
     inline DBProxyEndpoint& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 

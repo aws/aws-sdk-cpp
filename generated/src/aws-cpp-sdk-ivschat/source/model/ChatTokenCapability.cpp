@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChatTokenCapability::NOT_SET:
+            return {};
           case ChatTokenCapability::SEND_MESSAGE:
             return "SEND_MESSAGE";
           case ChatTokenCapability::DISCONNECT_USER:

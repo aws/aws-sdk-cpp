@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelevanceLevel::NOT_SET:
+            return {};
           case RelevanceLevel::HIGH:
             return "HIGH";
           case RelevanceLevel::MEDIUM:

@@ -29,7 +29,8 @@ ListBackupJobsRequest::ListBackupJobsRequest() :
     m_byAccountIdHasBeenSet(false),
     m_byCompleteAfterHasBeenSet(false),
     m_byCompleteBeforeHasBeenSet(false),
-    m_byParentJobIdHasBeenSet(false)
+    m_byParentJobIdHasBeenSet(false),
+    m_byMessageCategoryHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,13 @@ void ListBackupJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_byParentJobId;
       uri.AddQueryStringParameter("parentJobId", ss.str());
+      ss.str("");
+    }
+
+    if(m_byMessageCategoryHasBeenSet)
+    {
+      ss << m_byMessageCategory;
+      uri.AddQueryStringParameter("messageCategory", ss.str());
       ss.str("");
     }
 

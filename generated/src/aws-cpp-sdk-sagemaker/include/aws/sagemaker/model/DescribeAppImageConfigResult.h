@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/KernelGatewayImageConfig.h>
+#include <aws/sagemaker/model/JupyterLabAppImageConfig.h>
 #include <utility>
 
 namespace Aws
@@ -184,6 +185,32 @@ namespace Model
     inline DescribeAppImageConfigResult& WithKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { SetKernelGatewayImageConfig(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The configuration of the JupyterLab app.</p>
+     */
+    inline const JupyterLabAppImageConfig& GetJupyterLabAppImageConfig() const{ return m_jupyterLabAppImageConfig; }
+
+    /**
+     * <p>The configuration of the JupyterLab app.</p>
+     */
+    inline void SetJupyterLabAppImageConfig(const JupyterLabAppImageConfig& value) { m_jupyterLabAppImageConfig = value; }
+
+    /**
+     * <p>The configuration of the JupyterLab app.</p>
+     */
+    inline void SetJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { m_jupyterLabAppImageConfig = std::move(value); }
+
+    /**
+     * <p>The configuration of the JupyterLab app.</p>
+     */
+    inline DescribeAppImageConfigResult& WithJupyterLabAppImageConfig(const JupyterLabAppImageConfig& value) { SetJupyterLabAppImageConfig(value); return *this;}
+
+    /**
+     * <p>The configuration of the JupyterLab app.</p>
+     */
+    inline DescribeAppImageConfigResult& WithJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { SetJupyterLabAppImageConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -216,6 +243,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
 
     KernelGatewayImageConfig m_kernelGatewayImageConfig;
+
+    JupyterLabAppImageConfig m_jupyterLabAppImageConfig;
 
     Aws::String m_requestId;
   };

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrainingJobSortByOptions::NOT_SET:
+            return {};
           case TrainingJobSortByOptions::Name:
             return "Name";
           case TrainingJobSortByOptions::CreationTime:

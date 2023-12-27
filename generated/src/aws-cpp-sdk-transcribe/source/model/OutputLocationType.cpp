@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputLocationType::NOT_SET:
+            return {};
           case OutputLocationType::CUSTOMER_BUCKET:
             return "CUSTOMER_BUCKET";
           case OutputLocationType::SERVICE_BUCKET:

@@ -14,6 +14,7 @@
 #include <aws/ec2/model/EndDateType.h>
 #include <aws/ec2/model/InstanceMatchCriteria.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/CapacityReservationType.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/CapacityAllocation.h>
 #include <utility>
@@ -1136,6 +1137,37 @@ namespace Model
      */
     inline CapacityReservation& AddCapacityAllocations(CapacityAllocation&& value) { m_capacityAllocationsHasBeenSet = true; m_capacityAllocations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The type of Capacity Reservation.</p>
+     */
+    inline const CapacityReservationType& GetReservationType() const{ return m_reservationType; }
+
+    /**
+     * <p>The type of Capacity Reservation.</p>
+     */
+    inline bool ReservationTypeHasBeenSet() const { return m_reservationTypeHasBeenSet; }
+
+    /**
+     * <p>The type of Capacity Reservation.</p>
+     */
+    inline void SetReservationType(const CapacityReservationType& value) { m_reservationTypeHasBeenSet = true; m_reservationType = value; }
+
+    /**
+     * <p>The type of Capacity Reservation.</p>
+     */
+    inline void SetReservationType(CapacityReservationType&& value) { m_reservationTypeHasBeenSet = true; m_reservationType = std::move(value); }
+
+    /**
+     * <p>The type of Capacity Reservation.</p>
+     */
+    inline CapacityReservation& WithReservationType(const CapacityReservationType& value) { SetReservationType(value); return *this;}
+
+    /**
+     * <p>The type of Capacity Reservation.</p>
+     */
+    inline CapacityReservation& WithReservationType(CapacityReservationType&& value) { SetReservationType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_capacityReservationId;
@@ -1206,6 +1238,9 @@ namespace Model
 
     Aws::Vector<CapacityAllocation> m_capacityAllocations;
     bool m_capacityAllocationsHasBeenSet = false;
+
+    CapacityReservationType m_reservationType;
+    bool m_reservationTypeHasBeenSet = false;
   };
 
 } // namespace Model

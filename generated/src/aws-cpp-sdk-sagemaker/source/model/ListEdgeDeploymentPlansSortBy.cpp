@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListEdgeDeploymentPlansSortBy::NOT_SET:
+            return {};
           case ListEdgeDeploymentPlansSortBy::NAME:
             return "NAME";
           case ListEdgeDeploymentPlansSortBy::DEVICE_FLEET_NAME:

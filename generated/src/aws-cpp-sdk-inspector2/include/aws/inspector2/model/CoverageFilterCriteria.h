@@ -500,42 +500,66 @@ namespace Model
 
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline const Aws::Vector<CoverageStringFilter>& GetScanStatusCode() const{ return m_scanStatusCode; }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline bool ScanStatusCodeHasBeenSet() const { return m_scanStatusCodeHasBeenSet; }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline void SetScanStatusCode(const Aws::Vector<CoverageStringFilter>& value) { m_scanStatusCodeHasBeenSet = true; m_scanStatusCode = value; }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline void SetScanStatusCode(Aws::Vector<CoverageStringFilter>&& value) { m_scanStatusCodeHasBeenSet = true; m_scanStatusCode = std::move(value); }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline CoverageFilterCriteria& WithScanStatusCode(const Aws::Vector<CoverageStringFilter>& value) { SetScanStatusCode(value); return *this;}
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline CoverageFilterCriteria& WithScanStatusCode(Aws::Vector<CoverageStringFilter>&& value) { SetScanStatusCode(std::move(value)); return *this;}
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline CoverageFilterCriteria& AddScanStatusCode(const CoverageStringFilter& value) { m_scanStatusCodeHasBeenSet = true; m_scanStatusCode.push_back(value); return *this; }
 
     /**
-     * <p>The scan status code to filter on.</p>
+     * <p>The scan status code to filter on. Valid values are:
+     * <code>ValidationException</code>, <code>InternalServerException</code>,
+     * <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and
+     * <code>ThrottlingException</code>.</p>
      */
     inline CoverageFilterCriteria& AddScanStatusCode(CoverageStringFilter&& value) { m_scanStatusCodeHasBeenSet = true; m_scanStatusCode.push_back(std::move(value)); return *this; }
 

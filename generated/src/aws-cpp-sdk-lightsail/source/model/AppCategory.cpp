@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppCategory::NOT_SET:
+            return {};
           case AppCategory::LfR:
             return "LfR";
           default:

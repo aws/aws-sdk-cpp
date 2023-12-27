@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalarFunctions::NOT_SET:
+            return {};
           case ScalarFunctions::TRUNC:
             return "TRUNC";
           case ScalarFunctions::ABS:

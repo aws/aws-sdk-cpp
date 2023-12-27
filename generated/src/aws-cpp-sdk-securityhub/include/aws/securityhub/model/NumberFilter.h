@@ -109,6 +109,56 @@ namespace Model
      */
     inline NumberFilter& WithEq(double value) { SetEq(value); return *this;}
 
+
+    /**
+     * <p> The greater-than condition to be applied to a single field when querying for
+     * findings. </p>
+     */
+    inline double GetGt() const{ return m_gt; }
+
+    /**
+     * <p> The greater-than condition to be applied to a single field when querying for
+     * findings. </p>
+     */
+    inline bool GtHasBeenSet() const { return m_gtHasBeenSet; }
+
+    /**
+     * <p> The greater-than condition to be applied to a single field when querying for
+     * findings. </p>
+     */
+    inline void SetGt(double value) { m_gtHasBeenSet = true; m_gt = value; }
+
+    /**
+     * <p> The greater-than condition to be applied to a single field when querying for
+     * findings. </p>
+     */
+    inline NumberFilter& WithGt(double value) { SetGt(value); return *this;}
+
+
+    /**
+     * <p> The less-than condition to be applied to a single field when querying for
+     * findings. </p>
+     */
+    inline double GetLt() const{ return m_lt; }
+
+    /**
+     * <p> The less-than condition to be applied to a single field when querying for
+     * findings. </p>
+     */
+    inline bool LtHasBeenSet() const { return m_ltHasBeenSet; }
+
+    /**
+     * <p> The less-than condition to be applied to a single field when querying for
+     * findings. </p>
+     */
+    inline void SetLt(double value) { m_ltHasBeenSet = true; m_lt = value; }
+
+    /**
+     * <p> The less-than condition to be applied to a single field when querying for
+     * findings. </p>
+     */
+    inline NumberFilter& WithLt(double value) { SetLt(value); return *this;}
+
   private:
 
     double m_gte;
@@ -119,6 +169,12 @@ namespace Model
 
     double m_eq;
     bool m_eqHasBeenSet = false;
+
+    double m_gt;
+    bool m_gtHasBeenSet = false;
+
+    double m_lt;
+    bool m_ltHasBeenSet = false;
   };
 
 } // namespace Model

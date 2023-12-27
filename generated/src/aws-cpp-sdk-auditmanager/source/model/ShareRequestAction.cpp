@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareRequestAction::NOT_SET:
+            return {};
           case ShareRequestAction::ACCEPT:
             return "ACCEPT";
           case ShareRequestAction::DECLINE:

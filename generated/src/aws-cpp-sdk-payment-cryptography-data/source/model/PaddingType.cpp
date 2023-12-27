@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PaddingType::NOT_SET:
+            return {};
           case PaddingType::PKCS1:
             return "PKCS1";
           case PaddingType::OAEP_SHA1:

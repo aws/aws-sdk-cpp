@@ -14,6 +14,7 @@
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 #include <aws/firehose/model/VpcConfigurationDescription.h>
+#include <aws/firehose/model/DocumentIdOptions.h>
 #include <utility>
 
 namespace Aws
@@ -556,34 +557,83 @@ namespace Model
 
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch
+     * Serverless destination.</p>
      */
     inline const VpcConfigurationDescription& GetVpcConfigurationDescription() const{ return m_vpcConfigurationDescription; }
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch
+     * Serverless destination.</p>
      */
     inline bool VpcConfigurationDescriptionHasBeenSet() const { return m_vpcConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch
+     * Serverless destination.</p>
      */
     inline void SetVpcConfigurationDescription(const VpcConfigurationDescription& value) { m_vpcConfigurationDescriptionHasBeenSet = true; m_vpcConfigurationDescription = value; }
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch
+     * Serverless destination.</p>
      */
     inline void SetVpcConfigurationDescription(VpcConfigurationDescription&& value) { m_vpcConfigurationDescriptionHasBeenSet = true; m_vpcConfigurationDescription = std::move(value); }
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch
+     * Serverless destination.</p>
      */
     inline ElasticsearchDestinationDescription& WithVpcConfigurationDescription(const VpcConfigurationDescription& value) { SetVpcConfigurationDescription(value); return *this;}
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch
+     * Serverless destination.</p>
      */
     inline ElasticsearchDestinationDescription& WithVpcConfigurationDescription(VpcConfigurationDescription&& value) { SetVpcConfigurationDescription(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline const DocumentIdOptions& GetDocumentIdOptions() const{ return m_documentIdOptions; }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline bool DocumentIdOptionsHasBeenSet() const { return m_documentIdOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline void SetDocumentIdOptions(const DocumentIdOptions& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = value; }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline void SetDocumentIdOptions(DocumentIdOptions&& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = std::move(value); }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline ElasticsearchDestinationDescription& WithDocumentIdOptions(const DocumentIdOptions& value) { SetDocumentIdOptions(value); return *this;}
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline ElasticsearchDestinationDescription& WithDocumentIdOptions(DocumentIdOptions&& value) { SetDocumentIdOptions(std::move(value)); return *this;}
 
   private:
 
@@ -625,6 +675,9 @@ namespace Model
 
     VpcConfigurationDescription m_vpcConfigurationDescription;
     bool m_vpcConfigurationDescriptionHasBeenSet = false;
+
+    DocumentIdOptions m_documentIdOptions;
+    bool m_documentIdOptionsHasBeenSet = false;
   };
 
 } // namespace Model

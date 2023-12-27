@@ -307,7 +307,7 @@ namespace Route53Resolver
         }
 
         /**
-         * <p>Creates an Route 53 Resolver on an Outpost.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Route 53 Resolver on an Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver">AWS
          * API Reference</a></p>
          */
@@ -1924,7 +1924,7 @@ namespace Route53Resolver
         }
 
         /**
-         * <p>Updates the name, or enpoint type for an inbound or an outbound Resolver
+         * <p>Updates the name, or endpoint type for an inbound or an outbound Resolver
          * endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type
          * can't be updated to other type. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverEndpoint">AWS

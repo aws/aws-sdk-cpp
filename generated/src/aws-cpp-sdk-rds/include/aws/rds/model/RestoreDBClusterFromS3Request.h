@@ -525,8 +525,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -535,8 +535,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -545,8 +545,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -555,8 +555,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -565,8 +565,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -575,8 +575,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -585,8 +585,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -595,8 +595,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1073,22 +1073,22 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+     * <p>Specifies whether the restored DB cluster is encrypted.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+     * <p>Specifies whether the restored DB cluster is encrypted.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+     * <p>Specifies whether the restored DB cluster is encrypted.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+     * <p>Specifies whether the restored DB cluster is encrypted.</p>
      */
     inline RestoreDBClusterFromS3Request& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -1199,36 +1199,36 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
@@ -1237,106 +1237,106 @@ namespace Model
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid Values: <code>mysql</code> </p>
      */
     inline const Aws::String& GetSourceEngine() const{ return m_sourceEngine; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid Values: <code>mysql</code> </p>
      */
     inline bool SourceEngineHasBeenSet() const { return m_sourceEngineHasBeenSet; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid Values: <code>mysql</code> </p>
      */
     inline void SetSourceEngine(const Aws::String& value) { m_sourceEngineHasBeenSet = true; m_sourceEngine = value; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid Values: <code>mysql</code> </p>
      */
     inline void SetSourceEngine(Aws::String&& value) { m_sourceEngineHasBeenSet = true; m_sourceEngine = std::move(value); }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid Values: <code>mysql</code> </p>
      */
     inline void SetSourceEngine(const char* value) { m_sourceEngineHasBeenSet = true; m_sourceEngine.assign(value); }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid Values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(const Aws::String& value) { SetSourceEngine(value); return *this;}
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid Values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(Aws::String&& value) { SetSourceEngine(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
-     * stored in the Amazon S3 bucket.</p> <p>Valid values: <code>mysql</code> </p>
+     * stored in the Amazon S3 bucket.</p> <p>Valid Values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(const char* value) { SetSourceEngine(value); return *this;}
 
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline const Aws::String& GetSourceEngineVersion() const{ return m_sourceEngineVersion; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline void SetSourceEngineVersion(const Aws::String& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = std::move(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline void SetSourceEngineVersion(const char* value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion.assign(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const Aws::String& value) { SetSourceEngineVersion(value); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const char* value) { SetSourceEngineVersion(value); return *this;}
 
@@ -1659,55 +1659,55 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>A value that indicates whether the DB cluster has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled.</p>
+     * <p>Specifies whether to enable deletion protection for the DB cluster. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB cluster
-     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
+     * <p>Specifies whether to copy all tags from the restored DB cluster to snapshots
+     * of the restored DB cluster. The default is not to copy them.</p>
      */
     inline RestoreDBClusterFromS3Request& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1862,7 +1862,7 @@ namespace Model
 
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1875,7 +1875,7 @@ namespace Model
     inline const Aws::String& GetNetworkType() const{ return m_networkType; }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1888,7 +1888,7 @@ namespace Model
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1901,7 +1901,7 @@ namespace Model
     inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1914,7 +1914,7 @@ namespace Model
     inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1927,7 +1927,7 @@ namespace Model
     inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1940,7 +1940,7 @@ namespace Model
     inline RestoreDBClusterFromS3Request& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1953,7 +1953,7 @@ namespace Model
     inline RestoreDBClusterFromS3Request& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
 
     /**
-     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB cluster.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -1967,8 +1967,8 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to manage the master user password with Amazon
-     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
      * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
      * User Guide</i> and <a
@@ -1981,8 +1981,8 @@ namespace Model
     inline bool GetManageMasterUserPassword() const{ return m_manageMasterUserPassword; }
 
     /**
-     * <p>A value that indicates whether to manage the master user password with Amazon
-     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
      * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
      * User Guide</i> and <a
@@ -1995,8 +1995,8 @@ namespace Model
     inline bool ManageMasterUserPasswordHasBeenSet() const { return m_manageMasterUserPasswordHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to manage the master user password with Amazon
-     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
      * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
      * User Guide</i> and <a
@@ -2009,8 +2009,8 @@ namespace Model
     inline void SetManageMasterUserPassword(bool value) { m_manageMasterUserPasswordHasBeenSet = true; m_manageMasterUserPassword = value; }
 
     /**
-     * <p>A value that indicates whether to manage the master user password with Amazon
-     * Web Services Secrets Manager.</p> <p>For more information, see <a
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
      * management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS
      * User Guide</i> and <a
@@ -2170,56 +2170,56 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
      * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
      * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
      * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
      * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
      * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
      * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterFromS3Request& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
      * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterFromS3Request& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * Values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
      * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
      */
     inline RestoreDBClusterFromS3Request& WithStorageType(const char* value) { SetStorageType(value); return *this;}

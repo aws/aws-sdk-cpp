@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerAttributeName::NOT_SET:
+            return {};
           case LoadBalancerAttributeName::HealthCheckPath:
             return "HealthCheckPath";
           case LoadBalancerAttributeName::SessionStickinessEnabled:

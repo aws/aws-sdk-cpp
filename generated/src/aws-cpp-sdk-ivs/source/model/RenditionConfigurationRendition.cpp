@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RenditionConfigurationRendition::NOT_SET:
+            return {};
           case RenditionConfigurationRendition::FULL_HD:
             return "FULL_HD";
           case RenditionConfigurationRendition::HD:

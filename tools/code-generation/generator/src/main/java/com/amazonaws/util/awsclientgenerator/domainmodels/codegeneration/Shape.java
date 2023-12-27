@@ -5,8 +5,12 @@
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +20,9 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Shape {
     private String name;
     private String type;
@@ -51,6 +58,7 @@ public class Shape {
     private boolean hasPreSignedUrl;
     private boolean document;
     private boolean hasEmbeddedErrors = false;
+    private boolean overrideStreaming = false;
     private boolean requestCompressionRequired=false;
     private boolean requestCompressionRequiredGzip=false;
 
@@ -213,23 +221,68 @@ public class Shape {
       return "null";
     }
 
+    private Set<String> getAllChildrenShapeNames() {
+        Set<String> collected = new HashSet<String>();
+
+        if (members == null || members.isEmpty()) {
+            return collected;
+        }
+
+        collected.addAll(members.values().parallelStream()
+                .map(value -> value.getShape())
+                .map(memberShape -> memberShape.isList() ? memberShape.getListMember().getShape() : memberShape) //if references through a list container
+                .map(memberShape -> memberShape.getName())
+                .collect(Collectors.toSet()));
+
+        Map<String, Shape> toVisit = new HashMap<>(); // map to avoid Shape hashing quirks
+        toVisit.putAll(members.values().parallelStream()
+               .map(ShapeMember::getShape)
+               .collect(Collectors.toMap(shape -> shape.getName(), shape->shape, (shape1, shape2) -> shape1)));
+
+        while(!toVisit.isEmpty())
+        {
+            Shape visited = toVisit.entrySet().iterator().next().getValue();
+
+            if (visited.members != null && !visited.members.isEmpty()) {
+
+                Map<String, Shape> children = visited.members.values().parallelStream()
+                        .map(value -> value.getShape())
+                        .filter(shape -> !collected.contains(shape.getName()))
+                        .map(memberShape -> memberShape.isList() ? memberShape.getListMember().getShape() : memberShape) //if references through a list container
+                        .collect(Collectors.toMap(
+                                shape -> shape.getName(), shape -> shape,
+                                (shape1, shape2) -> shape1));
+
+                collected.addAll(children.keySet());
+                toVisit.putAll(children);
+            }
+            toVisit.remove(visited.getName());
+        }
+
+        return collected;
+    }
+
+    private Set<String> thisAndAllChildrenShapeNamesMemoized;
+    private Set<String> getThisAndAllChildrenShapeNames() {
+        if (thisAndAllChildrenShapeNamesMemoized != null && !thisAndAllChildrenShapeNamesMemoized.isEmpty()) {
+            // this method is called for at least shape count ^ 2 times
+            return thisAndAllChildrenShapeNamesMemoized;
+        }
+        Set<String> shapes = getAllChildrenShapeNames();
+
+        thisAndAllChildrenShapeNamesMemoized = shapes;
+        thisAndAllChildrenShapeNamesMemoized.add(getName());
+        return thisAndAllChildrenShapeNamesMemoized;
+    }
+
     // Some shapes are mutually referenced with each other, e.g. Statement and NotStatement in wafv2.
     public boolean isMutuallyReferencedWith(Shape otherShape) {
         if (otherShape == null || otherShape.members == null || members == null || !isStructure() || !otherShape.isStructure() || name.equals(otherShape.getName())) return false;
 
-        // Get this and other member type names, if member is a list then get underlying type in this list
-        Set<String> thisMemberShapeNames = members.values().parallelStream()
-                .map(value -> value.getShape())
-                .map(memberShape -> memberShape.isList() ? memberShape.getListMember().getShape() : memberShape) //if references through a list container
-                .map(memberShape -> memberShape.getName())
-                .collect(Collectors.toSet());
-        Set<String> otherMemberShapeNames = otherShape.getMembers().values().parallelStream()
-                .map(value -> value.getShape())
-                .map(memberShape -> memberShape.isList() ? memberShape.getListMember().getShape() : memberShape)
-                .map(memberShape -> memberShape.getName())
-                .collect(Collectors.toSet());
+        Set<String> thisShapes = this.getThisAndAllChildrenShapeNames();
+        Set<String> otherShapes = otherShape.getThisAndAllChildrenShapeNames();
 
-        return thisMemberShapeNames.contains(otherShape.getName()) && otherMemberShapeNames.contains(this.getName());
+        return thisShapes.contains(otherShape.getName()) && otherShapes.contains(this.getName());
     }
 
     public boolean hasContextParam() {

@@ -45,8 +45,14 @@ namespace Model
      * <p>The path of the account creation endpoint for your application. This is the
      * page on your website that accepts the completed registration form for a new
      * user. This page must accept <code>POST</code> requests.</p> <p>For example, for
-     * the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.</p>
+     * the URL <code>https://example.com/web/newaccount</code>, you would provide the
+     * path <code>/web/newaccount</code>. Account creation page paths that start with
+     * the path that you provide are considered a match. For example
+     * <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
+     * <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but
+     * doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>. </p>
      */
     inline const Aws::String& GetCreationPath() const{ return m_creationPath; }
 
@@ -54,8 +60,14 @@ namespace Model
      * <p>The path of the account creation endpoint for your application. This is the
      * page on your website that accepts the completed registration form for a new
      * user. This page must accept <code>POST</code> requests.</p> <p>For example, for
-     * the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.</p>
+     * the URL <code>https://example.com/web/newaccount</code>, you would provide the
+     * path <code>/web/newaccount</code>. Account creation page paths that start with
+     * the path that you provide are considered a match. For example
+     * <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
+     * <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but
+     * doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>. </p>
      */
     inline bool CreationPathHasBeenSet() const { return m_creationPathHasBeenSet; }
 
@@ -63,8 +75,14 @@ namespace Model
      * <p>The path of the account creation endpoint for your application. This is the
      * page on your website that accepts the completed registration form for a new
      * user. This page must accept <code>POST</code> requests.</p> <p>For example, for
-     * the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.</p>
+     * the URL <code>https://example.com/web/newaccount</code>, you would provide the
+     * path <code>/web/newaccount</code>. Account creation page paths that start with
+     * the path that you provide are considered a match. For example
+     * <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
+     * <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but
+     * doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>. </p>
      */
     inline void SetCreationPath(const Aws::String& value) { m_creationPathHasBeenSet = true; m_creationPath = value; }
 
@@ -72,8 +90,14 @@ namespace Model
      * <p>The path of the account creation endpoint for your application. This is the
      * page on your website that accepts the completed registration form for a new
      * user. This page must accept <code>POST</code> requests.</p> <p>For example, for
-     * the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.</p>
+     * the URL <code>https://example.com/web/newaccount</code>, you would provide the
+     * path <code>/web/newaccount</code>. Account creation page paths that start with
+     * the path that you provide are considered a match. For example
+     * <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
+     * <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but
+     * doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>. </p>
      */
     inline void SetCreationPath(Aws::String&& value) { m_creationPathHasBeenSet = true; m_creationPath = std::move(value); }
 
@@ -81,8 +105,14 @@ namespace Model
      * <p>The path of the account creation endpoint for your application. This is the
      * page on your website that accepts the completed registration form for a new
      * user. This page must accept <code>POST</code> requests.</p> <p>For example, for
-     * the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.</p>
+     * the URL <code>https://example.com/web/newaccount</code>, you would provide the
+     * path <code>/web/newaccount</code>. Account creation page paths that start with
+     * the path that you provide are considered a match. For example
+     * <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
+     * <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but
+     * doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>. </p>
      */
     inline void SetCreationPath(const char* value) { m_creationPathHasBeenSet = true; m_creationPath.assign(value); }
 
@@ -90,8 +120,14 @@ namespace Model
      * <p>The path of the account creation endpoint for your application. This is the
      * page on your website that accepts the completed registration form for a new
      * user. This page must accept <code>POST</code> requests.</p> <p>For example, for
-     * the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.</p>
+     * the URL <code>https://example.com/web/newaccount</code>, you would provide the
+     * path <code>/web/newaccount</code>. Account creation page paths that start with
+     * the path that you provide are considered a match. For example
+     * <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
+     * <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but
+     * doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>. </p>
      */
     inline AWSManagedRulesACFPRuleSet& WithCreationPath(const Aws::String& value) { SetCreationPath(value); return *this;}
 
@@ -99,8 +135,14 @@ namespace Model
      * <p>The path of the account creation endpoint for your application. This is the
      * page on your website that accepts the completed registration form for a new
      * user. This page must accept <code>POST</code> requests.</p> <p>For example, for
-     * the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.</p>
+     * the URL <code>https://example.com/web/newaccount</code>, you would provide the
+     * path <code>/web/newaccount</code>. Account creation page paths that start with
+     * the path that you provide are considered a match. For example
+     * <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
+     * <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but
+     * doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>. </p>
      */
     inline AWSManagedRulesACFPRuleSet& WithCreationPath(Aws::String&& value) { SetCreationPath(std::move(value)); return *this;}
 
@@ -108,8 +150,14 @@ namespace Model
      * <p>The path of the account creation endpoint for your application. This is the
      * page on your website that accepts the completed registration form for a new
      * user. This page must accept <code>POST</code> requests.</p> <p>For example, for
-     * the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.</p>
+     * the URL <code>https://example.com/web/newaccount</code>, you would provide the
+     * path <code>/web/newaccount</code>. Account creation page paths that start with
+     * the path that you provide are considered a match. For example
+     * <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
+     * <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but
+     * doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>. </p>
      */
     inline AWSManagedRulesACFPRuleSet& WithCreationPath(const char* value) { SetCreationPath(value); return *this;}
 
@@ -118,8 +166,14 @@ namespace Model
      * <p>The path of the account registration endpoint for your application. This is
      * the page on your website that presents the registration form to new users. </p>
      *  <p>This page must accept <code>GET</code> text/html requests.</p> 
-     * <p>For example, for the URL <code>https://example.com/web/register</code>, you
-     * would provide the path <code>/web/register</code>.</p>
+     * <p>For example, for the URL <code>https://example.com/web/registration</code>,
+     * you would provide the path <code>/web/registration</code>. Registration page
+     * paths that start with the path that you provide are considered a match. For
+     * example <code>/web/registration</code> matches the registration paths
+     * <code>/web/registration</code>, <code>/web/registration/</code>,
+     * <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>,
+     * but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>. </p>
      */
     inline const Aws::String& GetRegistrationPagePath() const{ return m_registrationPagePath; }
 
@@ -127,8 +181,14 @@ namespace Model
      * <p>The path of the account registration endpoint for your application. This is
      * the page on your website that presents the registration form to new users. </p>
      *  <p>This page must accept <code>GET</code> text/html requests.</p> 
-     * <p>For example, for the URL <code>https://example.com/web/register</code>, you
-     * would provide the path <code>/web/register</code>.</p>
+     * <p>For example, for the URL <code>https://example.com/web/registration</code>,
+     * you would provide the path <code>/web/registration</code>. Registration page
+     * paths that start with the path that you provide are considered a match. For
+     * example <code>/web/registration</code> matches the registration paths
+     * <code>/web/registration</code>, <code>/web/registration/</code>,
+     * <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>,
+     * but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>. </p>
      */
     inline bool RegistrationPagePathHasBeenSet() const { return m_registrationPagePathHasBeenSet; }
 
@@ -136,8 +196,14 @@ namespace Model
      * <p>The path of the account registration endpoint for your application. This is
      * the page on your website that presents the registration form to new users. </p>
      *  <p>This page must accept <code>GET</code> text/html requests.</p> 
-     * <p>For example, for the URL <code>https://example.com/web/register</code>, you
-     * would provide the path <code>/web/register</code>.</p>
+     * <p>For example, for the URL <code>https://example.com/web/registration</code>,
+     * you would provide the path <code>/web/registration</code>. Registration page
+     * paths that start with the path that you provide are considered a match. For
+     * example <code>/web/registration</code> matches the registration paths
+     * <code>/web/registration</code>, <code>/web/registration/</code>,
+     * <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>,
+     * but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>. </p>
      */
     inline void SetRegistrationPagePath(const Aws::String& value) { m_registrationPagePathHasBeenSet = true; m_registrationPagePath = value; }
 
@@ -145,8 +211,14 @@ namespace Model
      * <p>The path of the account registration endpoint for your application. This is
      * the page on your website that presents the registration form to new users. </p>
      *  <p>This page must accept <code>GET</code> text/html requests.</p> 
-     * <p>For example, for the URL <code>https://example.com/web/register</code>, you
-     * would provide the path <code>/web/register</code>.</p>
+     * <p>For example, for the URL <code>https://example.com/web/registration</code>,
+     * you would provide the path <code>/web/registration</code>. Registration page
+     * paths that start with the path that you provide are considered a match. For
+     * example <code>/web/registration</code> matches the registration paths
+     * <code>/web/registration</code>, <code>/web/registration/</code>,
+     * <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>,
+     * but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>. </p>
      */
     inline void SetRegistrationPagePath(Aws::String&& value) { m_registrationPagePathHasBeenSet = true; m_registrationPagePath = std::move(value); }
 
@@ -154,8 +226,14 @@ namespace Model
      * <p>The path of the account registration endpoint for your application. This is
      * the page on your website that presents the registration form to new users. </p>
      *  <p>This page must accept <code>GET</code> text/html requests.</p> 
-     * <p>For example, for the URL <code>https://example.com/web/register</code>, you
-     * would provide the path <code>/web/register</code>.</p>
+     * <p>For example, for the URL <code>https://example.com/web/registration</code>,
+     * you would provide the path <code>/web/registration</code>. Registration page
+     * paths that start with the path that you provide are considered a match. For
+     * example <code>/web/registration</code> matches the registration paths
+     * <code>/web/registration</code>, <code>/web/registration/</code>,
+     * <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>,
+     * but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>. </p>
      */
     inline void SetRegistrationPagePath(const char* value) { m_registrationPagePathHasBeenSet = true; m_registrationPagePath.assign(value); }
 
@@ -163,8 +241,14 @@ namespace Model
      * <p>The path of the account registration endpoint for your application. This is
      * the page on your website that presents the registration form to new users. </p>
      *  <p>This page must accept <code>GET</code> text/html requests.</p> 
-     * <p>For example, for the URL <code>https://example.com/web/register</code>, you
-     * would provide the path <code>/web/register</code>.</p>
+     * <p>For example, for the URL <code>https://example.com/web/registration</code>,
+     * you would provide the path <code>/web/registration</code>. Registration page
+     * paths that start with the path that you provide are considered a match. For
+     * example <code>/web/registration</code> matches the registration paths
+     * <code>/web/registration</code>, <code>/web/registration/</code>,
+     * <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>,
+     * but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>. </p>
      */
     inline AWSManagedRulesACFPRuleSet& WithRegistrationPagePath(const Aws::String& value) { SetRegistrationPagePath(value); return *this;}
 
@@ -172,8 +256,14 @@ namespace Model
      * <p>The path of the account registration endpoint for your application. This is
      * the page on your website that presents the registration form to new users. </p>
      *  <p>This page must accept <code>GET</code> text/html requests.</p> 
-     * <p>For example, for the URL <code>https://example.com/web/register</code>, you
-     * would provide the path <code>/web/register</code>.</p>
+     * <p>For example, for the URL <code>https://example.com/web/registration</code>,
+     * you would provide the path <code>/web/registration</code>. Registration page
+     * paths that start with the path that you provide are considered a match. For
+     * example <code>/web/registration</code> matches the registration paths
+     * <code>/web/registration</code>, <code>/web/registration/</code>,
+     * <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>,
+     * but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>. </p>
      */
     inline AWSManagedRulesACFPRuleSet& WithRegistrationPagePath(Aws::String&& value) { SetRegistrationPagePath(std::move(value)); return *this;}
 
@@ -181,8 +271,14 @@ namespace Model
      * <p>The path of the account registration endpoint for your application. This is
      * the page on your website that presents the registration form to new users. </p>
      *  <p>This page must accept <code>GET</code> text/html requests.</p> 
-     * <p>For example, for the URL <code>https://example.com/web/register</code>, you
-     * would provide the path <code>/web/register</code>.</p>
+     * <p>For example, for the URL <code>https://example.com/web/registration</code>,
+     * you would provide the path <code>/web/registration</code>. Registration page
+     * paths that start with the path that you provide are considered a match. For
+     * example <code>/web/registration</code> matches the registration paths
+     * <code>/web/registration</code>, <code>/web/registration/</code>,
+     * <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>,
+     * but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>. </p>
      */
     inline AWSManagedRulesACFPRuleSet& WithRegistrationPagePath(const char* value) { SetRegistrationPagePath(value); return *this;}
 

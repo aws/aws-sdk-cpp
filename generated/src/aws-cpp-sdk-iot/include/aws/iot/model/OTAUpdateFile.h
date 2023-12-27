@@ -211,67 +211,80 @@ namespace Model
 
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline OTAUpdateFile& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline OTAUpdateFile& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline OTAUpdateFile& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline OTAUpdateFile& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline OTAUpdateFile& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline OTAUpdateFile& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline OTAUpdateFile& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline OTAUpdateFile& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of name/attribute pairs.</p>
+     * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
+     * the Job document.</p>
      */
     inline OTAUpdateFile& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

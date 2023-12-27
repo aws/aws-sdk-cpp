@@ -10,6 +10,7 @@
 #include <aws/accessanalyzer/model/Type.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/accessanalyzer/model/AnalyzerConfiguration.h>
 #include <aws/accessanalyzer/model/InlineArchiveRule.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -82,44 +83,56 @@ namespace Model
 
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>The type of analyzer to create. Only <code>ACCOUNT</code>,
+     * <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and
+     * <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create
+     * only one analyzer per account per Region. You can create up to 5 analyzers per
+     * organization per Region.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>The type of analyzer to create. Only <code>ACCOUNT</code>,
+     * <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and
+     * <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create
+     * only one analyzer per account per Region. You can create up to 5 analyzers per
+     * organization per Region.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>The type of analyzer to create. Only <code>ACCOUNT</code>,
+     * <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and
+     * <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create
+     * only one analyzer per account per Region. You can create up to 5 analyzers per
+     * organization per Region.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>The type of analyzer to create. Only <code>ACCOUNT</code>,
+     * <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and
+     * <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create
+     * only one analyzer per account per Region. You can create up to 5 analyzers per
+     * organization per Region.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>The type of analyzer to create. Only <code>ACCOUNT</code>,
+     * <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and
+     * <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create
+     * only one analyzer per account per Region. You can create up to 5 analyzers per
+     * organization per Region.</p>
      */
     inline CreateAnalyzerRequest& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>The type of analyzer to create. Only <code>ACCOUNT</code>,
+     * <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and
+     * <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create
+     * only one analyzer per account per Region. You can create up to 5 analyzers per
+     * organization per Region.</p>
      */
     inline CreateAnalyzerRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 
@@ -182,67 +195,67 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline CreateAnalyzerRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline CreateAnalyzerRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline CreateAnalyzerRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline CreateAnalyzerRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline CreateAnalyzerRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline CreateAnalyzerRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline CreateAnalyzerRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline CreateAnalyzerRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer.</p>
      */
     inline CreateAnalyzerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -287,6 +300,55 @@ namespace Model
      */
     inline CreateAnalyzerRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>Specifies the configuration of the analyzer. If the analyzer is an unused
+     * access analyzer, the specified scope of unused access is used for the
+     * configuration. If the analyzer is an external access analyzer, this field is not
+     * used.</p>
+     */
+    inline const AnalyzerConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>Specifies the configuration of the analyzer. If the analyzer is an unused
+     * access analyzer, the specified scope of unused access is used for the
+     * configuration. If the analyzer is an external access analyzer, this field is not
+     * used.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the configuration of the analyzer. If the analyzer is an unused
+     * access analyzer, the specified scope of unused access is used for the
+     * configuration. If the analyzer is an external access analyzer, this field is not
+     * used.</p>
+     */
+    inline void SetConfiguration(const AnalyzerConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    /**
+     * <p>Specifies the configuration of the analyzer. If the analyzer is an unused
+     * access analyzer, the specified scope of unused access is used for the
+     * configuration. If the analyzer is an external access analyzer, this field is not
+     * used.</p>
+     */
+    inline void SetConfiguration(AnalyzerConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    /**
+     * <p>Specifies the configuration of the analyzer. If the analyzer is an unused
+     * access analyzer, the specified scope of unused access is used for the
+     * configuration. If the analyzer is an external access analyzer, this field is not
+     * used.</p>
+     */
+    inline CreateAnalyzerRequest& WithConfiguration(const AnalyzerConfiguration& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the configuration of the analyzer. If the analyzer is an unused
+     * access analyzer, the specified scope of unused access is used for the
+     * configuration. If the analyzer is an external access analyzer, this field is not
+     * used.</p>
+     */
+    inline CreateAnalyzerRequest& WithConfiguration(AnalyzerConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_analyzerName;
@@ -303,6 +365,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    AnalyzerConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

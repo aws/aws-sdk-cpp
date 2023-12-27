@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowType::NOT_SET:
+            return {};
           case WorkflowType::BUILD:
             return "BUILD";
           case WorkflowType::TEST:

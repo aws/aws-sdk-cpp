@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpnProtocol::NOT_SET:
+            return {};
           case VpnProtocol::openvpn:
             return "openvpn";
           default:

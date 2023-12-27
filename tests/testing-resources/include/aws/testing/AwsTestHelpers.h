@@ -14,16 +14,14 @@
 #include <aws/core/VersionConfig.h>
 #include <aws/core/utils/DateTime.h>
 
-#if defined(GetMessage)
-#undef GetMessage
-#endif
-
 #define AWS_ASSERT_SUCCESS(awsCppSdkOutcome) \
   ASSERT_TRUE(awsCppSdkOutcome.IsSuccess()) << "Error details: " << awsCppSdkOutcome.GetError() \
+                                            << "\nRetries: " << awsCppSdkOutcome.GetRetryCount() \
                                             << "\nNow timestamp: " << Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601_BASIC)
 
 #define AWS_EXPECT_SUCCESS(awsCppSdkOutcome) \
   EXPECT_TRUE(awsCppSdkOutcome.IsSuccess()) << "Error details: " << awsCppSdkOutcome.GetError() \
+                                            << "\nRetries: " << awsCppSdkOutcome.GetRetryCount() \
                                             << "\nNow timestamp: " << Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601_BASIC)
 
 /**

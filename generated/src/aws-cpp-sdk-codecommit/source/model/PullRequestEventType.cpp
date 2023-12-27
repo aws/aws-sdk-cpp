@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PullRequestEventType::NOT_SET:
+            return {};
           case PullRequestEventType::PULL_REQUEST_CREATED:
             return "PULL_REQUEST_CREATED";
           case PullRequestEventType::PULL_REQUEST_STATUS_CHANGED:

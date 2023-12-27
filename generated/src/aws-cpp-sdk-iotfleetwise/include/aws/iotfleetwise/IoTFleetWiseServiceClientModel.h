@@ -36,6 +36,7 @@
 #include <aws/iotfleetwise/model/DisassociateVehicleFleetResult.h>
 #include <aws/iotfleetwise/model/GetCampaignResult.h>
 #include <aws/iotfleetwise/model/GetDecoderManifestResult.h>
+#include <aws/iotfleetwise/model/GetEncryptionConfigurationResult.h>
 #include <aws/iotfleetwise/model/GetFleetResult.h>
 #include <aws/iotfleetwise/model/GetLoggingOptionsResult.h>
 #include <aws/iotfleetwise/model/GetModelManifestResult.h>
@@ -58,6 +59,7 @@
 #include <aws/iotfleetwise/model/ListTagsForResourceResult.h>
 #include <aws/iotfleetwise/model/ListVehiclesResult.h>
 #include <aws/iotfleetwise/model/ListVehiclesInFleetResult.h>
+#include <aws/iotfleetwise/model/PutEncryptionConfigurationResult.h>
 #include <aws/iotfleetwise/model/PutLoggingOptionsResult.h>
 #include <aws/iotfleetwise/model/RegisterAccountResult.h>
 #include <aws/iotfleetwise/model/TagResourceResult.h>
@@ -126,6 +128,7 @@ namespace Aws
       class DisassociateVehicleFleetRequest;
       class GetCampaignRequest;
       class GetDecoderManifestRequest;
+      class GetEncryptionConfigurationRequest;
       class GetFleetRequest;
       class GetLoggingOptionsRequest;
       class GetModelManifestRequest;
@@ -148,6 +151,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class ListVehiclesRequest;
       class ListVehiclesInFleetRequest;
+      class PutEncryptionConfigurationRequest;
       class PutLoggingOptionsRequest;
       class RegisterAccountRequest;
       class TagResourceRequest;
@@ -179,6 +183,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateVehicleFleetResult, IoTFleetWiseError> DisassociateVehicleFleetOutcome;
       typedef Aws::Utils::Outcome<GetCampaignResult, IoTFleetWiseError> GetCampaignOutcome;
       typedef Aws::Utils::Outcome<GetDecoderManifestResult, IoTFleetWiseError> GetDecoderManifestOutcome;
+      typedef Aws::Utils::Outcome<GetEncryptionConfigurationResult, IoTFleetWiseError> GetEncryptionConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetFleetResult, IoTFleetWiseError> GetFleetOutcome;
       typedef Aws::Utils::Outcome<GetLoggingOptionsResult, IoTFleetWiseError> GetLoggingOptionsOutcome;
       typedef Aws::Utils::Outcome<GetModelManifestResult, IoTFleetWiseError> GetModelManifestOutcome;
@@ -201,6 +206,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTFleetWiseError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListVehiclesResult, IoTFleetWiseError> ListVehiclesOutcome;
       typedef Aws::Utils::Outcome<ListVehiclesInFleetResult, IoTFleetWiseError> ListVehiclesInFleetOutcome;
+      typedef Aws::Utils::Outcome<PutEncryptionConfigurationResult, IoTFleetWiseError> PutEncryptionConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutLoggingOptionsResult, IoTFleetWiseError> PutLoggingOptionsOutcome;
       typedef Aws::Utils::Outcome<RegisterAccountResult, IoTFleetWiseError> RegisterAccountOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, IoTFleetWiseError> TagResourceOutcome;
@@ -232,6 +238,7 @@ namespace Aws
       typedef std::future<DisassociateVehicleFleetOutcome> DisassociateVehicleFleetOutcomeCallable;
       typedef std::future<GetCampaignOutcome> GetCampaignOutcomeCallable;
       typedef std::future<GetDecoderManifestOutcome> GetDecoderManifestOutcomeCallable;
+      typedef std::future<GetEncryptionConfigurationOutcome> GetEncryptionConfigurationOutcomeCallable;
       typedef std::future<GetFleetOutcome> GetFleetOutcomeCallable;
       typedef std::future<GetLoggingOptionsOutcome> GetLoggingOptionsOutcomeCallable;
       typedef std::future<GetModelManifestOutcome> GetModelManifestOutcomeCallable;
@@ -254,6 +261,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListVehiclesOutcome> ListVehiclesOutcomeCallable;
       typedef std::future<ListVehiclesInFleetOutcome> ListVehiclesInFleetOutcomeCallable;
+      typedef std::future<PutEncryptionConfigurationOutcome> PutEncryptionConfigurationOutcomeCallable;
       typedef std::future<PutLoggingOptionsOutcome> PutLoggingOptionsOutcomeCallable;
       typedef std::future<RegisterAccountOutcome> RegisterAccountOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -288,6 +296,7 @@ namespace Aws
     typedef std::function<void(const IoTFleetWiseClient*, const Model::DisassociateVehicleFleetRequest&, const Model::DisassociateVehicleFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVehicleFleetResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetCampaignRequest&, const Model::GetCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetDecoderManifestRequest&, const Model::GetDecoderManifestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDecoderManifestResponseReceivedHandler;
+    typedef std::function<void(const IoTFleetWiseClient*, const Model::GetEncryptionConfigurationRequest&, const Model::GetEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetFleetRequest&, const Model::GetFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFleetResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetLoggingOptionsRequest&, const Model::GetLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoggingOptionsResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetModelManifestRequest&, const Model::GetModelManifestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelManifestResponseReceivedHandler;
@@ -310,6 +319,7 @@ namespace Aws
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ListVehiclesRequest&, const Model::ListVehiclesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVehiclesResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ListVehiclesInFleetRequest&, const Model::ListVehiclesInFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVehiclesInFleetResponseReceivedHandler;
+    typedef std::function<void(const IoTFleetWiseClient*, const Model::PutEncryptionConfigurationRequest&, const Model::PutEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::PutLoggingOptionsRequest&, const Model::PutLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingOptionsResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::RegisterAccountRequest&, const Model::RegisterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterAccountResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

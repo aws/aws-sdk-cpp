@@ -174,59 +174,59 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == RESOURCE_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == QUICK_SIGHT_USER_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::QUICK_SIGHT_USER_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::QUICK_SIGHT_USER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IDENTITY_TYPE_NOT_SUPPORTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::IDENTITY_TYPE_NOT_SUPPORTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::IDENTITY_TYPE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_PRICING_PLAN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::UNSUPPORTED_PRICING_PLAN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::UNSUPPORTED_PRICING_PLAN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DOMAIN_NOT_WHITELISTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::DOMAIN_NOT_WHITELISTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::DOMAIN_NOT_WHITELISTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_USER_EDITION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::UNSUPPORTED_USER_EDITION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::UNSUPPORTED_USER_EDITION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SESSION_LIFETIME_IN_MINUTES_INVALID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::SESSION_LIFETIME_IN_MINUTES_INVALID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::SESSION_LIFETIME_IN_MINUTES_INVALID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PRECONDITION_NOT_MET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::PRECONDITION_NOT_MET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::PRECONDITION_NOT_MET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_UPDATING_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONCURRENT_UPDATING), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONCURRENT_UPDATING), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

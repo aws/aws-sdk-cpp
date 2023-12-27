@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatabaseStatus::NOT_SET:
+            return {};
           case DatabaseStatus::RUNNING:
             return "RUNNING";
           case DatabaseStatus::STARTING:

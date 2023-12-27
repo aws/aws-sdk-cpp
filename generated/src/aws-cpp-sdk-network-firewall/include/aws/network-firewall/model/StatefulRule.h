@@ -31,8 +31,8 @@ namespace Model
    * this option to specify a simple Suricata rule with protocol, source and
    * destination, ports, direction, and rule options. For information about the
    * Suricata <code>Rules</code> format, see <a
-   * href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
+   * Format</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRule">AWS
    * API Reference</a></p>
    */
@@ -54,18 +54,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> <li> <p>
-     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful
-     * rule, and sends a TCP reset packet back to sender of the packet. A TCP reset
-     * packet is a packet with no payload and a <code>RST</code> bit contained in the
-     * TCP header flags. Also sends an alert log mesage if alert logging is configured
-     * in the <a>Firewall</a> <a>LoggingConfiguration</a>.</p> <p> <code>REJECT</code>
-     * isn't currently available for use with IMAP and FTP protocols.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline const StatefulAction& GetAction() const{ return m_action; }
 
@@ -78,18 +72,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> <li> <p>
-     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful
-     * rule, and sends a TCP reset packet back to sender of the packet. A TCP reset
-     * packet is a packet with no payload and a <code>RST</code> bit contained in the
-     * TCP header flags. Also sends an alert log mesage if alert logging is configured
-     * in the <a>Firewall</a> <a>LoggingConfiguration</a>.</p> <p> <code>REJECT</code>
-     * isn't currently available for use with IMAP and FTP protocols.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
@@ -102,18 +90,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> <li> <p>
-     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful
-     * rule, and sends a TCP reset packet back to sender of the packet. A TCP reset
-     * packet is a packet with no payload and a <code>RST</code> bit contained in the
-     * TCP header flags. Also sends an alert log mesage if alert logging is configured
-     * in the <a>Firewall</a> <a>LoggingConfiguration</a>.</p> <p> <code>REJECT</code>
-     * isn't currently available for use with IMAP and FTP protocols.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline void SetAction(const StatefulAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -126,18 +108,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> <li> <p>
-     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful
-     * rule, and sends a TCP reset packet back to sender of the packet. A TCP reset
-     * packet is a packet with no payload and a <code>RST</code> bit contained in the
-     * TCP header flags. Also sends an alert log mesage if alert logging is configured
-     * in the <a>Firewall</a> <a>LoggingConfiguration</a>.</p> <p> <code>REJECT</code>
-     * isn't currently available for use with IMAP and FTP protocols.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline void SetAction(StatefulAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -150,18 +126,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> <li> <p>
-     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful
-     * rule, and sends a TCP reset packet back to sender of the packet. A TCP reset
-     * packet is a packet with no payload and a <code>RST</code> bit contained in the
-     * TCP header flags. Also sends an alert log mesage if alert logging is configured
-     * in the <a>Firewall</a> <a>LoggingConfiguration</a>.</p> <p> <code>REJECT</code>
-     * isn't currently available for use with IMAP and FTP protocols.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline StatefulRule& WithAction(const StatefulAction& value) { SetAction(value); return *this;}
 
@@ -174,18 +144,12 @@ namespace Model
      * intended destination.</p> </li> <li> <p> <b>DROP</b> - Blocks the packets from
      * going to the intended destination and sends an alert log message, if alert
      * logging is configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p>
-     * </li> <li> <p> <b>ALERT</b> - Permits the packets to go to the intended
-     * destination and sends an alert log message, if alert logging is configured in
-     * the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can use this action
-     * to test a rule that you intend to use to drop traffic. You can enable the rule
-     * with <code>ALERT</code> action, verify in the logs that the rule is filtering as
-     * you want, then change the action to <code>DROP</code>.</p> </li> <li> <p>
-     * <b>REJECT</b> - Drops TCP traffic that matches the conditions of the stateful
-     * rule, and sends a TCP reset packet back to sender of the packet. A TCP reset
-     * packet is a packet with no payload and a <code>RST</code> bit contained in the
-     * TCP header flags. Also sends an alert log mesage if alert logging is configured
-     * in the <a>Firewall</a> <a>LoggingConfiguration</a>.</p> <p> <code>REJECT</code>
-     * isn't currently available for use with IMAP and FTP protocols.</p> </li> </ul>
+     * </li> <li> <p> <b>ALERT</b> - Sends an alert log message, if alert logging is
+     * configured in the <a>Firewall</a> <a>LoggingConfiguration</a>. </p> <p>You can
+     * use this action to test a rule that you intend to use to drop traffic. You can
+     * enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+     * is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
+     * </ul>
      */
     inline StatefulRule& WithAction(StatefulAction&& value) { SetAction(std::move(value)); return *this;}
 

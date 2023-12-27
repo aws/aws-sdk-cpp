@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionAlg::NOT_SET:
+            return {};
           case EncryptionAlg::AES128_CBC:
             return "AES128_CBC";
           case EncryptionAlg::AES192_CBC:

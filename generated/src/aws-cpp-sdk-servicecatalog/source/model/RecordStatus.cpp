@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordStatus::NOT_SET:
+            return {};
           case RecordStatus::CREATED:
             return "CREATED";
           case RecordStatus::IN_PROGRESS:

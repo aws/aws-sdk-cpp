@@ -110,6 +110,31 @@ namespace Model
      */
     inline MetricToRetain& WithMetricDimension(MetricDimension&& value) { SetMetricDimension(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The value indicates exporting metrics related to the <code>MetricToRetain
+     * </code> when it's true.</p>
+     */
+    inline bool GetExportMetric() const{ return m_exportMetric; }
+
+    /**
+     * <p>The value indicates exporting metrics related to the <code>MetricToRetain
+     * </code> when it's true.</p>
+     */
+    inline bool ExportMetricHasBeenSet() const { return m_exportMetricHasBeenSet; }
+
+    /**
+     * <p>The value indicates exporting metrics related to the <code>MetricToRetain
+     * </code> when it's true.</p>
+     */
+    inline void SetExportMetric(bool value) { m_exportMetricHasBeenSet = true; m_exportMetric = value; }
+
+    /**
+     * <p>The value indicates exporting metrics related to the <code>MetricToRetain
+     * </code> when it's true.</p>
+     */
+    inline MetricToRetain& WithExportMetric(bool value) { SetExportMetric(value); return *this;}
+
   private:
 
     Aws::String m_metric;
@@ -117,6 +142,9 @@ namespace Model
 
     MetricDimension m_metricDimension;
     bool m_metricDimensionHasBeenSet = false;
+
+    bool m_exportMetric;
+    bool m_exportMetricHasBeenSet = false;
   };
 
 } // namespace Model

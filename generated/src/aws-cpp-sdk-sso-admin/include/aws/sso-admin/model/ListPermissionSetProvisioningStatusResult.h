@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sso-admin/model/PermissionSetProvisioningStatusMetadata.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     AWS_SSOADMIN_API ListPermissionSetProvisioningStatusResult();
     AWS_SSOADMIN_API ListPermissionSetProvisioningStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API ListPermissionSetProvisioningStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
-    inline const Aws::Vector<PermissionSetProvisioningStatusMetadata>& GetPermissionSetsProvisioningStatus() const{ return m_permissionSetsProvisioningStatus; }
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
-    inline void SetPermissionSetsProvisioningStatus(const Aws::Vector<PermissionSetProvisioningStatusMetadata>& value) { m_permissionSetsProvisioningStatus = value; }
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
-    inline void SetPermissionSetsProvisioningStatus(Aws::Vector<PermissionSetProvisioningStatusMetadata>&& value) { m_permissionSetsProvisioningStatus = std::move(value); }
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
-    inline ListPermissionSetProvisioningStatusResult& WithPermissionSetsProvisioningStatus(const Aws::Vector<PermissionSetProvisioningStatusMetadata>& value) { SetPermissionSetsProvisioningStatus(value); return *this;}
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
-    inline ListPermissionSetProvisioningStatusResult& WithPermissionSetsProvisioningStatus(Aws::Vector<PermissionSetProvisioningStatusMetadata>&& value) { SetPermissionSetsProvisioningStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
-    inline ListPermissionSetProvisioningStatusResult& AddPermissionSetsProvisioningStatus(const PermissionSetProvisioningStatusMetadata& value) { m_permissionSetsProvisioningStatus.push_back(value); return *this; }
-
-    /**
-     * <p>The status object for the permission set provisioning operation.</p>
-     */
-    inline ListPermissionSetProvisioningStatusResult& AddPermissionSetsProvisioningStatus(PermissionSetProvisioningStatusMetadata&& value) { m_permissionSetsProvisioningStatus.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -113,6 +77,42 @@ namespace Model
     inline ListPermissionSetProvisioningStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>The status object for the permission set provisioning operation.</p>
+     */
+    inline const Aws::Vector<PermissionSetProvisioningStatusMetadata>& GetPermissionSetsProvisioningStatus() const{ return m_permissionSetsProvisioningStatus; }
+
+    /**
+     * <p>The status object for the permission set provisioning operation.</p>
+     */
+    inline void SetPermissionSetsProvisioningStatus(const Aws::Vector<PermissionSetProvisioningStatusMetadata>& value) { m_permissionSetsProvisioningStatus = value; }
+
+    /**
+     * <p>The status object for the permission set provisioning operation.</p>
+     */
+    inline void SetPermissionSetsProvisioningStatus(Aws::Vector<PermissionSetProvisioningStatusMetadata>&& value) { m_permissionSetsProvisioningStatus = std::move(value); }
+
+    /**
+     * <p>The status object for the permission set provisioning operation.</p>
+     */
+    inline ListPermissionSetProvisioningStatusResult& WithPermissionSetsProvisioningStatus(const Aws::Vector<PermissionSetProvisioningStatusMetadata>& value) { SetPermissionSetsProvisioningStatus(value); return *this;}
+
+    /**
+     * <p>The status object for the permission set provisioning operation.</p>
+     */
+    inline ListPermissionSetProvisioningStatusResult& WithPermissionSetsProvisioningStatus(Aws::Vector<PermissionSetProvisioningStatusMetadata>&& value) { SetPermissionSetsProvisioningStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The status object for the permission set provisioning operation.</p>
+     */
+    inline ListPermissionSetProvisioningStatusResult& AddPermissionSetsProvisioningStatus(const PermissionSetProvisioningStatusMetadata& value) { m_permissionSetsProvisioningStatus.push_back(value); return *this; }
+
+    /**
+     * <p>The status object for the permission set provisioning operation.</p>
+     */
+    inline ListPermissionSetProvisioningStatusResult& AddPermissionSetsProvisioningStatus(PermissionSetProvisioningStatusMetadata&& value) { m_permissionSetsProvisioningStatus.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -136,9 +136,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<PermissionSetProvisioningStatusMetadata> m_permissionSetsProvisioningStatus;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<PermissionSetProvisioningStatusMetadata> m_permissionSetsProvisioningStatus;
 
     Aws::String m_requestId;
   };

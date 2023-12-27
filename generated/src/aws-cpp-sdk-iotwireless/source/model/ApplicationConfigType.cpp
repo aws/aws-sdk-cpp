@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationConfigType::NOT_SET:
+            return {};
           case ApplicationConfigType::SemtechGeolocation:
             return "SemtechGeolocation";
           default:

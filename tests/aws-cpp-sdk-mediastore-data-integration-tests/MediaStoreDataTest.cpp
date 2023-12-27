@@ -40,9 +40,6 @@ using namespace Aws::MediaStoreData::Model;
 
 // TODO: temporary fix for naming conflicts on Windows.
 #ifdef _WIN32
-#ifdef GetMessage
-#undef GetMessage
-#endif
 #ifdef GetObject
 #undef GetObject
 #endif

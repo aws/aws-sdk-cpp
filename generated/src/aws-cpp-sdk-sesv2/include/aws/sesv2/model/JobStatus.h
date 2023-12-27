@@ -19,7 +19,8 @@ namespace Model
     CREATED,
     PROCESSING,
     COMPLETED,
-    FAILED
+    FAILED,
+    CANCELLED
   };
 
 namespace JobStatusMapper

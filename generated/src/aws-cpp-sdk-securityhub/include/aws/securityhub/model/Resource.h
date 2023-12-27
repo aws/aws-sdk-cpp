@@ -436,6 +436,96 @@ namespace Model
      */
     inline Resource& WithDetails(ResourceDetails&& value) { SetDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline Resource& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline Resource& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline Resource& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the application that is related to a
+     * finding. </p>
+     */
+    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the application that is related to a
+     * finding. </p>
+     */
+    inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the application that is related to a
+     * finding. </p>
+     */
+    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the application that is related to a
+     * finding. </p>
+     */
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the application that is related to a
+     * finding. </p>
+     */
+    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the application that is related to a
+     * finding. </p>
+     */
+    inline Resource& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the application that is related to a
+     * finding. </p>
+     */
+    inline Resource& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the application that is related to a
+     * finding. </p>
+     */
+    inline Resource& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+
   private:
 
     Aws::String m_type;
@@ -461,6 +551,12 @@ namespace Model
 
     ResourceDetails m_details;
     bool m_detailsHasBeenSet = false;
+
+    Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet = false;
+
+    Aws::String m_applicationArn;
+    bool m_applicationArnHasBeenSet = false;
   };
 
 } // namespace Model

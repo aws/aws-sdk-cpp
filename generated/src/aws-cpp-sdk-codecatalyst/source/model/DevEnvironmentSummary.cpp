@@ -34,7 +34,8 @@ DevEnvironmentSummary::DevEnvironmentSummary() :
     m_instanceTypeHasBeenSet(false),
     m_inactivityTimeoutMinutes(0),
     m_inactivityTimeoutMinutesHasBeenSet(false),
-    m_persistentStorageHasBeenSet(false)
+    m_persistentStorageHasBeenSet(false),
+    m_vpcConnectionNameHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ DevEnvironmentSummary::DevEnvironmentSummary(JsonView jsonValue) :
     m_instanceTypeHasBeenSet(false),
     m_inactivityTimeoutMinutes(0),
     m_inactivityTimeoutMinutesHasBeenSet(false),
-    m_persistentStorageHasBeenSet(false)
+    m_persistentStorageHasBeenSet(false),
+    m_vpcConnectionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -158,6 +160,13 @@ DevEnvironmentSummary& DevEnvironmentSummary::operator =(JsonView jsonValue)
     m_persistentStorageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConnectionName"))
+  {
+    m_vpcConnectionName = jsonValue.GetString("vpcConnectionName");
+
+    m_vpcConnectionNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -247,6 +256,12 @@ JsonValue DevEnvironmentSummary::Jsonize() const
   if(m_persistentStorageHasBeenSet)
   {
    payload.WithObject("persistentStorage", m_persistentStorage.Jsonize());
+
+  }
+
+  if(m_vpcConnectionNameHasBeenSet)
+  {
+   payload.WithString("vpcConnectionName", m_vpcConnectionName);
 
   }
 

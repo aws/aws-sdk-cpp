@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Monotonicity::NOT_SET:
+            return {};
           case Monotonicity::DECREASING:
             return "DECREASING";
           case Monotonicity::INCREASING:

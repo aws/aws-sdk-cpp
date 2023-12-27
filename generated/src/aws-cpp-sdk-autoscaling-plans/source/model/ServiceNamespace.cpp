@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceNamespace::NOT_SET:
+            return {};
           case ServiceNamespace::autoscaling:
             return "autoscaling";
           case ServiceNamespace::ecs:

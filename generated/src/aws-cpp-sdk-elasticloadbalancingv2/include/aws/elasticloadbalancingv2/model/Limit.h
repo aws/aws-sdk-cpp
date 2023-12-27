@@ -25,7 +25,14 @@ namespace Model
 
   /**
    * <p>Information about an Elastic Load Balancing resource limit for your Amazon
-   * Web Services account.</p><p><h3>See Also:</h3>   <a
+   * Web Services account.</p> <p>For more information, see the following:</p> <ul>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
+   * for your Application Load Balancers</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas
+   * for your Network Load Balancers</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas
+   * for your Gateway Load Balancers</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Limit">AWS
    * API Reference</a></p>
    */

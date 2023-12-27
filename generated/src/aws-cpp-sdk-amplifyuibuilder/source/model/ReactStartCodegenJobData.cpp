@@ -29,7 +29,8 @@ ReactStartCodegenJobData::ReactStartCodegenJobData() :
     m_renderTypeDeclarationsHasBeenSet(false),
     m_inlineSourceMap(false),
     m_inlineSourceMapHasBeenSet(false),
-    m_apiConfigurationHasBeenSet(false)
+    m_apiConfigurationHasBeenSet(false),
+    m_dependenciesHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ReactStartCodegenJobData::ReactStartCodegenJobData(JsonView jsonValue) :
     m_renderTypeDeclarationsHasBeenSet(false),
     m_inlineSourceMap(false),
     m_inlineSourceMapHasBeenSet(false),
-    m_apiConfigurationHasBeenSet(false)
+    m_apiConfigurationHasBeenSet(false),
+    m_dependenciesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +95,16 @@ ReactStartCodegenJobData& ReactStartCodegenJobData::operator =(JsonView jsonValu
     m_apiConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dependencies"))
+  {
+    Aws::Map<Aws::String, JsonView> dependenciesJsonMap = jsonValue.GetObject("dependencies").GetAllObjects();
+    for(auto& dependenciesItem : dependenciesJsonMap)
+    {
+      m_dependencies[dependenciesItem.first] = dependenciesItem.second.AsString();
+    }
+    m_dependenciesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +142,17 @@ JsonValue ReactStartCodegenJobData::Jsonize() const
   if(m_apiConfigurationHasBeenSet)
   {
    payload.WithObject("apiConfiguration", m_apiConfiguration.Jsonize());
+
+  }
+
+  if(m_dependenciesHasBeenSet)
+  {
+   JsonValue dependenciesJsonMap;
+   for(auto& dependenciesItem : m_dependencies)
+   {
+     dependenciesJsonMap.WithString(dependenciesItem.first, dependenciesItem.second);
+   }
+   payload.WithObject("dependencies", std::move(dependenciesJsonMap));
 
   }
 

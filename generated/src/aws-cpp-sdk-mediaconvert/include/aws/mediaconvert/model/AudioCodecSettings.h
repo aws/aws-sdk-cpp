@@ -11,6 +11,7 @@
 #include <aws/mediaconvert/model/AudioCodec.h>
 #include <aws/mediaconvert/model/Eac3AtmosSettings.h>
 #include <aws/mediaconvert/model/Eac3Settings.h>
+#include <aws/mediaconvert/model/FlacSettings.h>
 #include <aws/mediaconvert/model/Mp2Settings.h>
 #include <aws/mediaconvert/model/Mp3Settings.h>
 #include <aws/mediaconvert/model/OpusSettings.h>
@@ -313,6 +314,43 @@ namespace Model
 
 
     /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * FLAC.
+     */
+    inline const FlacSettings& GetFlacSettings() const{ return m_flacSettings; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * FLAC.
+     */
+    inline bool FlacSettingsHasBeenSet() const { return m_flacSettingsHasBeenSet; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * FLAC.
+     */
+    inline void SetFlacSettings(const FlacSettings& value) { m_flacSettingsHasBeenSet = true; m_flacSettings = value; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * FLAC.
+     */
+    inline void SetFlacSettings(FlacSettings&& value) { m_flacSettingsHasBeenSet = true; m_flacSettings = std::move(value); }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * FLAC.
+     */
+    inline AudioCodecSettings& WithFlacSettings(const FlacSettings& value) { SetFlacSettings(value); return *this;}
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * FLAC.
+     */
+    inline AudioCodecSettings& WithFlacSettings(FlacSettings&& value) { SetFlacSettings(std::move(value)); return *this;}
+
+
+    /**
      * Required when you set Codec to the value MP2.
      */
     inline const Mp2Settings& GetMp2Settings() const{ return m_mp2Settings; }
@@ -503,6 +541,9 @@ namespace Model
 
     Eac3Settings m_eac3Settings;
     bool m_eac3SettingsHasBeenSet = false;
+
+    FlacSettings m_flacSettings;
+    bool m_flacSettingsHasBeenSet = false;
 
     Mp2Settings m_mp2Settings;
     bool m_mp2SettingsHasBeenSet = false;

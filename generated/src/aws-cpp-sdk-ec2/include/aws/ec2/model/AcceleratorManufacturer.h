@@ -16,10 +16,11 @@ namespace Model
   enum class AcceleratorManufacturer
   {
     NOT_SET,
-    nvidia,
-    amd,
     amazon_web_services,
-    xilinx
+    amd,
+    nvidia,
+    xilinx,
+    habana
   };
 
 namespace AcceleratorManufacturerMapper

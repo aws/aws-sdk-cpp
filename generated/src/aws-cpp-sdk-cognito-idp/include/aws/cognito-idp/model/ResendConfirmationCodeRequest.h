@@ -181,50 +181,66 @@ namespace Model
 
 
     /**
-     * <p>The <code>username</code> attribute of the user to whom you want to resend a
-     * confirmation code.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The <code>username</code> attribute of the user to whom you want to resend a
-     * confirmation code.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The <code>username</code> attribute of the user to whom you want to resend a
-     * confirmation code.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The <code>username</code> attribute of the user to whom you want to resend a
-     * confirmation code.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The <code>username</code> attribute of the user to whom you want to resend a
-     * confirmation code.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The <code>username</code> attribute of the user to whom you want to resend a
-     * confirmation code.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline ResendConfirmationCodeRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The <code>username</code> attribute of the user to whom you want to resend a
-     * confirmation code.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline ResendConfirmationCodeRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>username</code> attribute of the user to whom you want to resend a
-     * confirmation code.</p>
+     * <p>The username of the user that you want to query or modify. The value of this
+     * parameter is typically your user's username, but it can be any of their alias
+     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+     * you can also use their <code>sub</code> in this request.</p>
      */
     inline ResendConfirmationCodeRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

@@ -486,6 +486,49 @@ namespace Model
     inline GetDevEnvironmentResult& WithPersistentStorage(PersistentStorage&& value) { SetPersistentStorage(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline const Aws::String& GetVpcConnectionName() const{ return m_vpcConnectionName; }
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline void SetVpcConnectionName(const Aws::String& value) { m_vpcConnectionName = value; }
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline void SetVpcConnectionName(Aws::String&& value) { m_vpcConnectionName = std::move(value); }
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline void SetVpcConnectionName(const char* value) { m_vpcConnectionName.assign(value); }
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline GetDevEnvironmentResult& WithVpcConnectionName(const Aws::String& value) { SetVpcConnectionName(value); return *this;}
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline GetDevEnvironmentResult& WithVpcConnectionName(Aws::String&& value) { SetVpcConnectionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline GetDevEnvironmentResult& WithVpcConnectionName(const char* value) { SetVpcConnectionName(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -534,6 +577,8 @@ namespace Model
     int m_inactivityTimeoutMinutes;
 
     PersistentStorage m_persistentStorage;
+
+    Aws::String m_vpcConnectionName;
 
     Aws::String m_requestId;
   };

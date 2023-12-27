@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ItemType::NOT_SET:
+            return {};
           case ItemType::pronunciation:
             return "pronunciation";
           case ItemType::punctuation:

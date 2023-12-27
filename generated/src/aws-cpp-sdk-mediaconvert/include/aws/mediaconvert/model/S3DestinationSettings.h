@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/S3DestinationAccessControl.h>
 #include <aws/mediaconvert/model/S3EncryptionSettings.h>
+#include <aws/mediaconvert/model/S3StorageClass.h>
 #include <utility>
 
 namespace Aws
@@ -117,6 +118,55 @@ namespace Model
      */
     inline S3DestinationSettings& WithEncryption(S3EncryptionSettings&& value) { SetEncryption(std::move(value)); return *this;}
 
+
+    /**
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
+     */
+    inline const S3StorageClass& GetStorageClass() const{ return m_storageClass; }
+
+    /**
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
+     */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
+
+    /**
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
+     */
+    inline void SetStorageClass(const S3StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+
+    /**
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
+     */
+    inline void SetStorageClass(S3StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
+
+    /**
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
+     */
+    inline S3DestinationSettings& WithStorageClass(const S3StorageClass& value) { SetStorageClass(value); return *this;}
+
+    /**
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
+     */
+    inline S3DestinationSettings& WithStorageClass(S3StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+
   private:
 
     S3DestinationAccessControl m_accessControl;
@@ -124,6 +174,9 @@ namespace Model
 
     S3EncryptionSettings m_encryption;
     bool m_encryptionHasBeenSet = false;
+
+    S3StorageClass m_storageClass;
+    bool m_storageClassHasBeenSet = false;
   };
 
 } // namespace Model

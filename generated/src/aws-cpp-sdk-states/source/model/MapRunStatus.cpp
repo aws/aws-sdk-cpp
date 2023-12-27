@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MapRunStatus::NOT_SET:
+            return {};
           case MapRunStatus::RUNNING:
             return "RUNNING";
           case MapRunStatus::SUCCEEDED:

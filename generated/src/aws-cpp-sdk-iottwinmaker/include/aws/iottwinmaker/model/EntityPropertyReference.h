@@ -81,6 +81,55 @@ namespace Model
 
 
     /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline const Aws::String& GetComponentPath() const{ return m_componentPath; }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline bool ComponentPathHasBeenSet() const { return m_componentPathHasBeenSet; }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline void SetComponentPath(const Aws::String& value) { m_componentPathHasBeenSet = true; m_componentPath = value; }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline void SetComponentPath(Aws::String&& value) { m_componentPathHasBeenSet = true; m_componentPath = std::move(value); }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline void SetComponentPath(const char* value) { m_componentPathHasBeenSet = true; m_componentPath.assign(value); }
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline EntityPropertyReference& WithComponentPath(const Aws::String& value) { SetComponentPath(value); return *this;}
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline EntityPropertyReference& WithComponentPath(Aws::String&& value) { SetComponentPath(std::move(value)); return *this;}
+
+    /**
+     * <p>This string specifies the path to the composite component, starting from the
+     * top-level component.</p>
+     */
+    inline EntityPropertyReference& WithComponentPath(const char* value) { SetComponentPath(value); return *this;}
+
+
+    /**
      * <p>A mapping of external IDs to property names. External IDs uniquely identify
      * properties from external data stores.</p>
      */
@@ -244,6 +293,9 @@ namespace Model
 
     Aws::String m_componentName;
     bool m_componentNameHasBeenSet = false;
+
+    Aws::String m_componentPath;
+    bool m_componentPathHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_externalIdProperty;
     bool m_externalIdPropertyHasBeenSet = false;

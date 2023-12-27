@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListAssetPropertiesFilter::NOT_SET:
+            return {};
           case ListAssetPropertiesFilter::ALL:
             return "ALL";
           case ListAssetPropertiesFilter::BASE:

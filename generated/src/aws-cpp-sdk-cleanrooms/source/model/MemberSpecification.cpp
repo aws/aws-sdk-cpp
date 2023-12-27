@@ -21,14 +21,16 @@ namespace Model
 MemberSpecification::MemberSpecification() : 
     m_accountIdHasBeenSet(false),
     m_memberAbilitiesHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_displayNameHasBeenSet(false),
+    m_paymentConfigurationHasBeenSet(false)
 {
 }
 
 MemberSpecification::MemberSpecification(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_memberAbilitiesHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_displayNameHasBeenSet(false),
+    m_paymentConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ MemberSpecification& MemberSpecification::operator =(JsonView jsonValue)
     m_displayNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("paymentConfiguration"))
+  {
+    m_paymentConfiguration = jsonValue.GetObject("paymentConfiguration");
+
+    m_paymentConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +95,12 @@ JsonValue MemberSpecification::Jsonize() const
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_paymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
 
   }
 

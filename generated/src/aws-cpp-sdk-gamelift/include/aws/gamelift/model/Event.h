@@ -198,40 +198,45 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
-     * -- The server process did not call InitSDK() within the time expected. Check
-     * your game session log to see why InitSDK() was not called in time.</p> </li>
-     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
-     * ProcessReady() within the time expected after calling InitSDK(). Check your game
-     * session log to see why ProcessReady() was not called in time.</p> </li> <li>
+     * -- The server process did not call <code>InitSDK()</code> within the time
+     * expected (5 minutes). Check your game session log to see why
+     * <code>InitSDK()</code> was not called in time.</p> </li> <li>
+     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * <code>ProcessReady()</code> within the time expected (5 minutes) after calling
+     * <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
-     * ProcessEnding(). Check your game session log to see why ProcessEnding() was not
-     * called.</p> </li> <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server
-     * process did not report a valid health check for too long and was therefore
-     * terminated by GameLift. Check your game session log to see if the thread became
-     * stuck processing a synchronous task for too long.</p> </li> <li>
-     * <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly
-     * after OnProcessTerminate() was sent within the time expected. Check your game
-     * session log to see why termination took longer than expected.</p> </li> <li>
+     * <code>ProcessEnding()</code>. Check your game session log to see why
+     * <code>ProcessEnding()</code> was not called.</p> </li> <li>
+     * <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a
+     * valid health check for too long and was therefore terminated by GameLift. Check
+     * your game session log to see if the thread became stuck processing a synchronous
+     * task for too long.</p> </li> <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The
+     * server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see
+     * why termination took longer than expected.</p> </li> <li>
      * <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit
-     * cleanly within the time expected after calling ProcessEnding(). Check your game
-     * session log to see why termination took longer than expected.</p> </li> </ul>
-     * <p> <b>Game session events:</b> </p> <ul> <li>
-     * <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the
-     * expected time. Check your game session log to see why ActivateGameSession() took
-     * longer to complete than expected.</p> </li> </ul> <p> <b>Other fleet events:</b>
-     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
-     * capacity settings (desired instances, minimum/maximum scaling limits). Event
-     * messaging includes the new capacity settings.</p> </li> <li>
-     * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
-     * fleet's game session protection policy setting. Event messaging includes both
-     * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul>
+     * cleanly within the time expected (30 seconds) after calling
+     * <code>ProcessEnding()</code>. Check your game session log to see why termination
+     * took longer than expected.</p> </li> </ul> <p> <b>Game session events:</b> </p>
+     * <ul> <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate
+     * within the expected time. Check your game session log to see why
+     * <code>ActivateGameSession()</code> took longer to complete than expected.</p>
+     * </li> </ul> <p> <b>Other fleet events:</b> </p> <ul> <li> <p>FLEET_SCALING_EVENT
+     * -- A change was made to the fleet's capacity settings (desired instances,
+     * minimum/maximum scaling limits). Event messaging includes the new capacity
+     * settings.</p> </li> <li> <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED --
+     * A change was made to the fleet's game session protection policy setting. Event
+     * messaging includes both the old and new policy setting. </p> </li> <li>
+     * <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li> <li>
+     * <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li> </ul>
      */
     inline const EventCode& GetEventCode() const{ return m_eventCode; }
 
@@ -309,40 +314,45 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
-     * -- The server process did not call InitSDK() within the time expected. Check
-     * your game session log to see why InitSDK() was not called in time.</p> </li>
-     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
-     * ProcessReady() within the time expected after calling InitSDK(). Check your game
-     * session log to see why ProcessReady() was not called in time.</p> </li> <li>
+     * -- The server process did not call <code>InitSDK()</code> within the time
+     * expected (5 minutes). Check your game session log to see why
+     * <code>InitSDK()</code> was not called in time.</p> </li> <li>
+     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * <code>ProcessReady()</code> within the time expected (5 minutes) after calling
+     * <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
-     * ProcessEnding(). Check your game session log to see why ProcessEnding() was not
-     * called.</p> </li> <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server
-     * process did not report a valid health check for too long and was therefore
-     * terminated by GameLift. Check your game session log to see if the thread became
-     * stuck processing a synchronous task for too long.</p> </li> <li>
-     * <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly
-     * after OnProcessTerminate() was sent within the time expected. Check your game
-     * session log to see why termination took longer than expected.</p> </li> <li>
+     * <code>ProcessEnding()</code>. Check your game session log to see why
+     * <code>ProcessEnding()</code> was not called.</p> </li> <li>
+     * <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a
+     * valid health check for too long and was therefore terminated by GameLift. Check
+     * your game session log to see if the thread became stuck processing a synchronous
+     * task for too long.</p> </li> <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The
+     * server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see
+     * why termination took longer than expected.</p> </li> <li>
      * <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit
-     * cleanly within the time expected after calling ProcessEnding(). Check your game
-     * session log to see why termination took longer than expected.</p> </li> </ul>
-     * <p> <b>Game session events:</b> </p> <ul> <li>
-     * <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the
-     * expected time. Check your game session log to see why ActivateGameSession() took
-     * longer to complete than expected.</p> </li> </ul> <p> <b>Other fleet events:</b>
-     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
-     * capacity settings (desired instances, minimum/maximum scaling limits). Event
-     * messaging includes the new capacity settings.</p> </li> <li>
-     * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
-     * fleet's game session protection policy setting. Event messaging includes both
-     * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul>
+     * cleanly within the time expected (30 seconds) after calling
+     * <code>ProcessEnding()</code>. Check your game session log to see why termination
+     * took longer than expected.</p> </li> </ul> <p> <b>Game session events:</b> </p>
+     * <ul> <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate
+     * within the expected time. Check your game session log to see why
+     * <code>ActivateGameSession()</code> took longer to complete than expected.</p>
+     * </li> </ul> <p> <b>Other fleet events:</b> </p> <ul> <li> <p>FLEET_SCALING_EVENT
+     * -- A change was made to the fleet's capacity settings (desired instances,
+     * minimum/maximum scaling limits). Event messaging includes the new capacity
+     * settings.</p> </li> <li> <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED --
+     * A change was made to the fleet's game session protection policy setting. Event
+     * messaging includes both the old and new policy setting. </p> </li> <li>
+     * <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li> <li>
+     * <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li> </ul>
      */
     inline bool EventCodeHasBeenSet() const { return m_eventCodeHasBeenSet; }
 
@@ -420,40 +430,45 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
-     * -- The server process did not call InitSDK() within the time expected. Check
-     * your game session log to see why InitSDK() was not called in time.</p> </li>
-     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
-     * ProcessReady() within the time expected after calling InitSDK(). Check your game
-     * session log to see why ProcessReady() was not called in time.</p> </li> <li>
+     * -- The server process did not call <code>InitSDK()</code> within the time
+     * expected (5 minutes). Check your game session log to see why
+     * <code>InitSDK()</code> was not called in time.</p> </li> <li>
+     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * <code>ProcessReady()</code> within the time expected (5 minutes) after calling
+     * <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
-     * ProcessEnding(). Check your game session log to see why ProcessEnding() was not
-     * called.</p> </li> <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server
-     * process did not report a valid health check for too long and was therefore
-     * terminated by GameLift. Check your game session log to see if the thread became
-     * stuck processing a synchronous task for too long.</p> </li> <li>
-     * <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly
-     * after OnProcessTerminate() was sent within the time expected. Check your game
-     * session log to see why termination took longer than expected.</p> </li> <li>
+     * <code>ProcessEnding()</code>. Check your game session log to see why
+     * <code>ProcessEnding()</code> was not called.</p> </li> <li>
+     * <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a
+     * valid health check for too long and was therefore terminated by GameLift. Check
+     * your game session log to see if the thread became stuck processing a synchronous
+     * task for too long.</p> </li> <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The
+     * server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see
+     * why termination took longer than expected.</p> </li> <li>
      * <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit
-     * cleanly within the time expected after calling ProcessEnding(). Check your game
-     * session log to see why termination took longer than expected.</p> </li> </ul>
-     * <p> <b>Game session events:</b> </p> <ul> <li>
-     * <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the
-     * expected time. Check your game session log to see why ActivateGameSession() took
-     * longer to complete than expected.</p> </li> </ul> <p> <b>Other fleet events:</b>
-     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
-     * capacity settings (desired instances, minimum/maximum scaling limits). Event
-     * messaging includes the new capacity settings.</p> </li> <li>
-     * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
-     * fleet's game session protection policy setting. Event messaging includes both
-     * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul>
+     * cleanly within the time expected (30 seconds) after calling
+     * <code>ProcessEnding()</code>. Check your game session log to see why termination
+     * took longer than expected.</p> </li> </ul> <p> <b>Game session events:</b> </p>
+     * <ul> <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate
+     * within the expected time. Check your game session log to see why
+     * <code>ActivateGameSession()</code> took longer to complete than expected.</p>
+     * </li> </ul> <p> <b>Other fleet events:</b> </p> <ul> <li> <p>FLEET_SCALING_EVENT
+     * -- A change was made to the fleet's capacity settings (desired instances,
+     * minimum/maximum scaling limits). Event messaging includes the new capacity
+     * settings.</p> </li> <li> <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED --
+     * A change was made to the fleet's game session protection policy setting. Event
+     * messaging includes both the old and new policy setting. </p> </li> <li>
+     * <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li> <li>
+     * <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li> </ul>
      */
     inline void SetEventCode(const EventCode& value) { m_eventCodeHasBeenSet = true; m_eventCode = value; }
 
@@ -531,40 +546,45 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
-     * -- The server process did not call InitSDK() within the time expected. Check
-     * your game session log to see why InitSDK() was not called in time.</p> </li>
-     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
-     * ProcessReady() within the time expected after calling InitSDK(). Check your game
-     * session log to see why ProcessReady() was not called in time.</p> </li> <li>
+     * -- The server process did not call <code>InitSDK()</code> within the time
+     * expected (5 minutes). Check your game session log to see why
+     * <code>InitSDK()</code> was not called in time.</p> </li> <li>
+     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * <code>ProcessReady()</code> within the time expected (5 minutes) after calling
+     * <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
-     * ProcessEnding(). Check your game session log to see why ProcessEnding() was not
-     * called.</p> </li> <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server
-     * process did not report a valid health check for too long and was therefore
-     * terminated by GameLift. Check your game session log to see if the thread became
-     * stuck processing a synchronous task for too long.</p> </li> <li>
-     * <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly
-     * after OnProcessTerminate() was sent within the time expected. Check your game
-     * session log to see why termination took longer than expected.</p> </li> <li>
+     * <code>ProcessEnding()</code>. Check your game session log to see why
+     * <code>ProcessEnding()</code> was not called.</p> </li> <li>
+     * <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a
+     * valid health check for too long and was therefore terminated by GameLift. Check
+     * your game session log to see if the thread became stuck processing a synchronous
+     * task for too long.</p> </li> <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The
+     * server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see
+     * why termination took longer than expected.</p> </li> <li>
      * <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit
-     * cleanly within the time expected after calling ProcessEnding(). Check your game
-     * session log to see why termination took longer than expected.</p> </li> </ul>
-     * <p> <b>Game session events:</b> </p> <ul> <li>
-     * <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the
-     * expected time. Check your game session log to see why ActivateGameSession() took
-     * longer to complete than expected.</p> </li> </ul> <p> <b>Other fleet events:</b>
-     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
-     * capacity settings (desired instances, minimum/maximum scaling limits). Event
-     * messaging includes the new capacity settings.</p> </li> <li>
-     * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
-     * fleet's game session protection policy setting. Event messaging includes both
-     * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul>
+     * cleanly within the time expected (30 seconds) after calling
+     * <code>ProcessEnding()</code>. Check your game session log to see why termination
+     * took longer than expected.</p> </li> </ul> <p> <b>Game session events:</b> </p>
+     * <ul> <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate
+     * within the expected time. Check your game session log to see why
+     * <code>ActivateGameSession()</code> took longer to complete than expected.</p>
+     * </li> </ul> <p> <b>Other fleet events:</b> </p> <ul> <li> <p>FLEET_SCALING_EVENT
+     * -- A change was made to the fleet's capacity settings (desired instances,
+     * minimum/maximum scaling limits). Event messaging includes the new capacity
+     * settings.</p> </li> <li> <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED --
+     * A change was made to the fleet's game session protection policy setting. Event
+     * messaging includes both the old and new policy setting. </p> </li> <li>
+     * <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li> <li>
+     * <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li> </ul>
      */
     inline void SetEventCode(EventCode&& value) { m_eventCodeHasBeenSet = true; m_eventCode = std::move(value); }
 
@@ -642,40 +662,45 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
-     * -- The server process did not call InitSDK() within the time expected. Check
-     * your game session log to see why InitSDK() was not called in time.</p> </li>
-     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
-     * ProcessReady() within the time expected after calling InitSDK(). Check your game
-     * session log to see why ProcessReady() was not called in time.</p> </li> <li>
+     * -- The server process did not call <code>InitSDK()</code> within the time
+     * expected (5 minutes). Check your game session log to see why
+     * <code>InitSDK()</code> was not called in time.</p> </li> <li>
+     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * <code>ProcessReady()</code> within the time expected (5 minutes) after calling
+     * <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
-     * ProcessEnding(). Check your game session log to see why ProcessEnding() was not
-     * called.</p> </li> <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server
-     * process did not report a valid health check for too long and was therefore
-     * terminated by GameLift. Check your game session log to see if the thread became
-     * stuck processing a synchronous task for too long.</p> </li> <li>
-     * <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly
-     * after OnProcessTerminate() was sent within the time expected. Check your game
-     * session log to see why termination took longer than expected.</p> </li> <li>
+     * <code>ProcessEnding()</code>. Check your game session log to see why
+     * <code>ProcessEnding()</code> was not called.</p> </li> <li>
+     * <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a
+     * valid health check for too long and was therefore terminated by GameLift. Check
+     * your game session log to see if the thread became stuck processing a synchronous
+     * task for too long.</p> </li> <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The
+     * server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see
+     * why termination took longer than expected.</p> </li> <li>
      * <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit
-     * cleanly within the time expected after calling ProcessEnding(). Check your game
-     * session log to see why termination took longer than expected.</p> </li> </ul>
-     * <p> <b>Game session events:</b> </p> <ul> <li>
-     * <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the
-     * expected time. Check your game session log to see why ActivateGameSession() took
-     * longer to complete than expected.</p> </li> </ul> <p> <b>Other fleet events:</b>
-     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
-     * capacity settings (desired instances, minimum/maximum scaling limits). Event
-     * messaging includes the new capacity settings.</p> </li> <li>
-     * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
-     * fleet's game session protection policy setting. Event messaging includes both
-     * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul>
+     * cleanly within the time expected (30 seconds) after calling
+     * <code>ProcessEnding()</code>. Check your game session log to see why termination
+     * took longer than expected.</p> </li> </ul> <p> <b>Game session events:</b> </p>
+     * <ul> <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate
+     * within the expected time. Check your game session log to see why
+     * <code>ActivateGameSession()</code> took longer to complete than expected.</p>
+     * </li> </ul> <p> <b>Other fleet events:</b> </p> <ul> <li> <p>FLEET_SCALING_EVENT
+     * -- A change was made to the fleet's capacity settings (desired instances,
+     * minimum/maximum scaling limits). Event messaging includes the new capacity
+     * settings.</p> </li> <li> <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED --
+     * A change was made to the fleet's game session protection policy setting. Event
+     * messaging includes both the old and new policy setting. </p> </li> <li>
+     * <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li> <li>
+     * <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li> </ul>
      */
     inline Event& WithEventCode(const EventCode& value) { SetEventCode(value); return *this;}
 
@@ -753,40 +778,45 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
-     * -- The server process did not call InitSDK() within the time expected. Check
-     * your game session log to see why InitSDK() was not called in time.</p> </li>
-     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
-     * ProcessReady() within the time expected after calling InitSDK(). Check your game
-     * session log to see why ProcessReady() was not called in time.</p> </li> <li>
+     * -- The server process did not call <code>InitSDK()</code> within the time
+     * expected (5 minutes). Check your game session log to see why
+     * <code>InitSDK()</code> was not called in time.</p> </li> <li>
+     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * <code>ProcessReady()</code> within the time expected (5 minutes) after calling
+     * <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
-     * ProcessEnding(). Check your game session log to see why ProcessEnding() was not
-     * called.</p> </li> <li> <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server
-     * process did not report a valid health check for too long and was therefore
-     * terminated by GameLift. Check your game session log to see if the thread became
-     * stuck processing a synchronous task for too long.</p> </li> <li>
-     * <p>SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly
-     * after OnProcessTerminate() was sent within the time expected. Check your game
-     * session log to see why termination took longer than expected.</p> </li> <li>
+     * <code>ProcessEnding()</code>. Check your game session log to see why
+     * <code>ProcessEnding()</code> was not called.</p> </li> <li>
+     * <p>SERVER_PROCESS_TERMINATED_UNHEALTHY -- The server process did not report a
+     * valid health check for too long and was therefore terminated by GameLift. Check
+     * your game session log to see if the thread became stuck processing a synchronous
+     * task for too long.</p> </li> <li> <p>SERVER_PROCESS_FORCE_TERMINATED -- The
+     * server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see
+     * why termination took longer than expected.</p> </li> <li>
      * <p>SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit
-     * cleanly within the time expected after calling ProcessEnding(). Check your game
-     * session log to see why termination took longer than expected.</p> </li> </ul>
-     * <p> <b>Game session events:</b> </p> <ul> <li>
-     * <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the
-     * expected time. Check your game session log to see why ActivateGameSession() took
-     * longer to complete than expected.</p> </li> </ul> <p> <b>Other fleet events:</b>
-     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
-     * capacity settings (desired instances, minimum/maximum scaling limits). Event
-     * messaging includes the new capacity settings.</p> </li> <li>
-     * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
-     * fleet's game session protection policy setting. Event messaging includes both
-     * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul>
+     * cleanly within the time expected (30 seconds) after calling
+     * <code>ProcessEnding()</code>. Check your game session log to see why termination
+     * took longer than expected.</p> </li> </ul> <p> <b>Game session events:</b> </p>
+     * <ul> <li> <p>GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate
+     * within the expected time. Check your game session log to see why
+     * <code>ActivateGameSession()</code> took longer to complete than expected.</p>
+     * </li> </ul> <p> <b>Other fleet events:</b> </p> <ul> <li> <p>FLEET_SCALING_EVENT
+     * -- A change was made to the fleet's capacity settings (desired instances,
+     * minimum/maximum scaling limits). Event messaging includes the new capacity
+     * settings.</p> </li> <li> <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED --
+     * A change was made to the fleet's game session protection policy setting. Event
+     * messaging includes both the old and new policy setting. </p> </li> <li>
+     * <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li> <li>
+     * <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li> </ul>
      */
     inline Event& WithEventCode(EventCode&& value) { SetEventCode(std::move(value)); return *this;}
 

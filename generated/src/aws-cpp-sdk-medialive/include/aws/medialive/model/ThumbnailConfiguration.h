@@ -38,32 +38,44 @@ namespace Model
 
 
     /**
-     * Whether Thumbnail is enabled.
+     * Enables the thumbnail feature. The feature generates thumbnails of the incoming
+     * video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns
+     * the feature off.
      */
     inline const ThumbnailState& GetState() const{ return m_state; }
 
     /**
-     * Whether Thumbnail is enabled.
+     * Enables the thumbnail feature. The feature generates thumbnails of the incoming
+     * video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns
+     * the feature off.
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * Whether Thumbnail is enabled.
+     * Enables the thumbnail feature. The feature generates thumbnails of the incoming
+     * video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns
+     * the feature off.
      */
     inline void SetState(const ThumbnailState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * Whether Thumbnail is enabled.
+     * Enables the thumbnail feature. The feature generates thumbnails of the incoming
+     * video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns
+     * the feature off.
      */
     inline void SetState(ThumbnailState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * Whether Thumbnail is enabled.
+     * Enables the thumbnail feature. The feature generates thumbnails of the incoming
+     * video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns
+     * the feature off.
      */
     inline ThumbnailConfiguration& WithState(const ThumbnailState& value) { SetState(value); return *this;}
 
     /**
-     * Whether Thumbnail is enabled.
+     * Enables the thumbnail feature. The feature generates thumbnails of the incoming
+     * video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns
+     * the feature off.
      */
     inline ThumbnailConfiguration& WithState(ThumbnailState&& value) { SetState(std::move(value)); return *this;}
 

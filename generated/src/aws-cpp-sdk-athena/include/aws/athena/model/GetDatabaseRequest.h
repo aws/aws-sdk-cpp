@@ -115,6 +115,55 @@ namespace Model
      */
     inline GetDatabaseRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
+    /**
+     * <p>The name of the workgroup for which the metadata is being fetched. Required
+     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+     */
+    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+
+    /**
+     * <p>The name of the workgroup for which the metadata is being fetched. Required
+     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+     */
+    inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the workgroup for which the metadata is being fetched. Required
+     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+     */
+    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
+
+    /**
+     * <p>The name of the workgroup for which the metadata is being fetched. Required
+     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+     */
+    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
+
+    /**
+     * <p>The name of the workgroup for which the metadata is being fetched. Required
+     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+     */
+    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
+
+    /**
+     * <p>The name of the workgroup for which the metadata is being fetched. Required
+     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+     */
+    inline GetDatabaseRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
+
+    /**
+     * <p>The name of the workgroup for which the metadata is being fetched. Required
+     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+     */
+    inline GetDatabaseRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the workgroup for which the metadata is being fetched. Required
+     * if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+     */
+    inline GetDatabaseRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+
   private:
 
     Aws::String m_catalogName;
@@ -122,6 +171,9 @@ namespace Model
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;
+
+    Aws::String m_workGroup;
+    bool m_workGroupHasBeenSet = false;
   };
 
 } // namespace Model

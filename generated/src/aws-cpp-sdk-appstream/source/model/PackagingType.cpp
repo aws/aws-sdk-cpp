@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackagingType::NOT_SET:
+            return {};
           case PackagingType::CUSTOM:
             return "CUSTOM";
           case PackagingType::APPSTREAM2:

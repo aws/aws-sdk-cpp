@@ -39,58 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.</p>
+     * <p>The name of the add-on. The name must match one of the names returned by
+     * <code>DescribeAddonVersions</code>.</p>
      */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.</p>
+     * <p>The name of the add-on. The name must match one of the names returned by
+     * <code>DescribeAddonVersions</code>.</p>
      */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.</p>
+     * <p>The name of the add-on. The name must match one of the names returned by
+     * <code>DescribeAddonVersions</code>.</p>
      */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.</p>
+     * <p>The name of the add-on. The name must match one of the names returned by
+     * <code>DescribeAddonVersions</code>.</p>
      */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.</p>
+     * <p>The name of the add-on. The name must match one of the names returned by
+     * <code>DescribeAddonVersions</code>.</p>
      */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.</p>
+     * <p>The name of the add-on. The name must match one of the names returned by
+     * <code>DescribeAddonVersions</code>.</p>
      */
     inline DescribeAddonConfigurationRequest& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
 
     /**
-     * <p>The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.</p>
+     * <p>The name of the add-on. The name must match one of the names returned by
+     * <code>DescribeAddonVersions</code>.</p>
      */
     inline DescribeAddonConfigurationRequest& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.</p>
+     * <p>The name of the add-on. The name must match one of the names returned by
+     * <code>DescribeAddonVersions</code>.</p>
      */
     inline DescribeAddonConfigurationRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 

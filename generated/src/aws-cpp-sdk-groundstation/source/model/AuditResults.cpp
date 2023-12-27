@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuditResults::NOT_SET:
+            return {};
           case AuditResults::HEALTHY:
             return "HEALTHY";
           case AuditResults::UNHEALTHY:

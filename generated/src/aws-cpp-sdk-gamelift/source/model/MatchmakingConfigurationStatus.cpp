@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MatchmakingConfigurationStatus::NOT_SET:
+            return {};
           case MatchmakingConfigurationStatus::CANCELLED:
             return "CANCELLED";
           case MatchmakingConfigurationStatus::COMPLETED:

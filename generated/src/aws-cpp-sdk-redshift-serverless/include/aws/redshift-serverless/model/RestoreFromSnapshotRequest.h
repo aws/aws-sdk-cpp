@@ -35,6 +35,88 @@ namespace Model
 
 
     /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline const Aws::String& GetAdminPasswordSecretKmsKeyId() const{ return m_adminPasswordSecretKmsKeyId; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline bool AdminPasswordSecretKmsKeyIdHasBeenSet() const { return m_adminPasswordSecretKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline void SetAdminPasswordSecretKmsKeyId(const Aws::String& value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId = value; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline void SetAdminPasswordSecretKmsKeyId(Aws::String&& value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline void SetAdminPasswordSecretKmsKeyId(const char* value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline RestoreFromSnapshotRequest& WithAdminPasswordSecretKmsKeyId(const Aws::String& value) { SetAdminPasswordSecretKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline RestoreFromSnapshotRequest& WithAdminPasswordSecretKmsKeyId(Aws::String&& value) { SetAdminPasswordSecretKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline RestoreFromSnapshotRequest& WithAdminPasswordSecretKmsKeyId(const char* value) { SetAdminPasswordSecretKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is
+     * false or not set, Amazon Redshift uses the admin credentials that the namespace
+     * or cluster had at the time the snapshot was taken.</p>
+     */
+    inline bool GetManageAdminPassword() const{ return m_manageAdminPassword; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is
+     * false or not set, Amazon Redshift uses the admin credentials that the namespace
+     * or cluster had at the time the snapshot was taken.</p>
+     */
+    inline bool ManageAdminPasswordHasBeenSet() const { return m_manageAdminPasswordHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is
+     * false or not set, Amazon Redshift uses the admin credentials that the namespace
+     * or cluster had at the time the snapshot was taken.</p>
+     */
+    inline void SetManageAdminPassword(bool value) { m_manageAdminPasswordHasBeenSet = true; m_manageAdminPassword = value; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is
+     * false or not set, Amazon Redshift uses the admin credentials that the namespace
+     * or cluster had at the time the snapshot was taken.</p>
+     */
+    inline RestoreFromSnapshotRequest& WithManageAdminPassword(bool value) { SetManageAdminPassword(value); return *this;}
+
+
+    /**
      * <p>The name of the namespace to restore the snapshot to.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
@@ -279,6 +361,12 @@ namespace Model
     inline RestoreFromSnapshotRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
 
   private:
+
+    Aws::String m_adminPasswordSecretKmsKeyId;
+    bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
+
+    bool m_manageAdminPassword;
+    bool m_manageAdminPasswordHasBeenSet = false;
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;

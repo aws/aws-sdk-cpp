@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Statistic::NOT_SET:
+            return {};
           case Statistic::Average:
             return "Average";
           case Statistic::Sum:

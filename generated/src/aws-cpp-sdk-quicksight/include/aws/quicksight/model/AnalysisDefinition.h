@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/AnalysisDefaults.h>
+#include <aws/quicksight/model/AssetOptions.h>
 #include <aws/quicksight/model/DataSetIdentifierDeclaration.h>
 #include <aws/quicksight/model/SheetDefinition.h>
 #include <aws/quicksight/model/CalculatedField.h>
@@ -404,6 +405,37 @@ namespace Model
     
     inline AnalysisDefinition& WithAnalysisDefaults(AnalysisDefaults&& value) { SetAnalysisDefaults(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An array of option definitions for an analysis.</p>
+     */
+    inline const AssetOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>An array of option definitions for an analysis.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>An array of option definitions for an analysis.</p>
+     */
+    inline void SetOptions(const AssetOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>An array of option definitions for an analysis.</p>
+     */
+    inline void SetOptions(AssetOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>An array of option definitions for an analysis.</p>
+     */
+    inline AnalysisDefinition& WithOptions(const AssetOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>An array of option definitions for an analysis.</p>
+     */
+    inline AnalysisDefinition& WithOptions(AssetOptions&& value) { SetOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<DataSetIdentifierDeclaration> m_dataSetIdentifierDeclarations;
@@ -426,6 +458,9 @@ namespace Model
 
     AnalysisDefaults m_analysisDefaults;
     bool m_analysisDefaultsHasBeenSet = false;
+
+    AssetOptions m_options;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

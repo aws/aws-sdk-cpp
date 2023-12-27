@@ -21,7 +21,7 @@ namespace Model
    * are attached to an identity. Sending authorization is an Amazon SES feature that
    * enables you to authorize other senders to use your identities. For information,
    * see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPoliciesRequest">AWS
    * API Reference</a></p>
@@ -45,82 +45,82 @@ namespace Model
   public:
 
     /**
-     * <p>The identity that is associated with the policy for which the policies will
-     * be listed. You can specify an identity by using its name or by using its Amazon
+     * <p>The identity that is associated with the policy for which the policies are
+     * listed. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>,
      * <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
-     * successfully call this API, you must own the identity.</p>
+     * successfully call this operation, you must own the identity.</p>
      */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
 
     /**
-     * <p>The identity that is associated with the policy for which the policies will
-     * be listed. You can specify an identity by using its name or by using its Amazon
+     * <p>The identity that is associated with the policy for which the policies are
+     * listed. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>,
      * <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
-     * successfully call this API, you must own the identity.</p>
+     * successfully call this operation, you must own the identity.</p>
      */
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
 
     /**
-     * <p>The identity that is associated with the policy for which the policies will
-     * be listed. You can specify an identity by using its name or by using its Amazon
+     * <p>The identity that is associated with the policy for which the policies are
+     * listed. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>,
      * <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
-     * successfully call this API, you must own the identity.</p>
+     * successfully call this operation, you must own the identity.</p>
      */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
-     * <p>The identity that is associated with the policy for which the policies will
-     * be listed. You can specify an identity by using its name or by using its Amazon
+     * <p>The identity that is associated with the policy for which the policies are
+     * listed. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>,
      * <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
-     * successfully call this API, you must own the identity.</p>
+     * successfully call this operation, you must own the identity.</p>
      */
     inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
-     * <p>The identity that is associated with the policy for which the policies will
-     * be listed. You can specify an identity by using its name or by using its Amazon
+     * <p>The identity that is associated with the policy for which the policies are
+     * listed. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>,
      * <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
-     * successfully call this API, you must own the identity.</p>
+     * successfully call this operation, you must own the identity.</p>
      */
     inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
 
     /**
-     * <p>The identity that is associated with the policy for which the policies will
-     * be listed. You can specify an identity by using its name or by using its Amazon
+     * <p>The identity that is associated with the policy for which the policies are
+     * listed. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>,
      * <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
-     * successfully call this API, you must own the identity.</p>
+     * successfully call this operation, you must own the identity.</p>
      */
     inline ListIdentityPoliciesRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
 
     /**
-     * <p>The identity that is associated with the policy for which the policies will
-     * be listed. You can specify an identity by using its name or by using its Amazon
+     * <p>The identity that is associated with the policy for which the policies are
+     * listed. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>,
      * <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
-     * successfully call this API, you must own the identity.</p>
+     * successfully call this operation, you must own the identity.</p>
      */
     inline ListIdentityPoliciesRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
 
     /**
-     * <p>The identity that is associated with the policy for which the policies will
-     * be listed. You can specify an identity by using its name or by using its Amazon
+     * <p>The identity that is associated with the policy for which the policies are
+     * listed. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>,
      * <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
-     * successfully call this API, you must own the identity.</p>
+     * successfully call this operation, you must own the identity.</p>
      */
     inline ListIdentityPoliciesRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 

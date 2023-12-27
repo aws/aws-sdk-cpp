@@ -43,7 +43,8 @@ DescribedServer::DescribedServer() :
     m_userCount(0),
     m_userCountHasBeenSet(false),
     m_workflowDetailsHasBeenSet(false),
-    m_structuredLogDestinationsHasBeenSet(false)
+    m_structuredLogDestinationsHasBeenSet(false),
+    m_s3StorageOptionsHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_userCount(0),
     m_userCountHasBeenSet(false),
     m_workflowDetailsHasBeenSet(false),
-    m_structuredLogDestinationsHasBeenSet(false)
+    m_structuredLogDestinationsHasBeenSet(false),
+    m_s3StorageOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -228,6 +230,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_structuredLogDestinationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3StorageOptions"))
+  {
+    m_s3StorageOptions = jsonValue.GetObject("S3StorageOptions");
+
+    m_s3StorageOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -363,6 +372,12 @@ JsonValue DescribedServer::Jsonize() const
      structuredLogDestinationsJsonList[structuredLogDestinationsIndex].AsString(m_structuredLogDestinations[structuredLogDestinationsIndex]);
    }
    payload.WithArray("StructuredLogDestinations", std::move(structuredLogDestinationsJsonList));
+
+  }
+
+  if(m_s3StorageOptionsHasBeenSet)
+  {
+   payload.WithObject("S3StorageOptions", m_s3StorageOptions.Jsonize());
 
   }
 

@@ -178,9 +178,9 @@ namespace Model
 
 
     /**
-     * <p>The game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a
+     * <p>The game session protection policy to apply to all new game sessions created
+     * in this fleet. Game sessions that already exist are not affected. You can set
+     * protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
      * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
@@ -190,9 +190,9 @@ namespace Model
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
     /**
-     * <p>The game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a
+     * <p>The game session protection policy to apply to all new game sessions created
+     * in this fleet. Game sessions that already exist are not affected. You can set
+     * protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
      * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
@@ -202,9 +202,9 @@ namespace Model
     inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
 
     /**
-     * <p>The game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a
+     * <p>The game session protection policy to apply to all new game sessions created
+     * in this fleet. Game sessions that already exist are not affected. You can set
+     * protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
      * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
@@ -214,9 +214,9 @@ namespace Model
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
-     * <p>The game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a
+     * <p>The game session protection policy to apply to all new game sessions created
+     * in this fleet. Game sessions that already exist are not affected. You can set
+     * protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
      * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
@@ -226,9 +226,9 @@ namespace Model
     inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
 
     /**
-     * <p>The game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a
+     * <p>The game session protection policy to apply to all new game sessions created
+     * in this fleet. Game sessions that already exist are not affected. You can set
+     * protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
      * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
@@ -238,9 +238,9 @@ namespace Model
     inline UpdateFleetAttributesRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
     /**
-     * <p>The game session protection policy to apply to all new instances created in
-     * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a
+     * <p>The game session protection policy to apply to all new game sessions created
+     * in this fleet. Game sessions that already exist are not affected. You can set
+     * protection for individual game sessions using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
      * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
      * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the

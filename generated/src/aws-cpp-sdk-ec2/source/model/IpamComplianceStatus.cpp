@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamComplianceStatus::NOT_SET:
+            return {};
           case IpamComplianceStatus::compliant:
             return "compliant";
           case IpamComplianceStatus::noncompliant:

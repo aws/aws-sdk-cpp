@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatusName::NOT_SET:
+            return {};
           case StatusName::reachability:
             return "reachability";
           default:

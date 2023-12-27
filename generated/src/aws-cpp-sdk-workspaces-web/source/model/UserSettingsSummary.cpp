@@ -19,6 +19,7 @@ namespace Model
 {
 
 UserSettingsSummary::UserSettingsSummary() : 
+    m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
@@ -38,6 +39,7 @@ UserSettingsSummary::UserSettingsSummary() :
 }
 
 UserSettingsSummary::UserSettingsSummary(JsonView jsonValue) : 
+    m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
@@ -59,6 +61,13 @@ UserSettingsSummary::UserSettingsSummary(JsonView jsonValue) :
 
 UserSettingsSummary& UserSettingsSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("cookieSynchronizationConfiguration"))
+  {
+    m_cookieSynchronizationConfiguration = jsonValue.GetObject("cookieSynchronizationConfiguration");
+
+    m_cookieSynchronizationConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("copyAllowed"))
   {
     m_copyAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("copyAllowed"));
@@ -121,6 +130,12 @@ UserSettingsSummary& UserSettingsSummary::operator =(JsonView jsonValue)
 JsonValue UserSettingsSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cookieSynchronizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("cookieSynchronizationConfiguration", m_cookieSynchronizationConfiguration.Jsonize());
+
+  }
 
   if(m_copyAllowedHasBeenSet)
   {

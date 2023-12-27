@@ -146,47 +146,47 @@ namespace Model
 
 
     /**
-     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
+     * <p>Two or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
+     * <p>Two or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
+     * <p>Two or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
+     * <p>Two or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
+     * <p>Two or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
+     * <p>Two or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
+     * <p>Two or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
+     * <p>Two or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
+     * <p>Two or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlobalConfigurationOutputLockingMode::NOT_SET:
+            return {};
           case GlobalConfigurationOutputLockingMode::EPOCH_LOCKING:
             return "EPOCH_LOCKING";
           case GlobalConfigurationOutputLockingMode::PIPELINE_LOCKING:

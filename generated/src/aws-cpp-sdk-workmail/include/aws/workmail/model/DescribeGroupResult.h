@@ -235,6 +235,25 @@ namespace Model
     inline DescribeGroupResult& WithDisabledDate(Aws::Utils::DateTime&& value) { SetDisabledDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>If the value is set to <i>true</i>, the group is hidden from the address
+     * book.</p>
+     */
+    inline bool GetHiddenFromGlobalAddressList() const{ return m_hiddenFromGlobalAddressList; }
+
+    /**
+     * <p>If the value is set to <i>true</i>, the group is hidden from the address
+     * book.</p>
+     */
+    inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressList = value; }
+
+    /**
+     * <p>If the value is set to <i>true</i>, the group is hidden from the address
+     * book.</p>
+     */
+    inline DescribeGroupResult& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -269,6 +288,8 @@ namespace Model
     Aws::Utils::DateTime m_enabledDate;
 
     Aws::Utils::DateTime m_disabledDate;
+
+    bool m_hiddenFromGlobalAddressList;
 
     Aws::String m_requestId;
   };

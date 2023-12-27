@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Language::NOT_SET:
+            return {};
           case Language::DETECTORPL:
             return "DETECTORPL";
           default:

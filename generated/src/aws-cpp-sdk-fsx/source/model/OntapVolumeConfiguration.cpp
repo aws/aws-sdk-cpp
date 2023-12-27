@@ -38,7 +38,12 @@ OntapVolumeConfiguration::OntapVolumeConfiguration() :
     m_snapshotPolicyHasBeenSet(false),
     m_copyTagsToBackups(false),
     m_copyTagsToBackupsHasBeenSet(false),
-    m_snaplockConfigurationHasBeenSet(false)
+    m_snaplockConfigurationHasBeenSet(false),
+    m_volumeStyle(VolumeStyle::NOT_SET),
+    m_volumeStyleHasBeenSet(false),
+    m_aggregateConfigurationHasBeenSet(false),
+    m_sizeInBytes(0),
+    m_sizeInBytesHasBeenSet(false)
 {
 }
 
@@ -62,7 +67,12 @@ OntapVolumeConfiguration::OntapVolumeConfiguration(JsonView jsonValue) :
     m_snapshotPolicyHasBeenSet(false),
     m_copyTagsToBackups(false),
     m_copyTagsToBackupsHasBeenSet(false),
-    m_snaplockConfigurationHasBeenSet(false)
+    m_snaplockConfigurationHasBeenSet(false),
+    m_volumeStyle(VolumeStyle::NOT_SET),
+    m_volumeStyleHasBeenSet(false),
+    m_aggregateConfigurationHasBeenSet(false),
+    m_sizeInBytes(0),
+    m_sizeInBytesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -160,6 +170,27 @@ OntapVolumeConfiguration& OntapVolumeConfiguration::operator =(JsonView jsonValu
     m_snaplockConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VolumeStyle"))
+  {
+    m_volumeStyle = VolumeStyleMapper::GetVolumeStyleForName(jsonValue.GetString("VolumeStyle"));
+
+    m_volumeStyleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AggregateConfiguration"))
+  {
+    m_aggregateConfiguration = jsonValue.GetObject("AggregateConfiguration");
+
+    m_aggregateConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SizeInBytes"))
+  {
+    m_sizeInBytes = jsonValue.GetInt64("SizeInBytes");
+
+    m_sizeInBytesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -239,6 +270,23 @@ JsonValue OntapVolumeConfiguration::Jsonize() const
   if(m_snaplockConfigurationHasBeenSet)
   {
    payload.WithObject("SnaplockConfiguration", m_snaplockConfiguration.Jsonize());
+
+  }
+
+  if(m_volumeStyleHasBeenSet)
+  {
+   payload.WithString("VolumeStyle", VolumeStyleMapper::GetNameForVolumeStyle(m_volumeStyle));
+  }
+
+  if(m_aggregateConfigurationHasBeenSet)
+  {
+   payload.WithObject("AggregateConfiguration", m_aggregateConfiguration.Jsonize());
+
+  }
+
+  if(m_sizeInBytesHasBeenSet)
+  {
+   payload.WithInt64("SizeInBytes", m_sizeInBytes);
 
   }
 

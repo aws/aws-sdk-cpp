@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationType::NOT_SET:
+            return {};
           case RecommendationType::INFRA_ONLY:
             return "INFRA_ONLY";
           case RecommendationType::WORKLOAD_ONLY:

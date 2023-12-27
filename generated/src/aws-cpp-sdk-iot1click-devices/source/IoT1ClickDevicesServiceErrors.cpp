@@ -81,23 +81,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PRECONDITION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::PRECONDITION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::PRECONDITION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::RESOURCE_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RANGE_NOT_SATISFIABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::RANGE_NOT_SATISFIABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::RANGE_NOT_SATISFIABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickDevicesServiceErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

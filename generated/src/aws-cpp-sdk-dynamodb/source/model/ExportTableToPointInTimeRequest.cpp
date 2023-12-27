@@ -24,7 +24,10 @@ ExportTableToPointInTimeRequest::ExportTableToPointInTimeRequest() :
     m_s3SseAlgorithmHasBeenSet(false),
     m_s3SseKmsKeyIdHasBeenSet(false),
     m_exportFormat(ExportFormat::NOT_SET),
-    m_exportFormatHasBeenSet(false)
+    m_exportFormatHasBeenSet(false),
+    m_exportType(ExportType::NOT_SET),
+    m_exportTypeHasBeenSet(false),
+    m_incrementalExportSpecificationHasBeenSet(false)
 {
 }
 
@@ -81,6 +84,17 @@ Aws::String ExportTableToPointInTimeRequest::SerializePayload() const
   if(m_exportFormatHasBeenSet)
   {
    payload.WithString("ExportFormat", ExportFormatMapper::GetNameForExportFormat(m_exportFormat));
+  }
+
+  if(m_exportTypeHasBeenSet)
+  {
+   payload.WithString("ExportType", ExportTypeMapper::GetNameForExportType(m_exportType));
+  }
+
+  if(m_incrementalExportSpecificationHasBeenSet)
+  {
+   payload.WithObject("IncrementalExportSpecification", m_incrementalExportSpecification.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

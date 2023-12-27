@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessDirection::NOT_SET:
+            return {};
           case AccessDirection::inbound:
             return "inbound";
           case AccessDirection::outbound:

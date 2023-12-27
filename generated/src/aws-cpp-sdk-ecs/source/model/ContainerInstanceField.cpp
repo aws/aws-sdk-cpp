@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerInstanceField::NOT_SET:
+            return {};
           case ContainerInstanceField::TAGS:
             return "TAGS";
           case ContainerInstanceField::CONTAINER_INSTANCE_HEALTH:

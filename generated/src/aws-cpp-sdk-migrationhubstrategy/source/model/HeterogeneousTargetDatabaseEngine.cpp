@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HeterogeneousTargetDatabaseEngine::NOT_SET:
+            return {};
           case HeterogeneousTargetDatabaseEngine::None_specified:
             return "None specified";
           case HeterogeneousTargetDatabaseEngine::Amazon_Aurora:

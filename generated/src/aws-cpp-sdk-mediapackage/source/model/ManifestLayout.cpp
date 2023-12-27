@@ -22,6 +22,7 @@ namespace Aws
 
         static const int FULL_HASH = HashingUtils::HashString("FULL");
         static const int COMPACT_HASH = HashingUtils::HashString("COMPACT");
+        static const int DRM_TOP_LEVEL_COMPACT_HASH = HashingUtils::HashString("DRM_TOP_LEVEL_COMPACT");
 
 
         ManifestLayout GetManifestLayoutForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == COMPACT_HASH)
           {
             return ManifestLayout::COMPACT;
+          }
+          else if (hashCode == DRM_TOP_LEVEL_COMPACT_HASH)
+          {
+            return ManifestLayout::DRM_TOP_LEVEL_COMPACT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManifestLayout::NOT_SET:
+            return {};
           case ManifestLayout::FULL:
             return "FULL";
           case ManifestLayout::COMPACT:
             return "COMPACT";
+          case ManifestLayout::DRM_TOP_LEVEL_COMPACT:
+            return "DRM_TOP_LEVEL_COMPACT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

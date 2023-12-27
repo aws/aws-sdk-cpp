@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProresSlowPal::NOT_SET:
+            return {};
           case ProresSlowPal::DISABLED:
             return "DISABLED";
           case ProresSlowPal::ENABLED:

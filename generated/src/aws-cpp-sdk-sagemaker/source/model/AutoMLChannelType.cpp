@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLChannelType::NOT_SET:
+            return {};
           case AutoMLChannelType::training:
             return "training";
           case AutoMLChannelType::validation:

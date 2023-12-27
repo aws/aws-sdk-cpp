@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IdentityProvider::NOT_SET:
+            return {};
           case IdentityProvider::AWS_Marketplace:
             return "AWS_Marketplace";
           case IdentityProvider::GitHub:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequestThrottledExceptionReason::NOT_SET:
+            return {};
           case RequestThrottledExceptionReason::ACCOUNT_THROTTLED:
             return "ACCOUNT_THROTTLED";
           case RequestThrottledExceptionReason::DEPENDENCY_REQUEST_THROTTLED:

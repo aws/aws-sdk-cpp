@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NielsenWatermarksCbetStepaside::NOT_SET:
+            return {};
           case NielsenWatermarksCbetStepaside::DISABLED:
             return "DISABLED";
           case NielsenWatermarksCbetStepaside::ENABLED:

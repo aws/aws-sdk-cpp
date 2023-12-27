@@ -331,6 +331,47 @@ namespace Model
      */
     inline WorkspaceDescription& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The customer managed KMS key of this workspace.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>The customer managed KMS key of this workspace.</p>
+     */
+    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+
+    /**
+     * <p>The customer managed KMS key of this workspace.</p>
+     */
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
+
+    /**
+     * <p>The customer managed KMS key of this workspace.</p>
+     */
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
+
+    /**
+     * <p>The customer managed KMS key of this workspace.</p>
+     */
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
+
+    /**
+     * <p>The customer managed KMS key of this workspace.</p>
+     */
+    inline WorkspaceDescription& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The customer managed KMS key of this workspace.</p>
+     */
+    inline WorkspaceDescription& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The customer managed KMS key of this workspace.</p>
+     */
+    inline WorkspaceDescription& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+
   private:
 
     Aws::String m_workspaceId;
@@ -353,6 +394,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/rds/model/ScalingConfigurationInfo.h>
+#include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
 #include <aws/rds/model/WriteForwardingStatus.h>
@@ -18,6 +19,7 @@
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/LocalWriteForwardingStatus.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
+#include <aws/rds/model/DBClusterStatusInfo.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBClusterRole.h>
@@ -1229,6 +1231,47 @@ namespace Model
 
 
     /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const Aws::Vector<DBClusterStatusInfo>& GetStatusInfos() const{ return m_statusInfos; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool StatusInfosHasBeenSet() const { return m_statusInfosHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetStatusInfos(const Aws::Vector<DBClusterStatusInfo>& value) { m_statusInfosHasBeenSet = true; m_statusInfos = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetStatusInfos(Aws::Vector<DBClusterStatusInfo>&& value) { m_statusInfosHasBeenSet = true; m_statusInfos = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithStatusInfos(const Aws::Vector<DBClusterStatusInfo>& value) { SetStatusInfos(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithStatusInfos(Aws::Vector<DBClusterStatusInfo>&& value) { SetStatusInfos(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& AddStatusInfos(const DBClusterStatusInfo& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(value); return *this; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& AddStatusInfos(DBClusterStatusInfo&& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The list of DB instances that make up the DB cluster.</p>
      */
     inline const Aws::Vector<DBClusterMember>& GetDBClusterMembers() const{ return m_dBClusterMembers; }
@@ -1980,6 +2023,37 @@ namespace Model
 
 
     /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const RdsCustomClusterConfiguration& GetRdsCustomClusterConfiguration() const{ return m_rdsCustomClusterConfiguration; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool RdsCustomClusterConfigurationHasBeenSet() const { return m_rdsCustomClusterConfigurationHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { SetRdsCustomClusterConfiguration(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline DBCluster& WithRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { SetRdsCustomClusterConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates whether the DB cluster has deletion protection enabled. The
      * database can't be deleted when deletion protection is enabled.</p>
      */
@@ -2005,50 +2079,46 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is
-     * enabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless v1 DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information, see <a
+     * <p>Indicates whether the HTTP endpoint is enabled for an Aurora DB cluster.</p>
+     * <p>When enabled, the HTTP endpoint provides a connectionless web service API
+     * (RDS Data API) for running SQL queries on the DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool GetHttpEndpointEnabled() const{ return m_httpEndpointEnabled; }
 
     /**
-     * <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is
-     * enabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless v1 DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information, see <a
+     * <p>Indicates whether the HTTP endpoint is enabled for an Aurora DB cluster.</p>
+     * <p>When enabled, the HTTP endpoint provides a connectionless web service API
+     * (RDS Data API) for running SQL queries on the DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool HttpEndpointEnabledHasBeenSet() const { return m_httpEndpointEnabledHasBeenSet; }
 
     /**
-     * <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is
-     * enabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless v1 DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information, see <a
+     * <p>Indicates whether the HTTP endpoint is enabled for an Aurora DB cluster.</p>
+     * <p>When enabled, the HTTP endpoint provides a connectionless web service API
+     * (RDS Data API) for running SQL queries on the DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetHttpEndpointEnabled(bool value) { m_httpEndpointEnabledHasBeenSet = true; m_httpEndpointEnabled = value; }
 
     /**
-     * <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is
-     * enabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless v1 DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information, see <a
+     * <p>Indicates whether the HTTP endpoint is enabled for an Aurora DB cluster.</p>
+     * <p>When enabled, the HTTP endpoint provides a connectionless web service API
+     * (RDS Data API) for running SQL queries on the DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline DBCluster& WithHttpEndpointEnabled(bool value) { SetHttpEndpointEnabled(value); return *this;}
 
@@ -2395,7 +2465,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether write forwarding is enabled for a secondary cluster in an
+     * <p>Indicates whether write forwarding is enabled for a secondary cluster in an
      * Aurora global database. Because write forwarding takes time to enable, check the
      * value of <code>GlobalWriteForwardingStatus</code> to confirm that the request
      * has completed before using the write forwarding feature for this cluster.</p>
@@ -2403,7 +2473,7 @@ namespace Model
     inline bool GetGlobalWriteForwardingRequested() const{ return m_globalWriteForwardingRequested; }
 
     /**
-     * <p>Specifies whether write forwarding is enabled for a secondary cluster in an
+     * <p>Indicates whether write forwarding is enabled for a secondary cluster in an
      * Aurora global database. Because write forwarding takes time to enable, check the
      * value of <code>GlobalWriteForwardingStatus</code> to confirm that the request
      * has completed before using the write forwarding feature for this cluster.</p>
@@ -2411,7 +2481,7 @@ namespace Model
     inline bool GlobalWriteForwardingRequestedHasBeenSet() const { return m_globalWriteForwardingRequestedHasBeenSet; }
 
     /**
-     * <p>Specifies whether write forwarding is enabled for a secondary cluster in an
+     * <p>Indicates whether write forwarding is enabled for a secondary cluster in an
      * Aurora global database. Because write forwarding takes time to enable, check the
      * value of <code>GlobalWriteForwardingStatus</code> to confirm that the request
      * has completed before using the write forwarding feature for this cluster.</p>
@@ -2419,7 +2489,7 @@ namespace Model
     inline void SetGlobalWriteForwardingRequested(bool value) { m_globalWriteForwardingRequestedHasBeenSet = true; m_globalWriteForwardingRequested = value; }
 
     /**
-     * <p>Specifies whether write forwarding is enabled for a secondary cluster in an
+     * <p>Indicates whether write forwarding is enabled for a secondary cluster in an
      * Aurora global database. Because write forwarding takes time to enable, check the
      * value of <code>GlobalWriteForwardingStatus</code> to confirm that the request
      * has completed before using the write forwarding feature for this cluster.</p>
@@ -3158,40 +3228,89 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline const LocalWriteForwardingStatus& GetLocalWriteForwardingStatus() const{ return m_localWriteForwardingStatus; }
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline bool LocalWriteForwardingStatusHasBeenSet() const { return m_localWriteForwardingStatusHasBeenSet; }
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline void SetLocalWriteForwardingStatus(const LocalWriteForwardingStatus& value) { m_localWriteForwardingStatusHasBeenSet = true; m_localWriteForwardingStatus = value; }
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline void SetLocalWriteForwardingStatus(LocalWriteForwardingStatus&& value) { m_localWriteForwardingStatusHasBeenSet = true; m_localWriteForwardingStatus = std::move(value); }
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline DBCluster& WithLocalWriteForwardingStatus(const LocalWriteForwardingStatus& value) { SetLocalWriteForwardingStatus(value); return *this;}
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline DBCluster& WithLocalWriteForwardingStatus(LocalWriteForwardingStatus&& value) { SetLocalWriteForwardingStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline const Aws::String& GetAwsBackupRecoveryPointArn() const{ return m_awsBackupRecoveryPointArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(const Aws::String& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(Aws::String&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(const char* value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline DBCluster& WithAwsBackupRecoveryPointArn(const Aws::String& value) { SetAwsBackupRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline DBCluster& WithAwsBackupRecoveryPointArn(Aws::String&& value) { SetAwsBackupRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline DBCluster& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
 
   private:
 
@@ -3273,6 +3392,9 @@ namespace Model
     Aws::Vector<Aws::String> m_readReplicaIdentifiers;
     bool m_readReplicaIdentifiersHasBeenSet = false;
 
+    Aws::Vector<DBClusterStatusInfo> m_statusInfos;
+    bool m_statusInfosHasBeenSet = false;
+
     Aws::Vector<DBClusterMember> m_dBClusterMembers;
     bool m_dBClusterMembersHasBeenSet = false;
 
@@ -3326,6 +3448,9 @@ namespace Model
 
     ScalingConfigurationInfo m_scalingConfigurationInfo;
     bool m_scalingConfigurationInfoHasBeenSet = false;
+
+    RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
+    bool m_rdsCustomClusterConfigurationHasBeenSet = false;
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet = false;
@@ -3413,6 +3538,9 @@ namespace Model
 
     LocalWriteForwardingStatus m_localWriteForwardingStatus;
     bool m_localWriteForwardingStatusHasBeenSet = false;
+
+    Aws::String m_awsBackupRecoveryPointArn;
+    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeSetState::NOT_SET:
+            return {};
           case ChangeSetState::PENDING_GENERATION:
             return "PENDING_GENERATION";
           case ChangeSetState::FAILED_GENERATION:

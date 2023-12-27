@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationStatus::NOT_SET:
+            return {};
           case ReplicationStatus::ENABLED:
             return "ENABLED";
           case ReplicationStatus::ENABLING:

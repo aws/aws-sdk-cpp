@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThreatIntelIndicatorCategory::NOT_SET:
+            return {};
           case ThreatIntelIndicatorCategory::BACKDOOR:
             return "BACKDOOR";
           case ThreatIntelIndicatorCategory::CARD_STEALER:

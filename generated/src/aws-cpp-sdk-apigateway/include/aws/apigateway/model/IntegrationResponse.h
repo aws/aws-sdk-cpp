@@ -96,9 +96,9 @@ namespace Model
      * the success response returns nothing and the error response returns some string,
      * you could use the <code>.+</code> regex to match error response. However, make
      * sure that the error response does not contain any newline (<code>\n</code>)
-     * character in such cases. If the back end is an AWS Lambda function, the AWS
-     * Lambda function error header is matched. For all other HTTP and AWS back ends,
-     * the HTTP status code is matched.</p>
+     * character in such cases. If the back end is an Lambda function, the Lambda
+     * function error header is matched. For all other HTTP and Amazon Web Services
+     * back ends, the HTTP status code is matched.</p>
      */
     inline const Aws::String& GetSelectionPattern() const{ return m_selectionPattern; }
 
@@ -108,9 +108,9 @@ namespace Model
      * the success response returns nothing and the error response returns some string,
      * you could use the <code>.+</code> regex to match error response. However, make
      * sure that the error response does not contain any newline (<code>\n</code>)
-     * character in such cases. If the back end is an AWS Lambda function, the AWS
-     * Lambda function error header is matched. For all other HTTP and AWS back ends,
-     * the HTTP status code is matched.</p>
+     * character in such cases. If the back end is an Lambda function, the Lambda
+     * function error header is matched. For all other HTTP and Amazon Web Services
+     * back ends, the HTTP status code is matched.</p>
      */
     inline bool SelectionPatternHasBeenSet() const { return m_selectionPatternHasBeenSet; }
 
@@ -120,9 +120,9 @@ namespace Model
      * the success response returns nothing and the error response returns some string,
      * you could use the <code>.+</code> regex to match error response. However, make
      * sure that the error response does not contain any newline (<code>\n</code>)
-     * character in such cases. If the back end is an AWS Lambda function, the AWS
-     * Lambda function error header is matched. For all other HTTP and AWS back ends,
-     * the HTTP status code is matched.</p>
+     * character in such cases. If the back end is an Lambda function, the Lambda
+     * function error header is matched. For all other HTTP and Amazon Web Services
+     * back ends, the HTTP status code is matched.</p>
      */
     inline void SetSelectionPattern(const Aws::String& value) { m_selectionPatternHasBeenSet = true; m_selectionPattern = value; }
 
@@ -132,9 +132,9 @@ namespace Model
      * the success response returns nothing and the error response returns some string,
      * you could use the <code>.+</code> regex to match error response. However, make
      * sure that the error response does not contain any newline (<code>\n</code>)
-     * character in such cases. If the back end is an AWS Lambda function, the AWS
-     * Lambda function error header is matched. For all other HTTP and AWS back ends,
-     * the HTTP status code is matched.</p>
+     * character in such cases. If the back end is an Lambda function, the Lambda
+     * function error header is matched. For all other HTTP and Amazon Web Services
+     * back ends, the HTTP status code is matched.</p>
      */
     inline void SetSelectionPattern(Aws::String&& value) { m_selectionPatternHasBeenSet = true; m_selectionPattern = std::move(value); }
 
@@ -144,9 +144,9 @@ namespace Model
      * the success response returns nothing and the error response returns some string,
      * you could use the <code>.+</code> regex to match error response. However, make
      * sure that the error response does not contain any newline (<code>\n</code>)
-     * character in such cases. If the back end is an AWS Lambda function, the AWS
-     * Lambda function error header is matched. For all other HTTP and AWS back ends,
-     * the HTTP status code is matched.</p>
+     * character in such cases. If the back end is an Lambda function, the Lambda
+     * function error header is matched. For all other HTTP and Amazon Web Services
+     * back ends, the HTTP status code is matched.</p>
      */
     inline void SetSelectionPattern(const char* value) { m_selectionPatternHasBeenSet = true; m_selectionPattern.assign(value); }
 
@@ -156,9 +156,9 @@ namespace Model
      * the success response returns nothing and the error response returns some string,
      * you could use the <code>.+</code> regex to match error response. However, make
      * sure that the error response does not contain any newline (<code>\n</code>)
-     * character in such cases. If the back end is an AWS Lambda function, the AWS
-     * Lambda function error header is matched. For all other HTTP and AWS back ends,
-     * the HTTP status code is matched.</p>
+     * character in such cases. If the back end is an Lambda function, the Lambda
+     * function error header is matched. For all other HTTP and Amazon Web Services
+     * back ends, the HTTP status code is matched.</p>
      */
     inline IntegrationResponse& WithSelectionPattern(const Aws::String& value) { SetSelectionPattern(value); return *this;}
 
@@ -168,9 +168,9 @@ namespace Model
      * the success response returns nothing and the error response returns some string,
      * you could use the <code>.+</code> regex to match error response. However, make
      * sure that the error response does not contain any newline (<code>\n</code>)
-     * character in such cases. If the back end is an AWS Lambda function, the AWS
-     * Lambda function error header is matched. For all other HTTP and AWS back ends,
-     * the HTTP status code is matched.</p>
+     * character in such cases. If the back end is an Lambda function, the Lambda
+     * function error header is matched. For all other HTTP and Amazon Web Services
+     * back ends, the HTTP status code is matched.</p>
      */
     inline IntegrationResponse& WithSelectionPattern(Aws::String&& value) { SetSelectionPattern(std::move(value)); return *this;}
 
@@ -180,9 +180,9 @@ namespace Model
      * the success response returns nothing and the error response returns some string,
      * you could use the <code>.+</code> regex to match error response. However, make
      * sure that the error response does not contain any newline (<code>\n</code>)
-     * character in such cases. If the back end is an AWS Lambda function, the AWS
-     * Lambda function error header is matched. For all other HTTP and AWS back ends,
-     * the HTTP status code is matched.</p>
+     * character in such cases. If the back end is an Lambda function, the Lambda
+     * function error header is matched. For all other HTTP and Amazon Web Services
+     * back ends, the HTTP status code is matched.</p>
      */
     inline IntegrationResponse& WithSelectionPattern(const char* value) { SetSelectionPattern(value); return *this;}
 

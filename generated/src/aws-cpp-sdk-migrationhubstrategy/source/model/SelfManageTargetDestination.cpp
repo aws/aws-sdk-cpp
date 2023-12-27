@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SelfManageTargetDestination::NOT_SET:
+            return {};
           case SelfManageTargetDestination::None_specified:
             return "None specified";
           case SelfManageTargetDestination::Amazon_Elastic_Cloud_Compute_EC2:

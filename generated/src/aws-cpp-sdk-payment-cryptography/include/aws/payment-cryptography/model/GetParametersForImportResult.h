@@ -111,125 +111,113 @@ namespace Model
 
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 key block.
-     * <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
      */
     inline const KeyAlgorithm& GetWrappingKeyAlgorithm() const{ return m_wrappingKeyAlgorithm; }
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 key block.
-     * <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
      */
     inline void SetWrappingKeyAlgorithm(const KeyAlgorithm& value) { m_wrappingKeyAlgorithm = value; }
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 key block.
-     * <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
      */
     inline void SetWrappingKeyAlgorithm(KeyAlgorithm&& value) { m_wrappingKeyAlgorithm = std::move(value); }
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 key block.
-     * <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyAlgorithm(const KeyAlgorithm& value) { SetWrappingKeyAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 key block.
-     * <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyAlgorithm(KeyAlgorithm&& value) { SetWrappingKeyAlgorithm(std::move(value)); return *this;}
 
 
     /**
-     * <p>The wrapping key certificate of the wrapping key for use within the TR-34 key
-     * block. The certificate expires in 7 days.</p>
+     * <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping
+     * key for use within the TR-34 key block. The certificate expires in 7 days.</p>
      */
     inline const Aws::String& GetWrappingKeyCertificate() const{ return m_wrappingKeyCertificate; }
 
     /**
-     * <p>The wrapping key certificate of the wrapping key for use within the TR-34 key
-     * block. The certificate expires in 7 days.</p>
+     * <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping
+     * key for use within the TR-34 key block. The certificate expires in 7 days.</p>
      */
     inline void SetWrappingKeyCertificate(const Aws::String& value) { m_wrappingKeyCertificate = value; }
 
     /**
-     * <p>The wrapping key certificate of the wrapping key for use within the TR-34 key
-     * block. The certificate expires in 7 days.</p>
+     * <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping
+     * key for use within the TR-34 key block. The certificate expires in 7 days.</p>
      */
     inline void SetWrappingKeyCertificate(Aws::String&& value) { m_wrappingKeyCertificate = std::move(value); }
 
     /**
-     * <p>The wrapping key certificate of the wrapping key for use within the TR-34 key
-     * block. The certificate expires in 7 days.</p>
+     * <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping
+     * key for use within the TR-34 key block. The certificate expires in 7 days.</p>
      */
     inline void SetWrappingKeyCertificate(const char* value) { m_wrappingKeyCertificate.assign(value); }
 
     /**
-     * <p>The wrapping key certificate of the wrapping key for use within the TR-34 key
-     * block. The certificate expires in 7 days.</p>
+     * <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping
+     * key for use within the TR-34 key block. The certificate expires in 7 days.</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyCertificate(const Aws::String& value) { SetWrappingKeyCertificate(value); return *this;}
 
     /**
-     * <p>The wrapping key certificate of the wrapping key for use within the TR-34 key
-     * block. The certificate expires in 7 days.</p>
+     * <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping
+     * key for use within the TR-34 key block. The certificate expires in 7 days.</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyCertificate(Aws::String&& value) { SetWrappingKeyCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The wrapping key certificate of the wrapping key for use within the TR-34 key
-     * block. The certificate expires in 7 days.</p>
+     * <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping
+     * key for use within the TR-34 key block. The certificate expires in 7 days.</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyCertificate(const char* value) { SetWrappingKeyCertificate(value); return *this;}
 
 
     /**
-     * <p>The Amazon Web Services Payment Cryptography certificate chain that signed
-     * the wrapping key certificate. This is the root certificate authority (CA) within
-     * your service account.</p>
+     * <p>The Amazon Web Services Payment Cryptography root certificate authority (CA)
+     * that signed the wrapping key certificate in PEM format (base64 encoded).</p>
      */
     inline const Aws::String& GetWrappingKeyCertificateChain() const{ return m_wrappingKeyCertificateChain; }
 
     /**
-     * <p>The Amazon Web Services Payment Cryptography certificate chain that signed
-     * the wrapping key certificate. This is the root certificate authority (CA) within
-     * your service account.</p>
+     * <p>The Amazon Web Services Payment Cryptography root certificate authority (CA)
+     * that signed the wrapping key certificate in PEM format (base64 encoded).</p>
      */
     inline void SetWrappingKeyCertificateChain(const Aws::String& value) { m_wrappingKeyCertificateChain = value; }
 
     /**
-     * <p>The Amazon Web Services Payment Cryptography certificate chain that signed
-     * the wrapping key certificate. This is the root certificate authority (CA) within
-     * your service account.</p>
+     * <p>The Amazon Web Services Payment Cryptography root certificate authority (CA)
+     * that signed the wrapping key certificate in PEM format (base64 encoded).</p>
      */
     inline void SetWrappingKeyCertificateChain(Aws::String&& value) { m_wrappingKeyCertificateChain = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Payment Cryptography certificate chain that signed
-     * the wrapping key certificate. This is the root certificate authority (CA) within
-     * your service account.</p>
+     * <p>The Amazon Web Services Payment Cryptography root certificate authority (CA)
+     * that signed the wrapping key certificate in PEM format (base64 encoded).</p>
      */
     inline void SetWrappingKeyCertificateChain(const char* value) { m_wrappingKeyCertificateChain.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Payment Cryptography certificate chain that signed
-     * the wrapping key certificate. This is the root certificate authority (CA) within
-     * your service account.</p>
+     * <p>The Amazon Web Services Payment Cryptography root certificate authority (CA)
+     * that signed the wrapping key certificate in PEM format (base64 encoded).</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyCertificateChain(const Aws::String& value) { SetWrappingKeyCertificateChain(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Payment Cryptography certificate chain that signed
-     * the wrapping key certificate. This is the root certificate authority (CA) within
-     * your service account.</p>
+     * <p>The Amazon Web Services Payment Cryptography root certificate authority (CA)
+     * that signed the wrapping key certificate in PEM format (base64 encoded).</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyCertificateChain(Aws::String&& value) { SetWrappingKeyCertificateChain(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Payment Cryptography certificate chain that signed
-     * the wrapping key certificate. This is the root certificate authority (CA) within
-     * your service account.</p>
+     * <p>The Amazon Web Services Payment Cryptography root certificate authority (CA)
+     * that signed the wrapping key certificate in PEM format (base64 encoded).</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyCertificateChain(const char* value) { SetWrappingKeyCertificateChain(value); return *this;}
 

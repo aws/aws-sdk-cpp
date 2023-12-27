@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomEmailSenderLambdaVersionType::NOT_SET:
+            return {};
           case CustomEmailSenderLambdaVersionType::V1_0:
             return "V1_0";
           default:

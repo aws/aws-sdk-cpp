@@ -21,6 +21,7 @@
 #include <aws/secretsmanager/SecretsManagerClient.h>
 #include <aws/secretsmanager/SecretsManagerErrorMarshaller.h>
 #include <aws/secretsmanager/SecretsManagerEndpointProvider.h>
+#include <aws/secretsmanager/model/BatchGetSecretValueRequest.h>
 #include <aws/secretsmanager/model/CancelRotateSecretRequest.h>
 #include <aws/secretsmanager/model/CreateSecretRequest.h>
 #include <aws/secretsmanager/model/DeleteResourcePolicyRequest.h>
@@ -174,6 +175,32 @@ void SecretsManagerClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+BatchGetSecretValueOutcome SecretsManagerClient::BatchGetSecretValue(const BatchGetSecretValueRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchGetSecretValue);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetSecretValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchGetSecretValue, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchGetSecretValue, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchGetSecretValue",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchGetSecretValueOutcome>(
+    [&]()-> BatchGetSecretValueOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetSecretValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return BatchGetSecretValueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 CancelRotateSecretOutcome SecretsManagerClient::CancelRotateSecret(const CancelRotateSecretRequest& request) const

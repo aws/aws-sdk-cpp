@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginManifestType::NOT_SET:
+            return {};
           case OriginManifestType::SINGLE_PERIOD:
             return "SINGLE_PERIOD";
           case OriginManifestType::MULTI_PERIOD:

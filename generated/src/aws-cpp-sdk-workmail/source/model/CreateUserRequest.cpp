@@ -16,7 +16,13 @@ CreateUserRequest::CreateUserRequest() :
     m_organizationIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_role(UserRole::NOT_SET),
+    m_roleHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false),
+    m_hiddenFromGlobalAddressList(false),
+    m_hiddenFromGlobalAddressListHasBeenSet(false)
 {
 }
 
@@ -45,6 +51,29 @@ Aws::String CreateUserRequest::SerializePayload() const
   if(m_passwordHasBeenSet)
   {
    payload.WithString("Password", m_password);
+
+  }
+
+  if(m_roleHasBeenSet)
+  {
+   payload.WithString("Role", UserRoleMapper::GetNameForUserRole(m_role));
+  }
+
+  if(m_firstNameHasBeenSet)
+  {
+   payload.WithString("FirstName", m_firstName);
+
+  }
+
+  if(m_lastNameHasBeenSet)
+  {
+   payload.WithString("LastName", m_lastName);
+
+  }
+
+  if(m_hiddenFromGlobalAddressListHasBeenSet)
+  {
+   payload.WithBool("HiddenFromGlobalAddressList", m_hiddenFromGlobalAddressList);
 
   }
 

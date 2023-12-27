@@ -29,15 +29,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeStreamingServiceErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeStreamingServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeStreamingServiceErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeStreamingServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeStreamingServiceErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeStreamingServiceErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CrawlerState::NOT_SET:
+            return {};
           case CrawlerState::READY:
             return "READY";
           case CrawlerState::RUNNING:

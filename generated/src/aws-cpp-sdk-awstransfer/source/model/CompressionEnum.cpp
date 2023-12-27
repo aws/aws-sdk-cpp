@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CompressionEnum::NOT_SET:
+            return {};
           case CompressionEnum::ZLIB:
             return "ZLIB";
           case CompressionEnum::DISABLED:

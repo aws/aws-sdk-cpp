@@ -10,6 +10,7 @@
 #include <aws/medialive/model/RtmpCacheFullBehavior.h>
 #include <aws/medialive/model/RtmpCaptionData.h>
 #include <aws/medialive/model/InputLossActionForRtmpOut.h>
+#include <aws/medialive/model/IncludeFillerNalUnits.h>
 #include <aws/medialive/model/RtmpAdMarkers.h>
 #include <utility>
 
@@ -358,6 +359,61 @@ namespace Model
      */
     inline RtmpGroupSettings& WithRestartDelay(int value) { SetRestartDelay(value); return *this;}
 
+
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant
+     * bit rate). Controls whether the RTMP output stream is padded (with FILL NAL
+     * units) in order to achieve a constant bit rate that is truly constant. When
+     * there is no padding, the bandwidth varies (up to the bitrate value in the codec
+     * settings). We recommend that you choose Auto.
+     */
+    inline const IncludeFillerNalUnits& GetIncludeFillerNalUnits() const{ return m_includeFillerNalUnits; }
+
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant
+     * bit rate). Controls whether the RTMP output stream is padded (with FILL NAL
+     * units) in order to achieve a constant bit rate that is truly constant. When
+     * there is no padding, the bandwidth varies (up to the bitrate value in the codec
+     * settings). We recommend that you choose Auto.
+     */
+    inline bool IncludeFillerNalUnitsHasBeenSet() const { return m_includeFillerNalUnitsHasBeenSet; }
+
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant
+     * bit rate). Controls whether the RTMP output stream is padded (with FILL NAL
+     * units) in order to achieve a constant bit rate that is truly constant. When
+     * there is no padding, the bandwidth varies (up to the bitrate value in the codec
+     * settings). We recommend that you choose Auto.
+     */
+    inline void SetIncludeFillerNalUnits(const IncludeFillerNalUnits& value) { m_includeFillerNalUnitsHasBeenSet = true; m_includeFillerNalUnits = value; }
+
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant
+     * bit rate). Controls whether the RTMP output stream is padded (with FILL NAL
+     * units) in order to achieve a constant bit rate that is truly constant. When
+     * there is no padding, the bandwidth varies (up to the bitrate value in the codec
+     * settings). We recommend that you choose Auto.
+     */
+    inline void SetIncludeFillerNalUnits(IncludeFillerNalUnits&& value) { m_includeFillerNalUnitsHasBeenSet = true; m_includeFillerNalUnits = std::move(value); }
+
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant
+     * bit rate). Controls whether the RTMP output stream is padded (with FILL NAL
+     * units) in order to achieve a constant bit rate that is truly constant. When
+     * there is no padding, the bandwidth varies (up to the bitrate value in the codec
+     * settings). We recommend that you choose Auto.
+     */
+    inline RtmpGroupSettings& WithIncludeFillerNalUnits(const IncludeFillerNalUnits& value) { SetIncludeFillerNalUnits(value); return *this;}
+
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant
+     * bit rate). Controls whether the RTMP output stream is padded (with FILL NAL
+     * units) in order to achieve a constant bit rate that is truly constant. When
+     * there is no padding, the bandwidth varies (up to the bitrate value in the codec
+     * settings). We recommend that you choose Auto.
+     */
+    inline RtmpGroupSettings& WithIncludeFillerNalUnits(IncludeFillerNalUnits&& value) { SetIncludeFillerNalUnits(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<RtmpAdMarkers> m_adMarkers;
@@ -380,6 +436,9 @@ namespace Model
 
     int m_restartDelay;
     bool m_restartDelayHasBeenSet = false;
+
+    IncludeFillerNalUnits m_includeFillerNalUnits;
+    bool m_includeFillerNalUnitsHasBeenSet = false;
   };
 
 } // namespace Model

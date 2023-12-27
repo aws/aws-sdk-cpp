@@ -20,13 +20,15 @@ namespace Model
 
 KxDatabaseCacheConfiguration::KxDatabaseCacheConfiguration() : 
     m_cacheTypeHasBeenSet(false),
-    m_dbPathsHasBeenSet(false)
+    m_dbPathsHasBeenSet(false),
+    m_dataviewNameHasBeenSet(false)
 {
 }
 
 KxDatabaseCacheConfiguration::KxDatabaseCacheConfiguration(JsonView jsonValue) : 
     m_cacheTypeHasBeenSet(false),
-    m_dbPathsHasBeenSet(false)
+    m_dbPathsHasBeenSet(false),
+    m_dataviewNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ KxDatabaseCacheConfiguration& KxDatabaseCacheConfiguration::operator =(JsonView 
     m_dbPathsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataviewName"))
+  {
+    m_dataviewName = jsonValue.GetString("dataviewName");
+
+    m_dataviewNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue KxDatabaseCacheConfiguration::Jsonize() const
      dbPathsJsonList[dbPathsIndex].AsString(m_dbPaths[dbPathsIndex]);
    }
    payload.WithArray("dbPaths", std::move(dbPathsJsonList));
+
+  }
+
+  if(m_dataviewNameHasBeenSet)
+  {
+   payload.WithString("dataviewName", m_dataviewName);
 
   }
 

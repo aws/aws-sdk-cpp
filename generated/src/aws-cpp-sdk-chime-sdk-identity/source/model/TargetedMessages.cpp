@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetedMessages::NOT_SET:
+            return {};
           case TargetedMessages::ALL:
             return "ALL";
           case TargetedMessages::NONE:

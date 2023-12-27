@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ForecastDataType::NOT_SET:
+            return {};
           case ForecastDataType::CapacityForecast:
             return "CapacityForecast";
           case ForecastDataType::LoadForecast:

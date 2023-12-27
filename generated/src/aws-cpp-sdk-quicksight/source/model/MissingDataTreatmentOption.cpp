@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MissingDataTreatmentOption::NOT_SET:
+            return {};
           case MissingDataTreatmentOption::INTERPOLATE:
             return "INTERPOLATE";
           case MissingDataTreatmentOption::SHOW_AS_ZERO:

@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/codestar-connections/model/CreateRepositoryLinkResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CodeStarconnections::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+CreateRepositoryLinkResult::CreateRepositoryLinkResult()
+{
+}
+
+CreateRepositoryLinkResult::CreateRepositoryLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  *this = result;
+}
+
+CreateRepositoryLinkResult& CreateRepositoryLinkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("RepositoryLinkInfo"))
+  {
+    m_repositoryLinkInfo = jsonValue.GetObject("RepositoryLinkInfo");
+
+  }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+
+  return *this;
+}

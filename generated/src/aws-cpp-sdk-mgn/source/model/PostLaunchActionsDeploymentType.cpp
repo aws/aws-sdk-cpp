@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PostLaunchActionsDeploymentType::NOT_SET:
+            return {};
           case PostLaunchActionsDeploymentType::TEST_AND_CUTOVER:
             return "TEST_AND_CUTOVER";
           case PostLaunchActionsDeploymentType::CUTOVER_ONLY:

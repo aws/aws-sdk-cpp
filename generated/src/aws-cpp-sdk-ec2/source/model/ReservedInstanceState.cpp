@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservedInstanceState::NOT_SET:
+            return {};
           case ReservedInstanceState::payment_pending:
             return "payment-pending";
           case ReservedInstanceState::active:

@@ -42,37 +42,37 @@ namespace Model
 
 
     /**
-     * <p>The user name of the user you want to retrieve from the get user request.</p>
+     * <p>The username of the user that you requested.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user you want to retrieve from the get user request.</p>
+     * <p>The username of the user that you requested.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_username = value; }
 
     /**
-     * <p>The user name of the user you want to retrieve from the get user request.</p>
+     * <p>The username of the user that you requested.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user you want to retrieve from the get user request.</p>
+     * <p>The username of the user that you requested.</p>
      */
     inline void SetUsername(const char* value) { m_username.assign(value); }
 
     /**
-     * <p>The user name of the user you want to retrieve from the get user request.</p>
+     * <p>The username of the user that you requested.</p>
      */
     inline GetUserResult& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user you want to retrieve from the get user request.</p>
+     * <p>The username of the user that you requested.</p>
      */
     inline GetUserResult& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user you want to retrieve from the get user request.</p>
+     * <p>The username of the user that you requested.</p>
      */
     inline GetUserResult& WithUsername(const char* value) { SetUsername(value); return *this;}
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateTargetsArchitecture::NOT_SET:
+            return {};
           case UpdateTargetsArchitecture::armv6l:
             return "armv6l";
           case UpdateTargetsArchitecture::armv7l:

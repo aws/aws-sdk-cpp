@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/compute-optimizer/model/MigrationEffort.h>
+#include <aws/compute-optimizer/model/GpuInfo.h>
+#include <aws/compute-optimizer/model/InstanceSavingsOpportunityAfterDiscounts.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/PlatformDifference.h>
 #include <utility>
@@ -1127,6 +1129,92 @@ namespace Model
      */
     inline InstanceRecommendationOption& WithMigrationEffort(MigrationEffort&& value) { SetMigrationEffort(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     */
+    inline const GpuInfo& GetInstanceGpuInfo() const{ return m_instanceGpuInfo; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     */
+    inline bool InstanceGpuInfoHasBeenSet() const { return m_instanceGpuInfoHasBeenSet; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     */
+    inline void SetInstanceGpuInfo(const GpuInfo& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = value; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     */
+    inline void SetInstanceGpuInfo(GpuInfo&& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = std::move(value); }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     */
+    inline InstanceRecommendationOption& WithInstanceGpuInfo(const GpuInfo& value) { SetInstanceGpuInfo(value); return *this;}
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     */
+    inline InstanceRecommendationOption& WithInstanceGpuInfo(GpuInfo&& value) { SetInstanceGpuInfo(std::move(value)); return *this;}
+
+
+    /**
+     * <p> An object that describes the savings opportunity for the instance
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline const InstanceSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const{ return m_savingsOpportunityAfterDiscounts; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the instance
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the instance
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(const InstanceSavingsOpportunityAfterDiscounts& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = value; }
+
+    /**
+     * <p> An object that describes the savings opportunity for the instance
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline void SetSavingsOpportunityAfterDiscounts(InstanceSavingsOpportunityAfterDiscounts&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::move(value); }
+
+    /**
+     * <p> An object that describes the savings opportunity for the instance
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline InstanceRecommendationOption& WithSavingsOpportunityAfterDiscounts(const InstanceSavingsOpportunityAfterDiscounts& value) { SetSavingsOpportunityAfterDiscounts(value); return *this;}
+
+    /**
+     * <p> An object that describes the savings opportunity for the instance
+     * recommendation option that includes Savings Plans and Reserved Instances
+     * discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage. </p>
+     */
+    inline InstanceRecommendationOption& WithSavingsOpportunityAfterDiscounts(InstanceSavingsOpportunityAfterDiscounts&& value) { SetSavingsOpportunityAfterDiscounts(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceType;
@@ -1149,6 +1237,12 @@ namespace Model
 
     MigrationEffort m_migrationEffort;
     bool m_migrationEffortHasBeenSet = false;
+
+    GpuInfo m_instanceGpuInfo;
+    bool m_instanceGpuInfoHasBeenSet = false;
+
+    InstanceSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
+    bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
   };
 
 } // namespace Model

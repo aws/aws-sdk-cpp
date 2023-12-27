@@ -738,9 +738,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -752,9 +752,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -766,9 +766,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -780,9 +780,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -794,9 +794,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -808,9 +808,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -822,9 +822,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -836,9 +836,9 @@ namespace Model
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
      * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
@@ -852,10 +852,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -865,10 +865,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -878,10 +878,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -891,10 +891,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -904,10 +904,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -917,10 +917,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -930,10 +930,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -943,10 +943,10 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each Amazon Region, occurring on a random day of the week. To see the
      * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
-     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
-     * <p>Constraints: Minimum 30-minute window.</p>
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-maintaining.html#manage-console-maintaining-window">Neptune
+     * Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p> <p>Valid
+     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1302,56 +1302,83 @@ namespace Model
 
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs.</p>
+     * <p>A list of the log types that this DB cluster should export to CloudWatch
+     * Logs. Valid log types are: <code>audit</code> (to publish audit logs) and
+     * <code>slowquery</code> (to publish slow-query logs). See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+     * Neptune logs to Amazon CloudWatch logs</a>.</p>
      */
     inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -1385,22 +1412,52 @@ namespace Model
     inline CreateDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfiguration& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using
+     * Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+     */
     inline CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
 
@@ -1451,6 +1508,87 @@ namespace Model
      * added.</p>
      */
     inline CreateDBClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
+
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>Valid Values:</p>
+     * <ul> <li> <p> <code>standard | iopt1</code> </p> </li> </ul> <p>Default:</p>
+     * <ul> <li> <p> <code>standard</code> </p> </li> </ul>  <p>When you create a
+     * Neptune cluster with the storage type set to <code>iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>standard</code>.</p> 
+     */
+    inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
 
     /**
@@ -1575,6 +1713,9 @@ namespace Model
 
     Aws::String m_globalClusterIdentifier;
     bool m_globalClusterIdentifierHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

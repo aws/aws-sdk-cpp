@@ -214,6 +214,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalysisSchemeLanguage::NOT_SET:
+            return {};
           case AnalysisSchemeLanguage::ar:
             return "ar";
           case AnalysisSchemeLanguage::bg:

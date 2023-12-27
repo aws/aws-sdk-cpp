@@ -10,6 +10,7 @@
 #include <aws/fsx/model/WindowsDeploymentType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/WindowsAuditLogCreateConfiguration.h>
+#include <aws/fsx/model/DiskIopsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -764,6 +765,61 @@ namespace Model
      */
     inline CreateFileSystemWindowsConfiguration& WithAuditLogConfiguration(WindowsAuditLogCreateConfiguration&& value) { SetAuditLogConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for Windows file system. By default, Amazon FSx automatically provisions 3
+     * IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of
+     * storage, up to the maximum limit associated with your chosen throughput
+     * capacity.</p>
+     */
+    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const{ return m_diskIopsConfiguration; }
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for Windows file system. By default, Amazon FSx automatically provisions 3
+     * IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of
+     * storage, up to the maximum limit associated with your chosen throughput
+     * capacity.</p>
+     */
+    inline bool DiskIopsConfigurationHasBeenSet() const { return m_diskIopsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for Windows file system. By default, Amazon FSx automatically provisions 3
+     * IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of
+     * storage, up to the maximum limit associated with your chosen throughput
+     * capacity.</p>
+     */
+    inline void SetDiskIopsConfiguration(const DiskIopsConfiguration& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = value; }
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for Windows file system. By default, Amazon FSx automatically provisions 3
+     * IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of
+     * storage, up to the maximum limit associated with your chosen throughput
+     * capacity.</p>
+     */
+    inline void SetDiskIopsConfiguration(DiskIopsConfiguration&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::move(value); }
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for Windows file system. By default, Amazon FSx automatically provisions 3
+     * IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of
+     * storage, up to the maximum limit associated with your chosen throughput
+     * capacity.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& WithDiskIopsConfiguration(const DiskIopsConfiguration& value) { SetDiskIopsConfiguration(value); return *this;}
+
+    /**
+     * <p>The SSD IOPS (input/output operations per second) configuration for an Amazon
+     * FSx for Windows file system. By default, Amazon FSx automatically provisions 3
+     * IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of
+     * storage, up to the maximum limit associated with your chosen throughput
+     * capacity.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& WithDiskIopsConfiguration(DiskIopsConfiguration&& value) { SetDiskIopsConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_activeDirectoryId;
@@ -798,6 +854,9 @@ namespace Model
 
     WindowsAuditLogCreateConfiguration m_auditLogConfiguration;
     bool m_auditLogConfigurationHasBeenSet = false;
+
+    DiskIopsConfiguration m_diskIopsConfiguration;
+    bool m_diskIopsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

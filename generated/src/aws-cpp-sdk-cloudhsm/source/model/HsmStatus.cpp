@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HsmStatus::NOT_SET:
+            return {};
           case HsmStatus::PENDING:
             return "PENDING";
           case HsmStatus::RUNNING:

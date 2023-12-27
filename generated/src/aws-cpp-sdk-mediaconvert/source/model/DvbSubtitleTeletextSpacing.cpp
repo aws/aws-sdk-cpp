@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubtitleTeletextSpacing::NOT_SET:
+            return {};
           case DvbSubtitleTeletextSpacing::FIXED_GRID:
             return "FIXED_GRID";
           case DvbSubtitleTeletextSpacing::PROPORTIONAL:

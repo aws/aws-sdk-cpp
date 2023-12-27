@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p> The request structure used to create apps in Amplify. </p><p><h3>See
+   * <p>The request structure used to create apps in Amplify. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateAppRequest">AWS
    * API Reference</a></p>
@@ -42,130 +42,130 @@ namespace Model
 
 
     /**
-     * <p> The name for an Amplify app. </p>
+     * <p>The name of the Amplify app. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name for an Amplify app. </p>
+     * <p>The name of the Amplify app. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name for an Amplify app. </p>
+     * <p>The name of the Amplify app. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name for an Amplify app. </p>
+     * <p>The name of the Amplify app. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name for an Amplify app. </p>
+     * <p>The name of the Amplify app. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name for an Amplify app. </p>
+     * <p>The name of the Amplify app. </p>
      */
     inline CreateAppRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name for an Amplify app. </p>
+     * <p>The name of the Amplify app. </p>
      */
     inline CreateAppRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name for an Amplify app. </p>
+     * <p>The name of the Amplify app. </p>
      */
     inline CreateAppRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> The description for an Amplify app. </p>
+     * <p>The description of the Amplify app. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description for an Amplify app. </p>
+     * <p>The description of the Amplify app. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p> The description for an Amplify app. </p>
+     * <p>The description of the Amplify app. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description for an Amplify app. </p>
+     * <p>The description of the Amplify app. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> The description for an Amplify app. </p>
+     * <p>The description of the Amplify app. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description for an Amplify app. </p>
+     * <p>The description of the Amplify app. </p>
      */
     inline CreateAppRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description for an Amplify app. </p>
+     * <p>The description of the Amplify app. </p>
      */
     inline CreateAppRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description for an Amplify app. </p>
+     * <p>The description of the Amplify app. </p>
      */
     inline CreateAppRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p> The repository for an Amplify app. </p>
+     * <p>The Git repository for the Amplify app. </p>
      */
     inline const Aws::String& GetRepository() const{ return m_repository; }
 
     /**
-     * <p> The repository for an Amplify app. </p>
+     * <p>The Git repository for the Amplify app. </p>
      */
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
 
     /**
-     * <p> The repository for an Amplify app. </p>
+     * <p>The Git repository for the Amplify app. </p>
      */
     inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
 
     /**
-     * <p> The repository for an Amplify app. </p>
+     * <p>The Git repository for the Amplify app. </p>
      */
     inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
 
     /**
-     * <p> The repository for an Amplify app. </p>
+     * <p>The Git repository for the Amplify app. </p>
      */
     inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
 
     /**
-     * <p> The repository for an Amplify app. </p>
+     * <p>The Git repository for the Amplify app. </p>
      */
     inline CreateAppRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
 
     /**
-     * <p> The repository for an Amplify app. </p>
+     * <p>The Git repository for the Amplify app. </p>
      */
     inline CreateAppRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
 
     /**
-     * <p> The repository for an Amplify app. </p>
+     * <p>The Git repository for the Amplify app. </p>
      */
     inline CreateAppRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
 
 
     /**
-     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <p>The platform for the Amplify app. For a static app, set the platform type to
      * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
      * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
      * original SSR support only, set the platform type to
@@ -174,7 +174,7 @@ namespace Model
     inline const Platform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <p>The platform for the Amplify app. For a static app, set the platform type to
      * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
      * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
      * original SSR support only, set the platform type to
@@ -183,7 +183,7 @@ namespace Model
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <p>The platform for the Amplify app. For a static app, set the platform type to
      * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
      * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
      * original SSR support only, set the platform type to
@@ -192,7 +192,7 @@ namespace Model
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <p>The platform for the Amplify app. For a static app, set the platform type to
      * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
      * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
      * original SSR support only, set the platform type to
@@ -201,7 +201,7 @@ namespace Model
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <p>The platform for the Amplify app. For a static app, set the platform type to
      * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
      * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
      * original SSR support only, set the platform type to
@@ -210,7 +210,7 @@ namespace Model
     inline CreateAppRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <p>The platform for the Amplify app. For a static app, set the platform type to
      * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
      * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
      * original SSR support only, set the platform type to
@@ -220,50 +220,50 @@ namespace Model
 
 
     /**
-     * <p> The AWS Identity and Access Management (IAM) service role for an Amplify
-     * app. </p>
+     * <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.
+     * </p>
      */
     inline const Aws::String& GetIamServiceRoleArn() const{ return m_iamServiceRoleArn; }
 
     /**
-     * <p> The AWS Identity and Access Management (IAM) service role for an Amplify
-     * app. </p>
+     * <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.
+     * </p>
      */
     inline bool IamServiceRoleArnHasBeenSet() const { return m_iamServiceRoleArnHasBeenSet; }
 
     /**
-     * <p> The AWS Identity and Access Management (IAM) service role for an Amplify
-     * app. </p>
+     * <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.
+     * </p>
      */
     inline void SetIamServiceRoleArn(const Aws::String& value) { m_iamServiceRoleArnHasBeenSet = true; m_iamServiceRoleArn = value; }
 
     /**
-     * <p> The AWS Identity and Access Management (IAM) service role for an Amplify
-     * app. </p>
+     * <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.
+     * </p>
      */
     inline void SetIamServiceRoleArn(Aws::String&& value) { m_iamServiceRoleArnHasBeenSet = true; m_iamServiceRoleArn = std::move(value); }
 
     /**
-     * <p> The AWS Identity and Access Management (IAM) service role for an Amplify
-     * app. </p>
+     * <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.
+     * </p>
      */
     inline void SetIamServiceRoleArn(const char* value) { m_iamServiceRoleArnHasBeenSet = true; m_iamServiceRoleArn.assign(value); }
 
     /**
-     * <p> The AWS Identity and Access Management (IAM) service role for an Amplify
-     * app. </p>
+     * <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.
+     * </p>
      */
     inline CreateAppRequest& WithIamServiceRoleArn(const Aws::String& value) { SetIamServiceRoleArn(value); return *this;}
 
     /**
-     * <p> The AWS Identity and Access Management (IAM) service role for an Amplify
-     * app. </p>
+     * <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.
+     * </p>
      */
     inline CreateAppRequest& WithIamServiceRoleArn(Aws::String&& value) { SetIamServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS Identity and Access Management (IAM) service role for an Amplify
-     * app. </p>
+     * <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.
+     * </p>
      */
     inline CreateAppRequest& WithIamServiceRoleArn(const char* value) { SetIamServiceRoleArn(value); return *this;}
 
@@ -279,7 +279,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -296,7 +296,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -313,7 +313,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -330,7 +330,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -347,7 +347,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -364,7 +364,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -381,7 +381,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -398,7 +398,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -416,7 +416,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -433,7 +433,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -450,7 +450,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -467,7 +467,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -484,7 +484,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -501,7 +501,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -518,7 +518,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -535,7 +535,7 @@ namespace Model
      * apps deployed from a GitHub repository using OAuth continue to work with CI/CD.
      * However, we strongly recommend that you migrate these apps to use the GitHub
      * App. For more information, see <a
-     * href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating
      * an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User
      * Guide</i> .</p>
      */
@@ -543,193 +543,232 @@ namespace Model
 
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline void SetEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline void SetEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline CreateAppRequest& WithEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironmentVariables(value); return *this;}
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline CreateAppRequest& WithEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline CreateAppRequest& AddEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline CreateAppRequest& AddEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline CreateAppRequest& AddEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline CreateAppRequest& AddEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline CreateAppRequest& AddEnvironmentVariables(const char* key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline CreateAppRequest& AddEnvironmentVariables(Aws::String&& key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The environment variables map for an Amplify app. </p>
+     * <p>The environment variables map for an Amplify app. </p> <p>For a list of the
+     * environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
      */
     inline CreateAppRequest& AddEnvironmentVariables(const char* key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
 
 
     /**
-     * <p> Enables the auto building of branches for an Amplify app. </p>
+     * <p>Enables the auto building of branches for an Amplify app. </p>
      */
     inline bool GetEnableBranchAutoBuild() const{ return m_enableBranchAutoBuild; }
 
     /**
-     * <p> Enables the auto building of branches for an Amplify app. </p>
+     * <p>Enables the auto building of branches for an Amplify app. </p>
      */
     inline bool EnableBranchAutoBuildHasBeenSet() const { return m_enableBranchAutoBuildHasBeenSet; }
 
     /**
-     * <p> Enables the auto building of branches for an Amplify app. </p>
+     * <p>Enables the auto building of branches for an Amplify app. </p>
      */
     inline void SetEnableBranchAutoBuild(bool value) { m_enableBranchAutoBuildHasBeenSet = true; m_enableBranchAutoBuild = value; }
 
     /**
-     * <p> Enables the auto building of branches for an Amplify app. </p>
+     * <p>Enables the auto building of branches for an Amplify app. </p>
      */
     inline CreateAppRequest& WithEnableBranchAutoBuild(bool value) { SetEnableBranchAutoBuild(value); return *this;}
 
 
     /**
-     * <p> Automatically disconnects a branch in the Amplify Console when you delete a
+     * <p>Automatically disconnects a branch in the Amplify console when you delete a
      * branch from your Git repository. </p>
      */
     inline bool GetEnableBranchAutoDeletion() const{ return m_enableBranchAutoDeletion; }
 
     /**
-     * <p> Automatically disconnects a branch in the Amplify Console when you delete a
+     * <p>Automatically disconnects a branch in the Amplify console when you delete a
      * branch from your Git repository. </p>
      */
     inline bool EnableBranchAutoDeletionHasBeenSet() const { return m_enableBranchAutoDeletionHasBeenSet; }
 
     /**
-     * <p> Automatically disconnects a branch in the Amplify Console when you delete a
+     * <p>Automatically disconnects a branch in the Amplify console when you delete a
      * branch from your Git repository. </p>
      */
     inline void SetEnableBranchAutoDeletion(bool value) { m_enableBranchAutoDeletionHasBeenSet = true; m_enableBranchAutoDeletion = value; }
 
     /**
-     * <p> Automatically disconnects a branch in the Amplify Console when you delete a
+     * <p>Automatically disconnects a branch in the Amplify console when you delete a
      * branch from your Git repository. </p>
      */
     inline CreateAppRequest& WithEnableBranchAutoDeletion(bool value) { SetEnableBranchAutoDeletion(value); return *this;}
 
 
     /**
-     * <p> Enables basic authorization for an Amplify app. This will apply to all
+     * <p>Enables basic authorization for an Amplify app. This will apply to all
      * branches that are part of this app. </p>
      */
     inline bool GetEnableBasicAuth() const{ return m_enableBasicAuth; }
 
     /**
-     * <p> Enables basic authorization for an Amplify app. This will apply to all
+     * <p>Enables basic authorization for an Amplify app. This will apply to all
      * branches that are part of this app. </p>
      */
     inline bool EnableBasicAuthHasBeenSet() const { return m_enableBasicAuthHasBeenSet; }
 
     /**
-     * <p> Enables basic authorization for an Amplify app. This will apply to all
+     * <p>Enables basic authorization for an Amplify app. This will apply to all
      * branches that are part of this app. </p>
      */
     inline void SetEnableBasicAuth(bool value) { m_enableBasicAuthHasBeenSet = true; m_enableBasicAuth = value; }
 
     /**
-     * <p> Enables basic authorization for an Amplify app. This will apply to all
+     * <p>Enables basic authorization for an Amplify app. This will apply to all
      * branches that are part of this app. </p>
      */
     inline CreateAppRequest& WithEnableBasicAuth(bool value) { SetEnableBasicAuth(value); return *this;}
 
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. You must
+     * <p>The credentials for basic authorization for an Amplify app. You must
      * base64-encode the authorization credentials and provide them in the format
      * <code>user:password</code>.</p>
      */
     inline const Aws::String& GetBasicAuthCredentials() const{ return m_basicAuthCredentials; }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. You must
+     * <p>The credentials for basic authorization for an Amplify app. You must
      * base64-encode the authorization credentials and provide them in the format
      * <code>user:password</code>.</p>
      */
     inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. You must
+     * <p>The credentials for basic authorization for an Amplify app. You must
      * base64-encode the authorization credentials and provide them in the format
      * <code>user:password</code>.</p>
      */
     inline void SetBasicAuthCredentials(const Aws::String& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = value; }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. You must
+     * <p>The credentials for basic authorization for an Amplify app. You must
      * base64-encode the authorization credentials and provide them in the format
      * <code>user:password</code>.</p>
      */
     inline void SetBasicAuthCredentials(Aws::String&& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = std::move(value); }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. You must
+     * <p>The credentials for basic authorization for an Amplify app. You must
      * base64-encode the authorization credentials and provide them in the format
      * <code>user:password</code>.</p>
      */
     inline void SetBasicAuthCredentials(const char* value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials.assign(value); }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. You must
+     * <p>The credentials for basic authorization for an Amplify app. You must
      * base64-encode the authorization credentials and provide them in the format
      * <code>user:password</code>.</p>
      */
     inline CreateAppRequest& WithBasicAuthCredentials(const Aws::String& value) { SetBasicAuthCredentials(value); return *this;}
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. You must
+     * <p>The credentials for basic authorization for an Amplify app. You must
      * base64-encode the authorization credentials and provide them in the format
      * <code>user:password</code>.</p>
      */
     inline CreateAppRequest& WithBasicAuthCredentials(Aws::String&& value) { SetBasicAuthCredentials(std::move(value)); return *this;}
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. You must
+     * <p>The credentials for basic authorization for an Amplify app. You must
      * base64-encode the authorization credentials and provide them in the format
      * <code>user:password</code>.</p>
      */
@@ -737,149 +776,149 @@ namespace Model
 
 
     /**
-     * <p> The custom rewrite and redirect rules for an Amplify app. </p>
+     * <p>The custom rewrite and redirect rules for an Amplify app. </p>
      */
     inline const Aws::Vector<CustomRule>& GetCustomRules() const{ return m_customRules; }
 
     /**
-     * <p> The custom rewrite and redirect rules for an Amplify app. </p>
+     * <p>The custom rewrite and redirect rules for an Amplify app. </p>
      */
     inline bool CustomRulesHasBeenSet() const { return m_customRulesHasBeenSet; }
 
     /**
-     * <p> The custom rewrite and redirect rules for an Amplify app. </p>
+     * <p>The custom rewrite and redirect rules for an Amplify app. </p>
      */
     inline void SetCustomRules(const Aws::Vector<CustomRule>& value) { m_customRulesHasBeenSet = true; m_customRules = value; }
 
     /**
-     * <p> The custom rewrite and redirect rules for an Amplify app. </p>
+     * <p>The custom rewrite and redirect rules for an Amplify app. </p>
      */
     inline void SetCustomRules(Aws::Vector<CustomRule>&& value) { m_customRulesHasBeenSet = true; m_customRules = std::move(value); }
 
     /**
-     * <p> The custom rewrite and redirect rules for an Amplify app. </p>
+     * <p>The custom rewrite and redirect rules for an Amplify app. </p>
      */
     inline CreateAppRequest& WithCustomRules(const Aws::Vector<CustomRule>& value) { SetCustomRules(value); return *this;}
 
     /**
-     * <p> The custom rewrite and redirect rules for an Amplify app. </p>
+     * <p>The custom rewrite and redirect rules for an Amplify app. </p>
      */
     inline CreateAppRequest& WithCustomRules(Aws::Vector<CustomRule>&& value) { SetCustomRules(std::move(value)); return *this;}
 
     /**
-     * <p> The custom rewrite and redirect rules for an Amplify app. </p>
+     * <p>The custom rewrite and redirect rules for an Amplify app. </p>
      */
     inline CreateAppRequest& AddCustomRules(const CustomRule& value) { m_customRulesHasBeenSet = true; m_customRules.push_back(value); return *this; }
 
     /**
-     * <p> The custom rewrite and redirect rules for an Amplify app. </p>
+     * <p>The custom rewrite and redirect rules for an Amplify app. </p>
      */
     inline CreateAppRequest& AddCustomRules(CustomRule&& value) { m_customRulesHasBeenSet = true; m_customRules.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline CreateAppRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline CreateAppRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline CreateAppRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline CreateAppRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline CreateAppRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline CreateAppRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline CreateAppRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline CreateAppRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tag for an Amplify app. </p>
+     * <p>The tag for an Amplify app. </p>
      */
     inline CreateAppRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p> The build specification (build spec) for an Amplify app. </p>
+     * <p>The build specification (build spec) for an Amplify app. </p>
      */
     inline const Aws::String& GetBuildSpec() const{ return m_buildSpec; }
 
     /**
-     * <p> The build specification (build spec) for an Amplify app. </p>
+     * <p>The build specification (build spec) for an Amplify app. </p>
      */
     inline bool BuildSpecHasBeenSet() const { return m_buildSpecHasBeenSet; }
 
     /**
-     * <p> The build specification (build spec) for an Amplify app. </p>
+     * <p>The build specification (build spec) for an Amplify app. </p>
      */
     inline void SetBuildSpec(const Aws::String& value) { m_buildSpecHasBeenSet = true; m_buildSpec = value; }
 
     /**
-     * <p> The build specification (build spec) for an Amplify app. </p>
+     * <p>The build specification (build spec) for an Amplify app. </p>
      */
     inline void SetBuildSpec(Aws::String&& value) { m_buildSpecHasBeenSet = true; m_buildSpec = std::move(value); }
 
     /**
-     * <p> The build specification (build spec) for an Amplify app. </p>
+     * <p>The build specification (build spec) for an Amplify app. </p>
      */
     inline void SetBuildSpec(const char* value) { m_buildSpecHasBeenSet = true; m_buildSpec.assign(value); }
 
     /**
-     * <p> The build specification (build spec) for an Amplify app. </p>
+     * <p>The build specification (build spec) for an Amplify app. </p>
      */
     inline CreateAppRequest& WithBuildSpec(const Aws::String& value) { SetBuildSpec(value); return *this;}
 
     /**
-     * <p> The build specification (build spec) for an Amplify app. </p>
+     * <p>The build specification (build spec) for an Amplify app. </p>
      */
     inline CreateAppRequest& WithBuildSpec(Aws::String&& value) { SetBuildSpec(std::move(value)); return *this;}
 
     /**
-     * <p> The build specification (build spec) for an Amplify app. </p>
+     * <p>The build specification (build spec) for an Amplify app. </p>
      */
     inline CreateAppRequest& WithBuildSpec(const char* value) { SetBuildSpec(value); return *this;}
 
@@ -926,99 +965,99 @@ namespace Model
 
 
     /**
-     * <p> Enables automated branch creation for an Amplify app. </p>
+     * <p>Enables automated branch creation for an Amplify app. </p>
      */
     inline bool GetEnableAutoBranchCreation() const{ return m_enableAutoBranchCreation; }
 
     /**
-     * <p> Enables automated branch creation for an Amplify app. </p>
+     * <p>Enables automated branch creation for an Amplify app. </p>
      */
     inline bool EnableAutoBranchCreationHasBeenSet() const { return m_enableAutoBranchCreationHasBeenSet; }
 
     /**
-     * <p> Enables automated branch creation for an Amplify app. </p>
+     * <p>Enables automated branch creation for an Amplify app. </p>
      */
     inline void SetEnableAutoBranchCreation(bool value) { m_enableAutoBranchCreationHasBeenSet = true; m_enableAutoBranchCreation = value; }
 
     /**
-     * <p> Enables automated branch creation for an Amplify app. </p>
+     * <p>Enables automated branch creation for an Amplify app. </p>
      */
     inline CreateAppRequest& WithEnableAutoBranchCreation(bool value) { SetEnableAutoBranchCreation(value); return *this;}
 
 
     /**
-     * <p> The automated branch creation glob patterns for an Amplify app. </p>
+     * <p>The automated branch creation glob patterns for an Amplify app. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoBranchCreationPatterns() const{ return m_autoBranchCreationPatterns; }
 
     /**
-     * <p> The automated branch creation glob patterns for an Amplify app. </p>
+     * <p>The automated branch creation glob patterns for an Amplify app. </p>
      */
     inline bool AutoBranchCreationPatternsHasBeenSet() const { return m_autoBranchCreationPatternsHasBeenSet; }
 
     /**
-     * <p> The automated branch creation glob patterns for an Amplify app. </p>
+     * <p>The automated branch creation glob patterns for an Amplify app. </p>
      */
     inline void SetAutoBranchCreationPatterns(const Aws::Vector<Aws::String>& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns = value; }
 
     /**
-     * <p> The automated branch creation glob patterns for an Amplify app. </p>
+     * <p>The automated branch creation glob patterns for an Amplify app. </p>
      */
     inline void SetAutoBranchCreationPatterns(Aws::Vector<Aws::String>&& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns = std::move(value); }
 
     /**
-     * <p> The automated branch creation glob patterns for an Amplify app. </p>
+     * <p>The automated branch creation glob patterns for an Amplify app. </p>
      */
     inline CreateAppRequest& WithAutoBranchCreationPatterns(const Aws::Vector<Aws::String>& value) { SetAutoBranchCreationPatterns(value); return *this;}
 
     /**
-     * <p> The automated branch creation glob patterns for an Amplify app. </p>
+     * <p>The automated branch creation glob patterns for an Amplify app. </p>
      */
     inline CreateAppRequest& WithAutoBranchCreationPatterns(Aws::Vector<Aws::String>&& value) { SetAutoBranchCreationPatterns(std::move(value)); return *this;}
 
     /**
-     * <p> The automated branch creation glob patterns for an Amplify app. </p>
+     * <p>The automated branch creation glob patterns for an Amplify app. </p>
      */
     inline CreateAppRequest& AddAutoBranchCreationPatterns(const Aws::String& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.push_back(value); return *this; }
 
     /**
-     * <p> The automated branch creation glob patterns for an Amplify app. </p>
+     * <p>The automated branch creation glob patterns for an Amplify app. </p>
      */
     inline CreateAppRequest& AddAutoBranchCreationPatterns(Aws::String&& value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The automated branch creation glob patterns for an Amplify app. </p>
+     * <p>The automated branch creation glob patterns for an Amplify app. </p>
      */
     inline CreateAppRequest& AddAutoBranchCreationPatterns(const char* value) { m_autoBranchCreationPatternsHasBeenSet = true; m_autoBranchCreationPatterns.push_back(value); return *this; }
 
 
     /**
-     * <p> The automated branch creation configuration for an Amplify app. </p>
+     * <p>The automated branch creation configuration for an Amplify app. </p>
      */
     inline const AutoBranchCreationConfig& GetAutoBranchCreationConfig() const{ return m_autoBranchCreationConfig; }
 
     /**
-     * <p> The automated branch creation configuration for an Amplify app. </p>
+     * <p>The automated branch creation configuration for an Amplify app. </p>
      */
     inline bool AutoBranchCreationConfigHasBeenSet() const { return m_autoBranchCreationConfigHasBeenSet; }
 
     /**
-     * <p> The automated branch creation configuration for an Amplify app. </p>
+     * <p>The automated branch creation configuration for an Amplify app. </p>
      */
     inline void SetAutoBranchCreationConfig(const AutoBranchCreationConfig& value) { m_autoBranchCreationConfigHasBeenSet = true; m_autoBranchCreationConfig = value; }
 
     /**
-     * <p> The automated branch creation configuration for an Amplify app. </p>
+     * <p>The automated branch creation configuration for an Amplify app. </p>
      */
     inline void SetAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { m_autoBranchCreationConfigHasBeenSet = true; m_autoBranchCreationConfig = std::move(value); }
 
     /**
-     * <p> The automated branch creation configuration for an Amplify app. </p>
+     * <p>The automated branch creation configuration for an Amplify app. </p>
      */
     inline CreateAppRequest& WithAutoBranchCreationConfig(const AutoBranchCreationConfig& value) { SetAutoBranchCreationConfig(value); return *this;}
 
     /**
-     * <p> The automated branch creation configuration for an Amplify app. </p>
+     * <p>The automated branch creation configuration for an Amplify app. </p>
      */
     inline CreateAppRequest& WithAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { SetAutoBranchCreationConfig(std::move(value)); return *this;}
 

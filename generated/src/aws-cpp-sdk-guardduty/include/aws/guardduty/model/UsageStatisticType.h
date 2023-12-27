@@ -20,7 +20,8 @@ namespace Model
     SUM_BY_DATA_SOURCE,
     SUM_BY_RESOURCE,
     TOP_RESOURCES,
-    SUM_BY_FEATURES
+    SUM_BY_FEATURES,
+    TOP_ACCOUNTS_BY_FEATURE
   };
 
 namespace UsageStatisticTypeMapper

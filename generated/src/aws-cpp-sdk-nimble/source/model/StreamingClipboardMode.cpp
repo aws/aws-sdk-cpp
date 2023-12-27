@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamingClipboardMode::NOT_SET:
+            return {};
           case StreamingClipboardMode::ENABLED:
             return "ENABLED";
           case StreamingClipboardMode::DISABLED:

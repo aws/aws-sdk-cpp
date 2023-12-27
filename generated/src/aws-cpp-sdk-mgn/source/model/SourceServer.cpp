@@ -22,6 +22,7 @@ namespace Model
 SourceServer::SourceServer() : 
     m_applicationIDHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_connectorActionHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
     m_fqdnForActionFrameworkHasBeenSet(false),
     m_isArchived(false),
@@ -42,6 +43,7 @@ SourceServer::SourceServer() :
 SourceServer::SourceServer(JsonView jsonValue) : 
     m_applicationIDHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_connectorActionHasBeenSet(false),
     m_dataReplicationInfoHasBeenSet(false),
     m_fqdnForActionFrameworkHasBeenSet(false),
     m_isArchived(false),
@@ -74,6 +76,13 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorAction"))
+  {
+    m_connectorAction = jsonValue.GetObject("connectorAction");
+
+    m_connectorActionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dataReplicationInfo"))
@@ -172,6 +181,12 @@ JsonValue SourceServer::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_connectorActionHasBeenSet)
+  {
+   payload.WithObject("connectorAction", m_connectorAction.Jsonize());
 
   }
 

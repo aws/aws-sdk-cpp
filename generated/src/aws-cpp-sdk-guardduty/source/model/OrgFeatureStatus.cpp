@@ -22,6 +22,7 @@ namespace Aws
 
         static const int NEW__HASH = HashingUtils::HashString("NEW");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 
         OrgFeatureStatus GetOrgFeatureStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == NONE_HASH)
           {
             return OrgFeatureStatus::NONE;
+          }
+          else if (hashCode == ALL_HASH)
+          {
+            return OrgFeatureStatus::ALL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrgFeatureStatus::NOT_SET:
+            return {};
           case OrgFeatureStatus::NEW_:
             return "NEW";
           case OrgFeatureStatus::NONE:
             return "NONE";
+          case OrgFeatureStatus::ALL:
+            return "ALL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

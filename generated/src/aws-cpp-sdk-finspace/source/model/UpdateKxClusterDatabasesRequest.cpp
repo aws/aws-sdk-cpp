@@ -15,8 +15,10 @@ using namespace Aws::Utils;
 UpdateKxClusterDatabasesRequest::UpdateKxClusterDatabasesRequest() : 
     m_environmentIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_databasesHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true),
+    m_databasesHasBeenSet(false),
+    m_deploymentConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,12 @@ Aws::String UpdateKxClusterDatabasesRequest::SerializePayload() const
      databasesJsonList[databasesIndex].AsObject(m_databases[databasesIndex].Jsonize());
    }
    payload.WithArray("databases", std::move(databasesJsonList));
+
+  }
+
+  if(m_deploymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("deploymentConfiguration", m_deploymentConfiguration.Jsonize());
 
   }
 

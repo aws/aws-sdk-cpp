@@ -31,23 +31,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::INTERNAL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::INVALID_PAGINATION_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OSISErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

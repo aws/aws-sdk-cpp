@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReprocessingStatus::NOT_SET:
+            return {};
           case ReprocessingStatus::RUNNING:
             return "RUNNING";
           case ReprocessingStatus::SUCCEEDED:

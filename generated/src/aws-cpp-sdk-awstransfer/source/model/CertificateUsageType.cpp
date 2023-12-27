@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateUsageType::NOT_SET:
+            return {};
           case CertificateUsageType::SIGNING:
             return "SIGNING";
           case CertificateUsageType::ENCRYPTION:

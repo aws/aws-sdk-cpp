@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecrawlBehavior::NOT_SET:
+            return {};
           case RecrawlBehavior::CRAWL_EVERYTHING:
             return "CRAWL_EVERYTHING";
           case RecrawlBehavior::CRAWL_NEW_FOLDERS_ONLY:

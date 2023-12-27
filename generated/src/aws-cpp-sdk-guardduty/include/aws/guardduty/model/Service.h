@@ -11,6 +11,7 @@
 #include <aws/guardduty/model/ServiceAdditionalInfo.h>
 #include <aws/guardduty/model/EbsVolumeScanDetails.h>
 #include <aws/guardduty/model/RuntimeDetails.h>
+#include <aws/guardduty/model/Detection.h>
 #include <utility>
 
 namespace Aws
@@ -556,6 +557,37 @@ namespace Model
      */
     inline Service& WithRuntimeDetails(RuntimeDetails&& value) { SetRuntimeDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains information about the detected unusual behavior.</p>
+     */
+    inline const Detection& GetDetection() const{ return m_detection; }
+
+    /**
+     * <p>Contains information about the detected unusual behavior.</p>
+     */
+    inline bool DetectionHasBeenSet() const { return m_detectionHasBeenSet; }
+
+    /**
+     * <p>Contains information about the detected unusual behavior.</p>
+     */
+    inline void SetDetection(const Detection& value) { m_detectionHasBeenSet = true; m_detection = value; }
+
+    /**
+     * <p>Contains information about the detected unusual behavior.</p>
+     */
+    inline void SetDetection(Detection&& value) { m_detectionHasBeenSet = true; m_detection = std::move(value); }
+
+    /**
+     * <p>Contains information about the detected unusual behavior.</p>
+     */
+    inline Service& WithDetection(const Detection& value) { SetDetection(value); return *this;}
+
+    /**
+     * <p>Contains information about the detected unusual behavior.</p>
+     */
+    inline Service& WithDetection(Detection&& value) { SetDetection(std::move(value)); return *this;}
+
   private:
 
     Action m_action;
@@ -599,6 +631,9 @@ namespace Model
 
     RuntimeDetails m_runtimeDetails;
     bool m_runtimeDetailsHasBeenSet = false;
+
+    Detection m_detection;
+    bool m_detectionHasBeenSet = false;
   };
 
 } // namespace Model

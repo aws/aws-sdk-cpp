@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlobalTableStatus::NOT_SET:
+            return {};
           case GlobalTableStatus::CREATING:
             return "CREATING";
           case GlobalTableStatus::ACTIVE:

@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointConfigResult::DescribeEndpointConfigResult()
+DescribeEndpointConfigResult::DescribeEndpointConfigResult() : 
+    m_enableNetworkIsolation(false)
 {
 }
 
-DescribeEndpointConfigResult::DescribeEndpointConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeEndpointConfigResult::DescribeEndpointConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_enableNetworkIsolation(false)
 {
   *this = result;
 }
@@ -87,6 +89,24 @@ DescribeEndpointConfigResult& DescribeEndpointConfigResult::operator =(const Aws
     {
       m_shadowProductionVariants.push_back(shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("ExecutionRoleArn"))
+  {
+    m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
+
+  }
+
+  if(jsonValue.ValueExists("VpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("VpcConfig");
+
+  }
+
+  if(jsonValue.ValueExists("EnableNetworkIsolation"))
+  {
+    m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
+
   }
 
 

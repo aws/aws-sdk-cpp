@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkSecurityType::NOT_SET:
+            return {};
           case NetworkSecurityType::OPEN:
             return "OPEN";
           case NetworkSecurityType::WEP:

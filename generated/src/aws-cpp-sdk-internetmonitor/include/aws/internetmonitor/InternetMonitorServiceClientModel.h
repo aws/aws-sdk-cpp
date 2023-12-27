@@ -22,9 +22,13 @@
 #include <aws/internetmonitor/model/DeleteMonitorResult.h>
 #include <aws/internetmonitor/model/GetHealthEventResult.h>
 #include <aws/internetmonitor/model/GetMonitorResult.h>
+#include <aws/internetmonitor/model/GetQueryResultsResult.h>
+#include <aws/internetmonitor/model/GetQueryStatusResult.h>
 #include <aws/internetmonitor/model/ListHealthEventsResult.h>
 #include <aws/internetmonitor/model/ListMonitorsResult.h>
 #include <aws/internetmonitor/model/ListTagsForResourceResult.h>
+#include <aws/internetmonitor/model/StartQueryResult.h>
+#include <aws/internetmonitor/model/StopQueryResult.h>
 #include <aws/internetmonitor/model/TagResourceResult.h>
 #include <aws/internetmonitor/model/UntagResourceResult.h>
 #include <aws/internetmonitor/model/UpdateMonitorResult.h>
@@ -72,9 +76,13 @@ namespace Aws
       class DeleteMonitorRequest;
       class GetHealthEventRequest;
       class GetMonitorRequest;
+      class GetQueryResultsRequest;
+      class GetQueryStatusRequest;
       class ListHealthEventsRequest;
       class ListMonitorsRequest;
       class ListTagsForResourceRequest;
+      class StartQueryRequest;
+      class StopQueryRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateMonitorRequest;
@@ -85,9 +93,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteMonitorResult, InternetMonitorError> DeleteMonitorOutcome;
       typedef Aws::Utils::Outcome<GetHealthEventResult, InternetMonitorError> GetHealthEventOutcome;
       typedef Aws::Utils::Outcome<GetMonitorResult, InternetMonitorError> GetMonitorOutcome;
+      typedef Aws::Utils::Outcome<GetQueryResultsResult, InternetMonitorError> GetQueryResultsOutcome;
+      typedef Aws::Utils::Outcome<GetQueryStatusResult, InternetMonitorError> GetQueryStatusOutcome;
       typedef Aws::Utils::Outcome<ListHealthEventsResult, InternetMonitorError> ListHealthEventsOutcome;
       typedef Aws::Utils::Outcome<ListMonitorsResult, InternetMonitorError> ListMonitorsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, InternetMonitorError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<StartQueryResult, InternetMonitorError> StartQueryOutcome;
+      typedef Aws::Utils::Outcome<StopQueryResult, InternetMonitorError> StopQueryOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, InternetMonitorError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, InternetMonitorError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateMonitorResult, InternetMonitorError> UpdateMonitorOutcome;
@@ -98,9 +110,13 @@ namespace Aws
       typedef std::future<DeleteMonitorOutcome> DeleteMonitorOutcomeCallable;
       typedef std::future<GetHealthEventOutcome> GetHealthEventOutcomeCallable;
       typedef std::future<GetMonitorOutcome> GetMonitorOutcomeCallable;
+      typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
+      typedef std::future<GetQueryStatusOutcome> GetQueryStatusOutcomeCallable;
       typedef std::future<ListHealthEventsOutcome> ListHealthEventsOutcomeCallable;
       typedef std::future<ListMonitorsOutcome> ListMonitorsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<StartQueryOutcome> StartQueryOutcomeCallable;
+      typedef std::future<StopQueryOutcome> StopQueryOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateMonitorOutcome> UpdateMonitorOutcomeCallable;
@@ -114,9 +130,13 @@ namespace Aws
     typedef std::function<void(const InternetMonitorClient*, const Model::DeleteMonitorRequest&, const Model::DeleteMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMonitorResponseReceivedHandler;
     typedef std::function<void(const InternetMonitorClient*, const Model::GetHealthEventRequest&, const Model::GetHealthEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthEventResponseReceivedHandler;
     typedef std::function<void(const InternetMonitorClient*, const Model::GetMonitorRequest&, const Model::GetMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMonitorResponseReceivedHandler;
+    typedef std::function<void(const InternetMonitorClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryResultsResponseReceivedHandler;
+    typedef std::function<void(const InternetMonitorClient*, const Model::GetQueryStatusRequest&, const Model::GetQueryStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryStatusResponseReceivedHandler;
     typedef std::function<void(const InternetMonitorClient*, const Model::ListHealthEventsRequest&, const Model::ListHealthEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHealthEventsResponseReceivedHandler;
     typedef std::function<void(const InternetMonitorClient*, const Model::ListMonitorsRequest&, const Model::ListMonitorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitorsResponseReceivedHandler;
     typedef std::function<void(const InternetMonitorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const InternetMonitorClient*, const Model::StartQueryRequest&, const Model::StartQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryResponseReceivedHandler;
+    typedef std::function<void(const InternetMonitorClient*, const Model::StopQueryRequest&, const Model::StopQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopQueryResponseReceivedHandler;
     typedef std::function<void(const InternetMonitorClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const InternetMonitorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const InternetMonitorClient*, const Model::UpdateMonitorRequest&, const Model::UpdateMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitorResponseReceivedHandler;

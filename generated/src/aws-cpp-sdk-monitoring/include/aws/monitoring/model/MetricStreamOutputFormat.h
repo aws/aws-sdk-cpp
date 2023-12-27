@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     json,
-    opentelemetry0_7
+    opentelemetry0_7,
+    opentelemetry1_0
   };
 
 namespace MetricStreamOutputFormatMapper

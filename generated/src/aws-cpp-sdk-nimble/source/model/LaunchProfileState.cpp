@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchProfileState::NOT_SET:
+            return {};
           case LaunchProfileState::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case LaunchProfileState::READY:

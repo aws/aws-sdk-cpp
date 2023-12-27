@@ -131,90 +131,90 @@ namespace Model
 
 
     /**
-     * <p>An S3 link to the job document to use in the template. Required if you don't
-     * specify a value for <code>document</code>.</p>  <p>If the job document
-     * resides in an S3 bucket, you must use a placeholder link when specifying the
-     * document.</p> <p>The placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3
+     * object URL and is required if you don't specify a value for
+     * <code>document</code>.</p> <p>For example, <code>--document-source
+     * https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods
+     * for accessing a bucket</a>.</p>
      */
     inline const Aws::String& GetDocumentSource() const{ return m_documentSource; }
 
     /**
-     * <p>An S3 link to the job document to use in the template. Required if you don't
-     * specify a value for <code>document</code>.</p>  <p>If the job document
-     * resides in an S3 bucket, you must use a placeholder link when specifying the
-     * document.</p> <p>The placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3
+     * object URL and is required if you don't specify a value for
+     * <code>document</code>.</p> <p>For example, <code>--document-source
+     * https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods
+     * for accessing a bucket</a>.</p>
      */
     inline bool DocumentSourceHasBeenSet() const { return m_documentSourceHasBeenSet; }
 
     /**
-     * <p>An S3 link to the job document to use in the template. Required if you don't
-     * specify a value for <code>document</code>.</p>  <p>If the job document
-     * resides in an S3 bucket, you must use a placeholder link when specifying the
-     * document.</p> <p>The placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3
+     * object URL and is required if you don't specify a value for
+     * <code>document</code>.</p> <p>For example, <code>--document-source
+     * https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods
+     * for accessing a bucket</a>.</p>
      */
     inline void SetDocumentSource(const Aws::String& value) { m_documentSourceHasBeenSet = true; m_documentSource = value; }
 
     /**
-     * <p>An S3 link to the job document to use in the template. Required if you don't
-     * specify a value for <code>document</code>.</p>  <p>If the job document
-     * resides in an S3 bucket, you must use a placeholder link when specifying the
-     * document.</p> <p>The placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3
+     * object URL and is required if you don't specify a value for
+     * <code>document</code>.</p> <p>For example, <code>--document-source
+     * https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods
+     * for accessing a bucket</a>.</p>
      */
     inline void SetDocumentSource(Aws::String&& value) { m_documentSourceHasBeenSet = true; m_documentSource = std::move(value); }
 
     /**
-     * <p>An S3 link to the job document to use in the template. Required if you don't
-     * specify a value for <code>document</code>.</p>  <p>If the job document
-     * resides in an S3 bucket, you must use a placeholder link when specifying the
-     * document.</p> <p>The placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3
+     * object URL and is required if you don't specify a value for
+     * <code>document</code>.</p> <p>For example, <code>--document-source
+     * https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods
+     * for accessing a bucket</a>.</p>
      */
     inline void SetDocumentSource(const char* value) { m_documentSourceHasBeenSet = true; m_documentSource.assign(value); }
 
     /**
-     * <p>An S3 link to the job document to use in the template. Required if you don't
-     * specify a value for <code>document</code>.</p>  <p>If the job document
-     * resides in an S3 bucket, you must use a placeholder link when specifying the
-     * document.</p> <p>The placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3
+     * object URL and is required if you don't specify a value for
+     * <code>document</code>.</p> <p>For example, <code>--document-source
+     * https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods
+     * for accessing a bucket</a>.</p>
      */
     inline CreateJobTemplateRequest& WithDocumentSource(const Aws::String& value) { SetDocumentSource(value); return *this;}
 
     /**
-     * <p>An S3 link to the job document to use in the template. Required if you don't
-     * specify a value for <code>document</code>.</p>  <p>If the job document
-     * resides in an S3 bucket, you must use a placeholder link when specifying the
-     * document.</p> <p>The placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3
+     * object URL and is required if you don't specify a value for
+     * <code>document</code>.</p> <p>For example, <code>--document-source
+     * https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods
+     * for accessing a bucket</a>.</p>
      */
     inline CreateJobTemplateRequest& WithDocumentSource(Aws::String&& value) { SetDocumentSource(std::move(value)); return *this;}
 
     /**
-     * <p>An S3 link to the job document to use in the template. Required if you don't
-     * specify a value for <code>document</code>.</p>  <p>If the job document
-     * resides in an S3 bucket, you must use a placeholder link when specifying the
-     * document.</p> <p>The placeholder link is of the following form:</p> <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> 
+     * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3
+     * object URL and is required if you don't specify a value for
+     * <code>document</code>.</p> <p>For example, <code>--document-source
+     * https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods
+     * for accessing a bucket</a>.</p>
      */
     inline CreateJobTemplateRequest& WithDocumentSource(const char* value) { SetDocumentSource(value); return *this;}
 
@@ -509,7 +509,7 @@ namespace Model
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
      * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
+     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
      * allowed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDestinationPackageVersions() const{ return m_destinationPackageVersions; }
@@ -517,7 +517,7 @@ namespace Model
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
      * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
+     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
      * allowed.</p>
      */
     inline bool DestinationPackageVersionsHasBeenSet() const { return m_destinationPackageVersionsHasBeenSet; }
@@ -525,7 +525,7 @@ namespace Model
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
      * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
+     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
      * allowed.</p>
      */
     inline void SetDestinationPackageVersions(const Aws::Vector<Aws::String>& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions = value; }
@@ -533,7 +533,7 @@ namespace Model
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
      * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
+     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
      * allowed.</p>
      */
     inline void SetDestinationPackageVersions(Aws::Vector<Aws::String>&& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions = std::move(value); }
@@ -541,7 +541,7 @@ namespace Model
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
      * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
+     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
      * allowed.</p>
      */
     inline CreateJobTemplateRequest& WithDestinationPackageVersions(const Aws::Vector<Aws::String>& value) { SetDestinationPackageVersions(value); return *this;}
@@ -549,7 +549,7 @@ namespace Model
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
      * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
+     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
      * allowed.</p>
      */
     inline CreateJobTemplateRequest& WithDestinationPackageVersions(Aws::Vector<Aws::String>&& value) { SetDestinationPackageVersions(std::move(value)); return *this;}
@@ -557,7 +557,7 @@ namespace Model
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
      * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
+     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
      * allowed.</p>
      */
     inline CreateJobTemplateRequest& AddDestinationPackageVersions(const Aws::String& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions.push_back(value); return *this; }
@@ -565,7 +565,7 @@ namespace Model
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
      * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
+     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
      * allowed.</p>
      */
     inline CreateJobTemplateRequest& AddDestinationPackageVersions(Aws::String&& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions.push_back(std::move(value)); return *this; }
@@ -573,7 +573,7 @@ namespace Model
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
      * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
+     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
      * allowed.</p>
      */
     inline CreateJobTemplateRequest& AddDestinationPackageVersions(const char* value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions.push_back(value); return *this; }

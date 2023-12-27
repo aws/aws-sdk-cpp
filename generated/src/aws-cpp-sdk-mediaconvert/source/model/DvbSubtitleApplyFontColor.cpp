@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubtitleApplyFontColor::NOT_SET:
+            return {};
           case DvbSubtitleApplyFontColor::WHITE_TEXT_ONLY:
             return "WHITE_TEXT_ONLY";
           case DvbSubtitleApplyFontColor::ALL_TEXT:

@@ -27,6 +27,7 @@ namespace Aws
         static const int opt_out_list_name_HASH = HashingUtils::HashString("opt-out-list-name");
         static const int shared_routes_enabled_HASH = HashingUtils::HashString("shared-routes-enabled");
         static const int deletion_protection_enabled_HASH = HashingUtils::HashString("deletion-protection-enabled");
+        static const int two_way_channel_arn_HASH = HashingUtils::HashString("two-way-channel-arn");
 
 
         PoolFilterName GetPoolFilterNameForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return PoolFilterName::deletion_protection_enabled;
           }
+          else if (hashCode == two_way_channel_arn_HASH)
+          {
+            return PoolFilterName::two_way_channel_arn;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PoolFilterName::NOT_SET:
+            return {};
           case PoolFilterName::status:
             return "status";
           case PoolFilterName::message_type:
@@ -88,6 +95,8 @@ namespace Aws
             return "shared-routes-enabled";
           case PoolFilterName::deletion_protection_enabled:
             return "deletion-protection-enabled";
+          case PoolFilterName::two_way_channel_arn:
+            return "two-way-channel-arn";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

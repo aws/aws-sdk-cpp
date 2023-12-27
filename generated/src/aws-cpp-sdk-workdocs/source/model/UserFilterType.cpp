@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserFilterType::NOT_SET:
+            return {};
           case UserFilterType::ALL:
             return "ALL";
           case UserFilterType::ACTIVE_PENDING:

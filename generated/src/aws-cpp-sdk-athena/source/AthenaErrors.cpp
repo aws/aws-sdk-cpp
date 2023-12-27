@@ -53,23 +53,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == METADATA_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::METADATA), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::METADATA), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == SESSION_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::SESSION_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::SESSION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

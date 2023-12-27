@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeModificationState::NOT_SET:
+            return {};
           case VolumeModificationState::modifying:
             return "modifying";
           case VolumeModificationState::optimizing:

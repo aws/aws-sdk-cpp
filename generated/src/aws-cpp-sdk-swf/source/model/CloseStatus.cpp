@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloseStatus::NOT_SET:
+            return {};
           case CloseStatus::COMPLETED:
             return "COMPLETED";
           case CloseStatus::FAILED:

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int spot_HASH = HashingUtils::HashString("spot");
         static const int scheduled_HASH = HashingUtils::HashString("scheduled");
+        static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
 
 
         InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == scheduled_HASH)
           {
             return InstanceLifecycleType::scheduled;
+          }
+          else if (hashCode == capacity_block_HASH)
+          {
+            return InstanceLifecycleType::capacity_block;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceLifecycleType::NOT_SET:
+            return {};
           case InstanceLifecycleType::spot:
             return "spot";
           case InstanceLifecycleType::scheduled:
             return "scheduled";
+          case InstanceLifecycleType::capacity_block:
+            return "capacity-block";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

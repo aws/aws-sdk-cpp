@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListenerProtocol::NOT_SET:
+            return {};
           case ListenerProtocol::HTTP:
             return "HTTP";
           case ListenerProtocol::HTTPS:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudComponentState::NOT_SET:
+            return {};
           case CloudComponentState::REQUESTED:
             return "REQUESTED";
           case CloudComponentState::INITIATED:

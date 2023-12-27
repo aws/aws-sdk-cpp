@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AsyncJobStatus::NOT_SET:
+            return {};
           case AsyncJobStatus::IN_PROGRESS_INITIALIZING:
             return "IN_PROGRESS_INITIALIZING";
           case AsyncJobStatus::IN_PROGRESS:

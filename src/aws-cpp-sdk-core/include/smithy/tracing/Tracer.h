@@ -14,7 +14,7 @@ namespace smithy {
             /**
              * The kind of span being created.
              */
-            enum class SMITHY_API SpanKind {
+            enum class SpanKind {
                 INTERNAL,
                 CLIENT,
                 SERVER,

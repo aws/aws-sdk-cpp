@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageType::NOT_SET:
+            return {};
           case UsageType::EC2_INSTANCE_HOURS:
             return "EC2_INSTANCE_HOURS";
           case UsageType::ECR_INITIAL_SCAN:

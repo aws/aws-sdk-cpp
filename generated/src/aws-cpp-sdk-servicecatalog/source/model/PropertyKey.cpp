@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PropertyKey::NOT_SET:
+            return {};
           case PropertyKey::OWNER:
             return "OWNER";
           case PropertyKey::LAUNCH_ROLE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EffectivePolicyType::NOT_SET:
+            return {};
           case EffectivePolicyType::TAG_POLICY:
             return "TAG_POLICY";
           case EffectivePolicyType::BACKUP_POLICY:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Capability::NOT_SET:
+            return {};
           case Capability::CAPABILITY_IAM:
             return "CAPABILITY_IAM";
           case Capability::CAPABILITY_NAMED_IAM:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LastLaunchResult::NOT_SET:
+            return {};
           case LastLaunchResult::NOT_STARTED:
             return "NOT_STARTED";
           case LastLaunchResult::PENDING:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestType::NOT_SET:
+            return {};
           case TestType::Software:
             return "Software";
           case TestType::Hardware:

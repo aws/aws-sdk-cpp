@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitoringJobDefinitionSortKey::NOT_SET:
+            return {};
           case MonitoringJobDefinitionSortKey::Name:
             return "Name";
           case MonitoringJobDefinitionSortKey::CreationTime:

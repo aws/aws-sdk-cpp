@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FacetAttributeType::NOT_SET:
+            return {};
           case FacetAttributeType::STRING:
             return "STRING";
           case FacetAttributeType::BINARY:

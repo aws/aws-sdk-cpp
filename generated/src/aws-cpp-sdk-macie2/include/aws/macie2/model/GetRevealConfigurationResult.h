@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/macie2/model/RevealConfiguration.h>
+#include <aws/macie2/model/RetrievalConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -34,34 +35,65 @@ namespace Model
 
 
     /**
-     * <p>The current configuration settings and the status of the configuration for
-     * the account.</p>
+     * <p>The KMS key that's used to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline const RevealConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The current configuration settings and the status of the configuration for
-     * the account.</p>
+     * <p>The KMS key that's used to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline void SetConfiguration(const RevealConfiguration& value) { m_configuration = value; }
 
     /**
-     * <p>The current configuration settings and the status of the configuration for
-     * the account.</p>
+     * <p>The KMS key that's used to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline void SetConfiguration(RevealConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
-     * <p>The current configuration settings and the status of the configuration for
-     * the account.</p>
+     * <p>The KMS key that's used to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline GetRevealConfigurationResult& WithConfiguration(const RevealConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The current configuration settings and the status of the configuration for
-     * the account.</p>
+     * <p>The KMS key that's used to encrypt the sensitive data, and the status of the
+     * configuration for the Amazon Macie account.</p>
      */
     inline GetRevealConfigurationResult& WithConfiguration(RevealConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The access method and settings that are used to retrieve the sensitive
+     * data.</p>
+     */
+    inline const RetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
+
+    /**
+     * <p>The access method and settings that are used to retrieve the sensitive
+     * data.</p>
+     */
+    inline void SetRetrievalConfiguration(const RetrievalConfiguration& value) { m_retrievalConfiguration = value; }
+
+    /**
+     * <p>The access method and settings that are used to retrieve the sensitive
+     * data.</p>
+     */
+    inline void SetRetrievalConfiguration(RetrievalConfiguration&& value) { m_retrievalConfiguration = std::move(value); }
+
+    /**
+     * <p>The access method and settings that are used to retrieve the sensitive
+     * data.</p>
+     */
+    inline GetRevealConfigurationResult& WithRetrievalConfiguration(const RetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
+
+    /**
+     * <p>The access method and settings that are used to retrieve the sensitive
+     * data.</p>
+     */
+    inline GetRevealConfigurationResult& WithRetrievalConfiguration(RetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
 
 
     
@@ -88,6 +120,8 @@ namespace Model
   private:
 
     RevealConfiguration m_configuration;
+
+    RetrievalConfiguration m_retrievalConfiguration;
 
     Aws::String m_requestId;
   };

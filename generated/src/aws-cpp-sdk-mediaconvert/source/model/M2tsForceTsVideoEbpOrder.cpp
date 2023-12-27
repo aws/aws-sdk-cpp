@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsForceTsVideoEbpOrder::NOT_SET:
+            return {};
           case M2tsForceTsVideoEbpOrder::FORCE:
             return "FORCE";
           case M2tsForceTsVideoEbpOrder::DEFAULT:

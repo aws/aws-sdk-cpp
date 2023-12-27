@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdditionalResponseFieldType::NOT_SET:
+            return {};
           case AdditionalResponseFieldType::WEBURL:
             return "WEBURL";
           default:

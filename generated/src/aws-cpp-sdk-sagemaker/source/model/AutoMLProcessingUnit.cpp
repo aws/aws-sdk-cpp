@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLProcessingUnit::NOT_SET:
+            return {};
           case AutoMLProcessingUnit::CPU:
             return "CPU";
           case AutoMLProcessingUnit::GPU:

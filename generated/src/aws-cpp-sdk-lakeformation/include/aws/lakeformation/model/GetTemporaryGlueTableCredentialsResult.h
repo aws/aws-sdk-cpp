@@ -7,6 +7,7 @@
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -167,6 +168,47 @@ namespace Model
     inline GetTemporaryGlueTableCredentialsResult& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The Amazon S3 path for the temporary credentials.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVendedS3Path() const{ return m_vendedS3Path; }
+
+    /**
+     * <p>The Amazon S3 path for the temporary credentials.</p>
+     */
+    inline void SetVendedS3Path(const Aws::Vector<Aws::String>& value) { m_vendedS3Path = value; }
+
+    /**
+     * <p>The Amazon S3 path for the temporary credentials.</p>
+     */
+    inline void SetVendedS3Path(Aws::Vector<Aws::String>&& value) { m_vendedS3Path = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 path for the temporary credentials.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsResult& WithVendedS3Path(const Aws::Vector<Aws::String>& value) { SetVendedS3Path(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 path for the temporary credentials.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsResult& WithVendedS3Path(Aws::Vector<Aws::String>&& value) { SetVendedS3Path(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 path for the temporary credentials.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsResult& AddVendedS3Path(const Aws::String& value) { m_vendedS3Path.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon S3 path for the temporary credentials.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsResult& AddVendedS3Path(Aws::String&& value) { m_vendedS3Path.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon S3 path for the temporary credentials.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsResult& AddVendedS3Path(const char* value) { m_vendedS3Path.push_back(value); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -197,6 +239,8 @@ namespace Model
     Aws::String m_sessionToken;
 
     Aws::Utils::DateTime m_expiration;
+
+    Aws::Vector<Aws::String> m_vendedS3Path;
 
     Aws::String m_requestId;
   };

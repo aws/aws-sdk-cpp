@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExistCondition::NOT_SET:
+            return {};
           case ExistCondition::MUST_EXIST:
             return "MUST_EXIST";
           case ExistCondition::NOT_EXIST:

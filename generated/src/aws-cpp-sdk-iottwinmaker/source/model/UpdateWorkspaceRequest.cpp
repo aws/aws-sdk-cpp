@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateWorkspaceRequest::UpdateWorkspaceRequest() : 
     m_workspaceIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_s3LocationHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const
   if(m_roleHasBeenSet)
   {
    payload.WithString("role", m_role);
+
+  }
+
+  if(m_s3LocationHasBeenSet)
+  {
+   payload.WithString("s3Location", m_s3Location);
 
   }
 

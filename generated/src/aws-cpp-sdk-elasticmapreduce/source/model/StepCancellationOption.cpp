@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StepCancellationOption::NOT_SET:
+            return {};
           case StepCancellationOption::SEND_INTERRUPT:
             return "SEND_INTERRUPT";
           case StepCancellationOption::TERMINATE_PROCESS:

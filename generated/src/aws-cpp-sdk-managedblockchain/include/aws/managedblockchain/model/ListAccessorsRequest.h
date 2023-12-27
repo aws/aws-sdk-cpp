@@ -7,6 +7,7 @@
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/managedblockchain/ManagedBlockchainRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/managedblockchain/model/AccessorNetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -107,6 +108,55 @@ namespace Model
      */
     inline ListAccessorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for
+     * all existing <code>Accessors</code> tokens that were created before the
+     * <code>networkType</code> property was introduced.</p> 
+     */
+    inline const AccessorNetworkType& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for
+     * all existing <code>Accessors</code> tokens that were created before the
+     * <code>networkType</code> property was introduced.</p> 
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for
+     * all existing <code>Accessors</code> tokens that were created before the
+     * <code>networkType</code> property was introduced.</p> 
+     */
+    inline void SetNetworkType(const AccessorNetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for
+     * all existing <code>Accessors</code> tokens that were created before the
+     * <code>networkType</code> property was introduced.</p> 
+     */
+    inline void SetNetworkType(AccessorNetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for
+     * all existing <code>Accessors</code> tokens that were created before the
+     * <code>networkType</code> property was introduced.</p> 
+     */
+    inline ListAccessorsRequest& WithNetworkType(const AccessorNetworkType& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The blockchain network that the <code>Accessor</code> token is created
+     * for.</p>  <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for
+     * all existing <code>Accessors</code> tokens that were created before the
+     * <code>networkType</code> property was introduced.</p> 
+     */
+    inline ListAccessorsRequest& WithNetworkType(AccessorNetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+
   private:
 
     int m_maxResults;
@@ -114,6 +164,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    AccessorNetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -11,6 +11,7 @@
 #include <aws/quicksight/model/Parameters.h>
 #include <aws/quicksight/model/DashboardPublishOptions.h>
 #include <aws/quicksight/model/DashboardVersionDefinition.h>
+#include <aws/quicksight/model/ValidationStrategy.h>
 #include <utility>
 
 namespace Aws
@@ -564,6 +565,43 @@ namespace Model
      */
     inline UpdateDashboardRequest& WithDefinition(DashboardVersionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The option to relax the validation needed to update a dashboard with
+     * definition objects. This skips the validation step for specific errors.</p>
+     */
+    inline const ValidationStrategy& GetValidationStrategy() const{ return m_validationStrategy; }
+
+    /**
+     * <p>The option to relax the validation needed to update a dashboard with
+     * definition objects. This skips the validation step for specific errors.</p>
+     */
+    inline bool ValidationStrategyHasBeenSet() const { return m_validationStrategyHasBeenSet; }
+
+    /**
+     * <p>The option to relax the validation needed to update a dashboard with
+     * definition objects. This skips the validation step for specific errors.</p>
+     */
+    inline void SetValidationStrategy(const ValidationStrategy& value) { m_validationStrategyHasBeenSet = true; m_validationStrategy = value; }
+
+    /**
+     * <p>The option to relax the validation needed to update a dashboard with
+     * definition objects. This skips the validation step for specific errors.</p>
+     */
+    inline void SetValidationStrategy(ValidationStrategy&& value) { m_validationStrategyHasBeenSet = true; m_validationStrategy = std::move(value); }
+
+    /**
+     * <p>The option to relax the validation needed to update a dashboard with
+     * definition objects. This skips the validation step for specific errors.</p>
+     */
+    inline UpdateDashboardRequest& WithValidationStrategy(const ValidationStrategy& value) { SetValidationStrategy(value); return *this;}
+
+    /**
+     * <p>The option to relax the validation needed to update a dashboard with
+     * definition objects. This skips the validation step for specific errors.</p>
+     */
+    inline UpdateDashboardRequest& WithValidationStrategy(ValidationStrategy&& value) { SetValidationStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -592,6 +630,9 @@ namespace Model
 
     DashboardVersionDefinition m_definition;
     bool m_definitionHasBeenSet = false;
+
+    ValidationStrategy m_validationStrategy;
+    bool m_validationStrategyHasBeenSet = false;
   };
 
 } // namespace Model

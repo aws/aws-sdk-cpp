@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SceneErrorCode::NOT_SET:
+            return {};
           case SceneErrorCode::MATTERPORT_ERROR:
             return "MATTERPORT_ERROR";
           default:

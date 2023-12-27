@@ -40,7 +40,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_codeSigningConfigArnHasBeenSet(false),
     m_architecturesHasBeenSet(false),
     m_ephemeralStorageHasBeenSet(false),
-    m_snapStartHasBeenSet(false)
+    m_snapStartHasBeenSet(false),
+    m_loggingConfigHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
   if(m_snapStartHasBeenSet)
   {
    payload.WithObject("SnapStart", m_snapStart.Jsonize());
+
+  }
+
+  if(m_loggingConfigHasBeenSet)
+  {
+   payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
 
   }
 

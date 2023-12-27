@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudFormationStackRecordSourceType::NOT_SET:
+            return {};
           case CloudFormationStackRecordSourceType::ExportSnapshotRecord:
             return "ExportSnapshotRecord";
           default:

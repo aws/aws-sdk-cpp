@@ -27,7 +27,10 @@
 #include <aws/backup/model/CreateBackupVaultRequest.h>
 #include <aws/backup/model/CreateFrameworkRequest.h>
 #include <aws/backup/model/CreateLegalHoldRequest.h>
+#include <aws/backup/model/CreateLogicallyAirGappedBackupVaultRequest.h>
 #include <aws/backup/model/CreateReportPlanRequest.h>
+#include <aws/backup/model/CreateRestoreTestingPlanRequest.h>
+#include <aws/backup/model/CreateRestoreTestingSelectionRequest.h>
 #include <aws/backup/model/DeleteBackupPlanRequest.h>
 #include <aws/backup/model/DeleteBackupSelectionRequest.h>
 #include <aws/backup/model/DeleteBackupVaultRequest.h>
@@ -37,6 +40,8 @@
 #include <aws/backup/model/DeleteFrameworkRequest.h>
 #include <aws/backup/model/DeleteRecoveryPointRequest.h>
 #include <aws/backup/model/DeleteReportPlanRequest.h>
+#include <aws/backup/model/DeleteRestoreTestingPlanRequest.h>
+#include <aws/backup/model/DeleteRestoreTestingSelectionRequest.h>
 #include <aws/backup/model/DescribeBackupJobRequest.h>
 #include <aws/backup/model/DescribeBackupVaultRequest.h>
 #include <aws/backup/model/DescribeCopyJobRequest.h>
@@ -59,26 +64,39 @@
 #include <aws/backup/model/GetBackupVaultNotificationsRequest.h>
 #include <aws/backup/model/GetLegalHoldRequest.h>
 #include <aws/backup/model/GetRecoveryPointRestoreMetadataRequest.h>
+#include <aws/backup/model/GetRestoreJobMetadataRequest.h>
+#include <aws/backup/model/GetRestoreTestingInferredMetadataRequest.h>
+#include <aws/backup/model/GetRestoreTestingPlanRequest.h>
+#include <aws/backup/model/GetRestoreTestingSelectionRequest.h>
+#include <aws/backup/model/GetSupportedResourceTypesRequest.h>
+#include <aws/backup/model/ListBackupJobSummariesRequest.h>
 #include <aws/backup/model/ListBackupJobsRequest.h>
 #include <aws/backup/model/ListBackupPlanTemplatesRequest.h>
 #include <aws/backup/model/ListBackupPlanVersionsRequest.h>
 #include <aws/backup/model/ListBackupPlansRequest.h>
 #include <aws/backup/model/ListBackupSelectionsRequest.h>
 #include <aws/backup/model/ListBackupVaultsRequest.h>
+#include <aws/backup/model/ListCopyJobSummariesRequest.h>
 #include <aws/backup/model/ListCopyJobsRequest.h>
 #include <aws/backup/model/ListFrameworksRequest.h>
 #include <aws/backup/model/ListLegalHoldsRequest.h>
 #include <aws/backup/model/ListProtectedResourcesRequest.h>
+#include <aws/backup/model/ListProtectedResourcesByBackupVaultRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByBackupVaultRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByLegalHoldRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByResourceRequest.h>
 #include <aws/backup/model/ListReportJobsRequest.h>
 #include <aws/backup/model/ListReportPlansRequest.h>
+#include <aws/backup/model/ListRestoreJobSummariesRequest.h>
 #include <aws/backup/model/ListRestoreJobsRequest.h>
+#include <aws/backup/model/ListRestoreJobsByProtectedResourceRequest.h>
+#include <aws/backup/model/ListRestoreTestingPlansRequest.h>
+#include <aws/backup/model/ListRestoreTestingSelectionsRequest.h>
 #include <aws/backup/model/ListTagsRequest.h>
 #include <aws/backup/model/PutBackupVaultAccessPolicyRequest.h>
 #include <aws/backup/model/PutBackupVaultLockConfigurationRequest.h>
 #include <aws/backup/model/PutBackupVaultNotificationsRequest.h>
+#include <aws/backup/model/PutRestoreValidationResultRequest.h>
 #include <aws/backup/model/StartBackupJobRequest.h>
 #include <aws/backup/model/StartCopyJobRequest.h>
 #include <aws/backup/model/StartReportJobRequest.h>
@@ -92,6 +110,8 @@
 #include <aws/backup/model/UpdateRecoveryPointLifecycleRequest.h>
 #include <aws/backup/model/UpdateRegionSettingsRequest.h>
 #include <aws/backup/model/UpdateReportPlanRequest.h>
+#include <aws/backup/model/UpdateRestoreTestingPlanRequest.h>
+#include <aws/backup/model/UpdateRestoreTestingSelectionRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -411,6 +431,39 @@ CreateLegalHoldOutcome BackupClient::CreateLegalHold(const CreateLegalHoldReques
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateLogicallyAirGappedBackupVaultOutcome BackupClient::CreateLogicallyAirGappedBackupVault(const CreateLogicallyAirGappedBackupVaultRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateLogicallyAirGappedBackupVault);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLogicallyAirGappedBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateLogicallyAirGappedBackupVault", "Required field: BackupVaultName, is not set");
+    return CreateLogicallyAirGappedBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateLogicallyAirGappedBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateLogicallyAirGappedBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateLogicallyAirGappedBackupVault",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateLogicallyAirGappedBackupVaultOutcome>(
+    [&]()-> CreateLogicallyAirGappedBackupVaultOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLogicallyAirGappedBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logically-air-gapped-backup-vaults/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
+      return CreateLogicallyAirGappedBackupVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateReportPlanOutcome BackupClient::CreateReportPlan(const CreateReportPlanRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateReportPlan);
@@ -432,6 +485,67 @@ CreateReportPlanOutcome BackupClient::CreateReportPlan(const CreateReportPlanReq
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReportPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/audit/report-plans");
       return CreateReportPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateRestoreTestingPlanOutcome BackupClient::CreateRestoreTestingPlan(const CreateRestoreTestingPlanRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateRestoreTestingPlan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRestoreTestingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateRestoreTestingPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateRestoreTestingPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateRestoreTestingPlan",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateRestoreTestingPlanOutcome>(
+    [&]()-> CreateRestoreTestingPlanOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRestoreTestingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans");
+      return CreateRestoreTestingPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateRestoreTestingSelectionOutcome BackupClient::CreateRestoreTestingSelection(const CreateRestoreTestingSelectionRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateRestoreTestingSelection);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRestoreTestingSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreTestingPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateRestoreTestingSelection", "Required field: RestoreTestingPlanName, is not set");
+    return CreateRestoreTestingSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingPlanName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateRestoreTestingSelection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateRestoreTestingSelection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateRestoreTestingSelection",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateRestoreTestingSelectionOutcome>(
+    [&]()-> CreateRestoreTestingSelectionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRestoreTestingSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/selections");
+      return CreateRestoreTestingSelectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -746,6 +860,79 @@ DeleteReportPlanOutcome BackupClient::DeleteReportPlan(const DeleteReportPlanReq
       endpointResolutionOutcome.GetResult().AddPathSegments("/audit/report-plans/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportPlanName());
       return DeleteReportPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteRestoreTestingPlanOutcome BackupClient::DeleteRestoreTestingPlan(const DeleteRestoreTestingPlanRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteRestoreTestingPlan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRestoreTestingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreTestingPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRestoreTestingPlan", "Required field: RestoreTestingPlanName, is not set");
+    return DeleteRestoreTestingPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingPlanName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteRestoreTestingPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteRestoreTestingPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteRestoreTestingPlan",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteRestoreTestingPlanOutcome>(
+    [&]()-> DeleteRestoreTestingPlanOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRestoreTestingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
+      return DeleteRestoreTestingPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteRestoreTestingSelectionOutcome BackupClient::DeleteRestoreTestingSelection(const DeleteRestoreTestingSelectionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteRestoreTestingSelection);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRestoreTestingSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreTestingPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRestoreTestingSelection", "Required field: RestoreTestingPlanName, is not set");
+    return DeleteRestoreTestingSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingPlanName]", false));
+  }
+  if (!request.RestoreTestingSelectionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRestoreTestingSelection", "Required field: RestoreTestingSelectionName, is not set");
+    return DeleteRestoreTestingSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingSelectionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteRestoreTestingSelection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteRestoreTestingSelection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteRestoreTestingSelection",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteRestoreTestingSelectionOutcome>(
+    [&]()-> DeleteRestoreTestingSelectionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRestoreTestingSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/selections/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingSelectionName());
+      return DeleteRestoreTestingSelectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1502,33 +1689,202 @@ GetRecoveryPointRestoreMetadataOutcome BackupClient::GetRecoveryPointRestoreMeta
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
-GetSupportedResourceTypesOutcome BackupClient::GetSupportedResourceTypes() const
+GetRestoreJobMetadataOutcome BackupClient::GetRestoreJobMetadata(const GetRestoreJobMetadataRequest& request) const
 {
-AWS_OPERATION_GUARD(GetSupportedResourceTypes);
+  AWS_OPERATION_GUARD(GetRestoreJobMetadata);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRestoreJobMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRestoreJobMetadata", "Required field: RestoreJobId, is not set");
+    return GetRestoreJobMetadataOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreJobId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRestoreJobMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetRestoreJobMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRestoreJobMetadata",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetRestoreJobMetadataOutcome>(
+    [&]()-> GetRestoreJobMetadataOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRestoreJobMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreJobId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
+      return GetRestoreJobMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetRestoreTestingInferredMetadataOutcome BackupClient::GetRestoreTestingInferredMetadata(const GetRestoreTestingInferredMetadataRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetRestoreTestingInferredMetadata);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRestoreTestingInferredMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRestoreTestingInferredMetadata", "Required field: BackupVaultName, is not set");
+    return GetRestoreTestingInferredMetadataOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.RecoveryPointArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRestoreTestingInferredMetadata", "Required field: RecoveryPointArn, is not set");
+    return GetRestoreTestingInferredMetadataOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRestoreTestingInferredMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetRestoreTestingInferredMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRestoreTestingInferredMetadata",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetRestoreTestingInferredMetadataOutcome>(
+    [&]()-> GetRestoreTestingInferredMetadataOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRestoreTestingInferredMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/inferred-metadata");
+      return GetRestoreTestingInferredMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetRestoreTestingPlanOutcome BackupClient::GetRestoreTestingPlan(const GetRestoreTestingPlanRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetRestoreTestingPlan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRestoreTestingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreTestingPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRestoreTestingPlan", "Required field: RestoreTestingPlanName, is not set");
+    return GetRestoreTestingPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingPlanName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRestoreTestingPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetRestoreTestingPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRestoreTestingPlan",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetRestoreTestingPlanOutcome>(
+    [&]()-> GetRestoreTestingPlanOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRestoreTestingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
+      return GetRestoreTestingPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetRestoreTestingSelectionOutcome BackupClient::GetRestoreTestingSelection(const GetRestoreTestingSelectionRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetRestoreTestingSelection);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRestoreTestingSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreTestingPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRestoreTestingSelection", "Required field: RestoreTestingPlanName, is not set");
+    return GetRestoreTestingSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingPlanName]", false));
+  }
+  if (!request.RestoreTestingSelectionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRestoreTestingSelection", "Required field: RestoreTestingSelectionName, is not set");
+    return GetRestoreTestingSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingSelectionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRestoreTestingSelection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetRestoreTestingSelection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRestoreTestingSelection",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetRestoreTestingSelectionOutcome>(
+    [&]()-> GetRestoreTestingSelectionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRestoreTestingSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/selections/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingSelectionName());
+      return GetRestoreTestingSelectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetSupportedResourceTypesOutcome BackupClient::GetSupportedResourceTypes(const GetSupportedResourceTypesRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetSupportedResourceTypes);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSupportedResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSupportedResourceTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetSupportedResourceTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSupportedResourceTypes",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, "GetSupportedResourceTypes" }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSupportedResourceTypesOutcome>(
     [&]()-> GetSupportedResourceTypesOutcome {
-
-        AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSupportedResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-        const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(staticEndpointParameters); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-            *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, "GetSupportedResourceTypes"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSupportedResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSupportedResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/supported-resource-types");
-      return GetSupportedResourceTypesOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "GetSupportedResourceTypes"));
+      return GetSupportedResourceTypesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, "GetSupportedResourceTypes"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBackupJobSummariesOutcome BackupClient::ListBackupJobSummaries(const ListBackupJobSummariesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListBackupJobSummaries);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackupJobSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBackupJobSummaries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBackupJobSummaries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBackupJobSummaries",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBackupJobSummariesOutcome>(
+    [&]()-> ListBackupJobSummariesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBackupJobSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/audit/backup-job-summaries");
+      return ListBackupJobSummariesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 ListBackupJobsOutcome BackupClient::ListBackupJobs(const ListBackupJobsRequest& request) const
@@ -1707,6 +2063,33 @@ ListBackupVaultsOutcome BackupClient::ListBackupVaults(const ListBackupVaultsReq
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListCopyJobSummariesOutcome BackupClient::ListCopyJobSummaries(const ListCopyJobSummariesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCopyJobSummaries);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCopyJobSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCopyJobSummaries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCopyJobSummaries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCopyJobSummaries",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCopyJobSummariesOutcome>(
+    [&]()-> ListCopyJobSummariesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCopyJobSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/audit/copy-job-summaries");
+      return ListCopyJobSummariesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListCopyJobsOutcome BackupClient::ListCopyJobs(const ListCopyJobsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListCopyJobs);
@@ -1809,6 +2192,40 @@ ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListPro
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProtectedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/resources/");
       return ListProtectedResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListProtectedResourcesByBackupVaultOutcome BackupClient::ListProtectedResourcesByBackupVault(const ListProtectedResourcesByBackupVaultRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListProtectedResourcesByBackupVault);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProtectedResourcesByBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListProtectedResourcesByBackupVault", "Required field: BackupVaultName, is not set");
+    return ListProtectedResourcesByBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListProtectedResourcesByBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListProtectedResourcesByBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListProtectedResourcesByBackupVault",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListProtectedResourcesByBackupVaultOutcome>(
+    [&]()-> ListProtectedResourcesByBackupVaultOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProtectedResourcesByBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/backup-vaults/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/resources/");
+      return ListProtectedResourcesByBackupVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1971,6 +2388,33 @@ ListReportPlansOutcome BackupClient::ListReportPlans(const ListReportPlansReques
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListRestoreJobSummariesOutcome BackupClient::ListRestoreJobSummaries(const ListRestoreJobSummariesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListRestoreJobSummaries);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRestoreJobSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRestoreJobSummaries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListRestoreJobSummaries, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRestoreJobSummaries",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListRestoreJobSummariesOutcome>(
+    [&]()-> ListRestoreJobSummariesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRestoreJobSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/audit/restore-job-summaries");
+      return ListRestoreJobSummariesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListRestoreJobs);
@@ -1992,6 +2436,101 @@ ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsReques
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRestoreJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
       return ListRestoreJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListRestoreJobsByProtectedResourceOutcome BackupClient::ListRestoreJobsByProtectedResource(const ListRestoreJobsByProtectedResourceRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListRestoreJobsByProtectedResource);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRestoreJobsByProtectedResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRestoreJobsByProtectedResource", "Required field: ResourceArn, is not set");
+    return ListRestoreJobsByProtectedResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRestoreJobsByProtectedResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListRestoreJobsByProtectedResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRestoreJobsByProtectedResource",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListRestoreJobsByProtectedResourceOutcome>(
+    [&]()-> ListRestoreJobsByProtectedResourceOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRestoreJobsByProtectedResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/resources/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
+      return ListRestoreJobsByProtectedResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListRestoreTestingPlansOutcome BackupClient::ListRestoreTestingPlans(const ListRestoreTestingPlansRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListRestoreTestingPlans);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRestoreTestingPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRestoreTestingPlans, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListRestoreTestingPlans, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRestoreTestingPlans",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListRestoreTestingPlansOutcome>(
+    [&]()-> ListRestoreTestingPlansOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRestoreTestingPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans");
+      return ListRestoreTestingPlansOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListRestoreTestingSelectionsOutcome BackupClient::ListRestoreTestingSelections(const ListRestoreTestingSelectionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListRestoreTestingSelections);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRestoreTestingSelections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreTestingPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRestoreTestingSelections", "Required field: RestoreTestingPlanName, is not set");
+    return ListRestoreTestingSelectionsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingPlanName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRestoreTestingSelections, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListRestoreTestingSelections, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRestoreTestingSelections",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListRestoreTestingSelectionsOutcome>(
+    [&]()-> ListRestoreTestingSelectionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRestoreTestingSelections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/selections");
+      return ListRestoreTestingSelectionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2127,6 +2666,40 @@ PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(con
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
       return PutBackupVaultNotificationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutRestoreValidationResultOutcome BackupClient::PutRestoreValidationResult(const PutRestoreValidationResultRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutRestoreValidationResult);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRestoreValidationResult, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutRestoreValidationResult", "Required field: RestoreJobId, is not set");
+    return PutRestoreValidationResultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreJobId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutRestoreValidationResult, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutRestoreValidationResult, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutRestoreValidationResult",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutRestoreValidationResultOutcome>(
+    [&]()-> PutRestoreValidationResultOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutRestoreValidationResult, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-jobs/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreJobId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/validations");
+      return PutRestoreValidationResultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2533,6 +3106,79 @@ UpdateReportPlanOutcome BackupClient::UpdateReportPlan(const UpdateReportPlanReq
       endpointResolutionOutcome.GetResult().AddPathSegments("/audit/report-plans/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportPlanName());
       return UpdateReportPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateRestoreTestingPlanOutcome BackupClient::UpdateRestoreTestingPlan(const UpdateRestoreTestingPlanRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateRestoreTestingPlan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRestoreTestingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreTestingPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRestoreTestingPlan", "Required field: RestoreTestingPlanName, is not set");
+    return UpdateRestoreTestingPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingPlanName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateRestoreTestingPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateRestoreTestingPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateRestoreTestingPlan",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateRestoreTestingPlanOutcome>(
+    [&]()-> UpdateRestoreTestingPlanOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRestoreTestingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
+      return UpdateRestoreTestingPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateRestoreTestingSelectionOutcome BackupClient::UpdateRestoreTestingSelection(const UpdateRestoreTestingSelectionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateRestoreTestingSelection);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRestoreTestingSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.RestoreTestingPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRestoreTestingSelection", "Required field: RestoreTestingPlanName, is not set");
+    return UpdateRestoreTestingSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingPlanName]", false));
+  }
+  if (!request.RestoreTestingSelectionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRestoreTestingSelection", "Required field: RestoreTestingSelectionName, is not set");
+    return UpdateRestoreTestingSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreTestingSelectionName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateRestoreTestingSelection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateRestoreTestingSelection, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateRestoreTestingSelection",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateRestoreTestingSelectionOutcome>(
+    [&]()-> UpdateRestoreTestingSelectionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRestoreTestingSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/restore-testing/plans/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/selections/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingSelectionName());
+      return UpdateRestoreTestingSelectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -38,56 +38,6 @@ namespace Model
 
 
     
-    inline const Aws::String& GetArn() const{ return m_arn; }
-
-    
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    
-    inline CampaignSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    
-    inline CampaignSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    
-    inline CampaignSummary& WithArn(const char* value) { SetArn(value); return *this;}
-
-
-    
-    inline const Aws::String& GetConnectInstanceId() const{ return m_connectInstanceId; }
-
-    
-    inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
-
-    
-    inline void SetConnectInstanceId(const Aws::String& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = value; }
-
-    
-    inline void SetConnectInstanceId(Aws::String&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::move(value); }
-
-    
-    inline void SetConnectInstanceId(const char* value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId.assign(value); }
-
-    
-    inline CampaignSummary& WithConnectInstanceId(const Aws::String& value) { SetConnectInstanceId(value); return *this;}
-
-    
-    inline CampaignSummary& WithConnectInstanceId(Aws::String&& value) { SetConnectInstanceId(std::move(value)); return *this;}
-
-    
-    inline CampaignSummary& WithConnectInstanceId(const char* value) { SetConnectInstanceId(value); return *this;}
-
-
-    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -110,6 +60,31 @@ namespace Model
 
     
     inline CampaignSummary& WithId(const char* value) { SetId(value); return *this;}
+
+
+    
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    
+    inline CampaignSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    
+    inline CampaignSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    
+    inline CampaignSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     
@@ -136,19 +111,44 @@ namespace Model
     
     inline CampaignSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetConnectInstanceId() const{ return m_connectInstanceId; }
+
+    
+    inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
+
+    
+    inline void SetConnectInstanceId(const Aws::String& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = value; }
+
+    
+    inline void SetConnectInstanceId(Aws::String&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::move(value); }
+
+    
+    inline void SetConnectInstanceId(const char* value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId.assign(value); }
+
+    
+    inline CampaignSummary& WithConnectInstanceId(const Aws::String& value) { SetConnectInstanceId(value); return *this;}
+
+    
+    inline CampaignSummary& WithConnectInstanceId(Aws::String&& value) { SetConnectInstanceId(std::move(value)); return *this;}
+
+    
+    inline CampaignSummary& WithConnectInstanceId(const char* value) { SetConnectInstanceId(value); return *this;}
+
   private:
-
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
+
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_connectInstanceId;
+    bool m_connectInstanceIdHasBeenSet = false;
   };
 
 } // namespace Model

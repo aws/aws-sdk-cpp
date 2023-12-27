@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EcsResourceRequirementType::NOT_SET:
+            return {};
           case EcsResourceRequirementType::GPU:
             return "GPU";
           case EcsResourceRequirementType::InferenceAccelerator:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListingState::NOT_SET:
+            return {};
           case ListingState::available:
             return "available";
           case ListingState::sold:

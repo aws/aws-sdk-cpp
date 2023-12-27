@@ -119,6 +119,12 @@ GetDevEnvironmentResult& GetDevEnvironmentResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("vpcConnectionName"))
+  {
+    m_vpcConnectionName = jsonValue.GetString("vpcConnectionName");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

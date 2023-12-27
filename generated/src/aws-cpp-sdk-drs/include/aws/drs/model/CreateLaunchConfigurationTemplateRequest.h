@@ -151,6 +151,35 @@ namespace Model
 
 
     /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline bool GetLaunchIntoSourceInstance() const{ return m_launchIntoSourceInstance; }
+
+    /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline bool LaunchIntoSourceInstanceHasBeenSet() const { return m_launchIntoSourceInstanceHasBeenSet; }
+
+    /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline void SetLaunchIntoSourceInstance(bool value) { m_launchIntoSourceInstanceHasBeenSet = true; m_launchIntoSourceInstance = value; }
+
+    /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline CreateLaunchConfigurationTemplateRequest& WithLaunchIntoSourceInstance(bool value) { SetLaunchIntoSourceInstance(value); return *this;}
+
+
+    /**
      * <p>Licensing.</p>
      */
     inline const Licensing& GetLicensing() const{ return m_licensing; }
@@ -179,6 +208,27 @@ namespace Model
      * <p>Licensing.</p>
      */
     inline CreateLaunchConfigurationTemplateRequest& WithLicensing(Licensing&& value) { SetLicensing(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline bool GetPostLaunchEnabled() const{ return m_postLaunchEnabled; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline bool PostLaunchEnabledHasBeenSet() const { return m_postLaunchEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline void SetPostLaunchEnabled(bool value) { m_postLaunchEnabledHasBeenSet = true; m_postLaunchEnabled = value; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline CreateLaunchConfigurationTemplateRequest& WithPostLaunchEnabled(bool value) { SetPostLaunchEnabled(value); return *this;}
 
 
     /**
@@ -304,8 +354,14 @@ namespace Model
     LaunchDisposition m_launchDisposition;
     bool m_launchDispositionHasBeenSet = false;
 
+    bool m_launchIntoSourceInstance;
+    bool m_launchIntoSourceInstanceHasBeenSet = false;
+
     Licensing m_licensing;
     bool m_licensingHasBeenSet = false;
+
+    bool m_postLaunchEnabled;
+    bool m_postLaunchEnabledHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

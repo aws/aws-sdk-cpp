@@ -123,7 +123,8 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.</p>
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC
+     * configurations for the resource.</p>
      */
     inline const Aws::Vector<ResolverDnssecConfig>& GetResolverDnssecConfigs() const{ return m_resolverDnssecConfigs; }
 
@@ -131,7 +132,8 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.</p>
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC
+     * configurations for the resource.</p>
      */
     inline void SetResolverDnssecConfigs(const Aws::Vector<ResolverDnssecConfig>& value) { m_resolverDnssecConfigs = value; }
 
@@ -139,7 +141,8 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.</p>
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC
+     * configurations for the resource.</p>
      */
     inline void SetResolverDnssecConfigs(Aws::Vector<ResolverDnssecConfig>&& value) { m_resolverDnssecConfigs = std::move(value); }
 
@@ -147,7 +150,8 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.</p>
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC
+     * configurations for the resource.</p>
      */
     inline ListResolverDnssecConfigsResult& WithResolverDnssecConfigs(const Aws::Vector<ResolverDnssecConfig>& value) { SetResolverDnssecConfigs(value); return *this;}
 
@@ -155,7 +159,8 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.</p>
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC
+     * configurations for the resource.</p>
      */
     inline ListResolverDnssecConfigsResult& WithResolverDnssecConfigs(Aws::Vector<ResolverDnssecConfig>&& value) { SetResolverDnssecConfigs(std::move(value)); return *this;}
 
@@ -163,7 +168,8 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.</p>
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC
+     * configurations for the resource.</p>
      */
     inline ListResolverDnssecConfigsResult& AddResolverDnssecConfigs(const ResolverDnssecConfig& value) { m_resolverDnssecConfigs.push_back(value); return *this; }
 
@@ -171,7 +177,8 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.</p>
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC
+     * configurations for the resource.</p>
      */
     inline ListResolverDnssecConfigsResult& AddResolverDnssecConfigs(ResolverDnssecConfig&& value) { m_resolverDnssecConfigs.push_back(std::move(value)); return *this; }
 

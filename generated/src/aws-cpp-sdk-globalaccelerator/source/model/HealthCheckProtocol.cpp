@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HealthCheckProtocol::NOT_SET:
+            return {};
           case HealthCheckProtocol::TCP:
             return "TCP";
           case HealthCheckProtocol::HTTP:

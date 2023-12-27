@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeliveryStreamStatus::NOT_SET:
+            return {};
           case DeliveryStreamStatus::CREATING:
             return "CREATING";
           case DeliveryStreamStatus::CREATING_FAILED:

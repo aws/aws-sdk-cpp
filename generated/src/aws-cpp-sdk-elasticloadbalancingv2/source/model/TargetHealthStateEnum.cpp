@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetHealthStateEnum::NOT_SET:
+            return {};
           case TargetHealthStateEnum::initial:
             return "initial";
           case TargetHealthStateEnum::healthy:

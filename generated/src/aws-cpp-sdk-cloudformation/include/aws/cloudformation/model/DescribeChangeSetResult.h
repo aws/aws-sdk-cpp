@@ -906,6 +906,40 @@ namespace Model
     inline DescribeChangeSetResult& WithOnStackFailure(OnStackFailure&& value) { SetOnStackFailure(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom
+     * names</a> in templates. To import resources that do not accept custom names,
+     * such as EC2 instances, use the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource
+     * import</a> feature instead.</p> 
+     */
+    inline bool GetImportExistingResources() const{ return m_importExistingResources; }
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom
+     * names</a> in templates. To import resources that do not accept custom names,
+     * such as EC2 instances, use the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource
+     * import</a> feature instead.</p> 
+     */
+    inline void SetImportExistingResources(bool value) { m_importExistingResources = value; }
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom
+     * names</a> in templates. To import resources that do not accept custom names,
+     * such as EC2 instances, use the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource
+     * import</a> feature instead.</p> 
+     */
+    inline DescribeChangeSetResult& WithImportExistingResources(bool value) { SetImportExistingResources(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -962,6 +996,8 @@ namespace Model
     Aws::String m_rootChangeSetId;
 
     OnStackFailure m_onStackFailure;
+
+    bool m_importExistingResources;
 
     ResponseMetadata m_responseMetadata;
   };

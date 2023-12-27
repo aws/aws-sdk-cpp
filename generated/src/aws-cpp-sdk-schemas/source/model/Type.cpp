@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Type::NOT_SET:
+            return {};
           case Type::OpenApi3:
             return "OpenApi3";
           case Type::JSONSchemaDraft4:

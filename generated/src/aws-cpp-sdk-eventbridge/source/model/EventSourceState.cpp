@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventSourceState::NOT_SET:
+            return {};
           case EventSourceState::PENDING:
             return "PENDING";
           case EventSourceState::ACTIVE:

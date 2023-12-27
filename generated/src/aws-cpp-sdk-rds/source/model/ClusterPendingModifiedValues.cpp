@@ -31,6 +31,7 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues() :
     m_backupRetentionPeriodHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_storageTypeHasBeenSet(false)
@@ -48,6 +49,7 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues(const XmlNode& xmlNod
     m_backupRetentionPeriodHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_storageTypeHasBeenSet(false)
@@ -102,6 +104,12 @@ ClusterPendingModifiedValues& ClusterPendingModifiedValues::operator =(const Xml
     {
       m_allocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocatedStorageNode.GetText()).c_str()).c_str());
       m_allocatedStorageHasBeenSet = true;
+    }
+    XmlNode rdsCustomClusterConfigurationNode = resultNode.FirstChild("RdsCustomClusterConfiguration");
+    if(!rdsCustomClusterConfigurationNode.IsNull())
+    {
+      m_rdsCustomClusterConfiguration = rdsCustomClusterConfigurationNode;
+      m_rdsCustomClusterConfigurationHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
     if(!iopsNode.IsNull())
@@ -159,6 +167,13 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".AllocatedStorage=" << m_allocatedStorage << "&";
   }
 
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+      Aws::StringStream rdsCustomClusterConfigurationLocationAndMemberSs;
+      rdsCustomClusterConfigurationLocationAndMemberSs << location << index << locationValue << ".RdsCustomClusterConfiguration";
+      m_rdsCustomClusterConfiguration.OutputToStream(oStream, rdsCustomClusterConfigurationLocationAndMemberSs.str().c_str());
+  }
+
   if(m_iopsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
@@ -202,6 +217,12 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
   if(m_allocatedStorageHasBeenSet)
   {
       oStream << location << ".AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+      Aws::String rdsCustomClusterConfigurationLocationAndMember(location);
+      rdsCustomClusterConfigurationLocationAndMember += ".RdsCustomClusterConfiguration";
+      m_rdsCustomClusterConfiguration.OutputToStream(oStream, rdsCustomClusterConfigurationLocationAndMember.c_str());
   }
   if(m_iopsHasBeenSet)
   {

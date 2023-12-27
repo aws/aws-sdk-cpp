@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateReason::NOT_SET:
+            return {};
           case UpdateReason::DEFAULT:
             return "DEFAULT";
           case UpdateReason::PRICING_TIER_UPDATE:

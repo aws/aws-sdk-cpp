@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BillingGroupStatus::NOT_SET:
+            return {};
           case BillingGroupStatus::ACTIVE:
             return "ACTIVE";
           case BillingGroupStatus::PRIMARY_ACCOUNT_MISSING:

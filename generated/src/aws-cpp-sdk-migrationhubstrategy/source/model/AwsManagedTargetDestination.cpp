@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AwsManagedTargetDestination::NOT_SET:
+            return {};
           case AwsManagedTargetDestination::None_specified:
             return "None specified";
           case AwsManagedTargetDestination::AWS_Elastic_BeanStalk:

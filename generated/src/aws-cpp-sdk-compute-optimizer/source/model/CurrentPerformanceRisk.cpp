@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CurrentPerformanceRisk::NOT_SET:
+            return {};
           case CurrentPerformanceRisk::VeryLow:
             return "VeryLow";
           case CurrentPerformanceRisk::Low:

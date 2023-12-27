@@ -86,43 +86,43 @@ namespace Model
 
     /**
      * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block
-     * cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+     * certificate signs the wrapped key under export within the TR-34 key block.
+     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
      */
     inline const KeyAlgorithm& GetSigningKeyAlgorithm() const{ return m_signingKeyAlgorithm; }
 
     /**
      * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block
-     * cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+     * certificate signs the wrapped key under export within the TR-34 key block.
+     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
      */
     inline bool SigningKeyAlgorithmHasBeenSet() const { return m_signingKeyAlgorithmHasBeenSet; }
 
     /**
      * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block
-     * cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+     * certificate signs the wrapped key under export within the TR-34 key block.
+     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
      */
     inline void SetSigningKeyAlgorithm(const KeyAlgorithm& value) { m_signingKeyAlgorithmHasBeenSet = true; m_signingKeyAlgorithm = value; }
 
     /**
      * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block
-     * cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+     * certificate signs the wrapped key under export within the TR-34 key block.
+     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
      */
     inline void SetSigningKeyAlgorithm(KeyAlgorithm&& value) { m_signingKeyAlgorithmHasBeenSet = true; m_signingKeyAlgorithm = std::move(value); }
 
     /**
      * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block
-     * cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+     * certificate signs the wrapped key under export within the TR-34 key block.
+     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
      */
     inline GetParametersForExportRequest& WithSigningKeyAlgorithm(const KeyAlgorithm& value) { SetSigningKeyAlgorithm(value); return *this;}
 
     /**
      * <p>The signing key algorithm to generate a signing key certificate. This
-     * certificate signs the wrapped key under export within the TR-34 key block
-     * cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+     * certificate signs the wrapped key under export within the TR-34 key block.
+     * <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
      */
     inline GetParametersForExportRequest& WithSigningKeyAlgorithm(KeyAlgorithm&& value) { SetSigningKeyAlgorithm(std::move(value)); return *this;}
 

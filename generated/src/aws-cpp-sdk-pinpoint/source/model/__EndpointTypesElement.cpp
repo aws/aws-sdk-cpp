@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case __EndpointTypesElement::NOT_SET:
+            return {};
           case __EndpointTypesElement::PUSH:
             return "PUSH";
           case __EndpointTypesElement::GCM:

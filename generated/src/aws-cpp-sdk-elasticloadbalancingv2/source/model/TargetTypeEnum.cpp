@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetTypeEnum::NOT_SET:
+            return {};
           case TargetTypeEnum::instance:
             return "instance";
           case TargetTypeEnum::ip:

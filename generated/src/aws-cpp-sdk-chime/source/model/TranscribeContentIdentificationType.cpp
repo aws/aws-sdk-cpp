@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribeContentIdentificationType::NOT_SET:
+            return {};
           case TranscribeContentIdentificationType::PII:
             return "PII";
           default:

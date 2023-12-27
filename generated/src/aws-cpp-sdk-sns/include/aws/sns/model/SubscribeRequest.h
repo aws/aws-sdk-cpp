@@ -394,7 +394,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -429,7 +442,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
@@ -464,7 +490,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -499,7 +538,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -534,7 +586,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline SubscribeRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -569,7 +634,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline SubscribeRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -604,7 +682,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -639,7 +730,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -674,7 +778,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -709,7 +826,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -744,7 +874,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -779,7 +922,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -814,7 +970,20 @@ namespace Model
      * Data Firehose delivery stream subscriptions. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
      * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
-     * Guide</i>.</p> </li> </ul>
+     * Guide</i>.</p> </li> </ul> <p>The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
+     * topics</a>:</p> <ul> <li> <p> <code>ReplayPolicy</code> – Adds or updates an
+     * inline policy document for a subscription to replay messages stored in the
+     * specified Amazon SNS topic.</p> </li> <li> <p> <code>ReplayStatus</code> –
+     * Retrieves the status of the subscription message replay, which can be one of the
+     * following:</p> <ul> <li> <p> <code>Completed</code> – The replay has
+     * successfully redelivered all messages, and is now delivering newly published
+     * messages. If an ending point was specified in the <code>ReplayPolicy</code> then
+     * the subscription will no longer receive newly published messages.</p> </li> <li>
+     * <p> <code>In progress</code> – The replay is currently replaying the selected
+     * messages.</p> </li> <li> <p> <code>Failed</code> – The replay was unable to
+     * complete.</p> </li> <li> <p> <code>Pending</code> – The default state while the
+     * replay initiates.</p> </li> </ul> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

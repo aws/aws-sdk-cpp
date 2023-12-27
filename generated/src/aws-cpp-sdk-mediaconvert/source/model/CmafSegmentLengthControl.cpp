@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafSegmentLengthControl::NOT_SET:
+            return {};
           case CmafSegmentLengthControl::EXACT:
             return "EXACT";
           case CmafSegmentLengthControl::GOP_MULTIPLE:

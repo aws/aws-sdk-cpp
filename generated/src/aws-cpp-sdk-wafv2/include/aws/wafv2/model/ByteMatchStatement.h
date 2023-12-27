@@ -55,15 +55,25 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
+     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the
+     * client's TLS configuration. You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
+     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
+     * includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -82,15 +92,25 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
+     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the
+     * client's TLS configuration. You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
+     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
+     * includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -109,15 +129,25 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
+     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the
+     * client's TLS configuration. You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
+     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
+     * includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -136,15 +166,25 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
+     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the
+     * client's TLS configuration. You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
+     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
+     * includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -163,15 +203,25 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
+     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the
+     * client's TLS configuration. You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
+     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
+     * includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -190,15 +240,25 @@ namespace Model
      * This indicates the type of operation specified in the request. </p> </li> <li>
      * <p> <code>UriPath</code>: The value that you want WAF to search for in the URI
      * path, for example, <code>/images/daily-ad.jpg</code>. </p> </li> <li> <p>
-     * <code>HeaderOrder</code>: The comma-separated list of header names to match for.
-     * WAF creates a string that contains the ordered list of header names, from the
-     * headers in the web request, and then matches against that string. </p> </li>
-     * </ul> <p>If <code>SearchString</code> includes alphabetic characters A-Z and
-     * a-z, note that the value is case sensitive.</p> <p> <b>If you're using the WAF
-     * API</b> </p> <p>Specify a base64-encoded version of the value. The maximum
-     * length of the value before you base64-encode it is 200 bytes.</p> <p>For
-     * example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-     * value of <code>Data</code> is <code>User-Agent</code>. If you want to search the
+     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The
+     * JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the
+     * client's TLS configuration. You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> <p>You can obtain the JA3 fingerprint for client
+     * requests from the web ACL logs. If WAF is able to calculate the fingerprint, it
+     * includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> </li> <li> <p>
+     * <code>HeaderOrder</code>: The list of header names to match for. WAF creates a
+     * string that contains the ordered list of header names, from the headers in the
+     * web request, and then matches against that string. </p> </li> </ul> <p>If
+     * <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that
+     * the value is case sensitive.</p> <p> <b>If you're using the WAF API</b> </p>
+     * <p>Specify a base64-encoded version of the value. The maximum length of the
+     * value before you base64-encode it is 200 bytes.</p> <p>For example, suppose the
+     * value of <code>Type</code> is <code>HEADER</code> and the value of
+     * <code>Data</code> is <code>User-Agent</code>. If you want to search the
      * <code>User-Agent</code> header for the value <code>BadBot</code>, you
      * base64-encode <code>BadBot</code> using MIME base64-encoding and include the
      * resulting value, <code>QmFkQm90</code>, in the value of
@@ -248,7 +308,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
 
@@ -260,7 +320,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
 
@@ -272,7 +332,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
 
@@ -284,7 +344,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
 
@@ -296,7 +356,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline ByteMatchStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
 
@@ -308,7 +368,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline ByteMatchStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
 
@@ -320,7 +380,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline ByteMatchStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
 
@@ -332,7 +392,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline ByteMatchStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
 

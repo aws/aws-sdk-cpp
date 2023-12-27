@@ -10,6 +10,9 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceServiceClientModel.h>
+#include <aws/chime-sdk-voice/model/GetPhoneNumberSettingsRequest.h>
+#include <aws/chime-sdk-voice/model/ListAvailableVoiceConnectorRegionsRequest.h>
+#include <aws/chime-sdk-voice/model/GetGlobalSettingsRequest.h>
 
 namespace Aws
 {
@@ -879,25 +882,26 @@ namespace ChimeSDKVoice
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetGlobalSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetGlobalSettingsOutcome GetGlobalSettings() const;
+        virtual Model::GetGlobalSettingsOutcome GetGlobalSettings(const Model::GetGlobalSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetGlobalSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetGlobalSettingsOutcomeCallable GetGlobalSettingsCallable() const
+        template<typename GetGlobalSettingsRequestT = Model::GetGlobalSettingsRequest>
+        Model::GetGlobalSettingsOutcomeCallable GetGlobalSettingsCallable(const GetGlobalSettingsRequestT& request = {}) const
         {
-            return SubmitCallable(&ChimeSDKVoiceClient::GetGlobalSettings);
+            return SubmitCallable(&ChimeSDKVoiceClient::GetGlobalSettings, request);
         }
 
         /**
          * An Async wrapper for GetGlobalSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetGlobalSettingsAsync(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetGlobalSettingsRequestT = Model::GetGlobalSettingsRequest>
+        void GetGlobalSettingsAsync(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetGlobalSettingsRequestT& request = {}) const
         {
-            return SubmitAsync(&ChimeSDKVoiceClient::GetGlobalSettings, handler, context);
+            return SubmitAsync(&ChimeSDKVoiceClient::GetGlobalSettings, request, handler, context);
         }
+
         /**
          * <p>Retrieves details for the specified phone number ID, such as associations,
          * capabilities, and product type.</p><p><h3>See Also:</h3>   <a
@@ -957,25 +961,26 @@ namespace ChimeSDKVoice
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumberSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetPhoneNumberSettingsOutcome GetPhoneNumberSettings() const;
+        virtual Model::GetPhoneNumberSettingsOutcome GetPhoneNumberSettings(const Model::GetPhoneNumberSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetPhoneNumberSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetPhoneNumberSettingsOutcomeCallable GetPhoneNumberSettingsCallable() const
+        template<typename GetPhoneNumberSettingsRequestT = Model::GetPhoneNumberSettingsRequest>
+        Model::GetPhoneNumberSettingsOutcomeCallable GetPhoneNumberSettingsCallable(const GetPhoneNumberSettingsRequestT& request = {}) const
         {
-            return SubmitCallable(&ChimeSDKVoiceClient::GetPhoneNumberSettings);
+            return SubmitCallable(&ChimeSDKVoiceClient::GetPhoneNumberSettings, request);
         }
 
         /**
          * An Async wrapper for GetPhoneNumberSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetPhoneNumberSettingsAsync(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetPhoneNumberSettingsRequestT = Model::GetPhoneNumberSettingsRequest>
+        void GetPhoneNumberSettingsAsync(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetPhoneNumberSettingsRequestT& request = {}) const
         {
-            return SubmitAsync(&ChimeSDKVoiceClient::GetPhoneNumberSettings, handler, context);
+            return SubmitAsync(&ChimeSDKVoiceClient::GetPhoneNumberSettings, request, handler, context);
         }
+
         /**
          * <p>Retrieves the specified proxy session details for the specified Amazon Chime
          * SDK Voice Connector.</p><p><h3>See Also:</h3>   <a
@@ -1456,25 +1461,26 @@ namespace ChimeSDKVoice
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListAvailableVoiceConnectorRegions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAvailableVoiceConnectorRegionsOutcome ListAvailableVoiceConnectorRegions() const;
+        virtual Model::ListAvailableVoiceConnectorRegionsOutcome ListAvailableVoiceConnectorRegions(const Model::ListAvailableVoiceConnectorRegionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAvailableVoiceConnectorRegions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::ListAvailableVoiceConnectorRegionsOutcomeCallable ListAvailableVoiceConnectorRegionsCallable() const
+        template<typename ListAvailableVoiceConnectorRegionsRequestT = Model::ListAvailableVoiceConnectorRegionsRequest>
+        Model::ListAvailableVoiceConnectorRegionsOutcomeCallable ListAvailableVoiceConnectorRegionsCallable(const ListAvailableVoiceConnectorRegionsRequestT& request = {}) const
         {
-            return SubmitCallable(&ChimeSDKVoiceClient::ListAvailableVoiceConnectorRegions);
+            return SubmitCallable(&ChimeSDKVoiceClient::ListAvailableVoiceConnectorRegions, request);
         }
 
         /**
          * An Async wrapper for ListAvailableVoiceConnectorRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void ListAvailableVoiceConnectorRegionsAsync(const ListAvailableVoiceConnectorRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename ListAvailableVoiceConnectorRegionsRequestT = Model::ListAvailableVoiceConnectorRegionsRequest>
+        void ListAvailableVoiceConnectorRegionsAsync(const ListAvailableVoiceConnectorRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAvailableVoiceConnectorRegionsRequestT& request = {}) const
         {
-            return SubmitAsync(&ChimeSDKVoiceClient::ListAvailableVoiceConnectorRegions, handler, context);
+            return SubmitAsync(&ChimeSDKVoiceClient::ListAvailableVoiceConnectorRegions, request, handler, context);
         }
+
         /**
          * <p>Lists the phone numbers for an administrator's Amazon Chime SDK
          * account.</p><p><h3>See Also:</h3>   <a

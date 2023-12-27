@@ -5,7 +5,7 @@
 
 #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
 
-#include <aws/core/Http/HttpRequest.h>
+#include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -21,14 +21,13 @@
 #include <winhttp.h>
 #include <sstream>
 #include <iostream>
+#include <versionhelpers.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
-
-static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
 static void WinHttpEnableHttp2(void* handle)
 {
@@ -53,7 +52,13 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " << config.maxConnections
         << " request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
 
-    DWORD winhttpFlags = WINHTTP_ACCESS_TYPE_NO_PROXY;
+    DWORD winhttpFlags = config.allowSystemProxy ? WINHTTP_ACCESS_TYPE_DEFAULT_PROXY : WINHTTP_ACCESS_TYPE_NO_PROXY;
+#if defined(WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY)
+    if (config.allowSystemProxy && IsWindows8Point1OrGreater()) {
+        winhttpFlags = WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY;
+    }
+#endif
+
     const char* proxyHosts = nullptr;
     Aws::String strProxyHosts;
 

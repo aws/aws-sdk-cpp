@@ -53,7 +53,10 @@ AutomationRulesFindingFilters::AutomationRulesFindingFilters() :
     m_noteTextHasBeenSet(false),
     m_noteUpdatedAtHasBeenSet(false),
     m_noteUpdatedByHasBeenSet(false),
-    m_userDefinedFieldsHasBeenSet(false)
+    m_userDefinedFieldsHasBeenSet(false),
+    m_resourceApplicationArnHasBeenSet(false),
+    m_resourceApplicationNameHasBeenSet(false),
+    m_awsAccountNameHasBeenSet(false)
 {
 }
 
@@ -92,7 +95,10 @@ AutomationRulesFindingFilters::AutomationRulesFindingFilters(JsonView jsonValue)
     m_noteTextHasBeenSet(false),
     m_noteUpdatedAtHasBeenSet(false),
     m_noteUpdatedByHasBeenSet(false),
-    m_userDefinedFieldsHasBeenSet(false)
+    m_userDefinedFieldsHasBeenSet(false),
+    m_resourceApplicationArnHasBeenSet(false),
+    m_resourceApplicationNameHasBeenSet(false),
+    m_awsAccountNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -447,6 +453,36 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
       m_userDefinedFields.push_back(userDefinedFieldsJsonList[userDefinedFieldsIndex].AsObject());
     }
     m_userDefinedFieldsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceApplicationArn"))
+  {
+    Aws::Utils::Array<JsonView> resourceApplicationArnJsonList = jsonValue.GetArray("ResourceApplicationArn");
+    for(unsigned resourceApplicationArnIndex = 0; resourceApplicationArnIndex < resourceApplicationArnJsonList.GetLength(); ++resourceApplicationArnIndex)
+    {
+      m_resourceApplicationArn.push_back(resourceApplicationArnJsonList[resourceApplicationArnIndex].AsObject());
+    }
+    m_resourceApplicationArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceApplicationName"))
+  {
+    Aws::Utils::Array<JsonView> resourceApplicationNameJsonList = jsonValue.GetArray("ResourceApplicationName");
+    for(unsigned resourceApplicationNameIndex = 0; resourceApplicationNameIndex < resourceApplicationNameJsonList.GetLength(); ++resourceApplicationNameIndex)
+    {
+      m_resourceApplicationName.push_back(resourceApplicationNameJsonList[resourceApplicationNameIndex].AsObject());
+    }
+    m_resourceApplicationNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsAccountName"))
+  {
+    Aws::Utils::Array<JsonView> awsAccountNameJsonList = jsonValue.GetArray("AwsAccountName");
+    for(unsigned awsAccountNameIndex = 0; awsAccountNameIndex < awsAccountNameJsonList.GetLength(); ++awsAccountNameIndex)
+    {
+      m_awsAccountName.push_back(awsAccountNameJsonList[awsAccountNameIndex].AsObject());
+    }
+    m_awsAccountNameHasBeenSet = true;
   }
 
   return *this;
@@ -838,6 +874,39 @@ JsonValue AutomationRulesFindingFilters::Jsonize() const
      userDefinedFieldsJsonList[userDefinedFieldsIndex].AsObject(m_userDefinedFields[userDefinedFieldsIndex].Jsonize());
    }
    payload.WithArray("UserDefinedFields", std::move(userDefinedFieldsJsonList));
+
+  }
+
+  if(m_resourceApplicationArnHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourceApplicationArnJsonList(m_resourceApplicationArn.size());
+   for(unsigned resourceApplicationArnIndex = 0; resourceApplicationArnIndex < resourceApplicationArnJsonList.GetLength(); ++resourceApplicationArnIndex)
+   {
+     resourceApplicationArnJsonList[resourceApplicationArnIndex].AsObject(m_resourceApplicationArn[resourceApplicationArnIndex].Jsonize());
+   }
+   payload.WithArray("ResourceApplicationArn", std::move(resourceApplicationArnJsonList));
+
+  }
+
+  if(m_resourceApplicationNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> resourceApplicationNameJsonList(m_resourceApplicationName.size());
+   for(unsigned resourceApplicationNameIndex = 0; resourceApplicationNameIndex < resourceApplicationNameJsonList.GetLength(); ++resourceApplicationNameIndex)
+   {
+     resourceApplicationNameJsonList[resourceApplicationNameIndex].AsObject(m_resourceApplicationName[resourceApplicationNameIndex].Jsonize());
+   }
+   payload.WithArray("ResourceApplicationName", std::move(resourceApplicationNameJsonList));
+
+  }
+
+  if(m_awsAccountNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> awsAccountNameJsonList(m_awsAccountName.size());
+   for(unsigned awsAccountNameIndex = 0; awsAccountNameIndex < awsAccountNameJsonList.GetLength(); ++awsAccountNameIndex)
+   {
+     awsAccountNameJsonList[awsAccountNameIndex].AsObject(m_awsAccountName[awsAccountNameIndex].Jsonize());
+   }
+   payload.WithArray("AwsAccountName", std::move(awsAccountNameJsonList));
 
   }
 

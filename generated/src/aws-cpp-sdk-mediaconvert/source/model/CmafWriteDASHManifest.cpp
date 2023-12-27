@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafWriteDASHManifest::NOT_SET:
+            return {};
           case CmafWriteDASHManifest::DISABLED:
             return "DISABLED";
           case CmafWriteDASHManifest::ENABLED:

@@ -87,58 +87,58 @@ namespace Model
 
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline DeleteBucketReplicationRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline DeleteBucketReplicationRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline DeleteBucketReplicationRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 

@@ -77,6 +77,20 @@ namespace Aws
         static const int Tags_HASH = HashingUtils::HashString("Tags");
         static const int ExternalMetricStatusCode_HASH = HashingUtils::HashString("ExternalMetricStatusCode");
         static const int ExternalMetricStatusReason_HASH = HashingUtils::HashString("ExternalMetricStatusReason");
+        static const int CurrentInstanceGpuInfo_HASH = HashingUtils::HashString("CurrentInstanceGpuInfo");
+        static const int RecommendationOptionsInstanceGpuInfo_HASH = HashingUtils::HashString("RecommendationOptionsInstanceGpuInfo");
+        static const int UtilizationMetricsGpuPercentageMaximum_HASH = HashingUtils::HashString("UtilizationMetricsGpuPercentageMaximum");
+        static const int UtilizationMetricsGpuMemoryPercentageMaximum_HASH = HashingUtils::HashString("UtilizationMetricsGpuMemoryPercentageMaximum");
+        static const int RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum");
+        static const int RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum");
+        static const int Idle_HASH = HashingUtils::HashString("Idle");
+        static const int EffectiveRecommendationPreferencesPreferredResources_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesPreferredResources");
+        static const int EffectiveRecommendationPreferencesLookBackPeriod_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesLookBackPeriod");
+        static const int EffectiveRecommendationPreferencesUtilizationPreferences_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesUtilizationPreferences");
+        static const int EffectiveRecommendationPreferencesSavingsEstimationMode_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        static const int RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
+        static const int RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        static const int RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
 
 
         ExportableInstanceField GetExportableInstanceFieldForName(const Aws::String& name)
@@ -310,6 +324,62 @@ namespace Aws
           {
             return ExportableInstanceField::ExternalMetricStatusReason;
           }
+          else if (hashCode == CurrentInstanceGpuInfo_HASH)
+          {
+            return ExportableInstanceField::CurrentInstanceGpuInfo;
+          }
+          else if (hashCode == RecommendationOptionsInstanceGpuInfo_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsInstanceGpuInfo;
+          }
+          else if (hashCode == UtilizationMetricsGpuPercentageMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum;
+          }
+          else if (hashCode == UtilizationMetricsGpuMemoryPercentageMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum;
+          }
+          else if (hashCode == RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum;
+          }
+          else if (hashCode == RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum;
+          }
+          else if (hashCode == Idle_HASH)
+          {
+            return ExportableInstanceField::Idle;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesPreferredResources_HASH)
+          {
+            return ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesLookBackPeriod_HASH)
+          {
+            return ExportableInstanceField::EffectiveRecommendationPreferencesLookBackPeriod;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesUtilizationPreferences_HASH)
+          {
+            return ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesSavingsEstimationMode_HASH)
+          {
+            return ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode;
+          }
+          else if (hashCode == RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -324,6 +394,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportableInstanceField::NOT_SET:
+            return {};
           case ExportableInstanceField::AccountId:
             return "AccountId";
           case ExportableInstanceField::InstanceArn:
@@ -438,6 +510,34 @@ namespace Aws
             return "ExternalMetricStatusCode";
           case ExportableInstanceField::ExternalMetricStatusReason:
             return "ExternalMetricStatusReason";
+          case ExportableInstanceField::CurrentInstanceGpuInfo:
+            return "CurrentInstanceGpuInfo";
+          case ExportableInstanceField::RecommendationOptionsInstanceGpuInfo:
+            return "RecommendationOptionsInstanceGpuInfo";
+          case ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum:
+            return "UtilizationMetricsGpuPercentageMaximum";
+          case ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum:
+            return "UtilizationMetricsGpuMemoryPercentageMaximum";
+          case ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum:
+            return "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum";
+          case ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum:
+            return "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum";
+          case ExportableInstanceField::Idle:
+            return "Idle";
+          case ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources:
+            return "EffectiveRecommendationPreferencesPreferredResources";
+          case ExportableInstanceField::EffectiveRecommendationPreferencesLookBackPeriod:
+            return "EffectiveRecommendationPreferencesLookBackPeriod";
+          case ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences:
+            return "EffectiveRecommendationPreferencesUtilizationPreferences";
+          case ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode:
+            return "EffectiveRecommendationPreferencesSavingsEstimationMode";
+          case ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage:
+            return "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage";
+          case ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts:
+            return "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts";
+          case ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts:
+            return "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

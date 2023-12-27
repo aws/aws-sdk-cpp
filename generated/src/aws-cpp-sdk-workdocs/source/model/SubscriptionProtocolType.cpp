@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubscriptionProtocolType::NOT_SET:
+            return {};
           case SubscriptionProtocolType::HTTPS:
             return "HTTPS";
           case SubscriptionProtocolType::SQS:

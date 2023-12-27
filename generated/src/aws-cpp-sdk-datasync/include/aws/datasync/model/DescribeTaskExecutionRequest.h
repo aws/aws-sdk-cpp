@@ -38,50 +38,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's
-     * running.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want
+     * information about.</p>
      */
     inline const Aws::String& GetTaskExecutionArn() const{ return m_taskExecutionArn; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's
-     * running.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want
+     * information about.</p>
      */
     inline bool TaskExecutionArnHasBeenSet() const { return m_taskExecutionArnHasBeenSet; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's
-     * running.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want
+     * information about.</p>
      */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = value; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's
-     * running.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want
+     * information about.</p>
      */
     inline void SetTaskExecutionArn(Aws::String&& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = std::move(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's
-     * running.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want
+     * information about.</p>
      */
     inline void SetTaskExecutionArn(const char* value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn.assign(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's
-     * running.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want
+     * information about.</p>
      */
     inline DescribeTaskExecutionRequest& WithTaskExecutionArn(const Aws::String& value) { SetTaskExecutionArn(value); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's
-     * running.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want
+     * information about.</p>
      */
     inline DescribeTaskExecutionRequest& WithTaskExecutionArn(Aws::String&& value) { SetTaskExecutionArn(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's
-     * running.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want
+     * information about.</p>
      */
     inline DescribeTaskExecutionRequest& WithTaskExecutionArn(const char* value) { SetTaskExecutionArn(value); return *this;}
 

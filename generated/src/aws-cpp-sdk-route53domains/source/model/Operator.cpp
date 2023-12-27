@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Operator::NOT_SET:
+            return {};
           case Operator::LE:
             return "LE";
           case Operator::GE:

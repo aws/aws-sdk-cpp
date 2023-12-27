@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputFormat::NOT_SET:
+            return {};
           case OutputFormat::ION_BINARY:
             return "ION_BINARY";
           case OutputFormat::ION_TEXT:

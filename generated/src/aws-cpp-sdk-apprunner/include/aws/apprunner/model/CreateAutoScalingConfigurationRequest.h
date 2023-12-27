@@ -40,13 +40,22 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>  <p>The
-     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
-     * App Runner uses if you don't provide a custome one). You can't use it to create
-     * a new auto scaling configuration, and you can't create a revision of it.</p>
-     * <p>When you want to use your own auto scaling configuration for your App Runner
-     * service, <i>create a configuration with a different name</i>, and then provide
-     * it when you create or update your service.</p> 
+     * Runner creates incremental revisions of the configuration.</p>  <p>Prior
+     * to the release of <a
+     * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+     * scale configuration enhancements</a>, the name <code>DefaultConfiguration</code>
+     * was reserved. </p> <p>This restriction is no longer in place. You can now manage
+     * <code>DefaultConfiguration</code> the same way you manage your custom auto
+     * scaling configurations. This means you can do the following with the
+     * <code>DefaultConfiguration</code> that App Runner provides:</p> <ul> <li>
+     * <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the auto scaling configuration for which the App Runner
+     * <code>DefaultConfiguration</code> was created.</p> </li> <li> <p>If you delete
+     * the auto scaling configuration you can create another custom auto scaling
+     * configuration with the same <code>DefaultConfiguration</code> name. The original
+     * <code>DefaultConfiguration</code> resource provided by App Runner remains in
+     * your account unless you make changes to it.</p> </li> </ul> 
      */
     inline const Aws::String& GetAutoScalingConfigurationName() const{ return m_autoScalingConfigurationName; }
 
@@ -54,13 +63,22 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>  <p>The
-     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
-     * App Runner uses if you don't provide a custome one). You can't use it to create
-     * a new auto scaling configuration, and you can't create a revision of it.</p>
-     * <p>When you want to use your own auto scaling configuration for your App Runner
-     * service, <i>create a configuration with a different name</i>, and then provide
-     * it when you create or update your service.</p> 
+     * Runner creates incremental revisions of the configuration.</p>  <p>Prior
+     * to the release of <a
+     * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+     * scale configuration enhancements</a>, the name <code>DefaultConfiguration</code>
+     * was reserved. </p> <p>This restriction is no longer in place. You can now manage
+     * <code>DefaultConfiguration</code> the same way you manage your custom auto
+     * scaling configurations. This means you can do the following with the
+     * <code>DefaultConfiguration</code> that App Runner provides:</p> <ul> <li>
+     * <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the auto scaling configuration for which the App Runner
+     * <code>DefaultConfiguration</code> was created.</p> </li> <li> <p>If you delete
+     * the auto scaling configuration you can create another custom auto scaling
+     * configuration with the same <code>DefaultConfiguration</code> name. The original
+     * <code>DefaultConfiguration</code> resource provided by App Runner remains in
+     * your account unless you make changes to it.</p> </li> </ul> 
      */
     inline bool AutoScalingConfigurationNameHasBeenSet() const { return m_autoScalingConfigurationNameHasBeenSet; }
 
@@ -68,13 +86,22 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>  <p>The
-     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
-     * App Runner uses if you don't provide a custome one). You can't use it to create
-     * a new auto scaling configuration, and you can't create a revision of it.</p>
-     * <p>When you want to use your own auto scaling configuration for your App Runner
-     * service, <i>create a configuration with a different name</i>, and then provide
-     * it when you create or update your service.</p> 
+     * Runner creates incremental revisions of the configuration.</p>  <p>Prior
+     * to the release of <a
+     * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+     * scale configuration enhancements</a>, the name <code>DefaultConfiguration</code>
+     * was reserved. </p> <p>This restriction is no longer in place. You can now manage
+     * <code>DefaultConfiguration</code> the same way you manage your custom auto
+     * scaling configurations. This means you can do the following with the
+     * <code>DefaultConfiguration</code> that App Runner provides:</p> <ul> <li>
+     * <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the auto scaling configuration for which the App Runner
+     * <code>DefaultConfiguration</code> was created.</p> </li> <li> <p>If you delete
+     * the auto scaling configuration you can create another custom auto scaling
+     * configuration with the same <code>DefaultConfiguration</code> name. The original
+     * <code>DefaultConfiguration</code> resource provided by App Runner remains in
+     * your account unless you make changes to it.</p> </li> </ul> 
      */
     inline void SetAutoScalingConfigurationName(const Aws::String& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = value; }
 
@@ -82,13 +109,22 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>  <p>The
-     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
-     * App Runner uses if you don't provide a custome one). You can't use it to create
-     * a new auto scaling configuration, and you can't create a revision of it.</p>
-     * <p>When you want to use your own auto scaling configuration for your App Runner
-     * service, <i>create a configuration with a different name</i>, and then provide
-     * it when you create or update your service.</p> 
+     * Runner creates incremental revisions of the configuration.</p>  <p>Prior
+     * to the release of <a
+     * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+     * scale configuration enhancements</a>, the name <code>DefaultConfiguration</code>
+     * was reserved. </p> <p>This restriction is no longer in place. You can now manage
+     * <code>DefaultConfiguration</code> the same way you manage your custom auto
+     * scaling configurations. This means you can do the following with the
+     * <code>DefaultConfiguration</code> that App Runner provides:</p> <ul> <li>
+     * <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the auto scaling configuration for which the App Runner
+     * <code>DefaultConfiguration</code> was created.</p> </li> <li> <p>If you delete
+     * the auto scaling configuration you can create another custom auto scaling
+     * configuration with the same <code>DefaultConfiguration</code> name. The original
+     * <code>DefaultConfiguration</code> resource provided by App Runner remains in
+     * your account unless you make changes to it.</p> </li> </ul> 
      */
     inline void SetAutoScalingConfigurationName(Aws::String&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::move(value); }
 
@@ -96,13 +132,22 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>  <p>The
-     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
-     * App Runner uses if you don't provide a custome one). You can't use it to create
-     * a new auto scaling configuration, and you can't create a revision of it.</p>
-     * <p>When you want to use your own auto scaling configuration for your App Runner
-     * service, <i>create a configuration with a different name</i>, and then provide
-     * it when you create or update your service.</p> 
+     * Runner creates incremental revisions of the configuration.</p>  <p>Prior
+     * to the release of <a
+     * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+     * scale configuration enhancements</a>, the name <code>DefaultConfiguration</code>
+     * was reserved. </p> <p>This restriction is no longer in place. You can now manage
+     * <code>DefaultConfiguration</code> the same way you manage your custom auto
+     * scaling configurations. This means you can do the following with the
+     * <code>DefaultConfiguration</code> that App Runner provides:</p> <ul> <li>
+     * <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the auto scaling configuration for which the App Runner
+     * <code>DefaultConfiguration</code> was created.</p> </li> <li> <p>If you delete
+     * the auto scaling configuration you can create another custom auto scaling
+     * configuration with the same <code>DefaultConfiguration</code> name. The original
+     * <code>DefaultConfiguration</code> resource provided by App Runner remains in
+     * your account unless you make changes to it.</p> </li> </ul> 
      */
     inline void SetAutoScalingConfigurationName(const char* value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName.assign(value); }
 
@@ -110,13 +155,22 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>  <p>The
-     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
-     * App Runner uses if you don't provide a custome one). You can't use it to create
-     * a new auto scaling configuration, and you can't create a revision of it.</p>
-     * <p>When you want to use your own auto scaling configuration for your App Runner
-     * service, <i>create a configuration with a different name</i>, and then provide
-     * it when you create or update your service.</p> 
+     * Runner creates incremental revisions of the configuration.</p>  <p>Prior
+     * to the release of <a
+     * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+     * scale configuration enhancements</a>, the name <code>DefaultConfiguration</code>
+     * was reserved. </p> <p>This restriction is no longer in place. You can now manage
+     * <code>DefaultConfiguration</code> the same way you manage your custom auto
+     * scaling configurations. This means you can do the following with the
+     * <code>DefaultConfiguration</code> that App Runner provides:</p> <ul> <li>
+     * <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the auto scaling configuration for which the App Runner
+     * <code>DefaultConfiguration</code> was created.</p> </li> <li> <p>If you delete
+     * the auto scaling configuration you can create another custom auto scaling
+     * configuration with the same <code>DefaultConfiguration</code> name. The original
+     * <code>DefaultConfiguration</code> resource provided by App Runner remains in
+     * your account unless you make changes to it.</p> </li> </ul> 
      */
     inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(const Aws::String& value) { SetAutoScalingConfigurationName(value); return *this;}
 
@@ -124,13 +178,22 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>  <p>The
-     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
-     * App Runner uses if you don't provide a custome one). You can't use it to create
-     * a new auto scaling configuration, and you can't create a revision of it.</p>
-     * <p>When you want to use your own auto scaling configuration for your App Runner
-     * service, <i>create a configuration with a different name</i>, and then provide
-     * it when you create or update your service.</p> 
+     * Runner creates incremental revisions of the configuration.</p>  <p>Prior
+     * to the release of <a
+     * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+     * scale configuration enhancements</a>, the name <code>DefaultConfiguration</code>
+     * was reserved. </p> <p>This restriction is no longer in place. You can now manage
+     * <code>DefaultConfiguration</code> the same way you manage your custom auto
+     * scaling configurations. This means you can do the following with the
+     * <code>DefaultConfiguration</code> that App Runner provides:</p> <ul> <li>
+     * <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the auto scaling configuration for which the App Runner
+     * <code>DefaultConfiguration</code> was created.</p> </li> <li> <p>If you delete
+     * the auto scaling configuration you can create another custom auto scaling
+     * configuration with the same <code>DefaultConfiguration</code> name. The original
+     * <code>DefaultConfiguration</code> resource provided by App Runner remains in
+     * your account unless you make changes to it.</p> </li> </ul> 
      */
     inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(Aws::String&& value) { SetAutoScalingConfigurationName(std::move(value)); return *this;}
 
@@ -138,13 +201,22 @@ namespace Model
      * <p>A name for the auto scaling configuration. When you use it for the first time
      * in an Amazon Web Services Region, App Runner creates revision number
      * <code>1</code> of this name. When you use the same name in subsequent calls, App
-     * Runner creates incremental revisions of the configuration.</p>  <p>The
-     * name <code>DefaultConfiguration</code> is reserved (it's the configuration that
-     * App Runner uses if you don't provide a custome one). You can't use it to create
-     * a new auto scaling configuration, and you can't create a revision of it.</p>
-     * <p>When you want to use your own auto scaling configuration for your App Runner
-     * service, <i>create a configuration with a different name</i>, and then provide
-     * it when you create or update your service.</p> 
+     * Runner creates incremental revisions of the configuration.</p>  <p>Prior
+     * to the release of <a
+     * href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
+     * scale configuration enhancements</a>, the name <code>DefaultConfiguration</code>
+     * was reserved. </p> <p>This restriction is no longer in place. You can now manage
+     * <code>DefaultConfiguration</code> the same way you manage your custom auto
+     * scaling configurations. This means you can do the following with the
+     * <code>DefaultConfiguration</code> that App Runner provides:</p> <ul> <li>
+     * <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li> <li>
+     * <p>Delete the auto scaling configuration for which the App Runner
+     * <code>DefaultConfiguration</code> was created.</p> </li> <li> <p>If you delete
+     * the auto scaling configuration you can create another custom auto scaling
+     * configuration with the same <code>DefaultConfiguration</code> name. The original
+     * <code>DefaultConfiguration</code> resource provided by App Runner remains in
+     * your account unless you make changes to it.</p> </li> </ul> 
      */
     inline CreateAutoScalingConfigurationRequest& WithAutoScalingConfigurationName(const char* value) { SetAutoScalingConfigurationName(value); return *this;}
 

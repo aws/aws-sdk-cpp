@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FolderFilterAttribute::NOT_SET:
+            return {};
           case FolderFilterAttribute::PARENT_FOLDER_ARN:
             return "PARENT_FOLDER_ARN";
           case FolderFilterAttribute::DIRECT_QUICKSIGHT_OWNER:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColorSpaceUsage::NOT_SET:
+            return {};
           case ColorSpaceUsage::FORCE:
             return "FORCE";
           case ColorSpaceUsage::FALLBACK:

@@ -81,6 +81,12 @@ DescribePipeResult& DescribePipeResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");

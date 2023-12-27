@@ -405,6 +405,32 @@ namespace Glue
         }
 
         /**
+         * <p>Returns the configuration for the specified table optimizers.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTableOptimizer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetTableOptimizerOutcome BatchGetTableOptimizer(const Model::BatchGetTableOptimizerRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetTableOptimizer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetTableOptimizerRequestT = Model::BatchGetTableOptimizerRequest>
+        Model::BatchGetTableOptimizerOutcomeCallable BatchGetTableOptimizerCallable(const BatchGetTableOptimizerRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::BatchGetTableOptimizer, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetTableOptimizer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetTableOptimizerRequestT = Model::BatchGetTableOptimizerRequest>
+        void BatchGetTableOptimizerAsync(const BatchGetTableOptimizerRequestT& request, const BatchGetTableOptimizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::BatchGetTableOptimizer, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of resource metadata for a given list of trigger names. After
          * calling the <code>ListTriggers</code> operation, you can call this operation to
          * access the data to which you have been granted permissions. This operation
@@ -703,8 +729,9 @@ namespace Glue
         }
 
         /**
-         * <p>Creates a connection definition in the Data Catalog.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Creates a connection definition in the Data Catalog.</p> <p>Connections used
+         * for creating federated resources require the IAM
+         * <code>glue:PassConnection</code> permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection">AWS
          * API Reference</a></p>
          */
@@ -1141,6 +1168,33 @@ namespace Glue
         void CreateTableAsync(const CreateTableRequestT& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::CreateTable, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new table optimizer for a specific function.
+         * <code>compaction</code> is the only currently supported optimizer
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTableOptimizer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTableOptimizerOutcome CreateTableOptimizer(const Model::CreateTableOptimizerRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTableOptimizer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTableOptimizerRequestT = Model::CreateTableOptimizerRequest>
+        Model::CreateTableOptimizerOutcomeCallable CreateTableOptimizerCallable(const CreateTableOptimizerRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::CreateTableOptimizer, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTableOptimizer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTableOptimizerRequestT = Model::CreateTableOptimizerRequest>
+        void CreateTableOptimizerAsync(const CreateTableOptimizerRequestT& request, const CreateTableOptimizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::CreateTableOptimizer, request, handler, context);
         }
 
         /**
@@ -1801,6 +1855,33 @@ namespace Glue
         }
 
         /**
+         * <p>Deletes an optimizer and all associated metadata for a table. The
+         * optimization will no longer be performed on the table.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableOptimizer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTableOptimizerOutcome DeleteTableOptimizer(const Model::DeleteTableOptimizerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTableOptimizer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTableOptimizerRequestT = Model::DeleteTableOptimizerRequest>
+        Model::DeleteTableOptimizerOutcomeCallable DeleteTableOptimizerCallable(const DeleteTableOptimizerRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::DeleteTableOptimizer, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTableOptimizer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTableOptimizerRequestT = Model::DeleteTableOptimizerRequest>
+        void DeleteTableOptimizerAsync(const DeleteTableOptimizerRequestT& request, const DeleteTableOptimizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::DeleteTableOptimizer, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a specified version of a table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion">AWS
          * API Reference</a></p>
@@ -2106,6 +2187,58 @@ namespace Glue
         void GetColumnStatisticsForTableAsync(const GetColumnStatisticsForTableRequestT& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::GetColumnStatisticsForTable, request, handler, context);
+        }
+
+        /**
+         * <p>Get the associated metadata/information for a task run, given a task run
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetColumnStatisticsTaskRunOutcome GetColumnStatisticsTaskRun(const Model::GetColumnStatisticsTaskRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetColumnStatisticsTaskRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetColumnStatisticsTaskRunRequestT = Model::GetColumnStatisticsTaskRunRequest>
+        Model::GetColumnStatisticsTaskRunOutcomeCallable GetColumnStatisticsTaskRunCallable(const GetColumnStatisticsTaskRunRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetColumnStatisticsTaskRun, request);
+        }
+
+        /**
+         * An Async wrapper for GetColumnStatisticsTaskRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetColumnStatisticsTaskRunRequestT = Model::GetColumnStatisticsTaskRunRequest>
+        void GetColumnStatisticsTaskRunAsync(const GetColumnStatisticsTaskRunRequestT& request, const GetColumnStatisticsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetColumnStatisticsTaskRun, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about all runs associated with the specified
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetColumnStatisticsTaskRunsOutcome GetColumnStatisticsTaskRuns(const Model::GetColumnStatisticsTaskRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetColumnStatisticsTaskRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetColumnStatisticsTaskRunsRequestT = Model::GetColumnStatisticsTaskRunsRequest>
+        Model::GetColumnStatisticsTaskRunsOutcomeCallable GetColumnStatisticsTaskRunsCallable(const GetColumnStatisticsTaskRunsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetColumnStatisticsTaskRuns, request);
+        }
+
+        /**
+         * An Async wrapper for GetColumnStatisticsTaskRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetColumnStatisticsTaskRunsRequestT = Model::GetColumnStatisticsTaskRunsRequest>
+        void GetColumnStatisticsTaskRunsAsync(const GetColumnStatisticsTaskRunsRequestT& request, const GetColumnStatisticsTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetColumnStatisticsTaskRuns, request, handler, context);
         }
 
         /**
@@ -3226,6 +3359,32 @@ namespace Glue
         }
 
         /**
+         * <p>Returns the configuration of all optimizers associated with a specified
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableOptimizer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTableOptimizerOutcome GetTableOptimizer(const Model::GetTableOptimizerRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTableOptimizer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTableOptimizerRequestT = Model::GetTableOptimizerRequest>
+        Model::GetTableOptimizerOutcomeCallable GetTableOptimizerCallable(const GetTableOptimizerRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetTableOptimizer, request);
+        }
+
+        /**
+         * An Async wrapper for GetTableOptimizer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTableOptimizerRequestT = Model::GetTableOptimizerRequest>
+        void GetTableOptimizerAsync(const GetTableOptimizerRequestT& request, const GetTableOptimizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetTableOptimizer, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a specified version of a table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion">AWS
          * API Reference</a></p>
@@ -3665,6 +3824,31 @@ namespace Glue
         }
 
         /**
+         * <p>List all task runs for a particular account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListColumnStatisticsTaskRunsOutcome ListColumnStatisticsTaskRuns(const Model::ListColumnStatisticsTaskRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListColumnStatisticsTaskRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListColumnStatisticsTaskRunsRequestT = Model::ListColumnStatisticsTaskRunsRequest>
+        Model::ListColumnStatisticsTaskRunsOutcomeCallable ListColumnStatisticsTaskRunsCallable(const ListColumnStatisticsTaskRunsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::ListColumnStatisticsTaskRuns, request);
+        }
+
+        /**
+         * An Async wrapper for ListColumnStatisticsTaskRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListColumnStatisticsTaskRunsRequestT = Model::ListColumnStatisticsTaskRunsRequest>
+        void ListColumnStatisticsTaskRunsAsync(const ListColumnStatisticsTaskRunsRequestT& request, const ListColumnStatisticsTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::ListColumnStatisticsTaskRuns, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the names of all crawler resources in this Amazon Web Services
          * account, or the resources with the specified tag. This operation allows you to
          * see which resources are available in your account, and their names.</p> <p>This
@@ -4086,6 +4270,32 @@ namespace Glue
         }
 
         /**
+         * <p>Lists the history of previous optimizer runs for a specific
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTableOptimizerRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTableOptimizerRunsOutcome ListTableOptimizerRuns(const Model::ListTableOptimizerRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTableOptimizerRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTableOptimizerRunsRequestT = Model::ListTableOptimizerRunsRequest>
+        Model::ListTableOptimizerRunsOutcomeCallable ListTableOptimizerRunsCallable(const ListTableOptimizerRunsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::ListTableOptimizerRuns, request);
+        }
+
+        /**
+         * An Async wrapper for ListTableOptimizerRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTableOptimizerRunsRequestT = Model::ListTableOptimizerRunsRequest>
+        void ListTableOptimizerRunsAsync(const ListTableOptimizerRunsRequestT& request, const ListTableOptimizerRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::ListTableOptimizerRuns, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the names of all trigger resources in this Amazon Web Services
          * account, or the resources with the specified tag. This operation allows you to
          * see which resources are available in your account, and their names.</p> <p>This
@@ -4481,6 +4691,32 @@ namespace Glue
         }
 
         /**
+         * <p>Starts a column statistics task run, for a specified table and
+         * columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartColumnStatisticsTaskRunOutcome StartColumnStatisticsTaskRun(const Model::StartColumnStatisticsTaskRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartColumnStatisticsTaskRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartColumnStatisticsTaskRunRequestT = Model::StartColumnStatisticsTaskRunRequest>
+        Model::StartColumnStatisticsTaskRunOutcomeCallable StartColumnStatisticsTaskRunCallable(const StartColumnStatisticsTaskRunRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::StartColumnStatisticsTaskRun, request);
+        }
+
+        /**
+         * An Async wrapper for StartColumnStatisticsTaskRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartColumnStatisticsTaskRunRequestT = Model::StartColumnStatisticsTaskRunRequest>
+        void StartColumnStatisticsTaskRunAsync(const StartColumnStatisticsTaskRunRequestT& request, const StartColumnStatisticsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::StartColumnStatisticsTaskRun, request, handler, context);
+        }
+
+        /**
          * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
          * If the crawler is already running, returns a <a
          * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p><p><h3>See
@@ -4539,7 +4775,8 @@ namespace Glue
          * <p>Starts a recommendation run that is used to generate rules when you don't
          * know what rules to write. Glue Data Quality analyzes the data and comes up with
          * recommendations for a potential ruleset. You can then triage the ruleset and
-         * modify the generated ruleset to your liking.</p><p><h3>See Also:</h3>   <a
+         * modify the generated ruleset to your liking.</p> <p>Recommendation runs are
+         * automatically deleted after 90 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRuleRecommendationRun">AWS
          * API Reference</a></p>
          */
@@ -4816,6 +5053,31 @@ namespace Glue
         void StartWorkflowRunAsync(const StartWorkflowRunRequestT& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::StartWorkflowRun, request, handler, context);
+        }
+
+        /**
+         * <p>Stops a task run for the specified table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopColumnStatisticsTaskRunOutcome StopColumnStatisticsTaskRun(const Model::StopColumnStatisticsTaskRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopColumnStatisticsTaskRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopColumnStatisticsTaskRunRequestT = Model::StopColumnStatisticsTaskRunRequest>
+        Model::StopColumnStatisticsTaskRunOutcomeCallable StopColumnStatisticsTaskRunCallable(const StopColumnStatisticsTaskRunRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::StopColumnStatisticsTaskRun, request);
+        }
+
+        /**
+         * An Async wrapper for StopColumnStatisticsTaskRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopColumnStatisticsTaskRunRequestT = Model::StopColumnStatisticsTaskRunRequest>
+        void StopColumnStatisticsTaskRunAsync(const StopColumnStatisticsTaskRunRequestT& request, const StopColumnStatisticsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::StopColumnStatisticsTaskRun, request, handler, context);
         }
 
         /**
@@ -5485,6 +5747,32 @@ namespace Glue
         void UpdateTableAsync(const UpdateTableRequestT& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::UpdateTable, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the configuration for an existing table optimizer.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTableOptimizer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTableOptimizerOutcome UpdateTableOptimizer(const Model::UpdateTableOptimizerRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTableOptimizer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateTableOptimizerRequestT = Model::UpdateTableOptimizerRequest>
+        Model::UpdateTableOptimizerOutcomeCallable UpdateTableOptimizerCallable(const UpdateTableOptimizerRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::UpdateTableOptimizer, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateTableOptimizer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateTableOptimizerRequestT = Model::UpdateTableOptimizerRequest>
+        void UpdateTableOptimizerAsync(const UpdateTableOptimizerRequestT& request, const UpdateTableOptimizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::UpdateTableOptimizer, request, handler, context);
         }
 
         /**

@@ -20,7 +20,13 @@ PutRecommendationPreferencesRequest::PutRecommendationPreferencesRequest() :
     m_enhancedInfrastructureMetricsHasBeenSet(false),
     m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
     m_inferredWorkloadTypesHasBeenSet(false),
-    m_externalMetricsPreferenceHasBeenSet(false)
+    m_externalMetricsPreferenceHasBeenSet(false),
+    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET),
+    m_lookBackPeriodHasBeenSet(false),
+    m_utilizationPreferencesHasBeenSet(false),
+    m_preferredResourcesHasBeenSet(false),
+    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET),
+    m_savingsEstimationModeHasBeenSet(false)
 {
 }
 
@@ -53,6 +59,38 @@ Aws::String PutRecommendationPreferencesRequest::SerializePayload() const
   {
    payload.WithObject("externalMetricsPreference", m_externalMetricsPreference.Jsonize());
 
+  }
+
+  if(m_lookBackPeriodHasBeenSet)
+  {
+   payload.WithString("lookBackPeriod", LookBackPeriodPreferenceMapper::GetNameForLookBackPeriodPreference(m_lookBackPeriod));
+  }
+
+  if(m_utilizationPreferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> utilizationPreferencesJsonList(m_utilizationPreferences.size());
+   for(unsigned utilizationPreferencesIndex = 0; utilizationPreferencesIndex < utilizationPreferencesJsonList.GetLength(); ++utilizationPreferencesIndex)
+   {
+     utilizationPreferencesJsonList[utilizationPreferencesIndex].AsObject(m_utilizationPreferences[utilizationPreferencesIndex].Jsonize());
+   }
+   payload.WithArray("utilizationPreferences", std::move(utilizationPreferencesJsonList));
+
+  }
+
+  if(m_preferredResourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> preferredResourcesJsonList(m_preferredResources.size());
+   for(unsigned preferredResourcesIndex = 0; preferredResourcesIndex < preferredResourcesJsonList.GetLength(); ++preferredResourcesIndex)
+   {
+     preferredResourcesJsonList[preferredResourcesIndex].AsObject(m_preferredResources[preferredResourcesIndex].Jsonize());
+   }
+   payload.WithArray("preferredResources", std::move(preferredResourcesJsonList));
+
+  }
+
+  if(m_savingsEstimationModeHasBeenSet)
+  {
+   payload.WithString("savingsEstimationMode", SavingsEstimationModeMapper::GetNameForSavingsEstimationMode(m_savingsEstimationMode));
   }
 
   return payload.View().WriteReadable();

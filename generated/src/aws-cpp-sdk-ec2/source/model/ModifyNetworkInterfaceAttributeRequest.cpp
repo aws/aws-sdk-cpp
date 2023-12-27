@@ -18,7 +18,10 @@ ModifyNetworkInterfaceAttributeRequest::ModifyNetworkInterfaceAttributeRequest()
     m_groupsHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_sourceDestCheckHasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false)
+    m_enaSrdSpecificationHasBeenSet(false),
+    m_enablePrimaryIpv6(false),
+    m_enablePrimaryIpv6HasBeenSet(false),
+    m_connectionTrackingSpecificationHasBeenSet(false)
 {
 }
 
@@ -65,6 +68,16 @@ Aws::String ModifyNetworkInterfaceAttributeRequest::SerializePayload() const
   if(m_enaSrdSpecificationHasBeenSet)
   {
     m_enaSrdSpecification.OutputToStream(ss, "EnaSrdSpecification");
+  }
+
+  if(m_enablePrimaryIpv6HasBeenSet)
+  {
+    ss << "EnablePrimaryIpv6=" << std::boolalpha << m_enablePrimaryIpv6 << "&";
+  }
+
+  if(m_connectionTrackingSpecificationHasBeenSet)
+  {
+    m_connectionTrackingSpecification.OutputToStream(ss, "ConnectionTrackingSpecification");
   }
 
   ss << "Version=2016-11-15";

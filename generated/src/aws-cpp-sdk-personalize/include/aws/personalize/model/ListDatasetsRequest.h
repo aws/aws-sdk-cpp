@@ -84,50 +84,50 @@ namespace Model
 
 
     /**
-     * <p>A token returned from the previous call to <code>ListDatasetImportJobs</code>
-     * for getting the next set of dataset import jobs (if they exist).</p>
+     * <p>A token returned from the previous call to <code>ListDatasets</code> for
+     * getting the next set of dataset import jobs (if they exist).</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token returned from the previous call to <code>ListDatasetImportJobs</code>
-     * for getting the next set of dataset import jobs (if they exist).</p>
+     * <p>A token returned from the previous call to <code>ListDatasets</code> for
+     * getting the next set of dataset import jobs (if they exist).</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A token returned from the previous call to <code>ListDatasetImportJobs</code>
-     * for getting the next set of dataset import jobs (if they exist).</p>
+     * <p>A token returned from the previous call to <code>ListDatasets</code> for
+     * getting the next set of dataset import jobs (if they exist).</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token returned from the previous call to <code>ListDatasetImportJobs</code>
-     * for getting the next set of dataset import jobs (if they exist).</p>
+     * <p>A token returned from the previous call to <code>ListDatasets</code> for
+     * getting the next set of dataset import jobs (if they exist).</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token returned from the previous call to <code>ListDatasetImportJobs</code>
-     * for getting the next set of dataset import jobs (if they exist).</p>
+     * <p>A token returned from the previous call to <code>ListDatasets</code> for
+     * getting the next set of dataset import jobs (if they exist).</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token returned from the previous call to <code>ListDatasetImportJobs</code>
-     * for getting the next set of dataset import jobs (if they exist).</p>
+     * <p>A token returned from the previous call to <code>ListDatasets</code> for
+     * getting the next set of dataset import jobs (if they exist).</p>
      */
     inline ListDatasetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token returned from the previous call to <code>ListDatasetImportJobs</code>
-     * for getting the next set of dataset import jobs (if they exist).</p>
+     * <p>A token returned from the previous call to <code>ListDatasets</code> for
+     * getting the next set of dataset import jobs (if they exist).</p>
      */
     inline ListDatasetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token returned from the previous call to <code>ListDatasetImportJobs</code>
-     * for getting the next set of dataset import jobs (if they exist).</p>
+     * <p>A token returned from the previous call to <code>ListDatasets</code> for
+     * getting the next set of dataset import jobs (if they exist).</p>
      */
     inline ListDatasetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

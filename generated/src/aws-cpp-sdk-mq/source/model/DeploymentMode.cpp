@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentMode::NOT_SET:
+            return {};
           case DeploymentMode::SINGLE_INSTANCE:
             return "SINGLE_INSTANCE";
           case DeploymentMode::ACTIVE_STANDBY_MULTI_AZ:

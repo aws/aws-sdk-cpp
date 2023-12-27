@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitoringExecutionSortKey::NOT_SET:
+            return {};
           case MonitoringExecutionSortKey::CreationTime:
             return "CreationTime";
           case MonitoringExecutionSortKey::ScheduledTime:

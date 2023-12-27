@@ -183,7 +183,7 @@ namespace Model
 
     /**
      * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
-     * bucket due to an object-level issue or error. For example, the object is a
+     * bucket due to an object-level issue or error. For example, an object is a
      * malformed file. This value includes objects that Macie wasn't able to analyze
      * for reasons reported by other statistics in the ResourceStatistics object.</p>
      */
@@ -191,7 +191,7 @@ namespace Model
 
     /**
      * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
-     * bucket due to an object-level issue or error. For example, the object is a
+     * bucket due to an object-level issue or error. For example, an object is a
      * malformed file. This value includes objects that Macie wasn't able to analyze
      * for reasons reported by other statistics in the ResourceStatistics object.</p>
      */
@@ -199,7 +199,7 @@ namespace Model
 
     /**
      * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
-     * bucket due to an object-level issue or error. For example, the object is a
+     * bucket due to an object-level issue or error. For example, an object is a
      * malformed file. This value includes objects that Macie wasn't able to analyze
      * for reasons reported by other statistics in the ResourceStatistics object.</p>
      */
@@ -207,7 +207,7 @@ namespace Model
 
     /**
      * <p>The total number of objects that Amazon Macie wasn't able to analyze in the
-     * bucket due to an object-level issue or error. For example, the object is a
+     * bucket due to an object-level issue or error. For example, an object is a
      * malformed file. This value includes objects that Macie wasn't able to analyze
      * for reasons reported by other statistics in the ResourceStatistics object.</p>
      */

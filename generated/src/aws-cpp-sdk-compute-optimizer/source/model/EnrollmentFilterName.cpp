@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnrollmentFilterName::NOT_SET:
+            return {};
           case EnrollmentFilterName::Status:
             return "Status";
           default:

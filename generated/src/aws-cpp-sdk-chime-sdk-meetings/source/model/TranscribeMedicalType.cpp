@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribeMedicalType::NOT_SET:
+            return {};
           case TranscribeMedicalType::CONVERSATION:
             return "CONVERSATION";
           case TranscribeMedicalType::DICTATION:

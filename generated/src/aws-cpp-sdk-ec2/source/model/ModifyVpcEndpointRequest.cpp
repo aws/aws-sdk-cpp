@@ -27,7 +27,8 @@ ModifyVpcEndpointRequest::ModifyVpcEndpointRequest() :
     m_ipAddressTypeHasBeenSet(false),
     m_dnsOptionsHasBeenSet(false),
     m_privateDnsEnabled(false),
-    m_privateDnsEnabledHasBeenSet(false)
+    m_privateDnsEnabledHasBeenSet(false),
+    m_subnetConfigurationsHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,16 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
   if(m_privateDnsEnabledHasBeenSet)
   {
     ss << "PrivateDnsEnabled=" << std::boolalpha << m_privateDnsEnabled << "&";
+  }
+
+  if(m_subnetConfigurationsHasBeenSet)
+  {
+    unsigned subnetConfigurationsCount = 1;
+    for(auto& item : m_subnetConfigurations)
+    {
+      item.OutputToStream(ss, "SubnetConfiguration.", subnetConfigurationsCount, "");
+      subnetConfigurationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

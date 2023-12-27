@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryStatus::NOT_SET:
+            return {};
           case QueryStatus::QUEUED:
             return "QUEUED";
           case QueryStatus::RUNNING:

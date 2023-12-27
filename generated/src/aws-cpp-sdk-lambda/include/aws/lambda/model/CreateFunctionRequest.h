@@ -19,6 +19,7 @@
 #include <aws/lambda/model/ImageConfig.h>
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/SnapStart.h>
+#include <aws/lambda/model/LoggingConfig.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/Architecture.h>
 #include <utility>
@@ -1289,6 +1290,37 @@ namespace Model
      */
     inline CreateFunctionRequest& WithSnapStart(SnapStart&& value) { SetSnapStart(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = value; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::move(value); }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline CreateFunctionRequest& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline CreateFunctionRequest& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -1359,6 +1391,9 @@ namespace Model
 
     SnapStart m_snapStart;
     bool m_snapStartHasBeenSet = false;
+
+    LoggingConfig m_loggingConfig;
+    bool m_loggingConfigHasBeenSet = false;
   };
 
 } // namespace Model

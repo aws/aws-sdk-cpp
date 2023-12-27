@@ -11,7 +11,7 @@
         "Bodyless", "HTTPGET", "ratelimiter", "Ratelimiter", "STDMETHODCALLTYPE", "CANTSAVE", "OLECHAR", "DISPID",
         "UNKNOWNNAME", "DISPPARAMS", "XMLHTTP", "comptr", "Metadataservice", "Streamfn", "HWAVEOUT", "matdesc",
         "Presigner", "xindex", "errortype", "waveout", "WAVEOUTCAPSA", "ALLOWSYNC", "WAVEHDR", "MMSYSERR",
-        "WAVEFORMATEX", "Unprepare", "DDISABLE_IMDSV1",
+        "WAVEFORMATEX", "Unprepare", "DDISABLE_IMDSV1", "threadpool",
         // AWS general
         "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob", "AWSXML", "IMDSV",
         // AWS Signature
@@ -61,7 +61,7 @@
         // Aws common runtime API
         "Mtls",
 	    // Opentelemetry
-	    "Otel", "opentelemetry", "nostd", "OPTEL", "tparam"
+	    "Otel", "opentelemetry", "nostd", "OPTEL", "tparam","OTLP"
     ],
     "ignoreWords": [
         // variables defined in ConcurrentStreamBuf

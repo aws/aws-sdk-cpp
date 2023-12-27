@@ -103,31 +103,31 @@ namespace Model
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers that
-     * are included (used) when analyzing data.</p>
+     * are explicitly included (used) when analyzing data.</p>
      */
     inline const SensitivityInspectionTemplateIncludes& GetIncludes() const{ return m_includes; }
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers that
-     * are included (used) when analyzing data.</p>
+     * are explicitly included (used) when analyzing data.</p>
      */
     inline void SetIncludes(const SensitivityInspectionTemplateIncludes& value) { m_includes = value; }
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers that
-     * are included (used) when analyzing data.</p>
+     * are explicitly included (used) when analyzing data.</p>
      */
     inline void SetIncludes(SensitivityInspectionTemplateIncludes&& value) { m_includes = std::move(value); }
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers that
-     * are included (used) when analyzing data.</p>
+     * are explicitly included (used) when analyzing data.</p>
      */
     inline GetSensitivityInspectionTemplateResult& WithIncludes(const SensitivityInspectionTemplateIncludes& value) { SetIncludes(value); return *this;}
 
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers that
-     * are included (used) when analyzing data.</p>
+     * are explicitly included (used) when analyzing data.</p>
      */
     inline GetSensitivityInspectionTemplateResult& WithIncludes(SensitivityInspectionTemplateIncludes&& value) { SetIncludes(std::move(value)); return *this;}
 

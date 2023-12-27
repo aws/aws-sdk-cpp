@@ -28,8 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>Object specifying a participant token in a stage.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Object specifying a participant token in a stage.</p> <p> <b>Important</b>:
+   * Treat tokens as opaque; i.e., do not build functionality based on token
+   * contents. The format of tokens could change in the future.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ParticipantToken">AWS
    * API Reference</a></p>
    */

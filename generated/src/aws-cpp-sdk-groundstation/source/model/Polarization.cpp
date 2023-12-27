@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Polarization::NOT_SET:
+            return {};
           case Polarization::LEFT_HAND:
             return "LEFT_HAND";
           case Polarization::NONE:

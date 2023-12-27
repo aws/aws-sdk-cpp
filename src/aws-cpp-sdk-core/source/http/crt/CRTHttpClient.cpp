@@ -58,7 +58,7 @@ protected:
             // kick-in in plenty of time.
             bool retValue = Aws::Crt::Io::StdIOStreamInputStream::ReadImpl(buffer);
             size_t newPos = buffer.len;
-            AWS_ASSERT(newPos >= currentPos && !"the buffer length should not have decreased in value.");
+            AWS_ASSERT(newPos >= currentPos && "the buffer length should not have decreased in value.");
 
             if (retValue && m_isStreaming)
             {
@@ -290,7 +290,12 @@ namespace Aws
             }
 
             // When data is received from the content body of the incoming response, just copy it to the output stream.
+            assert(response);
             response->GetResponseBody().write((const char*)body.ptr, static_cast<long>(body.len));
+            if (response->GetResponseBody().fail()) {
+                const auto& ref = response->GetResponseBody();
+                AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to write " << body.len << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
+            }
 
             if (request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
             {

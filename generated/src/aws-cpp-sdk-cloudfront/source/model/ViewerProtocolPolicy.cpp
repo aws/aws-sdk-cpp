@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ViewerProtocolPolicy::NOT_SET:
+            return {};
           case ViewerProtocolPolicy::allow_all:
             return "allow-all";
           case ViewerProtocolPolicy::https_only:

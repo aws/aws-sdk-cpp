@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchStrategy::NOT_SET:
+            return {};
           case BatchStrategy::MultiRecord:
             return "MultiRecord";
           case BatchStrategy::SingleRecord:

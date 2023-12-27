@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalysisResultLevel::NOT_SET:
+            return {};
           case AnalysisResultLevel::INFO:
             return "INFO";
           case AnalysisResultLevel::WARNING:

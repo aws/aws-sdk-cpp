@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputePlatform::NOT_SET:
+            return {};
           case ComputePlatform::Default:
             return "Default";
           case ComputePlatform::AWSLambda:

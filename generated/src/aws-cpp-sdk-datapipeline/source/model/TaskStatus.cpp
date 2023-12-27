@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskStatus::NOT_SET:
+            return {};
           case TaskStatus::FINISHED:
             return "FINISHED";
           case TaskStatus::FAILED:

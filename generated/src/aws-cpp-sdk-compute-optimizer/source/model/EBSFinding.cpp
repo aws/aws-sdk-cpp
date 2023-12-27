@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EBSFinding::NOT_SET:
+            return {};
           case EBSFinding::Optimized:
             return "Optimized";
           case EBSFinding::NotOptimized:

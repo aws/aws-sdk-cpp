@@ -367,54 +367,54 @@ namespace Model
 
 
     /**
-     * <p>The output format for the stream. Valid values are <code>json</code> and
-     * <code>opentelemetry0.7</code>. For more information about metric stream output
-     * formats, see <a
+     * <p>The output format for the stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more
+     * information about metric stream output formats, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
      * Metric streams output formats</a>.</p>
      */
     inline const MetricStreamOutputFormat& GetOutputFormat() const{ return m_outputFormat; }
 
     /**
-     * <p>The output format for the stream. Valid values are <code>json</code> and
-     * <code>opentelemetry0.7</code>. For more information about metric stream output
-     * formats, see <a
+     * <p>The output format for the stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more
+     * information about metric stream output formats, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
      * Metric streams output formats</a>.</p>
      */
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
 
     /**
-     * <p>The output format for the stream. Valid values are <code>json</code> and
-     * <code>opentelemetry0.7</code>. For more information about metric stream output
-     * formats, see <a
+     * <p>The output format for the stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more
+     * information about metric stream output formats, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
      * Metric streams output formats</a>.</p>
      */
     inline void SetOutputFormat(const MetricStreamOutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
 
     /**
-     * <p>The output format for the stream. Valid values are <code>json</code> and
-     * <code>opentelemetry0.7</code>. For more information about metric stream output
-     * formats, see <a
+     * <p>The output format for the stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more
+     * information about metric stream output formats, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
      * Metric streams output formats</a>.</p>
      */
     inline void SetOutputFormat(MetricStreamOutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
 
     /**
-     * <p>The output format for the stream. Valid values are <code>json</code> and
-     * <code>opentelemetry0.7</code>. For more information about metric stream output
-     * formats, see <a
+     * <p>The output format for the stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more
+     * information about metric stream output formats, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
      * Metric streams output formats</a>.</p>
      */
     inline PutMetricStreamRequest& WithOutputFormat(const MetricStreamOutputFormat& value) { SetOutputFormat(value); return *this;}
 
     /**
-     * <p>The output format for the stream. Valid values are <code>json</code> and
-     * <code>opentelemetry0.7</code>. For more information about metric stream output
-     * formats, see <a
+     * <p>The output format for the stream. Valid values are <code>json</code>,
+     * <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more
+     * information about metric stream output formats, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
      * Metric streams output formats</a>.</p>
      */
@@ -555,8 +555,8 @@ namespace Model
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
-     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9, and so on.</p>
+     * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
+     * percentile statistics such as p95, p99.9, and so on.</p>
      */
     inline const Aws::Vector<MetricStreamStatisticsConfiguration>& GetStatisticsConfigurations() const{ return m_statisticsConfigurations; }
 
@@ -573,8 +573,8 @@ namespace Model
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
-     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9, and so on.</p>
+     * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
+     * percentile statistics such as p95, p99.9, and so on.</p>
      */
     inline bool StatisticsConfigurationsHasBeenSet() const { return m_statisticsConfigurationsHasBeenSet; }
 
@@ -591,8 +591,8 @@ namespace Model
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
-     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9, and so on.</p>
+     * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
+     * percentile statistics such as p95, p99.9, and so on.</p>
      */
     inline void SetStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations = value; }
 
@@ -609,8 +609,8 @@ namespace Model
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
-     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9, and so on.</p>
+     * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
+     * percentile statistics such as p95, p99.9, and so on.</p>
      */
     inline void SetStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations = std::move(value); }
 
@@ -627,8 +627,8 @@ namespace Model
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
-     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9, and so on.</p>
+     * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
+     * percentile statistics such as p95, p99.9, and so on.</p>
      */
     inline PutMetricStreamRequest& WithStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { SetStatisticsConfigurations(value); return *this;}
 
@@ -645,8 +645,8 @@ namespace Model
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
-     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9, and so on.</p>
+     * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
+     * percentile statistics such as p95, p99.9, and so on.</p>
      */
     inline PutMetricStreamRequest& WithStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { SetStatisticsConfigurations(std::move(value)); return *this;}
 
@@ -663,8 +663,8 @@ namespace Model
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
-     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9, and so on.</p>
+     * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
+     * percentile statistics such as p95, p99.9, and so on.</p>
      */
     inline PutMetricStreamRequest& AddStatisticsConfigurations(const MetricStreamStatisticsConfiguration& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.push_back(value); return *this; }
 
@@ -681,8 +681,8 @@ namespace Model
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
-     * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9, and so on.</p>
+     * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
+     * percentile statistics such as p95, p99.9, and so on.</p>
      */
     inline PutMetricStreamRequest& AddStatisticsConfigurations(MetricStreamStatisticsConfiguration&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.push_back(std::move(value)); return *this; }
 

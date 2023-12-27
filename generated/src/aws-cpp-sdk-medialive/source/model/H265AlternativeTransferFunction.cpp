@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265AlternativeTransferFunction::NOT_SET:
+            return {};
           case H265AlternativeTransferFunction::INSERT:
             return "INSERT";
           case H265AlternativeTransferFunction::OMIT:

@@ -43,9 +43,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
@@ -53,9 +53,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
 
@@ -63,9 +63,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
@@ -73,9 +73,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
@@ -83,9 +83,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
 
@@ -93,9 +93,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline ValidateTemplateRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
@@ -103,9 +103,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline ValidateTemplateRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
@@ -113,9 +113,9 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline ValidateTemplateRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
@@ -125,9 +125,9 @@ namespace Model
      * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
 
@@ -136,9 +136,9 @@ namespace Model
      * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
 
@@ -147,9 +147,9 @@ namespace Model
      * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
@@ -158,9 +158,9 @@ namespace Model
      * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
@@ -169,9 +169,9 @@ namespace Model
      * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
 
@@ -180,9 +180,9 @@ namespace Model
      * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline ValidateTemplateRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
 
@@ -191,9 +191,9 @@ namespace Model
      * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline ValidateTemplateRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
@@ -202,9 +202,9 @@ namespace Model
      * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a
      * Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must pass
-     * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
-     * <code>TemplateBody</code> is used.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
+     * passed, only <code>TemplateBody</code> is used.</p>
      */
     inline ValidateTemplateRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 

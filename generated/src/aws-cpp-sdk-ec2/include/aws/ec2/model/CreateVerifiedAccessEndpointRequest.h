@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/CreateVerifiedAccessEndpointLoadBalancerOptions.h>
 #include <aws/ec2/model/CreateVerifiedAccessEndpointEniOptions.h>
+#include <aws/ec2/model/VerifiedAccessSseSpecificationRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -295,55 +296,64 @@ namespace Model
 
     /**
      * <p>The IDs of the security groups to associate with the Verified Access
-     * endpoint.</p>
+     * endpoint. Required if <code>AttachmentType</code> is set to
+     * <code>vpc</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>The IDs of the security groups to associate with the Verified Access
-     * endpoint.</p>
+     * endpoint. Required if <code>AttachmentType</code> is set to
+     * <code>vpc</code>.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the security groups to associate with the Verified Access
-     * endpoint.</p>
+     * endpoint. Required if <code>AttachmentType</code> is set to
+     * <code>vpc</code>.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>The IDs of the security groups to associate with the Verified Access
-     * endpoint.</p>
+     * endpoint. Required if <code>AttachmentType</code> is set to
+     * <code>vpc</code>.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>The IDs of the security groups to associate with the Verified Access
-     * endpoint.</p>
+     * endpoint. Required if <code>AttachmentType</code> is set to
+     * <code>vpc</code>.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>The IDs of the security groups to associate with the Verified Access
-     * endpoint.</p>
+     * endpoint. Required if <code>AttachmentType</code> is set to
+     * <code>vpc</code>.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the security groups to associate with the Verified Access
-     * endpoint.</p>
+     * endpoint. Required if <code>AttachmentType</code> is set to
+     * <code>vpc</code>.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>The IDs of the security groups to associate with the Verified Access
-     * endpoint.</p>
+     * endpoint. Required if <code>AttachmentType</code> is set to
+     * <code>vpc</code>.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the security groups to associate with the Verified Access
-     * endpoint.</p>
+     * endpoint. Required if <code>AttachmentType</code> is set to
+     * <code>vpc</code>.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -642,6 +652,37 @@ namespace Model
      */
     inline CreateVerifiedAccessEndpointRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline const VerifiedAccessSseSpecificationRequest& GetSseSpecification() const{ return m_sseSpecification; }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline void SetSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline void SetSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline CreateVerifiedAccessEndpointRequest& WithSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { SetSseSpecification(value); return *this;}
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline CreateVerifiedAccessEndpointRequest& WithSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { SetSseSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_verifiedAccessGroupId;
@@ -685,6 +726,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    VerifiedAccessSseSpecificationRequest m_sseSpecification;
+    bool m_sseSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -912,8 +912,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -924,8 +924,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -936,8 +936,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -948,8 +948,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -960,8 +960,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -972,8 +972,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -984,8 +984,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -996,8 +996,8 @@ namespace Model
      * <code>PutMetricAlarm</code> operation, you must specify either
      * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
      * creating an alarm based on a math expression, you cannot specify this parameter,
-     * or any of the <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * or any of the <code>Namespace</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
      * information in the <code>Metrics</code> array.</p>
      */
@@ -1109,66 +1109,170 @@ namespace Model
 
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline const Aws::String& GetExtendedStatistic() const{ return m_extendedStatistic; }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline bool ExtendedStatisticHasBeenSet() const { return m_extendedStatisticHasBeenSet; }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline void SetExtendedStatistic(const Aws::String& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = value; }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline void SetExtendedStatistic(Aws::String&& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = std::move(value); }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline void SetExtendedStatistic(const char* value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic.assign(value); }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(const Aws::String& value) { SetExtendedStatistic(value); return *this;}
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(Aws::String&& value) { SetExtendedStatistic(std::move(value)); return *this;}
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(const char* value) { SetExtendedStatistic(value); return *this;}
 
@@ -1309,15 +1413,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
@@ -1327,15 +1433,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
@@ -1345,15 +1453,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
@@ -1363,15 +1473,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
@@ -1381,15 +1493,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline PutMetricAlarmRequest& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
@@ -1399,15 +1513,17 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
-     * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually, metrics are published with only one unit, so the
-     * alarm works as intended.</p> <p>However, if the metric is published with
-     * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and it behaves unpredictably.</p> <p>We recommend omitting
-     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
-     * is not published for this metric. Doing so causes the alarm to be stuck in the
-     * <code>INSUFFICIENT DATA</code> state.</p>
+     * aggregated separately. If you are creating an alarm based on a metric math
+     * expression, you can specify the unit for each metric (if needed) within the
+     * objects in the <code>Metrics</code> array.</p> <p>If you don't specify
+     * <code>Unit</code>, CloudWatch retrieves all unit types that have been published
+     * for the metric and attempts to evaluate the alarm. Usually, metrics are
+     * published with only one unit, so the alarm works as intended.</p> <p>However, if
+     * the metric is published with multiple types of units and you don't specify a
+     * unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+     * <p>We recommend omitting <code>Unit</code> so that you don't inadvertently
+     * specify an incorrect unit that is not published for this metric. Doing so causes
+     * the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline PutMetricAlarmRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
@@ -1812,8 +1928,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1832,8 +1948,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1852,8 +1968,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1872,8 +1988,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1892,8 +2008,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1912,8 +2028,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1932,8 +2048,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1952,8 +2068,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
-     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,
-     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or
      * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
      * same operation. Instead, you retrieve the metrics you are using in your math
      * expression as part of the <code>Metrics</code> array.</p>
@@ -1963,12 +2079,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -1977,12 +2094,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -1991,12 +2109,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2005,12 +2124,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2019,12 +2139,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2033,12 +2154,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2047,12 +2169,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2061,12 +2184,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>

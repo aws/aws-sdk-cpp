@@ -25,7 +25,10 @@ namespace Aws
         static const int PINPOINT_APP_HASH = HashingUtils::HashString("PINPOINT_APP");
         static const int WISDOM_ASSISTANT_HASH = HashingUtils::HashString("WISDOM_ASSISTANT");
         static const int WISDOM_KNOWLEDGE_BASE_HASH = HashingUtils::HashString("WISDOM_KNOWLEDGE_BASE");
+        static const int WISDOM_QUICK_RESPONSES_HASH = HashingUtils::HashString("WISDOM_QUICK_RESPONSES");
         static const int CASES_DOMAIN_HASH = HashingUtils::HashString("CASES_DOMAIN");
+        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
+        static const int FILE_SCANNER_HASH = HashingUtils::HashString("FILE_SCANNER");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
@@ -51,9 +54,21 @@ namespace Aws
           {
             return IntegrationType::WISDOM_KNOWLEDGE_BASE;
           }
+          else if (hashCode == WISDOM_QUICK_RESPONSES_HASH)
+          {
+            return IntegrationType::WISDOM_QUICK_RESPONSES;
+          }
           else if (hashCode == CASES_DOMAIN_HASH)
           {
             return IntegrationType::CASES_DOMAIN;
+          }
+          else if (hashCode == APPLICATION_HASH)
+          {
+            return IntegrationType::APPLICATION;
+          }
+          else if (hashCode == FILE_SCANNER_HASH)
+          {
+            return IntegrationType::FILE_SCANNER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntegrationType::NOT_SET:
+            return {};
           case IntegrationType::EVENT:
             return "EVENT";
           case IntegrationType::VOICE_ID:
@@ -79,8 +96,14 @@ namespace Aws
             return "WISDOM_ASSISTANT";
           case IntegrationType::WISDOM_KNOWLEDGE_BASE:
             return "WISDOM_KNOWLEDGE_BASE";
+          case IntegrationType::WISDOM_QUICK_RESPONSES:
+            return "WISDOM_QUICK_RESPONSES";
           case IntegrationType::CASES_DOMAIN:
             return "CASES_DOMAIN";
+          case IntegrationType::APPLICATION:
+            return "APPLICATION";
+          case IntegrationType::FILE_SCANNER:
+            return "FILE_SCANNER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

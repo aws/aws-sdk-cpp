@@ -31,7 +31,8 @@ QueryExecution::QueryExecution() :
     m_workGroupHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_executionParametersHasBeenSet(false),
-    m_substatementTypeHasBeenSet(false)
+    m_substatementTypeHasBeenSet(false),
+    m_queryResultsS3AccessGrantsConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ QueryExecution::QueryExecution(JsonView jsonValue) :
     m_workGroupHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_executionParametersHasBeenSet(false),
-    m_substatementTypeHasBeenSet(false)
+    m_substatementTypeHasBeenSet(false),
+    m_queryResultsS3AccessGrantsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -142,6 +144,13 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_substatementTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QueryResultsS3AccessGrantsConfiguration"))
+  {
+    m_queryResultsS3AccessGrantsConfiguration = jsonValue.GetObject("QueryResultsS3AccessGrantsConfiguration");
+
+    m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -222,6 +231,12 @@ JsonValue QueryExecution::Jsonize() const
   if(m_substatementTypeHasBeenSet)
   {
    payload.WithString("SubstatementType", m_substatementType);
+
+  }
+
+  if(m_queryResultsS3AccessGrantsConfigurationHasBeenSet)
+  {
+   payload.WithObject("QueryResultsS3AccessGrantsConfiguration", m_queryResultsS3AccessGrantsConfiguration.Jsonize());
 
   }
 

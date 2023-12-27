@@ -116,6 +116,7 @@ namespace Aws
       class CreatePackageRequest;
       class CreateVpcEndpointRequest;
       class DeleteElasticsearchDomainRequest;
+      class DeleteElasticsearchServiceRoleRequest;
       class DeleteInboundCrossClusterSearchConnectionRequest;
       class DeleteOutboundCrossClusterSearchConnectionRequest;
       class DeletePackageRequest;
@@ -277,7 +278,7 @@ namespace Aws
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::CreatePackageRequest&, const Model::CreatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePackageResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::CreateVpcEndpointRequest&, const Model::CreateVpcEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpcEndpointResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::DeleteElasticsearchDomainRequest&, const Model::DeleteElasticsearchDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteElasticsearchDomainResponseReceivedHandler;
-    typedef std::function<void(const ElasticsearchServiceClient*, const Model::DeleteElasticsearchServiceRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteElasticsearchServiceRoleResponseReceivedHandler;
+    typedef std::function<void(const ElasticsearchServiceClient*, const Model::DeleteElasticsearchServiceRoleRequest&, const Model::DeleteElasticsearchServiceRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteElasticsearchServiceRoleResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::DeleteInboundCrossClusterSearchConnectionRequest&, const Model::DeleteInboundCrossClusterSearchConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInboundCrossClusterSearchConnectionResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::DeleteOutboundCrossClusterSearchConnectionRequest&, const Model::DeleteOutboundCrossClusterSearchConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOutboundCrossClusterSearchConnectionResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::DeletePackageRequest&, const Model::DeletePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePackageResponseReceivedHandler;

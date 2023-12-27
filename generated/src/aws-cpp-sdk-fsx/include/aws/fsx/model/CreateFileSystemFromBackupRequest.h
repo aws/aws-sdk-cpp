@@ -555,8 +555,8 @@ namespace Model
 
     /**
      * <p>Sets the version for the Amazon FSx for Lustre file system that you're
-     * creating from a backup. Valid values are <code>2.10</code> and
-     * <code>2.12</code>.</p> <p>You don't need to specify
+     * creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>,
+     * and <code>2.15</code>.</p> <p>You don't need to specify
      * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      * <code>FileSystemTypeVersion</code> setting. If you choose to specify
      * <code>FileSystemTypeVersion</code> when creating from backup, the value must
@@ -566,8 +566,8 @@ namespace Model
 
     /**
      * <p>Sets the version for the Amazon FSx for Lustre file system that you're
-     * creating from a backup. Valid values are <code>2.10</code> and
-     * <code>2.12</code>.</p> <p>You don't need to specify
+     * creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>,
+     * and <code>2.15</code>.</p> <p>You don't need to specify
      * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      * <code>FileSystemTypeVersion</code> setting. If you choose to specify
      * <code>FileSystemTypeVersion</code> when creating from backup, the value must
@@ -577,8 +577,8 @@ namespace Model
 
     /**
      * <p>Sets the version for the Amazon FSx for Lustre file system that you're
-     * creating from a backup. Valid values are <code>2.10</code> and
-     * <code>2.12</code>.</p> <p>You don't need to specify
+     * creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>,
+     * and <code>2.15</code>.</p> <p>You don't need to specify
      * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      * <code>FileSystemTypeVersion</code> setting. If you choose to specify
      * <code>FileSystemTypeVersion</code> when creating from backup, the value must
@@ -588,8 +588,8 @@ namespace Model
 
     /**
      * <p>Sets the version for the Amazon FSx for Lustre file system that you're
-     * creating from a backup. Valid values are <code>2.10</code> and
-     * <code>2.12</code>.</p> <p>You don't need to specify
+     * creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>,
+     * and <code>2.15</code>.</p> <p>You don't need to specify
      * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      * <code>FileSystemTypeVersion</code> setting. If you choose to specify
      * <code>FileSystemTypeVersion</code> when creating from backup, the value must
@@ -599,8 +599,8 @@ namespace Model
 
     /**
      * <p>Sets the version for the Amazon FSx for Lustre file system that you're
-     * creating from a backup. Valid values are <code>2.10</code> and
-     * <code>2.12</code>.</p> <p>You don't need to specify
+     * creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>,
+     * and <code>2.15</code>.</p> <p>You don't need to specify
      * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      * <code>FileSystemTypeVersion</code> setting. If you choose to specify
      * <code>FileSystemTypeVersion</code> when creating from backup, the value must
@@ -610,8 +610,8 @@ namespace Model
 
     /**
      * <p>Sets the version for the Amazon FSx for Lustre file system that you're
-     * creating from a backup. Valid values are <code>2.10</code> and
-     * <code>2.12</code>.</p> <p>You don't need to specify
+     * creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>,
+     * and <code>2.15</code>.</p> <p>You don't need to specify
      * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      * <code>FileSystemTypeVersion</code> setting. If you choose to specify
      * <code>FileSystemTypeVersion</code> when creating from backup, the value must
@@ -621,8 +621,8 @@ namespace Model
 
     /**
      * <p>Sets the version for the Amazon FSx for Lustre file system that you're
-     * creating from a backup. Valid values are <code>2.10</code> and
-     * <code>2.12</code>.</p> <p>You don't need to specify
+     * creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>,
+     * and <code>2.15</code>.</p> <p>You don't need to specify
      * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      * <code>FileSystemTypeVersion</code> setting. If you choose to specify
      * <code>FileSystemTypeVersion</code> when creating from backup, the value must
@@ -632,8 +632,8 @@ namespace Model
 
     /**
      * <p>Sets the version for the Amazon FSx for Lustre file system that you're
-     * creating from a backup. Valid values are <code>2.10</code> and
-     * <code>2.12</code>.</p> <p>You don't need to specify
+     * creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>,
+     * and <code>2.15</code>.</p> <p>You don't need to specify
      * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      * <code>FileSystemTypeVersion</code> setting. If you choose to specify
      * <code>FileSystemTypeVersion</code> when creating from backup, the value must
@@ -682,7 +682,7 @@ namespace Model
      * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
      * than OpenZFS, you must provide a value that matches the backup's
      * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
-     * responds with a 400 Bad Request. </p>
+     * responds with with an HTTP status code 400 Bad Request. </p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
@@ -695,7 +695,7 @@ namespace Model
      * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
      * than OpenZFS, you must provide a value that matches the backup's
      * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
-     * responds with a 400 Bad Request. </p>
+     * responds with with an HTTP status code 400 Bad Request. </p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
@@ -708,7 +708,7 @@ namespace Model
      * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
      * than OpenZFS, you must provide a value that matches the backup's
      * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
-     * responds with a 400 Bad Request. </p>
+     * responds with with an HTTP status code 400 Bad Request. </p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
@@ -721,7 +721,7 @@ namespace Model
      * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
      * than OpenZFS, you must provide a value that matches the backup's
      * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
-     * responds with a 400 Bad Request. </p>
+     * responds with with an HTTP status code 400 Bad Request. </p>
      */
     inline CreateFileSystemFromBackupRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 

@@ -1282,7 +1282,7 @@ namespace SNS
          * Services account, the endpoint owner must run the
          * <code>ConfirmSubscription</code> action to confirm the subscription.</p> <p>You
          * call the <code>ConfirmSubscription</code> action with the token from the
-         * subscription response. Confirmation tokens are valid for three days.</p> <p>This
+         * subscription response. Confirmation tokens are valid for two days.</p> <p>This
          * action is throttled at 100 transactions per second (TPS).</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS API

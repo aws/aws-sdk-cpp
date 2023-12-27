@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterConditionString::NOT_SET:
+            return {};
           case FilterConditionString::IS:
             return "IS";
           case FilterConditionString::IS_NOT:

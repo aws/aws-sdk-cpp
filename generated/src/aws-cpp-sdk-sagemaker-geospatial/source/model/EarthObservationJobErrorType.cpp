@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EarthObservationJobErrorType::NOT_SET:
+            return {};
           case EarthObservationJobErrorType::CLIENT_ERROR:
             return "CLIENT_ERROR";
           case EarthObservationJobErrorType::SERVER_ERROR:

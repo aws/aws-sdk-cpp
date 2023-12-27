@@ -88,6 +88,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
@@ -99,6 +101,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
@@ -110,6 +114,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
@@ -121,6 +127,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
@@ -132,6 +140,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline SetSubnetsRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
@@ -143,6 +153,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline SetSubnetsRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
@@ -154,6 +166,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline SetSubnetsRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -165,6 +179,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline SetSubnetsRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
@@ -176,6 +192,8 @@ namespace Model
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
      * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline SetSubnetsRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -193,6 +211,8 @@ namespace Model
      * internet-facing load balancer. For internal load balancers, you can specify one
      * private IP address per subnet from the IPv4 range of the subnet. For
      * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const{ return m_subnetMappings; }
 
@@ -209,6 +229,8 @@ namespace Model
      * internet-facing load balancer. For internal load balancers, you can specify one
      * private IP address per subnet from the IPv4 range of the subnet. For
      * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline bool SubnetMappingsHasBeenSet() const { return m_subnetMappingsHasBeenSet; }
 
@@ -225,6 +247,8 @@ namespace Model
      * internet-facing load balancer. For internal load balancers, you can specify one
      * private IP address per subnet from the IPv4 range of the subnet. For
      * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline void SetSubnetMappings(const Aws::Vector<SubnetMapping>& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = value; }
 
@@ -241,6 +265,8 @@ namespace Model
      * internet-facing load balancer. For internal load balancers, you can specify one
      * private IP address per subnet from the IPv4 range of the subnet. For
      * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline void SetSubnetMappings(Aws::Vector<SubnetMapping>&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = std::move(value); }
 
@@ -257,6 +283,8 @@ namespace Model
      * internet-facing load balancer. For internal load balancers, you can specify one
      * private IP address per subnet from the IPv4 range of the subnet. For
      * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline SetSubnetsRequest& WithSubnetMappings(const Aws::Vector<SubnetMapping>& value) { SetSubnetMappings(value); return *this;}
 
@@ -273,6 +301,8 @@ namespace Model
      * internet-facing load balancer. For internal load balancers, you can specify one
      * private IP address per subnet from the IPv4 range of the subnet. For
      * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline SetSubnetsRequest& WithSubnetMappings(Aws::Vector<SubnetMapping>&& value) { SetSubnetMappings(std::move(value)); return *this;}
 
@@ -289,6 +319,8 @@ namespace Model
      * internet-facing load balancer. For internal load balancers, you can specify one
      * private IP address per subnet from the IPv4 range of the subnet. For
      * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline SetSubnetsRequest& AddSubnetMappings(const SubnetMapping& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(value); return *this; }
 
@@ -305,6 +337,8 @@ namespace Model
      * internet-facing load balancer. For internal load balancers, you can specify one
      * private IP address per subnet from the IPv4 range of the subnet. For
      * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Availability Zones.</p>
      */
     inline SetSubnetsRequest& AddSubnetMappings(SubnetMapping&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(std::move(value)); return *this; }
 
@@ -314,7 +348,9 @@ namespace Model
      * your load balancer. The possible values are <code>ipv4</code> (for IPv4
      * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
      * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener. .</p>
+     * listener.</p> <p>[Gateway Load Balancers] The type of IP addresses used by the
+     * subnets for your load balancer. The possible values are <code>ipv4</code> (for
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
@@ -323,7 +359,9 @@ namespace Model
      * your load balancer. The possible values are <code>ipv4</code> (for IPv4
      * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
      * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener. .</p>
+     * listener.</p> <p>[Gateway Load Balancers] The type of IP addresses used by the
+     * subnets for your load balancer. The possible values are <code>ipv4</code> (for
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
@@ -332,7 +370,9 @@ namespace Model
      * your load balancer. The possible values are <code>ipv4</code> (for IPv4
      * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
      * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener. .</p>
+     * listener.</p> <p>[Gateway Load Balancers] The type of IP addresses used by the
+     * subnets for your load balancer. The possible values are <code>ipv4</code> (for
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
@@ -341,7 +381,9 @@ namespace Model
      * your load balancer. The possible values are <code>ipv4</code> (for IPv4
      * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
      * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener. .</p>
+     * listener.</p> <p>[Gateway Load Balancers] The type of IP addresses used by the
+     * subnets for your load balancer. The possible values are <code>ipv4</code> (for
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
@@ -350,7 +392,9 @@ namespace Model
      * your load balancer. The possible values are <code>ipv4</code> (for IPv4
      * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
      * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener. .</p>
+     * listener.</p> <p>[Gateway Load Balancers] The type of IP addresses used by the
+     * subnets for your load balancer. The possible values are <code>ipv4</code> (for
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline SetSubnetsRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
@@ -359,7 +403,9 @@ namespace Model
      * your load balancer. The possible values are <code>ipv4</code> (for IPv4
      * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
      * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
-     * listener. .</p>
+     * listener.</p> <p>[Gateway Load Balancers] The type of IP addresses used by the
+     * subnets for your load balancer. The possible values are <code>ipv4</code> (for
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline SetSubnetsRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

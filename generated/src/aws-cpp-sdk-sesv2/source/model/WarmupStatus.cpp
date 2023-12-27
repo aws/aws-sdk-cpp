@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WarmupStatus::NOT_SET:
+            return {};
           case WarmupStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case WarmupStatus::DONE:

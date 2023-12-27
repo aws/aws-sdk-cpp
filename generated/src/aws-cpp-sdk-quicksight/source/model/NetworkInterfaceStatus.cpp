@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInterfaceStatus::NOT_SET:
+            return {};
           case NetworkInterfaceStatus::CREATING:
             return "CREATING";
           case NetworkInterfaceStatus::AVAILABLE:

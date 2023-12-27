@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M3u8Scte35Source::NOT_SET:
+            return {};
           case M3u8Scte35Source::PASSTHROUGH:
             return "PASSTHROUGH";
           case M3u8Scte35Source::NONE:

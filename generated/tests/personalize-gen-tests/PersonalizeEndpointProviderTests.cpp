@@ -16,7 +16,8 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
-using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<EpProp>>;
+using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
+using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class PersonalizeEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -30,6 +31,7 @@ struct PersonalizeEndpointProviderEndpointTestCase
         struct Endpoint
         {
             Aws::String url;
+            ExpEpAuthScheme authScheme;
             ExpEpProps properties;
             ExpEpHeaders headers;
         } endpoint;
@@ -59,6 +61,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.ap-northeast-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -67,6 +70,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.ap-northeast-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -75,6 +79,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.ap-south-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -83,6 +88,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.ap-southeast-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -91,6 +97,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.ap-southeast-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -99,6 +106,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "ca-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.ca-central-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -107,6 +115,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "eu-central-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.eu-central-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -115,6 +124,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.eu-west-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -123,6 +133,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -131,6 +142,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.us-east-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -139,6 +151,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -147,6 +160,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -155,6 +169,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -163,6 +178,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.us-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -171,6 +187,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -179,6 +196,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -187,6 +205,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize-fips.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -195,6 +214,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -203,6 +223,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -211,6 +232,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize-fips.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -219,6 +241,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -227,6 +250,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -241,6 +265,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -255,6 +280,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -269,6 +295,7 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize-fips.us-isob-east-1.sc2s.sgov.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -283,15 +310,16 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://personalize.us-isob-east-1.sc2s.sgov.gov",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 30*/
   {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -300,20 +328,19 @@ static const Aws::Vector<PersonalizeEndpointProviderEndpointTestCase> TEST_CASES
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 32*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 33*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true)}, // params
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
@@ -336,6 +363,8 @@ Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
         sdkSigner = "NullSigner";
     } else if (rulesSignerName == "bearer") {
         sdkSigner = "Bearer";
+    } else if (rulesSignerName == "s3Express") {
+        sdkSigner = "S3ExpressSigner";
     } else {
         sdkSigner = rulesSignerName;
     }
@@ -357,9 +386,23 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const PersonalizeEnd
         const auto expAuthSchemesIt = expect.endpoint.properties.find("authSchemes");
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
+            // in the list of AuthSchemes, select the one with a highest priority
+            const Aws::Vector<Aws::String> priotityList = {"s3Express", "sigv4a", "sigv4", "bearer", "none", ""};
+            const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
+                                                                    priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
+                                                                    {
+                                                                        const auto& propNameIt = std::find_if(props.begin(), props.end(), [](const EpProp& prop)
+                                                                        {
+                                                                            return prop.GetName() == "name";
+                                                                        });
+                                                                        assert(propNameIt != props.end());
+                                                                        return propNameIt->GetStrValueNoCheck() == expName;
+                                                                    });
+            assert(expectedAuthSchemePropsIt != expAuthSchemesIt->second.end());
+
             const auto& endpointResultAttrs = outcome.GetResult().GetAttributes();
             ASSERT_TRUE(endpointResultAttrs) << "Expected non-empty EndpointAttributes (authSchemes)";
-            for (const auto& expProperty : expAuthSchemesIt->second)
+            for (const auto& expProperty : *expectedAuthSchemePropsIt)
             {
                 if (expProperty.GetName() == "name") {
                     ASSERT_TRUE(!endpointResultAttrs->authScheme.GetName().empty());

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafManifestDurationFormat::NOT_SET:
+            return {};
           case CmafManifestDurationFormat::FLOATING_POINT:
             return "FLOATING_POINT";
           case CmafManifestDurationFormat::INTEGER:

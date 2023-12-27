@@ -26,6 +26,8 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
         static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 
 
         RecommendationJobStatus GetRecommendationJobStatusForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return RecommendationJobStatus::STOPPED;
           }
+          else if (hashCode == DELETING_HASH)
+          {
+            return RecommendationJobStatus::DELETING;
+          }
+          else if (hashCode == DELETED_HASH)
+          {
+            return RecommendationJobStatus::DELETED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationJobStatus::NOT_SET:
+            return {};
           case RecommendationJobStatus::PENDING:
             return "PENDING";
           case RecommendationJobStatus::IN_PROGRESS:
@@ -81,6 +93,10 @@ namespace Aws
             return "STOPPING";
           case RecommendationJobStatus::STOPPED:
             return "STOPPED";
+          case RecommendationJobStatus::DELETING:
+            return "DELETING";
+          case RecommendationJobStatus::DELETED:
+            return "DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

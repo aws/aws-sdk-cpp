@@ -22,7 +22,10 @@ namespace Model
     ImageNotFound,
     MissingDigestAndTag,
     ImageReferencedByManifestList,
-    KmsError
+    KmsError,
+    UpstreamAccessDenied,
+    UpstreamTooManyRequests,
+    UpstreamUnavailable
   };
 
 namespace ImageFailureCodeMapper

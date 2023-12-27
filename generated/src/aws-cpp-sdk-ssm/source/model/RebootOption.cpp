@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RebootOption::NOT_SET:
+            return {};
           case RebootOption::RebootIfNeeded:
             return "RebootIfNeeded";
           case RebootOption::NoReboot:

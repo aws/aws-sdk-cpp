@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordingMode::NOT_SET:
+            return {};
           case RecordingMode::DISABLED:
             return "DISABLED";
           case RecordingMode::INTERVAL:

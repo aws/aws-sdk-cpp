@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FpgaImageAttributeName::NOT_SET:
+            return {};
           case FpgaImageAttributeName::description:
             return "description";
           case FpgaImageAttributeName::name:

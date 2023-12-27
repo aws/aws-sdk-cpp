@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppReplicationConfigurationStatus::NOT_SET:
+            return {};
           case AppReplicationConfigurationStatus::NOT_CONFIGURED:
             return "NOT_CONFIGURED";
           case AppReplicationConfigurationStatus::CONFIGURED:

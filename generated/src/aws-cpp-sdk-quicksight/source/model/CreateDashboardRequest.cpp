@@ -23,7 +23,11 @@ CreateDashboardRequest::CreateDashboardRequest() :
     m_versionDescriptionHasBeenSet(false),
     m_dashboardPublishOptionsHasBeenSet(false),
     m_themeArnHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_validationStrategyHasBeenSet(false),
+    m_folderArnsHasBeenSet(false),
+    m_linkSharingConfigurationHasBeenSet(false),
+    m_linkEntitiesHasBeenSet(false)
 {
 }
 
@@ -92,6 +96,40 @@ Aws::String CreateDashboardRequest::SerializePayload() const
   if(m_definitionHasBeenSet)
   {
    payload.WithObject("Definition", m_definition.Jsonize());
+
+  }
+
+  if(m_validationStrategyHasBeenSet)
+  {
+   payload.WithObject("ValidationStrategy", m_validationStrategy.Jsonize());
+
+  }
+
+  if(m_folderArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> folderArnsJsonList(m_folderArns.size());
+   for(unsigned folderArnsIndex = 0; folderArnsIndex < folderArnsJsonList.GetLength(); ++folderArnsIndex)
+   {
+     folderArnsJsonList[folderArnsIndex].AsString(m_folderArns[folderArnsIndex]);
+   }
+   payload.WithArray("FolderArns", std::move(folderArnsJsonList));
+
+  }
+
+  if(m_linkSharingConfigurationHasBeenSet)
+  {
+   payload.WithObject("LinkSharingConfiguration", m_linkSharingConfiguration.Jsonize());
+
+  }
+
+  if(m_linkEntitiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> linkEntitiesJsonList(m_linkEntities.size());
+   for(unsigned linkEntitiesIndex = 0; linkEntitiesIndex < linkEntitiesJsonList.GetLength(); ++linkEntitiesIndex)
+   {
+     linkEntitiesJsonList[linkEntitiesIndex].AsString(m_linkEntities[linkEntitiesIndex]);
+   }
+   payload.WithArray("LinkEntities", std::move(linkEntitiesJsonList));
 
   }
 

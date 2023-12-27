@@ -102,6 +102,7 @@ namespace Model
      * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
      * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For text generation (LLMs fine-tuning):
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<AutoMLJobChannel>& GetAutoMLJobInputDataConfig() const{ return m_autoMLJobInputDataConfig; }
@@ -116,6 +117,7 @@ namespace Model
      * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
      * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For text generation (LLMs fine-tuning):
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline bool AutoMLJobInputDataConfigHasBeenSet() const { return m_autoMLJobInputDataConfigHasBeenSet; }
@@ -130,6 +132,7 @@ namespace Model
      * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
      * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For text generation (LLMs fine-tuning):
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline void SetAutoMLJobInputDataConfig(const Aws::Vector<AutoMLJobChannel>& value) { m_autoMLJobInputDataConfigHasBeenSet = true; m_autoMLJobInputDataConfig = value; }
@@ -144,6 +147,7 @@ namespace Model
      * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
      * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For text generation (LLMs fine-tuning):
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline void SetAutoMLJobInputDataConfig(Aws::Vector<AutoMLJobChannel>&& value) { m_autoMLJobInputDataConfigHasBeenSet = true; m_autoMLJobInputDataConfig = std::move(value); }
@@ -158,6 +162,7 @@ namespace Model
      * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
      * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For text generation (LLMs fine-tuning):
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobInputDataConfig(const Aws::Vector<AutoMLJobChannel>& value) { SetAutoMLJobInputDataConfig(value); return *this;}
@@ -172,6 +177,7 @@ namespace Model
      * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
      * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For text generation (LLMs fine-tuning):
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobInputDataConfig(Aws::Vector<AutoMLJobChannel>&& value) { SetAutoMLJobInputDataConfig(std::move(value)); return *this;}
@@ -186,6 +192,7 @@ namespace Model
      * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
      * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For text generation (LLMs fine-tuning):
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline CreateAutoMLJobV2Request& AddAutoMLJobInputDataConfig(const AutoMLJobChannel& value) { m_autoMLJobInputDataConfigHasBeenSet = true; m_autoMLJobInputDataConfig.push_back(value); return *this; }
@@ -200,6 +207,7 @@ namespace Model
      * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
      * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For text generation (LLMs fine-tuning):
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline CreateAutoMLJobV2Request& AddAutoMLJobInputDataConfig(AutoMLJobChannel&& value) { m_autoMLJobInputDataConfigHasBeenSet = true; m_autoMLJobInputDataConfig.push_back(std::move(value)); return *this; }
@@ -423,10 +431,20 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide both the
+     *  <ul> <li> <p>For tabular problem types: You must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> </li> <li>
+     * <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language
+     * models in Autopilot does not require setting the <code>AutoMLJobObjective</code>
+     * field. Autopilot fine-tunes LLMs without requiring multiple candidates to be
+     * trained and evaluated. Instead, using your dataset, Autopilot directly
+     * fine-tunes your target model to enhance a default objective metric, the
+     * cross-entropy loss. After fine-tuning a language model, you can evaluate the
+     * quality of its generated text using different metrics. For a list of the
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
+     * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
 
@@ -435,10 +453,20 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide both the
+     *  <ul> <li> <p>For tabular problem types: You must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> </li> <li>
+     * <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language
+     * models in Autopilot does not require setting the <code>AutoMLJobObjective</code>
+     * field. Autopilot fine-tunes LLMs without requiring multiple candidates to be
+     * trained and evaluated. Instead, using your dataset, Autopilot directly
+     * fine-tunes your target model to enhance a default objective metric, the
+     * cross-entropy loss. After fine-tuning a language model, you can evaluate the
+     * quality of its generated text using different metrics. For a list of the
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
+     * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
 
@@ -447,10 +475,20 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide both the
+     *  <ul> <li> <p>For tabular problem types: You must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> </li> <li>
+     * <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language
+     * models in Autopilot does not require setting the <code>AutoMLJobObjective</code>
+     * field. Autopilot fine-tunes LLMs without requiring multiple candidates to be
+     * trained and evaluated. Instead, using your dataset, Autopilot directly
+     * fine-tunes your target model to enhance a default objective metric, the
+     * cross-entropy loss. After fine-tuning a language model, you can evaluate the
+     * quality of its generated text using different metrics. For a list of the
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
+     * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
 
@@ -459,10 +497,20 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide both the
+     *  <ul> <li> <p>For tabular problem types: You must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> </li> <li>
+     * <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language
+     * models in Autopilot does not require setting the <code>AutoMLJobObjective</code>
+     * field. Autopilot fine-tunes LLMs without requiring multiple candidates to be
+     * trained and evaluated. Instead, using your dataset, Autopilot directly
+     * fine-tunes your target model to enhance a default objective metric, the
+     * cross-entropy loss. After fine-tuning a language model, you can evaluate the
+     * quality of its generated text using different metrics. For a list of the
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
+     * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
 
@@ -471,10 +519,20 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide both the
+     *  <ul> <li> <p>For tabular problem types: You must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> </li> <li>
+     * <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language
+     * models in Autopilot does not require setting the <code>AutoMLJobObjective</code>
+     * field. Autopilot fine-tunes LLMs without requiring multiple candidates to be
+     * trained and evaluated. Instead, using your dataset, Autopilot directly
+     * fine-tunes your target model to enhance a default objective metric, the
+     * cross-entropy loss. After fine-tuning a language model, you can evaluate the
+     * quality of its generated text using different metrics. For a list of the
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
+     * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
 
@@ -483,10 +541,20 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide both the
+     *  <ul> <li> <p>For tabular problem types: You must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> </li> <li>
+     * <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language
+     * models in Autopilot does not require setting the <code>AutoMLJobObjective</code>
+     * field. Autopilot fine-tunes LLMs without requiring multiple candidates to be
+     * trained and evaluated. Instead, using your dataset, Autopilot directly
+     * fine-tunes your target model to enhance a default objective metric, the
+     * cross-entropy loss. After fine-tuning a language model, you can evaluate the
+     * quality of its generated text using different metrics. For a list of the
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
+     * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul> 
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}
 

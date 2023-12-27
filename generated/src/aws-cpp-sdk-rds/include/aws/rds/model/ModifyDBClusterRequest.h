@@ -1190,37 +1190,37 @@ namespace Model
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
 
@@ -1554,53 +1554,69 @@ namespace Model
 
     /**
      * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * cluster. By default, the HTTP endpoint isn't enabled.</p> <p>When enabled, the
+     * HTTP endpoint provides a connectionless web service API (RDS Data API) for
+     * running SQL queries on the Aurora Serverless v1 DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+     * parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
+     * the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB
+     * cluster, use the <code>EnableHttpEndpoint</code> and
+     * <code>DisableHttpEndpoint</code> operations.</p>  <p>Valid for Cluster
+     * Type: Aurora DB clusters only</p>
      */
     inline bool GetEnableHttpEndpoint() const{ return m_enableHttpEndpoint; }
 
     /**
      * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * cluster. By default, the HTTP endpoint isn't enabled.</p> <p>When enabled, the
+     * HTTP endpoint provides a connectionless web service API (RDS Data API) for
+     * running SQL queries on the Aurora Serverless v1 DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+     * parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
+     * the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB
+     * cluster, use the <code>EnableHttpEndpoint</code> and
+     * <code>DisableHttpEndpoint</code> operations.</p>  <p>Valid for Cluster
+     * Type: Aurora DB clusters only</p>
      */
     inline bool EnableHttpEndpointHasBeenSet() const { return m_enableHttpEndpointHasBeenSet; }
 
     /**
      * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * cluster. By default, the HTTP endpoint isn't enabled.</p> <p>When enabled, the
+     * HTTP endpoint provides a connectionless web service API (RDS Data API) for
+     * running SQL queries on the Aurora Serverless v1 DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+     * parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
+     * the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB
+     * cluster, use the <code>EnableHttpEndpoint</code> and
+     * <code>DisableHttpEndpoint</code> operations.</p>  <p>Valid for Cluster
+     * Type: Aurora DB clusters only</p>
      */
     inline void SetEnableHttpEndpoint(bool value) { m_enableHttpEndpointHasBeenSet = true; m_enableHttpEndpoint = value; }
 
     /**
      * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * cluster. By default, the HTTP endpoint isn't enabled.</p> <p>When enabled, the
+     * HTTP endpoint provides a connectionless web service API (RDS Data API) for
+     * running SQL queries on the Aurora Serverless v1 DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+     * parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
+     * the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB
+     * cluster, use the <code>EnableHttpEndpoint</code> and
+     * <code>DisableHttpEndpoint</code> operations.</p>  <p>Valid for Cluster
+     * Type: Aurora DB clusters only</p>
      */
     inline ModifyDBClusterRequest& WithEnableHttpEndpoint(bool value) { SetEnableHttpEndpoint(value); return *this;}
 
@@ -2982,6 +2998,55 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithEnableLocalWriteForwarding(bool value) { SetEnableLocalWriteForwarding(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline const Aws::String& GetAwsBackupRecoveryPointArn() const{ return m_awsBackupRecoveryPointArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(const Aws::String& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(Aws::String&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(const char* value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline ModifyDBClusterRequest& WithAwsBackupRecoveryPointArn(const Aws::String& value) { SetAwsBackupRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline ModifyDBClusterRequest& WithAwsBackupRecoveryPointArn(Aws::String&& value) { SetAwsBackupRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline ModifyDBClusterRequest& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -3109,6 +3174,9 @@ namespace Model
 
     bool m_enableLocalWriteForwarding;
     bool m_enableLocalWriteForwardingHasBeenSet = false;
+
+    Aws::String m_awsBackupRecoveryPointArn;
+    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
   };
 
 } // namespace Model

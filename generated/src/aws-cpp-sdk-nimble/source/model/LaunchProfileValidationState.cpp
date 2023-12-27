@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchProfileValidationState::NOT_SET:
+            return {};
           case LaunchProfileValidationState::VALIDATION_NOT_STARTED:
             return "VALIDATION_NOT_STARTED";
           case LaunchProfileValidationState::VALIDATION_IN_PROGRESS:

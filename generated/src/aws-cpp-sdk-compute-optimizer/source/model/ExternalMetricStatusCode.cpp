@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExternalMetricStatusCode::NOT_SET:
+            return {};
           case ExternalMetricStatusCode::NO_EXTERNAL_METRIC_SET:
             return "NO_EXTERNAL_METRIC_SET";
           case ExternalMetricStatusCode::INTEGRATION_SUCCESS:

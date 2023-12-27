@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsMode::NOT_SET:
+            return {};
           case HlsMode::LIVE:
             return "LIVE";
           case HlsMode::VOD:

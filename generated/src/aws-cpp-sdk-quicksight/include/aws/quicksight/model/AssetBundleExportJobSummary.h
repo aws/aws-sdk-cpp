@@ -240,6 +240,56 @@ namespace Model
      */
     inline AssetBundleExportJobSummary& WithExportFormat(AssetBundleExportFormat&& value) { SetExportFormat(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The flag that determines the inclusion of permissions associated with each
+     * resource ARN.</p>
+     */
+    inline bool GetIncludePermissions() const{ return m_includePermissions; }
+
+    /**
+     * <p>The flag that determines the inclusion of permissions associated with each
+     * resource ARN.</p>
+     */
+    inline bool IncludePermissionsHasBeenSet() const { return m_includePermissionsHasBeenSet; }
+
+    /**
+     * <p>The flag that determines the inclusion of permissions associated with each
+     * resource ARN.</p>
+     */
+    inline void SetIncludePermissions(bool value) { m_includePermissionsHasBeenSet = true; m_includePermissions = value; }
+
+    /**
+     * <p>The flag that determines the inclusion of permissions associated with each
+     * resource ARN.</p>
+     */
+    inline AssetBundleExportJobSummary& WithIncludePermissions(bool value) { SetIncludePermissions(value); return *this;}
+
+
+    /**
+     * <p>The flag that determines the inclusion of tags associated with each resource
+     * ARN.</p>
+     */
+    inline bool GetIncludeTags() const{ return m_includeTags; }
+
+    /**
+     * <p>The flag that determines the inclusion of tags associated with each resource
+     * ARN.</p>
+     */
+    inline bool IncludeTagsHasBeenSet() const { return m_includeTagsHasBeenSet; }
+
+    /**
+     * <p>The flag that determines the inclusion of tags associated with each resource
+     * ARN.</p>
+     */
+    inline void SetIncludeTags(bool value) { m_includeTagsHasBeenSet = true; m_includeTags = value; }
+
+    /**
+     * <p>The flag that determines the inclusion of tags associated with each resource
+     * ARN.</p>
+     */
+    inline AssetBundleExportJobSummary& WithIncludeTags(bool value) { SetIncludeTags(value); return *this;}
+
   private:
 
     AssetBundleExportJobStatus m_jobStatus;
@@ -259,6 +309,12 @@ namespace Model
 
     AssetBundleExportFormat m_exportFormat;
     bool m_exportFormatHasBeenSet = false;
+
+    bool m_includePermissions;
+    bool m_includePermissionsHasBeenSet = false;
+
+    bool m_includeTags;
+    bool m_includeTagsHasBeenSet = false;
   };
 
 } // namespace Model

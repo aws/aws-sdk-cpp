@@ -16,6 +16,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.Cpp
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.EnumModel;
 import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -28,8 +29,13 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 public abstract class CppClientGenerator implements ClientGenerator {
+
+    private static final int OPERATIONS_PER_CLIENT_FILE = 100;
+    private static final int MAX_OPERATIONS_IN_CLIENT_FILE = 200;
 
     protected final VelocityEngine velocityEngine;
 
@@ -52,20 +58,35 @@ public abstract class CppClientGenerator implements ClientGenerator {
         //for c++, the way serialization works, we want to remove all required fields so we can do a value has been set
         //check on all fields.
         serviceModel.getShapes().values().stream().filter(hasMembers -> hasMembers.getMembers() != null).forEach(shape ->
-                shape.getMembers().values().stream().filter(shapeMember ->
-                        shapeMember.isRequired()).forEach( member -> member.setRequired(false)));
+                shape.getMembers().values().stream().filter(ShapeMember::isRequired)
+                    .forEach( member -> member.setRequired(false)));
 
-        getOperationsToRemove().stream().forEach(operation ->
-        {
-          serviceModel.getOperations().remove(operation);
-        });
+        getOperationsToRemove().stream().forEach(operation -> serviceModel.getOperations().remove(operation));
+        addEventStreamInitialResponse(serviceModel);
         addRequestIdToResults(serviceModel);
         List<SdkFileEntry> fileList = new ArrayList<>();
         fileList.addAll(generateModelHeaderFiles(serviceModel));
         fileList.addAll(generateModelSourceFiles(serviceModel));
         fileList.add(generateClientHeaderFile(serviceModel));
         fileList.add(generateServiceClientModelInclude(serviceModel));
-        fileList.add(generateClientSourceFile(serviceModel));
+
+        AtomicInteger operationCount = new AtomicInteger();
+
+        final List<ServiceModel> serviceModels;
+        if (serviceModel.getOperations().size() > MAX_OPERATIONS_IN_CLIENT_FILE) {
+            serviceModels = serviceModel.getOperations().entrySet().stream()
+                    .collect(Collectors.groupingBy(x -> operationCount.getAndIncrement() / OPERATIONS_PER_CLIENT_FILE))
+                    .entrySet().stream()
+                    .map(operationList -> serviceModel.toBuilder()
+                            .operations(operationList.getValue().stream()
+                                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
+                            .build())
+                    .collect(Collectors.toList());
+        } else {
+            serviceModels = ImmutableList.of(serviceModel);
+        }
+
+        fileList.addAll(generateClientSourceFile(serviceModels));
         if (serviceModel.getEndpointRules() == null) {
             fileList.add(generateARNHeaderFile(serviceModel));
             fileList.add(generateARNSourceFile(serviceModel));
@@ -100,6 +121,24 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         SdkFileEntry[] retArray = new SdkFileEntry[fileList.size()];
         return fileList.toArray(retArray);
+    }
+
+    protected void addEventStreamInitialResponse(final ServiceModel serviceModel) {
+        serviceModel.getOperations().entrySet().stream()
+            .filter(operation -> Objects.nonNull(operation.getValue().getResult()))
+            .filter(operation -> operation.getValue().getResult().getShape().hasEventStreamMembers())
+            .map(operation -> Shape.builder()
+                .name(operation.getKey() + "InitialResponse")
+                .type("structure")
+                .isReferenced(true)
+                .event(true)
+                .eventPayloadType("structure")
+                .members(
+                    operation.getValue().getResult().getShape().getMembers().entrySet().stream()          
+                        .filter(member -> !member.getValue().getShape().isEventStream())
+                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
+                .build())
+            .forEach(shape -> serviceModel.getShapes().put(shape.getName(), shape));
     }
 
     protected void addRequestIdToResults(final ServiceModel serviceModel) {
@@ -232,7 +271,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
             for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
                 String key = opEntry.getKey();
                 Operation op = opEntry.getValue();
-                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName() && op.getResult() != null) {
+                
+                if (op.getRequest() != null && 
+                    op.getRequest().getShape().getName().equals(shape.getName()) && 
+                    op.getResult() != null) {
                     if (op.getResult().getShape().hasEventStreamMembers()) {
                         for (Map.Entry<String, ShapeMember> shapeMemberEntry : op.getResult().getShape().getMembers().entrySet()) {
                             if (shapeMemberEntry.getValue().getShape().isEventStream()) {
@@ -293,7 +335,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, fileName, true);
     }
 
-    protected abstract SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception;
+    protected abstract List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception;
 
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         Shape shape = shapeEntry.getValue();
@@ -592,7 +634,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, "CMakeLists.txt", false);
     }
 
-    private SdkFileEntry generateSingleSourceFile(final ServiceModel serviceModel, final String templatePath, final String dstFileName) throws IOException {
+    private SdkFileEntry generateSingleSourceFile(final ServiceModel serviceModel, final String templatePath, final String dstFileName) {
         Template template = velocityEngine.getTemplate(templatePath, StandardCharsets.UTF_8.name());
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
@@ -600,7 +642,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, dstFileName, true);
     }
 
-    protected final SdkFileEntry makeFile(Template template, VelocityContext context, String path, boolean needsBOM) throws IOException {
+    protected final SdkFileEntry makeFile(Template template, VelocityContext context, String path, boolean needsBOM) {
         StringWriter sw = new StringWriter();
         template.merge(context, sw);
 

@@ -45,7 +45,8 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_dBClusterSnapshotArnHasBeenSet(false),
     m_sourceDBClusterSnapshotArnHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_dBClusterSnapshotArnHasBeenSet(false),
     m_sourceDBClusterSnapshotArnHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -211,6 +213,12 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
       m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMDatabaseAuthenticationEnabledNode.GetText()).c_str()).c_str());
       m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
     }
+    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
+    if(!storageTypeNode.IsNull())
+    {
+      m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
+      m_storageTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -322,6 +330,11 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
 }
 
 void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -409,6 +422,10 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
       oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 }
 

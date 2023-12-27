@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PredictiveScalingMaxCapacityBreachBehavior::NOT_SET:
+            return {};
           case PredictiveScalingMaxCapacityBreachBehavior::HonorMaxCapacity:
             return "HonorMaxCapacity";
           case PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity:

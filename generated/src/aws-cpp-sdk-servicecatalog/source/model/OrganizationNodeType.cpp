@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrganizationNodeType::NOT_SET:
+            return {};
           case OrganizationNodeType::ORGANIZATION:
             return "ORGANIZATION";
           case OrganizationNodeType::ORGANIZATIONAL_UNIT:

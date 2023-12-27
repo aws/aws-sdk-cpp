@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerCatalogStatus::NOT_SET:
+            return {};
           case ServerCatalogStatus::NOT_IMPORTED:
             return "NOT_IMPORTED";
           case ServerCatalogStatus::IMPORTING:

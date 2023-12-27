@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EarthObservationJobStatus::NOT_SET:
+            return {};
           case EarthObservationJobStatus::INITIALIZING:
             return "INITIALIZING";
           case EarthObservationJobStatus::IN_PROGRESS:

@@ -21,6 +21,7 @@
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/SnapStartResponse.h>
 #include <aws/lambda/model/RuntimeVersionConfig.h>
+#include <aws/lambda/model/LoggingConfig.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/lambda/model/Architecture.h>
@@ -1494,6 +1495,37 @@ namespace Model
     inline FunctionConfiguration& WithRuntimeVersionConfig(RuntimeVersionConfig&& value) { SetRuntimeVersionConfig(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = value; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::move(value); }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline FunctionConfiguration& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline FunctionConfiguration& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1624,6 +1656,9 @@ namespace Model
 
     RuntimeVersionConfig m_runtimeVersionConfig;
     bool m_runtimeVersionConfigHasBeenSet = false;
+
+    LoggingConfig m_loggingConfig;
+    bool m_loggingConfigHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

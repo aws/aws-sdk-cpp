@@ -19,7 +19,10 @@ CreateCustomDBEngineVersionRequest::CreateCustomDBEngineVersionRequest() :
     m_kMSKeyIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_manifestHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sourceCustomDbEngineVersionIdentifierHasBeenSet(false),
+    m_useAwsProvidedLatestImage(false),
+    m_useAwsProvidedLatestImageHasBeenSet(false)
 {
 }
 
@@ -75,6 +78,16 @@ Aws::String CreateCustomDBEngineVersionRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_sourceCustomDbEngineVersionIdentifierHasBeenSet)
+  {
+    ss << "SourceCustomDbEngineVersionIdentifier=" << StringUtils::URLEncode(m_sourceCustomDbEngineVersionIdentifier.c_str()) << "&";
+  }
+
+  if(m_useAwsProvidedLatestImageHasBeenSet)
+  {
+    ss << "UseAwsProvidedLatestImage=" << std::boolalpha << m_useAwsProvidedLatestImage << "&";
   }
 
   ss << "Version=2014-10-31";

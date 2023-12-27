@@ -38,7 +38,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
@@ -46,7 +47,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
@@ -54,7 +56,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
@@ -62,7 +65,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
@@ -70,7 +74,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
@@ -78,7 +83,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline ListPermissionSetsRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
@@ -86,7 +92,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline ListPermissionSetsRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
@@ -94,9 +101,31 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline ListPermissionSetsRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of results to display for the assignment.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to display for the assignment.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to display for the assignment.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to display for the assignment.</p>
+     */
+    inline ListPermissionSetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -147,37 +176,16 @@ namespace Model
      */
     inline ListPermissionSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>The maximum number of results to display for the assignment.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to display for the assignment.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to display for the assignment.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to display for the assignment.</p>
-     */
-    inline ListPermissionSetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

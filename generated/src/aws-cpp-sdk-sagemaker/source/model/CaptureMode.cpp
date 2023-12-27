@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Input_HASH = HashingUtils::HashString("Input");
         static const int Output_HASH = HashingUtils::HashString("Output");
+        static const int InputAndOutput_HASH = HashingUtils::HashString("InputAndOutput");
 
 
         CaptureMode GetCaptureModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Output_HASH)
           {
             return CaptureMode::Output;
+          }
+          else if (hashCode == InputAndOutput_HASH)
+          {
+            return CaptureMode::InputAndOutput;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CaptureMode::NOT_SET:
+            return {};
           case CaptureMode::Input:
             return "Input";
           case CaptureMode::Output:
             return "Output";
+          case CaptureMode::InputAndOutput:
+            return "InputAndOutput";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

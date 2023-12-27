@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult()
+DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult() : 
+    m_geofenceCount(0)
 {
 }
 
-DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_geofenceCount(0)
 {
   *this = result;
 }
@@ -50,6 +52,12 @@ DescribeGeofenceCollectionResult& DescribeGeofenceCollectionResult::operator =(c
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("GeofenceCount"))
+  {
+    m_geofenceCount = jsonValue.GetInteger("GeofenceCount");
 
   }
 

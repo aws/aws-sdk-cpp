@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentStatus::NOT_SET:
+            return {};
           case ContentStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case ContentStatus::CREATE_FAILED:

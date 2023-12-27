@@ -48,7 +48,11 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification() :
     m_ipv4PrefixCountHasBeenSet(false),
     m_ipv6PrefixesHasBeenSet(false),
     m_ipv6PrefixCount(0),
-    m_ipv6PrefixCountHasBeenSet(false)
+    m_ipv6PrefixCountHasBeenSet(false),
+    m_primaryIpv6(false),
+    m_primaryIpv6HasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false),
+    m_connectionTrackingSpecificationHasBeenSet(false)
 {
 }
 
@@ -80,7 +84,11 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification(con
     m_ipv4PrefixCountHasBeenSet(false),
     m_ipv6PrefixesHasBeenSet(false),
     m_ipv6PrefixCount(0),
-    m_ipv6PrefixCountHasBeenSet(false)
+    m_ipv6PrefixCountHasBeenSet(false),
+    m_primaryIpv6(false),
+    m_primaryIpv6HasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false),
+    m_connectionTrackingSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -235,6 +243,24 @@ InstanceNetworkInterfaceSpecification& InstanceNetworkInterfaceSpecification::op
       m_ipv6PrefixCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6PrefixCountNode.GetText()).c_str()).c_str());
       m_ipv6PrefixCountHasBeenSet = true;
     }
+    XmlNode primaryIpv6Node = resultNode.FirstChild("PrimaryIpv6");
+    if(!primaryIpv6Node.IsNull())
+    {
+      m_primaryIpv6 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(primaryIpv6Node.GetText()).c_str()).c_str());
+      m_primaryIpv6HasBeenSet = true;
+    }
+    XmlNode enaSrdSpecificationNode = resultNode.FirstChild("EnaSrdSpecification");
+    if(!enaSrdSpecificationNode.IsNull())
+    {
+      m_enaSrdSpecification = enaSrdSpecificationNode;
+      m_enaSrdSpecificationHasBeenSet = true;
+    }
+    XmlNode connectionTrackingSpecificationNode = resultNode.FirstChild("ConnectionTrackingSpecification");
+    if(!connectionTrackingSpecificationNode.IsNull())
+    {
+      m_connectionTrackingSpecification = connectionTrackingSpecificationNode;
+      m_connectionTrackingSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -365,6 +391,25 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".Ipv6PrefixCount=" << m_ipv6PrefixCount << "&";
   }
 
+  if(m_primaryIpv6HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrimaryIpv6=" << std::boolalpha << m_primaryIpv6 << "&";
+  }
+
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+      Aws::StringStream enaSrdSpecificationLocationAndMemberSs;
+      enaSrdSpecificationLocationAndMemberSs << location << index << locationValue << ".EnaSrdSpecification";
+      m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_connectionTrackingSpecificationHasBeenSet)
+  {
+      Aws::StringStream connectionTrackingSpecificationLocationAndMemberSs;
+      connectionTrackingSpecificationLocationAndMemberSs << location << index << locationValue << ".ConnectionTrackingSpecification";
+      m_connectionTrackingSpecification.OutputToStream(oStream, connectionTrackingSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -472,6 +517,22 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   if(m_ipv6PrefixCountHasBeenSet)
   {
       oStream << location << ".Ipv6PrefixCount=" << m_ipv6PrefixCount << "&";
+  }
+  if(m_primaryIpv6HasBeenSet)
+  {
+      oStream << location << ".PrimaryIpv6=" << std::boolalpha << m_primaryIpv6 << "&";
+  }
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+      Aws::String enaSrdSpecificationLocationAndMember(location);
+      enaSrdSpecificationLocationAndMember += ".EnaSrdSpecification";
+      m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMember.c_str());
+  }
+  if(m_connectionTrackingSpecificationHasBeenSet)
+  {
+      Aws::String connectionTrackingSpecificationLocationAndMember(location);
+      connectionTrackingSpecificationLocationAndMember += ".ConnectionTrackingSpecification";
+      m_connectionTrackingSpecification.OutputToStream(oStream, connectionTrackingSpecificationLocationAndMember.c_str());
   }
 }
 

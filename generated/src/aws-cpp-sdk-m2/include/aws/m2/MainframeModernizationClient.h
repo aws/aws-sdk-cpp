@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
+#include <aws/m2/model/GetSignedBluinsightsUrlRequest.h>
 
 namespace Aws
 {
@@ -479,25 +480,26 @@ namespace MainframeModernization
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSignedBluinsightsUrlOutcome GetSignedBluinsightsUrl() const;
+        virtual Model::GetSignedBluinsightsUrlOutcome GetSignedBluinsightsUrl(const Model::GetSignedBluinsightsUrlRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSignedBluinsightsUrl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetSignedBluinsightsUrlOutcomeCallable GetSignedBluinsightsUrlCallable() const
+        template<typename GetSignedBluinsightsUrlRequestT = Model::GetSignedBluinsightsUrlRequest>
+        Model::GetSignedBluinsightsUrlOutcomeCallable GetSignedBluinsightsUrlCallable(const GetSignedBluinsightsUrlRequestT& request = {}) const
         {
-            return SubmitCallable(&MainframeModernizationClient::GetSignedBluinsightsUrl);
+            return SubmitCallable(&MainframeModernizationClient::GetSignedBluinsightsUrl, request);
         }
 
         /**
          * An Async wrapper for GetSignedBluinsightsUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetSignedBluinsightsUrlAsync(const GetSignedBluinsightsUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetSignedBluinsightsUrlRequestT = Model::GetSignedBluinsightsUrlRequest>
+        void GetSignedBluinsightsUrlAsync(const GetSignedBluinsightsUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSignedBluinsightsUrlRequestT& request = {}) const
         {
-            return SubmitAsync(&MainframeModernizationClient::GetSignedBluinsightsUrl, handler, context);
+            return SubmitAsync(&MainframeModernizationClient::GetSignedBluinsightsUrl, request, handler, context);
         }
+
         /**
          * <p>Returns a list of the application versions for a specific
          * application.</p><p><h3>See Also:</h3>   <a

@@ -24,8 +24,8 @@ namespace Aws
    * and manages common database administration tasks, freeing up developers to focus
    * on what makes their applications and businesses unique.</p> <p>Amazon RDS gives
    * you access to the capabilities of a MySQL, MariaDB, PostgreSQL, Microsoft SQL
-   * Server, Oracle, or Amazon Aurora database server. These capabilities mean that
-   * the code, applications, and tools you already use today with your existing
+   * Server, Oracle, Db2, or Amazon Aurora database server. These capabilities mean
+   * that the code, applications, and tools you already use today with your existing
    * databases work with Amazon RDS without modification. Amazon RDS automatically
    * backs up your database and maintains the database software that powers your DB
    * instance. Amazon RDS is flexible: you can scale your DB instance's compute
@@ -365,7 +365,10 @@ namespace Aws
         }
 
         /**
-         * <p>Copies the specified DB cluster parameter group.</p><p><h3>See Also:</h3>  
+         * <p>Copies the specified DB cluster parameter group.</p>  <p>You can't copy
+         * a default DB cluster parameter group. Instead, create a new custom DB cluster
+         * parameter group, which copies the default parameters and values for the
+         * specified DB cluster parameter group family.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -449,7 +452,10 @@ namespace Aws
         }
 
         /**
-         * <p>Copies the specified DB parameter group.</p><p><h3>See Also:</h3>   <a
+         * <p>Copies the specified DB parameter group.</p>  <p>You can't copy a
+         * default DB parameter group. Instead, create a new custom DB parameter group,
+         * which copies the default parameters and values for the specified DB parameter
+         * group family.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -793,7 +799,7 @@ namespace Aws
         /**
          * <p>Creates a new DB instance that acts as a read replica for an existing source
          * DB instance or Multi-AZ DB cluster. You can create a read replica for a DB
-         * instance running MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server. You can
+         * instance running Db2, MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can
          * create a read replica for a Multi-AZ DB cluster running MySQL or PostgreSQL. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
@@ -801,9 +807,9 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
          * from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the
          * <i>Amazon RDS User Guide</i>.</p> <p>Amazon Aurora doesn't support this
-         * operation. Call the <code>CreateDBInstance</code> operation to create a DB
-         * instance for an Aurora DB cluster.</p> <p>All read replica DB instances are
-         * created with backups disabled. All other attributes (including DB security
+         * operation. To create a DB instance for an Aurora DB cluster, use the
+         * <code>CreateDBInstance</code> operation.</p> <p>All read replica DB instances
+         * are created with backups disabled. All other attributes (including DB security
          * groups and DB parameter groups) are inherited from the source DB instance or
          * cluster, except as specified.</p>  <p>Your source DB instance or
          * cluster must have backup retention enabled.</p> <p><h3>See
@@ -1106,6 +1112,32 @@ namespace Aws
         }
 
         /**
+         * <p>Creates a zero-ETL integration with Amazon Redshift.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIntegrationOutcome CreateIntegration(const Model::CreateIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIntegrationRequestT = Model::CreateIntegrationRequest>
+        Model::CreateIntegrationOutcomeCallable CreateIntegrationCallable(const CreateIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::CreateIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIntegrationRequestT = Model::CreateIntegrationRequest>
+        void CreateIntegrationAsync(const CreateIntegrationRequestT& request, const CreateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::CreateIntegration, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new option group. You can create up to 20 option groups.</p>
          * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">AWS
@@ -1129,6 +1161,33 @@ namespace Aws
         void CreateOptionGroupAsync(const CreateOptionGroupRequestT& request, const CreateOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::CreateOptionGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a tenant database in a DB instance that uses the multi-tenant
+         * configuration. Only RDS for Oracle container database (CDB) instances are
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTenantDatabaseOutcome CreateTenantDatabase(const Model::CreateTenantDatabaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTenantDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTenantDatabaseRequestT = Model::CreateTenantDatabaseRequest>
+        Model::CreateTenantDatabaseOutcomeCallable CreateTenantDatabaseCallable(const CreateTenantDatabaseRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::CreateTenantDatabase, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTenantDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTenantDatabaseRequestT = Model::CreateTenantDatabaseRequest>
+        void CreateTenantDatabaseAsync(const CreateTenantDatabaseRequestT& request, const CreateTenantDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::CreateTenantDatabase, request, handler, context);
         }
 
         /**
@@ -1359,15 +1418,14 @@ namespace Aws
         }
 
         /**
-         * <p>The DeleteDBInstance action deletes a previously provisioned DB instance.
-         * When you delete a DB instance, all automated backups for that instance are
-         * deleted and can't be recovered. Manual DB snapshots of the DB instance to be
-         * deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p>If you request
-         * a final DB snapshot the status of the Amazon RDS DB instance is
-         * <code>deleting</code> until the DB snapshot is created. The API action
-         * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
-         * The action can't be canceled or reverted once submitted.</p> <p>When a DB
-         * instance is in a failure state and has a status of <code>failed</code>,
+         * <p>Deletes a previously provisioned DB instance. When you delete a DB instance,
+         * all automated backups for that instance are deleted and can't be recovered.
+         * However, manual DB snapshots of the DB instance aren't deleted.</p> <p>If you
+         * request a final DB snapshot, the status of the Amazon RDS DB instance is
+         * <code>deleting</code> until the DB snapshot is created. This operation can't be
+         * canceled or reverted after it begins. To monitor the status of this operation,
+         * use <code>DescribeDBInstance</code>.</p> <p>When a DB instance is in a failure
+         * state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when you skip creation of the final snapshot with the
          * <code>SkipFinalSnapshot</code> parameter.</p> <p>If the specified DB instance is
@@ -1375,10 +1433,15 @@ namespace Aws
          * the following conditions are true:</p> <ul> <li> <p>The DB cluster is a read
          * replica of another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance
          * is the only instance in the DB cluster.</p> </li> </ul> <p>To delete a DB
-         * instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-         * API action to promote the DB cluster so it's no longer a read replica. After the
-         * promotion completes, then call the <code>DeleteDBInstance</code> API action to
-         * delete the final instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
+         * instance in this case, first use the <code>PromoteReadReplicaDBCluster</code>
+         * operation to promote the DB cluster so that it's no longer a read replica. After
+         * the promotion completes, use the <code>DeleteDBInstance</code> operation to
+         * delete the final instance in the DB cluster.</p>  <p>For RDS Custom
+         * DB instances, deleting the DB instance permanently deletes the EC2 instance and
+         * the associated EBS volumes. Make sure that you don't terminate or delete these
+         * resources before you delete the DB instance. Otherwise, deleting the DB instance
+         * and creation of the final snapshot might fail.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          */
@@ -1651,6 +1714,32 @@ namespace Aws
         }
 
         /**
+         * <p>Deletes a zero-ETL integration with Amazon Redshift.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIntegrationOutcome DeleteIntegration(const Model::DeleteIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        Model::DeleteIntegrationOutcomeCallable DeleteIntegrationCallable(const DeleteIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DeleteIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        void DeleteIntegrationAsync(const DeleteIntegrationRequestT& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DeleteIntegration, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an existing option group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">AWS
          * API Reference</a></p>
@@ -1673,6 +1762,34 @@ namespace Aws
         void DeleteOptionGroupAsync(const DeleteOptionGroupRequestT& request, const DeleteOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DeleteOptionGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a tenant database from your DB instance. This command only applies to
+         * RDS for Oracle container database (CDB) instances.</p> <p>You can't delete a
+         * tenant database when it is the only tenant in the DB instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTenantDatabaseOutcome DeleteTenantDatabase(const Model::DeleteTenantDatabaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTenantDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTenantDatabaseRequestT = Model::DeleteTenantDatabaseRequest>
+        Model::DeleteTenantDatabaseOutcomeCallable DeleteTenantDatabaseCallable(const DeleteTenantDatabaseRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DeleteTenantDatabase, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTenantDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTenantDatabaseRequestT = Model::DeleteTenantDatabaseRequest>
+        void DeleteTenantDatabaseAsync(const DeleteTenantDatabaseRequestT& request, const DeleteTenantDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DeleteTenantDatabase, request, handler, context);
         }
 
         /**
@@ -1763,8 +1880,8 @@ namespace Aws
         }
 
         /**
-         * <p>Lists the set of CA certificates provided by Amazon RDS for this Amazon Web
-         * Services account.</p> <p>For more information, see <a
+         * <p>Lists the set of certificate authority (CA) certificates provided by Amazon
+         * RDS for this Amazon Web Services account.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
          * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
          * Guide</i> and <a
@@ -2050,7 +2167,8 @@ namespace Aws
         }
 
         /**
-         * <p>Returns a list of the available DB engines.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the properties of specific versions of DB engines.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">AWS
          * API Reference</a></p>
          */
@@ -2313,6 +2431,32 @@ namespace Aws
         }
 
         /**
+         * <p>Describes the recommendations to resolve the issues for your DB instances, DB
+         * clusters, and DB parameter groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBRecommendationsOutcome DescribeDBRecommendations(const Model::DescribeDBRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDBRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDBRecommendationsRequestT = Model::DescribeDBRecommendationsRequest>
+        Model::DescribeDBRecommendationsOutcomeCallable DescribeDBRecommendationsCallable(const DescribeDBRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeDBRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDBRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDBRecommendationsRequestT = Model::DescribeDBRecommendationsRequest>
+        void DescribeDBRecommendationsAsync(const DescribeDBRecommendationsRequestT& request, const DescribeDBRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeDBRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of <code>DBSecurityGroup</code> descriptions. If a
          * <code>DBSecurityGroupName</code> is specified, the list will contain only the
          * descriptions of the specified DB security group.</p>  <p>EC2-Classic was
@@ -2381,6 +2525,37 @@ namespace Aws
         void DescribeDBSnapshotAttributesAsync(const DescribeDBSnapshotAttributesRequestT& request, const DescribeDBSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DescribeDBSnapshotAttributes, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the tenant databases that exist in a DB snapshot. This command only
+         * applies to RDS for Oracle DB instances in the multi-tenant configuration.</p>
+         * <p>You can use this command to inspect the tenant databases within a snapshot
+         * before restoring it. You can't directly interact with the tenant databases in a
+         * DB snapshot. If you restore a snapshot that was taken from DB instance using the
+         * multi-tenant configuration, you restore all its tenant databases.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBSnapshotTenantDatabasesOutcome DescribeDBSnapshotTenantDatabases(const Model::DescribeDBSnapshotTenantDatabasesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDBSnapshotTenantDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDBSnapshotTenantDatabasesRequestT = Model::DescribeDBSnapshotTenantDatabasesRequest>
+        Model::DescribeDBSnapshotTenantDatabasesOutcomeCallable DescribeDBSnapshotTenantDatabasesCallable(const DescribeDBSnapshotTenantDatabasesRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeDBSnapshotTenantDatabases, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDBSnapshotTenantDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDBSnapshotTenantDatabasesRequestT = Model::DescribeDBSnapshotTenantDatabasesRequest>
+        void DescribeDBSnapshotTenantDatabasesAsync(const DescribeDBSnapshotTenantDatabasesRequestT& request, const DescribeDBSnapshotTenantDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeDBSnapshotTenantDatabases, request, handler, context);
         }
 
         /**
@@ -2647,7 +2822,34 @@ namespace Aws
         }
 
         /**
-         * <p>Describes all available options.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe one or more zero-ETL integrations with Amazon
+         * Redshift.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIntegrationsOutcome DescribeIntegrations(const Model::DescribeIntegrationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeIntegrationsRequestT = Model::DescribeIntegrationsRequest>
+        Model::DescribeIntegrationsOutcomeCallable DescribeIntegrationsCallable(const DescribeIntegrationsRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeIntegrations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeIntegrationsRequestT = Model::DescribeIntegrationsRequest>
+        void DescribeIntegrationsAsync(const DescribeIntegrationsRequestT& request, const DescribeIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeIntegrations, request, handler, context);
+        }
+
+        /**
+         * <p>Describes all available options for the specified engine.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions">AWS
          * API Reference</a></p>
          */
@@ -2697,8 +2899,8 @@ namespace Aws
         }
 
         /**
-         * <p>Returns a list of orderable DB instance options for the specified DB engine,
-         * DB engine version, and DB instance class.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the orderable DB instance options for a specified DB
+         * engine.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions">AWS
          * API Reference</a></p>
          */
@@ -2834,6 +3036,33 @@ namespace Aws
         }
 
         /**
+         * <p>Describes the tenant databases in a DB instance that uses the multi-tenant
+         * configuration. Only RDS for Oracle CDB instances are supported.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTenantDatabasesOutcome DescribeTenantDatabases(const Model::DescribeTenantDatabasesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTenantDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTenantDatabasesRequestT = Model::DescribeTenantDatabasesRequest>
+        Model::DescribeTenantDatabasesOutcomeCallable DescribeTenantDatabasesCallable(const DescribeTenantDatabasesRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeTenantDatabases, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTenantDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTenantDatabasesRequestT = Model::DescribeTenantDatabasesRequest>
+        void DescribeTenantDatabasesAsync(const DescribeTenantDatabasesRequestT& request, const DescribeTenantDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeTenantDatabases, request, handler, context);
+        }
+
+        /**
          * <p>You can call <code>DescribeValidDBInstanceModifications</code> to learn what
          * modifications you can make to your DB instance. You can use this information
          * when you call <code>ModifyDBInstance</code>.</p> <p>This command doesn't apply
@@ -2862,6 +3091,38 @@ namespace Aws
         }
 
         /**
+         * <p>Disables the HTTP endpoint for the specified DB cluster. Disabling this
+         * endpoint disables RDS Data API.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+         * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+         * operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+         * clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use
+         * the <code>EnableHttpEndpoint</code> parameter of the
+         * <code>ModifyDBCluster</code> operation.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DisableHttpEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableHttpEndpointOutcome DisableHttpEndpoint(const Model::DisableHttpEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableHttpEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableHttpEndpointRequestT = Model::DisableHttpEndpointRequest>
+        Model::DisableHttpEndpointOutcomeCallable DisableHttpEndpointCallable(const DisableHttpEndpointRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DisableHttpEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for DisableHttpEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableHttpEndpointRequestT = Model::DisableHttpEndpointRequest>
+        void DisableHttpEndpointAsync(const DisableHttpEndpointRequestT& request, const DisableHttpEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DisableHttpEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
          * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
@@ -2885,6 +3146,41 @@ namespace Aws
         void DownloadDBLogFilePortionAsync(const DownloadDBLogFilePortionRequestT& request, const DownloadDBLogFilePortionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DownloadDBLogFilePortion, request, handler, context);
+        }
+
+        /**
+         * <p>Enables the HTTP endpoint for the DB cluster. By default, the HTTP endpoint
+         * isn't enabled.</p> <p>When enabled, this endpoint provides a connectionless web
+         * service API (RDS Data API) for running SQL queries on the Aurora DB cluster. You
+         * can also query your database from inside the RDS console with the RDS query
+         * editor.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+         * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+         * operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+         * clusters. To enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use
+         * the <code>EnableHttpEndpoint</code> parameter of the
+         * <code>ModifyDBCluster</code> operation.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EnableHttpEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableHttpEndpointOutcome EnableHttpEndpoint(const Model::EnableHttpEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableHttpEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableHttpEndpointRequestT = Model::EnableHttpEndpointRequest>
+        Model::EnableHttpEndpointOutcomeCallable EnableHttpEndpointCallable(const EnableHttpEndpointRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::EnableHttpEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for EnableHttpEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableHttpEndpointRequestT = Model::EnableHttpEndpointRequest>
+        void EnableHttpEndpointAsync(const EnableHttpEndpointRequestT& request, const EnableHttpEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::EnableHttpEndpoint, request, handler, context);
         }
 
         /**
@@ -2932,21 +3228,39 @@ namespace Aws
         }
 
         /**
-         * <p>Initiates the failover process for an Aurora global database
-         * (<a>GlobalCluster</a>).</p> <p>A failover for an Aurora global database promotes
-         * one of secondary read-only DB clusters to be the primary DB cluster and demotes
-         * the primary DB cluster to being a secondary (read-only) DB cluster. In other
-         * words, the role of the current primary DB cluster and the selected (target) DB
-         * cluster are switched. The selected secondary DB cluster assumes full read/write
-         * capabilities for the Aurora global database.</p> <p>For more information about
-         * failing over an Amazon Aurora global database, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
-         * planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora
-         * User Guide</i>.</p>  <p>This action applies to <a>GlobalCluster</a>
-         * (Aurora global databases) only. Use this action only on healthy Aurora global
-         * databases with running Aurora DB clusters and no Region-wide outages, to test
-         * disaster recovery scenarios or to reconfigure your Aurora global database
-         * topology.</p> <p><h3>See Also:</h3>   <a
+         * <p>Promotes the specified secondary DB cluster to be the primary DB cluster in
+         * the global database cluster to fail over or switch over a global database.
+         * Switchover operations were previously called "managed planned failovers."</p>
+         *  <p>Although this operation can be used either to fail over or to switch
+         * over a global database cluster, its intended use is for global database
+         * failover. To switch over a global database cluster, we recommend that you use
+         * the <a>SwitchoverGlobalCluster</a> operation instead.</p>  <p>How you use
+         * this operation depends on whether you are failing over or switching over your
+         * global database cluster:</p> <ul> <li> <p>Failing over - Specify the
+         * <code>AllowDataLoss</code> parameter and don't specify the
+         * <code>Switchover</code> parameter.</p> </li> <li> <p>Switching over - Specify
+         * the <code>Switchover</code> parameter or omit it, but don't specify the
+         * <code>AllowDataLoss</code> parameter.</p> </li> </ul> <p> <b>About failing over
+         * and switching over</b> </p> <p>While failing over and switching over a global
+         * database cluster both change the primary DB cluster, you use these operations
+         * for different reasons:</p> <ul> <li> <p> <i>Failing over</i> - Use this
+         * operation to respond to an unplanned event, such as a Regional disaster in the
+         * primary Region. Failing over can result in a loss of write transaction data that
+         * wasn't replicated to the chosen secondary before the failover event occurred.
+         * However, the recovery process that promotes a DB instance on the chosen seconday
+         * DB cluster to be the primary writer DB instance guarantees that the data is in a
+         * transactionally consistent state.</p> <p>For more information about failing over
+         * an Amazon Aurora global database, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-failover.managed-unplanned">Performing
+         * managed failovers for Aurora global databases</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p> </li> <li> <p> <i>Switching over</i> - Use this operation on a
+         * healthy global database cluster for planned events, such as Regional rotation or
+         * to fail back to the original primary DB cluster after a failover operation. With
+         * this operation, there is no data loss.</p> <p>For more information about
+         * switching over an Amazon Aurora global database, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing
+         * switchovers for Aurora global databases</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">AWS
          * API Reference</a></p>
          */
@@ -3096,7 +3410,7 @@ namespace Aws
          * scaling points, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
          * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-         * Guide</i>.</p>   <p>This action only applies to Aurora
+         * Guide</i>.</p>   <p>This operation only applies to Aurora
          * Serverless v1 DB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">AWS
          * API Reference</a></p>
@@ -3193,8 +3507,8 @@ namespace Aws
 
         /**
          * <p>Modifies the properties of an endpoint in an Amazon Aurora DB cluster.</p>
-         *  <p>This action only applies to Aurora DB clusters.</p> <p><h3>See
-         * Also:</h3>   <a
+         *  <p>This operation only applies to Aurora DB clusters.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterEndpoint">AWS
          * API Reference</a></p>
          */
@@ -3226,11 +3540,11 @@ namespace Aws
          * create a DB cluster parameter group, you should wait at least 5 minutes before
          * creating your first DB cluster that uses that DB cluster parameter group as the
          * default parameter group. This allows Amazon RDS to fully complete the create
-         * action before the parameter group is used as the default for a new DB cluster.
-         * This is especially important for parameters that are critical when creating the
-         * default database for a DB cluster, such as the character set for the default
-         * database defined by the <code>character_set_database</code> parameter. You can
-         * use the <i>Parameter Groups</i> option of the <a
+         * operation before the parameter group is used as the default for a new DB
+         * cluster. This is especially important for parameters that are critical when
+         * creating the default database for a DB cluster, such as the character set for
+         * the default database defined by the <code>character_set_database</code>
+         * parameter. You can use the <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <code>DescribeDBClusterParameters</code> operation to verify that your DB
          * cluster parameter group has been created or modified.</p> <p>If the modified DB
@@ -3347,7 +3661,7 @@ namespace Aws
          * parameters can be modified in a single request.</p>  <p>After you
          * modify a DB parameter group, you should wait at least 5 minutes before creating
          * your first DB instance that uses that DB parameter group as the default
-         * parameter group. This allows Amazon RDS to fully complete the modify action
+         * parameter group. This allows Amazon RDS to fully complete the modify operation
          * before the parameter group is used as the default for a new DB instance. This is
          * especially important for parameters that are critical when creating the default
          * database for a DB instance, such as the character set for the default database
@@ -3457,10 +3771,36 @@ namespace Aws
         }
 
         /**
+         * <p>Updates the recommendation status and recommended action status for the
+         * specified recommendation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyDBRecommendationOutcome ModifyDBRecommendation(const Model::ModifyDBRecommendationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyDBRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyDBRecommendationRequestT = Model::ModifyDBRecommendationRequest>
+        Model::ModifyDBRecommendationOutcomeCallable ModifyDBRecommendationCallable(const ModifyDBRecommendationRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::ModifyDBRecommendation, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyDBRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyDBRecommendationRequestT = Model::ModifyDBRecommendationRequest>
+        void ModifyDBRecommendationAsync(const ModifyDBRecommendationRequestT& request, const ModifyDBRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::ModifyDBRecommendation, request, handler, context);
+        }
+
+        /**
          * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
          * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
-         * upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This command doesn't
-         * apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
+         * upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This operation doesn't
+         * apply to RDS Custom or RDS for Db2.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          */
@@ -3587,9 +3927,10 @@ namespace Aws
         }
 
         /**
-         * <p>Modifies a setting for an Amazon Aurora global cluster. You can change one or
-         * more database configuration parameters by specifying these parameters and the
-         * new values in the request. For more information on Amazon Aurora, see <a
+         * <p>Modifies a setting for an Amazon Aurora global database cluster. You can
+         * change one or more database configuration parameters by specifying these
+         * parameters and the new values in the request. For more information on Amazon
+         * Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> 
          * <p>This operation only applies to Aurora global database clusters.</p>
@@ -3640,6 +3981,34 @@ namespace Aws
         void ModifyOptionGroupAsync(const ModifyOptionGroupRequestT& request, const ModifyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::ModifyOptionGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies an existing tenant database in a DB instance. You can change the
+         * tenant database name or the master user password. This operation is supported
+         * only for RDS for Oracle CDB instances using the multi-tenant
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyTenantDatabaseOutcome ModifyTenantDatabase(const Model::ModifyTenantDatabaseRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyTenantDatabase that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyTenantDatabaseRequestT = Model::ModifyTenantDatabaseRequest>
+        Model::ModifyTenantDatabaseOutcomeCallable ModifyTenantDatabaseCallable(const ModifyTenantDatabaseRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::ModifyTenantDatabase, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyTenantDatabase that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyTenantDatabaseRequestT = Model::ModifyTenantDatabaseRequest>
+        void ModifyTenantDatabaseAsync(const ModifyTenantDatabaseRequestT& request, const ModifyTenantDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::ModifyTenantDatabase, request, handler, context);
         }
 
         /**
@@ -3828,7 +4197,7 @@ namespace Aws
          * <p>Detaches an Aurora secondary cluster from an Aurora global database cluster.
          * The cluster becomes a standalone cluster with read-write capability instead of
          * being read-only and receiving data from a primary cluster in a different
-         * Region.</p>  <p>This action only applies to Aurora DB clusters.</p>
+         * Region.</p>  <p>This operation only applies to Aurora DB clusters.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveFromGlobalCluster">AWS
          * API Reference</a></p>
@@ -4046,17 +4415,17 @@ namespace Aws
          * data must be created using the Percona XtraBackup utility as described in <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3">
          * Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon
-         * Aurora User Guide</i>.</p>  <p>This action only restores the DB cluster,
-         * not the DB instances for that DB cluster. You must invoke the
-         * <code>CreateDBInstance</code> action to create DB instances for the restored DB
-         * cluster, specifying the identifier of the restored DB cluster in
+         * Aurora User Guide</i>.</p>  <p>This operation only restores the DB
+         * cluster, not the DB instances for that DB cluster. You must invoke the
+         * <code>CreateDBInstance</code> operation to create DB instances for the restored
+         * DB cluster, specifying the identifier of the restored DB cluster in
          * <code>DBClusterIdentifier</code>. You can create DB instances only after the
-         * <code>RestoreDBClusterFromS3</code> action has completed and the DB cluster is
-         * available.</p>  <p>For more information on Amazon Aurora, see <a
+         * <code>RestoreDBClusterFromS3</code> operation has completed and the DB cluster
+         * is available.</p>  <p>For more information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> 
-         * <p>This action only applies to Aurora DB clusters. The source DB engine must be
-         * MySQL.</p> <p><h3>See Also:</h3>   <a
+         * <p>This operation only applies to Aurora DB clusters. The source DB engine must
+         * be MySQL.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
          * API Reference</a></p>
          */
@@ -4084,12 +4453,12 @@ namespace Aws
          * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p>
          * <p>The target DB cluster is created from the source snapshot with a default
          * configuration. If you don't specify a security group, the new DB cluster is
-         * associated with the default security group.</p>  <p>This action only
+         * associated with the default security group.</p>  <p>This operation only
          * restores the DB cluster, not the DB instances for that DB cluster. You must
-         * invoke the <code>CreateDBInstance</code> action to create DB instances for the
-         * restored DB cluster, specifying the identifier of the restored DB cluster in
+         * invoke the <code>CreateDBInstance</code> operation to create DB instances for
+         * the restored DB cluster, specifying the identifier of the restored DB cluster in
          * <code>DBClusterIdentifier</code>. You can create DB instances only after the
-         * <code>RestoreDBClusterFromSnapshot</code> action has completed and the DB
+         * <code>RestoreDBClusterFromSnapshot</code> operation has completed and the DB
          * cluster is available.</p>  <p>For more information on Amazon Aurora DB
          * clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
@@ -4127,12 +4496,12 @@ namespace Aws
          * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
          * the source DB cluster with the same configuration as the original DB cluster,
          * except that the new DB cluster is created with the default DB security
-         * group.</p>  <p>For Aurora, this action only restores the DB cluster, not
-         * the DB instances for that DB cluster. You must invoke the
-         * <code>CreateDBInstance</code> action to create DB instances for the restored DB
-         * cluster, specifying the identifier of the restored DB cluster in
+         * group.</p>  <p>For Aurora, this operation only restores the DB cluster,
+         * not the DB instances for that DB cluster. You must invoke the
+         * <code>CreateDBInstance</code> operation to create DB instances for the restored
+         * DB cluster, specifying the identifier of the restored DB cluster in
          * <code>DBClusterIdentifier</code>. You can create DB instances only after the
-         * <code>RestoreDBClusterToPointInTime</code> action has completed and the DB
+         * <code>RestoreDBClusterToPointInTime</code> operation has completed and the DB
          * cluster is available.</p>  <p>For more information on Amazon Aurora DB
          * clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
@@ -4173,13 +4542,13 @@ namespace Aws
          * mirroring. In this case, the instance becomes a Multi-AZ deployment, not a
          * Single-AZ deployment.</p> <p>If you want to replace your original DB instance
          * with the new, restored DB instance, then rename your original DB instance before
-         * you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
-         * instances with the same name. After you have renamed your original DB instance
-         * with a different identifier, then you can pass the original name of the DB
-         * instance as the DBInstanceIdentifier in the call to the
-         * RestoreDBInstanceFromDBSnapshot action. The result is that you replace the
-         * original DB instance with the DB instance created from the snapshot.</p> <p>If
-         * you are restoring from a shared manual DB snapshot, the
+         * you call the <code>RestoreDBInstanceFromDBSnapshot</code> operation. RDS doesn't
+         * allow two DB instances with the same name. After you have renamed your original
+         * DB instance with a different identifier, then you can pass the original name of
+         * the DB instance as the <code>DBInstanceIdentifier</code> in the call to the
+         * <code>RestoreDBInstanceFromDBSnapshot</code> operation. The result is that you
+         * replace the original DB instance with the DB instance created from the
+         * snapshot.</p> <p>If you are restoring from a shared manual DB snapshot, the
          * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
          *  <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For
          * Aurora, use <code>RestoreDBClusterFromSnapshot</code>.</p> <p><h3>See
@@ -4215,7 +4584,7 @@ namespace Aws
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
          * Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User
-         * Guide.</i> </p> <p>This command doesn't apply to RDS Custom.</p><p><h3>See
+         * Guide.</i> </p> <p>This operation doesn't apply to RDS Custom.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">AWS
          * API Reference</a></p>
@@ -4242,16 +4611,17 @@ namespace Aws
 
         /**
          * <p>Restores a DB instance to an arbitrary point in time. You can restore to any
-         * point in time before the time identified by the LatestRestorableTime property.
-         * You can restore to a point up to the number of days specified by the
-         * BackupRetentionPeriod property.</p> <p>The target database is created with most
-         * of the original configuration, but in a system-selected Availability Zone, with
-         * the default security group, the default subnet group, and the default DB
-         * parameter group. By default, the new DB instance is created as a single-AZ
-         * deployment except when the instance is a SQL Server instance that has an option
-         * group that is associated with mirroring; in this case, the instance becomes a
-         * mirrored deployment and not a single-AZ deployment.</p>  <p>This command
-         * doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+         * point in time before the time identified by the
+         * <code>LatestRestorableTime</code> property. You can restore to a point up to the
+         * number of days specified by the <code>BackupRetentionPeriod</code> property.</p>
+         * <p>The target database is created with most of the original configuration, but
+         * in a system-selected Availability Zone, with the default security group, the
+         * default subnet group, and the default DB parameter group. By default, the new DB
+         * instance is created as a single-AZ deployment except when the instance is a SQL
+         * Server instance that has an option group that is associated with mirroring; in
+         * this case, the instance becomes a mirrored deployment and not a single-AZ
+         * deployment.</p>  <p>This operation doesn't apply to Aurora MySQL and
+         * Aurora PostgreSQL. For Aurora, use
          * <code>RestoreDBClusterToPointInTime</code>.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">AWS
@@ -4348,11 +4718,11 @@ namespace Aws
 
         /**
          * <p>Starts an Amazon Aurora DB cluster that was stopped using the Amazon Web
-         * Services console, the stop-db-cluster CLI command, or the StopDBCluster
-         * action.</p> <p>For more information, see <a
+         * Services console, the stop-db-cluster CLI command, or the
+         * <code>StopDBCluster</code> operation.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
          * Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User
-         * Guide</i>.</p>  <p>This action only applies to Aurora DB clusters.</p>
+         * Guide</i>.</p>  <p>This operation only applies to Aurora DB clusters.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">AWS
          * API Reference</a></p>
@@ -4379,8 +4749,8 @@ namespace Aws
 
         /**
          * <p>Starts an Amazon RDS DB instance that was stopped using the Amazon Web
-         * Services console, the stop-db-instance CLI command, or the StopDBInstance
-         * action.</p> <p>For more information, see <a
+         * Services console, the stop-db-instance CLI command, or the
+         * <code>StopDBInstance</code> operation.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
          * Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the
          * <i>Amazon RDS User Guide.</i> </p>  <p>This command doesn't apply to RDS
@@ -4442,9 +4812,9 @@ namespace Aws
         /**
          * <p>Starts an export of DB snapshot or DB cluster data to Amazon S3. The provided
          * IAM role must have access to the S3 bucket.</p> <p>You can't export snapshot
-         * data from RDS Custom DB instances.</p> <p>You can't export cluster data from
-         * Multi-AZ DB clusters.</p> <p>For more information on exporting DB snapshot data,
-         * see <a
+         * data from Db2 or RDS Custom DB instances.</p> <p>You can't export cluster data
+         * from Multi-AZ DB clusters.</p> <p>For more information on exporting DB snapshot
+         * data, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting
          * DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-export-snapshot.html">Exporting
@@ -4479,7 +4849,7 @@ namespace Aws
         /**
          * <p>Stops a database activity stream that was started using the Amazon Web
          * Services console, the <code>start-activity-stream</code> CLI command, or the
-         * <code>StartActivityStream</code> action.</p> <p>For more information, see <a
+         * <code>StartActivityStream</code> operation.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">
          * Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon
          * Aurora User Guide</i> or <a
@@ -4516,7 +4886,7 @@ namespace Aws
          * if necessary.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
          * Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User
-         * Guide</i>.</p>  <p>This action only applies to Aurora DB clusters.</p>
+         * Guide</i>.</p>  <p>This operation only applies to Aurora DB clusters.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBCluster">AWS
          * API Reference</a></p>
@@ -4636,6 +5006,46 @@ namespace Aws
         void SwitchoverBlueGreenDeploymentAsync(const SwitchoverBlueGreenDeploymentRequestT& request, const SwitchoverBlueGreenDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::SwitchoverBlueGreenDeployment, request, handler, context);
+        }
+
+        /**
+         * <p>Switches over the specified secondary DB cluster to be the new primary DB
+         * cluster in the global database cluster. Switchover operations were previously
+         * called "managed planned failovers."</p> <p>Aurora promotes the specified
+         * secondary cluster to assume full read/write capabilities and demotes the current
+         * primary cluster to a secondary (read-only) cluster, maintaining the orginal
+         * replication topology. All secondary clusters are synchronized with the primary
+         * at the beginning of the process so the new primary continues operations for the
+         * Aurora global database without losing any data. Your database is unavailable for
+         * a short time while the primary and selected secondary clusters are assuming
+         * their new roles. For more information about switching over an Aurora global
+         * database, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing
+         * switchovers for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p>  <p>This operation is intended for controlled environments,
+         * for operations such as "regional rotation" or to fall back to the original
+         * primary after a global database failover.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SwitchoverGlobalClusterOutcome SwitchoverGlobalCluster(const Model::SwitchoverGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for SwitchoverGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        Model::SwitchoverGlobalClusterOutcomeCallable SwitchoverGlobalClusterCallable(const SwitchoverGlobalClusterRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::SwitchoverGlobalCluster, request);
+        }
+
+        /**
+         * An Async wrapper for SwitchoverGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        void SwitchoverGlobalClusterAsync(const SwitchoverGlobalClusterRequestT& request, const SwitchoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::SwitchoverGlobalCluster, request, handler, context);
         }
 
         /**

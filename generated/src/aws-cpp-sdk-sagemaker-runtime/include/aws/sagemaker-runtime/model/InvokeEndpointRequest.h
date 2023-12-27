@@ -37,7 +37,7 @@ namespace Model
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-     * API. </p>
+     * API.</p>
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
 
@@ -45,7 +45,7 @@ namespace Model
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-     * API. </p>
+     * API.</p>
      */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
 
@@ -53,7 +53,7 @@ namespace Model
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-     * API. </p>
+     * API.</p>
      */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
@@ -61,7 +61,7 @@ namespace Model
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-     * API. </p>
+     * API.</p>
      */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
 
@@ -69,7 +69,7 @@ namespace Model
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-     * API. </p>
+     * API.</p>
      */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
 
@@ -77,7 +77,7 @@ namespace Model
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-     * API. </p>
+     * API.</p>
      */
     inline InvokeEndpointRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
 
@@ -85,7 +85,7 @@ namespace Model
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-     * API. </p>
+     * API.</p>
      */
     inline InvokeEndpointRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
 
@@ -93,48 +93,48 @@ namespace Model
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-     * API. </p>
+     * API.</p>
      */
     inline InvokeEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline const Aws::String& GetAccept() const{ return m_accept; }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline InvokeEndpointRequest& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline InvokeEndpointRequest& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline InvokeEndpointRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
 
@@ -146,14 +146,15 @@ namespace Model
      * provide an ID that you can use to track a request or to provide other metadata
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
-     * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
-     * code in your model is responsible for setting or updating any custom attributes
-     * in the response. If your code does not set this value in the response, an empty
-     * value is returned. For example, if a custom attribute represents the trace ID,
-     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the
-     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     * 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p> <p>The code in your model is responsible for setting or updating any custom
+     * attributes in the response. If your code does not set this value in the
+     * response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
+     * currently supported in the Amazon Web Services SDKs but not in the Amazon
+     * SageMaker Python SDK. </p>
      */
     inline const Aws::String& GetCustomAttributes() const{ return m_customAttributes; }
 
@@ -164,14 +165,15 @@ namespace Model
      * provide an ID that you can use to track a request or to provide other metadata
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
-     * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
-     * code in your model is responsible for setting or updating any custom attributes
-     * in the response. If your code does not set this value in the response, an empty
-     * value is returned. For example, if a custom attribute represents the trace ID,
-     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the
-     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     * 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p> <p>The code in your model is responsible for setting or updating any custom
+     * attributes in the response. If your code does not set this value in the
+     * response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
+     * currently supported in the Amazon Web Services SDKs but not in the Amazon
+     * SageMaker Python SDK. </p>
      */
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
 
@@ -182,14 +184,15 @@ namespace Model
      * provide an ID that you can use to track a request or to provide other metadata
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
-     * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
-     * code in your model is responsible for setting or updating any custom attributes
-     * in the response. If your code does not set this value in the response, an empty
-     * value is returned. For example, if a custom attribute represents the trace ID,
-     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the
-     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     * 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p> <p>The code in your model is responsible for setting or updating any custom
+     * attributes in the response. If your code does not set this value in the
+     * response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
+     * currently supported in the Amazon Web Services SDKs but not in the Amazon
+     * SageMaker Python SDK. </p>
      */
     inline void SetCustomAttributes(const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
 
@@ -200,14 +203,15 @@ namespace Model
      * provide an ID that you can use to track a request or to provide other metadata
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
-     * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
-     * code in your model is responsible for setting or updating any custom attributes
-     * in the response. If your code does not set this value in the response, an empty
-     * value is returned. For example, if a custom attribute represents the trace ID,
-     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the
-     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     * 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p> <p>The code in your model is responsible for setting or updating any custom
+     * attributes in the response. If your code does not set this value in the
+     * response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
+     * currently supported in the Amazon Web Services SDKs but not in the Amazon
+     * SageMaker Python SDK. </p>
      */
     inline void SetCustomAttributes(Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
 
@@ -218,14 +222,15 @@ namespace Model
      * provide an ID that you can use to track a request or to provide other metadata
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
-     * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
-     * code in your model is responsible for setting or updating any custom attributes
-     * in the response. If your code does not set this value in the response, an empty
-     * value is returned. For example, if a custom attribute represents the trace ID,
-     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the
-     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     * 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p> <p>The code in your model is responsible for setting or updating any custom
+     * attributes in the response. If your code does not set this value in the
+     * response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
+     * currently supported in the Amazon Web Services SDKs but not in the Amazon
+     * SageMaker Python SDK. </p>
      */
     inline void SetCustomAttributes(const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.assign(value); }
 
@@ -236,14 +241,15 @@ namespace Model
      * provide an ID that you can use to track a request or to provide other metadata
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
-     * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
-     * code in your model is responsible for setting or updating any custom attributes
-     * in the response. If your code does not set this value in the response, an empty
-     * value is returned. For example, if a custom attribute represents the trace ID,
-     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the
-     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     * 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p> <p>The code in your model is responsible for setting or updating any custom
+     * attributes in the response. If your code does not set this value in the
+     * response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
+     * currently supported in the Amazon Web Services SDKs but not in the Amazon
+     * SageMaker Python SDK. </p>
      */
     inline InvokeEndpointRequest& WithCustomAttributes(const Aws::String& value) { SetCustomAttributes(value); return *this;}
 
@@ -254,14 +260,15 @@ namespace Model
      * provide an ID that you can use to track a request or to provide other metadata
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
-     * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
-     * code in your model is responsible for setting or updating any custom attributes
-     * in the response. If your code does not set this value in the response, an empty
-     * value is returned. For example, if a custom attribute represents the trace ID,
-     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the
-     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     * 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p> <p>The code in your model is responsible for setting or updating any custom
+     * attributes in the response. If your code does not set this value in the
+     * response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
+     * currently supported in the Amazon Web Services SDKs but not in the Amazon
+     * SageMaker Python SDK. </p>
      */
     inline InvokeEndpointRequest& WithCustomAttributes(Aws::String&& value) { SetCustomAttributes(std::move(value)); return *this;}
 
@@ -272,14 +279,15 @@ namespace Model
      * provide an ID that you can use to track a request or to provide other metadata
      * that a service endpoint was programmed to process. The value must consist of no
      * more than 1024 visible US-ASCII characters as specified in <a
-     * href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field
-     * Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p> <p>The
-     * code in your model is responsible for setting or updating any custom attributes
-     * in the response. If your code does not set this value in the response, an empty
-     * value is returned. For example, if a custom attribute represents the trace ID,
-     * your model can prepend the custom attribute with <code>Trace ID:</code> in your
-     * post-processing function.</p> <p>This feature is currently supported in the
-     * Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     * 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
+     * </p> <p>The code in your model is responsible for setting or updating any custom
+     * attributes in the response. If your code does not set this value in the
+     * response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
+     * currently supported in the Amazon Web Services SDKs but not in the Amazon
+     * SageMaker Python SDK. </p>
      */
     inline InvokeEndpointRequest& WithCustomAttributes(const char* value) { SetCustomAttributes(value); return *this;}
 
@@ -608,6 +616,55 @@ namespace Model
      */
     inline InvokeEndpointRequest& WithEnableExplanations(const char* value) { SetEnableExplanations(value); return *this;}
 
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline const Aws::String& GetInferenceComponentName() const{ return m_inferenceComponentName; }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline bool InferenceComponentNameHasBeenSet() const { return m_inferenceComponentNameHasBeenSet; }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline void SetInferenceComponentName(const Aws::String& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = value; }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline void SetInferenceComponentName(Aws::String&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::move(value); }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline void SetInferenceComponentName(const char* value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName.assign(value); }
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline InvokeEndpointRequest& WithInferenceComponentName(const Aws::String& value) { SetInferenceComponentName(value); return *this;}
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline InvokeEndpointRequest& WithInferenceComponentName(Aws::String&& value) { SetInferenceComponentName(std::move(value)); return *this;}
+
+    /**
+     * <p>If the endpoint hosts one or more inference components, this parameter
+     * specifies the name of inference component to invoke.</p>
+     */
+    inline InvokeEndpointRequest& WithInferenceComponentName(const char* value) { SetInferenceComponentName(value); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -634,6 +691,9 @@ namespace Model
 
     Aws::String m_enableExplanations;
     bool m_enableExplanationsHasBeenSet = false;
+
+    Aws::String m_inferenceComponentName;
+    bool m_inferenceComponentNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EgressType::NOT_SET:
+            return {};
           case EgressType::DEFAULT:
             return "DEFAULT";
           case EgressType::VPC:

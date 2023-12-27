@@ -37,42 +37,42 @@ namespace Model
 
     /**
      * <p>Returns only custom language models with the specified status. Language
-     * models are ordered by creation date, with the newest model first. If you don't
+     * models are ordered by creation date, with the newest model first. If you do not
      * include <code>StatusEquals</code>, all custom language models are returned.</p>
      */
     inline const ModelStatus& GetStatusEquals() const{ return m_statusEquals; }
 
     /**
      * <p>Returns only custom language models with the specified status. Language
-     * models are ordered by creation date, with the newest model first. If you don't
+     * models are ordered by creation date, with the newest model first. If you do not
      * include <code>StatusEquals</code>, all custom language models are returned.</p>
      */
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
 
     /**
      * <p>Returns only custom language models with the specified status. Language
-     * models are ordered by creation date, with the newest model first. If you don't
+     * models are ordered by creation date, with the newest model first. If you do not
      * include <code>StatusEquals</code>, all custom language models are returned.</p>
      */
     inline void SetStatusEquals(const ModelStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
      * <p>Returns only custom language models with the specified status. Language
-     * models are ordered by creation date, with the newest model first. If you don't
+     * models are ordered by creation date, with the newest model first. If you do not
      * include <code>StatusEquals</code>, all custom language models are returned.</p>
      */
     inline void SetStatusEquals(ModelStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
 
     /**
      * <p>Returns only custom language models with the specified status. Language
-     * models are ordered by creation date, with the newest model first. If you don't
+     * models are ordered by creation date, with the newest model first. If you do not
      * include <code>StatusEquals</code>, all custom language models are returned.</p>
      */
     inline ListLanguageModelsRequest& WithStatusEquals(const ModelStatus& value) { SetStatusEquals(value); return *this;}
 
     /**
      * <p>Returns only custom language models with the specified status. Language
-     * models are ordered by creation date, with the newest model first. If you don't
+     * models are ordered by creation date, with the newest model first. If you do not
      * include <code>StatusEquals</code>, all custom language models are returned.</p>
      */
     inline ListLanguageModelsRequest& WithStatusEquals(ModelStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
@@ -203,7 +203,7 @@ namespace Model
     /**
      * <p>The maximum number of custom language models to return in each page of
      * results. If there are fewer results than the value that you specify, only the
-     * actual results are returned. If you don't specify a value, a default of 5 is
+     * actual results are returned. If you do not specify a value, a default of 5 is
      * used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -211,7 +211,7 @@ namespace Model
     /**
      * <p>The maximum number of custom language models to return in each page of
      * results. If there are fewer results than the value that you specify, only the
-     * actual results are returned. If you don't specify a value, a default of 5 is
+     * actual results are returned. If you do not specify a value, a default of 5 is
      * used.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -219,7 +219,7 @@ namespace Model
     /**
      * <p>The maximum number of custom language models to return in each page of
      * results. If there are fewer results than the value that you specify, only the
-     * actual results are returned. If you don't specify a value, a default of 5 is
+     * actual results are returned. If you do not specify a value, a default of 5 is
      * used.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -227,7 +227,7 @@ namespace Model
     /**
      * <p>The maximum number of custom language models to return in each page of
      * results. If there are fewer results than the value that you specify, only the
-     * actual results are returned. If you don't specify a value, a default of 5 is
+     * actual results are returned. If you do not specify a value, a default of 5 is
      * used.</p>
      */
     inline ListLanguageModelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

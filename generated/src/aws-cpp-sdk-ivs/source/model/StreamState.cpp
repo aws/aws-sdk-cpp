@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamState::NOT_SET:
+            return {};
           case StreamState::LIVE:
             return "LIVE";
           case StreamState::OFFLINE:

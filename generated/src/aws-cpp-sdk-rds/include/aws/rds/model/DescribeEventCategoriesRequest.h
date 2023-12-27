@@ -43,7 +43,7 @@ namespace Model
 
     /**
      * <p>The type of source that is generating the events. For RDS Proxy events,
-     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * specify <code>db-proxy</code>.</p> <p>Valid Values: <code>db-instance</code> |
      * <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>The type of source that is generating the events. For RDS Proxy events,
-     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * specify <code>db-proxy</code>.</p> <p>Valid Values: <code>db-instance</code> |
      * <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
@@ -61,7 +61,7 @@ namespace Model
 
     /**
      * <p>The type of source that is generating the events. For RDS Proxy events,
-     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * specify <code>db-proxy</code>.</p> <p>Valid Values: <code>db-instance</code> |
      * <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
@@ -70,7 +70,7 @@ namespace Model
 
     /**
      * <p>The type of source that is generating the events. For RDS Proxy events,
-     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * specify <code>db-proxy</code>.</p> <p>Valid Values: <code>db-instance</code> |
      * <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
@@ -79,7 +79,7 @@ namespace Model
 
     /**
      * <p>The type of source that is generating the events. For RDS Proxy events,
-     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * specify <code>db-proxy</code>.</p> <p>Valid Values: <code>db-instance</code> |
      * <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>The type of source that is generating the events. For RDS Proxy events,
-     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * specify <code>db-proxy</code>.</p> <p>Valid Values: <code>db-instance</code> |
      * <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
@@ -97,7 +97,7 @@ namespace Model
 
     /**
      * <p>The type of source that is generating the events. For RDS Proxy events,
-     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * specify <code>db-proxy</code>.</p> <p>Valid Values: <code>db-instance</code> |
      * <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
@@ -106,7 +106,7 @@ namespace Model
 
     /**
      * <p>The type of source that is generating the events. For RDS Proxy events,
-     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * specify <code>db-proxy</code>.</p> <p>Valid Values: <code>db-instance</code> |
      * <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> |
      * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>

@@ -35,6 +35,55 @@ namespace Model
 
 
     /**
+     * <p>The custom domain name associated with the workgroup. The custom domain name
+     * or the workgroup name must be included in the request.</p>
+     */
+    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
+
+    /**
+     * <p>The custom domain name associated with the workgroup. The custom domain name
+     * or the workgroup name must be included in the request.</p>
+     */
+    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
+
+    /**
+     * <p>The custom domain name associated with the workgroup. The custom domain name
+     * or the workgroup name must be included in the request.</p>
+     */
+    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
+
+    /**
+     * <p>The custom domain name associated with the workgroup. The custom domain name
+     * or the workgroup name must be included in the request.</p>
+     */
+    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
+
+    /**
+     * <p>The custom domain name associated with the workgroup. The custom domain name
+     * or the workgroup name must be included in the request.</p>
+     */
+    inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
+
+    /**
+     * <p>The custom domain name associated with the workgroup. The custom domain name
+     * or the workgroup name must be included in the request.</p>
+     */
+    inline GetCredentialsRequest& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
+
+    /**
+     * <p>The custom domain name associated with the workgroup. The custom domain name
+     * or the workgroup name must be included in the request.</p>
+     */
+    inline GetCredentialsRequest& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom domain name associated with the workgroup. The custom domain name
+     * or the workgroup name must be included in the request.</p>
+     */
+    inline GetCredentialsRequest& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+
+
+    /**
      * <p>The name of the database to get temporary authorization to log on to.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens.</p> </li> <li> <p>Must contain only uppercase or lowercase letters,
@@ -205,6 +254,9 @@ namespace Model
     inline GetCredentialsRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
 
   private:
+
+    Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
 
     Aws::String m_dbName;
     bool m_dbNameHasBeenSet = false;

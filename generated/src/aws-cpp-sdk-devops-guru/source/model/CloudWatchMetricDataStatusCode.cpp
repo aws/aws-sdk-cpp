@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudWatchMetricDataStatusCode::NOT_SET:
+            return {};
           case CloudWatchMetricDataStatusCode::Complete:
             return "Complete";
           case CloudWatchMetricDataStatusCode::InternalError:

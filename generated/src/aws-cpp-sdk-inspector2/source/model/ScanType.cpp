@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanType::NOT_SET:
+            return {};
           case ScanType::NETWORK:
             return "NETWORK";
           case ScanType::PACKAGE:

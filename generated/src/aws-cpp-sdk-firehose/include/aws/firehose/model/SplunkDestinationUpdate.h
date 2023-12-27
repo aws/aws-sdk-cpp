@@ -12,6 +12,7 @@
 #include <aws/firehose/model/S3DestinationUpdate.h>
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
+#include <aws/firehose/model/SplunkBufferingHints.h>
 #include <utility>
 
 namespace Aws
@@ -408,6 +409,43 @@ namespace Model
      */
     inline SplunkDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The buffering options. If no value is specified, the default values for
+     * Splunk are used.</p>
+     */
+    inline const SplunkBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+
+    /**
+     * <p>The buffering options. If no value is specified, the default values for
+     * Splunk are used.</p>
+     */
+    inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
+
+    /**
+     * <p>The buffering options. If no value is specified, the default values for
+     * Splunk are used.</p>
+     */
+    inline void SetBufferingHints(const SplunkBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
+
+    /**
+     * <p>The buffering options. If no value is specified, the default values for
+     * Splunk are used.</p>
+     */
+    inline void SetBufferingHints(SplunkBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
+
+    /**
+     * <p>The buffering options. If no value is specified, the default values for
+     * Splunk are used.</p>
+     */
+    inline SplunkDestinationUpdate& WithBufferingHints(const SplunkBufferingHints& value) { SetBufferingHints(value); return *this;}
+
+    /**
+     * <p>The buffering options. If no value is specified, the default values for
+     * Splunk are used.</p>
+     */
+    inline SplunkDestinationUpdate& WithBufferingHints(SplunkBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_hECEndpoint;
@@ -436,6 +474,9 @@ namespace Model
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+
+    SplunkBufferingHints m_bufferingHints;
+    bool m_bufferingHintsHasBeenSet = false;
   };
 
 } // namespace Model

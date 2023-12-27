@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryErrorCode::NOT_SET:
+            return {};
           case QueryErrorCode::INTERNAL_FAILURE:
             return "INTERNAL_FAILURE";
           case QueryErrorCode::ACCESS_DENIED:

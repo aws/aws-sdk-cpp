@@ -9,6 +9,8 @@
 #include <aws/athena/model/EngineVersion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/CustomerContentEncryptionConfiguration.h>
+#include <aws/athena/model/IdentityCenterConfiguration.h>
+#include <aws/athena/model/QueryResultsS3AccessGrantsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -361,42 +363,58 @@ namespace Model
 
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>The ARN of the execution role used to access user resources for Spark
+     * sessions and Identity Center enabled workgroups. This property applies only to
+     * Spark enabled workgroups and Identity Center enabled workgroups.</p>
      */
     inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>The ARN of the execution role used to access user resources for Spark
+     * sessions and Identity Center enabled workgroups. This property applies only to
+     * Spark enabled workgroups and Identity Center enabled workgroups.</p>
      */
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>The ARN of the execution role used to access user resources for Spark
+     * sessions and Identity Center enabled workgroups. This property applies only to
+     * Spark enabled workgroups and Identity Center enabled workgroups.</p>
      */
     inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>The ARN of the execution role used to access user resources for Spark
+     * sessions and Identity Center enabled workgroups. This property applies only to
+     * Spark enabled workgroups and Identity Center enabled workgroups.</p>
      */
     inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>The ARN of the execution role used to access user resources for Spark
+     * sessions and Identity Center enabled workgroups. This property applies only to
+     * Spark enabled workgroups and Identity Center enabled workgroups.</p>
      */
     inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>The ARN of the execution role used to access user resources for Spark
+     * sessions and Identity Center enabled workgroups. This property applies only to
+     * Spark enabled workgroups and Identity Center enabled workgroups.</p>
      */
     inline WorkGroupConfiguration& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>The ARN of the execution role used to access user resources for Spark
+     * sessions and Identity Center enabled workgroups. This property applies only to
+     * Spark enabled workgroups and Identity Center enabled workgroups.</p>
      */
     inline WorkGroupConfiguration& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
 
     /**
-     * <p>Role used in a session for accessing the user's resources.</p>
+     * <p>The ARN of the execution role used to access user resources for Spark
+     * sessions and Identity Center enabled workgroups. This property applies only to
+     * Spark enabled workgroups and Identity Center enabled workgroups.</p>
      */
     inline WorkGroupConfiguration& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
 
@@ -490,6 +508,68 @@ namespace Model
      */
     inline WorkGroupConfiguration& WithEnableMinimumEncryptionConfiguration(bool value) { SetEnableMinimumEncryptionConfiguration(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+     */
+    inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const{ return m_identityCenterConfiguration; }
+
+    /**
+     * <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+     */
+    inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+     */
+    inline void SetIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = value; }
+
+    /**
+     * <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+     */
+    inline void SetIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { m_identityCenterConfigurationHasBeenSet = true; m_identityCenterConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+     */
+    inline WorkGroupConfiguration& WithIdentityCenterConfiguration(const IdentityCenterConfiguration& value) { SetIdentityCenterConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+     */
+    inline WorkGroupConfiguration& WithIdentityCenterConfiguration(IdentityCenterConfiguration&& value) { SetIdentityCenterConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline const QueryResultsS3AccessGrantsConfiguration& GetQueryResultsS3AccessGrantsConfiguration() const{ return m_queryResultsS3AccessGrantsConfiguration; }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline bool QueryResultsS3AccessGrantsConfigurationHasBeenSet() const { return m_queryResultsS3AccessGrantsConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline void SetQueryResultsS3AccessGrantsConfiguration(const QueryResultsS3AccessGrantsConfiguration& value) { m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true; m_queryResultsS3AccessGrantsConfiguration = value; }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline void SetQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration&& value) { m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true; m_queryResultsS3AccessGrantsConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline WorkGroupConfiguration& WithQueryResultsS3AccessGrantsConfiguration(const QueryResultsS3AccessGrantsConfiguration& value) { SetQueryResultsS3AccessGrantsConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+     */
+    inline WorkGroupConfiguration& WithQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration&& value) { SetQueryResultsS3AccessGrantsConfiguration(std::move(value)); return *this;}
+
   private:
 
     ResultConfiguration m_resultConfiguration;
@@ -521,6 +601,12 @@ namespace Model
 
     bool m_enableMinimumEncryptionConfiguration;
     bool m_enableMinimumEncryptionConfigurationHasBeenSet = false;
+
+    IdentityCenterConfiguration m_identityCenterConfiguration;
+    bool m_identityCenterConfigurationHasBeenSet = false;
+
+    QueryResultsS3AccessGrantsConfiguration m_queryResultsS3AccessGrantsConfiguration;
+    bool m_queryResultsS3AccessGrantsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

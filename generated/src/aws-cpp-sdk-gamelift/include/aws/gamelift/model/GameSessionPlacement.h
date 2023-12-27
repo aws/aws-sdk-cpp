@@ -30,8 +30,16 @@ namespace Model
 {
 
   /**
-   * <p>This object includes the full details of the original request plus the
-   * current status and start/end time stamps.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a potential game session placement, including the full details of
+   * the original placement request and the current status. </p>  <p>If the
+   * game session placement status is <code>PENDING</code>, the properties for game
+   * session ID/ARN, region, IP address/DNS, and port aren't final. A game session is
+   * not active and ready to accept players until placement status reaches
+   * <code>FULFILLED</code>. When the placement is in <code>PENDING</code> status,
+   * Amazon GameLift may attempt to place a game session multiple times before
+   * succeeding. With each attempt it creates a <a>GameSession</a> object and updates
+   * this placement object with the new game session properties..</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionPlacement">AWS
    * API Reference</a></p>
    */
@@ -136,170 +144,140 @@ namespace Model
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
-     * sessions (if requested) have been successfully created. Values for
-     * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
-     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
-     * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
-     * process of placing the game session. Common reasons are the game session
-     * terminated before the placement process was completed, or an unexpected internal
-     * error.</p> </li> </ul>
+     * <b>PENDING</b> -- The placement request is in the queue waiting to be processed.
+     * Game session properties are not yet final. </p> </li> <li> <p> <b>FULFILLED</b>
+     * -- A new game session has been successfully placed. Game session properties are
+     * now final.</p> </li> <li> <p> <b>CANCELLED</b> -- The placement request was
+     * canceled.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new game session was not
+     * successfully created before the time limit expired. You can resubmit the
+     * placement request as needed.</p> </li> <li> <p> <b>FAILED</b> -- Amazon GameLift
+     * is not able to complete the process of placing the game session. Common reasons
+     * are the game session terminated before the placement process was completed, or
+     * an unexpected internal error.</p> </li> </ul>
      */
     inline const GameSessionPlacementState& GetStatus() const{ return m_status; }
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
-     * sessions (if requested) have been successfully created. Values for
-     * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
-     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
-     * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
-     * process of placing the game session. Common reasons are the game session
-     * terminated before the placement process was completed, or an unexpected internal
-     * error.</p> </li> </ul>
+     * <b>PENDING</b> -- The placement request is in the queue waiting to be processed.
+     * Game session properties are not yet final. </p> </li> <li> <p> <b>FULFILLED</b>
+     * -- A new game session has been successfully placed. Game session properties are
+     * now final.</p> </li> <li> <p> <b>CANCELLED</b> -- The placement request was
+     * canceled.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new game session was not
+     * successfully created before the time limit expired. You can resubmit the
+     * placement request as needed.</p> </li> <li> <p> <b>FAILED</b> -- Amazon GameLift
+     * is not able to complete the process of placing the game session. Common reasons
+     * are the game session terminated before the placement process was completed, or
+     * an unexpected internal error.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
-     * sessions (if requested) have been successfully created. Values for
-     * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
-     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
-     * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
-     * process of placing the game session. Common reasons are the game session
-     * terminated before the placement process was completed, or an unexpected internal
-     * error.</p> </li> </ul>
+     * <b>PENDING</b> -- The placement request is in the queue waiting to be processed.
+     * Game session properties are not yet final. </p> </li> <li> <p> <b>FULFILLED</b>
+     * -- A new game session has been successfully placed. Game session properties are
+     * now final.</p> </li> <li> <p> <b>CANCELLED</b> -- The placement request was
+     * canceled.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new game session was not
+     * successfully created before the time limit expired. You can resubmit the
+     * placement request as needed.</p> </li> <li> <p> <b>FAILED</b> -- Amazon GameLift
+     * is not able to complete the process of placing the game session. Common reasons
+     * are the game session terminated before the placement process was completed, or
+     * an unexpected internal error.</p> </li> </ul>
      */
     inline void SetStatus(const GameSessionPlacementState& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
-     * sessions (if requested) have been successfully created. Values for
-     * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
-     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
-     * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
-     * process of placing the game session. Common reasons are the game session
-     * terminated before the placement process was completed, or an unexpected internal
-     * error.</p> </li> </ul>
+     * <b>PENDING</b> -- The placement request is in the queue waiting to be processed.
+     * Game session properties are not yet final. </p> </li> <li> <p> <b>FULFILLED</b>
+     * -- A new game session has been successfully placed. Game session properties are
+     * now final.</p> </li> <li> <p> <b>CANCELLED</b> -- The placement request was
+     * canceled.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new game session was not
+     * successfully created before the time limit expired. You can resubmit the
+     * placement request as needed.</p> </li> <li> <p> <b>FAILED</b> -- Amazon GameLift
+     * is not able to complete the process of placing the game session. Common reasons
+     * are the game session terminated before the placement process was completed, or
+     * an unexpected internal error.</p> </li> </ul>
      */
     inline void SetStatus(GameSessionPlacementState&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
-     * sessions (if requested) have been successfully created. Values for
-     * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
-     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
-     * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
-     * process of placing the game session. Common reasons are the game session
-     * terminated before the placement process was completed, or an unexpected internal
-     * error.</p> </li> </ul>
+     * <b>PENDING</b> -- The placement request is in the queue waiting to be processed.
+     * Game session properties are not yet final. </p> </li> <li> <p> <b>FULFILLED</b>
+     * -- A new game session has been successfully placed. Game session properties are
+     * now final.</p> </li> <li> <p> <b>CANCELLED</b> -- The placement request was
+     * canceled.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new game session was not
+     * successfully created before the time limit expired. You can resubmit the
+     * placement request as needed.</p> </li> <li> <p> <b>FAILED</b> -- Amazon GameLift
+     * is not able to complete the process of placing the game session. Common reasons
+     * are the game session terminated before the placement process was completed, or
+     * an unexpected internal error.</p> </li> </ul>
      */
     inline GameSessionPlacement& WithStatus(const GameSessionPlacementState& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
-     * sessions (if requested) have been successfully created. Values for
-     * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
-     * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
-     * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
-     * process of placing the game session. Common reasons are the game session
-     * terminated before the placement process was completed, or an unexpected internal
-     * error.</p> </li> </ul>
+     * <b>PENDING</b> -- The placement request is in the queue waiting to be processed.
+     * Game session properties are not yet final. </p> </li> <li> <p> <b>FULFILLED</b>
+     * -- A new game session has been successfully placed. Game session properties are
+     * now final.</p> </li> <li> <p> <b>CANCELLED</b> -- The placement request was
+     * canceled.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new game session was not
+     * successfully created before the time limit expired. You can resubmit the
+     * placement request as needed.</p> </li> <li> <p> <b>FAILED</b> -- Amazon GameLift
+     * is not able to complete the process of placing the game session. Common reasons
+     * are the game session terminated before the placement process was completed, or
+     * an unexpected internal error.</p> </li> </ul>
      */
     inline GameSessionPlacement& WithStatus(GameSessionPlacementState&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
     inline GameSessionPlacement& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
     inline GameSessionPlacement& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
     inline GameSessionPlacement& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
-     * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process with a request to start a
-     * new game session (see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
     inline GameSessionPlacement& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
@@ -379,172 +357,164 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>A unique identifier for the game session. This value isn't final until
+     * placement status is <code>FULFILLED</code>.</p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>A unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>A unique identifier for the game session. This value isn't final until
+     * placement status is <code>FULFILLED</code>.</p>
      */
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>A unique identifier for the game session. This value isn't final until
+     * placement status is <code>FULFILLED</code>.</p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>A unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>A unique identifier for the game session. This value isn't final until
+     * placement status is <code>FULFILLED</code>.</p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>A unique identifier for the game session. This value isn't final until
+     * placement status is <code>FULFILLED</code>.</p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>A unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>A unique identifier for the game session. This value isn't final until
+     * placement status is <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>A unique identifier for the game session. This value isn't final until
+     * placement status is <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the game session. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>A unique identifier for the game session. This value isn't final until
+     * placement status is <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
 
     /**
-     * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>). This identifier is unique across all Regions. You can
-     * use this value as a <code>GameSessionId</code> value as needed.</p>
+     * <p>Identifier for the game session created by this placement request. This
+     * identifier is unique across all Regions. This value isn't final until placement
+     * status is <code>FULFILLED</code>.</p>
      */
     inline const Aws::String& GetGameSessionArn() const{ return m_gameSessionArn; }
 
     /**
-     * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>). This identifier is unique across all Regions. You can
-     * use this value as a <code>GameSessionId</code> value as needed.</p>
+     * <p>Identifier for the game session created by this placement request. This
+     * identifier is unique across all Regions. This value isn't final until placement
+     * status is <code>FULFILLED</code>.</p>
      */
     inline bool GameSessionArnHasBeenSet() const { return m_gameSessionArnHasBeenSet; }
 
     /**
-     * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>). This identifier is unique across all Regions. You can
-     * use this value as a <code>GameSessionId</code> value as needed.</p>
+     * <p>Identifier for the game session created by this placement request. This
+     * identifier is unique across all Regions. This value isn't final until placement
+     * status is <code>FULFILLED</code>.</p>
      */
     inline void SetGameSessionArn(const Aws::String& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = value; }
 
     /**
-     * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>). This identifier is unique across all Regions. You can
-     * use this value as a <code>GameSessionId</code> value as needed.</p>
+     * <p>Identifier for the game session created by this placement request. This
+     * identifier is unique across all Regions. This value isn't final until placement
+     * status is <code>FULFILLED</code>.</p>
      */
     inline void SetGameSessionArn(Aws::String&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = std::move(value); }
 
     /**
-     * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>). This identifier is unique across all Regions. You can
-     * use this value as a <code>GameSessionId</code> value as needed.</p>
+     * <p>Identifier for the game session created by this placement request. This
+     * identifier is unique across all Regions. This value isn't final until placement
+     * status is <code>FULFILLED</code>.</p>
      */
     inline void SetGameSessionArn(const char* value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn.assign(value); }
 
     /**
-     * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>). This identifier is unique across all Regions. You can
-     * use this value as a <code>GameSessionId</code> value as needed.</p>
+     * <p>Identifier for the game session created by this placement request. This
+     * identifier is unique across all Regions. This value isn't final until placement
+     * status is <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithGameSessionArn(const Aws::String& value) { SetGameSessionArn(value); return *this;}
 
     /**
-     * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>). This identifier is unique across all Regions. You can
-     * use this value as a <code>GameSessionId</code> value as needed.</p>
+     * <p>Identifier for the game session created by this placement request. This
+     * identifier is unique across all Regions. This value isn't final until placement
+     * status is <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithGameSessionArn(Aws::String&& value) { SetGameSessionArn(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier for the game session created by this placement request. This value
-     * is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>). This identifier is unique across all Regions. You can
-     * use this value as a <code>GameSessionId</code> value as needed.</p>
+     * <p>Identifier for the game session created by this placement request. This
+     * identifier is unique across all Regions. This value isn't final until placement
+     * status is <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithGameSessionArn(const char* value) { SetGameSessionArn(value); return *this;}
 
 
     /**
      * <p>Name of the Region where the game session created by this placement request
-     * is running. This value is set once the new game session is placed (placement
-     * status is <code>FULFILLED</code>).</p>
+     * is running. This value isn't final until placement status is
+     * <code>FULFILLED</code>.</p>
      */
     inline const Aws::String& GetGameSessionRegion() const{ return m_gameSessionRegion; }
 
     /**
      * <p>Name of the Region where the game session created by this placement request
-     * is running. This value is set once the new game session is placed (placement
-     * status is <code>FULFILLED</code>).</p>
+     * is running. This value isn't final until placement status is
+     * <code>FULFILLED</code>.</p>
      */
     inline bool GameSessionRegionHasBeenSet() const { return m_gameSessionRegionHasBeenSet; }
 
     /**
      * <p>Name of the Region where the game session created by this placement request
-     * is running. This value is set once the new game session is placed (placement
-     * status is <code>FULFILLED</code>).</p>
+     * is running. This value isn't final until placement status is
+     * <code>FULFILLED</code>.</p>
      */
     inline void SetGameSessionRegion(const Aws::String& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = value; }
 
     /**
      * <p>Name of the Region where the game session created by this placement request
-     * is running. This value is set once the new game session is placed (placement
-     * status is <code>FULFILLED</code>).</p>
+     * is running. This value isn't final until placement status is
+     * <code>FULFILLED</code>.</p>
      */
     inline void SetGameSessionRegion(Aws::String&& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = std::move(value); }
 
     /**
      * <p>Name of the Region where the game session created by this placement request
-     * is running. This value is set once the new game session is placed (placement
-     * status is <code>FULFILLED</code>).</p>
+     * is running. This value isn't final until placement status is
+     * <code>FULFILLED</code>.</p>
      */
     inline void SetGameSessionRegion(const char* value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion.assign(value); }
 
     /**
      * <p>Name of the Region where the game session created by this placement request
-     * is running. This value is set once the new game session is placed (placement
-     * status is <code>FULFILLED</code>).</p>
+     * is running. This value isn't final until placement status is
+     * <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithGameSessionRegion(const Aws::String& value) { SetGameSessionRegion(value); return *this;}
 
     /**
      * <p>Name of the Region where the game session created by this placement request
-     * is running. This value is set once the new game session is placed (placement
-     * status is <code>FULFILLED</code>).</p>
+     * is running. This value isn't final until placement status is
+     * <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithGameSessionRegion(Aws::String&& value) { SetGameSessionRegion(std::move(value)); return *this;}
 
     /**
      * <p>Name of the Region where the game session created by this placement request
-     * is running. This value is set once the new game session is placed (placement
-     * status is <code>FULFILLED</code>).</p>
+     * is running. This value isn't final until placement status is
+     * <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithGameSessionRegion(const char* value) { SetGameSessionRegion(value); return *this;}
 
@@ -688,65 +658,57 @@ namespace Model
 
     /**
      * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).
-     * </p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>. </p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
      * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).
-     * </p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>. </p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).
-     * </p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>. </p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
      * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).
-     * </p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>. </p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).
-     * </p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>. </p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
      * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).
-     * </p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>. </p>
      */
     inline GameSessionPlacement& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
      * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).
-     * </p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>. </p>
      */
     inline GameSessionPlacement& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The IP address of the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).
-     * </p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>. </p>
      */
     inline GameSessionPlacement& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
@@ -866,102 +828,102 @@ namespace Model
 
     /**
      * <p>The port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number. This value is set once
-     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
+     * server, an app needs both the IP address and port number. This value isn't final
+     * until placement status is <code>FULFILLED</code>.</p>
      */
     inline GameSessionPlacement& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
      * <p>A collection of information on player sessions created in response to the
-     * game session placement request. These player sessions are created only once a
+     * game session placement request. These player sessions are created only after a
      * new game session is successfully placed (placement status is
-     * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID.</p>
+     * <code>FULFILLED</code>). This information includes the player ID, provided in
+     * the placement request, and a corresponding player session ID.</p>
      */
     inline const Aws::Vector<PlacedPlayerSession>& GetPlacedPlayerSessions() const{ return m_placedPlayerSessions; }
 
     /**
      * <p>A collection of information on player sessions created in response to the
-     * game session placement request. These player sessions are created only once a
+     * game session placement request. These player sessions are created only after a
      * new game session is successfully placed (placement status is
-     * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID.</p>
+     * <code>FULFILLED</code>). This information includes the player ID, provided in
+     * the placement request, and a corresponding player session ID.</p>
      */
     inline bool PlacedPlayerSessionsHasBeenSet() const { return m_placedPlayerSessionsHasBeenSet; }
 
     /**
      * <p>A collection of information on player sessions created in response to the
-     * game session placement request. These player sessions are created only once a
+     * game session placement request. These player sessions are created only after a
      * new game session is successfully placed (placement status is
-     * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID.</p>
+     * <code>FULFILLED</code>). This information includes the player ID, provided in
+     * the placement request, and a corresponding player session ID.</p>
      */
     inline void SetPlacedPlayerSessions(const Aws::Vector<PlacedPlayerSession>& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions = value; }
 
     /**
      * <p>A collection of information on player sessions created in response to the
-     * game session placement request. These player sessions are created only once a
+     * game session placement request. These player sessions are created only after a
      * new game session is successfully placed (placement status is
-     * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID.</p>
+     * <code>FULFILLED</code>). This information includes the player ID, provided in
+     * the placement request, and a corresponding player session ID.</p>
      */
     inline void SetPlacedPlayerSessions(Aws::Vector<PlacedPlayerSession>&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions = std::move(value); }
 
     /**
      * <p>A collection of information on player sessions created in response to the
-     * game session placement request. These player sessions are created only once a
+     * game session placement request. These player sessions are created only after a
      * new game session is successfully placed (placement status is
-     * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID.</p>
+     * <code>FULFILLED</code>). This information includes the player ID, provided in
+     * the placement request, and a corresponding player session ID.</p>
      */
     inline GameSessionPlacement& WithPlacedPlayerSessions(const Aws::Vector<PlacedPlayerSession>& value) { SetPlacedPlayerSessions(value); return *this;}
 
     /**
      * <p>A collection of information on player sessions created in response to the
-     * game session placement request. These player sessions are created only once a
+     * game session placement request. These player sessions are created only after a
      * new game session is successfully placed (placement status is
-     * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID.</p>
+     * <code>FULFILLED</code>). This information includes the player ID, provided in
+     * the placement request, and a corresponding player session ID.</p>
      */
     inline GameSessionPlacement& WithPlacedPlayerSessions(Aws::Vector<PlacedPlayerSession>&& value) { SetPlacedPlayerSessions(std::move(value)); return *this;}
 
     /**
      * <p>A collection of information on player sessions created in response to the
-     * game session placement request. These player sessions are created only once a
+     * game session placement request. These player sessions are created only after a
      * new game session is successfully placed (placement status is
-     * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID.</p>
+     * <code>FULFILLED</code>). This information includes the player ID, provided in
+     * the placement request, and a corresponding player session ID.</p>
      */
     inline GameSessionPlacement& AddPlacedPlayerSessions(const PlacedPlayerSession& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.push_back(value); return *this; }
 
     /**
      * <p>A collection of information on player sessions created in response to the
-     * game session placement request. These player sessions are created only once a
+     * game session placement request. These player sessions are created only after a
      * new game session is successfully placed (placement status is
-     * <code>FULFILLED</code>). This information includes the player ID (as provided in
-     * the placement request) and the corresponding player session ID.</p>
+     * <code>FULFILLED</code>). This information includes the player ID, provided in
+     * the placement request, and a corresponding player session ID.</p>
      */
     inline GameSessionPlacement& AddPlacedPlayerSessions(PlacedPlayerSession&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.push_back(std::move(value)); return *this; }
 

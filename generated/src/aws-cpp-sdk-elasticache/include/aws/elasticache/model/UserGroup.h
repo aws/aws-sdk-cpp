@@ -333,6 +333,61 @@ namespace Model
 
 
     /**
+     * <p>Indicates which serverless caches the specified user group is associated
+     * with. Available for Redis only.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetServerlessCaches() const{ return m_serverlessCaches; }
+
+    /**
+     * <p>Indicates which serverless caches the specified user group is associated
+     * with. Available for Redis only.</p>
+     */
+    inline bool ServerlessCachesHasBeenSet() const { return m_serverlessCachesHasBeenSet; }
+
+    /**
+     * <p>Indicates which serverless caches the specified user group is associated
+     * with. Available for Redis only.</p>
+     */
+    inline void SetServerlessCaches(const Aws::Vector<Aws::String>& value) { m_serverlessCachesHasBeenSet = true; m_serverlessCaches = value; }
+
+    /**
+     * <p>Indicates which serverless caches the specified user group is associated
+     * with. Available for Redis only.</p>
+     */
+    inline void SetServerlessCaches(Aws::Vector<Aws::String>&& value) { m_serverlessCachesHasBeenSet = true; m_serverlessCaches = std::move(value); }
+
+    /**
+     * <p>Indicates which serverless caches the specified user group is associated
+     * with. Available for Redis only.</p>
+     */
+    inline UserGroup& WithServerlessCaches(const Aws::Vector<Aws::String>& value) { SetServerlessCaches(value); return *this;}
+
+    /**
+     * <p>Indicates which serverless caches the specified user group is associated
+     * with. Available for Redis only.</p>
+     */
+    inline UserGroup& WithServerlessCaches(Aws::Vector<Aws::String>&& value) { SetServerlessCaches(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates which serverless caches the specified user group is associated
+     * with. Available for Redis only.</p>
+     */
+    inline UserGroup& AddServerlessCaches(const Aws::String& value) { m_serverlessCachesHasBeenSet = true; m_serverlessCaches.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates which serverless caches the specified user group is associated
+     * with. Available for Redis only.</p>
+     */
+    inline UserGroup& AddServerlessCaches(Aws::String&& value) { m_serverlessCachesHasBeenSet = true; m_serverlessCaches.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Indicates which serverless caches the specified user group is associated
+     * with. Available for Redis only.</p>
+     */
+    inline UserGroup& AddServerlessCaches(const char* value) { m_serverlessCachesHasBeenSet = true; m_serverlessCaches.push_back(value); return *this; }
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the user group.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
@@ -410,6 +465,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_replicationGroups;
     bool m_replicationGroupsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_serverlessCaches;
+    bool m_serverlessCachesHasBeenSet = false;
 
     Aws::String m_aRN;
     bool m_aRNHasBeenSet = false;

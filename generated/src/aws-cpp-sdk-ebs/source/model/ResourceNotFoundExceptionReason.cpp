@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceNotFoundExceptionReason::NOT_SET:
+            return {};
           case ResourceNotFoundExceptionReason::SNAPSHOT_NOT_FOUND:
             return "SNAPSHOT_NOT_FOUND";
           case ResourceNotFoundExceptionReason::GRANT_NOT_FOUND:

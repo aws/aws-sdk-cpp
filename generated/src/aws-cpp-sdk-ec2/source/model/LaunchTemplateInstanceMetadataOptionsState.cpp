@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchTemplateInstanceMetadataOptionsState::NOT_SET:
+            return {};
           case LaunchTemplateInstanceMetadataOptionsState::pending:
             return "pending";
           case LaunchTemplateInstanceMetadataOptionsState::applied:

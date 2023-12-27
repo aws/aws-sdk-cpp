@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline const Aws::String& GetAutoScalingGroupArn() const{ return m_autoScalingGroupArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline bool AutoScalingGroupArnHasBeenSet() const { return m_autoScalingGroupArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline void SetAutoScalingGroupArn(const Aws::String& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline void SetAutoScalingGroupArn(Aws::String&& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline void SetAutoScalingGroupArn(const char* value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline AutoScalingGroupProvider& WithAutoScalingGroupArn(const Aws::String& value) { SetAutoScalingGroupArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline AutoScalingGroupProvider& WithAutoScalingGroupArn(Aws::String&& value) { SetAutoScalingGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline AutoScalingGroupProvider& WithAutoScalingGroupArn(const char* value) { SetAutoScalingGroupArn(value); return *this;}
 

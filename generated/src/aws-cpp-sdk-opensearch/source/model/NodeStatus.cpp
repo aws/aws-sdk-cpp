@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeStatus::NOT_SET:
+            return {};
           case NodeStatus::Active:
             return "Active";
           case NodeStatus::StandBy:

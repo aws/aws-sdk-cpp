@@ -19,12 +19,14 @@ namespace Model
 {
 
 AutoMLProblemTypeResolvedAttributes::AutoMLProblemTypeResolvedAttributes() : 
-    m_tabularResolvedAttributesHasBeenSet(false)
+    m_tabularResolvedAttributesHasBeenSet(false),
+    m_textGenerationResolvedAttributesHasBeenSet(false)
 {
 }
 
 AutoMLProblemTypeResolvedAttributes::AutoMLProblemTypeResolvedAttributes(JsonView jsonValue) : 
-    m_tabularResolvedAttributesHasBeenSet(false)
+    m_tabularResolvedAttributesHasBeenSet(false),
+    m_textGenerationResolvedAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ AutoMLProblemTypeResolvedAttributes& AutoMLProblemTypeResolvedAttributes::operat
     m_tabularResolvedAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TextGenerationResolvedAttributes"))
+  {
+    m_textGenerationResolvedAttributes = jsonValue.GetObject("TextGenerationResolvedAttributes");
+
+    m_textGenerationResolvedAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue AutoMLProblemTypeResolvedAttributes::Jsonize() const
   if(m_tabularResolvedAttributesHasBeenSet)
   {
    payload.WithObject("TabularResolvedAttributes", m_tabularResolvedAttributes.Jsonize());
+
+  }
+
+  if(m_textGenerationResolvedAttributesHasBeenSet)
+  {
+   payload.WithObject("TextGenerationResolvedAttributes", m_textGenerationResolvedAttributes.Jsonize());
 
   }
 

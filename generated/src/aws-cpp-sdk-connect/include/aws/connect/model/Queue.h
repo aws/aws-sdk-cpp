@@ -9,6 +9,7 @@
 #include <aws/connect/model/OutboundCallerConfig.h>
 #include <aws/connect/model/QueueStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -334,81 +335,153 @@ namespace Model
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline Queue& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline Queue& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline Queue& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline Queue& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline Queue& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline Queue& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline Queue& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline Queue& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline Queue& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline Queue& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline Queue& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = value; }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline Queue& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline Queue& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline Queue& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
 
   private:
 
@@ -438,6 +511,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet = false;
+
+    Aws::String m_lastModifiedRegion;
+    bool m_lastModifiedRegionHasBeenSet = false;
   };
 
 } // namespace Model

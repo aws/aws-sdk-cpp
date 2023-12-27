@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DecisionType::NOT_SET:
+            return {};
           case DecisionType::ScheduleActivityTask:
             return "ScheduleActivityTask";
           case DecisionType::RequestCancelActivityTask:

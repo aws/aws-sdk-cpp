@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotJobStatus::NOT_SET:
+            return {};
           case SnapshotJobStatus::QUEUED:
             return "QUEUED";
           case SnapshotJobStatus::RUNNING:

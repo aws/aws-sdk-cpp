@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ByoipCidrState::NOT_SET:
+            return {};
           case ByoipCidrState::advertised:
             return "advertised";
           case ByoipCidrState::deprovisioned:

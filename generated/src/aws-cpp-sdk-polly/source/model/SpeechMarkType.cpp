@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpeechMarkType::NOT_SET:
+            return {};
           case SpeechMarkType::sentence:
             return "sentence";
           case SpeechMarkType::ssml:

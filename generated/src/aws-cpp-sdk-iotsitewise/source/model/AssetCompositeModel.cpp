@@ -23,7 +23,8 @@ AssetCompositeModel::AssetCompositeModel() :
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_propertiesHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ AssetCompositeModel::AssetCompositeModel(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_propertiesHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ AssetCompositeModel& AssetCompositeModel::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+
+    m_externalIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +125,12 @@ JsonValue AssetCompositeModel::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
 
   }
 

@@ -23,13 +23,6 @@
 #include <thread>
 #include <aws/core/utils/logging/LogMacros.h>
 
-// TODO: temporary fix for naming conflicts for Windows.
-#ifdef _WIN32
-#ifdef GetMessage
-#undef GetMessage
-#endif
-#endif
-
 using namespace Aws;
 using namespace Aws::Client;
 using namespace Aws::Http;
@@ -542,7 +535,10 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersOnly)
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
+    auto config = ClientConfiguration();
+    auto expUA = ComputeUserAgentString(&config);
+    auto actualUA = finalHeaders[Http::USER_AGENT_HEADER];
+    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 
     headerValues[Http::CONTENT_LENGTH_HEADER] = "0";
     headerValues[Http::CONTENT_TYPE_HEADER] = "blah";
@@ -563,7 +559,9 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersOnly)
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
+    expUA = ComputeUserAgentString(&config);
+    actualUA = finalHeaders[Http::USER_AGENT_HEADER];
+    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 }
 
 TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersAndBody)
@@ -603,7 +601,10 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersAndBody)
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
+    auto config = ClientConfiguration();
+    auto expUA = ComputeUserAgentString(&config);
+    auto actualUA = finalHeaders[Http::USER_AGENT_HEADER];
+    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();
@@ -654,7 +655,10 @@ TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithAdditionalHeadersAndBody)
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-    ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
+    auto config = ClientConfiguration();
+    auto expUA = ComputeUserAgentString(&config);
+    auto actualUA = finalHeaders[Http::USER_AGENT_HEADER];
+    ASSERT_EQ(expUA, actualUA) << actualUA << " IS NOT " <<  expUA;
 
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();

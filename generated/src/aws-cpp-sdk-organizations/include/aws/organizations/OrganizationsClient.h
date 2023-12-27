@@ -10,6 +10,11 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/organizations/OrganizationsServiceClientModel.h>
+#include <aws/organizations/model/LeaveOrganizationRequest.h>
+#include <aws/organizations/model/DescribeResourcePolicyRequest.h>
+#include <aws/organizations/model/DeleteResourcePolicyRequest.h>
+#include <aws/organizations/model/DescribeOrganizationRequest.h>
+#include <aws/organizations/model/DeleteOrganizationRequest.h>
 
 namespace Aws
 {
@@ -57,9 +62,9 @@ namespace Organizations
    * Organizations service received, who made the request and when, and so on. For
    * more about Organizations and its support for CloudTrail, see <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_incident-response.html#orgs_cloudtrail-integration">Logging
-   * Organizations Events with CloudTrail</a> in the <i>Organizations User Guide</i>.
-   * To learn more about CloudTrail, including how to turn it on and find your log
-   * files, see the <a
+   * Organizations API calls with CloudTrail</a> in the <i>Organizations User
+   * Guide</i>. To learn more about CloudTrail, including how to turn it on and find
+   * your log files, see the <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">CloudTrail
    * User Guide</a>.</p>
    */
@@ -133,19 +138,19 @@ namespace Organizations
          * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
          * create the required service-linked role named
          * <code>AWSServiceRoleForOrganizations</code>. For more information, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">Organizations
-         * and Service-Linked Roles</a> in the <i>Organizations User Guide</i>.</p> </li>
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integrate_services-using_slrs">Organizations
+         * and service-linked roles</a> in the <i>Organizations User Guide</i>.</p> </li>
          * <li> <p> <b>Enable all features final confirmation</b> handshake: only a
          * principal from the management account.</p> <p>For more information about
          * invitations, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an Amazon Web Services account to join your organization</a> in the
-         * <i>Organizations User Guide.</i> For more information about requests to enable
+         * <i>Organizations User Guide</i>. For more information about requests to enable
          * all features in the organization, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-         * all features in your organization</a> in the <i>Organizations User Guide.</i>
-         * </p> </li> </ul> <p>After you accept a handshake, it continues to appear in the
-         * results of relevant APIs for only 30 days. After that, it's
+         * all features in your organization</a> in the <i>Organizations User
+         * Guide</i>.</p> </li> </ul> <p>After you accept a handshake, it continues to
+         * appear in the results of relevant APIs for only 30 days. After that, it's
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake">AWS
          * API Reference</a></p>
@@ -183,7 +188,8 @@ namespace Organizations
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
          * </p> </li> </ul> <p>This operation can be called only from the organization's
-         * management account.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an Amazon Web Services service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
          * API Reference</a></p>
          */
@@ -257,15 +263,14 @@ namespace Organizations
          * published after the account closes successfully. For information on using
          * CloudTrail with Organizations, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
-         * and monitoring in Organizations</a> in the <i>Organizations User Guide.</i> </p>
+         * and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p>
          * </li> </ul>  <ul> <li> <p>You can close only 10% of member accounts,
          * between 10 and 200, within a rolling 30 day period. This quota is not bound by a
-         * calendar month, but starts when you close an account.</p> <p>After you reach
-         * this limit, you can close additional accounts in the Billing console. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/close-account.html">Closing
-         * an account</a> in the Amazon Web Services Billing and Cost Management User
-         * Guide.</p> </li> <li> <p>To reinstate a closed account, contact Amazon Web
+         * calendar month, but starts when you close an account. After you reach this
+         * limit, you can close additional accounts. For more information, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+         * a member account in your organization</a> in the <i>Organizations User
+         * Guide</i>. </p> </li> <li> <p>To reinstate a closed account, contact Amazon Web
          * Services Support within the 90-day grace period while the account is in
          * SUSPENDED status. </p> </li> <li> <p>If the Amazon Web Services account you
          * attempt to close is linked to an Amazon Web Services GovCloud (US) account, the
@@ -273,11 +278,8 @@ namespace Organizations
          * pre-closure details, see <a
          * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/Closing-govcloud-account.html">
          * Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web
-         * Services GovCloud User Guide</i>.</p> </li> </ul>  <p>For more
-         * information about closing accounts, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
-         * an Amazon Web Services account</a> in the <i>Organizations User Guide.</i>
-         * </p><p><h3>See Also:</h3>   <a
+         * Services GovCloud User Guide</i>.</p> </li> </ul> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CloseAccount">AWS
          * API Reference</a></p>
          */
@@ -315,13 +317,13 @@ namespace Organizations
          * <li> <p>Check the CloudTrail log for the <code>CreateAccountResult</code> event.
          * For information on using CloudTrail with Organizations, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
-         * and monitoring in Organizations</a> in the <i>Organizations User Guide.</i> </p>
+         * and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p>
          * </li> </ul> <p>The user who calls the API to create an account must have the
          * <code>organizations:CreateAccount</code> permission. If you enabled all features
          * in the organization, Organizations creates the required service-linked role
          * named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
-         * and Service-Linked Roles</a> in the <i>Organizations User Guide</i>.</p> <p>If
+         * and service-linked roles</a> in the <i>Organizations User Guide</i>.</p> <p>If
          * the request includes tags, then the requester must have the
          * <code>organizations:TagResource</code> permission.</p> <p>Organizations
          * preconfigures the new member account with a role (named
@@ -333,16 +335,16 @@ namespace Organizations
          * the organization's management account.</p> <p>For more information about
          * creating accounts, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
-         * an Amazon Web Services account in Your Organization</a> in the <i>Organizations
-         * User Guide.</i> </p>  <ul> <li> <p>When you create an account in an
+         * a member account in your organization</a> in the <i>Organizations User
+         * Guide</i>.</p>  <ul> <li> <p>When you create an account in an
          * organization using the Organizations console, API, or CLI commands, the
          * information required for the account to operate as a standalone account, such as
          * a payment method and signing the end user license agreement (EULA) is <i>not</i>
          * automatically collected. If you must remove an account from your organization
-         * later, you can do so only after you provide the missing information. Follow the
-         * steps at <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
-         * To leave an organization as a member account</a> in the <i>Organizations User
+         * later, you can do so only after you provide the missing information. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+         * before removing an account from an organization</a> in the <i>Organizations User
          * Guide</i>.</p> </li> <li> <p>If you get an exception that indicates that you
          * exceeded your account limits for the organization, contact <a
          * href="https://console.aws.amazon.com/support/home#/">Amazon Web Services
@@ -356,16 +358,16 @@ namespace Organizations
          * root user. For information on the requirements and process for closing an
          * account, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
-         * an Amazon Web Services account</a> in the <i>Organizations User Guide</i>.</p>
-         * </li> </ul>   <p>When you create a member account with this
-         * operation, you can choose whether to create the account with the <b>IAM User and
-         * Role Access to Billing Information</b> switch enabled. If you enable it, IAM
-         * users and roles that have appropriate permissions can view billing information
-         * for the account. If you disable it, only the account root user can access
-         * billing information. For information about how to disable this switch for an
-         * account, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
-         * Access to Your Billing Information and Tools</a>.</p> <p><h3>See
+         * a member account in your organization</a> in the <i>Organizations User
+         * Guide</i>.</p> </li> </ul>   <p>When you create a member
+         * account with this operation, you can choose whether to create the account with
+         * the <b>IAM User and Role Access to Billing Information</b> switch enabled. If
+         * you enable it, IAM users and roles that have appropriate permissions can view
+         * billing information for the account. If you disable it, only the account root
+         * user can access billing information. For information about how to disable this
+         * switch for an account, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html#grantaccess">Granting
+         * access to your billing information and tools</a>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
          * API Reference</a></p>
@@ -405,7 +407,7 @@ namespace Organizations
          * <p>Organizations automatically creates the required service-linked role named
          * <code>AWSServiceRoleForOrganizations</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
-         * and Service-Linked Roles</a> in the <i>Organizations User Guide.</i> </p>
+         * and service-linked roles</a> in the <i>Organizations User Guide</i>.</p>
          * <p>Amazon Web Services automatically enables CloudTrail for Amazon Web Services
          * GovCloud (US) accounts, but you should also do the following:</p> <ul> <li>
          * <p>Verify that CloudTrail is enabled to store logs.</p> </li> <li> <p>Create an
@@ -425,7 +427,7 @@ namespace Organizations
          * inviting standalone accounts in the Amazon Web Services GovCloud (US) to join an
          * organization, see <a
          * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
-         * in the <i>Amazon Web Services GovCloud User Guide.</i> </p> <p>Calling
+         * in the <i>Amazon Web Services GovCloud User Guide</i>.</p> <p>Calling
          * <code>CreateGovCloudAccount</code> is an asynchronous request that Amazon Web
          * Services performs in the background. Because <code>CreateGovCloudAccount</code>
          * operates asynchronously, it can return a successful completion message even
@@ -436,10 +438,10 @@ namespace Organizations
          * parameter to the <a>DescribeCreateAccountStatus</a> operation.</p> </li> <li>
          * <p>Check the CloudTrail log for the <code>CreateAccountResult</code> event. For
          * information on using CloudTrail with Organizations, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
-         * the Activity in Your Organization</a> in the <i>Organizations User Guide.</i>
-         * </p> </li> </ul> <p/> <p>When you call the <code>CreateGovCloudAccount</code>
-         * action, you create two accounts: a standalone account in the Amazon Web Services
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html">Logging
+         * and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p>
+         * </li> </ul> <p/> <p>When you call the <code>CreateGovCloudAccount</code> action,
+         * you create two accounts: a standalone account in the Amazon Web Services
          * GovCloud (US) Region and an associated account in the commercial Region for
          * billing and support purposes. The account in the commercial Region is
          * automatically a member of the organization whose credentials made the request.
@@ -453,20 +455,20 @@ namespace Organizations
          * the commercial organization. For more information and to view a diagram that
          * explains how account access works, see <a
          * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
-         * in the <i>Amazon Web Services GovCloud User Guide.</i> </p> <p>For more
+         * in the <i>Amazon Web Services GovCloud User Guide</i>.</p> <p>For more
          * information about creating accounts, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
-         * an Amazon Web Services account in Your Organization</a> in the <i>Organizations
-         * User Guide.</i> </p>  <ul> <li> <p>When you create an account in an
+         * a member account in your organization</a> in the <i>Organizations User
+         * Guide</i>.</p>  <ul> <li> <p>When you create an account in an
          * organization using the Organizations console, API, or CLI commands, the
          * information required for the account to operate as a standalone account is
          * <i>not</i> automatically collected. This includes a payment method and signing
          * the end user license agreement (EULA). If you must remove an account from your
          * organization later, you can do so only after you provide the missing
-         * information. Follow the steps at <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
-         * To leave an organization as a member account</a> in the <i>Organizations User
-         * Guide.</i> </p> </li> <li> <p>If you get an exception that indicates that you
+         * information. For more information, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+         * before removing an account from an organization</a> in the <i>Organizations User
+         * Guide</i>.</p> </li> <li> <p>If you get an exception that indicates that you
          * exceeded your account limits for the organization, contact <a
          * href="https://console.aws.amazon.com/support/home#/">Amazon Web Services
          * Support</a>.</p> </li> <li> <p>If you get an exception that indicates that the
@@ -479,16 +481,16 @@ namespace Organizations
          * you must be signed in as the root user. For information on the requirements and
          * process for closing an account, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
-         * an Amazon Web Services account</a> in the <i>Organizations User Guide</i>.</p>
-         * </li> </ul>   <p>When you create a member account with this
-         * operation, you can choose whether to create the account with the <b>IAM User and
-         * Role Access to Billing Information</b> switch enabled. If you enable it, IAM
-         * users and roles that have appropriate permissions can view billing information
-         * for the account. If you disable it, only the account root user can access
-         * billing information. For information about how to disable this switch for an
-         * account, see <a
+         * a member account in your organization</a> in the <i>Organizations User
+         * Guide</i>.</p> </li> </ul>   <p>When you create a member
+         * account with this operation, you can choose whether to create the account with
+         * the <b>IAM User and Role Access to Billing Information</b> switch enabled. If
+         * you enable it, IAM users and roles that have appropriate permissions can view
+         * billing information for the account. If you disable it, only the account root
+         * user can access billing information. For information about how to disable this
+         * switch for an account, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
-         * Access to Your Billing Information and Tools</a>.</p> <p><h3>See
+         * access to your billing information and tools</a>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateGovCloudAccount">AWS
          * API Reference</a></p>
@@ -526,8 +528,8 @@ namespace Organizations
          * service control policies automatically enabled in the root. If you instead
          * choose to create the organization supporting only the consolidated billing
          * features by setting the <code>FeatureSet</code> parameter to
-         * <code>CONSOLIDATED_BILLING"</code>, no policy types are enabled by default, and
-         * you can't use organization policies</p><p><h3>See Also:</h3>   <a
+         * <code>CONSOLIDATED_BILLING</code>, no policy types are enabled by default and
+         * you can't use organization policies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganization">AWS
          * API Reference</a></p>
          */
@@ -559,8 +561,8 @@ namespace Organizations
          * service control policies, the limit is five.</p> <p>For more information about
          * OUs, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
-         * Organizational Units</a> in the <i>Organizations User Guide.</i> </p> <p>If the
-         * request includes tags, then the requester must have the
+         * organizational units (OUs)</a> in the <i>Organizations User Guide</i>.</p> <p>If
+         * the request includes tags, then the requester must have the
          * <code>organizations:TagResource</code> permission.</p> <p>This operation can be
          * called only from the organization's management account.</p><p><h3>See Also:</h3>
          * <a
@@ -592,10 +594,11 @@ namespace Organizations
          * organizational unit (OU), or an individual Amazon Web Services account.</p>
          * <p>For more information about policies and their use, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
-         * Organization Policies</a>.</p> <p>If the request includes tags, then the
+         * Organizations policies</a>.</p> <p>If the request includes tags, then the
          * requester must have the <code>organizations:TagResource</code> permission.</p>
-         * <p>This operation can be called only from the organization's management
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation can be called only from the organization's management account
+         * or by a member account that is a delegated administrator for an Amazon Web
+         * Services service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">AWS
          * API Reference</a></p>
          */
@@ -658,25 +661,26 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteOrganizationOutcome DeleteOrganization() const;
+        virtual Model::DeleteOrganizationOutcome DeleteOrganization(const Model::DeleteOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DeleteOrganizationOutcomeCallable DeleteOrganizationCallable() const
+        template<typename DeleteOrganizationRequestT = Model::DeleteOrganizationRequest>
+        Model::DeleteOrganizationOutcomeCallable DeleteOrganizationCallable(const DeleteOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::DeleteOrganization);
+            return SubmitCallable(&OrganizationsClient::DeleteOrganization, request);
         }
 
         /**
          * An Async wrapper for DeleteOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DeleteOrganizationAsync(const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DeleteOrganizationRequestT = Model::DeleteOrganizationRequest>
+        void DeleteOrganizationAsync(const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::DeleteOrganization, handler, context);
+            return SubmitAsync(&OrganizationsClient::DeleteOrganization, request, handler, context);
         }
+
         /**
          * <p>Deletes an organizational unit (OU) from a root or another OU. You must first
          * remove all accounts and child OUs from the OU that you want to delete.</p>
@@ -709,7 +713,8 @@ namespace Organizations
          * <p>Deletes the specified policy from your organization. Before you perform this
          * operation, you must first detach the policy from all organizational units (OUs),
          * roots, and accounts.</p> <p>This operation can be called only from the
-         * organization's management account.</p><p><h3>See Also:</h3>   <a
+         * organization's management account or by a member account that is a delegated
+         * administrator for an Amazon Web Services service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">AWS
          * API Reference</a></p>
          */
@@ -740,25 +745,26 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy() const;
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable() const
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::DeleteResourcePolicy);
+            return SubmitCallable(&OrganizationsClient::DeleteResourcePolicy, request);
         }
 
         /**
          * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DeleteResourcePolicyAsync(const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteResourcePolicyRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::DeleteResourcePolicy, handler, context);
+            return SubmitAsync(&OrganizationsClient::DeleteResourcePolicy, request, handler, context);
         }
+
         /**
          * <p>Removes the specified member Amazon Web Services account as a delegated
          * administrator for the specified Amazon Web Services service.</p> 
@@ -859,11 +865,10 @@ namespace Organizations
          * directly attached to the account.</p> <p>This operation applies only to policy
          * types <i>other</i> than service control policies (SCPs).</p> <p>For more
          * information about policy inheritance, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How
-         * Policy Inheritance Works</a> in the <i>Organizations User Guide</i>.</p> <p>This
-         * operation can be called only from the organization's management account or by a
-         * member account that is a delegated administrator for an Amazon Web Services
-         * service.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inheritance_mgmt.html">Understanding
+         * management policy inheritance</a> in the <i>Organizations User Guide</i>.</p>
+         * <p>This operation can be called from any account in the
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeEffectivePolicy">AWS
          * API Reference</a></p>
          */
@@ -928,25 +933,26 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOrganizationOutcome DescribeOrganization() const;
+        virtual Model::DescribeOrganizationOutcome DescribeOrganization(const Model::DescribeOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeOrganizationOutcomeCallable DescribeOrganizationCallable() const
+        template<typename DescribeOrganizationRequestT = Model::DescribeOrganizationRequest>
+        Model::DescribeOrganizationOutcomeCallable DescribeOrganizationCallable(const DescribeOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::DescribeOrganization);
+            return SubmitCallable(&OrganizationsClient::DescribeOrganization, request);
         }
 
         /**
          * An Async wrapper for DescribeOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeOrganizationAsync(const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeOrganizationRequestT = Model::DescribeOrganizationRequest>
+        void DescribeOrganizationAsync(const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::DescribeOrganization, handler, context);
+            return SubmitAsync(&OrganizationsClient::DescribeOrganization, request, handler, context);
         }
+
         /**
          * <p>Retrieves information about an organizational unit (OU).</p> <p>This
          * operation can be called only from the organization's management account or by a
@@ -1004,32 +1010,33 @@ namespace Organizations
         }
 
         /**
-         * <p>Retrieves information about a resource policy.</p> <p>You can only call this
-         * operation from the organization's management account or by a member account that
-         * is a delegated administrator for an Amazon Web Services service.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves information about a resource policy.</p> <p>This operation can be
+         * called only from the organization's management account or by a member account
+         * that is a delegated administrator for an Amazon Web Services
+         * service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeResourcePolicyOutcome DescribeResourcePolicy() const;
+        virtual Model::DescribeResourcePolicyOutcome DescribeResourcePolicy(const Model::DescribeResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeResourcePolicyOutcomeCallable DescribeResourcePolicyCallable() const
+        template<typename DescribeResourcePolicyRequestT = Model::DescribeResourcePolicyRequest>
+        Model::DescribeResourcePolicyOutcomeCallable DescribeResourcePolicyCallable(const DescribeResourcePolicyRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::DescribeResourcePolicy);
+            return SubmitCallable(&OrganizationsClient::DescribeResourcePolicy, request);
         }
 
         /**
          * An Async wrapper for DescribeResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeResourcePolicyAsync(const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeResourcePolicyRequestT = Model::DescribeResourcePolicyRequest>
+        void DescribeResourcePolicyAsync(const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeResourcePolicyRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::DescribeResourcePolicy, handler, context);
+            return SubmitAsync(&OrganizationsClient::DescribeResourcePolicy, request, handler, context);
         }
+
         /**
          * <p>Detaches a policy from a target root, organizational unit (OU), or
          * account.</p>  <p>If the policy being detached is a service control
@@ -1048,7 +1055,8 @@ namespace Organizations
          * using the authorization strategy of a "<a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
          * list</a>".</p> <p>This operation can be called only from the organization's
-         * management account.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an Amazon Web Services service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
          * API Reference</a></p>
          */
@@ -1115,9 +1123,9 @@ namespace Organizations
          * service can no longer perform operations in your organization's accounts </p>
          * <p>For more information about integrating other services with Organizations,
          * including the list of services that work with Organizations, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
-         * Organizations with Other Amazon Web Services Services</a> in the
-         * <i>Organizations User Guide.</i> </p> <p>This operation can be called only from
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using
+         * Organizations with other Amazon Web Services services</a> in the
+         * <i>Organizations User Guide</i>.</p> <p>This operation can be called only from
          * the organization's management account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess">AWS
          * API Reference</a></p>
@@ -1155,8 +1163,9 @@ namespace Organizations
          * features</a> are enabled for the organization. Amazon Web Services recommends
          * that you first use <a>ListRoots</a> to see the status of policy types for a
          * specified root, and then use this operation.</p> <p>This operation can be called
-         * only from the organization's management account.</p> <p> To view the status of
-         * available policy types in the organization, use
+         * only from the organization's management account or by a member account that is a
+         * delegated administrator for an Amazon Web Services service.</p> <p> To view the
+         * status of available policy types in the organization, use
          * <a>DescribeOrganization</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
@@ -1196,9 +1205,9 @@ namespace Organizations
          * on that service. For more information, see the documentation for the other
          * Amazon Web Services service.</p>  <p>For more information about
          * enabling services to integrate with Organizations, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
-         * Organizations with Other Amazon Web Services Services</a> in the
-         * <i>Organizations User Guide.</i> </p> <p>You can only call this operation from
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using
+         * Organizations with other Amazon Web Services services</a> in the
+         * <i>Organizations User Guide</i>.</p> <p>You can only call this operation from
          * the organization's management account and only if the organization has <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
          * all features</a>.</p><p><h3>See Also:</h3>   <a
@@ -1232,15 +1241,15 @@ namespace Organizations
          * billing, and you can't use any of the advanced account administration features
          * that Organizations supports. For more information, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-         * All Features in Your Organization</a> in the <i>Organizations User Guide.</i>
-         * </p>  <p>This operation is required only for organizations that were
-         * created explicitly with only the consolidated billing features enabled. Calling
-         * this operation sends a handshake to every invited account in the organization.
-         * The feature set change can be finalized and the additional features enabled only
-         * after all administrators in the invited accounts approve the change by accepting
-         * the handshake.</p>  <p>After you enable all features, you can
-         * separately enable or disable individual policy types in a root using
-         * <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. To see the status of
+         * all features in your organization</a> in the <i>Organizations User
+         * Guide</i>.</p>  <p>This operation is required only for organizations
+         * that were created explicitly with only the consolidated billing features
+         * enabled. Calling this operation sends a handshake to every invited account in
+         * the organization. The feature set change can be finalized and the additional
+         * features enabled only after all administrators in the invited accounts approve
+         * the change by accepting the handshake.</p>  <p>After you enable all
+         * features, you can separately enable or disable individual policy types in a root
+         * using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. To see the status of
          * policy types in a root, use <a>ListRoots</a>.</p> <p>After all invited member
          * accounts accept the handshake, you finalize the feature set change by accepting
          * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
@@ -1282,9 +1291,10 @@ namespace Organizations
          * performs in the background. Amazon Web Services recommends that you first use
          * <a>ListRoots</a> to see the status of policy types for a specified root, and
          * then use this operation.</p> <p>This operation can be called only from the
-         * organization's management account.</p> <p>You can enable a policy type in a root
-         * only if that policy type is available in the organization. To view the status of
-         * available policy types in the organization, use
+         * organization's management account or by a member account that is a delegated
+         * administrator for an Amazon Web Services service.</p> <p>You can enable a policy
+         * type in a root only if that policy type is available in the organization. To
+         * view the status of available policy types in the organization, use
          * <a>DescribeOrganization</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
@@ -1320,8 +1330,8 @@ namespace Organizations
          * seller in India, you can invite only other AISPL accounts to your organization.
          * You can't combine accounts from AISPL and Amazon Web Services or from any other
          * Amazon Web Services seller. For more information, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
-         * Billing in India</a>.</p> </li> <li> <p>If you receive an exception that
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-India.html">Consolidated
+         * billing in India</a>.</p> </li> <li> <p>If you receive an exception that
          * indicates that you exceeded your account limits for the organization or that the
          * operation failed because your organization is still initializing, wait one hour
          * and then try again. If the error persists after an hour, contact <a
@@ -1374,47 +1384,51 @@ namespace Organizations
          * contact information</p> </li> <li> <p>Provide a current payment method</p> </li>
          * </ul> <p>Amazon Web Services uses the payment method to charge for any billable
          * (not free tier) Amazon Web Services activity that occurs while the account isn't
-         * attached to an organization. Follow the steps at <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
-         * To leave an organization when all required account information has not yet been
-         * provided</a> in the <i>Organizations User Guide.</i> </p> </li> <li> <p>The
-         * account that you want to leave must not be a delegated administrator account for
-         * any Amazon Web Services service enabled for your organization. If the account is
-         * a delegated administrator, you must first change the delegated administrator
-         * account to another account that is remaining in the organization.</p> </li> <li>
-         * <p>You can leave an organization only after you enable IAM user access to
-         * billing in your account. For more information, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-         * Access to the Billing and Cost Management Console</a> in the <i>Amazon Web
-         * Services Billing and Cost Management User Guide.</i> </p> </li> <li> <p>After
-         * the account leaves the organization, all tags that were attached to the account
+         * attached to an organization. For more information, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+         * before removing an account from an organization</a> in the <i>Organizations User
+         * Guide</i>.</p> </li> <li> <p>The account that you want to leave must not be a
+         * delegated administrator account for any Amazon Web Services service enabled for
+         * your organization. If the account is a delegated administrator, you must first
+         * change the delegated administrator account to another account that is remaining
+         * in the organization.</p> </li> <li> <p>You can leave an organization only after
+         * you enable IAM user access to billing in your account. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
+         * IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web
+         * Services Billing and Cost Management User Guide</i>.</p> </li> <li> <p>After the
+         * account leaves the organization, all tags that were attached to the account
          * object in the organization are deleted. Amazon Web Services accounts outside of
          * an organization do not support tags.</p> </li> <li> <p>A newly created account
          * has a waiting period before it can be removed from its organization. If you get
          * an error that indicates that a wait period is required, then try again in a few
-         * days.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * days.</p> </li> <li> <p>If you are using an organization principal to call
+         * <code>LeaveOrganization</code> across multiple accounts, you can only do this up
+         * to 5 accounts per second in a single organization.</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::LeaveOrganizationOutcome LeaveOrganization() const;
+        virtual Model::LeaveOrganizationOutcome LeaveOrganization(const Model::LeaveOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for LeaveOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::LeaveOrganizationOutcomeCallable LeaveOrganizationCallable() const
+        template<typename LeaveOrganizationRequestT = Model::LeaveOrganizationRequest>
+        Model::LeaveOrganizationOutcomeCallable LeaveOrganizationCallable(const LeaveOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::LeaveOrganization);
+            return SubmitCallable(&OrganizationsClient::LeaveOrganization, request);
         }
 
         /**
          * An Async wrapper for LeaveOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void LeaveOrganizationAsync(const LeaveOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename LeaveOrganizationRequestT = Model::LeaveOrganizationRequest>
+        void LeaveOrganizationAsync(const LeaveOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const LeaveOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::LeaveOrganization, handler, context);
+            return SubmitAsync(&OrganizationsClient::LeaveOrganization, request, handler, context);
         }
+
         /**
          * <p>Returns a list of the Amazon Web Services services that you enabled to
          * integrate with your organization. After a service on this list creates the
@@ -1422,9 +1436,9 @@ namespace Organizations
          * your organization and its accounts.</p> <p>For more information about
          * integrating other services with Organizations, including the list of services
          * that currently work with Organizations, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating
-         * Organizations with Other Amazon Web Services Services</a> in the
-         * <i>Organizations User Guide.</i> </p> <p>This operation can be called only from
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using
+         * Organizations with other Amazon Web Services services</a> in the
+         * <i>Organizations User Guide</i>.</p> <p>This operation can be called only from
          * the organization's management account or by a member account that is a delegated
          * administrator for an Amazon Web Services service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">AWS
@@ -2065,24 +2079,18 @@ namespace Organizations
          * information required to operate as a standalone account. When you create an
          * account in an organization using the Organizations console, API, or CLI
          * commands, the information required of standalone accounts is <i>not</i>
-         * automatically collected. For an account that you want to make standalone, you
-         * must choose a support plan, provide and verify the required contact information,
-         * and provide a current payment method. Amazon Web Services uses the payment
-         * method to charge for any billable (not free tier) Amazon Web Services activity
-         * that occurs while the account isn't attached to an organization. To remove an
-         * account that doesn't yet have this information, you must sign in as the member
-         * account and follow the steps at <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
-         * To leave an organization when all required account information has not yet been
-         * provided</a> in the <i>Organizations User Guide.</i> </p> </li> <li> <p>The
-         * account that you want to leave must not be a delegated administrator account for
-         * any Amazon Web Services service enabled for your organization. If the account is
-         * a delegated administrator, you must first change the delegated administrator
-         * account to another account that is remaining in the organization.</p> </li> <li>
-         * <p>After the account leaves the organization, all tags that were attached to the
-         * account object in the organization are deleted. Amazon Web Services accounts
-         * outside of an organization do not support tags.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * automatically collected. For more information, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+         * before removing an account from an organization</a> in the <i>Organizations User
+         * Guide</i>.</p> </li> <li> <p>The account that you want to leave must not be a
+         * delegated administrator account for any Amazon Web Services service enabled for
+         * your organization. If the account is a delegated administrator, you must first
+         * change the delegated administrator account to another account that is remaining
+         * in the organization.</p> </li> <li> <p>After the account leaves the
+         * organization, all tags that were attached to the account object in the
+         * organization are deleted. Amazon Web Services accounts outside of an
+         * organization do not support tags.</p> </li> </ul> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">AWS
          * API Reference</a></p>
          */
@@ -2111,8 +2119,9 @@ namespace Organizations
          * attach tags to the following resources in Organizations.</p> <ul> <li> <p>Amazon
          * Web Services account</p> </li> <li> <p>Organization root</p> </li> <li>
          * <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p> </li> </ul>
-         * <p>This operation can be called only from the organization's management
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation can be called only from the organization's management account
+         * or by a member account that is a delegated administrator for an Amazon Web
+         * Services service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TagResource">AWS
          * API Reference</a></p>
          */
@@ -2142,7 +2151,8 @@ namespace Organizations
          * <li> <p>Amazon Web Services account</p> </li> <li> <p>Organization root</p>
          * </li> <li> <p>Organizational unit (OU)</p> </li> <li> <p>Policy (any type)</p>
          * </li> </ul> <p>This operation can be called only from the organization's
-         * management account.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an Amazon Web Services service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -2198,7 +2208,8 @@ namespace Organizations
          * <p>Updates an existing policy with a new name, description, or content. If you
          * don't supply any parameter, that value remains unchanged. You can't change a
          * policy's type.</p> <p>This operation can be called only from the organization's
-         * management account.</p><p><h3>See Also:</h3>   <a
+         * management account or by a member account that is a delegated administrator for
+         * an Amazon Web Services service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdatePolicy">AWS
          * API Reference</a></p>
          */

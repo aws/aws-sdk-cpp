@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanningRepositoryFilterType::NOT_SET:
+            return {};
           case ScanningRepositoryFilterType::WILDCARD:
             return "WILDCARD";
           default:

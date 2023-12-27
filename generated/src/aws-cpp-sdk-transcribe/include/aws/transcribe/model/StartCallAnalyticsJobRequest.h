@@ -150,11 +150,11 @@ namespace Model
      * has a default value that matches the name you specified for your transcription
      * job using the <code>CallAnalyticsJobName</code> parameter.</p> <p>You can
      * specify a KMS key to encrypt your output using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-     * <p>If you don't specify <code>OutputLocation</code>, your transcript is placed
-     * in a service-managed Amazon S3 bucket and you are provided with a URI to access
-     * your transcript.</p>
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS
+     * key, Amazon Transcribe uses the default Amazon S3 key for server-side
+     * encryption.</p> <p>If you do not specify <code>OutputLocation</code>, your
+     * transcript is placed in a service-managed Amazon S3 bucket and you are provided
+     * with a URI to access your transcript.</p>
      */
     inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
 
@@ -168,11 +168,11 @@ namespace Model
      * has a default value that matches the name you specified for your transcription
      * job using the <code>CallAnalyticsJobName</code> parameter.</p> <p>You can
      * specify a KMS key to encrypt your output using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-     * <p>If you don't specify <code>OutputLocation</code>, your transcript is placed
-     * in a service-managed Amazon S3 bucket and you are provided with a URI to access
-     * your transcript.</p>
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS
+     * key, Amazon Transcribe uses the default Amazon S3 key for server-side
+     * encryption.</p> <p>If you do not specify <code>OutputLocation</code>, your
+     * transcript is placed in a service-managed Amazon S3 bucket and you are provided
+     * with a URI to access your transcript.</p>
      */
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
 
@@ -186,11 +186,11 @@ namespace Model
      * has a default value that matches the name you specified for your transcription
      * job using the <code>CallAnalyticsJobName</code> parameter.</p> <p>You can
      * specify a KMS key to encrypt your output using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-     * <p>If you don't specify <code>OutputLocation</code>, your transcript is placed
-     * in a service-managed Amazon S3 bucket and you are provided with a URI to access
-     * your transcript.</p>
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS
+     * key, Amazon Transcribe uses the default Amazon S3 key for server-side
+     * encryption.</p> <p>If you do not specify <code>OutputLocation</code>, your
+     * transcript is placed in a service-managed Amazon S3 bucket and you are provided
+     * with a URI to access your transcript.</p>
      */
     inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
@@ -204,11 +204,11 @@ namespace Model
      * has a default value that matches the name you specified for your transcription
      * job using the <code>CallAnalyticsJobName</code> parameter.</p> <p>You can
      * specify a KMS key to encrypt your output using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-     * <p>If you don't specify <code>OutputLocation</code>, your transcript is placed
-     * in a service-managed Amazon S3 bucket and you are provided with a URI to access
-     * your transcript.</p>
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS
+     * key, Amazon Transcribe uses the default Amazon S3 key for server-side
+     * encryption.</p> <p>If you do not specify <code>OutputLocation</code>, your
+     * transcript is placed in a service-managed Amazon S3 bucket and you are provided
+     * with a URI to access your transcript.</p>
      */
     inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
 
@@ -222,11 +222,11 @@ namespace Model
      * has a default value that matches the name you specified for your transcription
      * job using the <code>CallAnalyticsJobName</code> parameter.</p> <p>You can
      * specify a KMS key to encrypt your output using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-     * <p>If you don't specify <code>OutputLocation</code>, your transcript is placed
-     * in a service-managed Amazon S3 bucket and you are provided with a URI to access
-     * your transcript.</p>
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS
+     * key, Amazon Transcribe uses the default Amazon S3 key for server-side
+     * encryption.</p> <p>If you do not specify <code>OutputLocation</code>, your
+     * transcript is placed in a service-managed Amazon S3 bucket and you are provided
+     * with a URI to access your transcript.</p>
      */
     inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
 
@@ -240,11 +240,11 @@ namespace Model
      * has a default value that matches the name you specified for your transcription
      * job using the <code>CallAnalyticsJobName</code> parameter.</p> <p>You can
      * specify a KMS key to encrypt your output using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-     * <p>If you don't specify <code>OutputLocation</code>, your transcript is placed
-     * in a service-managed Amazon S3 bucket and you are provided with a URI to access
-     * your transcript.</p>
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS
+     * key, Amazon Transcribe uses the default Amazon S3 key for server-side
+     * encryption.</p> <p>If you do not specify <code>OutputLocation</code>, your
+     * transcript is placed in a service-managed Amazon S3 bucket and you are provided
+     * with a URI to access your transcript.</p>
      */
     inline StartCallAnalyticsJobRequest& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
 
@@ -258,11 +258,11 @@ namespace Model
      * has a default value that matches the name you specified for your transcription
      * job using the <code>CallAnalyticsJobName</code> parameter.</p> <p>You can
      * specify a KMS key to encrypt your output using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-     * <p>If you don't specify <code>OutputLocation</code>, your transcript is placed
-     * in a service-managed Amazon S3 bucket and you are provided with a URI to access
-     * your transcript.</p>
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS
+     * key, Amazon Transcribe uses the default Amazon S3 key for server-side
+     * encryption.</p> <p>If you do not specify <code>OutputLocation</code>, your
+     * transcript is placed in a service-managed Amazon S3 bucket and you are provided
+     * with a URI to access your transcript.</p>
      */
     inline StartCallAnalyticsJobRequest& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
 
@@ -276,11 +276,11 @@ namespace Model
      * has a default value that matches the name you specified for your transcription
      * job using the <code>CallAnalyticsJobName</code> parameter.</p> <p>You can
      * specify a KMS key to encrypt your output using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-     * <p>If you don't specify <code>OutputLocation</code>, your transcript is placed
-     * in a service-managed Amazon S3 bucket and you are provided with a URI to access
-     * your transcript.</p>
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS
+     * key, Amazon Transcribe uses the default Amazon S3 key for server-side
+     * encryption.</p> <p>If you do not specify <code>OutputLocation</code>, your
+     * transcript is placed in a service-managed Amazon S3 bucket and you are provided
+     * with a URI to access your transcript.</p>
      */
     inline StartCallAnalyticsJobRequest& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
 
@@ -302,7 +302,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -327,7 +327,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -352,7 +352,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -377,7 +377,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -402,7 +402,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -427,7 +427,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -452,7 +452,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the
@@ -477,7 +477,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>If you don't specify an encryption key, your output is encrypted with the
+     * <p>If you do not specify an encryption key, your output is encrypted with the
      * default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your
      * output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.</p> <p>Note that the role making the

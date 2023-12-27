@@ -60,7 +60,9 @@ RunInstancesRequest::RunInstancesRequest() :
     m_privateDnsNameOptionsHasBeenSet(false),
     m_maintenanceOptionsHasBeenSet(false),
     m_disableApiStop(false),
-    m_disableApiStopHasBeenSet(false)
+    m_disableApiStopHasBeenSet(false),
+    m_enablePrimaryIpv6(false),
+    m_enablePrimaryIpv6HasBeenSet(false)
 {
 }
 
@@ -313,6 +315,11 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_disableApiStopHasBeenSet)
   {
     ss << "DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
+  }
+
+  if(m_enablePrimaryIpv6HasBeenSet)
+  {
+    ss << "EnablePrimaryIpv6=" << std::boolalpha << m_enablePrimaryIpv6 << "&";
   }
 
   ss << "Version=2016-11-15";

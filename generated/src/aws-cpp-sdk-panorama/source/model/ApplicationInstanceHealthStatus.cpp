@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationInstanceHealthStatus::NOT_SET:
+            return {};
           case ApplicationInstanceHealthStatus::RUNNING:
             return "RUNNING";
           case ApplicationInstanceHealthStatus::ERROR_:

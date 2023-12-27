@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
+        static const int GITLAB_HASH = HashingUtils::HashString("GITLAB");
+        static const int BITBUCKET_HASH = HashingUtils::HashString("BITBUCKET");
         static const int AWS_CODE_COMMIT_HASH = HashingUtils::HashString("AWS_CODE_COMMIT");
 
 
@@ -30,6 +32,14 @@ namespace Aws
           if (hashCode == GITHUB_HASH)
           {
             return SourceControlProvider::GITHUB;
+          }
+          else if (hashCode == GITLAB_HASH)
+          {
+            return SourceControlProvider::GITLAB;
+          }
+          else if (hashCode == BITBUCKET_HASH)
+          {
+            return SourceControlProvider::BITBUCKET;
           }
           else if (hashCode == AWS_CODE_COMMIT_HASH)
           {
@@ -49,8 +59,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceControlProvider::NOT_SET:
+            return {};
           case SourceControlProvider::GITHUB:
             return "GITHUB";
+          case SourceControlProvider::GITLAB:
+            return "GITLAB";
+          case SourceControlProvider::BITBUCKET:
+            return "BITBUCKET";
           case SourceControlProvider::AWS_CODE_COMMIT:
             return "AWS_CODE_COMMIT";
           default:

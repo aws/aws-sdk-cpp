@@ -387,6 +387,84 @@ namespace Model
      */
     inline CreateBlueGreenDeploymentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specify the DB instance class for the databases in the green environment.</p>
+     */
+    inline const Aws::String& GetTargetDBInstanceClass() const{ return m_targetDBInstanceClass; }
+
+    /**
+     * <p>Specify the DB instance class for the databases in the green environment.</p>
+     */
+    inline bool TargetDBInstanceClassHasBeenSet() const { return m_targetDBInstanceClassHasBeenSet; }
+
+    /**
+     * <p>Specify the DB instance class for the databases in the green environment.</p>
+     */
+    inline void SetTargetDBInstanceClass(const Aws::String& value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass = value; }
+
+    /**
+     * <p>Specify the DB instance class for the databases in the green environment.</p>
+     */
+    inline void SetTargetDBInstanceClass(Aws::String&& value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass = std::move(value); }
+
+    /**
+     * <p>Specify the DB instance class for the databases in the green environment.</p>
+     */
+    inline void SetTargetDBInstanceClass(const char* value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass.assign(value); }
+
+    /**
+     * <p>Specify the DB instance class for the databases in the green environment.</p>
+     */
+    inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(const Aws::String& value) { SetTargetDBInstanceClass(value); return *this;}
+
+    /**
+     * <p>Specify the DB instance class for the databases in the green environment.</p>
+     */
+    inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(Aws::String&& value) { SetTargetDBInstanceClass(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify the DB instance class for the databases in the green environment.</p>
+     */
+    inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(const char* value) { SetTargetDBInstanceClass(value); return *this;}
+
+
+    /**
+     * <p>Whether to upgrade the storage file system configuration on the green
+     * database. This option migrates the green DB instance from the older 32-bit file
+     * system to the preferred configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline bool GetUpgradeTargetStorageConfig() const{ return m_upgradeTargetStorageConfig; }
+
+    /**
+     * <p>Whether to upgrade the storage file system configuration on the green
+     * database. This option migrates the green DB instance from the older 32-bit file
+     * system to the preferred configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline bool UpgradeTargetStorageConfigHasBeenSet() const { return m_upgradeTargetStorageConfigHasBeenSet; }
+
+    /**
+     * <p>Whether to upgrade the storage file system configuration on the green
+     * database. This option migrates the green DB instance from the older 32-bit file
+     * system to the preferred configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline void SetUpgradeTargetStorageConfig(bool value) { m_upgradeTargetStorageConfigHasBeenSet = true; m_upgradeTargetStorageConfig = value; }
+
+    /**
+     * <p>Whether to upgrade the storage file system configuration on the green
+     * database. This option migrates the green DB instance from the older 32-bit file
+     * system to the preferred configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline CreateBlueGreenDeploymentRequest& WithUpgradeTargetStorageConfig(bool value) { SetUpgradeTargetStorageConfig(value); return *this;}
+
   private:
 
     Aws::String m_blueGreenDeploymentName;
@@ -406,6 +484,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_targetDBInstanceClass;
+    bool m_targetDBInstanceClassHasBeenSet = false;
+
+    bool m_upgradeTargetStorageConfig;
+    bool m_upgradeTargetStorageConfigHasBeenSet = false;
   };
 
 } // namespace Model

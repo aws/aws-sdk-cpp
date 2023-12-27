@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DialogActionType::NOT_SET:
+            return {};
           case DialogActionType::ElicitIntent:
             return "ElicitIntent";
           case DialogActionType::StartIntent:

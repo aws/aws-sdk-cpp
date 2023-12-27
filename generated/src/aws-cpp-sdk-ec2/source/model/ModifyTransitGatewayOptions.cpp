@@ -27,6 +27,8 @@ ModifyTransitGatewayOptions::ModifyTransitGatewayOptions() :
     m_vpnEcmpSupportHasBeenSet(false),
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
+    m_securityGroupReferencingSupport(SecurityGroupReferencingSupportValue::NOT_SET),
+    m_securityGroupReferencingSupportHasBeenSet(false),
     m_autoAcceptSharedAttachments(AutoAcceptSharedAttachmentsValue::NOT_SET),
     m_autoAcceptSharedAttachmentsHasBeenSet(false),
     m_defaultRouteTableAssociation(DefaultRouteTableAssociationValue::NOT_SET),
@@ -47,6 +49,8 @@ ModifyTransitGatewayOptions::ModifyTransitGatewayOptions(const XmlNode& xmlNode)
     m_vpnEcmpSupportHasBeenSet(false),
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
+    m_securityGroupReferencingSupport(SecurityGroupReferencingSupportValue::NOT_SET),
+    m_securityGroupReferencingSupportHasBeenSet(false),
     m_autoAcceptSharedAttachments(AutoAcceptSharedAttachmentsValue::NOT_SET),
     m_autoAcceptSharedAttachmentsHasBeenSet(false),
     m_defaultRouteTableAssociation(DefaultRouteTableAssociationValue::NOT_SET),
@@ -102,6 +106,12 @@ ModifyTransitGatewayOptions& ModifyTransitGatewayOptions::operator =(const XmlNo
     {
       m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsSupportNode.GetText()).c_str()).c_str());
       m_dnsSupportHasBeenSet = true;
+    }
+    XmlNode securityGroupReferencingSupportNode = resultNode.FirstChild("SecurityGroupReferencingSupport");
+    if(!securityGroupReferencingSupportNode.IsNull())
+    {
+      m_securityGroupReferencingSupport = SecurityGroupReferencingSupportValueMapper::GetSecurityGroupReferencingSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupReferencingSupportNode.GetText()).c_str()).c_str());
+      m_securityGroupReferencingSupportHasBeenSet = true;
     }
     XmlNode autoAcceptSharedAttachmentsNode = resultNode.FirstChild("AutoAcceptSharedAttachments");
     if(!autoAcceptSharedAttachmentsNode.IsNull())
@@ -174,6 +184,11 @@ void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
   }
 
+  if(m_securityGroupReferencingSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SecurityGroupReferencingSupport=" << SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport) << "&";
+  }
+
   if(m_autoAcceptSharedAttachmentsHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoAcceptSharedAttachments=" << AutoAcceptSharedAttachmentsValueMapper::GetNameForAutoAcceptSharedAttachmentsValue(m_autoAcceptSharedAttachments) << "&";
@@ -231,6 +246,10 @@ void ModifyTransitGatewayOptions::OutputToStream(Aws::OStream& oStream, const ch
   if(m_dnsSupportHasBeenSet)
   {
       oStream << location << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
+  }
+  if(m_securityGroupReferencingSupportHasBeenSet)
+  {
+      oStream << location << ".SecurityGroupReferencingSupport=" << SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport) << "&";
   }
   if(m_autoAcceptSharedAttachmentsHasBeenSet)
   {

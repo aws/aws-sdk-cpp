@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VehicleAssociationBehavior::NOT_SET:
+            return {};
           case VehicleAssociationBehavior::CreateIotThing:
             return "CreateIotThing";
           case VehicleAssociationBehavior::ValidateIotThingExists:

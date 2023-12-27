@@ -25,7 +25,9 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_architectureHasBeenSet(false),
     m_imageConfigurationHasBeenSet(false),
     m_workerTypeSpecificationsHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false)
+    m_releaseLabelHasBeenSet(false),
+    m_runtimeConfigurationHasBeenSet(false),
+    m_monitoringConfigurationHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,23 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_releaseLabelHasBeenSet)
   {
    payload.WithString("releaseLabel", m_releaseLabel);
+
+  }
+
+  if(m_runtimeConfigurationHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> runtimeConfigurationJsonList(m_runtimeConfiguration.size());
+   for(unsigned runtimeConfigurationIndex = 0; runtimeConfigurationIndex < runtimeConfigurationJsonList.GetLength(); ++runtimeConfigurationIndex)
+   {
+     runtimeConfigurationJsonList[runtimeConfigurationIndex].AsObject(m_runtimeConfiguration[runtimeConfigurationIndex].Jsonize());
+   }
+   payload.WithArray("runtimeConfiguration", std::move(runtimeConfigurationJsonList));
+
+  }
+
+  if(m_monitoringConfigurationHasBeenSet)
+  {
+   payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
 
   }
 

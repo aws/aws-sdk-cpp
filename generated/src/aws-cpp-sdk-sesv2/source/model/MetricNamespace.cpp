@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricNamespace::NOT_SET:
+            return {};
           case MetricNamespace::VDM:
             return "VDM";
           default:

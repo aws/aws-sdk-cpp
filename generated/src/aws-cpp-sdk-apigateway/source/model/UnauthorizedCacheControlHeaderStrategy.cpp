@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnauthorizedCacheControlHeaderStrategy::NOT_SET:
+            return {};
           case UnauthorizedCacheControlHeaderStrategy::FAIL_WITH_403:
             return "FAIL_WITH_403";
           case UnauthorizedCacheControlHeaderStrategy::SUCCEED_WITH_RESPONSE_HEADER:

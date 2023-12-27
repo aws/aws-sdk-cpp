@@ -35,6 +35,7 @@ TransformJob::TransformJob() :
     m_environmentHasBeenSet(false),
     m_transformInputHasBeenSet(false),
     m_transformOutputHasBeenSet(false),
+    m_dataCaptureConfigHasBeenSet(false),
     m_transformResourcesHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_transformStartTimeHasBeenSet(false),
@@ -64,6 +65,7 @@ TransformJob::TransformJob(JsonView jsonValue) :
     m_environmentHasBeenSet(false),
     m_transformInputHasBeenSet(false),
     m_transformOutputHasBeenSet(false),
+    m_dataCaptureConfigHasBeenSet(false),
     m_transformResourcesHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_transformStartTimeHasBeenSet(false),
@@ -164,6 +166,13 @@ TransformJob& TransformJob::operator =(JsonView jsonValue)
     m_transformOutput = jsonValue.GetObject("TransformOutput");
 
     m_transformOutputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataCaptureConfig"))
+  {
+    m_dataCaptureConfig = jsonValue.GetObject("DataCaptureConfig");
+
+    m_dataCaptureConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TransformResources"))
@@ -311,6 +320,12 @@ JsonValue TransformJob::Jsonize() const
   if(m_transformOutputHasBeenSet)
   {
    payload.WithObject("TransformOutput", m_transformOutput.Jsonize());
+
+  }
+
+  if(m_dataCaptureConfigHasBeenSet)
+  {
+   payload.WithObject("DataCaptureConfig", m_dataCaptureConfig.Jsonize());
 
   }
 

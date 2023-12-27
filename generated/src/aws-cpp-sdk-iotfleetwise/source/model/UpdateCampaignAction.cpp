@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateCampaignAction::NOT_SET:
+            return {};
           case UpdateCampaignAction::APPROVE:
             return "APPROVE";
           case UpdateCampaignAction::SUSPEND:

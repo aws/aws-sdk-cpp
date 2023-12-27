@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FragmentSelectorType::NOT_SET:
+            return {};
           case FragmentSelectorType::PRODUCER_TIMESTAMP:
             return "PRODUCER_TIMESTAMP";
           case FragmentSelectorType::SERVER_TIMESTAMP:

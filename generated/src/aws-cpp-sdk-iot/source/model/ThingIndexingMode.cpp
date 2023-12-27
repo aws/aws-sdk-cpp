@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThingIndexingMode::NOT_SET:
+            return {};
           case ThingIndexingMode::OFF:
             return "OFF";
           case ThingIndexingMode::REGISTRY:

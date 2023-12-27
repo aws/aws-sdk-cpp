@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportFilterOperator::NOT_SET:
+            return {};
           case ExportFilterOperator::CO:
             return "CO";
           case ExportFilterOperator::EQ:

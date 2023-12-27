@@ -8,6 +8,7 @@
 #include <aws/finspace/FinspaceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/finspace/model/KxClusterType.h>
+#include <aws/finspace/model/TickerplantLogConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/finspace/model/AutoScalingConfiguration.h>
 #include <aws/finspace/model/CapacityConfiguration.h>
@@ -16,6 +17,7 @@
 #include <aws/finspace/model/KxSavedownStorageConfiguration.h>
 #include <aws/finspace/model/KxAzMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/finspace/model/KxScalingGroupConfiguration.h>
 #include <aws/finspace/model/KxDatabaseConfiguration.h>
 #include <aws/finspace/model/KxCacheStorageConfiguration.h>
 #include <aws/finspace/model/KxCommandLineArgument.h>
@@ -181,7 +183,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline const KxClusterType& GetClusterType() const{ return m_clusterType; }
 
@@ -198,7 +210,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
 
@@ -215,7 +237,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline void SetClusterType(const KxClusterType& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
 
@@ -232,7 +264,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline void SetClusterType(KxClusterType&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
 
@@ -249,7 +291,17 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline CreateKxClusterRequest& WithClusterType(const KxClusterType& value) { SetClusterType(value); return *this;}
 
@@ -266,9 +318,68 @@ namespace Model
      * </li> <li> <p>GATEWAY – A gateway cluster allows you to access data across
      * processes in kdb systems. It allows you to create your own routing logic using
      * the initialization scripts and custom code. This type of cluster does not
-     * require a writable local storage.</p> </li> </ul>
+     * require a writable local storage.</p> </li> <li> <p>GP – A general purpose
+     * cluster allows you to quickly iterate on code during development by granting
+     * greater access to system commands and enabling a fast reload of custom code.
+     * This cluster type can optionally mount databases including cache and savedown
+     * storage. For this cluster type, the node count is fixed at 1. It does not
+     * support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+     * <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed
+     * handlers based on IAM permissions. It can publish to RDBs, other Tickerplants,
+     * and real-time subscribers (RTS). Tickerplants can persist messages to log, which
+     * is readable by any RDB environment. It supports only single-node that is only
+     * one kdb process.</p> </li> </ul>
      */
     inline CreateKxClusterRequest& WithClusterType(KxClusterType&& value) { SetClusterType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> A configuration to store Tickerplant logs. It consists of a list of volumes
+     * that will be mounted to your cluster. For the cluster type
+     * <code>Tickerplant</code>, the location of the TP volume on the cluster will be
+     * available by using the global variable <code>.aws.tp_log_path</code>. </p>
+     */
+    inline const TickerplantLogConfiguration& GetTickerplantLogConfiguration() const{ return m_tickerplantLogConfiguration; }
+
+    /**
+     * <p> A configuration to store Tickerplant logs. It consists of a list of volumes
+     * that will be mounted to your cluster. For the cluster type
+     * <code>Tickerplant</code>, the location of the TP volume on the cluster will be
+     * available by using the global variable <code>.aws.tp_log_path</code>. </p>
+     */
+    inline bool TickerplantLogConfigurationHasBeenSet() const { return m_tickerplantLogConfigurationHasBeenSet; }
+
+    /**
+     * <p> A configuration to store Tickerplant logs. It consists of a list of volumes
+     * that will be mounted to your cluster. For the cluster type
+     * <code>Tickerplant</code>, the location of the TP volume on the cluster will be
+     * available by using the global variable <code>.aws.tp_log_path</code>. </p>
+     */
+    inline void SetTickerplantLogConfiguration(const TickerplantLogConfiguration& value) { m_tickerplantLogConfigurationHasBeenSet = true; m_tickerplantLogConfiguration = value; }
+
+    /**
+     * <p> A configuration to store Tickerplant logs. It consists of a list of volumes
+     * that will be mounted to your cluster. For the cluster type
+     * <code>Tickerplant</code>, the location of the TP volume on the cluster will be
+     * available by using the global variable <code>.aws.tp_log_path</code>. </p>
+     */
+    inline void SetTickerplantLogConfiguration(TickerplantLogConfiguration&& value) { m_tickerplantLogConfigurationHasBeenSet = true; m_tickerplantLogConfiguration = std::move(value); }
+
+    /**
+     * <p> A configuration to store Tickerplant logs. It consists of a list of volumes
+     * that will be mounted to your cluster. For the cluster type
+     * <code>Tickerplant</code>, the location of the TP volume on the cluster will be
+     * available by using the global variable <code>.aws.tp_log_path</code>. </p>
+     */
+    inline CreateKxClusterRequest& WithTickerplantLogConfiguration(const TickerplantLogConfiguration& value) { SetTickerplantLogConfiguration(value); return *this;}
+
+    /**
+     * <p> A configuration to store Tickerplant logs. It consists of a list of volumes
+     * that will be mounted to your cluster. For the cluster type
+     * <code>Tickerplant</code>, the location of the TP volume on the cluster will be
+     * available by using the global variable <code>.aws.tp_log_path</code>. </p>
+     */
+    inline CreateKxClusterRequest& WithTickerplantLogConfiguration(TickerplantLogConfiguration&& value) { SetTickerplantLogConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -440,44 +551,38 @@ namespace Model
 
 
     /**
-     * <p>A structure for the metadata of a cluster. It includes information about like
-     * the CPUs needed, memory of instances, number of instances, and the port used
-     * while establishing a connection.</p>
+     * <p>A structure for the metadata of a cluster. It includes information like the
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline const CapacityConfiguration& GetCapacityConfiguration() const{ return m_capacityConfiguration; }
 
     /**
-     * <p>A structure for the metadata of a cluster. It includes information about like
-     * the CPUs needed, memory of instances, number of instances, and the port used
-     * while establishing a connection.</p>
+     * <p>A structure for the metadata of a cluster. It includes information like the
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline bool CapacityConfigurationHasBeenSet() const { return m_capacityConfigurationHasBeenSet; }
 
     /**
-     * <p>A structure for the metadata of a cluster. It includes information about like
-     * the CPUs needed, memory of instances, number of instances, and the port used
-     * while establishing a connection.</p>
+     * <p>A structure for the metadata of a cluster. It includes information like the
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline void SetCapacityConfiguration(const CapacityConfiguration& value) { m_capacityConfigurationHasBeenSet = true; m_capacityConfiguration = value; }
 
     /**
-     * <p>A structure for the metadata of a cluster. It includes information about like
-     * the CPUs needed, memory of instances, number of instances, and the port used
-     * while establishing a connection.</p>
+     * <p>A structure for the metadata of a cluster. It includes information like the
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline void SetCapacityConfiguration(CapacityConfiguration&& value) { m_capacityConfigurationHasBeenSet = true; m_capacityConfiguration = std::move(value); }
 
     /**
-     * <p>A structure for the metadata of a cluster. It includes information about like
-     * the CPUs needed, memory of instances, number of instances, and the port used
-     * while establishing a connection.</p>
+     * <p>A structure for the metadata of a cluster. It includes information like the
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline CreateKxClusterRequest& WithCapacityConfiguration(const CapacityConfiguration& value) { SetCapacityConfiguration(value); return *this;}
 
     /**
-     * <p>A structure for the metadata of a cluster. It includes information about like
-     * the CPUs needed, memory of instances, number of instances, and the port used
-     * while establishing a connection.</p>
+     * <p>A structure for the metadata of a cluster. It includes information like the
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline CreateKxClusterRequest& WithCapacityConfiguration(CapacityConfiguration&& value) { SetCapacityConfiguration(std::move(value)); return *this;}
 
@@ -989,6 +1094,37 @@ namespace Model
      */
     inline CreateKxClusterRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The structure that stores the configuration details of a scaling group.</p>
+     */
+    inline const KxScalingGroupConfiguration& GetScalingGroupConfiguration() const{ return m_scalingGroupConfiguration; }
+
+    /**
+     * <p>The structure that stores the configuration details of a scaling group.</p>
+     */
+    inline bool ScalingGroupConfigurationHasBeenSet() const { return m_scalingGroupConfigurationHasBeenSet; }
+
+    /**
+     * <p>The structure that stores the configuration details of a scaling group.</p>
+     */
+    inline void SetScalingGroupConfiguration(const KxScalingGroupConfiguration& value) { m_scalingGroupConfigurationHasBeenSet = true; m_scalingGroupConfiguration = value; }
+
+    /**
+     * <p>The structure that stores the configuration details of a scaling group.</p>
+     */
+    inline void SetScalingGroupConfiguration(KxScalingGroupConfiguration&& value) { m_scalingGroupConfigurationHasBeenSet = true; m_scalingGroupConfiguration = std::move(value); }
+
+    /**
+     * <p>The structure that stores the configuration details of a scaling group.</p>
+     */
+    inline CreateKxClusterRequest& WithScalingGroupConfiguration(const KxScalingGroupConfiguration& value) { SetScalingGroupConfiguration(value); return *this;}
+
+    /**
+     * <p>The structure that stores the configuration details of a scaling group.</p>
+     */
+    inline CreateKxClusterRequest& WithScalingGroupConfiguration(KxScalingGroupConfiguration&& value) { SetScalingGroupConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -1002,6 +1138,9 @@ namespace Model
 
     KxClusterType m_clusterType;
     bool m_clusterTypeHasBeenSet = false;
+
+    TickerplantLogConfiguration m_tickerplantLogConfiguration;
+    bool m_tickerplantLogConfigurationHasBeenSet = false;
 
     Aws::Vector<KxDatabaseConfiguration> m_databases;
     bool m_databasesHasBeenSet = false;
@@ -1047,6 +1186,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    KxScalingGroupConfiguration m_scalingGroupConfiguration;
+    bool m_scalingGroupConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

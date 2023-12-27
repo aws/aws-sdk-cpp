@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelSortKey::NOT_SET:
+            return {};
           case ModelSortKey::Name:
             return "Name";
           case ModelSortKey::CreationTime:

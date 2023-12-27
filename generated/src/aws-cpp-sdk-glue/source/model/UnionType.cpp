@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnionType::NOT_SET:
+            return {};
           case UnionType::ALL:
             return "ALL";
           case UnionType::DISTINCT:

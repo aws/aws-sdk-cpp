@@ -21,14 +21,18 @@ namespace Model
 TextLogSetting::TextLogSetting() : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+    m_destinationHasBeenSet(false),
+    m_selectiveLoggingEnabled(false),
+    m_selectiveLoggingEnabledHasBeenSet(false)
 {
 }
 
 TextLogSetting::TextLogSetting(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+    m_destinationHasBeenSet(false),
+    m_selectiveLoggingEnabled(false),
+    m_selectiveLoggingEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ TextLogSetting& TextLogSetting::operator =(JsonView jsonValue)
     m_destinationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("selectiveLoggingEnabled"))
+  {
+    m_selectiveLoggingEnabled = jsonValue.GetBool("selectiveLoggingEnabled");
+
+    m_selectiveLoggingEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +76,12 @@ JsonValue TextLogSetting::Jsonize() const
   if(m_destinationHasBeenSet)
   {
    payload.WithObject("destination", m_destination.Jsonize());
+
+  }
+
+  if(m_selectiveLoggingEnabledHasBeenSet)
+  {
+   payload.WithBool("selectiveLoggingEnabled", m_selectiveLoggingEnabled);
 
   }
 

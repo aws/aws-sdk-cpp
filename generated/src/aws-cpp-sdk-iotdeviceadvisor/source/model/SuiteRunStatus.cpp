@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SuiteRunStatus::NOT_SET:
+            return {};
           case SuiteRunStatus::PASS:
             return "PASS";
           case SuiteRunStatus::FAIL:

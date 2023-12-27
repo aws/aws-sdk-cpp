@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MSKStartPosition::NOT_SET:
+            return {};
           case MSKStartPosition::TRIM_HORIZON:
             return "TRIM_HORIZON";
           case MSKStartPosition::LATEST:

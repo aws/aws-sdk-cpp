@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VideoCodec::NOT_SET:
+            return {};
           case VideoCodec::AV1:
             return "AV1";
           case VideoCodec::AVC_INTRA:

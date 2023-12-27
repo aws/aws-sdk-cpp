@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The content of the email, composed of a subject line, an HTML part, and a
-   * text-only part.</p><p><h3>See Also:</h3>   <a
+   * <p>The content of the email, composed of a subject line and either an HTML part
+   * or a text-only part.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Template">AWS API
    * Reference</a></p>
    */
@@ -41,57 +41,57 @@ namespace Model
 
 
     /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * <p>The name of the template. You use this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * <p>The name of the template. You use this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * <p>The name of the template. You use this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * <p>The name of the template. You use this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * <p>The name of the template. You use this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * <p>The name of the template. You use this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
     inline Template& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * <p>The name of the template. You use this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
     inline Template& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * <p>The name of the template. You use this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
     inline Template& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
@@ -139,50 +139,50 @@ namespace Model
 
 
     /**
-     * <p>The email body that will be visible to recipients whose email clients do not
-     * display HTML.</p>
+     * <p>The email body that is visible to recipients whose email clients do not
+     * display HTML content.</p>
      */
     inline const Aws::String& GetTextPart() const{ return m_textPart; }
 
     /**
-     * <p>The email body that will be visible to recipients whose email clients do not
-     * display HTML.</p>
+     * <p>The email body that is visible to recipients whose email clients do not
+     * display HTML content.</p>
      */
     inline bool TextPartHasBeenSet() const { return m_textPartHasBeenSet; }
 
     /**
-     * <p>The email body that will be visible to recipients whose email clients do not
-     * display HTML.</p>
+     * <p>The email body that is visible to recipients whose email clients do not
+     * display HTML content.</p>
      */
     inline void SetTextPart(const Aws::String& value) { m_textPartHasBeenSet = true; m_textPart = value; }
 
     /**
-     * <p>The email body that will be visible to recipients whose email clients do not
-     * display HTML.</p>
+     * <p>The email body that is visible to recipients whose email clients do not
+     * display HTML content.</p>
      */
     inline void SetTextPart(Aws::String&& value) { m_textPartHasBeenSet = true; m_textPart = std::move(value); }
 
     /**
-     * <p>The email body that will be visible to recipients whose email clients do not
-     * display HTML.</p>
+     * <p>The email body that is visible to recipients whose email clients do not
+     * display HTML content.</p>
      */
     inline void SetTextPart(const char* value) { m_textPartHasBeenSet = true; m_textPart.assign(value); }
 
     /**
-     * <p>The email body that will be visible to recipients whose email clients do not
-     * display HTML.</p>
+     * <p>The email body that is visible to recipients whose email clients do not
+     * display HTML content.</p>
      */
     inline Template& WithTextPart(const Aws::String& value) { SetTextPart(value); return *this;}
 
     /**
-     * <p>The email body that will be visible to recipients whose email clients do not
-     * display HTML.</p>
+     * <p>The email body that is visible to recipients whose email clients do not
+     * display HTML content.</p>
      */
     inline Template& WithTextPart(Aws::String&& value) { SetTextPart(std::move(value)); return *this;}
 
     /**
-     * <p>The email body that will be visible to recipients whose email clients do not
-     * display HTML.</p>
+     * <p>The email body that is visible to recipients whose email clients do not
+     * display HTML content.</p>
      */
     inline Template& WithTextPart(const char* value) { SetTextPart(value); return *this;}
 

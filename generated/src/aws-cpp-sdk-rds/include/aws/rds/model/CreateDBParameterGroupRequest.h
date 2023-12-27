@@ -127,14 +127,14 @@ namespace Model
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
      * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
@@ -151,14 +151,14 @@ namespace Model
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
      * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
@@ -175,14 +175,14 @@ namespace Model
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
      * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
@@ -199,14 +199,14 @@ namespace Model
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
      * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::move(value); }
 
@@ -223,14 +223,14 @@ namespace Model
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
      * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
@@ -247,14 +247,14 @@ namespace Model
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
      * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
@@ -271,14 +271,14 @@ namespace Model
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
      * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
 
@@ -295,14 +295,14 @@ namespace Model
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
      * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>db2-ae</code> </p>
+     * </li> <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 

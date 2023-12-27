@@ -16,9 +16,12 @@ UpdateDomainRequest::UpdateDomainRequest() :
     m_domainIdHasBeenSet(false),
     m_defaultUserSettingsHasBeenSet(false),
     m_domainSettingsForUpdateHasBeenSet(false),
-    m_defaultSpaceSettingsHasBeenSet(false),
     m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET),
-    m_appSecurityGroupManagementHasBeenSet(false)
+    m_appSecurityGroupManagementHasBeenSet(false),
+    m_defaultSpaceSettingsHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false),
+    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
+    m_appNetworkAccessTypeHasBeenSet(false)
 {
 }
 
@@ -44,15 +47,31 @@ Aws::String UpdateDomainRequest::SerializePayload() const
 
   }
 
+  if(m_appSecurityGroupManagementHasBeenSet)
+  {
+   payload.WithString("AppSecurityGroupManagement", AppSecurityGroupManagementMapper::GetNameForAppSecurityGroupManagement(m_appSecurityGroupManagement));
+  }
+
   if(m_defaultSpaceSettingsHasBeenSet)
   {
    payload.WithObject("DefaultSpaceSettings", m_defaultSpaceSettings.Jsonize());
 
   }
 
-  if(m_appSecurityGroupManagementHasBeenSet)
+  if(m_subnetIdsHasBeenSet)
   {
-   payload.WithString("AppSecurityGroupManagement", AppSecurityGroupManagementMapper::GetNameForAppSecurityGroupManagement(m_appSecurityGroupManagement));
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
+   {
+     subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
+   }
+   payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
+
+  }
+
+  if(m_appNetworkAccessTypeHasBeenSet)
+  {
+   payload.WithString("AppNetworkAccessType", AppNetworkAccessTypeMapper::GetNameForAppNetworkAccessType(m_appNetworkAccessType));
   }
 
   return payload.View().WriteReadable();

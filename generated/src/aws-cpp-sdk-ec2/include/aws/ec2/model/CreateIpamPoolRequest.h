@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpamPoolAwsService.h>
 #include <aws/ec2/model/IpamPoolPublicIpSource.h>
+#include <aws/ec2/model/IpamPoolSourceResourceRequest.h>
 #include <aws/ec2/model/RequestIpamResourceTag.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -864,6 +865,37 @@ namespace Model
      */
     inline CreateIpamPoolRequest& WithPublicIpSource(IpamPoolPublicIpSource&& value) { SetPublicIpSource(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
+    inline const IpamPoolSourceResourceRequest& GetSourceResource() const{ return m_sourceResource; }
+
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
+    inline bool SourceResourceHasBeenSet() const { return m_sourceResourceHasBeenSet; }
+
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
+    inline void SetSourceResource(const IpamPoolSourceResourceRequest& value) { m_sourceResourceHasBeenSet = true; m_sourceResource = value; }
+
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
+    inline void SetSourceResource(IpamPoolSourceResourceRequest&& value) { m_sourceResourceHasBeenSet = true; m_sourceResource = std::move(value); }
+
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
+    inline CreateIpamPoolRequest& WithSourceResource(const IpamPoolSourceResourceRequest& value) { SetSourceResource(value); return *this;}
+
+    /**
+     * <p>The resource used to provision CIDRs to a resource planning pool.</p>
+     */
+    inline CreateIpamPoolRequest& WithSourceResource(IpamPoolSourceResourceRequest&& value) { SetSourceResource(std::move(value)); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -913,6 +945,9 @@ namespace Model
 
     IpamPoolPublicIpSource m_publicIpSource;
     bool m_publicIpSourceHasBeenSet = false;
+
+    IpamPoolSourceResourceRequest m_sourceResource;
+    bool m_sourceResourceHasBeenSet = false;
   };
 
 } // namespace Model

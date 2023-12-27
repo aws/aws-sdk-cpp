@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ScalingConfiguration.h>
+#include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
@@ -2435,6 +2436,37 @@ namespace Model
 
 
     /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const RdsCustomClusterConfiguration& GetRdsCustomClusterConfiguration() const{ return m_rdsCustomClusterConfiguration; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool RdsCustomClusterConfigurationHasBeenSet() const { return m_rdsCustomClusterConfigurationHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline CreateDBClusterRequest& WithRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { SetRdsCustomClusterConfiguration(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline CreateDBClusterRequest& WithRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { SetRdsCustomClusterConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies whether the DB cluster has deletion protection enabled. The
      * database can't be deleted when deletion protection is enabled. By default,
      * deletion protection isn't enabled.</p> <p>Valid for Cluster Type: Aurora DB
@@ -2525,54 +2557,62 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline bool GetEnableHttpEndpoint() const{ return m_enableHttpEndpoint; }
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline bool EnableHttpEndpointHasBeenSet() const { return m_enableHttpEndpointHasBeenSet; }
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline void SetEnableHttpEndpoint(bool value) { m_enableHttpEndpointHasBeenSet = true; m_enableHttpEndpoint = value; }
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithEnableHttpEndpoint(bool value) { SetEnableHttpEndpoint(value); return *this;}
 
@@ -2949,7 +2989,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -2967,7 +3010,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -2985,7 +3031,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -3003,7 +3052,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -3021,7 +3073,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -3039,7 +3094,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -3057,7 +3115,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -3075,7 +3136,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -4123,6 +4187,9 @@ namespace Model
 
     ScalingConfiguration m_scalingConfiguration;
     bool m_scalingConfigurationHasBeenSet = false;
+
+    RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
+    bool m_rdsCustomClusterConfigurationHasBeenSet = false;
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet = false;

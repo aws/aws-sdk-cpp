@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the destination file system to create in the replication
+   * <p>Describes the new or existing destination file system for the replication
    * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DestinationToCreate">AWS
    * API Reference</a></p>
@@ -88,60 +88,60 @@ namespace Model
 
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = value; }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = std::move(value); }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName.assign(value); }
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline DestinationToCreate& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline DestinationToCreate& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
 
     /**
-     * <p>To create a file system that uses EFS One Zone storage, specify the name of
-     * the Availability Zone in which to create the destination file system.</p>
+     * <p>To create a file system that uses One Zone storage, specify the name of the
+     * Availability Zone in which to create the destination file system.</p>
      */
     inline DestinationToCreate& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
 
 
     /**
-     * <p>Specifies the Key Management Service (KMS) key that you want to use to
-     * encrypt the destination file system. If you do not specify a KMS key, Amazon EFS
-     * uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The
-     * unique identifier of the key, for example
+     * <p>Specify the Key Management Service (KMS) key that you want to use to encrypt
+     * the destination file system. If you do not specify a KMS key, Amazon EFS uses
+     * your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This
+     * ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The unique
+     * identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - The
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -154,11 +154,11 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>Specifies the Key Management Service (KMS) key that you want to use to
-     * encrypt the destination file system. If you do not specify a KMS key, Amazon EFS
-     * uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The
-     * unique identifier of the key, for example
+     * <p>Specify the Key Management Service (KMS) key that you want to use to encrypt
+     * the destination file system. If you do not specify a KMS key, Amazon EFS uses
+     * your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This
+     * ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The unique
+     * identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - The
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -171,11 +171,11 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>Specifies the Key Management Service (KMS) key that you want to use to
-     * encrypt the destination file system. If you do not specify a KMS key, Amazon EFS
-     * uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The
-     * unique identifier of the key, for example
+     * <p>Specify the Key Management Service (KMS) key that you want to use to encrypt
+     * the destination file system. If you do not specify a KMS key, Amazon EFS uses
+     * your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This
+     * ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The unique
+     * identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - The
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -188,11 +188,11 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>Specifies the Key Management Service (KMS) key that you want to use to
-     * encrypt the destination file system. If you do not specify a KMS key, Amazon EFS
-     * uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The
-     * unique identifier of the key, for example
+     * <p>Specify the Key Management Service (KMS) key that you want to use to encrypt
+     * the destination file system. If you do not specify a KMS key, Amazon EFS uses
+     * your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This
+     * ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The unique
+     * identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - The
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -205,11 +205,11 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>Specifies the Key Management Service (KMS) key that you want to use to
-     * encrypt the destination file system. If you do not specify a KMS key, Amazon EFS
-     * uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The
-     * unique identifier of the key, for example
+     * <p>Specify the Key Management Service (KMS) key that you want to use to encrypt
+     * the destination file system. If you do not specify a KMS key, Amazon EFS uses
+     * your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This
+     * ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The unique
+     * identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - The
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -222,11 +222,11 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>Specifies the Key Management Service (KMS) key that you want to use to
-     * encrypt the destination file system. If you do not specify a KMS key, Amazon EFS
-     * uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The
-     * unique identifier of the key, for example
+     * <p>Specify the Key Management Service (KMS) key that you want to use to encrypt
+     * the destination file system. If you do not specify a KMS key, Amazon EFS uses
+     * your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This
+     * ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The unique
+     * identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - The
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -239,11 +239,11 @@ namespace Model
     inline DestinationToCreate& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>Specifies the Key Management Service (KMS) key that you want to use to
-     * encrypt the destination file system. If you do not specify a KMS key, Amazon EFS
-     * uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The
-     * unique identifier of the key, for example
+     * <p>Specify the Key Management Service (KMS) key that you want to use to encrypt
+     * the destination file system. If you do not specify a KMS key, Amazon EFS uses
+     * your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This
+     * ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The unique
+     * identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - The
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -256,11 +256,11 @@ namespace Model
     inline DestinationToCreate& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Key Management Service (KMS) key that you want to use to
-     * encrypt the destination file system. If you do not specify a KMS key, Amazon EFS
-     * uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>.
-     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The
-     * unique identifier of the key, for example
+     * <p>Specify the Key Management Service (KMS) key that you want to use to encrypt
+     * the destination file system. If you do not specify a KMS key, Amazon EFS uses
+     * your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This
+     * ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The unique
+     * identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - The
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -272,6 +272,63 @@ namespace Model
      */
     inline DestinationToCreate& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The ID of the file system to use for the destination. The file system's
+     * replication overwrite replication must be disabled. If you do not provide an ID,
+     * then EFS creates a new file system for the replication destination.</p>
+     */
+    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+
+    /**
+     * <p>The ID of the file system to use for the destination. The file system's
+     * replication overwrite replication must be disabled. If you do not provide an ID,
+     * then EFS creates a new file system for the replication destination.</p>
+     */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system to use for the destination. The file system's
+     * replication overwrite replication must be disabled. If you do not provide an ID,
+     * then EFS creates a new file system for the replication destination.</p>
+     */
+    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
+
+    /**
+     * <p>The ID of the file system to use for the destination. The file system's
+     * replication overwrite replication must be disabled. If you do not provide an ID,
+     * then EFS creates a new file system for the replication destination.</p>
+     */
+    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
+
+    /**
+     * <p>The ID of the file system to use for the destination. The file system's
+     * replication overwrite replication must be disabled. If you do not provide an ID,
+     * then EFS creates a new file system for the replication destination.</p>
+     */
+    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
+
+    /**
+     * <p>The ID of the file system to use for the destination. The file system's
+     * replication overwrite replication must be disabled. If you do not provide an ID,
+     * then EFS creates a new file system for the replication destination.</p>
+     */
+    inline DestinationToCreate& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
+
+    /**
+     * <p>The ID of the file system to use for the destination. The file system's
+     * replication overwrite replication must be disabled. If you do not provide an ID,
+     * then EFS creates a new file system for the replication destination.</p>
+     */
+    inline DestinationToCreate& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the file system to use for the destination. The file system's
+     * replication overwrite replication must be disabled. If you do not provide an ID,
+     * then EFS creates a new file system for the replication destination.</p>
+     */
+    inline DestinationToCreate& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+
   private:
 
     Aws::String m_region;
@@ -282,6 +339,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
+
+    Aws::String m_fileSystemId;
+    bool m_fileSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

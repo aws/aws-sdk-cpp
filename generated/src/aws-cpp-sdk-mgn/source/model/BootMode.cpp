@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BootMode::NOT_SET:
+            return {};
           case BootMode::LEGACY_BIOS:
             return "LEGACY_BIOS";
           case BootMode::UEFI:

@@ -24,7 +24,8 @@ LambdaFunctionMemoryRecommendationOption::LambdaFunctionMemoryRecommendationOpti
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false)
+    m_savingsOpportunityHasBeenSet(false),
+    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ LambdaFunctionMemoryRecommendationOption::LambdaFunctionMemoryRecommendationOpti
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false)
+    m_savingsOpportunityHasBeenSet(false),
+    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +74,13 @@ LambdaFunctionMemoryRecommendationOption& LambdaFunctionMemoryRecommendationOpti
     m_savingsOpportunityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
+  {
+    m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
+
+    m_savingsOpportunityAfterDiscountsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,6 +114,12 @@ JsonValue LambdaFunctionMemoryRecommendationOption::Jsonize() const
   if(m_savingsOpportunityHasBeenSet)
   {
    payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
+
+  }
+
+  if(m_savingsOpportunityAfterDiscountsHasBeenSet)
+  {
+   payload.WithObject("savingsOpportunityAfterDiscounts", m_savingsOpportunityAfterDiscounts.Jsonize());
 
   }
 

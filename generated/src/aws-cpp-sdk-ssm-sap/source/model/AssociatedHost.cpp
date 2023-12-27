@@ -21,6 +21,7 @@ namespace Model
 AssociatedHost::AssociatedHost() : 
     m_hostnameHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
+    m_ipAddressesHasBeenSet(false),
     m_osVersionHasBeenSet(false)
 {
 }
@@ -28,6 +29,7 @@ AssociatedHost::AssociatedHost() :
 AssociatedHost::AssociatedHost(JsonView jsonValue) : 
     m_hostnameHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
+    m_ipAddressesHasBeenSet(false),
     m_osVersionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +49,16 @@ AssociatedHost& AssociatedHost::operator =(JsonView jsonValue)
     m_ec2InstanceId = jsonValue.GetString("Ec2InstanceId");
 
     m_ec2InstanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IpAddresses"))
+  {
+    Aws::Utils::Array<JsonView> ipAddressesJsonList = jsonValue.GetArray("IpAddresses");
+    for(unsigned ipAddressesIndex = 0; ipAddressesIndex < ipAddressesJsonList.GetLength(); ++ipAddressesIndex)
+    {
+      m_ipAddresses.push_back(ipAddressesJsonList[ipAddressesIndex].AsObject());
+    }
+    m_ipAddressesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("OsVersion"))
@@ -72,6 +84,17 @@ JsonValue AssociatedHost::Jsonize() const
   if(m_ec2InstanceIdHasBeenSet)
   {
    payload.WithString("Ec2InstanceId", m_ec2InstanceId);
+
+  }
+
+  if(m_ipAddressesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ipAddressesJsonList(m_ipAddresses.size());
+   for(unsigned ipAddressesIndex = 0; ipAddressesIndex < ipAddressesJsonList.GetLength(); ++ipAddressesIndex)
+   {
+     ipAddressesJsonList[ipAddressesIndex].AsObject(m_ipAddresses[ipAddressesIndex].Jsonize());
+   }
+   payload.WithArray("IpAddresses", std::move(ipAddressesJsonList));
 
   }
 

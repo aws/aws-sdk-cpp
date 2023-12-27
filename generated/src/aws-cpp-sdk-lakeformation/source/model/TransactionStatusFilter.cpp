@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransactionStatusFilter::NOT_SET:
+            return {};
           case TransactionStatusFilter::ALL:
             return "ALL";
           case TransactionStatusFilter::COMPLETED:

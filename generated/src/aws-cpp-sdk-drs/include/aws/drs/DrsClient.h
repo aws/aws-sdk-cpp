@@ -231,6 +231,31 @@ namespace drs
         }
 
         /**
+         * <p>Deletes a resource launch action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLaunchActionOutcome DeleteLaunchAction(const Model::DeleteLaunchActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLaunchAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLaunchActionRequestT = Model::DeleteLaunchActionRequest>
+        Model::DeleteLaunchActionOutcomeCallable DeleteLaunchActionCallable(const DeleteLaunchActionRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::DeleteLaunchAction, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLaunchAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLaunchActionRequestT = Model::DeleteLaunchActionRequest>
+        void DeleteLaunchActionAsync(const DeleteLaunchActionRequestT& request, const DeleteLaunchActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::DeleteLaunchAction, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a single Launch Configuration Template by ID.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchConfigurationTemplate">AWS
@@ -802,6 +827,31 @@ namespace drs
         }
 
         /**
+         * <p>Lists resource launch actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLaunchActionsOutcome ListLaunchActions(const Model::ListLaunchActionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLaunchActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLaunchActionsRequestT = Model::ListLaunchActionsRequest>
+        Model::ListLaunchActionsOutcomeCallable ListLaunchActionsCallable(const ListLaunchActionsRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::ListLaunchActions, request);
+        }
+
+        /**
+         * An Async wrapper for ListLaunchActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLaunchActionsRequestT = Model::ListLaunchActionsRequest>
+        void ListLaunchActionsAsync(const ListLaunchActionsRequestT& request, const ListLaunchActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::ListLaunchActions, request, handler, context);
+        }
+
+        /**
          * <p>Returns an array of staging accounts for existing extended source
          * servers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts">AWS
@@ -851,6 +901,31 @@ namespace drs
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DrsClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Puts a resource launch action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutLaunchActionOutcome PutLaunchAction(const Model::PutLaunchActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutLaunchAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutLaunchActionRequestT = Model::PutLaunchActionRequest>
+        Model::PutLaunchActionOutcomeCallable PutLaunchActionCallable(const PutLaunchActionRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::PutLaunchAction, request);
+        }
+
+        /**
+         * An Async wrapper for PutLaunchAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutLaunchActionRequestT = Model::PutLaunchActionRequest>
+        void PutLaunchActionAsync(const PutLaunchActionRequestT& request, const PutLaunchActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::PutLaunchAction, request, handler, context);
         }
 
         /**

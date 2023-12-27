@@ -57,54 +57,182 @@ namespace Model
     AWS_S3_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
-     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>The canned access control list (ACL) to apply to the object.</p> <p>When you
+     * copy an object, the ACL metadata is not preserved and is set to
+     * <code>private</code> by default. Only the owner has full access control. To
+     * override the default ACL setting, specify a new ACL when you generate a copy
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+     * ACLs</a>. </p> <p>If the destination bucket that you're copying objects to uses
+     * the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and
+     * no longer affect permissions. Buckets that use this setting only accept
+     * <code>PUT</code> requests that don't specify an ACL or <code>PUT</code> requests
+     * that specify bucket owner full control ACLs, such as the
+     * <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this
+     * ACL expressed in the XML format. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+     * ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>  <ul> <li> <p>If your destination bucket uses the bucket
+     * owner enforced setting for Object Ownership, all objects written to the bucket
+     * by any account will be owned by the bucket owner.</p> </li> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline const ObjectCannedACL& GetACL() const{ return m_aCL; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>The canned access control list (ACL) to apply to the object.</p> <p>When you
+     * copy an object, the ACL metadata is not preserved and is set to
+     * <code>private</code> by default. Only the owner has full access control. To
+     * override the default ACL setting, specify a new ACL when you generate a copy
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+     * ACLs</a>. </p> <p>If the destination bucket that you're copying objects to uses
+     * the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and
+     * no longer affect permissions. Buckets that use this setting only accept
+     * <code>PUT</code> requests that don't specify an ACL or <code>PUT</code> requests
+     * that specify bucket owner full control ACLs, such as the
+     * <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this
+     * ACL expressed in the XML format. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+     * ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>  <ul> <li> <p>If your destination bucket uses the bucket
+     * owner enforced setting for Object Ownership, all objects written to the bucket
+     * by any account will be owned by the bucket owner.</p> </li> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>The canned access control list (ACL) to apply to the object.</p> <p>When you
+     * copy an object, the ACL metadata is not preserved and is set to
+     * <code>private</code> by default. Only the owner has full access control. To
+     * override the default ACL setting, specify a new ACL when you generate a copy
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+     * ACLs</a>. </p> <p>If the destination bucket that you're copying objects to uses
+     * the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and
+     * no longer affect permissions. Buckets that use this setting only accept
+     * <code>PUT</code> requests that don't specify an ACL or <code>PUT</code> requests
+     * that specify bucket owner full control ACLs, such as the
+     * <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this
+     * ACL expressed in the XML format. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+     * ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>  <ul> <li> <p>If your destination bucket uses the bucket
+     * owner enforced setting for Object Ownership, all objects written to the bucket
+     * by any account will be owned by the bucket owner.</p> </li> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline void SetACL(const ObjectCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>The canned access control list (ACL) to apply to the object.</p> <p>When you
+     * copy an object, the ACL metadata is not preserved and is set to
+     * <code>private</code> by default. Only the owner has full access control. To
+     * override the default ACL setting, specify a new ACL when you generate a copy
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+     * ACLs</a>. </p> <p>If the destination bucket that you're copying objects to uses
+     * the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and
+     * no longer affect permissions. Buckets that use this setting only accept
+     * <code>PUT</code> requests that don't specify an ACL or <code>PUT</code> requests
+     * that specify bucket owner full control ACLs, such as the
+     * <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this
+     * ACL expressed in the XML format. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+     * ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>  <ul> <li> <p>If your destination bucket uses the bucket
+     * owner enforced setting for Object Ownership, all objects written to the bucket
+     * by any account will be owned by the bucket owner.</p> </li> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = std::move(value); }
 
     /**
-     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>The canned access control list (ACL) to apply to the object.</p> <p>When you
+     * copy an object, the ACL metadata is not preserved and is set to
+     * <code>private</code> by default. Only the owner has full access control. To
+     * override the default ACL setting, specify a new ACL when you generate a copy
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+     * ACLs</a>. </p> <p>If the destination bucket that you're copying objects to uses
+     * the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and
+     * no longer affect permissions. Buckets that use this setting only accept
+     * <code>PUT</code> requests that don't specify an ACL or <code>PUT</code> requests
+     * that specify bucket owner full control ACLs, such as the
+     * <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this
+     * ACL expressed in the XML format. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+     * ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>  <ul> <li> <p>If your destination bucket uses the bucket
+     * owner enforced setting for Object Ownership, all objects written to the bucket
+     * by any account will be owned by the bucket owner.</p> </li> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline CopyObjectRequest& WithACL(const ObjectCannedACL& value) { SetACL(value); return *this;}
 
     /**
-     * <p>The canned ACL to apply to the object.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>The canned access control list (ACL) to apply to the object.</p> <p>When you
+     * copy an object, the ACL metadata is not preserved and is set to
+     * <code>private</code> by default. Only the owner has full access control. To
+     * override the default ACL setting, specify a new ACL when you generate a copy
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
+     * ACLs</a>. </p> <p>If the destination bucket that you're copying objects to uses
+     * the bucket owner enforced setting for S3 Object Ownership, ACLs are disabled and
+     * no longer affect permissions. Buckets that use this setting only accept
+     * <code>PUT</code> requests that don't specify an ACL or <code>PUT</code> requests
+     * that specify bucket owner full control ACLs, such as the
+     * <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this
+     * ACL expressed in the XML format. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+     * ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>  <ul> <li> <p>If your destination bucket uses the bucket
+     * owner enforced setting for Object Ownership, all objects written to the bucket
+     * by any account will be owned by the bucket owner.</p> </li> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline CopyObjectRequest& WithACL(ObjectCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this action with an
-     * access point, you must direct requests to the access point hostname. The access
-     * point hostname takes the form
+     * <p>The name of the destination bucket.</p> <p> <b>Directory buckets</b> - When
+     * you use this operation with a directory bucket, you must use
+     * virtual-hosted-style requests in the format <code>
+     * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+     * Path-style requests are not supported. Directory bucket names must be unique in
+     * the chosen Availability Zone. Bucket names must follow the format <code>
+     * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+     * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
+     * points</b> - When you use this action with an access point, you must provide the
+     * alias of the access point in place of the bucket name or specify the access
+     * point ARN. When using the access point ARN, you must direct requests to the
+     * access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Access
+     * points and Object Lambda access points are not supported by directory
+     * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
+     * Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -115,17 +243,31 @@ namespace Model
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this action with an
-     * access point, you must direct requests to the access point hostname. The access
-     * point hostname takes the form
+     * <p>The name of the destination bucket.</p> <p> <b>Directory buckets</b> - When
+     * you use this operation with a directory bucket, you must use
+     * virtual-hosted-style requests in the format <code>
+     * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+     * Path-style requests are not supported. Directory bucket names must be unique in
+     * the chosen Availability Zone. Bucket names must follow the format <code>
+     * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+     * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
+     * points</b> - When you use this action with an access point, you must provide the
+     * alias of the access point in place of the bucket name or specify the access
+     * point ARN. When using the access point ARN, you must direct requests to the
+     * access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Access
+     * points and Object Lambda access points are not supported by directory
+     * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
+     * Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -136,17 +278,31 @@ namespace Model
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this action with an
-     * access point, you must direct requests to the access point hostname. The access
-     * point hostname takes the form
+     * <p>The name of the destination bucket.</p> <p> <b>Directory buckets</b> - When
+     * you use this operation with a directory bucket, you must use
+     * virtual-hosted-style requests in the format <code>
+     * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+     * Path-style requests are not supported. Directory bucket names must be unique in
+     * the chosen Availability Zone. Bucket names must follow the format <code>
+     * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+     * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
+     * points</b> - When you use this action with an access point, you must provide the
+     * alias of the access point in place of the bucket name or specify the access
+     * point ARN. When using the access point ARN, you must direct requests to the
+     * access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Access
+     * points and Object Lambda access points are not supported by directory
+     * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
+     * Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -157,17 +313,31 @@ namespace Model
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this action with an
-     * access point, you must direct requests to the access point hostname. The access
-     * point hostname takes the form
+     * <p>The name of the destination bucket.</p> <p> <b>Directory buckets</b> - When
+     * you use this operation with a directory bucket, you must use
+     * virtual-hosted-style requests in the format <code>
+     * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+     * Path-style requests are not supported. Directory bucket names must be unique in
+     * the chosen Availability Zone. Bucket names must follow the format <code>
+     * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+     * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
+     * points</b> - When you use this action with an access point, you must provide the
+     * alias of the access point in place of the bucket name or specify the access
+     * point ARN. When using the access point ARN, you must direct requests to the
+     * access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Access
+     * points and Object Lambda access points are not supported by directory
+     * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
+     * Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -178,17 +348,31 @@ namespace Model
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this action with an
-     * access point, you must direct requests to the access point hostname. The access
-     * point hostname takes the form
+     * <p>The name of the destination bucket.</p> <p> <b>Directory buckets</b> - When
+     * you use this operation with a directory bucket, you must use
+     * virtual-hosted-style requests in the format <code>
+     * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+     * Path-style requests are not supported. Directory bucket names must be unique in
+     * the chosen Availability Zone. Bucket names must follow the format <code>
+     * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+     * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
+     * points</b> - When you use this action with an access point, you must provide the
+     * alias of the access point in place of the bucket name or specify the access
+     * point ARN. When using the access point ARN, you must direct requests to the
+     * access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Access
+     * points and Object Lambda access points are not supported by directory
+     * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
+     * Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -199,17 +383,31 @@ namespace Model
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this action with an
-     * access point, you must direct requests to the access point hostname. The access
-     * point hostname takes the form
+     * <p>The name of the destination bucket.</p> <p> <b>Directory buckets</b> - When
+     * you use this operation with a directory bucket, you must use
+     * virtual-hosted-style requests in the format <code>
+     * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+     * Path-style requests are not supported. Directory bucket names must be unique in
+     * the chosen Availability Zone. Bucket names must follow the format <code>
+     * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+     * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
+     * points</b> - When you use this action with an access point, you must provide the
+     * alias of the access point in place of the bucket name or specify the access
+     * point ARN. When using the access point ARN, you must direct requests to the
+     * access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Access
+     * points and Object Lambda access points are not supported by directory
+     * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
+     * Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -220,17 +418,31 @@ namespace Model
     inline CopyObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this action with an
-     * access point, you must direct requests to the access point hostname. The access
-     * point hostname takes the form
+     * <p>The name of the destination bucket.</p> <p> <b>Directory buckets</b> - When
+     * you use this operation with a directory bucket, you must use
+     * virtual-hosted-style requests in the format <code>
+     * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+     * Path-style requests are not supported. Directory bucket names must be unique in
+     * the chosen Availability Zone. Bucket names must follow the format <code>
+     * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+     * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
+     * points</b> - When you use this action with an access point, you must provide the
+     * alias of the access point in place of the bucket name or specify the access
+     * point ARN. When using the access point ARN, you must direct requests to the
+     * access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Access
+     * points and Object Lambda access points are not supported by directory
+     * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
+     * Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -241,17 +453,31 @@ namespace Model
     inline CopyObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the destination bucket.</p> <p>When using this action with an
-     * access point, you must direct requests to the access point hostname. The access
-     * point hostname takes the form
+     * <p>The name of the destination bucket.</p> <p> <b>Directory buckets</b> - When
+     * you use this operation with a directory bucket, you must use
+     * virtual-hosted-style requests in the format <code>
+     * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+     * Path-style requests are not supported. Directory bucket names must be unique in
+     * the chosen Availability Zone. Bucket names must follow the format <code>
+     * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+     * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
+     * points</b> - When you use this action with an access point, you must provide the
+     * alias of the access point in place of the bucket name or specify the access
+     * point ARN. When using the access point ARN, you must direct requests to the
+     * access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>Access
+     * points and Object Lambda access points are not supported by directory
+     * buckets.</p>  <p> <b>S3 on Outposts</b> - When you use this action with
+     * Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -263,132 +489,208 @@ namespace Model
 
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p>Specifies the caching behavior along the request/reply chain.</p>
      */
     inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p>Specifies the caching behavior along the request/reply chain.</p>
      */
     inline bool CacheControlHasBeenSet() const { return m_cacheControlHasBeenSet; }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p>Specifies the caching behavior along the request/reply chain.</p>
      */
     inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p>Specifies the caching behavior along the request/reply chain.</p>
      */
     inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::move(value); }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p>Specifies the caching behavior along the request/reply chain.</p>
      */
     inline void SetCacheControl(const char* value) { m_cacheControlHasBeenSet = true; m_cacheControl.assign(value); }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p>Specifies the caching behavior along the request/reply chain.</p>
      */
     inline CopyObjectRequest& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p>Specifies the caching behavior along the request/reply chain.</p>
      */
     inline CopyObjectRequest& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p>Specifies the caching behavior along the request/reply chain.</p>
      */
     inline CopyObjectRequest& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
 
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for
-     * the object. For more information, see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum
+     * for the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
-     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you copy an
+     * object, if the source object has a checksum, that checksum value will be copied
+     * to the new object by default. If the <code>CopyObject</code> request does not
+     * include this <code>x-amz-checksum-algorithm</code> header, the checksum
+     * algorithm will be copied from the source object to the destination object (if
+     * it's present on the source object). You can optionally specify a different
+     * checksum algorithm to use with the <code>x-amz-checksum-algorithm</code> header.
+     * Unrecognized or unsupported values will respond with the HTTP status code
+     * <code>400 Bad Request</code>.</p>  <p>For directory buckets, when you use
+     * Amazon Web Services SDKs, <code>CRC32</code> is the default checksum algorithm
+     * that's used for performance.</p> 
      */
     inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for
-     * the object. For more information, see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum
+     * for the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
-     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you copy an
+     * object, if the source object has a checksum, that checksum value will be copied
+     * to the new object by default. If the <code>CopyObject</code> request does not
+     * include this <code>x-amz-checksum-algorithm</code> header, the checksum
+     * algorithm will be copied from the source object to the destination object (if
+     * it's present on the source object). You can optionally specify a different
+     * checksum algorithm to use with the <code>x-amz-checksum-algorithm</code> header.
+     * Unrecognized or unsupported values will respond with the HTTP status code
+     * <code>400 Bad Request</code>.</p>  <p>For directory buckets, when you use
+     * Amazon Web Services SDKs, <code>CRC32</code> is the default checksum algorithm
+     * that's used for performance.</p> 
      */
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for
-     * the object. For more information, see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum
+     * for the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
-     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you copy an
+     * object, if the source object has a checksum, that checksum value will be copied
+     * to the new object by default. If the <code>CopyObject</code> request does not
+     * include this <code>x-amz-checksum-algorithm</code> header, the checksum
+     * algorithm will be copied from the source object to the destination object (if
+     * it's present on the source object). You can optionally specify a different
+     * checksum algorithm to use with the <code>x-amz-checksum-algorithm</code> header.
+     * Unrecognized or unsupported values will respond with the HTTP status code
+     * <code>400 Bad Request</code>.</p>  <p>For directory buckets, when you use
+     * Amazon Web Services SDKs, <code>CRC32</code> is the default checksum algorithm
+     * that's used for performance.</p> 
      */
     inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for
-     * the object. For more information, see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum
+     * for the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
-     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you copy an
+     * object, if the source object has a checksum, that checksum value will be copied
+     * to the new object by default. If the <code>CopyObject</code> request does not
+     * include this <code>x-amz-checksum-algorithm</code> header, the checksum
+     * algorithm will be copied from the source object to the destination object (if
+     * it's present on the source object). You can optionally specify a different
+     * checksum algorithm to use with the <code>x-amz-checksum-algorithm</code> header.
+     * Unrecognized or unsupported values will respond with the HTTP status code
+     * <code>400 Bad Request</code>.</p>  <p>For directory buckets, when you use
+     * Amazon Web Services SDKs, <code>CRC32</code> is the default checksum algorithm
+     * that's used for performance.</p> 
      */
     inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for
-     * the object. For more information, see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum
+     * for the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
-     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you copy an
+     * object, if the source object has a checksum, that checksum value will be copied
+     * to the new object by default. If the <code>CopyObject</code> request does not
+     * include this <code>x-amz-checksum-algorithm</code> header, the checksum
+     * algorithm will be copied from the source object to the destination object (if
+     * it's present on the source object). You can optionally specify a different
+     * checksum algorithm to use with the <code>x-amz-checksum-algorithm</code> header.
+     * Unrecognized or unsupported values will respond with the HTTP status code
+     * <code>400 Bad Request</code>.</p>  <p>For directory buckets, when you use
+     * Amazon Web Services SDKs, <code>CRC32</code> is the default checksum algorithm
+     * that's used for performance.</p> 
      */
     inline CopyObjectRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
 
     /**
-     * <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for
-     * the object. For more information, see <a
+     * <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum
+     * for the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
-     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you copy an
+     * object, if the source object has a checksum, that checksum value will be copied
+     * to the new object by default. If the <code>CopyObject</code> request does not
+     * include this <code>x-amz-checksum-algorithm</code> header, the checksum
+     * algorithm will be copied from the source object to the destination object (if
+     * it's present on the source object). You can optionally specify a different
+     * checksum algorithm to use with the <code>x-amz-checksum-algorithm</code> header.
+     * Unrecognized or unsupported values will respond with the HTTP status code
+     * <code>400 Bad Request</code>.</p>  <p>For directory buckets, when you use
+     * Amazon Web Services SDKs, <code>CRC32</code> is the default checksum algorithm
+     * that's used for performance.</p> 
      */
     inline CopyObjectRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. Indicates whether an
+     * object should be displayed in a web browser or downloaded as a file. It allows
+     * specifying the desired filename for the downloaded file.</p>
      */
     inline const Aws::String& GetContentDisposition() const{ return m_contentDisposition; }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. Indicates whether an
+     * object should be displayed in a web browser or downloaded as a file. It allows
+     * specifying the desired filename for the downloaded file.</p>
      */
     inline bool ContentDispositionHasBeenSet() const { return m_contentDispositionHasBeenSet; }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. Indicates whether an
+     * object should be displayed in a web browser or downloaded as a file. It allows
+     * specifying the desired filename for the downloaded file.</p>
      */
     inline void SetContentDisposition(const Aws::String& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = value; }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. Indicates whether an
+     * object should be displayed in a web browser or downloaded as a file. It allows
+     * specifying the desired filename for the downloaded file.</p>
      */
     inline void SetContentDisposition(Aws::String&& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = std::move(value); }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. Indicates whether an
+     * object should be displayed in a web browser or downloaded as a file. It allows
+     * specifying the desired filename for the downloaded file.</p>
      */
     inline void SetContentDisposition(const char* value) { m_contentDispositionHasBeenSet = true; m_contentDisposition.assign(value); }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. Indicates whether an
+     * object should be displayed in a web browser or downloaded as a file. It allows
+     * specifying the desired filename for the downloaded file.</p>
      */
     inline CopyObjectRequest& WithContentDisposition(const Aws::String& value) { SetContentDisposition(value); return *this;}
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. Indicates whether an
+     * object should be displayed in a web browser or downloaded as a file. It allows
+     * specifying the desired filename for the downloaded file.</p>
      */
     inline CopyObjectRequest& WithContentDisposition(Aws::String&& value) { SetContentDisposition(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. Indicates whether an
+     * object should be displayed in a web browser or downloaded as a file. It allows
+     * specifying the desired filename for the downloaded file.</p>
      */
     inline CopyObjectRequest& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
 
@@ -396,56 +698,64 @@ namespace Model
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field.</p>  <p>For directory buckets, only the
+     * <code>aws-chunked</code> value is supported in this header field.</p> 
      */
     inline const Aws::String& GetContentEncoding() const{ return m_contentEncoding; }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field.</p>  <p>For directory buckets, only the
+     * <code>aws-chunked</code> value is supported in this header field.</p> 
      */
     inline bool ContentEncodingHasBeenSet() const { return m_contentEncodingHasBeenSet; }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field.</p>  <p>For directory buckets, only the
+     * <code>aws-chunked</code> value is supported in this header field.</p> 
      */
     inline void SetContentEncoding(const Aws::String& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = value; }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field.</p>  <p>For directory buckets, only the
+     * <code>aws-chunked</code> value is supported in this header field.</p> 
      */
     inline void SetContentEncoding(Aws::String&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::move(value); }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field.</p>  <p>For directory buckets, only the
+     * <code>aws-chunked</code> value is supported in this header field.</p> 
      */
     inline void SetContentEncoding(const char* value) { m_contentEncodingHasBeenSet = true; m_contentEncoding.assign(value); }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field.</p>  <p>For directory buckets, only the
+     * <code>aws-chunked</code> value is supported in this header field.</p> 
      */
     inline CopyObjectRequest& WithContentEncoding(const Aws::String& value) { SetContentEncoding(value); return *this;}
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field.</p>  <p>For directory buckets, only the
+     * <code>aws-chunked</code> value is supported in this header field.</p> 
      */
     inline CopyObjectRequest& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field.</p>  <p>For directory buckets, only the
+     * <code>aws-chunked</code> value is supported in this header field.</p> 
      */
     inline CopyObjectRequest& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
 
@@ -492,491 +802,831 @@ namespace Model
 
 
     /**
-     * <p>A standard MIME type describing the format of the object data.</p>
+     * <p>A standard MIME type that describes the format of the object data.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
-     * <p>A standard MIME type describing the format of the object data.</p>
+     * <p>A standard MIME type that describes the format of the object data.</p>
      */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
-     * <p>A standard MIME type describing the format of the object data.</p>
+     * <p>A standard MIME type that describes the format of the object data.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
-     * <p>A standard MIME type describing the format of the object data.</p>
+     * <p>A standard MIME type that describes the format of the object data.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
-     * <p>A standard MIME type describing the format of the object data.</p>
+     * <p>A standard MIME type that describes the format of the object data.</p>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
 
     /**
-     * <p>A standard MIME type describing the format of the object data.</p>
+     * <p>A standard MIME type that describes the format of the object data.</p>
      */
     inline CopyObjectRequest& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
-     * <p>A standard MIME type describing the format of the object data.</p>
+     * <p>A standard MIME type that describes the format of the object data.</p>
      */
     inline CopyObjectRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
-     * <p>A standard MIME type describing the format of the object data.</p>
+     * <p>A standard MIME type that describes the format of the object data.</p>
      */
     inline CopyObjectRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
 
 
     /**
-     * <p>Specifies the source object for the copy operation. You specify the value in
-     * one of two formats, depending on whether you want to access the source object
-     * through an <a
+     * <p>Specifies the source object for the copy operation. The source object can be
+     * up to 5 GB. If the source object is an object that was uploaded by using a
+     * multipart upload, the object copy will be a single part object after the source
+     * object is copied to the destination bucket.</p> <p>You specify the value of the
+     * copy source in one of two formats, depending on whether you want to access the
+     * source object through an <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and the key of the source object,
      * separated by a slash (/). For example, to copy the object
-     * <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>,
-     * use <code>awsexamplebucket/reports/january.pdf</code>. The value must be
-     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
-     * specify the Amazon Resource Name (ARN) of the object as accessed through the
-     * access point, in the format
+     * <code>reports/january.pdf</code> from the general purpose bucket
+     * <code>awsexamplebucket</code>, use
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded. To copy the object <code>reports/january.pdf</code> from the
+     * directory bucket <code>awsexamplebucket--use1-az5--x-s3</code>, use
+     * <code>awsexamplebucket--use1-az5--x-s3/reports/january.pdf</code>. The value
+     * must be URL-encoded.</p> </li> <li> <p>For objects accessed through access
+     * points, specify the Amazon Resource Name (ARN) of the object as accessed through
+     * the access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
      * Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
-     * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
-     * using access points only when the source and destination buckets are in the same
-     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
-     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
-     * format
+     * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
+     * operations using Access points only when the source and destination buckets are
+     * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
+     * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
+     * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
-     * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
-     * example,
+     * The value must be URL-encoded. </p> </li> </ul> <p>If your source bucket
+     * versioning is enabled, the <code>x-amz-copy-source</code> header by default
+     * identifies the current version of an object to copy. If the current version is a
+     * delete marker, Amazon S3 behaves as if the object was deleted. To copy a
+     * different version, use the <code>versionId</code> query parameter. Specifically,
+     * append <code>?versionId=&lt;version-id&gt;</code> to the value (for example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
      * If you don't specify a version ID, Amazon S3 copies the latest version of the
-     * source object.</p>
+     * source object.</p> <p>If you enable versioning on the destination bucket, Amazon
+     * S3 generates a unique version ID for the copied object. This version ID is
+     * different from the version ID of the source object. Amazon S3 returns the
+     * version ID of the copied object in the <code>x-amz-version-id</code> response
+     * header in the response.</p> <p>If you do not enable versioning or suspend it on
+     * the destination bucket, the version ID that Amazon S3 generates in the
+     * <code>x-amz-version-id</code> response header is always null.</p>  <p>
+     * <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
+     * directory buckets.</p> 
      */
     inline const Aws::String& GetCopySource() const{ return m_copySource; }
 
     /**
-     * <p>Specifies the source object for the copy operation. You specify the value in
-     * one of two formats, depending on whether you want to access the source object
-     * through an <a
+     * <p>Specifies the source object for the copy operation. The source object can be
+     * up to 5 GB. If the source object is an object that was uploaded by using a
+     * multipart upload, the object copy will be a single part object after the source
+     * object is copied to the destination bucket.</p> <p>You specify the value of the
+     * copy source in one of two formats, depending on whether you want to access the
+     * source object through an <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and the key of the source object,
      * separated by a slash (/). For example, to copy the object
-     * <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>,
-     * use <code>awsexamplebucket/reports/january.pdf</code>. The value must be
-     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
-     * specify the Amazon Resource Name (ARN) of the object as accessed through the
-     * access point, in the format
+     * <code>reports/january.pdf</code> from the general purpose bucket
+     * <code>awsexamplebucket</code>, use
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded. To copy the object <code>reports/january.pdf</code> from the
+     * directory bucket <code>awsexamplebucket--use1-az5--x-s3</code>, use
+     * <code>awsexamplebucket--use1-az5--x-s3/reports/january.pdf</code>. The value
+     * must be URL-encoded.</p> </li> <li> <p>For objects accessed through access
+     * points, specify the Amazon Resource Name (ARN) of the object as accessed through
+     * the access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
      * Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
-     * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
-     * using access points only when the source and destination buckets are in the same
-     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
-     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
-     * format
+     * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
+     * operations using Access points only when the source and destination buckets are
+     * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
+     * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
+     * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
-     * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
-     * example,
+     * The value must be URL-encoded. </p> </li> </ul> <p>If your source bucket
+     * versioning is enabled, the <code>x-amz-copy-source</code> header by default
+     * identifies the current version of an object to copy. If the current version is a
+     * delete marker, Amazon S3 behaves as if the object was deleted. To copy a
+     * different version, use the <code>versionId</code> query parameter. Specifically,
+     * append <code>?versionId=&lt;version-id&gt;</code> to the value (for example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
      * If you don't specify a version ID, Amazon S3 copies the latest version of the
-     * source object.</p>
+     * source object.</p> <p>If you enable versioning on the destination bucket, Amazon
+     * S3 generates a unique version ID for the copied object. This version ID is
+     * different from the version ID of the source object. Amazon S3 returns the
+     * version ID of the copied object in the <code>x-amz-version-id</code> response
+     * header in the response.</p> <p>If you do not enable versioning or suspend it on
+     * the destination bucket, the version ID that Amazon S3 generates in the
+     * <code>x-amz-version-id</code> response header is always null.</p>  <p>
+     * <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
+     * directory buckets.</p> 
      */
     inline bool CopySourceHasBeenSet() const { return m_copySourceHasBeenSet; }
 
     /**
-     * <p>Specifies the source object for the copy operation. You specify the value in
-     * one of two formats, depending on whether you want to access the source object
-     * through an <a
+     * <p>Specifies the source object for the copy operation. The source object can be
+     * up to 5 GB. If the source object is an object that was uploaded by using a
+     * multipart upload, the object copy will be a single part object after the source
+     * object is copied to the destination bucket.</p> <p>You specify the value of the
+     * copy source in one of two formats, depending on whether you want to access the
+     * source object through an <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and the key of the source object,
      * separated by a slash (/). For example, to copy the object
-     * <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>,
-     * use <code>awsexamplebucket/reports/january.pdf</code>. The value must be
-     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
-     * specify the Amazon Resource Name (ARN) of the object as accessed through the
-     * access point, in the format
+     * <code>reports/january.pdf</code> from the general purpose bucket
+     * <code>awsexamplebucket</code>, use
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded. To copy the object <code>reports/january.pdf</code> from the
+     * directory bucket <code>awsexamplebucket--use1-az5--x-s3</code>, use
+     * <code>awsexamplebucket--use1-az5--x-s3/reports/january.pdf</code>. The value
+     * must be URL-encoded.</p> </li> <li> <p>For objects accessed through access
+     * points, specify the Amazon Resource Name (ARN) of the object as accessed through
+     * the access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
      * Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
-     * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
-     * using access points only when the source and destination buckets are in the same
-     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
-     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
-     * format
+     * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
+     * operations using Access points only when the source and destination buckets are
+     * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
+     * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
+     * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
-     * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
-     * example,
+     * The value must be URL-encoded. </p> </li> </ul> <p>If your source bucket
+     * versioning is enabled, the <code>x-amz-copy-source</code> header by default
+     * identifies the current version of an object to copy. If the current version is a
+     * delete marker, Amazon S3 behaves as if the object was deleted. To copy a
+     * different version, use the <code>versionId</code> query parameter. Specifically,
+     * append <code>?versionId=&lt;version-id&gt;</code> to the value (for example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
      * If you don't specify a version ID, Amazon S3 copies the latest version of the
-     * source object.</p>
+     * source object.</p> <p>If you enable versioning on the destination bucket, Amazon
+     * S3 generates a unique version ID for the copied object. This version ID is
+     * different from the version ID of the source object. Amazon S3 returns the
+     * version ID of the copied object in the <code>x-amz-version-id</code> response
+     * header in the response.</p> <p>If you do not enable versioning or suspend it on
+     * the destination bucket, the version ID that Amazon S3 generates in the
+     * <code>x-amz-version-id</code> response header is always null.</p>  <p>
+     * <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
+     * directory buckets.</p> 
      */
     inline void SetCopySource(const Aws::String& value) { m_copySourceHasBeenSet = true; m_copySource = value; }
 
     /**
-     * <p>Specifies the source object for the copy operation. You specify the value in
-     * one of two formats, depending on whether you want to access the source object
-     * through an <a
+     * <p>Specifies the source object for the copy operation. The source object can be
+     * up to 5 GB. If the source object is an object that was uploaded by using a
+     * multipart upload, the object copy will be a single part object after the source
+     * object is copied to the destination bucket.</p> <p>You specify the value of the
+     * copy source in one of two formats, depending on whether you want to access the
+     * source object through an <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and the key of the source object,
      * separated by a slash (/). For example, to copy the object
-     * <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>,
-     * use <code>awsexamplebucket/reports/january.pdf</code>. The value must be
-     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
-     * specify the Amazon Resource Name (ARN) of the object as accessed through the
-     * access point, in the format
+     * <code>reports/january.pdf</code> from the general purpose bucket
+     * <code>awsexamplebucket</code>, use
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded. To copy the object <code>reports/january.pdf</code> from the
+     * directory bucket <code>awsexamplebucket--use1-az5--x-s3</code>, use
+     * <code>awsexamplebucket--use1-az5--x-s3/reports/january.pdf</code>. The value
+     * must be URL-encoded.</p> </li> <li> <p>For objects accessed through access
+     * points, specify the Amazon Resource Name (ARN) of the object as accessed through
+     * the access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
      * Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
-     * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
-     * using access points only when the source and destination buckets are in the same
-     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
-     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
-     * format
+     * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
+     * operations using Access points only when the source and destination buckets are
+     * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
+     * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
+     * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
-     * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
-     * example,
+     * The value must be URL-encoded. </p> </li> </ul> <p>If your source bucket
+     * versioning is enabled, the <code>x-amz-copy-source</code> header by default
+     * identifies the current version of an object to copy. If the current version is a
+     * delete marker, Amazon S3 behaves as if the object was deleted. To copy a
+     * different version, use the <code>versionId</code> query parameter. Specifically,
+     * append <code>?versionId=&lt;version-id&gt;</code> to the value (for example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
      * If you don't specify a version ID, Amazon S3 copies the latest version of the
-     * source object.</p>
+     * source object.</p> <p>If you enable versioning on the destination bucket, Amazon
+     * S3 generates a unique version ID for the copied object. This version ID is
+     * different from the version ID of the source object. Amazon S3 returns the
+     * version ID of the copied object in the <code>x-amz-version-id</code> response
+     * header in the response.</p> <p>If you do not enable versioning or suspend it on
+     * the destination bucket, the version ID that Amazon S3 generates in the
+     * <code>x-amz-version-id</code> response header is always null.</p>  <p>
+     * <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
+     * directory buckets.</p> 
      */
     inline void SetCopySource(Aws::String&& value) { m_copySourceHasBeenSet = true; m_copySource = std::move(value); }
 
     /**
-     * <p>Specifies the source object for the copy operation. You specify the value in
-     * one of two formats, depending on whether you want to access the source object
-     * through an <a
+     * <p>Specifies the source object for the copy operation. The source object can be
+     * up to 5 GB. If the source object is an object that was uploaded by using a
+     * multipart upload, the object copy will be a single part object after the source
+     * object is copied to the destination bucket.</p> <p>You specify the value of the
+     * copy source in one of two formats, depending on whether you want to access the
+     * source object through an <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and the key of the source object,
      * separated by a slash (/). For example, to copy the object
-     * <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>,
-     * use <code>awsexamplebucket/reports/january.pdf</code>. The value must be
-     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
-     * specify the Amazon Resource Name (ARN) of the object as accessed through the
-     * access point, in the format
+     * <code>reports/january.pdf</code> from the general purpose bucket
+     * <code>awsexamplebucket</code>, use
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded. To copy the object <code>reports/january.pdf</code> from the
+     * directory bucket <code>awsexamplebucket--use1-az5--x-s3</code>, use
+     * <code>awsexamplebucket--use1-az5--x-s3/reports/january.pdf</code>. The value
+     * must be URL-encoded.</p> </li> <li> <p>For objects accessed through access
+     * points, specify the Amazon Resource Name (ARN) of the object as accessed through
+     * the access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
      * Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
-     * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
-     * using access points only when the source and destination buckets are in the same
-     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
-     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
-     * format
+     * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
+     * operations using Access points only when the source and destination buckets are
+     * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
+     * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
+     * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
-     * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
-     * example,
+     * The value must be URL-encoded. </p> </li> </ul> <p>If your source bucket
+     * versioning is enabled, the <code>x-amz-copy-source</code> header by default
+     * identifies the current version of an object to copy. If the current version is a
+     * delete marker, Amazon S3 behaves as if the object was deleted. To copy a
+     * different version, use the <code>versionId</code> query parameter. Specifically,
+     * append <code>?versionId=&lt;version-id&gt;</code> to the value (for example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
      * If you don't specify a version ID, Amazon S3 copies the latest version of the
-     * source object.</p>
+     * source object.</p> <p>If you enable versioning on the destination bucket, Amazon
+     * S3 generates a unique version ID for the copied object. This version ID is
+     * different from the version ID of the source object. Amazon S3 returns the
+     * version ID of the copied object in the <code>x-amz-version-id</code> response
+     * header in the response.</p> <p>If you do not enable versioning or suspend it on
+     * the destination bucket, the version ID that Amazon S3 generates in the
+     * <code>x-amz-version-id</code> response header is always null.</p>  <p>
+     * <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
+     * directory buckets.</p> 
      */
     inline void SetCopySource(const char* value) { m_copySourceHasBeenSet = true; m_copySource.assign(value); }
 
     /**
-     * <p>Specifies the source object for the copy operation. You specify the value in
-     * one of two formats, depending on whether you want to access the source object
-     * through an <a
+     * <p>Specifies the source object for the copy operation. The source object can be
+     * up to 5 GB. If the source object is an object that was uploaded by using a
+     * multipart upload, the object copy will be a single part object after the source
+     * object is copied to the destination bucket.</p> <p>You specify the value of the
+     * copy source in one of two formats, depending on whether you want to access the
+     * source object through an <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and the key of the source object,
      * separated by a slash (/). For example, to copy the object
-     * <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>,
-     * use <code>awsexamplebucket/reports/january.pdf</code>. The value must be
-     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
-     * specify the Amazon Resource Name (ARN) of the object as accessed through the
-     * access point, in the format
+     * <code>reports/january.pdf</code> from the general purpose bucket
+     * <code>awsexamplebucket</code>, use
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded. To copy the object <code>reports/january.pdf</code> from the
+     * directory bucket <code>awsexamplebucket--use1-az5--x-s3</code>, use
+     * <code>awsexamplebucket--use1-az5--x-s3/reports/january.pdf</code>. The value
+     * must be URL-encoded.</p> </li> <li> <p>For objects accessed through access
+     * points, specify the Amazon Resource Name (ARN) of the object as accessed through
+     * the access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
      * Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
-     * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
-     * using access points only when the source and destination buckets are in the same
-     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
-     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
-     * format
+     * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
+     * operations using Access points only when the source and destination buckets are
+     * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
+     * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
+     * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
-     * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
-     * example,
+     * The value must be URL-encoded. </p> </li> </ul> <p>If your source bucket
+     * versioning is enabled, the <code>x-amz-copy-source</code> header by default
+     * identifies the current version of an object to copy. If the current version is a
+     * delete marker, Amazon S3 behaves as if the object was deleted. To copy a
+     * different version, use the <code>versionId</code> query parameter. Specifically,
+     * append <code>?versionId=&lt;version-id&gt;</code> to the value (for example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
      * If you don't specify a version ID, Amazon S3 copies the latest version of the
-     * source object.</p>
+     * source object.</p> <p>If you enable versioning on the destination bucket, Amazon
+     * S3 generates a unique version ID for the copied object. This version ID is
+     * different from the version ID of the source object. Amazon S3 returns the
+     * version ID of the copied object in the <code>x-amz-version-id</code> response
+     * header in the response.</p> <p>If you do not enable versioning or suspend it on
+     * the destination bucket, the version ID that Amazon S3 generates in the
+     * <code>x-amz-version-id</code> response header is always null.</p>  <p>
+     * <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
+     * directory buckets.</p> 
      */
     inline CopyObjectRequest& WithCopySource(const Aws::String& value) { SetCopySource(value); return *this;}
 
     /**
-     * <p>Specifies the source object for the copy operation. You specify the value in
-     * one of two formats, depending on whether you want to access the source object
-     * through an <a
+     * <p>Specifies the source object for the copy operation. The source object can be
+     * up to 5 GB. If the source object is an object that was uploaded by using a
+     * multipart upload, the object copy will be a single part object after the source
+     * object is copied to the destination bucket.</p> <p>You specify the value of the
+     * copy source in one of two formats, depending on whether you want to access the
+     * source object through an <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and the key of the source object,
      * separated by a slash (/). For example, to copy the object
-     * <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>,
-     * use <code>awsexamplebucket/reports/january.pdf</code>. The value must be
-     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
-     * specify the Amazon Resource Name (ARN) of the object as accessed through the
-     * access point, in the format
+     * <code>reports/january.pdf</code> from the general purpose bucket
+     * <code>awsexamplebucket</code>, use
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded. To copy the object <code>reports/january.pdf</code> from the
+     * directory bucket <code>awsexamplebucket--use1-az5--x-s3</code>, use
+     * <code>awsexamplebucket--use1-az5--x-s3/reports/january.pdf</code>. The value
+     * must be URL-encoded.</p> </li> <li> <p>For objects accessed through access
+     * points, specify the Amazon Resource Name (ARN) of the object as accessed through
+     * the access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
      * Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
-     * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
-     * using access points only when the source and destination buckets are in the same
-     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
-     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
-     * format
+     * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
+     * operations using Access points only when the source and destination buckets are
+     * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
+     * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
+     * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
-     * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
-     * example,
+     * The value must be URL-encoded. </p> </li> </ul> <p>If your source bucket
+     * versioning is enabled, the <code>x-amz-copy-source</code> header by default
+     * identifies the current version of an object to copy. If the current version is a
+     * delete marker, Amazon S3 behaves as if the object was deleted. To copy a
+     * different version, use the <code>versionId</code> query parameter. Specifically,
+     * append <code>?versionId=&lt;version-id&gt;</code> to the value (for example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
      * If you don't specify a version ID, Amazon S3 copies the latest version of the
-     * source object.</p>
+     * source object.</p> <p>If you enable versioning on the destination bucket, Amazon
+     * S3 generates a unique version ID for the copied object. This version ID is
+     * different from the version ID of the source object. Amazon S3 returns the
+     * version ID of the copied object in the <code>x-amz-version-id</code> response
+     * header in the response.</p> <p>If you do not enable versioning or suspend it on
+     * the destination bucket, the version ID that Amazon S3 generates in the
+     * <code>x-amz-version-id</code> response header is always null.</p>  <p>
+     * <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
+     * directory buckets.</p> 
      */
     inline CopyObjectRequest& WithCopySource(Aws::String&& value) { SetCopySource(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the source object for the copy operation. You specify the value in
-     * one of two formats, depending on whether you want to access the source object
-     * through an <a
+     * <p>Specifies the source object for the copy operation. The source object can be
+     * up to 5 GB. If the source object is an object that was uploaded by using a
+     * multipart upload, the object copy will be a single part object after the source
+     * object is copied to the destination bucket.</p> <p>You specify the value of the
+     * copy source in one of two formats, depending on whether you want to access the
+     * source object through an <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and the key of the source object,
      * separated by a slash (/). For example, to copy the object
-     * <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>,
-     * use <code>awsexamplebucket/reports/january.pdf</code>. The value must be
-     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
-     * specify the Amazon Resource Name (ARN) of the object as accessed through the
-     * access point, in the format
+     * <code>reports/january.pdf</code> from the general purpose bucket
+     * <code>awsexamplebucket</code>, use
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded. To copy the object <code>reports/january.pdf</code> from the
+     * directory bucket <code>awsexamplebucket--use1-az5--x-s3</code>, use
+     * <code>awsexamplebucket--use1-az5--x-s3/reports/january.pdf</code>. The value
+     * must be URL-encoded.</p> </li> <li> <p>For objects accessed through access
+     * points, specify the Amazon Resource Name (ARN) of the object as accessed through
+     * the access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
      * Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
-     * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
-     * using access points only when the source and destination buckets are in the same
-     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
-     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
-     * format
+     * The value must be URL encoded.</p>  <ul> <li> <p>Amazon S3 supports copy
+     * operations using Access points only when the source and destination buckets are
+     * in the same Amazon Web Services Region.</p> </li> <li> <p>Access points are not
+     * supported by directory buckets.</p> </li> </ul>  <p>Alternatively, for
+     * objects accessed through Amazon S3 on Outposts, specify the ARN of the object as
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
-     * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
-     * example,
+     * The value must be URL-encoded. </p> </li> </ul> <p>If your source bucket
+     * versioning is enabled, the <code>x-amz-copy-source</code> header by default
+     * identifies the current version of an object to copy. If the current version is a
+     * delete marker, Amazon S3 behaves as if the object was deleted. To copy a
+     * different version, use the <code>versionId</code> query parameter. Specifically,
+     * append <code>?versionId=&lt;version-id&gt;</code> to the value (for example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
      * If you don't specify a version ID, Amazon S3 copies the latest version of the
-     * source object.</p>
+     * source object.</p> <p>If you enable versioning on the destination bucket, Amazon
+     * S3 generates a unique version ID for the copied object. This version ID is
+     * different from the version ID of the source object. Amazon S3 returns the
+     * version ID of the copied object in the <code>x-amz-version-id</code> response
+     * header in the response.</p> <p>If you do not enable versioning or suspend it on
+     * the destination bucket, the version ID that Amazon S3 generates in the
+     * <code>x-amz-version-id</code> response header is always null.</p>  <p>
+     * <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
+     * directory buckets.</p> 
      */
     inline CopyObjectRequest& WithCopySource(const char* value) { SetCopySource(value); return *this;}
 
 
     /**
-     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p> <p>
+     * If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline const Aws::String& GetCopySourceIfMatch() const{ return m_copySourceIfMatch; }
 
     /**
-     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p> <p>
+     * If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline bool CopySourceIfMatchHasBeenSet() const { return m_copySourceIfMatchHasBeenSet; }
 
     /**
-     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p> <p>
+     * If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline void SetCopySourceIfMatch(const Aws::String& value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch = value; }
 
     /**
-     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p> <p>
+     * If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline void SetCopySourceIfMatch(Aws::String&& value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch = std::move(value); }
 
     /**
-     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p> <p>
+     * If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline void SetCopySourceIfMatch(const char* value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch.assign(value); }
 
     /**
-     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p> <p>
+     * If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfMatch(const Aws::String& value) { SetCopySourceIfMatch(value); return *this;}
 
     /**
-     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p> <p>
+     * If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfMatch(Aws::String&& value) { SetCopySourceIfMatch(std::move(value)); return *this;}
 
     /**
-     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p> <p>
+     * If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfMatch(const char* value) { SetCopySourceIfMatch(value); return *this;}
 
 
     /**
-     * <p>Copies the object if it has been modified since the specified time.</p>
+     * <p>Copies the object if it has been modified since the specified time.</p> <p>If
+     * both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetCopySourceIfModifiedSince() const{ return m_copySourceIfModifiedSince; }
 
     /**
-     * <p>Copies the object if it has been modified since the specified time.</p>
+     * <p>Copies the object if it has been modified since the specified time.</p> <p>If
+     * both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline bool CopySourceIfModifiedSinceHasBeenSet() const { return m_copySourceIfModifiedSinceHasBeenSet; }
 
     /**
-     * <p>Copies the object if it has been modified since the specified time.</p>
+     * <p>Copies the object if it has been modified since the specified time.</p> <p>If
+     * both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline void SetCopySourceIfModifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
 
     /**
-     * <p>Copies the object if it has been modified since the specified time.</p>
+     * <p>Copies the object if it has been modified since the specified time.</p> <p>If
+     * both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline void SetCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = std::move(value); }
 
     /**
-     * <p>Copies the object if it has been modified since the specified time.</p>
+     * <p>Copies the object if it has been modified since the specified time.</p> <p>If
+     * both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfModifiedSince(const Aws::Utils::DateTime& value) { SetCopySourceIfModifiedSince(value); return *this;}
 
     /**
-     * <p>Copies the object if it has been modified since the specified time.</p>
+     * <p>Copies the object if it has been modified since the specified time.</p> <p>If
+     * both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfModifiedSince(std::move(value)); return *this;}
 
 
     /**
      * <p>Copies the object if its entity tag (ETag) is different than the specified
-     * ETag.</p>
+     * ETag.</p> <p>If both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline const Aws::String& GetCopySourceIfNoneMatch() const{ return m_copySourceIfNoneMatch; }
 
     /**
      * <p>Copies the object if its entity tag (ETag) is different than the specified
-     * ETag.</p>
+     * ETag.</p> <p>If both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline bool CopySourceIfNoneMatchHasBeenSet() const { return m_copySourceIfNoneMatchHasBeenSet; }
 
     /**
      * <p>Copies the object if its entity tag (ETag) is different than the specified
-     * ETag.</p>
+     * ETag.</p> <p>If both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline void SetCopySourceIfNoneMatch(const Aws::String& value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch = value; }
 
     /**
      * <p>Copies the object if its entity tag (ETag) is different than the specified
-     * ETag.</p>
+     * ETag.</p> <p>If both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline void SetCopySourceIfNoneMatch(Aws::String&& value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch = std::move(value); }
 
     /**
      * <p>Copies the object if its entity tag (ETag) is different than the specified
-     * ETag.</p>
+     * ETag.</p> <p>If both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline void SetCopySourceIfNoneMatch(const char* value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch.assign(value); }
 
     /**
      * <p>Copies the object if its entity tag (ETag) is different than the specified
-     * ETag.</p>
+     * ETag.</p> <p>If both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfNoneMatch(const Aws::String& value) { SetCopySourceIfNoneMatch(value); return *this;}
 
     /**
      * <p>Copies the object if its entity tag (ETag) is different than the specified
-     * ETag.</p>
+     * ETag.</p> <p>If both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfNoneMatch(Aws::String&& value) { SetCopySourceIfNoneMatch(std::move(value)); return *this;}
 
     /**
      * <p>Copies the object if its entity tag (ETag) is different than the specified
-     * ETag.</p>
+     * ETag.</p> <p>If both the <code>x-amz-copy-source-if-none-match</code> and
+     * <code>x-amz-copy-source-if-modified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns the <code>412 Precondition
+     * Failed</code> response code:</p> <ul> <li> <p>
+     * <code>x-amz-copy-source-if-none-match</code> condition evaluates to false</p>
+     * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
+     * evaluates to true</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfNoneMatch(const char* value) { SetCopySourceIfNoneMatch(value); return *this;}
 
 
     /**
      * <p>Copies the object if it hasn't been modified since the specified time.</p>
+     * <p> If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetCopySourceIfUnmodifiedSince() const{ return m_copySourceIfUnmodifiedSince; }
 
     /**
      * <p>Copies the object if it hasn't been modified since the specified time.</p>
+     * <p> If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline bool CopySourceIfUnmodifiedSinceHasBeenSet() const { return m_copySourceIfUnmodifiedSinceHasBeenSet; }
 
     /**
      * <p>Copies the object if it hasn't been modified since the specified time.</p>
+     * <p> If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline void SetCopySourceIfUnmodifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
 
     /**
      * <p>Copies the object if it hasn't been modified since the specified time.</p>
+     * <p> If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline void SetCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = std::move(value); }
 
     /**
      * <p>Copies the object if it hasn't been modified since the specified time.</p>
+     * <p> If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfUnmodifiedSince(const Aws::Utils::DateTime& value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
 
     /**
      * <p>Copies the object if it hasn't been modified since the specified time.</p>
+     * <p> If both the <code>x-amz-copy-source-if-match</code> and
+     * <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the
+     * request and evaluate as follows, Amazon S3 returns <code>200 OK</code> and
+     * copies the data:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code>
+     * condition evaluates to true</p> </li> <li> <p>
+     * <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to
+     * false</p> </li> </ul>
      */
     inline CopyObjectRequest& WithCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfUnmodifiedSince(std::move(value)); return *this;}
 
@@ -1014,196 +1664,260 @@ namespace Model
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+     * object.</p>  <ul> <li> <p>This functionality is not supported for
+     * directory buckets.</p> </li> <li> <p>This functionality is not supported for
+     * Amazon S3 on Outposts.</p> </li> </ul> 
      */
     inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+     * object.</p>  <ul> <li> <p>This functionality is not supported for
+     * directory buckets.</p> </li> <li> <p>This functionality is not supported for
+     * Amazon S3 on Outposts.</p> </li> </ul> 
      */
     inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+     * object.</p>  <ul> <li> <p>This functionality is not supported for
+     * directory buckets.</p> </li> <li> <p>This functionality is not supported for
+     * Amazon S3 on Outposts.</p> </li> </ul> 
      */
     inline void SetGrantFullControl(const Aws::String& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+     * object.</p>  <ul> <li> <p>This functionality is not supported for
+     * directory buckets.</p> </li> <li> <p>This functionality is not supported for
+     * Amazon S3 on Outposts.</p> </li> </ul> 
      */
     inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = std::move(value); }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+     * object.</p>  <ul> <li> <p>This functionality is not supported for
+     * directory buckets.</p> </li> <li> <p>This functionality is not supported for
+     * Amazon S3 on Outposts.</p> </li> </ul> 
      */
     inline void SetGrantFullControl(const char* value) { m_grantFullControlHasBeenSet = true; m_grantFullControl.assign(value); }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+     * object.</p>  <ul> <li> <p>This functionality is not supported for
+     * directory buckets.</p> </li> <li> <p>This functionality is not supported for
+     * Amazon S3 on Outposts.</p> </li> </ul> 
      */
     inline CopyObjectRequest& WithGrantFullControl(const Aws::String& value) { SetGrantFullControl(value); return *this;}
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+     * object.</p>  <ul> <li> <p>This functionality is not supported for
+     * directory buckets.</p> </li> <li> <p>This functionality is not supported for
+     * Amazon S3 on Outposts.</p> </li> </ul> 
      */
     inline CopyObjectRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(std::move(value)); return *this;}
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+     * object.</p>  <ul> <li> <p>This functionality is not supported for
+     * directory buckets.</p> </li> <li> <p>This functionality is not supported for
+     * Amazon S3 on Outposts.</p> </li> </ul> 
      */
     inline CopyObjectRequest& WithGrantFullControl(const char* value) { SetGrantFullControl(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p>  <ul> <li>
+     * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+     * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline const Aws::String& GetGrantRead() const{ return m_grantRead; }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p>  <ul> <li>
+     * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+     * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline bool GrantReadHasBeenSet() const { return m_grantReadHasBeenSet; }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p>  <ul> <li>
+     * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+     * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p>  <ul> <li>
+     * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+     * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = std::move(value); }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p>  <ul> <li>
+     * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+     * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline void SetGrantRead(const char* value) { m_grantReadHasBeenSet = true; m_grantRead.assign(value); }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p>  <ul> <li>
+     * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+     * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline CopyObjectRequest& WithGrantRead(const Aws::String& value) { SetGrantRead(value); return *this;}
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p>  <ul> <li>
+     * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+     * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline CopyObjectRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p>  <ul> <li>
+     * <p>This functionality is not supported for directory buckets.</p> </li> <li>
+     * <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline CopyObjectRequest& WithGrantRead(const char* value) { SetGrantRead(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline void SetGrantReadACP(const Aws::String& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = std::move(value); }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline void SetGrantReadACP(const char* value) { m_grantReadACPHasBeenSet = true; m_grantReadACP.assign(value); }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline CopyObjectRequest& WithGrantReadACP(const Aws::String& value) { SetGrantReadACP(value); return *this;}
 
     /**
-     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline CopyObjectRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
-     * Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to read the object ACL.</p>  <ul> <li> <p>This
+     * functionality is not supported for directory buckets.</p> </li> <li> <p>This
+     * functionality is not supported for Amazon S3 on Outposts.</p> </li> </ul>
+     * 
      */
     inline CopyObjectRequest& WithGrantReadACP(const char* value) { SetGrantReadACP(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
+     * <li> <p>This functionality is not supported for directory buckets.</p> </li>
+     * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline const Aws::String& GetGrantWriteACP() const{ return m_grantWriteACP; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
+     * <li> <p>This functionality is not supported for directory buckets.</p> </li>
+     * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline bool GrantWriteACPHasBeenSet() const { return m_grantWriteACPHasBeenSet; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
+     * <li> <p>This functionality is not supported for directory buckets.</p> </li>
+     * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline void SetGrantWriteACP(const Aws::String& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
+     * <li> <p>This functionality is not supported for directory buckets.</p> </li>
+     * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = std::move(value); }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
+     * <li> <p>This functionality is not supported for directory buckets.</p> </li>
+     * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline void SetGrantWriteACP(const char* value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP.assign(value); }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
+     * <li> <p>This functionality is not supported for directory buckets.</p> </li>
+     * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline CopyObjectRequest& WithGrantWriteACP(const Aws::String& value) { SetGrantWriteACP(value); return *this;}
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
+     * <li> <p>This functionality is not supported for directory buckets.</p> </li>
+     * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline CopyObjectRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
-     * is not supported by Amazon S3 on Outposts.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p>  <ul>
+     * <li> <p>This functionality is not supported for directory buckets.</p> </li>
+     * <li> <p>This functionality is not supported for Amazon S3 on Outposts.</p> </li>
+     * </ul> 
      */
     inline CopyObjectRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
 
@@ -1317,74 +2031,308 @@ namespace Model
 
     /**
      * <p>Specifies whether the metadata is copied from the source object or replaced
-     * with metadata provided in the request.</p>
+     * with metadata that's provided in the request. When copying an object, you can
+     * preserve all metadata (the default) or specify new metadata. If this header
+     * isn’t specified, <code>COPY</code> is the default behavior. </p> <p> <b>General
+     * purpose bucket</b> - For general purpose buckets, when you grant permissions,
+     * you can use the <code>s3:x-amz-metadata-directive</code> condition key to
+     * enforce certain metadata behavior when objects are uploaded. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Amazon
+     * S3 condition key examples</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>
+     * <code>x-amz-website-redirect-location</code> is unique to each object and is not
+     * copied when using the <code>x-amz-metadata-directive</code> header. To copy the
+     * value, you must specify <code>x-amz-website-redirect-location</code> in the
+     * request header.</p> 
      */
     inline const MetadataDirective& GetMetadataDirective() const{ return m_metadataDirective; }
 
     /**
      * <p>Specifies whether the metadata is copied from the source object or replaced
-     * with metadata provided in the request.</p>
+     * with metadata that's provided in the request. When copying an object, you can
+     * preserve all metadata (the default) or specify new metadata. If this header
+     * isn’t specified, <code>COPY</code> is the default behavior. </p> <p> <b>General
+     * purpose bucket</b> - For general purpose buckets, when you grant permissions,
+     * you can use the <code>s3:x-amz-metadata-directive</code> condition key to
+     * enforce certain metadata behavior when objects are uploaded. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Amazon
+     * S3 condition key examples</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>
+     * <code>x-amz-website-redirect-location</code> is unique to each object and is not
+     * copied when using the <code>x-amz-metadata-directive</code> header. To copy the
+     * value, you must specify <code>x-amz-website-redirect-location</code> in the
+     * request header.</p> 
      */
     inline bool MetadataDirectiveHasBeenSet() const { return m_metadataDirectiveHasBeenSet; }
 
     /**
      * <p>Specifies whether the metadata is copied from the source object or replaced
-     * with metadata provided in the request.</p>
+     * with metadata that's provided in the request. When copying an object, you can
+     * preserve all metadata (the default) or specify new metadata. If this header
+     * isn’t specified, <code>COPY</code> is the default behavior. </p> <p> <b>General
+     * purpose bucket</b> - For general purpose buckets, when you grant permissions,
+     * you can use the <code>s3:x-amz-metadata-directive</code> condition key to
+     * enforce certain metadata behavior when objects are uploaded. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Amazon
+     * S3 condition key examples</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>
+     * <code>x-amz-website-redirect-location</code> is unique to each object and is not
+     * copied when using the <code>x-amz-metadata-directive</code> header. To copy the
+     * value, you must specify <code>x-amz-website-redirect-location</code> in the
+     * request header.</p> 
      */
     inline void SetMetadataDirective(const MetadataDirective& value) { m_metadataDirectiveHasBeenSet = true; m_metadataDirective = value; }
 
     /**
      * <p>Specifies whether the metadata is copied from the source object or replaced
-     * with metadata provided in the request.</p>
+     * with metadata that's provided in the request. When copying an object, you can
+     * preserve all metadata (the default) or specify new metadata. If this header
+     * isn’t specified, <code>COPY</code> is the default behavior. </p> <p> <b>General
+     * purpose bucket</b> - For general purpose buckets, when you grant permissions,
+     * you can use the <code>s3:x-amz-metadata-directive</code> condition key to
+     * enforce certain metadata behavior when objects are uploaded. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Amazon
+     * S3 condition key examples</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>
+     * <code>x-amz-website-redirect-location</code> is unique to each object and is not
+     * copied when using the <code>x-amz-metadata-directive</code> header. To copy the
+     * value, you must specify <code>x-amz-website-redirect-location</code> in the
+     * request header.</p> 
      */
     inline void SetMetadataDirective(MetadataDirective&& value) { m_metadataDirectiveHasBeenSet = true; m_metadataDirective = std::move(value); }
 
     /**
      * <p>Specifies whether the metadata is copied from the source object or replaced
-     * with metadata provided in the request.</p>
+     * with metadata that's provided in the request. When copying an object, you can
+     * preserve all metadata (the default) or specify new metadata. If this header
+     * isn’t specified, <code>COPY</code> is the default behavior. </p> <p> <b>General
+     * purpose bucket</b> - For general purpose buckets, when you grant permissions,
+     * you can use the <code>s3:x-amz-metadata-directive</code> condition key to
+     * enforce certain metadata behavior when objects are uploaded. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Amazon
+     * S3 condition key examples</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>
+     * <code>x-amz-website-redirect-location</code> is unique to each object and is not
+     * copied when using the <code>x-amz-metadata-directive</code> header. To copy the
+     * value, you must specify <code>x-amz-website-redirect-location</code> in the
+     * request header.</p> 
      */
     inline CopyObjectRequest& WithMetadataDirective(const MetadataDirective& value) { SetMetadataDirective(value); return *this;}
 
     /**
      * <p>Specifies whether the metadata is copied from the source object or replaced
-     * with metadata provided in the request.</p>
+     * with metadata that's provided in the request. When copying an object, you can
+     * preserve all metadata (the default) or specify new metadata. If this header
+     * isn’t specified, <code>COPY</code> is the default behavior. </p> <p> <b>General
+     * purpose bucket</b> - For general purpose buckets, when you grant permissions,
+     * you can use the <code>s3:x-amz-metadata-directive</code> condition key to
+     * enforce certain metadata behavior when objects are uploaded. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Amazon
+     * S3 condition key examples</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>
+     * <code>x-amz-website-redirect-location</code> is unique to each object and is not
+     * copied when using the <code>x-amz-metadata-directive</code> header. To copy the
+     * value, you must specify <code>x-amz-website-redirect-location</code> in the
+     * request header.</p> 
      */
     inline CopyObjectRequest& WithMetadataDirective(MetadataDirective&& value) { SetMetadataDirective(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.</p>
+     * <p>Specifies whether the object tag-set is copied from the source object or
+     * replaced with the tag-set that's provided in the request.</p> <p>The default
+     * value is <code>COPY</code>.</p>  <p> <b>Directory buckets</b> - For
+     * directory buckets in a <code>CopyObject</code> operation, only the empty tag-set
+     * is supported. Any requests that attempt to write non-empty tags into directory
+     * buckets will receive a <code>501 Not Implemented</code> status code. When the
+     * destination bucket is a directory bucket, you will receive a <code>501 Not
+     * Implemented</code> response in any of the following situations:</p> <ul> <li>
+     * <p>When you attempt to <code>COPY</code> the tag-set from an S3 source object
+     * that has non-empty tags.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a source object and set a non-empty value to
+     * <code>x-amz-tagging</code>.</p> </li> <li> <p>When you don't set the
+     * <code>x-amz-tagging-directive</code> header and the source object has non-empty
+     * tags. This is because the default value of <code>x-amz-tagging-directive</code>
+     * is <code>COPY</code>.</p> </li> </ul> <p>Because only the empty tag-set is
+     * supported for directory buckets in a <code>CopyObject</code> operation, the
+     * following situations are allowed:</p> <ul> <li> <p>When you attempt to
+     * <code>COPY</code> the tag-set from a directory bucket source object that has no
+     * tags to a general purpose bucket. It copies an empty tag-set to the destination
+     * object.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set
+     * of a directory bucket source object and set the <code>x-amz-tagging</code> value
+     * of the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a general purpose bucket source
+     * object that has non-empty tags and set the <code>x-amz-tagging</code> value of
+     * the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a directory bucket source object
+     * and don't set the <code>x-amz-tagging</code> value of the directory bucket
+     * destination object. This is because the default value of
+     * <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline const TaggingDirective& GetTaggingDirective() const{ return m_taggingDirective; }
 
     /**
-     * <p>Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.</p>
+     * <p>Specifies whether the object tag-set is copied from the source object or
+     * replaced with the tag-set that's provided in the request.</p> <p>The default
+     * value is <code>COPY</code>.</p>  <p> <b>Directory buckets</b> - For
+     * directory buckets in a <code>CopyObject</code> operation, only the empty tag-set
+     * is supported. Any requests that attempt to write non-empty tags into directory
+     * buckets will receive a <code>501 Not Implemented</code> status code. When the
+     * destination bucket is a directory bucket, you will receive a <code>501 Not
+     * Implemented</code> response in any of the following situations:</p> <ul> <li>
+     * <p>When you attempt to <code>COPY</code> the tag-set from an S3 source object
+     * that has non-empty tags.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a source object and set a non-empty value to
+     * <code>x-amz-tagging</code>.</p> </li> <li> <p>When you don't set the
+     * <code>x-amz-tagging-directive</code> header and the source object has non-empty
+     * tags. This is because the default value of <code>x-amz-tagging-directive</code>
+     * is <code>COPY</code>.</p> </li> </ul> <p>Because only the empty tag-set is
+     * supported for directory buckets in a <code>CopyObject</code> operation, the
+     * following situations are allowed:</p> <ul> <li> <p>When you attempt to
+     * <code>COPY</code> the tag-set from a directory bucket source object that has no
+     * tags to a general purpose bucket. It copies an empty tag-set to the destination
+     * object.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set
+     * of a directory bucket source object and set the <code>x-amz-tagging</code> value
+     * of the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a general purpose bucket source
+     * object that has non-empty tags and set the <code>x-amz-tagging</code> value of
+     * the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a directory bucket source object
+     * and don't set the <code>x-amz-tagging</code> value of the directory bucket
+     * destination object. This is because the default value of
+     * <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline bool TaggingDirectiveHasBeenSet() const { return m_taggingDirectiveHasBeenSet; }
 
     /**
-     * <p>Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.</p>
+     * <p>Specifies whether the object tag-set is copied from the source object or
+     * replaced with the tag-set that's provided in the request.</p> <p>The default
+     * value is <code>COPY</code>.</p>  <p> <b>Directory buckets</b> - For
+     * directory buckets in a <code>CopyObject</code> operation, only the empty tag-set
+     * is supported. Any requests that attempt to write non-empty tags into directory
+     * buckets will receive a <code>501 Not Implemented</code> status code. When the
+     * destination bucket is a directory bucket, you will receive a <code>501 Not
+     * Implemented</code> response in any of the following situations:</p> <ul> <li>
+     * <p>When you attempt to <code>COPY</code> the tag-set from an S3 source object
+     * that has non-empty tags.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a source object and set a non-empty value to
+     * <code>x-amz-tagging</code>.</p> </li> <li> <p>When you don't set the
+     * <code>x-amz-tagging-directive</code> header and the source object has non-empty
+     * tags. This is because the default value of <code>x-amz-tagging-directive</code>
+     * is <code>COPY</code>.</p> </li> </ul> <p>Because only the empty tag-set is
+     * supported for directory buckets in a <code>CopyObject</code> operation, the
+     * following situations are allowed:</p> <ul> <li> <p>When you attempt to
+     * <code>COPY</code> the tag-set from a directory bucket source object that has no
+     * tags to a general purpose bucket. It copies an empty tag-set to the destination
+     * object.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set
+     * of a directory bucket source object and set the <code>x-amz-tagging</code> value
+     * of the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a general purpose bucket source
+     * object that has non-empty tags and set the <code>x-amz-tagging</code> value of
+     * the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a directory bucket source object
+     * and don't set the <code>x-amz-tagging</code> value of the directory bucket
+     * destination object. This is because the default value of
+     * <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline void SetTaggingDirective(const TaggingDirective& value) { m_taggingDirectiveHasBeenSet = true; m_taggingDirective = value; }
 
     /**
-     * <p>Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.</p>
+     * <p>Specifies whether the object tag-set is copied from the source object or
+     * replaced with the tag-set that's provided in the request.</p> <p>The default
+     * value is <code>COPY</code>.</p>  <p> <b>Directory buckets</b> - For
+     * directory buckets in a <code>CopyObject</code> operation, only the empty tag-set
+     * is supported. Any requests that attempt to write non-empty tags into directory
+     * buckets will receive a <code>501 Not Implemented</code> status code. When the
+     * destination bucket is a directory bucket, you will receive a <code>501 Not
+     * Implemented</code> response in any of the following situations:</p> <ul> <li>
+     * <p>When you attempt to <code>COPY</code> the tag-set from an S3 source object
+     * that has non-empty tags.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a source object and set a non-empty value to
+     * <code>x-amz-tagging</code>.</p> </li> <li> <p>When you don't set the
+     * <code>x-amz-tagging-directive</code> header and the source object has non-empty
+     * tags. This is because the default value of <code>x-amz-tagging-directive</code>
+     * is <code>COPY</code>.</p> </li> </ul> <p>Because only the empty tag-set is
+     * supported for directory buckets in a <code>CopyObject</code> operation, the
+     * following situations are allowed:</p> <ul> <li> <p>When you attempt to
+     * <code>COPY</code> the tag-set from a directory bucket source object that has no
+     * tags to a general purpose bucket. It copies an empty tag-set to the destination
+     * object.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set
+     * of a directory bucket source object and set the <code>x-amz-tagging</code> value
+     * of the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a general purpose bucket source
+     * object that has non-empty tags and set the <code>x-amz-tagging</code> value of
+     * the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a directory bucket source object
+     * and don't set the <code>x-amz-tagging</code> value of the directory bucket
+     * destination object. This is because the default value of
+     * <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline void SetTaggingDirective(TaggingDirective&& value) { m_taggingDirectiveHasBeenSet = true; m_taggingDirective = std::move(value); }
 
     /**
-     * <p>Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.</p>
+     * <p>Specifies whether the object tag-set is copied from the source object or
+     * replaced with the tag-set that's provided in the request.</p> <p>The default
+     * value is <code>COPY</code>.</p>  <p> <b>Directory buckets</b> - For
+     * directory buckets in a <code>CopyObject</code> operation, only the empty tag-set
+     * is supported. Any requests that attempt to write non-empty tags into directory
+     * buckets will receive a <code>501 Not Implemented</code> status code. When the
+     * destination bucket is a directory bucket, you will receive a <code>501 Not
+     * Implemented</code> response in any of the following situations:</p> <ul> <li>
+     * <p>When you attempt to <code>COPY</code> the tag-set from an S3 source object
+     * that has non-empty tags.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a source object and set a non-empty value to
+     * <code>x-amz-tagging</code>.</p> </li> <li> <p>When you don't set the
+     * <code>x-amz-tagging-directive</code> header and the source object has non-empty
+     * tags. This is because the default value of <code>x-amz-tagging-directive</code>
+     * is <code>COPY</code>.</p> </li> </ul> <p>Because only the empty tag-set is
+     * supported for directory buckets in a <code>CopyObject</code> operation, the
+     * following situations are allowed:</p> <ul> <li> <p>When you attempt to
+     * <code>COPY</code> the tag-set from a directory bucket source object that has no
+     * tags to a general purpose bucket. It copies an empty tag-set to the destination
+     * object.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set
+     * of a directory bucket source object and set the <code>x-amz-tagging</code> value
+     * of the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a general purpose bucket source
+     * object that has non-empty tags and set the <code>x-amz-tagging</code> value of
+     * the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a directory bucket source object
+     * and don't set the <code>x-amz-tagging</code> value of the directory bucket
+     * destination object. This is because the default value of
+     * <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline CopyObjectRequest& WithTaggingDirective(const TaggingDirective& value) { SetTaggingDirective(value); return *this;}
 
     /**
-     * <p>Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.</p>
+     * <p>Specifies whether the object tag-set is copied from the source object or
+     * replaced with the tag-set that's provided in the request.</p> <p>The default
+     * value is <code>COPY</code>.</p>  <p> <b>Directory buckets</b> - For
+     * directory buckets in a <code>CopyObject</code> operation, only the empty tag-set
+     * is supported. Any requests that attempt to write non-empty tags into directory
+     * buckets will receive a <code>501 Not Implemented</code> status code. When the
+     * destination bucket is a directory bucket, you will receive a <code>501 Not
+     * Implemented</code> response in any of the following situations:</p> <ul> <li>
+     * <p>When you attempt to <code>COPY</code> the tag-set from an S3 source object
+     * that has non-empty tags.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a source object and set a non-empty value to
+     * <code>x-amz-tagging</code>.</p> </li> <li> <p>When you don't set the
+     * <code>x-amz-tagging-directive</code> header and the source object has non-empty
+     * tags. This is because the default value of <code>x-amz-tagging-directive</code>
+     * is <code>COPY</code>.</p> </li> </ul> <p>Because only the empty tag-set is
+     * supported for directory buckets in a <code>CopyObject</code> operation, the
+     * following situations are allowed:</p> <ul> <li> <p>When you attempt to
+     * <code>COPY</code> the tag-set from a directory bucket source object that has no
+     * tags to a general purpose bucket. It copies an empty tag-set to the destination
+     * object.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set
+     * of a directory bucket source object and set the <code>x-amz-tagging</code> value
+     * of the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a general purpose bucket source
+     * object that has non-empty tags and set the <code>x-amz-tagging</code> value of
+     * the directory bucket destination object to empty.</p> </li> <li> <p>When you
+     * attempt to <code>REPLACE</code> the tag-set of a directory bucket source object
+     * and don't set the <code>x-amz-tagging</code> value of the directory bucket
+     * destination object. This is because the default value of
+     * <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline CopyObjectRequest& WithTaggingDirective(TaggingDirective&& value) { SetTaggingDirective(std::move(value)); return *this;}
 
@@ -1392,239 +2340,589 @@ namespace Model
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>).</p>
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * destination object and will receive a <code>400 Bad Request</code> response.
+     * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
+     * S3 bucket. When copying an object, if you don't specify encryption information
+     * in your copy request, the encryption setting of the target object is set to the
+     * default encryption configuration of the destination bucket. By default, all
+     * buckets have a base level of encryption configuration that uses server-side
+     * encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a
+     * default encryption configuration that uses server-side encryption with Key
+     * Management Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with
+     * Amazon Web Services KMS keys (DSSE-KMS), or server-side encryption with
+     * customer-provided encryption keys (SSE-C), Amazon S3 uses the corresponding KMS
+     * key, or a customer-provided key to encrypt the target object copy.</p> <p>When
+     * you perform a <code>CopyObject</code> operation, if you want to use a different
+     * type of encryption setting for the target object, you can specify appropriate
+     * encryption-related headers to encrypt the target object with an Amazon S3
+     * managed key, a KMS key, or a customer-provided key. If the encryption setting in
+     * your request is different from the default encryption configuration of the
+     * destination bucket, the encryption setting in your request takes precedence.
+     * </p> <p>With server-side encryption, Amazon S3 encrypts your data as it writes
+     * your data to disks in its data centers and decrypts the data when you access it.
+     * For more information about server-side encryption, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+     * Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>).</p>
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * destination object and will receive a <code>400 Bad Request</code> response.
+     * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
+     * S3 bucket. When copying an object, if you don't specify encryption information
+     * in your copy request, the encryption setting of the target object is set to the
+     * default encryption configuration of the destination bucket. By default, all
+     * buckets have a base level of encryption configuration that uses server-side
+     * encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a
+     * default encryption configuration that uses server-side encryption with Key
+     * Management Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with
+     * Amazon Web Services KMS keys (DSSE-KMS), or server-side encryption with
+     * customer-provided encryption keys (SSE-C), Amazon S3 uses the corresponding KMS
+     * key, or a customer-provided key to encrypt the target object copy.</p> <p>When
+     * you perform a <code>CopyObject</code> operation, if you want to use a different
+     * type of encryption setting for the target object, you can specify appropriate
+     * encryption-related headers to encrypt the target object with an Amazon S3
+     * managed key, a KMS key, or a customer-provided key. If the encryption setting in
+     * your request is different from the default encryption configuration of the
+     * destination bucket, the encryption setting in your request takes precedence.
+     * </p> <p>With server-side encryption, Amazon S3 encrypts your data as it writes
+     * your data to disks in its data centers and decrypts the data when you access it.
+     * For more information about server-side encryption, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+     * Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>).</p>
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * destination object and will receive a <code>400 Bad Request</code> response.
+     * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
+     * S3 bucket. When copying an object, if you don't specify encryption information
+     * in your copy request, the encryption setting of the target object is set to the
+     * default encryption configuration of the destination bucket. By default, all
+     * buckets have a base level of encryption configuration that uses server-side
+     * encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a
+     * default encryption configuration that uses server-side encryption with Key
+     * Management Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with
+     * Amazon Web Services KMS keys (DSSE-KMS), or server-side encryption with
+     * customer-provided encryption keys (SSE-C), Amazon S3 uses the corresponding KMS
+     * key, or a customer-provided key to encrypt the target object copy.</p> <p>When
+     * you perform a <code>CopyObject</code> operation, if you want to use a different
+     * type of encryption setting for the target object, you can specify appropriate
+     * encryption-related headers to encrypt the target object with an Amazon S3
+     * managed key, a KMS key, or a customer-provided key. If the encryption setting in
+     * your request is different from the default encryption configuration of the
+     * destination bucket, the encryption setting in your request takes precedence.
+     * </p> <p>With server-side encryption, Amazon S3 encrypts your data as it writes
+     * your data to disks in its data centers and decrypts the data when you access it.
+     * For more information about server-side encryption, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+     * Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>).</p>
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * destination object and will receive a <code>400 Bad Request</code> response.
+     * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
+     * S3 bucket. When copying an object, if you don't specify encryption information
+     * in your copy request, the encryption setting of the target object is set to the
+     * default encryption configuration of the destination bucket. By default, all
+     * buckets have a base level of encryption configuration that uses server-side
+     * encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a
+     * default encryption configuration that uses server-side encryption with Key
+     * Management Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with
+     * Amazon Web Services KMS keys (DSSE-KMS), or server-side encryption with
+     * customer-provided encryption keys (SSE-C), Amazon S3 uses the corresponding KMS
+     * key, or a customer-provided key to encrypt the target object copy.</p> <p>When
+     * you perform a <code>CopyObject</code> operation, if you want to use a different
+     * type of encryption setting for the target object, you can specify appropriate
+     * encryption-related headers to encrypt the target object with an Amazon S3
+     * managed key, a KMS key, or a customer-provided key. If the encryption setting in
+     * your request is different from the default encryption configuration of the
+     * destination bucket, the encryption setting in your request takes precedence.
+     * </p> <p>With server-side encryption, Amazon S3 encrypts your data as it writes
+     * your data to disks in its data centers and decrypts the data when you access it.
+     * For more information about server-side encryption, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+     * Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>).</p>
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * destination object and will receive a <code>400 Bad Request</code> response.
+     * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
+     * S3 bucket. When copying an object, if you don't specify encryption information
+     * in your copy request, the encryption setting of the target object is set to the
+     * default encryption configuration of the destination bucket. By default, all
+     * buckets have a base level of encryption configuration that uses server-side
+     * encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a
+     * default encryption configuration that uses server-side encryption with Key
+     * Management Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with
+     * Amazon Web Services KMS keys (DSSE-KMS), or server-side encryption with
+     * customer-provided encryption keys (SSE-C), Amazon S3 uses the corresponding KMS
+     * key, or a customer-provided key to encrypt the target object copy.</p> <p>When
+     * you perform a <code>CopyObject</code> operation, if you want to use a different
+     * type of encryption setting for the target object, you can specify appropriate
+     * encryption-related headers to encrypt the target object with an Amazon S3
+     * managed key, a KMS key, or a customer-provided key. If the encryption setting in
+     * your request is different from the default encryption configuration of the
+     * destination bucket, the encryption setting in your request takes precedence.
+     * </p> <p>With server-side encryption, Amazon S3 encrypts your data as it writes
+     * your data to disks in its data centers and decrypts the data when you access it.
+     * For more information about server-side encryption, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+     * Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline CopyObjectRequest& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>).</p>
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * destination object and will receive a <code>400 Bad Request</code> response.
+     * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
+     * S3 bucket. When copying an object, if you don't specify encryption information
+     * in your copy request, the encryption setting of the target object is set to the
+     * default encryption configuration of the destination bucket. By default, all
+     * buckets have a base level of encryption configuration that uses server-side
+     * encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a
+     * default encryption configuration that uses server-side encryption with Key
+     * Management Service (KMS) keys (SSE-KMS), dual-layer server-side encryption with
+     * Amazon Web Services KMS keys (DSSE-KMS), or server-side encryption with
+     * customer-provided encryption keys (SSE-C), Amazon S3 uses the corresponding KMS
+     * key, or a customer-provided key to encrypt the target object copy.</p> <p>When
+     * you perform a <code>CopyObject</code> operation, if you want to use a different
+     * type of encryption setting for the target object, you can specify appropriate
+     * encryption-related headers to encrypt the target object with an Amazon S3
+     * managed key, a KMS key, or a customer-provided key. If the encryption setting in
+     * your request is different from the default encryption configuration of the
+     * destination bucket, the encryption setting in your request takes precedence.
+     * </p> <p>With server-side encryption, Amazon S3 encrypts your data as it writes
+     * your data to disks in its data centers and decrypts the data when you access it.
+     * For more information about server-side encryption, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
+     * Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>For
+     * directory buckets, only server-side encryption with Amazon S3 managed keys
+     * (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline CopyObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the <code>STANDARD</code> Storage Class by default. The
+     * <code>STANDARD</code> storage class provides high durability and high
      * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - For
+     * directory buckets, only the S3 Express One Zone storage class is supported to
+     * store newly created objects. Unsupported storage class values won't write a
+     * destination object and will respond with the HTTP status code <code>400 Bad
+     * Request</code>.</p> </li> <li> <p> <b>Amazon S3 on Outposts </b> - S3 on
+     * Outposts only uses the <code>OUTPOSTS</code> Storage Class.</p> </li> </ul>
+     *  <p>You can use the <code>CopyObject</code> action to change the storage
+     * class of an object that is already stored in Amazon S3 by using the
+     * <code>x-amz-storage-class</code> header. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Before using an object as
+     * a source object for the copy operation, you must restore a copy of it if it
+     * meets any of the following conditions:</p> <ul> <li> <p>The storage class of the
+     * source object is <code>GLACIER</code> or <code>DEEP_ARCHIVE</code>.</p> </li>
+     * <li> <p>The storage class of the source object is
+     * <code>INTELLIGENT_TIERING</code> and it's <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html#intel-tiering-tier-definition">S3
+     * Intelligent-Tiering access tier</a> is <code>Archive Access</code> or <code>Deep
+     * Archive Access</code>.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
+     * Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the <code>STANDARD</code> Storage Class by default. The
+     * <code>STANDARD</code> storage class provides high durability and high
      * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - For
+     * directory buckets, only the S3 Express One Zone storage class is supported to
+     * store newly created objects. Unsupported storage class values won't write a
+     * destination object and will respond with the HTTP status code <code>400 Bad
+     * Request</code>.</p> </li> <li> <p> <b>Amazon S3 on Outposts </b> - S3 on
+     * Outposts only uses the <code>OUTPOSTS</code> Storage Class.</p> </li> </ul>
+     *  <p>You can use the <code>CopyObject</code> action to change the storage
+     * class of an object that is already stored in Amazon S3 by using the
+     * <code>x-amz-storage-class</code> header. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Before using an object as
+     * a source object for the copy operation, you must restore a copy of it if it
+     * meets any of the following conditions:</p> <ul> <li> <p>The storage class of the
+     * source object is <code>GLACIER</code> or <code>DEEP_ARCHIVE</code>.</p> </li>
+     * <li> <p>The storage class of the source object is
+     * <code>INTELLIGENT_TIERING</code> and it's <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html#intel-tiering-tier-definition">S3
+     * Intelligent-Tiering access tier</a> is <code>Archive Access</code> or <code>Deep
+     * Archive Access</code>.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
+     * Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the <code>STANDARD</code> Storage Class by default. The
+     * <code>STANDARD</code> storage class provides high durability and high
      * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - For
+     * directory buckets, only the S3 Express One Zone storage class is supported to
+     * store newly created objects. Unsupported storage class values won't write a
+     * destination object and will respond with the HTTP status code <code>400 Bad
+     * Request</code>.</p> </li> <li> <p> <b>Amazon S3 on Outposts </b> - S3 on
+     * Outposts only uses the <code>OUTPOSTS</code> Storage Class.</p> </li> </ul>
+     *  <p>You can use the <code>CopyObject</code> action to change the storage
+     * class of an object that is already stored in Amazon S3 by using the
+     * <code>x-amz-storage-class</code> header. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Before using an object as
+     * a source object for the copy operation, you must restore a copy of it if it
+     * meets any of the following conditions:</p> <ul> <li> <p>The storage class of the
+     * source object is <code>GLACIER</code> or <code>DEEP_ARCHIVE</code>.</p> </li>
+     * <li> <p>The storage class of the source object is
+     * <code>INTELLIGENT_TIERING</code> and it's <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html#intel-tiering-tier-definition">S3
+     * Intelligent-Tiering access tier</a> is <code>Archive Access</code> or <code>Deep
+     * Archive Access</code>.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
+     * Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the <code>STANDARD</code> Storage Class by default. The
+     * <code>STANDARD</code> storage class provides high durability and high
      * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - For
+     * directory buckets, only the S3 Express One Zone storage class is supported to
+     * store newly created objects. Unsupported storage class values won't write a
+     * destination object and will respond with the HTTP status code <code>400 Bad
+     * Request</code>.</p> </li> <li> <p> <b>Amazon S3 on Outposts </b> - S3 on
+     * Outposts only uses the <code>OUTPOSTS</code> Storage Class.</p> </li> </ul>
+     *  <p>You can use the <code>CopyObject</code> action to change the storage
+     * class of an object that is already stored in Amazon S3 by using the
+     * <code>x-amz-storage-class</code> header. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Before using an object as
+     * a source object for the copy operation, you must restore a copy of it if it
+     * meets any of the following conditions:</p> <ul> <li> <p>The storage class of the
+     * source object is <code>GLACIER</code> or <code>DEEP_ARCHIVE</code>.</p> </li>
+     * <li> <p>The storage class of the source object is
+     * <code>INTELLIGENT_TIERING</code> and it's <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html#intel-tiering-tier-definition">S3
+     * Intelligent-Tiering access tier</a> is <code>Archive Access</code> or <code>Deep
+     * Archive Access</code>.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
+     * Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the <code>STANDARD</code> Storage Class by default. The
+     * <code>STANDARD</code> storage class provides high durability and high
      * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - For
+     * directory buckets, only the S3 Express One Zone storage class is supported to
+     * store newly created objects. Unsupported storage class values won't write a
+     * destination object and will respond with the HTTP status code <code>400 Bad
+     * Request</code>.</p> </li> <li> <p> <b>Amazon S3 on Outposts </b> - S3 on
+     * Outposts only uses the <code>OUTPOSTS</code> Storage Class.</p> </li> </ul>
+     *  <p>You can use the <code>CopyObject</code> action to change the storage
+     * class of an object that is already stored in Amazon S3 by using the
+     * <code>x-amz-storage-class</code> header. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Before using an object as
+     * a source object for the copy operation, you must restore a copy of it if it
+     * meets any of the following conditions:</p> <ul> <li> <p>The storage class of the
+     * source object is <code>GLACIER</code> or <code>DEEP_ARCHIVE</code>.</p> </li>
+     * <li> <p>The storage class of the source object is
+     * <code>INTELLIGENT_TIERING</code> and it's <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html#intel-tiering-tier-definition">S3
+     * Intelligent-Tiering access tier</a> is <code>Archive Access</code> or <code>Deep
+     * Archive Access</code>.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
+     * Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CopyObjectRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the <code>STANDARD</code> Storage Class by default. The
+     * <code>STANDARD</code> storage class provides high durability and high
      * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * Storage Class. </p>  <ul> <li> <p> <b>Directory buckets </b> - For
+     * directory buckets, only the S3 Express One Zone storage class is supported to
+     * store newly created objects. Unsupported storage class values won't write a
+     * destination object and will respond with the HTTP status code <code>400 Bad
+     * Request</code>.</p> </li> <li> <p> <b>Amazon S3 on Outposts </b> - S3 on
+     * Outposts only uses the <code>OUTPOSTS</code> Storage Class.</p> </li> </ul>
+     *  <p>You can use the <code>CopyObject</code> action to change the storage
+     * class of an object that is already stored in Amazon S3 by using the
+     * <code>x-amz-storage-class</code> header. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Before using an object as
+     * a source object for the copy operation, you must restore a copy of it if it
+     * meets any of the following conditions:</p> <ul> <li> <p>The storage class of the
+     * source object is <code>GLACIER</code> or <code>DEEP_ARCHIVE</code>.</p> </li>
+     * <li> <p>The storage class of the source object is
+     * <code>INTELLIGENT_TIERING</code> and it's <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html#intel-tiering-tier-definition">S3
+     * Intelligent-Tiering access tier</a> is <code>Archive Access</code> or <code>Deep
+     * Archive Access</code>.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
+     * Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CopyObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
 
     /**
-     * <p>If the bucket is configured as a website, redirects requests for this object
-     * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata. This value is unique to each object
-     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
-     * Instead, you may opt to provide this header in combination with the
-     * directive.</p>
+     * <p>If the destination bucket is configured as a website, redirects requests for
+     * this object copy to another object in the same bucket or to an external URL.
+     * Amazon S3 stores the value of this header in the object metadata. This value is
+     * unique to each object and is not copied when using the
+     * <code>x-amz-metadata-directive</code> header. Instead, you may opt to provide
+     * this header in combination with the <code>x-amz-metadata-directive</code>
+     * header.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline const Aws::String& GetWebsiteRedirectLocation() const{ return m_websiteRedirectLocation; }
 
     /**
-     * <p>If the bucket is configured as a website, redirects requests for this object
-     * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata. This value is unique to each object
-     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
-     * Instead, you may opt to provide this header in combination with the
-     * directive.</p>
+     * <p>If the destination bucket is configured as a website, redirects requests for
+     * this object copy to another object in the same bucket or to an external URL.
+     * Amazon S3 stores the value of this header in the object metadata. This value is
+     * unique to each object and is not copied when using the
+     * <code>x-amz-metadata-directive</code> header. Instead, you may opt to provide
+     * this header in combination with the <code>x-amz-metadata-directive</code>
+     * header.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline bool WebsiteRedirectLocationHasBeenSet() const { return m_websiteRedirectLocationHasBeenSet; }
 
     /**
-     * <p>If the bucket is configured as a website, redirects requests for this object
-     * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata. This value is unique to each object
-     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
-     * Instead, you may opt to provide this header in combination with the
-     * directive.</p>
+     * <p>If the destination bucket is configured as a website, redirects requests for
+     * this object copy to another object in the same bucket or to an external URL.
+     * Amazon S3 stores the value of this header in the object metadata. This value is
+     * unique to each object and is not copied when using the
+     * <code>x-amz-metadata-directive</code> header. Instead, you may opt to provide
+     * this header in combination with the <code>x-amz-metadata-directive</code>
+     * header.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetWebsiteRedirectLocation(const Aws::String& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = value; }
 
     /**
-     * <p>If the bucket is configured as a website, redirects requests for this object
-     * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata. This value is unique to each object
-     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
-     * Instead, you may opt to provide this header in combination with the
-     * directive.</p>
+     * <p>If the destination bucket is configured as a website, redirects requests for
+     * this object copy to another object in the same bucket or to an external URL.
+     * Amazon S3 stores the value of this header in the object metadata. This value is
+     * unique to each object and is not copied when using the
+     * <code>x-amz-metadata-directive</code> header. Instead, you may opt to provide
+     * this header in combination with the <code>x-amz-metadata-directive</code>
+     * header.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetWebsiteRedirectLocation(Aws::String&& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = std::move(value); }
 
     /**
-     * <p>If the bucket is configured as a website, redirects requests for this object
-     * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata. This value is unique to each object
-     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
-     * Instead, you may opt to provide this header in combination with the
-     * directive.</p>
+     * <p>If the destination bucket is configured as a website, redirects requests for
+     * this object copy to another object in the same bucket or to an external URL.
+     * Amazon S3 stores the value of this header in the object metadata. This value is
+     * unique to each object and is not copied when using the
+     * <code>x-amz-metadata-directive</code> header. Instead, you may opt to provide
+     * this header in combination with the <code>x-amz-metadata-directive</code>
+     * header.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetWebsiteRedirectLocation(const char* value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation.assign(value); }
 
     /**
-     * <p>If the bucket is configured as a website, redirects requests for this object
-     * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata. This value is unique to each object
-     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
-     * Instead, you may opt to provide this header in combination with the
-     * directive.</p>
+     * <p>If the destination bucket is configured as a website, redirects requests for
+     * this object copy to another object in the same bucket or to an external URL.
+     * Amazon S3 stores the value of this header in the object metadata. This value is
+     * unique to each object and is not copied when using the
+     * <code>x-amz-metadata-directive</code> header. Instead, you may opt to provide
+     * this header in combination with the <code>x-amz-metadata-directive</code>
+     * header.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(const Aws::String& value) { SetWebsiteRedirectLocation(value); return *this;}
 
     /**
-     * <p>If the bucket is configured as a website, redirects requests for this object
-     * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata. This value is unique to each object
-     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
-     * Instead, you may opt to provide this header in combination with the
-     * directive.</p>
+     * <p>If the destination bucket is configured as a website, redirects requests for
+     * this object copy to another object in the same bucket or to an external URL.
+     * Amazon S3 stores the value of this header in the object metadata. This value is
+     * unique to each object and is not copied when using the
+     * <code>x-amz-metadata-directive</code> header. Instead, you may opt to provide
+     * this header in combination with the <code>x-amz-metadata-directive</code>
+     * header.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(Aws::String&& value) { SetWebsiteRedirectLocation(std::move(value)); return *this;}
 
     /**
-     * <p>If the bucket is configured as a website, redirects requests for this object
-     * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata. This value is unique to each object
-     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
-     * Instead, you may opt to provide this header in combination with the
-     * directive.</p>
+     * <p>If the destination bucket is configured as a website, redirects requests for
+     * this object copy to another object in the same bucket or to an external URL.
+     * Amazon S3 stores the value of this header in the object metadata. This value is
+     * unique to each object and is not copied when using the
+     * <code>x-amz-metadata-directive</code> header. Instead, you may opt to provide
+     * this header in combination with the <code>x-amz-metadata-directive</code>
+     * header.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(const char* value) { SetWebsiteRedirectLocation(value); return *this;}
 
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when encrypting the object (for example,
+     * <code>AES256</code>).</p> <p>When you perform a <code>CopyObject</code>
+     * operation, if you want to use a different type of encryption setting for the
+     * target object, you can specify appropriate encryption-related headers to encrypt
+     * the target object with an Amazon S3 managed key, a KMS key, or a
+     * customer-provided key. If the encryption setting in your request is different
+     * from the default encryption configuration of the destination bucket, the
+     * encryption setting in your request takes precedence. </p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when encrypting the object (for example,
+     * <code>AES256</code>).</p> <p>When you perform a <code>CopyObject</code>
+     * operation, if you want to use a different type of encryption setting for the
+     * target object, you can specify appropriate encryption-related headers to encrypt
+     * the target object with an Amazon S3 managed key, a KMS key, or a
+     * customer-provided key. If the encryption setting in your request is different
+     * from the default encryption configuration of the destination bucket, the
+     * encryption setting in your request takes precedence. </p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when encrypting the object (for example,
+     * <code>AES256</code>).</p> <p>When you perform a <code>CopyObject</code>
+     * operation, if you want to use a different type of encryption setting for the
+     * target object, you can specify appropriate encryption-related headers to encrypt
+     * the target object with an Amazon S3 managed key, a KMS key, or a
+     * customer-provided key. If the encryption setting in your request is different
+     * from the default encryption configuration of the destination bucket, the
+     * encryption setting in your request takes precedence. </p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when encrypting the object (for example,
+     * <code>AES256</code>).</p> <p>When you perform a <code>CopyObject</code>
+     * operation, if you want to use a different type of encryption setting for the
+     * target object, you can specify appropriate encryption-related headers to encrypt
+     * the target object with an Amazon S3 managed key, a KMS key, or a
+     * customer-provided key. If the encryption setting in your request is different
+     * from the default encryption configuration of the destination bucket, the
+     * encryption setting in your request takes precedence. </p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when encrypting the object (for example,
+     * <code>AES256</code>).</p> <p>When you perform a <code>CopyObject</code>
+     * operation, if you want to use a different type of encryption setting for the
+     * target object, you can specify appropriate encryption-related headers to encrypt
+     * the target object with an Amazon S3 managed key, a KMS key, or a
+     * customer-provided key. If the encryption setting in your request is different
+     * from the default encryption configuration of the destination bucket, the
+     * encryption setting in your request takes precedence. </p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when encrypting the object (for example,
+     * <code>AES256</code>).</p> <p>When you perform a <code>CopyObject</code>
+     * operation, if you want to use a different type of encryption setting for the
+     * target object, you can specify appropriate encryption-related headers to encrypt
+     * the target object with an Amazon S3 managed key, a KMS key, or a
+     * customer-provided key. If the encryption setting in your request is different
+     * from the default encryption configuration of the destination bucket, the
+     * encryption setting in your request takes precedence. </p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when encrypting the object (for example,
+     * <code>AES256</code>).</p> <p>When you perform a <code>CopyObject</code>
+     * operation, if you want to use a different type of encryption setting for the
+     * target object, you can specify appropriate encryption-related headers to encrypt
+     * the target object with an Amazon S3 managed key, a KMS key, or a
+     * customer-provided key. If the encryption setting in your request is different
+     * from the default encryption configuration of the destination bucket, the
+     * encryption setting in your request takes precedence. </p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (for example,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when encrypting the object (for example,
+     * <code>AES256</code>).</p> <p>When you perform a <code>CopyObject</code>
+     * operation, if you want to use a different type of encryption setting for the
+     * target object, you can specify appropriate encryption-related headers to encrypt
+     * the target object with an Amazon S3 managed key, a KMS key, or a
+     * customer-provided key. If the encryption setting in your request is different
+     * from the default encryption configuration of the destination bucket, the
+     * encryption setting in your request takes precedence. </p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
@@ -1632,72 +2930,88 @@ namespace Model
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * discarded. Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p> 
+     * <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * discarded. Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p> 
+     * <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * discarded. Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p> 
+     * <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * discarded. Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p> 
+     * <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * discarded. Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p> 
+     * <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * discarded. Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p> 
+     * <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * discarded. Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p> 
+     * <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * discarded. Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p> 
+     * <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
@@ -1705,145 +3019,169 @@ namespace Model
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p>  <p>This functionality
+     * is not supported when the destination bucket is a directory bucket.</p> 
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p>  <p>This functionality
+     * is not supported when the destination bucket is a directory bucket.</p> 
      */
     inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p>  <p>This functionality
+     * is not supported when the destination bucket is a directory bucket.</p> 
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p>  <p>This functionality
+     * is not supported when the destination bucket is a directory bucket.</p> 
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p>  <p>This functionality
+     * is not supported when the destination bucket is a directory bucket.</p> 
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p>  <p>This functionality
+     * is not supported when the destination bucket is a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p>  <p>This functionality
+     * is not supported when the destination bucket is a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p>  <p>This functionality
+     * is not supported when the destination bucket is a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>This functionality is not supported when the
+     * destination bucket is a directory bucket.</p> 
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>This functionality is not supported when the
+     * destination bucket is a directory bucket.</p> 
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>This functionality is not supported when the
+     * destination bucket is a directory bucket.</p> 
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>This functionality is not supported when the
+     * destination bucket is a directory bucket.</p> 
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>This functionality is not supported when the
+     * destination bucket is a directory bucket.</p> 
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>This functionality is not supported when the
+     * destination bucket is a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>This functionality is not supported when the
+     * destination bucket is a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
+     * Guide</i>.</p>  <p>This functionality is not supported when the
+     * destination bucket is a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -1851,56 +3189,80 @@ namespace Model
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for <code>CopyObject</code> requests.</p>
+     *  <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for <code>CopyObject</code> requests.</p>
+     *  <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline bool SSEKMSEncryptionContextHasBeenSet() const { return m_sSEKMSEncryptionContextHasBeenSet; }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for <code>CopyObject</code> requests.</p>
+     *  <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = value; }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for <code>CopyObject</code> requests.</p>
+     *  <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::move(value); }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for <code>CopyObject</code> requests.</p>
+     *  <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext.assign(value); }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for <code>CopyObject</code> requests.</p>
+     *  <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for <code>CopyObject</code> requests.</p>
+     *  <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value must be explicitly
+     * added to specify encryption context for <code>CopyObject</code> requests.</p>
+     *  <p>This functionality is not supported when the destination bucket is a
+     * directory bucket.</p> 
      */
     inline CopyObjectRequest& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
 
@@ -1908,85 +3270,141 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).
-     * Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
-     * Key for object encryption with SSE-KMS. </p> <p>Specifying this header with a
-     * COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
+     * If a target object uses SSE-KMS, you can enable an S3 Bucket Key for the
+     * object.</p> <p>Setting this header to <code>true</code> causes Amazon S3 to use
+     * an S3 Bucket Key for object encryption with SSE-KMS. Specifying this header with
+     * a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+     * Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).
-     * Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
-     * Key for object encryption with SSE-KMS. </p> <p>Specifying this header with a
-     * COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
+     * If a target object uses SSE-KMS, you can enable an S3 Bucket Key for the
+     * object.</p> <p>Setting this header to <code>true</code> causes Amazon S3 to use
+     * an S3 Bucket Key for object encryption with SSE-KMS. Specifying this header with
+     * a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+     * Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).
-     * Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
-     * Key for object encryption with SSE-KMS. </p> <p>Specifying this header with a
-     * COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
+     * If a target object uses SSE-KMS, you can enable an S3 Bucket Key for the
+     * object.</p> <p>Setting this header to <code>true</code> causes Amazon S3 to use
+     * an S3 Bucket Key for object encryption with SSE-KMS. Specifying this header with
+     * a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+     * Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).
-     * Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
-     * Key for object encryption with SSE-KMS. </p> <p>Specifying this header with a
-     * COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
+     * If a target object uses SSE-KMS, you can enable an S3 Bucket Key for the
+     * object.</p> <p>Setting this header to <code>true</code> causes Amazon S3 to use
+     * an S3 Bucket Key for object encryption with SSE-KMS. Specifying this header with
+     * a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
+     * Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This
+     * functionality is not supported when the destination bucket is a directory
+     * bucket.</p> 
      */
     inline CopyObjectRequest& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 
 
     /**
      * <p>Specifies the algorithm to use when decrypting the source object (for
-     * example, AES256).</p>
+     * example, <code>AES256</code>).</p> <p>If the source object for the copy is
+     * stored in Amazon S3 using SSE-C, you must provide the necessary encryption
+     * information in your request so that Amazon S3 can decrypt the object for
+     * copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline const Aws::String& GetCopySourceSSECustomerAlgorithm() const{ return m_copySourceSSECustomerAlgorithm; }
 
     /**
      * <p>Specifies the algorithm to use when decrypting the source object (for
-     * example, AES256).</p>
+     * example, <code>AES256</code>).</p> <p>If the source object for the copy is
+     * stored in Amazon S3 using SSE-C, you must provide the necessary encryption
+     * information in your request so that Amazon S3 can decrypt the object for
+     * copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline bool CopySourceSSECustomerAlgorithmHasBeenSet() const { return m_copySourceSSECustomerAlgorithmHasBeenSet; }
 
     /**
      * <p>Specifies the algorithm to use when decrypting the source object (for
-     * example, AES256).</p>
+     * example, <code>AES256</code>).</p> <p>If the source object for the copy is
+     * stored in Amazon S3 using SSE-C, you must provide the necessary encryption
+     * information in your request so that Amazon S3 can decrypt the object for
+     * copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline void SetCopySourceSSECustomerAlgorithm(const Aws::String& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = value; }
 
     /**
      * <p>Specifies the algorithm to use when decrypting the source object (for
-     * example, AES256).</p>
+     * example, <code>AES256</code>).</p> <p>If the source object for the copy is
+     * stored in Amazon S3 using SSE-C, you must provide the necessary encryption
+     * information in your request so that Amazon S3 can decrypt the object for
+     * copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline void SetCopySourceSSECustomerAlgorithm(Aws::String&& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = std::move(value); }
 
     /**
      * <p>Specifies the algorithm to use when decrypting the source object (for
-     * example, AES256).</p>
+     * example, <code>AES256</code>).</p> <p>If the source object for the copy is
+     * stored in Amazon S3 using SSE-C, you must provide the necessary encryption
+     * information in your request so that Amazon S3 can decrypt the object for
+     * copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline void SetCopySourceSSECustomerAlgorithm(const char* value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm.assign(value); }
 
     /**
      * <p>Specifies the algorithm to use when decrypting the source object (for
-     * example, AES256).</p>
+     * example, <code>AES256</code>).</p> <p>If the source object for the copy is
+     * stored in Amazon S3 using SSE-C, you must provide the necessary encryption
+     * information in your request so that Amazon S3 can decrypt the object for
+     * copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(const Aws::String& value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
 
     /**
      * <p>Specifies the algorithm to use when decrypting the source object (for
-     * example, AES256).</p>
+     * example, <code>AES256</code>).</p> <p>If the source object for the copy is
+     * stored in Amazon S3 using SSE-C, you must provide the necessary encryption
+     * information in your request so that Amazon S3 can decrypt the object for
+     * copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(Aws::String&& value) { SetCopySourceSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the algorithm to use when decrypting the source object (for
-     * example, AES256).</p>
+     * example, <code>AES256</code>).</p> <p>If the source object for the copy is
+     * stored in Amazon S3 using SSE-C, you must provide the necessary encryption
+     * information in your request so that Amazon S3 can decrypt the object for
+     * copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(const char* value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
 
@@ -1994,56 +3412,88 @@ namespace Model
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
      * decrypt the source object. The encryption key provided in this header must be
-     * one that was used when the source object was created.</p>
+     * the same one that was used when the source object was created.</p> <p>If the
+     * source object for the copy is stored in Amazon S3 using SSE-C, you must provide
+     * the necessary encryption information in your request so that Amazon S3 can
+     * decrypt the object for copying.</p>  <p>This functionality is not
+     * supported when the source object is in a directory bucket.</p> 
      */
     inline const Aws::String& GetCopySourceSSECustomerKey() const{ return m_copySourceSSECustomerKey; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
      * decrypt the source object. The encryption key provided in this header must be
-     * one that was used when the source object was created.</p>
+     * the same one that was used when the source object was created.</p> <p>If the
+     * source object for the copy is stored in Amazon S3 using SSE-C, you must provide
+     * the necessary encryption information in your request so that Amazon S3 can
+     * decrypt the object for copying.</p>  <p>This functionality is not
+     * supported when the source object is in a directory bucket.</p> 
      */
     inline bool CopySourceSSECustomerKeyHasBeenSet() const { return m_copySourceSSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
      * decrypt the source object. The encryption key provided in this header must be
-     * one that was used when the source object was created.</p>
+     * the same one that was used when the source object was created.</p> <p>If the
+     * source object for the copy is stored in Amazon S3 using SSE-C, you must provide
+     * the necessary encryption information in your request so that Amazon S3 can
+     * decrypt the object for copying.</p>  <p>This functionality is not
+     * supported when the source object is in a directory bucket.</p> 
      */
     inline void SetCopySourceSSECustomerKey(const Aws::String& value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey = value; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
      * decrypt the source object. The encryption key provided in this header must be
-     * one that was used when the source object was created.</p>
+     * the same one that was used when the source object was created.</p> <p>If the
+     * source object for the copy is stored in Amazon S3 using SSE-C, you must provide
+     * the necessary encryption information in your request so that Amazon S3 can
+     * decrypt the object for copying.</p>  <p>This functionality is not
+     * supported when the source object is in a directory bucket.</p> 
      */
     inline void SetCopySourceSSECustomerKey(Aws::String&& value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey = std::move(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
      * decrypt the source object. The encryption key provided in this header must be
-     * one that was used when the source object was created.</p>
+     * the same one that was used when the source object was created.</p> <p>If the
+     * source object for the copy is stored in Amazon S3 using SSE-C, you must provide
+     * the necessary encryption information in your request so that Amazon S3 can
+     * decrypt the object for copying.</p>  <p>This functionality is not
+     * supported when the source object is in a directory bucket.</p> 
      */
     inline void SetCopySourceSSECustomerKey(const char* value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey.assign(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
      * decrypt the source object. The encryption key provided in this header must be
-     * one that was used when the source object was created.</p>
+     * the same one that was used when the source object was created.</p> <p>If the
+     * source object for the copy is stored in Amazon S3 using SSE-C, you must provide
+     * the necessary encryption information in your request so that Amazon S3 can
+     * decrypt the object for copying.</p>  <p>This functionality is not
+     * supported when the source object is in a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKey(const Aws::String& value) { SetCopySourceSSECustomerKey(value); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
      * decrypt the source object. The encryption key provided in this header must be
-     * one that was used when the source object was created.</p>
+     * the same one that was used when the source object was created.</p> <p>If the
+     * source object for the copy is stored in Amazon S3 using SSE-C, you must provide
+     * the necessary encryption information in your request so that Amazon S3 can
+     * decrypt the object for copying.</p>  <p>This functionality is not
+     * supported when the source object is in a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKey(Aws::String&& value) { SetCopySourceSSECustomerKey(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
      * decrypt the source object. The encryption key provided in this header must be
-     * one that was used when the source object was created.</p>
+     * the same one that was used when the source object was created.</p> <p>If the
+     * source object for the copy is stored in Amazon S3 using SSE-C, you must provide
+     * the necessary encryption information in your request so that Amazon S3 can
+     * decrypt the object for copying.</p>  <p>This functionality is not
+     * supported when the source object is in a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKey(const char* value) { SetCopySourceSSECustomerKey(value); return *this;}
 
@@ -2051,56 +3501,88 @@ namespace Model
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p> <p>If the source object for
+     * the copy is stored in Amazon S3 using SSE-C, you must provide the necessary
+     * encryption information in your request so that Amazon S3 can decrypt the object
+     * for copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline const Aws::String& GetCopySourceSSECustomerKeyMD5() const{ return m_copySourceSSECustomerKeyMD5; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p> <p>If the source object for
+     * the copy is stored in Amazon S3 using SSE-C, you must provide the necessary
+     * encryption information in your request so that Amazon S3 can decrypt the object
+     * for copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline bool CopySourceSSECustomerKeyMD5HasBeenSet() const { return m_copySourceSSECustomerKeyMD5HasBeenSet; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p> <p>If the source object for
+     * the copy is stored in Amazon S3 using SSE-C, you must provide the necessary
+     * encryption information in your request so that Amazon S3 can decrypt the object
+     * for copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline void SetCopySourceSSECustomerKeyMD5(const Aws::String& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = value; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p> <p>If the source object for
+     * the copy is stored in Amazon S3 using SSE-C, you must provide the necessary
+     * encryption information in your request so that Amazon S3 can decrypt the object
+     * for copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline void SetCopySourceSSECustomerKeyMD5(Aws::String&& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p> <p>If the source object for
+     * the copy is stored in Amazon S3 using SSE-C, you must provide the necessary
+     * encryption information in your request so that Amazon S3 can decrypt the object
+     * for copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline void SetCopySourceSSECustomerKeyMD5(const char* value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p> <p>If the source object for
+     * the copy is stored in Amazon S3 using SSE-C, you must provide the necessary
+     * encryption information in your request so that Amazon S3 can decrypt the object
+     * for copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(const Aws::String& value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p> <p>If the source object for
+     * the copy is stored in Amazon S3 using SSE-C, you must provide the necessary
+     * encryption information in your request so that Amazon S3 can decrypt the object
+     * for copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(Aws::String&& value) { SetCopySourceSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure that the
-     * encryption key was transmitted without error.</p>
+     * encryption key was transmitted without error.</p> <p>If the source object for
+     * the copy is stored in Amazon S3 using SSE-C, you must provide the necessary
+     * encryption information in your request so that Amazon S3 can decrypt the object
+     * for copying.</p>  <p>This functionality is not supported when the source
+     * object is in a directory bucket.</p> 
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(const char* value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
 
@@ -2125,271 +3607,537 @@ namespace Model
 
 
     /**
-     * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
-     * as URL Query parameters.</p>
+     * <p>The tag-set for the object copy in the destination bucket. This value must be
+     * used in conjunction with the <code>x-amz-tagging-directive</code> if you choose
+     * <code>REPLACE</code> for the <code>x-amz-tagging-directive</code>. If you choose
+     * <code>COPY</code> for the <code>x-amz-tagging-directive</code>, you don't need
+     * to set the <code>x-amz-tagging</code> header, because the tag-set will be copied
+     * from the source object directly. The tag-set must be encoded as URL Query
+     * parameters.</p> <p>The default value is the empty value.</p>  <p>
+     * <b>Directory buckets</b> - For directory buckets in a <code>CopyObject</code>
+     * operation, only the empty tag-set is supported. Any requests that attempt to
+     * write non-empty tags into directory buckets will receive a <code>501 Not
+     * Implemented</code> status code. When the destination bucket is a directory
+     * bucket, you will receive a <code>501 Not Implemented</code> response in any of
+     * the following situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code>
+     * the tag-set from an S3 source object that has non-empty tags.</p> </li> <li>
+     * <p>When you attempt to <code>REPLACE</code> the tag-set of a source object and
+     * set a non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you
+     * don't set the <code>x-amz-tagging-directive</code> header and the source object
+     * has non-empty tags. This is because the default value of
+     * <code>x-amz-tagging-directive</code> is <code>COPY</code>.</p> </li> </ul>
+     * <p>Because only the empty tag-set is supported for directory buckets in a
+     * <code>CopyObject</code> operation, the following situations are allowed:</p>
+     * <ul> <li> <p>When you attempt to <code>COPY</code> the tag-set from a directory
+     * bucket source object that has no tags to a general purpose bucket. It copies an
+     * empty tag-set to the destination object.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a directory bucket source object and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a general purpose bucket source object that has non-empty tags and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a directory bucket source object and don't set the <code>x-amz-tagging</code>
+     * value of the directory bucket destination object. This is because the default
+     * value of <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline const Aws::String& GetTagging() const{ return m_tagging; }
 
     /**
-     * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
-     * as URL Query parameters.</p>
+     * <p>The tag-set for the object copy in the destination bucket. This value must be
+     * used in conjunction with the <code>x-amz-tagging-directive</code> if you choose
+     * <code>REPLACE</code> for the <code>x-amz-tagging-directive</code>. If you choose
+     * <code>COPY</code> for the <code>x-amz-tagging-directive</code>, you don't need
+     * to set the <code>x-amz-tagging</code> header, because the tag-set will be copied
+     * from the source object directly. The tag-set must be encoded as URL Query
+     * parameters.</p> <p>The default value is the empty value.</p>  <p>
+     * <b>Directory buckets</b> - For directory buckets in a <code>CopyObject</code>
+     * operation, only the empty tag-set is supported. Any requests that attempt to
+     * write non-empty tags into directory buckets will receive a <code>501 Not
+     * Implemented</code> status code. When the destination bucket is a directory
+     * bucket, you will receive a <code>501 Not Implemented</code> response in any of
+     * the following situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code>
+     * the tag-set from an S3 source object that has non-empty tags.</p> </li> <li>
+     * <p>When you attempt to <code>REPLACE</code> the tag-set of a source object and
+     * set a non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you
+     * don't set the <code>x-amz-tagging-directive</code> header and the source object
+     * has non-empty tags. This is because the default value of
+     * <code>x-amz-tagging-directive</code> is <code>COPY</code>.</p> </li> </ul>
+     * <p>Because only the empty tag-set is supported for directory buckets in a
+     * <code>CopyObject</code> operation, the following situations are allowed:</p>
+     * <ul> <li> <p>When you attempt to <code>COPY</code> the tag-set from a directory
+     * bucket source object that has no tags to a general purpose bucket. It copies an
+     * empty tag-set to the destination object.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a directory bucket source object and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a general purpose bucket source object that has non-empty tags and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a directory bucket source object and don't set the <code>x-amz-tagging</code>
+     * value of the directory bucket destination object. This is because the default
+     * value of <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline bool TaggingHasBeenSet() const { return m_taggingHasBeenSet; }
 
     /**
-     * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
-     * as URL Query parameters.</p>
+     * <p>The tag-set for the object copy in the destination bucket. This value must be
+     * used in conjunction with the <code>x-amz-tagging-directive</code> if you choose
+     * <code>REPLACE</code> for the <code>x-amz-tagging-directive</code>. If you choose
+     * <code>COPY</code> for the <code>x-amz-tagging-directive</code>, you don't need
+     * to set the <code>x-amz-tagging</code> header, because the tag-set will be copied
+     * from the source object directly. The tag-set must be encoded as URL Query
+     * parameters.</p> <p>The default value is the empty value.</p>  <p>
+     * <b>Directory buckets</b> - For directory buckets in a <code>CopyObject</code>
+     * operation, only the empty tag-set is supported. Any requests that attempt to
+     * write non-empty tags into directory buckets will receive a <code>501 Not
+     * Implemented</code> status code. When the destination bucket is a directory
+     * bucket, you will receive a <code>501 Not Implemented</code> response in any of
+     * the following situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code>
+     * the tag-set from an S3 source object that has non-empty tags.</p> </li> <li>
+     * <p>When you attempt to <code>REPLACE</code> the tag-set of a source object and
+     * set a non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you
+     * don't set the <code>x-amz-tagging-directive</code> header and the source object
+     * has non-empty tags. This is because the default value of
+     * <code>x-amz-tagging-directive</code> is <code>COPY</code>.</p> </li> </ul>
+     * <p>Because only the empty tag-set is supported for directory buckets in a
+     * <code>CopyObject</code> operation, the following situations are allowed:</p>
+     * <ul> <li> <p>When you attempt to <code>COPY</code> the tag-set from a directory
+     * bucket source object that has no tags to a general purpose bucket. It copies an
+     * empty tag-set to the destination object.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a directory bucket source object and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a general purpose bucket source object that has non-empty tags and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a directory bucket source object and don't set the <code>x-amz-tagging</code>
+     * value of the directory bucket destination object. This is because the default
+     * value of <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline void SetTagging(const Aws::String& value) { m_taggingHasBeenSet = true; m_tagging = value; }
 
     /**
-     * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
-     * as URL Query parameters.</p>
+     * <p>The tag-set for the object copy in the destination bucket. This value must be
+     * used in conjunction with the <code>x-amz-tagging-directive</code> if you choose
+     * <code>REPLACE</code> for the <code>x-amz-tagging-directive</code>. If you choose
+     * <code>COPY</code> for the <code>x-amz-tagging-directive</code>, you don't need
+     * to set the <code>x-amz-tagging</code> header, because the tag-set will be copied
+     * from the source object directly. The tag-set must be encoded as URL Query
+     * parameters.</p> <p>The default value is the empty value.</p>  <p>
+     * <b>Directory buckets</b> - For directory buckets in a <code>CopyObject</code>
+     * operation, only the empty tag-set is supported. Any requests that attempt to
+     * write non-empty tags into directory buckets will receive a <code>501 Not
+     * Implemented</code> status code. When the destination bucket is a directory
+     * bucket, you will receive a <code>501 Not Implemented</code> response in any of
+     * the following situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code>
+     * the tag-set from an S3 source object that has non-empty tags.</p> </li> <li>
+     * <p>When you attempt to <code>REPLACE</code> the tag-set of a source object and
+     * set a non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you
+     * don't set the <code>x-amz-tagging-directive</code> header and the source object
+     * has non-empty tags. This is because the default value of
+     * <code>x-amz-tagging-directive</code> is <code>COPY</code>.</p> </li> </ul>
+     * <p>Because only the empty tag-set is supported for directory buckets in a
+     * <code>CopyObject</code> operation, the following situations are allowed:</p>
+     * <ul> <li> <p>When you attempt to <code>COPY</code> the tag-set from a directory
+     * bucket source object that has no tags to a general purpose bucket. It copies an
+     * empty tag-set to the destination object.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a directory bucket source object and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a general purpose bucket source object that has non-empty tags and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a directory bucket source object and don't set the <code>x-amz-tagging</code>
+     * value of the directory bucket destination object. This is because the default
+     * value of <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline void SetTagging(Aws::String&& value) { m_taggingHasBeenSet = true; m_tagging = std::move(value); }
 
     /**
-     * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
-     * as URL Query parameters.</p>
+     * <p>The tag-set for the object copy in the destination bucket. This value must be
+     * used in conjunction with the <code>x-amz-tagging-directive</code> if you choose
+     * <code>REPLACE</code> for the <code>x-amz-tagging-directive</code>. If you choose
+     * <code>COPY</code> for the <code>x-amz-tagging-directive</code>, you don't need
+     * to set the <code>x-amz-tagging</code> header, because the tag-set will be copied
+     * from the source object directly. The tag-set must be encoded as URL Query
+     * parameters.</p> <p>The default value is the empty value.</p>  <p>
+     * <b>Directory buckets</b> - For directory buckets in a <code>CopyObject</code>
+     * operation, only the empty tag-set is supported. Any requests that attempt to
+     * write non-empty tags into directory buckets will receive a <code>501 Not
+     * Implemented</code> status code. When the destination bucket is a directory
+     * bucket, you will receive a <code>501 Not Implemented</code> response in any of
+     * the following situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code>
+     * the tag-set from an S3 source object that has non-empty tags.</p> </li> <li>
+     * <p>When you attempt to <code>REPLACE</code> the tag-set of a source object and
+     * set a non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you
+     * don't set the <code>x-amz-tagging-directive</code> header and the source object
+     * has non-empty tags. This is because the default value of
+     * <code>x-amz-tagging-directive</code> is <code>COPY</code>.</p> </li> </ul>
+     * <p>Because only the empty tag-set is supported for directory buckets in a
+     * <code>CopyObject</code> operation, the following situations are allowed:</p>
+     * <ul> <li> <p>When you attempt to <code>COPY</code> the tag-set from a directory
+     * bucket source object that has no tags to a general purpose bucket. It copies an
+     * empty tag-set to the destination object.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a directory bucket source object and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a general purpose bucket source object that has non-empty tags and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a directory bucket source object and don't set the <code>x-amz-tagging</code>
+     * value of the directory bucket destination object. This is because the default
+     * value of <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline void SetTagging(const char* value) { m_taggingHasBeenSet = true; m_tagging.assign(value); }
 
     /**
-     * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
-     * as URL Query parameters.</p>
+     * <p>The tag-set for the object copy in the destination bucket. This value must be
+     * used in conjunction with the <code>x-amz-tagging-directive</code> if you choose
+     * <code>REPLACE</code> for the <code>x-amz-tagging-directive</code>. If you choose
+     * <code>COPY</code> for the <code>x-amz-tagging-directive</code>, you don't need
+     * to set the <code>x-amz-tagging</code> header, because the tag-set will be copied
+     * from the source object directly. The tag-set must be encoded as URL Query
+     * parameters.</p> <p>The default value is the empty value.</p>  <p>
+     * <b>Directory buckets</b> - For directory buckets in a <code>CopyObject</code>
+     * operation, only the empty tag-set is supported. Any requests that attempt to
+     * write non-empty tags into directory buckets will receive a <code>501 Not
+     * Implemented</code> status code. When the destination bucket is a directory
+     * bucket, you will receive a <code>501 Not Implemented</code> response in any of
+     * the following situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code>
+     * the tag-set from an S3 source object that has non-empty tags.</p> </li> <li>
+     * <p>When you attempt to <code>REPLACE</code> the tag-set of a source object and
+     * set a non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you
+     * don't set the <code>x-amz-tagging-directive</code> header and the source object
+     * has non-empty tags. This is because the default value of
+     * <code>x-amz-tagging-directive</code> is <code>COPY</code>.</p> </li> </ul>
+     * <p>Because only the empty tag-set is supported for directory buckets in a
+     * <code>CopyObject</code> operation, the following situations are allowed:</p>
+     * <ul> <li> <p>When you attempt to <code>COPY</code> the tag-set from a directory
+     * bucket source object that has no tags to a general purpose bucket. It copies an
+     * empty tag-set to the destination object.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a directory bucket source object and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a general purpose bucket source object that has non-empty tags and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a directory bucket source object and don't set the <code>x-amz-tagging</code>
+     * value of the directory bucket destination object. This is because the default
+     * value of <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline CopyObjectRequest& WithTagging(const Aws::String& value) { SetTagging(value); return *this;}
 
     /**
-     * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
-     * as URL Query parameters.</p>
+     * <p>The tag-set for the object copy in the destination bucket. This value must be
+     * used in conjunction with the <code>x-amz-tagging-directive</code> if you choose
+     * <code>REPLACE</code> for the <code>x-amz-tagging-directive</code>. If you choose
+     * <code>COPY</code> for the <code>x-amz-tagging-directive</code>, you don't need
+     * to set the <code>x-amz-tagging</code> header, because the tag-set will be copied
+     * from the source object directly. The tag-set must be encoded as URL Query
+     * parameters.</p> <p>The default value is the empty value.</p>  <p>
+     * <b>Directory buckets</b> - For directory buckets in a <code>CopyObject</code>
+     * operation, only the empty tag-set is supported. Any requests that attempt to
+     * write non-empty tags into directory buckets will receive a <code>501 Not
+     * Implemented</code> status code. When the destination bucket is a directory
+     * bucket, you will receive a <code>501 Not Implemented</code> response in any of
+     * the following situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code>
+     * the tag-set from an S3 source object that has non-empty tags.</p> </li> <li>
+     * <p>When you attempt to <code>REPLACE</code> the tag-set of a source object and
+     * set a non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you
+     * don't set the <code>x-amz-tagging-directive</code> header and the source object
+     * has non-empty tags. This is because the default value of
+     * <code>x-amz-tagging-directive</code> is <code>COPY</code>.</p> </li> </ul>
+     * <p>Because only the empty tag-set is supported for directory buckets in a
+     * <code>CopyObject</code> operation, the following situations are allowed:</p>
+     * <ul> <li> <p>When you attempt to <code>COPY</code> the tag-set from a directory
+     * bucket source object that has no tags to a general purpose bucket. It copies an
+     * empty tag-set to the destination object.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a directory bucket source object and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a general purpose bucket source object that has non-empty tags and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a directory bucket source object and don't set the <code>x-amz-tagging</code>
+     * value of the directory bucket destination object. This is because the default
+     * value of <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline CopyObjectRequest& WithTagging(Aws::String&& value) { SetTagging(std::move(value)); return *this;}
 
     /**
-     * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
-     * as URL Query parameters.</p>
+     * <p>The tag-set for the object copy in the destination bucket. This value must be
+     * used in conjunction with the <code>x-amz-tagging-directive</code> if you choose
+     * <code>REPLACE</code> for the <code>x-amz-tagging-directive</code>. If you choose
+     * <code>COPY</code> for the <code>x-amz-tagging-directive</code>, you don't need
+     * to set the <code>x-amz-tagging</code> header, because the tag-set will be copied
+     * from the source object directly. The tag-set must be encoded as URL Query
+     * parameters.</p> <p>The default value is the empty value.</p>  <p>
+     * <b>Directory buckets</b> - For directory buckets in a <code>CopyObject</code>
+     * operation, only the empty tag-set is supported. Any requests that attempt to
+     * write non-empty tags into directory buckets will receive a <code>501 Not
+     * Implemented</code> status code. When the destination bucket is a directory
+     * bucket, you will receive a <code>501 Not Implemented</code> response in any of
+     * the following situations:</p> <ul> <li> <p>When you attempt to <code>COPY</code>
+     * the tag-set from an S3 source object that has non-empty tags.</p> </li> <li>
+     * <p>When you attempt to <code>REPLACE</code> the tag-set of a source object and
+     * set a non-empty value to <code>x-amz-tagging</code>.</p> </li> <li> <p>When you
+     * don't set the <code>x-amz-tagging-directive</code> header and the source object
+     * has non-empty tags. This is because the default value of
+     * <code>x-amz-tagging-directive</code> is <code>COPY</code>.</p> </li> </ul>
+     * <p>Because only the empty tag-set is supported for directory buckets in a
+     * <code>CopyObject</code> operation, the following situations are allowed:</p>
+     * <ul> <li> <p>When you attempt to <code>COPY</code> the tag-set from a directory
+     * bucket source object that has no tags to a general purpose bucket. It copies an
+     * empty tag-set to the destination object.</p> </li> <li> <p>When you attempt to
+     * <code>REPLACE</code> the tag-set of a directory bucket source object and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a general purpose bucket source object that has non-empty tags and set the
+     * <code>x-amz-tagging</code> value of the directory bucket destination object to
+     * empty.</p> </li> <li> <p>When you attempt to <code>REPLACE</code> the tag-set of
+     * a directory bucket source object and don't set the <code>x-amz-tagging</code>
+     * value of the directory bucket destination object. This is because the default
+     * value of <code>x-amz-tagging</code> is the empty value.</p> </li> </ul> 
      */
     inline CopyObjectRequest& WithTagging(const char* value) { SetTagging(value); return *this;}
 
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The Object Lock mode that you want to apply to the object copy.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline const ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The Object Lock mode that you want to apply to the object copy.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The Object Lock mode that you want to apply to the object copy.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetObjectLockMode(const ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The Object Lock mode that you want to apply to the object copy.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetObjectLockMode(ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The Object Lock mode that you want to apply to the object copy.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline CopyObjectRequest& WithObjectLockMode(const ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The Object Lock mode that you want to apply to the object copy.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline CopyObjectRequest& WithObjectLockMode(ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
-     * expire.</p>
+     * <p>The date and time when you want the Object Lock of the object copy to
+     * expire.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
-     * expire.</p>
+     * <p>The date and time when you want the Object Lock of the object copy to
+     * expire.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
-     * expire.</p>
+     * <p>The date and time when you want the Object Lock of the object copy to
+     * expire.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
-     * expire.</p>
+     * <p>The date and time when you want the Object Lock of the object copy to
+     * expire.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
-     * expire.</p>
+     * <p>The date and time when you want the Object Lock of the object copy to
+     * expire.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline CopyObjectRequest& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
-     * expire.</p>
+     * <p>The date and time when you want the Object Lock of the object copy to
+     * expire.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline CopyObjectRequest& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies whether you want to apply a legal hold to the copied object.</p>
+     * <p>Specifies whether you want to apply a legal hold to the object copy.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline const ObjectLockLegalHoldStatus& GetObjectLockLegalHoldStatus() const{ return m_objectLockLegalHoldStatus; }
 
     /**
-     * <p>Specifies whether you want to apply a legal hold to the copied object.</p>
+     * <p>Specifies whether you want to apply a legal hold to the object copy.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline bool ObjectLockLegalHoldStatusHasBeenSet() const { return m_objectLockLegalHoldStatusHasBeenSet; }
 
     /**
-     * <p>Specifies whether you want to apply a legal hold to the copied object.</p>
+     * <p>Specifies whether you want to apply a legal hold to the object copy.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = value; }
 
     /**
-     * <p>Specifies whether you want to apply a legal hold to the copied object.</p>
+     * <p>Specifies whether you want to apply a legal hold to the object copy.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = std::move(value); }
 
     /**
-     * <p>Specifies whether you want to apply a legal hold to the copied object.</p>
+     * <p>Specifies whether you want to apply a legal hold to the object copy.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline CopyObjectRequest& WithObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { SetObjectLockLegalHoldStatus(value); return *this;}
 
     /**
-     * <p>Specifies whether you want to apply a legal hold to the copied object.</p>
+     * <p>Specifies whether you want to apply a legal hold to the object copy.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline CopyObjectRequest& WithObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The account ID of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request fails with the HTTP status
-     * code <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected destination bucket owner. If the account ID
+     * that you provide does not match the actual owner of the destination bucket, the
+     * request fails with the HTTP status code <code>403 Forbidden</code> (access
+     * denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account ID of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request fails with the HTTP status
-     * code <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected destination bucket owner. If the account ID
+     * that you provide does not match the actual owner of the destination bucket, the
+     * request fails with the HTTP status code <code>403 Forbidden</code> (access
+     * denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request fails with the HTTP status
-     * code <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected destination bucket owner. If the account ID
+     * that you provide does not match the actual owner of the destination bucket, the
+     * request fails with the HTTP status code <code>403 Forbidden</code> (access
+     * denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account ID of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request fails with the HTTP status
-     * code <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected destination bucket owner. If the account ID
+     * that you provide does not match the actual owner of the destination bucket, the
+     * request fails with the HTTP status code <code>403 Forbidden</code> (access
+     * denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request fails with the HTTP status
-     * code <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected destination bucket owner. If the account ID
+     * that you provide does not match the actual owner of the destination bucket, the
+     * request fails with the HTTP status code <code>403 Forbidden</code> (access
+     * denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account ID of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request fails with the HTTP status
-     * code <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected destination bucket owner. If the account ID
+     * that you provide does not match the actual owner of the destination bucket, the
+     * request fails with the HTTP status code <code>403 Forbidden</code> (access
+     * denied).</p>
      */
     inline CopyObjectRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request fails with the HTTP status
-     * code <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected destination bucket owner. If the account ID
+     * that you provide does not match the actual owner of the destination bucket, the
+     * request fails with the HTTP status code <code>403 Forbidden</code> (access
+     * denied).</p>
      */
     inline CopyObjectRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request fails with the HTTP status
-     * code <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected destination bucket owner. If the account ID
+     * that you provide does not match the actual owner of the destination bucket, the
+     * request fails with the HTTP status code <code>403 Forbidden</code> (access
+     * denied).</p>
      */
     inline CopyObjectRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 
 
     /**
-     * <p>The account ID of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request fails with the HTTP status code
-     * <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected source bucket owner. If the account ID that
+     * you provide does not match the actual owner of the source bucket, the request
+     * fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedSourceBucketOwner() const{ return m_expectedSourceBucketOwner; }
 
     /**
-     * <p>The account ID of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request fails with the HTTP status code
-     * <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected source bucket owner. If the account ID that
+     * you provide does not match the actual owner of the source bucket, the request
+     * fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedSourceBucketOwnerHasBeenSet() const { return m_expectedSourceBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request fails with the HTTP status code
-     * <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected source bucket owner. If the account ID that
+     * you provide does not match the actual owner of the source bucket, the request
+     * fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedSourceBucketOwner(const Aws::String& value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner = value; }
 
     /**
-     * <p>The account ID of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request fails with the HTTP status code
-     * <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected source bucket owner. If the account ID that
+     * you provide does not match the actual owner of the source bucket, the request
+     * fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedSourceBucketOwner(Aws::String&& value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request fails with the HTTP status code
-     * <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected source bucket owner. If the account ID that
+     * you provide does not match the actual owner of the source bucket, the request
+     * fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedSourceBucketOwner(const char* value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner.assign(value); }
 
     /**
-     * <p>The account ID of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request fails with the HTTP status code
-     * <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected source bucket owner. If the account ID that
+     * you provide does not match the actual owner of the source bucket, the request
+     * fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline CopyObjectRequest& WithExpectedSourceBucketOwner(const Aws::String& value) { SetExpectedSourceBucketOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request fails with the HTTP status code
-     * <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected source bucket owner. If the account ID that
+     * you provide does not match the actual owner of the source bucket, the request
+     * fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline CopyObjectRequest& WithExpectedSourceBucketOwner(Aws::String&& value) { SetExpectedSourceBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request fails with the HTTP status code
-     * <code>403 Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected source bucket owner. If the account ID that
+     * you provide does not match the actual owner of the source bucket, the request
+     * fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline CopyObjectRequest& WithExpectedSourceBucketOwner(const char* value) { SetExpectedSourceBucketOwner(value); return *this;}
 

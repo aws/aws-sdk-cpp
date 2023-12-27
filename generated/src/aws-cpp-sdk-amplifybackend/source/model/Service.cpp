@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Service::NOT_SET:
+            return {};
           case Service::COGNITO:
             return "COGNITO";
           default:

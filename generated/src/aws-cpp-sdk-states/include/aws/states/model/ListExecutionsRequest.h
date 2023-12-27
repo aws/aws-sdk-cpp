@@ -8,6 +8,7 @@
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/ExecutionStatus.h>
+#include <aws/states/model/ExecutionRedriveFilter.h>
 #include <utility>
 
 namespace Aws
@@ -391,6 +392,73 @@ namespace Model
      */
     inline ListExecutionsRequest& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
 
+
+    /**
+     * <p>Sets a filter to list executions based on whether or not they have been
+     * redriven.</p> <p>For a Distributed Map, <code>redriveFilter</code> sets a filter
+     * to list child workflow executions based on whether or not they have been
+     * redriven.</p> <p>If you do not provide a <code>redriveFilter</code>, Step
+     * Functions returns a list of both redriven and non-redriven executions.</p> <p>If
+     * you provide a state machine ARN in <code>redriveFilter</code>, the API returns a
+     * validation exception.</p>
+     */
+    inline const ExecutionRedriveFilter& GetRedriveFilter() const{ return m_redriveFilter; }
+
+    /**
+     * <p>Sets a filter to list executions based on whether or not they have been
+     * redriven.</p> <p>For a Distributed Map, <code>redriveFilter</code> sets a filter
+     * to list child workflow executions based on whether or not they have been
+     * redriven.</p> <p>If you do not provide a <code>redriveFilter</code>, Step
+     * Functions returns a list of both redriven and non-redriven executions.</p> <p>If
+     * you provide a state machine ARN in <code>redriveFilter</code>, the API returns a
+     * validation exception.</p>
+     */
+    inline bool RedriveFilterHasBeenSet() const { return m_redriveFilterHasBeenSet; }
+
+    /**
+     * <p>Sets a filter to list executions based on whether or not they have been
+     * redriven.</p> <p>For a Distributed Map, <code>redriveFilter</code> sets a filter
+     * to list child workflow executions based on whether or not they have been
+     * redriven.</p> <p>If you do not provide a <code>redriveFilter</code>, Step
+     * Functions returns a list of both redriven and non-redriven executions.</p> <p>If
+     * you provide a state machine ARN in <code>redriveFilter</code>, the API returns a
+     * validation exception.</p>
+     */
+    inline void SetRedriveFilter(const ExecutionRedriveFilter& value) { m_redriveFilterHasBeenSet = true; m_redriveFilter = value; }
+
+    /**
+     * <p>Sets a filter to list executions based on whether or not they have been
+     * redriven.</p> <p>For a Distributed Map, <code>redriveFilter</code> sets a filter
+     * to list child workflow executions based on whether or not they have been
+     * redriven.</p> <p>If you do not provide a <code>redriveFilter</code>, Step
+     * Functions returns a list of both redriven and non-redriven executions.</p> <p>If
+     * you provide a state machine ARN in <code>redriveFilter</code>, the API returns a
+     * validation exception.</p>
+     */
+    inline void SetRedriveFilter(ExecutionRedriveFilter&& value) { m_redriveFilterHasBeenSet = true; m_redriveFilter = std::move(value); }
+
+    /**
+     * <p>Sets a filter to list executions based on whether or not they have been
+     * redriven.</p> <p>For a Distributed Map, <code>redriveFilter</code> sets a filter
+     * to list child workflow executions based on whether or not they have been
+     * redriven.</p> <p>If you do not provide a <code>redriveFilter</code>, Step
+     * Functions returns a list of both redriven and non-redriven executions.</p> <p>If
+     * you provide a state machine ARN in <code>redriveFilter</code>, the API returns a
+     * validation exception.</p>
+     */
+    inline ListExecutionsRequest& WithRedriveFilter(const ExecutionRedriveFilter& value) { SetRedriveFilter(value); return *this;}
+
+    /**
+     * <p>Sets a filter to list executions based on whether or not they have been
+     * redriven.</p> <p>For a Distributed Map, <code>redriveFilter</code> sets a filter
+     * to list child workflow executions based on whether or not they have been
+     * redriven.</p> <p>If you do not provide a <code>redriveFilter</code>, Step
+     * Functions returns a list of both redriven and non-redriven executions.</p> <p>If
+     * you provide a state machine ARN in <code>redriveFilter</code>, the API returns a
+     * validation exception.</p>
+     */
+    inline ListExecutionsRequest& WithRedriveFilter(ExecutionRedriveFilter&& value) { SetRedriveFilter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stateMachineArn;
@@ -407,6 +475,9 @@ namespace Model
 
     Aws::String m_mapRunArn;
     bool m_mapRunArnHasBeenSet = false;
+
+    ExecutionRedriveFilter m_redriveFilter;
+    bool m_redriveFilterHasBeenSet = false;
   };
 
 } // namespace Model

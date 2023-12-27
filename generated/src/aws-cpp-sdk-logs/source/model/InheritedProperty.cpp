@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InheritedProperty::NOT_SET:
+            return {};
           case InheritedProperty::ACCOUNT_DATA_PROTECTION:
             return "ACCOUNT_DATA_PROTECTION";
           default:

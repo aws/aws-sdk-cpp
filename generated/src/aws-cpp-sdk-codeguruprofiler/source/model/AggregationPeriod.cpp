@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregationPeriod::NOT_SET:
+            return {};
           case AggregationPeriod::PT5M:
             return "PT5M";
           case AggregationPeriod::PT1H:

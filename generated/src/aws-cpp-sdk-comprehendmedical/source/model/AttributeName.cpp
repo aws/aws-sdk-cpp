@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttributeName::NOT_SET:
+            return {};
           case AttributeName::SIGN:
             return "SIGN";
           case AttributeName::SYMPTOM:

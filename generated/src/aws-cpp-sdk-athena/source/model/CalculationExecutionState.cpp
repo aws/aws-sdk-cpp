@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CalculationExecutionState::NOT_SET:
+            return {};
           case CalculationExecutionState::CREATING:
             return "CREATING";
           case CalculationExecutionState::CREATED:

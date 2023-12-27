@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocationUpdateStatus::NOT_SET:
+            return {};
           case LocationUpdateStatus::PENDING_UPDATE:
             return "PENDING_UPDATE";
           default:

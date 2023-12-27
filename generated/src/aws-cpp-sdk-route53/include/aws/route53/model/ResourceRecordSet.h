@@ -71,11 +71,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -104,11 +99,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -137,11 +127,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -170,11 +155,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -203,11 +183,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -236,11 +211,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline ResourceRecordSet& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -269,11 +239,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline ResourceRecordSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -302,11 +267,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline ResourceRecordSet& WithName(const char* value) { SetName(value); return *this;}
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientVpnAuthenticationType::NOT_SET:
+            return {};
           case ClientVpnAuthenticationType::certificate_authentication:
             return "certificate-authentication";
           case ClientVpnAuthenticationType::directory_service_authentication:

@@ -20,13 +20,17 @@ namespace Model
 
 SecurityContext::SecurityContext() : 
     m_privileged(false),
-    m_privilegedHasBeenSet(false)
+    m_privilegedHasBeenSet(false),
+    m_allowPrivilegeEscalation(false),
+    m_allowPrivilegeEscalationHasBeenSet(false)
 {
 }
 
 SecurityContext::SecurityContext(JsonView jsonValue) : 
     m_privileged(false),
-    m_privilegedHasBeenSet(false)
+    m_privilegedHasBeenSet(false),
+    m_allowPrivilegeEscalation(false),
+    m_allowPrivilegeEscalationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ SecurityContext& SecurityContext::operator =(JsonView jsonValue)
     m_privilegedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("allowPrivilegeEscalation"))
+  {
+    m_allowPrivilegeEscalation = jsonValue.GetBool("allowPrivilegeEscalation");
+
+    m_allowPrivilegeEscalationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,12 @@ JsonValue SecurityContext::Jsonize() const
   if(m_privilegedHasBeenSet)
   {
    payload.WithBool("privileged", m_privileged);
+
+  }
+
+  if(m_allowPrivilegeEscalationHasBeenSet)
+  {
+   payload.WithBool("allowPrivilegeEscalation", m_allowPrivilegeEscalation);
 
   }
 

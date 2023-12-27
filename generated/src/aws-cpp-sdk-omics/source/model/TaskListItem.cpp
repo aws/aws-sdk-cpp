@@ -31,7 +31,8 @@ TaskListItem::TaskListItem() :
     m_startTimeHasBeenSet(false),
     m_stopTimeHasBeenSet(false),
     m_gpus(0),
-    m_gpusHasBeenSet(false)
+    m_gpusHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ TaskListItem::TaskListItem(JsonView jsonValue) :
     m_startTimeHasBeenSet(false),
     m_stopTimeHasBeenSet(false),
     m_gpus(0),
-    m_gpusHasBeenSet(false)
+    m_gpusHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +120,13 @@ TaskListItem& TaskListItem::operator =(JsonView jsonValue)
     m_gpusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -172,6 +181,12 @@ JsonValue TaskListItem::Jsonize() const
   if(m_gpusHasBeenSet)
   {
    payload.WithInteger("gpus", m_gpus);
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", m_instanceType);
 
   }
 

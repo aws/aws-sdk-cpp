@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
-#include <aws/connectcampaigns/model/InstanceIdFilterOperator.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcampaigns/model/InstanceIdFilterOperator.h>
 #include <utility>
 
 namespace Aws
@@ -39,25 +39,6 @@ namespace Model
 
 
     
-    inline const InstanceIdFilterOperator& GetOperator() const{ return m_operator; }
-
-    
-    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    
-    inline void SetOperator(const InstanceIdFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    
-    inline void SetOperator(InstanceIdFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    
-    inline InstanceIdFilter& WithOperator(const InstanceIdFilterOperator& value) { SetOperator(value); return *this;}
-
-    
-    inline InstanceIdFilter& WithOperator(InstanceIdFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
-
-
-    
     inline const Aws::String& GetValue() const{ return m_value; }
 
     
@@ -81,13 +62,32 @@ namespace Model
     
     inline InstanceIdFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
-  private:
 
-    InstanceIdFilterOperator m_operator;
-    bool m_operatorHasBeenSet = false;
+    
+    inline const InstanceIdFilterOperator& GetOperator() const{ return m_operator; }
+
+    
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+
+    
+    inline void SetOperator(const InstanceIdFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
+
+    
+    inline void SetOperator(InstanceIdFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+
+    
+    inline InstanceIdFilter& WithOperator(const InstanceIdFilterOperator& value) { SetOperator(value); return *this;}
+
+    
+    inline InstanceIdFilter& WithOperator(InstanceIdFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
+
+    InstanceIdFilterOperator m_operator;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

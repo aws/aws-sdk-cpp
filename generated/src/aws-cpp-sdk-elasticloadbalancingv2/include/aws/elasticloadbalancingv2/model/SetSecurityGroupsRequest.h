@@ -8,6 +8,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum.h>
 #include <utility>
 
 namespace Aws
@@ -123,6 +124,49 @@ namespace Model
      */
     inline SetSecurityGroupsRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
+     * is <code>on</code>.</p>
+     */
+    inline const EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum& GetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() const{ return m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic; }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
+     * is <code>on</code>.</p>
+     */
+    inline bool EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet() const { return m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
+     * is <code>on</code>.</p>
+     */
+    inline void SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum& value) { m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = true; m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = value; }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
+     * is <code>on</code>.</p>
+     */
+    inline void SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum&& value) { m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = true; m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = std::move(value); }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
+     * is <code>on</code>.</p>
+     */
+    inline SetSecurityGroupsRequest& WithEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum& value) { SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(value); return *this;}
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
+     * is <code>on</code>.</p>
+     */
+    inline SetSecurityGroupsRequest& WithEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum&& value) { SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_loadBalancerArn;
@@ -130,6 +174,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet = false;
+
+    EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
+    bool m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = false;
   };
 
 } // namespace Model

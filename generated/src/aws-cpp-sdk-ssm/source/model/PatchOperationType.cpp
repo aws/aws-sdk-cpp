@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PatchOperationType::NOT_SET:
+            return {};
           case PatchOperationType::Scan:
             return "Scan";
           case PatchOperationType::Install:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrialComponentPrimaryStatus::NOT_SET:
+            return {};
           case TrialComponentPrimaryStatus::InProgress:
             return "InProgress";
           case TrialComponentPrimaryStatus::Completed:

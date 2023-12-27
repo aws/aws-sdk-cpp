@@ -42,7 +42,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return maxResults number of items, NextToken allows you to
+     * request is made to return MaxResults number of items, NextToken allows you to
      * return more items in your list starting at the location pointed to by the next
      * token. </p>
      */
@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return maxResults number of items, NextToken allows you to
+     * request is made to return MaxResults number of items, NextToken allows you to
      * return more items in your list starting at the location pointed to by the next
      * token. </p>
      */
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return maxResults number of items, NextToken allows you to
+     * request is made to return MaxResults number of items, NextToken allows you to
      * return more items in your list starting at the location pointed to by the next
      * token. </p>
      */
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return maxResults number of items, NextToken allows you to
+     * request is made to return MaxResults number of items, NextToken allows you to
      * return more items in your list starting at the location pointed to by the next
      * token. </p>
      */
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return maxResults number of items, NextToken allows you to
+     * request is made to return MaxResults number of items, NextToken allows you to
      * return more items in your list starting at the location pointed to by the next
      * token. </p>
      */
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return maxResults number of items, NextToken allows you to
+     * request is made to return MaxResults number of items, NextToken allows you to
      * return more items in your list starting at the location pointed to by the next
      * token. </p>
      */
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return maxResults number of items, NextToken allows you to
+     * request is made to return MaxResults number of items, NextToken allows you to
      * return more items in your list starting at the location pointed to by the next
      * token. </p>
      */
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return maxResults number of items, NextToken allows you to
+     * request is made to return MaxResults number of items, NextToken allows you to
      * return more items in your list starting at the location pointed to by the next
      * token. </p>
      */
@@ -270,129 +270,161 @@ namespace Model
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
-     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
-     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
-     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
-     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
-     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
-     * </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
-     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
-     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
-     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
-     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
-     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
-     * </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
-     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
-     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
-     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
-     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
-     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
-     * </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
-     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
-     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
-     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
-     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
-     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
-     * </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
-     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
-     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
-     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
-     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
-     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
-     * </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
-     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
-     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
-     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
-     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
-     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
-     * </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
-     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
-     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
-     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
-     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
-     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
-     * </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
-     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
-     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
-     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
-     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
-     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
-     * </ul>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 
@@ -617,6 +649,103 @@ namespace Model
      */
     inline ListCopyJobsRequest& WithByParentJobId(const char* value) { SetByParentJobId(value); return *this;}
 
+
+    /**
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p> <p>View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted strings.</p> <p>The the value ANY returns count of all
+     * message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts for
+     * all message categories and returns the sum.</p>
+     */
+    inline const Aws::String& GetByMessageCategory() const{ return m_byMessageCategory; }
+
+    /**
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p> <p>View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted strings.</p> <p>The the value ANY returns count of all
+     * message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts for
+     * all message categories and returns the sum.</p>
+     */
+    inline bool ByMessageCategoryHasBeenSet() const { return m_byMessageCategoryHasBeenSet; }
+
+    /**
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p> <p>View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted strings.</p> <p>The the value ANY returns count of all
+     * message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts for
+     * all message categories and returns the sum.</p>
+     */
+    inline void SetByMessageCategory(const Aws::String& value) { m_byMessageCategoryHasBeenSet = true; m_byMessageCategory = value; }
+
+    /**
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p> <p>View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted strings.</p> <p>The the value ANY returns count of all
+     * message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts for
+     * all message categories and returns the sum.</p>
+     */
+    inline void SetByMessageCategory(Aws::String&& value) { m_byMessageCategoryHasBeenSet = true; m_byMessageCategory = std::move(value); }
+
+    /**
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p> <p>View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted strings.</p> <p>The the value ANY returns count of all
+     * message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts for
+     * all message categories and returns the sum.</p>
+     */
+    inline void SetByMessageCategory(const char* value) { m_byMessageCategoryHasBeenSet = true; m_byMessageCategory.assign(value); }
+
+    /**
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p> <p>View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted strings.</p> <p>The the value ANY returns count of all
+     * message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts for
+     * all message categories and returns the sum.</p>
+     */
+    inline ListCopyJobsRequest& WithByMessageCategory(const Aws::String& value) { SetByMessageCategory(value); return *this;}
+
+    /**
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p> <p>View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted strings.</p> <p>The the value ANY returns count of all
+     * message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts for
+     * all message categories and returns the sum.</p>
+     */
+    inline ListCopyJobsRequest& WithByMessageCategory(Aws::String&& value) { SetByMessageCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>This is an optional parameter that can be used to filter out jobs with a
+     * MessageCategory which matches the value you input.</p> <p>Example strings may
+     * include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p> <p>View <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of accepted strings.</p> <p>The the value ANY returns count of all
+     * message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts for
+     * all message categories and returns the sum.</p>
+     */
+    inline ListCopyJobsRequest& WithByMessageCategory(const char* value) { SetByMessageCategory(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -654,6 +783,9 @@ namespace Model
 
     Aws::String m_byParentJobId;
     bool m_byParentJobIdHasBeenSet = false;
+
+    Aws::String m_byMessageCategory;
+    bool m_byMessageCategoryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregateFunctionName::NOT_SET:
+            return {};
           case AggregateFunctionName::SUM:
             return "SUM";
           case AggregateFunctionName::SUM_DISTINCT:

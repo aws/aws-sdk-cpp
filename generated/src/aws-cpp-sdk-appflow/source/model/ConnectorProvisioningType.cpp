@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectorProvisioningType::NOT_SET:
+            return {};
           case ConnectorProvisioningType::LAMBDA:
             return "LAMBDA";
           default:

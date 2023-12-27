@@ -27,6 +27,9 @@ namespace Aws
         static const int InvalidResourceIdentifier_HASH = HashingUtils::HashString("InvalidResourceIdentifier");
         static const int InvalidAz_HASH = HashingUtils::HashString("InvalidAz");
         static const int UnsupportedAz_HASH = HashingUtils::HashString("UnsupportedAz");
+        static const int InvalidAlarmCondition_HASH = HashingUtils::HashString("InvalidAlarmCondition");
+        static const int InvalidConditionType_HASH = HashingUtils::HashString("InvalidConditionType");
+        static const int InvalidPracticeBlocker_HASH = HashingUtils::HashString("InvalidPracticeBlocker");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -60,6 +63,18 @@ namespace Aws
           {
             return ValidationExceptionReason::UnsupportedAz;
           }
+          else if (hashCode == InvalidAlarmCondition_HASH)
+          {
+            return ValidationExceptionReason::InvalidAlarmCondition;
+          }
+          else if (hashCode == InvalidConditionType_HASH)
+          {
+            return ValidationExceptionReason::InvalidConditionType;
+          }
+          else if (hashCode == InvalidPracticeBlocker_HASH)
+          {
+            return ValidationExceptionReason::InvalidPracticeBlocker;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::NOT_SET:
+            return {};
           case ValidationExceptionReason::InvalidExpiresIn:
             return "InvalidExpiresIn";
           case ValidationExceptionReason::InvalidStatus:
@@ -88,6 +105,12 @@ namespace Aws
             return "InvalidAz";
           case ValidationExceptionReason::UnsupportedAz:
             return "UnsupportedAz";
+          case ValidationExceptionReason::InvalidAlarmCondition:
+            return "InvalidAlarmCondition";
+          case ValidationExceptionReason::InvalidConditionType:
+            return "InvalidConditionType";
+          case ValidationExceptionReason::InvalidPracticeBlocker:
+            return "InvalidPracticeBlocker";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

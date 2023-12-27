@@ -10,6 +10,7 @@
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrors.h>
 
+#include <aws/transcribestreaming/model/StartMedicalStreamTranscriptionInitialResponse.h>
 #include <aws/transcribestreaming/model/MedicalTranscriptEvent.h>
 
 namespace Aws
@@ -20,12 +21,14 @@ namespace Model
 {
     enum class StartMedicalStreamTranscriptionEventType
     {
+        INITIAL_RESPONSE,
         TRANSCRIPTEVENT,
         UNKNOWN
     };
 
     class StartMedicalStreamTranscriptionHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const StartMedicalStreamTranscriptionInitialResponse&)> StartMedicalStreamTranscriptionInitialResponseCallback;
         typedef std::function<void(const MedicalTranscriptEvent&)> MedicalTranscriptEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& error)> ErrorCallback;
 
@@ -35,6 +38,7 @@ namespace Model
 
         AWS_TRANSCRIBESTREAMINGSERVICE_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const StartMedicalStreamTranscriptionInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetMedicalTranscriptEventCallback(const MedicalTranscriptEventCallback& callback) { m_onMedicalTranscriptEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
@@ -43,6 +47,7 @@ namespace Model
         AWS_TRANSCRIBESTREAMINGSERVICE_API void HandleErrorInMessage();
         AWS_TRANSCRIBESTREAMINGSERVICE_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
+        StartMedicalStreamTranscriptionInitialResponseCallback m_onInitialResponse;
         MedicalTranscriptEventCallback m_onMedicalTranscriptEvent;
         ErrorCallback m_onError;
     };

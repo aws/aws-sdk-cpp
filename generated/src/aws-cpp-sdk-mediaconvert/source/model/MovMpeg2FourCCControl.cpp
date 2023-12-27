@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MovMpeg2FourCCControl::NOT_SET:
+            return {};
           case MovMpeg2FourCCControl::XDCAM:
             return "XDCAM";
           case MovMpeg2FourCCControl::MPEG:

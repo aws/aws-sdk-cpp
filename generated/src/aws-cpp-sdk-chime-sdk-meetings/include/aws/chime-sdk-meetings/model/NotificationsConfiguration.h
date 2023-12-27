@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+     * <p>The ARN of the Amazon Web Services Lambda function in the notifications
+     * configuration.</p>
      */
     inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
 
     /**
-     * <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+     * <p>The ARN of the Amazon Web Services Lambda function in the notifications
+     * configuration.</p>
      */
     inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+     * <p>The ARN of the Amazon Web Services Lambda function in the notifications
+     * configuration.</p>
      */
     inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
 
     /**
-     * <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+     * <p>The ARN of the Amazon Web Services Lambda function in the notifications
+     * configuration.</p>
      */
     inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+     * <p>The ARN of the Amazon Web Services Lambda function in the notifications
+     * configuration.</p>
      */
     inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+     * <p>The ARN of the Amazon Web Services Lambda function in the notifications
+     * configuration.</p>
      */
     inline NotificationsConfiguration& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+     * <p>The ARN of the Amazon Web Services Lambda function in the notifications
+     * configuration.</p>
      */
     inline NotificationsConfiguration& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+     * <p>The ARN of the Amazon Web Services Lambda function in the notifications
+     * configuration.</p>
      */
     inline NotificationsConfiguration& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
 

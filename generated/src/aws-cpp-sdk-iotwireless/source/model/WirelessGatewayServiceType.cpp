@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WirelessGatewayServiceType::NOT_SET:
+            return {};
           case WirelessGatewayServiceType::CUPS:
             return "CUPS";
           case WirelessGatewayServiceType::LNS:

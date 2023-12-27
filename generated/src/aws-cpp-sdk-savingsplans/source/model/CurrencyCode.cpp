@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CurrencyCode::NOT_SET:
+            return {};
           case CurrencyCode::CNY:
             return "CNY";
           case CurrencyCode::USD:

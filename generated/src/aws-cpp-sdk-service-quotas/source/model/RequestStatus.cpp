@@ -25,6 +25,8 @@ namespace Aws
         static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
         static const int DENIED_HASH = HashingUtils::HashString("DENIED");
         static const int CASE_CLOSED_HASH = HashingUtils::HashString("CASE_CLOSED");
+        static const int NOT_APPROVED_HASH = HashingUtils::HashString("NOT_APPROVED");
+        static const int INVALID_REQUEST_HASH = HashingUtils::HashString("INVALID_REQUEST");
 
 
         RequestStatus GetRequestStatusForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return RequestStatus::CASE_CLOSED;
           }
+          else if (hashCode == NOT_APPROVED_HASH)
+          {
+            return RequestStatus::NOT_APPROVED;
+          }
+          else if (hashCode == INVALID_REQUEST_HASH)
+          {
+            return RequestStatus::INVALID_REQUEST;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -64,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequestStatus::NOT_SET:
+            return {};
           case RequestStatus::PENDING:
             return "PENDING";
           case RequestStatus::CASE_OPENED:
@@ -74,6 +86,10 @@ namespace Aws
             return "DENIED";
           case RequestStatus::CASE_CLOSED:
             return "CASE_CLOSED";
+          case RequestStatus::NOT_APPROVED:
+            return "NOT_APPROVED";
+          case RequestStatus::INVALID_REQUEST:
+            return "INVALID_REQUEST";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrincipalType::NOT_SET:
+            return {};
           case PrincipalType::AWS_ACCOUNT:
             return "AWS_ACCOUNT";
           case PrincipalType::AWS_SERVICE:

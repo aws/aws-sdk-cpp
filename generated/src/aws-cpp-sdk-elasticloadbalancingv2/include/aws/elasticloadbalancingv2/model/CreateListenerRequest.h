@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/ProtocolEnum.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/MutualAuthenticationAttributes.h>
 #include <aws/elasticloadbalancingv2/model/Certificate.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
 #include <aws/elasticloadbalancingv2/model/Tag.h>
@@ -490,6 +491,37 @@ namespace Model
      */
     inline CreateListenerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline const MutualAuthenticationAttributes& GetMutualAuthentication() const{ return m_mutualAuthentication; }
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline bool MutualAuthenticationHasBeenSet() const { return m_mutualAuthenticationHasBeenSet; }
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline void SetMutualAuthentication(const MutualAuthenticationAttributes& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = value; }
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline void SetMutualAuthentication(MutualAuthenticationAttributes&& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = std::move(value); }
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline CreateListenerRequest& WithMutualAuthentication(const MutualAuthenticationAttributes& value) { SetMutualAuthentication(value); return *this;}
+
+    /**
+     * <p>The mutual authentication configuration information.</p>
+     */
+    inline CreateListenerRequest& WithMutualAuthentication(MutualAuthenticationAttributes&& value) { SetMutualAuthentication(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_loadBalancerArn;
@@ -515,6 +547,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    MutualAuthenticationAttributes m_mutualAuthentication;
+    bool m_mutualAuthenticationHasBeenSet = false;
   };
 
 } // namespace Model

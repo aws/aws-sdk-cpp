@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appflow/model/OAuth2Credentials.h>
 #include <utility>
 
 namespace Aws
@@ -119,6 +120,37 @@ namespace Model
      */
     inline ServiceNowConnectorProfileCredentials& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
+    /**
+     * <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+     */
+    inline const OAuth2Credentials& GetOAuth2Credentials() const{ return m_oAuth2Credentials; }
+
+    /**
+     * <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+     */
+    inline bool OAuth2CredentialsHasBeenSet() const { return m_oAuth2CredentialsHasBeenSet; }
+
+    /**
+     * <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+     */
+    inline void SetOAuth2Credentials(const OAuth2Credentials& value) { m_oAuth2CredentialsHasBeenSet = true; m_oAuth2Credentials = value; }
+
+    /**
+     * <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+     */
+    inline void SetOAuth2Credentials(OAuth2Credentials&& value) { m_oAuth2CredentialsHasBeenSet = true; m_oAuth2Credentials = std::move(value); }
+
+    /**
+     * <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+     */
+    inline ServiceNowConnectorProfileCredentials& WithOAuth2Credentials(const OAuth2Credentials& value) { SetOAuth2Credentials(value); return *this;}
+
+    /**
+     * <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+     */
+    inline ServiceNowConnectorProfileCredentials& WithOAuth2Credentials(OAuth2Credentials&& value) { SetOAuth2Credentials(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_username;
@@ -126,6 +158,9 @@ namespace Model
 
     Aws::String m_password;
     bool m_passwordHasBeenSet = false;
+
+    OAuth2Credentials m_oAuth2Credentials;
+    bool m_oAuth2CredentialsHasBeenSet = false;
   };
 
 } // namespace Model

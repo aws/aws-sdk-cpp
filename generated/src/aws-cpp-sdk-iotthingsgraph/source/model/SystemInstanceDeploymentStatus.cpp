@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SystemInstanceDeploymentStatus::NOT_SET:
+            return {};
           case SystemInstanceDeploymentStatus::NOT_DEPLOYED:
             return "NOT_DEPLOYED";
           case SystemInstanceDeploymentStatus::BOOTSTRAP:

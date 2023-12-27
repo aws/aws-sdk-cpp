@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetSelection::NOT_SET:
+            return {};
           case TargetSelection::CONTINUOUS:
             return "CONTINUOUS";
           case TargetSelection::SNAPSHOT:

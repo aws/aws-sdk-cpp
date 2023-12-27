@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ZendeskConnectorOperator::NOT_SET:
+            return {};
           case ZendeskConnectorOperator::PROJECTION:
             return "PROJECTION";
           case ZendeskConnectorOperator::GREATER_THAN:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::IDENTITY_SOURCE:
             return "IDENTITY_SOURCE";
           case ResourceType::POLICY_STORE:

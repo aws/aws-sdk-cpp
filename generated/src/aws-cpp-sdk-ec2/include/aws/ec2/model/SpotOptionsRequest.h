@@ -518,7 +518,14 @@ namespace Model
      * interruptions. If you do not specify this parameter, you will pay the current
      * Spot price.</p>  <p>If you specify a maximum price, your Spot
      * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p>   <p>If your fleet includes T instances that
+     * are configured as <code>unlimited</code>, and if their average CPU usage exceeds
+     * the baseline utilization, you will incur a charge for surplus credits. The
+     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>MaxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetMaxTotalPrice() const{ return m_maxTotalPrice; }
 
@@ -528,7 +535,14 @@ namespace Model
      * interruptions. If you do not specify this parameter, you will pay the current
      * Spot price.</p>  <p>If you specify a maximum price, your Spot
      * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p>   <p>If your fleet includes T instances that
+     * are configured as <code>unlimited</code>, and if their average CPU usage exceeds
+     * the baseline utilization, you will incur a charge for surplus credits. The
+     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>MaxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline bool MaxTotalPriceHasBeenSet() const { return m_maxTotalPriceHasBeenSet; }
 
@@ -538,7 +552,14 @@ namespace Model
      * interruptions. If you do not specify this parameter, you will pay the current
      * Spot price.</p>  <p>If you specify a maximum price, your Spot
      * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p>   <p>If your fleet includes T instances that
+     * are configured as <code>unlimited</code>, and if their average CPU usage exceeds
+     * the baseline utilization, you will incur a charge for surplus credits. The
+     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>MaxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetMaxTotalPrice(const Aws::String& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = value; }
 
@@ -548,7 +569,14 @@ namespace Model
      * interruptions. If you do not specify this parameter, you will pay the current
      * Spot price.</p>  <p>If you specify a maximum price, your Spot
      * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p>   <p>If your fleet includes T instances that
+     * are configured as <code>unlimited</code>, and if their average CPU usage exceeds
+     * the baseline utilization, you will incur a charge for surplus credits. The
+     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>MaxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetMaxTotalPrice(Aws::String&& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = std::move(value); }
 
@@ -558,7 +586,14 @@ namespace Model
      * interruptions. If you do not specify this parameter, you will pay the current
      * Spot price.</p>  <p>If you specify a maximum price, your Spot
      * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p>   <p>If your fleet includes T instances that
+     * are configured as <code>unlimited</code>, and if their average CPU usage exceeds
+     * the baseline utilization, you will incur a charge for surplus credits. The
+     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>MaxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetMaxTotalPrice(const char* value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice.assign(value); }
 
@@ -568,7 +603,14 @@ namespace Model
      * interruptions. If you do not specify this parameter, you will pay the current
      * Spot price.</p>  <p>If you specify a maximum price, your Spot
      * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p>   <p>If your fleet includes T instances that
+     * are configured as <code>unlimited</code>, and if their average CPU usage exceeds
+     * the baseline utilization, you will incur a charge for surplus credits. The
+     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>MaxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline SpotOptionsRequest& WithMaxTotalPrice(const Aws::String& value) { SetMaxTotalPrice(value); return *this;}
 
@@ -578,7 +620,14 @@ namespace Model
      * interruptions. If you do not specify this parameter, you will pay the current
      * Spot price.</p>  <p>If you specify a maximum price, your Spot
      * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p>   <p>If your fleet includes T instances that
+     * are configured as <code>unlimited</code>, and if their average CPU usage exceeds
+     * the baseline utilization, you will incur a charge for surplus credits. The
+     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>MaxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline SpotOptionsRequest& WithMaxTotalPrice(Aws::String&& value) { SetMaxTotalPrice(std::move(value)); return *this;}
 
@@ -588,7 +637,14 @@ namespace Model
      * interruptions. If you do not specify this parameter, you will pay the current
      * Spot price.</p>  <p>If you specify a maximum price, your Spot
      * Instances will be interrupted more frequently than if you do not specify this
-     * parameter.</p> 
+     * parameter.</p>   <p>If your fleet includes T instances that
+     * are configured as <code>unlimited</code>, and if their average CPU usage exceeds
+     * the baseline utilization, you will incur a charge for surplus credits. The
+     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
+     * surplus credits, your final cost might be higher than what you specified for
+     * <code>MaxTotalPrice</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline SpotOptionsRequest& WithMaxTotalPrice(const char* value) { SetMaxTotalPrice(value); return *this;}
 

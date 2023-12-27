@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3DcFilter::NOT_SET:
+            return {};
           case Eac3DcFilter::DISABLED:
             return "DISABLED";
           case Eac3DcFilter::ENABLED:

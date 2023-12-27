@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RetentionPeriodUnit::NOT_SET:
+            return {};
           case RetentionPeriodUnit::DAYS:
             return "DAYS";
           default:

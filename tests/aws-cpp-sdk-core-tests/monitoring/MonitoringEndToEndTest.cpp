@@ -14,7 +14,7 @@
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/monitoring/DefaultMonitoring.h>
 #include <aws/core/net/SimpleUDP.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/DefaultExecutor.h>
 #include <aws/core/utils/threading/ThreadTask.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 

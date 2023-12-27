@@ -24,7 +24,8 @@ NetworkInterface::NetworkInterface() :
     m_networkInterfaceIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+    m_availabilityZoneHasBeenSet(false),
+    m_ipv6AddressHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_networkInterfaceIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+    m_availabilityZoneHasBeenSet(false),
+    m_ipv6AddressHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,6 +69,12 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
+    XmlNode ipv6AddressNode = resultNode.FirstChild("Ipv6Address");
+    if(!ipv6AddressNode.IsNull())
+    {
+      m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
+      m_ipv6AddressHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -94,6 +102,11 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
+  if(m_ipv6AddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
+  }
+
 }
 
 void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -113,6 +126,10 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_ipv6AddressHasBeenSet)
+  {
+      oStream << location << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
   }
 }
 

@@ -271,63 +271,63 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline long long GetContentLength() const{ return m_contentLength; }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline S3ObjectMetadata& WithContentLength(long long value) { SetContentLength(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline S3ObjectMetadata& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline S3ObjectMetadata& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline S3ObjectMetadata& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
@@ -405,53 +405,59 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline bool GetRequesterCharged() const{ return m_requesterCharged; }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline bool RequesterChargedHasBeenSet() const { return m_requesterChargedHasBeenSet; }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline void SetRequesterCharged(bool value) { m_requesterChargedHasBeenSet = true; m_requesterCharged = value; }
 
     /**
-     * <p/>
+     * <p> <i>This member has been deprecated.</i> </p> <p/>
      */
     inline S3ObjectMetadata& WithRequesterCharged(bool value) { SetRequesterCharged(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p/>  <p>For directory buckets, only the server-side encryption with
+     * Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline const S3SSEAlgorithm& GetSSEAlgorithm() const{ return m_sSEAlgorithm; }
 
     /**
-     * <p/>
+     * <p/>  <p>For directory buckets, only the server-side encryption with
+     * Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline bool SSEAlgorithmHasBeenSet() const { return m_sSEAlgorithmHasBeenSet; }
 
     /**
-     * <p/>
+     * <p/>  <p>For directory buckets, only the server-side encryption with
+     * Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline void SetSSEAlgorithm(const S3SSEAlgorithm& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = value; }
 
     /**
-     * <p/>
+     * <p/>  <p>For directory buckets, only the server-side encryption with
+     * Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline void SetSSEAlgorithm(S3SSEAlgorithm&& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = std::move(value); }
 
     /**
-     * <p/>
+     * <p/>  <p>For directory buckets, only the server-side encryption with
+     * Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline S3ObjectMetadata& WithSSEAlgorithm(const S3SSEAlgorithm& value) { SetSSEAlgorithm(value); return *this;}
 
     /**
-     * <p/>
+     * <p/>  <p>For directory buckets, only the server-side encryption with
+     * Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p> 
      */
     inline S3ObjectMetadata& WithSSEAlgorithm(S3SSEAlgorithm&& value) { SetSSEAlgorithm(std::move(value)); return *this;}
 

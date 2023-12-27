@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BaseMapStyleType::NOT_SET:
+            return {};
           case BaseMapStyleType::LIGHT_GRAY:
             return "LIGHT_GRAY";
           case BaseMapStyleType::DARK_GRAY:

@@ -172,9 +172,9 @@ namespace AppRunner
          * <p>Create an App Runner connection resource. App Runner requires a connection
          * resource when you create App Runner services that access private repositories
          * from certain third-party providers. You can share a connection across multiple
-         * services.</p> <p>A connection resource is needed to access GitHub repositories.
-         * GitHub requires a user interface approval process through the App Runner console
-         * before you can use the connection.</p><p><h3>See Also:</h3>   <a
+         * services.</p> <p>A connection resource is needed to access GitHub and Bitbucket
+         * repositories. Both require a user interface approval process through the App
+         * Runner console before you can use the connection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateConnection">AWS
          * API Reference</a></p>
          */
@@ -322,9 +322,10 @@ namespace AppRunner
 
         /**
          * <p>Delete an App Runner automatic scaling configuration resource. You can delete
-         * a specific revision or the latest active revision. You can't delete a
-         * configuration that's used by one or more App Runner services.</p><p><h3>See
-         * Also:</h3>   <a
+         * a top level auto scaling configuration, a specific revision of one, or all
+         * revisions associated with the top level configuration. You can't delete the
+         * default auto scaling configuration or a configuration that's used by one or more
+         * App Runner services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteAutoScalingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -817,6 +818,32 @@ namespace AppRunner
         }
 
         /**
+         * <p>Returns a list of the associated App Runner services using an auto scaling
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListServicesForAutoScalingConfigurationOutcome ListServicesForAutoScalingConfiguration(const Model::ListServicesForAutoScalingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListServicesForAutoScalingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListServicesForAutoScalingConfigurationRequestT = Model::ListServicesForAutoScalingConfigurationRequest>
+        Model::ListServicesForAutoScalingConfigurationOutcomeCallable ListServicesForAutoScalingConfigurationCallable(const ListServicesForAutoScalingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&AppRunnerClient::ListServicesForAutoScalingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for ListServicesForAutoScalingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListServicesForAutoScalingConfigurationRequestT = Model::ListServicesForAutoScalingConfigurationRequest>
+        void ListServicesForAutoScalingConfigurationAsync(const ListServicesForAutoScalingConfigurationRequestT& request, const ListServicesForAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppRunnerClient::ListServicesForAutoScalingConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>List tags that are associated with for an App Runner resource. The response
          * contains a list of tag key-value pairs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">AWS
@@ -1033,6 +1060,33 @@ namespace AppRunner
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppRunnerClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Update an auto scaling configuration to be the default. The existing default
+         * auto scaling configuration will be set to non-default
+         * automatically.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDefaultAutoScalingConfigurationOutcome UpdateDefaultAutoScalingConfiguration(const Model::UpdateDefaultAutoScalingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDefaultAutoScalingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDefaultAutoScalingConfigurationRequestT = Model::UpdateDefaultAutoScalingConfigurationRequest>
+        Model::UpdateDefaultAutoScalingConfigurationOutcomeCallable UpdateDefaultAutoScalingConfigurationCallable(const UpdateDefaultAutoScalingConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&AppRunnerClient::UpdateDefaultAutoScalingConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDefaultAutoScalingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDefaultAutoScalingConfigurationRequestT = Model::UpdateDefaultAutoScalingConfigurationRequest>
+        void UpdateDefaultAutoScalingConfigurationAsync(const UpdateDefaultAutoScalingConfigurationRequestT& request, const UpdateDefaultAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppRunnerClient::UpdateDefaultAutoScalingConfiguration, request, handler, context);
         }
 
         /**

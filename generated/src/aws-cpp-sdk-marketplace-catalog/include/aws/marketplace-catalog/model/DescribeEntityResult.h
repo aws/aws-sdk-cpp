@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Document.h>
 #include <utility>
 
 namespace Aws
@@ -240,6 +241,32 @@ namespace Model
     inline DescribeEntityResult& WithDetails(const char* value) { SetDetails(value); return *this;}
 
 
+    /**
+     * <p>The JSON value of the details specific to the entity.</p>
+     */
+    inline Aws::Utils::DocumentView GetDetailsDocument() const{ return m_detailsDocument; }
+
+    /**
+     * <p>The JSON value of the details specific to the entity.</p>
+     */
+    inline void SetDetailsDocument(const Aws::Utils::Document& value) { m_detailsDocument = value; }
+
+    /**
+     * <p>The JSON value of the details specific to the entity.</p>
+     */
+    inline void SetDetailsDocument(Aws::Utils::Document&& value) { m_detailsDocument = std::move(value); }
+
+    /**
+     * <p>The JSON value of the details specific to the entity.</p>
+     */
+    inline DescribeEntityResult& WithDetailsDocument(const Aws::Utils::Document& value) { SetDetailsDocument(value); return *this;}
+
+    /**
+     * <p>The JSON value of the details specific to the entity.</p>
+     */
+    inline DescribeEntityResult& WithDetailsDocument(Aws::Utils::Document&& value) { SetDetailsDocument(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -272,6 +299,8 @@ namespace Model
     Aws::String m_lastModifiedDate;
 
     Aws::String m_details;
+
+    Aws::Utils::Document m_detailsDocument;
 
     Aws::String m_requestId;
   };

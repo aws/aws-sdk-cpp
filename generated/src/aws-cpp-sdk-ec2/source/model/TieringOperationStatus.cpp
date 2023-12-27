@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TieringOperationStatus::NOT_SET:
+            return {};
           case TieringOperationStatus::archival_in_progress:
             return "archival-in-progress";
           case TieringOperationStatus::archival_completed:

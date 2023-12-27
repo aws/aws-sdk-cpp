@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailedItemErrorCode::NOT_SET:
+            return {};
           case FailedItemErrorCode::INVALID_ARN:
             return "INVALID_ARN";
           case FailedItemErrorCode::DUPLICATE_ARN:

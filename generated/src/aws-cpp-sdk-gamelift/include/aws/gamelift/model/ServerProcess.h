@@ -41,90 +41,114 @@ namespace Model
 
 
     /**
-     * <p>The location of a game build executable or the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are
-     * installed on instances at the root: </p> <ul> <li> <p>Windows (custom game
-     * builds only): <code>C:\game</code>. Example:
+     * <p>The location of a game build executable or Realtime script. Game builds and
+     * Realtime scripts are installed on instances at the root: </p> <ul> <li>
+     * <p>Windows (custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
-     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
+     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul> 
+     * <p>Amazon GameLift doesn't support the use of setup scripts that launch the game
+     * executable. For custom game builds, this parameter must indicate the executable
+     * that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>. </p> 
      */
     inline const Aws::String& GetLaunchPath() const{ return m_launchPath; }
 
     /**
-     * <p>The location of a game build executable or the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are
-     * installed on instances at the root: </p> <ul> <li> <p>Windows (custom game
-     * builds only): <code>C:\game</code>. Example:
+     * <p>The location of a game build executable or Realtime script. Game builds and
+     * Realtime scripts are installed on instances at the root: </p> <ul> <li>
+     * <p>Windows (custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
-     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
+     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul> 
+     * <p>Amazon GameLift doesn't support the use of setup scripts that launch the game
+     * executable. For custom game builds, this parameter must indicate the executable
+     * that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>. </p> 
      */
     inline bool LaunchPathHasBeenSet() const { return m_launchPathHasBeenSet; }
 
     /**
-     * <p>The location of a game build executable or the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are
-     * installed on instances at the root: </p> <ul> <li> <p>Windows (custom game
-     * builds only): <code>C:\game</code>. Example:
+     * <p>The location of a game build executable or Realtime script. Game builds and
+     * Realtime scripts are installed on instances at the root: </p> <ul> <li>
+     * <p>Windows (custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
-     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
+     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul> 
+     * <p>Amazon GameLift doesn't support the use of setup scripts that launch the game
+     * executable. For custom game builds, this parameter must indicate the executable
+     * that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>. </p> 
      */
     inline void SetLaunchPath(const Aws::String& value) { m_launchPathHasBeenSet = true; m_launchPath = value; }
 
     /**
-     * <p>The location of a game build executable or the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are
-     * installed on instances at the root: </p> <ul> <li> <p>Windows (custom game
-     * builds only): <code>C:\game</code>. Example:
+     * <p>The location of a game build executable or Realtime script. Game builds and
+     * Realtime scripts are installed on instances at the root: </p> <ul> <li>
+     * <p>Windows (custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
-     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
+     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul> 
+     * <p>Amazon GameLift doesn't support the use of setup scripts that launch the game
+     * executable. For custom game builds, this parameter must indicate the executable
+     * that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>. </p> 
      */
     inline void SetLaunchPath(Aws::String&& value) { m_launchPathHasBeenSet = true; m_launchPath = std::move(value); }
 
     /**
-     * <p>The location of a game build executable or the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are
-     * installed on instances at the root: </p> <ul> <li> <p>Windows (custom game
-     * builds only): <code>C:\game</code>. Example:
+     * <p>The location of a game build executable or Realtime script. Game builds and
+     * Realtime scripts are installed on instances at the root: </p> <ul> <li>
+     * <p>Windows (custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
-     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
+     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul> 
+     * <p>Amazon GameLift doesn't support the use of setup scripts that launch the game
+     * executable. For custom game builds, this parameter must indicate the executable
+     * that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>. </p> 
      */
     inline void SetLaunchPath(const char* value) { m_launchPathHasBeenSet = true; m_launchPath.assign(value); }
 
     /**
-     * <p>The location of a game build executable or the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are
-     * installed on instances at the root: </p> <ul> <li> <p>Windows (custom game
-     * builds only): <code>C:\game</code>. Example:
+     * <p>The location of a game build executable or Realtime script. Game builds and
+     * Realtime scripts are installed on instances at the root: </p> <ul> <li>
+     * <p>Windows (custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
-     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
+     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul> 
+     * <p>Amazon GameLift doesn't support the use of setup scripts that launch the game
+     * executable. For custom game builds, this parameter must indicate the executable
+     * that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>. </p> 
      */
     inline ServerProcess& WithLaunchPath(const Aws::String& value) { SetLaunchPath(value); return *this;}
 
     /**
-     * <p>The location of a game build executable or the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are
-     * installed on instances at the root: </p> <ul> <li> <p>Windows (custom game
-     * builds only): <code>C:\game</code>. Example:
+     * <p>The location of a game build executable or Realtime script. Game builds and
+     * Realtime scripts are installed on instances at the root: </p> <ul> <li>
+     * <p>Windows (custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
-     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
+     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul> 
+     * <p>Amazon GameLift doesn't support the use of setup scripts that launch the game
+     * executable. For custom game builds, this parameter must indicate the executable
+     * that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>. </p> 
      */
     inline ServerProcess& WithLaunchPath(Aws::String&& value) { SetLaunchPath(std::move(value)); return *this;}
 
     /**
-     * <p>The location of a game build executable or the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are
-     * installed on instances at the root: </p> <ul> <li> <p>Windows (custom game
-     * builds only): <code>C:\game</code>. Example:
+     * <p>The location of a game build executable or Realtime script. Game builds and
+     * Realtime scripts are installed on instances at the root: </p> <ul> <li>
+     * <p>Windows (custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
-     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
+     * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul> 
+     * <p>Amazon GameLift doesn't support the use of setup scripts that launch the game
+     * executable. For custom game builds, this parameter must indicate the executable
+     * that calls the server SDK operations <code>initSDK()</code> and
+     * <code>ProcessReady()</code>. </p> 
      */
     inline ServerProcess& WithLaunchPath(const char* value) { SetLaunchPath(value); return *this;}
 

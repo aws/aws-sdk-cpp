@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CSV,
-    PDF
+    PDF,
+    EXCEL
   };
 
 namespace SnapshotFileFormatTypeMapper

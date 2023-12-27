@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpsertAction::NOT_SET:
+            return {};
           case UpsertAction::UPDATED:
             return "UPDATED";
           case UpsertAction::APPENDED:

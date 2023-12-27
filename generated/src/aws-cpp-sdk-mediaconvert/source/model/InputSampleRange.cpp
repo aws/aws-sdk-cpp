@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputSampleRange::NOT_SET:
+            return {};
           case InputSampleRange::FOLLOW:
             return "FOLLOW";
           case InputSampleRange::FULL_RANGE:

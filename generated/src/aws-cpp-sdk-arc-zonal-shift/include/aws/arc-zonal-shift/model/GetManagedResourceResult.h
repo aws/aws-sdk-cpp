@@ -8,6 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/arc-zonal-shift/model/PracticeRunConfiguration.h>
+#include <aws/arc-zonal-shift/model/ZonalAutoshiftStatus.h>
+#include <aws/arc-zonal-shift/model/AutoshiftInResource.h>
 #include <aws/arc-zonal-shift/model/ZonalShiftInResource.h>
 #include <utility>
 
@@ -129,6 +132,42 @@ namespace Model
 
 
     /**
+     * <p>An array of the autoshifts that are active for the resource.</p>
+     */
+    inline const Aws::Vector<AutoshiftInResource>& GetAutoshifts() const{ return m_autoshifts; }
+
+    /**
+     * <p>An array of the autoshifts that are active for the resource.</p>
+     */
+    inline void SetAutoshifts(const Aws::Vector<AutoshiftInResource>& value) { m_autoshifts = value; }
+
+    /**
+     * <p>An array of the autoshifts that are active for the resource.</p>
+     */
+    inline void SetAutoshifts(Aws::Vector<AutoshiftInResource>&& value) { m_autoshifts = std::move(value); }
+
+    /**
+     * <p>An array of the autoshifts that are active for the resource.</p>
+     */
+    inline GetManagedResourceResult& WithAutoshifts(const Aws::Vector<AutoshiftInResource>& value) { SetAutoshifts(value); return *this;}
+
+    /**
+     * <p>An array of the autoshifts that are active for the resource.</p>
+     */
+    inline GetManagedResourceResult& WithAutoshifts(Aws::Vector<AutoshiftInResource>&& value) { SetAutoshifts(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of the autoshifts that are active for the resource.</p>
+     */
+    inline GetManagedResourceResult& AddAutoshifts(const AutoshiftInResource& value) { m_autoshifts.push_back(value); return *this; }
+
+    /**
+     * <p>An array of the autoshifts that are active for the resource.</p>
+     */
+    inline GetManagedResourceResult& AddAutoshifts(AutoshiftInResource&& value) { m_autoshifts.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The name of the resource.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -162,6 +201,83 @@ namespace Model
      * <p>The name of the resource.</p>
      */
     inline GetManagedResourceResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The practice run configuration for zonal autoshift that's associated with the
+     * resource.</p>
+     */
+    inline const PracticeRunConfiguration& GetPracticeRunConfiguration() const{ return m_practiceRunConfiguration; }
+
+    /**
+     * <p>The practice run configuration for zonal autoshift that's associated with the
+     * resource.</p>
+     */
+    inline void SetPracticeRunConfiguration(const PracticeRunConfiguration& value) { m_practiceRunConfiguration = value; }
+
+    /**
+     * <p>The practice run configuration for zonal autoshift that's associated with the
+     * resource.</p>
+     */
+    inline void SetPracticeRunConfiguration(PracticeRunConfiguration&& value) { m_practiceRunConfiguration = std::move(value); }
+
+    /**
+     * <p>The practice run configuration for zonal autoshift that's associated with the
+     * resource.</p>
+     */
+    inline GetManagedResourceResult& WithPracticeRunConfiguration(const PracticeRunConfiguration& value) { SetPracticeRunConfiguration(value); return *this;}
+
+    /**
+     * <p>The practice run configuration for zonal autoshift that's associated with the
+     * resource.</p>
+     */
+    inline GetManagedResourceResult& WithPracticeRunConfiguration(PracticeRunConfiguration&& value) { SetPracticeRunConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The status for zonal autoshift for a resource. When the autoshift status is
+     * <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away
+     * from an Availability Zone, on your behalf, when Amazon Web Services determines
+     * that there's an issue in the Availability Zone that could potentially affect
+     * customers.</p>
+     */
+    inline const ZonalAutoshiftStatus& GetZonalAutoshiftStatus() const{ return m_zonalAutoshiftStatus; }
+
+    /**
+     * <p>The status for zonal autoshift for a resource. When the autoshift status is
+     * <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away
+     * from an Availability Zone, on your behalf, when Amazon Web Services determines
+     * that there's an issue in the Availability Zone that could potentially affect
+     * customers.</p>
+     */
+    inline void SetZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { m_zonalAutoshiftStatus = value; }
+
+    /**
+     * <p>The status for zonal autoshift for a resource. When the autoshift status is
+     * <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away
+     * from an Availability Zone, on your behalf, when Amazon Web Services determines
+     * that there's an issue in the Availability Zone that could potentially affect
+     * customers.</p>
+     */
+    inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { m_zonalAutoshiftStatus = std::move(value); }
+
+    /**
+     * <p>The status for zonal autoshift for a resource. When the autoshift status is
+     * <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away
+     * from an Availability Zone, on your behalf, when Amazon Web Services determines
+     * that there's an issue in the Availability Zone that could potentially affect
+     * customers.</p>
+     */
+    inline GetManagedResourceResult& WithZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { SetZonalAutoshiftStatus(value); return *this;}
+
+    /**
+     * <p>The status for zonal autoshift for a resource. When the autoshift status is
+     * <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away
+     * from an Availability Zone, on your behalf, when Amazon Web Services determines
+     * that there's an issue in the Availability Zone that could potentially affect
+     * customers.</p>
+     */
+    inline GetManagedResourceResult& WithZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { SetZonalAutoshiftStatus(std::move(value)); return *this;}
 
 
     /**
@@ -227,7 +343,13 @@ namespace Model
 
     Aws::String m_arn;
 
+    Aws::Vector<AutoshiftInResource> m_autoshifts;
+
     Aws::String m_name;
+
+    PracticeRunConfiguration m_practiceRunConfiguration;
+
+    ZonalAutoshiftStatus m_zonalAutoshiftStatus;
 
     Aws::Vector<ZonalShiftInResource> m_zonalShifts;
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApprovalModel::NOT_SET:
+            return {};
           case ApprovalModel::AUTOMATIC:
             return "AUTOMATIC";
           case ApprovalModel::MANUAL:

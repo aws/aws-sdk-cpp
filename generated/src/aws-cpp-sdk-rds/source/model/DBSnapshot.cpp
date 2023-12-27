@@ -61,7 +61,11 @@ DBSnapshot::DBSnapshot() :
     m_snapshotTargetHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
-    m_dBSystemIdHasBeenSet(false)
+    m_dBSystemIdHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
 }
 
@@ -106,7 +110,11 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_snapshotTargetHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
-    m_dBSystemIdHasBeenSet(false)
+    m_dBSystemIdHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -333,6 +341,18 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_dBSystemId = Aws::Utils::Xml::DecodeEscapedXmlText(dBSystemIdNode.GetText());
       m_dBSystemIdHasBeenSet = true;
     }
+    XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
+    if(!dedicatedLogVolumeNode.IsNull())
+    {
+      m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
+      m_dedicatedLogVolumeHasBeenSet = true;
+    }
+    XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
+    if(!multiTenantNode.IsNull())
+    {
+      m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
+      m_multiTenantHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -522,6 +542,16 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
   }
 
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -673,6 +703,14 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_dBSystemIdHasBeenSet)
   {
       oStream << location << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
+  }
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 }
 

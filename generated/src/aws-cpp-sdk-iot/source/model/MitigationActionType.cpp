@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MitigationActionType::NOT_SET:
+            return {};
           case MitigationActionType::UPDATE_DEVICE_CERTIFICATE:
             return "UPDATE_DEVICE_CERTIFICATE";
           case MitigationActionType::UPDATE_CA_CERTIFICATE:

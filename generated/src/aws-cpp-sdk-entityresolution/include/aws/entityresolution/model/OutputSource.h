@@ -27,9 +27,9 @@ namespace Model
 
   /**
    * <p>A list of <code>OutputAttribute</code> objects, each of which have the fields
-   * Name and Hashed. Each of these objects selects a column to be included in the
-   * output table, and whether the values of the column should be
-   * hashed.</p><p><h3>See Also:</h3>   <a
+   * <code>Name</code> and <code>Hashed</code>. Each of these objects selects a
+   * column to be included in the output table, and whether the values of the column
+   * should be hashed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/OutputSource">AWS
    * API Reference</a></p>
    */
@@ -130,57 +130,65 @@ namespace Model
 
     /**
      * <p>A list of <code>OutputAttribute</code> objects, each of which have the fields
-     * Name and Hashed. Each of these objects selects a column to be included in the
-     * output table, and whether the values of the column should be hashed.</p>
+     * <code>Name</code> and <code>Hashed</code>. Each of these objects selects a
+     * column to be included in the output table, and whether the values of the column
+     * should be hashed.</p>
      */
     inline const Aws::Vector<OutputAttribute>& GetOutput() const{ return m_output; }
 
     /**
      * <p>A list of <code>OutputAttribute</code> objects, each of which have the fields
-     * Name and Hashed. Each of these objects selects a column to be included in the
-     * output table, and whether the values of the column should be hashed.</p>
+     * <code>Name</code> and <code>Hashed</code>. Each of these objects selects a
+     * column to be included in the output table, and whether the values of the column
+     * should be hashed.</p>
      */
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
 
     /**
      * <p>A list of <code>OutputAttribute</code> objects, each of which have the fields
-     * Name and Hashed. Each of these objects selects a column to be included in the
-     * output table, and whether the values of the column should be hashed.</p>
+     * <code>Name</code> and <code>Hashed</code>. Each of these objects selects a
+     * column to be included in the output table, and whether the values of the column
+     * should be hashed.</p>
      */
     inline void SetOutput(const Aws::Vector<OutputAttribute>& value) { m_outputHasBeenSet = true; m_output = value; }
 
     /**
      * <p>A list of <code>OutputAttribute</code> objects, each of which have the fields
-     * Name and Hashed. Each of these objects selects a column to be included in the
-     * output table, and whether the values of the column should be hashed.</p>
+     * <code>Name</code> and <code>Hashed</code>. Each of these objects selects a
+     * column to be included in the output table, and whether the values of the column
+     * should be hashed.</p>
      */
     inline void SetOutput(Aws::Vector<OutputAttribute>&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
 
     /**
      * <p>A list of <code>OutputAttribute</code> objects, each of which have the fields
-     * Name and Hashed. Each of these objects selects a column to be included in the
-     * output table, and whether the values of the column should be hashed.</p>
+     * <code>Name</code> and <code>Hashed</code>. Each of these objects selects a
+     * column to be included in the output table, and whether the values of the column
+     * should be hashed.</p>
      */
     inline OutputSource& WithOutput(const Aws::Vector<OutputAttribute>& value) { SetOutput(value); return *this;}
 
     /**
      * <p>A list of <code>OutputAttribute</code> objects, each of which have the fields
-     * Name and Hashed. Each of these objects selects a column to be included in the
-     * output table, and whether the values of the column should be hashed.</p>
+     * <code>Name</code> and <code>Hashed</code>. Each of these objects selects a
+     * column to be included in the output table, and whether the values of the column
+     * should be hashed.</p>
      */
     inline OutputSource& WithOutput(Aws::Vector<OutputAttribute>&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>OutputAttribute</code> objects, each of which have the fields
-     * Name and Hashed. Each of these objects selects a column to be included in the
-     * output table, and whether the values of the column should be hashed.</p>
+     * <code>Name</code> and <code>Hashed</code>. Each of these objects selects a
+     * column to be included in the output table, and whether the values of the column
+     * should be hashed.</p>
      */
     inline OutputSource& AddOutput(const OutputAttribute& value) { m_outputHasBeenSet = true; m_output.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>OutputAttribute</code> objects, each of which have the fields
-     * Name and Hashed. Each of these objects selects a column to be included in the
-     * output table, and whether the values of the column should be hashed.</p>
+     * <code>Name</code> and <code>Hashed</code>. Each of these objects selects a
+     * column to be included in the output table, and whether the values of the column
+     * should be hashed.</p>
      */
     inline OutputSource& AddOutput(OutputAttribute&& value) { m_outputHasBeenSet = true; m_output.push_back(std::move(value)); return *this; }
 

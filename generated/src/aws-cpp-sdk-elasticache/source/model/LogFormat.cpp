@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogFormat::NOT_SET:
+            return {};
           case LogFormat::text:
             return "text";
           case LogFormat::json:

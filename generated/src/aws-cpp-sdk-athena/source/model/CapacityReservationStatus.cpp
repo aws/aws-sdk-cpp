@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityReservationStatus::NOT_SET:
+            return {};
           case CapacityReservationStatus::PENDING:
             return "PENDING";
           case CapacityReservationStatus::ACTIVE:

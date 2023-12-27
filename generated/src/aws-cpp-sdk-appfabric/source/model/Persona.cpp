@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Persona::NOT_SET:
+            return {};
           case Persona::admin:
             return "admin";
           case Persona::endUser:

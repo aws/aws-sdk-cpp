@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerTlsCertificateFailureReason::NOT_SET:
+            return {};
           case LoadBalancerTlsCertificateFailureReason::NO_AVAILABLE_CONTACTS:
             return "NO_AVAILABLE_CONTACTS";
           case LoadBalancerTlsCertificateFailureReason::ADDITIONAL_VERIFICATION_REQUIRED:

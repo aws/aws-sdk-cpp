@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasetType::NOT_SET:
+            return {};
           case DatasetType::TRAIN:
             return "TRAIN";
           case DatasetType::TEST:

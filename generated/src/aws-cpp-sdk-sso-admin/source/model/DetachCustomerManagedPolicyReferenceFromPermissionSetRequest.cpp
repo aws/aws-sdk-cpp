@@ -13,15 +13,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::DetachCustomerManagedPolicyReferenceFromPermissionSetRequest() : 
+    m_customerManagedPolicyReferenceHasBeenSet(false),
     m_instanceArnHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_customerManagedPolicyReferenceHasBeenSet(false)
+    m_permissionSetArnHasBeenSet(false)
 {
 }
 
 Aws::String DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_customerManagedPolicyReferenceHasBeenSet)
+  {
+   payload.WithObject("CustomerManagedPolicyReference", m_customerManagedPolicyReference.Jsonize());
+
+  }
 
   if(m_instanceArnHasBeenSet)
   {
@@ -32,12 +38,6 @@ Aws::String DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::Serial
   if(m_permissionSetArnHasBeenSet)
   {
    payload.WithString("PermissionSetArn", m_permissionSetArn);
-
-  }
-
-  if(m_customerManagedPolicyReferenceHasBeenSet)
-  {
-   payload.WithObject("CustomerManagedPolicyReference", m_customerManagedPolicyReference.Jsonize());
 
   }
 

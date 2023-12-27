@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConformancePackState::NOT_SET:
+            return {};
           case ConformancePackState::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case ConformancePackState::CREATE_COMPLETE:

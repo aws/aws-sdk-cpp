@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/Av1AdaptiveQuantization.h>
 #include <aws/mediaconvert/model/Av1BitDepth.h>
+#include <aws/mediaconvert/model/Av1FilmGrainSynthesis.h>
 #include <aws/mediaconvert/model/Av1FramerateControl.h>
 #include <aws/mediaconvert/model/Av1FramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/Av1QvbrSettings.h>
@@ -110,6 +111,67 @@ namespace Model
      * Specify the Bit depth. You can choose 8-bit or 10-bit.
      */
     inline Av1Settings& WithBitDepth(Av1BitDepth&& value) { SetBitDepth(std::move(value)); return *this;}
+
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline const Av1FilmGrainSynthesis& GetFilmGrainSynthesis() const{ return m_filmGrainSynthesis; }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline bool FilmGrainSynthesisHasBeenSet() const { return m_filmGrainSynthesisHasBeenSet; }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline void SetFilmGrainSynthesis(const Av1FilmGrainSynthesis& value) { m_filmGrainSynthesisHasBeenSet = true; m_filmGrainSynthesis = value; }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline void SetFilmGrainSynthesis(Av1FilmGrainSynthesis&& value) { m_filmGrainSynthesisHasBeenSet = true; m_filmGrainSynthesis = std::move(value); }
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline Av1Settings& WithFilmGrainSynthesis(const Av1FilmGrainSynthesis& value) { SetFilmGrainSynthesis(value); return *this;}
+
+    /**
+     * Film grain synthesis replaces film grain present in your content with similar
+     * quality synthesized AV1 film grain. We recommend that you choose Enabled to
+     * reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR
+     * quality level 9 or 10 outputs we recommend that you keep the default value,
+     * Disabled. When you include Film grain synthesis, you cannot include the Noise
+     * reducer preprocessor.
+     */
+    inline Av1Settings& WithFilmGrainSynthesis(Av1FilmGrainSynthesis&& value) { SetFilmGrainSynthesis(std::move(value)); return *this;}
 
 
     /**
@@ -651,6 +713,9 @@ namespace Model
 
     Av1BitDepth m_bitDepth;
     bool m_bitDepthHasBeenSet = false;
+
+    Av1FilmGrainSynthesis m_filmGrainSynthesis;
+    bool m_filmGrainSynthesisHasBeenSet = false;
 
     Av1FramerateControl m_framerateControl;
     bool m_framerateControlHasBeenSet = false;

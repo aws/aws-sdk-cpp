@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationStatus::NOT_SET:
+            return {};
           case ApplicationStatus::NOT_STARTED:
             return "NOT_STARTED";
           case ApplicationStatus::IN_PROGRESS:

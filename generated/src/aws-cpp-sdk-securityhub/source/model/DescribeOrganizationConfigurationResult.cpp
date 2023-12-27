@@ -53,6 +53,12 @@ DescribeOrganizationConfigurationResult& DescribeOrganizationConfigurationResult
 
   }
 
+  if(jsonValue.ValueExists("OrganizationConfiguration"))
+  {
+    m_organizationConfiguration = jsonValue.GetObject("OrganizationConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

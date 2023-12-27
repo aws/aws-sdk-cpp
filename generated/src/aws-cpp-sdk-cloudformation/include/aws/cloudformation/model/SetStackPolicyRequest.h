@@ -83,8 +83,8 @@ namespace Model
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the CloudFormation User Guide. You can
-     * specify either the <code>StackPolicyBody</code> or the
+     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
+     * You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetStackPolicyBody() const{ return m_stackPolicyBody; }
@@ -92,8 +92,8 @@ namespace Model
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the CloudFormation User Guide. You can
-     * specify either the <code>StackPolicyBody</code> or the
+     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
+     * You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline bool StackPolicyBodyHasBeenSet() const { return m_stackPolicyBodyHasBeenSet; }
@@ -101,8 +101,8 @@ namespace Model
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the CloudFormation User Guide. You can
-     * specify either the <code>StackPolicyBody</code> or the
+     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
+     * You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline void SetStackPolicyBody(const Aws::String& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = value; }
@@ -110,8 +110,8 @@ namespace Model
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the CloudFormation User Guide. You can
-     * specify either the <code>StackPolicyBody</code> or the
+     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
+     * You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline void SetStackPolicyBody(Aws::String&& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = std::move(value); }
@@ -119,8 +119,8 @@ namespace Model
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the CloudFormation User Guide. You can
-     * specify either the <code>StackPolicyBody</code> or the
+     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
+     * You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline void SetStackPolicyBody(const char* value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody.assign(value); }
@@ -128,8 +128,8 @@ namespace Model
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the CloudFormation User Guide. You can
-     * specify either the <code>StackPolicyBody</code> or the
+     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
+     * You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline SetStackPolicyRequest& WithStackPolicyBody(const Aws::String& value) { SetStackPolicyBody(value); return *this;}
@@ -137,8 +137,8 @@ namespace Model
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the CloudFormation User Guide. You can
-     * specify either the <code>StackPolicyBody</code> or the
+     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
+     * You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline SetStackPolicyRequest& WithStackPolicyBody(Aws::String&& value) { SetStackPolicyBody(std::move(value)); return *this;}
@@ -146,8 +146,8 @@ namespace Model
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the CloudFormation User Guide. You can
-     * specify either the <code>StackPolicyBody</code> or the
+     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
+     * You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline SetStackPolicyRequest& WithStackPolicyBody(const char* value) { SetStackPolicyBody(value); return *this;}

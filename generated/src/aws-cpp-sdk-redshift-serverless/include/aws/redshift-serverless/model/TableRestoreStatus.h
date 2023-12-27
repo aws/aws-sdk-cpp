@@ -40,58 +40,58 @@ namespace Model
 
 
     /**
-     * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-     * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * <p>A message that explains the returned status. For example, if the status of
+     * the operation is <code>FAILED</code>, the message explains why the operation
+     * failed.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-     * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * <p>A message that explains the returned status. For example, if the status of
+     * the operation is <code>FAILED</code>, the message explains why the operation
+     * failed.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-     * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * <p>A message that explains the returned status. For example, if the status of
+     * the operation is <code>FAILED</code>, the message explains why the operation
+     * failed.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-     * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * <p>A message that explains the returned status. For example, if the status of
+     * the operation is <code>FAILED</code>, the message explains why the operation
+     * failed.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-     * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * <p>A message that explains the returned status. For example, if the status of
+     * the operation is <code>FAILED</code>, the message explains why the operation
+     * failed.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-     * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * <p>A message that explains the returned status. For example, if the status of
+     * the operation is <code>FAILED</code>, the message explains why the operation
+     * failed.</p>
      */
     inline TableRestoreStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-     * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * <p>A message that explains the returned status. For example, if the status of
+     * the operation is <code>FAILED</code>, the message explains why the operation
+     * failed.</p>
      */
     inline TableRestoreStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-     * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * <p>A message that explains the returned status. For example, if the status of
+     * the operation is <code>FAILED</code>, the message explains why the operation
+     * failed.</p>
      */
     inline TableRestoreStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
 
@@ -197,6 +197,47 @@ namespace Model
      * <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
      */
     inline TableRestoreStatus& WithProgressInMegaBytes(long long value) { SetProgressInMegaBytes(value); return *this;}
+
+
+    /**
+     * <p>The ID of the recovery point being restored from.</p>
+     */
+    inline const Aws::String& GetRecoveryPointId() const{ return m_recoveryPointId; }
+
+    /**
+     * <p>The ID of the recovery point being restored from.</p>
+     */
+    inline bool RecoveryPointIdHasBeenSet() const { return m_recoveryPointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the recovery point being restored from.</p>
+     */
+    inline void SetRecoveryPointId(const Aws::String& value) { m_recoveryPointIdHasBeenSet = true; m_recoveryPointId = value; }
+
+    /**
+     * <p>The ID of the recovery point being restored from.</p>
+     */
+    inline void SetRecoveryPointId(Aws::String&& value) { m_recoveryPointIdHasBeenSet = true; m_recoveryPointId = std::move(value); }
+
+    /**
+     * <p>The ID of the recovery point being restored from.</p>
+     */
+    inline void SetRecoveryPointId(const char* value) { m_recoveryPointIdHasBeenSet = true; m_recoveryPointId.assign(value); }
+
+    /**
+     * <p>The ID of the recovery point being restored from.</p>
+     */
+    inline TableRestoreStatus& WithRecoveryPointId(const Aws::String& value) { SetRecoveryPointId(value); return *this;}
+
+    /**
+     * <p>The ID of the recovery point being restored from.</p>
+     */
+    inline TableRestoreStatus& WithRecoveryPointId(Aws::String&& value) { SetRecoveryPointId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the recovery point being restored from.</p>
+     */
+    inline TableRestoreStatus& WithRecoveryPointId(const char* value) { SetRecoveryPointId(value); return *this;}
 
 
     /**
@@ -402,57 +443,57 @@ namespace Model
 
     /**
      * <p>A value that describes the current state of the table restore request.
-     * Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>,
+     * <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>A value that describes the current state of the table restore request.
-     * Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>,
+     * <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>A value that describes the current state of the table restore request.
-     * Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>,
+     * <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>A value that describes the current state of the table restore request.
-     * Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>,
+     * <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>A value that describes the current state of the table restore request.
-     * Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>,
+     * <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>A value that describes the current state of the table restore request.
-     * Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>,
+     * <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
      */
     inline TableRestoreStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>A value that describes the current state of the table restore request.
-     * Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>,
+     * <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
      */
     inline TableRestoreStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A value that describes the current state of the table restore request.
-     * Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     * Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>,
+     * <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
      */
     inline TableRestoreStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -654,6 +695,9 @@ namespace Model
 
     long long m_progressInMegaBytes;
     bool m_progressInMegaBytesHasBeenSet = false;
+
+    Aws::String m_recoveryPointId;
+    bool m_recoveryPointIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestTime;
     bool m_requestTimeHasBeenSet = false;

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SsmTargetAccount::NOT_SET:
+            return {};
           case SsmTargetAccount::RESPONSE_PLAN_OWNER_ACCOUNT:
             return "RESPONSE_PLAN_OWNER_ACCOUNT";
           case SsmTargetAccount::IMPACTED_ACCOUNT:

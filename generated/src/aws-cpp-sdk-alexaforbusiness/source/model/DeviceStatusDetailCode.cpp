@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceStatusDetailCode::NOT_SET:
+            return {};
           case DeviceStatusDetailCode::DEVICE_SOFTWARE_UPDATE_NEEDED:
             return "DEVICE_SOFTWARE_UPDATE_NEEDED";
           case DeviceStatusDetailCode::DEVICE_WAS_OFFLINE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Formality::NOT_SET:
+            return {};
           case Formality::FORMAL:
             return "FORMAL";
           case Formality::INFORMAL:

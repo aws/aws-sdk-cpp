@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputSourceEndBehavior::NOT_SET:
+            return {};
           case InputSourceEndBehavior::CONTINUE:
             return "CONTINUE";
           case InputSourceEndBehavior::LOOP:

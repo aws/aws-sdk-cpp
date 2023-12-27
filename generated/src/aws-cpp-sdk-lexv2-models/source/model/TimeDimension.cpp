@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeDimension::NOT_SET:
+            return {};
           case TimeDimension::Hours:
             return "Hours";
           case TimeDimension::Days:

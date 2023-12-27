@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntervalUnitValues::NOT_SET:
+            return {};
           case IntervalUnitValues::HOURS:
             return "HOURS";
           default:

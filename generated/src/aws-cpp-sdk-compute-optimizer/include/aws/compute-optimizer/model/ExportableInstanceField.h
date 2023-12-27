@@ -72,7 +72,21 @@ namespace Model
     InstanceState,
     Tags,
     ExternalMetricStatusCode,
-    ExternalMetricStatusReason
+    ExternalMetricStatusReason,
+    CurrentInstanceGpuInfo,
+    RecommendationOptionsInstanceGpuInfo,
+    UtilizationMetricsGpuPercentageMaximum,
+    UtilizationMetricsGpuMemoryPercentageMaximum,
+    RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum,
+    RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum,
+    Idle,
+    EffectiveRecommendationPreferencesPreferredResources,
+    EffectiveRecommendationPreferencesLookBackPeriod,
+    EffectiveRecommendationPreferencesUtilizationPreferences,
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
   };
 
 namespace ExportableInstanceFieldMapper

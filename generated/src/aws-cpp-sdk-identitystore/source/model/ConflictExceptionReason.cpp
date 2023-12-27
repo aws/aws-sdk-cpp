@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictExceptionReason::NOT_SET:
+            return {};
           case ConflictExceptionReason::UNIQUENESS_CONSTRAINT_VIOLATION:
             return "UNIQUENESS_CONSTRAINT_VIOLATION";
           case ConflictExceptionReason::CONCURRENT_MODIFICATION:

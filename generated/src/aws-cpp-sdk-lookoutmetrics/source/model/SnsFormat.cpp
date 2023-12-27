@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnsFormat::NOT_SET:
+            return {};
           case SnsFormat::LONG_TEXT:
             return "LONG_TEXT";
           case SnsFormat::SHORT_TEXT:

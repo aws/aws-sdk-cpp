@@ -241,7 +241,8 @@ namespace AmplifyUIBuilder
         }
 
         /**
-         * <p>Exchanges an access code for a token.</p><p><h3>See Also:</h3>   <a
+         *  <p>This is for internal use.</p>  <p>Amplify uses this action to
+         * exchange an access code for a token.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExchangeCodeForToken">AWS
          * API Reference</a></p>
          */
@@ -600,8 +601,9 @@ namespace AmplifyUIBuilder
         }
 
         /**
-         * <p>Refreshes a previously issued access token that might have
-         * expired.</p><p><h3>See Also:</h3>   <a
+         *  <p>This is for internal use.</p>  <p>Amplify uses this action to
+         * refresh a previously issued access token that might have expired.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/RefreshToken">AWS
          * API Reference</a></p>
          */

@@ -46,7 +46,7 @@ namespace Model
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
      * repository, Amazon Web Services account ID of the repository owner, repository
      * namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>
      */
     inline const Aws::String& GetRepositoryArn() const{ return m_repositoryArn; }
 
@@ -55,7 +55,7 @@ namespace Model
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
      * repository, Amazon Web Services account ID of the repository owner, repository
      * namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>
      */
     inline bool RepositoryArnHasBeenSet() const { return m_repositoryArnHasBeenSet; }
 
@@ -64,7 +64,7 @@ namespace Model
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
      * repository, Amazon Web Services account ID of the repository owner, repository
      * namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>
      */
     inline void SetRepositoryArn(const Aws::String& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = value; }
 
@@ -73,7 +73,7 @@ namespace Model
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
      * repository, Amazon Web Services account ID of the repository owner, repository
      * namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>
      */
     inline void SetRepositoryArn(Aws::String&& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = std::move(value); }
 
@@ -82,7 +82,7 @@ namespace Model
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
      * repository, Amazon Web Services account ID of the repository owner, repository
      * namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>
      */
     inline void SetRepositoryArn(const char* value) { m_repositoryArnHasBeenSet = true; m_repositoryArn.assign(value); }
 
@@ -91,7 +91,7 @@ namespace Model
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
      * repository, Amazon Web Services account ID of the repository owner, repository
      * namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>
      */
     inline Repository& WithRepositoryArn(const Aws::String& value) { SetRepositoryArn(value); return *this;}
 
@@ -100,7 +100,7 @@ namespace Model
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
      * repository, Amazon Web Services account ID of the repository owner, repository
      * namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>
      */
     inline Repository& WithRepositoryArn(Aws::String&& value) { SetRepositoryArn(std::move(value)); return *this;}
 
@@ -109,7 +109,7 @@ namespace Model
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
      * repository, Amazon Web Services account ID of the repository owner, repository
      * namespace, and repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+     * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>
      */
     inline Repository& WithRepositoryArn(const char* value) { SetRepositoryArn(value); return *this;}
 

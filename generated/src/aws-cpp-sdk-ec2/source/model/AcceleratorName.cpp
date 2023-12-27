@@ -21,14 +21,17 @@ namespace Aws
       {
 
         static const int a100_HASH = HashingUtils::HashString("a100");
-        static const int v100_HASH = HashingUtils::HashString("v100");
-        static const int k80_HASH = HashingUtils::HashString("k80");
-        static const int t4_HASH = HashingUtils::HashString("t4");
-        static const int m60_HASH = HashingUtils::HashString("m60");
-        static const int radeon_pro_v520_HASH = HashingUtils::HashString("radeon-pro-v520");
-        static const int vu9p_HASH = HashingUtils::HashString("vu9p");
         static const int inferentia_HASH = HashingUtils::HashString("inferentia");
         static const int k520_HASH = HashingUtils::HashString("k520");
+        static const int k80_HASH = HashingUtils::HashString("k80");
+        static const int m60_HASH = HashingUtils::HashString("m60");
+        static const int radeon_pro_v520_HASH = HashingUtils::HashString("radeon-pro-v520");
+        static const int t4_HASH = HashingUtils::HashString("t4");
+        static const int vu9p_HASH = HashingUtils::HashString("vu9p");
+        static const int v100_HASH = HashingUtils::HashString("v100");
+        static const int a10g_HASH = HashingUtils::HashString("a10g");
+        static const int h100_HASH = HashingUtils::HashString("h100");
+        static const int t4g_HASH = HashingUtils::HashString("t4g");
 
 
         AcceleratorName GetAcceleratorNameForName(const Aws::String& name)
@@ -38,17 +41,17 @@ namespace Aws
           {
             return AcceleratorName::a100;
           }
-          else if (hashCode == v100_HASH)
+          else if (hashCode == inferentia_HASH)
           {
-            return AcceleratorName::v100;
+            return AcceleratorName::inferentia;
+          }
+          else if (hashCode == k520_HASH)
+          {
+            return AcceleratorName::k520;
           }
           else if (hashCode == k80_HASH)
           {
             return AcceleratorName::k80;
-          }
-          else if (hashCode == t4_HASH)
-          {
-            return AcceleratorName::t4;
           }
           else if (hashCode == m60_HASH)
           {
@@ -58,17 +61,29 @@ namespace Aws
           {
             return AcceleratorName::radeon_pro_v520;
           }
+          else if (hashCode == t4_HASH)
+          {
+            return AcceleratorName::t4;
+          }
           else if (hashCode == vu9p_HASH)
           {
             return AcceleratorName::vu9p;
           }
-          else if (hashCode == inferentia_HASH)
+          else if (hashCode == v100_HASH)
           {
-            return AcceleratorName::inferentia;
+            return AcceleratorName::v100;
           }
-          else if (hashCode == k520_HASH)
+          else if (hashCode == a10g_HASH)
           {
-            return AcceleratorName::k520;
+            return AcceleratorName::a10g;
+          }
+          else if (hashCode == h100_HASH)
+          {
+            return AcceleratorName::h100;
+          }
+          else if (hashCode == t4g_HASH)
+          {
+            return AcceleratorName::t4g;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -84,24 +99,32 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcceleratorName::NOT_SET:
+            return {};
           case AcceleratorName::a100:
             return "a100";
-          case AcceleratorName::v100:
-            return "v100";
-          case AcceleratorName::k80:
-            return "k80";
-          case AcceleratorName::t4:
-            return "t4";
-          case AcceleratorName::m60:
-            return "m60";
-          case AcceleratorName::radeon_pro_v520:
-            return "radeon-pro-v520";
-          case AcceleratorName::vu9p:
-            return "vu9p";
           case AcceleratorName::inferentia:
             return "inferentia";
           case AcceleratorName::k520:
             return "k520";
+          case AcceleratorName::k80:
+            return "k80";
+          case AcceleratorName::m60:
+            return "m60";
+          case AcceleratorName::radeon_pro_v520:
+            return "radeon-pro-v520";
+          case AcceleratorName::t4:
+            return "t4";
+          case AcceleratorName::vu9p:
+            return "vu9p";
+          case AcceleratorName::v100:
+            return "v100";
+          case AcceleratorName::a10g:
+            return "a10g";
+          case AcceleratorName::h100:
+            return "h100";
+          case AcceleratorName::t4g:
+            return "t4g";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/health/HealthRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/health/model/EventAccountFilter.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/health/model/EntityAccountFilter.h>
 #include <utility>
 
 namespace Aws
@@ -34,55 +34,6 @@ namespace Model
     AWS_HEALTH_API Aws::String SerializePayload() const override;
 
     AWS_HEALTH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    /**
-     * <p>A JSON set of elements including the <code>awsAccountId</code> and the
-     * <code>eventArn</code>.</p>
-     */
-    inline const Aws::Vector<EventAccountFilter>& GetOrganizationEntityFilters() const{ return m_organizationEntityFilters; }
-
-    /**
-     * <p>A JSON set of elements including the <code>awsAccountId</code> and the
-     * <code>eventArn</code>.</p>
-     */
-    inline bool OrganizationEntityFiltersHasBeenSet() const { return m_organizationEntityFiltersHasBeenSet; }
-
-    /**
-     * <p>A JSON set of elements including the <code>awsAccountId</code> and the
-     * <code>eventArn</code>.</p>
-     */
-    inline void SetOrganizationEntityFilters(const Aws::Vector<EventAccountFilter>& value) { m_organizationEntityFiltersHasBeenSet = true; m_organizationEntityFilters = value; }
-
-    /**
-     * <p>A JSON set of elements including the <code>awsAccountId</code> and the
-     * <code>eventArn</code>.</p>
-     */
-    inline void SetOrganizationEntityFilters(Aws::Vector<EventAccountFilter>&& value) { m_organizationEntityFiltersHasBeenSet = true; m_organizationEntityFilters = std::move(value); }
-
-    /**
-     * <p>A JSON set of elements including the <code>awsAccountId</code> and the
-     * <code>eventArn</code>.</p>
-     */
-    inline DescribeAffectedEntitiesForOrganizationRequest& WithOrganizationEntityFilters(const Aws::Vector<EventAccountFilter>& value) { SetOrganizationEntityFilters(value); return *this;}
-
-    /**
-     * <p>A JSON set of elements including the <code>awsAccountId</code> and the
-     * <code>eventArn</code>.</p>
-     */
-    inline DescribeAffectedEntitiesForOrganizationRequest& WithOrganizationEntityFilters(Aws::Vector<EventAccountFilter>&& value) { SetOrganizationEntityFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>A JSON set of elements including the <code>awsAccountId</code> and the
-     * <code>eventArn</code>.</p>
-     */
-    inline DescribeAffectedEntitiesForOrganizationRequest& AddOrganizationEntityFilters(const EventAccountFilter& value) { m_organizationEntityFiltersHasBeenSet = true; m_organizationEntityFilters.push_back(value); return *this; }
-
-    /**
-     * <p>A JSON set of elements including the <code>awsAccountId</code> and the
-     * <code>eventArn</code>.</p>
-     */
-    inline DescribeAffectedEntitiesForOrganizationRequest& AddOrganizationEntityFilters(EventAccountFilter&& value) { m_organizationEntityFiltersHasBeenSet = true; m_organizationEntityFilters.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -231,10 +182,56 @@ namespace Model
      */
     inline DescribeAffectedEntitiesForOrganizationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
-  private:
 
-    Aws::Vector<EventAccountFilter> m_organizationEntityFilters;
-    bool m_organizationEntityFiltersHasBeenSet = false;
+    /**
+     * <p>A JSON set of elements including the <code>awsAccountId</code>,
+     * <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+     */
+    inline const Aws::Vector<EntityAccountFilter>& GetOrganizationEntityAccountFilters() const{ return m_organizationEntityAccountFilters; }
+
+    /**
+     * <p>A JSON set of elements including the <code>awsAccountId</code>,
+     * <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+     */
+    inline bool OrganizationEntityAccountFiltersHasBeenSet() const { return m_organizationEntityAccountFiltersHasBeenSet; }
+
+    /**
+     * <p>A JSON set of elements including the <code>awsAccountId</code>,
+     * <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+     */
+    inline void SetOrganizationEntityAccountFilters(const Aws::Vector<EntityAccountFilter>& value) { m_organizationEntityAccountFiltersHasBeenSet = true; m_organizationEntityAccountFilters = value; }
+
+    /**
+     * <p>A JSON set of elements including the <code>awsAccountId</code>,
+     * <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+     */
+    inline void SetOrganizationEntityAccountFilters(Aws::Vector<EntityAccountFilter>&& value) { m_organizationEntityAccountFiltersHasBeenSet = true; m_organizationEntityAccountFilters = std::move(value); }
+
+    /**
+     * <p>A JSON set of elements including the <code>awsAccountId</code>,
+     * <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+     */
+    inline DescribeAffectedEntitiesForOrganizationRequest& WithOrganizationEntityAccountFilters(const Aws::Vector<EntityAccountFilter>& value) { SetOrganizationEntityAccountFilters(value); return *this;}
+
+    /**
+     * <p>A JSON set of elements including the <code>awsAccountId</code>,
+     * <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+     */
+    inline DescribeAffectedEntitiesForOrganizationRequest& WithOrganizationEntityAccountFilters(Aws::Vector<EntityAccountFilter>&& value) { SetOrganizationEntityAccountFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>A JSON set of elements including the <code>awsAccountId</code>,
+     * <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+     */
+    inline DescribeAffectedEntitiesForOrganizationRequest& AddOrganizationEntityAccountFilters(const EntityAccountFilter& value) { m_organizationEntityAccountFiltersHasBeenSet = true; m_organizationEntityAccountFilters.push_back(value); return *this; }
+
+    /**
+     * <p>A JSON set of elements including the <code>awsAccountId</code>,
+     * <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+     */
+    inline DescribeAffectedEntitiesForOrganizationRequest& AddOrganizationEntityAccountFilters(EntityAccountFilter&& value) { m_organizationEntityAccountFiltersHasBeenSet = true; m_organizationEntityAccountFilters.push_back(std::move(value)); return *this; }
+
+  private:
 
     Aws::String m_locale;
     bool m_localeHasBeenSet = false;
@@ -244,6 +241,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::Vector<EntityAccountFilter> m_organizationEntityAccountFilters;
+    bool m_organizationEntityAccountFiltersHasBeenSet = false;
   };
 
 } // namespace Model

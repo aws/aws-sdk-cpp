@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ForwardedIPPosition::NOT_SET:
+            return {};
           case ForwardedIPPosition::FIRST:
             return "FIRST";
           case ForwardedIPPosition::LAST:

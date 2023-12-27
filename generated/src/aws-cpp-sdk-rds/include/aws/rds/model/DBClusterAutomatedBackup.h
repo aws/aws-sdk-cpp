@@ -457,26 +457,26 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline DBClusterAutomatedBackup& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -519,22 +519,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the source DB cluster is encrypted.</p>
+     * <p>Indicates whether the source DB cluster is encrypted.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>Specifies whether the source DB cluster is encrypted.</p>
+     * <p>Indicates whether the source DB cluster is encrypted.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the source DB cluster is encrypted.</p>
+     * <p>Indicates whether the source DB cluster is encrypted.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>Specifies whether the source DB cluster is encrypted.</p>
+     * <p>Indicates whether the source DB cluster is encrypted.</p>
      */
     inline DBClusterAutomatedBackup& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -948,6 +948,55 @@ namespace Model
      */
     inline DBClusterAutomatedBackup& WithIops(int value) { SetIops(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline const Aws::String& GetAwsBackupRecoveryPointArn() const{ return m_awsBackupRecoveryPointArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(const Aws::String& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(Aws::String&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline void SetAwsBackupRecoveryPointArn(const char* value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline DBClusterAutomatedBackup& WithAwsBackupRecoveryPointArn(const Aws::String& value) { SetAwsBackupRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline DBClusterAutomatedBackup& WithAwsBackupRecoveryPointArn(Aws::String&& value) { SetAwsBackupRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
+     */
+    inline DBClusterAutomatedBackup& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -1018,6 +1067,9 @@ namespace Model
 
     int m_iops;
     bool m_iopsHasBeenSet = false;
+
+    Aws::String m_awsBackupRecoveryPointArn;
+    bool m_awsBackupRecoveryPointArnHasBeenSet = false;
   };
 
 } // namespace Model

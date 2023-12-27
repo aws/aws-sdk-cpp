@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateFormat::NOT_SET:
+            return {};
           case TemplateFormat::CfnYaml:
             return "CfnYaml";
           case TemplateFormat::CfnJson:

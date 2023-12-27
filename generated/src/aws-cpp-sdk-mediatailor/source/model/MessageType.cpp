@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageType::NOT_SET:
+            return {};
           case MessageType::SPLICE_INSERT:
             return "SPLICE_INSERT";
           case MessageType::TIME_SIGNAL:

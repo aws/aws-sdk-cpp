@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceEventWindowState::NOT_SET:
+            return {};
           case InstanceEventWindowState::creating:
             return "creating";
           case InstanceEventWindowState::deleting:

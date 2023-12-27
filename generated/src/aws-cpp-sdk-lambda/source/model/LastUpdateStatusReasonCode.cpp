@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LastUpdateStatusReasonCode::NOT_SET:
+            return {};
           case LastUpdateStatusReasonCode::EniLimitExceeded:
             return "EniLimitExceeded";
           case LastUpdateStatusReasonCode::InsufficientRolePermissions:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResetImageAttributeName::NOT_SET:
+            return {};
           case ResetImageAttributeName::launchPermission:
             return "launchPermission";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CatalogEncryptionMode::NOT_SET:
+            return {};
           case CatalogEncryptionMode::DISABLED:
             return "DISABLED";
           case CatalogEncryptionMode::SSE_KMS:

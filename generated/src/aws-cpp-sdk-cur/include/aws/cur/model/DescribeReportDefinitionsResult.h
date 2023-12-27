@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
      */
     inline const Aws::Vector<ReportDefinition>& GetReportDefinitions() const{ return m_reportDefinitions; }
 
     /**
-     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
      */
     inline void SetReportDefinitions(const Aws::Vector<ReportDefinition>& value) { m_reportDefinitions = value; }
 
     /**
-     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
      */
     inline void SetReportDefinitions(Aws::Vector<ReportDefinition>&& value) { m_reportDefinitions = std::move(value); }
 
     /**
-     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
      */
     inline DescribeReportDefinitionsResult& WithReportDefinitions(const Aws::Vector<ReportDefinition>& value) { SetReportDefinitions(value); return *this;}
 
     /**
-     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
      */
     inline DescribeReportDefinitionsResult& WithReportDefinitions(Aws::Vector<ReportDefinition>&& value) { SetReportDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
      */
     inline DescribeReportDefinitionsResult& AddReportDefinitions(const ReportDefinition& value) { m_reportDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
      */
     inline DescribeReportDefinitionsResult& AddReportDefinitions(ReportDefinition&& value) { m_reportDefinitions.push_back(std::move(value)); return *this; }
 

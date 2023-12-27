@@ -958,7 +958,15 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for
+     * surplus credits, and, if you use surplus credits, your final cost might be
+     * higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetOnDemandMaxTotalPrice() const{ return m_onDemandMaxTotalPrice; }
 
@@ -970,7 +978,15 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for
+     * surplus credits, and, if you use surplus credits, your final cost might be
+     * higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline bool OnDemandMaxTotalPriceHasBeenSet() const { return m_onDemandMaxTotalPriceHasBeenSet; }
 
@@ -982,7 +998,15 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for
+     * surplus credits, and, if you use surplus credits, your final cost might be
+     * higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetOnDemandMaxTotalPrice(const Aws::String& value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice = value; }
 
@@ -994,7 +1018,15 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for
+     * surplus credits, and, if you use surplus credits, your final cost might be
+     * higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetOnDemandMaxTotalPrice(Aws::String&& value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice = std::move(value); }
 
@@ -1006,7 +1038,15 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for
+     * surplus credits, and, if you use surplus credits, your final cost might be
+     * higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetOnDemandMaxTotalPrice(const char* value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice.assign(value); }
 
@@ -1018,7 +1058,15 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for
+     * surplus credits, and, if you use surplus credits, your final cost might be
+     * higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(const Aws::String& value) { SetOnDemandMaxTotalPrice(value); return *this;}
 
@@ -1030,7 +1078,15 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for
+     * surplus credits, and, if you use surplus credits, your final cost might be
+     * higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(Aws::String&& value) { SetOnDemandMaxTotalPrice(std::move(value)); return *this;}
 
@@ -1042,104 +1098,176 @@ namespace Model
      * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>onDemandMaxTotalPrice</code> does not account for
+     * surplus credits, and, if you use surplus credits, your final cost might be
+     * higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(const char* value) { SetOnDemandMaxTotalPrice(value); return *this;}
 
 
     /**
      * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
-     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * You can use the <code>spotMaxTotalPrice</code> parameter, the
      * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
      * your fleet cost does not exceed your budget. If you set a maximum price per hour
      * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus
+     * credits, and, if you use surplus credits, your final cost might be higher than
+     * what you specified for <code>spotMaxTotalPrice</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetSpotMaxTotalPrice() const{ return m_spotMaxTotalPrice; }
 
     /**
      * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
-     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * You can use the <code>spotMaxTotalPrice</code> parameter, the
      * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
      * your fleet cost does not exceed your budget. If you set a maximum price per hour
      * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus
+     * credits, and, if you use surplus credits, your final cost might be higher than
+     * what you specified for <code>spotMaxTotalPrice</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline bool SpotMaxTotalPriceHasBeenSet() const { return m_spotMaxTotalPriceHasBeenSet; }
 
     /**
      * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
-     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * You can use the <code>spotMaxTotalPrice</code> parameter, the
      * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
      * your fleet cost does not exceed your budget. If you set a maximum price per hour
      * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus
+     * credits, and, if you use surplus credits, your final cost might be higher than
+     * what you specified for <code>spotMaxTotalPrice</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetSpotMaxTotalPrice(const Aws::String& value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice = value; }
 
     /**
      * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
-     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * You can use the <code>spotMaxTotalPrice</code> parameter, the
      * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
      * your fleet cost does not exceed your budget. If you set a maximum price per hour
      * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus
+     * credits, and, if you use surplus credits, your final cost might be higher than
+     * what you specified for <code>spotMaxTotalPrice</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetSpotMaxTotalPrice(Aws::String&& value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice = std::move(value); }
 
     /**
      * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
-     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * You can use the <code>spotMaxTotalPrice</code> parameter, the
      * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
      * your fleet cost does not exceed your budget. If you set a maximum price per hour
      * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus
+     * credits, and, if you use surplus credits, your final cost might be higher than
+     * what you specified for <code>spotMaxTotalPrice</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline void SetSpotMaxTotalPrice(const char* value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice.assign(value); }
 
     /**
      * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
-     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * You can use the <code>spotMaxTotalPrice</code> parameter, the
      * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
      * your fleet cost does not exceed your budget. If you set a maximum price per hour
      * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus
+     * credits, and, if you use surplus credits, your final cost might be higher than
+     * what you specified for <code>spotMaxTotalPrice</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline SpotFleetRequestConfigData& WithSpotMaxTotalPrice(const Aws::String& value) { SetSpotMaxTotalPrice(value); return *this;}
 
     /**
      * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
-     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * You can use the <code>spotMaxTotalPrice</code> parameter, the
      * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
      * your fleet cost does not exceed your budget. If you set a maximum price per hour
      * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus
+     * credits, and, if you use surplus credits, your final cost might be higher than
+     * what you specified for <code>spotMaxTotalPrice</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline SpotFleetRequestConfigData& WithSpotMaxTotalPrice(Aws::String&& value) { SetSpotMaxTotalPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
-     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * You can use the <code>spotMaxTotalPrice</code> parameter, the
      * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
      * your fleet cost does not exceed your budget. If you set a maximum price per hour
      * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
      * launch instances until it reaches the maximum amount you're willing to pay. When
      * the maximum amount you're willing to pay is reached, the fleet stops launching
-     * instances even if it hasn’t met the target capacity.</p>
+     * instances even if it hasn’t met the target capacity.</p>  <p>If your fleet
+     * includes T instances that are configured as <code>unlimited</code>, and if their
+     * average CPU usage exceeds the baseline utilization, you will incur a charge for
+     * surplus credits. The <code>spotMaxTotalPrice</code> does not account for surplus
+     * credits, and, if you use surplus credits, your final cost might be higher than
+     * what you specified for <code>spotMaxTotalPrice</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
+     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline SpotFleetRequestConfigData& WithSpotMaxTotalPrice(const char* value) { SetSpotMaxTotalPrice(value); return *this;}
 
@@ -1631,8 +1759,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
      * </code> (valid only if you use <code>LaunchSpecifications</code>). For
      * information about tagging after launch, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * Your Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
+     * your resources</a>.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
@@ -1647,8 +1775,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
      * </code> (valid only if you use <code>LaunchSpecifications</code>). For
      * information about tagging after launch, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * Your Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
+     * your resources</a>.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
@@ -1663,8 +1791,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
      * </code> (valid only if you use <code>LaunchSpecifications</code>). For
      * information about tagging after launch, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * Your Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
+     * your resources</a>.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
@@ -1679,8 +1807,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
      * </code> (valid only if you use <code>LaunchSpecifications</code>). For
      * information about tagging after launch, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * Your Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
+     * your resources</a>.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
@@ -1695,8 +1823,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
      * </code> (valid only if you use <code>LaunchSpecifications</code>). For
      * information about tagging after launch, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * Your Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
+     * your resources</a>.</p>
      */
     inline SpotFleetRequestConfigData& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
@@ -1711,8 +1839,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
      * </code> (valid only if you use <code>LaunchSpecifications</code>). For
      * information about tagging after launch, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * Your Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
+     * your resources</a>.</p>
      */
     inline SpotFleetRequestConfigData& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
@@ -1727,8 +1855,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
      * </code> (valid only if you use <code>LaunchSpecifications</code>). For
      * information about tagging after launch, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * Your Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
+     * your resources</a>.</p>
      */
     inline SpotFleetRequestConfigData& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
@@ -1743,8 +1871,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
      * </code> (valid only if you use <code>LaunchSpecifications</code>). For
      * information about tagging after launch, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
-     * Your Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
+     * your resources</a>.</p>
      */
     inline SpotFleetRequestConfigData& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
