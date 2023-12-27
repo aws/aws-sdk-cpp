@@ -5,6 +5,7 @@
 
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Outcome.h>
@@ -16,6 +17,11 @@
 #include <aws/logs/model/GetLogEventsRequest.h>
 #include <aws/logs/model/PutLogEventsRequest.h>
 #include <aws/logs/model/DeleteLogGroupRequest.h>
+#include <aws/logs/model/StartLiveTailHandler.h>
+#include <aws/logs/model/StartLiveTailRequest.h>
+#include <aws/access-management/AccessManagementClient.h>
+#include <aws/iam/IAMClient.h>
+#include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/testing/TestingEnvironment.h>
 
 #include <chrono>
@@ -40,6 +46,7 @@ namespace
     protected:
         Aws::UniquePtr<Aws::CloudWatchLogs::CloudWatchLogsClient> m_client;
         Aws::String m_UUID;
+        Aws::String m_accountId;
 
         Aws::String BuildResourceName(const char *baseName)
         {
@@ -54,6 +61,16 @@ namespace
             config.region = AWS_TEST_REGION;
             m_client = Aws::MakeUnique<Aws::CloudWatchLogs::CloudWatchLogsClient>(ALLOCATION_TAG, config);
             CreateLogsGroup(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP));
+
+            auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
+            if(accountId.empty()) {
+                config.region = Aws::Region::US_EAST_1;
+                auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
+                auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
+                Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
+                accountId = accessManagementClient.GetAccountId();
+            }
+            m_accountId = accountId;
         }
 
         void TearDown()
@@ -139,6 +156,52 @@ namespace
             retry++;
         }
         ASSERT_EQ(6u, eventsCount);
+    }
+
+    TEST_F(CloudWatchLogsOperationTest, StartLiveTailTest)
+    {
+        CreateLogStreamRequest createStreamRequest;
+        createStreamRequest.WithLogGroupName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP))
+                            .WithLogStreamName(BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM));
+        auto createStreamOutcome = m_client->CreateLogStream(createStreamRequest);
+        AWS_ASSERT_SUCCESS(createStreamOutcome);
+
+        StartLiveTailHandler handler;
+
+        auto OnResponseCallback = [](
+            const CloudWatchLogsClient* /*unused*/,
+            const StartLiveTailRequest& /*unused*/,
+            const StartLiveTailOutcome& outcome,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& /*unused*/) {
+            // Unfortunately the only way to end stream right now is to cancel
+            // it, so StartLiveTail api currently cannot end successfully. 
+            ASSERT_EQ(outcome.IsSuccess(), false);
+        };
+
+        StartLiveTailRequest request;
+
+        Aws::StringStream ss;
+        ss << "arn:aws:logs:" << AWS_TEST_REGION << ":" << m_accountId << ":log-group:" << BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP);
+        request.SetLogGroupIdentifiers({ss.str()});
+        request.SetLogStreamNames({BuildResourceName(BASE_CLOUD_WATCH_LOGS_STREAM)});
+        request.SetLogEventFilterPattern("ERROR");
+        request.SetEventStreamHandler(handler);
+
+        std::atomic<bool> keep_going(true);
+        request.SetContinueRequestHandler([&keep_going](const Aws::Http::HttpRequest*) {
+            return keep_going.load();
+        });
+
+        m_client->StartLiveTailAsync(request, OnResponseCallback);
+
+        //let it run for a little bit
+        std::this_thread::sleep_for(std::chrono::seconds(6));
+
+        keep_going.store(false);
+
+        //note: continue request handler takes a while to stop a request, so
+        //wait some time for request to stop before exiting the test
+        std::this_thread::sleep_for(std::chrono::seconds(30));
     }
 }
 

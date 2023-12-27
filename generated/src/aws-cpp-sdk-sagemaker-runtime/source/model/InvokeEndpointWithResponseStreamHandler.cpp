@@ -29,6 +29,12 @@ namespace Model
 
     InvokeEndpointWithResponseStreamHandler::InvokeEndpointWithResponseStreamHandler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const InvokeEndpointWithResponseStreamInitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(INVOKEENDPOINTWITHRESPONSESTREAM_HANDLER_CLASS_TAG,
+                "InvokeEndpointWithResponseStream initial response received.");
+        };
+
         m_onPayloadPart = [&](const PayloadPart&)
         {
             AWS_LOGSTREAM_TRACE(INVOKEENDPOINTWITHRESPONSESTREAM_HANDLER_CLASS_TAG, "PayloadPart received.");
@@ -88,6 +94,21 @@ namespace Model
         }
         switch (InvokeEndpointWithResponseStreamEventMapper::GetInvokeEndpointWithResponseStreamEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+        
+        case InvokeEndpointWithResponseStreamEventType::INITIAL_RESPONSE: 
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEENDPOINTWITHRESPONSESTREAM_HANDLER_CLASS_TAG, "Unable to generate a proper InvokeEndpointWithResponseStreamInitialResponse object from the response in JSON format.");
+                break;
+            }
+
+            InvokeEndpointWithResponseStreamInitialResponse event(json.View());
+            m_onInitialResponse(event);
+            break;
+        }   
+
         case InvokeEndpointWithResponseStreamEventType::PAYLOADPART:
         {
             PayloadPart event(GetEventPayloadWithOwnership());
@@ -186,12 +207,18 @@ namespace Model
 
 namespace InvokeEndpointWithResponseStreamEventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int PAYLOADPART_HASH = Aws::Utils::HashingUtils::HashString("PayloadPart");
 
     InvokeEndpointWithResponseStreamEventType GetInvokeEndpointWithResponseStreamEventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        if (hashCode == PAYLOADPART_HASH)
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return InvokeEndpointWithResponseStreamEventType::INITIAL_RESPONSE;
+        }
+        else if (hashCode == PAYLOADPART_HASH)
         {
             return InvokeEndpointWithResponseStreamEventType::PAYLOADPART;
         }
@@ -202,6 +229,8 @@ namespace InvokeEndpointWithResponseStreamEventMapper
     {
         switch (value)
         {
+        case InvokeEndpointWithResponseStreamEventType::INITIAL_RESPONSE:
+            return "initial-response";
         case InvokeEndpointWithResponseStreamEventType::PAYLOADPART:
             return "PayloadPart";
         default:

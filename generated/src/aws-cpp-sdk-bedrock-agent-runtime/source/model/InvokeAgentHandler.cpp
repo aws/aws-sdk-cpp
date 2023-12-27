@@ -29,6 +29,12 @@ namespace Model
 
     InvokeAgentHandler::InvokeAgentHandler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const InvokeAgentInitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG,
+                "InvokeAgent initial response received.");
+        };
+
         m_onPayloadPart = [&](const PayloadPart&)
         {
             AWS_LOGSTREAM_TRACE(INVOKEAGENT_HANDLER_CLASS_TAG, "PayloadPart received.");
@@ -93,6 +99,21 @@ namespace Model
         }
         switch (InvokeAgentEventMapper::GetInvokeAgentEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+        
+        case InvokeAgentEventType::INITIAL_RESPONSE: 
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEAGENT_HANDLER_CLASS_TAG, "Unable to generate a proper InvokeAgentInitialResponse object from the response in JSON format.");
+                break;
+            }
+
+            InvokeAgentInitialResponse event(json.View());
+            m_onInitialResponse(event);
+            break;
+        }   
+
         case InvokeAgentEventType::CHUNK:
         {
             JsonValue json(GetEventPayloadAsString());
@@ -209,13 +230,19 @@ namespace Model
 
 namespace InvokeAgentEventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int CHUNK_HASH = Aws::Utils::HashingUtils::HashString("chunk");
     static const int TRACE_HASH = Aws::Utils::HashingUtils::HashString("trace");
 
     InvokeAgentEventType GetInvokeAgentEventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        if (hashCode == CHUNK_HASH)
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return InvokeAgentEventType::INITIAL_RESPONSE;
+        }
+        else if (hashCode == CHUNK_HASH)
         {
             return InvokeAgentEventType::CHUNK;
         }
@@ -230,6 +257,8 @@ namespace InvokeAgentEventMapper
     {
         switch (value)
         {
+        case InvokeAgentEventType::INITIAL_RESPONSE:
+            return "initial-response";
         case InvokeAgentEventType::CHUNK:
             return "chunk";
         case InvokeAgentEventType::TRACE:

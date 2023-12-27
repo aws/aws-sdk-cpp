@@ -10,6 +10,7 @@
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrors.h>
 
+#include <aws/transcribestreaming/model/StartCallAnalyticsStreamTranscriptionInitialResponse.h>
 #include <aws/transcribestreaming/model/UtteranceEvent.h>
 #include <aws/transcribestreaming/model/CategoryEvent.h>
 
@@ -21,6 +22,7 @@ namespace Model
 {
     enum class StartCallAnalyticsStreamTranscriptionEventType
     {
+        INITIAL_RESPONSE,
         UTTERANCEEVENT,
         CATEGORYEVENT,
         UNKNOWN
@@ -28,6 +30,7 @@ namespace Model
 
     class StartCallAnalyticsStreamTranscriptionHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const StartCallAnalyticsStreamTranscriptionInitialResponse&)> StartCallAnalyticsStreamTranscriptionInitialResponseCallback;
         typedef std::function<void(const UtteranceEvent&)> UtteranceEventCallback;
         typedef std::function<void(const CategoryEvent&)> CategoryEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& error)> ErrorCallback;
@@ -38,6 +41,7 @@ namespace Model
 
         AWS_TRANSCRIBESTREAMINGSERVICE_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const StartCallAnalyticsStreamTranscriptionInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetUtteranceEventCallback(const UtteranceEventCallback& callback) { m_onUtteranceEvent = callback; }
         inline void SetCategoryEventCallback(const CategoryEventCallback& callback) { m_onCategoryEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
@@ -47,6 +51,7 @@ namespace Model
         AWS_TRANSCRIBESTREAMINGSERVICE_API void HandleErrorInMessage();
         AWS_TRANSCRIBESTREAMINGSERVICE_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
+        StartCallAnalyticsStreamTranscriptionInitialResponseCallback m_onInitialResponse;
         UtteranceEventCallback m_onUtteranceEvent;
         CategoryEventCallback m_onCategoryEvent;
         ErrorCallback m_onError;

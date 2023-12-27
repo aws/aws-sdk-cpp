@@ -10,6 +10,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/BedrockRuntimeErrors.h>
 
+#include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamInitialResponse.h>
 #include <aws/bedrock-runtime/model/PayloadPart.h>
 
 namespace Aws
@@ -20,12 +21,14 @@ namespace Model
 {
     enum class InvokeModelWithResponseStreamEventType
     {
+        INITIAL_RESPONSE,
         CHUNK,
         UNKNOWN
     };
 
     class InvokeModelWithResponseStreamHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const InvokeModelWithResponseStreamInitialResponse&)> InvokeModelWithResponseStreamInitialResponseCallback;
         typedef std::function<void(const PayloadPart&)> PayloadPartCallback;
         typedef std::function<void(const Aws::Client::AWSError<BedrockRuntimeErrors>& error)> ErrorCallback;
 
@@ -35,6 +38,7 @@ namespace Model
 
         AWS_BEDROCKRUNTIME_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const InvokeModelWithResponseStreamInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetPayloadPartCallback(const PayloadPartCallback& callback) { m_onPayloadPart = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
@@ -43,6 +47,7 @@ namespace Model
         AWS_BEDROCKRUNTIME_API void HandleErrorInMessage();
         AWS_BEDROCKRUNTIME_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
+        InvokeModelWithResponseStreamInitialResponseCallback m_onInitialResponse;
         PayloadPartCallback m_onPayloadPart;
         ErrorCallback m_onError;
     };

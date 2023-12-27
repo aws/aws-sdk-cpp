@@ -86,7 +86,9 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
         // Will not generate source code if it's a shape of event, with empty member.
         if (shape.isStructure() && shape.isReferenced() &&
-            !(shape.isEventStream() || (shape.isEvent() && shape.getMembers().isEmpty()) || (shape.isResult() && shape.hasEventStreamMembers()))) {
+            !(shape.isEventStream() ||
+                (shape.isEvent() && shape.getMembers().isEmpty() && !shape.getName().endsWith("InitialResponse")) ||
+                (shape.isResult() && shape.hasEventStreamMembers()))) {
             Template template = null;
             VelocityContext context = createContext(serviceModel);
 
@@ -124,9 +126,9 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
         if (shape.isStructure() && shape.isReferenced() &&
             !(shape.isEventStream() ||
-              shape.hasBlobMembers() && shape.hasEventPayloadMembers() ||
-              shape.isEvent() && shape.getMembers().isEmpty() ||
-              shape.isResult() && shape.hasEventStreamMembers())) {
+                (shape.hasBlobMembers() && shape.hasEventPayloadMembers()) ||
+                (shape.isEvent() && shape.getMembers().isEmpty() && !shape.getName().endsWith("InitialResponse")) ||
+                (shape.isResult() && shape.hasEventStreamMembers()))) {
             Template template = null;
             VelocityContext context = createContext(serviceModel);
 
