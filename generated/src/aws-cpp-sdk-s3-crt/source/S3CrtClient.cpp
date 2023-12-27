@@ -290,7 +290,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 
-  // initialize aws_s3_client:
+  // initialize aws_s3_client;
   aws_s3_client_config s3CrtConfig;
   AWS_ZERO_STRUCT(s3CrtConfig);
   s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
@@ -329,16 +329,6 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
 
   Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
   s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
-
-  // Add and initialize exponential backoff retry strategy:
-  struct aws_exponential_backoff_retry_options retry_options = {
-    .el_group = s3CrtConfig.client_bootstrap->event_loop_group,
-    .max_retries = config.exponentialBackoffTotalRetries,
-    .backoff_scale_factor_ms = static_cast<uint32_t>(config.exponentialBackoffScaleFactor * 1e3),
-    .maximum_delay_ms = static_cast<uint32_t>(config.exponentialBackoffMaxDelay * 1e3),
-    .jitter_mode = AWS_EXPONENTIAL_BACKOFF_JITTER_FULL,
-  };
-  s3CrtConfig.retry_strategy = aws_retry_strategy_new_exponential_backoff(Aws::get_aws_allocator(), &retry_options);
 
   m_crtCredProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderDelegate({
      std::bind([](const std::shared_ptr<AWSCredentialsProvider>& provider) {
@@ -490,7 +480,6 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   {
     aws_tls_connection_options_clean_up(&nonConstTlsOptions);
   }
-  aws_retry_strategy_release(s3CrtConfig.retry_strategy);
   if (!m_s3CrtClient)
   {
     AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to allocate aws_s3_client instance, abort.");
