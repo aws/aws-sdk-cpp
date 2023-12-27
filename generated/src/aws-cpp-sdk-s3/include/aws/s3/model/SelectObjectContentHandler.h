@@ -10,6 +10,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Errors.h>
 
+#include <aws/s3/model/SelectObjectContentInitialResponse.h>
 #include <aws/s3/model/RecordsEvent.h>
 #include <aws/s3/model/StatsEvent.h>
 #include <aws/s3/model/ProgressEvent.h>
@@ -22,6 +23,7 @@ namespace Model
 {
     enum class SelectObjectContentEventType
     {
+        INITIAL_RESPONSE,
         RECORDS,
         STATS,
         PROGRESS,
@@ -32,6 +34,7 @@ namespace Model
 
     class SelectObjectContentHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const SelectObjectContentInitialResponse&)> SelectObjectContentInitialResponseCallback;
         typedef std::function<void(const RecordsEvent&)> RecordsEventCallback;
         typedef std::function<void(const StatsEvent&)> StatsEventCallback;
         typedef std::function<void(const ProgressEvent&)> ProgressEventCallback;
@@ -45,6 +48,7 @@ namespace Model
 
         AWS_S3_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const SelectObjectContentInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetRecordsEventCallback(const RecordsEventCallback& callback) { m_onRecordsEvent = callback; }
         inline void SetStatsEventCallback(const StatsEventCallback& callback) { m_onStatsEvent = callback; }
         inline void SetProgressEventCallback(const ProgressEventCallback& callback) { m_onProgressEvent = callback; }
@@ -57,6 +61,7 @@ namespace Model
         AWS_S3_API void HandleErrorInMessage();
         AWS_S3_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
+        SelectObjectContentInitialResponseCallback m_onInitialResponse;
         RecordsEventCallback m_onRecordsEvent;
         StatsEventCallback m_onStatsEvent;
         ProgressEventCallback m_onProgressEvent;

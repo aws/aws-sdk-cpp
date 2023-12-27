@@ -58,13 +58,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
         //for c++, the way serialization works, we want to remove all required fields so we can do a value has been set
         //check on all fields.
         serviceModel.getShapes().values().stream().filter(hasMembers -> hasMembers.getMembers() != null).forEach(shape ->
-                shape.getMembers().values().stream().filter(shapeMember ->
-                        shapeMember.isRequired()).forEach( member -> member.setRequired(false)));
+                shape.getMembers().values().stream().filter(ShapeMember::isRequired)
+                    .forEach( member -> member.setRequired(false)));
 
-        getOperationsToRemove().stream().forEach(operation ->
-        {
-          serviceModel.getOperations().remove(operation);
-        });
+        getOperationsToRemove().stream().forEach(operation -> serviceModel.getOperations().remove(operation));
+        addEventStreamInitialResponse(serviceModel);
         addRequestIdToResults(serviceModel);
         List<SdkFileEntry> fileList = new ArrayList<>();
         fileList.addAll(generateModelHeaderFiles(serviceModel));
@@ -123,6 +121,24 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         SdkFileEntry[] retArray = new SdkFileEntry[fileList.size()];
         return fileList.toArray(retArray);
+    }
+
+    protected void addEventStreamInitialResponse(final ServiceModel serviceModel) {
+        serviceModel.getOperations().entrySet().stream()
+            .filter(operation -> Objects.nonNull(operation.getValue().getResult()))
+            .filter(operation -> operation.getValue().getResult().getShape().hasEventStreamMembers())
+            .map(operation -> Shape.builder()
+                .name(operation.getKey() + "InitialResponse")
+                .type("structure")
+                .isReferenced(true)
+                .event(true)
+                .eventPayloadType("structure")
+                .members(
+                    operation.getValue().getResult().getShape().getMembers().entrySet().stream()          
+                        .filter(member -> !member.getValue().getShape().isEventStream())
+                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
+                .build())
+            .forEach(shape -> serviceModel.getShapes().put(shape.getName(), shape));
     }
 
     protected void addRequestIdToResults(final ServiceModel serviceModel) {
@@ -255,7 +271,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
             for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
                 String key = opEntry.getKey();
                 Operation op = opEntry.getValue();
-                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName() && op.getResult() != null) {
+                
+                if (op.getRequest() != null && 
+                    op.getRequest().getShape().getName().equals(shape.getName()) && 
+                    op.getResult() != null) {
                     if (op.getResult().getShape().hasEventStreamMembers()) {
                         for (Map.Entry<String, ShapeMember> shapeMemberEntry : op.getResult().getShape().getMembers().entrySet()) {
                             if (shapeMemberEntry.getValue().getShape().isEventStream()) {
