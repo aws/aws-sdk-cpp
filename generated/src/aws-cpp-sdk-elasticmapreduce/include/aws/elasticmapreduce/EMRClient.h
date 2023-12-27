@@ -1378,6 +1378,40 @@ namespace EMR
         }
 
         /**
+         * <p>You can use the <code>SetKeepJobFlowAliveWhenNoSteps</code> to configure a
+         * cluster (job flow) to terminate after the step execution, i.e., all your steps
+         * are executed. If you want a transient cluster that shuts down after the last of
+         * the current executing steps are completed, you can configure
+         * <code>SetKeepJobFlowAliveWhenNoSteps</code> to false. If you want a long running
+         * cluster, configure <code>SetKeepJobFlowAliveWhenNoSteps</code> to true.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+         * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetKeepJobFlowAliveWhenNoSteps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetKeepJobFlowAliveWhenNoStepsOutcome SetKeepJobFlowAliveWhenNoSteps(const Model::SetKeepJobFlowAliveWhenNoStepsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SetKeepJobFlowAliveWhenNoSteps that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SetKeepJobFlowAliveWhenNoStepsRequestT = Model::SetKeepJobFlowAliveWhenNoStepsRequest>
+        Model::SetKeepJobFlowAliveWhenNoStepsOutcomeCallable SetKeepJobFlowAliveWhenNoStepsCallable(const SetKeepJobFlowAliveWhenNoStepsRequestT& request) const
+        {
+            return SubmitCallable(&EMRClient::SetKeepJobFlowAliveWhenNoSteps, request);
+        }
+
+        /**
+         * An Async wrapper for SetKeepJobFlowAliveWhenNoSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SetKeepJobFlowAliveWhenNoStepsRequestT = Model::SetKeepJobFlowAliveWhenNoStepsRequest>
+        void SetKeepJobFlowAliveWhenNoStepsAsync(const SetKeepJobFlowAliveWhenNoStepsRequestT& request, const SetKeepJobFlowAliveWhenNoStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRClient::SetKeepJobFlowAliveWhenNoSteps, request, handler, context);
+        }
+
+        /**
          * <p>SetTerminationProtection locks a cluster (job flow) so the Amazon EC2
          * instances in the cluster cannot be terminated by user intervention, an API call,
          * or in the event of a job-flow error. The cluster still terminates upon
