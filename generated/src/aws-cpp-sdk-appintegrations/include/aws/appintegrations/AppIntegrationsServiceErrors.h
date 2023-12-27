@@ -50,7 +50,8 @@ enum class AppIntegrationsServiceErrors
   DUPLICATE_RESOURCE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVICE,
   INVALID_REQUEST,
-  RESOURCE_QUOTA_EXCEEDED
+  RESOURCE_QUOTA_EXCEEDED,
+  UNSUPPORTED_OPERATION
 };
 
 class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceError : public Aws::Client::AWSError<AppIntegrationsServiceErrors>

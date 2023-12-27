@@ -807,6 +807,72 @@ namespace Model
 
 
     /**
+     * <p>An integer that represents the queue time adjust to be applied to the
+     * contact, in seconds (longer / larger queue time are routed preferentially).
+     * Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.</p>
+     */
+    inline int GetQueueTimeAdjustmentSeconds() const{ return m_queueTimeAdjustmentSeconds; }
+
+    /**
+     * <p>An integer that represents the queue time adjust to be applied to the
+     * contact, in seconds (longer / larger queue time are routed preferentially).
+     * Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.</p>
+     */
+    inline bool QueueTimeAdjustmentSecondsHasBeenSet() const { return m_queueTimeAdjustmentSecondsHasBeenSet; }
+
+    /**
+     * <p>An integer that represents the queue time adjust to be applied to the
+     * contact, in seconds (longer / larger queue time are routed preferentially).
+     * Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.</p>
+     */
+    inline void SetQueueTimeAdjustmentSeconds(int value) { m_queueTimeAdjustmentSecondsHasBeenSet = true; m_queueTimeAdjustmentSeconds = value; }
+
+    /**
+     * <p>An integer that represents the queue time adjust to be applied to the
+     * contact, in seconds (longer / larger queue time are routed preferentially).
+     * Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.</p>
+     */
+    inline Contact& WithQueueTimeAdjustmentSeconds(int value) { SetQueueTimeAdjustmentSeconds(value); return *this;}
+
+
+    /**
+     * <p>An integer that represents the queue priority to be applied to the contact
+     * (lower priorities are routed preferentially). Cannot be specified if the
+     * QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be
+     * larger than zero, and a valid integer value. Default Value is 5.</p>
+     */
+    inline long long GetQueuePriority() const{ return m_queuePriority; }
+
+    /**
+     * <p>An integer that represents the queue priority to be applied to the contact
+     * (lower priorities are routed preferentially). Cannot be specified if the
+     * QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be
+     * larger than zero, and a valid integer value. Default Value is 5.</p>
+     */
+    inline bool QueuePriorityHasBeenSet() const { return m_queuePriorityHasBeenSet; }
+
+    /**
+     * <p>An integer that represents the queue priority to be applied to the contact
+     * (lower priorities are routed preferentially). Cannot be specified if the
+     * QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be
+     * larger than zero, and a valid integer value. Default Value is 5.</p>
+     */
+    inline void SetQueuePriority(long long value) { m_queuePriorityHasBeenSet = true; m_queuePriority = value; }
+
+    /**
+     * <p>An integer that represents the queue priority to be applied to the contact
+     * (lower priorities are routed preferentially). Cannot be specified if the
+     * QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be
+     * larger than zero, and a valid integer value. Default Value is 5.</p>
+     */
+    inline Contact& WithQueuePriority(long long value) { SetQueuePriority(value); return *this;}
+
+
+    /**
      * <p>Tags associated with the contact. This contains both Amazon Web Services
      * generated and user-defined tags.</p>
      */
@@ -945,6 +1011,12 @@ namespace Model
 
     WisdomInfo m_wisdomInfo;
     bool m_wisdomInfoHasBeenSet = false;
+
+    int m_queueTimeAdjustmentSeconds;
+    bool m_queueTimeAdjustmentSecondsHasBeenSet = false;
+
+    long long m_queuePriority;
+    bool m_queuePriorityHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

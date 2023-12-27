@@ -18,7 +18,9 @@ GetTemporaryGlueTableCredentialsRequest::GetTemporaryGlueTableCredentialsRequest
     m_durationSeconds(0),
     m_durationSecondsHasBeenSet(false),
     m_auditContextHasBeenSet(false),
-    m_supportedPermissionTypesHasBeenSet(false)
+    m_supportedPermissionTypesHasBeenSet(false),
+    m_s3PathHasBeenSet(false),
+    m_querySessionContextHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,18 @@ Aws::String GetTemporaryGlueTableCredentialsRequest::SerializePayload() const
      supportedPermissionTypesJsonList[supportedPermissionTypesIndex].AsString(PermissionTypeMapper::GetNameForPermissionType(m_supportedPermissionTypes[supportedPermissionTypesIndex]));
    }
    payload.WithArray("SupportedPermissionTypes", std::move(supportedPermissionTypesJsonList));
+
+  }
+
+  if(m_s3PathHasBeenSet)
+  {
+   payload.WithString("S3Path", m_s3Path);
+
+  }
+
+  if(m_querySessionContextHasBeenSet)
+  {
+   payload.WithObject("QuerySessionContext", m_querySessionContext.Jsonize());
 
   }
 

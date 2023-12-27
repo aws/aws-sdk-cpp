@@ -56,6 +56,12 @@ CreateWorkspaceResult& CreateWorkspaceResult::operator =(const Aws::AmazonWebSer
     }
   }
 
+  if(jsonValue.ValueExists("kmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

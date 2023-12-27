@@ -11,6 +11,8 @@
 #include <aws/medialive/model/InputDeviceScanType.h>
 #include <aws/medialive/model/InputDeviceCodec.h>
 #include <aws/medialive/model/InputDeviceMediaConnectSettings.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/InputDeviceUhdAudioChannelPairConfig.h>
 #include <utility>
 
 namespace Aws
@@ -359,6 +361,71 @@ namespace Model
      */
     inline InputDeviceUhdSettings& WithMediaconnectSettings(InputDeviceMediaConnectSettings&& value) { SetMediaconnectSettings(std::move(value)); return *this;}
 
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Each audio configuration specifies either to exclude the pair, or to format it
+     * and include it in the output from the UHD device. Applies only when the device
+     * is configured as the source for a MediaConnect flow.
+     */
+    inline const Aws::Vector<InputDeviceUhdAudioChannelPairConfig>& GetAudioChannelPairs() const{ return m_audioChannelPairs; }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Each audio configuration specifies either to exclude the pair, or to format it
+     * and include it in the output from the UHD device. Applies only when the device
+     * is configured as the source for a MediaConnect flow.
+     */
+    inline bool AudioChannelPairsHasBeenSet() const { return m_audioChannelPairsHasBeenSet; }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Each audio configuration specifies either to exclude the pair, or to format it
+     * and include it in the output from the UHD device. Applies only when the device
+     * is configured as the source for a MediaConnect flow.
+     */
+    inline void SetAudioChannelPairs(const Aws::Vector<InputDeviceUhdAudioChannelPairConfig>& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs = value; }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Each audio configuration specifies either to exclude the pair, or to format it
+     * and include it in the output from the UHD device. Applies only when the device
+     * is configured as the source for a MediaConnect flow.
+     */
+    inline void SetAudioChannelPairs(Aws::Vector<InputDeviceUhdAudioChannelPairConfig>&& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs = std::move(value); }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Each audio configuration specifies either to exclude the pair, or to format it
+     * and include it in the output from the UHD device. Applies only when the device
+     * is configured as the source for a MediaConnect flow.
+     */
+    inline InputDeviceUhdSettings& WithAudioChannelPairs(const Aws::Vector<InputDeviceUhdAudioChannelPairConfig>& value) { SetAudioChannelPairs(value); return *this;}
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Each audio configuration specifies either to exclude the pair, or to format it
+     * and include it in the output from the UHD device. Applies only when the device
+     * is configured as the source for a MediaConnect flow.
+     */
+    inline InputDeviceUhdSettings& WithAudioChannelPairs(Aws::Vector<InputDeviceUhdAudioChannelPairConfig>&& value) { SetAudioChannelPairs(std::move(value)); return *this;}
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Each audio configuration specifies either to exclude the pair, or to format it
+     * and include it in the output from the UHD device. Applies only when the device
+     * is configured as the source for a MediaConnect flow.
+     */
+    inline InputDeviceUhdSettings& AddAudioChannelPairs(const InputDeviceUhdAudioChannelPairConfig& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs.push_back(value); return *this; }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Each audio configuration specifies either to exclude the pair, or to format it
+     * and include it in the output from the UHD device. Applies only when the device
+     * is configured as the source for a MediaConnect flow.
+     */
+    inline InputDeviceUhdSettings& AddAudioChannelPairs(InputDeviceUhdAudioChannelPairConfig&& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs.push_back(std::move(value)); return *this; }
+
   private:
 
     InputDeviceActiveInput m_activeInput;
@@ -393,6 +460,9 @@ namespace Model
 
     InputDeviceMediaConnectSettings m_mediaconnectSettings;
     bool m_mediaconnectSettingsHasBeenSet = false;
+
+    Aws::Vector<InputDeviceUhdAudioChannelPairConfig> m_audioChannelPairs;
+    bool m_audioChannelPairsHasBeenSet = false;
   };
 
 } // namespace Model

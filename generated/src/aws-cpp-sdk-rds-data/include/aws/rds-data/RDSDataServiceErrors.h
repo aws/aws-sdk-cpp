@@ -48,10 +48,18 @@ enum class RDSDataServiceErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DATABASE_ERROR,
+  DATABASE_NOT_FOUND,
+  DATABASE_UNAVAILABLE,
   FORBIDDEN,
+  HTTP_ENDPOINT_NOT_ENABLED,
   INTERNAL_SERVER_ERROR,
+  INVALID_SECRET,
   NOT_FOUND,
-  STATEMENT_TIMEOUT
+  SECRETS_ERROR,
+  STATEMENT_TIMEOUT,
+  TRANSACTION_NOT_FOUND,
+  UNSUPPORTED_RESULT
 };
 
 class AWS_RDSDATASERVICE_API RDSDataServiceError : public Aws::Client::AWSError<RDSDataServiceErrors>

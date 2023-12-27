@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     OPENSEARCH_SERVERLESS,
     PINECONE,
-    REDIS_ENTERPRISE_CLOUD
+    REDIS_ENTERPRISE_CLOUD,
+    RDS
   };
 
 namespace KnowledgeBaseStorageTypeMapper

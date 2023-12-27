@@ -9,8 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/appintegrations/model/Subscription.h>
-#include <aws/appintegrations/model/Publication.h>
 #include <utility>
 
 namespace Aws
@@ -191,85 +189,58 @@ namespace Model
 
 
     /**
-     * <p>The events that the application subscribes.</p>
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
      */
-    inline const Aws::Vector<Subscription>& GetSubscriptions() const{ return m_subscriptions; }
+    inline const Aws::Vector<Aws::String>& GetPermissions() const{ return m_permissions; }
 
     /**
-     * <p>The events that the application subscribes.</p>
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
      */
-    inline bool SubscriptionsHasBeenSet() const { return m_subscriptionsHasBeenSet; }
+    inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
 
     /**
-     * <p>The events that the application subscribes.</p>
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
      */
-    inline void SetSubscriptions(const Aws::Vector<Subscription>& value) { m_subscriptionsHasBeenSet = true; m_subscriptions = value; }
+    inline void SetPermissions(const Aws::Vector<Aws::String>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
 
     /**
-     * <p>The events that the application subscribes.</p>
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
      */
-    inline void SetSubscriptions(Aws::Vector<Subscription>&& value) { m_subscriptionsHasBeenSet = true; m_subscriptions = std::move(value); }
+    inline void SetPermissions(Aws::Vector<Aws::String>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
 
     /**
-     * <p>The events that the application subscribes.</p>
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
      */
-    inline UpdateApplicationRequest& WithSubscriptions(const Aws::Vector<Subscription>& value) { SetSubscriptions(value); return *this;}
+    inline UpdateApplicationRequest& WithPermissions(const Aws::Vector<Aws::String>& value) { SetPermissions(value); return *this;}
 
     /**
-     * <p>The events that the application subscribes.</p>
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
      */
-    inline UpdateApplicationRequest& WithSubscriptions(Aws::Vector<Subscription>&& value) { SetSubscriptions(std::move(value)); return *this;}
+    inline UpdateApplicationRequest& WithPermissions(Aws::Vector<Aws::String>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>The events that the application subscribes.</p>
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
      */
-    inline UpdateApplicationRequest& AddSubscriptions(const Subscription& value) { m_subscriptionsHasBeenSet = true; m_subscriptions.push_back(value); return *this; }
+    inline UpdateApplicationRequest& AddPermissions(const Aws::String& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
 
     /**
-     * <p>The events that the application subscribes.</p>
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
      */
-    inline UpdateApplicationRequest& AddSubscriptions(Subscription&& value) { m_subscriptionsHasBeenSet = true; m_subscriptions.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline const Aws::Vector<Publication>& GetPublications() const{ return m_publications; }
+    inline UpdateApplicationRequest& AddPermissions(Aws::String&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The events that the application publishes.</p>
+     * <p>The configuration of events or requests that the application has access
+     * to.</p>
      */
-    inline bool PublicationsHasBeenSet() const { return m_publicationsHasBeenSet; }
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline void SetPublications(const Aws::Vector<Publication>& value) { m_publicationsHasBeenSet = true; m_publications = value; }
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline void SetPublications(Aws::Vector<Publication>&& value) { m_publicationsHasBeenSet = true; m_publications = std::move(value); }
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline UpdateApplicationRequest& WithPublications(const Aws::Vector<Publication>& value) { SetPublications(value); return *this;}
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline UpdateApplicationRequest& WithPublications(Aws::Vector<Publication>&& value) { SetPublications(std::move(value)); return *this;}
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline UpdateApplicationRequest& AddPublications(const Publication& value) { m_publicationsHasBeenSet = true; m_publications.push_back(value); return *this; }
-
-    /**
-     * <p>The events that the application publishes.</p>
-     */
-    inline UpdateApplicationRequest& AddPublications(Publication&& value) { m_publicationsHasBeenSet = true; m_publications.push_back(std::move(value)); return *this; }
+    inline UpdateApplicationRequest& AddPermissions(const char* value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
 
   private:
 
@@ -285,11 +256,8 @@ namespace Model
     ApplicationSourceConfig m_applicationSourceConfig;
     bool m_applicationSourceConfigHasBeenSet = false;
 
-    Aws::Vector<Subscription> m_subscriptions;
-    bool m_subscriptionsHasBeenSet = false;
-
-    Aws::Vector<Publication> m_publications;
-    bool m_publicationsHasBeenSet = false;
+    Aws::Vector<Aws::String> m_permissions;
+    bool m_permissionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -58,8 +58,8 @@
 ${className}::${className}(const ${className} &rhs) :
     BASECLASS(rhs.m_clientConfiguration,
         Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
-            Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-            Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this),
+            rhs.GetCredentialsProvider(),
+            rhs.m_clientConfiguration.identityProviderSupplier(*this),
             SERVICE_NAME,
             Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
             rhs.m_clientConfiguration.payloadSigningPolicy,

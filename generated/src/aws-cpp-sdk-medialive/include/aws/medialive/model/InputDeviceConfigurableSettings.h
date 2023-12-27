@@ -8,6 +8,8 @@
 #include <aws/medialive/model/InputDeviceConfiguredInput.h>
 #include <aws/medialive/model/InputDeviceCodec.h>
 #include <aws/medialive/model/InputDeviceMediaConnectConfigurableSettings.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/InputDeviceConfigurableAudioChannelPairConfig.h>
 #include <utility>
 
 namespace Aws
@@ -213,6 +215,87 @@ namespace Model
      */
     inline InputDeviceConfigurableSettings& WithMediaconnectSettings(InputDeviceMediaConnectConfigurableSettings&& value) { SetMediaconnectSettings(std::move(value)); return *this;}
 
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Set up each audio configuration either to exclude the pair, or to format it and
+     * include it in the output from the device. This parameter applies only to UHD
+     * devices, and only when the device is configured as the source for a MediaConnect
+     * flow. For an HD device, you configure the audio by setting up audio selectors in
+     * the channel configuration.
+     */
+    inline const Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>& GetAudioChannelPairs() const{ return m_audioChannelPairs; }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Set up each audio configuration either to exclude the pair, or to format it and
+     * include it in the output from the device. This parameter applies only to UHD
+     * devices, and only when the device is configured as the source for a MediaConnect
+     * flow. For an HD device, you configure the audio by setting up audio selectors in
+     * the channel configuration.
+     */
+    inline bool AudioChannelPairsHasBeenSet() const { return m_audioChannelPairsHasBeenSet; }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Set up each audio configuration either to exclude the pair, or to format it and
+     * include it in the output from the device. This parameter applies only to UHD
+     * devices, and only when the device is configured as the source for a MediaConnect
+     * flow. For an HD device, you configure the audio by setting up audio selectors in
+     * the channel configuration.
+     */
+    inline void SetAudioChannelPairs(const Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs = value; }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Set up each audio configuration either to exclude the pair, or to format it and
+     * include it in the output from the device. This parameter applies only to UHD
+     * devices, and only when the device is configured as the source for a MediaConnect
+     * flow. For an HD device, you configure the audio by setting up audio selectors in
+     * the channel configuration.
+     */
+    inline void SetAudioChannelPairs(Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>&& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs = std::move(value); }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Set up each audio configuration either to exclude the pair, or to format it and
+     * include it in the output from the device. This parameter applies only to UHD
+     * devices, and only when the device is configured as the source for a MediaConnect
+     * flow. For an HD device, you configure the audio by setting up audio selectors in
+     * the channel configuration.
+     */
+    inline InputDeviceConfigurableSettings& WithAudioChannelPairs(const Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>& value) { SetAudioChannelPairs(value); return *this;}
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Set up each audio configuration either to exclude the pair, or to format it and
+     * include it in the output from the device. This parameter applies only to UHD
+     * devices, and only when the device is configured as the source for a MediaConnect
+     * flow. For an HD device, you configure the audio by setting up audio selectors in
+     * the channel configuration.
+     */
+    inline InputDeviceConfigurableSettings& WithAudioChannelPairs(Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>&& value) { SetAudioChannelPairs(std::move(value)); return *this;}
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Set up each audio configuration either to exclude the pair, or to format it and
+     * include it in the output from the device. This parameter applies only to UHD
+     * devices, and only when the device is configured as the source for a MediaConnect
+     * flow. For an HD device, you configure the audio by setting up audio selectors in
+     * the channel configuration.
+     */
+    inline InputDeviceConfigurableSettings& AddAudioChannelPairs(const InputDeviceConfigurableAudioChannelPairConfig& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs.push_back(value); return *this; }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source.
+     * Set up each audio configuration either to exclude the pair, or to format it and
+     * include it in the output from the device. This parameter applies only to UHD
+     * devices, and only when the device is configured as the source for a MediaConnect
+     * flow. For an HD device, you configure the audio by setting up audio selectors in
+     * the channel configuration.
+     */
+    inline InputDeviceConfigurableSettings& AddAudioChannelPairs(InputDeviceConfigurableAudioChannelPairConfig&& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs.push_back(std::move(value)); return *this; }
+
   private:
 
     InputDeviceConfiguredInput m_configuredInput;
@@ -229,6 +312,9 @@ namespace Model
 
     InputDeviceMediaConnectConfigurableSettings m_mediaconnectSettings;
     bool m_mediaconnectSettingsHasBeenSet = false;
+
+    Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig> m_audioChannelPairs;
+    bool m_audioChannelPairsHasBeenSet = false;
   };
 
 } // namespace Model

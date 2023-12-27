@@ -84,7 +84,7 @@
 ${className}::${className}(const ${className} &rhs) :
     BASECLASS(rhs.m_clientConfiguration,
         Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
-            ${defaultCredentialsProviderChainParam},
+            rhs.GetCredentialsProvider(),
             rhs.m_clientConfiguration.identityProviderSupplier(*this),
             SERVICE_NAME,
             Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),

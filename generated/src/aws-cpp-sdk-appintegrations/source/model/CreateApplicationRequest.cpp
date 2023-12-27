@@ -17,11 +17,10 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_namespaceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_applicationSourceConfigHasBeenSet(false),
-    m_subscriptionsHasBeenSet(false),
-    m_publicationsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_permissionsHasBeenSet(false)
 {
 }
 
@@ -53,28 +52,6 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   }
 
-  if(m_subscriptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subscriptionsJsonList(m_subscriptions.size());
-   for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
-   {
-     subscriptionsJsonList[subscriptionsIndex].AsObject(m_subscriptions[subscriptionsIndex].Jsonize());
-   }
-   payload.WithArray("Subscriptions", std::move(subscriptionsJsonList));
-
-  }
-
-  if(m_publicationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> publicationsJsonList(m_publications.size());
-   for(unsigned publicationsIndex = 0; publicationsIndex < publicationsJsonList.GetLength(); ++publicationsIndex)
-   {
-     publicationsJsonList[publicationsIndex].AsObject(m_publications[publicationsIndex].Jsonize());
-   }
-   payload.WithArray("Publications", std::move(publicationsJsonList));
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
@@ -89,6 +66,17 @@ Aws::String CreateApplicationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_permissionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
+   for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
+   {
+     permissionsJsonList[permissionsIndex].AsString(m_permissions[permissionsIndex]);
+   }
+   payload.WithArray("Permissions", std::move(permissionsJsonList));
 
   }
 
