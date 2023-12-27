@@ -66,6 +66,18 @@ namespace Aws
             /* Callback and associated user data for when the client has completed its shutdown process. */
             std::function<void(void*)> clientShutdownCallback;
             void *shutdownCallbackUserData = nullptr;
+
+            /**
+             * Parameters for the AWS_C_S3_RETRY_STRATEGY::EXPONENTIAL_BACKOFF strategy.
+             */
+            /* Maximum number of request retries. Specifying 0 here will fall back to the default set by aws-c-io. */
+            size_t exponentialBackoffMaxRetries = 0;
+
+            /* Scale factor (in seconds) for the back-off value. */
+            double exponentialBackoffScaleFactor = 1.0;
+
+            /* Maximum delay between retries (in seconds). Specifying 0 here will fall back to the default set by aws-c-io. */
+            uint32_t exponentialMaxBackoffSecs = 0;
         };
     }
 }
