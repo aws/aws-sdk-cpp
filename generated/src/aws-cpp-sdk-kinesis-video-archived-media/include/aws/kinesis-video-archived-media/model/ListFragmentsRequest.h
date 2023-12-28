@@ -223,37 +223,43 @@ namespace Model
 
     /**
      * <p>Describes the timestamp range and timestamp origin for the range of fragments
-     * to return.</p>
+     * to return.</p>  <p>This is only required when the <code>NextToken</code>
+     * isn't passed in the API.</p> 
      */
     inline const FragmentSelector& GetFragmentSelector() const{ return m_fragmentSelector; }
 
     /**
      * <p>Describes the timestamp range and timestamp origin for the range of fragments
-     * to return.</p>
+     * to return.</p>  <p>This is only required when the <code>NextToken</code>
+     * isn't passed in the API.</p> 
      */
     inline bool FragmentSelectorHasBeenSet() const { return m_fragmentSelectorHasBeenSet; }
 
     /**
      * <p>Describes the timestamp range and timestamp origin for the range of fragments
-     * to return.</p>
+     * to return.</p>  <p>This is only required when the <code>NextToken</code>
+     * isn't passed in the API.</p> 
      */
     inline void SetFragmentSelector(const FragmentSelector& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = value; }
 
     /**
      * <p>Describes the timestamp range and timestamp origin for the range of fragments
-     * to return.</p>
+     * to return.</p>  <p>This is only required when the <code>NextToken</code>
+     * isn't passed in the API.</p> 
      */
     inline void SetFragmentSelector(FragmentSelector&& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = std::move(value); }
 
     /**
      * <p>Describes the timestamp range and timestamp origin for the range of fragments
-     * to return.</p>
+     * to return.</p>  <p>This is only required when the <code>NextToken</code>
+     * isn't passed in the API.</p> 
      */
     inline ListFragmentsRequest& WithFragmentSelector(const FragmentSelector& value) { SetFragmentSelector(value); return *this;}
 
     /**
      * <p>Describes the timestamp range and timestamp origin for the range of fragments
-     * to return.</p>
+     * to return.</p>  <p>This is only required when the <code>NextToken</code>
+     * isn't passed in the API.</p> 
      */
     inline ListFragmentsRequest& WithFragmentSelector(FragmentSelector&& value) { SetFragmentSelector(std::move(value)); return *this;}
 

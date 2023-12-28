@@ -22,7 +22,8 @@ DomainSettingsForUpdate::DomainSettingsForUpdate() :
     m_rStudioServerProDomainSettingsForUpdateHasBeenSet(false),
     m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
     m_executionRoleIdentityConfigHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_dockerSettingsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ DomainSettingsForUpdate::DomainSettingsForUpdate(JsonView jsonValue) :
     m_rStudioServerProDomainSettingsForUpdateHasBeenSet(false),
     m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
     m_executionRoleIdentityConfigHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_dockerSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,13 @@ DomainSettingsForUpdate& DomainSettingsForUpdate::operator =(JsonView jsonValue)
     m_securityGroupIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DockerSettings"))
+  {
+    m_dockerSettings = jsonValue.GetObject("DockerSettings");
+
+    m_dockerSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,6 +96,12 @@ JsonValue DomainSettingsForUpdate::Jsonize() const
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
    }
    payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
+
+  }
+
+  if(m_dockerSettingsHasBeenSet)
+  {
+   payload.WithObject("DockerSettings", m_dockerSettings.Jsonize());
 
   }
 
