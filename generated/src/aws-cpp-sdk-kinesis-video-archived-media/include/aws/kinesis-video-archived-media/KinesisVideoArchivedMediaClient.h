@@ -410,7 +410,7 @@ namespace KinesisVideoArchivedMedia
         }
 
         /**
-         * <p>Retrieves a list of Images corresponding to each timestamp for a given time
+         * <p>Retrieves a list of images corresponding to each timestamp for a given time
          * range, sampling interval, and image format configuration.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetImages">AWS

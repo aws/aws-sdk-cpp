@@ -19,7 +19,8 @@ namespace Model
     Bitbucket,
     GitHub,
     GitHubEnterpriseServer,
-    GitLab
+    GitLab,
+    GitLabSelfManaged
   };
 
 namespace ProviderTypeMapper
