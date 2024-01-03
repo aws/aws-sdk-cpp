@@ -13,29 +13,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class ContainerType
+  enum class UncompressedInterlaceMode
   {
     NOT_SET,
-    F4V,
-    ISMV,
-    M2TS,
-    M3U8,
-    CMFC,
-    MOV,
-    MP4,
-    MPD,
-    MXF,
-    WEBM,
-    RAW,
-    Y4M
+    INTERLACED,
+    PROGRESSIVE
   };
 
-namespace ContainerTypeMapper
+namespace UncompressedInterlaceModeMapper
 {
-AWS_MEDIACONVERT_API ContainerType GetContainerTypeForName(const Aws::String& name);
+AWS_MEDIACONVERT_API UncompressedInterlaceMode GetUncompressedInterlaceModeForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForContainerType(ContainerType value);
-} // namespace ContainerTypeMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForUncompressedInterlaceMode(UncompressedInterlaceMode value);
+} // namespace UncompressedInterlaceModeMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact</p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact</p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact</p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact</p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact</p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact</p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline ContactSearchSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact</p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline ContactSearchSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact</p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline ContactSearchSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -347,67 +347,79 @@ namespace Model
 
 
     /**
-     * <p>The date and time this contact was initiated, in UTC time. For INBOUND, this
-     * is when the contact arrived. For OUTBOUND, this is when the agent began dialing.
-     * For CALLBACK, this is when the callback contact was created. For TRANSFER and
-     * QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when
-     * the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started
-     * dialing the external participant. For MONITOR, this is when the supervisor
+     * <p>The date and time this contact was initiated, in UTC time. For
+     * <code>INBOUND</code>, this is when the contact arrived. For
+     * <code>OUTBOUND</code>, this is when the agent began dialing. For
+     * <code>CALLBACK</code>, this is when the callback contact was created. For
+     * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
+     * was initiated. For API, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
      * started listening to a contact.</p>
      */
     inline const Aws::Utils::DateTime& GetInitiationTimestamp() const{ return m_initiationTimestamp; }
 
     /**
-     * <p>The date and time this contact was initiated, in UTC time. For INBOUND, this
-     * is when the contact arrived. For OUTBOUND, this is when the agent began dialing.
-     * For CALLBACK, this is when the callback contact was created. For TRANSFER and
-     * QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when
-     * the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started
-     * dialing the external participant. For MONITOR, this is when the supervisor
+     * <p>The date and time this contact was initiated, in UTC time. For
+     * <code>INBOUND</code>, this is when the contact arrived. For
+     * <code>OUTBOUND</code>, this is when the agent began dialing. For
+     * <code>CALLBACK</code>, this is when the callback contact was created. For
+     * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
+     * was initiated. For API, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
      * started listening to a contact.</p>
      */
     inline bool InitiationTimestampHasBeenSet() const { return m_initiationTimestampHasBeenSet; }
 
     /**
-     * <p>The date and time this contact was initiated, in UTC time. For INBOUND, this
-     * is when the contact arrived. For OUTBOUND, this is when the agent began dialing.
-     * For CALLBACK, this is when the callback contact was created. For TRANSFER and
-     * QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when
-     * the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started
-     * dialing the external participant. For MONITOR, this is when the supervisor
+     * <p>The date and time this contact was initiated, in UTC time. For
+     * <code>INBOUND</code>, this is when the contact arrived. For
+     * <code>OUTBOUND</code>, this is when the agent began dialing. For
+     * <code>CALLBACK</code>, this is when the callback contact was created. For
+     * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
+     * was initiated. For API, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
      * started listening to a contact.</p>
      */
     inline void SetInitiationTimestamp(const Aws::Utils::DateTime& value) { m_initiationTimestampHasBeenSet = true; m_initiationTimestamp = value; }
 
     /**
-     * <p>The date and time this contact was initiated, in UTC time. For INBOUND, this
-     * is when the contact arrived. For OUTBOUND, this is when the agent began dialing.
-     * For CALLBACK, this is when the callback contact was created. For TRANSFER and
-     * QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when
-     * the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started
-     * dialing the external participant. For MONITOR, this is when the supervisor
+     * <p>The date and time this contact was initiated, in UTC time. For
+     * <code>INBOUND</code>, this is when the contact arrived. For
+     * <code>OUTBOUND</code>, this is when the agent began dialing. For
+     * <code>CALLBACK</code>, this is when the callback contact was created. For
+     * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
+     * was initiated. For API, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
      * started listening to a contact.</p>
      */
     inline void SetInitiationTimestamp(Aws::Utils::DateTime&& value) { m_initiationTimestampHasBeenSet = true; m_initiationTimestamp = std::move(value); }
 
     /**
-     * <p>The date and time this contact was initiated, in UTC time. For INBOUND, this
-     * is when the contact arrived. For OUTBOUND, this is when the agent began dialing.
-     * For CALLBACK, this is when the callback contact was created. For TRANSFER and
-     * QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when
-     * the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started
-     * dialing the external participant. For MONITOR, this is when the supervisor
+     * <p>The date and time this contact was initiated, in UTC time. For
+     * <code>INBOUND</code>, this is when the contact arrived. For
+     * <code>OUTBOUND</code>, this is when the agent began dialing. For
+     * <code>CALLBACK</code>, this is when the callback contact was created. For
+     * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
+     * was initiated. For API, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
      * started listening to a contact.</p>
      */
     inline ContactSearchSummary& WithInitiationTimestamp(const Aws::Utils::DateTime& value) { SetInitiationTimestamp(value); return *this;}
 
     /**
-     * <p>The date and time this contact was initiated, in UTC time. For INBOUND, this
-     * is when the contact arrived. For OUTBOUND, this is when the agent began dialing.
-     * For CALLBACK, this is when the callback contact was created. For TRANSFER and
-     * QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when
-     * the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started
-     * dialing the external participant. For MONITOR, this is when the supervisor
+     * <p>The date and time this contact was initiated, in UTC time. For
+     * <code>INBOUND</code>, this is when the contact arrived. For
+     * <code>OUTBOUND</code>, this is when the agent began dialing. For
+     * <code>CALLBACK</code>, this is when the callback contact was created. For
+     * <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
+     * was initiated. For API, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     * external participant. For <code>MONITOR</code>, this is when the supervisor
      * started listening to a contact.</p>
      */
     inline ContactSearchSummary& WithInitiationTimestamp(Aws::Utils::DateTime&& value) { SetInitiationTimestamp(std::move(value)); return *this;}

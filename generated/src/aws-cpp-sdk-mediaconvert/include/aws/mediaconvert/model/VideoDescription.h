@@ -158,8 +158,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline const VideoCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
 
@@ -170,8 +170,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
 
@@ -182,8 +182,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline void SetCodecSettings(const VideoCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
 
@@ -194,8 +194,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline void SetCodecSettings(VideoCodecSettings&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::move(value); }
 
@@ -206,8 +206,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline VideoDescription& WithCodecSettings(const VideoCodecSettings& value) { SetCodecSettings(value); return *this;}
 
@@ -218,8 +218,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline VideoDescription& WithCodecSettings(VideoCodecSettings&& value) { SetCodecSettings(std::move(value)); return *this;}
 

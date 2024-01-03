@@ -37,80 +37,80 @@ namespace Model
 
     /**
      * <p>The identifier of Amazon Connect instance. You can find the instance ID in
-     * the Amazon Resource Name (ARN) of the instance</p>
+     * the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
      * <p>The identifier of Amazon Connect instance. You can find the instance ID in
-     * the Amazon Resource Name (ARN) of the instance</p>
+     * the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The identifier of Amazon Connect instance. You can find the instance ID in
-     * the Amazon Resource Name (ARN) of the instance</p>
+     * the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
      * <p>The identifier of Amazon Connect instance. You can find the instance ID in
-     * the Amazon Resource Name (ARN) of the instance</p>
+     * the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The identifier of Amazon Connect instance. You can find the instance ID in
-     * the Amazon Resource Name (ARN) of the instance</p>
+     * the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
      * <p>The identifier of Amazon Connect instance. You can find the instance ID in
-     * the Amazon Resource Name (ARN) of the instance</p>
+     * the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline SearchContactsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
      * <p>The identifier of Amazon Connect instance. You can find the instance ID in
-     * the Amazon Resource Name (ARN) of the instance</p>
+     * the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline SearchContactsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of Amazon Connect instance. You can find the instance ID in
-     * the Amazon Resource Name (ARN) of the instance</p>
+     * the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline SearchContactsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>Time range that you want to search results</p>
+     * <p>Time range that you want to search results.</p>
      */
     inline const SearchContactsTimeRange& GetTimeRange() const{ return m_timeRange; }
 
     /**
-     * <p>Time range that you want to search results</p>
+     * <p>Time range that you want to search results.</p>
      */
     inline bool TimeRangeHasBeenSet() const { return m_timeRangeHasBeenSet; }
 
     /**
-     * <p>Time range that you want to search results</p>
+     * <p>Time range that you want to search results.</p>
      */
     inline void SetTimeRange(const SearchContactsTimeRange& value) { m_timeRangeHasBeenSet = true; m_timeRange = value; }
 
     /**
-     * <p>Time range that you want to search results</p>
+     * <p>Time range that you want to search results.</p>
      */
     inline void SetTimeRange(SearchContactsTimeRange&& value) { m_timeRangeHasBeenSet = true; m_timeRange = std::move(value); }
 
     /**
-     * <p>Time range that you want to search results</p>
+     * <p>Time range that you want to search results.</p>
      */
     inline SearchContactsRequest& WithTimeRange(const SearchContactsTimeRange& value) { SetTimeRange(value); return *this;}
 
     /**
-     * <p>Time range that you want to search results</p>
+     * <p>Time range that you want to search results.</p>
      */
     inline SearchContactsRequest& WithTimeRange(SearchContactsTimeRange&& value) { SetTimeRange(std::move(value)); return *this;}
 
@@ -217,32 +217,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies a field to sort by and a sort order</p>
+     * <p>Specifies a field to sort by and a sort order.</p>
      */
     inline const Sort& GetSort() const{ return m_sort; }
 
     /**
-     * <p>Specifies a field to sort by and a sort order</p>
+     * <p>Specifies a field to sort by and a sort order.</p>
      */
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
 
     /**
-     * <p>Specifies a field to sort by and a sort order</p>
+     * <p>Specifies a field to sort by and a sort order.</p>
      */
     inline void SetSort(const Sort& value) { m_sortHasBeenSet = true; m_sort = value; }
 
     /**
-     * <p>Specifies a field to sort by and a sort order</p>
+     * <p>Specifies a field to sort by and a sort order.</p>
      */
     inline void SetSort(Sort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
 
     /**
-     * <p>Specifies a field to sort by and a sort order</p>
+     * <p>Specifies a field to sort by and a sort order.</p>
      */
     inline SearchContactsRequest& WithSort(const Sort& value) { SetSort(value); return *this;}
 
     /**
-     * <p>Specifies a field to sort by and a sort order</p>
+     * <p>Specifies a field to sort by and a sort order.</p>
      */
     inline SearchContactsRequest& WithSort(Sort&& value) { SetSort(std::move(value)); return *this;}
 

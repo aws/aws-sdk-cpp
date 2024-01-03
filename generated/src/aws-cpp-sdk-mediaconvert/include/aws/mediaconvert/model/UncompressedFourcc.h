@@ -13,29 +13,20 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class ContainerType
+  enum class UncompressedFourcc
   {
     NOT_SET,
-    F4V,
-    ISMV,
-    M2TS,
-    M3U8,
-    CMFC,
-    MOV,
-    MP4,
-    MPD,
-    MXF,
-    WEBM,
-    RAW,
-    Y4M
+    I420,
+    I422,
+    I444
   };
 
-namespace ContainerTypeMapper
+namespace UncompressedFourccMapper
 {
-AWS_MEDIACONVERT_API ContainerType GetContainerTypeForName(const Aws::String& name);
+AWS_MEDIACONVERT_API UncompressedFourcc GetUncompressedFourccForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForContainerType(ContainerType value);
-} // namespace ContainerTypeMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForUncompressedFourcc(UncompressedFourcc value);
+} // namespace UncompressedFourccMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

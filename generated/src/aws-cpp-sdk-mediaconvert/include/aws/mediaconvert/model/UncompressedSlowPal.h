@@ -13,29 +13,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class ContainerType
+  enum class UncompressedSlowPal
   {
     NOT_SET,
-    F4V,
-    ISMV,
-    M2TS,
-    M3U8,
-    CMFC,
-    MOV,
-    MP4,
-    MPD,
-    MXF,
-    WEBM,
-    RAW,
-    Y4M
+    DISABLED,
+    ENABLED
   };
 
-namespace ContainerTypeMapper
+namespace UncompressedSlowPalMapper
 {
-AWS_MEDIACONVERT_API ContainerType GetContainerTypeForName(const Aws::String& name);
+AWS_MEDIACONVERT_API UncompressedSlowPal GetUncompressedSlowPalForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForContainerType(ContainerType value);
-} // namespace ContainerTypeMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForUncompressedSlowPal(UncompressedSlowPal value);
+} // namespace UncompressedSlowPalMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

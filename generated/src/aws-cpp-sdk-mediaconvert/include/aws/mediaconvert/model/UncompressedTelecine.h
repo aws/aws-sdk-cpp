@@ -13,29 +13,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class ContainerType
+  enum class UncompressedTelecine
   {
     NOT_SET,
-    F4V,
-    ISMV,
-    M2TS,
-    M3U8,
-    CMFC,
-    MOV,
-    MP4,
-    MPD,
-    MXF,
-    WEBM,
-    RAW,
-    Y4M
+    NONE,
+    HARD
   };
 
-namespace ContainerTypeMapper
+namespace UncompressedTelecineMapper
 {
-AWS_MEDIACONVERT_API ContainerType GetContainerTypeForName(const Aws::String& name);
+AWS_MEDIACONVERT_API UncompressedTelecine GetUncompressedTelecineForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForContainerType(ContainerType value);
-} // namespace ContainerTypeMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForUncompressedTelecine(UncompressedTelecine value);
+} // namespace UncompressedTelecineMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws
