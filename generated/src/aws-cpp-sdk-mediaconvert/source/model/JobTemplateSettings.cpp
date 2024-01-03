@@ -22,6 +22,7 @@ JobTemplateSettings::JobTemplateSettings() :
     m_adAvailOffset(0),
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
+    m_colorConversion3DLUTSettingsHasBeenSet(false),
     m_esamHasBeenSet(false),
     m_extendedDataServicesHasBeenSet(false),
     m_followSource(0),
@@ -41,6 +42,7 @@ JobTemplateSettings::JobTemplateSettings(JsonView jsonValue) :
     m_adAvailOffset(0),
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
+    m_colorConversion3DLUTSettingsHasBeenSet(false),
     m_esamHasBeenSet(false),
     m_extendedDataServicesHasBeenSet(false),
     m_followSource(0),
@@ -71,6 +73,16 @@ JobTemplateSettings& JobTemplateSettings::operator =(JsonView jsonValue)
     m_availBlanking = jsonValue.GetObject("availBlanking");
 
     m_availBlankingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("colorConversion3DLUTSettings"))
+  {
+    Aws::Utils::Array<JsonView> colorConversion3DLUTSettingsJsonList = jsonValue.GetArray("colorConversion3DLUTSettings");
+    for(unsigned colorConversion3DLUTSettingsIndex = 0; colorConversion3DLUTSettingsIndex < colorConversion3DLUTSettingsJsonList.GetLength(); ++colorConversion3DLUTSettingsIndex)
+    {
+      m_colorConversion3DLUTSettings.push_back(colorConversion3DLUTSettingsJsonList[colorConversion3DLUTSettingsIndex].AsObject());
+    }
+    m_colorConversion3DLUTSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("esam"))
@@ -172,6 +184,17 @@ JsonValue JobTemplateSettings::Jsonize() const
   if(m_availBlankingHasBeenSet)
   {
    payload.WithObject("availBlanking", m_availBlanking.Jsonize());
+
+  }
+
+  if(m_colorConversion3DLUTSettingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> colorConversion3DLUTSettingsJsonList(m_colorConversion3DLUTSettings.size());
+   for(unsigned colorConversion3DLUTSettingsIndex = 0; colorConversion3DLUTSettingsIndex < colorConversion3DLUTSettingsJsonList.GetLength(); ++colorConversion3DLUTSettingsIndex)
+   {
+     colorConversion3DLUTSettingsJsonList[colorConversion3DLUTSettingsIndex].AsObject(m_colorConversion3DLUTSettings[colorConversion3DLUTSettingsIndex].Jsonize());
+   }
+   payload.WithArray("colorConversion3DLUTSettings", std::move(colorConversion3DLUTSettingsJsonList));
 
   }
 

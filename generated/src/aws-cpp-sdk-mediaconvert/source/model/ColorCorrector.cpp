@@ -31,6 +31,8 @@ ColorCorrector::ColorCorrector() :
     m_hdrToSdrToneMapperHasBeenSet(false),
     m_hue(0),
     m_hueHasBeenSet(false),
+    m_maxLuminance(0),
+    m_maxLuminanceHasBeenSet(false),
     m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
     m_sampleRangeConversionHasBeenSet(false),
     m_saturation(0),
@@ -53,6 +55,8 @@ ColorCorrector::ColorCorrector(JsonView jsonValue) :
     m_hdrToSdrToneMapperHasBeenSet(false),
     m_hue(0),
     m_hueHasBeenSet(false),
+    m_maxLuminance(0),
+    m_maxLuminanceHasBeenSet(false),
     m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
     m_sampleRangeConversionHasBeenSet(false),
     m_saturation(0),
@@ -112,6 +116,13 @@ ColorCorrector& ColorCorrector::operator =(JsonView jsonValue)
     m_hue = jsonValue.GetInteger("hue");
 
     m_hueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxLuminance"))
+  {
+    m_maxLuminance = jsonValue.GetInteger("maxLuminance");
+
+    m_maxLuminanceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sampleRangeConversion"))
@@ -179,6 +190,12 @@ JsonValue ColorCorrector::Jsonize() const
   if(m_hueHasBeenSet)
   {
    payload.WithInteger("hue", m_hue);
+
+  }
+
+  if(m_maxLuminanceHasBeenSet)
+  {
+   payload.WithInteger("maxLuminance", m_maxLuminance);
 
   }
 

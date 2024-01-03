@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure of time range that you want to search results</p><p><h3>See
+   * <p>A structure of time range that you want to search results.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactsTimeRange">AWS
    * API Reference</a></p>
@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The type of timestamp to search</p>
+     * <p>The type of timestamp to search.</p>
      */
     inline const SearchContactsTimeRangeType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of timestamp to search</p>
+     * <p>The type of timestamp to search.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of timestamp to search</p>
+     * <p>The type of timestamp to search.</p>
      */
     inline void SetType(const SearchContactsTimeRangeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of timestamp to search</p>
+     * <p>The type of timestamp to search.</p>
      */
     inline void SetType(SearchContactsTimeRangeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of timestamp to search</p>
+     * <p>The type of timestamp to search.</p>
      */
     inline SearchContactsTimeRange& WithType(const SearchContactsTimeRangeType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of timestamp to search</p>
+     * <p>The type of timestamp to search.</p>
      */
     inline SearchContactsTimeRange& WithType(SearchContactsTimeRangeType&& value) { SetType(std::move(value)); return *this;}
 

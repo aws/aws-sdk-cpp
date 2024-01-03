@@ -31,6 +31,7 @@ namespace Aws
         static const int MXF_HASH = HashingUtils::HashString("MXF");
         static const int WEBM_HASH = HashingUtils::HashString("WEBM");
         static const int RAW_HASH = HashingUtils::HashString("RAW");
+        static const int Y4M_HASH = HashingUtils::HashString("Y4M");
 
 
         ContainerType GetContainerTypeForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ContainerType::RAW;
           }
+          else if (hashCode == Y4M_HASH)
+          {
+            return ContainerType::Y4M;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "WEBM";
           case ContainerType::RAW:
             return "RAW";
+          case ContainerType::Y4M:
+            return "Y4M";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

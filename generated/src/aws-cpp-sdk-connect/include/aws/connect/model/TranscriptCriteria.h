@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>The transcript criteria used to search</p><p><h3>See Also:</h3>   <a
+   * <p>A structure that defines search criteria base on words or phrases,
+   * participants in the Contact Lens conversational analytics
+   * transcript.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TranscriptCriteria">AWS
    * API Reference</a></p>
    */
@@ -118,32 +120,38 @@ namespace Model
 
 
     /**
-     * <p>The match type of search texts in a transcript criteria.</p>
+     * <p>The match type combining search criteria using multiple search texts in a
+     * transcript criteria.</p>
      */
     inline const SearchContactsMatchType& GetMatchType() const{ return m_matchType; }
 
     /**
-     * <p>The match type of search texts in a transcript criteria.</p>
+     * <p>The match type combining search criteria using multiple search texts in a
+     * transcript criteria.</p>
      */
     inline bool MatchTypeHasBeenSet() const { return m_matchTypeHasBeenSet; }
 
     /**
-     * <p>The match type of search texts in a transcript criteria.</p>
+     * <p>The match type combining search criteria using multiple search texts in a
+     * transcript criteria.</p>
      */
     inline void SetMatchType(const SearchContactsMatchType& value) { m_matchTypeHasBeenSet = true; m_matchType = value; }
 
     /**
-     * <p>The match type of search texts in a transcript criteria.</p>
+     * <p>The match type combining search criteria using multiple search texts in a
+     * transcript criteria.</p>
      */
     inline void SetMatchType(SearchContactsMatchType&& value) { m_matchTypeHasBeenSet = true; m_matchType = std::move(value); }
 
     /**
-     * <p>The match type of search texts in a transcript criteria.</p>
+     * <p>The match type combining search criteria using multiple search texts in a
+     * transcript criteria.</p>
      */
     inline TranscriptCriteria& WithMatchType(const SearchContactsMatchType& value) { SetMatchType(value); return *this;}
 
     /**
-     * <p>The match type of search texts in a transcript criteria.</p>
+     * <p>The match type combining search criteria using multiple search texts in a
+     * transcript criteria.</p>
      */
     inline TranscriptCriteria& WithMatchType(SearchContactsMatchType&& value) { SetMatchType(std::move(value)); return *this;}
 
