@@ -42,163 +42,163 @@ namespace Model
 
 
     /**
-     * <p>The ID for the virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
+     * or <code>app_lamp_7_0</code>).</p>
      */
     inline const Aws::String& GetBlueprintId() const{ return m_blueprintId; }
 
     /**
-     * <p>The ID for the virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
+     * or <code>app_lamp_7_0</code>).</p>
      */
     inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
 
     /**
-     * <p>The ID for the virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
+     * or <code>app_lamp_7_0</code>).</p>
      */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
     /**
-     * <p>The ID for the virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
+     * or <code>app_lamp_7_0</code>).</p>
      */
     inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
 
     /**
-     * <p>The ID for the virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
+     * or <code>app_lamp_7_0</code>).</p>
      */
     inline void SetBlueprintId(const char* value) { m_blueprintIdHasBeenSet = true; m_blueprintId.assign(value); }
 
     /**
-     * <p>The ID for the virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
+     * or <code>app_lamp_7_0</code>).</p>
      */
     inline Blueprint& WithBlueprintId(const Aws::String& value) { SetBlueprintId(value); return *this;}
 
     /**
-     * <p>The ID for the virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
+     * or <code>app_lamp_7_0</code>).</p>
      */
     inline Blueprint& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+     * <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code>
+     * or <code>app_lamp_7_0</code>).</p>
      */
     inline Blueprint& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline Blueprint& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline Blueprint& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline Blueprint& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+     * <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+     * <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
      */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
-     * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+     * <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
      */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+     * <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
      */
     inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
-     * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+     * <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
      */
     inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
 
     /**
-     * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+     * <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
      */
     inline Blueprint& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+     * <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
      */
     inline Blueprint& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+     * <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
      */
     inline Blueprint& WithGroup(const char* value) { SetGroup(value); return *this;}
 
 
     /**
-     * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+     * <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
      */
     inline const BlueprintType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+     * <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+     * <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
      */
     inline void SetType(const BlueprintType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+     * <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
      */
     inline void SetType(BlueprintType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+     * <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
      */
     inline Blueprint& WithType(const BlueprintType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+     * <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
      */
     inline Blueprint& WithType(BlueprintType&& value) { SetType(std::move(value)); return *this;}
 
@@ -315,49 +315,49 @@ namespace Model
 
 
     /**
-     * <p>The version number of the operating system, application, or stack (e.g.,
+     * <p>The version number of the operating system, application, or stack (
      * <code>2016.03.0</code>).</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version number of the operating system, application, or stack (e.g.,
+     * <p>The version number of the operating system, application, or stack (
      * <code>2016.03.0</code>).</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version number of the operating system, application, or stack (e.g.,
+     * <p>The version number of the operating system, application, or stack (
      * <code>2016.03.0</code>).</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version number of the operating system, application, or stack (e.g.,
+     * <p>The version number of the operating system, application, or stack (
      * <code>2016.03.0</code>).</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version number of the operating system, application, or stack (e.g.,
+     * <p>The version number of the operating system, application, or stack (
      * <code>2016.03.0</code>).</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version number of the operating system, application, or stack (e.g.,
+     * <p>The version number of the operating system, application, or stack (
      * <code>2016.03.0</code>).</p>
      */
     inline Blueprint& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version number of the operating system, application, or stack (e.g.,
+     * <p>The version number of the operating system, application, or stack (
      * <code>2016.03.0</code>).</p>
      */
     inline Blueprint& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the operating system, application, or stack (e.g.,
+     * <p>The version number of the operating system, application, or stack (
      * <code>2016.03.0</code>).</p>
      */
     inline Blueprint& WithVersion(const char* value) { SetVersion(value); return *this;}

@@ -311,49 +311,49 @@ namespace Model
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 

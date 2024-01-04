@@ -180,32 +180,50 @@ namespace Model
 
 
     /**
-     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     * <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
      */
     inline const IPAddressTypeStatus& GetIPAddressType() const{ return m_iPAddressType; }
 
     /**
-     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     * <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
      */
     inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
 
     /**
-     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     * <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
      */
     inline void SetIPAddressType(const IPAddressTypeStatus& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
 
     /**
-     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     * <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
      */
     inline void SetIPAddressType(IPAddressTypeStatus&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
 
     /**
-     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     * <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
      */
     inline DomainConfig& WithIPAddressType(const IPAddressTypeStatus& value) { SetIPAddressType(value); return *this;}
 
     /**
-     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     * <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
      */
     inline DomainConfig& WithIPAddressType(IPAddressTypeStatus&& value) { SetIPAddressType(std::move(value)); return *this;}
 

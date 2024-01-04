@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
      */
     inline const CloudFormationStackRecordSourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
      */
     inline void SetResourceType(const CloudFormationStackRecordSourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
      */
     inline void SetResourceType(CloudFormationStackRecordSourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
      */
     inline CloudFormationStackRecordSourceInfo& WithResourceType(const CloudFormationStackRecordSourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
      */
     inline CloudFormationStackRecordSourceInfo& WithResourceType(CloudFormationStackRecordSourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

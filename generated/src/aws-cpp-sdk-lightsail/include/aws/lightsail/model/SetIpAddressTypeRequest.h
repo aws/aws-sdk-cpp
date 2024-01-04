@@ -37,7 +37,7 @@ namespace Model
 
 
     /**
-     * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
+     * <p>The resource type.</p> <p>The resource values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
      * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
@@ -47,7 +47,7 @@ namespace Model
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
+     * <p>The resource type.</p> <p>The resource values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
      * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
@@ -57,7 +57,7 @@ namespace Model
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
+     * <p>The resource type.</p> <p>The resource values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
      * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
@@ -67,7 +67,7 @@ namespace Model
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
+     * <p>The resource type.</p> <p>The resource values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
      * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
@@ -77,7 +77,7 @@ namespace Model
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
+     * <p>The resource type.</p> <p>The resource values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
      * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web
@@ -87,7 +87,7 @@ namespace Model
     inline SetIpAddressTypeRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type.</p> <p>The possible values are <code>Distribution</code>,
+     * <p>The resource type.</p> <p>The resource values are <code>Distribution</code>,
      * <code>Instance</code>, and <code>LoadBalancer</code>.</p> 
      * <p>Distribution-related APIs are available only in the N. Virginia
      * (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web

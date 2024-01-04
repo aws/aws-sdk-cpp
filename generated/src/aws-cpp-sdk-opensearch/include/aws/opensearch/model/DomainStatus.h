@@ -314,118 +314,158 @@ namespace Model
     inline DomainStatus& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
 
-    
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
     inline const Aws::String& GetEndpointV2() const{ return m_endpointV2; }
 
-    
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
     inline bool EndpointV2HasBeenSet() const { return m_endpointV2HasBeenSet; }
 
-    
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
     inline void SetEndpointV2(const Aws::String& value) { m_endpointV2HasBeenSet = true; m_endpointV2 = value; }
 
-    
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
     inline void SetEndpointV2(Aws::String&& value) { m_endpointV2HasBeenSet = true; m_endpointV2 = std::move(value); }
 
-    
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
     inline void SetEndpointV2(const char* value) { m_endpointV2HasBeenSet = true; m_endpointV2.assign(value); }
 
-    
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
     inline DomainStatus& WithEndpointV2(const Aws::String& value) { SetEndpointV2(value); return *this;}
 
-    
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
     inline DomainStatus& WithEndpointV2(Aws::String&& value) { SetEndpointV2(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
     inline DomainStatus& WithEndpointV2(const char* value) { SetEndpointV2(value); return *this;}
 
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEndpoints() const{ return m_endpoints; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline void SetEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline void SetEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& WithEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { SetEndpoints(value); return *this;}
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& WithEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { SetEndpoints(std::move(value)); return *this;}
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(const Aws::String& key, const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(Aws::String&& key, const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(const Aws::String& key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(Aws::String&& key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(const char* key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(Aws::String&& key, const char* value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(const char* key, const char* value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }

@@ -21,14 +21,18 @@ namespace Model
 AutoScalingGroupProviderUpdate::AutoScalingGroupProviderUpdate() : 
     m_managedScalingHasBeenSet(false),
     m_managedTerminationProtection(ManagedTerminationProtection::NOT_SET),
-    m_managedTerminationProtectionHasBeenSet(false)
+    m_managedTerminationProtectionHasBeenSet(false),
+    m_managedDraining(ManagedDraining::NOT_SET),
+    m_managedDrainingHasBeenSet(false)
 {
 }
 
 AutoScalingGroupProviderUpdate::AutoScalingGroupProviderUpdate(JsonView jsonValue) : 
     m_managedScalingHasBeenSet(false),
     m_managedTerminationProtection(ManagedTerminationProtection::NOT_SET),
-    m_managedTerminationProtectionHasBeenSet(false)
+    m_managedTerminationProtectionHasBeenSet(false),
+    m_managedDraining(ManagedDraining::NOT_SET),
+    m_managedDrainingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ AutoScalingGroupProviderUpdate& AutoScalingGroupProviderUpdate::operator =(JsonV
     m_managedTerminationProtectionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("managedDraining"))
+  {
+    m_managedDraining = ManagedDrainingMapper::GetManagedDrainingForName(jsonValue.GetString("managedDraining"));
+
+    m_managedDrainingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +76,11 @@ JsonValue AutoScalingGroupProviderUpdate::Jsonize() const
   if(m_managedTerminationProtectionHasBeenSet)
   {
    payload.WithString("managedTerminationProtection", ManagedTerminationProtectionMapper::GetNameForManagedTerminationProtection(m_managedTerminationProtection));
+  }
+
+  if(m_managedDrainingHasBeenSet)
+  {
+   payload.WithString("managedDraining", ManagedDrainingMapper::GetNameForManagedDraining(m_managedDraining));
   }
 
   return payload;

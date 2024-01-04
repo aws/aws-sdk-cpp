@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline const Aws::String& GetDiskSnapshotName() const{ return m_diskSnapshotName; }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline bool DiskSnapshotNameHasBeenSet() const { return m_diskSnapshotNameHasBeenSet; }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline void SetDiskSnapshotName(const Aws::String& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = value; }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline void SetDiskSnapshotName(Aws::String&& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = std::move(value); }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline void SetDiskSnapshotName(const char* value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName.assign(value); }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline GetDiskSnapshotRequest& WithDiskSnapshotName(const Aws::String& value) { SetDiskSnapshotName(value); return *this;}
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline GetDiskSnapshotRequest& WithDiskSnapshotName(Aws::String&& value) { SetDiskSnapshotName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline GetDiskSnapshotRequest& WithDiskSnapshotName(const char* value) { SetDiskSnapshotName(value); return *this;}
 
