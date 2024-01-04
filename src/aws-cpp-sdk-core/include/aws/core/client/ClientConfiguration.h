@@ -99,6 +99,11 @@ namespace Aws
              */
             explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
+	    /**
+	     * Add virtual method to allow use of dynamic_cast under inheritance.
+	     */
+            virtual ~ClientConfiguration() = default;
+
             /**
              * User Agent string user for http calls. This is filled in for you in the constructor. Don't override this unless you have a really good reason.
              */
