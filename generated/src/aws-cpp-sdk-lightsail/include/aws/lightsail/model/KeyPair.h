@@ -84,50 +84,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the key pair
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the key pair
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the key pair
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the key pair
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the key pair
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the key pair
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
      */
     inline KeyPair& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the key pair
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
      */
     inline KeyPair& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the key pair
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
      */
     inline KeyPair& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -190,38 +190,38 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the key pair was created (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the key pair was created
+     * (<code>1479816991.349</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The timestamp when the key pair was created (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the key pair was created
+     * (<code>1479816991.349</code>).</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The timestamp when the key pair was created (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the key pair was created
+     * (<code>1479816991.349</code>).</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The timestamp when the key pair was created (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the key pair was created
+     * (<code>1479816991.349</code>).</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The timestamp when the key pair was created (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the key pair was created
+     * (<code>1479816991.349</code>).</p>
      */
     inline KeyPair& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when the key pair was created (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the key pair was created
+     * (<code>1479816991.349</code>).</p>
      */
     inline KeyPair& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

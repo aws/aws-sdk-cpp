@@ -114,49 +114,49 @@ namespace Model
 
 
     /**
-     * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
+     * <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2
      * instance.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
+     * <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2
      * instance.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
+     * <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2
      * instance.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
+     * <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2
      * instance.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
+     * <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2
      * instance.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
+     * <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2
      * instance.</p>
      */
     inline InstanceEntry& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
+     * <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2
      * instance.</p>
      */
     inline InstanceEntry& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
+     * <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2
      * instance.</p>
      */
     inline InstanceEntry& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}

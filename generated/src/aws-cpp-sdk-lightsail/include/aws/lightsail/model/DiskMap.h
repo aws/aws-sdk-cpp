@@ -87,42 +87,42 @@ namespace Model
 
 
     /**
-     * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+     * <p>The new disk name (<code>my-new-disk</code>).</p>
      */
     inline const Aws::String& GetNewDiskName() const{ return m_newDiskName; }
 
     /**
-     * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+     * <p>The new disk name (<code>my-new-disk</code>).</p>
      */
     inline bool NewDiskNameHasBeenSet() const { return m_newDiskNameHasBeenSet; }
 
     /**
-     * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+     * <p>The new disk name (<code>my-new-disk</code>).</p>
      */
     inline void SetNewDiskName(const Aws::String& value) { m_newDiskNameHasBeenSet = true; m_newDiskName = value; }
 
     /**
-     * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+     * <p>The new disk name (<code>my-new-disk</code>).</p>
      */
     inline void SetNewDiskName(Aws::String&& value) { m_newDiskNameHasBeenSet = true; m_newDiskName = std::move(value); }
 
     /**
-     * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+     * <p>The new disk name (<code>my-new-disk</code>).</p>
      */
     inline void SetNewDiskName(const char* value) { m_newDiskNameHasBeenSet = true; m_newDiskName.assign(value); }
 
     /**
-     * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+     * <p>The new disk name (<code>my-new-disk</code>).</p>
      */
     inline DiskMap& WithNewDiskName(const Aws::String& value) { SetNewDiskName(value); return *this;}
 
     /**
-     * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+     * <p>The new disk name (<code>my-new-disk</code>).</p>
      */
     inline DiskMap& WithNewDiskName(Aws::String&& value) { SetNewDiskName(std::move(value)); return *this;}
 
     /**
-     * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+     * <p>The new disk name (<code>my-new-disk</code>).</p>
      */
     inline DiskMap& WithNewDiskName(const char* value) { SetNewDiskName(value); return *this;}
 

@@ -120,9 +120,9 @@ namespace Model
 
 
     /**
-     * <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server
-     * (e.g., <code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers,
-     * the value looks like
+     * <p>The target IP address (<code>192.0.2.0</code>), or AWS name server
+     * (<code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers, the
+     * value looks like
      * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
      * For Lightsail distributions, the value looks like
      * <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services,
@@ -134,9 +134,9 @@ namespace Model
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
-     * <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server
-     * (e.g., <code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers,
-     * the value looks like
+     * <p>The target IP address (<code>192.0.2.0</code>), or AWS name server
+     * (<code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers, the
+     * value looks like
      * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
      * For Lightsail distributions, the value looks like
      * <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services,
@@ -148,9 +148,9 @@ namespace Model
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
-     * <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server
-     * (e.g., <code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers,
-     * the value looks like
+     * <p>The target IP address (<code>192.0.2.0</code>), or AWS name server
+     * (<code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers, the
+     * value looks like
      * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
      * For Lightsail distributions, the value looks like
      * <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services,
@@ -162,9 +162,9 @@ namespace Model
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server
-     * (e.g., <code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers,
-     * the value looks like
+     * <p>The target IP address (<code>192.0.2.0</code>), or AWS name server
+     * (<code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers, the
+     * value looks like
      * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
      * For Lightsail distributions, the value looks like
      * <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services,
@@ -176,9 +176,9 @@ namespace Model
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server
-     * (e.g., <code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers,
-     * the value looks like
+     * <p>The target IP address (<code>192.0.2.0</code>), or AWS name server
+     * (<code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers, the
+     * value looks like
      * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
      * For Lightsail distributions, the value looks like
      * <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services,
@@ -190,9 +190,9 @@ namespace Model
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
-     * <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server
-     * (e.g., <code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers,
-     * the value looks like
+     * <p>The target IP address (<code>192.0.2.0</code>), or AWS name server
+     * (<code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers, the
+     * value looks like
      * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
      * For Lightsail distributions, the value looks like
      * <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services,
@@ -204,9 +204,9 @@ namespace Model
     inline DomainEntry& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
-     * <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server
-     * (e.g., <code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers,
-     * the value looks like
+     * <p>The target IP address (<code>192.0.2.0</code>), or AWS name server
+     * (<code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers, the
+     * value looks like
      * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
      * For Lightsail distributions, the value looks like
      * <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services,
@@ -218,9 +218,9 @@ namespace Model
     inline DomainEntry& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server
-     * (e.g., <code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers,
-     * the value looks like
+     * <p>The target IP address (<code>192.0.2.0</code>), or AWS name server
+     * (<code>ns-111.awsdns-22.com.</code>).</p> <p>For Lightsail load balancers, the
+     * value looks like
      * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
      * For Lightsail distributions, the value looks like
      * <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services,

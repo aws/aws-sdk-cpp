@@ -86,50 +86,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -192,38 +192,38 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the snapshot was created (e.g.,
-     * <code>1479907467.024</code>).</p>
+     * <p>The timestamp when the snapshot was created
+     * (<code>1479907467.024</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The timestamp when the snapshot was created (e.g.,
-     * <code>1479907467.024</code>).</p>
+     * <p>The timestamp when the snapshot was created
+     * (<code>1479907467.024</code>).</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The timestamp when the snapshot was created (e.g.,
-     * <code>1479907467.024</code>).</p>
+     * <p>The timestamp when the snapshot was created
+     * (<code>1479907467.024</code>).</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The timestamp when the snapshot was created (e.g.,
-     * <code>1479907467.024</code>).</p>
+     * <p>The timestamp when the snapshot was created
+     * (<code>1479907467.024</code>).</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The timestamp when the snapshot was created (e.g.,
-     * <code>1479907467.024</code>).</p>
+     * <p>The timestamp when the snapshot was created
+     * (<code>1479907467.024</code>).</p>
      */
     inline InstanceSnapshot& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when the snapshot was created (e.g.,
-     * <code>1479907467.024</code>).</p>
+     * <p>The timestamp when the snapshot was created
+     * (<code>1479907467.024</code>).</p>
      */
     inline InstanceSnapshot& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -527,163 +527,163 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
-     * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * created
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetFromInstanceArn() const{ return m_fromInstanceArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
-     * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * created
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline bool FromInstanceArnHasBeenSet() const { return m_fromInstanceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
-     * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * created
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline void SetFromInstanceArn(const Aws::String& value) { m_fromInstanceArnHasBeenSet = true; m_fromInstanceArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
-     * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * created
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline void SetFromInstanceArn(Aws::String&& value) { m_fromInstanceArnHasBeenSet = true; m_fromInstanceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
-     * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * created
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline void SetFromInstanceArn(const char* value) { m_fromInstanceArnHasBeenSet = true; m_fromInstanceArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
-     * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * created
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithFromInstanceArn(const Aws::String& value) { SetFromInstanceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
-     * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * created
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithFromInstanceArn(Aws::String&& value) { SetFromInstanceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
-     * created (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     * created
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithFromInstanceArn(const char* value) { SetFromInstanceArn(value); return *this;}
 
 
     /**
-     * <p>The blueprint ID from which you created the snapshot (e.g.,
-     * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * <p>The blueprint ID from which you created the snapshot
+     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline const Aws::String& GetFromBlueprintId() const{ return m_fromBlueprintId; }
 
     /**
-     * <p>The blueprint ID from which you created the snapshot (e.g.,
-     * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * <p>The blueprint ID from which you created the snapshot
+     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline bool FromBlueprintIdHasBeenSet() const { return m_fromBlueprintIdHasBeenSet; }
 
     /**
-     * <p>The blueprint ID from which you created the snapshot (e.g.,
-     * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * <p>The blueprint ID from which you created the snapshot
+     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline void SetFromBlueprintId(const Aws::String& value) { m_fromBlueprintIdHasBeenSet = true; m_fromBlueprintId = value; }
 
     /**
-     * <p>The blueprint ID from which you created the snapshot (e.g.,
-     * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * <p>The blueprint ID from which you created the snapshot
+     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline void SetFromBlueprintId(Aws::String&& value) { m_fromBlueprintIdHasBeenSet = true; m_fromBlueprintId = std::move(value); }
 
     /**
-     * <p>The blueprint ID from which you created the snapshot (e.g.,
-     * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * <p>The blueprint ID from which you created the snapshot
+     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline void SetFromBlueprintId(const char* value) { m_fromBlueprintIdHasBeenSet = true; m_fromBlueprintId.assign(value); }
 
     /**
-     * <p>The blueprint ID from which you created the snapshot (e.g.,
-     * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * <p>The blueprint ID from which you created the snapshot
+     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline InstanceSnapshot& WithFromBlueprintId(const Aws::String& value) { SetFromBlueprintId(value); return *this;}
 
     /**
-     * <p>The blueprint ID from which you created the snapshot (e.g.,
-     * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * <p>The blueprint ID from which you created the snapshot
+     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline InstanceSnapshot& WithFromBlueprintId(Aws::String&& value) { SetFromBlueprintId(std::move(value)); return *this;}
 
     /**
-     * <p>The blueprint ID from which you created the snapshot (e.g.,
-     * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * <p>The blueprint ID from which you created the snapshot
+     * (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
     inline InstanceSnapshot& WithFromBlueprintId(const char* value) { SetFromBlueprintId(value); return *this;}
 
 
     /**
-     * <p>The bundle ID from which you created the snapshot (e.g.,
-     * <code>micro_1_0</code>).</p>
+     * <p>The bundle ID from which you created the snapshot
+     * (<code>micro_1_0</code>).</p>
      */
     inline const Aws::String& GetFromBundleId() const{ return m_fromBundleId; }
 
     /**
-     * <p>The bundle ID from which you created the snapshot (e.g.,
-     * <code>micro_1_0</code>).</p>
+     * <p>The bundle ID from which you created the snapshot
+     * (<code>micro_1_0</code>).</p>
      */
     inline bool FromBundleIdHasBeenSet() const { return m_fromBundleIdHasBeenSet; }
 
     /**
-     * <p>The bundle ID from which you created the snapshot (e.g.,
-     * <code>micro_1_0</code>).</p>
+     * <p>The bundle ID from which you created the snapshot
+     * (<code>micro_1_0</code>).</p>
      */
     inline void SetFromBundleId(const Aws::String& value) { m_fromBundleIdHasBeenSet = true; m_fromBundleId = value; }
 
     /**
-     * <p>The bundle ID from which you created the snapshot (e.g.,
-     * <code>micro_1_0</code>).</p>
+     * <p>The bundle ID from which you created the snapshot
+     * (<code>micro_1_0</code>).</p>
      */
     inline void SetFromBundleId(Aws::String&& value) { m_fromBundleIdHasBeenSet = true; m_fromBundleId = std::move(value); }
 
     /**
-     * <p>The bundle ID from which you created the snapshot (e.g.,
-     * <code>micro_1_0</code>).</p>
+     * <p>The bundle ID from which you created the snapshot
+     * (<code>micro_1_0</code>).</p>
      */
     inline void SetFromBundleId(const char* value) { m_fromBundleIdHasBeenSet = true; m_fromBundleId.assign(value); }
 
     /**
-     * <p>The bundle ID from which you created the snapshot (e.g.,
-     * <code>micro_1_0</code>).</p>
+     * <p>The bundle ID from which you created the snapshot
+     * (<code>micro_1_0</code>).</p>
      */
     inline InstanceSnapshot& WithFromBundleId(const Aws::String& value) { SetFromBundleId(value); return *this;}
 
     /**
-     * <p>The bundle ID from which you created the snapshot (e.g.,
-     * <code>micro_1_0</code>).</p>
+     * <p>The bundle ID from which you created the snapshot
+     * (<code>micro_1_0</code>).</p>
      */
     inline InstanceSnapshot& WithFromBundleId(Aws::String&& value) { SetFromBundleId(std::move(value)); return *this;}
 
     /**
-     * <p>The bundle ID from which you created the snapshot (e.g.,
-     * <code>micro_1_0</code>).</p>
+     * <p>The bundle ID from which you created the snapshot
+     * (<code>micro_1_0</code>).</p>
      */
     inline InstanceSnapshot& WithFromBundleId(const char* value) { SetFromBundleId(value); return *this;}
 

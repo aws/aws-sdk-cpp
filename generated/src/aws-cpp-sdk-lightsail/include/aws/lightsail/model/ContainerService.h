@@ -200,38 +200,32 @@ namespace Model
 
 
     /**
-     * <p>The Lightsail resource type of the container service (i.e.,
-     * <code>ContainerService</code>).</p>
+     * <p>The Lightsail resource type of the container service.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The Lightsail resource type of the container service (i.e.,
-     * <code>ContainerService</code>).</p>
+     * <p>The Lightsail resource type of the container service.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The Lightsail resource type of the container service (i.e.,
-     * <code>ContainerService</code>).</p>
+     * <p>The Lightsail resource type of the container service.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The Lightsail resource type of the container service (i.e.,
-     * <code>ContainerService</code>).</p>
+     * <p>The Lightsail resource type of the container service.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The Lightsail resource type of the container service (i.e.,
-     * <code>ContainerService</code>).</p>
+     * <p>The Lightsail resource type of the container service.</p>
      */
     inline ContainerService& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The Lightsail resource type of the container service (i.e.,
-     * <code>ContainerService</code>).</p>
+     * <p>The Lightsail resource type of the container service.</p>
      */
     inline ContainerService& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

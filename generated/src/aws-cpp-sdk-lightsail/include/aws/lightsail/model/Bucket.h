@@ -46,50 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The Lightsail resource type of the bucket (for example,
-     * <code>Bucket</code>).</p>
+     * <p>The Lightsail resource type of the bucket.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The Lightsail resource type of the bucket (for example,
-     * <code>Bucket</code>).</p>
+     * <p>The Lightsail resource type of the bucket.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The Lightsail resource type of the bucket (for example,
-     * <code>Bucket</code>).</p>
+     * <p>The Lightsail resource type of the bucket.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The Lightsail resource type of the bucket (for example,
-     * <code>Bucket</code>).</p>
+     * <p>The Lightsail resource type of the bucket.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The Lightsail resource type of the bucket (for example,
-     * <code>Bucket</code>).</p>
+     * <p>The Lightsail resource type of the bucket.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The Lightsail resource type of the bucket (for example,
-     * <code>Bucket</code>).</p>
+     * <p>The Lightsail resource type of the bucket.</p>
      */
     inline Bucket& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The Lightsail resource type of the bucket (for example,
-     * <code>Bucket</code>).</p>
+     * <p>The Lightsail resource type of the bucket.</p>
      */
     inline Bucket& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The Lightsail resource type of the bucket (for example,
-     * <code>Bucket</code>).</p>
+     * <p>The Lightsail resource type of the bucket.</p>
      */
     inline Bucket& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

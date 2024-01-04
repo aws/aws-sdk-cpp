@@ -65,7 +65,10 @@ namespace Model
      * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version
      * 1.0 to TLS version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS
-     * security policy that supports only TLS version 1.2</p> </li> </ul>
+     * security policy that supports only TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-PFS-2023-10:</b> TLS security policy that supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline const TLSSecurityPolicy& GetTLSSecurityPolicy() const{ return m_tLSSecurityPolicy; }
 
@@ -74,7 +77,10 @@ namespace Model
      * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version
      * 1.0 to TLS version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS
-     * security policy that supports only TLS version 1.2</p> </li> </ul>
+     * security policy that supports only TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-PFS-2023-10:</b> TLS security policy that supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline bool TLSSecurityPolicyHasBeenSet() const { return m_tLSSecurityPolicyHasBeenSet; }
 
@@ -83,7 +89,10 @@ namespace Model
      * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version
      * 1.0 to TLS version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS
-     * security policy that supports only TLS version 1.2</p> </li> </ul>
+     * security policy that supports only TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-PFS-2023-10:</b> TLS security policy that supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline void SetTLSSecurityPolicy(const TLSSecurityPolicy& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = value; }
 
@@ -92,7 +101,10 @@ namespace Model
      * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version
      * 1.0 to TLS version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS
-     * security policy that supports only TLS version 1.2</p> </li> </ul>
+     * security policy that supports only TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-PFS-2023-10:</b> TLS security policy that supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline void SetTLSSecurityPolicy(TLSSecurityPolicy&& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = std::move(value); }
 
@@ -101,7 +113,10 @@ namespace Model
      * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version
      * 1.0 to TLS version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS
-     * security policy that supports only TLS version 1.2</p> </li> </ul>
+     * security policy that supports only TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-PFS-2023-10:</b> TLS security policy that supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline DomainEndpointOptions& WithTLSSecurityPolicy(const TLSSecurityPolicy& value) { SetTLSSecurityPolicy(value); return *this;}
 
@@ -110,7 +125,10 @@ namespace Model
      * The policy can be one of the following values:</p> <ul> <li> <p>
      * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version
      * 1.0 to TLS version 1.2</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS
-     * security policy that supports only TLS version 1.2</p> </li> </ul>
+     * security policy that supports only TLS version 1.2</p> </li> <li> <p>
+     * <b>Policy-Min-TLS-1-2-PFS-2023-10:</b> TLS security policy that supports TLS
+     * version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</p>
+     * </li> </ul>
      */
     inline DomainEndpointOptions& WithTLSSecurityPolicy(TLSSecurityPolicy&& value) { SetTLSSecurityPolicy(std::move(value)); return *this;}
 

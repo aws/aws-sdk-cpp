@@ -404,7 +404,25 @@ namespace Model
     AWS_KafkaConnect_Connector,
     AWS_Lambda_CodeSigningConfig,
     AWS_NetworkManager_ConnectPeer,
-    AWS_ResourceExplorer2_Index
+    AWS_ResourceExplorer2_Index,
+    AWS_AppStream_Fleet,
+    AWS_Cognito_UserPool,
+    AWS_Cognito_UserPoolClient,
+    AWS_Cognito_UserPoolGroup,
+    AWS_EC2_NetworkInsightsAccessScope,
+    AWS_EC2_NetworkInsightsAnalysis,
+    AWS_Grafana_Workspace,
+    AWS_GroundStation_DataflowEndpointGroup,
+    AWS_ImageBuilder_ImageRecipe,
+    AWS_KMS_Alias,
+    AWS_M2_Environment,
+    AWS_QuickSight_DataSource,
+    AWS_QuickSight_Template,
+    AWS_QuickSight_Theme,
+    AWS_RDS_OptionGroup,
+    AWS_Redshift_EndpointAccess,
+    AWS_Route53Resolver_FirewallRuleGroup,
+    AWS_SSM_Document
   };
 
 namespace ResourceTypeMapper

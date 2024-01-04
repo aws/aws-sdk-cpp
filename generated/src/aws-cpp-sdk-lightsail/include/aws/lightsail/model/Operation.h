@@ -156,38 +156,38 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the operation was initialized (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the operation was initialized
+     * (<code>1479816991.349</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The timestamp when the operation was initialized (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the operation was initialized
+     * (<code>1479816991.349</code>).</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The timestamp when the operation was initialized (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the operation was initialized
+     * (<code>1479816991.349</code>).</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The timestamp when the operation was initialized (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the operation was initialized
+     * (<code>1479816991.349</code>).</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The timestamp when the operation was initialized (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the operation was initialized
+     * (<code>1479816991.349</code>).</p>
      */
     inline Operation& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when the operation was initialized (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the operation was initialized
+     * (<code>1479816991.349</code>).</p>
      */
     inline Operation& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -245,42 +245,42 @@ namespace Model
 
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+     * <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline const Aws::String& GetOperationDetails() const{ return m_operationDetails; }
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+     * <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline bool OperationDetailsHasBeenSet() const { return m_operationDetailsHasBeenSet; }
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+     * <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline void SetOperationDetails(const Aws::String& value) { m_operationDetailsHasBeenSet = true; m_operationDetails = value; }
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+     * <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline void SetOperationDetails(Aws::String&& value) { m_operationDetailsHasBeenSet = true; m_operationDetails = std::move(value); }
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+     * <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline void SetOperationDetails(const char* value) { m_operationDetailsHasBeenSet = true; m_operationDetails.assign(value); }
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+     * <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline Operation& WithOperationDetails(const Aws::String& value) { SetOperationDetails(value); return *this;}
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+     * <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline Operation& WithOperationDetails(Aws::String&& value) { SetOperationDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+     * <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
      */
     inline Operation& WithOperationDetails(const char* value) { SetOperationDetails(value); return *this;}
 
@@ -348,38 +348,32 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the status was changed (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetStatusChangedAt() const{ return m_statusChangedAt; }
 
     /**
-     * <p>The timestamp when the status was changed (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
      */
     inline bool StatusChangedAtHasBeenSet() const { return m_statusChangedAtHasBeenSet; }
 
     /**
-     * <p>The timestamp when the status was changed (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
      */
     inline void SetStatusChangedAt(const Aws::Utils::DateTime& value) { m_statusChangedAtHasBeenSet = true; m_statusChangedAt = value; }
 
     /**
-     * <p>The timestamp when the status was changed (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
      */
     inline void SetStatusChangedAt(Aws::Utils::DateTime&& value) { m_statusChangedAtHasBeenSet = true; m_statusChangedAt = std::move(value); }
 
     /**
-     * <p>The timestamp when the status was changed (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
      */
     inline Operation& WithStatusChangedAt(const Aws::Utils::DateTime& value) { SetStatusChangedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when the status was changed (e.g.,
-     * <code>1479816991.349</code>).</p>
+     * <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
      */
     inline Operation& WithStatusChangedAt(Aws::Utils::DateTime&& value) { SetStatusChangedAt(std::move(value)); return *this;}
 

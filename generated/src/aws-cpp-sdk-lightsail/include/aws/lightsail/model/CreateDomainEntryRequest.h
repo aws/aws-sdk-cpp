@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
-     * the domain entry.</p>
+     * <p>The domain name (<code>example.com</code>) for which you want to create the
+     * domain entry.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
-     * the domain entry.</p>
+     * <p>The domain name (<code>example.com</code>) for which you want to create the
+     * domain entry.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
-     * the domain entry.</p>
+     * <p>The domain name (<code>example.com</code>) for which you want to create the
+     * domain entry.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
-     * the domain entry.</p>
+     * <p>The domain name (<code>example.com</code>) for which you want to create the
+     * domain entry.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
-     * the domain entry.</p>
+     * <p>The domain name (<code>example.com</code>) for which you want to create the
+     * domain entry.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
-     * the domain entry.</p>
+     * <p>The domain name (<code>example.com</code>) for which you want to create the
+     * domain entry.</p>
      */
     inline CreateDomainEntryRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
-     * the domain entry.</p>
+     * <p>The domain name (<code>example.com</code>) for which you want to create the
+     * domain entry.</p>
      */
     inline CreateDomainEntryRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
-     * the domain entry.</p>
+     * <p>The domain name (<code>example.com</code>) for which you want to create the
+     * domain entry.</p>
      */
     inline CreateDomainEntryRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

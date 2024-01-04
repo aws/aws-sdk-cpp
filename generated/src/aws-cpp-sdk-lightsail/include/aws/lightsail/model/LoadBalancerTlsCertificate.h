@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
      */
     inline LoadBalancerTlsCertificate& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
      */
     inline LoadBalancerTlsCertificate& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
      */
     inline LoadBalancerTlsCertificate& WithName(const char* value) { SetName(value); return *this;}
 
@@ -256,9 +256,9 @@ namespace Model
 
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
-     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
-     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p> <ul> <li>
+     * <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private
+     * server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
      * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
      * connect to a Lightsail instance</p> </li> <li> <p> <b>
      * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
@@ -273,9 +273,9 @@ namespace Model
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
-     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
-     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p> <ul> <li>
+     * <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private
+     * server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
      * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
      * connect to a Lightsail instance</p> </li> <li> <p> <b>
      * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
@@ -290,9 +290,9 @@ namespace Model
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
-     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
-     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p> <ul> <li>
+     * <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private
+     * server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
      * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
      * connect to a Lightsail instance</p> </li> <li> <p> <b>
      * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
@@ -307,9 +307,9 @@ namespace Model
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
-     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
-     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p> <ul> <li>
+     * <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private
+     * server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
      * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
      * connect to a Lightsail instance</p> </li> <li> <p> <b>
      * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
@@ -324,9 +324,9 @@ namespace Model
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
-     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
-     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p> <ul> <li>
+     * <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private
+     * server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
      * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
      * connect to a Lightsail instance</p> </li> <li> <p> <b>
      * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
@@ -341,9 +341,9 @@ namespace Model
     inline LoadBalancerTlsCertificate& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
-     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
-     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p> <ul> <li>
+     * <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private
+     * server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
      * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
      * connect to a Lightsail instance</p> </li> <li> <p> <b>
      * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
@@ -1287,65 +1287,65 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * for the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for
+     * the certificate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * for the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for
+     * the certificate.</p>
      */
     inline bool SubjectAlternativeNamesHasBeenSet() const { return m_subjectAlternativeNamesHasBeenSet; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * for the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for
+     * the certificate.</p>
      */
     inline void SetSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * for the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for
+     * the certificate.</p>
      */
     inline void SetSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * for the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for
+     * the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { SetSubjectAlternativeNames(value); return *this;}
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * for the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for
+     * the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * for the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for
+     * the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& AddSubjectAlternativeNames(const Aws::String& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * for the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for
+     * the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& AddSubjectAlternativeNames(Aws::String&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * for the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for
+     * the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 

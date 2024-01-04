@@ -167,11 +167,12 @@ namespace Model
      * <p>The recording frequency that will be applied to all the resource types
      * specified in the override.</p> <ul> <li> <p>Continuous recording allows you to
      * record configuration changes continuously whenever a change occurs.</p> </li>
-     * <li> <p>Daily recording allows you record configuration data once every 24
-     * hours, only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
-     * depends on continuous recording to monitor your resources. If you are using
-     * Firewall Manager, it is recommended that you set the recording frequency to
-     * Continuous.</p> 
+     * <li> <p>Daily recording allows you to receive a configuration item (CI)
+     * representing the most recent state of your resources over the last 24-hour
+     * period, only if it’s different from the previous CI recorded. </p> </li> </ul>
+     *  <p>Firewall Manager depends on continuous recording to monitor your
+     * resources. If you are using Firewall Manager, it is recommended that you set the
+     * recording frequency to Continuous.</p> 
      */
     inline const RecordingFrequency& GetRecordingFrequency() const{ return m_recordingFrequency; }
 
@@ -179,11 +180,12 @@ namespace Model
      * <p>The recording frequency that will be applied to all the resource types
      * specified in the override.</p> <ul> <li> <p>Continuous recording allows you to
      * record configuration changes continuously whenever a change occurs.</p> </li>
-     * <li> <p>Daily recording allows you record configuration data once every 24
-     * hours, only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
-     * depends on continuous recording to monitor your resources. If you are using
-     * Firewall Manager, it is recommended that you set the recording frequency to
-     * Continuous.</p> 
+     * <li> <p>Daily recording allows you to receive a configuration item (CI)
+     * representing the most recent state of your resources over the last 24-hour
+     * period, only if it’s different from the previous CI recorded. </p> </li> </ul>
+     *  <p>Firewall Manager depends on continuous recording to monitor your
+     * resources. If you are using Firewall Manager, it is recommended that you set the
+     * recording frequency to Continuous.</p> 
      */
     inline bool RecordingFrequencyHasBeenSet() const { return m_recordingFrequencyHasBeenSet; }
 
@@ -191,11 +193,12 @@ namespace Model
      * <p>The recording frequency that will be applied to all the resource types
      * specified in the override.</p> <ul> <li> <p>Continuous recording allows you to
      * record configuration changes continuously whenever a change occurs.</p> </li>
-     * <li> <p>Daily recording allows you record configuration data once every 24
-     * hours, only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
-     * depends on continuous recording to monitor your resources. If you are using
-     * Firewall Manager, it is recommended that you set the recording frequency to
-     * Continuous.</p> 
+     * <li> <p>Daily recording allows you to receive a configuration item (CI)
+     * representing the most recent state of your resources over the last 24-hour
+     * period, only if it’s different from the previous CI recorded. </p> </li> </ul>
+     *  <p>Firewall Manager depends on continuous recording to monitor your
+     * resources. If you are using Firewall Manager, it is recommended that you set the
+     * recording frequency to Continuous.</p> 
      */
     inline void SetRecordingFrequency(const RecordingFrequency& value) { m_recordingFrequencyHasBeenSet = true; m_recordingFrequency = value; }
 
@@ -203,11 +206,12 @@ namespace Model
      * <p>The recording frequency that will be applied to all the resource types
      * specified in the override.</p> <ul> <li> <p>Continuous recording allows you to
      * record configuration changes continuously whenever a change occurs.</p> </li>
-     * <li> <p>Daily recording allows you record configuration data once every 24
-     * hours, only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
-     * depends on continuous recording to monitor your resources. If you are using
-     * Firewall Manager, it is recommended that you set the recording frequency to
-     * Continuous.</p> 
+     * <li> <p>Daily recording allows you to receive a configuration item (CI)
+     * representing the most recent state of your resources over the last 24-hour
+     * period, only if it’s different from the previous CI recorded. </p> </li> </ul>
+     *  <p>Firewall Manager depends on continuous recording to monitor your
+     * resources. If you are using Firewall Manager, it is recommended that you set the
+     * recording frequency to Continuous.</p> 
      */
     inline void SetRecordingFrequency(RecordingFrequency&& value) { m_recordingFrequencyHasBeenSet = true; m_recordingFrequency = std::move(value); }
 
@@ -215,11 +219,12 @@ namespace Model
      * <p>The recording frequency that will be applied to all the resource types
      * specified in the override.</p> <ul> <li> <p>Continuous recording allows you to
      * record configuration changes continuously whenever a change occurs.</p> </li>
-     * <li> <p>Daily recording allows you record configuration data once every 24
-     * hours, only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
-     * depends on continuous recording to monitor your resources. If you are using
-     * Firewall Manager, it is recommended that you set the recording frequency to
-     * Continuous.</p> 
+     * <li> <p>Daily recording allows you to receive a configuration item (CI)
+     * representing the most recent state of your resources over the last 24-hour
+     * period, only if it’s different from the previous CI recorded. </p> </li> </ul>
+     *  <p>Firewall Manager depends on continuous recording to monitor your
+     * resources. If you are using Firewall Manager, it is recommended that you set the
+     * recording frequency to Continuous.</p> 
      */
     inline RecordingModeOverride& WithRecordingFrequency(const RecordingFrequency& value) { SetRecordingFrequency(value); return *this;}
 
@@ -227,11 +232,12 @@ namespace Model
      * <p>The recording frequency that will be applied to all the resource types
      * specified in the override.</p> <ul> <li> <p>Continuous recording allows you to
      * record configuration changes continuously whenever a change occurs.</p> </li>
-     * <li> <p>Daily recording allows you record configuration data once every 24
-     * hours, only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
-     * depends on continuous recording to monitor your resources. If you are using
-     * Firewall Manager, it is recommended that you set the recording frequency to
-     * Continuous.</p> 
+     * <li> <p>Daily recording allows you to receive a configuration item (CI)
+     * representing the most recent state of your resources over the last 24-hour
+     * period, only if it’s different from the previous CI recorded. </p> </li> </ul>
+     *  <p>Firewall Manager depends on continuous recording to monitor your
+     * resources. If you are using Firewall Manager, it is recommended that you set the
+     * recording frequency to Continuous.</p> 
      */
     inline RecordingModeOverride& WithRecordingFrequency(RecordingFrequency&& value) { SetRecordingFrequency(std::move(value)); return *this;}
 

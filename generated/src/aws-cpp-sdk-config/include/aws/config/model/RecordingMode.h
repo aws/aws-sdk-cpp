@@ -30,12 +30,13 @@ namespace Model
    * configuration changes. Config supports <i>Continuous recording</i> and <i>Daily
    * recording</i>.</p> <ul> <li> <p>Continuous recording allows you to record
    * configuration changes continuously whenever a change occurs.</p> </li> <li>
-   * <p>Daily recording allows you record configuration data once every 24 hours,
-   * only if a change has occurred.</p> </li> </ul>  <p>Firewall Manager
-   * depends on continuous recording to monitor your resources. If you are using
-   * Firewall Manager, it is recommended that you set the recording frequency to
-   * Continuous.</p>  <p>You can also override the recording frequency for
-   * specific resource types.</p><p><h3>See Also:</h3>   <a
+   * <p>Daily recording allows you to receive a configuration item (CI) representing
+   * the most recent state of your resources over the last 24-hour period, only if
+   * it’s different from the previous CI recorded. </p> </li> </ul> 
+   * <p>Firewall Manager depends on continuous recording to monitor your resources.
+   * If you are using Firewall Manager, it is recommended that you set the recording
+   * frequency to Continuous.</p>  <p>You can also override the recording
+   * frequency for specific resource types.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RecordingMode">AWS
    * API Reference</a></p>
    */

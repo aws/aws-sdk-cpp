@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline DiskSnapshot& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline DiskSnapshot& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     * <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
      */
     inline DiskSnapshot& WithName(const char* value) { SetName(value); return *this;}
 
@@ -245,32 +245,32 @@ namespace Model
 
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+     * <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+     * <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+     * <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+     * <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+     * <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
      */
     inline DiskSnapshot& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+     * <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
      */
     inline DiskSnapshot& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

@@ -141,6 +141,7 @@
 #include <aws/lightsail/model/GetRelationalDatabaseSnapshotResult.h>
 #include <aws/lightsail/model/GetRelationalDatabaseSnapshotsResult.h>
 #include <aws/lightsail/model/GetRelationalDatabasesResult.h>
+#include <aws/lightsail/model/GetSetupHistoryResult.h>
 #include <aws/lightsail/model/GetStaticIpResult.h>
 #include <aws/lightsail/model/GetStaticIpsResult.h>
 #include <aws/lightsail/model/ImportKeyPairResult.h>
@@ -157,6 +158,7 @@
 #include <aws/lightsail/model/SendContactMethodVerificationResult.h>
 #include <aws/lightsail/model/SetIpAddressTypeResult.h>
 #include <aws/lightsail/model/SetResourceAccessForBucketResult.h>
+#include <aws/lightsail/model/SetupInstanceHttpsResult.h>
 #include <aws/lightsail/model/StartGUISessionResult.h>
 #include <aws/lightsail/model/StartInstanceResult.h>
 #include <aws/lightsail/model/StartRelationalDatabaseResult.h>
@@ -340,6 +342,7 @@ namespace Aws
       class GetRelationalDatabaseSnapshotRequest;
       class GetRelationalDatabaseSnapshotsRequest;
       class GetRelationalDatabasesRequest;
+      class GetSetupHistoryRequest;
       class GetStaticIpRequest;
       class GetStaticIpsRequest;
       class ImportKeyPairRequest;
@@ -356,6 +359,7 @@ namespace Aws
       class SendContactMethodVerificationRequest;
       class SetIpAddressTypeRequest;
       class SetResourceAccessForBucketRequest;
+      class SetupInstanceHttpsRequest;
       class StartGUISessionRequest;
       class StartInstanceRequest;
       class StartRelationalDatabaseRequest;
@@ -502,6 +506,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetRelationalDatabaseSnapshotResult, LightsailError> GetRelationalDatabaseSnapshotOutcome;
       typedef Aws::Utils::Outcome<GetRelationalDatabaseSnapshotsResult, LightsailError> GetRelationalDatabaseSnapshotsOutcome;
       typedef Aws::Utils::Outcome<GetRelationalDatabasesResult, LightsailError> GetRelationalDatabasesOutcome;
+      typedef Aws::Utils::Outcome<GetSetupHistoryResult, LightsailError> GetSetupHistoryOutcome;
       typedef Aws::Utils::Outcome<GetStaticIpResult, LightsailError> GetStaticIpOutcome;
       typedef Aws::Utils::Outcome<GetStaticIpsResult, LightsailError> GetStaticIpsOutcome;
       typedef Aws::Utils::Outcome<ImportKeyPairResult, LightsailError> ImportKeyPairOutcome;
@@ -518,6 +523,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<SendContactMethodVerificationResult, LightsailError> SendContactMethodVerificationOutcome;
       typedef Aws::Utils::Outcome<SetIpAddressTypeResult, LightsailError> SetIpAddressTypeOutcome;
       typedef Aws::Utils::Outcome<SetResourceAccessForBucketResult, LightsailError> SetResourceAccessForBucketOutcome;
+      typedef Aws::Utils::Outcome<SetupInstanceHttpsResult, LightsailError> SetupInstanceHttpsOutcome;
       typedef Aws::Utils::Outcome<StartGUISessionResult, LightsailError> StartGUISessionOutcome;
       typedef Aws::Utils::Outcome<StartInstanceResult, LightsailError> StartInstanceOutcome;
       typedef Aws::Utils::Outcome<StartRelationalDatabaseResult, LightsailError> StartRelationalDatabaseOutcome;
@@ -664,6 +670,7 @@ namespace Aws
       typedef std::future<GetRelationalDatabaseSnapshotOutcome> GetRelationalDatabaseSnapshotOutcomeCallable;
       typedef std::future<GetRelationalDatabaseSnapshotsOutcome> GetRelationalDatabaseSnapshotsOutcomeCallable;
       typedef std::future<GetRelationalDatabasesOutcome> GetRelationalDatabasesOutcomeCallable;
+      typedef std::future<GetSetupHistoryOutcome> GetSetupHistoryOutcomeCallable;
       typedef std::future<GetStaticIpOutcome> GetStaticIpOutcomeCallable;
       typedef std::future<GetStaticIpsOutcome> GetStaticIpsOutcomeCallable;
       typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
@@ -680,6 +687,7 @@ namespace Aws
       typedef std::future<SendContactMethodVerificationOutcome> SendContactMethodVerificationOutcomeCallable;
       typedef std::future<SetIpAddressTypeOutcome> SetIpAddressTypeOutcomeCallable;
       typedef std::future<SetResourceAccessForBucketOutcome> SetResourceAccessForBucketOutcomeCallable;
+      typedef std::future<SetupInstanceHttpsOutcome> SetupInstanceHttpsOutcomeCallable;
       typedef std::future<StartGUISessionOutcome> StartGUISessionOutcomeCallable;
       typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
       typedef std::future<StartRelationalDatabaseOutcome> StartRelationalDatabaseOutcomeCallable;
@@ -829,6 +837,7 @@ namespace Aws
     typedef std::function<void(const LightsailClient*, const Model::GetRelationalDatabaseSnapshotRequest&, const Model::GetRelationalDatabaseSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRelationalDatabaseSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetRelationalDatabaseSnapshotsRequest&, const Model::GetRelationalDatabaseSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRelationalDatabaseSnapshotsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetRelationalDatabasesRequest&, const Model::GetRelationalDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRelationalDatabasesResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetSetupHistoryRequest&, const Model::GetSetupHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSetupHistoryResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetStaticIpRequest&, const Model::GetStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStaticIpResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetStaticIpsRequest&, const Model::GetStaticIpsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStaticIpsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::ImportKeyPairRequest&, const Model::ImportKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportKeyPairResponseReceivedHandler;
@@ -845,6 +854,7 @@ namespace Aws
     typedef std::function<void(const LightsailClient*, const Model::SendContactMethodVerificationRequest&, const Model::SendContactMethodVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendContactMethodVerificationResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::SetIpAddressTypeRequest&, const Model::SetIpAddressTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIpAddressTypeResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::SetResourceAccessForBucketRequest&, const Model::SetResourceAccessForBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetResourceAccessForBucketResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::SetupInstanceHttpsRequest&, const Model::SetupInstanceHttpsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetupInstanceHttpsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartGUISessionRequest&, const Model::StartGUISessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartGUISessionResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartInstanceRequest&, const Model::StartInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartRelationalDatabaseRequest&, const Model::StartRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRelationalDatabaseResponseReceivedHandler;

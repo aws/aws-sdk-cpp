@@ -207,38 +207,32 @@ namespace Model
 
 
     /**
-     * <p>The Lightsail resource type (e.g.,
-     * <code>CloudFormationStackRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The Lightsail resource type (e.g.,
-     * <code>CloudFormationStackRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The Lightsail resource type (e.g.,
-     * <code>CloudFormationStackRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The Lightsail resource type (e.g.,
-     * <code>CloudFormationStackRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The Lightsail resource type (e.g.,
-     * <code>CloudFormationStackRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
      */
     inline CloudFormationStackRecord& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The Lightsail resource type (e.g.,
-     * <code>CloudFormationStackRecord</code>).</p>
+     * <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
      */
     inline CloudFormationStackRecord& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

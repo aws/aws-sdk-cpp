@@ -409,6 +409,24 @@ namespace Aws
         static const int AWS_Lambda_CodeSigningConfig_HASH = HashingUtils::HashString("AWS::Lambda::CodeSigningConfig");
         static const int AWS_NetworkManager_ConnectPeer_HASH = HashingUtils::HashString("AWS::NetworkManager::ConnectPeer");
         static const int AWS_ResourceExplorer2_Index_HASH = HashingUtils::HashString("AWS::ResourceExplorer2::Index");
+        static const int AWS_AppStream_Fleet_HASH = HashingUtils::HashString("AWS::AppStream::Fleet");
+        static const int AWS_Cognito_UserPool_HASH = HashingUtils::HashString("AWS::Cognito::UserPool");
+        static const int AWS_Cognito_UserPoolClient_HASH = HashingUtils::HashString("AWS::Cognito::UserPoolClient");
+        static const int AWS_Cognito_UserPoolGroup_HASH = HashingUtils::HashString("AWS::Cognito::UserPoolGroup");
+        static const int AWS_EC2_NetworkInsightsAccessScope_HASH = HashingUtils::HashString("AWS::EC2::NetworkInsightsAccessScope");
+        static const int AWS_EC2_NetworkInsightsAnalysis_HASH = HashingUtils::HashString("AWS::EC2::NetworkInsightsAnalysis");
+        static const int AWS_Grafana_Workspace_HASH = HashingUtils::HashString("AWS::Grafana::Workspace");
+        static const int AWS_GroundStation_DataflowEndpointGroup_HASH = HashingUtils::HashString("AWS::GroundStation::DataflowEndpointGroup");
+        static const int AWS_ImageBuilder_ImageRecipe_HASH = HashingUtils::HashString("AWS::ImageBuilder::ImageRecipe");
+        static const int AWS_KMS_Alias_HASH = HashingUtils::HashString("AWS::KMS::Alias");
+        static const int AWS_M2_Environment_HASH = HashingUtils::HashString("AWS::M2::Environment");
+        static const int AWS_QuickSight_DataSource_HASH = HashingUtils::HashString("AWS::QuickSight::DataSource");
+        static const int AWS_QuickSight_Template_HASH = HashingUtils::HashString("AWS::QuickSight::Template");
+        static const int AWS_QuickSight_Theme_HASH = HashingUtils::HashString("AWS::QuickSight::Theme");
+        static const int AWS_RDS_OptionGroup_HASH = HashingUtils::HashString("AWS::RDS::OptionGroup");
+        static const int AWS_Redshift_EndpointAccess_HASH = HashingUtils::HashString("AWS::Redshift::EndpointAccess");
+        static const int AWS_Route53Resolver_FirewallRuleGroup_HASH = HashingUtils::HashString("AWS::Route53Resolver::FirewallRuleGroup");
+        static const int AWS_SSM_Document_HASH = HashingUtils::HashString("AWS::SSM::Document");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -2374,6 +2392,96 @@ namespace Aws
             enumValue = ResourceType::AWS_ResourceExplorer2_Index;
             return true;
           }
+          else if (hashCode == AWS_AppStream_Fleet_HASH)
+          {
+            enumValue = ResourceType::AWS_AppStream_Fleet;
+            return true;
+          }
+          else if (hashCode == AWS_Cognito_UserPool_HASH)
+          {
+            enumValue = ResourceType::AWS_Cognito_UserPool;
+            return true;
+          }
+          else if (hashCode == AWS_Cognito_UserPoolClient_HASH)
+          {
+            enumValue = ResourceType::AWS_Cognito_UserPoolClient;
+            return true;
+          }
+          else if (hashCode == AWS_Cognito_UserPoolGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Cognito_UserPoolGroup;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_NetworkInsightsAccessScope_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_NetworkInsightsAccessScope;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_NetworkInsightsAnalysis_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_NetworkInsightsAnalysis;
+            return true;
+          }
+          else if (hashCode == AWS_Grafana_Workspace_HASH)
+          {
+            enumValue = ResourceType::AWS_Grafana_Workspace;
+            return true;
+          }
+          else if (hashCode == AWS_GroundStation_DataflowEndpointGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_GroundStation_DataflowEndpointGroup;
+            return true;
+          }
+          else if (hashCode == AWS_ImageBuilder_ImageRecipe_HASH)
+          {
+            enumValue = ResourceType::AWS_ImageBuilder_ImageRecipe;
+            return true;
+          }
+          else if (hashCode == AWS_KMS_Alias_HASH)
+          {
+            enumValue = ResourceType::AWS_KMS_Alias;
+            return true;
+          }
+          else if (hashCode == AWS_M2_Environment_HASH)
+          {
+            enumValue = ResourceType::AWS_M2_Environment;
+            return true;
+          }
+          else if (hashCode == AWS_QuickSight_DataSource_HASH)
+          {
+            enumValue = ResourceType::AWS_QuickSight_DataSource;
+            return true;
+          }
+          else if (hashCode == AWS_QuickSight_Template_HASH)
+          {
+            enumValue = ResourceType::AWS_QuickSight_Template;
+            return true;
+          }
+          else if (hashCode == AWS_QuickSight_Theme_HASH)
+          {
+            enumValue = ResourceType::AWS_QuickSight_Theme;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_OptionGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_OptionGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_EndpointAccess_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_EndpointAccess;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_FirewallRuleGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_FirewallRuleGroup;
+            return true;
+          }
+          else if (hashCode == AWS_SSM_Document_HASH)
+          {
+            enumValue = ResourceType::AWS_SSM_Document;
+            return true;
+          }
           return false;
         }
 
@@ -3571,6 +3679,60 @@ namespace Aws
             return true;
           case ResourceType::AWS_ResourceExplorer2_Index:
             value = "AWS::ResourceExplorer2::Index";
+            return true;
+          case ResourceType::AWS_AppStream_Fleet:
+            value = "AWS::AppStream::Fleet";
+            return true;
+          case ResourceType::AWS_Cognito_UserPool:
+            value = "AWS::Cognito::UserPool";
+            return true;
+          case ResourceType::AWS_Cognito_UserPoolClient:
+            value = "AWS::Cognito::UserPoolClient";
+            return true;
+          case ResourceType::AWS_Cognito_UserPoolGroup:
+            value = "AWS::Cognito::UserPoolGroup";
+            return true;
+          case ResourceType::AWS_EC2_NetworkInsightsAccessScope:
+            value = "AWS::EC2::NetworkInsightsAccessScope";
+            return true;
+          case ResourceType::AWS_EC2_NetworkInsightsAnalysis:
+            value = "AWS::EC2::NetworkInsightsAnalysis";
+            return true;
+          case ResourceType::AWS_Grafana_Workspace:
+            value = "AWS::Grafana::Workspace";
+            return true;
+          case ResourceType::AWS_GroundStation_DataflowEndpointGroup:
+            value = "AWS::GroundStation::DataflowEndpointGroup";
+            return true;
+          case ResourceType::AWS_ImageBuilder_ImageRecipe:
+            value = "AWS::ImageBuilder::ImageRecipe";
+            return true;
+          case ResourceType::AWS_KMS_Alias:
+            value = "AWS::KMS::Alias";
+            return true;
+          case ResourceType::AWS_M2_Environment:
+            value = "AWS::M2::Environment";
+            return true;
+          case ResourceType::AWS_QuickSight_DataSource:
+            value = "AWS::QuickSight::DataSource";
+            return true;
+          case ResourceType::AWS_QuickSight_Template:
+            value = "AWS::QuickSight::Template";
+            return true;
+          case ResourceType::AWS_QuickSight_Theme:
+            value = "AWS::QuickSight::Theme";
+            return true;
+          case ResourceType::AWS_RDS_OptionGroup:
+            value = "AWS::RDS::OptionGroup";
+            return true;
+          case ResourceType::AWS_Redshift_EndpointAccess:
+            value = "AWS::Redshift::EndpointAccess";
+            return true;
+          case ResourceType::AWS_Route53Resolver_FirewallRuleGroup:
+            value = "AWS::Route53Resolver::FirewallRuleGroup";
+            return true;
+          case ResourceType::AWS_SSM_Document:
+            value = "AWS::SSM::Document";
             return true;
           default:
             return false;
