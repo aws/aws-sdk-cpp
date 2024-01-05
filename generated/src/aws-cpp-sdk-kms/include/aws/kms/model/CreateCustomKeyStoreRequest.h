@@ -484,7 +484,7 @@ namespace Model
      * values must be unique in the Amazon Web Services account and Region.</p> </li>
      * <li> <p>An external key store with <code>PUBLIC_ENDPOINT</code> connectivity
      * cannot use the same <code>XksProxyUriEndpoint</code> value as an external key
-     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in the same Amazon Web
+     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in this Amazon Web
      * Services Region.</p> </li> <li> <p>Each external key store with
      * <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS
      * name. The <code>XksProxyUriEndpoint</code> value for external key stores with
@@ -515,7 +515,7 @@ namespace Model
      * values must be unique in the Amazon Web Services account and Region.</p> </li>
      * <li> <p>An external key store with <code>PUBLIC_ENDPOINT</code> connectivity
      * cannot use the same <code>XksProxyUriEndpoint</code> value as an external key
-     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in the same Amazon Web
+     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in this Amazon Web
      * Services Region.</p> </li> <li> <p>Each external key store with
      * <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS
      * name. The <code>XksProxyUriEndpoint</code> value for external key stores with
@@ -546,7 +546,7 @@ namespace Model
      * values must be unique in the Amazon Web Services account and Region.</p> </li>
      * <li> <p>An external key store with <code>PUBLIC_ENDPOINT</code> connectivity
      * cannot use the same <code>XksProxyUriEndpoint</code> value as an external key
-     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in the same Amazon Web
+     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in this Amazon Web
      * Services Region.</p> </li> <li> <p>Each external key store with
      * <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS
      * name. The <code>XksProxyUriEndpoint</code> value for external key stores with
@@ -577,7 +577,7 @@ namespace Model
      * values must be unique in the Amazon Web Services account and Region.</p> </li>
      * <li> <p>An external key store with <code>PUBLIC_ENDPOINT</code> connectivity
      * cannot use the same <code>XksProxyUriEndpoint</code> value as an external key
-     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in the same Amazon Web
+     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in this Amazon Web
      * Services Region.</p> </li> <li> <p>Each external key store with
      * <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS
      * name. The <code>XksProxyUriEndpoint</code> value for external key stores with
@@ -608,7 +608,7 @@ namespace Model
      * values must be unique in the Amazon Web Services account and Region.</p> </li>
      * <li> <p>An external key store with <code>PUBLIC_ENDPOINT</code> connectivity
      * cannot use the same <code>XksProxyUriEndpoint</code> value as an external key
-     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in the same Amazon Web
+     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in this Amazon Web
      * Services Region.</p> </li> <li> <p>Each external key store with
      * <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS
      * name. The <code>XksProxyUriEndpoint</code> value for external key stores with
@@ -639,7 +639,7 @@ namespace Model
      * values must be unique in the Amazon Web Services account and Region.</p> </li>
      * <li> <p>An external key store with <code>PUBLIC_ENDPOINT</code> connectivity
      * cannot use the same <code>XksProxyUriEndpoint</code> value as an external key
-     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in the same Amazon Web
+     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in this Amazon Web
      * Services Region.</p> </li> <li> <p>Each external key store with
      * <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS
      * name. The <code>XksProxyUriEndpoint</code> value for external key stores with
@@ -670,7 +670,7 @@ namespace Model
      * values must be unique in the Amazon Web Services account and Region.</p> </li>
      * <li> <p>An external key store with <code>PUBLIC_ENDPOINT</code> connectivity
      * cannot use the same <code>XksProxyUriEndpoint</code> value as an external key
-     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in the same Amazon Web
+     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in this Amazon Web
      * Services Region.</p> </li> <li> <p>Each external key store with
      * <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS
      * name. The <code>XksProxyUriEndpoint</code> value for external key stores with
@@ -701,7 +701,7 @@ namespace Model
      * values must be unique in the Amazon Web Services account and Region.</p> </li>
      * <li> <p>An external key store with <code>PUBLIC_ENDPOINT</code> connectivity
      * cannot use the same <code>XksProxyUriEndpoint</code> value as an external key
-     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in the same Amazon Web
+     * store with <code>VPC_ENDPOINT_SERVICE</code> connectivity in this Amazon Web
      * Services Region.</p> </li> <li> <p>Each external key store with
      * <code>VPC_ENDPOINT_SERVICE</code> connectivity must have its own private DNS
      * name. The <code>XksProxyUriEndpoint</code> value for external key stores with
