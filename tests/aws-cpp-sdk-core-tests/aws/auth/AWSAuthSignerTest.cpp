@@ -12,12 +12,15 @@
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/platform/Platform.h>
+#include <aws/core/utils/crypto/CRC32.h>
+#include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/auth/signing.h>
 #include <aws/cal/ecc.h>
 #include <aws/common/encoding.h>
 #include <fstream>
+#include <tuple>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -25,6 +28,7 @@ using namespace Aws::Http;
 
 static const char ALLOC_TAG[] = "AwsAuthV4SignerTest";
 static const char EMPTY_STRING_SHA256[] = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+static const char STREAMING_UNSIGNED_PAYLOAD_TRAILER[] = "STREAMING-UNSIGNED-PAYLOAD-TRAILER";
 static const char UNSIGNED_PAYLOAD[] = "UNSIGNED-PAYLOAD";
 static const char X_AMZ_SIGNATURE[] = "X-Amz-Signature";
 
@@ -389,7 +393,7 @@ static bool SignPayload(AWSAuthV4Signer::PayloadSigningPolicy policy, Aws::Http:
     return true;
 }
 
-static void RunTestCaseWithPayload(const char* testCaseName, AWSAuthV4Signer::PayloadSigningPolicy policy, Aws::Http::Scheme scheme, bool requestSignPayload/*sign flag in request*/)
+static void RunTestCaseWithPayload(const char* testCaseName, AWSAuthV4Signer::PayloadSigningPolicy policy, Aws::Http::Scheme scheme, bool requestSignPayload, const Aws::String& requestHash)
 {
     DateTime timestampForSigner;
     std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credProvider = MakeStaticCredentialsProvider();
@@ -397,9 +401,20 @@ static void RunTestCaseWithPayload(const char* testCaseName, AWSAuthV4Signer::Pa
     bool signPayload = SignPayload(policy, scheme, requestSignPayload);
     auto requestToMake = GetHttpRequestFromTestCase(testCaseName, timestampForSigner, scheme);
 
+    // simulate what AWSClient does if client chooses a specific request hash type
+    if (requestHash == "crc32") {
+        requestToMake.SetRequestHash("crc32", Aws::MakeShared<Crypto::CRC32>("crc32"));
+    } else if (requestHash == "sha256") {
+        requestToMake.SetRequestHash("sha256", Aws::MakeShared<Crypto::Sha256>("sha256"));
+    } else {
+        ASSERT_STREQ("none", requestHash.c_str());
+    }
+
     signer.SetSigningTimestamp(timestampForSigner);
     ASSERT_TRUE(signer.SignRequest(requestToMake, requestSignPayload));
-    ASSERT_STREQ(GetHttpRequestSignatureFromTestCase(testCaseName, signPayload).c_str(), requestToMake.GetAwsAuthorization().c_str());
+    if (requestHash == "none") {
+        ASSERT_STREQ(GetHttpRequestSignatureFromTestCase(testCaseName, signPayload).c_str(), requestToMake.GetAwsAuthorization().c_str());
+    }
 
     TestableAuthv4Signer signerV4a(credProvider, "service", "us-east-1", policy, false, Aws::Auth::AWSSigningAlgorithm::ASYMMETRIC_SIGV4);
     requestToMake = GetHttpRequestFromTestCase(testCaseName, timestampForSigner, scheme);
@@ -435,26 +450,37 @@ static void RunTestCaseWithPayload(const char* testCaseName, AWSAuthV4Signer::Pa
     VerifyV4ASignature(stringToSign, signature, eccPublicKeyX, eccPublicKeyY);
 }
 
-static void RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy policy, Aws::Http::Scheme scheme, bool requestSignPayload/*sign flag in request*/)
+static void RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy policy, Aws::Http::Scheme scheme, bool requestSignPayload, const Aws::String& requestHash)
 {
     bool signPayload = SignPayload(policy, scheme, requestSignPayload);
     auto request = Standard::StandardHttpRequest(scheme == Aws::Http::Scheme::HTTP ? "http://test.com/query?key=val" : "https://test.com/query?key=val", Aws::Http::HttpMethod::HTTP_GET);
 
+    const char *expectedContentHashHeader = 
+        signPayload ? EMPTY_STRING_SHA256 : (requestHash == "none") ? UNSIGNED_PAYLOAD : STREAMING_UNSIGNED_PAYLOAD_TRAILER;
+
+    if (requestHash == "crc32") {
+        request.SetRequestHash("crc32", Aws::MakeShared<Crypto::CRC32>("crc32"));
+    } else if (requestHash == "sha256") {
+        request.SetRequestHash("sha256", Aws::MakeShared<Crypto::Sha256>("sha256"));
+    } else {
+        ASSERT_STREQ("none", requestHash.c_str());
+    }
+
     std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credProvider = MakeStaticCredentialsProvider();
     AWSAuthV4Signer signer(credProvider, "service", "us-east-1", policy, false);
     ASSERT_TRUE(signer.SignRequest(request, requestSignPayload));
-    ASSERT_STREQ(signPayload ? EMPTY_STRING_SHA256 : UNSIGNED_PAYLOAD, request.GetHeaderValue("x-amz-content-sha256").c_str());
+    ASSERT_STREQ(expectedContentHashHeader, request.GetHeaderValue("x-amz-content-sha256").c_str());
 
     AWSAuthV4Signer signerV4a(credProvider, "service", "us-east-1", policy, false, Aws::Auth::AWSSigningAlgorithm::ASYMMETRIC_SIGV4);
     ASSERT_TRUE(signer.SignRequest(request, requestSignPayload));
-    ASSERT_STREQ(signPayload ? EMPTY_STRING_SHA256 : UNSIGNED_PAYLOAD, request.GetHeaderValue("x-amz-content-sha256").c_str());
+    ASSERT_STREQ(expectedContentHashHeader, request.GetHeaderValue("x-amz-content-sha256").c_str());
 }
 
-class AWSAuthSignerTest : public Aws::Testing::AwsCppSdkGTestSuite
+class AWSAuthSignerEmptyTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 };
 
-TEST_F(AWSAuthSignerTest, HeadersWithEmptyValues)
+TEST_F(AWSAuthSignerEmptyTest, HeadersWithEmptyValues)
 {
     auto request = Standard::StandardHttpRequest("https://test.com/query?key=val", Aws::Http::HttpMethod::HTTP_GET);
     request.SetHeaderValue("same_key", "    ");
@@ -470,50 +496,51 @@ TEST_F(AWSAuthSignerTest, HeadersWithEmptyValues)
     ASSERT_STREQ(UNSIGNED_PAYLOAD, request.GetHeaderValue("x-amz-content-sha256").c_str());
 }
 
-TEST_F(AWSAuthSignerTest, PayloadSigningPolicyNever)
+class AWSAuthSignerTestSuite
+  : public Aws::Testing::AwsCppSdkGTestSuite,
+    public ::testing::WithParamInterface<
+        std::tuple<
+            AWSAuthV4Signer::PayloadSigningPolicy,
+            Aws::Http::Scheme,
+            bool /* requestSignPayload */,
+            Aws::String /* requestHash */
+        >
+    >
 {
-    // Test without payload(empty body)
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTP, true);
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTP, false);
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTPS, true);
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTPS, false);
+};
 
-    // Test with payload(non-empty body)
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTP, true);
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTP, false);
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTPS, true);
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTPS, false);
+TEST_P(AWSAuthSignerTestSuite, Signing)
+{
+    auto params = GetParam();
+    RunTestCaseWithoutPayload(std::get<0>(params), std::get<1>(params), std::get<2>(params), std::get<3>(params));
+    RunTestCaseWithPayload("post-x-www-form-urlencoded", std::get<0>(params), std::get<1>(params), std::get<2>(params), std::get<3>(params));
 }
 
-TEST_F(AWSAuthSignerTest, PayloadSigningPolicyAlways)
-{
-    // Test without payload(empty body)
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Always, Aws::Http::Scheme::HTTP, true);
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Always, Aws::Http::Scheme::HTTP, false);
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Always, Aws::Http::Scheme::HTTPS, true);
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Always, Aws::Http::Scheme::HTTPS, false);
-
-    // Test with payload(non-empty body)
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Always, Aws::Http::Scheme::HTTP, true);
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Always, Aws::Http::Scheme::HTTP, false);
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Always, Aws::Http::Scheme::HTTPS, true);
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Always, Aws::Http::Scheme::HTTPS, false);
-}
-
-TEST_F(AWSAuthSignerTest, PayloadSigningPolicyRequestDependent)
-{
-    // Test without payload(empty body)
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, Aws::Http::Scheme::HTTP, true);
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, Aws::Http::Scheme::HTTP, false);
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, Aws::Http::Scheme::HTTPS, true);
-    RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, Aws::Http::Scheme::HTTPS, false);
-
-    // Test with payload(non-empty body)
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, Aws::Http::Scheme::HTTP, true);
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, Aws::Http::Scheme::HTTPS, true);
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, Aws::Http::Scheme::HTTP, false);
-    RunTestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, Aws::Http::Scheme::HTTPS, false);
-}
+INSTANTIATE_TEST_SUITE_P(
+    AWSAuthSignerTest,
+    AWSAuthSignerTestSuite,
+    ::testing::Combine(
+        // welcome to the matrix
+        ::testing::Values(
+            AWSAuthV4Signer::PayloadSigningPolicy::Never,
+            AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
+            AWSAuthV4Signer::PayloadSigningPolicy::Always
+        ),
+        ::testing::Values(
+            Aws::Http::Scheme::HTTP,
+            Aws::Http::Scheme::HTTPS
+        ),
+        ::testing::Values(
+            true,
+            false
+        ),
+        ::testing::Values(
+            "none",
+            "crc32",
+            "sha256"    // has a special case to avoid double-hashing the payload
+        )
+    )
+);
 
 class AWSAuthV4SignerTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
