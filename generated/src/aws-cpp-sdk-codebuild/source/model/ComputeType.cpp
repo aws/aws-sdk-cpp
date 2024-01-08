@@ -23,6 +23,7 @@ namespace Aws
         static const int BUILD_GENERAL1_SMALL_HASH = HashingUtils::HashString("BUILD_GENERAL1_SMALL");
         static const int BUILD_GENERAL1_MEDIUM_HASH = HashingUtils::HashString("BUILD_GENERAL1_MEDIUM");
         static const int BUILD_GENERAL1_LARGE_HASH = HashingUtils::HashString("BUILD_GENERAL1_LARGE");
+        static const int BUILD_GENERAL1_XLARGE_HASH = HashingUtils::HashString("BUILD_GENERAL1_XLARGE");
         static const int BUILD_GENERAL1_2XLARGE_HASH = HashingUtils::HashString("BUILD_GENERAL1_2XLARGE");
         static const int BUILD_LAMBDA_1GB_HASH = HashingUtils::HashString("BUILD_LAMBDA_1GB");
         static const int BUILD_LAMBDA_2GB_HASH = HashingUtils::HashString("BUILD_LAMBDA_2GB");
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == BUILD_GENERAL1_LARGE_HASH)
           {
             return ComputeType::BUILD_GENERAL1_LARGE;
+          }
+          else if (hashCode == BUILD_GENERAL1_XLARGE_HASH)
+          {
+            return ComputeType::BUILD_GENERAL1_XLARGE;
           }
           else if (hashCode == BUILD_GENERAL1_2XLARGE_HASH)
           {
@@ -92,6 +97,8 @@ namespace Aws
             return "BUILD_GENERAL1_MEDIUM";
           case ComputeType::BUILD_GENERAL1_LARGE:
             return "BUILD_GENERAL1_LARGE";
+          case ComputeType::BUILD_GENERAL1_XLARGE:
+            return "BUILD_GENERAL1_XLARGE";
           case ComputeType::BUILD_GENERAL1_2XLARGE:
             return "BUILD_GENERAL1_2XLARGE";
           case ComputeType::BUILD_LAMBDA_1GB:

@@ -801,6 +801,8 @@ namespace Aws
         static const int m7i_metal_48xl_HASH = HashingUtils::HashString("m7i.metal-48xl");
         static const int r7i_metal_24xl_HASH = HashingUtils::HashString("r7i.metal-24xl");
         static const int r7i_metal_48xl_HASH = HashingUtils::HashString("r7i.metal-48xl");
+        static const int r7iz_metal_16xl_HASH = HashingUtils::HashString("r7iz.metal-16xl");
+        static const int r7iz_metal_32xl_HASH = HashingUtils::HashString("r7iz.metal-32xl");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -4738,6 +4740,16 @@ namespace Aws
             enumValue = InstanceType::r7i_metal_48xl;
             return true;
           }
+          else if (hashCode == r7iz_metal_16xl_HASH)
+          {
+            enumValue = InstanceType::r7iz_metal_16xl;
+            return true;
+          }
+          else if (hashCode == r7iz_metal_32xl_HASH)
+          {
+            enumValue = InstanceType::r7iz_metal_32xl;
+            return true;
+          }
           return false;
         }
 
@@ -7135,6 +7147,12 @@ namespace Aws
             return true;
           case InstanceType::r7i_metal_48xl:
             value = "r7i.metal-48xl";
+            return true;
+          case InstanceType::r7iz_metal_16xl:
+            value = "r7iz.metal-16xl";
+            return true;
+          case InstanceType::r7iz_metal_32xl:
+            value = "r7iz.metal-32xl";
             return true;
           default:
             return false;
