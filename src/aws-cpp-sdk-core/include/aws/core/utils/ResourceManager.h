@@ -15,7 +15,7 @@ namespace Aws
     namespace Utils
     {
         /**
-         * Generic resource manager with Acquire/Release semantics. Acquire will block waiting on a an available resource. Release will
+         * Generic resource manager with Acquire/Release semantics. Acquire will block waiting on an available resource. Release will
          * cause one blocked acquisition to unblock.
          *
          * You must call ShutdownAndWait() when finished with this container, this unblocks the listening thread and gives you a chance to
