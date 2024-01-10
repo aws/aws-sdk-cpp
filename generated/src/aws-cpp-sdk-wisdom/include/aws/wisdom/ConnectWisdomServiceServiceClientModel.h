@@ -37,7 +37,6 @@
 #include <aws/wisdom/model/GetImportJobResult.h>
 #include <aws/wisdom/model/GetKnowledgeBaseResult.h>
 #include <aws/wisdom/model/GetQuickResponseResult.h>
-#include <aws/wisdom/model/GetRecommendationsResult.h>
 #include <aws/wisdom/model/GetSessionResult.h>
 #include <aws/wisdom/model/ListAssistantAssociationsResult.h>
 #include <aws/wisdom/model/ListAssistantsResult.h>
@@ -47,7 +46,6 @@
 #include <aws/wisdom/model/ListQuickResponsesResult.h>
 #include <aws/wisdom/model/ListTagsForResourceResult.h>
 #include <aws/wisdom/model/NotifyRecommendationsReceivedResult.h>
-#include <aws/wisdom/model/QueryAssistantResult.h>
 #include <aws/wisdom/model/RemoveKnowledgeBaseTemplateUriResult.h>
 #include <aws/wisdom/model/SearchContentResult.h>
 #include <aws/wisdom/model/SearchQuickResponsesResult.h>
@@ -118,7 +116,6 @@ namespace Aws
       class GetImportJobRequest;
       class GetKnowledgeBaseRequest;
       class GetQuickResponseRequest;
-      class GetRecommendationsRequest;
       class GetSessionRequest;
       class ListAssistantAssociationsRequest;
       class ListAssistantsRequest;
@@ -128,7 +125,6 @@ namespace Aws
       class ListQuickResponsesRequest;
       class ListTagsForResourceRequest;
       class NotifyRecommendationsReceivedRequest;
-      class QueryAssistantRequest;
       class RemoveKnowledgeBaseTemplateUriRequest;
       class SearchContentRequest;
       class SearchQuickResponsesRequest;
@@ -162,7 +158,6 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetImportJobResult, ConnectWisdomServiceError> GetImportJobOutcome;
       typedef Aws::Utils::Outcome<GetKnowledgeBaseResult, ConnectWisdomServiceError> GetKnowledgeBaseOutcome;
       typedef Aws::Utils::Outcome<GetQuickResponseResult, ConnectWisdomServiceError> GetQuickResponseOutcome;
-      typedef Aws::Utils::Outcome<GetRecommendationsResult, ConnectWisdomServiceError> GetRecommendationsOutcome;
       typedef Aws::Utils::Outcome<GetSessionResult, ConnectWisdomServiceError> GetSessionOutcome;
       typedef Aws::Utils::Outcome<ListAssistantAssociationsResult, ConnectWisdomServiceError> ListAssistantAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListAssistantsResult, ConnectWisdomServiceError> ListAssistantsOutcome;
@@ -172,7 +167,6 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListQuickResponsesResult, ConnectWisdomServiceError> ListQuickResponsesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectWisdomServiceError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<NotifyRecommendationsReceivedResult, ConnectWisdomServiceError> NotifyRecommendationsReceivedOutcome;
-      typedef Aws::Utils::Outcome<QueryAssistantResult, ConnectWisdomServiceError> QueryAssistantOutcome;
       typedef Aws::Utils::Outcome<RemoveKnowledgeBaseTemplateUriResult, ConnectWisdomServiceError> RemoveKnowledgeBaseTemplateUriOutcome;
       typedef Aws::Utils::Outcome<SearchContentResult, ConnectWisdomServiceError> SearchContentOutcome;
       typedef Aws::Utils::Outcome<SearchQuickResponsesResult, ConnectWisdomServiceError> SearchQuickResponsesOutcome;
@@ -206,7 +200,6 @@ namespace Aws
       typedef std::future<GetImportJobOutcome> GetImportJobOutcomeCallable;
       typedef std::future<GetKnowledgeBaseOutcome> GetKnowledgeBaseOutcomeCallable;
       typedef std::future<GetQuickResponseOutcome> GetQuickResponseOutcomeCallable;
-      typedef std::future<GetRecommendationsOutcome> GetRecommendationsOutcomeCallable;
       typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
       typedef std::future<ListAssistantAssociationsOutcome> ListAssistantAssociationsOutcomeCallable;
       typedef std::future<ListAssistantsOutcome> ListAssistantsOutcomeCallable;
@@ -216,7 +209,6 @@ namespace Aws
       typedef std::future<ListQuickResponsesOutcome> ListQuickResponsesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<NotifyRecommendationsReceivedOutcome> NotifyRecommendationsReceivedOutcomeCallable;
-      typedef std::future<QueryAssistantOutcome> QueryAssistantOutcomeCallable;
       typedef std::future<RemoveKnowledgeBaseTemplateUriOutcome> RemoveKnowledgeBaseTemplateUriOutcomeCallable;
       typedef std::future<SearchContentOutcome> SearchContentOutcomeCallable;
       typedef std::future<SearchQuickResponsesOutcome> SearchQuickResponsesOutcomeCallable;
@@ -253,7 +245,6 @@ namespace Aws
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::GetImportJobRequest&, const Model::GetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportJobResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::GetKnowledgeBaseRequest&, const Model::GetKnowledgeBaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKnowledgeBaseResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::GetQuickResponseRequest&, const Model::GetQuickResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQuickResponseResponseReceivedHandler;
-    typedef std::function<void(const ConnectWisdomServiceClient*, const Model::GetRecommendationsRequest&, const Model::GetRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::ListAssistantAssociationsRequest&, const Model::ListAssistantAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssistantAssociationsResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::ListAssistantsRequest&, const Model::ListAssistantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssistantsResponseReceivedHandler;
@@ -263,7 +254,6 @@ namespace Aws
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::ListQuickResponsesRequest&, const Model::ListQuickResponsesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQuickResponsesResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::NotifyRecommendationsReceivedRequest&, const Model::NotifyRecommendationsReceivedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyRecommendationsReceivedResponseReceivedHandler;
-    typedef std::function<void(const ConnectWisdomServiceClient*, const Model::QueryAssistantRequest&, const Model::QueryAssistantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryAssistantResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::RemoveKnowledgeBaseTemplateUriRequest&, const Model::RemoveKnowledgeBaseTemplateUriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveKnowledgeBaseTemplateUriResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::SearchContentRequest&, const Model::SearchContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContentResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::SearchQuickResponsesRequest&, const Model::SearchQuickResponsesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchQuickResponsesResponseReceivedHandler;

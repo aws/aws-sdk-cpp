@@ -132,73 +132,82 @@ namespace Model
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
-     * you specify here are included in the Live Tail session.</p>  <p>You can
-     * specify this parameter only if you specify only one log group in
-     * <code>logGroupIdentifiers</code>.</p> 
+     * you specify here are included in the Live Tail session.</p> <p>If you specify
+     * this field, you can't also specify the <code>logStreamNamePrefixes</code>
+     * field.</p>  <p>You can specify this parameter only if you specify only one
+     * log group in <code>logGroupIdentifiers</code>.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetLogStreamNames() const{ return m_logStreamNames; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
-     * you specify here are included in the Live Tail session.</p>  <p>You can
-     * specify this parameter only if you specify only one log group in
-     * <code>logGroupIdentifiers</code>.</p> 
+     * you specify here are included in the Live Tail session.</p> <p>If you specify
+     * this field, you can't also specify the <code>logStreamNamePrefixes</code>
+     * field.</p>  <p>You can specify this parameter only if you specify only one
+     * log group in <code>logGroupIdentifiers</code>.</p> 
      */
     inline bool LogStreamNamesHasBeenSet() const { return m_logStreamNamesHasBeenSet; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
-     * you specify here are included in the Live Tail session.</p>  <p>You can
-     * specify this parameter only if you specify only one log group in
-     * <code>logGroupIdentifiers</code>.</p> 
+     * you specify here are included in the Live Tail session.</p> <p>If you specify
+     * this field, you can't also specify the <code>logStreamNamePrefixes</code>
+     * field.</p>  <p>You can specify this parameter only if you specify only one
+     * log group in <code>logGroupIdentifiers</code>.</p> 
      */
     inline void SetLogStreamNames(const Aws::Vector<Aws::String>& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = value; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
-     * you specify here are included in the Live Tail session.</p>  <p>You can
-     * specify this parameter only if you specify only one log group in
-     * <code>logGroupIdentifiers</code>.</p> 
+     * you specify here are included in the Live Tail session.</p> <p>If you specify
+     * this field, you can't also specify the <code>logStreamNamePrefixes</code>
+     * field.</p>  <p>You can specify this parameter only if you specify only one
+     * log group in <code>logGroupIdentifiers</code>.</p> 
      */
     inline void SetLogStreamNames(Aws::Vector<Aws::String>&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = std::move(value); }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
-     * you specify here are included in the Live Tail session.</p>  <p>You can
-     * specify this parameter only if you specify only one log group in
-     * <code>logGroupIdentifiers</code>.</p> 
+     * you specify here are included in the Live Tail session.</p> <p>If you specify
+     * this field, you can't also specify the <code>logStreamNamePrefixes</code>
+     * field.</p>  <p>You can specify this parameter only if you specify only one
+     * log group in <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& WithLogStreamNames(const Aws::Vector<Aws::String>& value) { SetLogStreamNames(value); return *this;}
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
-     * you specify here are included in the Live Tail session.</p>  <p>You can
-     * specify this parameter only if you specify only one log group in
-     * <code>logGroupIdentifiers</code>.</p> 
+     * you specify here are included in the Live Tail session.</p> <p>If you specify
+     * this field, you can't also specify the <code>logStreamNamePrefixes</code>
+     * field.</p>  <p>You can specify this parameter only if you specify only one
+     * log group in <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& WithLogStreamNames(Aws::Vector<Aws::String>&& value) { SetLogStreamNames(std::move(value)); return *this;}
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
-     * you specify here are included in the Live Tail session.</p>  <p>You can
-     * specify this parameter only if you specify only one log group in
-     * <code>logGroupIdentifiers</code>.</p> 
+     * you specify here are included in the Live Tail session.</p> <p>If you specify
+     * this field, you can't also specify the <code>logStreamNamePrefixes</code>
+     * field.</p>  <p>You can specify this parameter only if you specify only one
+     * log group in <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& AddLogStreamNames(const Aws::String& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
-     * you specify here are included in the Live Tail session.</p>  <p>You can
-     * specify this parameter only if you specify only one log group in
-     * <code>logGroupIdentifiers</code>.</p> 
+     * you specify here are included in the Live Tail session.</p> <p>If you specify
+     * this field, you can't also specify the <code>logStreamNamePrefixes</code>
+     * field.</p>  <p>You can specify this parameter only if you specify only one
+     * log group in <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& AddLogStreamNames(Aws::String&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
-     * you specify here are included in the Live Tail session.</p>  <p>You can
-     * specify this parameter only if you specify only one log group in
-     * <code>logGroupIdentifiers</code>.</p> 
+     * you specify here are included in the Live Tail session.</p> <p>If you specify
+     * this field, you can't also specify the <code>logStreamNamePrefixes</code>
+     * field.</p>  <p>You can specify this parameter only if you specify only one
+     * log group in <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& AddLogStreamNames(const char* value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
@@ -206,72 +215,90 @@ namespace Model
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
      * have names that start with the prefixes that you specify here are included in
-     * the Live Tail session.</p>  <p>You can specify this parameter only if you
-     * specify only one log group in <code>logGroupIdentifiers</code>.</p> 
+     * the Live Tail session.</p> <p>If you specify this field, you can't also specify
+     * the <code>logStreamNames</code> field.</p>  <p>You can specify this
+     * parameter only if you specify only one log group in
+     * <code>logGroupIdentifiers</code>.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetLogStreamNamePrefixes() const{ return m_logStreamNamePrefixes; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
      * have names that start with the prefixes that you specify here are included in
-     * the Live Tail session.</p>  <p>You can specify this parameter only if you
-     * specify only one log group in <code>logGroupIdentifiers</code>.</p> 
+     * the Live Tail session.</p> <p>If you specify this field, you can't also specify
+     * the <code>logStreamNames</code> field.</p>  <p>You can specify this
+     * parameter only if you specify only one log group in
+     * <code>logGroupIdentifiers</code>.</p> 
      */
     inline bool LogStreamNamePrefixesHasBeenSet() const { return m_logStreamNamePrefixesHasBeenSet; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
      * have names that start with the prefixes that you specify here are included in
-     * the Live Tail session.</p>  <p>You can specify this parameter only if you
-     * specify only one log group in <code>logGroupIdentifiers</code>.</p> 
+     * the Live Tail session.</p> <p>If you specify this field, you can't also specify
+     * the <code>logStreamNames</code> field.</p>  <p>You can specify this
+     * parameter only if you specify only one log group in
+     * <code>logGroupIdentifiers</code>.</p> 
      */
     inline void SetLogStreamNamePrefixes(const Aws::Vector<Aws::String>& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes = value; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
      * have names that start with the prefixes that you specify here are included in
-     * the Live Tail session.</p>  <p>You can specify this parameter only if you
-     * specify only one log group in <code>logGroupIdentifiers</code>.</p> 
+     * the Live Tail session.</p> <p>If you specify this field, you can't also specify
+     * the <code>logStreamNames</code> field.</p>  <p>You can specify this
+     * parameter only if you specify only one log group in
+     * <code>logGroupIdentifiers</code>.</p> 
      */
     inline void SetLogStreamNamePrefixes(Aws::Vector<Aws::String>&& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes = std::move(value); }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
      * have names that start with the prefixes that you specify here are included in
-     * the Live Tail session.</p>  <p>You can specify this parameter only if you
-     * specify only one log group in <code>logGroupIdentifiers</code>.</p> 
+     * the Live Tail session.</p> <p>If you specify this field, you can't also specify
+     * the <code>logStreamNames</code> field.</p>  <p>You can specify this
+     * parameter only if you specify only one log group in
+     * <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& WithLogStreamNamePrefixes(const Aws::Vector<Aws::String>& value) { SetLogStreamNamePrefixes(value); return *this;}
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
      * have names that start with the prefixes that you specify here are included in
-     * the Live Tail session.</p>  <p>You can specify this parameter only if you
-     * specify only one log group in <code>logGroupIdentifiers</code>.</p> 
+     * the Live Tail session.</p> <p>If you specify this field, you can't also specify
+     * the <code>logStreamNames</code> field.</p>  <p>You can specify this
+     * parameter only if you specify only one log group in
+     * <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& WithLogStreamNamePrefixes(Aws::Vector<Aws::String>&& value) { SetLogStreamNamePrefixes(std::move(value)); return *this;}
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
      * have names that start with the prefixes that you specify here are included in
-     * the Live Tail session.</p>  <p>You can specify this parameter only if you
-     * specify only one log group in <code>logGroupIdentifiers</code>.</p> 
+     * the Live Tail session.</p> <p>If you specify this field, you can't also specify
+     * the <code>logStreamNames</code> field.</p>  <p>You can specify this
+     * parameter only if you specify only one log group in
+     * <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& AddLogStreamNamePrefixes(const Aws::String& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes.push_back(value); return *this; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
      * have names that start with the prefixes that you specify here are included in
-     * the Live Tail session.</p>  <p>You can specify this parameter only if you
-     * specify only one log group in <code>logGroupIdentifiers</code>.</p> 
+     * the Live Tail session.</p> <p>If you specify this field, you can't also specify
+     * the <code>logStreamNames</code> field.</p>  <p>You can specify this
+     * parameter only if you specify only one log group in
+     * <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& AddLogStreamNamePrefixes(Aws::String&& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If you specify this parameter, then only log events in the log streams that
      * have names that start with the prefixes that you specify here are included in
-     * the Live Tail session.</p>  <p>You can specify this parameter only if you
-     * specify only one log group in <code>logGroupIdentifiers</code>.</p> 
+     * the Live Tail session.</p> <p>If you specify this field, you can't also specify
+     * the <code>logStreamNames</code> field.</p>  <p>You can specify this
+     * parameter only if you specify only one log group in
+     * <code>logGroupIdentifiers</code>.</p> 
      */
     inline StartLiveTailRequest& AddLogStreamNamePrefixes(const char* value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes.push_back(value); return *this; }
 

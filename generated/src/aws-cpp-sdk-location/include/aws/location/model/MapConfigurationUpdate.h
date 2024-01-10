@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -35,6 +36,88 @@ namespace Model
     AWS_LOCATIONSERVICE_API MapConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API MapConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Specifies the custom layers for the style. Leave unset to not enable any
+     * custom layer, or, for styles that support custom layers, you can enable
+     * layer(s), such as POI layer for the VectorEsriNavigation style. Default is
+     * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
+     * layers. See Custom Layers for more information.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetCustomLayers() const{ return m_customLayers; }
+
+    /**
+     * <p>Specifies the custom layers for the style. Leave unset to not enable any
+     * custom layer, or, for styles that support custom layers, you can enable
+     * layer(s), such as POI layer for the VectorEsriNavigation style. Default is
+     * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
+     * layers. See Custom Layers for more information.</p> 
+     */
+    inline bool CustomLayersHasBeenSet() const { return m_customLayersHasBeenSet; }
+
+    /**
+     * <p>Specifies the custom layers for the style. Leave unset to not enable any
+     * custom layer, or, for styles that support custom layers, you can enable
+     * layer(s), such as POI layer for the VectorEsriNavigation style. Default is
+     * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
+     * layers. See Custom Layers for more information.</p> 
+     */
+    inline void SetCustomLayers(const Aws::Vector<Aws::String>& value) { m_customLayersHasBeenSet = true; m_customLayers = value; }
+
+    /**
+     * <p>Specifies the custom layers for the style. Leave unset to not enable any
+     * custom layer, or, for styles that support custom layers, you can enable
+     * layer(s), such as POI layer for the VectorEsriNavigation style. Default is
+     * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
+     * layers. See Custom Layers for more information.</p> 
+     */
+    inline void SetCustomLayers(Aws::Vector<Aws::String>&& value) { m_customLayersHasBeenSet = true; m_customLayers = std::move(value); }
+
+    /**
+     * <p>Specifies the custom layers for the style. Leave unset to not enable any
+     * custom layer, or, for styles that support custom layers, you can enable
+     * layer(s), such as POI layer for the VectorEsriNavigation style. Default is
+     * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
+     * layers. See Custom Layers for more information.</p> 
+     */
+    inline MapConfigurationUpdate& WithCustomLayers(const Aws::Vector<Aws::String>& value) { SetCustomLayers(value); return *this;}
+
+    /**
+     * <p>Specifies the custom layers for the style. Leave unset to not enable any
+     * custom layer, or, for styles that support custom layers, you can enable
+     * layer(s), such as POI layer for the VectorEsriNavigation style. Default is
+     * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
+     * layers. See Custom Layers for more information.</p> 
+     */
+    inline MapConfigurationUpdate& WithCustomLayers(Aws::Vector<Aws::String>&& value) { SetCustomLayers(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the custom layers for the style. Leave unset to not enable any
+     * custom layer, or, for styles that support custom layers, you can enable
+     * layer(s), such as POI layer for the VectorEsriNavigation style. Default is
+     * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
+     * layers. See Custom Layers for more information.</p> 
+     */
+    inline MapConfigurationUpdate& AddCustomLayers(const Aws::String& value) { m_customLayersHasBeenSet = true; m_customLayers.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the custom layers for the style. Leave unset to not enable any
+     * custom layer, or, for styles that support custom layers, you can enable
+     * layer(s), such as POI layer for the VectorEsriNavigation style. Default is
+     * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
+     * layers. See Custom Layers for more information.</p> 
+     */
+    inline MapConfigurationUpdate& AddCustomLayers(Aws::String&& value) { m_customLayersHasBeenSet = true; m_customLayers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the custom layers for the style. Leave unset to not enable any
+     * custom layer, or, for styles that support custom layers, you can enable
+     * layer(s), such as POI layer for the VectorEsriNavigation style. Default is
+     * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
+     * layers. See Custom Layers for more information.</p> 
+     */
+    inline MapConfigurationUpdate& AddCustomLayers(const char* value) { m_customLayersHasBeenSet = true; m_customLayers.push_back(value); return *this; }
 
 
     /**
@@ -118,6 +201,9 @@ namespace Model
     inline MapConfigurationUpdate& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
 
   private:
+
+    Aws::Vector<Aws::String> m_customLayers;
+    bool m_customLayersHasBeenSet = false;
 
     Aws::String m_politicalView;
     bool m_politicalViewHasBeenSet = false;

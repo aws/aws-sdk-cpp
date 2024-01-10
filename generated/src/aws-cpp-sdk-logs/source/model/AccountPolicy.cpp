@@ -27,6 +27,7 @@ AccountPolicy::AccountPolicy() :
     m_policyTypeHasBeenSet(false),
     m_scope(Scope::NOT_SET),
     m_scopeHasBeenSet(false),
+    m_selectionCriteriaHasBeenSet(false),
     m_accountIdHasBeenSet(false)
 {
 }
@@ -40,6 +41,7 @@ AccountPolicy::AccountPolicy(JsonView jsonValue) :
     m_policyTypeHasBeenSet(false),
     m_scope(Scope::NOT_SET),
     m_scopeHasBeenSet(false),
+    m_selectionCriteriaHasBeenSet(false),
     m_accountIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -82,6 +84,13 @@ AccountPolicy& AccountPolicy::operator =(JsonView jsonValue)
     m_scopeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("selectionCriteria"))
+  {
+    m_selectionCriteria = jsonValue.GetString("selectionCriteria");
+
+    m_selectionCriteriaHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
@@ -122,6 +131,12 @@ JsonValue AccountPolicy::Jsonize() const
   if(m_scopeHasBeenSet)
   {
    payload.WithString("scope", ScopeMapper::GetNameForScope(m_scope));
+  }
+
+  if(m_selectionCriteriaHasBeenSet)
+  {
+   payload.WithString("selectionCriteria", m_selectionCriteria);
+
   }
 
   if(m_accountIdHasBeenSet)

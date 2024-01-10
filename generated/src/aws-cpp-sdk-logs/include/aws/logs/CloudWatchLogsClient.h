@@ -417,9 +417,17 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Deletes a CloudWatch Logs account policy.</p> <p>To use this operation, you
-         * must be signed on with the <code>logs:DeleteDataProtectionPolicy</code> and
-         * <code>logs:DeleteAccountPolicy</code> permissions.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a CloudWatch Logs account policy. This stops the policy from applying
+         * to all log groups or a subset of log groups in the account. Log-group level
+         * policies will still be in effect.</p> <p>To use this operation, you must be
+         * signed on with the correct permissions depending on the type of policy that you
+         * are deleting.</p> <ul> <li> <p>To delete a data protection policy, you must have
+         * the <code>logs:DeleteDataProtectionPolicy</code> and
+         * <code>logs:DeleteAccountPolicy</code> permissions.</p> </li> <li> <p>To delete a
+         * subscription filter policy, you must have the
+         * <code>logs:DeleteSubscriptionFilter</code> and
+         * <code>logs:DeleteAccountPolicy</code> permissions.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteAccountPolicy">AWS
          * API Reference</a></p>
          */
@@ -1679,20 +1687,22 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Creates an account-level data protection policy that applies to all log
-         * groups in the account. A data protection policy can help safeguard sensitive
-         * data that's ingested by your log groups by auditing and masking the sensitive
-         * log data. Each account can have only one account-level policy.</p> 
-         * <p>Sensitive data is detected and masked when it is ingested into a log group.
-         * When you set a data protection policy, log events ingested into the log groups
-         * before that time are not masked.</p>  <p>If you use
-         * <code>PutAccountPolicy</code> to create a data protection policy for your whole
-         * account, it applies to both existing log groups and all log groups that are
-         * created later in this account. The account policy is applied to existing log
-         * groups with eventual consistency. It might take up to 5 minutes before sensitive
-         * data in existing log groups begins to be masked.</p> <p>By default, when a user
-         * views a log event that includes masked data, the sensitive data is replaced by
-         * asterisks. A user who has the <code>logs:Unmask</code> permission can use a <a
+         * <p>Creates an account-level data protection policy or subscription filter policy
+         * that applies to all log groups or a subset of log groups in the account.</p> <p>
+         * <b>Data protection policy</b> </p> <p>A data protection policy can help
+         * safeguard sensitive data that's ingested by your log groups by auditing and
+         * masking the sensitive log data. Each account can have only one account-level
+         * data protection policy.</p>  <p>Sensitive data is detected and masked
+         * when it is ingested into a log group. When you set a data protection policy, log
+         * events ingested into the log groups before that time are not masked.</p>
+         *  <p>If you use <code>PutAccountPolicy</code> to create a data
+         * protection policy for your whole account, it applies to both existing log groups
+         * and all log groups that are created later in this account. The account-level
+         * policy is applied to existing log groups with eventual consistency. It might
+         * take up to 5 minutes before sensitive data in existing log groups begins to be
+         * masked.</p> <p>By default, when a user views a log event that includes masked
+         * data, the sensitive data is replaced by asterisks. A user who has the
+         * <code>logs:Unmask</code> permission can use a <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
@@ -1704,16 +1714,37 @@ namespace CloudWatchLogs
          * see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect
          * sensitive log data with masking</a>.</p> <p>To use the
-         * <code>PutAccountPolicy</code> operation, you must be signed on with the
-         * <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code>
-         * permissions.</p> <p>The <code>PutAccountPolicy</code> operation applies to all
-         * log groups in the account. You can also use <a
+         * <code>PutAccountPolicy</code> operation for a data protection policy, you must
+         * be signed on with the <code>logs:PutDataProtectionPolicy</code> and
+         * <code>logs:PutAccountPolicy</code> permissions.</p> <p>The
+         * <code>PutAccountPolicy</code> operation applies to all log groups in the
+         * account. You can use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
          * to create a data protection policy that applies to just one log group. If a log
          * group has its own data protection policy and the account also has an
          * account-level data protection policy, then the two policies are cumulative. Any
-         * sensitive term specified in either policy is masked.</p><p><h3>See Also:</h3>  
-         * <a
+         * sensitive term specified in either policy is masked.</p> <p> <b>Subscription
+         * filter policy</b> </p> <p>A subscription filter policy sets up a real-time feed
+         * of log events from CloudWatch Logs to other Amazon Web Services services.
+         * Account-level subscription filter policies apply to both existing log groups and
+         * log groups that are created later in this account. Supported destinations are
+         * Kinesis Data Streams, Kinesis Data Firehose, and Lambda. When log events are
+         * sent to the receiving service, they are Base64 encoded and compressed with the
+         * GZIP format.</p> <p>The following destinations are supported for subscription
+         * filters:</p> <ul> <li> <p>An Kinesis Data Streams data stream in the same
+         * account as the subscription policy, for same-account delivery.</p> </li> <li>
+         * <p>An Kinesis Data Firehose data stream in the same account as the subscription
+         * policy, for same-account delivery.</p> </li> <li> <p>A Lambda function in the
+         * same account as the subscription policy, for same-account delivery.</p> </li>
+         * <li> <p>A logical destination in a different account created with <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
+         * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
+         * supported as logical destinations.</p> </li> </ul> <p>Each account can have one
+         * account-level subscription filter policy. If you are updating an existing
+         * filter, you must specify the correct name in <code>PolicyName</code>. To perform
+         * a <code>PutAccountPolicy</code> subscription filter operation for any
+         * destination except a Lambda function, you must also have the
+         * <code>iam:PassRole</code> permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutAccountPolicy">AWS
          * API Reference</a></p>
          */
@@ -2181,7 +2212,7 @@ namespace CloudWatchLogs
          * that before log events are deleted, but in rare situations might take
          * longer.</p> <p>To illustrate, imagine that you change a log group to have a
          * longer retention setting when it contains log events that are past the
-         * expiration date, but haven’t been deleted. Those log events will take up to 72
+         * expiration date, but haven��t been deleted. Those log events will take up to 72
          * hours to be deleted after the new retention date is reached. To make sure that
          * log data is deleted permanently, keep a log group at its lower retention setting
          * until 72 hours after the previous retention period ends. Alternatively, wait to
@@ -2292,8 +2323,11 @@ namespace CloudWatchLogs
          * three hours.</p> </li> </ul>  <p>You can end a session before it
          * times out by closing the session stream or by closing the client that is
          * receiving the stream. The session also ends if the established connection
-         * between the client and the server breaks.</p> <p><h3>See Also:</h3> 
-         * <a
+         * between the client and the server breaks.</p>  <p>For examples of
+         * using an SDK to start a Live Tail session, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/example_cloudwatch-logs_StartLiveTail_section.html">
+         * Start a Live Tail session using an Amazon Web Services SDK</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartLiveTail">AWS
          * API Reference</a></p>
          */
