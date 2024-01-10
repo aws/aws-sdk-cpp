@@ -18,7 +18,8 @@ PutAccountPolicyRequest::PutAccountPolicyRequest() :
     m_policyType(PolicyType::NOT_SET),
     m_policyTypeHasBeenSet(false),
     m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_selectionCriteriaHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String PutAccountPolicyRequest::SerializePayload() const
   if(m_scopeHasBeenSet)
   {
    payload.WithString("scope", ScopeMapper::GetNameForScope(m_scope));
+  }
+
+  if(m_selectionCriteriaHasBeenSet)
+  {
+   payload.WithString("selectionCriteria", m_selectionCriteria);
+
   }
 
   return payload.View().WriteReadable();

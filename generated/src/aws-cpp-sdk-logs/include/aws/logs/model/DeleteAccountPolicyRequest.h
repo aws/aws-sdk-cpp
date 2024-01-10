@@ -77,38 +77,32 @@ namespace Model
 
 
     /**
-     * <p>The type of policy to delete. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * <p>The type of policy to delete.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The type of policy to delete. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * <p>The type of policy to delete.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The type of policy to delete. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * <p>The type of policy to delete.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The type of policy to delete. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * <p>The type of policy to delete.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The type of policy to delete. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * <p>The type of policy to delete.</p>
      */
     inline DeleteAccountPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The type of policy to delete. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * <p>The type of policy to delete.</p>
      */
     inline DeleteAccountPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 
