@@ -386,65 +386,89 @@ namespace Model
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>.</p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDestinationPackageVersions() const{ return m_destinationPackageVersions; }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>.</p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline void SetDestinationPackageVersions(const Aws::Vector<Aws::String>& value) { m_destinationPackageVersions = value; }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>.</p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline void SetDestinationPackageVersions(Aws::Vector<Aws::String>&& value) { m_destinationPackageVersions = std::move(value); }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>.</p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline DescribeJobTemplateResult& WithDestinationPackageVersions(const Aws::Vector<Aws::String>& value) { SetDestinationPackageVersions(value); return *this;}
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>.</p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline DescribeJobTemplateResult& WithDestinationPackageVersions(Aws::Vector<Aws::String>&& value) { SetDestinationPackageVersions(std::move(value)); return *this;}
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>.</p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline DescribeJobTemplateResult& AddDestinationPackageVersions(const Aws::String& value) { m_destinationPackageVersions.push_back(value); return *this; }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>.</p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline DescribeJobTemplateResult& AddDestinationPackageVersions(Aws::String&& value) { m_destinationPackageVersions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single ARN. Up to 25 package version ARNs are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>.</p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline DescribeJobTemplateResult& AddDestinationPackageVersions(const char* value) { m_destinationPackageVersions.push_back(value); return *this; }
 

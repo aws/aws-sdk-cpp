@@ -74,83 +74,99 @@ namespace Model
 
 
     /**
-     * <p>The device name.</p>
+     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
+     * parameter returns <code>null</code>.</p>
      */
     inline const Aws::String& GetDevice() const{ return m_device; }
 
     /**
-     * <p>The device name.</p>
+     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
+     * parameter returns <code>null</code>.</p>
      */
     inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
 
     /**
-     * <p>The device name.</p>
+     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
+     * parameter returns <code>null</code>.</p>
      */
     inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
 
     /**
-     * <p>The device name.</p>
+     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
+     * parameter returns <code>null</code>.</p>
      */
     inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
 
     /**
-     * <p>The device name.</p>
+     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
+     * parameter returns <code>null</code>.</p>
      */
     inline void SetDevice(const char* value) { m_deviceHasBeenSet = true; m_device.assign(value); }
 
     /**
-     * <p>The device name.</p>
+     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
+     * parameter returns <code>null</code>.</p>
      */
     inline VolumeAttachment& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
 
     /**
-     * <p>The device name.</p>
+     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
+     * parameter returns <code>null</code>.</p>
      */
     inline VolumeAttachment& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
 
     /**
-     * <p>The device name.</p>
+     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
+     * parameter returns <code>null</code>.</p>
      */
     inline VolumeAttachment& WithDevice(const char* value) { SetDevice(value); return *this;}
 
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
+     * this parameter returns <code>null</code>.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
+     * this parameter returns <code>null</code>.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
+     * this parameter returns <code>null</code>.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
+     * this parameter returns <code>null</code>.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
+     * this parameter returns <code>null</code>.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
+     * this parameter returns <code>null</code>.</p>
      */
     inline VolumeAttachment& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
+     * this parameter returns <code>null</code>.</p>
      */
     inline VolumeAttachment& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
+     * this parameter returns <code>null</code>.</p>
      */
     inline VolumeAttachment& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -248,6 +264,112 @@ namespace Model
     inline VolumeAttachment& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
 
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline const Aws::String& GetAssociatedResource() const{ return m_associatedResource; }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline bool AssociatedResourceHasBeenSet() const { return m_associatedResourceHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline void SetAssociatedResource(const Aws::String& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = value; }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline void SetAssociatedResource(Aws::String&& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = std::move(value); }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline void SetAssociatedResource(const char* value) { m_associatedResourceHasBeenSet = true; m_associatedResource.assign(value); }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline VolumeAttachment& WithAssociatedResource(const Aws::String& value) { SetAssociatedResource(value); return *this;}
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline VolumeAttachment& WithAssociatedResource(Aws::String&& value) { SetAssociatedResource(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline VolumeAttachment& WithAssociatedResource(const char* value) { SetAssociatedResource(value); return *this;}
+
+
+    /**
+     * <p>The service principal of Amazon Web Services service that owns the underlying
+     * instance to which the volume is attached.</p> <p>This parameter is returned only
+     * for volumes that are attached to Fargate tasks.</p>
+     */
+    inline const Aws::String& GetInstanceOwningService() const{ return m_instanceOwningService; }
+
+    /**
+     * <p>The service principal of Amazon Web Services service that owns the underlying
+     * instance to which the volume is attached.</p> <p>This parameter is returned only
+     * for volumes that are attached to Fargate tasks.</p>
+     */
+    inline bool InstanceOwningServiceHasBeenSet() const { return m_instanceOwningServiceHasBeenSet; }
+
+    /**
+     * <p>The service principal of Amazon Web Services service that owns the underlying
+     * instance to which the volume is attached.</p> <p>This parameter is returned only
+     * for volumes that are attached to Fargate tasks.</p>
+     */
+    inline void SetInstanceOwningService(const Aws::String& value) { m_instanceOwningServiceHasBeenSet = true; m_instanceOwningService = value; }
+
+    /**
+     * <p>The service principal of Amazon Web Services service that owns the underlying
+     * instance to which the volume is attached.</p> <p>This parameter is returned only
+     * for volumes that are attached to Fargate tasks.</p>
+     */
+    inline void SetInstanceOwningService(Aws::String&& value) { m_instanceOwningServiceHasBeenSet = true; m_instanceOwningService = std::move(value); }
+
+    /**
+     * <p>The service principal of Amazon Web Services service that owns the underlying
+     * instance to which the volume is attached.</p> <p>This parameter is returned only
+     * for volumes that are attached to Fargate tasks.</p>
+     */
+    inline void SetInstanceOwningService(const char* value) { m_instanceOwningServiceHasBeenSet = true; m_instanceOwningService.assign(value); }
+
+    /**
+     * <p>The service principal of Amazon Web Services service that owns the underlying
+     * instance to which the volume is attached.</p> <p>This parameter is returned only
+     * for volumes that are attached to Fargate tasks.</p>
+     */
+    inline VolumeAttachment& WithInstanceOwningService(const Aws::String& value) { SetInstanceOwningService(value); return *this;}
+
+    /**
+     * <p>The service principal of Amazon Web Services service that owns the underlying
+     * instance to which the volume is attached.</p> <p>This parameter is returned only
+     * for volumes that are attached to Fargate tasks.</p>
+     */
+    inline VolumeAttachment& WithInstanceOwningService(Aws::String&& value) { SetInstanceOwningService(std::move(value)); return *this;}
+
+    /**
+     * <p>The service principal of Amazon Web Services service that owns the underlying
+     * instance to which the volume is attached.</p> <p>This parameter is returned only
+     * for volumes that are attached to Fargate tasks.</p>
+     */
+    inline VolumeAttachment& WithInstanceOwningService(const char* value) { SetInstanceOwningService(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -282,6 +404,12 @@ namespace Model
 
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet = false;
+
+    Aws::String m_associatedResource;
+    bool m_associatedResourceHasBeenSet = false;
+
+    Aws::String m_instanceOwningService;
+    bool m_instanceOwningServiceHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
   };

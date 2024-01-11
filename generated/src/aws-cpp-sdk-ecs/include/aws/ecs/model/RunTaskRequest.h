@@ -16,6 +16,7 @@
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <aws/ecs/model/Tag.h>
+#include <aws/ecs/model/TaskVolumeConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -1485,6 +1486,87 @@ namespace Model
      */
     inline RunTaskRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline const Aws::Vector<TaskVolumeConfiguration>& GetVolumeConfigurations() const{ return m_volumeConfigurations; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline bool VolumeConfigurationsHasBeenSet() const { return m_volumeConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline void SetVolumeConfigurations(const Aws::Vector<TaskVolumeConfiguration>& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline void SetVolumeConfigurations(Aws::Vector<TaskVolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = std::move(value); }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline RunTaskRequest& WithVolumeConfigurations(const Aws::Vector<TaskVolumeConfiguration>& value) { SetVolumeConfigurations(value); return *this;}
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline RunTaskRequest& WithVolumeConfigurations(Aws::Vector<TaskVolumeConfiguration>&& value) { SetVolumeConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline RunTaskRequest& AddVolumeConfigurations(const TaskVolumeConfiguration& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline RunTaskRequest& AddVolumeConfigurations(TaskVolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
@@ -1540,6 +1622,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::Vector<TaskVolumeConfiguration> m_volumeConfigurations;
+    bool m_volumeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

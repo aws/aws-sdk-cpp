@@ -28,7 +28,9 @@ VolumeAttachment::VolumeAttachment() :
     m_stateHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+    m_deleteOnTerminationHasBeenSet(false),
+    m_associatedResourceHasBeenSet(false),
+    m_instanceOwningServiceHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ VolumeAttachment::VolumeAttachment(const XmlNode& xmlNode) :
     m_stateHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
+    m_deleteOnTerminationHasBeenSet(false),
+    m_associatedResourceHasBeenSet(false),
+    m_instanceOwningServiceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -87,6 +91,18 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
     }
+    XmlNode associatedResourceNode = resultNode.FirstChild("associatedResource");
+    if(!associatedResourceNode.IsNull())
+    {
+      m_associatedResource = Aws::Utils::Xml::DecodeEscapedXmlText(associatedResourceNode.GetText());
+      m_associatedResourceHasBeenSet = true;
+    }
+    XmlNode instanceOwningServiceNode = resultNode.FirstChild("instanceOwningService");
+    if(!instanceOwningServiceNode.IsNull())
+    {
+      m_instanceOwningService = Aws::Utils::Xml::DecodeEscapedXmlText(instanceOwningServiceNode.GetText());
+      m_instanceOwningServiceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -124,6 +140,16 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 
+  if(m_associatedResourceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssociatedResource=" << StringUtils::URLEncode(m_associatedResource.c_str()) << "&";
+  }
+
+  if(m_instanceOwningServiceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceOwningService=" << StringUtils::URLEncode(m_instanceOwningService.c_str()) << "&";
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -154,6 +180,14 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
+  }
+  if(m_associatedResourceHasBeenSet)
+  {
+      oStream << location << ".AssociatedResource=" << StringUtils::URLEncode(m_associatedResource.c_str()) << "&";
+  }
+  if(m_instanceOwningServiceHasBeenSet)
+  {
+      oStream << location << ".InstanceOwningService=" << StringUtils::URLEncode(m_instanceOwningService.c_str()) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

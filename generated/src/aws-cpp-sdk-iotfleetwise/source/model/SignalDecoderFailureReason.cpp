@@ -35,7 +35,6 @@ namespace Aws
         static const int NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL_HASH = HashingUtils::HashString("NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL");
         static const int SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG_HASH = HashingUtils::HashString("SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG");
         static const int EMPTY_MESSAGE_SIGNAL_HASH = HashingUtils::HashString("EMPTY_MESSAGE_SIGNAL");
-        static const int CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL_HASH = HashingUtils::HashString("CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL");
 
 
         SignalDecoderFailureReason GetSignalDecoderFailureReasonForName(const Aws::String& name)
@@ -101,10 +100,6 @@ namespace Aws
           {
             return SignalDecoderFailureReason::EMPTY_MESSAGE_SIGNAL;
           }
-          else if (hashCode == CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL_HASH)
-          {
-            return SignalDecoderFailureReason::CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL;
-          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -151,8 +146,6 @@ namespace Aws
             return "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG";
           case SignalDecoderFailureReason::EMPTY_MESSAGE_SIGNAL:
             return "EMPTY_MESSAGE_SIGNAL";
-          case SignalDecoderFailureReason::CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL:
-            return "CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

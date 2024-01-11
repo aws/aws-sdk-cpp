@@ -175,6 +175,12 @@ namespace ECS
          * associated with the service. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * load balancing</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>You can attach Amazon EBS volumes to Amazon ECS tasks by
+         * configuring the volume when creating or updating a service.
+         * <code>volumeConfigurations</code> is only supported for REPLICA service and not
+         * DAEMON service. For more infomation, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>Tasks for services that don't use a load balancer are
          * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
          * services that use a load balancer are considered healthy if they're in the
@@ -1453,23 +1459,27 @@ namespace ECS
          * customers will not be able to launch instances with Amazon EI accelerators in
          * Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used
          * Amazon EI at least once during the past 30-day period are considered current
-         * customers and will be able to continue using the service. </p>  <p>The
-         * Amazon ECS API follows an eventual consistency model. This is because of the
-         * distributed nature of the system supporting the API. This means that the result
-         * of an API command you run that affects your Amazon ECS resources might not be
-         * immediately visible to all subsequent commands you run. Keep this in mind when
-         * you carry out an API command that immediately follows a previous API
-         * command.</p> <p>To manage eventual consistency, you can do the following:</p>
-         * <ul> <li> <p>Confirm the state of the resource before you run a command to
-         * modify it. Run the DescribeTasks command using an exponential backoff algorithm
-         * to ensure that you allow enough time for the previous command to propagate
-         * through the system. To do this, run the DescribeTasks command repeatedly,
-         * starting with a couple of seconds of wait time and increasing gradually up to
-         * five minutes of wait time.</p> </li> <li> <p>Add wait time between subsequent
-         * commands, even if the DescribeTasks command returns an accurate response. Apply
-         * an exponential backoff algorithm starting with a couple of seconds of wait time,
-         * and increase gradually up to about five minutes of wait time.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * customers and will be able to continue using the service. </p>  <p>You
+         * can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+         * creating or updating a service. For more infomation, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>The Amazon ECS API follows an eventual consistency model. This
+         * is because of the distributed nature of the system supporting the API. This
+         * means that the result of an API command you run that affects your Amazon ECS
+         * resources might not be immediately visible to all subsequent commands you run.
+         * Keep this in mind when you carry out an API command that immediately follows a
+         * previous API command.</p> <p>To manage eventual consistency, you can do the
+         * following:</p> <ul> <li> <p>Confirm the state of the resource before you run a
+         * command to modify it. Run the DescribeTasks command using an exponential backoff
+         * algorithm to ensure that you allow enough time for the previous command to
+         * propagate through the system. To do this, run the DescribeTasks command
+         * repeatedly, starting with a couple of seconds of wait time and increasing
+         * gradually up to five minutes of wait time.</p> </li> <li> <p>Add wait time
+         * between subsequent commands, even if the DescribeTasks command returns an
+         * accurate response. Apply an exponential backoff algorithm starting with a couple
+         * of seconds of wait time, and increase gradually up to about five minutes of wait
+         * time.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
          * Reference</a></p>
          */
@@ -1505,7 +1515,11 @@ namespace ECS
          * to continue using the service. </p>  <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
-         * Tasks</a> in the <i>Amazon Elastic Container Service Developer
+         * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+         * <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the
+         * volume when creating or updating a service. For more infomation, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
          * Reference</a></p>
@@ -1895,13 +1909,25 @@ namespace ECS
          * configuration, network configuration, load balancers, service registries, enable
          * ECS managed tags option, propagate tags option, task placement constraints and
          * strategies, and task definition. When you update any of these parameters, Amazon
-         * ECS starts new tasks with the new configuration. </p> <p>For services using the
-         * blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired
-         * count, deployment configuration, health check grace period, task placement
-         * constraints and strategies, enable ECS managed tags option, and propagate tags
-         * can be updated using this API. If the network configuration, platform version,
-         * task definition, or load balancer need to be updated, create a new CodeDeploy
-         * deployment. For more information, see <a
+         * ECS starts new tasks with the new configuration. </p> <p>You can attach Amazon
+         * EBS volumes to Amazon ECS tasks by configuring the volume when starting or
+         * running a task, or when creating or updating a service. For more infomation, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+         * You can update your volume configurations and trigger a new deployment.
+         * <code>volumeConfigurations</code> is only supported for REPLICA service and not
+         * DAEMON service. If you leave <code>volumeConfigurations</code>
+         * <code>null</code>, it doesn't trigger a new deployment. For more infomation on
+         * volumes, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
+         * deployment controller, only the desired count, deployment configuration, health
+         * check grace period, task placement constraints and strategies, enable ECS
+         * managed tags option, and propagate tags can be updated using this API. If the
+         * network configuration, platform version, task definition, or load balancer need
+         * to be updated, create a new CodeDeploy deployment. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
          * in the <i>CodeDeploy API Reference</i>.</p> <p>For services using an external
          * deployment controller, you can update only the desired count, task placement
@@ -1912,12 +1938,17 @@ namespace ECS
          * <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from the number of
          * instantiations of a task definition in a service by specifying the cluster that
          * the service is running in and a new <code>desiredCount</code> parameter.</p>
-         * <p>If you have updated the Docker image of your application, you can create a
-         * new task definition with that image and deploy it to your service. The service
-         * scheduler uses the minimum healthy percent and maximum percent parameters (in
-         * the service's deployment configuration) to determine the deployment
-         * strategy.</p>  <p>If your updated Docker image uses the same tag as what
-         * is in the existing task definition for your service (for example,
+         * <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the
+         * volume when starting or running a task, or when creating or updating a service.
+         * For more infomation, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>If you have updated the container image of your application,
+         * you can create a new task definition with that image and deploy it to your
+         * service. The service scheduler uses the minimum healthy percent and maximum
+         * percent parameters (in the service's deployment configuration) to determine the
+         * deployment strategy.</p>  <p>If your updated Docker image uses the same
+         * tag as what is in the existing task definition for your service (for example,
          * <code>my_image:latest</code>), you don't need to create a new revision of your
          * task definition. You can update the service using the
          * <code>forceNewDeployment</code> option. The new tasks launched by the deployment

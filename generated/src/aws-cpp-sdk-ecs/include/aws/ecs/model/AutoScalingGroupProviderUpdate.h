@@ -183,48 +183,42 @@ namespace Model
     /**
      * <p>The managed draining option for the Auto Scaling group capacity provider.
      * When you enable this, Amazon ECS manages and gracefully drains the EC2 container
-     * instances that are in the Auto Scaling group capacity provider.</p> <p>The
-     * default is <code>ENABLED</code>.</p>
+     * instances that are in the Auto Scaling group capacity provider.</p>
      */
     inline const ManagedDraining& GetManagedDraining() const{ return m_managedDraining; }
 
     /**
      * <p>The managed draining option for the Auto Scaling group capacity provider.
      * When you enable this, Amazon ECS manages and gracefully drains the EC2 container
-     * instances that are in the Auto Scaling group capacity provider.</p> <p>The
-     * default is <code>ENABLED</code>.</p>
+     * instances that are in the Auto Scaling group capacity provider.</p>
      */
     inline bool ManagedDrainingHasBeenSet() const { return m_managedDrainingHasBeenSet; }
 
     /**
      * <p>The managed draining option for the Auto Scaling group capacity provider.
      * When you enable this, Amazon ECS manages and gracefully drains the EC2 container
-     * instances that are in the Auto Scaling group capacity provider.</p> <p>The
-     * default is <code>ENABLED</code>.</p>
+     * instances that are in the Auto Scaling group capacity provider.</p>
      */
     inline void SetManagedDraining(const ManagedDraining& value) { m_managedDrainingHasBeenSet = true; m_managedDraining = value; }
 
     /**
      * <p>The managed draining option for the Auto Scaling group capacity provider.
      * When you enable this, Amazon ECS manages and gracefully drains the EC2 container
-     * instances that are in the Auto Scaling group capacity provider.</p> <p>The
-     * default is <code>ENABLED</code>.</p>
+     * instances that are in the Auto Scaling group capacity provider.</p>
      */
     inline void SetManagedDraining(ManagedDraining&& value) { m_managedDrainingHasBeenSet = true; m_managedDraining = std::move(value); }
 
     /**
      * <p>The managed draining option for the Auto Scaling group capacity provider.
      * When you enable this, Amazon ECS manages and gracefully drains the EC2 container
-     * instances that are in the Auto Scaling group capacity provider.</p> <p>The
-     * default is <code>ENABLED</code>.</p>
+     * instances that are in the Auto Scaling group capacity provider.</p>
      */
     inline AutoScalingGroupProviderUpdate& WithManagedDraining(const ManagedDraining& value) { SetManagedDraining(value); return *this;}
 
     /**
      * <p>The managed draining option for the Auto Scaling group capacity provider.
      * When you enable this, Amazon ECS manages and gracefully drains the EC2 container
-     * instances that are in the Auto Scaling group capacity provider.</p> <p>The
-     * default is <code>ENABLED</code>.</p>
+     * instances that are in the Auto Scaling group capacity provider.</p>
      */
     inline AutoScalingGroupProviderUpdate& WithManagedDraining(ManagedDraining&& value) { SetManagedDraining(std::move(value)); return *this;}
 

@@ -152,38 +152,32 @@ namespace Model
 
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline GetSpotPlacementScoresRequest& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
 
     /**
-     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
-     * (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline GetSpotPlacementScoresRequest& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
 

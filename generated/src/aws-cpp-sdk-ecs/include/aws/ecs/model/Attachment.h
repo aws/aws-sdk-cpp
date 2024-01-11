@@ -82,42 +82,50 @@ namespace Model
 
 
     /**
-     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>,
+     * <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>,
+     * <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>,
+     * <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>,
+     * <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>,
+     * <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>,
+     * <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
      */
     inline Attachment& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>,
+     * <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
      */
     inline Attachment& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>,
+     * <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
      */
     inline Attachment& WithType(const char* value) { SetType(value); return *this;}
 
@@ -188,58 +196,106 @@ namespace Model
 
 
     /**
-     * <p>Details of the attachment. For elastic network interfaces, this includes the
-     * network interface ID, the MAC address, the subnet ID, and the private IPv4
-     * address.</p>
+     * <p>Details of the attachment.</p> <p>For elastic network interfaces, this
+     * includes the network interface ID, the MAC address, the subnet ID, and the
+     * private IPv4 address.</p> <p>For Service Connect services, this includes
+     * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
+     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
+     * includes <code>roleArn</code>, <code>encrypted</code>,
+     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
+     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
+     * <code>throughput</code>, and <code>volumeType</code>.</p>
      */
     inline const Aws::Vector<KeyValuePair>& GetDetails() const{ return m_details; }
 
     /**
-     * <p>Details of the attachment. For elastic network interfaces, this includes the
-     * network interface ID, the MAC address, the subnet ID, and the private IPv4
-     * address.</p>
+     * <p>Details of the attachment.</p> <p>For elastic network interfaces, this
+     * includes the network interface ID, the MAC address, the subnet ID, and the
+     * private IPv4 address.</p> <p>For Service Connect services, this includes
+     * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
+     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
+     * includes <code>roleArn</code>, <code>encrypted</code>,
+     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
+     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
+     * <code>throughput</code>, and <code>volumeType</code>.</p>
      */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
-     * <p>Details of the attachment. For elastic network interfaces, this includes the
-     * network interface ID, the MAC address, the subnet ID, and the private IPv4
-     * address.</p>
+     * <p>Details of the attachment.</p> <p>For elastic network interfaces, this
+     * includes the network interface ID, the MAC address, the subnet ID, and the
+     * private IPv4 address.</p> <p>For Service Connect services, this includes
+     * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
+     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
+     * includes <code>roleArn</code>, <code>encrypted</code>,
+     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
+     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
+     * <code>throughput</code>, and <code>volumeType</code>.</p>
      */
     inline void SetDetails(const Aws::Vector<KeyValuePair>& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p>Details of the attachment. For elastic network interfaces, this includes the
-     * network interface ID, the MAC address, the subnet ID, and the private IPv4
-     * address.</p>
+     * <p>Details of the attachment.</p> <p>For elastic network interfaces, this
+     * includes the network interface ID, the MAC address, the subnet ID, and the
+     * private IPv4 address.</p> <p>For Service Connect services, this includes
+     * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
+     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
+     * includes <code>roleArn</code>, <code>encrypted</code>,
+     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
+     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
+     * <code>throughput</code>, and <code>volumeType</code>.</p>
      */
     inline void SetDetails(Aws::Vector<KeyValuePair>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p>Details of the attachment. For elastic network interfaces, this includes the
-     * network interface ID, the MAC address, the subnet ID, and the private IPv4
-     * address.</p>
+     * <p>Details of the attachment.</p> <p>For elastic network interfaces, this
+     * includes the network interface ID, the MAC address, the subnet ID, and the
+     * private IPv4 address.</p> <p>For Service Connect services, this includes
+     * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
+     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
+     * includes <code>roleArn</code>, <code>encrypted</code>,
+     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
+     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
+     * <code>throughput</code>, and <code>volumeType</code>.</p>
      */
     inline Attachment& WithDetails(const Aws::Vector<KeyValuePair>& value) { SetDetails(value); return *this;}
 
     /**
-     * <p>Details of the attachment. For elastic network interfaces, this includes the
-     * network interface ID, the MAC address, the subnet ID, and the private IPv4
-     * address.</p>
+     * <p>Details of the attachment.</p> <p>For elastic network interfaces, this
+     * includes the network interface ID, the MAC address, the subnet ID, and the
+     * private IPv4 address.</p> <p>For Service Connect services, this includes
+     * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
+     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
+     * includes <code>roleArn</code>, <code>encrypted</code>,
+     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
+     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
+     * <code>throughput</code>, and <code>volumeType</code>.</p>
      */
     inline Attachment& WithDetails(Aws::Vector<KeyValuePair>&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Details of the attachment. For elastic network interfaces, this includes the
-     * network interface ID, the MAC address, the subnet ID, and the private IPv4
-     * address.</p>
+     * <p>Details of the attachment.</p> <p>For elastic network interfaces, this
+     * includes the network interface ID, the MAC address, the subnet ID, and the
+     * private IPv4 address.</p> <p>For Service Connect services, this includes
+     * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
+     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
+     * includes <code>roleArn</code>, <code>encrypted</code>,
+     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
+     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
+     * <code>throughput</code>, and <code>volumeType</code>.</p>
      */
     inline Attachment& AddDetails(const KeyValuePair& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
 
     /**
-     * <p>Details of the attachment. For elastic network interfaces, this includes the
-     * network interface ID, the MAC address, the subnet ID, and the private IPv4
-     * address.</p>
+     * <p>Details of the attachment.</p> <p>For elastic network interfaces, this
+     * includes the network interface ID, the MAC address, the subnet ID, and the
+     * private IPv4 address.</p> <p>For Service Connect services, this includes
+     * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
+     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
+     * includes <code>roleArn</code>, <code>encrypted</code>,
+     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
+     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
+     * <code>throughput</code>, and <code>volumeType</code>.</p>
      */
     inline Attachment& AddDetails(KeyValuePair&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 
