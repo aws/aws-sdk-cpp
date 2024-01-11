@@ -59,6 +59,22 @@ Debian based Linux distributions example:
 RPM based Linux distributions example:
    `sudo [yum|dnf|zypper] install libcurl-devel`
 
+### Building for MacOS
+
+Building for mac is largely the same as building on a *nix system except for how the system consumes the curl dependency and compilers.
+
+You must install the [xcode command line tools](https://mac.install.guide/commandlinetools/4.html). This is required for apple clang and gcc. This also installs libcurl as well.
+
+> :warning: If you are using MacOS Sonoma there is a [known issue](https://github.com/aws/aws-sdk-cpp/issues/2804) where using libcurl version 8.4.0 on mac can lead to issues. [This issue is being tracked with curl and apple](https://github.com/curl/curl/issues/12525). In the meanwhile please use and updated version of [curl from homebrew](https://formulae.brew.sh/formula/curl). You can include this in your project via the CMAKE_PREFIX_PATH.
+>
+> ```
+> cmake -DCMAKE_PREFIX_PATH="/opt/homebrew/opt/curl/" \
+>  -DAUTORUN_UNIT_TESTS=OFF \
+>  -DBUILD_ONLY="s3" \
+>  -DCMAKE_INSTALL_PREFIX="~/sdk-install" \
+>  ..
+> ```
+
 ### Building for Android
 To build for Android, add `-DTARGET_ARCH=ANDROID` to your cmake command line. Currently we support Android APIs from 19 to 28 with Android NDK 19c and we are using build-in cmake toolchain file supplied by Android NDK, assuming you have the appropriate environment variables (ANDROID_NDK) set.
 
