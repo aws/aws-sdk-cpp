@@ -72,6 +72,16 @@ AttachVolumeResponse& AttachVolumeResponse::operator =(const Aws::AmazonWebServi
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
     }
+    XmlNode associatedResourceNode = resultNode.FirstChild("associatedResource");
+    if(!associatedResourceNode.IsNull())
+    {
+      m_associatedResource = Aws::Utils::Xml::DecodeEscapedXmlText(associatedResourceNode.GetText());
+    }
+    XmlNode instanceOwningServiceNode = resultNode.FirstChild("instanceOwningService");
+    if(!instanceOwningServiceNode.IsNull())
+    {
+      m_instanceOwningService = Aws::Utils::Xml::DecodeEscapedXmlText(instanceOwningServiceNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

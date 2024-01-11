@@ -405,9 +405,12 @@ namespace SecretsManager
         /**
          * <p>Generates a random password. We recommend that you specify the maximum length
          * and include every character type that the system you are generating a password
-         * for can support.</p> <p>Secrets Manager generates a CloudTrail log entry when
-         * you call this action. Do not include sensitive information in request parameters
-         * because it might be logged. For more information, see <a
+         * for can support. By default, Secrets Manager uses uppercase and lowercase
+         * letters, numbers, and the following characters in passwords:
+         * <code>!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~</code> </p> <p>Secrets
+         * Manager generates a CloudTrail log entry when you call this action. Do not
+         * include sensitive information in request parameters because it might be logged.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
          * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
          * </b> <code>secretsmanager:GetRandomPassword</code>. For more information, see <a
@@ -750,8 +753,12 @@ namespace SecretsManager
          * because it might be logged. For more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
          * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
-         * </b> <code>secretsmanager:ReplicateSecretToRegions</code>. For more information,
-         * see <a
+         * </b> <code>secretsmanager:ReplicateSecretToRegions</code>. If the primary secret
+         * is encrypted with a KMS key other than <code>aws/secretsmanager</code>, you also
+         * need <code>kms:Decrypt</code> permission to the key. To encrypt the replicated
+         * secret with a KMS key other than <code>aws/secretsmanager</code>, you need
+         * <code>kms:GenerateDataKey</code> and <code>kms:Encrypt</code> to the key. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication

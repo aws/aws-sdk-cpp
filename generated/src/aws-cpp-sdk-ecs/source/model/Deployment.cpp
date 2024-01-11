@@ -42,7 +42,8 @@ Deployment::Deployment() :
     m_rolloutStateHasBeenSet(false),
     m_rolloutStateReasonHasBeenSet(false),
     m_serviceConnectConfigurationHasBeenSet(false),
-    m_serviceConnectResourcesHasBeenSet(false)
+    m_serviceConnectResourcesHasBeenSet(false),
+    m_volumeConfigurationsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ Deployment::Deployment(JsonView jsonValue) :
     m_rolloutStateHasBeenSet(false),
     m_rolloutStateReasonHasBeenSet(false),
     m_serviceConnectConfigurationHasBeenSet(false),
-    m_serviceConnectResourcesHasBeenSet(false)
+    m_serviceConnectResourcesHasBeenSet(false),
+    m_volumeConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -209,6 +211,16 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_serviceConnectResourcesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("volumeConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> volumeConfigurationsJsonList = jsonValue.GetArray("volumeConfigurations");
+    for(unsigned volumeConfigurationsIndex = 0; volumeConfigurationsIndex < volumeConfigurationsJsonList.GetLength(); ++volumeConfigurationsIndex)
+    {
+      m_volumeConfigurations.push_back(volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject());
+    }
+    m_volumeConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -327,6 +339,17 @@ JsonValue Deployment::Jsonize() const
      serviceConnectResourcesJsonList[serviceConnectResourcesIndex].AsObject(m_serviceConnectResources[serviceConnectResourcesIndex].Jsonize());
    }
    payload.WithArray("serviceConnectResources", std::move(serviceConnectResourcesJsonList));
+
+  }
+
+  if(m_volumeConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> volumeConfigurationsJsonList(m_volumeConfigurations.size());
+   for(unsigned volumeConfigurationsIndex = 0; volumeConfigurationsIndex < volumeConfigurationsJsonList.GetLength(); ++volumeConfigurationsIndex)
+   {
+     volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject(m_volumeConfigurations[volumeConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("volumeConfigurations", std::move(volumeConfigurationsJsonList));
 
   }
 

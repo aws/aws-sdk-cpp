@@ -529,37 +529,43 @@ namespace Model
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline const Aws::Utils::DateTime& GetNextRotationDate() const{ return m_nextRotationDate; }
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline bool NextRotationDateHasBeenSet() const { return m_nextRotationDateHasBeenSet; }
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline void SetNextRotationDate(const Aws::Utils::DateTime& value) { m_nextRotationDateHasBeenSet = true; m_nextRotationDate = value; }
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline void SetNextRotationDate(Aws::Utils::DateTime&& value) { m_nextRotationDateHasBeenSet = true; m_nextRotationDate = std::move(value); }
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline SecretListEntry& WithNextRotationDate(const Aws::Utils::DateTime& value) { SetNextRotationDate(value); return *this;}
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline SecretListEntry& WithNextRotationDate(Aws::Utils::DateTime&& value) { SetNextRotationDate(std::move(value)); return *this;}
 

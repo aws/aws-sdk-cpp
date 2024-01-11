@@ -145,56 +145,56 @@ namespace Model
 
     /**
      * <p>The decrypted secret value, if the secret value was originally provided as
-     * binary data in the form of a byte array. The response parameter represents the
-     * binary data as a <a
-     * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>If the secret was created by using the Secrets Manager console,
-     * or if the secret value was originally provided as a string, then this field is
-     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
+     * binary data in the form of a byte array. When you retrieve a
+     * <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
+     * <p>If the secret was created by using the Secrets Manager console, or if the
+     * secret value was originally provided as a string, then this field is omitted.
+     * The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
 
     /**
      * <p>The decrypted secret value, if the secret value was originally provided as
-     * binary data in the form of a byte array. The response parameter represents the
-     * binary data as a <a
-     * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>If the secret was created by using the Secrets Manager console,
-     * or if the secret value was originally provided as a string, then this field is
-     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
+     * binary data in the form of a byte array. When you retrieve a
+     * <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
+     * <p>If the secret was created by using the Secrets Manager console, or if the
+     * secret value was originally provided as a string, then this field is omitted.
+     * The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline void SetSecretBinary(const Aws::Utils::CryptoBuffer& value) { m_secretBinary = value; }
 
     /**
      * <p>The decrypted secret value, if the secret value was originally provided as
-     * binary data in the form of a byte array. The response parameter represents the
-     * binary data as a <a
-     * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>If the secret was created by using the Secrets Manager console,
-     * or if the secret value was originally provided as a string, then this field is
-     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
+     * binary data in the form of a byte array. When you retrieve a
+     * <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
+     * <p>If the secret was created by using the Secrets Manager console, or if the
+     * secret value was originally provided as a string, then this field is omitted.
+     * The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline void SetSecretBinary(Aws::Utils::CryptoBuffer&& value) { m_secretBinary = std::move(value); }
 
     /**
      * <p>The decrypted secret value, if the secret value was originally provided as
-     * binary data in the form of a byte array. The response parameter represents the
-     * binary data as a <a
-     * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>If the secret was created by using the Secrets Manager console,
-     * or if the secret value was originally provided as a string, then this field is
-     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
+     * binary data in the form of a byte array. When you retrieve a
+     * <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
+     * <p>If the secret was created by using the Secrets Manager console, or if the
+     * secret value was originally provided as a string, then this field is omitted.
+     * The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline GetSecretValueResult& WithSecretBinary(const Aws::Utils::CryptoBuffer& value) { SetSecretBinary(value); return *this;}
 
     /**
      * <p>The decrypted secret value, if the secret value was originally provided as
-     * binary data in the form of a byte array. The response parameter represents the
-     * binary data as a <a
-     * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>If the secret was created by using the Secrets Manager console,
-     * or if the secret value was originally provided as a string, then this field is
-     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
+     * binary data in the form of a byte array. When you retrieve a
+     * <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
+     * <p>If the secret was created by using the Secrets Manager console, or if the
+     * secret value was originally provided as a string, then this field is omitted.
+     * The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline GetSecretValueResult& WithSecretBinary(Aws::Utils::CryptoBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
 

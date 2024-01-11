@@ -17,6 +17,7 @@
 #include <aws/eventbridge/model/SageMakerPipelineParameters.h>
 #include <aws/eventbridge/model/DeadLetterConfig.h>
 #include <aws/eventbridge/model/RetryPolicy.h>
+#include <aws/eventbridge/model/AppSyncParameters.h>
 #include <utility>
 
 namespace Aws
@@ -851,6 +852,43 @@ namespace Model
      */
     inline Target& WithRetryPolicy(RetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains the GraphQL operation to be parsed and executed, if the event target
+     * is an AppSync API.</p>
+     */
+    inline const AppSyncParameters& GetAppSyncParameters() const{ return m_appSyncParameters; }
+
+    /**
+     * <p>Contains the GraphQL operation to be parsed and executed, if the event target
+     * is an AppSync API.</p>
+     */
+    inline bool AppSyncParametersHasBeenSet() const { return m_appSyncParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the GraphQL operation to be parsed and executed, if the event target
+     * is an AppSync API.</p>
+     */
+    inline void SetAppSyncParameters(const AppSyncParameters& value) { m_appSyncParametersHasBeenSet = true; m_appSyncParameters = value; }
+
+    /**
+     * <p>Contains the GraphQL operation to be parsed and executed, if the event target
+     * is an AppSync API.</p>
+     */
+    inline void SetAppSyncParameters(AppSyncParameters&& value) { m_appSyncParametersHasBeenSet = true; m_appSyncParameters = std::move(value); }
+
+    /**
+     * <p>Contains the GraphQL operation to be parsed and executed, if the event target
+     * is an AppSync API.</p>
+     */
+    inline Target& WithAppSyncParameters(const AppSyncParameters& value) { SetAppSyncParameters(value); return *this;}
+
+    /**
+     * <p>Contains the GraphQL operation to be parsed and executed, if the event target
+     * is an AppSync API.</p>
+     */
+    inline Target& WithAppSyncParameters(AppSyncParameters&& value) { SetAppSyncParameters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -900,6 +938,9 @@ namespace Model
 
     RetryPolicy m_retryPolicy;
     bool m_retryPolicyHasBeenSet = false;
+
+    AppSyncParameters m_appSyncParameters;
+    bool m_appSyncParametersHasBeenSet = false;
   };
 
 } // namespace Model

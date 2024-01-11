@@ -18,8 +18,7 @@ namespace Model
     NOT_SET,
     CAN_SIGNAL,
     OBD_SIGNAL,
-    MESSAGE_SIGNAL,
-    CUSTOMER_DECODED_SIGNAL
+    MESSAGE_SIGNAL
   };
 
 namespace SignalDecoderTypeMapper

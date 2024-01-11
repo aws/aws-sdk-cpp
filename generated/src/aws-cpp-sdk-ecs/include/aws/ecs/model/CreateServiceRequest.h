@@ -21,6 +21,7 @@
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <aws/ecs/model/Tag.h>
+#include <aws/ecs/model/ServiceVolumeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -2154,6 +2155,63 @@ namespace Model
      */
     inline CreateServiceRequest& WithServiceConnectConfiguration(ServiceConnectConfiguration&& value) { SetServiceConnectConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline const Aws::Vector<ServiceVolumeConfiguration>& GetVolumeConfigurations() const{ return m_volumeConfigurations; }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline bool VolumeConfigurationsHasBeenSet() const { return m_volumeConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline void SetVolumeConfigurations(const Aws::Vector<ServiceVolumeConfiguration>& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline void SetVolumeConfigurations(Aws::Vector<ServiceVolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = std::move(value); }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline CreateServiceRequest& WithVolumeConfigurations(const Aws::Vector<ServiceVolumeConfiguration>& value) { SetVolumeConfigurations(value); return *this;}
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline CreateServiceRequest& WithVolumeConfigurations(Aws::Vector<ServiceVolumeConfiguration>&& value) { SetVolumeConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline CreateServiceRequest& AddVolumeConfigurations(const ServiceVolumeConfiguration& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline CreateServiceRequest& AddVolumeConfigurations(ServiceVolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cluster;
@@ -2224,6 +2282,9 @@ namespace Model
 
     ServiceConnectConfiguration m_serviceConnectConfiguration;
     bool m_serviceConnectConfigurationHasBeenSet = false;
+
+    Aws::Vector<ServiceVolumeConfiguration> m_volumeConfigurations;
+    bool m_volumeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

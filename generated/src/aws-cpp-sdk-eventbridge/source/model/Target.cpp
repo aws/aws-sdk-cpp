@@ -34,7 +34,8 @@ Target::Target() :
     m_redshiftDataParametersHasBeenSet(false),
     m_sageMakerPipelineParametersHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_appSyncParametersHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ Target::Target(JsonView jsonValue) :
     m_redshiftDataParametersHasBeenSet(false),
     m_sageMakerPipelineParametersHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_appSyncParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -173,6 +175,13 @@ Target& Target::operator =(JsonView jsonValue)
     m_retryPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AppSyncParameters"))
+  {
+    m_appSyncParameters = jsonValue.GetObject("AppSyncParameters");
+
+    m_appSyncParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -273,6 +282,12 @@ JsonValue Target::Jsonize() const
   if(m_retryPolicyHasBeenSet)
   {
    payload.WithObject("RetryPolicy", m_retryPolicy.Jsonize());
+
+  }
+
+  if(m_appSyncParametersHasBeenSet)
+  {
+   payload.WithObject("AppSyncParameters", m_appSyncParameters.Jsonize());
 
   }
 
