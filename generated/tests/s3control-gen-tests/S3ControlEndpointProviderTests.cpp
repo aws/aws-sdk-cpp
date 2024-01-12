@@ -244,25 +244,34 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 19*/
-  {"outpost access points do not support dualstack@us-west-2", // documentation
+  {"outpost access points support dualstack@us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid configuration: Outpost Access Points do not support dual-stack"} // expect
+    {{/*epUrl*/"https://s3-outposts.us-west-2.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 20*/
-  {"outpost access points do not support dualstack@cn-north-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
-     EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid configuration: Outpost Access Points do not support dual-stack"} // expect
-  },
-  /*TEST CASE 21*/
-  {"outpost access points do not support dualstack@af-south-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
+  {"outpost access points support dualstack@af-south-1", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "af-south-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid configuration: Outpost Access Points do not support dual-stack"} // expect
+    {{/*epUrl*/"https://s3-outposts.af-south-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 21*/
+  {"outpost access points support fips + dualstack@af-south-1", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
+     EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "af-south-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://s3-outposts-fips.af-south-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 22*/
   {"invalid ARN: must be include outpost ID@us-west-2", // documentation
@@ -388,6 +397,16 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 36*/
+  {"ListRegionalBucket + OutpostId + fips + dualstack@us-east-2", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("OutpostId", "op-123"), EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-2"),
+     EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://s3-outposts-fips.us-east-2.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 37*/
   {"CreateBucket + OutpostId endpoint url@us-east-2", // documentation
     {EpParam("RequiresAccountId", false), EpParam("OutpostId", "123"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://beta.example.com"), EpParam("Bucket", "blah"),
      EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
@@ -397,19 +416,12 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 37*/
+  /*TEST CASE 38*/
   {"dualstack cannot be used with outposts when an endpoint URL is set@us-west-2.", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
-     EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
+     EpParam("UseFIPS", false), EpParam("Endpoint", "https://s3-outposts.us-west-2.api.aws"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid configuration: Outpost Access Points do not support dual-stack"} // expect
-  },
-  /*TEST CASE 38*/
-  {"Dual-stack cannot be used with outposts@us-west-2", // documentation
-    {EpParam("RequiresAccountId", false), EpParam("OutpostId", "op-123"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"), EpParam("Bucket", "bucketname"),
-     EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid configuration: Outposts do not support dual-stack"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: DualStack and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 39*/
   {"vanilla bucket arn requires account id@us-west-2", // documentation
@@ -462,11 +474,14 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 44*/
-  {"Outposts do not support dualstack@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
-     EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
+  {"bucket ARN in aws partition with fips + dualstack@us-east-2", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("Bucket", "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+     EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid configuration: Outpost buckets do not support dual-stack"} // expect
+    {{/*epUrl*/"https://s3-outposts-fips.us-east-2.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 45*/
   {"vanilla bucket arn requires account id@cn-north-1", // documentation
@@ -519,11 +534,14 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 50*/
-  {"Outposts do not support dualstack@us-west-2", // documentation
+  {"Outposts support dualstack @us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid configuration: Outpost buckets do not support dual-stack"} // expect
+    {{/*epUrl*/"https://s3-outposts.us-west-2.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 51*/
   {"vanilla bucket arn requires account id@af-south-1", // documentation
@@ -576,41 +594,34 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
   /*TEST CASE 56*/
-  {"Outposts do not support dualstack@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
-     EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid configuration: Outpost buckets do not support dual-stack"} // expect
-  },
-  /*TEST CASE 57*/
   {"Invalid ARN: missing outpost id and bucket@us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost"), EpParam("Region", "us-west-2"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: The Outpost Id was not set"} // expect
   },
-  /*TEST CASE 58*/
+  /*TEST CASE 57*/
   {"Invalid ARN: missing bucket@us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Expected a 4-component resource"} // expect
   },
-  /*TEST CASE 59*/
+  /*TEST CASE 58*/
   {"Invalid ARN: missing outpost and bucket ids@us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:bucket"), EpParam("Region", "us-west-2"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: Expected a 4-component resource"} // expect
   },
-  /*TEST CASE 60*/
+  /*TEST CASE 59*/
   {"Invalid ARN: missing bucket id@us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: expected a bucket name"} // expect
   },
-  /*TEST CASE 61*/
+  /*TEST CASE 60*/
   {"account id inserted into hostname@us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "1234567890"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -619,7 +630,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 62*/
+  /*TEST CASE 61*/
   {"account id prefix with dualstack@us-east-1", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "1234567890"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -628,7 +639,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 63*/
+  /*TEST CASE 62*/
   {"account id prefix with fips@us-east-1", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "1234567890"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -637,7 +648,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 64*/
+  /*TEST CASE 63*/
   {"custom account id prefix with fips@us-east-1", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -646,7 +657,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 65*/
+  /*TEST CASE 64*/
   {"standard url @ us-east-1", // documentation
     {EpParam("Region", "us-east-1")}, // params
     {}, // tags
@@ -655,7 +666,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 66*/
+  /*TEST CASE 65*/
   {"fips url @ us-east-1", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1")}, // params
     {}, // tags
@@ -664,7 +675,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 67*/
+  /*TEST CASE 66*/
   {"dualstack url @ us-east-1", // documentation
     {EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -673,7 +684,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 68*/
+  /*TEST CASE 67*/
   {"fips,dualstack url @ us-east-1", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -682,7 +693,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 69*/
+  /*TEST CASE 68*/
   {"standard url @ cn-north-1", // documentation
     {EpParam("Region", "cn-north-1")}, // params
     {}, // tags
@@ -691,13 +702,13 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 70*/
+  /*TEST CASE 69*/
   {"fips @ cn-north-1", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
-  /*TEST CASE 71*/
+  /*TEST CASE 70*/
   {"custom account id prefix @us-east-1", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -706,13 +717,13 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 72*/
+  /*TEST CASE 71*/
   {"invalid account id prefix @us-east-1", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "/?invalid&not-host*label"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"AccountId must only contain a-z, A-Z, 0-9 and `-`."} // expect
   },
-  /*TEST CASE 73*/
+  /*TEST CASE 72*/
   {"custom account id prefix with fips@us-east-1", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -721,7 +732,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 74*/
+  /*TEST CASE 73*/
   {"custom account id prefix with dualstack,fips@us-east-1", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -730,7 +741,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 75*/
+  /*TEST CASE 74*/
   {"custom account id with custom endpoint", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccountId", "123456789012"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
@@ -739,29 +750,38 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 76*/
+  /*TEST CASE 75*/
   {"RequiresAccountId with AccountId unset", // documentation
     {EpParam("RequiresAccountId", true), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"AccountId is required but not set"} // expect
   },
-  /*TEST CASE 77*/
+  /*TEST CASE 76*/
   {"RequiresAccountId with AccountId unset and custom endpoint", // documentation
     {EpParam("RequiresAccountId", true), EpParam("Endpoint", "https://beta.example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"AccountId is required but not set"} // expect
   },
-  /*TEST CASE 78*/
+  /*TEST CASE 77*/
   {"RequiresAccountId with invalid AccountId and custom endpoint", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccountId", "/?invalid&not-host*label"), EpParam("Endpoint", "https://beta.example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"AccountId must only contain a-z, A-Z, 0-9 and `-`."} // expect
   },
-  /*TEST CASE 79*/
+  /*TEST CASE 78*/
   {"account id with custom endpoint, fips", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", true), EpParam("AccountId", "123456789012"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://123456789012.example.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 79*/
+  {"custom endpoint, fips", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://example.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -776,66 +796,57 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 81*/
-  {"custom endpoint, fips", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 82*/
   {"custom endpoint, DualStack", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: DualStack and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 83*/
+  /*TEST CASE 82*/
   {"region not set", // documentation
     {}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Region must be set"} // expect
   },
-  /*TEST CASE 84*/
+  /*TEST CASE 83*/
   {"invalid partition", // documentation
     {EpParam("Region", "invalid-region 42")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid region: region was not a valid DNS name."} // expect
   },
-  /*TEST CASE 85*/
+  /*TEST CASE 84*/
   {"ListRegionalBuckets + OutpostId without accountId set.", // documentation
     {EpParam("RequiresAccountId", true), EpParam("OutpostId", "op-123"), EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"AccountId is required but not set"} // expect
   },
-  /*TEST CASE 86*/
+  /*TEST CASE 85*/
   {"ListRegionalBuckets + OutpostId with invalid accountId set.", // documentation
     {EpParam("RequiresAccountId", true), EpParam("OutpostId", "op-123"), EpParam("UseFIPS", false), EpParam("AccountId", "/?invalid&not-host*label"), EpParam("Region", "us-east-2"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"AccountId must only contain a-z, A-Z, 0-9 and `-`."} // expect
   },
-  /*TEST CASE 87*/
+  /*TEST CASE 86*/
   {"accesspoint set but missing accountId", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "myaccesspoint"), EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"AccountId is required but not set"} // expect
   },
-  /*TEST CASE 88*/
+  /*TEST CASE 87*/
   {"outpost accesspoint ARN with missing accountId", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-west-2::outpost:op-01234567890123456:outpost:op1"), EpParam("UseFIPS", false),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: missing account ID"} // expect
   },
-  /*TEST CASE 89*/
+  /*TEST CASE 88*/
   {"bucket ARN with missing accountId", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-west-2::outpost:op-01234567890123456:bucket:mybucket"), EpParam("UseFIPS", false),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: missing account ID"} // expect
   },
-  /*TEST CASE 90*/
+  /*TEST CASE 89*/
   {"endpoint url with accesspoint (non-arn)", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "apname"), EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Endpoint", "https://beta.example.com"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
@@ -845,7 +856,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 91*/
+  /*TEST CASE 90*/
   {"access point name with an accesspoint arn@us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
@@ -855,49 +866,49 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 92*/
+  /*TEST CASE 91*/
   {"DualStack + Custom endpoint is not supported(non-arn)", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "apname"), EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Endpoint", "https://beta.example.com"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: DualStack and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 93*/
-  {"get bucket with endpoint_url and dualstack is not supported@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+  /*TEST CASE 92*/
+  {"get bucket with custom endpoint and dualstack is not supported@us-west-2", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Endpoint", "https://s3-outposts.us-west-2.api.aws"), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid configuration: Outpost buckets do not support dual-stack"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: DualStack and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 94*/
+  /*TEST CASE 93*/
   {"ListRegionalBuckets + OutpostId with fips in CN.", // documentation
     {EpParam("RequiresAccountId", true), EpParam("OutpostId", "op-123"), EpParam("UseFIPS", true), EpParam("AccountId", "0123456789012"), EpParam("Region", "cn-north-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
-  /*TEST CASE 95*/
+  /*TEST CASE 94*/
   {"ListRegionalBuckets + invalid OutpostId.", // documentation
     {EpParam("RequiresAccountId", true), EpParam("OutpostId", "?outpost/invalid+"), EpParam("UseFIPS", false), EpParam("AccountId", "0123456789012"), EpParam("Region", "us-west-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"OutpostId must only contain a-z, A-Z, 0-9 and `-`."} // expect
   },
-  /*TEST CASE 96*/
+  /*TEST CASE 95*/
   {"bucket ARN with mismatched accountId", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("AccountId", "0123456789012"), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:999999:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`)"} // expect
   },
-  /*TEST CASE 97*/
+  /*TEST CASE 96*/
   {"OutpostId with invalid region", // documentation
     {EpParam("RequiresAccountId", true), EpParam("OutpostId", "op-123"), EpParam("UseFIPS", false), EpParam("AccountId", "0123456"), EpParam("Region", "invalid-region 42"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid region: region was not a valid DNS name."} // expect
   },
-  /*TEST CASE 98*/
+  /*TEST CASE 97*/
   {"OutpostId with RequireAccountId unset", // documentation
     {EpParam("OutpostId", "op-123"), EpParam("UseFIPS", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -906,21 +917,21 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 99*/
+  /*TEST CASE 98*/
   {"Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("UseArnRegion", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"} // expect
   },
-  /*TEST CASE 100*/
+  /*TEST CASE 99*/
   {"Outpost Bucket ARN with arn region and client region mismatch with UseArnRegion=false", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"), EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("UseArnRegion", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"} // expect
   },
-  /*TEST CASE 101*/
+  /*TEST CASE 100*/
   {"Accesspoint ARN with region mismatch and UseArnRegion unset", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
@@ -930,7 +941,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 102*/
+  /*TEST CASE 101*/
   {"Bucket ARN with region mismatch and UseArnRegion unset", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
@@ -940,28 +951,28 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 103*/
+  /*TEST CASE 102*/
   {"Outpost Bucket ARN with partition mismatch with UseArnRegion=true", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("UseArnRegion", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Client was configured for partition `aws` but ARN has `aws-cn`"} // expect
   },
-  /*TEST CASE 104*/
+  /*TEST CASE 103*/
   {"Accesspoint ARN with partition mismatch and UseArnRegion=true", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseFIPS", false), EpParam("AccountId", "123456789012"), EpParam("UseArnRegion", true), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Client was configured for partition `aws` but ARN has `aws-cn`"} // expect
   },
-  /*TEST CASE 105*/
+  /*TEST CASE 104*/
   {"Accesspoint ARN with region mismatch, UseArnRegion=false and custom endpoint", // documentation
     {EpParam("RequiresAccountId", true), EpParam("AccessPointName", "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("UseArnRegion", false), EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false`"} // expect
   },
-  /*TEST CASE 106*/
+  /*TEST CASE 105*/
   {"outpost bucket arn@us-west-2", // documentation
     {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
@@ -971,7 +982,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 107*/
+  /*TEST CASE 106*/
   {"S3 Snow Control with bucket", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -980,7 +991,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 108*/
+  /*TEST CASE 107*/
   {"S3 Snow Control without bucket", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -989,7 +1000,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 109*/
+  /*TEST CASE 108*/
   {"S3 Snow Control with bucket and without port", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -998,7 +1009,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 110*/
+  /*TEST CASE 109*/
   {"S3 Snow Control with bucket and with DNS", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "http://s3snow.com"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1007,13 +1018,13 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 111*/
+  /*TEST CASE 110*/
   {"S3 Snow Control with FIPS enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3 Snow does not support FIPS"} // expect
   },
-  /*TEST CASE 112*/
+  /*TEST CASE 111*/
   {"S3 Snow Control with Dualstack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("UseDualStack", true)}, // params
     {}, // tags

@@ -375,9 +375,9 @@ namespace Model
      * <p>The filters to apply to returned metrics. You can filter on the following
      * resources:</p> <ul> <li> <p>Queues</p> </li> <li> <p>Routing profiles</p> </li>
      * <li> <p>Agents</p> </li> <li> <p>Channels</p> </li> <li> <p>User hierarchy
-     * groups</p> </li> <li> <p>Feature</p> </li> </ul> <p>At least one filter must be
-     * passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-     * <p>To filter by phone number, see <a
+     * groups</p> </li> <li> <p>Feature</p> </li> <li> <p>Routing step expression</p>
+     * </li> </ul> <p>At least one filter must be passed from queues, routing profiles,
+     * agents, or user hierarchy groups.</p> <p>To filter by phone number, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
      * a historical metrics report</a> in the <i>Amazon Connect Administrator's
      * Guide</i>.</p> <p>Note the following limits:</p> <ul> <li> <p> <b>Filter
@@ -388,20 +388,21 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p> </li> <li> <p>
-     * <b>Filter values</b>: A maximum of 100 filter values are supported in a single
-     * request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the
-     * CHANNEL filter key. They do not count towards limitation of 100 filter values.
-     * For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and
-     * 15 routing profiles for a total of 100 filter values, along with 3 channel
-     * filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid
-     * filterValue for the <code>FEATURE</code> filter key. It is available only to
-     * contacts analyzed by Contact Lens conversational analytics.</p> <p>
-     * <code>connect:Chat</code>, <code>connect:SMS</code>,
-     * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
-     * <code>filterValue</code> examples (not exhaustive) for the
-     * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
-     * </ul>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p> </li> <li> <p> <b>Filter values</b>: A
+     * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
+     * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
+     * count towards limitation of 100 filter values. For example, a GetMetricDataV2
+     * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
+     * of 100 filter values, along with 3 channel filters. </p> <p>
+     * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
+     * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
+     * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
+     * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
+     * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
+     * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
+     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
+     * filter value up to 3000 length.</p> </li> </ul>
      */
     inline const Aws::Vector<FilterV2>& GetFilters() const{ return m_filters; }
 
@@ -409,9 +410,9 @@ namespace Model
      * <p>The filters to apply to returned metrics. You can filter on the following
      * resources:</p> <ul> <li> <p>Queues</p> </li> <li> <p>Routing profiles</p> </li>
      * <li> <p>Agents</p> </li> <li> <p>Channels</p> </li> <li> <p>User hierarchy
-     * groups</p> </li> <li> <p>Feature</p> </li> </ul> <p>At least one filter must be
-     * passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-     * <p>To filter by phone number, see <a
+     * groups</p> </li> <li> <p>Feature</p> </li> <li> <p>Routing step expression</p>
+     * </li> </ul> <p>At least one filter must be passed from queues, routing profiles,
+     * agents, or user hierarchy groups.</p> <p>To filter by phone number, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
      * a historical metrics report</a> in the <i>Amazon Connect Administrator's
      * Guide</i>.</p> <p>Note the following limits:</p> <ul> <li> <p> <b>Filter
@@ -422,20 +423,21 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p> </li> <li> <p>
-     * <b>Filter values</b>: A maximum of 100 filter values are supported in a single
-     * request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the
-     * CHANNEL filter key. They do not count towards limitation of 100 filter values.
-     * For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and
-     * 15 routing profiles for a total of 100 filter values, along with 3 channel
-     * filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid
-     * filterValue for the <code>FEATURE</code> filter key. It is available only to
-     * contacts analyzed by Contact Lens conversational analytics.</p> <p>
-     * <code>connect:Chat</code>, <code>connect:SMS</code>,
-     * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
-     * <code>filterValue</code> examples (not exhaustive) for the
-     * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
-     * </ul>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p> </li> <li> <p> <b>Filter values</b>: A
+     * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
+     * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
+     * count towards limitation of 100 filter values. For example, a GetMetricDataV2
+     * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
+     * of 100 filter values, along with 3 channel filters. </p> <p>
+     * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
+     * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
+     * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
+     * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
+     * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
+     * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
+     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
+     * filter value up to 3000 length.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -443,9 +445,9 @@ namespace Model
      * <p>The filters to apply to returned metrics. You can filter on the following
      * resources:</p> <ul> <li> <p>Queues</p> </li> <li> <p>Routing profiles</p> </li>
      * <li> <p>Agents</p> </li> <li> <p>Channels</p> </li> <li> <p>User hierarchy
-     * groups</p> </li> <li> <p>Feature</p> </li> </ul> <p>At least one filter must be
-     * passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-     * <p>To filter by phone number, see <a
+     * groups</p> </li> <li> <p>Feature</p> </li> <li> <p>Routing step expression</p>
+     * </li> </ul> <p>At least one filter must be passed from queues, routing profiles,
+     * agents, or user hierarchy groups.</p> <p>To filter by phone number, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
      * a historical metrics report</a> in the <i>Amazon Connect Administrator's
      * Guide</i>.</p> <p>Note the following limits:</p> <ul> <li> <p> <b>Filter
@@ -456,20 +458,21 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p> </li> <li> <p>
-     * <b>Filter values</b>: A maximum of 100 filter values are supported in a single
-     * request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the
-     * CHANNEL filter key. They do not count towards limitation of 100 filter values.
-     * For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and
-     * 15 routing profiles for a total of 100 filter values, along with 3 channel
-     * filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid
-     * filterValue for the <code>FEATURE</code> filter key. It is available only to
-     * contacts analyzed by Contact Lens conversational analytics.</p> <p>
-     * <code>connect:Chat</code>, <code>connect:SMS</code>,
-     * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
-     * <code>filterValue</code> examples (not exhaustive) for the
-     * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
-     * </ul>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p> </li> <li> <p> <b>Filter values</b>: A
+     * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
+     * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
+     * count towards limitation of 100 filter values. For example, a GetMetricDataV2
+     * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
+     * of 100 filter values, along with 3 channel filters. </p> <p>
+     * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
+     * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
+     * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
+     * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
+     * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
+     * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
+     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
+     * filter value up to 3000 length.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<FilterV2>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -477,9 +480,9 @@ namespace Model
      * <p>The filters to apply to returned metrics. You can filter on the following
      * resources:</p> <ul> <li> <p>Queues</p> </li> <li> <p>Routing profiles</p> </li>
      * <li> <p>Agents</p> </li> <li> <p>Channels</p> </li> <li> <p>User hierarchy
-     * groups</p> </li> <li> <p>Feature</p> </li> </ul> <p>At least one filter must be
-     * passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-     * <p>To filter by phone number, see <a
+     * groups</p> </li> <li> <p>Feature</p> </li> <li> <p>Routing step expression</p>
+     * </li> </ul> <p>At least one filter must be passed from queues, routing profiles,
+     * agents, or user hierarchy groups.</p> <p>To filter by phone number, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
      * a historical metrics report</a> in the <i>Amazon Connect Administrator's
      * Guide</i>.</p> <p>Note the following limits:</p> <ul> <li> <p> <b>Filter
@@ -490,20 +493,21 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p> </li> <li> <p>
-     * <b>Filter values</b>: A maximum of 100 filter values are supported in a single
-     * request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the
-     * CHANNEL filter key. They do not count towards limitation of 100 filter values.
-     * For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and
-     * 15 routing profiles for a total of 100 filter values, along with 3 channel
-     * filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid
-     * filterValue for the <code>FEATURE</code> filter key. It is available only to
-     * contacts analyzed by Contact Lens conversational analytics.</p> <p>
-     * <code>connect:Chat</code>, <code>connect:SMS</code>,
-     * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
-     * <code>filterValue</code> examples (not exhaustive) for the
-     * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
-     * </ul>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p> </li> <li> <p> <b>Filter values</b>: A
+     * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
+     * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
+     * count towards limitation of 100 filter values. For example, a GetMetricDataV2
+     * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
+     * of 100 filter values, along with 3 channel filters. </p> <p>
+     * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
+     * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
+     * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
+     * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
+     * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
+     * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
+     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
+     * filter value up to 3000 length.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<FilterV2>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -511,9 +515,9 @@ namespace Model
      * <p>The filters to apply to returned metrics. You can filter on the following
      * resources:</p> <ul> <li> <p>Queues</p> </li> <li> <p>Routing profiles</p> </li>
      * <li> <p>Agents</p> </li> <li> <p>Channels</p> </li> <li> <p>User hierarchy
-     * groups</p> </li> <li> <p>Feature</p> </li> </ul> <p>At least one filter must be
-     * passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-     * <p>To filter by phone number, see <a
+     * groups</p> </li> <li> <p>Feature</p> </li> <li> <p>Routing step expression</p>
+     * </li> </ul> <p>At least one filter must be passed from queues, routing profiles,
+     * agents, or user hierarchy groups.</p> <p>To filter by phone number, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
      * a historical metrics report</a> in the <i>Amazon Connect Administrator's
      * Guide</i>.</p> <p>Note the following limits:</p> <ul> <li> <p> <b>Filter
@@ -524,20 +528,21 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p> </li> <li> <p>
-     * <b>Filter values</b>: A maximum of 100 filter values are supported in a single
-     * request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the
-     * CHANNEL filter key. They do not count towards limitation of 100 filter values.
-     * For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and
-     * 15 routing profiles for a total of 100 filter values, along with 3 channel
-     * filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid
-     * filterValue for the <code>FEATURE</code> filter key. It is available only to
-     * contacts analyzed by Contact Lens conversational analytics.</p> <p>
-     * <code>connect:Chat</code>, <code>connect:SMS</code>,
-     * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
-     * <code>filterValue</code> examples (not exhaustive) for the
-     * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
-     * </ul>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p> </li> <li> <p> <b>Filter values</b>: A
+     * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
+     * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
+     * count towards limitation of 100 filter values. For example, a GetMetricDataV2
+     * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
+     * of 100 filter values, along with 3 channel filters. </p> <p>
+     * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
+     * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
+     * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
+     * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
+     * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
+     * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
+     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
+     * filter value up to 3000 length.</p> </li> </ul>
      */
     inline GetMetricDataV2Request& WithFilters(const Aws::Vector<FilterV2>& value) { SetFilters(value); return *this;}
 
@@ -545,9 +550,9 @@ namespace Model
      * <p>The filters to apply to returned metrics. You can filter on the following
      * resources:</p> <ul> <li> <p>Queues</p> </li> <li> <p>Routing profiles</p> </li>
      * <li> <p>Agents</p> </li> <li> <p>Channels</p> </li> <li> <p>User hierarchy
-     * groups</p> </li> <li> <p>Feature</p> </li> </ul> <p>At least one filter must be
-     * passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-     * <p>To filter by phone number, see <a
+     * groups</p> </li> <li> <p>Feature</p> </li> <li> <p>Routing step expression</p>
+     * </li> </ul> <p>At least one filter must be passed from queues, routing profiles,
+     * agents, or user hierarchy groups.</p> <p>To filter by phone number, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
      * a historical metrics report</a> in the <i>Amazon Connect Administrator's
      * Guide</i>.</p> <p>Note the following limits:</p> <ul> <li> <p> <b>Filter
@@ -558,20 +563,21 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p> </li> <li> <p>
-     * <b>Filter values</b>: A maximum of 100 filter values are supported in a single
-     * request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the
-     * CHANNEL filter key. They do not count towards limitation of 100 filter values.
-     * For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and
-     * 15 routing profiles for a total of 100 filter values, along with 3 channel
-     * filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid
-     * filterValue for the <code>FEATURE</code> filter key. It is available only to
-     * contacts analyzed by Contact Lens conversational analytics.</p> <p>
-     * <code>connect:Chat</code>, <code>connect:SMS</code>,
-     * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
-     * <code>filterValue</code> examples (not exhaustive) for the
-     * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
-     * </ul>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p> </li> <li> <p> <b>Filter values</b>: A
+     * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
+     * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
+     * count towards limitation of 100 filter values. For example, a GetMetricDataV2
+     * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
+     * of 100 filter values, along with 3 channel filters. </p> <p>
+     * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
+     * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
+     * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
+     * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
+     * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
+     * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
+     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
+     * filter value up to 3000 length.</p> </li> </ul>
      */
     inline GetMetricDataV2Request& WithFilters(Aws::Vector<FilterV2>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -579,9 +585,9 @@ namespace Model
      * <p>The filters to apply to returned metrics. You can filter on the following
      * resources:</p> <ul> <li> <p>Queues</p> </li> <li> <p>Routing profiles</p> </li>
      * <li> <p>Agents</p> </li> <li> <p>Channels</p> </li> <li> <p>User hierarchy
-     * groups</p> </li> <li> <p>Feature</p> </li> </ul> <p>At least one filter must be
-     * passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-     * <p>To filter by phone number, see <a
+     * groups</p> </li> <li> <p>Feature</p> </li> <li> <p>Routing step expression</p>
+     * </li> </ul> <p>At least one filter must be passed from queues, routing profiles,
+     * agents, or user hierarchy groups.</p> <p>To filter by phone number, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
      * a historical metrics report</a> in the <i>Amazon Connect Administrator's
      * Guide</i>.</p> <p>Note the following limits:</p> <ul> <li> <p> <b>Filter
@@ -592,20 +598,21 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p> </li> <li> <p>
-     * <b>Filter values</b>: A maximum of 100 filter values are supported in a single
-     * request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the
-     * CHANNEL filter key. They do not count towards limitation of 100 filter values.
-     * For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and
-     * 15 routing profiles for a total of 100 filter values, along with 3 channel
-     * filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid
-     * filterValue for the <code>FEATURE</code> filter key. It is available only to
-     * contacts analyzed by Contact Lens conversational analytics.</p> <p>
-     * <code>connect:Chat</code>, <code>connect:SMS</code>,
-     * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
-     * <code>filterValue</code> examples (not exhaustive) for the
-     * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
-     * </ul>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p> </li> <li> <p> <b>Filter values</b>: A
+     * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
+     * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
+     * count towards limitation of 100 filter values. For example, a GetMetricDataV2
+     * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
+     * of 100 filter values, along with 3 channel filters. </p> <p>
+     * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
+     * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
+     * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
+     * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
+     * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
+     * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
+     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
+     * filter value up to 3000 length.</p> </li> </ul>
      */
     inline GetMetricDataV2Request& AddFilters(const FilterV2& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -613,9 +620,9 @@ namespace Model
      * <p>The filters to apply to returned metrics. You can filter on the following
      * resources:</p> <ul> <li> <p>Queues</p> </li> <li> <p>Routing profiles</p> </li>
      * <li> <p>Agents</p> </li> <li> <p>Channels</p> </li> <li> <p>User hierarchy
-     * groups</p> </li> <li> <p>Feature</p> </li> </ul> <p>At least one filter must be
-     * passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-     * <p>To filter by phone number, see <a
+     * groups</p> </li> <li> <p>Feature</p> </li> <li> <p>Routing step expression</p>
+     * </li> </ul> <p>At least one filter must be passed from queues, routing profiles,
+     * agents, or user hierarchy groups.</p> <p>To filter by phone number, see <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
      * a historical metrics report</a> in the <i>Amazon Connect Administrator's
      * Guide</i>.</p> <p>Note the following limits:</p> <ul> <li> <p> <b>Filter
@@ -626,20 +633,21 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p> </li> <li> <p>
-     * <b>Filter values</b>: A maximum of 100 filter values are supported in a single
-     * request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the
-     * CHANNEL filter key. They do not count towards limitation of 100 filter values.
-     * For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and
-     * 15 routing profiles for a total of 100 filter values, along with 3 channel
-     * filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid
-     * filterValue for the <code>FEATURE</code> filter key. It is available only to
-     * contacts analyzed by Contact Lens conversational analytics.</p> <p>
-     * <code>connect:Chat</code>, <code>connect:SMS</code>,
-     * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
-     * <code>filterValue</code> examples (not exhaustive) for the
-     * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
-     * </ul>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p> </li> <li> <p> <b>Filter values</b>: A
+     * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
+     * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
+     * count towards limitation of 100 filter values. For example, a GetMetricDataV2
+     * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
+     * of 100 filter values, along with 3 channel filters. </p> <p>
+     * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
+     * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
+     * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
+     * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
+     * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
+     * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
+     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
+     * filter value up to 3000 length.</p> </li> </ul>
      */
     inline GetMetricDataV2Request& AddFilters(FilterV2&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -655,7 +663,8 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>,
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupings() const{ return m_groupings; }
 
@@ -670,7 +679,8 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>,
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p>
      */
     inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
 
@@ -685,7 +695,8 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>,
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p>
      */
     inline void SetGroupings(const Aws::Vector<Aws::String>& value) { m_groupingsHasBeenSet = true; m_groupings = value; }
 
@@ -700,7 +711,8 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>,
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p>
      */
     inline void SetGroupings(Aws::Vector<Aws::String>&& value) { m_groupingsHasBeenSet = true; m_groupings = std::move(value); }
 
@@ -715,7 +727,8 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>,
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p>
      */
     inline GetMetricDataV2Request& WithGroupings(const Aws::Vector<Aws::String>& value) { SetGroupings(value); return *this;}
 
@@ -730,7 +743,8 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>,
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p>
      */
     inline GetMetricDataV2Request& WithGroupings(Aws::Vector<Aws::String>&& value) { SetGroupings(std::move(value)); return *this;}
 
@@ -745,7 +759,8 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>,
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p>
      */
     inline GetMetricDataV2Request& AddGroupings(const Aws::String& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
 
@@ -760,7 +775,8 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>,
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p>
      */
     inline GetMetricDataV2Request& AddGroupings(Aws::String&& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(std::move(value)); return *this; }
 
@@ -775,7 +791,8 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>,
-     * <code>contact/segmentAttributes/connect:Subtype</code> </p>
+     * <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> </p>
      */
     inline GetMetricDataV2Request& AddGroupings(const char* value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
 
@@ -846,10 +863,10 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>AVG_HANDLE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
-     * filter but not a valid grouping.</p>  </dd> <dt>AVG_HOLD_TIME</dt> <dd>
-     * <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, Agent, Agent Hierarchy, Feature,
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> 
+     * <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters:
+     * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
      * filter but not a valid grouping.</p>  </dd>
      * <dt>AVG_HOLD_TIME_ALL_CONTACTS</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings
@@ -898,16 +915,16 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype</p> </dd> <dt>CONTACTS_CREATED</dt>
-     * <dd> <p>Unit: Count</p> <p>Valid metric filter key:
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> </dd>
+     * <dt>CONTACTS_CREATED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters: Queue,
      * Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * Feature, contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a
-     * valid filter but not a valid grouping.</p>  </dd>
+     * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+     *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -943,6 +960,10 @@ namespace Model
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is available only for
      * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
      * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
@@ -964,7 +985,9 @@ namespace Model
      * Channel, Routing Profile</p> <p>Threshold: For <code>ThresholdValue</code>,
      * enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
-     * </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
+     * </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>SUM_CONNECTING_TIME_AGENT</dt> <dd> <p>Unit: Seconds</p>
      * <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only
@@ -1080,10 +1103,10 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>AVG_HANDLE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
-     * filter but not a valid grouping.</p>  </dd> <dt>AVG_HOLD_TIME</dt> <dd>
-     * <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, Agent, Agent Hierarchy, Feature,
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> 
+     * <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters:
+     * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
      * filter but not a valid grouping.</p>  </dd>
      * <dt>AVG_HOLD_TIME_ALL_CONTACTS</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings
@@ -1132,16 +1155,16 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype</p> </dd> <dt>CONTACTS_CREATED</dt>
-     * <dd> <p>Unit: Count</p> <p>Valid metric filter key:
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> </dd>
+     * <dt>CONTACTS_CREATED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters: Queue,
      * Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * Feature, contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a
-     * valid filter but not a valid grouping.</p>  </dd>
+     * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+     *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -1177,6 +1200,10 @@ namespace Model
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is available only for
      * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
      * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
@@ -1198,7 +1225,9 @@ namespace Model
      * Channel, Routing Profile</p> <p>Threshold: For <code>ThresholdValue</code>,
      * enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
-     * </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
+     * </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>SUM_CONNECTING_TIME_AGENT</dt> <dd> <p>Unit: Seconds</p>
      * <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only
@@ -1314,10 +1343,10 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>AVG_HANDLE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
-     * filter but not a valid grouping.</p>  </dd> <dt>AVG_HOLD_TIME</dt> <dd>
-     * <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, Agent, Agent Hierarchy, Feature,
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> 
+     * <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters:
+     * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
      * filter but not a valid grouping.</p>  </dd>
      * <dt>AVG_HOLD_TIME_ALL_CONTACTS</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings
@@ -1366,16 +1395,16 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype</p> </dd> <dt>CONTACTS_CREATED</dt>
-     * <dd> <p>Unit: Count</p> <p>Valid metric filter key:
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> </dd>
+     * <dt>CONTACTS_CREATED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters: Queue,
      * Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * Feature, contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a
-     * valid filter but not a valid grouping.</p>  </dd>
+     * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+     *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -1411,6 +1440,10 @@ namespace Model
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is available only for
      * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
      * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
@@ -1432,7 +1465,9 @@ namespace Model
      * Channel, Routing Profile</p> <p>Threshold: For <code>ThresholdValue</code>,
      * enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
-     * </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
+     * </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>SUM_CONNECTING_TIME_AGENT</dt> <dd> <p>Unit: Seconds</p>
      * <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only
@@ -1548,10 +1583,10 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>AVG_HANDLE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
-     * filter but not a valid grouping.</p>  </dd> <dt>AVG_HOLD_TIME</dt> <dd>
-     * <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, Agent, Agent Hierarchy, Feature,
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> 
+     * <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters:
+     * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
      * filter but not a valid grouping.</p>  </dd>
      * <dt>AVG_HOLD_TIME_ALL_CONTACTS</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings
@@ -1600,16 +1635,16 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype</p> </dd> <dt>CONTACTS_CREATED</dt>
-     * <dd> <p>Unit: Count</p> <p>Valid metric filter key:
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> </dd>
+     * <dt>CONTACTS_CREATED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters: Queue,
      * Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * Feature, contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a
-     * valid filter but not a valid grouping.</p>  </dd>
+     * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+     *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -1645,6 +1680,10 @@ namespace Model
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is available only for
      * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
      * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
@@ -1666,7 +1705,9 @@ namespace Model
      * Channel, Routing Profile</p> <p>Threshold: For <code>ThresholdValue</code>,
      * enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
-     * </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
+     * </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>SUM_CONNECTING_TIME_AGENT</dt> <dd> <p>Unit: Seconds</p>
      * <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only
@@ -1782,10 +1823,10 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>AVG_HANDLE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
-     * filter but not a valid grouping.</p>  </dd> <dt>AVG_HOLD_TIME</dt> <dd>
-     * <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, Agent, Agent Hierarchy, Feature,
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> 
+     * <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters:
+     * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
      * filter but not a valid grouping.</p>  </dd>
      * <dt>AVG_HOLD_TIME_ALL_CONTACTS</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings
@@ -1834,16 +1875,16 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype</p> </dd> <dt>CONTACTS_CREATED</dt>
-     * <dd> <p>Unit: Count</p> <p>Valid metric filter key:
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> </dd>
+     * <dt>CONTACTS_CREATED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters: Queue,
      * Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * Feature, contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a
-     * valid filter but not a valid grouping.</p>  </dd>
+     * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+     *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -1879,6 +1920,10 @@ namespace Model
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is available only for
      * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
      * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
@@ -1900,7 +1945,9 @@ namespace Model
      * Channel, Routing Profile</p> <p>Threshold: For <code>ThresholdValue</code>,
      * enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
-     * </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
+     * </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>SUM_CONNECTING_TIME_AGENT</dt> <dd> <p>Unit: Seconds</p>
      * <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only
@@ -2016,10 +2063,10 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>AVG_HANDLE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
-     * filter but not a valid grouping.</p>  </dd> <dt>AVG_HOLD_TIME</dt> <dd>
-     * <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, Agent, Agent Hierarchy, Feature,
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> 
+     * <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters:
+     * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
      * filter but not a valid grouping.</p>  </dd>
      * <dt>AVG_HOLD_TIME_ALL_CONTACTS</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings
@@ -2068,16 +2115,16 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype</p> </dd> <dt>CONTACTS_CREATED</dt>
-     * <dd> <p>Unit: Count</p> <p>Valid metric filter key:
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> </dd>
+     * <dt>CONTACTS_CREATED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters: Queue,
      * Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * Feature, contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a
-     * valid filter but not a valid grouping.</p>  </dd>
+     * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+     *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -2113,6 +2160,10 @@ namespace Model
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is available only for
      * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
      * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
@@ -2134,7 +2185,9 @@ namespace Model
      * Channel, Routing Profile</p> <p>Threshold: For <code>ThresholdValue</code>,
      * enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
-     * </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
+     * </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>SUM_CONNECTING_TIME_AGENT</dt> <dd> <p>Unit: Seconds</p>
      * <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only
@@ -2250,10 +2303,10 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>AVG_HANDLE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
-     * filter but not a valid grouping.</p>  </dd> <dt>AVG_HOLD_TIME</dt> <dd>
-     * <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, Agent, Agent Hierarchy, Feature,
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> 
+     * <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters:
+     * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
      * filter but not a valid grouping.</p>  </dd>
      * <dt>AVG_HOLD_TIME_ALL_CONTACTS</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings
@@ -2302,16 +2355,16 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype</p> </dd> <dt>CONTACTS_CREATED</dt>
-     * <dd> <p>Unit: Count</p> <p>Valid metric filter key:
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> </dd>
+     * <dt>CONTACTS_CREATED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters: Queue,
      * Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * Feature, contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a
-     * valid filter but not a valid grouping.</p>  </dd>
+     * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+     *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -2347,6 +2400,10 @@ namespace Model
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is available only for
      * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
      * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
@@ -2368,7 +2425,9 @@ namespace Model
      * Channel, Routing Profile</p> <p>Threshold: For <code>ThresholdValue</code>,
      * enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
-     * </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
+     * </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>SUM_CONNECTING_TIME_AGENT</dt> <dd> <p>Unit: Seconds</p>
      * <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only
@@ -2484,10 +2543,10 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>AVG_HANDLE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
-     * filter but not a valid grouping.</p>  </dd> <dt>AVG_HOLD_TIME</dt> <dd>
-     * <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel, Routing
-     * Profile, Agent, Agent Hierarchy, Feature,
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> 
+     * <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>AVG_HOLD_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters:
+     * Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
      * contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a valid
      * filter but not a valid grouping.</p>  </dd>
      * <dt>AVG_HOLD_TIME_ALL_CONTACTS</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings
@@ -2536,16 +2595,16 @@ namespace Model
      * Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype</p> </dd> <dt>CONTACTS_CREATED</dt>
-     * <dd> <p>Unit: Count</p> <p>Valid metric filter key:
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p> </dd>
+     * <dt>CONTACTS_CREATED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code> </p> <p>Valid groupings and filters: Queue,
      * Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: Count</p> <p>Valid metric filter key:
      * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * Feature, contact/segmentAttributes/connect:Subtype</p>  <p>Feature is a
-     * valid filter but not a valid grouping.</p>  </dd>
+     * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+     *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -2581,6 +2640,10 @@ namespace Model
      * <dd> <p>Unit: Seconds</p> <p>Valid groupings and filters: Queue, Channel,
      * Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> <p>Unit: Percent</p> <p>Valid
+     * groupings and filters: Queue, RoutingStepExpression</p> </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt> <dd> <p>This metric is available only for
      * contacts analyzed by Contact Lens conversational analytics.</p> <p>Unit:
      * Percentage</p> <p>Valid groupings and filters: Queue, Channel, Routing Profile,
@@ -2602,7 +2665,9 @@ namespace Model
      * Channel, Routing Profile</p> <p>Threshold: For <code>ThresholdValue</code>,
      * enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
-     * </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
+     * </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, RoutingStepExpression</p> </dd>
+     * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>SUM_CONNECTING_TIME_AGENT</dt> <dd> <p>Unit: Seconds</p>
      * <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only
