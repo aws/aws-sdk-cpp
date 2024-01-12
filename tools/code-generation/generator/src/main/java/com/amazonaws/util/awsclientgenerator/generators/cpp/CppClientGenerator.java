@@ -202,6 +202,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
         context.put("input.encoding", StandardCharsets.UTF_8.name());
         context.put("output.encoding", StandardCharsets.UTF_8.name());
         context.put("nullChar", '\0');
+
+        if (serviceModel.getEndpointRules().contains("\"sigv4a\"")) {
+            context.put("multiRegionAccessPointSupported", true);
+        }
         return context;
     }
 
