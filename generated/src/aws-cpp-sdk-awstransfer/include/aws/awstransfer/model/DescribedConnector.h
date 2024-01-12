@@ -549,6 +549,61 @@ namespace Model
      */
     inline DescribedConnector& WithSftpConfig(SftpConnectorConfig&& value) { SetSftpConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of egress IP addresses of this connector. These IP addresses are
+     * assigned automatically when you create the connector.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetServiceManagedEgressIpAddresses() const{ return m_serviceManagedEgressIpAddresses; }
+
+    /**
+     * <p>The list of egress IP addresses of this connector. These IP addresses are
+     * assigned automatically when you create the connector.</p>
+     */
+    inline bool ServiceManagedEgressIpAddressesHasBeenSet() const { return m_serviceManagedEgressIpAddressesHasBeenSet; }
+
+    /**
+     * <p>The list of egress IP addresses of this connector. These IP addresses are
+     * assigned automatically when you create the connector.</p>
+     */
+    inline void SetServiceManagedEgressIpAddresses(const Aws::Vector<Aws::String>& value) { m_serviceManagedEgressIpAddressesHasBeenSet = true; m_serviceManagedEgressIpAddresses = value; }
+
+    /**
+     * <p>The list of egress IP addresses of this connector. These IP addresses are
+     * assigned automatically when you create the connector.</p>
+     */
+    inline void SetServiceManagedEgressIpAddresses(Aws::Vector<Aws::String>&& value) { m_serviceManagedEgressIpAddressesHasBeenSet = true; m_serviceManagedEgressIpAddresses = std::move(value); }
+
+    /**
+     * <p>The list of egress IP addresses of this connector. These IP addresses are
+     * assigned automatically when you create the connector.</p>
+     */
+    inline DescribedConnector& WithServiceManagedEgressIpAddresses(const Aws::Vector<Aws::String>& value) { SetServiceManagedEgressIpAddresses(value); return *this;}
+
+    /**
+     * <p>The list of egress IP addresses of this connector. These IP addresses are
+     * assigned automatically when you create the connector.</p>
+     */
+    inline DescribedConnector& WithServiceManagedEgressIpAddresses(Aws::Vector<Aws::String>&& value) { SetServiceManagedEgressIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of egress IP addresses of this connector. These IP addresses are
+     * assigned automatically when you create the connector.</p>
+     */
+    inline DescribedConnector& AddServiceManagedEgressIpAddresses(const Aws::String& value) { m_serviceManagedEgressIpAddressesHasBeenSet = true; m_serviceManagedEgressIpAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The list of egress IP addresses of this connector. These IP addresses are
+     * assigned automatically when you create the connector.</p>
+     */
+    inline DescribedConnector& AddServiceManagedEgressIpAddresses(Aws::String&& value) { m_serviceManagedEgressIpAddressesHasBeenSet = true; m_serviceManagedEgressIpAddresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of egress IP addresses of this connector. These IP addresses are
+     * assigned automatically when you create the connector.</p>
+     */
+    inline DescribedConnector& AddServiceManagedEgressIpAddresses(const char* value) { m_serviceManagedEgressIpAddressesHasBeenSet = true; m_serviceManagedEgressIpAddresses.push_back(value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -574,6 +629,9 @@ namespace Model
 
     SftpConnectorConfig m_sftpConfig;
     bool m_sftpConfigHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_serviceManagedEgressIpAddresses;
+    bool m_serviceManagedEgressIpAddressesHasBeenSet = false;
   };
 
 } // namespace Model

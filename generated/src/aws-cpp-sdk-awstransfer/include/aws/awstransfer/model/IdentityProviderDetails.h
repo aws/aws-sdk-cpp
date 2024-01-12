@@ -139,50 +139,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Directory Service directory that you want to stop
-     * sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to use as
+     * your identity provider.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The identifier of the Directory Service directory that you want to stop
-     * sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to use as
+     * your identity provider.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Directory Service directory that you want to stop
-     * sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to use as
+     * your identity provider.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The identifier of the Directory Service directory that you want to stop
-     * sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to use as
+     * your identity provider.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The identifier of the Directory Service directory that you want to stop
-     * sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to use as
+     * your identity provider.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The identifier of the Directory Service directory that you want to stop
-     * sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to use as
+     * your identity provider.</p>
      */
     inline IdentityProviderDetails& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The identifier of the Directory Service directory that you want to stop
-     * sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to use as
+     * your identity provider.</p>
      */
     inline IdentityProviderDetails& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Directory Service directory that you want to stop
-     * sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to use as
+     * your identity provider.</p>
      */
     inline IdentityProviderDetails& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 

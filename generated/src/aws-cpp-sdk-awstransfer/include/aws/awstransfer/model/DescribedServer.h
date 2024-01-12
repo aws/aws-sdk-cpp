@@ -1575,6 +1575,88 @@ namespace Model
      */
     inline DescribedServer& WithS3StorageOptions(S3StorageOptions&& value) { SetS3StorageOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAs2ServiceManagedEgressIpAddresses() const{ return m_as2ServiceManagedEgressIpAddresses; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline bool As2ServiceManagedEgressIpAddressesHasBeenSet() const { return m_as2ServiceManagedEgressIpAddressesHasBeenSet; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline void SetAs2ServiceManagedEgressIpAddresses(const Aws::Vector<Aws::String>& value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses = value; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline void SetAs2ServiceManagedEgressIpAddresses(Aws::Vector<Aws::String>&& value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses = std::move(value); }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& WithAs2ServiceManagedEgressIpAddresses(const Aws::Vector<Aws::String>& value) { SetAs2ServiceManagedEgressIpAddresses(value); return *this;}
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& WithAs2ServiceManagedEgressIpAddresses(Aws::Vector<Aws::String>&& value) { SetAs2ServiceManagedEgressIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& AddAs2ServiceManagedEgressIpAddresses(const Aws::String& value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& AddAs2ServiceManagedEgressIpAddresses(Aws::String&& value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& AddAs2ServiceManagedEgressIpAddresses(const char* value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses.push_back(value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -1639,6 +1721,9 @@ namespace Model
 
     S3StorageOptions m_s3StorageOptions;
     bool m_s3StorageOptionsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_as2ServiceManagedEgressIpAddresses;
+    bool m_as2ServiceManagedEgressIpAddressesHasBeenSet = false;
   };
 
 } // namespace Model

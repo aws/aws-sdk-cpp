@@ -573,74 +573,98 @@ namespace Model
 
 
     /**
-     * <p>An area that's part of a larger municipality. For example, <code>Blissville
-     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
-     * property supported by Esri and OpenData. The Esri property is
-     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
-     * 
+     * <p>An area that's part of a larger municipality. For example,
+     * <code>Blissville</code> is a submunicipality in the Queen County in New
+     * York.</p>  <p>This property is only returned for a place index that uses
+     * Esri as a data provider. The property is represented as a
+     * <code>district</code>.</p>  <p>For more information about data providers,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers</a>.</p>
      */
     inline const Aws::String& GetSubMunicipality() const{ return m_subMunicipality; }
 
     /**
-     * <p>An area that's part of a larger municipality. For example, <code>Blissville
-     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
-     * property supported by Esri and OpenData. The Esri property is
-     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
-     * 
+     * <p>An area that's part of a larger municipality. For example,
+     * <code>Blissville</code> is a submunicipality in the Queen County in New
+     * York.</p>  <p>This property is only returned for a place index that uses
+     * Esri as a data provider. The property is represented as a
+     * <code>district</code>.</p>  <p>For more information about data providers,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers</a>.</p>
      */
     inline bool SubMunicipalityHasBeenSet() const { return m_subMunicipalityHasBeenSet; }
 
     /**
-     * <p>An area that's part of a larger municipality. For example, <code>Blissville
-     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
-     * property supported by Esri and OpenData. The Esri property is
-     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
-     * 
+     * <p>An area that's part of a larger municipality. For example,
+     * <code>Blissville</code> is a submunicipality in the Queen County in New
+     * York.</p>  <p>This property is only returned for a place index that uses
+     * Esri as a data provider. The property is represented as a
+     * <code>district</code>.</p>  <p>For more information about data providers,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers</a>.</p>
      */
     inline void SetSubMunicipality(const Aws::String& value) { m_subMunicipalityHasBeenSet = true; m_subMunicipality = value; }
 
     /**
-     * <p>An area that's part of a larger municipality. For example, <code>Blissville
-     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
-     * property supported by Esri and OpenData. The Esri property is
-     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
-     * 
+     * <p>An area that's part of a larger municipality. For example,
+     * <code>Blissville</code> is a submunicipality in the Queen County in New
+     * York.</p>  <p>This property is only returned for a place index that uses
+     * Esri as a data provider. The property is represented as a
+     * <code>district</code>.</p>  <p>For more information about data providers,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers</a>.</p>
      */
     inline void SetSubMunicipality(Aws::String&& value) { m_subMunicipalityHasBeenSet = true; m_subMunicipality = std::move(value); }
 
     /**
-     * <p>An area that's part of a larger municipality. For example, <code>Blissville
-     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
-     * property supported by Esri and OpenData. The Esri property is
-     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
-     * 
+     * <p>An area that's part of a larger municipality. For example,
+     * <code>Blissville</code> is a submunicipality in the Queen County in New
+     * York.</p>  <p>This property is only returned for a place index that uses
+     * Esri as a data provider. The property is represented as a
+     * <code>district</code>.</p>  <p>For more information about data providers,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers</a>.</p>
      */
     inline void SetSubMunicipality(const char* value) { m_subMunicipalityHasBeenSet = true; m_subMunicipality.assign(value); }
 
     /**
-     * <p>An area that's part of a larger municipality. For example, <code>Blissville
-     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
-     * property supported by Esri and OpenData. The Esri property is
-     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
-     * 
+     * <p>An area that's part of a larger municipality. For example,
+     * <code>Blissville</code> is a submunicipality in the Queen County in New
+     * York.</p>  <p>This property is only returned for a place index that uses
+     * Esri as a data provider. The property is represented as a
+     * <code>district</code>.</p>  <p>For more information about data providers,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers</a>.</p>
      */
     inline Place& WithSubMunicipality(const Aws::String& value) { SetSubMunicipality(value); return *this;}
 
     /**
-     * <p>An area that's part of a larger municipality. For example, <code>Blissville
-     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
-     * property supported by Esri and OpenData. The Esri property is
-     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
-     * 
+     * <p>An area that's part of a larger municipality. For example,
+     * <code>Blissville</code> is a submunicipality in the Queen County in New
+     * York.</p>  <p>This property is only returned for a place index that uses
+     * Esri as a data provider. The property is represented as a
+     * <code>district</code>.</p>  <p>For more information about data providers,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers</a>.</p>
      */
     inline Place& WithSubMunicipality(Aws::String&& value) { SetSubMunicipality(std::move(value)); return *this;}
 
     /**
-     * <p>An area that's part of a larger municipality. For example, <code>Blissville
-     * </code> is a submunicipality in the Queen County in New York.</p>  <p>This
-     * property supported by Esri and OpenData. The Esri property is
-     * <code>district</code>, and the OpenData property is <code>borough</code>.</p>
-     * 
+     * <p>An area that's part of a larger municipality. For example,
+     * <code>Blissville</code> is a submunicipality in the Queen County in New
+     * York.</p>  <p>This property is only returned for a place index that uses
+     * Esri as a data provider. The property is represented as a
+     * <code>district</code>.</p>  <p>For more information about data providers,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     * Location Service data providers</a>.</p>
      */
     inline Place& WithSubMunicipality(const char* value) { SetSubMunicipality(value); return *this;}
 
@@ -789,121 +813,129 @@ namespace Model
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
-     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>This property is returned only for a place index that uses Esri or Grab as a
+     * data provider. It is not returned for
+     * <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline const Aws::String& GetUnitNumber() const{ return m_unitNumber; }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
-     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>This property is returned only for a place index that uses Esri or Grab as a
+     * data provider. It is not returned for
+     * <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline bool UnitNumberHasBeenSet() const { return m_unitNumberHasBeenSet; }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
-     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>This property is returned only for a place index that uses Esri or Grab as a
+     * data provider. It is not returned for
+     * <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline void SetUnitNumber(const Aws::String& value) { m_unitNumberHasBeenSet = true; m_unitNumber = value; }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
-     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>This property is returned only for a place index that uses Esri or Grab as a
+     * data provider. It is not returned for
+     * <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline void SetUnitNumber(Aws::String&& value) { m_unitNumberHasBeenSet = true; m_unitNumber = std::move(value); }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
-     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>This property is returned only for a place index that uses Esri or Grab as a
+     * data provider. It is not returned for
+     * <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline void SetUnitNumber(const char* value) { m_unitNumberHasBeenSet = true; m_unitNumber.assign(value); }
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
-     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>This property is returned only for a place index that uses Esri or Grab as a
+     * data provider. It is not returned for
+     * <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline Place& WithUnitNumber(const Aws::String& value) { SetUnitNumber(value); return *this;}
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
-     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>This property is returned only for a place index that uses Esri or Grab as a
+     * data provider. It is not returned for
+     * <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline Place& WithUnitNumber(Aws::String&& value) { SetUnitNumber(std::move(value)); return *this;}
 
     /**
      * <p>For addresses with multiple units, the unit identifier. Can include numbers
      * and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> 
-     * <p>Returned only for a place index that uses Esri or Grab as a data provider. Is
-     * not returned for <code>SearchPlaceIndexForPosition</code>.</p> 
+     * <p>This property is returned only for a place index that uses Esri or Grab as a
+     * data provider. It is not returned for
+     * <code>SearchPlaceIndexForPosition</code>.</p> 
      */
     inline Place& WithUnitNumber(const char* value) { SetUnitNumber(value); return *this;}
 
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
-     * Esri as a data provider.</p> 
+     * <code>Apartment</code>.</p>  <p>This property is returned only for a place
+     * index that uses Esri as a data provider.</p> 
      */
     inline const Aws::String& GetUnitType() const{ return m_unitType; }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
-     * Esri as a data provider.</p> 
+     * <code>Apartment</code>.</p>  <p>This property is returned only for a place
+     * index that uses Esri as a data provider.</p> 
      */
     inline bool UnitTypeHasBeenSet() const { return m_unitTypeHasBeenSet; }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
-     * Esri as a data provider.</p> 
+     * <code>Apartment</code>.</p>  <p>This property is returned only for a place
+     * index that uses Esri as a data provider.</p> 
      */
     inline void SetUnitType(const Aws::String& value) { m_unitTypeHasBeenSet = true; m_unitType = value; }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
-     * Esri as a data provider.</p> 
+     * <code>Apartment</code>.</p>  <p>This property is returned only for a place
+     * index that uses Esri as a data provider.</p> 
      */
     inline void SetUnitType(Aws::String&& value) { m_unitTypeHasBeenSet = true; m_unitType = std::move(value); }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
-     * Esri as a data provider.</p> 
+     * <code>Apartment</code>.</p>  <p>This property is returned only for a place
+     * index that uses Esri as a data provider.</p> 
      */
     inline void SetUnitType(const char* value) { m_unitTypeHasBeenSet = true; m_unitType.assign(value); }
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
-     * Esri as a data provider.</p> 
+     * <code>Apartment</code>.</p>  <p>This property is returned only for a place
+     * index that uses Esri as a data provider.</p> 
      */
     inline Place& WithUnitType(const Aws::String& value) { SetUnitType(value); return *this;}
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
-     * Esri as a data provider.</p> 
+     * <code>Apartment</code>.</p>  <p>This property is returned only for a place
+     * index that uses Esri as a data provider.</p> 
      */
     inline Place& WithUnitType(Aws::String&& value) { SetUnitType(std::move(value)); return *this;}
 
     /**
      * <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example,
-     * <code>Apartment</code>.</p>  <p>Returned only for a place index that uses
-     * Esri as a data provider.</p> 
+     * <code>Apartment</code>.</p>  <p>This property is returned only for a place
+     * index that uses Esri as a data provider.</p> 
      */
     inline Place& WithUnitType(const char* value) { SetUnitType(value); return *this;}
 
