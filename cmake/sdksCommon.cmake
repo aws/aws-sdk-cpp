@@ -152,6 +152,7 @@ list(APPEND HIGH_LEVEL_SDK_LIST "s3-encryption")
 list(APPEND HIGH_LEVEL_SDK_LIST "text-to-speech")
 
 set(SDK_TEST_PROJECT_LIST "")
+list(APPEND SDK_TEST_PROJECT_LIST "cloudfront:tests/aws-cpp-sdk-cloudfront-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "cognito-identity:tests/aws-cpp-sdk-cognitoidentity-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "core:tests/aws-cpp-sdk-core-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "dynamodb:tests/aws-cpp-sdk-dynamodb-integration-tests")
