@@ -62,7 +62,7 @@ TimestreamWriteClient::TimestreamWriteClient(const TimestreamWrite::TimestreamWr
                                              std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
@@ -109,7 +109,7 @@ TimestreamWriteClient::TimestreamWriteClient(const std::shared_ptr<AWSCredential
   TimestreamWriteClient::TimestreamWriteClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),

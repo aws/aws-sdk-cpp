@@ -43,7 +43,7 @@ AlexaForBusinessClient::AlexaForBusinessClient(const AlexaForBusiness::AlexaForB
                                                std::shared_ptr<AlexaForBusinessEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AlexaForBusinessErrorMarshaller>(ALLOCATION_TAG)),
@@ -90,7 +90,7 @@ AlexaForBusinessClient::AlexaForBusinessClient(const std::shared_ptr<AWSCredenti
   AlexaForBusinessClient::AlexaForBusinessClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AlexaForBusinessErrorMarshaller>(ALLOCATION_TAG)),

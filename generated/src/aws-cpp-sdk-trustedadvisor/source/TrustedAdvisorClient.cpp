@@ -52,7 +52,7 @@ TrustedAdvisorClient::TrustedAdvisorClient(const TrustedAdvisor::TrustedAdvisorC
                                            std::shared_ptr<TrustedAdvisorEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
@@ -99,7 +99,7 @@ TrustedAdvisorClient::TrustedAdvisorClient(const std::shared_ptr<AWSCredentialsP
   TrustedAdvisorClient::TrustedAdvisorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),

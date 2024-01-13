@@ -86,7 +86,7 @@ WorkDocsClient::WorkDocsClient(const WorkDocs::WorkDocsClientConfiguration& clie
                                std::shared_ptr<WorkDocsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<WorkDocsErrorMarshaller>(ALLOCATION_TAG)),
@@ -133,7 +133,7 @@ WorkDocsClient::WorkDocsClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   WorkDocsClient::WorkDocsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<WorkDocsErrorMarshaller>(ALLOCATION_TAG)),

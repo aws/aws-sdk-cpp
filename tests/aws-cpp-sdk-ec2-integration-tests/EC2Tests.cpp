@@ -67,7 +67,7 @@ protected:
         config.scheme = Scheme::HTTPS;
         config.region = AWS_TEST_REGION;
 
-        m_EC2Client = Aws::MakeShared<Aws::EC2::EC2Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config);
+        m_EC2Client = Aws::MakeShared<Aws::EC2::EC2Client>(ALLOCATION_TAG, GetDefaultCredentialsProviderChain(), config);
 
         DeleteSecurityGroup(BuildResourceName(BASE_SECURITY_GROUP_NAME));
     }

@@ -74,7 +74,7 @@ BillingConductorClient::BillingConductorClient(const BillingConductor::BillingCo
                                                std::shared_ptr<BillingConductorEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BillingConductorErrorMarshaller>(ALLOCATION_TAG)),
@@ -121,7 +121,7 @@ BillingConductorClient::BillingConductorClient(const std::shared_ptr<AWSCredenti
   BillingConductorClient::BillingConductorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BillingConductorErrorMarshaller>(ALLOCATION_TAG)),

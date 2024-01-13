@@ -54,7 +54,7 @@ IoTEventsDataClient::IoTEventsDataClient(const IoTEventsData::IoTEventsDataClien
                                          std::shared_ptr<IoTEventsDataEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTEventsDataErrorMarshaller>(ALLOCATION_TAG)),
@@ -101,7 +101,7 @@ IoTEventsDataClient::IoTEventsDataClient(const std::shared_ptr<AWSCredentialsPro
   IoTEventsDataClient::IoTEventsDataClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTEventsDataErrorMarshaller>(ALLOCATION_TAG)),

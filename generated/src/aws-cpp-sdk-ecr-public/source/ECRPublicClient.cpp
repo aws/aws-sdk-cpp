@@ -65,7 +65,7 @@ ECRPublicClient::ECRPublicClient(const ECRPublic::ECRPublicClientConfiguration& 
                                  std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
@@ -112,7 +112,7 @@ ECRPublicClient::ECRPublicClient(const std::shared_ptr<AWSCredentialsProvider>& 
   ECRPublicClient::ECRPublicClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),

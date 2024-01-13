@@ -69,7 +69,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const CodeStarconnections::
                                                      std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarconnectionsErrorMarshaller>(ALLOCATION_TAG)),
@@ -116,7 +116,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const std::shared_ptr<AWSCr
   CodeStarconnectionsClient::CodeStarconnectionsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarconnectionsErrorMarshaller>(ALLOCATION_TAG)),

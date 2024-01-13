@@ -65,7 +65,7 @@ MQClient::MQClient(const MQ::MQClientConfiguration& clientConfiguration,
                    std::shared_ptr<MQEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MQErrorMarshaller>(ALLOCATION_TAG)),
@@ -112,7 +112,7 @@ MQClient::MQClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
   MQClient::MQClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MQErrorMarshaller>(ALLOCATION_TAG)),

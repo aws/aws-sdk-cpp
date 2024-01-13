@@ -54,7 +54,7 @@ NetworkMonitorClient::NetworkMonitorClient(const NetworkMonitor::NetworkMonitorC
                                            std::shared_ptr<NetworkMonitorEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NetworkMonitorErrorMarshaller>(ALLOCATION_TAG)),
@@ -101,7 +101,7 @@ NetworkMonitorClient::NetworkMonitorClient(const std::shared_ptr<AWSCredentialsP
   NetworkMonitorClient::NetworkMonitorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NetworkMonitorErrorMarshaller>(ALLOCATION_TAG)),

@@ -110,7 +110,7 @@ AthenaClient::AthenaClient(const Athena::AthenaClientConfiguration& clientConfig
                            std::shared_ptr<AthenaEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AthenaErrorMarshaller>(ALLOCATION_TAG)),
@@ -157,7 +157,7 @@ AthenaClient::AthenaClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   AthenaClient::AthenaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AthenaErrorMarshaller>(ALLOCATION_TAG)),

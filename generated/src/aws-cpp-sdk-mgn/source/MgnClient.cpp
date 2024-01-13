@@ -112,7 +112,7 @@ MgnClient::MgnClient(const mgn::MgnClientConfiguration& clientConfiguration,
                      std::shared_ptr<MgnEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MgnErrorMarshaller>(ALLOCATION_TAG)),
@@ -159,7 +159,7 @@ MgnClient::MgnClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   MgnClient::MgnClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MgnErrorMarshaller>(ALLOCATION_TAG)),

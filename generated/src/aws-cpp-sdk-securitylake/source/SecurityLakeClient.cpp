@@ -73,7 +73,7 @@ SecurityLakeClient::SecurityLakeClient(const SecurityLake::SecurityLakeClientCon
                                        std::shared_ptr<SecurityLakeEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SecurityLakeErrorMarshaller>(ALLOCATION_TAG)),
@@ -120,7 +120,7 @@ SecurityLakeClient::SecurityLakeClient(const std::shared_ptr<AWSCredentialsProvi
   SecurityLakeClient::SecurityLakeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SecurityLakeErrorMarshaller>(ALLOCATION_TAG)),

@@ -98,7 +98,7 @@ ECSClient::ECSClient(const ECS::ECSClientConfiguration& clientConfiguration,
                      std::shared_ptr<ECSEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ECSErrorMarshaller>(ALLOCATION_TAG)),
@@ -145,7 +145,7 @@ ECSClient::ECSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   ECSClient::ECSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ECSErrorMarshaller>(ALLOCATION_TAG)),

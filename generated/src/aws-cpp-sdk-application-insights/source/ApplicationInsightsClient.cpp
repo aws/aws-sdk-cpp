@@ -75,7 +75,7 @@ ApplicationInsightsClient::ApplicationInsightsClient(const ApplicationInsights::
                                                      std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ApplicationInsightsErrorMarshaller>(ALLOCATION_TAG)),
@@ -122,7 +122,7 @@ ApplicationInsightsClient::ApplicationInsightsClient(const std::shared_ptr<AWSCr
   ApplicationInsightsClient::ApplicationInsightsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ApplicationInsightsErrorMarshaller>(ALLOCATION_TAG)),

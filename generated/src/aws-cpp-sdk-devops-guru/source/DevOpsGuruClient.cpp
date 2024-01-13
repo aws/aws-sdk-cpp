@@ -73,7 +73,7 @@ DevOpsGuruClient::DevOpsGuruClient(const DevOpsGuru::DevOpsGuruClientConfigurati
                                    std::shared_ptr<DevOpsGuruEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DevOpsGuruErrorMarshaller>(ALLOCATION_TAG)),
@@ -120,7 +120,7 @@ DevOpsGuruClient::DevOpsGuruClient(const std::shared_ptr<AWSCredentialsProvider>
   DevOpsGuruClient::DevOpsGuruClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DevOpsGuruErrorMarshaller>(ALLOCATION_TAG)),

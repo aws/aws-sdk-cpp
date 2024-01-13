@@ -58,7 +58,7 @@ ControlTowerClient::ControlTowerClient(const ControlTower::ControlTowerClientCon
                                        std::shared_ptr<ControlTowerEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ControlTowerErrorMarshaller>(ALLOCATION_TAG)),
@@ -105,7 +105,7 @@ ControlTowerClient::ControlTowerClient(const std::shared_ptr<AWSCredentialsProvi
   ControlTowerClient::ControlTowerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ControlTowerErrorMarshaller>(ALLOCATION_TAG)),

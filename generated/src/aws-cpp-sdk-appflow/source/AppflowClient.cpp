@@ -67,7 +67,7 @@ AppflowClient::AppflowClient(const Appflow::AppflowClientConfiguration& clientCo
                              std::shared_ptr<AppflowEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppflowErrorMarshaller>(ALLOCATION_TAG)),
@@ -114,7 +114,7 @@ AppflowClient::AppflowClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   AppflowClient::AppflowClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppflowErrorMarshaller>(ALLOCATION_TAG)),

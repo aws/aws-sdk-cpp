@@ -52,7 +52,7 @@ RecycleBinClient::RecycleBinClient(const RecycleBin::RecycleBinClientConfigurati
                                    std::shared_ptr<RecycleBinEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RecycleBinErrorMarshaller>(ALLOCATION_TAG)),
@@ -99,7 +99,7 @@ RecycleBinClient::RecycleBinClient(const std::shared_ptr<AWSCredentialsProvider>
   RecycleBinClient::RecycleBinClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RecycleBinErrorMarshaller>(ALLOCATION_TAG)),

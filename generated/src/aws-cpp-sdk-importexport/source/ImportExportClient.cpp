@@ -49,7 +49,7 @@ ImportExportClient::ImportExportClient(const ImportExport::ImportExportClientCon
                                        std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
@@ -96,7 +96,7 @@ ImportExportClient::ImportExportClient(const std::shared_ptr<AWSCredentialsProvi
   ImportExportClient::ImportExportClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),

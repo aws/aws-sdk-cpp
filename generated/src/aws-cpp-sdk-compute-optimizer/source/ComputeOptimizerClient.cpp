@@ -65,7 +65,7 @@ ComputeOptimizerClient::ComputeOptimizerClient(const ComputeOptimizer::ComputeOp
                                                std::shared_ptr<ComputeOptimizerEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ComputeOptimizerErrorMarshaller>(ALLOCATION_TAG)),
@@ -112,7 +112,7 @@ ComputeOptimizerClient::ComputeOptimizerClient(const std::shared_ptr<AWSCredenti
   ComputeOptimizerClient::ComputeOptimizerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ComputeOptimizerErrorMarshaller>(ALLOCATION_TAG)),

@@ -70,7 +70,7 @@ RolesAnywhereClient::RolesAnywhereClient(const RolesAnywhere::RolesAnywhereClien
                                          std::shared_ptr<RolesAnywhereEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RolesAnywhereErrorMarshaller>(ALLOCATION_TAG)),
@@ -117,7 +117,7 @@ RolesAnywhereClient::RolesAnywhereClient(const std::shared_ptr<AWSCredentialsPro
   RolesAnywhereClient::RolesAnywhereClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RolesAnywhereErrorMarshaller>(ALLOCATION_TAG)),

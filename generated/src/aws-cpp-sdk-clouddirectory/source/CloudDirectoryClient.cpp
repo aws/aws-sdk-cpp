@@ -108,7 +108,7 @@ CloudDirectoryClient::CloudDirectoryClient(const CloudDirectory::CloudDirectoryC
                                            std::shared_ptr<CloudDirectoryEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudDirectoryErrorMarshaller>(ALLOCATION_TAG)),
@@ -155,7 +155,7 @@ CloudDirectoryClient::CloudDirectoryClient(const std::shared_ptr<AWSCredentialsP
   CloudDirectoryClient::CloudDirectoryClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudDirectoryErrorMarshaller>(ALLOCATION_TAG)),

@@ -180,6 +180,16 @@ namespace Aws
               << "ABI is not guaranteed, please don't mix different versions of built libraries "
               << "and different versions of headers and corresponding built libraries.");
         }
+
+        if(options.credentialsProviderChainOptions.credentialsProviderChain_create_fn) {
+            Aws::Auth::SetDefaultCredentialsProviderChain(options.credentialsProviderChainOptions.credentialsProviderChain_create_fn());
+        }
+        else
+        {
+            Aws::Auth::SetDefaultCredentialsProviderChain(
+                Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)
+            );
+        }
     }
 
     void ShutdownAPI(const SDKOptions& options)

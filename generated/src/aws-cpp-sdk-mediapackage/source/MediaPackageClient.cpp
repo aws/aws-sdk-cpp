@@ -60,7 +60,7 @@ MediaPackageClient::MediaPackageClient(const MediaPackage::MediaPackageClientCon
                                        std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaPackageErrorMarshaller>(ALLOCATION_TAG)),
@@ -107,7 +107,7 @@ MediaPackageClient::MediaPackageClient(const std::shared_ptr<AWSCredentialsProvi
   MediaPackageClient::MediaPackageClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaPackageErrorMarshaller>(ALLOCATION_TAG)),

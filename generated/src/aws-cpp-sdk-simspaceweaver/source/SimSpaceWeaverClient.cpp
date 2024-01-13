@@ -58,7 +58,7 @@ SimSpaceWeaverClient::SimSpaceWeaverClient(const SimSpaceWeaver::SimSpaceWeaverC
                                            std::shared_ptr<SimSpaceWeaverEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SimSpaceWeaverErrorMarshaller>(ALLOCATION_TAG)),
@@ -105,7 +105,7 @@ SimSpaceWeaverClient::SimSpaceWeaverClient(const std::shared_ptr<AWSCredentialsP
   SimSpaceWeaverClient::SimSpaceWeaverClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SimSpaceWeaverErrorMarshaller>(ALLOCATION_TAG)),

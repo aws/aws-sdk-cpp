@@ -108,7 +108,7 @@ KendraClient::KendraClient(const kendra::KendraClientConfiguration& clientConfig
                            std::shared_ptr<KendraEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KendraErrorMarshaller>(ALLOCATION_TAG)),
@@ -155,7 +155,7 @@ KendraClient::KendraClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   KendraClient::KendraClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KendraErrorMarshaller>(ALLOCATION_TAG)),

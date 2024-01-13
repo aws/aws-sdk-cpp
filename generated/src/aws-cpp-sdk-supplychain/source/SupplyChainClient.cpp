@@ -44,7 +44,7 @@ SupplyChainClient::SupplyChainClient(const SupplyChain::SupplyChainClientConfigu
                                      std::shared_ptr<SupplyChainEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SupplyChainErrorMarshaller>(ALLOCATION_TAG)),
@@ -91,7 +91,7 @@ SupplyChainClient::SupplyChainClient(const std::shared_ptr<AWSCredentialsProvide
   SupplyChainClient::SupplyChainClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SupplyChainErrorMarshaller>(ALLOCATION_TAG)),

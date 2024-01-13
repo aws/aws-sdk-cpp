@@ -55,7 +55,7 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const CodeStarNotificat
                                                          std::shared_ptr<CodeStarNotificationsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
@@ -102,7 +102,7 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const std::shared_ptr<A
   CodeStarNotificationsClient::CodeStarNotificationsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),

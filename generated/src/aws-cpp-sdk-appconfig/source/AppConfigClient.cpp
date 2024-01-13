@@ -84,7 +84,7 @@ AppConfigClient::AppConfigClient(const AppConfig::AppConfigClientConfiguration& 
                                  std::shared_ptr<AppConfigEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
@@ -131,7 +131,7 @@ AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& 
   AppConfigClient::AppConfigClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),

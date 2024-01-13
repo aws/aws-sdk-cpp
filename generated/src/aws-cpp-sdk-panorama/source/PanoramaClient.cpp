@@ -76,7 +76,7 @@ PanoramaClient::PanoramaClient(const Panorama::PanoramaClientConfiguration& clie
                                std::shared_ptr<PanoramaEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PanoramaErrorMarshaller>(ALLOCATION_TAG)),
@@ -123,7 +123,7 @@ PanoramaClient::PanoramaClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   PanoramaClient::PanoramaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PanoramaErrorMarshaller>(ALLOCATION_TAG)),

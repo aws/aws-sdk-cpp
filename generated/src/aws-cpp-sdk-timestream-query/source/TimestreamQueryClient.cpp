@@ -56,7 +56,7 @@ TimestreamQueryClient::TimestreamQueryClient(const TimestreamQuery::TimestreamQu
                                              std::shared_ptr<TimestreamQueryEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
@@ -103,7 +103,7 @@ TimestreamQueryClient::TimestreamQueryClient(const std::shared_ptr<AWSCredential
   TimestreamQueryClient::TimestreamQueryClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),

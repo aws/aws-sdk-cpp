@@ -203,7 +203,7 @@ LightsailClient::LightsailClient(const Lightsail::LightsailClientConfiguration& 
                                  std::shared_ptr<LightsailEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LightsailErrorMarshaller>(ALLOCATION_TAG)),
@@ -250,7 +250,7 @@ LightsailClient::LightsailClient(const std::shared_ptr<AWSCredentialsProvider>& 
   LightsailClient::LightsailClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LightsailErrorMarshaller>(ALLOCATION_TAG)),

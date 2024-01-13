@@ -67,7 +67,7 @@ TextractClient::TextractClient(const Textract::TextractClientConfiguration& clie
                                std::shared_ptr<TextractEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TextractErrorMarshaller>(ALLOCATION_TAG)),
@@ -114,7 +114,7 @@ TextractClient::TextractClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   TextractClient::TextractClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TextractErrorMarshaller>(ALLOCATION_TAG)),

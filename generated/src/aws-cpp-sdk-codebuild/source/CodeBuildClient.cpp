@@ -87,7 +87,7 @@ CodeBuildClient::CodeBuildClient(const CodeBuild::CodeBuildClientConfiguration& 
                                  std::shared_ptr<CodeBuildEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeBuildErrorMarshaller>(ALLOCATION_TAG)),
@@ -134,7 +134,7 @@ CodeBuildClient::CodeBuildClient(const std::shared_ptr<AWSCredentialsProvider>& 
   CodeBuildClient::CodeBuildClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeBuildErrorMarshaller>(ALLOCATION_TAG)),

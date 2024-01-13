@@ -176,14 +176,14 @@ namespace
             s3ClientConfig.partSize = 5 * 1024 * 1024;
 
             Client = Aws::MakeShared<S3CrtClient>(ALLOCATION_TAG,
-                Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), s3ClientConfig,
+                GetDefaultCredentialsProviderChain(), s3ClientConfig,
                 AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/,
                 Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY);
 
             s3ClientConfig.region = Aws::Region::US_WEST_2;
             s3ClientConfig.useDualStack = true;
             oregonClient = Aws::MakeShared<S3CrtClient>(ALLOCATION_TAG,
-                Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), s3ClientConfig,
+                GetDefaultCredentialsProviderChain(), s3ClientConfig,
                 AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
             m_HttpClient = Aws::Http::CreateHttpClient(s3ClientConfig);
         }

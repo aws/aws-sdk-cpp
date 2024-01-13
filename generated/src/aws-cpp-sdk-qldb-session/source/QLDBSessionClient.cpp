@@ -43,7 +43,7 @@ QLDBSessionClient::QLDBSessionClient(const QLDBSession::QLDBSessionClientConfigu
                                      std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
@@ -90,7 +90,7 @@ QLDBSessionClient::QLDBSessionClient(const std::shared_ptr<AWSCredentialsProvide
   QLDBSessionClient::QLDBSessionClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),

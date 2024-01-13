@@ -91,7 +91,7 @@ LookoutEquipmentClient::LookoutEquipmentClient(const LookoutEquipment::LookoutEq
                                                std::shared_ptr<LookoutEquipmentEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LookoutEquipmentErrorMarshaller>(ALLOCATION_TAG)),
@@ -138,7 +138,7 @@ LookoutEquipmentClient::LookoutEquipmentClient(const std::shared_ptr<AWSCredenti
   LookoutEquipmentClient::LookoutEquipmentClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LookoutEquipmentErrorMarshaller>(ALLOCATION_TAG)),

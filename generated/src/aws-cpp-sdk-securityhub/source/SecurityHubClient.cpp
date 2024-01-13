@@ -118,7 +118,7 @@ SecurityHubClient::SecurityHubClient(const SecurityHub::SecurityHubClientConfigu
                                      std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SecurityHubErrorMarshaller>(ALLOCATION_TAG)),
@@ -165,7 +165,7 @@ SecurityHubClient::SecurityHubClient(const std::shared_ptr<AWSCredentialsProvide
   SecurityHubClient::SecurityHubClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SecurityHubErrorMarshaller>(ALLOCATION_TAG)),

@@ -4,6 +4,7 @@
  */
 #pragma once
 
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/utils/logging/LogLevel.h>
 #include <aws/core/utils/logging/LogSystemInterface.h>
 #include <aws/core/utils/logging/CRTLogSystem.h>
@@ -105,6 +106,17 @@ namespace Aws
          * Disable legacy URL encoding that leaves `$&,:@=` unescaped for legacy purposes.
          */
         bool compliantRfc3986Encoding;
+    };
+
+    /**
+    * SDK wide options for Credentials Provider Chain
+    */
+    struct CredentialsProviderChainOptions
+    {
+        /**
+         * Defaults to empty, if this is set, then the result of your closure will be installed and used instead of the system defaults
+         */
+        std::function<std::shared_ptr<Aws::Auth::AWSCredentialsProviderChain>()> credentialsProviderChain_create_fn;
     };
 
     /**
@@ -236,6 +248,10 @@ namespace Aws
          * SDK wide options for crypto
          */
         CryptoOptions cryptoOptions;
+        /**
+         * SDK wide options for credentials provider chain
+         */
+        CredentialsProviderChainOptions credentialsProviderChainOptions;
 
         /**
          * Options used to set up customized monitoring implementations

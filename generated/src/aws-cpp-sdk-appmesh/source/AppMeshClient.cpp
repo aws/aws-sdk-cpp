@@ -80,7 +80,7 @@ AppMeshClient::AppMeshClient(const AppMesh::AppMeshClientConfiguration& clientCo
                              std::shared_ptr<AppMeshEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
@@ -127,7 +127,7 @@ AppMeshClient::AppMeshClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   AppMeshClient::AppMeshClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),

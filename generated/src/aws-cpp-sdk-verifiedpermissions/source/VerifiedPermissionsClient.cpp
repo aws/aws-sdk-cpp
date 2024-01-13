@@ -67,7 +67,7 @@ VerifiedPermissionsClient::VerifiedPermissionsClient(const VerifiedPermissions::
                                                      std::shared_ptr<VerifiedPermissionsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VerifiedPermissionsErrorMarshaller>(ALLOCATION_TAG)),
@@ -114,7 +114,7 @@ VerifiedPermissionsClient::VerifiedPermissionsClient(const std::shared_ptr<AWSCr
   VerifiedPermissionsClient::VerifiedPermissionsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VerifiedPermissionsErrorMarshaller>(ALLOCATION_TAG)),

@@ -186,22 +186,22 @@ namespace
             }
 
             Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
+                    GetDefaultCredentialsProviderChain(), config,
                         AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY);
             config.region = Aws::Region::AWS_GLOBAL;
             globalClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG,
-                Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
+                GetDefaultCredentialsProviderChain(), config,
                     AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
             config.region = Aws::Region::US_WEST_2;
             config.useDualStack = true;
             oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
+                    GetDefaultCredentialsProviderChain(), config,
                         AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
             m_HttpClient = Aws::Http::CreateHttpClient(config);
 
             config.retryStrategy = Aws::MakeShared<RetryFiveTimesRetryStrategy>(ALLOCATION_TAG);
             retryClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG,
-                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
+                    GetDefaultCredentialsProviderChain(), config,
                         AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
             // Using client side monitoring for endpoint override testing.
             TestingMonitoringManager::InitTestingMonitoring();

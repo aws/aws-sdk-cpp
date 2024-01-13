@@ -48,7 +48,7 @@ AutoScalingPlansClient::AutoScalingPlansClient(const AutoScalingPlans::AutoScali
                                                std::shared_ptr<AutoScalingPlansEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AutoScalingPlansErrorMarshaller>(ALLOCATION_TAG)),
@@ -95,7 +95,7 @@ AutoScalingPlansClient::AutoScalingPlansClient(const std::shared_ptr<AWSCredenti
   AutoScalingPlansClient::AutoScalingPlansClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AutoScalingPlansErrorMarshaller>(ALLOCATION_TAG)),

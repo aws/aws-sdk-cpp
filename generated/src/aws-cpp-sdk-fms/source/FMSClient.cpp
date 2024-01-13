@@ -84,7 +84,7 @@ FMSClient::FMSClient(const FMS::FMSClientConfiguration& clientConfiguration,
                      std::shared_ptr<FMSEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<FMSErrorMarshaller>(ALLOCATION_TAG)),
@@ -131,7 +131,7 @@ FMSClient::FMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   FMSClient::FMSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<FMSErrorMarshaller>(ALLOCATION_TAG)),

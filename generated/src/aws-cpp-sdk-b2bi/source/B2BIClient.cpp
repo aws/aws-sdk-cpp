@@ -69,7 +69,7 @@ B2BIClient::B2BIClient(const B2BI::B2BIClientConfiguration& clientConfiguration,
                        std::shared_ptr<B2BIEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<B2BIErrorMarshaller>(ALLOCATION_TAG)),
@@ -116,7 +116,7 @@ B2BIClient::B2BIClient(const std::shared_ptr<AWSCredentialsProvider>& credential
   B2BIClient::B2BIClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<B2BIErrorMarshaller>(ALLOCATION_TAG)),

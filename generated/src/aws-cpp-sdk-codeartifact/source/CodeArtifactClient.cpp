@@ -80,7 +80,7 @@ CodeArtifactClient::CodeArtifactClient(const CodeArtifact::CodeArtifactClientCon
                                        std::shared_ptr<CodeArtifactEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeArtifactErrorMarshaller>(ALLOCATION_TAG)),
@@ -127,7 +127,7 @@ CodeArtifactClient::CodeArtifactClient(const std::shared_ptr<AWSCredentialsProvi
   CodeArtifactClient::CodeArtifactClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeArtifactErrorMarshaller>(ALLOCATION_TAG)),

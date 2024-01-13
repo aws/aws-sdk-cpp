@@ -69,7 +69,7 @@ ManagedBlockchainClient::ManagedBlockchainClient(const ManagedBlockchain::Manage
                                                  std::shared_ptr<ManagedBlockchainEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ManagedBlockchainErrorMarshaller>(ALLOCATION_TAG)),
@@ -116,7 +116,7 @@ ManagedBlockchainClient::ManagedBlockchainClient(const std::shared_ptr<AWSCreden
   ManagedBlockchainClient::ManagedBlockchainClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ManagedBlockchainErrorMarshaller>(ALLOCATION_TAG)),

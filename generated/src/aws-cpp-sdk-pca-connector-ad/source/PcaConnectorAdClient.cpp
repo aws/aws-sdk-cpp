@@ -67,7 +67,7 @@ PcaConnectorAdClient::PcaConnectorAdClient(const PcaConnectorAd::PcaConnectorAdC
                                            std::shared_ptr<PcaConnectorAdEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PcaConnectorAdErrorMarshaller>(ALLOCATION_TAG)),
@@ -114,7 +114,7 @@ PcaConnectorAdClient::PcaConnectorAdClient(const std::shared_ptr<AWSCredentialsP
   PcaConnectorAdClient::PcaConnectorAdClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PcaConnectorAdErrorMarshaller>(ALLOCATION_TAG)),

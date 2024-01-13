@@ -107,7 +107,7 @@ protected:
 
     void SetUp()
     {
-        sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), GetConfig());
+        sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, GetDefaultCredentialsProviderChain(), GetConfig());
     }
 
     void TearDown()

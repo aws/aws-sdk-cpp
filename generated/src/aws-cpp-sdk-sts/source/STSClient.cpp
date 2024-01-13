@@ -51,7 +51,7 @@ STSClient::STSClient(const STS::STSClientConfiguration& clientConfiguration,
                      std::shared_ptr<STSEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
@@ -98,7 +98,7 @@ STSClient::STSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   STSClient::STSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),

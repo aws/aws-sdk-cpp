@@ -70,7 +70,7 @@ MediaConvertClient::MediaConvertClient(const MediaConvert::MediaConvertClientCon
                                        std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaConvertErrorMarshaller>(ALLOCATION_TAG)),
@@ -117,7 +117,7 @@ MediaConvertClient::MediaConvertClient(const std::shared_ptr<AWSCredentialsProvi
   MediaConvertClient::MediaConvertClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaConvertErrorMarshaller>(ALLOCATION_TAG)),

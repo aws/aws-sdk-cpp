@@ -75,7 +75,7 @@ GlacierClient::GlacierClient(const Glacier::GlacierClientConfiguration& clientCo
                              std::shared_ptr<GlacierEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
@@ -122,7 +122,7 @@ GlacierClient::GlacierClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   GlacierClient::GlacierClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),

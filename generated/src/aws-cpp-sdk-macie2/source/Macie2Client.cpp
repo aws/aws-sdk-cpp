@@ -121,7 +121,7 @@ Macie2Client::Macie2Client(const Macie2::Macie2ClientConfiguration& clientConfig
                            std::shared_ptr<Macie2EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<Macie2ErrorMarshaller>(ALLOCATION_TAG)),
@@ -168,7 +168,7 @@ Macie2Client::Macie2Client(const std::shared_ptr<AWSCredentialsProvider>& creden
   Macie2Client::Macie2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<Macie2ErrorMarshaller>(ALLOCATION_TAG)),

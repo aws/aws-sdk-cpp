@@ -50,7 +50,7 @@ CloudControlApiClient::CloudControlApiClient(const CloudControlApi::CloudControl
                                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudControlApiErrorMarshaller>(ALLOCATION_TAG)),
@@ -97,7 +97,7 @@ CloudControlApiClient::CloudControlApiClient(const std::shared_ptr<AWSCredential
   CloudControlApiClient::CloudControlApiClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudControlApiErrorMarshaller>(ALLOCATION_TAG)),

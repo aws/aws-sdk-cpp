@@ -104,7 +104,7 @@ CleanRoomsClient::CleanRoomsClient(const CleanRooms::CleanRoomsClientConfigurati
                                    std::shared_ptr<CleanRoomsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CleanRoomsErrorMarshaller>(ALLOCATION_TAG)),
@@ -151,7 +151,7 @@ CleanRoomsClient::CleanRoomsClient(const std::shared_ptr<AWSCredentialsProvider>
   CleanRoomsClient::CleanRoomsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CleanRoomsErrorMarshaller>(ALLOCATION_TAG)),

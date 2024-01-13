@@ -49,7 +49,7 @@ CostOptimizationHubClient::CostOptimizationHubClient(const CostOptimizationHub::
                                                      std::shared_ptr<CostOptimizationHubEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CostOptimizationHubErrorMarshaller>(ALLOCATION_TAG)),
@@ -96,7 +96,7 @@ CostOptimizationHubClient::CostOptimizationHubClient(const std::shared_ptr<AWSCr
   CostOptimizationHubClient::CostOptimizationHubClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CostOptimizationHubErrorMarshaller>(ALLOCATION_TAG)),

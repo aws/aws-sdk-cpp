@@ -96,7 +96,7 @@ LakeFormationClient::LakeFormationClient(const LakeFormation::LakeFormationClien
                                          std::shared_ptr<LakeFormationEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LakeFormationErrorMarshaller>(ALLOCATION_TAG)),
@@ -143,7 +143,7 @@ LakeFormationClient::LakeFormationClient(const std::shared_ptr<AWSCredentialsPro
   LakeFormationClient::LakeFormationClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LakeFormationErrorMarshaller>(ALLOCATION_TAG)),

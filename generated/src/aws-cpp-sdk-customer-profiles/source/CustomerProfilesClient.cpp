@@ -94,7 +94,7 @@ CustomerProfilesClient::CustomerProfilesClient(const CustomerProfiles::CustomerP
                                                std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CustomerProfilesErrorMarshaller>(ALLOCATION_TAG)),
@@ -141,7 +141,7 @@ CustomerProfilesClient::CustomerProfilesClient(const std::shared_ptr<AWSCredenti
   CustomerProfilesClient::CustomerProfilesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CustomerProfilesErrorMarshaller>(ALLOCATION_TAG)),

@@ -70,7 +70,7 @@ EFSClient::EFSClient(const EFS::EFSClientConfiguration& clientConfiguration,
                      std::shared_ptr<EFSEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EFSErrorMarshaller>(ALLOCATION_TAG)),
@@ -117,7 +117,7 @@ EFSClient::EFSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   EFSClient::EFSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EFSErrorMarshaller>(ALLOCATION_TAG)),

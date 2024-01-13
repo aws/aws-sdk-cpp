@@ -67,7 +67,7 @@ BackupGatewayClient::BackupGatewayClient(const BackupGateway::BackupGatewayClien
                                          std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BackupGatewayErrorMarshaller>(ALLOCATION_TAG)),
@@ -114,7 +114,7 @@ BackupGatewayClient::BackupGatewayClient(const std::shared_ptr<AWSCredentialsPro
   BackupGatewayClient::BackupGatewayClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BackupGatewayErrorMarshaller>(ALLOCATION_TAG)),

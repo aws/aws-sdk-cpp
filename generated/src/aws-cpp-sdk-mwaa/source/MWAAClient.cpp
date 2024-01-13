@@ -52,7 +52,7 @@ MWAAClient::MWAAClient(const MWAA::MWAAClientConfiguration& clientConfiguration,
                        std::shared_ptr<MWAAEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MWAAErrorMarshaller>(ALLOCATION_TAG)),
@@ -99,7 +99,7 @@ MWAAClient::MWAAClient(const std::shared_ptr<AWSCredentialsProvider>& credential
   MWAAClient::MWAAClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MWAAErrorMarshaller>(ALLOCATION_TAG)),

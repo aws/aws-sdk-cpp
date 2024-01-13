@@ -78,7 +78,7 @@ NetworkFirewallClient::NetworkFirewallClient(const NetworkFirewall::NetworkFirew
                                              std::shared_ptr<NetworkFirewallEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NetworkFirewallErrorMarshaller>(ALLOCATION_TAG)),
@@ -125,7 +125,7 @@ NetworkFirewallClient::NetworkFirewallClient(const std::shared_ptr<AWSCredential
   NetworkFirewallClient::NetworkFirewallClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NetworkFirewallErrorMarshaller>(ALLOCATION_TAG)),

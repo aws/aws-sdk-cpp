@@ -68,7 +68,7 @@ PrivateNetworksClient::PrivateNetworksClient(const PrivateNetworks::PrivateNetwo
                                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
@@ -115,7 +115,7 @@ PrivateNetworksClient::PrivateNetworksClient(const std::shared_ptr<AWSCredential
   PrivateNetworksClient::PrivateNetworksClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),

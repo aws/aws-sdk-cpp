@@ -101,7 +101,7 @@ DirectConnectClient::DirectConnectClient(const DirectConnect::DirectConnectClien
                                          std::shared_ptr<DirectConnectEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DirectConnectErrorMarshaller>(ALLOCATION_TAG)),
@@ -148,7 +148,7 @@ DirectConnectClient::DirectConnectClient(const std::shared_ptr<AWSCredentialsPro
   DirectConnectClient::DirectConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DirectConnectErrorMarshaller>(ALLOCATION_TAG)),

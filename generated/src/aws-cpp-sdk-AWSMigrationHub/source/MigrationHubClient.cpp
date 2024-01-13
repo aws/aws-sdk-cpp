@@ -59,7 +59,7 @@ MigrationHubClient::MigrationHubClient(const MigrationHub::MigrationHubClientCon
                                        std::shared_ptr<MigrationHubEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MigrationHubErrorMarshaller>(ALLOCATION_TAG)),
@@ -106,7 +106,7 @@ MigrationHubClient::MigrationHubClient(const std::shared_ptr<AWSCredentialsProvi
   MigrationHubClient::MigrationHubClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MigrationHubErrorMarshaller>(ALLOCATION_TAG)),

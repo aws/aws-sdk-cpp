@@ -65,7 +65,7 @@ SecretsManagerClient::SecretsManagerClient(const SecretsManager::SecretsManagerC
                                            std::shared_ptr<SecretsManagerEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SecretsManagerErrorMarshaller>(ALLOCATION_TAG)),
@@ -112,7 +112,7 @@ SecretsManagerClient::SecretsManagerClient(const std::shared_ptr<AWSCredentialsP
   SecretsManagerClient::SecretsManagerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SecretsManagerErrorMarshaller>(ALLOCATION_TAG)),

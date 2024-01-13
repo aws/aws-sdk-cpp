@@ -80,7 +80,7 @@ MemoryDBClient::MemoryDBClient(const MemoryDB::MemoryDBClientConfiguration& clie
                                std::shared_ptr<MemoryDBEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MemoryDBErrorMarshaller>(ALLOCATION_TAG)),
@@ -127,7 +127,7 @@ MemoryDBClient::MemoryDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   MemoryDBClient::MemoryDBClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MemoryDBErrorMarshaller>(ALLOCATION_TAG)),

@@ -91,7 +91,7 @@ NimbleStudioClient::NimbleStudioClient(const NimbleStudio::NimbleStudioClientCon
                                        std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
@@ -138,7 +138,7 @@ NimbleStudioClient::NimbleStudioClient(const std::shared_ptr<AWSCredentialsProvi
   NimbleStudioClient::NimbleStudioClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),

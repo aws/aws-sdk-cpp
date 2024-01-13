@@ -117,7 +117,7 @@ RekognitionClient::RekognitionClient(const Rekognition::RekognitionClientConfigu
                                      std::shared_ptr<RekognitionEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
@@ -164,7 +164,7 @@ RekognitionClient::RekognitionClient(const std::shared_ptr<AWSCredentialsProvide
   RekognitionClient::RekognitionClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),

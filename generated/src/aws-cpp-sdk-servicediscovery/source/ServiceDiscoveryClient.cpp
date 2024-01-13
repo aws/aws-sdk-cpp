@@ -69,7 +69,7 @@ ServiceDiscoveryClient::ServiceDiscoveryClient(const ServiceDiscovery::ServiceDi
                                                std::shared_ptr<ServiceDiscoveryEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
@@ -116,7 +116,7 @@ ServiceDiscoveryClient::ServiceDiscoveryClient(const std::shared_ptr<AWSCredenti
   ServiceDiscoveryClient::ServiceDiscoveryClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),

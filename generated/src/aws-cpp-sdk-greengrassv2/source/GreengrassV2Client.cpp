@@ -71,7 +71,7 @@ GreengrassV2Client::GreengrassV2Client(const GreengrassV2::GreengrassV2ClientCon
                                        std::shared_ptr<GreengrassV2EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GreengrassV2ErrorMarshaller>(ALLOCATION_TAG)),
@@ -118,7 +118,7 @@ GreengrassV2Client::GreengrassV2Client(const std::shared_ptr<AWSCredentialsProvi
   GreengrassV2Client::GreengrassV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GreengrassV2ErrorMarshaller>(ALLOCATION_TAG)),

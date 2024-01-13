@@ -51,7 +51,7 @@ KendraRankingClient::KendraRankingClient(const KendraRanking::KendraRankingClien
                                          std::shared_ptr<KendraRankingEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KendraRankingErrorMarshaller>(ALLOCATION_TAG)),
@@ -98,7 +98,7 @@ KendraRankingClient::KendraRankingClient(const std::shared_ptr<AWSCredentialsPro
   KendraRankingClient::KendraRankingClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KendraRankingErrorMarshaller>(ALLOCATION_TAG)),

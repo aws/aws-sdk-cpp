@@ -43,7 +43,7 @@ SageMakerMetricsClient::SageMakerMetricsClient(const SageMakerMetrics::SageMaker
                                                std::shared_ptr<SageMakerMetricsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerMetricsErrorMarshaller>(ALLOCATION_TAG)),
@@ -90,7 +90,7 @@ SageMakerMetricsClient::SageMakerMetricsClient(const std::shared_ptr<AWSCredenti
   SageMakerMetricsClient::SageMakerMetricsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SageMakerMetricsErrorMarshaller>(ALLOCATION_TAG)),

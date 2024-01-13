@@ -51,7 +51,7 @@ PollyClient::PollyClient(const Polly::PollyClientConfiguration& clientConfigurat
                          std::shared_ptr<PollyEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PollyErrorMarshaller>(ALLOCATION_TAG)),
@@ -98,7 +98,7 @@ PollyClient::PollyClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
   PollyClient::PollyClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PollyErrorMarshaller>(ALLOCATION_TAG)),

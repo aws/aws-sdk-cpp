@@ -90,7 +90,7 @@ CloudTrailClient::CloudTrailClient(const CloudTrail::CloudTrailClientConfigurati
                                    std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudTrailErrorMarshaller>(ALLOCATION_TAG)),
@@ -137,7 +137,7 @@ CloudTrailClient::CloudTrailClient(const std::shared_ptr<AWSCredentialsProvider>
   CloudTrailClient::CloudTrailClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudTrailErrorMarshaller>(ALLOCATION_TAG)),

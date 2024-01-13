@@ -53,7 +53,7 @@ RepostspaceClient::RepostspaceClient(const repostspace::RepostspaceClientConfigu
                                      std::shared_ptr<RepostspaceEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RepostspaceErrorMarshaller>(ALLOCATION_TAG)),
@@ -100,7 +100,7 @@ RepostspaceClient::RepostspaceClient(const std::shared_ptr<AWSCredentialsProvide
   RepostspaceClient::RepostspaceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<RepostspaceErrorMarshaller>(ALLOCATION_TAG)),

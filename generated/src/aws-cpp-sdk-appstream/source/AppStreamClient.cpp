@@ -117,7 +117,7 @@ AppStreamClient::AppStreamClient(const AppStream::AppStreamClientConfiguration& 
                                  std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppStreamErrorMarshaller>(ALLOCATION_TAG)),
@@ -164,7 +164,7 @@ AppStreamClient::AppStreamClient(const std::shared_ptr<AWSCredentialsProvider>& 
   AppStreamClient::AppStreamClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppStreamErrorMarshaller>(ALLOCATION_TAG)),

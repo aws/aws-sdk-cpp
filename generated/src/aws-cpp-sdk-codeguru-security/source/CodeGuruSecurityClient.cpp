@@ -55,7 +55,7 @@ CodeGuruSecurityClient::CodeGuruSecurityClient(const CodeGuruSecurity::CodeGuruS
                                                std::shared_ptr<CodeGuruSecurityEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeGuruSecurityErrorMarshaller>(ALLOCATION_TAG)),
@@ -102,7 +102,7 @@ CodeGuruSecurityClient::CodeGuruSecurityClient(const std::shared_ptr<AWSCredenti
   CodeGuruSecurityClient::CodeGuruSecurityClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CodeGuruSecurityErrorMarshaller>(ALLOCATION_TAG)),

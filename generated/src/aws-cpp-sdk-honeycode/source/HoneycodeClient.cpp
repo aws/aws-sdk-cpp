@@ -57,7 +57,7 @@ HoneycodeClient::HoneycodeClient(const Honeycode::HoneycodeClientConfiguration& 
                                  std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
@@ -104,7 +104,7 @@ HoneycodeClient::HoneycodeClient(const std::shared_ptr<AWSCredentialsProvider>& 
   HoneycodeClient::HoneycodeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),

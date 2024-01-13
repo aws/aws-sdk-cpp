@@ -136,7 +136,7 @@ S3ControlClient::S3ControlClient(const S3Control::S3ControlClientConfiguration& 
                                  std::shared_ptr<S3ControlEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region),
                                              Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
@@ -189,7 +189,7 @@ S3ControlClient::S3ControlClient(const std::shared_ptr<AWSCredentialsProvider>& 
   S3ControlClient::S3ControlClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region),
                                              Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,

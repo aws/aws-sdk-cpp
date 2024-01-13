@@ -82,7 +82,7 @@ BedrockAgentClient::BedrockAgentClient(const BedrockAgent::BedrockAgentClientCon
                                        std::shared_ptr<BedrockAgentEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BedrockAgentErrorMarshaller>(ALLOCATION_TAG)),
@@ -129,7 +129,7 @@ BedrockAgentClient::BedrockAgentClient(const std::shared_ptr<AWSCredentialsProvi
   BedrockAgentClient::BedrockAgentClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BedrockAgentErrorMarshaller>(ALLOCATION_TAG)),

@@ -108,7 +108,7 @@ GuardDutyClient::GuardDutyClient(const GuardDuty::GuardDutyClientConfiguration& 
                                  std::shared_ptr<GuardDutyEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GuardDutyErrorMarshaller>(ALLOCATION_TAG)),
@@ -155,7 +155,7 @@ GuardDutyClient::GuardDutyClient(const std::shared_ptr<AWSCredentialsProvider>& 
   GuardDutyClient::GuardDutyClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GuardDutyErrorMarshaller>(ALLOCATION_TAG)),

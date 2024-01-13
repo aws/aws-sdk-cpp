@@ -51,7 +51,7 @@ BackupStorageClient::BackupStorageClient(const BackupStorage::BackupStorageClien
                                          std::shared_ptr<BackupStorageEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
@@ -98,7 +98,7 @@ BackupStorageClient::BackupStorageClient(const std::shared_ptr<AWSCredentialsPro
   BackupStorageClient::BackupStorageClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),

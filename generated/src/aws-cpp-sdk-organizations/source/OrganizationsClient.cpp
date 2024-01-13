@@ -97,7 +97,7 @@ OrganizationsClient::OrganizationsClient(const Organizations::OrganizationsClien
                                          std::shared_ptr<OrganizationsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OrganizationsErrorMarshaller>(ALLOCATION_TAG)),
@@ -144,7 +144,7 @@ OrganizationsClient::OrganizationsClient(const std::shared_ptr<AWSCredentialsPro
   OrganizationsClient::OrganizationsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OrganizationsErrorMarshaller>(ALLOCATION_TAG)),

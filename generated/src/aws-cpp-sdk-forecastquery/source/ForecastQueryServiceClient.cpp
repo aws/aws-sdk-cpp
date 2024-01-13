@@ -44,7 +44,7 @@ ForecastQueryServiceClient::ForecastQueryServiceClient(const ForecastQueryServic
                                                        std::shared_ptr<ForecastQueryServiceEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
@@ -91,7 +91,7 @@ ForecastQueryServiceClient::ForecastQueryServiceClient(const std::shared_ptr<AWS
   ForecastQueryServiceClient::ForecastQueryServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),

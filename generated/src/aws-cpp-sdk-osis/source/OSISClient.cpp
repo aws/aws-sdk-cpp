@@ -56,7 +56,7 @@ OSISClient::OSISClient(const OSIS::OSISClientConfiguration& clientConfiguration,
                        std::shared_ptr<OSISEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OSISErrorMarshaller>(ALLOCATION_TAG)),
@@ -103,7 +103,7 @@ OSISClient::OSISClient(const std::shared_ptr<AWSCredentialsProvider>& credential
   OSISClient::OSISClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<OSISErrorMarshaller>(ALLOCATION_TAG)),

@@ -63,7 +63,7 @@ ResourceExplorer2Client::ResourceExplorer2Client(const ResourceExplorer2::Resour
                                                  std::shared_ptr<ResourceExplorer2EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ResourceExplorer2ErrorMarshaller>(ALLOCATION_TAG)),
@@ -110,7 +110,7 @@ ResourceExplorer2Client::ResourceExplorer2Client(const std::shared_ptr<AWSCreden
   ResourceExplorer2Client::ResourceExplorer2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ResourceExplorer2ErrorMarshaller>(ALLOCATION_TAG)),
