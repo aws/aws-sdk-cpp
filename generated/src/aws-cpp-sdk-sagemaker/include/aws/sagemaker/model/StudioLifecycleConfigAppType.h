@@ -18,8 +18,6 @@ namespace Model
     NOT_SET,
     JupyterServer,
     KernelGateway,
-    VSCode,
-    Savitur,
     CodeEditor,
     JupyterLab
   };

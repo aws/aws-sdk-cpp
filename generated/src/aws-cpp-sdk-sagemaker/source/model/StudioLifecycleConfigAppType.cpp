@@ -22,8 +22,6 @@ namespace Aws
 
         static const int JupyterServer_HASH = HashingUtils::HashString("JupyterServer");
         static const int KernelGateway_HASH = HashingUtils::HashString("KernelGateway");
-        static const int VSCode_HASH = HashingUtils::HashString("VSCode");
-        static const int Savitur_HASH = HashingUtils::HashString("Savitur");
         static const int CodeEditor_HASH = HashingUtils::HashString("CodeEditor");
         static const int JupyterLab_HASH = HashingUtils::HashString("JupyterLab");
 
@@ -38,14 +36,6 @@ namespace Aws
           else if (hashCode == KernelGateway_HASH)
           {
             return StudioLifecycleConfigAppType::KernelGateway;
-          }
-          else if (hashCode == VSCode_HASH)
-          {
-            return StudioLifecycleConfigAppType::VSCode;
-          }
-          else if (hashCode == Savitur_HASH)
-          {
-            return StudioLifecycleConfigAppType::Savitur;
           }
           else if (hashCode == CodeEditor_HASH)
           {
@@ -75,10 +65,6 @@ namespace Aws
             return "JupyterServer";
           case StudioLifecycleConfigAppType::KernelGateway:
             return "KernelGateway";
-          case StudioLifecycleConfigAppType::VSCode:
-            return "VSCode";
-          case StudioLifecycleConfigAppType::Savitur:
-            return "Savitur";
           case StudioLifecycleConfigAppType::CodeEditor:
             return "CodeEditor";
           case StudioLifecycleConfigAppType::JupyterLab:

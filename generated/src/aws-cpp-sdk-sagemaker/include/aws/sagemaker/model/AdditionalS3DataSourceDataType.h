@@ -16,7 +16,8 @@ namespace Model
   enum class AdditionalS3DataSourceDataType
   {
     NOT_SET,
-    S3Object
+    S3Object,
+    S3Prefix
   };
 
 namespace AdditionalS3DataSourceDataTypeMapper
