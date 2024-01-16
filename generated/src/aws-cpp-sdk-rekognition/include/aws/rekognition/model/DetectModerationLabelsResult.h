@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/HumanLoopActivationOutput.h>
 #include <aws/rekognition/model/ModerationLabel.h>
+#include <aws/rekognition/model/ContentType.h>
 #include <utility>
 
 namespace Aws
@@ -197,6 +198,49 @@ namespace Model
     inline DetectModerationLabelsResult& WithProjectVersion(const char* value) { SetProjectVersion(value); return *this;}
 
 
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline const Aws::Vector<ContentType>& GetContentTypes() const{ return m_contentTypes; }
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline void SetContentTypes(const Aws::Vector<ContentType>& value) { m_contentTypes = value; }
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline void SetContentTypes(Aws::Vector<ContentType>&& value) { m_contentTypes = std::move(value); }
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline DetectModerationLabelsResult& WithContentTypes(const Aws::Vector<ContentType>& value) { SetContentTypes(value); return *this;}
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline DetectModerationLabelsResult& WithContentTypes(Aws::Vector<ContentType>&& value) { SetContentTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline DetectModerationLabelsResult& AddContentTypes(const ContentType& value) { m_contentTypes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of predicted results for the type of content an image contains. For
+     * example, the image content might be from animation, sports, or a video game.</p>
+     */
+    inline DetectModerationLabelsResult& AddContentTypes(ContentType&& value) { m_contentTypes.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -227,6 +271,8 @@ namespace Model
     HumanLoopActivationOutput m_humanLoopActivationOutput;
 
     Aws::String m_projectVersion;
+
+    Aws::Vector<ContentType> m_contentTypes;
 
     Aws::String m_requestId;
   };

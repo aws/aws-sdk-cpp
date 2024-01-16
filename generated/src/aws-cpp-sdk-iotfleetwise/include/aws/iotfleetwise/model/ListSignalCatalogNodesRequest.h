@@ -7,6 +7,7 @@
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/iotfleetwise/IoTFleetWiseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/model/SignalNodeType.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,37 @@ namespace Model
      */
     inline ListSignalCatalogNodesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The type of node in the signal catalog.</p>
+     */
+    inline const SignalNodeType& GetSignalNodeType() const{ return m_signalNodeType; }
+
+    /**
+     * <p>The type of node in the signal catalog.</p>
+     */
+    inline bool SignalNodeTypeHasBeenSet() const { return m_signalNodeTypeHasBeenSet; }
+
+    /**
+     * <p>The type of node in the signal catalog.</p>
+     */
+    inline void SetSignalNodeType(const SignalNodeType& value) { m_signalNodeTypeHasBeenSet = true; m_signalNodeType = value; }
+
+    /**
+     * <p>The type of node in the signal catalog.</p>
+     */
+    inline void SetSignalNodeType(SignalNodeType&& value) { m_signalNodeTypeHasBeenSet = true; m_signalNodeType = std::move(value); }
+
+    /**
+     * <p>The type of node in the signal catalog.</p>
+     */
+    inline ListSignalCatalogNodesRequest& WithSignalNodeType(const SignalNodeType& value) { SetSignalNodeType(value); return *this;}
+
+    /**
+     * <p>The type of node in the signal catalog.</p>
+     */
+    inline ListSignalCatalogNodesRequest& WithSignalNodeType(SignalNodeType&& value) { SetSignalNodeType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -186,6 +218,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    SignalNodeType m_signalNodeType;
+    bool m_signalNodeTypeHasBeenSet = false;
   };
 
 } // namespace Model

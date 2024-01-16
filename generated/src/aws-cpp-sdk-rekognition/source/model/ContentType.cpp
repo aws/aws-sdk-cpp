@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/ModerationLabel.h>
+#include <aws/rekognition/model/ContentType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,28 +18,22 @@ namespace Rekognition
 namespace Model
 {
 
-ModerationLabel::ModerationLabel() : 
+ContentType::ContentType() : 
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parentNameHasBeenSet(false),
-    m_taxonomyLevel(0),
-    m_taxonomyLevelHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
 }
 
-ModerationLabel::ModerationLabel(JsonView jsonValue) : 
+ContentType::ContentType(JsonView jsonValue) : 
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parentNameHasBeenSet(false),
-    m_taxonomyLevel(0),
-    m_taxonomyLevelHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ModerationLabel& ModerationLabel::operator =(JsonView jsonValue)
+ContentType& ContentType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Confidence"))
   {
@@ -55,24 +49,10 @@ ModerationLabel& ModerationLabel::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ParentName"))
-  {
-    m_parentName = jsonValue.GetString("ParentName");
-
-    m_parentNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("TaxonomyLevel"))
-  {
-    m_taxonomyLevel = jsonValue.GetInteger("TaxonomyLevel");
-
-    m_taxonomyLevelHasBeenSet = true;
-  }
-
   return *this;
 }
 
-JsonValue ModerationLabel::Jsonize() const
+JsonValue ContentType::Jsonize() const
 {
   JsonValue payload;
 
@@ -85,18 +65,6 @@ JsonValue ModerationLabel::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
-
-  }
-
-  if(m_parentNameHasBeenSet)
-  {
-   payload.WithString("ParentName", m_parentName);
-
-  }
-
-  if(m_taxonomyLevelHasBeenSet)
-  {
-   payload.WithInteger("TaxonomyLevel", m_taxonomyLevel);
 
   }
 

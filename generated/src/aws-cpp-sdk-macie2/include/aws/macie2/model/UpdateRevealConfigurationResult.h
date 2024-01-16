@@ -66,27 +66,27 @@ namespace Model
 
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline const RetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline void SetRetrievalConfiguration(const RetrievalConfiguration& value) { m_retrievalConfiguration = value; }
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline void SetRetrievalConfiguration(RetrievalConfiguration&& value) { m_retrievalConfiguration = std::move(value); }
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline UpdateRevealConfigurationResult& WithRetrievalConfiguration(const RetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline UpdateRevealConfigurationResult& WithRetrievalConfiguration(RetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
 

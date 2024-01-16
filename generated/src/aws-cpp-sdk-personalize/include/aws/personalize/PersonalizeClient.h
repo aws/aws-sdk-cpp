@@ -155,27 +155,32 @@ namespace Personalize
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
          * APIs, a campaign is specified in the request.</p> <p> <b>Minimum Provisioned TPS
          * and Auto-Scaling</b> </p>  <p> A high <code>minProvisionedTPS</code>
-         * will increase your bill. We recommend starting with 1 for
+         * will increase your cost. We recommend starting with 1 for
          * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
          * CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
-         * necessary.</p>  <p>A transaction is a single
-         * <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code> call.
-         * Transactions per second (TPS) is the throughput and unit of billing for Amazon
-         * Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>)
-         * specifies the baseline throughput provisioned by Amazon Personalize, and thus,
-         * the minimum billing charge. </p> <p> If your TPS increases beyond
+         * necessary.</p>  <p> When you create an Amazon Personalize campaign,
+         * you can specify the minimum provisioned transactions per second
+         * (<code>minProvisionedTPS</code>) for the campaign. This is the baseline
+         * transaction throughput for the campaign provisioned by Amazon Personalize. It
+         * sets the minimum billing charge for the campaign while it is active. A
+         * transaction is a single <code>GetRecommendations</code> or
+         * <code>GetPersonalizedRanking</code> request. The default
+         * <code>minProvisionedTPS</code> is 1.</p> <p> If your TPS increases beyond the
          * <code>minProvisionedTPS</code>, Amazon Personalize auto-scales the provisioned
          * capacity up and down, but never below <code>minProvisionedTPS</code>. There's a
          * short time delay while the capacity is increased that might cause loss of
-         * transactions.</p> <p>The actual TPS used is calculated as the average
-         * requests/second within a 5-minute window. You pay for maximum of either the
-         * minimum provisioned TPS or the actual TPS. We recommend starting with a low
-         * <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch
-         * metrics, and then increase the <code>minProvisionedTPS</code> as necessary.</p>
-         * <p> <b>Status</b> </p> <p>A campaign can be in one of the following states:</p>
-         * <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
-         * FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
-         * <p>To get the campaign status, call <a
+         * transactions. When your traffic reduces, capacity returns to the
+         * <code>minProvisionedTPS</code>. </p> <p>You are charged for the the minimum
+         * provisioned TPS or, if your requests exceed the <code>minProvisionedTPS</code>,
+         * the actual TPS. The actual TPS is the total number of recommendation requests
+         * you make. We recommend starting with a low <code>minProvisionedTPS</code>, track
+         * your usage using Amazon CloudWatch metrics, and then increase the
+         * <code>minProvisionedTPS</code> as necessary.</p> <p>For more information about
+         * campaign costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
+         * Personalize pricing</a>.</p> <p> <b>Status</b> </p> <p>A campaign can be in one
+         * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
+         * &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
+         * IN_PROGRESS</p> </li> </ul> <p>To get the campaign status, call <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>.</p>
          *  <p>Wait until the <code>status</code> of the campaign is
          * <code>ACTIVE</code> before asking the campaign for recommendations.</p> 

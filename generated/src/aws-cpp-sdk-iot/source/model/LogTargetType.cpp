@@ -25,8 +25,6 @@ namespace Aws
         static const int CLIENT_ID_HASH = HashingUtils::HashString("CLIENT_ID");
         static const int SOURCE_IP_HASH = HashingUtils::HashString("SOURCE_IP");
         static const int PRINCIPAL_ID_HASH = HashingUtils::HashString("PRINCIPAL_ID");
-        static const int EVENT_TYPE_HASH = HashingUtils::HashString("EVENT_TYPE");
-        static const int DEVICE_DEFENDER_HASH = HashingUtils::HashString("DEVICE_DEFENDER");
 
 
         LogTargetType GetLogTargetTypeForName(const Aws::String& name)
@@ -51,14 +49,6 @@ namespace Aws
           else if (hashCode == PRINCIPAL_ID_HASH)
           {
             return LogTargetType::PRINCIPAL_ID;
-          }
-          else if (hashCode == EVENT_TYPE_HASH)
-          {
-            return LogTargetType::EVENT_TYPE;
-          }
-          else if (hashCode == DEVICE_DEFENDER_HASH)
-          {
-            return LogTargetType::DEVICE_DEFENDER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -86,10 +76,6 @@ namespace Aws
             return "SOURCE_IP";
           case LogTargetType::PRINCIPAL_ID:
             return "PRINCIPAL_ID";
-          case LogTargetType::EVENT_TYPE:
-            return "EVENT_TYPE";
-          case LogTargetType::DEVICE_DEFENDER:
-            return "DEVICE_DEFENDER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -132,56 +132,86 @@ namespace Model
 
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline const RevealStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline void SetStatus(const RevealStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline void SetStatus(RevealStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline RevealConfiguration& WithStatus(const RevealStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline RevealConfiguration& WithStatus(RevealStatus&& value) { SetStatus(std::move(value)); return *this;}
 

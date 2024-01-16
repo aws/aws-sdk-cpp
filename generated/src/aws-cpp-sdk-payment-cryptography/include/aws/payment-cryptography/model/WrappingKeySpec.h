@@ -13,22 +13,19 @@ namespace PaymentCryptography
 {
 namespace Model
 {
-  enum class KeyMaterialType
+  enum class WrappingKeySpec
   {
     NOT_SET,
-    TR34_KEY_BLOCK,
-    TR31_KEY_BLOCK,
-    ROOT_PUBLIC_KEY_CERTIFICATE,
-    TRUSTED_PUBLIC_KEY_CERTIFICATE,
-    KEY_CRYPTOGRAM
+    RSA_OAEP_SHA_256,
+    RSA_OAEP_SHA_512
   };
 
-namespace KeyMaterialTypeMapper
+namespace WrappingKeySpecMapper
 {
-AWS_PAYMENTCRYPTOGRAPHY_API KeyMaterialType GetKeyMaterialTypeForName(const Aws::String& name);
+AWS_PAYMENTCRYPTOGRAPHY_API WrappingKeySpec GetWrappingKeySpecForName(const Aws::String& name);
 
-AWS_PAYMENTCRYPTOGRAPHY_API Aws::String GetNameForKeyMaterialType(KeyMaterialType value);
-} // namespace KeyMaterialTypeMapper
+AWS_PAYMENTCRYPTOGRAPHY_API Aws::String GetNameForWrappingKeySpec(WrappingKeySpec value);
+} // namespace WrappingKeySpecMapper
 } // namespace Model
 } // namespace PaymentCryptography
 } // namespace Aws

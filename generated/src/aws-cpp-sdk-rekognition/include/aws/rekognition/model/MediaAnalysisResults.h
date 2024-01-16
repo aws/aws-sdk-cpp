@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/S3Object.h>
+#include <aws/rekognition/model/MediaAnalysisModelVersions.h>
 #include <utility>
 
 namespace Aws
@@ -56,10 +57,50 @@ namespace Model
     
     inline MediaAnalysisResults& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the model versions for the features selected in a given
+     * job.</p>
+     */
+    inline const MediaAnalysisModelVersions& GetModelVersions() const{ return m_modelVersions; }
+
+    /**
+     * <p>Information about the model versions for the features selected in a given
+     * job.</p>
+     */
+    inline bool ModelVersionsHasBeenSet() const { return m_modelVersionsHasBeenSet; }
+
+    /**
+     * <p>Information about the model versions for the features selected in a given
+     * job.</p>
+     */
+    inline void SetModelVersions(const MediaAnalysisModelVersions& value) { m_modelVersionsHasBeenSet = true; m_modelVersions = value; }
+
+    /**
+     * <p>Information about the model versions for the features selected in a given
+     * job.</p>
+     */
+    inline void SetModelVersions(MediaAnalysisModelVersions&& value) { m_modelVersionsHasBeenSet = true; m_modelVersions = std::move(value); }
+
+    /**
+     * <p>Information about the model versions for the features selected in a given
+     * job.</p>
+     */
+    inline MediaAnalysisResults& WithModelVersions(const MediaAnalysisModelVersions& value) { SetModelVersions(value); return *this;}
+
+    /**
+     * <p>Information about the model versions for the features selected in a given
+     * job.</p>
+     */
+    inline MediaAnalysisResults& WithModelVersions(MediaAnalysisModelVersions&& value) { SetModelVersions(std::move(value)); return *this;}
+
   private:
 
     S3Object m_s3Object;
     bool m_s3ObjectHasBeenSet = false;
+
+    MediaAnalysisModelVersions m_modelVersions;
+    bool m_modelVersionsHasBeenSet = false;
   };
 
 } // namespace Model
