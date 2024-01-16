@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
+#include <aws/payment-cryptography/model/ImportKeyCryptogram.h>
 #include <aws/payment-cryptography/model/RootCertificatePublicKey.h>
 #include <aws/payment-cryptography/model/ImportTr31KeyBlock.h>
 #include <aws/payment-cryptography/model/ImportTr34KeyBlock.h>
@@ -28,8 +29,8 @@ namespace Model
 
   /**
    * <p>Parameter information for key material import into Amazon Web Services
-   * Payment Cryptography using TR-31 or TR-34 key exchange method.</p><p><h3>See
-   * Also:</h3>   <a
+   * Payment Cryptography using TR-31 or TR-34 or RSA wrap and unwrap key exchange
+   * method.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ImportKeyMaterial">AWS
    * API Reference</a></p>
    */
@@ -40,6 +41,43 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API ImportKeyMaterial(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API ImportKeyMaterial& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
+     */
+    inline const ImportKeyCryptogram& GetKeyCryptogram() const{ return m_keyCryptogram; }
+
+    /**
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
+     */
+    inline bool KeyCryptogramHasBeenSet() const { return m_keyCryptogramHasBeenSet; }
+
+    /**
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
+     */
+    inline void SetKeyCryptogram(const ImportKeyCryptogram& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = value; }
+
+    /**
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
+     */
+    inline void SetKeyCryptogram(ImportKeyCryptogram&& value) { m_keyCryptogramHasBeenSet = true; m_keyCryptogram = std::move(value); }
+
+    /**
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
+     */
+    inline ImportKeyMaterial& WithKeyCryptogram(const ImportKeyCryptogram& value) { SetKeyCryptogram(value); return *this;}
+
+    /**
+     * <p>Parameter information for key material import using asymmetric RSA wrap and
+     * unwrap key exchange method.</p>
+     */
+    inline ImportKeyMaterial& WithKeyCryptogram(ImportKeyCryptogram&& value) { SetKeyCryptogram(std::move(value)); return *this;}
 
 
     /**
@@ -178,6 +216,9 @@ namespace Model
     inline ImportKeyMaterial& WithTrustedCertificatePublicKey(TrustedCertificatePublicKey&& value) { SetTrustedCertificatePublicKey(std::move(value)); return *this;}
 
   private:
+
+    ImportKeyCryptogram m_keyCryptogram;
+    bool m_keyCryptogramHasBeenSet = false;
 
     RootCertificatePublicKey m_rootCertificatePublicKey;
     bool m_rootCertificatePublicKeyHasBeenSet = false;

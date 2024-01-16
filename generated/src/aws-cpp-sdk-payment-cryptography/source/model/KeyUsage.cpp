@@ -34,6 +34,7 @@ namespace Aws
         static const int TR31_K1_KEY_BLOCK_PROTECTION_KEY_HASH = HashingUtils::HashString("TR31_K1_KEY_BLOCK_PROTECTION_KEY");
         static const int TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT_HASH = HashingUtils::HashString("TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT");
         static const int TR31_M3_ISO_9797_3_MAC_KEY_HASH = HashingUtils::HashString("TR31_M3_ISO_9797_3_MAC_KEY");
+        static const int TR31_M1_ISO_9797_1_MAC_KEY_HASH = HashingUtils::HashString("TR31_M1_ISO_9797_1_MAC_KEY");
         static const int TR31_M6_ISO_9797_5_CMAC_KEY_HASH = HashingUtils::HashString("TR31_M6_ISO_9797_5_CMAC_KEY");
         static const int TR31_M7_HMAC_KEY_HASH = HashingUtils::HashString("TR31_M7_HMAC_KEY");
         static const int TR31_P0_PIN_ENCRYPTION_KEY_HASH = HashingUtils::HashString("TR31_P0_PIN_ENCRYPTION_KEY");
@@ -102,6 +103,10 @@ namespace Aws
           else if (hashCode == TR31_M3_ISO_9797_3_MAC_KEY_HASH)
           {
             return KeyUsage::TR31_M3_ISO_9797_3_MAC_KEY;
+          }
+          else if (hashCode == TR31_M1_ISO_9797_1_MAC_KEY_HASH)
+          {
+            return KeyUsage::TR31_M1_ISO_9797_1_MAC_KEY;
           }
           else if (hashCode == TR31_M6_ISO_9797_5_CMAC_KEY_HASH)
           {
@@ -179,6 +184,8 @@ namespace Aws
             return "TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT";
           case KeyUsage::TR31_M3_ISO_9797_3_MAC_KEY:
             return "TR31_M3_ISO_9797_3_MAC_KEY";
+          case KeyUsage::TR31_M1_ISO_9797_1_MAC_KEY:
+            return "TR31_M1_ISO_9797_1_MAC_KEY";
           case KeyUsage::TR31_M6_ISO_9797_5_CMAC_KEY:
             return "TR31_M6_ISO_9797_5_CMAC_KEY";
           case KeyUsage::TR31_M7_HMAC_KEY:

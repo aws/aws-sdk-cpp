@@ -111,27 +111,32 @@ namespace Model
 
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA
+     * WrappedKeyCryptogram.</p>
      */
     inline const KeyAlgorithm& GetWrappingKeyAlgorithm() const{ return m_wrappingKeyAlgorithm; }
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA
+     * WrappedKeyCryptogram.</p>
      */
     inline void SetWrappingKeyAlgorithm(const KeyAlgorithm& value) { m_wrappingKeyAlgorithm = value; }
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA
+     * WrappedKeyCryptogram.</p>
      */
     inline void SetWrappingKeyAlgorithm(KeyAlgorithm&& value) { m_wrappingKeyAlgorithm = std::move(value); }
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA
+     * WrappedKeyCryptogram.</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyAlgorithm(const KeyAlgorithm& value) { SetWrappingKeyAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+     * <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA
+     * WrappedKeyCryptogram.</p>
      */
     inline GetParametersForImportResult& WithWrappingKeyAlgorithm(KeyAlgorithm&& value) { SetWrappingKeyAlgorithm(std::move(value)); return *this;}
 

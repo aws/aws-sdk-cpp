@@ -186,9 +186,12 @@ namespace Model
      * <p>Whether metadata with recommendations is enabled for the campaign. If
      * enabled, you can specify the columns from your Items dataset in your request for
      * recommendations. Amazon Personalize returns this data for each item in the
-     * recommendation response. </p> <p> If you enable metadata in recommendations, you
-     * will incur additional costs. For more information, see <a
-     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * recommendation response. For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.</p> <p> If you enable metadata
+     * in recommendations, you will incur additional costs. For more information, see
+     * <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
      * pricing</a>. </p>
      */
     inline bool GetEnableMetadataWithRecommendations() const{ return m_enableMetadataWithRecommendations; }
@@ -197,9 +200,12 @@ namespace Model
      * <p>Whether metadata with recommendations is enabled for the campaign. If
      * enabled, you can specify the columns from your Items dataset in your request for
      * recommendations. Amazon Personalize returns this data for each item in the
-     * recommendation response. </p> <p> If you enable metadata in recommendations, you
-     * will incur additional costs. For more information, see <a
-     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * recommendation response. For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.</p> <p> If you enable metadata
+     * in recommendations, you will incur additional costs. For more information, see
+     * <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
      * pricing</a>. </p>
      */
     inline bool EnableMetadataWithRecommendationsHasBeenSet() const { return m_enableMetadataWithRecommendationsHasBeenSet; }
@@ -208,9 +214,12 @@ namespace Model
      * <p>Whether metadata with recommendations is enabled for the campaign. If
      * enabled, you can specify the columns from your Items dataset in your request for
      * recommendations. Amazon Personalize returns this data for each item in the
-     * recommendation response. </p> <p> If you enable metadata in recommendations, you
-     * will incur additional costs. For more information, see <a
-     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * recommendation response. For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.</p> <p> If you enable metadata
+     * in recommendations, you will incur additional costs. For more information, see
+     * <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
      * pricing</a>. </p>
      */
     inline void SetEnableMetadataWithRecommendations(bool value) { m_enableMetadataWithRecommendationsHasBeenSet = true; m_enableMetadataWithRecommendations = value; }
@@ -219,9 +228,12 @@ namespace Model
      * <p>Whether metadata with recommendations is enabled for the campaign. If
      * enabled, you can specify the columns from your Items dataset in your request for
      * recommendations. Amazon Personalize returns this data for each item in the
-     * recommendation response. </p> <p> If you enable metadata in recommendations, you
-     * will incur additional costs. For more information, see <a
-     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
+     * recommendation response. For information about enabling metadata for a campaign,
+     * see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.</p> <p> If you enable metadata
+     * in recommendations, you will incur additional costs. For more information, see
+     * <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
      * pricing</a>. </p>
      */
     inline CampaignConfig& WithEnableMetadataWithRecommendations(bool value) { SetEnableMetadataWithRecommendations(value); return *this;}

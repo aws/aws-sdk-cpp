@@ -71,32 +71,32 @@ namespace Model
 
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline const UpdateRetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline bool RetrievalConfigurationHasBeenSet() const { return m_retrievalConfigurationHasBeenSet; }
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline void SetRetrievalConfiguration(const UpdateRetrievalConfiguration& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = value; }
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline void SetRetrievalConfiguration(UpdateRetrievalConfiguration&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::move(value); }
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline UpdateRevealConfigurationRequest& WithRetrievalConfiguration(const UpdateRetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
 
     /**
-     * <p>The access method and settings to use to retrieve the sensitive data.</p>
+     * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline UpdateRevealConfigurationRequest& WithRetrievalConfiguration(UpdateRetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
 

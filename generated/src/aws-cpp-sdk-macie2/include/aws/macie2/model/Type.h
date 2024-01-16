@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     NONE,
     AES256,
-    aws_kms
+    aws_kms,
+    aws_kms_dsse
   };
 
 namespace TypeMapper

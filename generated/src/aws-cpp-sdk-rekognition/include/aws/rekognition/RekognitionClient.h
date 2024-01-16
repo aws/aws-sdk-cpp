@@ -57,9 +57,13 @@ namespace Rekognition
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityInfo.html">GetCelebrityInfo</a>
    * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetMediaAnalysisJob.html">GetMediaAnalysisJob</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html">IndexFaces</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListCollections.html">ListCollections</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListMediaAnalysisJob.html">ListMediaAnalysisJob</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html">ListFaces</a>
    * </p> </li> <li> <p> <a
@@ -74,6 +78,8 @@ namespace Rekognition
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsers.html">SearchUsers</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsersByImage.html">SearchUsersByImage</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartMediaAnalysisJob.html">StartMediaAnalysisJob</a>
    * </p> </li> </ul> <p> <b>Amazon Rekognition Custom Labels</b> </p> <ul> <li> <p>
    * <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html">CopyProjectVersion</a>
@@ -1072,7 +1078,9 @@ namespace Rekognition
          * provides the label name (<code>Name</code>), the level of confidence that the
          * image contains the object (<code>Confidence</code>), and object location
          * information, if it exists, for the label on the image (<code>Geometry</code>).
-         * </p> <p>To filter labels that are returned, specify a value for
+         * Note that for the <code>DetectCustomLabelsLabels</code> operation,
+         * <code>Polygons</code> are not returned in the <code>Geometry</code> section of
+         * the response.</p> <p>To filter labels that are returned, specify a value for
          * <code>MinConfidence</code>. <code>DetectCustomLabelsLabels</code> only returns
          * labels with a confidence that's higher than the specified value. The value of
          * <code>MinConfidence</code> maps to the assumed threshold values created during

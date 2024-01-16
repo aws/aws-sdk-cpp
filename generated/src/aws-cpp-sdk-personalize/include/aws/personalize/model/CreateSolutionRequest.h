@@ -115,15 +115,15 @@ namespace Model
      *  <p>We don't recommend enabling automated machine learning. Instead,
      * match your use case to the available Amazon Personalize recipes. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
-     * your use case.</a> </p>  <p>Whether to perform automated machine
-     * learning (AutoML). The default is <code>false</code>. For this case, you must
-     * specify <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon
-     * Personalize analyzes your training data and selects the optimal
-     * USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-     * <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by
-     * running tests with different values for the hyperparameters. AutoML lengthens
-     * the training process as compared to selecting a specific recipe.</p>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>.</p>  <p>Whether to perform automated machine learning
+     * (AutoML). The default is <code>false</code>. For this case, you must specify
+     * <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon Personalize
+     * analyzes your training data and selects the optimal USER_PERSONALIZATION recipe
+     * and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon
+     * Personalize determines the optimal recipe by running tests with different values
+     * for the hyperparameters. AutoML lengthens the training process as compared to
+     * selecting a specific recipe.</p>
      */
     inline bool GetPerformAutoML() const{ return m_performAutoML; }
 
@@ -131,15 +131,15 @@ namespace Model
      *  <p>We don't recommend enabling automated machine learning. Instead,
      * match your use case to the available Amazon Personalize recipes. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
-     * your use case.</a> </p>  <p>Whether to perform automated machine
-     * learning (AutoML). The default is <code>false</code>. For this case, you must
-     * specify <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon
-     * Personalize analyzes your training data and selects the optimal
-     * USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-     * <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by
-     * running tests with different values for the hyperparameters. AutoML lengthens
-     * the training process as compared to selecting a specific recipe.</p>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>.</p>  <p>Whether to perform automated machine learning
+     * (AutoML). The default is <code>false</code>. For this case, you must specify
+     * <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon Personalize
+     * analyzes your training data and selects the optimal USER_PERSONALIZATION recipe
+     * and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon
+     * Personalize determines the optimal recipe by running tests with different values
+     * for the hyperparameters. AutoML lengthens the training process as compared to
+     * selecting a specific recipe.</p>
      */
     inline bool PerformAutoMLHasBeenSet() const { return m_performAutoMLHasBeenSet; }
 
@@ -147,15 +147,15 @@ namespace Model
      *  <p>We don't recommend enabling automated machine learning. Instead,
      * match your use case to the available Amazon Personalize recipes. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
-     * your use case.</a> </p>  <p>Whether to perform automated machine
-     * learning (AutoML). The default is <code>false</code>. For this case, you must
-     * specify <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon
-     * Personalize analyzes your training data and selects the optimal
-     * USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-     * <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by
-     * running tests with different values for the hyperparameters. AutoML lengthens
-     * the training process as compared to selecting a specific recipe.</p>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>.</p>  <p>Whether to perform automated machine learning
+     * (AutoML). The default is <code>false</code>. For this case, you must specify
+     * <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon Personalize
+     * analyzes your training data and selects the optimal USER_PERSONALIZATION recipe
+     * and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon
+     * Personalize determines the optimal recipe by running tests with different values
+     * for the hyperparameters. AutoML lengthens the training process as compared to
+     * selecting a specific recipe.</p>
      */
     inline void SetPerformAutoML(bool value) { m_performAutoMLHasBeenSet = true; m_performAutoML = value; }
 
@@ -163,64 +163,88 @@ namespace Model
      *  <p>We don't recommend enabling automated machine learning. Instead,
      * match your use case to the available Amazon Personalize recipes. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
-     * your use case.</a> </p>  <p>Whether to perform automated machine
-     * learning (AutoML). The default is <code>false</code>. For this case, you must
-     * specify <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon
-     * Personalize analyzes your training data and selects the optimal
-     * USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-     * <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by
-     * running tests with different values for the hyperparameters. AutoML lengthens
-     * the training process as compared to selecting a specific recipe.</p>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>.</p>  <p>Whether to perform automated machine learning
+     * (AutoML). The default is <code>false</code>. For this case, you must specify
+     * <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon Personalize
+     * analyzes your training data and selects the optimal USER_PERSONALIZATION recipe
+     * and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon
+     * Personalize determines the optimal recipe by running tests with different values
+     * for the hyperparameters. AutoML lengthens the training process as compared to
+     * selecting a specific recipe.</p>
      */
     inline CreateSolutionRequest& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
 
 
     /**
-     * <p>The ARN of the recipe to use for model training. This is required when
-     * <code>performAutoML</code> is false.</p>
+     * <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This
+     * is required when <code>performAutoML</code> is false. For information about
+     * different Amazon Personalize recipes and their ARNs, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>. </p>
      */
     inline const Aws::String& GetRecipeArn() const{ return m_recipeArn; }
 
     /**
-     * <p>The ARN of the recipe to use for model training. This is required when
-     * <code>performAutoML</code> is false.</p>
+     * <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This
+     * is required when <code>performAutoML</code> is false. For information about
+     * different Amazon Personalize recipes and their ARNs, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>. </p>
      */
     inline bool RecipeArnHasBeenSet() const { return m_recipeArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the recipe to use for model training. This is required when
-     * <code>performAutoML</code> is false.</p>
+     * <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This
+     * is required when <code>performAutoML</code> is false. For information about
+     * different Amazon Personalize recipes and their ARNs, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>. </p>
      */
     inline void SetRecipeArn(const Aws::String& value) { m_recipeArnHasBeenSet = true; m_recipeArn = value; }
 
     /**
-     * <p>The ARN of the recipe to use for model training. This is required when
-     * <code>performAutoML</code> is false.</p>
+     * <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This
+     * is required when <code>performAutoML</code> is false. For information about
+     * different Amazon Personalize recipes and their ARNs, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>. </p>
      */
     inline void SetRecipeArn(Aws::String&& value) { m_recipeArnHasBeenSet = true; m_recipeArn = std::move(value); }
 
     /**
-     * <p>The ARN of the recipe to use for model training. This is required when
-     * <code>performAutoML</code> is false.</p>
+     * <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This
+     * is required when <code>performAutoML</code> is false. For information about
+     * different Amazon Personalize recipes and their ARNs, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>. </p>
      */
     inline void SetRecipeArn(const char* value) { m_recipeArnHasBeenSet = true; m_recipeArn.assign(value); }
 
     /**
-     * <p>The ARN of the recipe to use for model training. This is required when
-     * <code>performAutoML</code> is false.</p>
+     * <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This
+     * is required when <code>performAutoML</code> is false. For information about
+     * different Amazon Personalize recipes and their ARNs, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>. </p>
      */
     inline CreateSolutionRequest& WithRecipeArn(const Aws::String& value) { SetRecipeArn(value); return *this;}
 
     /**
-     * <p>The ARN of the recipe to use for model training. This is required when
-     * <code>performAutoML</code> is false.</p>
+     * <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This
+     * is required when <code>performAutoML</code> is false. For information about
+     * different Amazon Personalize recipes and their ARNs, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>. </p>
      */
     inline CreateSolutionRequest& WithRecipeArn(Aws::String&& value) { SetRecipeArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the recipe to use for model training. This is required when
-     * <code>performAutoML</code> is false.</p>
+     * <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This
+     * is required when <code>performAutoML</code> is false. For information about
+     * different Amazon Personalize recipes and their ARNs, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+     * a recipe</a>. </p>
      */
     inline CreateSolutionRequest& WithRecipeArn(const char* value) { SetRecipeArn(value); return *this;}
 
