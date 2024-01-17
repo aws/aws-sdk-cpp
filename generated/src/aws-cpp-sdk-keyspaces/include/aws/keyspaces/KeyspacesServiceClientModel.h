@@ -24,6 +24,7 @@
 #include <aws/keyspaces/model/DeleteTableResult.h>
 #include <aws/keyspaces/model/GetKeyspaceResult.h>
 #include <aws/keyspaces/model/GetTableResult.h>
+#include <aws/keyspaces/model/GetTableAutoScalingSettingsResult.h>
 #include <aws/keyspaces/model/ListKeyspacesResult.h>
 #include <aws/keyspaces/model/ListTablesResult.h>
 #include <aws/keyspaces/model/ListTagsForResourceResult.h>
@@ -77,6 +78,7 @@ namespace Aws
       class DeleteTableRequest;
       class GetKeyspaceRequest;
       class GetTableRequest;
+      class GetTableAutoScalingSettingsRequest;
       class ListKeyspacesRequest;
       class ListTablesRequest;
       class ListTagsForResourceRequest;
@@ -93,6 +95,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteTableResult, KeyspacesError> DeleteTableOutcome;
       typedef Aws::Utils::Outcome<GetKeyspaceResult, KeyspacesError> GetKeyspaceOutcome;
       typedef Aws::Utils::Outcome<GetTableResult, KeyspacesError> GetTableOutcome;
+      typedef Aws::Utils::Outcome<GetTableAutoScalingSettingsResult, KeyspacesError> GetTableAutoScalingSettingsOutcome;
       typedef Aws::Utils::Outcome<ListKeyspacesResult, KeyspacesError> ListKeyspacesOutcome;
       typedef Aws::Utils::Outcome<ListTablesResult, KeyspacesError> ListTablesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, KeyspacesError> ListTagsForResourceOutcome;
@@ -109,6 +112,7 @@ namespace Aws
       typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
       typedef std::future<GetKeyspaceOutcome> GetKeyspaceOutcomeCallable;
       typedef std::future<GetTableOutcome> GetTableOutcomeCallable;
+      typedef std::future<GetTableAutoScalingSettingsOutcome> GetTableAutoScalingSettingsOutcomeCallable;
       typedef std::future<ListKeyspacesOutcome> ListKeyspacesOutcomeCallable;
       typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -128,6 +132,7 @@ namespace Aws
     typedef std::function<void(const KeyspacesClient*, const Model::DeleteTableRequest&, const Model::DeleteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableResponseReceivedHandler;
     typedef std::function<void(const KeyspacesClient*, const Model::GetKeyspaceRequest&, const Model::GetKeyspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKeyspaceResponseReceivedHandler;
     typedef std::function<void(const KeyspacesClient*, const Model::GetTableRequest&, const Model::GetTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableResponseReceivedHandler;
+    typedef std::function<void(const KeyspacesClient*, const Model::GetTableAutoScalingSettingsRequest&, const Model::GetTableAutoScalingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableAutoScalingSettingsResponseReceivedHandler;
     typedef std::function<void(const KeyspacesClient*, const Model::ListKeyspacesRequest&, const Model::ListKeyspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyspacesResponseReceivedHandler;
     typedef std::function<void(const KeyspacesClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
     typedef std::function<void(const KeyspacesClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
