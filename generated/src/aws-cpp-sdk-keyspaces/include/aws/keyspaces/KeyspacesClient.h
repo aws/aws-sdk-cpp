@@ -280,6 +280,39 @@ namespace Keyspaces
         }
 
         /**
+         * <p>Returns auto scaling related settings of the specified table in JSON format.
+         * If the table is a multi-Region table, the Amazon Web Services Region specific
+         * auto scaling settings of the table are included.</p> <p>Amazon Keyspaces auto
+         * scaling helps you provision throughput capacity for variable workloads
+         * efficiently by increasing and decreasing your table's read and write capacity
+         * automatically in response to application traffic. For more information, see <a
+         * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+         * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+         * <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTableAutoScalingSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTableAutoScalingSettingsOutcome GetTableAutoScalingSettings(const Model::GetTableAutoScalingSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTableAutoScalingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTableAutoScalingSettingsRequestT = Model::GetTableAutoScalingSettingsRequest>
+        Model::GetTableAutoScalingSettingsOutcomeCallable GetTableAutoScalingSettingsCallable(const GetTableAutoScalingSettingsRequestT& request) const
+        {
+            return SubmitCallable(&KeyspacesClient::GetTableAutoScalingSettings, request);
+        }
+
+        /**
+         * An Async wrapper for GetTableAutoScalingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTableAutoScalingSettingsRequestT = Model::GetTableAutoScalingSettingsRequest>
+        void GetTableAutoScalingSettingsAsync(const GetTableAutoScalingSettingsRequestT& request, const GetTableAutoScalingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KeyspacesClient::GetTableAutoScalingSettings, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of keyspaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListKeyspaces">AWS
          * API Reference</a></p>
@@ -357,7 +390,7 @@ namespace Keyspaces
         }
 
         /**
-         * <p>Restores the specified table to the specified point in time within the
+         * <p>Restores the table to the specified point in time within the
          * <code>earliest_restorable_timestamp</code> and the current time. For more
          * information about restore points, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
@@ -368,22 +401,22 @@ namespace Keyspaces
          * the state based on the selected timestamp <code>(day:hour:minute:second)</code>
          * to a new table. The Time to Live (TTL) settings are also restored to the state
          * based on the selected timestamp.</p> <p>In addition to the table's schema, data,
-         * and TTL settings, <code>RestoreTable</code> restores the capacity mode,
-         * encryption, and point-in-time recovery settings from the source table. Unlike
-         * the table's schema data and TTL settings, which are restored based on the
-         * selected timestamp, these settings are always restored based on the table's
-         * settings as of the current time or when the table was deleted.</p> <p>You can
-         * also overwrite these settings during restore:</p> <ul> <li> <p>Read/write
-         * capacity mode</p> </li> <li> <p>Provisioned throughput capacity settings</p>
-         * </li> <li> <p>Point-in-time (PITR) settings</p> </li> <li> <p>Tags</p> </li>
-         * </ul> <p>For more information, see <a
+         * and TTL settings, <code>RestoreTable</code> restores the capacity mode, auto
+         * scaling settings, encryption settings, and point-in-time recovery settings from
+         * the source table. Unlike the table's schema data and TTL settings, which are
+         * restored based on the selected timestamp, these settings are always restored
+         * based on the table's settings as of the current time or when the table was
+         * deleted.</p> <p>You can also overwrite these settings during restore:</p> <ul>
+         * <li> <p>Read/write capacity mode</p> </li> <li> <p>Provisioned throughput
+         * capacity units</p> </li> <li> <p>Auto scaling settings</p> </li> <li>
+         * <p>Point-in-time (PITR) settings</p> </li> <li> <p>Tags</p> </li> </ul> <p>For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR
          * restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> <p>Note
          * that the following settings are not restored, and you must configure them
-         * manually for the new table:</p> <ul> <li> <p>Automatic scaling policies (for
-         * tables that use provisioned capacity mode)</p> </li> <li> <p>Identity and Access
-         * Management (IAM) policies</p> </li> <li> <p>Amazon CloudWatch metrics and
-         * alarms</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * manually for the new table:</p> <ul> <li> <p>Identity and Access Management
+         * (IAM) policies</p> </li> <li> <p>Amazon CloudWatch metrics and alarms</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/RestoreTable">AWS
          * API Reference</a></p>
          */
@@ -469,8 +502,8 @@ namespace Keyspaces
 
         /**
          * <p>Adds new columns to the table or updates one of the table's settings, for
-         * example capacity mode, encryption, point-in-time recovery, or ttl settings. Note
-         * that you can only update one specific table setting per update
+         * example capacity mode, auto scaling, encryption, point-in-time recovery, or ttl
+         * settings. Note that you can only update one specific table setting per update
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UpdateTable">AWS
          * API Reference</a></p>
