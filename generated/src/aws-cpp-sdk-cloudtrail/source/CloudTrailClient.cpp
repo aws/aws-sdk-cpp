@@ -48,6 +48,7 @@
 #include <aws/cloudtrail/model/ListEventDataStoresRequest.h>
 #include <aws/cloudtrail/model/ListImportFailuresRequest.h>
 #include <aws/cloudtrail/model/ListImportsRequest.h>
+#include <aws/cloudtrail/model/ListInsightsMetricDataRequest.h>
 #include <aws/cloudtrail/model/ListPublicKeysRequest.h>
 #include <aws/cloudtrail/model/ListQueriesRequest.h>
 #include <aws/cloudtrail/model/ListTagsRequest.h>
@@ -898,6 +899,32 @@ ListImportsOutcome CloudTrailClient::ListImports(const ListImportsRequest& reque
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return ListImportsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListInsightsMetricDataOutcome CloudTrailClient::ListInsightsMetricData(const ListInsightsMetricDataRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListInsightsMetricData);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInsightsMetricData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListInsightsMetricData, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListInsightsMetricData, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListInsightsMetricData",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListInsightsMetricDataOutcome>(
+    [&]()-> ListInsightsMetricDataOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInsightsMetricData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return ListInsightsMetricDataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

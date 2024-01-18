@@ -401,8 +401,10 @@ namespace Model
      * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
      * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
-     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
-     * filter value up to 3000 length.</p> </li> </ul>
+     * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
+     * filter key with a filter value up to 3000 length. This filter is case and order
+     * sensitive. JSON string fields must be sorted in ascending order and JSON array
+     * order should be kept as is.</p> </li> </ul>
      */
     inline const Aws::Vector<FilterV2>& GetFilters() const{ return m_filters; }
 
@@ -436,8 +438,10 @@ namespace Model
      * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
      * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
-     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
-     * filter value up to 3000 length.</p> </li> </ul>
+     * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
+     * filter key with a filter value up to 3000 length. This filter is case and order
+     * sensitive. JSON string fields must be sorted in ascending order and JSON array
+     * order should be kept as is.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -471,8 +475,10 @@ namespace Model
      * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
      * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
-     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
-     * filter value up to 3000 length.</p> </li> </ul>
+     * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
+     * filter key with a filter value up to 3000 length. This filter is case and order
+     * sensitive. JSON string fields must be sorted in ascending order and JSON array
+     * order should be kept as is.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<FilterV2>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -506,8 +512,10 @@ namespace Model
      * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
      * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
-     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
-     * filter value up to 3000 length.</p> </li> </ul>
+     * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
+     * filter key with a filter value up to 3000 length. This filter is case and order
+     * sensitive. JSON string fields must be sorted in ascending order and JSON array
+     * order should be kept as is.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<FilterV2>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -541,8 +549,10 @@ namespace Model
      * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
      * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
-     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
-     * filter value up to 3000 length.</p> </li> </ul>
+     * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
+     * filter key with a filter value up to 3000 length. This filter is case and order
+     * sensitive. JSON string fields must be sorted in ascending order and JSON array
+     * order should be kept as is.</p> </li> </ul>
      */
     inline GetMetricDataV2Request& WithFilters(const Aws::Vector<FilterV2>& value) { SetFilters(value); return *this;}
 
@@ -576,8 +586,10 @@ namespace Model
      * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
      * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
-     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
-     * filter value up to 3000 length.</p> </li> </ul>
+     * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
+     * filter key with a filter value up to 3000 length. This filter is case and order
+     * sensitive. JSON string fields must be sorted in ascending order and JSON array
+     * order should be kept as is.</p> </li> </ul>
      */
     inline GetMetricDataV2Request& WithFilters(Aws::Vector<FilterV2>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -611,8 +623,10 @@ namespace Model
      * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
      * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
-     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
-     * filter value up to 3000 length.</p> </li> </ul>
+     * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
+     * filter key with a filter value up to 3000 length. This filter is case and order
+     * sensitive. JSON string fields must be sorted in ascending order and JSON array
+     * order should be kept as is.</p> </li> </ul>
      */
     inline GetMetricDataV2Request& AddFilters(const FilterV2& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -646,8 +660,10 @@ namespace Model
      * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
      * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
-     * filter</code> key.</p> <p>ROUTING_STEP_EXPRESSION is a valid filter key with a
-     * filter value up to 3000 length.</p> </li> </ul>
+     * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
+     * filter key with a filter value up to 3000 length. This filter is case and order
+     * sensitive. JSON string fields must be sorted in ascending order and JSON array
+     * order should be kept as is.</p> </li> </ul>
      */
     inline GetMetricDataV2Request& AddFilters(FilterV2&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -925,6 +941,10 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * metric filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and
+     * filters: Queue, Channel, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -941,6 +961,9 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>CONTACTS_QUEUED_BY_ENQUEUE</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, Channel, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile,
@@ -1165,6 +1188,10 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * metric filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and
+     * filters: Queue, Channel, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -1181,6 +1208,9 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>CONTACTS_QUEUED_BY_ENQUEUE</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, Channel, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile,
@@ -1405,6 +1435,10 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * metric filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and
+     * filters: Queue, Channel, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -1421,6 +1455,9 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>CONTACTS_QUEUED_BY_ENQUEUE</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, Channel, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile,
@@ -1645,6 +1682,10 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * metric filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and
+     * filters: Queue, Channel, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -1661,6 +1702,9 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>CONTACTS_QUEUED_BY_ENQUEUE</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, Channel, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile,
@@ -1885,6 +1929,10 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * metric filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and
+     * filters: Queue, Channel, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -1901,6 +1949,9 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>CONTACTS_QUEUED_BY_ENQUEUE</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, Channel, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile,
@@ -2125,6 +2176,10 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * metric filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and
+     * filters: Queue, Channel, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -2141,6 +2196,9 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>CONTACTS_QUEUED_BY_ENQUEUE</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, Channel, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile,
@@ -2365,6 +2423,10 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * metric filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and
+     * filters: Queue, Channel, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -2381,6 +2443,9 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>CONTACTS_QUEUED_BY_ENQUEUE</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, Channel, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile,
@@ -2605,6 +2670,10 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
      *  <p>Feature is a valid filter but not a valid grouping.</p>  </dd>
+     * <dt>CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT</dt> <dd> <p>Unit: Count</p> <p>Valid
+     * metric filter key: <code>INITIATION_METHOD</code> </p> <p>Valid groupings and
+     * filters: Queue, Channel, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
@@ -2621,6 +2690,9 @@ namespace Model
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent
      * Hierarchy</p> </dd> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: Count</p> <p>Valid
      * groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+     * contact/segmentAttributes/connect:Subtype</p> </dd>
+     * <dt>CONTACTS_QUEUED_BY_ENQUEUE</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Queue, Channel, Agent, Agent Hierarchy,
      * contact/segmentAttributes/connect:Subtype</p> </dd>
      * <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile,

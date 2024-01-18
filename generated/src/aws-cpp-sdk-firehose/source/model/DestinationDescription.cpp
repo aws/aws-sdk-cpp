@@ -27,6 +27,7 @@ DestinationDescription::DestinationDescription() :
     m_amazonopensearchserviceDestinationDescriptionHasBeenSet(false),
     m_splunkDestinationDescriptionHasBeenSet(false),
     m_httpEndpointDestinationDescriptionHasBeenSet(false),
+    m_snowflakeDestinationDescriptionHasBeenSet(false),
     m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet(false)
 {
 }
@@ -40,6 +41,7 @@ DestinationDescription::DestinationDescription(JsonView jsonValue) :
     m_amazonopensearchserviceDestinationDescriptionHasBeenSet(false),
     m_splunkDestinationDescriptionHasBeenSet(false),
     m_httpEndpointDestinationDescriptionHasBeenSet(false),
+    m_snowflakeDestinationDescriptionHasBeenSet(false),
     m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -103,6 +105,13 @@ DestinationDescription& DestinationDescription::operator =(JsonView jsonValue)
     m_httpEndpointDestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnowflakeDestinationDescription"))
+  {
+    m_snowflakeDestinationDescription = jsonValue.GetObject("SnowflakeDestinationDescription");
+
+    m_snowflakeDestinationDescriptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AmazonOpenSearchServerlessDestinationDescription"))
   {
     m_amazonOpenSearchServerlessDestinationDescription = jsonValue.GetObject("AmazonOpenSearchServerlessDestinationDescription");
@@ -162,6 +171,12 @@ JsonValue DestinationDescription::Jsonize() const
   if(m_httpEndpointDestinationDescriptionHasBeenSet)
   {
    payload.WithObject("HttpEndpointDestinationDescription", m_httpEndpointDestinationDescription.Jsonize());
+
+  }
+
+  if(m_snowflakeDestinationDescriptionHasBeenSet)
+  {
+   payload.WithObject("SnowflakeDestinationDescription", m_snowflakeDestinationDescription.Jsonize());
 
   }
 

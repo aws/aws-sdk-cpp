@@ -79,40 +79,10 @@ namespace Model
      * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>The following resource types
-     * are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event
-     * selector resource types are not valid in basic event selectors. For more
-     * information, see <a
+     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>Additional resource types are
+     * available through <i>advanced</i> event selectors. For more information about
+     * these additional resource types, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
-     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
-     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
-     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
-     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
@@ -121,40 +91,10 @@ namespace Model
      * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>The following resource types
-     * are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event
-     * selector resource types are not valid in basic event selectors. For more
-     * information, see <a
+     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>Additional resource types are
+     * available through <i>advanced</i> event selectors. For more information about
+     * these additional resource types, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
-     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
-     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
-     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
-     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -163,40 +103,10 @@ namespace Model
      * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>The following resource types
-     * are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event
-     * selector resource types are not valid in basic event selectors. For more
-     * information, see <a
+     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>Additional resource types are
+     * available through <i>advanced</i> event selectors. For more information about
+     * these additional resource types, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
-     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
-     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
-     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
-     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -205,40 +115,10 @@ namespace Model
      * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>The following resource types
-     * are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event
-     * selector resource types are not valid in basic event selectors. For more
-     * information, see <a
+     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>Additional resource types are
+     * available through <i>advanced</i> event selectors. For more information about
+     * these additional resource types, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
-     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
-     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
-     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
-     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -247,40 +127,10 @@ namespace Model
      * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>The following resource types
-     * are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event
-     * selector resource types are not valid in basic event selectors. For more
-     * information, see <a
+     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>Additional resource types are
+     * available through <i>advanced</i> event selectors. For more information about
+     * these additional resource types, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
-     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
-     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
-     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
-     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
@@ -289,40 +139,10 @@ namespace Model
      * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>The following resource types
-     * are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event
-     * selector resource types are not valid in basic event selectors. For more
-     * information, see <a
+     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>Additional resource types are
+     * available through <i>advanced</i> event selectors. For more information about
+     * these additional resource types, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
-     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
-     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
-     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
-     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
@@ -331,40 +151,10 @@ namespace Model
      * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>The following resource types
-     * are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event
-     * selector resource types are not valid in basic event selectors. For more
-     * information, see <a
+     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>Additional resource types are
+     * available through <i>advanced</i> event selectors. For more information about
+     * these additional resource types, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
-     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
-     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
-     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
-     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
@@ -373,40 +163,10 @@ namespace Model
      * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>The following resource types
-     * are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event
-     * selector resource types are not valid in basic event selectors. For more
-     * information, see <a
+     * <code>AWS::S3::Object</code> </p> </li> </ul> <p>Additional resource types are
+     * available through <i>advanced</i> event selectors. For more information about
+     * these additional resource types, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
-     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
-     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
-     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
-     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const char* value) { SetType(value); return *this;}
 
