@@ -296,9 +296,12 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
 
     if (ioStream != nullptr && amountToRead > 0)
     {
+        size_t amountRead = 0;
         if (isStreaming)
         {
-            if (ioStream->readsome(ptr, amountToRead) == 0 && !ioStream->eof())
+            ioStream->peek();
+            amountRead = ioStream->readsome(ptr, amountToRead);
+            if (amountRead == 0 && !ioStream->eof())
             {
                 return CURL_READFUNC_PAUSE;
             }
@@ -306,8 +309,8 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
         else
         {
             ioStream->read(ptr, amountToRead);
+            amountRead = static_cast<size_t>(ioStream->gcount());
         }
-        size_t amountRead = static_cast<size_t>(ioStream->gcount());
 
         if (isAwsChunked)
         {
