@@ -45,6 +45,7 @@
 #include <aws/cloudtrail/model/ListEventDataStoresResult.h>
 #include <aws/cloudtrail/model/ListImportFailuresResult.h>
 #include <aws/cloudtrail/model/ListImportsResult.h>
+#include <aws/cloudtrail/model/ListInsightsMetricDataResult.h>
 #include <aws/cloudtrail/model/ListPublicKeysResult.h>
 #include <aws/cloudtrail/model/ListQueriesResult.h>
 #include <aws/cloudtrail/model/ListTagsResult.h>
@@ -133,6 +134,7 @@ namespace Aws
       class ListEventDataStoresRequest;
       class ListImportFailuresRequest;
       class ListImportsRequest;
+      class ListInsightsMetricDataRequest;
       class ListPublicKeysRequest;
       class ListQueriesRequest;
       class ListTagsRequest;
@@ -184,6 +186,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListEventDataStoresResult, CloudTrailError> ListEventDataStoresOutcome;
       typedef Aws::Utils::Outcome<ListImportFailuresResult, CloudTrailError> ListImportFailuresOutcome;
       typedef Aws::Utils::Outcome<ListImportsResult, CloudTrailError> ListImportsOutcome;
+      typedef Aws::Utils::Outcome<ListInsightsMetricDataResult, CloudTrailError> ListInsightsMetricDataOutcome;
       typedef Aws::Utils::Outcome<ListPublicKeysResult, CloudTrailError> ListPublicKeysOutcome;
       typedef Aws::Utils::Outcome<ListQueriesResult, CloudTrailError> ListQueriesOutcome;
       typedef Aws::Utils::Outcome<ListTagsResult, CloudTrailError> ListTagsOutcome;
@@ -235,6 +238,7 @@ namespace Aws
       typedef std::future<ListEventDataStoresOutcome> ListEventDataStoresOutcomeCallable;
       typedef std::future<ListImportFailuresOutcome> ListImportFailuresOutcomeCallable;
       typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
+      typedef std::future<ListInsightsMetricDataOutcome> ListInsightsMetricDataOutcomeCallable;
       typedef std::future<ListPublicKeysOutcome> ListPublicKeysOutcomeCallable;
       typedef std::future<ListQueriesOutcome> ListQueriesOutcomeCallable;
       typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
@@ -289,6 +293,7 @@ namespace Aws
     typedef std::function<void(const CloudTrailClient*, const Model::ListEventDataStoresRequest&, const Model::ListEventDataStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventDataStoresResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListImportFailuresRequest&, const Model::ListImportFailuresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportFailuresResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportsResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::ListInsightsMetricDataRequest&, const Model::ListInsightsMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInsightsMetricDataResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListPublicKeysRequest&, const Model::ListPublicKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublicKeysResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListQueriesRequest&, const Model::ListQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueriesResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;

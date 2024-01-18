@@ -102,9 +102,11 @@ namespace Model
      * retrieved only for the resources associated with the queues or routing profiles,
      * and by any channels included in the filter. (You cannot filter by both queue AND
      * routing profile.) You can include both resource IDs and resource ARNs in the
-     * same request.</p> <p>When using <code>RoutingStepExpression</code>, you need to
-     * pass exactly one <code>QueueId</code>.</p> <p>Currently tagging is only
-     * supported on the resources that are passed in the filter.</p>
+     * same request.</p> <p>When using the <code>RoutingStepExpression</code> filter,
+     * you need to pass exactly one <code>QueueId</code>. The filter is also case
+     * sensitive so when using the <code>RoutingStepExpression</code> filter, grouping
+     * by <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
+     * only supported on the resources that are passed in the filter.</p>
      */
     inline const Filters& GetFilters() const{ return m_filters; }
 
@@ -116,9 +118,11 @@ namespace Model
      * retrieved only for the resources associated with the queues or routing profiles,
      * and by any channels included in the filter. (You cannot filter by both queue AND
      * routing profile.) You can include both resource IDs and resource ARNs in the
-     * same request.</p> <p>When using <code>RoutingStepExpression</code>, you need to
-     * pass exactly one <code>QueueId</code>.</p> <p>Currently tagging is only
-     * supported on the resources that are passed in the filter.</p>
+     * same request.</p> <p>When using the <code>RoutingStepExpression</code> filter,
+     * you need to pass exactly one <code>QueueId</code>. The filter is also case
+     * sensitive so when using the <code>RoutingStepExpression</code> filter, grouping
+     * by <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
+     * only supported on the resources that are passed in the filter.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -130,9 +134,11 @@ namespace Model
      * retrieved only for the resources associated with the queues or routing profiles,
      * and by any channels included in the filter. (You cannot filter by both queue AND
      * routing profile.) You can include both resource IDs and resource ARNs in the
-     * same request.</p> <p>When using <code>RoutingStepExpression</code>, you need to
-     * pass exactly one <code>QueueId</code>.</p> <p>Currently tagging is only
-     * supported on the resources that are passed in the filter.</p>
+     * same request.</p> <p>When using the <code>RoutingStepExpression</code> filter,
+     * you need to pass exactly one <code>QueueId</code>. The filter is also case
+     * sensitive so when using the <code>RoutingStepExpression</code> filter, grouping
+     * by <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
+     * only supported on the resources that are passed in the filter.</p>
      */
     inline void SetFilters(const Filters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -144,9 +150,11 @@ namespace Model
      * retrieved only for the resources associated with the queues or routing profiles,
      * and by any channels included in the filter. (You cannot filter by both queue AND
      * routing profile.) You can include both resource IDs and resource ARNs in the
-     * same request.</p> <p>When using <code>RoutingStepExpression</code>, you need to
-     * pass exactly one <code>QueueId</code>.</p> <p>Currently tagging is only
-     * supported on the resources that are passed in the filter.</p>
+     * same request.</p> <p>When using the <code>RoutingStepExpression</code> filter,
+     * you need to pass exactly one <code>QueueId</code>. The filter is also case
+     * sensitive so when using the <code>RoutingStepExpression</code> filter, grouping
+     * by <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
+     * only supported on the resources that are passed in the filter.</p>
      */
     inline void SetFilters(Filters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -158,9 +166,11 @@ namespace Model
      * retrieved only for the resources associated with the queues or routing profiles,
      * and by any channels included in the filter. (You cannot filter by both queue AND
      * routing profile.) You can include both resource IDs and resource ARNs in the
-     * same request.</p> <p>When using <code>RoutingStepExpression</code>, you need to
-     * pass exactly one <code>QueueId</code>.</p> <p>Currently tagging is only
-     * supported on the resources that are passed in the filter.</p>
+     * same request.</p> <p>When using the <code>RoutingStepExpression</code> filter,
+     * you need to pass exactly one <code>QueueId</code>. The filter is also case
+     * sensitive so when using the <code>RoutingStepExpression</code> filter, grouping
+     * by <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
+     * only supported on the resources that are passed in the filter.</p>
      */
     inline GetCurrentMetricDataRequest& WithFilters(const Filters& value) { SetFilters(value); return *this;}
 
@@ -172,9 +182,11 @@ namespace Model
      * retrieved only for the resources associated with the queues or routing profiles,
      * and by any channels included in the filter. (You cannot filter by both queue AND
      * routing profile.) You can include both resource IDs and resource ARNs in the
-     * same request.</p> <p>When using <code>RoutingStepExpression</code>, you need to
-     * pass exactly one <code>QueueId</code>.</p> <p>Currently tagging is only
-     * supported on the resources that are passed in the filter.</p>
+     * same request.</p> <p>When using the <code>RoutingStepExpression</code> filter,
+     * you need to pass exactly one <code>QueueId</code>. The filter is also case
+     * sensitive so when using the <code>RoutingStepExpression</code> filter, grouping
+     * by <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
+     * only supported on the resources that are passed in the filter.</p>
      */
     inline GetCurrentMetricDataRequest& WithFilters(Filters&& value) { SetFilters(std::move(value)); return *this;}
 

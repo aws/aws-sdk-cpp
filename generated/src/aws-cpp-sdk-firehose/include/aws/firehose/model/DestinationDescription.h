@@ -13,6 +13,7 @@
 #include <aws/firehose/model/AmazonopensearchserviceDestinationDescription.h>
 #include <aws/firehose/model/SplunkDestinationDescription.h>
 #include <aws/firehose/model/HttpEndpointDestinationDescription.h>
+#include <aws/firehose/model/SnowflakeDestinationDescription.h>
 #include <aws/firehose/model/AmazonOpenSearchServerlessDestinationDescription.h>
 #include <utility>
 
@@ -305,6 +306,37 @@ namespace Model
 
 
     /**
+     * <p>Optional description for the destination</p>
+     */
+    inline const SnowflakeDestinationDescription& GetSnowflakeDestinationDescription() const{ return m_snowflakeDestinationDescription; }
+
+    /**
+     * <p>Optional description for the destination</p>
+     */
+    inline bool SnowflakeDestinationDescriptionHasBeenSet() const { return m_snowflakeDestinationDescriptionHasBeenSet; }
+
+    /**
+     * <p>Optional description for the destination</p>
+     */
+    inline void SetSnowflakeDestinationDescription(const SnowflakeDestinationDescription& value) { m_snowflakeDestinationDescriptionHasBeenSet = true; m_snowflakeDestinationDescription = value; }
+
+    /**
+     * <p>Optional description for the destination</p>
+     */
+    inline void SetSnowflakeDestinationDescription(SnowflakeDestinationDescription&& value) { m_snowflakeDestinationDescriptionHasBeenSet = true; m_snowflakeDestinationDescription = std::move(value); }
+
+    /**
+     * <p>Optional description for the destination</p>
+     */
+    inline DestinationDescription& WithSnowflakeDestinationDescription(const SnowflakeDestinationDescription& value) { SetSnowflakeDestinationDescription(value); return *this;}
+
+    /**
+     * <p>Optional description for the destination</p>
+     */
+    inline DestinationDescription& WithSnowflakeDestinationDescription(SnowflakeDestinationDescription&& value) { SetSnowflakeDestinationDescription(std::move(value)); return *this;}
+
+
+    /**
      * <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
      */
     inline const AmazonOpenSearchServerlessDestinationDescription& GetAmazonOpenSearchServerlessDestinationDescription() const{ return m_amazonOpenSearchServerlessDestinationDescription; }
@@ -359,6 +391,9 @@ namespace Model
 
     HttpEndpointDestinationDescription m_httpEndpointDestinationDescription;
     bool m_httpEndpointDestinationDescriptionHasBeenSet = false;
+
+    SnowflakeDestinationDescription m_snowflakeDestinationDescription;
+    bool m_snowflakeDestinationDescriptionHasBeenSet = false;
 
     AmazonOpenSearchServerlessDestinationDescription m_amazonOpenSearchServerlessDestinationDescription;
     bool m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet = false;

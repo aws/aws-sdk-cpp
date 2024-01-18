@@ -39,7 +39,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -47,7 +47,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
@@ -55,7 +55,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
@@ -63,7 +63,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
@@ -71,7 +71,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline UpdateTrafficDistributionRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
@@ -87,7 +87,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline UpdateTrafficDistributionRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
@@ -95,7 +95,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline UpdateTrafficDistributionRequest& WithId(const char* value) { SetId(value); return *this;}
 
