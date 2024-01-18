@@ -32,7 +32,8 @@ namespace Aws
 
                 explicit ConcurrentStreamBuf(size_t bufferLength = 8 * 1024);
 
-                void SetEof();
+                void SetEofInput(Aws::IOStream* pStreamToClose = nullptr);
+                void CloseStream();
 
             protected:
                 std::streampos seekoff(std::streamoff off, std::ios_base::seekdir dir, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;
@@ -51,7 +52,9 @@ namespace Aws
                 Aws::Vector<unsigned char> m_backbuf; // used to shuttle data from the put area to the get area
                 std::mutex m_lock; // synchronize access to the common backbuffer
                 std::condition_variable m_signal;
-                bool m_eof;
+                bool m_eofInput = false;
+                bool m_eofOutput = false;
+                Aws::IOStream* m_pStreamToClose = nullptr;
             };
         }
     }
