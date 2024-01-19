@@ -8,6 +8,7 @@
 #include <aws/codebuild/model/EnvironmentType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/ComputeType.h>
+#include <aws/codebuild/model/ProjectFleet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/RegistryCredential.h>
 #include <aws/codebuild/model/ImagePullCredentialsType.h>
@@ -49,12 +50,11 @@ namespace Model
      * environment type <code>ARM_CONTAINER</code> is available only in regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
-     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
-     * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
-     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
-     * (Ningxia).</p> </li> <li> <p>The environment type
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> is available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada
+     * (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
+     * (Beijing), and China (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
@@ -67,7 +67,9 @@ namespace Model
      * (São Paulo).</p> </li> </ul> <ul> <li> <p>The environment types
      * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
      * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
+     * (Oregon), and EU (Ireland).</p> </li> </ul>  <p>If you're using compute
+     * fleets during project creation, <code>type</code> will be ignored.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
      */
@@ -78,12 +80,11 @@ namespace Model
      * environment type <code>ARM_CONTAINER</code> is available only in regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
-     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
-     * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
-     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
-     * (Ningxia).</p> </li> <li> <p>The environment type
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> is available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada
+     * (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
+     * (Beijing), and China (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
@@ -96,7 +97,9 @@ namespace Model
      * (São Paulo).</p> </li> </ul> <ul> <li> <p>The environment types
      * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
      * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
+     * (Oregon), and EU (Ireland).</p> </li> </ul>  <p>If you're using compute
+     * fleets during project creation, <code>type</code> will be ignored.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
      */
@@ -107,12 +110,11 @@ namespace Model
      * environment type <code>ARM_CONTAINER</code> is available only in regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
-     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
-     * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
-     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
-     * (Ningxia).</p> </li> <li> <p>The environment type
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> is available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada
+     * (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
+     * (Beijing), and China (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
@@ -125,7 +127,9 @@ namespace Model
      * (São Paulo).</p> </li> </ul> <ul> <li> <p>The environment types
      * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
      * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
+     * (Oregon), and EU (Ireland).</p> </li> </ul>  <p>If you're using compute
+     * fleets during project creation, <code>type</code> will be ignored.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
      */
@@ -136,12 +140,11 @@ namespace Model
      * environment type <code>ARM_CONTAINER</code> is available only in regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
-     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
-     * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
-     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
-     * (Ningxia).</p> </li> <li> <p>The environment type
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> is available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada
+     * (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
+     * (Beijing), and China (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
@@ -154,7 +157,9 @@ namespace Model
      * (São Paulo).</p> </li> </ul> <ul> <li> <p>The environment types
      * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
      * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
+     * (Oregon), and EU (Ireland).</p> </li> </ul>  <p>If you're using compute
+     * fleets during project creation, <code>type</code> will be ignored.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
      */
@@ -165,12 +170,11 @@ namespace Model
      * environment type <code>ARM_CONTAINER</code> is available only in regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
-     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
-     * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
-     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
-     * (Ningxia).</p> </li> <li> <p>The environment type
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> is available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada
+     * (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
+     * (Beijing), and China (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
@@ -183,7 +187,9 @@ namespace Model
      * (São Paulo).</p> </li> </ul> <ul> <li> <p>The environment types
      * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
      * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
+     * (Oregon), and EU (Ireland).</p> </li> </ul>  <p>If you're using compute
+     * fleets during project creation, <code>type</code> will be ignored.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
      */
@@ -194,12 +200,11 @@ namespace Model
      * environment type <code>ARM_CONTAINER</code> is available only in regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
-     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
-     * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
-     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
-     * (Ningxia).</p> </li> <li> <p>The environment type
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> is available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada
+     * (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
+     * (Beijing), and China (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
@@ -212,7 +217,9 @@ namespace Model
      * (São Paulo).</p> </li> </ul> <ul> <li> <p>The environment types
      * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
      * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
+     * (Oregon), and EU (Ireland).</p> </li> </ul>  <p>If you're using compute
+     * fleets during project creation, <code>type</code> will be ignored.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
      */
@@ -387,7 +394,9 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul>  <p>If you're using
+     * compute fleets during project creation, <code>computeType</code> will be
+     * ignored.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
      */
@@ -432,7 +441,9 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul>  <p>If you're using
+     * compute fleets during project creation, <code>computeType</code> will be
+     * ignored.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
      */
@@ -477,7 +488,9 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul>  <p>If you're using
+     * compute fleets during project creation, <code>computeType</code> will be
+     * ignored.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
      */
@@ -522,7 +535,9 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul>  <p>If you're using
+     * compute fleets during project creation, <code>computeType</code> will be
+     * ignored.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
      */
@@ -567,7 +582,9 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul>  <p>If you're using
+     * compute fleets during project creation, <code>computeType</code> will be
+     * ignored.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
      */
@@ -612,11 +629,44 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul>  <p>If you're using
+     * compute fleets during project creation, <code>computeType</code> will be
+     * ignored.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
      */
     inline ProjectEnvironment& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A ProjectFleet object to use for this build project.</p>
+     */
+    inline const ProjectFleet& GetFleet() const{ return m_fleet; }
+
+    /**
+     * <p>A ProjectFleet object to use for this build project.</p>
+     */
+    inline bool FleetHasBeenSet() const { return m_fleetHasBeenSet; }
+
+    /**
+     * <p>A ProjectFleet object to use for this build project.</p>
+     */
+    inline void SetFleet(const ProjectFleet& value) { m_fleetHasBeenSet = true; m_fleet = value; }
+
+    /**
+     * <p>A ProjectFleet object to use for this build project.</p>
+     */
+    inline void SetFleet(ProjectFleet&& value) { m_fleetHasBeenSet = true; m_fleet = std::move(value); }
+
+    /**
+     * <p>A ProjectFleet object to use for this build project.</p>
+     */
+    inline ProjectEnvironment& WithFleet(const ProjectFleet& value) { SetFleet(value); return *this;}
+
+    /**
+     * <p>A ProjectFleet object to use for this build project.</p>
+     */
+    inline ProjectEnvironment& WithFleet(ProjectFleet&& value) { SetFleet(std::move(value)); return *this;}
 
 
     /**
@@ -923,6 +973,9 @@ namespace Model
 
     ComputeType m_computeType;
     bool m_computeTypeHasBeenSet = false;
+
+    ProjectFleet m_fleet;
+    bool m_fleetHasBeenSet = false;
 
     Aws::Vector<EnvironmentVariable> m_environmentVariables;
     bool m_environmentVariablesHasBeenSet = false;

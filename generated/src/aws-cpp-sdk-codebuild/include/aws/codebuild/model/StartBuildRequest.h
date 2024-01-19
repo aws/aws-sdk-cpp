@@ -19,6 +19,7 @@
 #include <aws/codebuild/model/LogsConfig.h>
 #include <aws/codebuild/model/RegistryCredential.h>
 #include <aws/codebuild/model/ImagePullCredentialsType.h>
+#include <aws/codebuild/model/ProjectFleet.h>
 #include <aws/codebuild/model/ProjectSource.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
@@ -1627,6 +1628,43 @@ namespace Model
      */
     inline StartBuildRequest& WithDebugSessionEnabled(bool value) { SetDebugSessionEnabled(value); return *this;}
 
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline const ProjectFleet& GetFleetOverride() const{ return m_fleetOverride; }
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline bool FleetOverrideHasBeenSet() const { return m_fleetOverrideHasBeenSet; }
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline void SetFleetOverride(const ProjectFleet& value) { m_fleetOverrideHasBeenSet = true; m_fleetOverride = value; }
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline void SetFleetOverride(ProjectFleet&& value) { m_fleetOverrideHasBeenSet = true; m_fleetOverride = std::move(value); }
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline StartBuildRequest& WithFleetOverride(const ProjectFleet& value) { SetFleetOverride(value); return *this;}
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline StartBuildRequest& WithFleetOverride(ProjectFleet&& value) { SetFleetOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectName;
@@ -1721,6 +1759,9 @@ namespace Model
 
     bool m_debugSessionEnabled;
     bool m_debugSessionEnabledHasBeenSet = false;
+
+    ProjectFleet m_fleetOverride;
+    bool m_fleetOverrideHasBeenSet = false;
   };
 
 } // namespace Model

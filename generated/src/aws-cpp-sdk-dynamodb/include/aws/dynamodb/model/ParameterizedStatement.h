@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> Represents a PartiQL statment that uses parameters. </p><p><h3>See
+   * <p> Represents a PartiQL statement that uses parameters. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ParameterizedStatement">AWS
    * API Reference</a></p>
@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p> A PartiQL statment that uses parameters. </p>
+     * <p> A PartiQL statement that uses parameters. </p>
      */
     inline const Aws::String& GetStatement() const{ return m_statement; }
 
     /**
-     * <p> A PartiQL statment that uses parameters. </p>
+     * <p> A PartiQL statement that uses parameters. </p>
      */
     inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }
 
     /**
-     * <p> A PartiQL statment that uses parameters. </p>
+     * <p> A PartiQL statement that uses parameters. </p>
      */
     inline void SetStatement(const Aws::String& value) { m_statementHasBeenSet = true; m_statement = value; }
 
     /**
-     * <p> A PartiQL statment that uses parameters. </p>
+     * <p> A PartiQL statement that uses parameters. </p>
      */
     inline void SetStatement(Aws::String&& value) { m_statementHasBeenSet = true; m_statement = std::move(value); }
 
     /**
-     * <p> A PartiQL statment that uses parameters. </p>
+     * <p> A PartiQL statement that uses parameters. </p>
      */
     inline void SetStatement(const char* value) { m_statementHasBeenSet = true; m_statement.assign(value); }
 
     /**
-     * <p> A PartiQL statment that uses parameters. </p>
+     * <p> A PartiQL statement that uses parameters. </p>
      */
     inline ParameterizedStatement& WithStatement(const Aws::String& value) { SetStatement(value); return *this;}
 
     /**
-     * <p> A PartiQL statment that uses parameters. </p>
+     * <p> A PartiQL statement that uses parameters. </p>
      */
     inline ParameterizedStatement& WithStatement(Aws::String&& value) { SetStatement(std::move(value)); return *this;}
 
     /**
-     * <p> A PartiQL statment that uses parameters. </p>
+     * <p> A PartiQL statement that uses parameters. </p>
      */
     inline ParameterizedStatement& WithStatement(const char* value) { SetStatement(value); return *this;}
 

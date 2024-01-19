@@ -72,6 +72,7 @@
 #include <aws/dynamodb/model/UpdateGlobalTableRequest.h>
 #include <aws/dynamodb/model/UpdateGlobalTableSettingsRequest.h>
 #include <aws/dynamodb/model/UpdateItemRequest.h>
+#include <aws/dynamodb/model/UpdateKinesisStreamingDestinationRequest.h>
 #include <aws/dynamodb/model/UpdateTableRequest.h>
 #include <aws/dynamodb/model/UpdateTableReplicaAutoScalingRequest.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveRequest.h>
@@ -2762,6 +2763,67 @@ UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) c
       }
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return UpdateItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateKinesisStreamingDestinationOutcome DynamoDBClient::UpdateKinesisStreamingDestination(const UpdateKinesisStreamingDestinationRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateKinesisStreamingDestination);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateKinesisStreamingDestination, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateKinesisStreamingDestination, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateKinesisStreamingDestination",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateKinesisStreamingDestinationOutcome>(
+    [&]()-> UpdateKinesisStreamingDestinationOutcome {
+      ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
+      if (enableEndpointDiscovery)
+      {
+          Aws::String endpointKey = "Shared";
+          Aws::String endpoint;
+          if (m_endpointsCache.Get(endpointKey, endpoint))
+          {
+              AWS_LOGSTREAM_TRACE("UpdateKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
+              endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
+              endpointResolutionOutcome.GetResult().SetURI(endpoint);
+          }
+          else
+          {
+              AWS_LOGSTREAM_TRACE("UpdateKinesisStreamingDestination", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+              DescribeEndpointsRequest endpointRequest;
+              auto endpointOutcome = DescribeEndpoints(endpointRequest);
+              if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+              {
+                  const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+                  m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+                  endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+                  AWS_LOGSTREAM_TRACE("UpdateKinesisStreamingDestination", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+                  endpointResolutionOutcome.GetResult().SetURI(endpoint);
+              }
+              else
+              {
+                  AWS_LOGSTREAM_ERROR("UpdateKinesisStreamingDestination", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+                  endpointResolutionOutcome = endpointOutcome.GetError();
+              }
+          }
+      }
+      if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+          endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+              [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+              TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+              *meter,
+              {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      }
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return UpdateKinesisStreamingDestinationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
