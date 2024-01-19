@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 EnableKinesisStreamingDestinationRequest::EnableKinesisStreamingDestinationRequest() : 
     m_tableNameHasBeenSet(false),
-    m_streamArnHasBeenSet(false)
+    m_streamArnHasBeenSet(false),
+    m_enableKinesisStreamingConfigurationHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String EnableKinesisStreamingDestinationRequest::SerializePayload() const
   if(m_streamArnHasBeenSet)
   {
    payload.WithString("StreamArn", m_streamArn);
+
+  }
+
+  if(m_enableKinesisStreamingConfigurationHasBeenSet)
+  {
+   payload.WithObject("EnableKinesisStreamingConfiguration", m_enableKinesisStreamingConfiguration.Jsonize());
 
   }
 

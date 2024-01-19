@@ -118,42 +118,50 @@ namespace Model
 
 
     /**
-     * <p>The notebook content to be imported.</p>
+     * <p>The notebook content to be imported. The payload must be in
+     * <code>ipynb</code> format.</p>
      */
     inline const Aws::String& GetPayload() const{ return m_payload; }
 
     /**
-     * <p>The notebook content to be imported.</p>
+     * <p>The notebook content to be imported. The payload must be in
+     * <code>ipynb</code> format.</p>
      */
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
 
     /**
-     * <p>The notebook content to be imported.</p>
+     * <p>The notebook content to be imported. The payload must be in
+     * <code>ipynb</code> format.</p>
      */
     inline void SetPayload(const Aws::String& value) { m_payloadHasBeenSet = true; m_payload = value; }
 
     /**
-     * <p>The notebook content to be imported.</p>
+     * <p>The notebook content to be imported. The payload must be in
+     * <code>ipynb</code> format.</p>
      */
     inline void SetPayload(Aws::String&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
 
     /**
-     * <p>The notebook content to be imported.</p>
+     * <p>The notebook content to be imported. The payload must be in
+     * <code>ipynb</code> format.</p>
      */
     inline void SetPayload(const char* value) { m_payloadHasBeenSet = true; m_payload.assign(value); }
 
     /**
-     * <p>The notebook content to be imported.</p>
+     * <p>The notebook content to be imported. The payload must be in
+     * <code>ipynb</code> format.</p>
      */
     inline ImportNotebookRequest& WithPayload(const Aws::String& value) { SetPayload(value); return *this;}
 
     /**
-     * <p>The notebook content to be imported.</p>
+     * <p>The notebook content to be imported. The payload must be in
+     * <code>ipynb</code> format.</p>
      */
     inline ImportNotebookRequest& WithPayload(Aws::String&& value) { SetPayload(std::move(value)); return *this;}
 
     /**
-     * <p>The notebook content to be imported.</p>
+     * <p>The notebook content to be imported. The payload must be in
+     * <code>ipynb</code> format.</p>
      */
     inline ImportNotebookRequest& WithPayload(const char* value) { SetPayload(value); return *this;}
 
@@ -193,6 +201,55 @@ namespace Model
      * <code>IPYNB</code>.</p>
      */
     inline ImportNotebookRequest& WithType(NotebookType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A URI that specifies the Amazon S3 location of a notebook file in
+     * <code>ipynb</code> format.</p>
+     */
+    inline const Aws::String& GetNotebookS3LocationUri() const{ return m_notebookS3LocationUri; }
+
+    /**
+     * <p>A URI that specifies the Amazon S3 location of a notebook file in
+     * <code>ipynb</code> format.</p>
+     */
+    inline bool NotebookS3LocationUriHasBeenSet() const { return m_notebookS3LocationUriHasBeenSet; }
+
+    /**
+     * <p>A URI that specifies the Amazon S3 location of a notebook file in
+     * <code>ipynb</code> format.</p>
+     */
+    inline void SetNotebookS3LocationUri(const Aws::String& value) { m_notebookS3LocationUriHasBeenSet = true; m_notebookS3LocationUri = value; }
+
+    /**
+     * <p>A URI that specifies the Amazon S3 location of a notebook file in
+     * <code>ipynb</code> format.</p>
+     */
+    inline void SetNotebookS3LocationUri(Aws::String&& value) { m_notebookS3LocationUriHasBeenSet = true; m_notebookS3LocationUri = std::move(value); }
+
+    /**
+     * <p>A URI that specifies the Amazon S3 location of a notebook file in
+     * <code>ipynb</code> format.</p>
+     */
+    inline void SetNotebookS3LocationUri(const char* value) { m_notebookS3LocationUriHasBeenSet = true; m_notebookS3LocationUri.assign(value); }
+
+    /**
+     * <p>A URI that specifies the Amazon S3 location of a notebook file in
+     * <code>ipynb</code> format.</p>
+     */
+    inline ImportNotebookRequest& WithNotebookS3LocationUri(const Aws::String& value) { SetNotebookS3LocationUri(value); return *this;}
+
+    /**
+     * <p>A URI that specifies the Amazon S3 location of a notebook file in
+     * <code>ipynb</code> format.</p>
+     */
+    inline ImportNotebookRequest& WithNotebookS3LocationUri(Aws::String&& value) { SetNotebookS3LocationUri(std::move(value)); return *this;}
+
+    /**
+     * <p>A URI that specifies the Amazon S3 location of a notebook file in
+     * <code>ipynb</code> format.</p>
+     */
+    inline ImportNotebookRequest& WithNotebookS3LocationUri(const char* value) { SetNotebookS3LocationUri(value); return *this;}
 
 
     /**
@@ -288,6 +345,9 @@ namespace Model
 
     NotebookType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_notebookS3LocationUri;
+    bool m_notebookS3LocationUriHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;

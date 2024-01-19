@@ -163,6 +163,32 @@ namespace CodeBuild
         }
 
         /**
+         * <p>Gets information about one or more compute fleets.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetFleetsOutcome BatchGetFleets(const Model::BatchGetFleetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetFleets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetFleetsRequestT = Model::BatchGetFleetsRequest>
+        Model::BatchGetFleetsOutcomeCallable BatchGetFleetsCallable(const BatchGetFleetsRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::BatchGetFleets, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetFleetsRequestT = Model::BatchGetFleetsRequest>
+        void BatchGetFleetsAsync(const BatchGetFleetsRequestT& request, const BatchGetFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::BatchGetFleets, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about one or more build projects.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">AWS
@@ -236,6 +262,31 @@ namespace CodeBuild
         void BatchGetReportsAsync(const BatchGetReportsRequestT& request, const BatchGetReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeBuildClient::BatchGetReports, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a compute fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateFleetRequestT = Model::CreateFleetRequest>
+        Model::CreateFleetOutcomeCallable CreateFleetCallable(const CreateFleetRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::CreateFleet, request);
+        }
+
+        /**
+         * An Async wrapper for CreateFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateFleetRequestT = Model::CreateFleetRequest>
+        void CreateFleetAsync(const CreateFleetRequestT& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::CreateFleet, request, handler, context);
         }
 
         /**
@@ -348,6 +399,32 @@ namespace CodeBuild
         void DeleteBuildBatchAsync(const DeleteBuildBatchRequestT& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeBuildClient::DeleteBuildBatch, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a compute fleet. When you delete a compute fleet, its builds are not
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFleetOutcome DeleteFleet(const Model::DeleteFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteFleetRequestT = Model::DeleteFleetRequest>
+        Model::DeleteFleetOutcomeCallable DeleteFleetCallable(const DeleteFleetRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::DeleteFleet, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteFleetRequestT = Model::DeleteFleetRequest>
+        void DeleteFleetAsync(const DeleteFleetRequestT& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::DeleteFleet, request, handler, context);
         }
 
         /**
@@ -793,6 +870,32 @@ namespace CodeBuild
         }
 
         /**
+         * <p>Gets a list of compute fleet names with each compute fleet name representing
+         * a single compute fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFleetsOutcome ListFleets(const Model::ListFleetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFleets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFleetsRequestT = Model::ListFleetsRequest>
+        Model::ListFleetsOutcomeCallable ListFleetsCallable(const ListFleetsRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::ListFleets, request);
+        }
+
+        /**
+         * An Async wrapper for ListFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFleetsRequestT = Model::ListFleetsRequest>
+        void ListFleetsAsync(const ListFleetsRequestT& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::ListFleets, request, handler, context);
+        }
+
+        /**
          * <p>Gets a list of build project names, with each build project name representing
          * a single build project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">AWS
@@ -1149,6 +1252,31 @@ namespace CodeBuild
         void StopBuildBatchAsync(const StopBuildBatchRequestT& request, const StopBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeBuildClient::StopBuildBatch, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a compute fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFleetOutcome UpdateFleet(const Model::UpdateFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateFleetRequestT = Model::UpdateFleetRequest>
+        Model::UpdateFleetOutcomeCallable UpdateFleetCallable(const UpdateFleetRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::UpdateFleet, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateFleetRequestT = Model::UpdateFleetRequest>
+        void UpdateFleetAsync(const UpdateFleetRequestT& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::UpdateFleet, request, handler, context);
         }
 
         /**

@@ -402,49 +402,49 @@ namespace Model
 
     /**
      * <p>Represents the DynamoDB Streams configuration for the table.</p> 
-     * <p>You receive a <code>ValidationException</code> if you try to enable a stream
-     * on a table that already has a stream, or if you try to disable a stream on a
-     * table that doesn't have a stream.</p> 
+     * <p>You receive a <code>ResourceInUseException</code> if you try to enable a
+     * stream on a table that already has a stream, or if you try to disable a stream
+     * on a table that doesn't have a stream.</p> 
      */
     inline const StreamSpecification& GetStreamSpecification() const{ return m_streamSpecification; }
 
     /**
      * <p>Represents the DynamoDB Streams configuration for the table.</p> 
-     * <p>You receive a <code>ValidationException</code> if you try to enable a stream
-     * on a table that already has a stream, or if you try to disable a stream on a
-     * table that doesn't have a stream.</p> 
+     * <p>You receive a <code>ResourceInUseException</code> if you try to enable a
+     * stream on a table that already has a stream, or if you try to disable a stream
+     * on a table that doesn't have a stream.</p> 
      */
     inline bool StreamSpecificationHasBeenSet() const { return m_streamSpecificationHasBeenSet; }
 
     /**
      * <p>Represents the DynamoDB Streams configuration for the table.</p> 
-     * <p>You receive a <code>ValidationException</code> if you try to enable a stream
-     * on a table that already has a stream, or if you try to disable a stream on a
-     * table that doesn't have a stream.</p> 
+     * <p>You receive a <code>ResourceInUseException</code> if you try to enable a
+     * stream on a table that already has a stream, or if you try to disable a stream
+     * on a table that doesn't have a stream.</p> 
      */
     inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
 
     /**
      * <p>Represents the DynamoDB Streams configuration for the table.</p> 
-     * <p>You receive a <code>ValidationException</code> if you try to enable a stream
-     * on a table that already has a stream, or if you try to disable a stream on a
-     * table that doesn't have a stream.</p> 
+     * <p>You receive a <code>ResourceInUseException</code> if you try to enable a
+     * stream on a table that already has a stream, or if you try to disable a stream
+     * on a table that doesn't have a stream.</p> 
      */
     inline void SetStreamSpecification(StreamSpecification&& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = std::move(value); }
 
     /**
      * <p>Represents the DynamoDB Streams configuration for the table.</p> 
-     * <p>You receive a <code>ValidationException</code> if you try to enable a stream
-     * on a table that already has a stream, or if you try to disable a stream on a
-     * table that doesn't have a stream.</p> 
+     * <p>You receive a <code>ResourceInUseException</code> if you try to enable a
+     * stream on a table that already has a stream, or if you try to disable a stream
+     * on a table that doesn't have a stream.</p> 
      */
     inline UpdateTableRequest& WithStreamSpecification(const StreamSpecification& value) { SetStreamSpecification(value); return *this;}
 
     /**
      * <p>Represents the DynamoDB Streams configuration for the table.</p> 
-     * <p>You receive a <code>ValidationException</code> if you try to enable a stream
-     * on a table that already has a stream, or if you try to disable a stream on a
-     * table that doesn't have a stream.</p> 
+     * <p>You receive a <code>ResourceInUseException</code> if you try to enable a
+     * stream on a table that already has a stream, or if you try to disable a stream
+     * on a table that doesn't have a stream.</p> 
      */
     inline UpdateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(std::move(value)); return *this;}
 

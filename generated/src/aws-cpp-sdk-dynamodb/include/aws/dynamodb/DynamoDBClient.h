@@ -1980,6 +1980,32 @@ namespace DynamoDB
         }
 
         /**
+         * <p>The command to update the Kinesis stream destination.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKinesisStreamingDestinationOutcome UpdateKinesisStreamingDestination(const Model::UpdateKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKinesisStreamingDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKinesisStreamingDestinationRequestT = Model::UpdateKinesisStreamingDestinationRequest>
+        Model::UpdateKinesisStreamingDestinationOutcomeCallable UpdateKinesisStreamingDestinationCallable(const UpdateKinesisStreamingDestinationRequestT& request) const
+        {
+            return SubmitCallable(&DynamoDBClient::UpdateKinesisStreamingDestination, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKinesisStreamingDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKinesisStreamingDestinationRequestT = Model::UpdateKinesisStreamingDestinationRequest>
+        void UpdateKinesisStreamingDestinationAsync(const UpdateKinesisStreamingDestinationRequestT& request, const UpdateKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DynamoDBClient::UpdateKinesisStreamingDestination, request, handler, context);
+        }
+
+        /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
          * DynamoDB Streams settings for a given table.</p>  <p>This operation
          * only applies to <a
