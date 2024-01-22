@@ -108,42 +108,66 @@ namespace Model
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces attached to
      * instances created in the specified subnet should be assigned a public IPv4
-     * address.</p>
+     * address.</p> <p>Starting on February 1, 2024, Amazon Web Services will charge
+     * for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline const AttributeBooleanValue& GetMapPublicIpOnLaunch() const{ return m_mapPublicIpOnLaunch; }
 
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces attached to
      * instances created in the specified subnet should be assigned a public IPv4
-     * address.</p>
+     * address.</p> <p>Starting on February 1, 2024, Amazon Web Services will charge
+     * for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline bool MapPublicIpOnLaunchHasBeenSet() const { return m_mapPublicIpOnLaunchHasBeenSet; }
 
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces attached to
      * instances created in the specified subnet should be assigned a public IPv4
-     * address.</p>
+     * address.</p> <p>Starting on February 1, 2024, Amazon Web Services will charge
+     * for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline void SetMapPublicIpOnLaunch(const AttributeBooleanValue& value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = value; }
 
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces attached to
      * instances created in the specified subnet should be assigned a public IPv4
-     * address.</p>
+     * address.</p> <p>Starting on February 1, 2024, Amazon Web Services will charge
+     * for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline void SetMapPublicIpOnLaunch(AttributeBooleanValue&& value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = std::move(value); }
 
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces attached to
      * instances created in the specified subnet should be assigned a public IPv4
-     * address.</p>
+     * address.</p> <p>Starting on February 1, 2024, Amazon Web Services will charge
+     * for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline ModifySubnetAttributeRequest& WithMapPublicIpOnLaunch(const AttributeBooleanValue& value) { SetMapPublicIpOnLaunch(value); return *this;}
 
     /**
      * <p>Specify <code>true</code> to indicate that network interfaces attached to
      * instances created in the specified subnet should be assigned a public IPv4
-     * address.</p>
+     * address.</p> <p>Starting on February 1, 2024, Amazon Web Services will charge
+     * for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline ModifySubnetAttributeRequest& WithMapPublicIpOnLaunch(AttributeBooleanValue&& value) { SetMapPublicIpOnLaunch(std::move(value)); return *this;}
 

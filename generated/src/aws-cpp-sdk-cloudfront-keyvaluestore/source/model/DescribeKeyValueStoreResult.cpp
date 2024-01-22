@@ -63,6 +63,18 @@ DescribeKeyValueStoreResult& DescribeKeyValueStoreResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = jsonValue.GetString("Status");
+
+  }
+
+  if(jsonValue.ValueExists("FailureReason"))
+  {
+    m_failureReason = jsonValue.GetString("FailureReason");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& eTagIter = headers.find("etag");
