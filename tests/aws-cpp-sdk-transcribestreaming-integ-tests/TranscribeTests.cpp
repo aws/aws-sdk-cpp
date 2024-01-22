@@ -361,7 +361,7 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
                 // the number of characters extracted by the last read() operation.
                 if (file.gcount() > 0) {
                     int64_t now = Aws::Utils::DateTime::Now().Millis();
-                    int64_t sleepForMs = std::max(0l, (int64_t) ((lastAudioEventSentAt - now) + chunkLengthToUseMs));
+                    int64_t sleepForMs = std::max((int64_t) 0l, (int64_t) ((lastAudioEventSentAt - now) + chunkLengthToUseMs));
                     std::this_thread::sleep_for(std::chrono::milliseconds(sleepForMs));
                     lastAudioEventSentAt = Aws::Utils::DateTime::Now().Millis();
 

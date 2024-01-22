@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-transcribestreaming-integration-tests
+add_project(aws-cpp-sdk-transcribestreaming-integ-tests
     "Tests for the AWS TranscribeStreaming C++ SDK"
     aws-cpp-sdk-transcribestreaming
     testing-resources
