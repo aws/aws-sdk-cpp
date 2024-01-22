@@ -8,6 +8,7 @@
 #include <aws/connectcases/ConnectCasesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connectcases/model/UserUnion.h>
 #include <aws/connectcases/model/FieldValue.h>
 #include <utility>
 
@@ -172,6 +173,25 @@ namespace Model
      */
     inline UpdateCaseRequest& AddFields(FieldValue&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const UserUnion& GetPerformedBy() const{ return m_performedBy; }
+
+    
+    inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
+
+    
+    inline void SetPerformedBy(const UserUnion& value) { m_performedByHasBeenSet = true; m_performedBy = value; }
+
+    
+    inline void SetPerformedBy(UserUnion&& value) { m_performedByHasBeenSet = true; m_performedBy = std::move(value); }
+
+    
+    inline UpdateCaseRequest& WithPerformedBy(const UserUnion& value) { SetPerformedBy(value); return *this;}
+
+    
+    inline UpdateCaseRequest& WithPerformedBy(UserUnion&& value) { SetPerformedBy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_caseId;
@@ -182,6 +202,9 @@ namespace Model
 
     Aws::Vector<FieldValue> m_fields;
     bool m_fieldsHasBeenSet = false;
+
+    UserUnion m_performedBy;
+    bool m_performedByHasBeenSet = false;
   };
 
 } // namespace Model

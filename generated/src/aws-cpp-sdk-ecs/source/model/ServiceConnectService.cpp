@@ -23,7 +23,9 @@ ServiceConnectService::ServiceConnectService() :
     m_discoveryNameHasBeenSet(false),
     m_clientAliasesHasBeenSet(false),
     m_ingressPortOverride(0),
-    m_ingressPortOverrideHasBeenSet(false)
+    m_ingressPortOverrideHasBeenSet(false),
+    m_timeoutHasBeenSet(false),
+    m_tlsHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ ServiceConnectService::ServiceConnectService(JsonView jsonValue) :
     m_discoveryNameHasBeenSet(false),
     m_clientAliasesHasBeenSet(false),
     m_ingressPortOverride(0),
-    m_ingressPortOverrideHasBeenSet(false)
+    m_ingressPortOverrideHasBeenSet(false),
+    m_timeoutHasBeenSet(false),
+    m_tlsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +74,20 @@ ServiceConnectService& ServiceConnectService::operator =(JsonView jsonValue)
     m_ingressPortOverrideHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timeout"))
+  {
+    m_timeout = jsonValue.GetObject("timeout");
+
+    m_timeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tls"))
+  {
+    m_tls = jsonValue.GetObject("tls");
+
+    m_tlsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +121,18 @@ JsonValue ServiceConnectService::Jsonize() const
   if(m_ingressPortOverrideHasBeenSet)
   {
    payload.WithInteger("ingressPortOverride", m_ingressPortOverride);
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithObject("timeout", m_timeout.Jsonize());
+
+  }
+
+  if(m_tlsHasBeenSet)
+  {
+   payload.WithObject("tls", m_tls.Jsonize());
 
   }
 

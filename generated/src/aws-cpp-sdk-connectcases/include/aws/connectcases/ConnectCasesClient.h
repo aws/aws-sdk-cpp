@@ -135,11 +135,16 @@ namespace ConnectCases
         }
 
         /**
-         * <p>Creates a case in the specified Cases domain. Case system and custom fields
-         * are taken as an array id/value pairs with a declared data types.</p> <p>The
-         * following fields are required when creating a case:</p> <pre><code> &lt;ul&gt;
-         * &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the
-         * full customer profile ARN in this format:
+         *  <p>If you provide a value for <code>PerformedBy.UserArn</code> you must
+         * also have <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+         * permission on the User ARN resource that you provide</p>  <pre><code>
+         * &lt;p&gt;Creates a case in the specified Cases domain. Case system and custom
+         * fields are taken as an array id/value pairs with a declared data
+         * types.&lt;/p&gt; &lt;p&gt;The following fields are required when creating a
+         * case:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;
+         * &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer
+         * profile ARN in this format:
          * &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
          * ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt;
          * &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt;
@@ -378,6 +383,32 @@ namespace ConnectCases
         void GetCaseAsync(const GetCaseRequestT& request, const GetCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectCasesClient::GetCase, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the audit history about a specific case if it exists.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseAuditEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCaseAuditEventsOutcome GetCaseAuditEvents(const Model::GetCaseAuditEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCaseAuditEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCaseAuditEventsRequestT = Model::GetCaseAuditEventsRequest>
+        Model::GetCaseAuditEventsOutcomeCallable GetCaseAuditEventsCallable(const GetCaseAuditEventsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCasesClient::GetCaseAuditEvents, request);
+        }
+
+        /**
+         * An Async wrapper for GetCaseAuditEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCaseAuditEventsRequestT = Model::GetCaseAuditEventsRequest>
+        void GetCaseAuditEventsAsync(const GetCaseAuditEventsRequestT& request, const GetCaseAuditEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCasesClient::GetCaseAuditEvents, request, handler, context);
         }
 
         /**
@@ -799,10 +830,15 @@ namespace ConnectCases
         }
 
         /**
-         * <p>Updates the values of fields on a case. Fields to be updated are received as
-         * an array of id/value pairs identical to the <code>CreateCase</code> input .</p>
-         * <p>If the action is successful, the service sends back an HTTP 200 response with
-         * an empty HTTP body.</p><p><h3>See Also:</h3>   <a
+         *  <p>If you provide a value for <code>PerformedBy.UserArn</code> you must
+         * also have <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+         * permission on the User ARN resource that you provide</p>  <pre><code>
+         * &lt;p&gt;Updates the values of fields on a case. Fields to be updated are
+         * received as an array of id/value pairs identical to the
+         * &lt;code&gt;CreateCase&lt;/code&gt; input .&lt;/p&gt; &lt;p&gt;If the action is
+         * successful, the service sends back an HTTP 200 response with an empty HTTP
+         * body.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateCase">AWS
          * API Reference</a></p>
          */

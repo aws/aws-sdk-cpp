@@ -606,7 +606,7 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * you��ll pay for an On-Demand Instance, expressed as a percentage above the least
      * expensive current generation M, C, or R instance type with your specified
      * attributes. When Amazon EC2 selects instance types with your attributes, it
      * excludes instance types priced above your threshold.</p> <p>The parameter
@@ -625,7 +625,7 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * you��ll pay for an On-Demand Instance, expressed as a percentage above the least
      * expensive current generation M, C, or R instance type with your specified
      * attributes. When Amazon EC2 selects instance types with your attributes, it
      * excludes instance types priced above your threshold.</p> <p>The parameter
@@ -644,7 +644,7 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * you��ll pay for an On-Demand Instance, expressed as a percentage above the least
      * expensive current generation M, C, or R instance type with your specified
      * attributes. When Amazon EC2 selects instance types with your attributes, it
      * excludes instance types priced above your threshold.</p> <p>The parameter
@@ -663,7 +663,7 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * you��ll pay for an On-Demand Instance, expressed as a percentage above the least
      * expensive current generation M, C, or R instance type with your specified
      * attributes. When Amazon EC2 selects instance types with your attributes, it
      * excludes instance types priced above your threshold.</p> <p>The parameter

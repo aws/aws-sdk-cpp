@@ -977,42 +977,58 @@ namespace Model
 
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecifications() const{ return m_elasticGpuSpecifications; }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline bool ElasticGpuSpecificationsHasBeenSet() const { return m_elasticGpuSpecificationsHasBeenSet; }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline void SetElasticGpuSpecifications(const Aws::Vector<ElasticGpuSpecification>& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications = value; }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline void SetElasticGpuSpecifications(Aws::Vector<ElasticGpuSpecification>&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications = std::move(value); }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RequestLaunchTemplateData& WithElasticGpuSpecifications(const Aws::Vector<ElasticGpuSpecification>& value) { SetElasticGpuSpecifications(value); return *this;}
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RequestLaunchTemplateData& WithElasticGpuSpecifications(Aws::Vector<ElasticGpuSpecification>&& value) { SetElasticGpuSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RequestLaunchTemplateData& AddElasticGpuSpecifications(const ElasticGpuSpecification& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RequestLaunchTemplateData& AddElasticGpuSpecifications(ElasticGpuSpecification&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications.push_back(std::move(value)); return *this; }
 

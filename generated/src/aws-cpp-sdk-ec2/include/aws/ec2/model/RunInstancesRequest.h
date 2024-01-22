@@ -1491,74 +1491,58 @@ namespace Model
 
 
     /**
-     * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
-     * resource that you can attach to your Windows instance to accelerate the graphics
-     * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecification() const{ return m_elasticGpuSpecification; }
 
     /**
-     * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
-     * resource that you can attach to your Windows instance to accelerate the graphics
-     * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline bool ElasticGpuSpecificationHasBeenSet() const { return m_elasticGpuSpecificationHasBeenSet; }
 
     /**
-     * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
-     * resource that you can attach to your Windows instance to accelerate the graphics
-     * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline void SetElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = value; }
 
     /**
-     * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
-     * resource that you can attach to your Windows instance to accelerate the graphics
-     * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline void SetElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = std::move(value); }
 
     /**
-     * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
-     * resource that you can attach to your Windows instance to accelerate the graphics
-     * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RunInstancesRequest& WithElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { SetElasticGpuSpecification(value); return *this;}
 
     /**
-     * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
-     * resource that you can attach to your Windows instance to accelerate the graphics
-     * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RunInstancesRequest& WithElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { SetElasticGpuSpecification(std::move(value)); return *this;}
 
     /**
-     * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
-     * resource that you can attach to your Windows instance to accelerate the graphics
-     * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RunInstancesRequest& AddElasticGpuSpecification(const ElasticGpuSpecification& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(value); return *this; }
 
     /**
-     * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
-     * resource that you can attach to your Windows instance to accelerate the graphics
-     * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RunInstancesRequest& AddElasticGpuSpecification(ElasticGpuSpecification&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(std::move(value)); return *this; }
 
@@ -1695,10 +1679,9 @@ namespace Model
     /**
      * <p>The tags to apply to the resources that are created during instance
      * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Spot Instance
+     * requests</p> </li> <li> <p>Network interfaces</p> </li> </ul> <p>To tag a
+     * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
@@ -1706,10 +1689,9 @@ namespace Model
     /**
      * <p>The tags to apply to the resources that are created during instance
      * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Spot Instance
+     * requests</p> </li> <li> <p>Network interfaces</p> </li> </ul> <p>To tag a
+     * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
@@ -1717,10 +1699,9 @@ namespace Model
     /**
      * <p>The tags to apply to the resources that are created during instance
      * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Spot Instance
+     * requests</p> </li> <li> <p>Network interfaces</p> </li> </ul> <p>To tag a
+     * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
@@ -1728,10 +1709,9 @@ namespace Model
     /**
      * <p>The tags to apply to the resources that are created during instance
      * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Spot Instance
+     * requests</p> </li> <li> <p>Network interfaces</p> </li> </ul> <p>To tag a
+     * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
@@ -1739,10 +1719,9 @@ namespace Model
     /**
      * <p>The tags to apply to the resources that are created during instance
      * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Spot Instance
+     * requests</p> </li> <li> <p>Network interfaces</p> </li> </ul> <p>To tag a
+     * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
@@ -1750,10 +1729,9 @@ namespace Model
     /**
      * <p>The tags to apply to the resources that are created during instance
      * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Spot Instance
+     * requests</p> </li> <li> <p>Network interfaces</p> </li> </ul> <p>To tag a
+     * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
@@ -1761,10 +1739,9 @@ namespace Model
     /**
      * <p>The tags to apply to the resources that are created during instance
      * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Spot Instance
+     * requests</p> </li> <li> <p>Network interfaces</p> </li> </ul> <p>To tag a
+     * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
@@ -1772,10 +1749,9 @@ namespace Model
     /**
      * <p>The tags to apply to the resources that are created during instance
      * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Spot Instance
+     * requests</p> </li> <li> <p>Network interfaces</p> </li> </ul> <p>To tag a
+     * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }

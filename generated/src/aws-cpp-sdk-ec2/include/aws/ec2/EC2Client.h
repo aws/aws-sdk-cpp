@@ -7505,8 +7505,11 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the Elastic Graphics accelerator associated with your instances.
-         * For more information about Elastic Graphics, see <a
+         *  <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For
+         * workloads that require graphics acceleration, we recommend that you use Amazon
+         * EC2 G4ad, G4dn, or G5 instances.</p>  <p>Describes the Elastic Graphics
+         * accelerator associated with your instances. For more information about Elastic
+         * Graphics, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
          * Elastic Graphics</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">AWS
@@ -13547,9 +13550,9 @@ namespace EC2
          * you may need to allow the following actions in your IAM policy:
          * <code>DescribeSpotInstanceRequests</code>,
          * <code>DescribeInstanceCreditSpecifications</code>, <code>DescribeVolumes</code>,
-         * <code>DescribeInstanceAttribute</code>, and <code>DescribeElasticGpus</code>.
-         * Or, you can allow <code>describe*</code> depending on your instance
-         * requirements.</p><p><h3>See Also:</h3>   <a
+         * and <code>DescribeInstanceAttribute</code>. Or, you can allow
+         * <code>describe*</code> depending on your instance requirements.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData">AWS
          * API Reference</a></p>
          */
@@ -18293,7 +18296,7 @@ namespace EC2
          * restarted. Stopping an instance does not preserve data stored in RAM.</p>
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>If you attempt to start a T3 instance with
-         * <code>host</code> tenancy and the <code>unlimted</code> CPU credit option, the
+         * <code>host</code> tenancy and the <code>unlimited</code> CPU credit option, the
          * request fails. The <code>unlimited</code> CPU credit option is not supported on
          * Dedicated Hosts. Before you start the instance, either change its CPU credit
          * option to <code>standard</code>, or change its tenancy to <code>default</code>
