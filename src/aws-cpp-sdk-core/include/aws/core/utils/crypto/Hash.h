@@ -9,6 +9,7 @@
 #include <aws/core/utils/crypto/HashResult.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/HashingUtils.h>
 
 namespace Aws
 {
@@ -45,6 +46,14 @@ namespace Aws
                  * Get the result in the current value
                  */
                 virtual HashResult GetHash() = 0;
+
+                /**
+                 * Return the base64 encoded checksum value
+                 */
+                virtual Aws::String GetHashBase64(ByteBuffer& m_checksum){
+                    Aws::String base64Encoded = HashingUtils::Base64Encode(m_checksum);
+                    return base64Encoded;
+                }
 
                 // when hashing streams, this is the size of our internal buffer we read the stream into
                 static const uint32_t INTERNAL_HASH_STREAM_BUFFER_SIZE = 8192;

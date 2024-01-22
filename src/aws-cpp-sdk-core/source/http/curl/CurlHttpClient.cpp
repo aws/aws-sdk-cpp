@@ -331,8 +331,11 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
                 chunkedTrailer << "0\r\n";
                 if (request->GetRequestHash().second != nullptr)
                 {
+                    Aws::Utils::ByteBuffer unusedChecksum(0);
+                    auto hash = request->GetRequestHash().second->GetHashBase64(unusedChecksum);
                     chunkedTrailer << "x-amz-checksum-" << request->GetRequestHash().first << ":"
                         << HashingUtils::Base64Encode(request->GetRequestHash().second->GetHash().GetResult()) << "\r\n";
+                        //<< hash << "\r\n";
                 }
                 chunkedTrailer << "\r\n";
                 amountRead = chunkedTrailer.str().size();
@@ -658,7 +661,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         headers = curl_slist_append(headers, "content-type:");
     }
 
-    // Discard Expect header so as to avoid using multiple payloads to send a http request (header + body)
+    // Discard Expect header to avoid using multiple payloads to send a http request (header + body)
     if (m_disableExpectHeader)
     {
         headers = curl_slist_append(headers, "Expect:");

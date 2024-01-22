@@ -32,6 +32,7 @@
 #include <aws/core/utils/crypto/CRC32.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha1.h>
+#include <aws/core/utils/crypto/PrecalculatedHash.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/event/EventStream.h>
@@ -791,53 +792,66 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
                               request.GetServiceSpecificParameters()->parameterMap.find("overrideChecksumDisable") !=
                               request.GetServiceSpecificParameters()->parameterMap.end();
 
-    // Request checksums
+    //Check if user has provided the checksum algorithm
     if (!checksumAlgorithmName.empty() && !shouldSkipChecksum)
     {
+        // Check if user has provided a checksum value for the specified algorithm
+        const Aws::String checksumType = "x-amz-checksum-" + checksumAlgorithmName;
+        const HeaderValueCollection &headers = request.GetHeaders();
+        bool checksumValueAndAlgorithmProvided = headers.find(checksumType) != headers.end();
+
         // For non-streaming payload, the resolved checksum location is always header.
         // For streaming payload, the resolved checksum location depends on whether it is an unsigned payload, we let AwsAuthSigner decide it.
-        if (checksumAlgorithmName == "crc32")
+        if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
+        {
+            auto hash = Aws::MakeShared<Crypto::PrecalculatedHash>(AWS_CLIENT_LOG_TAG,request.GetHeaders().find(checksumType)->second);
+            httpRequest->SetRequestHash(checksumAlgorithmName,hash);
+        }
+        else if (checksumValueAndAlgorithmProvided){
+            httpRequest->SetHeaderValue(checksumType, request.GetHeaders().find(checksumType)->second);
+        }
+        else if (checksumAlgorithmName == "crc32")
         {
             if (request.IsStreaming())
             {
-                httpRequest->SetRequestHash("crc32", Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG));
+                httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG));
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-crc32", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "crc32c")
         {
             if (request.IsStreaming())
             {
-                httpRequest->SetRequestHash("crc32c", Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG));
+                httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG));
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-crc32c", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "sha256")
         {
             if (request.IsStreaming())
             {
-                httpRequest->SetRequestHash("sha256", Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG));
+                httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG));
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-sha256", HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "sha1")
         {
             if (request.IsStreaming())
             {
-                httpRequest->SetRequestHash("sha1", Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG));
+                httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG));
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-sha1", HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "md5")
@@ -921,7 +935,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
             AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "This http client doesn't support transfer-encoding:chunked. " <<
                                                    "The request may fail if it's not a seekable stream.");
         }
-        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Found body, but content-length has not been set, attempting to compute content-length");
+        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "`Found body, but content-length has not been set, attempting to compute content-length");
         body->seekg(0, body->end);
         auto streamSize = body->tellg();
         body->seekg(0, body->beg);
@@ -938,7 +952,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         //changing the internal state of the hash computation is not a logical state
         //change as far as constness goes for this class. Due to the platform specificness
         //of hash computations, we can't control the fact that computing a hash mutates
-        //state on some platforms such as windows (but that isn't a concern of this class.
+        //state on some platforms such as windows (but that isn't a concern of this class).
         auto md5HashResult = const_cast<AWSClient*>(this)->m_hash->Calculate(*body);
         body->clear();
         if (md5HashResult.IsSuccess())
