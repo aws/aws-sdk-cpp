@@ -31,8 +31,8 @@ namespace Client
 {
 
 static const char* CLIENT_CONFIG_TAG = "ClientConfiguration";
-static const char* USE_REQUEST_COMPRESSION_ENV_VAR = "USE_REQUEST_COMPRESSION";
-static const char* USE_REQUEST_COMPRESSION_CONFIG_VAR = "use_request_compression";
+static const char* DISABLE_REQUEST_COMPRESSION_ENV_VAR = "DISABLE_REQUEST_COMPRESSION";
+static const char* DISABLE_REQUEST_COMPRESSION_CONFIG_VAR = "disable_request_compression";
 static const char* REQUEST_MIN_COMPRESSION_SIZE_BYTES_ENV_VAR = "REQUEST_MIN_COMPRESSION_SIZE_BYTES";
 static const char* REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR = "request_min_compression_size_bytes";
 static const char* AWS_EXECUTION_ENV = "AWS_EXECUTION_ENV";
@@ -142,15 +142,15 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.enableHostPrefixInjection = true;
     clientConfig.profileName = Aws::Auth::GetConfigProfileName();
 
-    Aws::String useCompressionConfig = clientConfig.LoadConfigFromEnvOrProfile(
-        USE_REQUEST_COMPRESSION_ENV_VAR,
+    Aws::String disableCompressionConfig = clientConfig.LoadConfigFromEnvOrProfile(
+        DISABLE_REQUEST_COMPRESSION_ENV_VAR,
         Aws::Auth::GetConfigProfileName(),
-        USE_REQUEST_COMPRESSION_CONFIG_VAR,
-        {"ENABLE", "DISABLE", "enable", "disable"},
-        "ENABLE"
+        DISABLE_REQUEST_COMPRESSION_CONFIG_VAR,
+        {"TRUE", "FALSE", "true", "false"},
+        "false"
         );
 
-    if (Aws::Utils::StringUtils::ToLower(useCompressionConfig.c_str())  == "disable") {
+    if (Aws::Utils::StringUtils::ToLower(disableCompressionConfig.c_str())  == "true") {
       clientConfig.requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::DISABLE;
       AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Request Compression disabled");
     } else {
