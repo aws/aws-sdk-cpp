@@ -856,7 +856,10 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
         }
         else if (checksumAlgorithmName == "md5")
         {
-            httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(GetBodyStream(request)))));
+            // Only set header for checksum if not already provided
+            if (headers.find(CONTENT_MD5_HEADER) == headers.end()) {
+                httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(GetBodyStream(request)))));
+            }
         }
         else
         {

@@ -515,9 +515,7 @@ if(MSVC)
 
 endif(MSVC)
 
-add_library(${PROJECT_NAME} ${AWS_NATIVE_SDK_SRC}
-        include/aws/core/utils/crypto/PrecalculatedHash.h
-        source/utils/crypto/PrecalculatedHash.cpp)
+add_library(${PROJECT_NAME} ${AWS_NATIVE_SDK_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MAJOR=${AWSSDK_VERSION_MAJOR}")

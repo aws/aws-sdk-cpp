@@ -237,9 +237,10 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
             return false;
         }
 
-        if (request.GetRequestHash().second != nullptr)
+        Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+        const auto headers = request.GetHeaders();
+        if (request.GetRequestHash().second != nullptr && headers.find(checksumHeaderKey) == headers.end())
         {
-            Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
             Aws::String checksumHeaderValue;
             if (request.GetRequestHash().first == "sha256") {
                 // we already calculated the payload hash so just reverse the hex string to
