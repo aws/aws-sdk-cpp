@@ -403,7 +403,8 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
                 FAIL() << "Test is taking too long, aborting.";
             }
             stream.flush();
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000)); /* We are investigating why we need this */
+            stream.WaitForDrain();
+            std::this_thread::sleep_for(std::chrono::milliseconds(1500)); /* We are investigating why we need this */
             stream.Close();
      };
 
@@ -468,7 +469,7 @@ TEST_F(TranscribeStreamingTests, TranscribeStreamingCppSdkSample)
   for(size_t chunkDuration = 50; chunkDuration <= 200; chunkDuration += 25)
   {
     int64_t startedAt = Aws::Utils::DateTime::Now().Millis();
-    Aws::String result = RunTestLikeSample(3000, "this_is_a_cpp_test_sample_8kHz_2162ms.wav", 8000, chunkDuration);
+    Aws::String result = RunTestLikeSample(3500, "this_is_a_cpp_test_sample_8kHz_2162ms.wav", 8000, chunkDuration);
     int64_t endedAt = Aws::Utils::DateTime::Now().Millis();
     std::cout << "Transcription of this_is_a_cpp_test_sample_8kHz_2162ms with chunk duration " << chunkDuration << " ms took " << endedAt - startedAt << " ms.\n";
 
