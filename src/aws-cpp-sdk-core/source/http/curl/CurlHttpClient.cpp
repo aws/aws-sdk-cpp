@@ -427,16 +427,20 @@ static int CurlProgressCallback(void *userdata, double, double, double, double)
         curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
         return 0;
     }
-    char output[1];
-    if (ioStream->readsome(output, 1) > 0)
-    {
-        ioStream->unget();
-        if (!ioStream->good())
-        {
-            AWS_LOGSTREAM_WARN(CURL_HTTP_CLIENT_TAG, "Input stream failed to perform unget().");
-        }
-        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
-    }
+    // forcing "underflow" on the IOStream with ConcurrentStreamBuf to move data from back buffer to put area
+    ioStream->peek();
+//    char output[1];
+//    if (ioStream->readsome(output, 1) > 0)
+//    {
+//        ioStream->unget();
+//        if (!ioStream->good())
+//        {
+//            AWS_LOGSTREAM_WARN(CURL_HTTP_CLIENT_TAG, "Input stream failed to perform unget().");
+//        }
+//    }
+
+    // forcing curl to try to ReadBody again (~to poll body IOStream for HTTP2)
+    curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
 
     return 0;
 }
