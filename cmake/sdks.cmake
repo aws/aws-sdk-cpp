@@ -215,20 +215,6 @@ function(add_sdks)
     if(ENABLE_TESTING)
         add_subdirectory(tests/testing-resources)
 
-        if(ENABLE_FUNCTIONAL_TESTING)
-            message(STATUS "Clearing existing directory for document-test to prepare for generation.")
-            file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-document-test")
-
-            # Generates SDK client based on aws-cpp-sdk-core-tests/resources/api-descriptions/document-test-2021-06-28.normal.json for functional testing.
-            execute_process(
-                COMMAND ${PYTHON3_CMD} tools/scripts/legacy/generate_sdks.py --pathToApiDefinitions aws-cpp-sdk-core-tests/resources/api-descriptions --serviceName document-test --apiVersion 2021-06-28 --outputLocation ./generated/ --prepareTool
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-            )
-            message(STATUS "Generated service: document-test, version: 2021-06-28")
-            add_subdirectory(aws-cpp-sdk-document-test)
-            add_definitions(-DENABLE_FUNCTIONAL_TESTING)
-        endif()
-
         # android-unified-tests includes all the tests in our code base, those tests related services may not be incldued in BUILD_ONLY,
         # means, those services will not be built, but will be tried to linked against with test targets, which will cause link time error.
         # See https://github.com/aws/aws-sdk-cpp/issues/786. We should only build android-unified-tests when doing a full build.

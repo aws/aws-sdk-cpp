@@ -111,9 +111,6 @@ If disabled, SDK will build and install [AWS-LC](https://github.com/awslabs/aws-
 ### ENABLE_HTTP_CLIENT_TESTING
 (Defaults to OFF) If enabled, corresponding http client test suites will be built and run
 
-### ENABLE_FUNCTIONAL_TESTING
-(Defaults to OFF) If enabled, clients might be generated based on dummy models, and run functional tests as part of unit tests: aws-cpp-sdk-core-tests
-
 ### ENABLE_VIRTUAL_OPERATIONS
 (Defaults to ON) This option usually works with REGENERATE_CLIENTS.
 If enabled when doing code generation (REGENERATE_CLIENTS=ON), operation related functions in service clients will be marked as `virtual`.
