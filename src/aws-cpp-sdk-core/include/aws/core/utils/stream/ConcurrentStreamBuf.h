@@ -35,6 +35,12 @@ namespace Aws
                 void SetEofInput(Aws::IOStream* pStreamToClose = nullptr);
                 void CloseStream();
 
+                /**
+                 * Blocks the current thread until all submitted data is consumed.
+                 * Returns false on timeout, and true if GetArea and back buffer are empty.
+                 */
+                bool WaitForDrain(int64_t timeoutMs);
+
             protected:
                 std::streampos seekoff(std::streamoff off, std::ios_base::seekdir dir, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;
                 std::streampos seekpos(std::streampos pos, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;

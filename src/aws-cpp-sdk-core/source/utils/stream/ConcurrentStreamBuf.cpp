@@ -6,6 +6,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <cstdint>
 #include <cassert>
+#include <thread>
 
 namespace Aws
 {
@@ -63,6 +64,69 @@ namespace Aws
                 m_signal.notify_all();
             }
 
+            bool ConcurrentStreamBuf::WaitForDrain(int64_t timeoutMs)
+            {
+                const auto waitStarted = std::chrono::steady_clock::now();
+
+                // timed FlushPutArea
+                do
+                {
+                    std::unique_lock<std::mutex> lock(m_lock);
+                    const size_t bitslen = pptr() - pbase();
+                    if(!bitslen)
+                        break;
+
+                    m_signal.wait_for(lock, std::chrono::milliseconds(timeoutMs), [this, bitslen]{ return m_eofInput || bitslen <= (m_backbuf.capacity() - m_backbuf.size()); });
+                    std::copy(pbase(), pptr(), std::back_inserter(m_backbuf));
+
+                    m_signal.notify_one();
+                    char* pbegin = reinterpret_cast<char*>(&m_putArea[0]);
+                    setp(pbegin, pbegin + m_putArea.size());
+
+                    timeoutMs -= std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - waitStarted).count();
+                }
+                while(timeoutMs > 0);
+
+                // timed wait for drained back buffer
+                do
+                {
+                    std::unique_lock<std::mutex> lock(m_lock);
+                    const size_t bitslen = pptr() - pbase();
+                    if(bitslen || timeoutMs <= 0)
+                    {
+                        return false;
+                    }
+
+                    m_signal.wait_for(lock, std::chrono::milliseconds(timeoutMs), [this]{ return m_eofOutput || m_backbuf.empty(); });
+                    if (m_eofOutput)
+                    {
+                        return true;
+                    }
+                    if (m_backbuf.empty())
+                    {
+                        break;
+                    }
+
+                    timeoutMs -= std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - waitStarted).count();
+                }
+                while(timeoutMs > 0);
+
+                // timed wait for drained GetArea
+                do
+                {
+                    if (gptr() == nullptr || gptr() >= egptr())
+                    {
+                        return true;
+                    }
+                    std::this_thread::sleep_for(std::chrono::milliseconds(20));
+
+                    timeoutMs -= std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - waitStarted).count();
+                }
+                while(timeoutMs > 0);
+
+                return false;
+            }
+
             void ConcurrentStreamBuf::FlushPutArea()
             {
                 const size_t bitslen = pptr() - pbase();
@@ -99,7 +163,7 @@ namespace Aws
 
                     if (!m_eofInput)
                     {
-                        m_signal.wait_for(lock, std::chrono::milliseconds(1000), [this] { return m_backbuf.empty() == false || m_eofInput; });
+                        m_signal.wait_for(lock, std::chrono::milliseconds(20), [this] { return m_backbuf.empty() == false || m_eofInput; });
                     }
 
                     if (m_eofInput && m_backbuf.empty())
