@@ -43,6 +43,11 @@ CreateRouteTableResponse& CreateRouteTableResponse::operator =(const Aws::Amazon
     {
       m_routeTable = routeTableNode;
     }
+    XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
+    if(!clientTokenNode.IsNull())
+    {
+      m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

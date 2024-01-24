@@ -19,7 +19,8 @@ namespace Model
     available,
     information,
     impaired,
-    unavailable
+    unavailable,
+    constrained
   };
 
 namespace AvailabilityZoneStateMapper

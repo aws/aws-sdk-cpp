@@ -3047,6 +3047,35 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool GetEnableLimitlessDatabase() const{ return m_enableLimitlessDatabase; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool EnableLimitlessDatabaseHasBeenSet() const { return m_enableLimitlessDatabaseHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline void SetEnableLimitlessDatabase(bool value) { m_enableLimitlessDatabaseHasBeenSet = true; m_enableLimitlessDatabase = value; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithEnableLimitlessDatabase(bool value) { SetEnableLimitlessDatabase(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -3177,6 +3206,9 @@ namespace Model
 
     Aws::String m_awsBackupRecoveryPointArn;
     bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+
+    bool m_enableLimitlessDatabase;
+    bool m_enableLimitlessDatabaseHasBeenSet = false;
   };
 
 } // namespace Model

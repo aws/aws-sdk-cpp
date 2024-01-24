@@ -390,41 +390,81 @@ namespace Model
 
     /**
      * <p>Specify the DB instance class for the databases in the green environment.</p>
+     * <p>This parameter only applies to RDS DB instances, because DB instances within
+     * an Aurora DB cluster can have multiple different instance classes. If you're
+     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
+     * parameter. After the green environment is created, you can individually modify
+     * the instance classes of the DB instances within the green DB cluster.</p>
      */
     inline const Aws::String& GetTargetDBInstanceClass() const{ return m_targetDBInstanceClass; }
 
     /**
      * <p>Specify the DB instance class for the databases in the green environment.</p>
+     * <p>This parameter only applies to RDS DB instances, because DB instances within
+     * an Aurora DB cluster can have multiple different instance classes. If you're
+     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
+     * parameter. After the green environment is created, you can individually modify
+     * the instance classes of the DB instances within the green DB cluster.</p>
      */
     inline bool TargetDBInstanceClassHasBeenSet() const { return m_targetDBInstanceClassHasBeenSet; }
 
     /**
      * <p>Specify the DB instance class for the databases in the green environment.</p>
+     * <p>This parameter only applies to RDS DB instances, because DB instances within
+     * an Aurora DB cluster can have multiple different instance classes. If you're
+     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
+     * parameter. After the green environment is created, you can individually modify
+     * the instance classes of the DB instances within the green DB cluster.</p>
      */
     inline void SetTargetDBInstanceClass(const Aws::String& value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass = value; }
 
     /**
      * <p>Specify the DB instance class for the databases in the green environment.</p>
+     * <p>This parameter only applies to RDS DB instances, because DB instances within
+     * an Aurora DB cluster can have multiple different instance classes. If you're
+     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
+     * parameter. After the green environment is created, you can individually modify
+     * the instance classes of the DB instances within the green DB cluster.</p>
      */
     inline void SetTargetDBInstanceClass(Aws::String&& value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass = std::move(value); }
 
     /**
      * <p>Specify the DB instance class for the databases in the green environment.</p>
+     * <p>This parameter only applies to RDS DB instances, because DB instances within
+     * an Aurora DB cluster can have multiple different instance classes. If you're
+     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
+     * parameter. After the green environment is created, you can individually modify
+     * the instance classes of the DB instances within the green DB cluster.</p>
      */
     inline void SetTargetDBInstanceClass(const char* value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass.assign(value); }
 
     /**
      * <p>Specify the DB instance class for the databases in the green environment.</p>
+     * <p>This parameter only applies to RDS DB instances, because DB instances within
+     * an Aurora DB cluster can have multiple different instance classes. If you're
+     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
+     * parameter. After the green environment is created, you can individually modify
+     * the instance classes of the DB instances within the green DB cluster.</p>
      */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(const Aws::String& value) { SetTargetDBInstanceClass(value); return *this;}
 
     /**
      * <p>Specify the DB instance class for the databases in the green environment.</p>
+     * <p>This parameter only applies to RDS DB instances, because DB instances within
+     * an Aurora DB cluster can have multiple different instance classes. If you're
+     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
+     * parameter. After the green environment is created, you can individually modify
+     * the instance classes of the DB instances within the green DB cluster.</p>
      */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(Aws::String&& value) { SetTargetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>Specify the DB instance class for the databases in the green environment.</p>
+     * <p>This parameter only applies to RDS DB instances, because DB instances within
+     * an Aurora DB cluster can have multiple different instance classes. If you're
+     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
+     * parameter. After the green environment is created, you can individually modify
+     * the instance classes of the DB instances within the green DB cluster.</p>
      */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(const char* value) { SetTargetDBInstanceClass(value); return *this;}
 

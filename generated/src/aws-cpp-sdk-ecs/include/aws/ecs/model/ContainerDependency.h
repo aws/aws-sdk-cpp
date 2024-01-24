@@ -44,7 +44,11 @@ namespace Model
    * Guide</i>.</p>  <p>For tasks that use the Fargate launch type, the task or
    * service requires the following platforms:</p> <ul> <li> <p>Linux platform
    * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
-   * <code>1.0.0</code> or later.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+   * <code>1.0.0</code> or later.</p> </li> </ul>  <p>For more information
+   * about how to create a container dependency, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/example_task_definitions.html#example_task_definition-containerdependency">Container
+   * dependency</a> in the <i>Amazon Elastic Container Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerDependency">AWS
    * API Reference</a></p>
    */

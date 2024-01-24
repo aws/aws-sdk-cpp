@@ -374,22 +374,40 @@ namespace Model
     inline ServiceConnectService& WithTimeout(TimeoutConfiguration&& value) { SetTimeout(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
     inline const ServiceConnectTlsConfiguration& GetTls() const{ return m_tls; }
 
-    
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
     inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
 
-    
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
     inline void SetTls(const ServiceConnectTlsConfiguration& value) { m_tlsHasBeenSet = true; m_tls = value; }
 
-    
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
     inline void SetTls(ServiceConnectTlsConfiguration&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
 
-    
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
     inline ServiceConnectService& WithTls(const ServiceConnectTlsConfiguration& value) { SetTls(value); return *this;}
 
-    
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
     inline ServiceConnectService& WithTls(ServiceConnectTlsConfiguration&& value) { SetTls(std::move(value)); return *this;}
 
   private:

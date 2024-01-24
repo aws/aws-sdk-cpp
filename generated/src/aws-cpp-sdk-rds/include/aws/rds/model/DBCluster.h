@@ -18,6 +18,7 @@
 #include <aws/rds/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/LocalWriteForwardingStatus.h>
+#include <aws/rds/model/LimitlessDatabase.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterStatusInfo.h>
 #include <aws/rds/model/DBClusterMember.h>
@@ -3312,6 +3313,37 @@ namespace Model
      */
     inline DBCluster& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
 
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline const LimitlessDatabase& GetLimitlessDatabase() const{ return m_limitlessDatabase; }
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline bool LimitlessDatabaseHasBeenSet() const { return m_limitlessDatabaseHasBeenSet; }
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline void SetLimitlessDatabase(const LimitlessDatabase& value) { m_limitlessDatabaseHasBeenSet = true; m_limitlessDatabase = value; }
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline void SetLimitlessDatabase(LimitlessDatabase&& value) { m_limitlessDatabaseHasBeenSet = true; m_limitlessDatabase = std::move(value); }
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline DBCluster& WithLimitlessDatabase(const LimitlessDatabase& value) { SetLimitlessDatabase(value); return *this;}
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline DBCluster& WithLimitlessDatabase(LimitlessDatabase&& value) { SetLimitlessDatabase(std::move(value)); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -3541,6 +3573,9 @@ namespace Model
 
     Aws::String m_awsBackupRecoveryPointArn;
     bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+
+    LimitlessDatabase m_limitlessDatabase;
+    bool m_limitlessDatabaseHasBeenSet = false;
   };
 
 } // namespace Model

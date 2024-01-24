@@ -43,6 +43,11 @@ CreateNetworkAclResponse& CreateNetworkAclResponse::operator =(const Aws::Amazon
     {
       m_networkAcl = networkAclNode;
     }
+    XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
+    if(!clientTokenNode.IsNull())
+    {
+      m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {
