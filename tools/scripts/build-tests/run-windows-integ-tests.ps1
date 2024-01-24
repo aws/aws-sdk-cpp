@@ -19,4 +19,4 @@ aws configure set aws_session_token (${sts}[3] -replace " " -replace "`"" -repla
 aws configure list
 # Run tests
 cd "${env:PREFIX_DIR}\\win-build"
-python ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug
+python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug
