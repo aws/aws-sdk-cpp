@@ -58,7 +58,6 @@
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
 
-#include "aws/core/utils/crypto/CRC32.h"
 
 using namespace Aws;
 using namespace Aws::Http::Standard;

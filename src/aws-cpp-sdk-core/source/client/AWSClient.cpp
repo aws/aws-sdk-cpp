@@ -854,12 +854,9 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
                 httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(GetBodyStream(request)))));
             }
         }
-        else if (checksumAlgorithmName == "md5")
+        else if (checksumAlgorithmName == "md5" && headers.find(CONTENT_MD5_HEADER) == headers.end())
         {
-            // Only set header for checksum if not already provided
-            if (headers.find(CONTENT_MD5_HEADER) == headers.end()) {
-                httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(GetBodyStream(request)))));
-            }
+            httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(GetBodyStream(request)))));
         }
         else
         {
@@ -938,7 +935,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
             AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "This http client doesn't support transfer-encoding:chunked. " <<
                                                    "The request may fail if it's not a seekable stream.");
         }
-        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "`Found body, but content-length has not been set, attempting to compute content-length");
+        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Found body, but content-length has not been set, attempting to compute content-length");
         body->seekg(0, body->end);
         auto streamSize = body->tellg();
         body->seekg(0, body->beg);
@@ -955,7 +952,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         //changing the internal state of the hash computation is not a logical state
         //change as far as constness goes for this class. Due to the platform specificness
         //of hash computations, we can't control the fact that computing a hash mutates
-        //state on some platforms such as windows (but that isn't a concern of this class).
+        //state on some platforms such as windows (but that isn't a concern of this class.
         auto md5HashResult = const_cast<AWSClient*>(this)->m_hash->Calculate(*body);
         body->clear();
         if (md5HashResult.IsSuccess())

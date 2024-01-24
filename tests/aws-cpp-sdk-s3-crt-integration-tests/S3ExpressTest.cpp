@@ -50,8 +50,8 @@ using namespace Aws::Utils;
 
 
 namespace {
-  static const char* ALLOCATION_TAG = "S3CrtClientS3ExpressTest";
-  static const char* S3_EXPRESS_SUFFIX = "--use1-az6--x-s3";
+  const char* ALLOCATION_TAG = "S3CrtClientS3ExpressTest";
+  const char* S3_EXPRESS_SUFFIX = "--use1-az6--x-s3";
 
   class S3ExpressTest : public ::testing::Test {
   public:
