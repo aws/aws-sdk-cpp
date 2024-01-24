@@ -1,4 +1,6 @@
-﻿# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿#!/usr/bin/env python3
+
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: Apache-2.0.
 #
 import argparse
@@ -66,7 +68,7 @@ def main():
         print("prefix = " + prefix)
         gtest_brief = "--gtest_brief=1"
         add_executable_bit(test_exe)
-        subprocess.check_call([test_exe, prefix, gtest_brief])
+        subprocess.check_call([test_exe, prefix, gtest_brief], timeout=20*60)
 
 
 # Run from powershell; make sure msbuild is in PATH environment variable
