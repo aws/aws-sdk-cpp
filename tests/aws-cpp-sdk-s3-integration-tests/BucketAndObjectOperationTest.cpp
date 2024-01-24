@@ -2409,15 +2409,15 @@ namespace
         AWS_ASSERT_SUCCESS(putObjectOutcome);
     }
 
-    TEST_F(BucketAndObjectOperationTest, BadCheckSumShouldFail) {
+    TEST_F(BucketAndObjectOperationTest, PutObjectChecksum) {
         struct ChecksumTestCase {
             ChecksumAlgorithm checksumAlgorithm;
             std::function<PutObjectRequest(PutObjectRequest)> chucksumMutator;
-            Http::HttpResponseCode responseCode;
-            Aws::String body;
+            HttpResponseCode responseCode;
+            String body;
         };
 
-        const Aws::String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
+        const String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
@@ -2513,7 +2513,7 @@ namespace
                 .WithBucket(fullBucketName)
                 .WithKey("RunningScared")
                 .WithChecksumAlgorithm(testCase.checksumAlgorithm));
-            std::shared_ptr<Aws::IOStream> body = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG,
+            std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
                 testCase.body,
                 std::ios_base::in | std::ios_base::binary);
             request.SetBody(body);
