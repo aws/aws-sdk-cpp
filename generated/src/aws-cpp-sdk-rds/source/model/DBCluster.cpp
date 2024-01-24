@@ -120,7 +120,8 @@ DBCluster::DBCluster() :
     m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
     m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
     m_localWriteForwardingStatusHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false)
+    m_awsBackupRecoveryPointArnHasBeenSet(false),
+    m_limitlessDatabaseHasBeenSet(false)
 {
 }
 
@@ -224,7 +225,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
     m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
     m_localWriteForwardingStatusHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false)
+    m_awsBackupRecoveryPointArnHasBeenSet(false),
+    m_limitlessDatabaseHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -757,6 +759,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
       m_awsBackupRecoveryPointArnHasBeenSet = true;
     }
+    XmlNode limitlessDatabaseNode = resultNode.FirstChild("LimitlessDatabase");
+    if(!limitlessDatabaseNode.IsNull())
+    {
+      m_limitlessDatabase = limitlessDatabaseNode;
+      m_limitlessDatabaseHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1212,6 +1220,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
+  if(m_limitlessDatabaseHasBeenSet)
+  {
+      Aws::StringStream limitlessDatabaseLocationAndMemberSs;
+      limitlessDatabaseLocationAndMemberSs << location << index << locationValue << ".LimitlessDatabase";
+      m_limitlessDatabase.OutputToStream(oStream, limitlessDatabaseLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1587,6 +1602,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_awsBackupRecoveryPointArnHasBeenSet)
   {
       oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+  if(m_limitlessDatabaseHasBeenSet)
+  {
+      Aws::String limitlessDatabaseLocationAndMember(location);
+      limitlessDatabaseLocationAndMember += ".LimitlessDatabase";
+      m_limitlessDatabase.OutputToStream(oStream, limitlessDatabaseLocationAndMember.c_str());
   }
 }
 

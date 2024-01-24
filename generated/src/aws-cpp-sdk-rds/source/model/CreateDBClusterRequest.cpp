@@ -72,6 +72,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
     m_performanceInsightsRetentionPeriod(0),
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_enableLimitlessDatabase(false),
+    m_enableLimitlessDatabaseHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
@@ -334,6 +336,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_performanceInsightsRetentionPeriodHasBeenSet)
   {
     ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+
+  if(m_enableLimitlessDatabaseHasBeenSet)
+  {
+    ss << "EnableLimitlessDatabase=" << std::boolalpha << m_enableLimitlessDatabase << "&";
   }
 
   if(m_serverlessV2ScalingConfigurationHasBeenSet)

@@ -92,57 +92,89 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 

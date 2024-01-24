@@ -3668,6 +3668,35 @@ namespace Model
     inline CreateDBClusterRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
 
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool GetEnableLimitlessDatabase() const{ return m_enableLimitlessDatabase; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool EnableLimitlessDatabaseHasBeenSet() const { return m_enableLimitlessDatabaseHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline void SetEnableLimitlessDatabase(bool value) { m_enableLimitlessDatabaseHasBeenSet = true; m_enableLimitlessDatabase = value; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline CreateDBClusterRequest& WithEnableLimitlessDatabase(bool value) { SetEnableLimitlessDatabase(value); return *this;}
+
+
     
     inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
 
@@ -4244,6 +4273,9 @@ namespace Model
 
     int m_performanceInsightsRetentionPeriod;
     bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
+
+    bool m_enableLimitlessDatabase;
+    bool m_enableLimitlessDatabaseHasBeenSet = false;
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
     bool m_serverlessV2ScalingConfigurationHasBeenSet = false;

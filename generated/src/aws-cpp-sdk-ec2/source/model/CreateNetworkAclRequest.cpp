@@ -14,7 +14,9 @@ CreateNetworkAclRequest::CreateNetworkAclRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -40,6 +42,11 @@ Aws::String CreateNetworkAclRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

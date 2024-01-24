@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/RouteTable.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -59,6 +60,49 @@ namespace Model
     inline CreateRouteTableResponse& WithRouteTable(RouteTable&& value) { SetRouteTable(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
+     * Only returned if a client token was provided in the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
+     * Only returned if a client token was provided in the request.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
+
+    /**
+     * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
+     * Only returned if a client token was provided in the request.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
+
+    /**
+     * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
+     * Only returned if a client token was provided in the request.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
+
+    /**
+     * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
+     * Only returned if a client token was provided in the request.</p>
+     */
+    inline CreateRouteTableResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
+     * Only returned if a client token was provided in the request.</p>
+     */
+    inline CreateRouteTableResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
+     * Only returned if a client token was provided in the request.</p>
+     */
+    inline CreateRouteTableResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -77,6 +121,8 @@ namespace Model
   private:
 
     RouteTable m_routeTable;
+
+    Aws::String m_clientToken;
 
     ResponseMetadata m_responseMetadata;
   };

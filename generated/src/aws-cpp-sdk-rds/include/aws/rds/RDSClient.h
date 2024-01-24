@@ -972,6 +972,33 @@ namespace Aws
         }
 
         /**
+         * <p>Creates a new DB shard group for Aurora Limitless Database. You must enable
+         * Aurora Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora
+         * DB clusters only</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBShardGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDBShardGroupOutcome CreateDBShardGroup(const Model::CreateDBShardGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDBShardGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDBShardGroupRequestT = Model::CreateDBShardGroupRequest>
+        Model::CreateDBShardGroupOutcomeCallable CreateDBShardGroupCallable(const CreateDBShardGroupRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::CreateDBShardGroup, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDBShardGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDBShardGroupRequestT = Model::CreateDBShardGroupRequest>
+        void CreateDBShardGroupAsync(const CreateDBShardGroupRequestT& request, const CreateDBShardGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::CreateDBShardGroup, request, handler, context);
+        }
+
+        /**
          * <p>Creates a snapshot of a DB instance. The source DB instance must be in the
          * <code>available</code> or <code>storage-optimization</code> state.</p><p><h3>See
          * Also:</h3>   <a
@@ -1605,6 +1632,32 @@ namespace Aws
         void DeleteDBSecurityGroupAsync(const DeleteDBSecurityGroupRequestT& request, const DeleteDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DeleteDBSecurityGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Aurora Limitless Database DB shard group.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBShardGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDBShardGroupOutcome DeleteDBShardGroup(const Model::DeleteDBShardGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDBShardGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDBShardGroupRequestT = Model::DeleteDBShardGroupRequest>
+        Model::DeleteDBShardGroupOutcomeCallable DeleteDBShardGroupCallable(const DeleteDBShardGroupRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DeleteDBShardGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDBShardGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDBShardGroupRequestT = Model::DeleteDBShardGroupRequest>
+        void DeleteDBShardGroupAsync(const DeleteDBShardGroupRequestT& request, const DeleteDBShardGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DeleteDBShardGroup, request, handler, context);
         }
 
         /**
@@ -2493,6 +2546,32 @@ namespace Aws
         }
 
         /**
+         * <p>Describes existing Aurora Limitless Database DB shard groups.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBShardGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBShardGroupsOutcome DescribeDBShardGroups(const Model::DescribeDBShardGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDBShardGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDBShardGroupsRequestT = Model::DescribeDBShardGroupsRequest>
+        Model::DescribeDBShardGroupsOutcomeCallable DescribeDBShardGroupsCallable(const DescribeDBShardGroupsRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeDBShardGroups, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDBShardGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDBShardGroupsRequestT = Model::DescribeDBShardGroupsRequest>
+        void DescribeDBShardGroupsAsync(const DescribeDBShardGroupsRequestT& request, const DescribeDBShardGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeDBShardGroups, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of DB snapshot attribute names and values for a manual DB
          * snapshot.</p> <p>When sharing snapshots with other Amazon Web Services accounts,
          * <code>DescribeDBSnapshotAttributes</code> returns the <code>restore</code>
@@ -3187,17 +3266,18 @@ namespace Aws
          * <p>Forces a failover for a DB cluster.</p> <p>For an Aurora DB cluster, failover
          * for a DB cluster promotes one of the Aurora Replicas (read-only instances) in
          * the DB cluster to be the primary DB instance (the cluster writer).</p> <p>For a
-         * Multi-AZ DB cluster, failover for a DB cluster promotes one of the readable
-         * standby DB instances (read-only instances) in the DB cluster to be the primary
-         * DB instance (the cluster writer).</p> <p>An Amazon Aurora DB cluster
-         * automatically fails over to an Aurora Replica, if one exists, when the primary
-         * DB instance fails. A Multi-AZ DB cluster automatically fails over to a readable
-         * standby DB instance when the primary DB instance fails.</p> <p>To simulate a
-         * failure of a primary instance for testing, you can force a failover. Because
-         * each instance in a DB cluster has its own endpoint address, make sure to clean
-         * up and re-establish any existing connections that use those endpoint addresses
-         * when the failover is complete.</p> <p>For more information on Amazon Aurora DB
-         * clusters, see <a
+         * Multi-AZ DB cluster, after RDS terminates the primary DB instance, the internal
+         * monitoring system detects that the primary DB instance is unhealthy and promotes
+         * a readable standby (read-only instances) in the DB cluster to be the primary DB
+         * instance (the cluster writer). Failover times are typically less than 35
+         * seconds.</p> <p>An Amazon Aurora DB cluster automatically fails over to an
+         * Aurora Replica, if one exists, when the primary DB instance fails. A Multi-AZ DB
+         * cluster automatically fails over to a readable standby DB instance when the
+         * primary DB instance fails.</p> <p>To simulate a failure of a primary instance
+         * for testing, you can force a failover. Because each instance in a DB cluster has
+         * its own endpoint address, make sure to clean up and re-establish any existing
+         * connections that use those endpoint addresses when the failover is complete.</p>
+         * <p>For more information on Amazon Aurora DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
@@ -3797,6 +3877,33 @@ namespace Aws
         }
 
         /**
+         * <p>Modifies the settings of an Aurora Limitless Database DB shard group. You can
+         * change one or more settings by specifying these parameters and the new values in
+         * the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyDBShardGroupOutcome ModifyDBShardGroup(const Model::ModifyDBShardGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyDBShardGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyDBShardGroupRequestT = Model::ModifyDBShardGroupRequest>
+        Model::ModifyDBShardGroupOutcomeCallable ModifyDBShardGroupCallable(const ModifyDBShardGroupRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::ModifyDBShardGroup, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyDBShardGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyDBShardGroupRequestT = Model::ModifyDBShardGroupRequest>
+        void ModifyDBShardGroupAsync(const ModifyDBShardGroupRequestT& request, const ModifyDBShardGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::ModifyDBShardGroup, request, handler, context);
+        }
+
+        /**
          * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
          * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
          * upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This operation doesn't
@@ -4165,6 +4272,34 @@ namespace Aws
         void RebootDBInstanceAsync(const RebootDBInstanceRequestT& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::RebootDBInstance, request, handler, context);
+        }
+
+        /**
+         * <p>You might need to reboot your DB shard group, usually for maintenance
+         * reasons. For example, if you make certain modifications, reboot the DB shard
+         * group for the changes to take effect.</p> <p>This operation applies only to
+         * Aurora Limitless Database DBb shard groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBShardGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RebootDBShardGroupOutcome RebootDBShardGroup(const Model::RebootDBShardGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for RebootDBShardGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RebootDBShardGroupRequestT = Model::RebootDBShardGroupRequest>
+        Model::RebootDBShardGroupOutcomeCallable RebootDBShardGroupCallable(const RebootDBShardGroupRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::RebootDBShardGroup, request);
+        }
+
+        /**
+         * An Async wrapper for RebootDBShardGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RebootDBShardGroupRequestT = Model::RebootDBShardGroupRequest>
+        void RebootDBShardGroupAsync(const RebootDBShardGroupRequestT& request, const RebootDBShardGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::RebootDBShardGroup, request, handler, context);
         }
 
         /**
