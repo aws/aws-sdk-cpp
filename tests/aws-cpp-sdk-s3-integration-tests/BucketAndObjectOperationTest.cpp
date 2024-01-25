@@ -2410,8 +2410,7 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, PutObjectChecksum) {
         struct ChecksumTestCase {
-            ChecksumAlgorithm checksumAlgorithm;
-            std::function<PutObjectRequest(PutObjectRequest)> chucksumMutator;
+            std::function<PutObjectRequest(PutObjectRequest)> chucksumRequestMutator;
             HttpResponseCode responseCode;
             String body;
         };
@@ -2426,79 +2425,73 @@ namespace
 
         Vector<ChecksumTestCase> testCases{
             {
-                ChecksumAlgorithm::CRC32,
                 [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumCRC32("Just runnin' scared each place we go");
+                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32).WithChecksumCRC32("Just runnin' scared each place we go");
                 },
                 HttpResponseCode::BAD_REQUEST,
                 "Just runnin' scared each place we go"
             },
             {
-                ChecksumAlgorithm::SHA1,
                 [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumSHA1("So afraid that he might show");
+                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1).WithChecksumSHA1("So afraid that he might show");
                 },
                 HttpResponseCode::BAD_REQUEST,
                 "So afraid that he might show"
             },
             {
-                ChecksumAlgorithm::SHA256,
                 [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumSHA256("Yeah, runnin' scared, what would I do");
+                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256).WithChecksumSHA256("Yeah, runnin' scared, what would I do");
                 },
                 HttpResponseCode::BAD_REQUEST,
                 "Yeah, runnin' scared, what would I do"
             },
             {
-                ChecksumAlgorithm::CRC32C,
                 [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumCRC32C("If he came back and wanted you?");
+                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C).WithChecksumCRC32C("If he came back and wanted you?");
                 },
                 HttpResponseCode::BAD_REQUEST,
                 "If he came back and wanted you?"
             },
             {
-                ChecksumAlgorithm::NOT_SET,
                 [](PutObjectRequest request) -> PutObjectRequest {
                     return request.WithContentMD5("Just runnin' scared, feelin' low");
                 },
                 HttpResponseCode::BAD_REQUEST,
-                "Just runnin' scared, feelin' low"
+                "Just runnin' scared, feelin' low",
             },
             {
-                ChecksumAlgorithm::CRC32,
                 [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumCRC32(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32("Runnin' scared, you love him so")));
+                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32)
+                        .WithChecksumCRC32(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32("Runnin' scared, you love him so")));
                 },
                 HttpResponseCode::OK,
                 "Runnin' scared, you love him so"
             },
             {
-                ChecksumAlgorithm::SHA1,
                 [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
+                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1)
+                        .WithChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
                 },
                 HttpResponseCode::OK,
                 "Just runnin' scared, afraid to lose"
             },
             {
-                ChecksumAlgorithm::SHA256,
                 [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumSHA256(HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
+                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256)
+                        .WithChecksumSHA256(HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
                 },
                 HttpResponseCode::OK,
                 "If he came back, which one would you choose?"
             },
             {
-                ChecksumAlgorithm::CRC32C,
                 [](PutObjectRequest request) -> PutObjectRequest {
-                    return request.WithChecksumCRC32C(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C("Then all at once he was standing there")));
+                    return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C)
+                        .WithChecksumCRC32C(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C("Then all at once he was standing there")));
                 },
                 HttpResponseCode::OK,
                 "Then all at once he was standing there"
             },
             {
-                ChecksumAlgorithm::NOT_SET,
                 [](PutObjectRequest request) -> PutObjectRequest {
                     return request.WithContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5("So sure of himself, his head in the air")));
                 },
@@ -2508,10 +2501,9 @@ namespace
         };
 
         for (const auto&testCase: testCases) {
-            auto request = testCase.chucksumMutator(PutObjectRequest()
+            auto request = testCase.chucksumRequestMutator(PutObjectRequest()
                 .WithBucket(fullBucketName)
-                .WithKey("RunningScared")
-                .WithChecksumAlgorithm(testCase.checksumAlgorithm));
+                .WithKey("RunningScared"));
             std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
                 testCase.body,
                 std::ios_base::in | std::ios_base::binary);
