@@ -448,6 +448,31 @@ namespace Model
      */
     inline Bundle& AddSupportedAppCategories(AppCategory&& value) { m_supportedAppCategoriesHasBeenSet = true; m_supportedAppCategories.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An integer that indicates the public ipv4 address count included in the
+     * bundle, the value is either 0 or 1.</p>
+     */
+    inline int GetPublicIpv4AddressCount() const{ return m_publicIpv4AddressCount; }
+
+    /**
+     * <p>An integer that indicates the public ipv4 address count included in the
+     * bundle, the value is either 0 or 1.</p>
+     */
+    inline bool PublicIpv4AddressCountHasBeenSet() const { return m_publicIpv4AddressCountHasBeenSet; }
+
+    /**
+     * <p>An integer that indicates the public ipv4 address count included in the
+     * bundle, the value is either 0 or 1.</p>
+     */
+    inline void SetPublicIpv4AddressCount(int value) { m_publicIpv4AddressCountHasBeenSet = true; m_publicIpv4AddressCount = value; }
+
+    /**
+     * <p>An integer that indicates the public ipv4 address count included in the
+     * bundle, the value is either 0 or 1.</p>
+     */
+    inline Bundle& WithPublicIpv4AddressCount(int value) { SetPublicIpv4AddressCount(value); return *this;}
+
   private:
 
     double m_price;
@@ -485,6 +510,9 @@ namespace Model
 
     Aws::Vector<AppCategory> m_supportedAppCategories;
     bool m_supportedAppCategoriesHasBeenSet = false;
+
+    int m_publicIpv4AddressCount;
+    bool m_publicIpv4AddressCountHasBeenSet = false;
   };
 
 } // namespace Model

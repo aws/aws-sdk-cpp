@@ -7,9 +7,9 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/PasswordData.h>
 #include <aws/lightsail/model/InstanceAccessProtocol.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/HostKeyAttributes.h>
 #include <utility>
 
@@ -170,6 +170,52 @@ namespace Model
      * <p>The public IP address of the Amazon Lightsail instance.</p>
      */
     inline InstanceAccessDetails& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& WithIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& WithIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& AddIpv6Addresses(const Aws::String& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& AddIpv6Addresses(Aws::String&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
 
     /**
@@ -544,6 +590,9 @@ namespace Model
 
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     Aws::String m_password;
     bool m_passwordHasBeenSet = false;

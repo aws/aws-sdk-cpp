@@ -22,6 +22,7 @@ InstanceAccessDetails::InstanceAccessDetails() :
     m_certKeyHasBeenSet(false),
     m_expiresAtHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_passwordDataHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
@@ -37,6 +38,7 @@ InstanceAccessDetails::InstanceAccessDetails(JsonView jsonValue) :
     m_certKeyHasBeenSet(false),
     m_expiresAtHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_passwordDataHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
@@ -70,6 +72,16 @@ InstanceAccessDetails& InstanceAccessDetails::operator =(JsonView jsonValue)
     m_ipAddress = jsonValue.GetString("ipAddress");
 
     m_ipAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ipv6Addresses"))
+  {
+    Aws::Utils::Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
+    for(unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex)
+    {
+      m_ipv6Addresses.push_back(ipv6AddressesJsonList[ipv6AddressesIndex].AsString());
+    }
+    m_ipv6AddressesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("password"))
@@ -145,6 +157,17 @@ JsonValue InstanceAccessDetails::Jsonize() const
   if(m_ipAddressHasBeenSet)
   {
    payload.WithString("ipAddress", m_ipAddress);
+
+  }
+
+  if(m_ipv6AddressesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ipv6AddressesJsonList(m_ipv6Addresses.size());
+   for(unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex)
+   {
+     ipv6AddressesJsonList[ipv6AddressesIndex].AsString(m_ipv6Addresses[ipv6AddressesIndex]);
+   }
+   payload.WithArray("ipv6Addresses", std::move(ipv6AddressesJsonList));
 
   }
 
