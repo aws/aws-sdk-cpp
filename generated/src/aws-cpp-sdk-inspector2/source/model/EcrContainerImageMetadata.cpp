@@ -19,11 +19,13 @@ namespace Model
 {
 
 EcrContainerImageMetadata::EcrContainerImageMetadata() : 
+    m_imagePulledAtHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 EcrContainerImageMetadata::EcrContainerImageMetadata(JsonView jsonValue) : 
+    m_imagePulledAtHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ EcrContainerImageMetadata::EcrContainerImageMetadata(JsonView jsonValue) :
 
 EcrContainerImageMetadata& EcrContainerImageMetadata::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("imagePulledAt"))
+  {
+    m_imagePulledAt = jsonValue.GetDouble("imagePulledAt");
+
+    m_imagePulledAtHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -47,6 +56,11 @@ EcrContainerImageMetadata& EcrContainerImageMetadata::operator =(JsonView jsonVa
 JsonValue EcrContainerImageMetadata::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_imagePulledAtHasBeenSet)
+  {
+   payload.WithDouble("imagePulledAt", m_imagePulledAt.SecondsWithMSPrecision());
+  }
 
   if(m_tagsHasBeenSet)
   {

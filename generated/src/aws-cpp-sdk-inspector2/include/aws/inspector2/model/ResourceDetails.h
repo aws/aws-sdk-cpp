@@ -115,38 +115,38 @@ namespace Model
 
 
     /**
-     * <p>A summary of the information about an AWS Lambda function affected by a
-     * finding.</p>
+     * <p>A summary of the information about an Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline const AwsLambdaFunctionDetails& GetAwsLambdaFunction() const{ return m_awsLambdaFunction; }
 
     /**
-     * <p>A summary of the information about an AWS Lambda function affected by a
-     * finding.</p>
+     * <p>A summary of the information about an Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline bool AwsLambdaFunctionHasBeenSet() const { return m_awsLambdaFunctionHasBeenSet; }
 
     /**
-     * <p>A summary of the information about an AWS Lambda function affected by a
-     * finding.</p>
+     * <p>A summary of the information about an Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline void SetAwsLambdaFunction(const AwsLambdaFunctionDetails& value) { m_awsLambdaFunctionHasBeenSet = true; m_awsLambdaFunction = value; }
 
     /**
-     * <p>A summary of the information about an AWS Lambda function affected by a
-     * finding.</p>
+     * <p>A summary of the information about an Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline void SetAwsLambdaFunction(AwsLambdaFunctionDetails&& value) { m_awsLambdaFunctionHasBeenSet = true; m_awsLambdaFunction = std::move(value); }
 
     /**
-     * <p>A summary of the information about an AWS Lambda function affected by a
-     * finding.</p>
+     * <p>A summary of the information about an Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline ResourceDetails& WithAwsLambdaFunction(const AwsLambdaFunctionDetails& value) { SetAwsLambdaFunction(value); return *this;}
 
     /**
-     * <p>A summary of the information about an AWS Lambda function affected by a
-     * finding.</p>
+     * <p>A summary of the information about an Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline ResourceDetails& WithAwsLambdaFunction(AwsLambdaFunctionDetails&& value) { SetAwsLambdaFunction(std::move(value)); return *this;}
 

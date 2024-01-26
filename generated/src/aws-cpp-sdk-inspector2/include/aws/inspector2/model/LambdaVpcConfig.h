@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-   * function. For more information, see <a
+   * <p>The VPC security groups and subnets that are attached to an Amazon Web
+   * Services Lambda function. For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
    * Settings</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/LambdaVpcConfig">AWS
@@ -42,72 +42,72 @@ namespace Model
 
 
     /**
-     * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-     * function. For more information, see <a
+     * <p>The VPC security groups and subnets that are attached to an Amazon Web
+     * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-     * function. For more information, see <a
+     * <p>The VPC security groups and subnets that are attached to an Amazon Web
+     * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-     * function. For more information, see <a
+     * <p>The VPC security groups and subnets that are attached to an Amazon Web
+     * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-     * function. For more information, see <a
+     * <p>The VPC security groups and subnets that are attached to an Amazon Web
+     * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-     * function. For more information, see <a
+     * <p>The VPC security groups and subnets that are attached to an Amazon Web
+     * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline LambdaVpcConfig& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-     * function. For more information, see <a
+     * <p>The VPC security groups and subnets that are attached to an Amazon Web
+     * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline LambdaVpcConfig& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-     * function. For more information, see <a
+     * <p>The VPC security groups and subnets that are attached to an Amazon Web
+     * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline LambdaVpcConfig& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-     * function. For more information, see <a
+     * <p>The VPC security groups and subnets that are attached to an Amazon Web
+     * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline LambdaVpcConfig& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The VPC security groups and subnets that are attached to an AWS Lambda
-     * function. For more information, see <a
+     * <p>The VPC security groups and subnets that are attached to an Amazon Web
+     * Services Lambda function. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */

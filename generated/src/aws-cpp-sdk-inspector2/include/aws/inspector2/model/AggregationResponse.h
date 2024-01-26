@@ -271,63 +271,63 @@ namespace Model
 
 
     /**
-     * <p>An aggregation of findings by AWS Lambda function.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda function.</p>
      */
     inline const LambdaFunctionAggregationResponse& GetLambdaFunctionAggregation() const{ return m_lambdaFunctionAggregation; }
 
     /**
-     * <p>An aggregation of findings by AWS Lambda function.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda function.</p>
      */
     inline bool LambdaFunctionAggregationHasBeenSet() const { return m_lambdaFunctionAggregationHasBeenSet; }
 
     /**
-     * <p>An aggregation of findings by AWS Lambda function.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda function.</p>
      */
     inline void SetLambdaFunctionAggregation(const LambdaFunctionAggregationResponse& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = value; }
 
     /**
-     * <p>An aggregation of findings by AWS Lambda function.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda function.</p>
      */
     inline void SetLambdaFunctionAggregation(LambdaFunctionAggregationResponse&& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = std::move(value); }
 
     /**
-     * <p>An aggregation of findings by AWS Lambda function.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda function.</p>
      */
     inline AggregationResponse& WithLambdaFunctionAggregation(const LambdaFunctionAggregationResponse& value) { SetLambdaFunctionAggregation(value); return *this;}
 
     /**
-     * <p>An aggregation of findings by AWS Lambda function.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda function.</p>
      */
     inline AggregationResponse& WithLambdaFunctionAggregation(LambdaFunctionAggregationResponse&& value) { SetLambdaFunctionAggregation(std::move(value)); return *this;}
 
 
     /**
-     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda layer.</p>
      */
     inline const LambdaLayerAggregationResponse& GetLambdaLayerAggregation() const{ return m_lambdaLayerAggregation; }
 
     /**
-     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda layer.</p>
      */
     inline bool LambdaLayerAggregationHasBeenSet() const { return m_lambdaLayerAggregationHasBeenSet; }
 
     /**
-     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda layer.</p>
      */
     inline void SetLambdaLayerAggregation(const LambdaLayerAggregationResponse& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = value; }
 
     /**
-     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda layer.</p>
      */
     inline void SetLambdaLayerAggregation(LambdaLayerAggregationResponse&& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = std::move(value); }
 
     /**
-     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda layer.</p>
      */
     inline AggregationResponse& WithLambdaLayerAggregation(const LambdaLayerAggregationResponse& value) { SetLambdaLayerAggregation(value); return *this;}
 
     /**
-     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     * <p>An aggregation of findings by Amazon Web Services Lambda layer.</p>
      */
     inline AggregationResponse& WithLambdaLayerAggregation(LambdaLayerAggregationResponse&& value) { SetLambdaLayerAggregation(std::move(value)); return *this;}
 

@@ -1514,8 +1514,8 @@ namespace Inspector2
 
         /**
          * <p>Updates an encryption key. A <code>ResourceNotFoundException</code> means
-         * that an AWS owned key is being used for encryption.</p><p><h3>See Also:</h3>  
-         * <a
+         * that an Amazon Web Services owned key is being used for
+         * encryption.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey">AWS
          * API Reference</a></p>
          */
