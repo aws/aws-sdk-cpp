@@ -338,7 +338,7 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
             Aws::Vector<char> buf(bufferSize);
 
             int64_t lastAudioEventSentAt = Aws::Utils::DateTime::Now().Millis();
-            while (file) {
+            while (file && file.peek() != -1) {
                 if(Aws::Utils::DateTime::Now().Millis() > testMustEndBeforeMs)
                 {
                     FAIL() << "Test is taking too long, aborting.";
@@ -350,7 +350,7 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
                     FAIL() << "Provided file is empty: " << fileName;
                 }
 
-                Aws::Vector<unsigned char> bits{buf.begin(), buf.end()};
+                Aws::Vector<unsigned char> bits{buf.begin(), buf.begin() + file.gcount()};
                 AudioEvent event(std::move(bits));
                 if (!stream) {
                     FAIL() << "Failed to create a stream" << std::endl;
@@ -358,17 +358,24 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
                 }
 
                 // The std::basic_istream::gcount() is used to count the characters in the given string. It returns
-                // the number of characters extracted by the last read() operation.
+                // the number of characters extracted by the last read() operation.`
                 if (file.gcount() > 0) {
                     int64_t now = Aws::Utils::DateTime::Now().Millis();
-                    int64_t sleepForMs = std::max((int64_t) 0l, (int64_t) ((lastAudioEventSentAt - now) + chunkLengthToUseMs));
-                    std::this_thread::sleep_for(std::chrono::milliseconds(sleepForMs));
-                    lastAudioEventSentAt = Aws::Utils::DateTime::Now().Millis();
+
+                    int64_t sleepForMs = std::max((int64_t) 0l, (int64_t) (chunkLengthToUseMs - (now - lastAudioEventSentAt)));
+                    int64_t sleepUntil = now + sleepForMs - 3;
+                    while(Aws::Utils::DateTime::Now().Millis() <= sleepUntil)
+                    {
+                      // just trying to perform a high-precision sleep to simulate real-time streaming
+                      // one of our CI hosts actually oversleep in a normal people's sleep
+                      std::this_thread::sleep_for(std::chrono::nanoseconds(10));
+                    }
 
                     if (!stream.WriteAudioEvent(event)) {
                         FAIL() << "Failed to write an audio event";
                         // break; // Unreachable due to FAIL macro above
                     }
+                    lastAudioEventSentAt = Aws::Utils::DateTime::Now().Millis();
                     if(Aws::Utils::DateTime::Now().Millis() > testMustEndBeforeMs)
                     {
                         FAIL() << "Test is taking too long, aborting.";
@@ -404,7 +411,6 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
             }
             stream.flush();
             stream.WaitForDrain();
-            std::this_thread::sleep_for(std::chrono::milliseconds(1500)); /* We are investigating why we need this */
             stream.Close();
      };
 
@@ -423,12 +429,20 @@ Aws::String TranscribeStreamingTests::RunTestLikeSample(size_t timeoutMs, const 
         signaling.Release();
     };
 
+    // abort operation taking too long by using this callback
+    std::atomic<bool> shouldContinue;
+    shouldContinue = true;
+    request.SetContinueRequestHandler([&shouldContinue](const Aws::Http::HttpRequest*) { return shouldContinue.load(); });
+
     m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback,
                                          nullptr /*context*/);
 
     EXPECT_TRUE(
         signaling.WaitOneFor(timeoutMs)
         ) << "Did not get a response after " << Aws::Utils::StringUtils::to_string(timeoutMs) << " ms";
+
+    request.GetAudioStream()->Close();
+    shouldContinue = false;
 
     if (failedToKeepUpCount)
         std::cout << "Failed to keep up count: " << failedToKeepUpCount << " \n";

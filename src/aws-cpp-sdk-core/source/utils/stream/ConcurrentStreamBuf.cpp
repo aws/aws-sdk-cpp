@@ -159,11 +159,11 @@ namespace Aws
             {
                 bool closeStream = false;
                 {
-                    std::unique_lock<std::mutex> lock(m_lock);
-
-                    if (!m_eofInput)
+                    std::unique_lock<std::mutex> lock(m_lock, std::defer_lock);
+                    if (!lock.try_lock())
                     {
-                        m_signal.wait_for(lock, std::chrono::milliseconds(20), [this] { return m_backbuf.empty() == false || m_eofInput; });
+                        // don't block consumer, it will retry asking later
+                        return 'z'; // just returning some valid value other than EOF
                     }
 
                     if (m_eofInput && m_backbuf.empty())
@@ -176,6 +176,7 @@ namespace Aws
                         std::copy(m_backbuf.begin(), m_backbuf.end(), std::back_inserter(m_getArea));
                         m_backbuf.clear();
                     }
+                    m_signal.notify_one();
                 }
                 if (closeStream)
                 {
@@ -183,10 +184,24 @@ namespace Aws
                     return std::char_traits<char>::eof();
                 }
 
-                m_signal.notify_one();
                 char* gbegin = reinterpret_cast<char*>(&m_getArea[0]);
                 setg(gbegin, gbegin, gbegin + m_getArea.size());
-                return std::char_traits<char>::to_int_type(*gptr());
+
+                if (!m_getArea.empty())
+                  return std::char_traits<char>::to_int_type(*gptr());
+                else
+                  return 'a'; // just returning some valid value other than EOF
+            }
+
+            int ConcurrentStreamBuf::uflow()
+            {
+                /* Make clang happy with our "great" streambuf */
+                if (underflow() == std::char_traits<char>::eof() || m_getArea.empty())
+                    return std::char_traits<char>::eof();
+
+                auto ret = traits_type::to_int_type(*this->gptr());
+                this->gbump(1);
+                return ret;
             }
 
             std::streamsize ConcurrentStreamBuf::showmanyc()

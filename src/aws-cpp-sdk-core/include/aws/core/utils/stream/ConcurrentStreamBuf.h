@@ -46,6 +46,7 @@ namespace Aws
                 std::streampos seekpos(std::streampos pos, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;
 
                 int underflow() override;
+                int uflow() override;
                 int overflow(int ch) override;
                 int sync() override;
                 std::streamsize showmanyc() override;

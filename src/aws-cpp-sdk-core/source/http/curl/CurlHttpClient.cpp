@@ -16,6 +16,7 @@
 #include <aws/core/monitoring/HttpClientMetrics.h>
 #include <cassert>
 #include <algorithm>
+#include <thread>
 
 
 using namespace Aws::Client;
@@ -299,8 +300,10 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
         size_t amountRead = 0;
         if (isStreaming)
         {
-            ioStream->peek();
-            amountRead = ioStream->readsome(ptr, amountToRead);
+            if (!ioStream->eof() && ioStream->peek() != EOF)
+            {
+              amountRead = ioStream->readsome(ptr, amountToRead);
+            }
             if (amountRead == 0 && !ioStream->eof())
             {
                 return CURL_READFUNC_PAUSE;
@@ -428,18 +431,14 @@ static int CurlProgressCallback(void *userdata, double, double, double, double)
         return 0;
     }
     // forcing "underflow" on the IOStream with ConcurrentStreamBuf to move data from back buffer to put area
-    ioStream->peek();
-//    char output[1];
-//    if (ioStream->readsome(output, 1) > 0)
-//    {
-//        ioStream->unget();
-//        if (!ioStream->good())
-//        {
-//            AWS_LOGSTREAM_WARN(CURL_HTTP_CLIENT_TAG, "Input stream failed to perform unget().");
-//        }
-//    }
+    int peekVal = ioStream->peek();
+    AWS_UNREFERENCED_PARAM(peekVal);
 
     // forcing curl to try to ReadBody again (~to poll body IOStream for HTTP2)
+    // This is a spin pause-unpause in case of no data provided by a customer callback
+    // But otherwise curl will slow down the transfer and start calling as at frequency of 1s
+    //   see https://curl.se/mail/lib-2020-07/0046.html
+    // we should use multi handle or another HTTP client in the future to avoid this
     curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
 
     return 0;
