@@ -804,7 +804,7 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
         // For streaming payload, the resolved checksum location depends on whether it is an unsigned payload, we let AwsAuthSigner decide it.
         if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
         {
-            auto hash = Aws::MakeShared<Crypto::PrecalculatedHash>(AWS_CLIENT_LOG_TAG,request.GetHeaders().find(checksumType)->second);
+            const auto hash = Aws::MakeShared<Crypto::PrecalculatedHash>(AWS_CLIENT_LOG_TAG, request.GetHeaders().find(checksumType)->second);
             httpRequest->SetRequestHash(checksumAlgorithmName,hash);
         }
         else if (checksumValueAndAlgorithmProvided){

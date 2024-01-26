@@ -20,7 +20,6 @@ namespace Aws {
                 HashResult Calculate(const Aws::String &str) override;
                 HashResult Calculate(Aws::IStream &stream) override;
                 void Update(unsigned char *string, size_t bufferSize) override;
-                Aws::String GetHashBase64(ByteBuffer& m_checksum) override;
                 HashResult GetHash() override;
 
             private:

@@ -264,9 +264,9 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
         if (request.GetRequestHash().second != nullptr)
         {
             payloadHash = STREAMING_UNSIGNED_PAYLOAD_TRAILER;
-            Aws::String trailerHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
-            request.DeleteHeader(trailerHeaderValue.c_str());
-            request.SetHeaderValue(Http::AWS_TRAILER_HEADER, trailerHeaderValue);
+            Aws::String checksumHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+            request.DeleteHeader(checksumHeaderValue.c_str());
+            request.SetHeaderValue(Http::AWS_TRAILER_HEADER, checksumHeaderValue);
             request.SetTransferEncoding(CHUNKED_VALUE);
             request.SetHeaderValue(Http::CONTENT_ENCODING_HEADER, Http::AWS_CHUNKED_VALUE);
             if (request.HasHeader(Http::CONTENT_LENGTH_HEADER)) {
