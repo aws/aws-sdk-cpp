@@ -67,8 +67,13 @@ namespace Aws
              * Returns the assumed role credentials or empty credentials on error.
              */
             AWSCredentials GetCredentialsFromSTS(const AWSCredentials& credentials, const Aws::String& roleARN);
+            /**
+             * Assumes a role given its ARN. Communication with STS is done through the provided credentials.
+             * Returns the assumed role credentials or empty credentials on error.
+             */
+            AWSCredentials GetCredentialsFromSTS(const AWSCredentials& credentials, const Aws::String& roleARN, const Aws::String& externalId);
         private:
-            AWSCredentials GetCredentialsFromSTSInternal(const Aws::String& roleArn, Aws::STS::STSClient* client);
+            AWSCredentials GetCredentialsFromSTSInternal(const Aws::String& roleArn, const Aws::String& externalId, Aws::STS::STSClient* client);
 
             Aws::String m_profileName;
             AWSCredentials m_credentials;
