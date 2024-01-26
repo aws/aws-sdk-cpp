@@ -180,3 +180,6 @@ An override path for where the build system should find the Android NDK.  By def
 
 ### ANDROID_BUILD_ZLIB
 (Defaults to ON) When building for Android, should Zlib be built as well
+
+### AWS_USE_CRYPTO_SHARED_LIBS
+Forces FindCrypto to use a shared crypto library if found. regardless of the value of BUILD_SHARED_LIBS
