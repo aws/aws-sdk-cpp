@@ -237,9 +237,10 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
             return false;
         }
 
-        if (request.GetRequestHash().second != nullptr)
+        Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+        const auto headers = request.GetHeaders();
+        if (request.GetRequestHash().second != nullptr && !request.HasHeader(checksumHeaderKey.c_str()))
         {
-            Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
             Aws::String checksumHeaderValue;
             if (request.GetRequestHash().first == "sha256") {
                 // we already calculated the payload hash so just reverse the hex string to
@@ -247,7 +248,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
                 checksumHeaderValue = HashingUtils::Base64Encode(HashingUtils::HexDecode(payloadHash));
             } else {
                 // if it is one of the other hashes, we must be careful if there is no content body
-                auto body = request.GetContentBody();
+                const auto& body = request.GetContentBody();
                 checksumHeaderValue = (body)
                     ? HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate(*body).GetResult())
                     : HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate({}).GetResult());
@@ -263,8 +264,9 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
         if (request.GetRequestHash().second != nullptr)
         {
             payloadHash = STREAMING_UNSIGNED_PAYLOAD_TRAILER;
-            Aws::String trailerHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
-            request.SetHeaderValue(Http::AWS_TRAILER_HEADER, trailerHeaderValue);
+            Aws::String checksumHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+            request.DeleteHeader(checksumHeaderValue.c_str());
+            request.SetHeaderValue(Http::AWS_TRAILER_HEADER, checksumHeaderValue);
             request.SetTransferEncoding(CHUNKED_VALUE);
             request.SetHeaderValue(Http::CONTENT_ENCODING_HEADER, Http::AWS_CHUNKED_VALUE);
             if (request.HasHeader(Http::CONTENT_LENGTH_HEADER)) {
