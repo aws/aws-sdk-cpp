@@ -798,17 +798,18 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
         // Check if user has provided a checksum value for the specified algorithm
         const Aws::String checksumType = "x-amz-checksum-" + checksumAlgorithmName;
         const HeaderValueCollection &headers = request.GetHeaders();
-        bool checksumValueAndAlgorithmProvided = headers.find(checksumType) != headers.end();
+        const auto checksumHeader = headers.find(checksumType);
+        bool checksumValueAndAlgorithmProvided = checksumHeader != headers.end();
 
         // For non-streaming payload, the resolved checksum location is always header.
         // For streaming payload, the resolved checksum location depends on whether it is an unsigned payload, we let AwsAuthSigner decide it.
         if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
         {
-            const auto hash = Aws::MakeShared<Crypto::PrecalculatedHash>(AWS_CLIENT_LOG_TAG, request.GetHeaders().find(checksumType)->second);
+            const auto hash = Aws::MakeShared<Crypto::PrecalculatedHash>(AWS_CLIENT_LOG_TAG, checksumHeader->second);
             httpRequest->SetRequestHash(checksumAlgorithmName,hash);
         }
         else if (checksumValueAndAlgorithmProvided){
-            httpRequest->SetHeaderValue(checksumType, request.GetHeaders().find(checksumType)->second);
+            httpRequest->SetHeaderValue(checksumType, checksumHeader->second);
         }
         else if (checksumAlgorithmName == "crc32")
         {

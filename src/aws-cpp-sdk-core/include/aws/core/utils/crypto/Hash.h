@@ -9,7 +9,6 @@
 #include <aws/core/utils/crypto/HashResult.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/HashingUtils.h>
 
 namespace Aws
 {

@@ -239,7 +239,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
 
         Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
         const auto headers = request.GetHeaders();
-        if (request.GetRequestHash().second != nullptr && headers.find(checksumHeaderKey) == headers.end())
+        if (request.GetRequestHash().second != nullptr && !request.HasHeader(checksumHeaderKey.c_str()))
         {
             Aws::String checksumHeaderValue;
             if (request.GetRequestHash().first == "sha256") {
