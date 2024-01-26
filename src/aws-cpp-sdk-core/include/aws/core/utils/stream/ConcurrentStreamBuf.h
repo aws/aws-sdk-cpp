@@ -30,7 +30,7 @@ namespace Aws
             {
             public:
 
-                explicit ConcurrentStreamBuf(size_t bufferLength = 4 * 1024);
+                explicit ConcurrentStreamBuf(size_t bufferLength = 8 * 1024);
 
                 void SetEof();
 

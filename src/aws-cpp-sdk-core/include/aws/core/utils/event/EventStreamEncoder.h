@@ -49,11 +49,12 @@ namespace Aws
                 bool InitEncodedStruct(const Aws::Utils::Event::Message& msg, aws_event_stream_message* encoded);
 
                 /**
-                 * Initialize signed C struct based on unsigned C struct.
+                 * Initialize signed C struct with a content of a payload message.
                  * Returns true if successful.
+                 * signedmsg will contain an AWS Stream Event with a payload in a H2 frame payload section.
                  * A successfully initialized struct must be cleaned up when you're done with it.
                  */
-                bool InitSignedStruct(const aws_event_stream_message* msg, aws_event_stream_message* signedmsg);
+                bool InitSignedStruct(const aws_event_stream_message* payload, aws_event_stream_message* signedmsg);
 
                 Aws::Client::AWSAuthSigner* m_signer;
                 Aws::String m_signatureSeed;

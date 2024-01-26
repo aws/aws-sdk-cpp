@@ -31,10 +31,13 @@ namespace Model
     AudioStream& WriteAudioEvent(const AudioEvent& value)
     {
        Aws::Utils::Event::Message msg;
-       msg.InsertEventHeader(":message-type", Aws::String("event"));
-       msg.InsertEventHeader(":event-type", Aws::String("AudioEvent"));
-       msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
-       msg.WriteEventPayload(value.GetAudioChunk());
+       if(!value.GetAudioChunk().empty())
+       {
+           msg.InsertEventHeader(":message-type", Aws::String("event"));
+           msg.InsertEventHeader(":event-type", Aws::String("AudioEvent"));
+           msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
+           msg.WriteEventPayload(value.GetAudioChunk());
+       }
        WriteEvent(msg);
        return *this;
     }
