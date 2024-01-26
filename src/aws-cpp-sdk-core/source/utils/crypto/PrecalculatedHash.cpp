@@ -5,6 +5,7 @@
 
 
 #include <aws/core/utils/crypto/PrecalculatedHash.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils::Crypto;
 
