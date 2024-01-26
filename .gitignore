@@ -10,6 +10,7 @@ Release
 *#
 *.iml
 tags
+.vs
 .vscode
 
 # CI Artifacts
