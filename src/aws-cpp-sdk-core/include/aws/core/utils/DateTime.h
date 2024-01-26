@@ -140,6 +140,11 @@ namespace Aws
             Aws::String ToGmtString(const char* formatStr) const;
 
             /**
+            * Convert dateTime to GMT time string using predefined format.
+            */
+            Aws::String ToGmtStringWithMs() const;
+
+            /**
              * Get the representation of this datetime as seconds.milliseconds since epoch
              */
             double SecondsWithMSPrecision() const;
