@@ -17,6 +17,12 @@ using namespace Aws::Auth;
 
 constexpr char CLASS_TAG[] = "STSProfileCredentialsProvider";
 
+template <typename T>
+struct NoOpDeleter
+{
+    void operator()(T*) {}
+};
+
 STSProfileCredentialsProvider::STSProfileCredentialsProvider()
     : STSProfileCredentialsProvider(GetConfigProfileName(), std::chrono::minutes(60)/*duration*/, nullptr/*stsClientFactory*/)
 {
@@ -27,8 +33,24 @@ STSProfileCredentialsProvider::STSProfileCredentialsProvider(const Aws::String& 
 {
 }
 
+STSProfileCredentialsProvider::STSProfileCredentialsProvider(const Aws::String& profileName, std::chrono::minutes duration, std::nullptr_t)
+    : m_profileName(profileName),
+    m_duration(duration),
+    m_reloadFrequency(std::chrono::minutes(std::max(int64_t(5), static_cast<int64_t>(duration.count()))) - std::chrono::minutes(5)),
+    m_stsClientFactory(nullptr)
+{
+}
+
 STSProfileCredentialsProvider::STSProfileCredentialsProvider(const Aws::String& profileName, std::chrono::minutes duration, const std::function<Aws::STS::STSClient*(const AWSCredentials&)> &stsClientFactory)
       : m_profileName(profileName),
+        m_duration(duration),
+        m_reloadFrequency(std::chrono::minutes(std::max(int64_t(5), static_cast<int64_t>(duration.count()))) - std::chrono::minutes(5)),
+        m_stsClientFactory([=](const auto& credentials) {return std::shared_ptr<Aws::STS::STSClient>(stsClientFactory(credentials), NoOpDeleter<Aws::STS::STSClient>()); })
+{
+}
+
+STSProfileCredentialsProvider::STSProfileCredentialsProvider(const Aws::String& profileName, std::chrono::minutes duration, const std::function<std::shared_ptr<Aws::STS::STSClient> (const AWSCredentials&)>& stsClientFactory)
+        : m_profileName(profileName),
         m_duration(duration),
         m_reloadFrequency(std::chrono::minutes(std::max(int64_t(5), static_cast<int64_t>(duration.count()))) - std::chrono::minutes(5)),
         m_stsClientFactory(stsClientFactory)
@@ -337,7 +359,8 @@ AWSCredentials STSProfileCredentialsProvider::GetCredentialsFromSTS(const AWSCre
 {
     using namespace Aws::STS::Model;
     if (m_stsClientFactory) {
-        return GetCredentialsFromSTSInternal(roleArn, m_stsClientFactory(credentials));
+        auto client = m_stsClientFactory(credentials);
+        return GetCredentialsFromSTSInternal(roleArn, client.get());
     }
 
     Aws::STS::STSClient stsClient {credentials};
