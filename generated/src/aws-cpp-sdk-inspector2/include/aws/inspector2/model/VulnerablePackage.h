@@ -346,50 +346,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
-     * finding.</p>
+     * <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline const Aws::String& GetSourceLambdaLayerArn() const{ return m_sourceLambdaLayerArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
-     * finding.</p>
+     * <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline bool SourceLambdaLayerArnHasBeenSet() const { return m_sourceLambdaLayerArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
-     * finding.</p>
+     * <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline void SetSourceLambdaLayerArn(const Aws::String& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
-     * finding.</p>
+     * <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline void SetSourceLambdaLayerArn(Aws::String&& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
-     * finding.</p>
+     * <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline void SetSourceLambdaLayerArn(const char* value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
-     * finding.</p>
+     * <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline VulnerablePackage& WithSourceLambdaLayerArn(const Aws::String& value) { SetSourceLambdaLayerArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
-     * finding.</p>
+     * <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline VulnerablePackage& WithSourceLambdaLayerArn(Aws::String&& value) { SetSourceLambdaLayerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a
-     * finding.</p>
+     * <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function
+     * affected by a finding.</p>
      */
     inline VulnerablePackage& WithSourceLambdaLayerArn(const char* value) { SetSourceLambdaLayerArn(value); return *this;}
 

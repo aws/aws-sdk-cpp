@@ -270,63 +270,75 @@ namespace Model
 
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * function.</p>
      */
     inline const LambdaFunctionAggregation& GetLambdaFunctionAggregation() const{ return m_lambdaFunctionAggregation; }
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * function.</p>
      */
     inline bool LambdaFunctionAggregationHasBeenSet() const { return m_lambdaFunctionAggregationHasBeenSet; }
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * function.</p>
      */
     inline void SetLambdaFunctionAggregation(const LambdaFunctionAggregation& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = value; }
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * function.</p>
      */
     inline void SetLambdaFunctionAggregation(LambdaFunctionAggregation&& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = std::move(value); }
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * function.</p>
      */
     inline AggregationRequest& WithLambdaFunctionAggregation(const LambdaFunctionAggregation& value) { SetLambdaFunctionAggregation(value); return *this;}
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda function.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * function.</p>
      */
     inline AggregationRequest& WithLambdaFunctionAggregation(LambdaFunctionAggregation&& value) { SetLambdaFunctionAggregation(std::move(value)); return *this;}
 
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * layer.</p>
      */
     inline const LambdaLayerAggregation& GetLambdaLayerAggregation() const{ return m_lambdaLayerAggregation; }
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * layer.</p>
      */
     inline bool LambdaLayerAggregationHasBeenSet() const { return m_lambdaLayerAggregationHasBeenSet; }
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * layer.</p>
      */
     inline void SetLambdaLayerAggregation(const LambdaLayerAggregation& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = value; }
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * layer.</p>
      */
     inline void SetLambdaLayerAggregation(LambdaLayerAggregation&& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = std::move(value); }
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * layer.</p>
      */
     inline AggregationRequest& WithLambdaLayerAggregation(const LambdaLayerAggregation& value) { SetLambdaLayerAggregation(value); return *this;}
 
     /**
-     * <p>Returns an object with findings aggregated by AWS Lambda layer.</p>
+     * <p>Returns an object with findings aggregated by Amazon Web Services Lambda
+     * layer.</p>
      */
     inline AggregationRequest& WithLambdaLayerAggregation(LambdaLayerAggregation&& value) { SetLambdaLayerAggregation(std::move(value)); return *this;}
 

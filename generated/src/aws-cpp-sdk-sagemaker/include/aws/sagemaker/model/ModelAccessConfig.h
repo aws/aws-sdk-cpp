@@ -22,11 +22,18 @@ namespace Model
 {
 
   /**
-   * <p>The access configuration file for the ML model. You can explicitly accept the
-   * model end-user license agreement (EULA) within the
-   * <code>ModelAccessConfig</code>. For more information, see <a
+   * <p>The access configuration file to control access to the ML model. You can
+   * explicitly accept the model end-user license agreement (EULA) within the
+   * <code>ModelAccessConfig</code>.</p> <ul> <li> <p>If you are a Jumpstart user,
+   * see the <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user
-   * license agreements</a>.</p><p><h3>See Also:</h3>   <a
+   * license agreements</a> section for more details on accepting the EULA.</p> </li>
+   * <li> <p>If you are an AutoML user, see the <i>Optional Parameters</i> section of
+   * <i>Create an AutoML job to fine-tune text generation models using the API</i>
+   * for details on <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-finetune-llms.html#autopilot-llms-finetuning-api-optional-params">How
+   * to set the EULA acceptance when fine-tuning a model using the AutoML
+   * API</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelAccessConfig">AWS
    * API Reference</a></p>
    */

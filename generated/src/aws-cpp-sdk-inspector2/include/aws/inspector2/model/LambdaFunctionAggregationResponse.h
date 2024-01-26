@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>A response that contains the results of an AWS Lambda function finding
-   * aggregation.</p><p><h3>See Also:</h3>   <a
+   * <p>A response that contains the results of an Amazon Web Services Lambda
+   * function finding aggregation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/LambdaFunctionAggregationResponse">AWS
    * API Reference</a></p>
    */
@@ -42,83 +42,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
+     * Lambda function. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
+     * Lambda function. </p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
+     * Lambda function. </p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
+     * Lambda function. </p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
+     * Lambda function. </p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
+     * Lambda function. </p>
      */
     inline LambdaFunctionAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
+     * Lambda function. </p>
      */
     inline LambdaFunctionAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+     * <p>The ID of the Amazon Web Services account that owns the Amazon Web Services
+     * Lambda function. </p>
      */
     inline LambdaFunctionAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The AWS Lambda function names included in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names included in the aggregation
+     * results.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The AWS Lambda function names included in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names included in the aggregation
+     * results.</p>
      */
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
 
     /**
-     * <p>The AWS Lambda function names included in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names included in the aggregation
+     * results.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The AWS Lambda function names included in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names included in the aggregation
+     * results.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The AWS Lambda function names included in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names included in the aggregation
+     * results.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The AWS Lambda function names included in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names included in the aggregation
+     * results.</p>
      */
     inline LambdaFunctionAggregationResponse& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The AWS Lambda function names included in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names included in the aggregation
+     * results.</p>
      */
     inline LambdaFunctionAggregationResponse& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Lambda function names included in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names included in the aggregation
+     * results.</p>
      */
     inline LambdaFunctionAggregationResponse& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
@@ -190,38 +206,38 @@ namespace Model
 
 
     /**
-     * <p>The date that the AWS Lambda function included in the aggregation results was
-     * last changed.</p>
+     * <p>The date that the Amazon Web Services Lambda function included in the
+     * aggregation results was last changed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedAt() const{ return m_lastModifiedAt; }
 
     /**
-     * <p>The date that the AWS Lambda function included in the aggregation results was
-     * last changed.</p>
+     * <p>The date that the Amazon Web Services Lambda function included in the
+     * aggregation results was last changed.</p>
      */
     inline bool LastModifiedAtHasBeenSet() const { return m_lastModifiedAtHasBeenSet; }
 
     /**
-     * <p>The date that the AWS Lambda function included in the aggregation results was
-     * last changed.</p>
+     * <p>The date that the Amazon Web Services Lambda function included in the
+     * aggregation results was last changed.</p>
      */
     inline void SetLastModifiedAt(const Aws::Utils::DateTime& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = value; }
 
     /**
-     * <p>The date that the AWS Lambda function included in the aggregation results was
-     * last changed.</p>
+     * <p>The date that the Amazon Web Services Lambda function included in the
+     * aggregation results was last changed.</p>
      */
     inline void SetLastModifiedAt(Aws::Utils::DateTime&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::move(value); }
 
     /**
-     * <p>The date that the AWS Lambda function included in the aggregation results was
-     * last changed.</p>
+     * <p>The date that the Amazon Web Services Lambda function included in the
+     * aggregation results was last changed.</p>
      */
     inline LambdaFunctionAggregationResponse& WithLastModifiedAt(const Aws::Utils::DateTime& value) { SetLastModifiedAt(value); return *this;}
 
     /**
-     * <p>The date that the AWS Lambda function included in the aggregation results was
-     * last changed.</p>
+     * <p>The date that the Amazon Web Services Lambda function included in the
+     * aggregation results was last changed.</p>
      */
     inline LambdaFunctionAggregationResponse& WithLastModifiedAt(Aws::Utils::DateTime&& value) { SetLastModifiedAt(std::move(value)); return *this;}
 

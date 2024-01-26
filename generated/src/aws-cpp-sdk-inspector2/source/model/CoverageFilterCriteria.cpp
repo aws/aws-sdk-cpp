@@ -23,6 +23,7 @@ CoverageFilterCriteria::CoverageFilterCriteria() :
     m_ec2InstanceTagsHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
     m_ecrRepositoryNameHasBeenSet(false),
+    m_imagePulledAtHasBeenSet(false),
     m_lambdaFunctionNameHasBeenSet(false),
     m_lambdaFunctionRuntimeHasBeenSet(false),
     m_lambdaFunctionTagsHasBeenSet(false),
@@ -40,6 +41,7 @@ CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue) :
     m_ec2InstanceTagsHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
     m_ecrRepositoryNameHasBeenSet(false),
+    m_imagePulledAtHasBeenSet(false),
     m_lambdaFunctionNameHasBeenSet(false),
     m_lambdaFunctionRuntimeHasBeenSet(false),
     m_lambdaFunctionTagsHasBeenSet(false),
@@ -93,6 +95,16 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
       m_ecrRepositoryName.push_back(ecrRepositoryNameJsonList[ecrRepositoryNameIndex].AsObject());
     }
     m_ecrRepositoryNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imagePulledAt"))
+  {
+    Aws::Utils::Array<JsonView> imagePulledAtJsonList = jsonValue.GetArray("imagePulledAt");
+    for(unsigned imagePulledAtIndex = 0; imagePulledAtIndex < imagePulledAtJsonList.GetLength(); ++imagePulledAtIndex)
+    {
+      m_imagePulledAt.push_back(imagePulledAtJsonList[imagePulledAtIndex].AsObject());
+    }
+    m_imagePulledAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lambdaFunctionName"))
@@ -233,6 +245,17 @@ JsonValue CoverageFilterCriteria::Jsonize() const
      ecrRepositoryNameJsonList[ecrRepositoryNameIndex].AsObject(m_ecrRepositoryName[ecrRepositoryNameIndex].Jsonize());
    }
    payload.WithArray("ecrRepositoryName", std::move(ecrRepositoryNameJsonList));
+
+  }
+
+  if(m_imagePulledAtHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> imagePulledAtJsonList(m_imagePulledAt.size());
+   for(unsigned imagePulledAtIndex = 0; imagePulledAtIndex < imagePulledAtJsonList.GetLength(); ++imagePulledAtIndex)
+   {
+     imagePulledAtJsonList[imagePulledAtIndex].AsObject(m_imagePulledAt[imagePulledAtIndex].Jsonize());
+   }
+   payload.WithArray("imagePulledAt", std::move(imagePulledAtJsonList));
 
   }
 

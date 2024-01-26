@@ -39,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p>An object that contains details about the state of the ECR automated re-scan
-     * setting.</p>
+     * <p>An object that contains details about the state of the ECR re-scan
+     * settings.</p>
      */
     inline const EcrRescanDurationState& GetRescanDurationState() const{ return m_rescanDurationState; }
 
     /**
-     * <p>An object that contains details about the state of the ECR automated re-scan
-     * setting.</p>
+     * <p>An object that contains details about the state of the ECR re-scan
+     * settings.</p>
      */
     inline bool RescanDurationStateHasBeenSet() const { return m_rescanDurationStateHasBeenSet; }
 
     /**
-     * <p>An object that contains details about the state of the ECR automated re-scan
-     * setting.</p>
+     * <p>An object that contains details about the state of the ECR re-scan
+     * settings.</p>
      */
     inline void SetRescanDurationState(const EcrRescanDurationState& value) { m_rescanDurationStateHasBeenSet = true; m_rescanDurationState = value; }
 
     /**
-     * <p>An object that contains details about the state of the ECR automated re-scan
-     * setting.</p>
+     * <p>An object that contains details about the state of the ECR re-scan
+     * settings.</p>
      */
     inline void SetRescanDurationState(EcrRescanDurationState&& value) { m_rescanDurationStateHasBeenSet = true; m_rescanDurationState = std::move(value); }
 
     /**
-     * <p>An object that contains details about the state of the ECR automated re-scan
-     * setting.</p>
+     * <p>An object that contains details about the state of the ECR re-scan
+     * settings.</p>
      */
     inline EcrConfigurationState& WithRescanDurationState(const EcrRescanDurationState& value) { SetRescanDurationState(value); return *this;}
 
     /**
-     * <p>An object that contains details about the state of the ECR automated re-scan
-     * setting.</p>
+     * <p>An object that contains details about the state of the ECR re-scan
+     * settings.</p>
      */
     inline EcrConfigurationState& WithRescanDurationState(EcrRescanDurationState&& value) { SetRescanDurationState(std::move(value)); return *this;}
 
