@@ -331,8 +331,11 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
                 chunkedTrailer << "0\r\n";
                 if (request->GetRequestHash().second != nullptr)
                 {
-                    chunkedTrailer << "x-amz-checksum-" << request->GetRequestHash().first << ":"
-                        << HashingUtils::Base64Encode(request->GetRequestHash().second->GetHash().GetResult()) << "\r\n";
+                    chunkedTrailer << "x-amz-checksum-"
+                        << request->GetRequestHash().first
+                        << ":"
+                        << HashingUtils::Base64Encode(request->GetRequestHash().second->GetHash().GetResult())
+                        << "\r\n";
                 }
                 chunkedTrailer << "\r\n";
                 amountRead = chunkedTrailer.str().size();
