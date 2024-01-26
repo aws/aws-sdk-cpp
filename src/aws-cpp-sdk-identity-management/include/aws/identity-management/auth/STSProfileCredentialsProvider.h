@@ -106,8 +106,10 @@ namespace Aws
              * Returns the assumed role credentials or empty credentials on error.
              */
             AWSCredentials GetCredentialsFromSTS(const AWSCredentials& credentials, const Aws::String& roleARN);
+            AWSCredentials GetCredentialsFromWebIdentity(const Config::Profile& profile);
         private:
             AWSCredentials GetCredentialsFromSTSInternal(const Aws::String& roleArn, Aws::STS::STSClient* client);
+            AWSCredentials GetCredentialsFromWebIdentityInternal(const Config::Profile& profile, Aws::STS::STSClient* client);
 
             Aws::String m_profileName;
             AWSCredentials m_credentials;
