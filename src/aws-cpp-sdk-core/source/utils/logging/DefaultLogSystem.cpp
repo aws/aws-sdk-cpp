@@ -64,6 +64,12 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, std::s
             logFile->flush();
         }
     }
+
+    {
+        std::unique_lock<std::mutex> locker(syncData->m_logQueueMutex);
+        syncData->m_loggingThreadStopped = true;
+        syncData->m_queueSignal.notify_one();
+    }
 }
 
 DefaultLogSystem::DefaultLogSystem(LogLevel logLevel, const std::shared_ptr<Aws::OStream>& logFile) :
@@ -90,12 +96,27 @@ DefaultLogSystem::~DefaultLogSystem()
         m_syncData.m_queueSignal.notify_one();
     }
 
+    // explicitly wait for logging thread to finish
+    {
+        std::unique_lock<std::mutex> locker(m_syncData.m_logQueueMutex);
+        if (!m_syncData.m_loggingThreadStopped)
+        {
+            m_syncData.m_queueSignal.wait_for(locker,
+                                              std::chrono::milliseconds(500),
+                                              [&](){ return m_syncData.m_loggingThreadStopped; });
+        }
+    }
+
     m_loggingThread.join();
 }
 
 void DefaultLogSystem::ProcessFormattedStatement(Aws::String&& statement)
 {
     std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
+    if (m_syncData.m_stopLogging)
+    {
+        return;
+    }
     m_syncData.m_queuedLogMessages.emplace_back(std::move(statement));
     if(m_syncData.m_queuedLogMessages.size() >= BUFFERED_MSG_COUNT)
     {
