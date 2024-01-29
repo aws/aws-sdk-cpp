@@ -146,7 +146,10 @@ namespace Snowball
          * <p>Creates an address for a Snow device to be shipped to. In most regions,
          * addresses are validated at the time of creation. The address you provide must be
          * located within the serviceable area of your region. If the address is invalid or
-         * unsupported, then an exception is thrown.</p><p><h3>See Also:</h3>   <a
+         * unsupported, then an exception is thrown. If providing an address as a JSON file
+         * through the <code>cli-input-json</code> option, include the full file path. For
+         * example, <code>--cli-input-json file://create-address.json</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">AWS
          * API Reference</a></p>
          */
