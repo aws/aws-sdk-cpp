@@ -68,7 +68,8 @@ namespace {
             .WithDataRedundancy(DataRedundancy::SingleAvailabilityZone))));
 
       if (!outcome.IsSuccess() && outcome.GetError().GetResponseCode() == Aws::Http::HttpResponseCode::CONFLICT &&
-                                  outcome.GetError().GetExceptionName() == "BucketAlreadyOwnedByYou") {
+                                  (outcome.GetError().GetExceptionName() == "BucketAlreadyOwnedByYou" ||
+                                   outcome.GetError().GetExceptionName() == "OperationAborted")) {
         return CreateBucketOutcome(CreateBucketResult());
       }
 
