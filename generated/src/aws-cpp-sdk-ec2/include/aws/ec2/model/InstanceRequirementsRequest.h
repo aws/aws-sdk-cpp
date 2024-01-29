@@ -527,91 +527,128 @@ namespace Model
 
 
     /**
-     * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the least expensive
-     * current generation M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 selects instance types with your attributes, it excludes instance
-     * types priced above your threshold.</p> <p>The parameter accepts an integer,
-     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
-     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
-     * parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage higher than an identified Spot price. The identified Spot price is
+     * the Spot price of the lowest priced current generation C, M, or R instance type
+     * with your specified attributes. If no current generation C, M, or R instance
+     * type matches your attributes, then the identified Spot price is from the lowest
+     * priced current generation instance types, and failing that, from the lowest
+     * priced previous generation instance types that match your attributes. When
+     * Amazon EC2 selects instance types with your attributes, it will exclude instance
+     * types whose Spot price exceeds your specified threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To
+     * indicate no price protection threshold, specify a high value, such as
+     * <code>999999</code>.</p> <p>If you set <code>TargetCapacityUnitType</code> to
+     * <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is
+     * applied based on the per-vCPU or per-memory price instead of the per-instance
+     * price.</p> <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
-     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per-vCPU or per-memory price instead of the per-instance price.</p> 
-     * <p>Default: <code>100</code> </p>
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, then
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for
+     * that parameter defaults to <code>100</code>.</p>  <p>Default:
+     * <code>100</code> </p>
      */
     inline int GetSpotMaxPricePercentageOverLowestPrice() const{ return m_spotMaxPricePercentageOverLowestPrice; }
 
     /**
-     * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the least expensive
-     * current generation M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 selects instance types with your attributes, it excludes instance
-     * types priced above your threshold.</p> <p>The parameter accepts an integer,
-     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
-     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
-     * parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage higher than an identified Spot price. The identified Spot price is
+     * the Spot price of the lowest priced current generation C, M, or R instance type
+     * with your specified attributes. If no current generation C, M, or R instance
+     * type matches your attributes, then the identified Spot price is from the lowest
+     * priced current generation instance types, and failing that, from the lowest
+     * priced previous generation instance types that match your attributes. When
+     * Amazon EC2 selects instance types with your attributes, it will exclude instance
+     * types whose Spot price exceeds your specified threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To
+     * indicate no price protection threshold, specify a high value, such as
+     * <code>999999</code>.</p> <p>If you set <code>TargetCapacityUnitType</code> to
+     * <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is
+     * applied based on the per-vCPU or per-memory price instead of the per-instance
+     * price.</p> <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
-     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per-vCPU or per-memory price instead of the per-instance price.</p> 
-     * <p>Default: <code>100</code> </p>
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, then
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for
+     * that parameter defaults to <code>100</code>.</p>  <p>Default:
+     * <code>100</code> </p>
      */
     inline bool SpotMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_spotMaxPricePercentageOverLowestPriceHasBeenSet; }
 
     /**
-     * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the least expensive
-     * current generation M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 selects instance types with your attributes, it excludes instance
-     * types priced above your threshold.</p> <p>The parameter accepts an integer,
-     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
-     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
-     * parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage higher than an identified Spot price. The identified Spot price is
+     * the Spot price of the lowest priced current generation C, M, or R instance type
+     * with your specified attributes. If no current generation C, M, or R instance
+     * type matches your attributes, then the identified Spot price is from the lowest
+     * priced current generation instance types, and failing that, from the lowest
+     * priced previous generation instance types that match your attributes. When
+     * Amazon EC2 selects instance types with your attributes, it will exclude instance
+     * types whose Spot price exceeds your specified threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To
+     * indicate no price protection threshold, specify a high value, such as
+     * <code>999999</code>.</p> <p>If you set <code>TargetCapacityUnitType</code> to
+     * <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is
+     * applied based on the per-vCPU or per-memory price instead of the per-instance
+     * price.</p> <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
-     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per-vCPU or per-memory price instead of the per-instance price.</p> 
-     * <p>Default: <code>100</code> </p>
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, then
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for
+     * that parameter defaults to <code>100</code>.</p>  <p>Default:
+     * <code>100</code> </p>
      */
     inline void SetSpotMaxPricePercentageOverLowestPrice(int value) { m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true; m_spotMaxPricePercentageOverLowestPrice = value; }
 
     /**
-     * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the least expensive
-     * current generation M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 selects instance types with your attributes, it excludes instance
-     * types priced above your threshold.</p> <p>The parameter accepts an integer,
-     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
-     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
-     * parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage higher than an identified Spot price. The identified Spot price is
+     * the Spot price of the lowest priced current generation C, M, or R instance type
+     * with your specified attributes. If no current generation C, M, or R instance
+     * type matches your attributes, then the identified Spot price is from the lowest
+     * priced current generation instance types, and failing that, from the lowest
+     * priced previous generation instance types that match your attributes. When
+     * Amazon EC2 selects instance types with your attributes, it will exclude instance
+     * types whose Spot price exceeds your specified threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To
+     * indicate no price protection threshold, specify a high value, such as
+     * <code>999999</code>.</p> <p>If you set <code>TargetCapacityUnitType</code> to
+     * <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is
+     * applied based on the per-vCPU or per-memory price instead of the per-instance
+     * price.</p> <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
-     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per-vCPU or per-memory price instead of the per-instance price.</p> 
-     * <p>Default: <code>100</code> </p>
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, then
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for
+     * that parameter defaults to <code>100</code>.</p>  <p>Default:
+     * <code>100</code> </p>
      */
     inline InstanceRequirementsRequest& WithSpotMaxPricePercentageOverLowestPrice(int value) { SetSpotMaxPricePercentageOverLowestPrice(value); return *this;}
 
 
     /**
-     * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
-     * expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it
-     * excludes instance types priced above your threshold.</p> <p>The parameter
-     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
-     * off price protection, specify a high value, such as <code>999999</code>.</p>
-     * <p>This parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for On-Demand Instances, as
+     * a percentage higher than an identified On-Demand price. The identified On-Demand
+     * price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. When Amazon EC2 selects instance types with
+     * your attributes, it will exclude instance types whose price exceeds your
+     * specified threshold.</p> <p>The parameter accepts an integer, which Amazon EC2
+     * interprets as a percentage.</p> <p>To indicate no price protection threshold,
+     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
+     * supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -623,14 +660,15 @@ namespace Model
     inline int GetOnDemandMaxPricePercentageOverLowestPrice() const{ return m_onDemandMaxPricePercentageOverLowestPrice; }
 
     /**
-     * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
-     * expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it
-     * excludes instance types priced above your threshold.</p> <p>The parameter
-     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
-     * off price protection, specify a high value, such as <code>999999</code>.</p>
-     * <p>This parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for On-Demand Instances, as
+     * a percentage higher than an identified On-Demand price. The identified On-Demand
+     * price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. When Amazon EC2 selects instance types with
+     * your attributes, it will exclude instance types whose price exceeds your
+     * specified threshold.</p> <p>The parameter accepts an integer, which Amazon EC2
+     * interprets as a percentage.</p> <p>To indicate no price protection threshold,
+     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
+     * supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -642,14 +680,15 @@ namespace Model
     inline bool OnDemandMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet; }
 
     /**
-     * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
-     * expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it
-     * excludes instance types priced above your threshold.</p> <p>The parameter
-     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
-     * off price protection, specify a high value, such as <code>999999</code>.</p>
-     * <p>This parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for On-Demand Instances, as
+     * a percentage higher than an identified On-Demand price. The identified On-Demand
+     * price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. When Amazon EC2 selects instance types with
+     * your attributes, it will exclude instance types whose price exceeds your
+     * specified threshold.</p> <p>The parameter accepts an integer, which Amazon EC2
+     * interprets as a percentage.</p> <p>To indicate no price protection threshold,
+     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
+     * supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -661,14 +700,15 @@ namespace Model
     inline void SetOnDemandMaxPricePercentageOverLowestPrice(int value) { m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = true; m_onDemandMaxPricePercentageOverLowestPrice = value; }
 
     /**
-     * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
-     * expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it
-     * excludes instance types priced above your threshold.</p> <p>The parameter
-     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
-     * off price protection, specify a high value, such as <code>999999</code>.</p>
-     * <p>This parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for On-Demand Instances, as
+     * a percentage higher than an identified On-Demand price. The identified On-Demand
+     * price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. When Amazon EC2 selects instance types with
+     * your attributes, it will exclude instance types whose price exceeds your
+     * specified threshold.</p> <p>The parameter accepts an integer, which Amazon EC2
+     * interprets as a percentage.</p> <p>To indicate no price protection threshold,
+     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
+     * supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -1752,6 +1792,99 @@ namespace Model
      */
     inline InstanceRequirementsRequest& AddAllowedInstanceTypes(const char* value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(value); return *this; }
 
+
+    /**
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage of an identified On-Demand price. The identified On-Demand price is
+     * the price of the lowest priced current generation C, M, or R instance type with
+     * your specified attributes. If no current generation C, M, or R instance type
+     * matches your attributes, then the identified price is from the lowest priced
+     * current generation instance types, and failing that, from the lowest priced
+     * previous generation instance types that match your attributes. When Amazon EC2
+     * selects instance types with your attributes, it will exclude instance types
+     * whose price exceeds your specified threshold.</p> <p>The parameter accepts an
+     * integer, which Amazon EC2 interprets as a percentage.</p> <p>To indicate no
+     * price protection threshold, specify a high value, such as
+     * <code>999999</code>.</p> <p>If you set <code>DesiredCapacityType</code> to
+     * <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is
+     * based on the per vCPU or per memory price instead of the per instance price.</p>
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, then
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for
+     * that parameter defaults to <code>100</code>.</p> 
+     */
+    inline int GetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() const{ return m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice; }
+
+    /**
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage of an identified On-Demand price. The identified On-Demand price is
+     * the price of the lowest priced current generation C, M, or R instance type with
+     * your specified attributes. If no current generation C, M, or R instance type
+     * matches your attributes, then the identified price is from the lowest priced
+     * current generation instance types, and failing that, from the lowest priced
+     * previous generation instance types that match your attributes. When Amazon EC2
+     * selects instance types with your attributes, it will exclude instance types
+     * whose price exceeds your specified threshold.</p> <p>The parameter accepts an
+     * integer, which Amazon EC2 interprets as a percentage.</p> <p>To indicate no
+     * price protection threshold, specify a high value, such as
+     * <code>999999</code>.</p> <p>If you set <code>DesiredCapacityType</code> to
+     * <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is
+     * based on the per vCPU or per memory price instead of the per instance price.</p>
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, then
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for
+     * that parameter defaults to <code>100</code>.</p> 
+     */
+    inline bool MaxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet() const { return m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet; }
+
+    /**
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage of an identified On-Demand price. The identified On-Demand price is
+     * the price of the lowest priced current generation C, M, or R instance type with
+     * your specified attributes. If no current generation C, M, or R instance type
+     * matches your attributes, then the identified price is from the lowest priced
+     * current generation instance types, and failing that, from the lowest priced
+     * previous generation instance types that match your attributes. When Amazon EC2
+     * selects instance types with your attributes, it will exclude instance types
+     * whose price exceeds your specified threshold.</p> <p>The parameter accepts an
+     * integer, which Amazon EC2 interprets as a percentage.</p> <p>To indicate no
+     * price protection threshold, specify a high value, such as
+     * <code>999999</code>.</p> <p>If you set <code>DesiredCapacityType</code> to
+     * <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is
+     * based on the per vCPU or per memory price instead of the per instance price.</p>
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, then
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for
+     * that parameter defaults to <code>100</code>.</p> 
+     */
+    inline void SetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(int value) { m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = true; m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice = value; }
+
+    /**
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage of an identified On-Demand price. The identified On-Demand price is
+     * the price of the lowest priced current generation C, M, or R instance type with
+     * your specified attributes. If no current generation C, M, or R instance type
+     * matches your attributes, then the identified price is from the lowest priced
+     * current generation instance types, and failing that, from the lowest priced
+     * previous generation instance types that match your attributes. When Amazon EC2
+     * selects instance types with your attributes, it will exclude instance types
+     * whose price exceeds your specified threshold.</p> <p>The parameter accepts an
+     * integer, which Amazon EC2 interprets as a percentage.</p> <p>To indicate no
+     * price protection threshold, specify a high value, such as
+     * <code>999999</code>.</p> <p>If you set <code>DesiredCapacityType</code> to
+     * <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is
+     * based on the per vCPU or per memory price instead of the per instance price.</p>
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, then
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for
+     * that parameter defaults to <code>100</code>.</p> 
+     */
+    inline InstanceRequirementsRequest& WithMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(int value) { SetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(value); return *this;}
+
   private:
 
     VCpuCountRangeRequest m_vCpuCount;
@@ -1822,6 +1955,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_allowedInstanceTypes;
     bool m_allowedInstanceTypesHasBeenSet = false;
+
+    int m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice;
+    bool m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = false;
   };
 
 } // namespace Model

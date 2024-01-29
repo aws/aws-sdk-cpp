@@ -49,7 +49,9 @@ InstanceRequirements::InstanceRequirements() :
     m_acceleratorNamesHasBeenSet(false),
     m_acceleratorTotalMemoryMiBHasBeenSet(false),
     m_networkBandwidthGbpsHasBeenSet(false),
-    m_allowedInstanceTypesHasBeenSet(false)
+    m_allowedInstanceTypesHasBeenSet(false),
+    m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice(0),
+    m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ InstanceRequirements::InstanceRequirements(const XmlNode& xmlNode) :
     m_acceleratorNamesHasBeenSet(false),
     m_acceleratorTotalMemoryMiBHasBeenSet(false),
     m_networkBandwidthGbpsHasBeenSet(false),
-    m_allowedInstanceTypesHasBeenSet(false)
+    m_allowedInstanceTypesHasBeenSet(false),
+    m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice(0),
+    m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -279,6 +283,12 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
 
       m_allowedInstanceTypesHasBeenSet = true;
     }
+    XmlNode maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode = resultNode.FirstChild("maxSpotPriceAsPercentageOfOptimalOnDemandPrice");
+    if(!maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode.IsNull())
+    {
+      m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode.GetText()).c_str()).c_str());
+      m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -451,6 +461,11 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       }
   }
 
+  if(m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxSpotPriceAsPercentageOfOptimalOnDemandPrice=" << m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice << "&";
+  }
+
 }
 
 void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -596,6 +611,10 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       {
         oStream << location << ".AllowedInstanceTypeSet." << allowedInstanceTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet)
+  {
+      oStream << location << ".MaxSpotPriceAsPercentageOfOptimalOnDemandPrice=" << m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice << "&";
   }
 }
 

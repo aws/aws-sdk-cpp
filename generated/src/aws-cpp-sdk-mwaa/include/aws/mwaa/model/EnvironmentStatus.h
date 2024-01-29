@@ -26,7 +26,8 @@ namespace Model
     UPDATE_FAILED,
     ROLLING_BACK,
     CREATING_SNAPSHOT,
-    PENDING
+    PENDING,
+    MAINTENANCE
   };
 
 namespace EnvironmentStatusMapper
