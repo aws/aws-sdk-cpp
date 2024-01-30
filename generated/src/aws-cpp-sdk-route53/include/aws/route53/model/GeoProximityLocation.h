@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> (Resource record sets only): A complex type that lets you control how Amazon
-   * Route 53 responds to DNS queries based on the geographic origin of the query and
-   * your resources. Only one of , <code>LocalZoneGroup</code>,
+   * <p> (Resource record sets only): A complex type that lets you specify where your
+   * resources are located. Only one of <code>LocalZoneGroup</code>,
    * <code>Coordinates</code>, or <code>Amazon Web ServicesRegion</code> is allowed
    * per request at a time.</p> <p>For more information about geoproximity routing,
    * see <a

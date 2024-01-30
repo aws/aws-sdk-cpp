@@ -23,8 +23,11 @@ ProjectSummary::ProjectSummary() :
     m_createdByHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_domainIdHasBeenSet(false),
+    m_failureReasonsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_projectStatus(ProjectStatus::NOT_SET),
+    m_projectStatusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
@@ -34,8 +37,11 @@ ProjectSummary::ProjectSummary(JsonView jsonValue) :
     m_createdByHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_domainIdHasBeenSet(false),
+    m_failureReasonsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_projectStatus(ProjectStatus::NOT_SET),
+    m_projectStatusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -71,6 +77,16 @@ ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
     m_domainIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("failureReasons"))
+  {
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+    {
+      m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsObject());
+    }
+    m_failureReasonsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -83,6 +99,13 @@ ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("projectStatus"))
+  {
+    m_projectStatus = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("projectStatus"));
+
+    m_projectStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -122,6 +145,17 @@ JsonValue ProjectSummary::Jsonize() const
 
   }
 
+  if(m_failureReasonsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> failureReasonsJsonList(m_failureReasons.size());
+   for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+   {
+     failureReasonsJsonList[failureReasonsIndex].AsObject(m_failureReasons[failureReasonsIndex].Jsonize());
+   }
+   payload.WithArray("failureReasons", std::move(failureReasonsJsonList));
+
+  }
+
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
@@ -132,6 +166,11 @@ JsonValue ProjectSummary::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_projectStatusHasBeenSet)
+  {
+   payload.WithString("projectStatus", ProjectStatusMapper::GetNameForProjectStatus(m_projectStatus));
   }
 
   if(m_updatedAtHasBeenSet)

@@ -8,6 +8,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/ProjectStatus.h>
+#include <aws/datazone/model/ProjectDeletionError.h>
 #include <utility>
 
 namespace Aws
@@ -169,6 +171,42 @@ namespace Model
 
 
     /**
+     * <p>Reasons for failed project deletion</p>
+     */
+    inline const Aws::Vector<ProjectDeletionError>& GetFailureReasons() const{ return m_failureReasons; }
+
+    /**
+     * <p>Reasons for failed project deletion</p>
+     */
+    inline void SetFailureReasons(const Aws::Vector<ProjectDeletionError>& value) { m_failureReasons = value; }
+
+    /**
+     * <p>Reasons for failed project deletion</p>
+     */
+    inline void SetFailureReasons(Aws::Vector<ProjectDeletionError>&& value) { m_failureReasons = std::move(value); }
+
+    /**
+     * <p>Reasons for failed project deletion</p>
+     */
+    inline GetProjectResult& WithFailureReasons(const Aws::Vector<ProjectDeletionError>& value) { SetFailureReasons(value); return *this;}
+
+    /**
+     * <p>Reasons for failed project deletion</p>
+     */
+    inline GetProjectResult& WithFailureReasons(Aws::Vector<ProjectDeletionError>&& value) { SetFailureReasons(std::move(value)); return *this;}
+
+    /**
+     * <p>Reasons for failed project deletion</p>
+     */
+    inline GetProjectResult& AddFailureReasons(const ProjectDeletionError& value) { m_failureReasons.push_back(value); return *this; }
+
+    /**
+     * <p>Reasons for failed project deletion</p>
+     */
+    inline GetProjectResult& AddFailureReasons(ProjectDeletionError&& value) { m_failureReasons.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The business glossary terms that can be used in the project.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const{ return m_glossaryTerms; }
@@ -307,6 +345,32 @@ namespace Model
     inline GetProjectResult& WithName(const char* value) { SetName(value); return *this;}
 
 
+    /**
+     * <p>Status of the project</p>
+     */
+    inline const ProjectStatus& GetProjectStatus() const{ return m_projectStatus; }
+
+    /**
+     * <p>Status of the project</p>
+     */
+    inline void SetProjectStatus(const ProjectStatus& value) { m_projectStatus = value; }
+
+    /**
+     * <p>Status of the project</p>
+     */
+    inline void SetProjectStatus(ProjectStatus&& value) { m_projectStatus = std::move(value); }
+
+    /**
+     * <p>Status of the project</p>
+     */
+    inline GetProjectResult& WithProjectStatus(const ProjectStatus& value) { SetProjectStatus(value); return *this;}
+
+    /**
+     * <p>Status of the project</p>
+     */
+    inline GetProjectResult& WithProjectStatus(ProjectStatus&& value) { SetProjectStatus(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -338,6 +402,8 @@ namespace Model
 
     Aws::String m_domainId;
 
+    Aws::Vector<ProjectDeletionError> m_failureReasons;
+
     Aws::Vector<Aws::String> m_glossaryTerms;
 
     Aws::String m_id;
@@ -345,6 +411,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedAt;
 
     Aws::String m_name;
+
+    ProjectStatus m_projectStatus;
 
     Aws::String m_requestId;
   };
