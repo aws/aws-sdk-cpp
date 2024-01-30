@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace DataZone
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DeleteProject"; }
 
     AWS_DATAZONE_API Aws::String SerializePayload() const override;
+
+    AWS_DATAZONE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -113,6 +119,27 @@ namespace Model
      */
     inline DeleteProjectRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
+
+    /**
+     * <p>Optional flag to asynchronously delete child entities within the project</p>
+     */
+    inline bool GetSkipDeletionCheck() const{ return m_skipDeletionCheck; }
+
+    /**
+     * <p>Optional flag to asynchronously delete child entities within the project</p>
+     */
+    inline bool SkipDeletionCheckHasBeenSet() const { return m_skipDeletionCheckHasBeenSet; }
+
+    /**
+     * <p>Optional flag to asynchronously delete child entities within the project</p>
+     */
+    inline void SetSkipDeletionCheck(bool value) { m_skipDeletionCheckHasBeenSet = true; m_skipDeletionCheck = value; }
+
+    /**
+     * <p>Optional flag to asynchronously delete child entities within the project</p>
+     */
+    inline DeleteProjectRequest& WithSkipDeletionCheck(bool value) { SetSkipDeletionCheck(value); return *this;}
+
   private:
 
     Aws::String m_domainIdentifier;
@@ -120,6 +147,9 @@ namespace Model
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    bool m_skipDeletionCheck;
+    bool m_skipDeletionCheckHasBeenSet = false;
   };
 
 } // namespace Model

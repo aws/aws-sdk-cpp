@@ -128,6 +128,27 @@ namespace Model
      */
     inline DeleteDomainRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
+
+    /**
+     * <p>Optional flag to delete all child entities within the domain</p>
+     */
+    inline bool GetSkipDeletionCheck() const{ return m_skipDeletionCheck; }
+
+    /**
+     * <p>Optional flag to delete all child entities within the domain</p>
+     */
+    inline bool SkipDeletionCheckHasBeenSet() const { return m_skipDeletionCheckHasBeenSet; }
+
+    /**
+     * <p>Optional flag to delete all child entities within the domain</p>
+     */
+    inline void SetSkipDeletionCheck(bool value) { m_skipDeletionCheckHasBeenSet = true; m_skipDeletionCheck = value; }
+
+    /**
+     * <p>Optional flag to delete all child entities within the domain</p>
+     */
+    inline DeleteDomainRequest& WithSkipDeletionCheck(bool value) { SetSkipDeletionCheck(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -135,6 +156,9 @@ namespace Model
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    bool m_skipDeletionCheck;
+    bool m_skipDeletionCheckHasBeenSet = false;
   };
 
 } // namespace Model
