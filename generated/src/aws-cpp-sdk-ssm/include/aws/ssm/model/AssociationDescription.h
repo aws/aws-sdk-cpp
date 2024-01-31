@@ -1266,6 +1266,35 @@ namespace Model
 
 
     /**
+     * <p>The number of hours that an association can run on specified targets. After
+     * the resulting cutoff time passes, associations that are currently running are
+     * cancelled, and no pending executions are started on remaining targets.</p>
+     */
+    inline int GetDuration() const{ return m_duration; }
+
+    /**
+     * <p>The number of hours that an association can run on specified targets. After
+     * the resulting cutoff time passes, associations that are currently running are
+     * cancelled, and no pending executions are started on remaining targets.</p>
+     */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The number of hours that an association can run on specified targets. After
+     * the resulting cutoff time passes, associations that are currently running are
+     * cancelled, and no pending executions are started on remaining targets.</p>
+     */
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
+
+    /**
+     * <p>The number of hours that an association can run on specified targets. After
+     * the resulting cutoff time passes, associations that are currently running are
+     * cancelled, and no pending executions are started on remaining targets.</p>
+     */
+    inline AssociationDescription& WithDuration(int value) { SetDuration(value); return *this;}
+
+
+    /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
      * and TargetMaps can't be specified together.</p>
      */
@@ -1449,6 +1478,9 @@ namespace Model
 
     int m_scheduleOffset;
     bool m_scheduleOffsetHasBeenSet = false;
+
+    int m_duration;
+    bool m_durationHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
     bool m_targetMapsHasBeenSet = false;

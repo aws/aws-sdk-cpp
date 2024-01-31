@@ -421,29 +421,29 @@ namespace Model
 
     /**
      * <p>The amount of time that can pass before the stack status becomes
-     * CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
-     * <code>false</code>, the stack will be rolled back.</p>
+     * <code>CREATE_FAILED</code>; if <code>DisableRollback</code> is not set or is set
+     * to <code>false</code>, the stack will be rolled back.</p>
      */
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
      * <p>The amount of time that can pass before the stack status becomes
-     * CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
-     * <code>false</code>, the stack will be rolled back.</p>
+     * <code>CREATE_FAILED</code>; if <code>DisableRollback</code> is not set or is set
+     * to <code>false</code>, the stack will be rolled back.</p>
      */
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
 
     /**
      * <p>The amount of time that can pass before the stack status becomes
-     * CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
-     * <code>false</code>, the stack will be rolled back.</p>
+     * <code>CREATE_FAILED</code>; if <code>DisableRollback</code> is not set or is set
+     * to <code>false</code>, the stack will be rolled back.</p>
      */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
      * <p>The amount of time that can pass before the stack status becomes
-     * CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
-     * <code>false</code>, the stack will be rolled back.</p>
+     * <code>CREATE_FAILED</code>; if <code>DisableRollback</code> is not set or is set
+     * to <code>false</code>, the stack will be rolled back.</p>
      */
     inline CreateStackRequest& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 

@@ -1334,6 +1334,75 @@ namespace Model
 
 
     /**
+     * <p>The number of hours the association can run before it is canceled. Duration
+     * applies to associations that are currently running, and any pending and in
+     * progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p> <p>The <code>Duration</code> parameter applies only when both these
+     * conditions are true:</p> <ul> <li> <p>The association for which you specify a
+     * duration is cancelable according to the parameters of the SSM command document
+     * or Automation runbook associated with this execution. </p> </li> <li> <p>The
+     * command specifies the <code> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a>
+     * </code> parameter, which means that the association doesn't run immediately
+     * after it is created, but only according to the specified schedule.</p> </li>
+     * </ul>
+     */
+    inline int GetDuration() const{ return m_duration; }
+
+    /**
+     * <p>The number of hours the association can run before it is canceled. Duration
+     * applies to associations that are currently running, and any pending and in
+     * progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p> <p>The <code>Duration</code> parameter applies only when both these
+     * conditions are true:</p> <ul> <li> <p>The association for which you specify a
+     * duration is cancelable according to the parameters of the SSM command document
+     * or Automation runbook associated with this execution. </p> </li> <li> <p>The
+     * command specifies the <code> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a>
+     * </code> parameter, which means that the association doesn't run immediately
+     * after it is created, but only according to the specified schedule.</p> </li>
+     * </ul>
+     */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The number of hours the association can run before it is canceled. Duration
+     * applies to associations that are currently running, and any pending and in
+     * progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p> <p>The <code>Duration</code> parameter applies only when both these
+     * conditions are true:</p> <ul> <li> <p>The association for which you specify a
+     * duration is cancelable according to the parameters of the SSM command document
+     * or Automation runbook associated with this execution. </p> </li> <li> <p>The
+     * command specifies the <code> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a>
+     * </code> parameter, which means that the association doesn't run immediately
+     * after it is created, but only according to the specified schedule.</p> </li>
+     * </ul>
+     */
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
+
+    /**
+     * <p>The number of hours the association can run before it is canceled. Duration
+     * applies to associations that are currently running, and any pending and in
+     * progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p> <p>The <code>Duration</code> parameter applies only when both these
+     * conditions are true:</p> <ul> <li> <p>The association for which you specify a
+     * duration is cancelable according to the parameters of the SSM command document
+     * or Automation runbook associated with this execution. </p> </li> <li> <p>The
+     * command specifies the <code> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a>
+     * </code> parameter, which means that the association doesn't run immediately
+     * after it is created, but only according to the specified schedule.</p> </li>
+     * </ul>
+     */
+    inline CreateAssociationRequest& WithDuration(int value) { SetDuration(value); return *this;}
+
+
+    /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
      * and TargetMaps can't be specified together.</p>
      */
@@ -1525,6 +1594,9 @@ namespace Model
 
     int m_scheduleOffset;
     bool m_scheduleOffsetHasBeenSet = false;
+
+    int m_duration;
+    bool m_durationHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
     bool m_targetMapsHasBeenSet = false;

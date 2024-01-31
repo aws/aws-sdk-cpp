@@ -34,6 +34,8 @@ CreateAssociationRequest::CreateAssociationRequest() :
     m_targetLocationsHasBeenSet(false),
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
+    m_duration(0),
+    m_durationHasBeenSet(false),
     m_targetMapsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_alarmConfigurationHasBeenSet(false)
@@ -166,6 +168,12 @@ Aws::String CreateAssociationRequest::SerializePayload() const
   if(m_scheduleOffsetHasBeenSet)
   {
    payload.WithInteger("ScheduleOffset", m_scheduleOffset);
+
+  }
+
+  if(m_durationHasBeenSet)
+  {
+   payload.WithInteger("Duration", m_duration);
 
   }
 
