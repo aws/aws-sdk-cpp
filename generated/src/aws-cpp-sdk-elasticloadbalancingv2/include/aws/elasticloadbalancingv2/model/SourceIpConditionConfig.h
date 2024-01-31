@@ -49,7 +49,8 @@ namespace Model
      * addresses, the condition is satisfied if the source IP address of the request
      * matches one of the CIDR blocks. This condition is not satisfied by the addresses
      * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p>
+     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
+     * must be less than, or equal to five.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
@@ -59,7 +60,8 @@ namespace Model
      * addresses, the condition is satisfied if the source IP address of the request
      * matches one of the CIDR blocks. This condition is not satisfied by the addresses
      * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p>
+     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
+     * must be less than, or equal to five.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
@@ -69,7 +71,8 @@ namespace Model
      * addresses, the condition is satisfied if the source IP address of the request
      * matches one of the CIDR blocks. This condition is not satisfied by the addresses
      * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p>
+     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
+     * must be less than, or equal to five.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
@@ -79,7 +82,8 @@ namespace Model
      * addresses, the condition is satisfied if the source IP address of the request
      * matches one of the CIDR blocks. This condition is not satisfied by the addresses
      * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p>
+     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
+     * must be less than, or equal to five.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
@@ -89,7 +93,8 @@ namespace Model
      * addresses, the condition is satisfied if the source IP address of the request
      * matches one of the CIDR blocks. This condition is not satisfied by the addresses
      * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p>
+     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
+     * must be less than, or equal to five.</p>
      */
     inline SourceIpConditionConfig& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
@@ -99,7 +104,8 @@ namespace Model
      * addresses, the condition is satisfied if the source IP address of the request
      * matches one of the CIDR blocks. This condition is not satisfied by the addresses
      * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p>
+     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
+     * must be less than, or equal to five.</p>
      */
     inline SourceIpConditionConfig& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
@@ -109,7 +115,8 @@ namespace Model
      * addresses, the condition is satisfied if the source IP address of the request
      * matches one of the CIDR blocks. This condition is not satisfied by the addresses
      * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p>
+     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
+     * must be less than, or equal to five.</p>
      */
     inline SourceIpConditionConfig& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
@@ -119,7 +126,8 @@ namespace Model
      * addresses, the condition is satisfied if the source IP address of the request
      * matches one of the CIDR blocks. This condition is not satisfied by the addresses
      * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p>
+     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
+     * must be less than, or equal to five.</p>
      */
     inline SourceIpConditionConfig& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
@@ -129,7 +137,8 @@ namespace Model
      * addresses, the condition is satisfied if the source IP address of the request
      * matches one of the CIDR blocks. This condition is not satisfied by the addresses
      * in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
-     * header, use <a>HttpHeaderConditionConfig</a>.</p>
+     * header, use <a>HttpHeaderConditionConfig</a>.</p> <p>The total number of values
+     * must be less than, or equal to five.</p>
      */
     inline SourceIpConditionConfig& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

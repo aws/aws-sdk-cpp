@@ -122,42 +122,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the query key used for this parameter.</p>
+     * <p>The alias of the Key Management Service (KMS) key used to encrypt the
+     * parameter. Applies to <code>SecureString</code> parameters only.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The ID of the query key used for this parameter.</p>
+     * <p>The alias of the Key Management Service (KMS) key used to encrypt the
+     * parameter. Applies to <code>SecureString</code> parameters only.</p>
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the query key used for this parameter.</p>
+     * <p>The alias of the Key Management Service (KMS) key used to encrypt the
+     * parameter. Applies to <code>SecureString</code> parameters only.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The ID of the query key used for this parameter.</p>
+     * <p>The alias of the Key Management Service (KMS) key used to encrypt the
+     * parameter. Applies to <code>SecureString</code> parameters only.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The ID of the query key used for this parameter.</p>
+     * <p>The alias of the Key Management Service (KMS) key used to encrypt the
+     * parameter. Applies to <code>SecureString</code> parameters only.</p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The ID of the query key used for this parameter.</p>
+     * <p>The alias of the Key Management Service (KMS) key used to encrypt the
+     * parameter. Applies to <code>SecureString</code> parameters only.</p>
      */
     inline ParameterMetadata& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the query key used for this parameter.</p>
+     * <p>The alias of the Key Management Service (KMS) key used to encrypt the
+     * parameter. Applies to <code>SecureString</code> parameters only.</p>
      */
     inline ParameterMetadata& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the query key used for this parameter.</p>
+     * <p>The alias of the Key Management Service (KMS) key used to encrypt the
+     * parameter. Applies to <code>SecureString</code> parameters only.</p>
      */
     inline ParameterMetadata& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

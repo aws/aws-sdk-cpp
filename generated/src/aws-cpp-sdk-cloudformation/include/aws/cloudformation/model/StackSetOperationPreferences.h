@@ -85,46 +85,64 @@ namespace Model
 
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
+     *  <p> <code>RegionOrder</code> isn't followed if
+     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetRegionOrder() const{ return m_regionOrder; }
 
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
+     *  <p> <code>RegionOrder</code> isn't followed if
+     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline bool RegionOrderHasBeenSet() const { return m_regionOrderHasBeenSet; }
 
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
+     *  <p> <code>RegionOrder</code> isn't followed if
+     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline void SetRegionOrder(const Aws::Vector<Aws::String>& value) { m_regionOrderHasBeenSet = true; m_regionOrder = value; }
 
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
+     *  <p> <code>RegionOrder</code> isn't followed if
+     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline void SetRegionOrder(Aws::Vector<Aws::String>&& value) { m_regionOrderHasBeenSet = true; m_regionOrder = std::move(value); }
 
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
+     *  <p> <code>RegionOrder</code> isn't followed if
+     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline StackSetOperationPreferences& WithRegionOrder(const Aws::Vector<Aws::String>& value) { SetRegionOrder(value); return *this;}
 
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
+     *  <p> <code>RegionOrder</code> isn't followed if
+     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline StackSetOperationPreferences& WithRegionOrder(Aws::Vector<Aws::String>&& value) { SetRegionOrder(std::move(value)); return *this;}
 
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
+     *  <p> <code>RegionOrder</code> isn't followed if
+     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline StackSetOperationPreferences& AddRegionOrder(const Aws::String& value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(value); return *this; }
 
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
+     *  <p> <code>RegionOrder</code> isn't followed if
+     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline StackSetOperationPreferences& AddRegionOrder(Aws::String&& value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The order of the Regions where you want to perform the stack operation.</p>
+     *  <p> <code>RegionOrder</code> isn't followed if
+     * <code>AutoDeployment</code> is enabled.</p> 
      */
     inline StackSetOperationPreferences& AddRegionOrder(const char* value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(value); return *this; }
 

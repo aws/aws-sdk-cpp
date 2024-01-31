@@ -1146,8 +1146,10 @@ namespace SSM
         }
 
         /**
-         * <p>Lists all patches eligible to be included in a patch baseline.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all patches eligible to be included in a patch baseline.</p> 
+         * <p>Currently, <code>DescribeAvailablePatches</code> supports only the Amazon
+         * Linux 1, Amazon Linux 2, and Windows Server operating systems.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">AWS
          * API Reference</a></p>
          */

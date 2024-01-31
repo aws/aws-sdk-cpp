@@ -304,6 +304,33 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Creates a template from existing resources that are not already managed with
+         * CloudFormation. You can check the status of the template generation using the
+         * <code>DescribeGeneratedTemplate</code> API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGeneratedTemplateOutcome CreateGeneratedTemplate(const Model::CreateGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateGeneratedTemplateRequestT = Model::CreateGeneratedTemplateRequest>
+        Model::CreateGeneratedTemplateOutcomeCallable CreateGeneratedTemplateCallable(const CreateGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::CreateGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateGeneratedTemplateRequestT = Model::CreateGeneratedTemplateRequest>
+        void CreateGeneratedTemplateAsync(const CreateGeneratedTemplateRequestT& request, const CreateGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::CreateGeneratedTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Creates a stack as specified in the template. After the call completes
          * successfully, the stack creation starts. You can check the status of the stack
          * through the <a>DescribeStacks</a> operation.</p><p><h3>See Also:</h3>   <a
@@ -472,6 +499,31 @@ namespace CloudFormation
         void DeleteChangeSetAsync(const DeleteChangeSetRequestT& request, const DeleteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::DeleteChangeSet, request, handler, context);
+        }
+
+        /**
+         * <p>Deleted a generated template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGeneratedTemplateOutcome DeleteGeneratedTemplate(const Model::DeleteGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteGeneratedTemplateRequestT = Model::DeleteGeneratedTemplateRequest>
+        Model::DeleteGeneratedTemplateOutcomeCallable DeleteGeneratedTemplateCallable(const DeleteGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::DeleteGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteGeneratedTemplateRequestT = Model::DeleteGeneratedTemplateRequest>
+        void DeleteGeneratedTemplateAsync(const DeleteGeneratedTemplateRequestT& request, const DeleteGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::DeleteGeneratedTemplate, request, handler, context);
         }
 
         /**
@@ -680,6 +732,35 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Describes a generated template. The output includes details about the
+         * progress of the creation of a generated template started by a
+         * <code>CreateGeneratedTemplate</code> API action or the update of a generated
+         * template started with an <code>UpdateGeneratedTemplate</code> API
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGeneratedTemplateOutcome DescribeGeneratedTemplate(const Model::DescribeGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeGeneratedTemplateRequestT = Model::DescribeGeneratedTemplateRequest>
+        Model::DescribeGeneratedTemplateOutcomeCallable DescribeGeneratedTemplateCallable(const DescribeGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::DescribeGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeGeneratedTemplateRequestT = Model::DescribeGeneratedTemplateRequest>
+        void DescribeGeneratedTemplateAsync(const DescribeGeneratedTemplateRequestT& request, const DescribeGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::DescribeGeneratedTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about the account's <code>OrganizationAccess</code>
          * status. This API can be called either by the management account or the delegated
          * administrator by using the <code>CallAs</code> parameter. This API can also be
@@ -740,6 +821,31 @@ namespace CloudFormation
         void DescribePublisherAsync(const DescribePublisherRequestT& request, const DescribePublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::DescribePublisher, request, handler, context);
+        }
+
+        /**
+         * <p>Describes details of a resource scan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeResourceScanOutcome DescribeResourceScan(const Model::DescribeResourceScanRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeResourceScan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeResourceScanRequestT = Model::DescribeResourceScanRequest>
+        Model::DescribeResourceScanOutcomeCallable DescribeResourceScanCallable(const DescribeResourceScanRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::DescribeResourceScan, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeResourceScan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeResourceScanRequestT = Model::DescribeResourceScanRequest>
+        void DescribeResourceScanAsync(const DescribeResourceScanRequestT& request, const DescribeResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::DescribeResourceScan, request, handler, context);
         }
 
         /**
@@ -1285,6 +1391,36 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Retrieves a generated template. If the template is in an
+         * <code>InProgress</code> or <code>Pending</code> status then the template
+         * returned will be the template when the template was last in a
+         * <code>Complete</code> status. If the template has not yet been in a
+         * <code>Complete</code> status then an empty template will be
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetGeneratedTemplateOutcome GetGeneratedTemplate(const Model::GetGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetGeneratedTemplateRequestT = Model::GetGeneratedTemplateRequest>
+        Model::GetGeneratedTemplateOutcomeCallable GetGeneratedTemplateCallable(const GetGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::GetGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for GetGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetGeneratedTemplateRequestT = Model::GetGeneratedTemplateRequest>
+        void GetGeneratedTemplateAsync(const GetGeneratedTemplateRequestT& request, const GetGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::GetGeneratedTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Returns the stack policy for a specified stack. If a stack doesn't have a
          * policy, a null value is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">AWS
@@ -1460,6 +1596,31 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Lists your generated templates in this Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGeneratedTemplatesOutcome ListGeneratedTemplates(const Model::ListGeneratedTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListGeneratedTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListGeneratedTemplatesRequestT = Model::ListGeneratedTemplatesRequest>
+        Model::ListGeneratedTemplatesOutcomeCallable ListGeneratedTemplatesCallable(const ListGeneratedTemplatesRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListGeneratedTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for ListGeneratedTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListGeneratedTemplatesRequestT = Model::ListGeneratedTemplatesRequest>
+        void ListGeneratedTemplatesAsync(const ListGeneratedTemplatesRequestT& request, const ListGeneratedTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListGeneratedTemplates, request, handler, context);
+        }
+
+        /**
          * <p>Lists all stacks that are importing an exported output value. To modify or
          * remove an exported output value, first use this action to see which stacks are
          * using it. To see the exported output values in your account, see
@@ -1488,6 +1649,88 @@ namespace CloudFormation
         void ListImportsAsync(const ListImportsRequestT& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::ListImports, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the related resources for a list of resources from a resource scan. The
+         * response indicates whether each returned resource is already managed by
+         * CloudFormation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceScanRelatedResourcesOutcome ListResourceScanRelatedResources(const Model::ListResourceScanRelatedResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceScanRelatedResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceScanRelatedResourcesRequestT = Model::ListResourceScanRelatedResourcesRequest>
+        Model::ListResourceScanRelatedResourcesOutcomeCallable ListResourceScanRelatedResourcesCallable(const ListResourceScanRelatedResourcesRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListResourceScanRelatedResources, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceScanRelatedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceScanRelatedResourcesRequestT = Model::ListResourceScanRelatedResourcesRequest>
+        void ListResourceScanRelatedResourcesAsync(const ListResourceScanRelatedResourcesRequestT& request, const ListResourceScanRelatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListResourceScanRelatedResources, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the resources from a resource scan. The results can be filtered by
+         * resource identifier, resource type prefix, tag key, and tag value. Only
+         * resources that match all specified filters are returned. The response indicates
+         * whether each returned resource is already managed by
+         * CloudFormation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceScanResourcesOutcome ListResourceScanResources(const Model::ListResourceScanResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceScanResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceScanResourcesRequestT = Model::ListResourceScanResourcesRequest>
+        Model::ListResourceScanResourcesOutcomeCallable ListResourceScanResourcesCallable(const ListResourceScanResourcesRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListResourceScanResources, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceScanResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceScanResourcesRequestT = Model::ListResourceScanResourcesRequest>
+        void ListResourceScanResourcesAsync(const ListResourceScanResourcesRequestT& request, const ListResourceScanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListResourceScanResources, request, handler, context);
+        }
+
+        /**
+         * <p>List the resource scans from newest to oldest. By default it will return up
+         * to 10 resource scans.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceScansOutcome ListResourceScans(const Model::ListResourceScansRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceScans that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceScansRequestT = Model::ListResourceScansRequest>
+        Model::ListResourceScansOutcomeCallable ListResourceScansCallable(const ListResourceScansRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListResourceScans, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceScans that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceScansRequestT = Model::ListResourceScansRequest>
+        void ListResourceScansAsync(const ListResourceScansRequestT& request, const ListResourceScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListResourceScans, request, handler, context);
         }
 
         /**
@@ -2066,6 +2309,33 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Starts a scan of the resources in this account in this Region. You can the
+         * status of a scan using the <code>ListResourceScans</code> API
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartResourceScanOutcome StartResourceScan(const Model::StartResourceScanRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartResourceScan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartResourceScanRequestT = Model::StartResourceScanRequest>
+        Model::StartResourceScanOutcomeCallable StartResourceScanCallable(const StartResourceScanRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::StartResourceScan, request);
+        }
+
+        /**
+         * An Async wrapper for StartResourceScan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartResourceScanRequestT = Model::StartResourceScanRequest>
+        void StartResourceScanAsync(const StartResourceScanRequestT& request, const StartResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::StartResourceScan, request, handler, context);
+        }
+
+        /**
          * <p>Stops an in-progress operation on a stack set and its associated stack
          * instances. StackSets will cancel all the unstarted stack instance deployments
          * and wait for those are in-progress to complete.</p><p><h3>See Also:</h3>   <a
@@ -2136,6 +2406,35 @@ namespace CloudFormation
         void TestTypeAsync(const TestTypeRequestT& request, const TestTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::TestType, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a generated template. This can be used to change the name, add and
+         * remove resources, refresh resources, and change the <code>DeletionPolicy</code>
+         * and <code>UpdateReplacePolicy</code> settings. You can check the status of the
+         * update to the generated template using the
+         * <code>DescribeGeneratedTemplate</code> API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGeneratedTemplateOutcome UpdateGeneratedTemplate(const Model::UpdateGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateGeneratedTemplateRequestT = Model::UpdateGeneratedTemplateRequest>
+        Model::UpdateGeneratedTemplateOutcomeCallable UpdateGeneratedTemplateCallable(const UpdateGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::UpdateGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateGeneratedTemplateRequestT = Model::UpdateGeneratedTemplateRequest>
+        void UpdateGeneratedTemplateAsync(const UpdateGeneratedTemplateRequestT& request, const UpdateGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::UpdateGeneratedTemplate, request, handler, context);
         }
 
         /**
