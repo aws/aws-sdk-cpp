@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>The container for the identifier for the token including the unique token ID
-   * and its blockchain network.</p>  <p>Only the native tokens BTC,ETH, and
-   * the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
+   * and its blockchain network.</p>  <p>Only the native tokens BTC and ETH,
+   * and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/TokenIdentifier">AWS
    * API Reference</a></p>
@@ -114,72 +114,72 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the token.</p>  <p>You must specify this
-     * container with <code>btc</code> for the native BTC token, and <code>eth</code>
-     * for the native ETH token. For all other token types you must specify the
+     * <p>The unique identifier of the token.</p>  <p>For native tokens, use the
+     * 3 character abbreviation that best matches your token. For example, btc for
+     * Bitcoin, eth for Ether, etc. For all other token types you must specify the
      * <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code>
      * format.</p> 
      */
     inline const Aws::String& GetTokenId() const{ return m_tokenId; }
 
     /**
-     * <p>The unique identifier of the token.</p>  <p>You must specify this
-     * container with <code>btc</code> for the native BTC token, and <code>eth</code>
-     * for the native ETH token. For all other token types you must specify the
+     * <p>The unique identifier of the token.</p>  <p>For native tokens, use the
+     * 3 character abbreviation that best matches your token. For example, btc for
+     * Bitcoin, eth for Ether, etc. For all other token types you must specify the
      * <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code>
      * format.</p> 
      */
     inline bool TokenIdHasBeenSet() const { return m_tokenIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the token.</p>  <p>You must specify this
-     * container with <code>btc</code> for the native BTC token, and <code>eth</code>
-     * for the native ETH token. For all other token types you must specify the
+     * <p>The unique identifier of the token.</p>  <p>For native tokens, use the
+     * 3 character abbreviation that best matches your token. For example, btc for
+     * Bitcoin, eth for Ether, etc. For all other token types you must specify the
      * <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code>
      * format.</p> 
      */
     inline void SetTokenId(const Aws::String& value) { m_tokenIdHasBeenSet = true; m_tokenId = value; }
 
     /**
-     * <p>The unique identifier of the token.</p>  <p>You must specify this
-     * container with <code>btc</code> for the native BTC token, and <code>eth</code>
-     * for the native ETH token. For all other token types you must specify the
+     * <p>The unique identifier of the token.</p>  <p>For native tokens, use the
+     * 3 character abbreviation that best matches your token. For example, btc for
+     * Bitcoin, eth for Ether, etc. For all other token types you must specify the
      * <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code>
      * format.</p> 
      */
     inline void SetTokenId(Aws::String&& value) { m_tokenIdHasBeenSet = true; m_tokenId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the token.</p>  <p>You must specify this
-     * container with <code>btc</code> for the native BTC token, and <code>eth</code>
-     * for the native ETH token. For all other token types you must specify the
+     * <p>The unique identifier of the token.</p>  <p>For native tokens, use the
+     * 3 character abbreviation that best matches your token. For example, btc for
+     * Bitcoin, eth for Ether, etc. For all other token types you must specify the
      * <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code>
      * format.</p> 
      */
     inline void SetTokenId(const char* value) { m_tokenIdHasBeenSet = true; m_tokenId.assign(value); }
 
     /**
-     * <p>The unique identifier of the token.</p>  <p>You must specify this
-     * container with <code>btc</code> for the native BTC token, and <code>eth</code>
-     * for the native ETH token. For all other token types you must specify the
+     * <p>The unique identifier of the token.</p>  <p>For native tokens, use the
+     * 3 character abbreviation that best matches your token. For example, btc for
+     * Bitcoin, eth for Ether, etc. For all other token types you must specify the
      * <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code>
      * format.</p> 
      */
     inline TokenIdentifier& WithTokenId(const Aws::String& value) { SetTokenId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the token.</p>  <p>You must specify this
-     * container with <code>btc</code> for the native BTC token, and <code>eth</code>
-     * for the native ETH token. For all other token types you must specify the
+     * <p>The unique identifier of the token.</p>  <p>For native tokens, use the
+     * 3 character abbreviation that best matches your token. For example, btc for
+     * Bitcoin, eth for Ether, etc. For all other token types you must specify the
      * <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code>
      * format.</p> 
      */
     inline TokenIdentifier& WithTokenId(Aws::String&& value) { SetTokenId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the token.</p>  <p>You must specify this
-     * container with <code>btc</code> for the native BTC token, and <code>eth</code>
-     * for the native ETH token. For all other token types you must specify the
+     * <p>The unique identifier of the token.</p>  <p>For native tokens, use the
+     * 3 character abbreviation that best matches your token. For example, btc for
+     * Bitcoin, eth for Ether, etc. For all other token types you must specify the
      * <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code>
      * format.</p> 
      */

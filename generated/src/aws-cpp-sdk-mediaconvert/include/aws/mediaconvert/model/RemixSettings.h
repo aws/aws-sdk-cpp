@@ -40,6 +40,88 @@ namespace Model
 
 
     /**
+     * Optionally specify the channel in your input that contains your audio
+     * description audio signal. MediaConvert mixes your audio signal across all output
+     * channels, while reducing their volume according to your data stream. When you
+     * specify an audio description audio channel, you must also specify an audio
+     * description data channel. For more information about audio description signals,
+     * see the BBC WHP 198 and 051 white papers.
+     */
+    inline int GetAudioDescriptionAudioChannel() const{ return m_audioDescriptionAudioChannel; }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio
+     * description audio signal. MediaConvert mixes your audio signal across all output
+     * channels, while reducing their volume according to your data stream. When you
+     * specify an audio description audio channel, you must also specify an audio
+     * description data channel. For more information about audio description signals,
+     * see the BBC WHP 198 and 051 white papers.
+     */
+    inline bool AudioDescriptionAudioChannelHasBeenSet() const { return m_audioDescriptionAudioChannelHasBeenSet; }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio
+     * description audio signal. MediaConvert mixes your audio signal across all output
+     * channels, while reducing their volume according to your data stream. When you
+     * specify an audio description audio channel, you must also specify an audio
+     * description data channel. For more information about audio description signals,
+     * see the BBC WHP 198 and 051 white papers.
+     */
+    inline void SetAudioDescriptionAudioChannel(int value) { m_audioDescriptionAudioChannelHasBeenSet = true; m_audioDescriptionAudioChannel = value; }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio
+     * description audio signal. MediaConvert mixes your audio signal across all output
+     * channels, while reducing their volume according to your data stream. When you
+     * specify an audio description audio channel, you must also specify an audio
+     * description data channel. For more information about audio description signals,
+     * see the BBC WHP 198 and 051 white papers.
+     */
+    inline RemixSettings& WithAudioDescriptionAudioChannel(int value) { SetAudioDescriptionAudioChannel(value); return *this;}
+
+
+    /**
+     * Optionally specify the channel in your input that contains your audio
+     * description data stream. MediaConvert mixes your audio signal across all output
+     * channels, while reducing their volume according to your data stream. When you
+     * specify an audio description data channel, you must also specify an audio
+     * description audio channel. For more information about audio description signals,
+     * see the BBC WHP 198 and 051 white papers.
+     */
+    inline int GetAudioDescriptionDataChannel() const{ return m_audioDescriptionDataChannel; }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio
+     * description data stream. MediaConvert mixes your audio signal across all output
+     * channels, while reducing their volume according to your data stream. When you
+     * specify an audio description data channel, you must also specify an audio
+     * description audio channel. For more information about audio description signals,
+     * see the BBC WHP 198 and 051 white papers.
+     */
+    inline bool AudioDescriptionDataChannelHasBeenSet() const { return m_audioDescriptionDataChannelHasBeenSet; }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio
+     * description data stream. MediaConvert mixes your audio signal across all output
+     * channels, while reducing their volume according to your data stream. When you
+     * specify an audio description data channel, you must also specify an audio
+     * description audio channel. For more information about audio description signals,
+     * see the BBC WHP 198 and 051 white papers.
+     */
+    inline void SetAudioDescriptionDataChannel(int value) { m_audioDescriptionDataChannelHasBeenSet = true; m_audioDescriptionDataChannel = value; }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio
+     * description data stream. MediaConvert mixes your audio signal across all output
+     * channels, while reducing their volume according to your data stream. When you
+     * specify an audio description data channel, you must also specify an audio
+     * description audio channel. For more information about audio description signals,
+     * see the BBC WHP 198 and 051 white papers.
+     */
+    inline RemixSettings& WithAudioDescriptionDataChannel(int value) { SetAudioDescriptionDataChannel(value); return *this;}
+
+
+    /**
      * Channel mapping contains the group of fields that hold the remixing value for
      * each channel, in dB. Specify remix values to indicate how much of the content
      * from your input audio channel you want in your output audio channels. Each
@@ -208,6 +290,12 @@ namespace Model
     inline RemixSettings& WithChannelsOut(int value) { SetChannelsOut(value); return *this;}
 
   private:
+
+    int m_audioDescriptionAudioChannel;
+    bool m_audioDescriptionAudioChannelHasBeenSet = false;
+
+    int m_audioDescriptionDataChannel;
+    bool m_audioDescriptionDataChannelHasBeenSet = false;
 
     ChannelMapping m_channelMapping;
     bool m_channelMappingHasBeenSet = false;

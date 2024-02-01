@@ -1290,8 +1290,8 @@ namespace CognitoIdentityProvider
          * authorize requests, and you can't grant IAM permissions in policies. For more
          * information about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken">AWS
          * API Reference</a></p>
          */
@@ -1316,15 +1316,16 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Changes the password for a specified user in a user pool.</p> 
-         * <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies
-         * in requests for this API operation. For this operation, you can't use IAM
-         * credentials to authorize requests, and you can't grant IAM permissions in
-         * policies. For more information about authorization models in Amazon Cognito, see
-         * <a
+         * <p>Changes the password for a specified user in a user pool.</p> <p>Authorize
+         * this action with a signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you can't use IAM credentials to authorize
+         * requests, and you can't grant IAM permissions in policies. For more information
+         * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword">AWS
          * API Reference</a></p>
          */
@@ -1350,14 +1351,18 @@ namespace CognitoIdentityProvider
 
         /**
          * <p>Confirms tracking of the device. This API call is the call that begins device
-         * tracking.</p>  <p>Amazon Cognito doesn't evaluate Identity and Access
-         * Management (IAM) policies in requests for this API operation. For this
-         * operation, you can't use IAM credentials to authorize requests, and you can't
-         * grant IAM permissions in policies. For more information about authorization
-         * models in Amazon Cognito, see <a
+         * tracking. For more information about device authentication, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+         * with user devices in your user pool</a>.</p> <p>Authorize this action with a
+         * signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you can't use IAM credentials to authorize
+         * requests, and you can't grant IAM permissions in policies. For more information
+         * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">AWS
          * API Reference</a></p>
          */
@@ -1389,8 +1394,8 @@ namespace CognitoIdentityProvider
          * policies. For more information about authorization models in Amazon Cognito, see
          * <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">AWS
          * API Reference</a></p>
          */
@@ -1434,8 +1439,8 @@ namespace CognitoIdentityProvider
          * requests, and you can't grant IAM permissions in policies. For more information
          * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">AWS
          * API Reference</a></p>
          */
@@ -1494,11 +1499,12 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Creates an IdP for a user pool.</p>  <p>Amazon Cognito evaluates
-         * Identity and Access Management (IAM) policies in requests for this API
-         * operation. For this operation, you must use IAM credentials to authorize
-         * requests, and you must grant yourself the corresponding IAM permission in a
-         * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * <p>Adds a configuration and trust relationship between a third-party identity
+         * provider (IdP) and a user pool.</p>  <p>Amazon Cognito evaluates Identity
+         * and Access Management (IAM) policies in requests for this API operation. For
+         * this operation, you must use IAM credentials to authorize requests, and you must
+         * grant yourself the corresponding IAM permission in a policy.</p> <p
+         * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
          * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
@@ -1799,14 +1805,16 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Allows a user to delete their own user profile.</p>  <p>Amazon Cognito
-         * doesn't evaluate Identity and Access Management (IAM) policies in requests for
-         * this API operation. For this operation, you can't use IAM credentials to
-         * authorize requests, and you can't grant IAM permissions in policies. For more
-         * information about authorization models in Amazon Cognito, see <a
+         * <p>Allows a user to delete their own user profile.</p> <p>Authorize this action
+         * with a signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you can't use IAM credentials to authorize
+         * requests, and you can't grant IAM permissions in policies. For more information
+         * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser">AWS
          * API Reference</a></p>
          */
@@ -1831,14 +1839,16 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Deletes the attributes for a user.</p>  <p>Amazon Cognito doesn't
+         * <p>Deletes the attributes for a user.</p> <p>Authorize this action with a
+         * signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
          * evaluate Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you can't use IAM credentials to authorize
          * requests, and you can't grant IAM permissions in policies. For more information
          * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes">AWS
          * API Reference</a></p>
          */
@@ -2134,14 +2144,19 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Forgets the specified device.</p>  <p>Amazon Cognito doesn't evaluate
-         * Identity and Access Management (IAM) policies in requests for this API
+         * <p>Forgets the specified device. For more information about device
+         * authentication, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+         * with user devices in your user pool</a>.</p> <p>Authorize this action with a
+         * signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you can't use IAM credentials to authorize
          * requests, and you can't grant IAM permissions in policies. For more information
          * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">AWS
          * API Reference</a></p>
          */
@@ -2184,11 +2199,11 @@ namespace CognitoIdentityProvider
          * authorize requests, and you can't grant IAM permissions in policies. For more
          * information about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p>   <p>This action
-         * might generate an SMS text message. Starting June 1, 2021, US telecom carriers
-         * require you to register an origination phone number before you can send SMS
-         * messages to US phone numbers. If you use SMS text messages in Amazon Cognito,
-         * you must register a phone number with <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p> 
+         *  <p>This action might generate an SMS text message. Starting June 1, 2021,
+         * US telecom carriers require you to register an origination phone number before
+         * you can send SMS messages to US phone numbers. If you use SMS text messages in
+         * Amazon Cognito, you must register a phone number with <a
          * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
@@ -2252,14 +2267,18 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Gets the device.</p>  <p>Amazon Cognito doesn't evaluate Identity and
-         * Access Management (IAM) policies in requests for this API operation. For this
-         * operation, you can't use IAM credentials to authorize requests, and you can't
-         * grant IAM permissions in policies. For more information about authorization
-         * models in Amazon Cognito, see <a
+         * <p>Gets the device. For more information about device authentication, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+         * with user devices in your user pool</a>.</p> <p>Authorize this action with a
+         * signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you can't use IAM credentials to authorize
+         * requests, and you can't grant IAM permissions in policies. For more information
+         * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice">AWS
          * API Reference</a></p>
          */
@@ -2420,15 +2439,16 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Gets the user attributes and metadata for a user.</p>  <p>Amazon
-         * Cognito doesn't evaluate Identity and Access Management (IAM) policies in
-         * requests for this API operation. For this operation, you can't use IAM
-         * credentials to authorize requests, and you can't grant IAM permissions in
-         * policies. For more information about authorization models in Amazon Cognito, see
-         * <a
+         * <p>Gets the user attributes and metadata for a user.</p> <p>Authorize this
+         * action with a signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you can't use IAM credentials to authorize
+         * requests, and you can't grant IAM permissions in policies. For more information
+         * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser">AWS
          * API Reference</a></p>
          */
@@ -2455,17 +2475,19 @@ namespace CognitoIdentityProvider
         /**
          * <p>Generates a user attribute verification code for the specified attribute
          * name. Sends a message to a user with a code that they must return in a
-         * VerifyUserAttribute request.</p>  <p>Amazon Cognito doesn't evaluate
-         * Identity and Access Management (IAM) policies in requests for this API
+         * VerifyUserAttribute request.</p> <p>Authorize this action with a signed-in
+         * user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you can't use IAM credentials to authorize
          * requests, and you can't grant IAM permissions in policies. For more information
          * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p>   <p>This action
-         * might generate an SMS text message. Starting June 1, 2021, US telecom carriers
-         * require you to register an origination phone number before you can send SMS
-         * messages to US phone numbers. If you use SMS text messages in Amazon Cognito,
-         * you must register a phone number with <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p> 
+         *  <p>This action might generate an SMS text message. Starting June 1, 2021,
+         * US telecom carriers require you to register an origination phone number before
+         * you can send SMS messages to US phone numbers. If you use SMS text messages in
+         * Amazon Cognito, you must register a phone number with <a
          * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
@@ -2546,14 +2568,16 @@ namespace CognitoIdentityProvider
          * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.</p>
          * </li> <li> <p>Amazon Cognito no longer accepts a signed-out user's refresh
          * tokens in refresh requests.</p> </li> </ul> <p>Other requests might be valid
-         * until your user's token expires.</p>  <p>Amazon Cognito doesn't evaluate
-         * Identity and Access Management (IAM) policies in requests for this API
+         * until your user's token expires.</p> <p>Authorize this action with a signed-in
+         * user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you can't use IAM credentials to authorize
          * requests, and you can't grant IAM permissions in policies. For more information
          * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">AWS
          * API Reference</a></p>
          */
@@ -2588,11 +2612,11 @@ namespace CognitoIdentityProvider
          * authorize requests, and you can't grant IAM permissions in policies. For more
          * information about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p>   <p>This action
-         * might generate an SMS text message. Starting June 1, 2021, US telecom carriers
-         * require you to register an origination phone number before you can send SMS
-         * messages to US phone numbers. If you use SMS text messages in Amazon Cognito,
-         * you must register a phone number with <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p> 
+         *  <p>This action might generate an SMS text message. Starting June 1, 2021,
+         * US telecom carriers require you to register an origination phone number before
+         * you can send SMS messages to US phone numbers. If you use SMS text messages in
+         * Amazon Cognito, you must register a phone number with <a
          * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
@@ -2631,14 +2655,18 @@ namespace CognitoIdentityProvider
 
         /**
          * <p>Lists the sign-in devices that Amazon Cognito has registered to the current
-         * user.</p>  <p>Amazon Cognito doesn't evaluate Identity and Access
-         * Management (IAM) policies in requests for this API operation. For this
-         * operation, you can't use IAM credentials to authorize requests, and you can't
-         * grant IAM permissions in policies. For more information about authorization
-         * models in Amazon Cognito, see <a
+         * user. For more information about device authentication, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+         * with user devices in your user pool</a>.</p> <p>Authorize this action with a
+         * signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you can't use IAM credentials to authorize
+         * requests, and you can't grant IAM permissions in policies. For more information
+         * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">AWS
          * API Reference</a></p>
          */
@@ -2973,11 +3001,11 @@ namespace CognitoIdentityProvider
          * can't grant IAM permissions in policies. For more information about
          * authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p>   <p>This action
-         * might generate an SMS text message. Starting June 1, 2021, US telecom carriers
-         * require you to register an origination phone number before you can send SMS
-         * messages to US phone numbers. If you use SMS text messages in Amazon Cognito,
-         * you must register a phone number with <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p> 
+         *  <p>This action might generate an SMS text message. Starting June 1, 2021,
+         * US telecom carriers require you to register an origination phone number before
+         * you can send SMS messages to US phone numbers. If you use SMS text messages in
+         * Amazon Cognito, you must register a phone number with <a
          * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
@@ -3029,11 +3057,11 @@ namespace CognitoIdentityProvider
          * authorize requests, and you can't grant IAM permissions in policies. For more
          * information about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p>   <p>This action
-         * might generate an SMS text message. Starting June 1, 2021, US telecom carriers
-         * require you to register an origination phone number before you can send SMS
-         * messages to US phone numbers. If you use SMS text messages in Amazon Cognito,
-         * you must register a phone number with <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p> 
+         *  <p>This action might generate an SMS text message. Starting June 1, 2021,
+         * US telecom carriers require you to register an origination phone number before
+         * you can send SMS messages to US phone numbers. If you use SMS text messages in
+         * Amazon Cognito, you must register a phone number with <a
          * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
@@ -3080,8 +3108,8 @@ namespace CognitoIdentityProvider
          * grant IAM permissions in policies. For more information about authorization
          * models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RevokeToken">AWS
          * API Reference</a></p>
          */
@@ -3204,14 +3232,16 @@ namespace CognitoIdentityProvider
          * MFA during all sign-in attempts unless device tracking is turned on and the
          * device has been trusted. If you want MFA to be applied selectively based on the
          * assessed risk level of sign-in attempts, deactivate MFA for users and turn on
-         * Adaptive Authentication for the user pool.</p>  <p>Amazon Cognito doesn't
+         * Adaptive Authentication for the user pool.</p> <p>Authorize this action with a
+         * signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
          * evaluate Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you can't use IAM credentials to authorize
          * requests, and you can't grant IAM permissions in policies. For more information
          * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          */
@@ -3282,14 +3312,16 @@ namespace CognitoIdentityProvider
          * SMS MFA. You can't use it to configure time-based one-time password (TOTP)
          * software token MFA. To configure either type of MFA, use <a
          * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
-         * instead.</p>  <p>Amazon Cognito doesn't evaluate Identity and Access
-         * Management (IAM) policies in requests for this API operation. For this
-         * operation, you can't use IAM credentials to authorize requests, and you can't
-         * grant IAM permissions in policies. For more information about authorization
-         * models in Amazon Cognito, see <a
-         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
+         * instead.</p> <p>Authorize this action with a signed-in user's access token. It
+         * must include the scope <code>aws.cognito.signin.user.admin</code>.</p> 
+         * <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies
+         * in requests for this API operation. For this operation, you can't use IAM
+         * credentials to authorize requests, and you can't grant IAM permissions in
+         * policies. For more information about authorization models in Amazon Cognito, see
          * <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
          * API Reference</a></p>
          */
@@ -3321,11 +3353,11 @@ namespace CognitoIdentityProvider
          * requests, and you can't grant IAM permissions in policies. For more information
          * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p>   <p>This action
-         * might generate an SMS text message. Starting June 1, 2021, US telecom carriers
-         * require you to register an origination phone number before you can send SMS
-         * messages to US phone numbers. If you use SMS text messages in Amazon Cognito,
-         * you must register a phone number with <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p> 
+         *  <p>This action might generate an SMS text message. Starting June 1, 2021,
+         * US telecom carriers require you to register an origination phone number before
+         * you can send SMS messages to US phone numbers. If you use SMS text messages in
+         * Amazon Cognito, you must register a phone number with <a
          * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
@@ -3486,8 +3518,8 @@ namespace CognitoIdentityProvider
          * policies. For more information about authorization models in Amazon Cognito, see
          * <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback">AWS
          * API Reference</a></p>
          */
@@ -3512,14 +3544,19 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Updates the device status.</p>  <p>Amazon Cognito doesn't evaluate
-         * Identity and Access Management (IAM) policies in requests for this API
+         * <p>Updates the device status. For more information about device authentication,
+         * see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+         * with user devices in your user pool</a>.</p> <p>Authorize this action with a
+         * signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you can't use IAM credentials to authorize
          * requests, and you can't grant IAM permissions in policies. For more information
          * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus">AWS
          * API Reference</a></p>
          */
@@ -3653,17 +3690,19 @@ namespace CognitoIdentityProvider
          * with their own credentials. You authorize this API request with the user's
          * access token. To delete an attribute from your user, submit the attribute in
          * your API request with a blank value. Custom attribute values in this request
-         * must include the <code>custom:</code> prefix.</p>  <p>Amazon Cognito
-         * doesn't evaluate Identity and Access Management (IAM) policies in requests for
-         * this API operation. For this operation, you can't use IAM credentials to
-         * authorize requests, and you can't grant IAM permissions in policies. For more
-         * information about authorization models in Amazon Cognito, see <a
+         * must include the <code>custom:</code> prefix.</p> <p>Authorize this action with
+         * a signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
+         * evaluate Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you can't use IAM credentials to authorize
+         * requests, and you can't grant IAM permissions in policies. For more information
+         * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p>   <p>This action
-         * might generate an SMS text message. Starting June 1, 2021, US telecom carriers
-         * require you to register an origination phone number before you can send SMS
-         * messages to US phone numbers. If you use SMS text messages in Amazon Cognito,
-         * you must register a phone number with <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p> 
+         *  <p>This action might generate an SMS text message. Starting June 1, 2021,
+         * US telecom carriers require you to register an origination phone number before
+         * you can send SMS messages to US phone numbers. If you use SMS text messages in
+         * Amazon Cognito, you must register a phone number with <a
          * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
@@ -3861,8 +3900,8 @@ namespace CognitoIdentityProvider
          * policies. For more information about authorization models in Amazon Cognito, see
          * <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
          * API Reference</a></p>
          */
@@ -3892,14 +3931,16 @@ namespace CognitoIdentityProvider
          * VerifyUserAttribute updates the affected attribute to its pending value. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html">
-         * UserAttributeUpdateSettingsType</a>. </p>  <p>Amazon Cognito doesn't
+         * UserAttributeUpdateSettingsType</a>. </p> <p>Authorize this action with a
+         * signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p>  <p>Amazon Cognito doesn't
          * evaluate Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you can't use IAM credentials to authorize
          * requests, and you can't grant IAM permissions in policies. For more information
          * about authorization models in Amazon Cognito, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-         * the Amazon Cognito native and OIDC APIs</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * the Amazon Cognito user pools API and user pool endpoints</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">AWS
          * API Reference</a></p>
          */

@@ -108,43 +108,43 @@ namespace Model
 
     /**
      * <p>A URL identifying to the location of the data to be imported. This can be an
-     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
+     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
      * <p>A URL identifying to the location of the data to be imported. This can be an
-     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
+     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
      */
     inline void SetSource(const Aws::String& value) { m_source = value; }
 
     /**
      * <p>A URL identifying to the location of the data to be imported. This can be an
-     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
+     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
      */
     inline void SetSource(Aws::String&& value) { m_source = std::move(value); }
 
     /**
      * <p>A URL identifying to the location of the data to be imported. This can be an
-     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
+     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
      */
     inline void SetSource(const char* value) { m_source.assign(value); }
 
     /**
      * <p>A URL identifying to the location of the data to be imported. This can be an
-     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
+     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
      */
     inline CancelImportTaskResult& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
      * <p>A URL identifying to the location of the data to be imported. This can be an
-     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
+     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
      */
     inline CancelImportTaskResult& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <p>A URL identifying to the location of the data to be imported. This can be an
-     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
+     * Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
      */
     inline CancelImportTaskResult& WithSource(const char* value) { SetSource(value); return *this;}
 

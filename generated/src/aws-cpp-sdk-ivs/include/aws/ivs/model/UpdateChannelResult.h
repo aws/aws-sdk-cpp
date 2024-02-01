@@ -33,19 +33,29 @@ namespace Model
     AWS_IVS_API UpdateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Object specifying the updated channel.</p>
+     */
     inline const Channel& GetChannel() const{ return m_channel; }
 
-    
+    /**
+     * <p>Object specifying the updated channel.</p>
+     */
     inline void SetChannel(const Channel& value) { m_channel = value; }
 
-    
+    /**
+     * <p>Object specifying the updated channel.</p>
+     */
     inline void SetChannel(Channel&& value) { m_channel = std::move(value); }
 
-    
+    /**
+     * <p>Object specifying the updated channel.</p>
+     */
     inline UpdateChannelResult& WithChannel(const Channel& value) { SetChannel(value); return *this;}
 
-    
+    /**
+     * <p>Object specifying the updated channel.</p>
+     */
     inline UpdateChannelResult& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
 
 

@@ -28,7 +28,6 @@
 #include <aws/mediaconvert/model/DeletePolicyResult.h>
 #include <aws/mediaconvert/model/DeletePresetResult.h>
 #include <aws/mediaconvert/model/DeleteQueueResult.h>
-#include <aws/mediaconvert/model/DescribeEndpointsResult.h>
 #include <aws/mediaconvert/model/DisassociateCertificateResult.h>
 #include <aws/mediaconvert/model/GetJobResult.h>
 #include <aws/mediaconvert/model/GetJobTemplateResult.h>
@@ -96,7 +95,6 @@ namespace Aws
       class DeletePolicyRequest;
       class DeletePresetRequest;
       class DeleteQueueRequest;
-      class DescribeEndpointsRequest;
       class DisassociateCertificateRequest;
       class GetJobRequest;
       class GetJobTemplateRequest;
@@ -127,7 +125,6 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeletePolicyResult, MediaConvertError> DeletePolicyOutcome;
       typedef Aws::Utils::Outcome<DeletePresetResult, MediaConvertError> DeletePresetOutcome;
       typedef Aws::Utils::Outcome<DeleteQueueResult, MediaConvertError> DeleteQueueOutcome;
-      typedef Aws::Utils::Outcome<DescribeEndpointsResult, MediaConvertError> DescribeEndpointsOutcome;
       typedef Aws::Utils::Outcome<DisassociateCertificateResult, MediaConvertError> DisassociateCertificateOutcome;
       typedef Aws::Utils::Outcome<GetJobResult, MediaConvertError> GetJobOutcome;
       typedef Aws::Utils::Outcome<GetJobTemplateResult, MediaConvertError> GetJobTemplateOutcome;
@@ -158,7 +155,6 @@ namespace Aws
       typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
       typedef std::future<DeletePresetOutcome> DeletePresetOutcomeCallable;
       typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
-      typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
       typedef std::future<DisassociateCertificateOutcome> DisassociateCertificateOutcomeCallable;
       typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
       typedef std::future<GetJobTemplateOutcome> GetJobTemplateOutcomeCallable;
@@ -192,7 +188,6 @@ namespace Aws
     typedef std::function<void(const MediaConvertClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DeletePresetRequest&, const Model::DeletePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePresetResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DeleteQueueRequest&, const Model::DeleteQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueueResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DisassociateCertificateRequest&, const Model::DisassociateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateCertificateResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::GetJobTemplateRequest&, const Model::GetJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobTemplateResponseReceivedHandler;

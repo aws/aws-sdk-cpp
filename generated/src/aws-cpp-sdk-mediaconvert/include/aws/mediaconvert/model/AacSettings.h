@@ -173,62 +173,32 @@ namespace Model
 
 
     /**
-     * Specify the AAC profile. For the widest player compatibility and where higher
-     * bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved
-     * audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds
-     * spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE
-     * v2) adds parametric stereo, which optimizes for encoding stereo audio at very
-     * low bitrates.
+     * AAC Profile.
      */
     inline const AacCodecProfile& GetCodecProfile() const{ return m_codecProfile; }
 
     /**
-     * Specify the AAC profile. For the widest player compatibility and where higher
-     * bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved
-     * audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds
-     * spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE
-     * v2) adds parametric stereo, which optimizes for encoding stereo audio at very
-     * low bitrates.
+     * AAC Profile.
      */
     inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
 
     /**
-     * Specify the AAC profile. For the widest player compatibility and where higher
-     * bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved
-     * audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds
-     * spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE
-     * v2) adds parametric stereo, which optimizes for encoding stereo audio at very
-     * low bitrates.
+     * AAC Profile.
      */
     inline void SetCodecProfile(const AacCodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
 
     /**
-     * Specify the AAC profile. For the widest player compatibility and where higher
-     * bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved
-     * audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds
-     * spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE
-     * v2) adds parametric stereo, which optimizes for encoding stereo audio at very
-     * low bitrates.
+     * AAC Profile.
      */
     inline void SetCodecProfile(AacCodecProfile&& value) { m_codecProfileHasBeenSet = true; m_codecProfile = std::move(value); }
 
     /**
-     * Specify the AAC profile. For the widest player compatibility and where higher
-     * bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved
-     * audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds
-     * spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE
-     * v2) adds parametric stereo, which optimizes for encoding stereo audio at very
-     * low bitrates.
+     * AAC Profile.
      */
     inline AacSettings& WithCodecProfile(const AacCodecProfile& value) { SetCodecProfile(value); return *this;}
 
     /**
-     * Specify the AAC profile. For the widest player compatibility and where higher
-     * bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved
-     * audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds
-     * spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE
-     * v2) adds parametric stereo, which optimizes for encoding stereo audio at very
-     * low bitrates.
+     * AAC Profile.
      */
     inline AacSettings& WithCodecProfile(AacCodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
 
@@ -307,50 +277,32 @@ namespace Model
 
 
     /**
-     * Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC
-     * output bitrate will be equal to the value that you choose for Bitrate. For a
-     * variable bitrate: Choose VBR. Your AAC output bitrate will vary according to
-     * your audio content and the value that you choose for Bitrate quality.
+     * Rate Control Mode.
      */
     inline const AacRateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
     /**
-     * Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC
-     * output bitrate will be equal to the value that you choose for Bitrate. For a
-     * variable bitrate: Choose VBR. Your AAC output bitrate will vary according to
-     * your audio content and the value that you choose for Bitrate quality.
+     * Rate Control Mode.
      */
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
 
     /**
-     * Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC
-     * output bitrate will be equal to the value that you choose for Bitrate. For a
-     * variable bitrate: Choose VBR. Your AAC output bitrate will vary according to
-     * your audio content and the value that you choose for Bitrate quality.
+     * Rate Control Mode.
      */
     inline void SetRateControlMode(const AacRateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
     /**
-     * Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC
-     * output bitrate will be equal to the value that you choose for Bitrate. For a
-     * variable bitrate: Choose VBR. Your AAC output bitrate will vary according to
-     * your audio content and the value that you choose for Bitrate quality.
+     * Rate Control Mode.
      */
     inline void SetRateControlMode(AacRateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
 
     /**
-     * Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC
-     * output bitrate will be equal to the value that you choose for Bitrate. For a
-     * variable bitrate: Choose VBR. Your AAC output bitrate will vary according to
-     * your audio content and the value that you choose for Bitrate quality.
+     * Rate Control Mode.
      */
     inline AacSettings& WithRateControlMode(const AacRateControlMode& value) { SetRateControlMode(value); return *this;}
 
     /**
-     * Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC
-     * output bitrate will be equal to the value that you choose for Bitrate. For a
-     * variable bitrate: Choose VBR. Your AAC output bitrate will vary according to
-     * your audio content and the value that you choose for Bitrate quality.
+     * Rate Control Mode.
      */
     inline AacSettings& WithRateControlMode(AacRateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
 
@@ -393,34 +345,50 @@ namespace Model
 
 
     /**
-     * Specify the AAC sample rate in samples per second (Hz). Valid sample rates
-     * depend on the AAC profile and Coding mode that you select. For a list of
-     * supported sample rates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html
+     * Specify the Sample rate in Hz. Valid sample rates depend on the Profile and
+     * Coding mode that you select. The following list shows valid sample rates for
+     * each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver
+     * Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC
+     * Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding
+     * mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile,
+     * Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode
+     * 2.0: 22050, 24000, 32000, 44100, 48000.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
 
     /**
-     * Specify the AAC sample rate in samples per second (Hz). Valid sample rates
-     * depend on the AAC profile and Coding mode that you select. For a list of
-     * supported sample rates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html
+     * Specify the Sample rate in Hz. Valid sample rates depend on the Profile and
+     * Coding mode that you select. The following list shows valid sample rates for
+     * each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver
+     * Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC
+     * Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding
+     * mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile,
+     * Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode
+     * 2.0: 22050, 24000, 32000, 44100, 48000.
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
-     * Specify the AAC sample rate in samples per second (Hz). Valid sample rates
-     * depend on the AAC profile and Coding mode that you select. For a list of
-     * supported sample rates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html
+     * Specify the Sample rate in Hz. Valid sample rates depend on the Profile and
+     * Coding mode that you select. The following list shows valid sample rates for
+     * each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver
+     * Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC
+     * Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding
+     * mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile,
+     * Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode
+     * 2.0: 22050, 24000, 32000, 44100, 48000.
      */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
-     * Specify the AAC sample rate in samples per second (Hz). Valid sample rates
-     * depend on the AAC profile and Coding mode that you select. For a list of
-     * supported sample rates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html
+     * Specify the Sample rate in Hz. Valid sample rates depend on the Profile and
+     * Coding mode that you select. The following list shows valid sample rates for
+     * each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver
+     * Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC
+     * Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding
+     * mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile,
+     * Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode
+     * 2.0: 22050, 24000, 32000, 44100, 48000.
      */
     inline AacSettings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
 
@@ -463,44 +431,32 @@ namespace Model
 
 
     /**
-     * Specify the quality of your variable bitrate (VBR) AAC audio. For a list of
-     * approximate VBR bitrates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
      */
     inline const AacVbrQuality& GetVbrQuality() const{ return m_vbrQuality; }
 
     /**
-     * Specify the quality of your variable bitrate (VBR) AAC audio. For a list of
-     * approximate VBR bitrates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
      */
     inline bool VbrQualityHasBeenSet() const { return m_vbrQualityHasBeenSet; }
 
     /**
-     * Specify the quality of your variable bitrate (VBR) AAC audio. For a list of
-     * approximate VBR bitrates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
      */
     inline void SetVbrQuality(const AacVbrQuality& value) { m_vbrQualityHasBeenSet = true; m_vbrQuality = value; }
 
     /**
-     * Specify the quality of your variable bitrate (VBR) AAC audio. For a list of
-     * approximate VBR bitrates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
      */
     inline void SetVbrQuality(AacVbrQuality&& value) { m_vbrQualityHasBeenSet = true; m_vbrQuality = std::move(value); }
 
     /**
-     * Specify the quality of your variable bitrate (VBR) AAC audio. For a list of
-     * approximate VBR bitrates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
      */
     inline AacSettings& WithVbrQuality(const AacVbrQuality& value) { SetVbrQuality(value); return *this;}
 
     /**
-     * Specify the quality of your variable bitrate (VBR) AAC audio. For a list of
-     * approximate VBR bitrates, see:
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
+     * VBR Quality Level - Only used if rate_control_mode is VBR.
      */
     inline AacSettings& WithVbrQuality(AacVbrQuality&& value) { SetVbrQuality(std::move(value)); return *this;}
 

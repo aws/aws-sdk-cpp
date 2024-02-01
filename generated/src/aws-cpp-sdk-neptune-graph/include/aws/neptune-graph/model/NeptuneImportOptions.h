@@ -176,7 +176,7 @@ namespace Model
      * <p>Neptune Analytics currently does not support user defined edge ids. The edge
      * ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is
      * set to true, and ids are stored as properties on the relationships with the
-     * property name neptuneEdgeId.</p>
+     * property name <i>neptuneEdgeId</i>.</p>
      */
     inline bool GetPreserveEdgeIds() const{ return m_preserveEdgeIds; }
 
@@ -184,7 +184,7 @@ namespace Model
      * <p>Neptune Analytics currently does not support user defined edge ids. The edge
      * ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is
      * set to true, and ids are stored as properties on the relationships with the
-     * property name neptuneEdgeId.</p>
+     * property name <i>neptuneEdgeId</i>.</p>
      */
     inline bool PreserveEdgeIdsHasBeenSet() const { return m_preserveEdgeIdsHasBeenSet; }
 
@@ -192,7 +192,7 @@ namespace Model
      * <p>Neptune Analytics currently does not support user defined edge ids. The edge
      * ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is
      * set to true, and ids are stored as properties on the relationships with the
-     * property name neptuneEdgeId.</p>
+     * property name <i>neptuneEdgeId</i>.</p>
      */
     inline void SetPreserveEdgeIds(bool value) { m_preserveEdgeIdsHasBeenSet = true; m_preserveEdgeIds = value; }
 
@@ -200,7 +200,7 @@ namespace Model
      * <p>Neptune Analytics currently does not support user defined edge ids. The edge
      * ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is
      * set to true, and ids are stored as properties on the relationships with the
-     * property name neptuneEdgeId.</p>
+     * property name <i>neptuneEdgeId</i>.</p>
      */
     inline NeptuneImportOptions& WithPreserveEdgeIds(bool value) { SetPreserveEdgeIds(value); return *this;}
 

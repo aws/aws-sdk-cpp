@@ -340,32 +340,6 @@ namespace MediaConvert
         }
 
         /**
-         * Send an request with an empty body to the regional API endpoint to get your
-         * account API endpoint.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
-
-        /**
-         * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const DescribeEndpointsRequestT& request) const
-        {
-            return SubmitCallable(&MediaConvertClient::DescribeEndpoints, request);
-        }
-
-        /**
-         * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        void DescribeEndpointsAsync(const DescribeEndpointsRequestT& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&MediaConvertClient::DescribeEndpoints, request, handler, context);
-        }
-
-        /**
          * Removes an association between the Amazon Resource Name (ARN) of an AWS
          * Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert
          * resource.<p><h3>See Also:</h3>   <a

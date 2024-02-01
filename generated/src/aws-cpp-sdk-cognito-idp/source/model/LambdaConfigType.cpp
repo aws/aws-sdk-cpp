@@ -28,8 +28,8 @@ LambdaConfigType::LambdaConfigType() :
     m_createAuthChallengeHasBeenSet(false),
     m_verifyAuthChallengeResponseHasBeenSet(false),
     m_preTokenGenerationHasBeenSet(false),
-    m_preTokenGenerationConfigHasBeenSet(false),
     m_userMigrationHasBeenSet(false),
+    m_preTokenGenerationConfigHasBeenSet(false),
     m_customSMSSenderHasBeenSet(false),
     m_customEmailSenderHasBeenSet(false),
     m_kMSKeyIDHasBeenSet(false)
@@ -46,8 +46,8 @@ LambdaConfigType::LambdaConfigType(JsonView jsonValue) :
     m_createAuthChallengeHasBeenSet(false),
     m_verifyAuthChallengeResponseHasBeenSet(false),
     m_preTokenGenerationHasBeenSet(false),
-    m_preTokenGenerationConfigHasBeenSet(false),
     m_userMigrationHasBeenSet(false),
+    m_preTokenGenerationConfigHasBeenSet(false),
     m_customSMSSenderHasBeenSet(false),
     m_customEmailSenderHasBeenSet(false),
     m_kMSKeyIDHasBeenSet(false)
@@ -120,18 +120,18 @@ LambdaConfigType& LambdaConfigType::operator =(JsonView jsonValue)
     m_preTokenGenerationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PreTokenGenerationConfig"))
-  {
-    m_preTokenGenerationConfig = jsonValue.GetObject("PreTokenGenerationConfig");
-
-    m_preTokenGenerationConfigHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("UserMigration"))
   {
     m_userMigration = jsonValue.GetString("UserMigration");
 
     m_userMigrationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreTokenGenerationConfig"))
+  {
+    m_preTokenGenerationConfig = jsonValue.GetObject("PreTokenGenerationConfig");
+
+    m_preTokenGenerationConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CustomSMSSender"))
@@ -216,15 +216,15 @@ JsonValue LambdaConfigType::Jsonize() const
 
   }
 
-  if(m_preTokenGenerationConfigHasBeenSet)
-  {
-   payload.WithObject("PreTokenGenerationConfig", m_preTokenGenerationConfig.Jsonize());
-
-  }
-
   if(m_userMigrationHasBeenSet)
   {
    payload.WithString("UserMigration", m_userMigration);
+
+  }
+
+  if(m_preTokenGenerationConfigHasBeenSet)
+  {
+   payload.WithObject("PreTokenGenerationConfig", m_preTokenGenerationConfig.Jsonize());
 
   }
 

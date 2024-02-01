@@ -16,7 +16,8 @@ namespace Model
   enum class ConfirmationStatus
   {
     NOT_SET,
-    FINAL
+    FINAL,
+    NONFINAL
   };
 
 namespace ConfirmationStatusMapper

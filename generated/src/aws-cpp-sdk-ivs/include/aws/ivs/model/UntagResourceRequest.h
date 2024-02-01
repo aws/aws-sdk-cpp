@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>Array of tags to be removed. Array of maps, each of the form
-     * s<code>tring:string (key:value)</code>. See <a
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>Array of tags to be removed. Array of maps, each of the form
-     * s<code>tring:string (key:value)</code>. See <a
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -110,7 +110,7 @@ namespace Model
 
     /**
      * <p>Array of tags to be removed. Array of maps, each of the form
-     * s<code>tring:string (key:value)</code>. See <a
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>Array of tags to be removed. Array of maps, each of the form
-     * s<code>tring:string (key:value)</code>. See <a
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -130,7 +130,7 @@ namespace Model
 
     /**
      * <p>Array of tags to be removed. Array of maps, each of the form
-     * s<code>tring:string (key:value)</code>. See <a
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -140,7 +140,7 @@ namespace Model
 
     /**
      * <p>Array of tags to be removed. Array of maps, each of the form
-     * s<code>tring:string (key:value)</code>. See <a
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -150,7 +150,7 @@ namespace Model
 
     /**
      * <p>Array of tags to be removed. Array of maps, each of the form
-     * s<code>tring:string (key:value)</code>. See <a
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -160,7 +160,7 @@ namespace Model
 
     /**
      * <p>Array of tags to be removed. Array of maps, each of the form
-     * s<code>tring:string (key:value)</code>. See <a
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -170,7 +170,7 @@ namespace Model
 
     /**
      * <p>Array of tags to be removed. Array of maps, each of the form
-     * s<code>tring:string (key:value)</code>. See <a
+     * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> for more information, including restrictions
      * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
