@@ -22,11 +22,13 @@
 #include <aws/ivs/model/BatchGetStreamKeyResult.h>
 #include <aws/ivs/model/BatchStartViewerSessionRevocationResult.h>
 #include <aws/ivs/model/CreateChannelResult.h>
+#include <aws/ivs/model/CreatePlaybackRestrictionPolicyResult.h>
 #include <aws/ivs/model/CreateRecordingConfigurationResult.h>
 #include <aws/ivs/model/CreateStreamKeyResult.h>
 #include <aws/ivs/model/DeletePlaybackKeyPairResult.h>
 #include <aws/ivs/model/GetChannelResult.h>
 #include <aws/ivs/model/GetPlaybackKeyPairResult.h>
+#include <aws/ivs/model/GetPlaybackRestrictionPolicyResult.h>
 #include <aws/ivs/model/GetRecordingConfigurationResult.h>
 #include <aws/ivs/model/GetStreamResult.h>
 #include <aws/ivs/model/GetStreamKeyResult.h>
@@ -34,6 +36,7 @@
 #include <aws/ivs/model/ImportPlaybackKeyPairResult.h>
 #include <aws/ivs/model/ListChannelsResult.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsResult.h>
+#include <aws/ivs/model/ListPlaybackRestrictionPoliciesResult.h>
 #include <aws/ivs/model/ListRecordingConfigurationsResult.h>
 #include <aws/ivs/model/ListStreamKeysResult.h>
 #include <aws/ivs/model/ListStreamSessionsResult.h>
@@ -44,6 +47,7 @@
 #include <aws/ivs/model/TagResourceResult.h>
 #include <aws/ivs/model/UntagResourceResult.h>
 #include <aws/ivs/model/UpdateChannelResult.h>
+#include <aws/ivs/model/UpdatePlaybackRestrictionPolicyResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IVSClient header */
 
@@ -89,14 +93,17 @@ namespace Aws
       class BatchGetStreamKeyRequest;
       class BatchStartViewerSessionRevocationRequest;
       class CreateChannelRequest;
+      class CreatePlaybackRestrictionPolicyRequest;
       class CreateRecordingConfigurationRequest;
       class CreateStreamKeyRequest;
       class DeleteChannelRequest;
       class DeletePlaybackKeyPairRequest;
+      class DeletePlaybackRestrictionPolicyRequest;
       class DeleteRecordingConfigurationRequest;
       class DeleteStreamKeyRequest;
       class GetChannelRequest;
       class GetPlaybackKeyPairRequest;
+      class GetPlaybackRestrictionPolicyRequest;
       class GetRecordingConfigurationRequest;
       class GetStreamRequest;
       class GetStreamKeyRequest;
@@ -104,6 +111,7 @@ namespace Aws
       class ImportPlaybackKeyPairRequest;
       class ListChannelsRequest;
       class ListPlaybackKeyPairsRequest;
+      class ListPlaybackRestrictionPoliciesRequest;
       class ListRecordingConfigurationsRequest;
       class ListStreamKeysRequest;
       class ListStreamSessionsRequest;
@@ -115,6 +123,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateChannelRequest;
+      class UpdatePlaybackRestrictionPolicyRequest;
       /* End of service model forward declarations required in IVSClient header */
 
       /* Service model Outcome class definitions */
@@ -122,14 +131,17 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchGetStreamKeyResult, IVSError> BatchGetStreamKeyOutcome;
       typedef Aws::Utils::Outcome<BatchStartViewerSessionRevocationResult, IVSError> BatchStartViewerSessionRevocationOutcome;
       typedef Aws::Utils::Outcome<CreateChannelResult, IVSError> CreateChannelOutcome;
+      typedef Aws::Utils::Outcome<CreatePlaybackRestrictionPolicyResult, IVSError> CreatePlaybackRestrictionPolicyOutcome;
       typedef Aws::Utils::Outcome<CreateRecordingConfigurationResult, IVSError> CreateRecordingConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateStreamKeyResult, IVSError> CreateStreamKeyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteChannelOutcome;
       typedef Aws::Utils::Outcome<DeletePlaybackKeyPairResult, IVSError> DeletePlaybackKeyPairOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeletePlaybackRestrictionPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteRecordingConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteStreamKeyOutcome;
       typedef Aws::Utils::Outcome<GetChannelResult, IVSError> GetChannelOutcome;
       typedef Aws::Utils::Outcome<GetPlaybackKeyPairResult, IVSError> GetPlaybackKeyPairOutcome;
+      typedef Aws::Utils::Outcome<GetPlaybackRestrictionPolicyResult, IVSError> GetPlaybackRestrictionPolicyOutcome;
       typedef Aws::Utils::Outcome<GetRecordingConfigurationResult, IVSError> GetRecordingConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetStreamResult, IVSError> GetStreamOutcome;
       typedef Aws::Utils::Outcome<GetStreamKeyResult, IVSError> GetStreamKeyOutcome;
@@ -137,6 +149,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ImportPlaybackKeyPairResult, IVSError> ImportPlaybackKeyPairOutcome;
       typedef Aws::Utils::Outcome<ListChannelsResult, IVSError> ListChannelsOutcome;
       typedef Aws::Utils::Outcome<ListPlaybackKeyPairsResult, IVSError> ListPlaybackKeyPairsOutcome;
+      typedef Aws::Utils::Outcome<ListPlaybackRestrictionPoliciesResult, IVSError> ListPlaybackRestrictionPoliciesOutcome;
       typedef Aws::Utils::Outcome<ListRecordingConfigurationsResult, IVSError> ListRecordingConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListStreamKeysResult, IVSError> ListStreamKeysOutcome;
       typedef Aws::Utils::Outcome<ListStreamSessionsResult, IVSError> ListStreamSessionsOutcome;
@@ -148,6 +161,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, IVSError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, IVSError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateChannelResult, IVSError> UpdateChannelOutcome;
+      typedef Aws::Utils::Outcome<UpdatePlaybackRestrictionPolicyResult, IVSError> UpdatePlaybackRestrictionPolicyOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -155,14 +169,17 @@ namespace Aws
       typedef std::future<BatchGetStreamKeyOutcome> BatchGetStreamKeyOutcomeCallable;
       typedef std::future<BatchStartViewerSessionRevocationOutcome> BatchStartViewerSessionRevocationOutcomeCallable;
       typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
+      typedef std::future<CreatePlaybackRestrictionPolicyOutcome> CreatePlaybackRestrictionPolicyOutcomeCallable;
       typedef std::future<CreateRecordingConfigurationOutcome> CreateRecordingConfigurationOutcomeCallable;
       typedef std::future<CreateStreamKeyOutcome> CreateStreamKeyOutcomeCallable;
       typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
       typedef std::future<DeletePlaybackKeyPairOutcome> DeletePlaybackKeyPairOutcomeCallable;
+      typedef std::future<DeletePlaybackRestrictionPolicyOutcome> DeletePlaybackRestrictionPolicyOutcomeCallable;
       typedef std::future<DeleteRecordingConfigurationOutcome> DeleteRecordingConfigurationOutcomeCallable;
       typedef std::future<DeleteStreamKeyOutcome> DeleteStreamKeyOutcomeCallable;
       typedef std::future<GetChannelOutcome> GetChannelOutcomeCallable;
       typedef std::future<GetPlaybackKeyPairOutcome> GetPlaybackKeyPairOutcomeCallable;
+      typedef std::future<GetPlaybackRestrictionPolicyOutcome> GetPlaybackRestrictionPolicyOutcomeCallable;
       typedef std::future<GetRecordingConfigurationOutcome> GetRecordingConfigurationOutcomeCallable;
       typedef std::future<GetStreamOutcome> GetStreamOutcomeCallable;
       typedef std::future<GetStreamKeyOutcome> GetStreamKeyOutcomeCallable;
@@ -170,6 +187,7 @@ namespace Aws
       typedef std::future<ImportPlaybackKeyPairOutcome> ImportPlaybackKeyPairOutcomeCallable;
       typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
       typedef std::future<ListPlaybackKeyPairsOutcome> ListPlaybackKeyPairsOutcomeCallable;
+      typedef std::future<ListPlaybackRestrictionPoliciesOutcome> ListPlaybackRestrictionPoliciesOutcomeCallable;
       typedef std::future<ListRecordingConfigurationsOutcome> ListRecordingConfigurationsOutcomeCallable;
       typedef std::future<ListStreamKeysOutcome> ListStreamKeysOutcomeCallable;
       typedef std::future<ListStreamSessionsOutcome> ListStreamSessionsOutcomeCallable;
@@ -181,6 +199,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
+      typedef std::future<UpdatePlaybackRestrictionPolicyOutcome> UpdatePlaybackRestrictionPolicyOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -191,14 +210,17 @@ namespace Aws
     typedef std::function<void(const IVSClient*, const Model::BatchGetStreamKeyRequest&, const Model::BatchGetStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetStreamKeyResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::BatchStartViewerSessionRevocationRequest&, const Model::BatchStartViewerSessionRevocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStartViewerSessionRevocationResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::CreatePlaybackRestrictionPolicyRequest&, const Model::CreatePlaybackRestrictionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlaybackRestrictionPolicyResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::CreateRecordingConfigurationRequest&, const Model::CreateRecordingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRecordingConfigurationResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::CreateStreamKeyRequest&, const Model::CreateStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamKeyResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::DeletePlaybackKeyPairRequest&, const Model::DeletePlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlaybackKeyPairResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::DeletePlaybackRestrictionPolicyRequest&, const Model::DeletePlaybackRestrictionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlaybackRestrictionPolicyResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::DeleteRecordingConfigurationRequest&, const Model::DeleteRecordingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecordingConfigurationResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::DeleteStreamKeyRequest&, const Model::DeleteStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamKeyResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetChannelRequest&, const Model::GetChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetPlaybackKeyPairRequest&, const Model::GetPlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlaybackKeyPairResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::GetPlaybackRestrictionPolicyRequest&, const Model::GetPlaybackRestrictionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlaybackRestrictionPolicyResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetRecordingConfigurationRequest&, const Model::GetRecordingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordingConfigurationResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetStreamRequest&, const Model::GetStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::GetStreamKeyRequest&, const Model::GetStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamKeyResponseReceivedHandler;
@@ -206,6 +228,7 @@ namespace Aws
     typedef std::function<void(const IVSClient*, const Model::ImportPlaybackKeyPairRequest&, const Model::ImportPlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportPlaybackKeyPairResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListPlaybackKeyPairsRequest&, const Model::ListPlaybackKeyPairsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlaybackKeyPairsResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::ListPlaybackRestrictionPoliciesRequest&, const Model::ListPlaybackRestrictionPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlaybackRestrictionPoliciesResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListRecordingConfigurationsRequest&, const Model::ListRecordingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecordingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListStreamKeysRequest&, const Model::ListStreamKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamKeysResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListStreamSessionsRequest&, const Model::ListStreamSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamSessionsResponseReceivedHandler;
@@ -217,6 +240,7 @@ namespace Aws
     typedef std::function<void(const IVSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::UpdatePlaybackRestrictionPolicyRequest&, const Model::UpdatePlaybackRestrictionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePlaybackRestrictionPolicyResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace IVS
 } // namespace Aws

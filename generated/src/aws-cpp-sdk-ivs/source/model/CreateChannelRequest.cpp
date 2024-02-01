@@ -20,6 +20,7 @@ CreateChannelRequest::CreateChannelRequest() :
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_playbackRestrictionPolicyArnHasBeenSet(false),
     m_preset(TranscodePreset::NOT_SET),
     m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
@@ -53,6 +54,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_playbackRestrictionPolicyArnHasBeenSet)
+  {
+   payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
 
   }
 

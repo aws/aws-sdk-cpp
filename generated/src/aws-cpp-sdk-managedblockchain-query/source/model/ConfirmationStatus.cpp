@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int FINAL_HASH = HashingUtils::HashString("FINAL");
+        static const int NONFINAL_HASH = HashingUtils::HashString("NONFINAL");
 
 
         ConfirmationStatus GetConfirmationStatusForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == FINAL_HASH)
           {
             return ConfirmationStatus::FINAL;
+          }
+          else if (hashCode == NONFINAL_HASH)
+          {
+            return ConfirmationStatus::NONFINAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case ConfirmationStatus::FINAL:
             return "FINAL";
+          case ConfirmationStatus::NONFINAL:
+            return "NONFINAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

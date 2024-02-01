@@ -1365,97 +1365,113 @@ namespace Model
 
 
     /**
-     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
-     * flow, which provides an authorization code as the response. This code can be
-     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
-     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
-     * token, based on scopes) directly to your user.</p> </dd>
-     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
-     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * <p>The OAuth grant types that you want your app client to generate. To create an
+     * app client that generates client credentials grants, you must add
+     * <code>client_credentials</code> as the only allowed OAuth flow.</p> <dl>
+     * <dt>code</dt> <dd> <p>Use a code grant flow, which provides an authorization
+     * code as the response. This code can be exchanged for access tokens with the
+     * <code>/oauth2/token</code> endpoint.</p> </dd> <dt>implicit</dt> <dd> <p>Issue
+     * the access token (and, optionally, ID token, based on scopes) directly to your
+     * user.</p> </dd> <dt>client_credentials</dt> <dd> <p>Issue the access token from
+     * the <code>/oauth2/token</code> endpoint directly to a non-person user using a
      * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline const Aws::Vector<OAuthFlowType>& GetAllowedOAuthFlows() const{ return m_allowedOAuthFlows; }
 
     /**
-     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
-     * flow, which provides an authorization code as the response. This code can be
-     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
-     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
-     * token, based on scopes) directly to your user.</p> </dd>
-     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
-     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * <p>The OAuth grant types that you want your app client to generate. To create an
+     * app client that generates client credentials grants, you must add
+     * <code>client_credentials</code> as the only allowed OAuth flow.</p> <dl>
+     * <dt>code</dt> <dd> <p>Use a code grant flow, which provides an authorization
+     * code as the response. This code can be exchanged for access tokens with the
+     * <code>/oauth2/token</code> endpoint.</p> </dd> <dt>implicit</dt> <dd> <p>Issue
+     * the access token (and, optionally, ID token, based on scopes) directly to your
+     * user.</p> </dd> <dt>client_credentials</dt> <dd> <p>Issue the access token from
+     * the <code>/oauth2/token</code> endpoint directly to a non-person user using a
      * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline bool AllowedOAuthFlowsHasBeenSet() const { return m_allowedOAuthFlowsHasBeenSet; }
 
     /**
-     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
-     * flow, which provides an authorization code as the response. This code can be
-     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
-     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
-     * token, based on scopes) directly to your user.</p> </dd>
-     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
-     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * <p>The OAuth grant types that you want your app client to generate. To create an
+     * app client that generates client credentials grants, you must add
+     * <code>client_credentials</code> as the only allowed OAuth flow.</p> <dl>
+     * <dt>code</dt> <dd> <p>Use a code grant flow, which provides an authorization
+     * code as the response. This code can be exchanged for access tokens with the
+     * <code>/oauth2/token</code> endpoint.</p> </dd> <dt>implicit</dt> <dd> <p>Issue
+     * the access token (and, optionally, ID token, based on scopes) directly to your
+     * user.</p> </dd> <dt>client_credentials</dt> <dd> <p>Issue the access token from
+     * the <code>/oauth2/token</code> endpoint directly to a non-person user using a
      * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline void SetAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = value; }
 
     /**
-     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
-     * flow, which provides an authorization code as the response. This code can be
-     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
-     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
-     * token, based on scopes) directly to your user.</p> </dd>
-     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
-     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * <p>The OAuth grant types that you want your app client to generate. To create an
+     * app client that generates client credentials grants, you must add
+     * <code>client_credentials</code> as the only allowed OAuth flow.</p> <dl>
+     * <dt>code</dt> <dd> <p>Use a code grant flow, which provides an authorization
+     * code as the response. This code can be exchanged for access tokens with the
+     * <code>/oauth2/token</code> endpoint.</p> </dd> <dt>implicit</dt> <dd> <p>Issue
+     * the access token (and, optionally, ID token, based on scopes) directly to your
+     * user.</p> </dd> <dt>client_credentials</dt> <dd> <p>Issue the access token from
+     * the <code>/oauth2/token</code> endpoint directly to a non-person user using a
      * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline void SetAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = std::move(value); }
 
     /**
-     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
-     * flow, which provides an authorization code as the response. This code can be
-     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
-     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
-     * token, based on scopes) directly to your user.</p> </dd>
-     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
-     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * <p>The OAuth grant types that you want your app client to generate. To create an
+     * app client that generates client credentials grants, you must add
+     * <code>client_credentials</code> as the only allowed OAuth flow.</p> <dl>
+     * <dt>code</dt> <dd> <p>Use a code grant flow, which provides an authorization
+     * code as the response. This code can be exchanged for access tokens with the
+     * <code>/oauth2/token</code> endpoint.</p> </dd> <dt>implicit</dt> <dd> <p>Issue
+     * the access token (and, optionally, ID token, based on scopes) directly to your
+     * user.</p> </dd> <dt>client_credentials</dt> <dd> <p>Issue the access token from
+     * the <code>/oauth2/token</code> endpoint directly to a non-person user using a
      * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline CreateUserPoolClientRequest& WithAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { SetAllowedOAuthFlows(value); return *this;}
 
     /**
-     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
-     * flow, which provides an authorization code as the response. This code can be
-     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
-     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
-     * token, based on scopes) directly to your user.</p> </dd>
-     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
-     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * <p>The OAuth grant types that you want your app client to generate. To create an
+     * app client that generates client credentials grants, you must add
+     * <code>client_credentials</code> as the only allowed OAuth flow.</p> <dl>
+     * <dt>code</dt> <dd> <p>Use a code grant flow, which provides an authorization
+     * code as the response. This code can be exchanged for access tokens with the
+     * <code>/oauth2/token</code> endpoint.</p> </dd> <dt>implicit</dt> <dd> <p>Issue
+     * the access token (and, optionally, ID token, based on scopes) directly to your
+     * user.</p> </dd> <dt>client_credentials</dt> <dd> <p>Issue the access token from
+     * the <code>/oauth2/token</code> endpoint directly to a non-person user using a
      * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline CreateUserPoolClientRequest& WithAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { SetAllowedOAuthFlows(std::move(value)); return *this;}
 
     /**
-     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
-     * flow, which provides an authorization code as the response. This code can be
-     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
-     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
-     * token, based on scopes) directly to your user.</p> </dd>
-     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
-     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * <p>The OAuth grant types that you want your app client to generate. To create an
+     * app client that generates client credentials grants, you must add
+     * <code>client_credentials</code> as the only allowed OAuth flow.</p> <dl>
+     * <dt>code</dt> <dd> <p>Use a code grant flow, which provides an authorization
+     * code as the response. This code can be exchanged for access tokens with the
+     * <code>/oauth2/token</code> endpoint.</p> </dd> <dt>implicit</dt> <dd> <p>Issue
+     * the access token (and, optionally, ID token, based on scopes) directly to your
+     * user.</p> </dd> <dt>client_credentials</dt> <dd> <p>Issue the access token from
+     * the <code>/oauth2/token</code> endpoint directly to a non-person user using a
      * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline CreateUserPoolClientRequest& AddAllowedOAuthFlows(const OAuthFlowType& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(value); return *this; }
 
     /**
-     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
-     * flow, which provides an authorization code as the response. This code can be
-     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
-     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
-     * token, based on scopes) directly to your user.</p> </dd>
-     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
-     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * <p>The OAuth grant types that you want your app client to generate. To create an
+     * app client that generates client credentials grants, you must add
+     * <code>client_credentials</code> as the only allowed OAuth flow.</p> <dl>
+     * <dt>code</dt> <dd> <p>Use a code grant flow, which provides an authorization
+     * code as the response. This code can be exchanged for access tokens with the
+     * <code>/oauth2/token</code> endpoint.</p> </dd> <dt>implicit</dt> <dd> <p>Issue
+     * the access token (and, optionally, ID token, based on scopes) directly to your
+     * user.</p> </dd> <dt>client_credentials</dt> <dd> <p>Issue the access token from
+     * the <code>/oauth2/token</code> endpoint directly to a non-person user using a
      * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline CreateUserPoolClientRequest& AddAllowedOAuthFlows(OAuthFlowType&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(std::move(value)); return *this; }

@@ -47,11 +47,14 @@ namespace IVS
    * for more information.</p> </li> <li> <p> <b>Recording configuration</b> — Stores
    * configuration related to recording a live stream and where to store the recorded
    * content. Multiple channels can reference the same recording configuration. See
-   * the Recording Configuration endpoints for more information.</p> </li> </ul> <p>
-   * <b>Tagging</b> </p> <p>A <i>tag</i> is a metadata label that you assign to an
-   * Amazon Web Services resource. A tag comprises a <i>key</i> and a <i>value</i>,
-   * both set by you. For example, you might set a tag as <code>topic:nature</code>
-   * to label a particular video category. See <a
+   * the Recording Configuration endpoints for more information.</p> </li> <li> <p>
+   * <b>Playback restriction policy</b> — Restricts playback by countries and/or
+   * origin sites. See the Playback Restriction Policy endpoints for more
+   * information.</p> </li> </ul> <p> <b>Tagging</b> </p> <p>A <i>tag</i> is a
+   * metadata label that you assign to an Amazon Web Services resource. A tag
+   * comprises a <i>key</i> and a <i>value</i>, both set by you. For example, you
+   * might set a tag as <code>topic:nature</code> to label a particular video
+   * category. See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * Amazon Web Services Resources</a> for more information, including restrictions
    * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
@@ -107,31 +110,17 @@ namespace IVS
    * Updates a channel's configuration. This does not affect an ongoing stream of
    * this channel. You must stop and restart the stream for the changes to take
    * effect.</p> </li> <li> <p> <a>DeleteChannel</a> — Deletes the specified
-   * channel.</p> </li> </ul> <p> <b>StreamKey Endpoints</b> </p> <ul> <li> <p>
-   * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for
-   * the specified channel ARN.</p> </li> <li> <p> <a>GetStreamKey</a> — Gets stream
-   * key information for the specified ARN.</p> </li> <li> <p>
-   * <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs
-   * simultaneously.</p> </li> <li> <p> <a>ListStreamKeys</a> — Gets summary
-   * information about stream keys for the specified channel.</p> </li> <li> <p>
-   * <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can
-   * no longer be used to stream.</p> </li> </ul> <p> <b>Stream Endpoints</b> </p>
-   * <ul> <li> <p> <a>GetStream</a> — Gets information about the active (live) stream
-   * on a specified channel.</p> </li> <li> <p> <a>GetStreamSession</a> — Gets
-   * metadata on a specified stream.</p> </li> <li> <p> <a>ListStreams</a> — Gets
-   * summary information about live streams in your account, in the Amazon Web
-   * Services region where the API request is processed.</p> </li> <li> <p>
-   * <a>ListStreamSessions</a> — Gets a summary of current and previous streams for a
-   * specified channel in your account, in the AWS region where the API request is
-   * processed.</p> </li> <li> <p> <a>StopStream</a> — Disconnects the incoming RTMPS
-   * stream for the specified channel. Can be used in conjunction with
-   * <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> </li> <li>
-   * <p> <a>PutMetadata</a> — Inserts metadata into the active stream of the
-   * specified channel. At most 5 requests per second per channel are allowed, each
-   * with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we
-   * recommend batching your data into a single PutMetadata call.) At most 155
-   * requests per second per account are allowed.</p> </li> </ul> <p> <b>Private
-   * Channel Endpoints</b> </p> <p>For more information, see <a
+   * channel.</p> </li> </ul> <p> <b>Playback Restriction Policy Endpoints</b> </p>
+   * <ul> <li> <p> <a>CreatePlaybackRestrictionPolicy</a> — Creates a new playback
+   * restriction policy, for constraining playback by countries and/or origins.</p>
+   * </li> <li> <p> <a>DeletePlaybackRestrictionPolicy</a> — Deletes the specified
+   * playback restriction policy</p> </li> <li> <p>
+   * <a>GetPlaybackRestrictionPolicy</a> — Gets the specified playback restriction
+   * policy.</p> </li> <li> <p> <a>ListPlaybackRestrictionPolicies</a> — Gets summary
+   * information about playback restriction policies.</p> </li> <li> <p>
+   * <a>UpdatePlaybackRestrictionPolicy</a> — Updates a specified playback
+   * restriction policy.</p> </li> </ul> <p> <b>Private Channel Endpoints</b> </p>
+   * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
    * Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p> <ul> <li> <p>
    * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and
@@ -160,7 +149,30 @@ namespace IVS
    * summary information about all recording configurations in your account, in the
    * Amazon Web Services region where the API request is processed.</p> </li> <li>
    * <p> <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration
-   * for the specified ARN.</p> </li> </ul> <p> <b>Amazon Web Services Tags
+   * for the specified ARN.</p> </li> </ul> <p> <b>Stream Endpoints</b> </p> <ul>
+   * <li> <p> <a>GetStream</a> — Gets information about the active (live) stream on a
+   * specified channel.</p> </li> <li> <p> <a>GetStreamSession</a> — Gets metadata on
+   * a specified stream.</p> </li> <li> <p> <a>ListStreams</a> — Gets summary
+   * information about live streams in your account, in the Amazon Web Services
+   * region where the API request is processed.</p> </li> <li> <p>
+   * <a>ListStreamSessions</a> — Gets a summary of current and previous streams for a
+   * specified channel in your account, in the AWS region where the API request is
+   * processed.</p> </li> <li> <p> <a>StopStream</a> — Disconnects the incoming RTMPS
+   * stream for the specified channel. Can be used in conjunction with
+   * <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> </li> <li>
+   * <p> <a>PutMetadata</a> — Inserts metadata into the active stream of the
+   * specified channel. At most 5 requests per second per channel are allowed, each
+   * with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we
+   * recommend batching your data into a single PutMetadata call.) At most 155
+   * requests per second per account are allowed.</p> </li> </ul> <p> <b>StreamKey
+   * Endpoints</b> </p> <ul> <li> <p> <a>CreateStreamKey</a> — Creates a stream key,
+   * used to initiate a stream, for the specified channel ARN.</p> </li> <li> <p>
+   * <a>GetStreamKey</a> — Gets stream key information for the specified ARN.</p>
+   * </li> <li> <p> <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on
+   * multiple ARNs simultaneously.</p> </li> <li> <p> <a>ListStreamKeys</a> — Gets
+   * summary information about stream keys for the specified channel.</p> </li> <li>
+   * <p> <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it
+   * can no longer be used to stream.</p> </li> </ul> <p> <b>Amazon Web Services Tags
    * Endpoints</b> </p> <ul> <li> <p> <a>TagResource</a> — Adds or updates tags for
    * the Amazon Web Services resource with the specified ARN.</p> </li> <li> <p>
    * <a>UntagResource</a> — Removes tags from the resource with the specified
@@ -330,6 +342,32 @@ namespace IVS
         }
 
         /**
+         * <p>Creates a new playback restriction policy, for constraining playback by
+         * countries and/or origins.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePlaybackRestrictionPolicyOutcome CreatePlaybackRestrictionPolicy(const Model::CreatePlaybackRestrictionPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePlaybackRestrictionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePlaybackRestrictionPolicyRequestT = Model::CreatePlaybackRestrictionPolicyRequest>
+        Model::CreatePlaybackRestrictionPolicyOutcomeCallable CreatePlaybackRestrictionPolicyCallable(const CreatePlaybackRestrictionPolicyRequestT& request) const
+        {
+            return SubmitCallable(&IVSClient::CreatePlaybackRestrictionPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePlaybackRestrictionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePlaybackRestrictionPolicyRequestT = Model::CreatePlaybackRestrictionPolicyRequest>
+        void CreatePlaybackRestrictionPolicyAsync(const CreatePlaybackRestrictionPolicyRequestT& request, const CreatePlaybackRestrictionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IVSClient::CreatePlaybackRestrictionPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new recording configuration, used to enable recording to Amazon
          * S3.</p> <p> <b>Known issue:</b> In the us-east-1 region, if you use the Amazon
          * Web Services CLI to create a recording configuration, it returns success even if
@@ -456,6 +494,32 @@ namespace IVS
         }
 
         /**
+         * <p>Deletes the specified playback restriction policy.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackRestrictionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePlaybackRestrictionPolicyOutcome DeletePlaybackRestrictionPolicy(const Model::DeletePlaybackRestrictionPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePlaybackRestrictionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePlaybackRestrictionPolicyRequestT = Model::DeletePlaybackRestrictionPolicyRequest>
+        Model::DeletePlaybackRestrictionPolicyOutcomeCallable DeletePlaybackRestrictionPolicyCallable(const DeletePlaybackRestrictionPolicyRequestT& request) const
+        {
+            return SubmitCallable(&IVSClient::DeletePlaybackRestrictionPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePlaybackRestrictionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePlaybackRestrictionPolicyRequestT = Model::DeletePlaybackRestrictionPolicyRequest>
+        void DeletePlaybackRestrictionPolicyAsync(const DeletePlaybackRestrictionPolicyRequestT& request, const DeletePlaybackRestrictionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IVSClient::DeletePlaybackRestrictionPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the recording configuration for the specified ARN.</p> <p>If you try
          * to delete a recording configuration that is associated with a channel, you will
          * get an error (409 ConflictException). To avoid this, for all channels that
@@ -566,6 +630,31 @@ namespace IVS
         void GetPlaybackKeyPairAsync(const GetPlaybackKeyPairRequestT& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IVSClient::GetPlaybackKeyPair, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the specified playback restriction policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackRestrictionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPlaybackRestrictionPolicyOutcome GetPlaybackRestrictionPolicy(const Model::GetPlaybackRestrictionPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPlaybackRestrictionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPlaybackRestrictionPolicyRequestT = Model::GetPlaybackRestrictionPolicyRequest>
+        Model::GetPlaybackRestrictionPolicyOutcomeCallable GetPlaybackRestrictionPolicyCallable(const GetPlaybackRestrictionPolicyRequestT& request) const
+        {
+            return SubmitCallable(&IVSClient::GetPlaybackRestrictionPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetPlaybackRestrictionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPlaybackRestrictionPolicyRequestT = Model::GetPlaybackRestrictionPolicyRequest>
+        void GetPlaybackRestrictionPolicyAsync(const GetPlaybackRestrictionPolicyRequestT& request, const GetPlaybackRestrictionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IVSClient::GetPlaybackRestrictionPolicy, request, handler, context);
         }
 
         /**
@@ -757,6 +846,32 @@ namespace IVS
         void ListPlaybackKeyPairsAsync(const ListPlaybackKeyPairsRequestT& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IVSClient::ListPlaybackKeyPairs, request, handler, context);
+        }
+
+        /**
+         * <p>Gets summary information about playback restriction policies.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackRestrictionPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPlaybackRestrictionPoliciesOutcome ListPlaybackRestrictionPolicies(const Model::ListPlaybackRestrictionPoliciesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPlaybackRestrictionPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPlaybackRestrictionPoliciesRequestT = Model::ListPlaybackRestrictionPoliciesRequest>
+        Model::ListPlaybackRestrictionPoliciesOutcomeCallable ListPlaybackRestrictionPoliciesCallable(const ListPlaybackRestrictionPoliciesRequestT& request) const
+        {
+            return SubmitCallable(&IVSClient::ListPlaybackRestrictionPolicies, request);
+        }
+
+        /**
+         * An Async wrapper for ListPlaybackRestrictionPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPlaybackRestrictionPoliciesRequestT = Model::ListPlaybackRestrictionPoliciesRequest>
+        void ListPlaybackRestrictionPoliciesAsync(const ListPlaybackRestrictionPoliciesRequestT& request, const ListPlaybackRestrictionPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IVSClient::ListPlaybackRestrictionPolicies, request, handler, context);
         }
 
         /**
@@ -1060,6 +1175,32 @@ namespace IVS
         void UpdateChannelAsync(const UpdateChannelRequestT& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IVSClient::UpdateChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a specified playback restriction policy.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdatePlaybackRestrictionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePlaybackRestrictionPolicyOutcome UpdatePlaybackRestrictionPolicy(const Model::UpdatePlaybackRestrictionPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePlaybackRestrictionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePlaybackRestrictionPolicyRequestT = Model::UpdatePlaybackRestrictionPolicyRequest>
+        Model::UpdatePlaybackRestrictionPolicyOutcomeCallable UpdatePlaybackRestrictionPolicyCallable(const UpdatePlaybackRestrictionPolicyRequestT& request) const
+        {
+            return SubmitCallable(&IVSClient::UpdatePlaybackRestrictionPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePlaybackRestrictionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePlaybackRestrictionPolicyRequestT = Model::UpdatePlaybackRestrictionPolicyRequest>
+        void UpdatePlaybackRestrictionPolicyAsync(const UpdatePlaybackRestrictionPolicyRequestT& request, const UpdatePlaybackRestrictionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IVSClient::UpdatePlaybackRestrictionPolicy, request, handler, context);
         }
 
 

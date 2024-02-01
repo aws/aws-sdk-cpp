@@ -49,7 +49,8 @@ enum class NeptuneGraphErrors
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
-  SERVICE_QUOTA_EXCEEDED
+  SERVICE_QUOTA_EXCEEDED,
+  UNPROCESSABLE
 };
 
 class AWS_NEPTUNEGRAPH_API NeptuneGraphError : public Aws::Client::AWSError<NeptuneGraphErrors>

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/DescribeEndpointsResult.h>
+#include <aws/neptune-graph/model/GetGraphSummaryResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -12,35 +12,38 @@
 
 #include <utility>
 
-using namespace Aws::MediaConvert::Model;
+using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointsResult::DescribeEndpointsResult()
+GetGraphSummaryResult::GetGraphSummaryResult()
 {
 }
 
-DescribeEndpointsResult::DescribeEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetGraphSummaryResult::GetGraphSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEndpointsResult& DescribeEndpointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetGraphSummaryResult& GetGraphSummaryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("endpoints"))
+  if(jsonValue.ValueExists("version"))
   {
-    Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
-    for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
-    {
-      m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsObject());
-    }
+    m_version = jsonValue.GetString("version");
+
   }
 
-  if(jsonValue.ValueExists("nextToken"))
+  if(jsonValue.ValueExists("lastStatisticsComputationTime"))
   {
-    m_nextToken = jsonValue.GetString("nextToken");
+    m_lastStatisticsComputationTime = jsonValue.GetString("lastStatisticsComputationTime");
+
+  }
+
+  if(jsonValue.ValueExists("graphSummary"))
+  {
+    m_graphSummary = jsonValue.GetObject("graphSummary");
 
   }
 

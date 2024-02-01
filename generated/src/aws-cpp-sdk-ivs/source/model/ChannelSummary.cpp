@@ -27,6 +27,7 @@ ChannelSummary::ChannelSummary() :
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_playbackRestrictionPolicyArnHasBeenSet(false),
     m_preset(TranscodePreset::NOT_SET),
     m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
@@ -45,6 +46,7 @@ ChannelSummary::ChannelSummary(JsonView jsonValue) :
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_playbackRestrictionPolicyArnHasBeenSet(false),
     m_preset(TranscodePreset::NOT_SET),
     m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
@@ -90,6 +92,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("playbackRestrictionPolicyArn"))
+  {
+    m_playbackRestrictionPolicyArn = jsonValue.GetString("playbackRestrictionPolicyArn");
+
+    m_playbackRestrictionPolicyArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("preset"))
@@ -156,6 +165,12 @@ JsonValue ChannelSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_playbackRestrictionPolicyArnHasBeenSet)
+  {
+   payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
 
   }
 
