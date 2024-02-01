@@ -470,11 +470,11 @@ namespace {
       request.SetBody(body);
       const auto response = client->PutObject(request);
       if (!response.IsSuccess()) {
-        ASSERT_EQ(testCase.responseCode, response.GetError().GetResponseCode());
+        EXPECT_EQ(testCase.responseCode, response.GetError().GetResponseCode());
       }
       else {
-        ASSERT_EQ(testCase.responseCode, HttpResponseCode::OK);
-        ASSERT_TRUE(response.IsSuccess());
+        EXPECT_EQ(testCase.responseCode, HttpResponseCode::OK);
+        EXPECT_TRUE(response.IsSuccess());
       }
     }
   }
