@@ -211,32 +211,32 @@ namespace Model
 
 
     /**
-     * <p>The default settings used to create a space within the Domain.</p>
+     * <p>The default settings used to create a space within the domain.</p>
      */
     inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
 
     /**
-     * <p>The default settings used to create a space within the Domain.</p>
+     * <p>The default settings used to create a space within the domain.</p>
      */
     inline bool DefaultSpaceSettingsHasBeenSet() const { return m_defaultSpaceSettingsHasBeenSet; }
 
     /**
-     * <p>The default settings used to create a space within the Domain.</p>
+     * <p>The default settings used to create a space within the domain.</p>
      */
     inline void SetDefaultSpaceSettings(const DefaultSpaceSettings& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = value; }
 
     /**
-     * <p>The default settings used to create a space within the Domain.</p>
+     * <p>The default settings used to create a space within the domain.</p>
      */
     inline void SetDefaultSpaceSettings(DefaultSpaceSettings&& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = std::move(value); }
 
     /**
-     * <p>The default settings used to create a space within the Domain.</p>
+     * <p>The default settings used to create a space within the domain.</p>
      */
     inline UpdateDomainRequest& WithDefaultSpaceSettings(const DefaultSpaceSettings& value) { SetDefaultSpaceSettings(value); return *this;}
 
     /**
-     * <p>The default settings used to create a space within the Domain.</p>
+     * <p>The default settings used to create a space within the domain.</p>
      */
     inline UpdateDomainRequest& WithDefaultSpaceSettings(DefaultSpaceSettings&& value) { SetDefaultSpaceSettings(std::move(value)); return *this;}
 

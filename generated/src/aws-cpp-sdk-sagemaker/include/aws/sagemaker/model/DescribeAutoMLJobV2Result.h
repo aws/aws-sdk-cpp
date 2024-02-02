@@ -191,51 +191,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Identity and Access Management role that has read permission
-     * to the input data location and write permission to the output data location in
-     * Amazon S3.</p>
+     * <p>The ARN of the IAM role that has read permission to the input data location
+     * and write permission to the output data location in Amazon S3.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the Identity and Access Management role that has read permission
-     * to the input data location and write permission to the output data location in
-     * Amazon S3.</p>
+     * <p>The ARN of the IAM role that has read permission to the input data location
+     * and write permission to the output data location in Amazon S3.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The ARN of the Identity and Access Management role that has read permission
-     * to the input data location and write permission to the output data location in
-     * Amazon S3.</p>
+     * <p>The ARN of the IAM role that has read permission to the input data location
+     * and write permission to the output data location in Amazon S3.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Identity and Access Management role that has read permission
-     * to the input data location and write permission to the output data location in
-     * Amazon S3.</p>
+     * <p>The ARN of the IAM role that has read permission to the input data location
+     * and write permission to the output data location in Amazon S3.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the Identity and Access Management role that has read permission
-     * to the input data location and write permission to the output data location in
-     * Amazon S3.</p>
+     * <p>The ARN of the IAM role that has read permission to the input data location
+     * and write permission to the output data location in Amazon S3.</p>
      */
     inline DescribeAutoMLJobV2Result& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Identity and Access Management role that has read permission
-     * to the input data location and write permission to the output data location in
-     * Amazon S3.</p>
+     * <p>The ARN of the IAM role that has read permission to the input data location
+     * and write permission to the output data location in Amazon S3.</p>
      */
     inline DescribeAutoMLJobV2Result& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Identity and Access Management role that has read permission
-     * to the input data location and write permission to the output data location in
-     * Amazon S3.</p>
+     * <p>The ARN of the IAM role that has read permission to the input data location
+     * and write permission to the output data location in Amazon S3.</p>
      */
     inline DescribeAutoMLJobV2Result& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

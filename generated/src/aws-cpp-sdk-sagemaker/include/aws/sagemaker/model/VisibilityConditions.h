@@ -39,50 +39,58 @@ namespace Model
 
 
     /**
-     * <p>The key for that specifies the tag that you're using to filter the search
-     * results. The key must start with <code>Tags.</code>.</p>
+     * <p>The key that specifies the tag that you're using to filter the search
+     * results. It must be in the following format:
+     * <code>Tags.&lt;key&gt;/EqualsIfExists</code>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The key for that specifies the tag that you're using to filter the search
-     * results. The key must start with <code>Tags.</code>.</p>
+     * <p>The key that specifies the tag that you're using to filter the search
+     * results. It must be in the following format:
+     * <code>Tags.&lt;key&gt;/EqualsIfExists</code>.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The key for that specifies the tag that you're using to filter the search
-     * results. The key must start with <code>Tags.</code>.</p>
+     * <p>The key that specifies the tag that you're using to filter the search
+     * results. It must be in the following format:
+     * <code>Tags.&lt;key&gt;/EqualsIfExists</code>.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The key for that specifies the tag that you're using to filter the search
-     * results. The key must start with <code>Tags.</code>.</p>
+     * <p>The key that specifies the tag that you're using to filter the search
+     * results. It must be in the following format:
+     * <code>Tags.&lt;key&gt;/EqualsIfExists</code>.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The key for that specifies the tag that you're using to filter the search
-     * results. The key must start with <code>Tags.</code>.</p>
+     * <p>The key that specifies the tag that you're using to filter the search
+     * results. It must be in the following format:
+     * <code>Tags.&lt;key&gt;/EqualsIfExists</code>.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The key for that specifies the tag that you're using to filter the search
-     * results. The key must start with <code>Tags.</code>.</p>
+     * <p>The key that specifies the tag that you're using to filter the search
+     * results. It must be in the following format:
+     * <code>Tags.&lt;key&gt;/EqualsIfExists</code>.</p>
      */
     inline VisibilityConditions& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The key for that specifies the tag that you're using to filter the search
-     * results. The key must start with <code>Tags.</code>.</p>
+     * <p>The key that specifies the tag that you're using to filter the search
+     * results. It must be in the following format:
+     * <code>Tags.&lt;key&gt;/EqualsIfExists</code>.</p>
      */
     inline VisibilityConditions& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The key for that specifies the tag that you're using to filter the search
-     * results. The key must start with <code>Tags.</code>.</p>
+     * <p>The key that specifies the tag that you're using to filter the search
+     * results. It must be in the following format:
+     * <code>Tags.&lt;key&gt;/EqualsIfExists</code>.</p>
      */
     inline VisibilityConditions& WithKey(const char* value) { SetKey(value); return *this;}
 

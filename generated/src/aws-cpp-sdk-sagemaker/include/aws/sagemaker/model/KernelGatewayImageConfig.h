@@ -82,37 +82,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * <p>The Amazon Elastic File System storage configuration for a SageMaker
      * image.</p>
      */
     inline const FileSystemConfig& GetFileSystemConfig() const{ return m_fileSystemConfig; }
 
     /**
-     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * <p>The Amazon Elastic File System storage configuration for a SageMaker
      * image.</p>
      */
     inline bool FileSystemConfigHasBeenSet() const { return m_fileSystemConfigHasBeenSet; }
 
     /**
-     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * <p>The Amazon Elastic File System storage configuration for a SageMaker
      * image.</p>
      */
     inline void SetFileSystemConfig(const FileSystemConfig& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = value; }
 
     /**
-     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * <p>The Amazon Elastic File System storage configuration for a SageMaker
      * image.</p>
      */
     inline void SetFileSystemConfig(FileSystemConfig&& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = std::move(value); }
 
     /**
-     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * <p>The Amazon Elastic File System storage configuration for a SageMaker
      * image.</p>
      */
     inline KernelGatewayImageConfig& WithFileSystemConfig(const FileSystemConfig& value) { SetFileSystemConfig(value); return *this;}
 
     /**
-     * <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker
+     * <p>The Amazon Elastic File System storage configuration for a SageMaker
      * image.</p>
      */
     inline KernelGatewayImageConfig& WithFileSystemConfig(FileSystemConfig&& value) { SetFileSystemConfig(std::move(value)); return *this;}
