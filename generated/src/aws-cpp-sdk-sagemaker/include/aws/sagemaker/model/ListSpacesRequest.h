@@ -191,42 +191,42 @@ namespace Model
 
 
     /**
-     * <p>A parameter to search for the Domain ID.</p>
+     * <p>A parameter to search for the domain ID.</p>
      */
     inline const Aws::String& GetDomainIdEquals() const{ return m_domainIdEquals; }
 
     /**
-     * <p>A parameter to search for the Domain ID.</p>
+     * <p>A parameter to search for the domain ID.</p>
      */
     inline bool DomainIdEqualsHasBeenSet() const { return m_domainIdEqualsHasBeenSet; }
 
     /**
-     * <p>A parameter to search for the Domain ID.</p>
+     * <p>A parameter to search for the domain ID.</p>
      */
     inline void SetDomainIdEquals(const Aws::String& value) { m_domainIdEqualsHasBeenSet = true; m_domainIdEquals = value; }
 
     /**
-     * <p>A parameter to search for the Domain ID.</p>
+     * <p>A parameter to search for the domain ID.</p>
      */
     inline void SetDomainIdEquals(Aws::String&& value) { m_domainIdEqualsHasBeenSet = true; m_domainIdEquals = std::move(value); }
 
     /**
-     * <p>A parameter to search for the Domain ID.</p>
+     * <p>A parameter to search for the domain ID.</p>
      */
     inline void SetDomainIdEquals(const char* value) { m_domainIdEqualsHasBeenSet = true; m_domainIdEquals.assign(value); }
 
     /**
-     * <p>A parameter to search for the Domain ID.</p>
+     * <p>A parameter to search for the domain ID.</p>
      */
     inline ListSpacesRequest& WithDomainIdEquals(const Aws::String& value) { SetDomainIdEquals(value); return *this;}
 
     /**
-     * <p>A parameter to search for the Domain ID.</p>
+     * <p>A parameter to search for the domain ID.</p>
      */
     inline ListSpacesRequest& WithDomainIdEquals(Aws::String&& value) { SetDomainIdEquals(std::move(value)); return *this;}
 
     /**
-     * <p>A parameter to search for the Domain ID.</p>
+     * <p>A parameter to search for the domain ID.</p>
      */
     inline ListSpacesRequest& WithDomainIdEquals(const char* value) { SetDomainIdEquals(value); return *this;}
 

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DirectDeploySettings.h>
 #include <aws/sagemaker/model/KendraSettings.h>
+#include <aws/sagemaker/model/GenerativeAiSettings.h>
 #include <aws/sagemaker/model/IdentityProviderOAuthSetting.h>
 #include <utility>
 
@@ -238,6 +239,37 @@ namespace Model
      */
     inline CanvasAppSettings& WithKendraSettings(KendraSettings&& value) { SetKendraSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The generative AI settings for the SageMaker Canvas application.</p>
+     */
+    inline const GenerativeAiSettings& GetGenerativeAiSettings() const{ return m_generativeAiSettings; }
+
+    /**
+     * <p>The generative AI settings for the SageMaker Canvas application.</p>
+     */
+    inline bool GenerativeAiSettingsHasBeenSet() const { return m_generativeAiSettingsHasBeenSet; }
+
+    /**
+     * <p>The generative AI settings for the SageMaker Canvas application.</p>
+     */
+    inline void SetGenerativeAiSettings(const GenerativeAiSettings& value) { m_generativeAiSettingsHasBeenSet = true; m_generativeAiSettings = value; }
+
+    /**
+     * <p>The generative AI settings for the SageMaker Canvas application.</p>
+     */
+    inline void SetGenerativeAiSettings(GenerativeAiSettings&& value) { m_generativeAiSettingsHasBeenSet = true; m_generativeAiSettings = std::move(value); }
+
+    /**
+     * <p>The generative AI settings for the SageMaker Canvas application.</p>
+     */
+    inline CanvasAppSettings& WithGenerativeAiSettings(const GenerativeAiSettings& value) { SetGenerativeAiSettings(value); return *this;}
+
+    /**
+     * <p>The generative AI settings for the SageMaker Canvas application.</p>
+     */
+    inline CanvasAppSettings& WithGenerativeAiSettings(GenerativeAiSettings&& value) { SetGenerativeAiSettings(std::move(value)); return *this;}
+
   private:
 
     TimeSeriesForecastingSettings m_timeSeriesForecastingSettings;
@@ -257,6 +289,9 @@ namespace Model
 
     KendraSettings m_kendraSettings;
     bool m_kendraSettingsHasBeenSet = false;
+
+    GenerativeAiSettings m_generativeAiSettings;
+    bool m_generativeAiSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline const Aws::String& GetAppImageConfigArn() const{ return m_appImageConfigArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline bool AppImageConfigArnHasBeenSet() const { return m_appImageConfigArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline void SetAppImageConfigArn(const Aws::String& value) { m_appImageConfigArnHasBeenSet = true; m_appImageConfigArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline void SetAppImageConfigArn(Aws::String&& value) { m_appImageConfigArnHasBeenSet = true; m_appImageConfigArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline void SetAppImageConfigArn(const char* value) { m_appImageConfigArnHasBeenSet = true; m_appImageConfigArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline AppImageConfigDetails& WithAppImageConfigArn(const Aws::String& value) { SetAppImageConfigArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline AppImageConfigDetails& WithAppImageConfigArn(Aws::String&& value) { SetAppImageConfigArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline AppImageConfigDetails& WithAppImageConfigArn(const char* value) { SetAppImageConfigArn(value); return *this;}
 

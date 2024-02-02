@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline SpaceDetails& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline SpaceDetails& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline SpaceDetails& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
