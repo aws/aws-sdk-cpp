@@ -50,16 +50,8 @@ namespace Aws
         static const char* HTTP_CLIENT_FACTORY_ALLOCATION_TAG = "HttpClientFactory";
 
 #if ENABLE_CURL_CLIENT && !defined(_WIN32)
-        static void LogAndSwallowHandler(int signal)
+        static void LogAndSwallowHandler(int)
         {
-            switch(signal)
-            {
-                case SIGPIPE:
-                    AWS_LOGSTREAM_ERROR(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Received a SIGPIPE error");
-                    break;
-                default:
-                    AWS_LOGSTREAM_ERROR(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Unhandled system SIGNAL error"  << signal);
-            }
         }
 #endif
 
