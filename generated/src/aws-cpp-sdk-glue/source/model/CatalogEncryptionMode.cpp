@@ -22,6 +22,7 @@ namespace Aws
 
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
         static const int SSE_KMS_HASH = HashingUtils::HashString("SSE-KMS");
+        static const int SSE_KMS_WITH_SERVICE_ROLE_HASH = HashingUtils::HashString("SSE-KMS-WITH-SERVICE-ROLE");
 
 
         CatalogEncryptionMode GetCatalogEncryptionModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SSE_KMS_HASH)
           {
             return CatalogEncryptionMode::SSE_KMS;
+          }
+          else if (hashCode == SSE_KMS_WITH_SERVICE_ROLE_HASH)
+          {
+            return CatalogEncryptionMode::SSE_KMS_WITH_SERVICE_ROLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "DISABLED";
           case CatalogEncryptionMode::SSE_KMS:
             return "SSE-KMS";
+          case CatalogEncryptionMode::SSE_KMS_WITH_SERVICE_ROLE:
+            return "SSE-KMS-WITH-SERVICE-ROLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
