@@ -1,8 +1,7 @@
 # AWS SDK for C++
 The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).
 
-AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
-the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
+AWS SDK for C++ is now in General Availability and recommended for production use. We invite our customers to join the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
 ## __Jump To:__
 * [Change log](https://github.com/aws/aws-sdk-cpp/tags)
@@ -19,7 +18,7 @@ the development efforts by submitting pull requests and sending us feedback and 
 * Visual Studio 2015 or later
 * OR GNU Compiler Collection (GCC) 4.9 or later
 * OR Clang 3.3 or later
-* 4GB of RAM (This is required to build some of the larger clients. The SDK build may fail on EC2 instance types t2.micro, t2.small and other small instance types due to insufficient memory)
+* 4GB of RAM (required for building some of the larger clients; SDK build may fail on EC2 instance types t2.micro, t2.small, and other small instance types due to insufficient memory)
 * Supported platforms
   * Amazon Linux
   * Windows
@@ -35,7 +34,7 @@ the development efforts by submitting pull requests and sending us feedback and 
     git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp
     ```
 
-3. Create your build directory. Replace <BUILD_DIR> with your build directory name:
+3. Create your build directory. Replace `<BUILD_DIR>` with your build directory name:
 4. Build the project:
 
     ```sh
@@ -48,7 +47,7 @@ the development efforts by submitting pull requests and sending us feedback and 
    cmake --install . --config=Debug
    ```
 
-   **_NOTE:_** BUILD_ONLY is an optional flag used to list only the services you are using. Building the whole sdk can take a long time. Also check out the list of [CMake parameters](./docs/CMake_Parameters.md)
+   **_NOTE:_** BUILD_ONLY is an optional flag used to list only the services you are using. Building the whole SDK can take a long time. Also, check out the list of [CMake parameters](./docs/CMake_Parameters.md)
 
 #### Other Dependencies:
 To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
@@ -61,11 +60,11 @@ RPM based Linux distributions example:
 
 ### Building for MacOS
 
-Building for mac is largely the same as building on a *nix system except for how the system consumes the curl dependency and compilers.
+Building for macOS is largely the same as building on a *nix system except for how the system consumes the curl dependency and compilers.
 
-You must install the [xcode command line tools](https://mac.install.guide/commandlinetools/4.html). This is required for apple clang and gcc. This also installs libcurl as well.
+You must install the [xcode command line tools](https://mac.install.guide/commandlinetools/4.html). This is required for Apple clang and gcc. This also installs libcurl as well.
 
-> :warning: If you are using MacOS Sonoma there is a [known issue](https://github.com/aws/aws-sdk-cpp/issues/2804) where using libcurl version 8.4.0 on mac can lead to issues. [This issue is being tracked with curl and apple](https://github.com/curl/curl/issues/12525). In the meanwhile please use and updated version of [curl from homebrew](https://formulae.brew.sh/formula/curl). You can include this in your project via the CMAKE_PREFIX_PATH.
+> :warning: If you are using macOS Sonoma, there is a [known issue](https://github.com/aws/aws-sdk-cpp/issues/2804) where using libcurl version 8.4.0 on macOS can lead to issues. [This issue is being tracked with curl and Apple](https://github.com/curl/curl/issues/12525). In the meanwhile, please use an updated version of [curl from Homebrew](https://formulae.brew.sh/formula/curl). You can include this in your project via the CMAKE_PREFIX_PATH.
 >
 > ```
 > cmake -DCMAKE_PREFIX_PATH="/opt/homebrew/opt/curl/" \
@@ -76,16 +75,16 @@ You must install the [xcode command line tools](https://mac.install.guide/comman
 > ```
 
 ### Building for Android
-To build for Android, add `-DTARGET_ARCH=ANDROID` to your cmake command line. Currently we support Android APIs from 19 to 28 with Android NDK 19c and we are using build-in cmake toolchain file supplied by Android NDK, assuming you have the appropriate environment variables (ANDROID_NDK) set.
+To build for Android, add `-DTARGET_ARCH=ANDROID` to your CMake command line. Currently, we support Android APIs from 19 to 28 with Android NDK 19c, and we are using the built-in CMake toolchain file supplied by Android NDK, assuming you have the appropriate environment variables (ANDROID_NDK) set.
 
 ##### Android on Windows
-Building for Android on Windows requires some additional setup.  In particular, you will need to run cmake from a Visual Studio developer command prompt (2015 or higher). Additionally, you will need 'git' and 'patch' in your path.  If you have git installed on a Windows system, then patch is likely found in a sibling directory (.../Git/usr/bin/). Once you've verified these requirements, your cmake command line will change slightly to use nmake:
+Building for Android on Windows requires some additional setup. In particular, you will need to run CMake from a Visual Studio developer command prompt (2015 or higher). Additionally, you will need 'git' and 'patch' in your path. If you have Git installed on a Windows system, then the patch is likely found in a sibling directory (.../Git/usr/bin/). Once you've verified these requirements, your CMake command line will change slightly to use nmake:
 
    ```sh
    cmake -G "NMake Makefiles" `-DTARGET_ARCH=ANDROID` <other options> ..
    ```
 
-Nmake builds targets in a serial fashion.  To make things quicker, we recommend installing JOM as an alternative to nmake and then changing the cmake invocation to:
+Nmake builds targets in a serial fashion. To make things quicker, we recommend installing JOM as an alternative to nmake and then changing the CMake invocation to:
 
    ```sh
    cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
@@ -128,7 +127,7 @@ Please make sure to check out our resources too before opening an issue:
 * Other docs for how to build the sdk
   * [CMake Parameters](./docs/CMake_Parameters.md)
   * [Add as CMake external project](./docs/CMake_External_Project.md)
-  * [Builing for Docker](https://github.com/aws/aws-sdk-cpp/tree/master/CI/docker-file) (To build for Docker, ensure your container meets the [minimum requirements](#minimum-requirements))
+  * [Building for Docker](https://github.com/aws/aws-sdk-cpp/tree/master/CI/docker-file) (To build for Docker, ensure your container meets the [minimum requirements](#minimum-requirements))
   * [Building on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2)
 * SDK usage
   * [API Docs](https://sdk.amazonaws.com/cpp/api/LATEST/index.html)
