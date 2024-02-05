@@ -30,6 +30,9 @@
 #include <aws/s3/model/ListPartsRequest.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
 #include <aws/s3/model/ListMultipartUploadsRequest.h>
+#include <aws/s3/model/PutBucketTaggingRequest.h>
+#include <aws/s3/model/Tag.h>
+#include <aws/s3/model/Tagging.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <random>
@@ -52,6 +55,7 @@ using namespace Aws::Utils;
 namespace {
   const char* ALLOCATION_TAG = "S3ClientS3ExpressTest";
   const char* S3_EXPRESS_SUFFIX = "--use1-az6--x-s3";
+  const char* TEST_BUCKET_TAG = "IntegrationTestResource";
 
   class S3ExpressTest : public ::testing::Test {
   public:
@@ -67,6 +71,7 @@ namespace {
             .WithType(BucketType::Directory)
             .WithDataRedundancy(DataRedundancy::SingleAvailabilityZone))));
 
+      TagTestBucket(bucketName);
       if (!outcome.IsSuccess() && outcome.GetError().GetResponseCode() == Aws::Http::HttpResponseCode::CONFLICT &&
                                   (outcome.GetError().GetExceptionName() == "BucketAlreadyOwnedByYou" ||
                                    outcome.GetError().GetExceptionName() == "OperationAborted")) {
@@ -294,6 +299,22 @@ namespace {
           std::cout << "Failed to delete bucket: " << outcome.GetError().GetMessage() << "\n";
         }
       }
+    }
+
+    void TagTestBucket(const String& bucketName) {
+      PutBucketTaggingRequest taggingRequest;
+      taggingRequest.SetBucket(bucketName);
+      Tag tag;
+      tag.SetKey(TEST_BUCKET_TAG);
+      tag.SetValue(TEST_BUCKET_TAG);
+      Tagging tagging;
+      tagging.AddTagSet(tag);
+      taggingRequest.SetTagging(tagging);
+
+      const auto taggingOutcome = CallOperationWithUnconditionalRetry(client.get(),
+        &S3Client::PutBucketTagging,
+        taggingRequest);
+      AWS_EXPECT_SUCCESS(taggingOutcome);
     }
 
   protected:
