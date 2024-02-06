@@ -29,7 +29,7 @@ namespace Aws
                 auto bits = m_encoder.EncodeAndSign(msg);
 
                 AWS_LOGSTREAM_TRACE("EventEncoderStream::WriteEvent", "Encoded event (base64 encoded): " <<
-                                    Aws::Utils::HashingUtils::Base64Encode((bits.data(), bits.size())));
+                                    Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::ByteBuffer(bits.data(), bits.size())));
 
                 // write buffer to underlying rdbuf (ConcurrentStreamBuf), this may call overflow()
                 // and block until data is consumed by HTTP Client
