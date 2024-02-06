@@ -7,7 +7,7 @@
 \#include <aws/${metadata.projectName}/S3ExpressSignerProvider.h>
 \#include <aws/${metadata.projectName}/S3ExpressSigner.h>
 
-const char *CLASS_TAG = "S3ExpressSignerProvider";
+static const char *CLASS_TAG = "S3ExpressSignerProvider";
 
 ${rootNamespace}::Auth::S3ExpressSignerProvider::S3ExpressSignerProvider(
     const std::shared_ptr<AWSCredentialsProvider> &credentialsProvider,
