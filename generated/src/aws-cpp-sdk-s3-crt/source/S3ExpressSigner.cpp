@@ -17,10 +17,10 @@ using namespace Aws::Config;
 using namespace Aws::Environment;
 using namespace Aws::Utils;
 
-const char *S3_EXPRESS_SIGNER_NAME = "S3ExpressSigner";
-const char *S3_EXPRESS_HEADER = "x-amz-s3session-token";
-const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
-const char *S3_EXPRESS_SERVICE_NAME = "s3express";
+static const char *S3_EXPRESS_SIGNER_NAME = "S3ExpressSigner";
+static const char *S3_EXPRESS_HEADER = "x-amz-s3session-token";
+static const char *S3_EXPRESS_QUERY_PARAM = "X-Amz-S3session-Token";
+static const char *S3_EXPRESS_SERVICE_NAME = "s3express";
 
 S3ExpressSigner::S3ExpressSigner(
     std::shared_ptr<S3ExpressIdentityProvider> S3ExpressIdentityProvider,
