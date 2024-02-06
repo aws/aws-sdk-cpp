@@ -4719,18 +4719,7 @@ namespace Model
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
-     * setting to maintain longer lived connections.</p>  <p>We don't recommended
-     * that you specify network-related <code>systemControls</code> parameters for
-     * multiple containers in a single task that also uses either the
-     * <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
-     * <code>awsvpc</code> network mode, the container that's started last determines
-     * which <code>systemControls</code> parameters take effect. For tasks that use the
-     * <code>host</code> network mode, it changes the container instance's namespaced
-     * kernel parameters as well as the containers.</p>   <p>This
-     * parameter is not supported for Windows containers.</p>   <p>This
-     * parameter is only supported for tasks that are hosted on Fargate if the tasks
-     * are using platform version <code>1.4.0</code> or later (Linux). This isn't
-     * supported for Windows containers on Fargate.</p> 
+     * setting to maintain longer lived connections.</p>
      */
     inline const Aws::Vector<SystemControl>& GetSystemControls() const{ return m_systemControls; }
 
@@ -4743,18 +4732,7 @@ namespace Model
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
-     * setting to maintain longer lived connections.</p>  <p>We don't recommended
-     * that you specify network-related <code>systemControls</code> parameters for
-     * multiple containers in a single task that also uses either the
-     * <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
-     * <code>awsvpc</code> network mode, the container that's started last determines
-     * which <code>systemControls</code> parameters take effect. For tasks that use the
-     * <code>host</code> network mode, it changes the container instance's namespaced
-     * kernel parameters as well as the containers.</p>   <p>This
-     * parameter is not supported for Windows containers.</p>   <p>This
-     * parameter is only supported for tasks that are hosted on Fargate if the tasks
-     * are using platform version <code>1.4.0</code> or later (Linux). This isn't
-     * supported for Windows containers on Fargate.</p> 
+     * setting to maintain longer lived connections.</p>
      */
     inline bool SystemControlsHasBeenSet() const { return m_systemControlsHasBeenSet; }
 
@@ -4767,18 +4745,7 @@ namespace Model
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
-     * setting to maintain longer lived connections.</p>  <p>We don't recommended
-     * that you specify network-related <code>systemControls</code> parameters for
-     * multiple containers in a single task that also uses either the
-     * <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
-     * <code>awsvpc</code> network mode, the container that's started last determines
-     * which <code>systemControls</code> parameters take effect. For tasks that use the
-     * <code>host</code> network mode, it changes the container instance's namespaced
-     * kernel parameters as well as the containers.</p>   <p>This
-     * parameter is not supported for Windows containers.</p>   <p>This
-     * parameter is only supported for tasks that are hosted on Fargate if the tasks
-     * are using platform version <code>1.4.0</code> or later (Linux). This isn't
-     * supported for Windows containers on Fargate.</p> 
+     * setting to maintain longer lived connections.</p>
      */
     inline void SetSystemControls(const Aws::Vector<SystemControl>& value) { m_systemControlsHasBeenSet = true; m_systemControls = value; }
 
@@ -4791,18 +4758,7 @@ namespace Model
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
-     * setting to maintain longer lived connections.</p>  <p>We don't recommended
-     * that you specify network-related <code>systemControls</code> parameters for
-     * multiple containers in a single task that also uses either the
-     * <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
-     * <code>awsvpc</code> network mode, the container that's started last determines
-     * which <code>systemControls</code> parameters take effect. For tasks that use the
-     * <code>host</code> network mode, it changes the container instance's namespaced
-     * kernel parameters as well as the containers.</p>   <p>This
-     * parameter is not supported for Windows containers.</p>   <p>This
-     * parameter is only supported for tasks that are hosted on Fargate if the tasks
-     * are using platform version <code>1.4.0</code> or later (Linux). This isn't
-     * supported for Windows containers on Fargate.</p> 
+     * setting to maintain longer lived connections.</p>
      */
     inline void SetSystemControls(Aws::Vector<SystemControl>&& value) { m_systemControlsHasBeenSet = true; m_systemControls = std::move(value); }
 
@@ -4815,18 +4771,7 @@ namespace Model
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
-     * setting to maintain longer lived connections.</p>  <p>We don't recommended
-     * that you specify network-related <code>systemControls</code> parameters for
-     * multiple containers in a single task that also uses either the
-     * <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
-     * <code>awsvpc</code> network mode, the container that's started last determines
-     * which <code>systemControls</code> parameters take effect. For tasks that use the
-     * <code>host</code> network mode, it changes the container instance's namespaced
-     * kernel parameters as well as the containers.</p>   <p>This
-     * parameter is not supported for Windows containers.</p>   <p>This
-     * parameter is only supported for tasks that are hosted on Fargate if the tasks
-     * are using platform version <code>1.4.0</code> or later (Linux). This isn't
-     * supported for Windows containers on Fargate.</p> 
+     * setting to maintain longer lived connections.</p>
      */
     inline ContainerDefinition& WithSystemControls(const Aws::Vector<SystemControl>& value) { SetSystemControls(value); return *this;}
 
@@ -4839,18 +4784,7 @@ namespace Model
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
-     * setting to maintain longer lived connections.</p>  <p>We don't recommended
-     * that you specify network-related <code>systemControls</code> parameters for
-     * multiple containers in a single task that also uses either the
-     * <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
-     * <code>awsvpc</code> network mode, the container that's started last determines
-     * which <code>systemControls</code> parameters take effect. For tasks that use the
-     * <code>host</code> network mode, it changes the container instance's namespaced
-     * kernel parameters as well as the containers.</p>   <p>This
-     * parameter is not supported for Windows containers.</p>   <p>This
-     * parameter is only supported for tasks that are hosted on Fargate if the tasks
-     * are using platform version <code>1.4.0</code> or later (Linux). This isn't
-     * supported for Windows containers on Fargate.</p> 
+     * setting to maintain longer lived connections.</p>
      */
     inline ContainerDefinition& WithSystemControls(Aws::Vector<SystemControl>&& value) { SetSystemControls(std::move(value)); return *this;}
 
@@ -4863,18 +4797,7 @@ namespace Model
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
-     * setting to maintain longer lived connections.</p>  <p>We don't recommended
-     * that you specify network-related <code>systemControls</code> parameters for
-     * multiple containers in a single task that also uses either the
-     * <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
-     * <code>awsvpc</code> network mode, the container that's started last determines
-     * which <code>systemControls</code> parameters take effect. For tasks that use the
-     * <code>host</code> network mode, it changes the container instance's namespaced
-     * kernel parameters as well as the containers.</p>   <p>This
-     * parameter is not supported for Windows containers.</p>   <p>This
-     * parameter is only supported for tasks that are hosted on Fargate if the tasks
-     * are using platform version <code>1.4.0</code> or later (Linux). This isn't
-     * supported for Windows containers on Fargate.</p> 
+     * setting to maintain longer lived connections.</p>
      */
     inline ContainerDefinition& AddSystemControls(const SystemControl& value) { m_systemControlsHasBeenSet = true; m_systemControls.push_back(value); return *this; }
 
@@ -4887,18 +4810,7 @@ namespace Model
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
-     * setting to maintain longer lived connections.</p>  <p>We don't recommended
-     * that you specify network-related <code>systemControls</code> parameters for
-     * multiple containers in a single task that also uses either the
-     * <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
-     * <code>awsvpc</code> network mode, the container that's started last determines
-     * which <code>systemControls</code> parameters take effect. For tasks that use the
-     * <code>host</code> network mode, it changes the container instance's namespaced
-     * kernel parameters as well as the containers.</p>   <p>This
-     * parameter is not supported for Windows containers.</p>   <p>This
-     * parameter is only supported for tasks that are hosted on Fargate if the tasks
-     * are using platform version <code>1.4.0</code> or later (Linux). This isn't
-     * supported for Windows containers on Fargate.</p> 
+     * setting to maintain longer lived connections.</p>
      */
     inline ContainerDefinition& AddSystemControls(SystemControl&& value) { m_systemControlsHasBeenSet = true; m_systemControls.push_back(std::move(value)); return *this; }
 

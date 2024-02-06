@@ -50,6 +50,7 @@
 #include <aws/appsync/model/GetDomainNameResult.h>
 #include <aws/appsync/model/GetFunctionResult.h>
 #include <aws/appsync/model/GetGraphqlApiResult.h>
+#include <aws/appsync/model/GetGraphqlApiEnvironmentVariablesResult.h>
 #include <aws/appsync/model/GetIntrospectionSchemaResult.h>
 #include <aws/appsync/model/GetResolverResult.h>
 #include <aws/appsync/model/GetSchemaCreationStatusResult.h>
@@ -66,6 +67,7 @@
 #include <aws/appsync/model/ListTagsForResourceResult.h>
 #include <aws/appsync/model/ListTypesResult.h>
 #include <aws/appsync/model/ListTypesByAssociationResult.h>
+#include <aws/appsync/model/PutGraphqlApiEnvironmentVariablesResult.h>
 #include <aws/appsync/model/StartDataSourceIntrospectionResult.h>
 #include <aws/appsync/model/StartSchemaCreationResult.h>
 #include <aws/appsync/model/StartSchemaMergeResult.h>
@@ -152,6 +154,7 @@ namespace Aws
       class GetDomainNameRequest;
       class GetFunctionRequest;
       class GetGraphqlApiRequest;
+      class GetGraphqlApiEnvironmentVariablesRequest;
       class GetIntrospectionSchemaRequest;
       class GetResolverRequest;
       class GetSchemaCreationStatusRequest;
@@ -168,6 +171,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class ListTypesRequest;
       class ListTypesByAssociationRequest;
+      class PutGraphqlApiEnvironmentVariablesRequest;
       class StartDataSourceIntrospectionRequest;
       class StartSchemaCreationRequest;
       class StartSchemaMergeRequest;
@@ -217,6 +221,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDomainNameResult, AppSyncError> GetDomainNameOutcome;
       typedef Aws::Utils::Outcome<GetFunctionResult, AppSyncError> GetFunctionOutcome;
       typedef Aws::Utils::Outcome<GetGraphqlApiResult, AppSyncError> GetGraphqlApiOutcome;
+      typedef Aws::Utils::Outcome<GetGraphqlApiEnvironmentVariablesResult, AppSyncError> GetGraphqlApiEnvironmentVariablesOutcome;
       typedef Aws::Utils::Outcome<GetIntrospectionSchemaResult, AppSyncError> GetIntrospectionSchemaOutcome;
       typedef Aws::Utils::Outcome<GetResolverResult, AppSyncError> GetResolverOutcome;
       typedef Aws::Utils::Outcome<GetSchemaCreationStatusResult, AppSyncError> GetSchemaCreationStatusOutcome;
@@ -233,6 +238,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppSyncError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTypesResult, AppSyncError> ListTypesOutcome;
       typedef Aws::Utils::Outcome<ListTypesByAssociationResult, AppSyncError> ListTypesByAssociationOutcome;
+      typedef Aws::Utils::Outcome<PutGraphqlApiEnvironmentVariablesResult, AppSyncError> PutGraphqlApiEnvironmentVariablesOutcome;
       typedef Aws::Utils::Outcome<StartDataSourceIntrospectionResult, AppSyncError> StartDataSourceIntrospectionOutcome;
       typedef Aws::Utils::Outcome<StartSchemaCreationResult, AppSyncError> StartSchemaCreationOutcome;
       typedef Aws::Utils::Outcome<StartSchemaMergeResult, AppSyncError> StartSchemaMergeOutcome;
@@ -282,6 +288,7 @@ namespace Aws
       typedef std::future<GetDomainNameOutcome> GetDomainNameOutcomeCallable;
       typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
       typedef std::future<GetGraphqlApiOutcome> GetGraphqlApiOutcomeCallable;
+      typedef std::future<GetGraphqlApiEnvironmentVariablesOutcome> GetGraphqlApiEnvironmentVariablesOutcomeCallable;
       typedef std::future<GetIntrospectionSchemaOutcome> GetIntrospectionSchemaOutcomeCallable;
       typedef std::future<GetResolverOutcome> GetResolverOutcomeCallable;
       typedef std::future<GetSchemaCreationStatusOutcome> GetSchemaCreationStatusOutcomeCallable;
@@ -298,6 +305,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTypesOutcome> ListTypesOutcomeCallable;
       typedef std::future<ListTypesByAssociationOutcome> ListTypesByAssociationOutcomeCallable;
+      typedef std::future<PutGraphqlApiEnvironmentVariablesOutcome> PutGraphqlApiEnvironmentVariablesOutcomeCallable;
       typedef std::future<StartDataSourceIntrospectionOutcome> StartDataSourceIntrospectionOutcomeCallable;
       typedef std::future<StartSchemaCreationOutcome> StartSchemaCreationOutcomeCallable;
       typedef std::future<StartSchemaMergeOutcome> StartSchemaMergeOutcomeCallable;
@@ -350,6 +358,7 @@ namespace Aws
     typedef std::function<void(const AppSyncClient*, const Model::GetDomainNameRequest&, const Model::GetDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainNameResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetGraphqlApiRequest&, const Model::GetGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGraphqlApiResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::GetGraphqlApiEnvironmentVariablesRequest&, const Model::GetGraphqlApiEnvironmentVariablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGraphqlApiEnvironmentVariablesResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetIntrospectionSchemaRequest&, Model::GetIntrospectionSchemaOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntrospectionSchemaResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetResolverRequest&, const Model::GetResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetSchemaCreationStatusRequest&, const Model::GetSchemaCreationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSchemaCreationStatusResponseReceivedHandler;
@@ -366,6 +375,7 @@ namespace Aws
     typedef std::function<void(const AppSyncClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListTypesRequest&, const Model::ListTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypesResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListTypesByAssociationRequest&, const Model::ListTypesByAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypesByAssociationResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::PutGraphqlApiEnvironmentVariablesRequest&, const Model::PutGraphqlApiEnvironmentVariablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutGraphqlApiEnvironmentVariablesResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::StartDataSourceIntrospectionRequest&, const Model::StartDataSourceIntrospectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataSourceIntrospectionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::StartSchemaCreationRequest&, const Model::StartSchemaCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSchemaCreationResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::StartSchemaMergeRequest&, const Model::StartSchemaMergeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSchemaMergeResponseReceivedHandler;

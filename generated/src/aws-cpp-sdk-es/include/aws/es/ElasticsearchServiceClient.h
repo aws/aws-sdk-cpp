@@ -197,6 +197,32 @@ namespace ElasticsearchService
         }
 
         /**
+         * <p>Cancels a pending configuration change on an Amazon OpenSearch Service
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelDomainConfigChange">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelDomainConfigChangeOutcome CancelDomainConfigChange(const Model::CancelDomainConfigChangeRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelDomainConfigChange that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelDomainConfigChangeRequestT = Model::CancelDomainConfigChangeRequest>
+        Model::CancelDomainConfigChangeOutcomeCallable CancelDomainConfigChangeCallable(const CancelDomainConfigChangeRequestT& request) const
+        {
+            return SubmitCallable(&ElasticsearchServiceClient::CancelDomainConfigChange, request);
+        }
+
+        /**
+         * An Async wrapper for CancelDomainConfigChange that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelDomainConfigChangeRequestT = Model::CancelDomainConfigChangeRequest>
+        void CancelDomainConfigChangeAsync(const CancelDomainConfigChangeRequestT& request, const CancelDomainConfigChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElasticsearchServiceClient::CancelDomainConfigChange, request, handler, context);
+        }
+
+        /**
          * <p>Cancels a scheduled service software update for an Amazon ES domain. You can
          * only perform this operation before the <code>AutomatedUpdateDate</code> and when
          * the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>

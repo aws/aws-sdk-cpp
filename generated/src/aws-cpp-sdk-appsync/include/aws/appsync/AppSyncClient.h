@@ -907,6 +907,32 @@ namespace AppSync
         }
 
         /**
+         * <p>Retrieves the list of environmental variable key-value pairs associated with
+         * an API by its ID value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApiEnvironmentVariables">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetGraphqlApiEnvironmentVariablesOutcome GetGraphqlApiEnvironmentVariables(const Model::GetGraphqlApiEnvironmentVariablesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetGraphqlApiEnvironmentVariables that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetGraphqlApiEnvironmentVariablesRequestT = Model::GetGraphqlApiEnvironmentVariablesRequest>
+        Model::GetGraphqlApiEnvironmentVariablesOutcomeCallable GetGraphqlApiEnvironmentVariablesCallable(const GetGraphqlApiEnvironmentVariablesRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::GetGraphqlApiEnvironmentVariables, request);
+        }
+
+        /**
+         * An Async wrapper for GetGraphqlApiEnvironmentVariables that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetGraphqlApiEnvironmentVariablesRequestT = Model::GetGraphqlApiEnvironmentVariablesRequest>
+        void GetGraphqlApiEnvironmentVariablesAsync(const GetGraphqlApiEnvironmentVariablesRequestT& request, const GetGraphqlApiEnvironmentVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::GetGraphqlApiEnvironmentVariables, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the introspection schema for a GraphQL API.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetIntrospectionSchema">AWS
@@ -1314,6 +1340,52 @@ namespace AppSync
         void ListTypesByAssociationAsync(const ListTypesByAssociationRequestT& request, const ListTypesByAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppSyncClient::ListTypesByAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a list of environmental variables in an API by its ID value. </p>
+         * <p>When creating an environmental variable, it must follow the constraints
+         * below:</p> <ul> <li> <p>Both JavaScript and VTL templates support environmental
+         * variables.</p> </li> <li> <p>Environmental variables are not evaluated before
+         * function invocation.</p> </li> <li> <p>Environmental variables only support
+         * string values.</p> </li> <li> <p>Any defined value in an environmental variable
+         * is considered a string literal and not expanded.</p> </li> <li> <p>Variable
+         * evaluations should ideally be performed in the function code.</p> </li> </ul>
+         * <p>When creating an environmental variable key-value pair, it must follow the
+         * additional constraints below:</p> <ul> <li> <p>Keys must begin with a
+         * letter.</p> </li> <li> <p>Keys must be at least two characters long.</p> </li>
+         * <li> <p>Keys can only contain letters, numbers, and the underscore character
+         * (_).</p> </li> <li> <p>Values can be up to 512 characters long.</p> </li> <li>
+         * <p>You can configure up to 50 key-value pairs in a GraphQL API.</p> </li> </ul>
+         * <p>You can create a list of environmental variables by adding it to the
+         * <code>environmentVariables</code> payload as a list in the format
+         * <code>{"key1":"value1","key2":"value2", …}</code>. Note that each call of the
+         * <code>PutGraphqlApiEnvironmentVariables</code> action will result in the
+         * overwriting of the existing environmental variable list of that API. This means
+         * the existing environmental variables will be lost. To avoid this, you must
+         * include all existing and new environmental variables in the list each time you
+         * call this action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/PutGraphqlApiEnvironmentVariables">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutGraphqlApiEnvironmentVariablesOutcome PutGraphqlApiEnvironmentVariables(const Model::PutGraphqlApiEnvironmentVariablesRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutGraphqlApiEnvironmentVariables that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutGraphqlApiEnvironmentVariablesRequestT = Model::PutGraphqlApiEnvironmentVariablesRequest>
+        Model::PutGraphqlApiEnvironmentVariablesOutcomeCallable PutGraphqlApiEnvironmentVariablesCallable(const PutGraphqlApiEnvironmentVariablesRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::PutGraphqlApiEnvironmentVariables, request);
+        }
+
+        /**
+         * An Async wrapper for PutGraphqlApiEnvironmentVariables that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutGraphqlApiEnvironmentVariablesRequestT = Model::PutGraphqlApiEnvironmentVariablesRequest>
+        void PutGraphqlApiEnvironmentVariablesAsync(const PutGraphqlApiEnvironmentVariablesRequestT& request, const PutGraphqlApiEnvironmentVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::PutGraphqlApiEnvironmentVariables, request, handler, context);
         }
 
         /**

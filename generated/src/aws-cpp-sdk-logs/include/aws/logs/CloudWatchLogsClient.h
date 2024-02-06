@@ -344,6 +344,7 @@ namespace CloudWatchLogs
          * can be between 1 and 512 characters long.</p> </li> <li> <p>Log group names
          * consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-'
          * (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)</p> </li>
+         * <li> <p>Log group names can't start with the string <code>aws/</code> </p> </li>
          * </ul> <p>When you create a log group, by default the log events in the log group
          * do not expire. To set a retention policy so that events expire and are deleted
          * after a specified time, use <a
@@ -865,8 +866,18 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Retrieves a list of the deliveries that have been created in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of the deliveries that have been created in the account.</p>
+         * <p>A <i>delivery</i> is a connection between a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">
+         * <i>delivery source</i> </a> and a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">
+         * <i>delivery destination</i> </a>.</p> <p>A delivery source represents an Amazon
+         * Web Services resource that sends logs to an logs delivery destination. The
+         * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only
+         * some Amazon Web Services services support being configured as a delivery source.
+         * These services are listed in <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
+         * logging from Amazon Web Services services.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDeliveries">AWS
          * API Reference</a></p>
          */
@@ -1320,10 +1331,20 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Returns complete information about one <i>delivery</i>. A delivery is a
-         * connection between a logical <i>delivery source</i> and a logical <i>delivery
-         * destination</i> </p> <p>You need to specify the delivery <code>id</code> in this
-         * operation. You can find the IDs of the deliveries in your account with the <a
+         * <p>Returns complete information about one logical <i>delivery</i>. A delivery is
+         * a connection between a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">
+         * <i>delivery source</i> </a> and a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">
+         * <i>delivery destination</i> </a>.</p> <p>A delivery source represents an Amazon
+         * Web Services resource that sends logs to an logs delivery destination. The
+         * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only
+         * some Amazon Web Services services support being configured as a delivery source.
+         * These services are listed in <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
+         * logging from Amazon Web Services services.</a> </p> <p>You need to specify the
+         * delivery <code>id</code> in this operation. You can find the IDs of the
+         * deliveries in your account with the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetDelivery">AWS
@@ -2212,7 +2233,7 @@ namespace CloudWatchLogs
          * that before log events are deleted, but in rare situations might take
          * longer.</p> <p>To illustrate, imagine that you change a log group to have a
          * longer retention setting when it contains log events that are past the
-         * expiration date, but haven��t been deleted. Those log events will take up to 72
+         * expiration date, but haven’t been deleted. Those log events will take up to 72
          * hours to be deleted after the new retention date is reached. To make sure that
          * log data is deleted permanently, keep a log group at its lower retention setting
          * until 72 hours after the previous retention period ends. Alternatively, wait to
