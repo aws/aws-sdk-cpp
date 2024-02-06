@@ -184,7 +184,7 @@ namespace Aws
                     return std::char_traits<char>::eof();
                 }
 
-                char* gbegin = reinterpret_cast<char*>(&m_getArea[0]);
+                char* gbegin = reinterpret_cast<char*>(m_getArea.data());
                 setg(gbegin, gbegin, gbegin + m_getArea.size());
 
                 if (!m_getArea.empty())
