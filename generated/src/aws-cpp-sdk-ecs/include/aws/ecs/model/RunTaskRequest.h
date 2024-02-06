@@ -356,11 +356,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -378,11 +378,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -400,11 +400,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -422,11 +422,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -444,11 +444,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -466,11 +466,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you

@@ -9,6 +9,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/opensearch/model/OverallChangeStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/opensearch/model/ConfigChangeStatus.h>
+#include <aws/opensearch/model/InitiatedBy.h>
 #include <aws/opensearch/model/ChangeProgressStage.h>
 #include <utility>
 
@@ -332,6 +334,99 @@ namespace Model
      */
     inline ChangeProgressStatusDetails& AddChangeProgressStages(ChangeProgressStage&& value) { m_changeProgressStagesHasBeenSet = true; m_changeProgressStages.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The last time that the status of the configuration change was updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>The last time that the status of the configuration change was updated.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
+
+    /**
+     * <p>The last time that the status of the configuration change was updated.</p>
+     */
+    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+
+    /**
+     * <p>The last time that the status of the configuration change was updated.</p>
+     */
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
+
+    /**
+     * <p>The last time that the status of the configuration change was updated.</p>
+     */
+    inline ChangeProgressStatusDetails& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
+
+    /**
+     * <p>The last time that the status of the configuration change was updated.</p>
+     */
+    inline ChangeProgressStatusDetails& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The current status of the configuration change.</p>
+     */
+    inline const ConfigChangeStatus& GetConfigChangeStatus() const{ return m_configChangeStatus; }
+
+    /**
+     * <p>The current status of the configuration change.</p>
+     */
+    inline bool ConfigChangeStatusHasBeenSet() const { return m_configChangeStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the configuration change.</p>
+     */
+    inline void SetConfigChangeStatus(const ConfigChangeStatus& value) { m_configChangeStatusHasBeenSet = true; m_configChangeStatus = value; }
+
+    /**
+     * <p>The current status of the configuration change.</p>
+     */
+    inline void SetConfigChangeStatus(ConfigChangeStatus&& value) { m_configChangeStatusHasBeenSet = true; m_configChangeStatus = std::move(value); }
+
+    /**
+     * <p>The current status of the configuration change.</p>
+     */
+    inline ChangeProgressStatusDetails& WithConfigChangeStatus(const ConfigChangeStatus& value) { SetConfigChangeStatus(value); return *this;}
+
+    /**
+     * <p>The current status of the configuration change.</p>
+     */
+    inline ChangeProgressStatusDetails& WithConfigChangeStatus(ConfigChangeStatus&& value) { SetConfigChangeStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The IAM principal who initiated the configuration change.</p>
+     */
+    inline const InitiatedBy& GetInitiatedBy() const{ return m_initiatedBy; }
+
+    /**
+     * <p>The IAM principal who initiated the configuration change.</p>
+     */
+    inline bool InitiatedByHasBeenSet() const { return m_initiatedByHasBeenSet; }
+
+    /**
+     * <p>The IAM principal who initiated the configuration change.</p>
+     */
+    inline void SetInitiatedBy(const InitiatedBy& value) { m_initiatedByHasBeenSet = true; m_initiatedBy = value; }
+
+    /**
+     * <p>The IAM principal who initiated the configuration change.</p>
+     */
+    inline void SetInitiatedBy(InitiatedBy&& value) { m_initiatedByHasBeenSet = true; m_initiatedBy = std::move(value); }
+
+    /**
+     * <p>The IAM principal who initiated the configuration change.</p>
+     */
+    inline ChangeProgressStatusDetails& WithInitiatedBy(const InitiatedBy& value) { SetInitiatedBy(value); return *this;}
+
+    /**
+     * <p>The IAM principal who initiated the configuration change.</p>
+     */
+    inline ChangeProgressStatusDetails& WithInitiatedBy(InitiatedBy&& value) { SetInitiatedBy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_changeId;
@@ -354,6 +449,15 @@ namespace Model
 
     Aws::Vector<ChangeProgressStage> m_changeProgressStages;
     bool m_changeProgressStagesHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdatedTime;
+    bool m_lastUpdatedTimeHasBeenSet = false;
+
+    ConfigChangeStatus m_configChangeStatus;
+    bool m_configChangeStatusHasBeenSet = false;
+
+    InitiatedBy m_initiatedBy;
+    bool m_initiatedByHasBeenSet = false;
   };
 
 } // namespace Model

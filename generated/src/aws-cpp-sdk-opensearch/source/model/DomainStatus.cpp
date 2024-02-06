@@ -52,7 +52,10 @@ DomainStatus::DomainStatus() :
     m_autoTuneOptionsHasBeenSet(false),
     m_changeProgressDetailsHasBeenSet(false),
     m_offPeakWindowOptionsHasBeenSet(false),
-    m_softwareUpdateOptionsHasBeenSet(false)
+    m_softwareUpdateOptionsHasBeenSet(false),
+    m_domainProcessingStatus(DomainProcessingStatusType::NOT_SET),
+    m_domainProcessingStatusHasBeenSet(false),
+    m_modifyingPropertiesHasBeenSet(false)
 {
 }
 
@@ -90,7 +93,10 @@ DomainStatus::DomainStatus(JsonView jsonValue) :
     m_autoTuneOptionsHasBeenSet(false),
     m_changeProgressDetailsHasBeenSet(false),
     m_offPeakWindowOptionsHasBeenSet(false),
-    m_softwareUpdateOptionsHasBeenSet(false)
+    m_softwareUpdateOptionsHasBeenSet(false),
+    m_domainProcessingStatus(DomainProcessingStatusType::NOT_SET),
+    m_domainProcessingStatusHasBeenSet(false),
+    m_modifyingPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -309,6 +315,23 @@ DomainStatus& DomainStatus::operator =(JsonView jsonValue)
     m_softwareUpdateOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DomainProcessingStatus"))
+  {
+    m_domainProcessingStatus = DomainProcessingStatusTypeMapper::GetDomainProcessingStatusTypeForName(jsonValue.GetString("DomainProcessingStatus"));
+
+    m_domainProcessingStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModifyingProperties"))
+  {
+    Aws::Utils::Array<JsonView> modifyingPropertiesJsonList = jsonValue.GetArray("ModifyingProperties");
+    for(unsigned modifyingPropertiesIndex = 0; modifyingPropertiesIndex < modifyingPropertiesJsonList.GetLength(); ++modifyingPropertiesIndex)
+    {
+      m_modifyingProperties.push_back(modifyingPropertiesJsonList[modifyingPropertiesIndex].AsObject());
+    }
+    m_modifyingPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -501,6 +524,22 @@ JsonValue DomainStatus::Jsonize() const
   if(m_softwareUpdateOptionsHasBeenSet)
   {
    payload.WithObject("SoftwareUpdateOptions", m_softwareUpdateOptions.Jsonize());
+
+  }
+
+  if(m_domainProcessingStatusHasBeenSet)
+  {
+   payload.WithString("DomainProcessingStatus", DomainProcessingStatusTypeMapper::GetNameForDomainProcessingStatusType(m_domainProcessingStatus));
+  }
+
+  if(m_modifyingPropertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> modifyingPropertiesJsonList(m_modifyingProperties.size());
+   for(unsigned modifyingPropertiesIndex = 0; modifyingPropertiesIndex < modifyingPropertiesJsonList.GetLength(); ++modifyingPropertiesIndex)
+   {
+     modifyingPropertiesJsonList[modifyingPropertiesIndex].AsObject(m_modifyingProperties[modifyingPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("ModifyingProperties", std::move(modifyingPropertiesJsonList));
 
   }
 

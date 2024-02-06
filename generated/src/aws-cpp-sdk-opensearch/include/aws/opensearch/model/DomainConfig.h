@@ -23,6 +23,8 @@
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/OffPeakWindowOptionsStatus.h>
 #include <aws/opensearch/model/SoftwareUpdateOptionsStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/opensearch/model/ModifyingProperties.h>
 #include <utility>
 
 namespace Aws
@@ -672,6 +674,55 @@ namespace Model
      */
     inline DomainConfig& WithSoftwareUpdateOptions(SoftwareUpdateOptionsStatus&& value) { SetSoftwareUpdateOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline const Aws::Vector<ModifyingProperties>& GetModifyingProperties() const{ return m_modifyingProperties; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline bool ModifyingPropertiesHasBeenSet() const { return m_modifyingPropertiesHasBeenSet; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline void SetModifyingProperties(const Aws::Vector<ModifyingProperties>& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties = value; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline void SetModifyingProperties(Aws::Vector<ModifyingProperties>&& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties = std::move(value); }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline DomainConfig& WithModifyingProperties(const Aws::Vector<ModifyingProperties>& value) { SetModifyingProperties(value); return *this;}
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline DomainConfig& WithModifyingProperties(Aws::Vector<ModifyingProperties>&& value) { SetModifyingProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline DomainConfig& AddModifyingProperties(const ModifyingProperties& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline DomainConfig& AddModifyingProperties(ModifyingProperties&& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(std::move(value)); return *this; }
+
   private:
 
     VersionStatus m_engineVersion;
@@ -727,6 +778,9 @@ namespace Model
 
     SoftwareUpdateOptionsStatus m_softwareUpdateOptions;
     bool m_softwareUpdateOptionsHasBeenSet = false;
+
+    Aws::Vector<ModifyingProperties> m_modifyingProperties;
+    bool m_modifyingPropertiesHasBeenSet = false;
   };
 
 } // namespace Model
