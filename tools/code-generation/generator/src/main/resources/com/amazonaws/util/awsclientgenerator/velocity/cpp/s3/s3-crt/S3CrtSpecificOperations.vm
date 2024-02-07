@@ -38,7 +38,7 @@ static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request,
   {
       receivedHandler(userData->request.get(), userData->response.get(), static_cast<long long>(body->len));
   }
-  AWS_LOGSTREAM_TRACE(${className}::ALLOCATION_TAG, body->len << " bytes written to response.");
+  AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, body->len << " bytes written to response.");
 
   return AWS_OP_SUCCESS;
 }
@@ -395,7 +395,7 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
 #end
 
   // make aws_s3_meta_request with callbacks
-  CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(${className}::ALLOCATION_TAG);
+  CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(ALLOCATION_TAG);
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
 
