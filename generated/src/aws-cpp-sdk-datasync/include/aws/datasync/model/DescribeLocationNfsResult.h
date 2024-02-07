@@ -77,37 +77,37 @@ namespace Model
 
 
     /**
-     * <p>The URL of the NFS location.</p>
+     * <p>The URI of the NFS location.</p>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>The URL of the NFS location.</p>
+     * <p>The URI of the NFS location.</p>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUri = value; }
 
     /**
-     * <p>The URL of the NFS location.</p>
+     * <p>The URI of the NFS location.</p>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUri = std::move(value); }
 
     /**
-     * <p>The URL of the NFS location.</p>
+     * <p>The URI of the NFS location.</p>
      */
     inline void SetLocationUri(const char* value) { m_locationUri.assign(value); }
 
     /**
-     * <p>The URL of the NFS location.</p>
+     * <p>The URI of the NFS location.</p>
      */
     inline DescribeLocationNfsResult& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>The URL of the NFS location.</p>
+     * <p>The URI of the NFS location.</p>
      */
     inline DescribeLocationNfsResult& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the NFS location.</p>
+     * <p>The URI of the NFS location.</p>
      */
     inline DescribeLocationNfsResult& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 

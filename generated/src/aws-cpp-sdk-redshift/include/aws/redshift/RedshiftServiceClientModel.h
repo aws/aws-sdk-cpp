@@ -102,6 +102,7 @@
 #include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsResult.h>
 #include <aws/redshift/model/GetResourcePolicyResult.h>
+#include <aws/redshift/model/ListRecommendationsResult.h>
 #include <aws/redshift/model/ModifyAquaConfigurationResult.h>
 #include <aws/redshift/model/ModifyAuthenticationProfileResult.h>
 #include <aws/redshift/model/ModifyClusterResult.h>
@@ -274,6 +275,7 @@ namespace Aws
       class GetReservedNodeExchangeConfigurationOptionsRequest;
       class GetReservedNodeExchangeOfferingsRequest;
       class GetResourcePolicyRequest;
+      class ListRecommendationsRequest;
       class ModifyAquaConfigurationRequest;
       class ModifyAuthenticationProfileRequest;
       class ModifyClusterRequest;
@@ -409,6 +411,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetReservedNodeExchangeConfigurationOptionsResult, RedshiftError> GetReservedNodeExchangeConfigurationOptionsOutcome;
       typedef Aws::Utils::Outcome<GetReservedNodeExchangeOfferingsResult, RedshiftError> GetReservedNodeExchangeOfferingsOutcome;
       typedef Aws::Utils::Outcome<GetResourcePolicyResult, RedshiftError> GetResourcePolicyOutcome;
+      typedef Aws::Utils::Outcome<ListRecommendationsResult, RedshiftError> ListRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ModifyAquaConfigurationResult, RedshiftError> ModifyAquaConfigurationOutcome;
       typedef Aws::Utils::Outcome<ModifyAuthenticationProfileResult, RedshiftError> ModifyAuthenticationProfileOutcome;
       typedef Aws::Utils::Outcome<ModifyClusterResult, RedshiftError> ModifyClusterOutcome;
@@ -544,6 +547,7 @@ namespace Aws
       typedef std::future<GetReservedNodeExchangeConfigurationOptionsOutcome> GetReservedNodeExchangeConfigurationOptionsOutcomeCallable;
       typedef std::future<GetReservedNodeExchangeOfferingsOutcome> GetReservedNodeExchangeOfferingsOutcomeCallable;
       typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
+      typedef std::future<ListRecommendationsOutcome> ListRecommendationsOutcomeCallable;
       typedef std::future<ModifyAquaConfigurationOutcome> ModifyAquaConfigurationOutcomeCallable;
       typedef std::future<ModifyAuthenticationProfileOutcome> ModifyAuthenticationProfileOutcomeCallable;
       typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
@@ -682,6 +686,7 @@ namespace Aws
     typedef std::function<void(const RedshiftClient*, const Model::GetReservedNodeExchangeConfigurationOptionsRequest&, const Model::GetReservedNodeExchangeConfigurationOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedNodeExchangeConfigurationOptionsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetReservedNodeExchangeOfferingsRequest&, const Model::GetReservedNodeExchangeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedNodeExchangeOfferingsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::ListRecommendationsRequest&, const Model::ListRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendationsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyAquaConfigurationRequest&, const Model::ModifyAquaConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAquaConfigurationResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyAuthenticationProfileRequest&, const Model::ModifyAuthenticationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAuthenticationProfileResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterRequest&, const Model::ModifyClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterResponseReceivedHandler;

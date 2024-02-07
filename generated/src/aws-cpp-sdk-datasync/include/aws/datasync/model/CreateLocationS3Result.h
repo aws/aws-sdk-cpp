@@ -38,44 +38,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that
-     * is created.</p>
+     * <p>The ARN of the S3 location that you created.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that
-     * is created.</p>
+     * <p>The ARN of the S3 location that you created.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that
-     * is created.</p>
+     * <p>The ARN of the S3 location that you created.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that
-     * is created.</p>
+     * <p>The ARN of the S3 location that you created.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that
-     * is created.</p>
+     * <p>The ARN of the S3 location that you created.</p>
      */
     inline CreateLocationS3Result& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that
-     * is created.</p>
+     * <p>The ARN of the S3 location that you created.</p>
      */
     inline CreateLocationS3Result& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that
-     * is created.</p>
+     * <p>The ARN of the S3 location that you created.</p>
      */
     inline CreateLocationS3Result& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 

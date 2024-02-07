@@ -25,11 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents a single entry in a list of task executions.
-   * <code>TaskExecutionListEntry</code> returns an array that contains a list of
-   * specific invocations of a task when the <a
+   * <p>Represents a single entry in a list of DataSync task executions that's
+   * returned with the <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html">ListTaskExecutions</a>
-   * operation is called.</p><p><h3>See Also:</h3>   <a
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskExecutionListEntry">AWS
    * API Reference</a></p>
    */
@@ -43,73 +42,85 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+     * <p>The Amazon Resource Name (ARN) of a task execution.</p>
      */
     inline const Aws::String& GetTaskExecutionArn() const{ return m_taskExecutionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+     * <p>The Amazon Resource Name (ARN) of a task execution.</p>
      */
     inline bool TaskExecutionArnHasBeenSet() const { return m_taskExecutionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+     * <p>The Amazon Resource Name (ARN) of a task execution.</p>
      */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+     * <p>The Amazon Resource Name (ARN) of a task execution.</p>
      */
     inline void SetTaskExecutionArn(Aws::String&& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+     * <p>The Amazon Resource Name (ARN) of a task execution.</p>
      */
     inline void SetTaskExecutionArn(const char* value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+     * <p>The Amazon Resource Name (ARN) of a task execution.</p>
      */
     inline TaskExecutionListEntry& WithTaskExecutionArn(const Aws::String& value) { SetTaskExecutionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+     * <p>The Amazon Resource Name (ARN) of a task execution.</p>
      */
     inline TaskExecutionListEntry& WithTaskExecutionArn(Aws::String&& value) { SetTaskExecutionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+     * <p>The Amazon Resource Name (ARN) of a task execution.</p>
      */
     inline TaskExecutionListEntry& WithTaskExecutionArn(const char* value) { SetTaskExecutionArn(value); return *this;}
 
 
     /**
-     * <p>The status of a task execution.</p>
+     * <p>The status of a task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p>
      */
     inline const TaskExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of a task execution.</p>
+     * <p>The status of a task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of a task execution.</p>
+     * <p>The status of a task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p>
      */
     inline void SetStatus(const TaskExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of a task execution.</p>
+     * <p>The status of a task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p>
      */
     inline void SetStatus(TaskExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of a task execution.</p>
+     * <p>The status of a task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p>
      */
     inline TaskExecutionListEntry& WithStatus(const TaskExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of a task execution.</p>
+     * <p>The status of a task execution. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p>
      */
     inline TaskExecutionListEntry& WithStatus(TaskExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
