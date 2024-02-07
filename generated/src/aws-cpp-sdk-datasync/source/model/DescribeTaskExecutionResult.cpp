@@ -87,6 +87,12 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
     }
   }
 
+  if(jsonValue.ValueExists("ManifestConfig"))
+  {
+    m_manifestConfig = jsonValue.GetObject("ManifestConfig");
+
+  }
+
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
@@ -123,15 +129,15 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
 
   }
 
-  if(jsonValue.ValueExists("Result"))
-  {
-    m_result = jsonValue.GetObject("Result");
-
-  }
-
   if(jsonValue.ValueExists("BytesCompressed"))
   {
     m_bytesCompressed = jsonValue.GetInt64("BytesCompressed");
+
+  }
+
+  if(jsonValue.ValueExists("Result"))
+  {
+    m_result = jsonValue.GetObject("Result");
 
   }
 

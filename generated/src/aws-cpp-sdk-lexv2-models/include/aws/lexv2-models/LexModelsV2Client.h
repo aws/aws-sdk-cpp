@@ -263,6 +263,32 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>Action to create a replication of the source bot in the secondary
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBotReplicaOutcome CreateBotReplica(const Model::CreateBotReplicaRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateBotReplica that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateBotReplicaRequestT = Model::CreateBotReplicaRequest>
+        Model::CreateBotReplicaOutcomeCallable CreateBotReplicaCallable(const CreateBotReplicaRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::CreateBotReplica, request);
+        }
+
+        /**
+         * An Async wrapper for CreateBotReplica that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateBotReplicaRequestT = Model::CreateBotReplicaRequest>
+        void CreateBotReplicaAsync(const CreateBotReplicaRequestT& request, const CreateBotReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::CreateBotReplica, request, handler, context);
+        }
+
+        /**
          * <p>Creates an immutable version of the bot. When you create the first version of
          * a bot, Amazon Lex sets the version number to 1. Subsequent bot versions increase
          * in an increment of 1. The version number will always represent the total number
@@ -611,6 +637,32 @@ namespace LexModelsV2
         void DeleteBotLocaleAsync(const DeleteBotLocaleRequestT& request, const DeleteBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::DeleteBotLocale, request, handler, context);
+        }
+
+        /**
+         * <p>The action to delete the replicated bot in the secondary
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBotReplicaOutcome DeleteBotReplica(const Model::DeleteBotReplicaRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteBotReplica that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteBotReplicaRequestT = Model::DeleteBotReplicaRequest>
+        Model::DeleteBotReplicaOutcomeCallable DeleteBotReplicaCallable(const DeleteBotReplicaRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::DeleteBotReplica, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteBotReplica that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteBotReplicaRequestT = Model::DeleteBotReplicaRequest>
+        void DeleteBotReplicaAsync(const DeleteBotReplicaRequestT& request, const DeleteBotReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::DeleteBotReplica, request, handler, context);
         }
 
         /**
@@ -1014,6 +1066,32 @@ namespace LexModelsV2
         void DescribeBotRecommendationAsync(const DescribeBotRecommendationRequestT& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::DescribeBotRecommendation, request, handler, context);
+        }
+
+        /**
+         * <p>Monitors the bot replication status through the UI console.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBotReplicaOutcome DescribeBotReplica(const Model::DescribeBotReplicaRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBotReplica that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBotReplicaRequestT = Model::DescribeBotReplicaRequest>
+        Model::DescribeBotReplicaOutcomeCallable DescribeBotReplicaCallable(const DescribeBotReplicaRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::DescribeBotReplica, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBotReplica that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBotReplicaRequestT = Model::DescribeBotReplicaRequest>
+        void DescribeBotReplicaAsync(const DescribeBotReplicaRequestT& request, const DescribeBotReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::DescribeBotReplica, request, handler, context);
         }
 
         /**
@@ -1439,6 +1517,32 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>The action to list the replicated bots created from the source bot
+         * alias.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBotAliasReplicasOutcome ListBotAliasReplicas(const Model::ListBotAliasReplicasRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBotAliasReplicas that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBotAliasReplicasRequestT = Model::ListBotAliasReplicasRequest>
+        Model::ListBotAliasReplicasOutcomeCallable ListBotAliasReplicasCallable(const ListBotAliasReplicasRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListBotAliasReplicas, request);
+        }
+
+        /**
+         * An Async wrapper for ListBotAliasReplicas that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBotAliasReplicasRequestT = Model::ListBotAliasReplicasRequest>
+        void ListBotAliasReplicasAsync(const ListBotAliasReplicasRequestT& request, const ListBotAliasReplicasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListBotAliasReplicas, request, handler, context);
+        }
+
+        /**
          * <p>Gets a list of aliases for the specified bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliases">AWS
          * API Reference</a></p>
@@ -1515,6 +1619,31 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>The action to list the replicated bots.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBotReplicasOutcome ListBotReplicas(const Model::ListBotReplicasRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBotReplicas that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBotReplicasRequestT = Model::ListBotReplicasRequest>
+        Model::ListBotReplicasOutcomeCallable ListBotReplicasCallable(const ListBotReplicasRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListBotReplicas, request);
+        }
+
+        /**
+         * An Async wrapper for ListBotReplicas that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBotReplicasRequestT = Model::ListBotReplicasRequest>
+        void ListBotReplicasAsync(const ListBotReplicasRequestT& request, const ListBotReplicasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListBotReplicas, request, handler, context);
+        }
+
+        /**
          * <p>Lists the generation requests made for a bot locale.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations">AWS
@@ -1538,6 +1667,32 @@ namespace LexModelsV2
         void ListBotResourceGenerationsAsync(const ListBotResourceGenerationsRequestT& request, const ListBotResourceGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::ListBotResourceGenerations, request, handler, context);
+        }
+
+        /**
+         * <p>Contains information about all the versions replication statuses applicable
+         * for Global Resiliency.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBotVersionReplicasOutcome ListBotVersionReplicas(const Model::ListBotVersionReplicasRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBotVersionReplicas that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBotVersionReplicasRequestT = Model::ListBotVersionReplicasRequest>
+        Model::ListBotVersionReplicasOutcomeCallable ListBotVersionReplicasCallable(const ListBotVersionReplicasRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListBotVersionReplicas, request);
+        }
+
+        /**
+         * An Async wrapper for ListBotVersionReplicas that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBotVersionReplicasRequestT = Model::ListBotVersionReplicasRequest>
+        void ListBotVersionReplicasAsync(const ListBotVersionReplicasRequestT& request, const ListBotVersionReplicasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListBotVersionReplicas, request, handler, context);
         }
 
         /**

@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>The URL of the object storage system location.</p>
+     * <p>The URI of the object storage system location.</p>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>The URL of the object storage system location.</p>
+     * <p>The URI of the object storage system location.</p>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUri = value; }
 
     /**
-     * <p>The URL of the object storage system location.</p>
+     * <p>The URI of the object storage system location.</p>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUri = std::move(value); }
 
     /**
-     * <p>The URL of the object storage system location.</p>
+     * <p>The URI of the object storage system location.</p>
      */
     inline void SetLocationUri(const char* value) { m_locationUri.assign(value); }
 
     /**
-     * <p>The URL of the object storage system location.</p>
+     * <p>The URI of the object storage system location.</p>
      */
     inline DescribeLocationObjectStorageResult& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>The URL of the object storage system location.</p>
+     * <p>The URI of the object storage system location.</p>
      */
     inline DescribeLocationObjectStorageResult& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the object storage system location.</p>
+     * <p>The URI of the object storage system location.</p>
      */
     inline DescribeLocationObjectStorageResult& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 
@@ -202,50 +202,50 @@ namespace Model
 
 
     /**
-     * <p>The ARNs of the DataSync agents that can securely connect with your
-     * location.</p>
+     * <p>The ARNs of the DataSync agents that can connect with your object storage
+     * system.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
 
     /**
-     * <p>The ARNs of the DataSync agents that can securely connect with your
-     * location.</p>
+     * <p>The ARNs of the DataSync agents that can connect with your object storage
+     * system.</p>
      */
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArns = value; }
 
     /**
-     * <p>The ARNs of the DataSync agents that can securely connect with your
-     * location.</p>
+     * <p>The ARNs of the DataSync agents that can connect with your object storage
+     * system.</p>
      */
     inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArns = std::move(value); }
 
     /**
-     * <p>The ARNs of the DataSync agents that can securely connect with your
-     * location.</p>
+     * <p>The ARNs of the DataSync agents that can connect with your object storage
+     * system.</p>
      */
     inline DescribeLocationObjectStorageResult& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
 
     /**
-     * <p>The ARNs of the DataSync agents that can securely connect with your
-     * location.</p>
+     * <p>The ARNs of the DataSync agents that can connect with your object storage
+     * system.</p>
      */
     inline DescribeLocationObjectStorageResult& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNs of the DataSync agents that can securely connect with your
-     * location.</p>
+     * <p>The ARNs of the DataSync agents that can connect with your object storage
+     * system.</p>
      */
     inline DescribeLocationObjectStorageResult& AddAgentArns(const Aws::String& value) { m_agentArns.push_back(value); return *this; }
 
     /**
-     * <p>The ARNs of the DataSync agents that can securely connect with your
-     * location.</p>
+     * <p>The ARNs of the DataSync agents that can connect with your object storage
+     * system.</p>
      */
     inline DescribeLocationObjectStorageResult& AddAgentArns(Aws::String&& value) { m_agentArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ARNs of the DataSync agents that can securely connect with your
-     * location.</p>
+     * <p>The ARNs of the DataSync agents that can connect with your object storage
+     * system.</p>
      */
     inline DescribeLocationObjectStorageResult& AddAgentArns(const char* value) { m_agentArns.push_back(value); return *this; }
 

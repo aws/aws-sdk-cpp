@@ -10,6 +10,7 @@
 #include <aws/datasync/model/Options.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/model/TaskSchedule.h>
+#include <aws/datasync/model/ManifestConfig.h>
 #include <aws/datasync/model/TaskReportConfig.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <utility>
@@ -398,38 +399,159 @@ namespace Model
 
 
     /**
+     * <p>Configures a manifest, which is a list of files or objects that you want
+     * DataSync to transfer. For more information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p> <p>When using this
+     * parameter, your caller identity (the IAM role that you're using DataSync with)
+     * must have the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a manifest configuration,
+     * specify this parameter as empty.</p>
+     */
+    inline const ManifestConfig& GetManifestConfig() const{ return m_manifestConfig; }
+
+    /**
+     * <p>Configures a manifest, which is a list of files or objects that you want
+     * DataSync to transfer. For more information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p> <p>When using this
+     * parameter, your caller identity (the IAM role that you're using DataSync with)
+     * must have the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a manifest configuration,
+     * specify this parameter as empty.</p>
+     */
+    inline bool ManifestConfigHasBeenSet() const { return m_manifestConfigHasBeenSet; }
+
+    /**
+     * <p>Configures a manifest, which is a list of files or objects that you want
+     * DataSync to transfer. For more information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p> <p>When using this
+     * parameter, your caller identity (the IAM role that you're using DataSync with)
+     * must have the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a manifest configuration,
+     * specify this parameter as empty.</p>
+     */
+    inline void SetManifestConfig(const ManifestConfig& value) { m_manifestConfigHasBeenSet = true; m_manifestConfig = value; }
+
+    /**
+     * <p>Configures a manifest, which is a list of files or objects that you want
+     * DataSync to transfer. For more information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p> <p>When using this
+     * parameter, your caller identity (the IAM role that you're using DataSync with)
+     * must have the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a manifest configuration,
+     * specify this parameter as empty.</p>
+     */
+    inline void SetManifestConfig(ManifestConfig&& value) { m_manifestConfigHasBeenSet = true; m_manifestConfig = std::move(value); }
+
+    /**
+     * <p>Configures a manifest, which is a list of files or objects that you want
+     * DataSync to transfer. For more information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p> <p>When using this
+     * parameter, your caller identity (the IAM role that you're using DataSync with)
+     * must have the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a manifest configuration,
+     * specify this parameter as empty.</p>
+     */
+    inline UpdateTaskRequest& WithManifestConfig(const ManifestConfig& value) { SetManifestConfig(value); return *this;}
+
+    /**
+     * <p>Configures a manifest, which is a list of files or objects that you want
+     * DataSync to transfer. For more information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p> <p>When using this
+     * parameter, your caller identity (the IAM role that you're using DataSync with)
+     * must have the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a manifest configuration,
+     * specify this parameter as empty.</p>
+     */
+    inline UpdateTaskRequest& WithManifestConfig(ManifestConfig&& value) { SetManifestConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies how you want to configure a task report, which provides detailed
-     * information about for your DataSync transfer.</p>
+     * information about your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.</p> <p>When using this parameter,
+     * your caller identity (the IAM role that you're using DataSync with) must have
+     * the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a task report configuration,
+     * specify this parameter as empty.</p>
      */
     inline const TaskReportConfig& GetTaskReportConfig() const{ return m_taskReportConfig; }
 
     /**
      * <p>Specifies how you want to configure a task report, which provides detailed
-     * information about for your DataSync transfer.</p>
+     * information about your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.</p> <p>When using this parameter,
+     * your caller identity (the IAM role that you're using DataSync with) must have
+     * the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a task report configuration,
+     * specify this parameter as empty.</p>
      */
     inline bool TaskReportConfigHasBeenSet() const { return m_taskReportConfigHasBeenSet; }
 
     /**
      * <p>Specifies how you want to configure a task report, which provides detailed
-     * information about for your DataSync transfer.</p>
+     * information about your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.</p> <p>When using this parameter,
+     * your caller identity (the IAM role that you're using DataSync with) must have
+     * the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a task report configuration,
+     * specify this parameter as empty.</p>
      */
     inline void SetTaskReportConfig(const TaskReportConfig& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = value; }
 
     /**
      * <p>Specifies how you want to configure a task report, which provides detailed
-     * information about for your DataSync transfer.</p>
+     * information about your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.</p> <p>When using this parameter,
+     * your caller identity (the IAM role that you're using DataSync with) must have
+     * the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a task report configuration,
+     * specify this parameter as empty.</p>
      */
     inline void SetTaskReportConfig(TaskReportConfig&& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = std::move(value); }
 
     /**
      * <p>Specifies how you want to configure a task report, which provides detailed
-     * information about for your DataSync transfer.</p>
+     * information about your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.</p> <p>When using this parameter,
+     * your caller identity (the IAM role that you're using DataSync with) must have
+     * the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a task report configuration,
+     * specify this parameter as empty.</p>
      */
     inline UpdateTaskRequest& WithTaskReportConfig(const TaskReportConfig& value) { SetTaskReportConfig(value); return *this;}
 
     /**
      * <p>Specifies how you want to configure a task report, which provides detailed
-     * information about for your DataSync transfer.</p>
+     * information about your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.</p> <p>When using this parameter,
+     * your caller identity (the IAM role that you're using DataSync with) must have
+     * the <code>iam:PassRole</code> permission. The <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+     * policy includes this permission.</p> <p>To remove a task report configuration,
+     * specify this parameter as empty.</p>
      */
     inline UpdateTaskRequest& WithTaskReportConfig(TaskReportConfig&& value) { SetTaskReportConfig(std::move(value)); return *this;}
 
@@ -455,6 +577,9 @@ namespace Model
 
     Aws::Vector<FilterRule> m_includes;
     bool m_includesHasBeenSet = false;
+
+    ManifestConfig m_manifestConfig;
+    bool m_manifestConfigHasBeenSet = false;
 
     TaskReportConfig m_taskReportConfig;
     bool m_taskReportConfigHasBeenSet = false;
