@@ -34,3 +34,8 @@ set_compiler_flags(${PROJECT_NAME})
 set_compiler_warnings(${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+
+if(MSVC AND BUILD_SHARED_LIBS)
+    set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS
+            "/DELAYLOAD:aws-cpp-sdk-access-management.dll /DELAYLOAD:aws-cpp-sdk-cognito-identity /DELAYLOAD:aws-cpp-sdk-iam /DELAYLOAD:aws-cpp-sdk-core.dll")
+endif()

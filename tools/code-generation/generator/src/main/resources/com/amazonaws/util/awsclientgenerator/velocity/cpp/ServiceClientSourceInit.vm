@@ -38,7 +38,8 @@
 #set($virtualAddressingInit = "")
 #end
 #if($serviceModel.endpointRules)
-#set($addArgDummy = $ctorMemberInitList.add("m_endpointProvider(std::move(endpointProvider))"))
+#set($endpointsProviderDefaultCtorCall = "m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<" + ${metadata.classNamePrefix} + "EndpointProvider>(ALLOCATION_TAG))")
+#set($addArgDummy = $ctorMemberInitList.add($endpointsProviderDefaultCtorCall))
 #end
 #if(!$USEast1RegionalEndpointArgString)
 #set($USEast1RegionalEndpointArgString = "")
