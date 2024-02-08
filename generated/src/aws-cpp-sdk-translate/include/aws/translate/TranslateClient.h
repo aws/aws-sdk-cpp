@@ -23,8 +23,8 @@ namespace Translate
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef TranslateClientConfiguration ClientConfigurationType;
       typedef TranslateEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace Translate
         * is not specified, it will be initialized to default values.
         */
         TranslateClient(const Aws::Translate::TranslateClientConfiguration& clientConfiguration = Aws::Translate::TranslateClientConfiguration(),
-                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         TranslateClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::Translate::TranslateClientConfiguration& clientConfiguration = Aws::Translate::TranslateClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace Translate
         * the default http client factory will be used
         */
         TranslateClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::Translate::TranslateClientConfiguration& clientConfiguration = Aws::Translate::TranslateClientConfiguration());
 
 

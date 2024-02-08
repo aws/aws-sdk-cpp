@@ -148,8 +148,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* S3CrtClient::SERVICE_NAME = "s3";
-const char* S3CrtClient::ALLOCATION_TAG = "S3CrtClient";
+namespace Aws
+{
+  namespace S3Crt
+  {
+    const char SERVICE_NAME[] = "s3";
+    const char ALLOCATION_TAG[] = "S3CrtClient";
+  }
+}
+const char* S3CrtClient::GetServiceName() {return SERVICE_NAME;}
+const char* S3CrtClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 S3CrtClient::S3CrtClient(const S3CrtClient &rhs) :
     BASECLASS(rhs.m_clientConfiguration,
@@ -532,7 +540,7 @@ static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request,
   {
       receivedHandler(userData->request.get(), userData->response.get(), static_cast<long long>(body->len));
   }
-  AWS_LOGSTREAM_TRACE(S3CrtClient::ALLOCATION_TAG, body->len << " bytes written to response.");
+  AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, body->len << " bytes written to response.");
 
   return AWS_OP_SUCCESS;
 }

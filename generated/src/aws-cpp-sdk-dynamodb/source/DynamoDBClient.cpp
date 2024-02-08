@@ -90,8 +90,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DynamoDBClient::SERVICE_NAME = "dynamodb";
-const char* DynamoDBClient::ALLOCATION_TAG = "DynamoDBClient";
+namespace Aws
+{
+  namespace DynamoDB
+  {
+    const char SERVICE_NAME[] = "dynamodb";
+    const char ALLOCATION_TAG[] = "DynamoDBClient";
+  }
+}
+const char* DynamoDBClient::GetServiceName() {return SERVICE_NAME;}
+const char* DynamoDBClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DynamoDBClient::DynamoDBClient(const DynamoDB::DynamoDBClientConfiguration& clientConfiguration,
                                std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider) :
@@ -103,7 +111,7 @@ DynamoDBClient::DynamoDBClient(const DynamoDB::DynamoDBClientConfiguration& clie
             Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -119,7 +127,7 @@ DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
             Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -135,7 +143,7 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

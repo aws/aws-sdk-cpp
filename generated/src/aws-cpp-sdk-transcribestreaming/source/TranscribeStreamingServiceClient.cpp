@@ -39,8 +39,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* TranscribeStreamingServiceClient::SERVICE_NAME = "transcribe";
-const char* TranscribeStreamingServiceClient::ALLOCATION_TAG = "TranscribeStreamingServiceClient";
+namespace Aws
+{
+  namespace TranscribeStreamingService
+  {
+    const char SERVICE_NAME[] = "transcribe";
+    const char ALLOCATION_TAG[] = "TranscribeStreamingServiceClient";
+  }
+}
+const char* TranscribeStreamingServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* TranscribeStreamingServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration& clientConfiguration,
                                                                    std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider) :
@@ -52,7 +60,7 @@ TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const Transcr
             Aws::MakeShared<TranscribeStreamingServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -68,7 +76,7 @@ TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const AWSCred
             Aws::MakeShared<TranscribeStreamingServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const std::sh
             Aws::MakeShared<TranscribeStreamingServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

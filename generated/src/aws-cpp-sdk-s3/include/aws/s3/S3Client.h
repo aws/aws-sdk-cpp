@@ -43,8 +43,8 @@ namespace Aws
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
-        static const char* SERVICE_NAME;
-        static const char* ALLOCATION_TAG;
+        static const char* GetServiceName();
+        static const char* GetAllocationTag();
 
       typedef S3ClientConfiguration ClientConfigurationType;
       typedef S3EndpointProvider EndpointProviderType;
@@ -83,14 +83,14 @@ namespace Aws
         * is not specified, it will be initialized to default values.
         */
         S3Client(const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration(),
-                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG));
+                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         S3Client(const Aws::Auth::AWSCredentials& credentials,
-                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
+                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = nullptr,
                  const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration());
 
        /**
@@ -98,7 +98,7 @@ namespace Aws
         * the default http client factory will be used
         */
         S3Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
+                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = nullptr,
                  const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration());
 
 

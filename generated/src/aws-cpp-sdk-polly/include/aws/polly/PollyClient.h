@@ -26,8 +26,8 @@ namespace Polly
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PollyClientConfiguration ClientConfigurationType;
       typedef PollyEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace Polly
         * is not specified, it will be initialized to default values.
         */
         PollyClient(const Aws::Polly::PollyClientConfiguration& clientConfiguration = Aws::Polly::PollyClientConfiguration(),
-                    std::shared_ptr<PollyEndpointProviderBase> endpointProvider = Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<PollyEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PollyClient(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<PollyEndpointProviderBase> endpointProvider = Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<PollyEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Polly::PollyClientConfiguration& clientConfiguration = Aws::Polly::PollyClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace Polly
         * the default http client factory will be used
         */
         PollyClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<PollyEndpointProviderBase> endpointProvider = Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<PollyEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Polly::PollyClientConfiguration& clientConfiguration = Aws::Polly::PollyClientConfiguration());
 
 

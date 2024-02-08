@@ -44,8 +44,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* STSClient::SERVICE_NAME = "sts";
-const char* STSClient::ALLOCATION_TAG = "STSClient";
+namespace Aws
+{
+  namespace STS
+  {
+    const char SERVICE_NAME[] = "sts";
+    const char ALLOCATION_TAG[] = "STSClient";
+  }
+}
+const char* STSClient::GetServiceName() {return SERVICE_NAME;}
+const char* STSClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 STSClient::STSClient(const STS::STSClientConfiguration& clientConfiguration,
                      std::shared_ptr<STSEndpointProviderBase> endpointProvider) :
@@ -57,7 +65,7 @@ STSClient::STSClient(const STS::STSClientConfiguration& clientConfiguration,
             Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<STSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -73,7 +81,7 @@ STSClient::STSClient(const AWSCredentials& credentials,
             Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<STSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ STSClient::STSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<STSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
