@@ -134,8 +134,16 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 using namespace Aws::Utils;
 
 
-const char* S3Client::SERVICE_NAME = "s3";
-const char* S3Client::ALLOCATION_TAG = "S3Client";
+namespace Aws
+{
+  namespace S3
+  {
+    const char SERVICE_NAME[] = "s3";
+    const char ALLOCATION_TAG[] = "S3Client";
+  }
+}
+const char* S3Client::GetServiceName() {return SERVICE_NAME;}
+const char* S3Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 S3Client::S3Client(const S3Client &rhs) :
     BASECLASS(rhs.m_clientConfiguration,
@@ -216,7 +224,7 @@ S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -235,7 +243,7 @@ S3Client::S3Client(const AWSCredentials& credentials,
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -254,7 +262,7 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

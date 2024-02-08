@@ -37,8 +37,8 @@ namespace DynamoDB
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DynamoDBClientConfiguration ClientConfigurationType;
       typedef DynamoDBEndpointProvider EndpointProviderType;
@@ -48,14 +48,14 @@ namespace DynamoDB
         * is not specified, it will be initialized to default values.
         */
         DynamoDBClient(const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration(),
-                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DynamoDBClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration());
 
        /**
@@ -63,7 +63,7 @@ namespace DynamoDB
         * the default http client factory will be used
         */
         DynamoDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration());
 
 

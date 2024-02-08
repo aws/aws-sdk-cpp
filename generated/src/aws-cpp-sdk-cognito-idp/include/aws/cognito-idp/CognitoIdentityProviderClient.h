@@ -76,8 +76,8 @@ namespace CognitoIdentityProvider
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CognitoIdentityProviderClientConfiguration ClientConfigurationType;
       typedef CognitoIdentityProviderEndpointProvider EndpointProviderType;
@@ -87,14 +87,14 @@ namespace CognitoIdentityProvider
         * is not specified, it will be initialized to default values.
         */
         CognitoIdentityProviderClient(const Aws::CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration& clientConfiguration = Aws::CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration(),
-                                      std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> endpointProvider = Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG));
+                                      std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CognitoIdentityProviderClient(const Aws::Auth::AWSCredentials& credentials,
-                                      std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> endpointProvider = Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG),
+                                      std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> endpointProvider = nullptr,
                                       const Aws::CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration& clientConfiguration = Aws::CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration());
 
        /**
@@ -102,7 +102,7 @@ namespace CognitoIdentityProvider
         * the default http client factory will be used
         */
         CognitoIdentityProviderClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                      std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> endpointProvider = Aws::MakeShared<CognitoIdentityProviderEndpointProvider>(ALLOCATION_TAG),
+                                      std::shared_ptr<CognitoIdentityProviderEndpointProviderBase> endpointProvider = nullptr,
                                       const Aws::CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration& clientConfiguration = Aws::CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration());
 
 

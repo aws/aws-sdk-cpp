@@ -58,8 +58,10 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SQSClient::SERVICE_NAME = "sqs";
-const char* SQSClient::ALLOCATION_TAG = "SQSClient";
+const char* SERVICE_NAME = "sqs";
+const char* ALLOCATION_TAG = "SQSClient";
+const char* SQSClient::GetServiceName() {return SERVICE_NAME;}
+const char* SQSClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SQSClient::SQSClient(const SQS::SQSClientConfiguration& clientConfiguration,
                      std::shared_ptr<SQSEndpointProviderBase> endpointProvider) :
@@ -71,7 +73,7 @@ SQSClient::SQSClient(const SQS::SQSClientConfiguration& clientConfiguration,
             Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +89,7 @@ SQSClient::SQSClient(const AWSCredentials& credentials,
             Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +105,7 @@ SQSClient::SQSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

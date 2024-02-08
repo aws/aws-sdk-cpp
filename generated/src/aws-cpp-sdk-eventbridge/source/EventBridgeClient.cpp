@@ -91,8 +91,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* EventBridgeClient::SERVICE_NAME = "events";
-const char* EventBridgeClient::ALLOCATION_TAG = "EventBridgeClient";
+namespace Aws
+{
+  namespace EventBridge
+  {
+    const char SERVICE_NAME[] = "events";
+    const char ALLOCATION_TAG[] = "EventBridgeClient";
+  }
+}
+const char* EventBridgeClient::GetServiceName() {return SERVICE_NAME;}
+const char* EventBridgeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 EventBridgeClient::EventBridgeClient(const EventBridge::EventBridgeClientConfiguration& clientConfiguration,
                                      std::shared_ptr<EventBridgeEndpointProviderBase> endpointProvider) :
@@ -104,7 +112,7 @@ EventBridgeClient::EventBridgeClient(const EventBridge::EventBridgeClientConfigu
             Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EventBridgeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -120,7 +128,7 @@ EventBridgeClient::EventBridgeClient(const AWSCredentials& credentials,
             Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EventBridgeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -136,7 +144,7 @@ EventBridgeClient::EventBridgeClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EventBridgeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

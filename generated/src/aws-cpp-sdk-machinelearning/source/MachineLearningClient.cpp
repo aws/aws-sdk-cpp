@@ -63,8 +63,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* MachineLearningClient::SERVICE_NAME = "machinelearning";
-const char* MachineLearningClient::ALLOCATION_TAG = "MachineLearningClient";
+namespace Aws
+{
+  namespace MachineLearning
+  {
+    const char SERVICE_NAME[] = "machinelearning";
+    const char ALLOCATION_TAG[] = "MachineLearningClient";
+  }
+}
+const char* MachineLearningClient::GetServiceName() {return SERVICE_NAME;}
+const char* MachineLearningClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MachineLearningClient::MachineLearningClient(const MachineLearning::MachineLearningClientConfiguration& clientConfiguration,
                                              std::shared_ptr<MachineLearningEndpointProviderBase> endpointProvider) :
@@ -76,7 +84,7 @@ MachineLearningClient::MachineLearningClient(const MachineLearning::MachineLearn
             Aws::MakeShared<MachineLearningErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MachineLearningEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -92,7 +100,7 @@ MachineLearningClient::MachineLearningClient(const AWSCredentials& credentials,
             Aws::MakeShared<MachineLearningErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MachineLearningEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -108,7 +116,7 @@ MachineLearningClient::MachineLearningClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<MachineLearningErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MachineLearningEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

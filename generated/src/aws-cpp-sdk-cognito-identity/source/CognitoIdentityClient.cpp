@@ -58,8 +58,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CognitoIdentityClient::SERVICE_NAME = "cognito-identity";
-const char* CognitoIdentityClient::ALLOCATION_TAG = "CognitoIdentityClient";
+namespace Aws
+{
+  namespace CognitoIdentity
+  {
+    const char SERVICE_NAME[] = "cognito-identity";
+    const char ALLOCATION_TAG[] = "CognitoIdentityClient";
+  }
+}
+const char* CognitoIdentityClient::GetServiceName() {return SERVICE_NAME;}
+const char* CognitoIdentityClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CognitoIdentityClient::CognitoIdentityClient(const CognitoIdentity::CognitoIdentityClientConfiguration& clientConfiguration,
                                              std::shared_ptr<CognitoIdentityEndpointProviderBase> endpointProvider) :
@@ -71,7 +79,7 @@ CognitoIdentityClient::CognitoIdentityClient(const CognitoIdentity::CognitoIdent
             Aws::MakeShared<CognitoIdentityErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CognitoIdentityEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ CognitoIdentityClient::CognitoIdentityClient(const AWSCredentials& credentials,
             Aws::MakeShared<CognitoIdentityErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CognitoIdentityEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ CognitoIdentityClient::CognitoIdentityClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<CognitoIdentityErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CognitoIdentityEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
