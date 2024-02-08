@@ -781,42 +781,50 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     * <p>Filters the list of Amazon Web Services Lambda findings by the availability
+     * of exploits.</p>
      */
     inline const Aws::Vector<StringFilter>& GetExploitAvailable() const{ return m_exploitAvailable; }
 
     /**
-     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     * <p>Filters the list of Amazon Web Services Lambda findings by the availability
+     * of exploits.</p>
      */
     inline bool ExploitAvailableHasBeenSet() const { return m_exploitAvailableHasBeenSet; }
 
     /**
-     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     * <p>Filters the list of Amazon Web Services Lambda findings by the availability
+     * of exploits.</p>
      */
     inline void SetExploitAvailable(const Aws::Vector<StringFilter>& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = value; }
 
     /**
-     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     * <p>Filters the list of Amazon Web Services Lambda findings by the availability
+     * of exploits.</p>
      */
     inline void SetExploitAvailable(Aws::Vector<StringFilter>&& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = std::move(value); }
 
     /**
-     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     * <p>Filters the list of Amazon Web Services Lambda findings by the availability
+     * of exploits.</p>
      */
     inline FilterCriteria& WithExploitAvailable(const Aws::Vector<StringFilter>& value) { SetExploitAvailable(value); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     * <p>Filters the list of Amazon Web Services Lambda findings by the availability
+     * of exploits.</p>
      */
     inline FilterCriteria& WithExploitAvailable(Aws::Vector<StringFilter>&& value) { SetExploitAvailable(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     * <p>Filters the list of Amazon Web Services Lambda findings by the availability
+     * of exploits.</p>
      */
     inline FilterCriteria& AddExploitAvailable(const StringFilter& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable.push_back(value); return *this; }
 
     /**
-     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     * <p>Filters the list of Amazon Web Services Lambda findings by the availability
+     * of exploits.</p>
      */
     inline FilterCriteria& AddExploitAvailable(StringFilter&& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable.push_back(std::move(value)); return *this; }
 
@@ -1100,105 +1108,113 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by execution
+     * role.</p>
      */
     inline const Aws::Vector<StringFilter>& GetLambdaFunctionExecutionRoleArn() const{ return m_lambdaFunctionExecutionRoleArn; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by execution
+     * role.</p>
      */
     inline bool LambdaFunctionExecutionRoleArnHasBeenSet() const { return m_lambdaFunctionExecutionRoleArnHasBeenSet; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by execution
+     * role.</p>
      */
     inline void SetLambdaFunctionExecutionRoleArn(const Aws::Vector<StringFilter>& value) { m_lambdaFunctionExecutionRoleArnHasBeenSet = true; m_lambdaFunctionExecutionRoleArn = value; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by execution
+     * role.</p>
      */
     inline void SetLambdaFunctionExecutionRoleArn(Aws::Vector<StringFilter>&& value) { m_lambdaFunctionExecutionRoleArnHasBeenSet = true; m_lambdaFunctionExecutionRoleArn = std::move(value); }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by execution
+     * role.</p>
      */
     inline FilterCriteria& WithLambdaFunctionExecutionRoleArn(const Aws::Vector<StringFilter>& value) { SetLambdaFunctionExecutionRoleArn(value); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by execution
+     * role.</p>
      */
     inline FilterCriteria& WithLambdaFunctionExecutionRoleArn(Aws::Vector<StringFilter>&& value) { SetLambdaFunctionExecutionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by execution
+     * role.</p>
      */
     inline FilterCriteria& AddLambdaFunctionExecutionRoleArn(const StringFilter& value) { m_lambdaFunctionExecutionRoleArnHasBeenSet = true; m_lambdaFunctionExecutionRoleArn.push_back(value); return *this; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by execution
+     * role.</p>
      */
     inline FilterCriteria& AddLambdaFunctionExecutionRoleArn(StringFilter&& value) { m_lambdaFunctionExecutionRoleArnHasBeenSet = true; m_lambdaFunctionExecutionRoleArn.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the date and time that a user
-     * last updated the configuration, in <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the date and time
+     * that a user last updated the configuration, in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
      * format</a> </p>
      */
     inline const Aws::Vector<DateFilter>& GetLambdaFunctionLastModifiedAt() const{ return m_lambdaFunctionLastModifiedAt; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the date and time that a user
-     * last updated the configuration, in <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the date and time
+     * that a user last updated the configuration, in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
      * format</a> </p>
      */
     inline bool LambdaFunctionLastModifiedAtHasBeenSet() const { return m_lambdaFunctionLastModifiedAtHasBeenSet; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the date and time that a user
-     * last updated the configuration, in <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the date and time
+     * that a user last updated the configuration, in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
      * format</a> </p>
      */
     inline void SetLambdaFunctionLastModifiedAt(const Aws::Vector<DateFilter>& value) { m_lambdaFunctionLastModifiedAtHasBeenSet = true; m_lambdaFunctionLastModifiedAt = value; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the date and time that a user
-     * last updated the configuration, in <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the date and time
+     * that a user last updated the configuration, in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
      * format</a> </p>
      */
     inline void SetLambdaFunctionLastModifiedAt(Aws::Vector<DateFilter>&& value) { m_lambdaFunctionLastModifiedAtHasBeenSet = true; m_lambdaFunctionLastModifiedAt = std::move(value); }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the date and time that a user
-     * last updated the configuration, in <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the date and time
+     * that a user last updated the configuration, in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
      * format</a> </p>
      */
     inline FilterCriteria& WithLambdaFunctionLastModifiedAt(const Aws::Vector<DateFilter>& value) { SetLambdaFunctionLastModifiedAt(value); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the date and time that a user
-     * last updated the configuration, in <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the date and time
+     * that a user last updated the configuration, in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
      * format</a> </p>
      */
     inline FilterCriteria& WithLambdaFunctionLastModifiedAt(Aws::Vector<DateFilter>&& value) { SetLambdaFunctionLastModifiedAt(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the date and time that a user
-     * last updated the configuration, in <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the date and time
+     * that a user last updated the configuration, in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
      * format</a> </p>
      */
     inline FilterCriteria& AddLambdaFunctionLastModifiedAt(const DateFilter& value) { m_lambdaFunctionLastModifiedAtHasBeenSet = true; m_lambdaFunctionLastModifiedAt.push_back(value); return *this; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the date and time that a user
-     * last updated the configuration, in <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the date and time
+     * that a user last updated the configuration, in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
      * format</a> </p>
      */
@@ -1206,56 +1222,56 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
      * layers</a>. A Lambda function can have up to five layers.</p>
      */
     inline const Aws::Vector<StringFilter>& GetLambdaFunctionLayers() const{ return m_lambdaFunctionLayers; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
      * layers</a>. A Lambda function can have up to five layers.</p>
      */
     inline bool LambdaFunctionLayersHasBeenSet() const { return m_lambdaFunctionLayersHasBeenSet; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
      * layers</a>. A Lambda function can have up to five layers.</p>
      */
     inline void SetLambdaFunctionLayers(const Aws::Vector<StringFilter>& value) { m_lambdaFunctionLayersHasBeenSet = true; m_lambdaFunctionLayers = value; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
      * layers</a>. A Lambda function can have up to five layers.</p>
      */
     inline void SetLambdaFunctionLayers(Aws::Vector<StringFilter>&& value) { m_lambdaFunctionLayersHasBeenSet = true; m_lambdaFunctionLayers = std::move(value); }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
      * layers</a>. A Lambda function can have up to five layers.</p>
      */
     inline FilterCriteria& WithLambdaFunctionLayers(const Aws::Vector<StringFilter>& value) { SetLambdaFunctionLayers(value); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
      * layers</a>. A Lambda function can have up to five layers.</p>
      */
     inline FilterCriteria& WithLambdaFunctionLayers(Aws::Vector<StringFilter>&& value) { SetLambdaFunctionLayers(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
      * layers</a>. A Lambda function can have up to five layers.</p>
      */
     inline FilterCriteria& AddLambdaFunctionLayers(const StringFilter& value) { m_lambdaFunctionLayersHasBeenSet = true; m_lambdaFunctionLayers.push_back(value); return *this; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * <p>Filters the list of Amazon Web Services Lambda functions by the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
      * layers</a>. A Lambda function can have up to five layers.</p>
      */
@@ -1263,91 +1279,99 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the name of the
+     * function.</p>
      */
     inline const Aws::Vector<StringFilter>& GetLambdaFunctionName() const{ return m_lambdaFunctionName; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the name of the
+     * function.</p>
      */
     inline bool LambdaFunctionNameHasBeenSet() const { return m_lambdaFunctionNameHasBeenSet; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the name of the
+     * function.</p>
      */
     inline void SetLambdaFunctionName(const Aws::Vector<StringFilter>& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = value; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the name of the
+     * function.</p>
      */
     inline void SetLambdaFunctionName(Aws::Vector<StringFilter>&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::move(value); }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the name of the
+     * function.</p>
      */
     inline FilterCriteria& WithLambdaFunctionName(const Aws::Vector<StringFilter>& value) { SetLambdaFunctionName(value); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the name of the
+     * function.</p>
      */
     inline FilterCriteria& WithLambdaFunctionName(Aws::Vector<StringFilter>&& value) { SetLambdaFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the name of the
+     * function.</p>
      */
     inline FilterCriteria& AddLambdaFunctionName(const StringFilter& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(value); return *this; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the name of the
+     * function.</p>
      */
     inline FilterCriteria& AddLambdaFunctionName(StringFilter&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
-     * Lambda function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the runtime
+     * environment for the Lambda function.</p>
      */
     inline const Aws::Vector<StringFilter>& GetLambdaFunctionRuntime() const{ return m_lambdaFunctionRuntime; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
-     * Lambda function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the runtime
+     * environment for the Lambda function.</p>
      */
     inline bool LambdaFunctionRuntimeHasBeenSet() const { return m_lambdaFunctionRuntimeHasBeenSet; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
-     * Lambda function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the runtime
+     * environment for the Lambda function.</p>
      */
     inline void SetLambdaFunctionRuntime(const Aws::Vector<StringFilter>& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime = value; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
-     * Lambda function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the runtime
+     * environment for the Lambda function.</p>
      */
     inline void SetLambdaFunctionRuntime(Aws::Vector<StringFilter>&& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime = std::move(value); }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
-     * Lambda function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the runtime
+     * environment for the Lambda function.</p>
      */
     inline FilterCriteria& WithLambdaFunctionRuntime(const Aws::Vector<StringFilter>& value) { SetLambdaFunctionRuntime(value); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
-     * Lambda function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the runtime
+     * environment for the Lambda function.</p>
      */
     inline FilterCriteria& WithLambdaFunctionRuntime(Aws::Vector<StringFilter>&& value) { SetLambdaFunctionRuntime(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
-     * Lambda function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the runtime
+     * environment for the Lambda function.</p>
      */
     inline FilterCriteria& AddLambdaFunctionRuntime(const StringFilter& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime.push_back(value); return *this; }
 
     /**
-     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
-     * Lambda function.</p>
+     * <p>Filters the list of Amazon Web Services Lambda functions by the runtime
+     * environment for the Lambda function.</p>
      */
     inline FilterCriteria& AddLambdaFunctionRuntime(StringFilter&& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime.push_back(std::move(value)); return *this; }
 

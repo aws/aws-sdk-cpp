@@ -94,8 +94,8 @@ namespace Model
      * instance was terminated because the number of Spot requests with a maximum price
      * equal to or higher than the Spot price exceeded available capacity or because of
      * an increase in the Spot price.</p> </li> <li> <p>
-     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
-     * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
+     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down from
+     * the operating system of the instance.</p> </li> <li> <p>
      * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted
      * during AMI creation.</p> </li> <li> <p> <code>Client.InternalError</code>: A
      * client error caused the instance to terminate during launch.</p> </li> <li> <p>
@@ -123,8 +123,8 @@ namespace Model
      * instance was terminated because the number of Spot requests with a maximum price
      * equal to or higher than the Spot price exceeded available capacity or because of
      * an increase in the Spot price.</p> </li> <li> <p>
-     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
-     * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
+     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down from
+     * the operating system of the instance.</p> </li> <li> <p>
      * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted
      * during AMI creation.</p> </li> <li> <p> <code>Client.InternalError</code>: A
      * client error caused the instance to terminate during launch.</p> </li> <li> <p>
@@ -152,8 +152,8 @@ namespace Model
      * instance was terminated because the number of Spot requests with a maximum price
      * equal to or higher than the Spot price exceeded available capacity or because of
      * an increase in the Spot price.</p> </li> <li> <p>
-     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
-     * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
+     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down from
+     * the operating system of the instance.</p> </li> <li> <p>
      * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted
      * during AMI creation.</p> </li> <li> <p> <code>Client.InternalError</code>: A
      * client error caused the instance to terminate during launch.</p> </li> <li> <p>
@@ -181,8 +181,8 @@ namespace Model
      * instance was terminated because the number of Spot requests with a maximum price
      * equal to or higher than the Spot price exceeded available capacity or because of
      * an increase in the Spot price.</p> </li> <li> <p>
-     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
-     * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
+     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down from
+     * the operating system of the instance.</p> </li> <li> <p>
      * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted
      * during AMI creation.</p> </li> <li> <p> <code>Client.InternalError</code>: A
      * client error caused the instance to terminate during launch.</p> </li> <li> <p>
@@ -210,8 +210,8 @@ namespace Model
      * instance was terminated because the number of Spot requests with a maximum price
      * equal to or higher than the Spot price exceeded available capacity or because of
      * an increase in the Spot price.</p> </li> <li> <p>
-     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
-     * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
+     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down from
+     * the operating system of the instance.</p> </li> <li> <p>
      * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted
      * during AMI creation.</p> </li> <li> <p> <code>Client.InternalError</code>: A
      * client error caused the instance to terminate during launch.</p> </li> <li> <p>
@@ -239,8 +239,8 @@ namespace Model
      * instance was terminated because the number of Spot requests with a maximum price
      * equal to or higher than the Spot price exceeded available capacity or because of
      * an increase in the Spot price.</p> </li> <li> <p>
-     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
-     * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
+     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down from
+     * the operating system of the instance.</p> </li> <li> <p>
      * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted
      * during AMI creation.</p> </li> <li> <p> <code>Client.InternalError</code>: A
      * client error caused the instance to terminate during launch.</p> </li> <li> <p>
@@ -268,8 +268,8 @@ namespace Model
      * instance was terminated because the number of Spot requests with a maximum price
      * equal to or higher than the Spot price exceeded available capacity or because of
      * an increase in the Spot price.</p> </li> <li> <p>
-     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
-     * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
+     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down from
+     * the operating system of the instance.</p> </li> <li> <p>
      * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted
      * during AMI creation.</p> </li> <li> <p> <code>Client.InternalError</code>: A
      * client error caused the instance to terminate during launch.</p> </li> <li> <p>
@@ -297,8 +297,8 @@ namespace Model
      * instance was terminated because the number of Spot requests with a maximum price
      * equal to or higher than the Spot price exceeded available capacity or because of
      * an increase in the Spot price.</p> </li> <li> <p>
-     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
-     * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
+     * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down from
+     * the operating system of the instance.</p> </li> <li> <p>
      * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted
      * during AMI creation.</p> </li> <li> <p> <code>Client.InternalError</code>: A
      * client error caused the instance to terminate during launch.</p> </li> <li> <p>

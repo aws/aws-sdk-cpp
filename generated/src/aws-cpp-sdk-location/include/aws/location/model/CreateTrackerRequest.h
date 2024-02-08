@@ -391,7 +391,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -404,7 +404,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -417,7 +417,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -430,7 +430,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -443,7 +443,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
@@ -456,7 +456,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
@@ -469,7 +469,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -482,7 +482,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -495,7 +495,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -508,7 +508,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
@@ -521,7 +521,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -534,7 +534,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -547,7 +547,7 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0���9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * 0��9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
      * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }

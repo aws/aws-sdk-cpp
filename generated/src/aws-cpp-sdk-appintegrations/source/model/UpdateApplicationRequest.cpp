@@ -17,8 +17,7 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_applicationSourceConfigHasBeenSet(false),
-    m_subscriptionsHasBeenSet(false),
-    m_publicationsHasBeenSet(false)
+    m_permissionsHasBeenSet(false)
 {
 }
 
@@ -44,25 +43,14 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
 
   }
 
-  if(m_subscriptionsHasBeenSet)
+  if(m_permissionsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> subscriptionsJsonList(m_subscriptions.size());
-   for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
+   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
+   for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
    {
-     subscriptionsJsonList[subscriptionsIndex].AsObject(m_subscriptions[subscriptionsIndex].Jsonize());
+     permissionsJsonList[permissionsIndex].AsString(m_permissions[permissionsIndex]);
    }
-   payload.WithArray("Subscriptions", std::move(subscriptionsJsonList));
-
-  }
-
-  if(m_publicationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> publicationsJsonList(m_publications.size());
-   for(unsigned publicationsIndex = 0; publicationsIndex < publicationsJsonList.GetLength(); ++publicationsIndex)
-   {
-     publicationsJsonList[publicationsIndex].AsObject(m_publications[publicationsIndex].Jsonize());
-   }
-   payload.WithArray("Publications", std::move(publicationsJsonList));
+   payload.WithArray("Permissions", std::move(permissionsJsonList));
 
   }
 

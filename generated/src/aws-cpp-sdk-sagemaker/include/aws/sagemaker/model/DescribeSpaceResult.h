@@ -38,37 +38,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline void SetDomainId(const char* value) { m_domainId.assign(value); }
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline DescribeSpaceResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline DescribeSpaceResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the associated Domain.</p>
+     * <p>The ID of the associated domain.</p>
      */
     inline DescribeSpaceResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
@@ -146,37 +146,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+     * <p>The ID of the space's profile in the Amazon EFS volume.</p>
      */
     inline const Aws::String& GetHomeEfsFileSystemUid() const{ return m_homeEfsFileSystemUid; }
 
     /**
-     * <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+     * <p>The ID of the space's profile in the Amazon EFS volume.</p>
      */
     inline void SetHomeEfsFileSystemUid(const Aws::String& value) { m_homeEfsFileSystemUid = value; }
 
     /**
-     * <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+     * <p>The ID of the space's profile in the Amazon EFS volume.</p>
      */
     inline void SetHomeEfsFileSystemUid(Aws::String&& value) { m_homeEfsFileSystemUid = std::move(value); }
 
     /**
-     * <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+     * <p>The ID of the space's profile in the Amazon EFS volume.</p>
      */
     inline void SetHomeEfsFileSystemUid(const char* value) { m_homeEfsFileSystemUid.assign(value); }
 
     /**
-     * <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+     * <p>The ID of the space's profile in the Amazon EFS volume.</p>
      */
     inline DescribeSpaceResult& WithHomeEfsFileSystemUid(const Aws::String& value) { SetHomeEfsFileSystemUid(value); return *this;}
 
     /**
-     * <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+     * <p>The ID of the space's profile in the Amazon EFS volume.</p>
      */
     inline DescribeSpaceResult& WithHomeEfsFileSystemUid(Aws::String&& value) { SetHomeEfsFileSystemUid(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+     * <p>The ID of the space's profile in the Amazon EFS volume.</p>
      */
     inline DescribeSpaceResult& WithHomeEfsFileSystemUid(const char* value) { SetHomeEfsFileSystemUid(value); return *this;}
 

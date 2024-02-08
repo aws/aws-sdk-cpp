@@ -43,7 +43,7 @@ namespace Model
      * the AutoML job V2 (Binary Classification, Multiclass Classification,
      * Regression). For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * SageMaker Autopilot problem types</a>.</p>
      */
     inline const ProblemType& GetProblemType() const{ return m_problemType; }
 
@@ -52,7 +52,7 @@ namespace Model
      * the AutoML job V2 (Binary Classification, Multiclass Classification,
      * Regression). For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * SageMaker Autopilot problem types</a>.</p>
      */
     inline bool ProblemTypeHasBeenSet() const { return m_problemTypeHasBeenSet; }
 
@@ -61,7 +61,7 @@ namespace Model
      * the AutoML job V2 (Binary Classification, Multiclass Classification,
      * Regression). For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * SageMaker Autopilot problem types</a>.</p>
      */
     inline void SetProblemType(const ProblemType& value) { m_problemTypeHasBeenSet = true; m_problemType = value; }
 
@@ -70,7 +70,7 @@ namespace Model
      * the AutoML job V2 (Binary Classification, Multiclass Classification,
      * Regression). For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * SageMaker Autopilot problem types</a>.</p>
      */
     inline void SetProblemType(ProblemType&& value) { m_problemTypeHasBeenSet = true; m_problemType = std::move(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * the AutoML job V2 (Binary Classification, Multiclass Classification,
      * Regression). For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * SageMaker Autopilot problem types</a>.</p>
      */
     inline TabularResolvedAttributes& WithProblemType(const ProblemType& value) { SetProblemType(value); return *this;}
 
@@ -88,7 +88,7 @@ namespace Model
      * the AutoML job V2 (Binary Classification, Multiclass Classification,
      * Regression). For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * SageMaker Autopilot problem types</a>.</p>
      */
     inline TabularResolvedAttributes& WithProblemType(ProblemType&& value) { SetProblemType(std::move(value)); return *this;}
 

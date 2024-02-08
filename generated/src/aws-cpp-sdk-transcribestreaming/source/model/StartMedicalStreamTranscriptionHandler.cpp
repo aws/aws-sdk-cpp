@@ -29,6 +29,12 @@ namespace Model
 
     StartMedicalStreamTranscriptionHandler::StartMedicalStreamTranscriptionHandler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const StartMedicalStreamTranscriptionInitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(STARTMEDICALSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG,
+                "StartMedicalStreamTranscription initial response received.");
+        };
+
         m_onMedicalTranscriptEvent = [&](const MedicalTranscriptEvent&)
         {
             AWS_LOGSTREAM_TRACE(STARTMEDICALSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG, "MedicalTranscriptEvent received.");
@@ -88,6 +94,21 @@ namespace Model
         }
         switch (StartMedicalStreamTranscriptionEventMapper::GetStartMedicalStreamTranscriptionEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+        
+        case StartMedicalStreamTranscriptionEventType::INITIAL_RESPONSE: 
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(STARTMEDICALSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG, "Unable to generate a proper StartMedicalStreamTranscriptionInitialResponse object from the response in JSON format.");
+                break;
+            }
+
+            StartMedicalStreamTranscriptionInitialResponse event(json.View());
+            m_onInitialResponse(event);
+            break;
+        }   
+
         case StartMedicalStreamTranscriptionEventType::TRANSCRIPTEVENT:
         {
             JsonValue json(GetEventPayloadAsString());
@@ -192,12 +213,18 @@ namespace Model
 
 namespace StartMedicalStreamTranscriptionEventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int TRANSCRIPTEVENT_HASH = Aws::Utils::HashingUtils::HashString("TranscriptEvent");
 
     StartMedicalStreamTranscriptionEventType GetStartMedicalStreamTranscriptionEventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        if (hashCode == TRANSCRIPTEVENT_HASH)
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return StartMedicalStreamTranscriptionEventType::INITIAL_RESPONSE;
+        }
+        else if (hashCode == TRANSCRIPTEVENT_HASH)
         {
             return StartMedicalStreamTranscriptionEventType::TRANSCRIPTEVENT;
         }
@@ -208,6 +235,8 @@ namespace StartMedicalStreamTranscriptionEventMapper
     {
         switch (value)
         {
+        case StartMedicalStreamTranscriptionEventType::INITIAL_RESPONSE:
+            return "initial-response";
         case StartMedicalStreamTranscriptionEventType::TRANSCRIPTEVENT:
             return "TranscriptEvent";
         default:

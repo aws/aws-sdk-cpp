@@ -101,22 +101,22 @@ namespace Model
 
 
     /**
-     * <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+     * <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
      */
     inline double GetRamSizeInGb() const{ return m_ramSizeInGb; }
 
     /**
-     * <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+     * <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
      */
     inline bool RamSizeInGbHasBeenSet() const { return m_ramSizeInGbHasBeenSet; }
 
     /**
-     * <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+     * <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
      */
     inline void SetRamSizeInGb(double value) { m_ramSizeInGbHasBeenSet = true; m_ramSizeInGb = value; }
 
     /**
-     * <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+     * <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
      */
     inline InstanceHardware& WithRamSizeInGb(double value) { SetRamSizeInGb(value); return *this;}
 

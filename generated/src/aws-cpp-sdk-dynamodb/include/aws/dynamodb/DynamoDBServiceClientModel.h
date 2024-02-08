@@ -67,6 +67,7 @@
 #include <aws/dynamodb/model/UpdateGlobalTableResult.h>
 #include <aws/dynamodb/model/UpdateGlobalTableSettingsResult.h>
 #include <aws/dynamodb/model/UpdateItemResult.h>
+#include <aws/dynamodb/model/UpdateKinesisStreamingDestinationResult.h>
 #include <aws/dynamodb/model/UpdateTableResult.h>
 #include <aws/dynamodb/model/UpdateTableReplicaAutoScalingResult.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveResult.h>
@@ -161,6 +162,7 @@ namespace Aws
       class UpdateGlobalTableRequest;
       class UpdateGlobalTableSettingsRequest;
       class UpdateItemRequest;
+      class UpdateKinesisStreamingDestinationRequest;
       class UpdateTableRequest;
       class UpdateTableReplicaAutoScalingRequest;
       class UpdateTimeToLiveRequest;
@@ -217,6 +219,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateGlobalTableResult, DynamoDBError> UpdateGlobalTableOutcome;
       typedef Aws::Utils::Outcome<UpdateGlobalTableSettingsResult, DynamoDBError> UpdateGlobalTableSettingsOutcome;
       typedef Aws::Utils::Outcome<UpdateItemResult, DynamoDBError> UpdateItemOutcome;
+      typedef Aws::Utils::Outcome<UpdateKinesisStreamingDestinationResult, DynamoDBError> UpdateKinesisStreamingDestinationOutcome;
       typedef Aws::Utils::Outcome<UpdateTableResult, DynamoDBError> UpdateTableOutcome;
       typedef Aws::Utils::Outcome<UpdateTableReplicaAutoScalingResult, DynamoDBError> UpdateTableReplicaAutoScalingOutcome;
       typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, DynamoDBError> UpdateTimeToLiveOutcome;
@@ -273,6 +276,7 @@ namespace Aws
       typedef std::future<UpdateGlobalTableOutcome> UpdateGlobalTableOutcomeCallable;
       typedef std::future<UpdateGlobalTableSettingsOutcome> UpdateGlobalTableSettingsOutcomeCallable;
       typedef std::future<UpdateItemOutcome> UpdateItemOutcomeCallable;
+      typedef std::future<UpdateKinesisStreamingDestinationOutcome> UpdateKinesisStreamingDestinationOutcomeCallable;
       typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
       typedef std::future<UpdateTableReplicaAutoScalingOutcome> UpdateTableReplicaAutoScalingOutcomeCallable;
       typedef std::future<UpdateTimeToLiveOutcome> UpdateTimeToLiveOutcomeCallable;
@@ -332,6 +336,7 @@ namespace Aws
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateGlobalTableRequest&, const Model::UpdateGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateGlobalTableSettingsRequest&, const Model::UpdateGlobalTableSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalTableSettingsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateItemRequest&, const Model::UpdateItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateItemResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::UpdateKinesisStreamingDestinationRequest&, const Model::UpdateKinesisStreamingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKinesisStreamingDestinationResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTableReplicaAutoScalingRequest&, const Model::UpdateTableReplicaAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableReplicaAutoScalingResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTimeToLiveRequest&, const Model::UpdateTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTimeToLiveResponseReceivedHandler;

@@ -197,32 +197,32 @@ namespace Model
 
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+     * <p>The Lightsail resource type of the alarm.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+     * <p>The Lightsail resource type of the alarm.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+     * <p>The Lightsail resource type of the alarm.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+     * <p>The Lightsail resource type of the alarm.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+     * <p>The Lightsail resource type of the alarm.</p>
      */
     inline Alarm& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+     * <p>The Lightsail resource type of the alarm.</p>
      */
     inline Alarm& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

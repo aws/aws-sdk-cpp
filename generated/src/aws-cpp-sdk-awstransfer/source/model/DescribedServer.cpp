@@ -44,7 +44,8 @@ DescribedServer::DescribedServer() :
     m_userCountHasBeenSet(false),
     m_workflowDetailsHasBeenSet(false),
     m_structuredLogDestinationsHasBeenSet(false),
-    m_s3StorageOptionsHasBeenSet(false)
+    m_s3StorageOptionsHasBeenSet(false),
+    m_as2ServiceManagedEgressIpAddressesHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_userCountHasBeenSet(false),
     m_workflowDetailsHasBeenSet(false),
     m_structuredLogDestinationsHasBeenSet(false),
-    m_s3StorageOptionsHasBeenSet(false)
+    m_s3StorageOptionsHasBeenSet(false),
+    m_as2ServiceManagedEgressIpAddressesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -237,6 +239,16 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_s3StorageOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("As2ServiceManagedEgressIpAddresses"))
+  {
+    Aws::Utils::Array<JsonView> as2ServiceManagedEgressIpAddressesJsonList = jsonValue.GetArray("As2ServiceManagedEgressIpAddresses");
+    for(unsigned as2ServiceManagedEgressIpAddressesIndex = 0; as2ServiceManagedEgressIpAddressesIndex < as2ServiceManagedEgressIpAddressesJsonList.GetLength(); ++as2ServiceManagedEgressIpAddressesIndex)
+    {
+      m_as2ServiceManagedEgressIpAddresses.push_back(as2ServiceManagedEgressIpAddressesJsonList[as2ServiceManagedEgressIpAddressesIndex].AsString());
+    }
+    m_as2ServiceManagedEgressIpAddressesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -378,6 +390,17 @@ JsonValue DescribedServer::Jsonize() const
   if(m_s3StorageOptionsHasBeenSet)
   {
    payload.WithObject("S3StorageOptions", m_s3StorageOptions.Jsonize());
+
+  }
+
+  if(m_as2ServiceManagedEgressIpAddressesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> as2ServiceManagedEgressIpAddressesJsonList(m_as2ServiceManagedEgressIpAddresses.size());
+   for(unsigned as2ServiceManagedEgressIpAddressesIndex = 0; as2ServiceManagedEgressIpAddressesIndex < as2ServiceManagedEgressIpAddressesJsonList.GetLength(); ++as2ServiceManagedEgressIpAddressesIndex)
+   {
+     as2ServiceManagedEgressIpAddressesJsonList[as2ServiceManagedEgressIpAddressesIndex].AsString(m_as2ServiceManagedEgressIpAddresses[as2ServiceManagedEgressIpAddressesIndex]);
+   }
+   payload.WithArray("As2ServiceManagedEgressIpAddresses", std::move(as2ServiceManagedEgressIpAddressesJsonList));
 
   }
 

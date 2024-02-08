@@ -165,37 +165,37 @@ namespace Model
 
     /**
      * <p>A list of the account IDs of Amazon Web Services accounts of third-party
-     * applications that are allowed to to access data managed by Lake Formation.</p>
+     * applications that are allowed to access data managed by Lake Formation.</p>
      */
     inline const ExternalFilteringConfiguration& GetExternalFiltering() const{ return m_externalFiltering; }
 
     /**
      * <p>A list of the account IDs of Amazon Web Services accounts of third-party
-     * applications that are allowed to to access data managed by Lake Formation.</p>
+     * applications that are allowed to access data managed by Lake Formation.</p>
      */
     inline bool ExternalFilteringHasBeenSet() const { return m_externalFilteringHasBeenSet; }
 
     /**
      * <p>A list of the account IDs of Amazon Web Services accounts of third-party
-     * applications that are allowed to to access data managed by Lake Formation.</p>
+     * applications that are allowed to access data managed by Lake Formation.</p>
      */
     inline void SetExternalFiltering(const ExternalFilteringConfiguration& value) { m_externalFilteringHasBeenSet = true; m_externalFiltering = value; }
 
     /**
      * <p>A list of the account IDs of Amazon Web Services accounts of third-party
-     * applications that are allowed to to access data managed by Lake Formation.</p>
+     * applications that are allowed to access data managed by Lake Formation.</p>
      */
     inline void SetExternalFiltering(ExternalFilteringConfiguration&& value) { m_externalFilteringHasBeenSet = true; m_externalFiltering = std::move(value); }
 
     /**
      * <p>A list of the account IDs of Amazon Web Services accounts of third-party
-     * applications that are allowed to to access data managed by Lake Formation.</p>
+     * applications that are allowed to access data managed by Lake Formation.</p>
      */
     inline CreateLakeFormationIdentityCenterConfigurationRequest& WithExternalFiltering(const ExternalFilteringConfiguration& value) { SetExternalFiltering(value); return *this;}
 
     /**
      * <p>A list of the account IDs of Amazon Web Services accounts of third-party
-     * applications that are allowed to to access data managed by Lake Formation.</p>
+     * applications that are allowed to access data managed by Lake Formation.</p>
      */
     inline CreateLakeFormationIdentityCenterConfigurationRequest& WithExternalFiltering(ExternalFilteringConfiguration&& value) { SetExternalFiltering(std::move(value)); return *this;}
 

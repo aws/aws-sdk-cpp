@@ -51,7 +51,8 @@ namespace Model
      *  </li> <li> <p> <code>block-new-sharing</code> - Prevents only new public
      * sharing of snapshots in the Region. Users in the account will no longer be able
      * to request new public sharing. However, snapshots that are already publicly
-     * shared, remain publicly available.</p> </li> </ul>
+     * shared, remain publicly available.</p> </li> </ul> <p> <code>unblocked</code> is
+     * not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
      */
     inline const SnapshotBlockPublicAccessState& GetState() const{ return m_state; }
 
@@ -70,7 +71,8 @@ namespace Model
      *  </li> <li> <p> <code>block-new-sharing</code> - Prevents only new public
      * sharing of snapshots in the Region. Users in the account will no longer be able
      * to request new public sharing. However, snapshots that are already publicly
-     * shared, remain publicly available.</p> </li> </ul>
+     * shared, remain publicly available.</p> </li> </ul> <p> <code>unblocked</code> is
+     * not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
@@ -89,7 +91,8 @@ namespace Model
      *  </li> <li> <p> <code>block-new-sharing</code> - Prevents only new public
      * sharing of snapshots in the Region. Users in the account will no longer be able
      * to request new public sharing. However, snapshots that are already publicly
-     * shared, remain publicly available.</p> </li> </ul>
+     * shared, remain publicly available.</p> </li> </ul> <p> <code>unblocked</code> is
+     * not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
      */
     inline void SetState(const SnapshotBlockPublicAccessState& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -108,7 +111,8 @@ namespace Model
      *  </li> <li> <p> <code>block-new-sharing</code> - Prevents only new public
      * sharing of snapshots in the Region. Users in the account will no longer be able
      * to request new public sharing. However, snapshots that are already publicly
-     * shared, remain publicly available.</p> </li> </ul>
+     * shared, remain publicly available.</p> </li> </ul> <p> <code>unblocked</code> is
+     * not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
      */
     inline void SetState(SnapshotBlockPublicAccessState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -127,7 +131,8 @@ namespace Model
      *  </li> <li> <p> <code>block-new-sharing</code> - Prevents only new public
      * sharing of snapshots in the Region. Users in the account will no longer be able
      * to request new public sharing. However, snapshots that are already publicly
-     * shared, remain publicly available.</p> </li> </ul>
+     * shared, remain publicly available.</p> </li> </ul> <p> <code>unblocked</code> is
+     * not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
      */
     inline EnableSnapshotBlockPublicAccessRequest& WithState(const SnapshotBlockPublicAccessState& value) { SetState(value); return *this;}
 
@@ -146,7 +151,8 @@ namespace Model
      *  </li> <li> <p> <code>block-new-sharing</code> - Prevents only new public
      * sharing of snapshots in the Region. Users in the account will no longer be able
      * to request new public sharing. However, snapshots that are already publicly
-     * shared, remain publicly available.</p> </li> </ul>
+     * shared, remain publicly available.</p> </li> </ul> <p> <code>unblocked</code> is
+     * not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
      */
     inline EnableSnapshotBlockPublicAccessRequest& WithState(SnapshotBlockPublicAccessState&& value) { SetState(std::move(value)); return *this;}
 

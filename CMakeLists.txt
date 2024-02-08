@@ -50,7 +50,6 @@ if (LEGACY_BUILD)
     option(USE_OPENSSL "Set this if you want to use your system's OpenSSL 1.0.2/1.1.1 compatible libcrypto" ON)
     option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" ON)
     option(ENABLE_HTTP_CLIENT_TESTING "If enabled, corresponding http client test suites will be built and run" OFF)
-    option(ENABLE_FUNCTIONAL_TESTING "If enabled, clients might be generated based on dummy models, and run functional tests as part of unit tests: aws-cpp-sdk-core-tests" OFF)
     option(CUSTOM_MEMORY_MANAGEMENT "If set to ON, generates the sdk project files with custom memory management enabled, otherwise disables it" OFF)
     option(REGENERATE_CLIENTS "If set to ON, all clients being built on this run will be regenerated from the api definitions, this option involves some setup of python, java 8+, and maven" OFF)
     option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIENTS. \

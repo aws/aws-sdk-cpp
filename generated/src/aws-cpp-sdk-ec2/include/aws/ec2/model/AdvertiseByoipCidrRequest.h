@@ -158,6 +158,119 @@ namespace Model
      */
     inline AdvertiseByoipCidrRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>If you have <a
+     * href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
+     * Zones</a> enabled, you can choose a network border group for Local Zones when
+     * you provision and advertise a BYOIPv4 CIDR. Choose the network border group
+     * carefully as the EIP and the Amazon Web Services resource it is associated with
+     * must reside in the same network border group.</p> <p>You can provision BYOIP
+     * address ranges to and advertise them in the following Local Zone network border
+     * groups:</p> <ul> <li> <p>us-east-1-dfw-2</p> </li> <li> <p>us-west-2-lax-1</p>
+     * </li> <li> <p>us-west-2-phx-2</p> </li> </ul>  <p>You cannot provision or
+     * advertise BYOIPv6 address ranges in Local Zones at this time.</p> 
+     */
+    inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
+
+    /**
+     * <p>If you have <a
+     * href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
+     * Zones</a> enabled, you can choose a network border group for Local Zones when
+     * you provision and advertise a BYOIPv4 CIDR. Choose the network border group
+     * carefully as the EIP and the Amazon Web Services resource it is associated with
+     * must reside in the same network border group.</p> <p>You can provision BYOIP
+     * address ranges to and advertise them in the following Local Zone network border
+     * groups:</p> <ul> <li> <p>us-east-1-dfw-2</p> </li> <li> <p>us-west-2-lax-1</p>
+     * </li> <li> <p>us-west-2-phx-2</p> </li> </ul>  <p>You cannot provision or
+     * advertise BYOIPv6 address ranges in Local Zones at this time.</p> 
+     */
+    inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
+
+    /**
+     * <p>If you have <a
+     * href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
+     * Zones</a> enabled, you can choose a network border group for Local Zones when
+     * you provision and advertise a BYOIPv4 CIDR. Choose the network border group
+     * carefully as the EIP and the Amazon Web Services resource it is associated with
+     * must reside in the same network border group.</p> <p>You can provision BYOIP
+     * address ranges to and advertise them in the following Local Zone network border
+     * groups:</p> <ul> <li> <p>us-east-1-dfw-2</p> </li> <li> <p>us-west-2-lax-1</p>
+     * </li> <li> <p>us-west-2-phx-2</p> </li> </ul>  <p>You cannot provision or
+     * advertise BYOIPv6 address ranges in Local Zones at this time.</p> 
+     */
+    inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
+
+    /**
+     * <p>If you have <a
+     * href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
+     * Zones</a> enabled, you can choose a network border group for Local Zones when
+     * you provision and advertise a BYOIPv4 CIDR. Choose the network border group
+     * carefully as the EIP and the Amazon Web Services resource it is associated with
+     * must reside in the same network border group.</p> <p>You can provision BYOIP
+     * address ranges to and advertise them in the following Local Zone network border
+     * groups:</p> <ul> <li> <p>us-east-1-dfw-2</p> </li> <li> <p>us-west-2-lax-1</p>
+     * </li> <li> <p>us-west-2-phx-2</p> </li> </ul>  <p>You cannot provision or
+     * advertise BYOIPv6 address ranges in Local Zones at this time.</p> 
+     */
+    inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
+
+    /**
+     * <p>If you have <a
+     * href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
+     * Zones</a> enabled, you can choose a network border group for Local Zones when
+     * you provision and advertise a BYOIPv4 CIDR. Choose the network border group
+     * carefully as the EIP and the Amazon Web Services resource it is associated with
+     * must reside in the same network border group.</p> <p>You can provision BYOIP
+     * address ranges to and advertise them in the following Local Zone network border
+     * groups:</p> <ul> <li> <p>us-east-1-dfw-2</p> </li> <li> <p>us-west-2-lax-1</p>
+     * </li> <li> <p>us-west-2-phx-2</p> </li> </ul>  <p>You cannot provision or
+     * advertise BYOIPv6 address ranges in Local Zones at this time.</p> 
+     */
+    inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
+
+    /**
+     * <p>If you have <a
+     * href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
+     * Zones</a> enabled, you can choose a network border group for Local Zones when
+     * you provision and advertise a BYOIPv4 CIDR. Choose the network border group
+     * carefully as the EIP and the Amazon Web Services resource it is associated with
+     * must reside in the same network border group.</p> <p>You can provision BYOIP
+     * address ranges to and advertise them in the following Local Zone network border
+     * groups:</p> <ul> <li> <p>us-east-1-dfw-2</p> </li> <li> <p>us-west-2-lax-1</p>
+     * </li> <li> <p>us-west-2-phx-2</p> </li> </ul>  <p>You cannot provision or
+     * advertise BYOIPv6 address ranges in Local Zones at this time.</p> 
+     */
+    inline AdvertiseByoipCidrRequest& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
+
+    /**
+     * <p>If you have <a
+     * href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
+     * Zones</a> enabled, you can choose a network border group for Local Zones when
+     * you provision and advertise a BYOIPv4 CIDR. Choose the network border group
+     * carefully as the EIP and the Amazon Web Services resource it is associated with
+     * must reside in the same network border group.</p> <p>You can provision BYOIP
+     * address ranges to and advertise them in the following Local Zone network border
+     * groups:</p> <ul> <li> <p>us-east-1-dfw-2</p> </li> <li> <p>us-west-2-lax-1</p>
+     * </li> <li> <p>us-west-2-phx-2</p> </li> </ul>  <p>You cannot provision or
+     * advertise BYOIPv6 address ranges in Local Zones at this time.</p> 
+     */
+    inline AdvertiseByoipCidrRequest& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>If you have <a
+     * href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
+     * Zones</a> enabled, you can choose a network border group for Local Zones when
+     * you provision and advertise a BYOIPv4 CIDR. Choose the network border group
+     * carefully as the EIP and the Amazon Web Services resource it is associated with
+     * must reside in the same network border group.</p> <p>You can provision BYOIP
+     * address ranges to and advertise them in the following Local Zone network border
+     * groups:</p> <ul> <li> <p>us-east-1-dfw-2</p> </li> <li> <p>us-west-2-lax-1</p>
+     * </li> <li> <p>us-west-2-phx-2</p> </li> </ul>  <p>You cannot provision or
+     * advertise BYOIPv6 address ranges in Local Zones at this time.</p> 
+     */
+    inline AdvertiseByoipCidrRequest& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
+
   private:
 
     Aws::String m_cidr;
@@ -168,6 +281,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_networkBorderGroup;
+    bool m_networkBorderGroupHasBeenSet = false;
   };
 
 } // namespace Model

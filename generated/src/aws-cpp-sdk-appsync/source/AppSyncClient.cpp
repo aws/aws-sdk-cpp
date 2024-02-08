@@ -53,6 +53,7 @@
 #include <aws/appsync/model/GetDomainNameRequest.h>
 #include <aws/appsync/model/GetFunctionRequest.h>
 #include <aws/appsync/model/GetGraphqlApiRequest.h>
+#include <aws/appsync/model/GetGraphqlApiEnvironmentVariablesRequest.h>
 #include <aws/appsync/model/GetIntrospectionSchemaRequest.h>
 #include <aws/appsync/model/GetResolverRequest.h>
 #include <aws/appsync/model/GetSchemaCreationStatusRequest.h>
@@ -69,6 +70,7 @@
 #include <aws/appsync/model/ListTagsForResourceRequest.h>
 #include <aws/appsync/model/ListTypesRequest.h>
 #include <aws/appsync/model/ListTypesByAssociationRequest.h>
+#include <aws/appsync/model/PutGraphqlApiEnvironmentVariablesRequest.h>
 #include <aws/appsync/model/StartDataSourceIntrospectionRequest.h>
 #include <aws/appsync/model/StartSchemaCreationRequest.h>
 #include <aws/appsync/model/StartSchemaMergeRequest.h>
@@ -1339,6 +1341,40 @@ GetGraphqlApiOutcome AppSyncClient::GetGraphqlApi(const GetGraphqlApiRequest& re
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetGraphqlApiEnvironmentVariablesOutcome AppSyncClient::GetGraphqlApiEnvironmentVariables(const GetGraphqlApiEnvironmentVariablesRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetGraphqlApiEnvironmentVariables);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGraphqlApiEnvironmentVariables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGraphqlApiEnvironmentVariables", "Required field: ApiId, is not set");
+    return GetGraphqlApiEnvironmentVariablesOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetGraphqlApiEnvironmentVariables, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetGraphqlApiEnvironmentVariables, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetGraphqlApiEnvironmentVariables",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetGraphqlApiEnvironmentVariablesOutcome>(
+    [&]()-> GetGraphqlApiEnvironmentVariablesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGraphqlApiEnvironmentVariables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apis/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/environmentVariables");
+      return GetGraphqlApiEnvironmentVariablesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetIntrospectionSchemaOutcome AppSyncClient::GetIntrospectionSchema(const GetIntrospectionSchemaRequest& request) const
 {
   AWS_OPERATION_GUARD(GetIntrospectionSchema);
@@ -1928,6 +1964,40 @@ ListTypesByAssociationOutcome AppSyncClient::ListTypesByAssociation(const ListTy
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/types");
       return ListTypesByAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutGraphqlApiEnvironmentVariablesOutcome AppSyncClient::PutGraphqlApiEnvironmentVariables(const PutGraphqlApiEnvironmentVariablesRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutGraphqlApiEnvironmentVariables);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutGraphqlApiEnvironmentVariables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutGraphqlApiEnvironmentVariables", "Required field: ApiId, is not set");
+    return PutGraphqlApiEnvironmentVariablesOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutGraphqlApiEnvironmentVariables, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutGraphqlApiEnvironmentVariables, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutGraphqlApiEnvironmentVariables",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutGraphqlApiEnvironmentVariablesOutcome>(
+    [&]()-> PutGraphqlApiEnvironmentVariablesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutGraphqlApiEnvironmentVariables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apis/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/environmentVariables");
+      return PutGraphqlApiEnvironmentVariablesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

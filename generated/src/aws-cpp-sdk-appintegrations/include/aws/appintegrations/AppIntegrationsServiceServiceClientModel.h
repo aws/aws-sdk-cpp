@@ -21,11 +21,13 @@
 #include <aws/appintegrations/model/CreateApplicationResult.h>
 #include <aws/appintegrations/model/CreateDataIntegrationResult.h>
 #include <aws/appintegrations/model/CreateEventIntegrationResult.h>
+#include <aws/appintegrations/model/DeleteApplicationResult.h>
 #include <aws/appintegrations/model/DeleteDataIntegrationResult.h>
 #include <aws/appintegrations/model/DeleteEventIntegrationResult.h>
 #include <aws/appintegrations/model/GetApplicationResult.h>
 #include <aws/appintegrations/model/GetDataIntegrationResult.h>
 #include <aws/appintegrations/model/GetEventIntegrationResult.h>
+#include <aws/appintegrations/model/ListApplicationAssociationsResult.h>
 #include <aws/appintegrations/model/ListApplicationsResult.h>
 #include <aws/appintegrations/model/ListDataIntegrationAssociationsResult.h>
 #include <aws/appintegrations/model/ListDataIntegrationsResult.h>
@@ -80,11 +82,13 @@ namespace Aws
       class CreateApplicationRequest;
       class CreateDataIntegrationRequest;
       class CreateEventIntegrationRequest;
+      class DeleteApplicationRequest;
       class DeleteDataIntegrationRequest;
       class DeleteEventIntegrationRequest;
       class GetApplicationRequest;
       class GetDataIntegrationRequest;
       class GetEventIntegrationRequest;
+      class ListApplicationAssociationsRequest;
       class ListApplicationsRequest;
       class ListDataIntegrationAssociationsRequest;
       class ListDataIntegrationsRequest;
@@ -102,11 +106,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateApplicationResult, AppIntegrationsServiceError> CreateApplicationOutcome;
       typedef Aws::Utils::Outcome<CreateDataIntegrationResult, AppIntegrationsServiceError> CreateDataIntegrationOutcome;
       typedef Aws::Utils::Outcome<CreateEventIntegrationResult, AppIntegrationsServiceError> CreateEventIntegrationOutcome;
+      typedef Aws::Utils::Outcome<DeleteApplicationResult, AppIntegrationsServiceError> DeleteApplicationOutcome;
       typedef Aws::Utils::Outcome<DeleteDataIntegrationResult, AppIntegrationsServiceError> DeleteDataIntegrationOutcome;
       typedef Aws::Utils::Outcome<DeleteEventIntegrationResult, AppIntegrationsServiceError> DeleteEventIntegrationOutcome;
       typedef Aws::Utils::Outcome<GetApplicationResult, AppIntegrationsServiceError> GetApplicationOutcome;
       typedef Aws::Utils::Outcome<GetDataIntegrationResult, AppIntegrationsServiceError> GetDataIntegrationOutcome;
       typedef Aws::Utils::Outcome<GetEventIntegrationResult, AppIntegrationsServiceError> GetEventIntegrationOutcome;
+      typedef Aws::Utils::Outcome<ListApplicationAssociationsResult, AppIntegrationsServiceError> ListApplicationAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, AppIntegrationsServiceError> ListApplicationsOutcome;
       typedef Aws::Utils::Outcome<ListDataIntegrationAssociationsResult, AppIntegrationsServiceError> ListDataIntegrationAssociationsOutcome;
       typedef Aws::Utils::Outcome<ListDataIntegrationsResult, AppIntegrationsServiceError> ListDataIntegrationsOutcome;
@@ -124,11 +130,13 @@ namespace Aws
       typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
       typedef std::future<CreateDataIntegrationOutcome> CreateDataIntegrationOutcomeCallable;
       typedef std::future<CreateEventIntegrationOutcome> CreateEventIntegrationOutcomeCallable;
+      typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
       typedef std::future<DeleteDataIntegrationOutcome> DeleteDataIntegrationOutcomeCallable;
       typedef std::future<DeleteEventIntegrationOutcome> DeleteEventIntegrationOutcomeCallable;
       typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
       typedef std::future<GetDataIntegrationOutcome> GetDataIntegrationOutcomeCallable;
       typedef std::future<GetEventIntegrationOutcome> GetEventIntegrationOutcomeCallable;
+      typedef std::future<ListApplicationAssociationsOutcome> ListApplicationAssociationsOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
       typedef std::future<ListDataIntegrationAssociationsOutcome> ListDataIntegrationAssociationsOutcomeCallable;
       typedef std::future<ListDataIntegrationsOutcome> ListDataIntegrationsOutcomeCallable;
@@ -149,11 +157,13 @@ namespace Aws
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::CreateDataIntegrationRequest&, const Model::CreateDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataIntegrationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::CreateEventIntegrationRequest&, const Model::CreateEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventIntegrationResponseReceivedHandler;
+    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::DeleteDataIntegrationRequest&, const Model::DeleteDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataIntegrationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::DeleteEventIntegrationRequest&, const Model::DeleteEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventIntegrationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::GetDataIntegrationRequest&, const Model::GetDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataIntegrationResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::GetEventIntegrationRequest&, const Model::GetEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventIntegrationResponseReceivedHandler;
+    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::ListApplicationAssociationsRequest&, const Model::ListApplicationAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationAssociationsResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::ListDataIntegrationAssociationsRequest&, const Model::ListDataIntegrationAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataIntegrationAssociationsResponseReceivedHandler;
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::ListDataIntegrationsRequest&, const Model::ListDataIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataIntegrationsResponseReceivedHandler;

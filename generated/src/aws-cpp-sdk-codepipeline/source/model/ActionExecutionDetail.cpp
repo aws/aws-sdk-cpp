@@ -27,6 +27,7 @@ ActionExecutionDetail::ActionExecutionDetail() :
     m_actionNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
+    m_updatedByHasBeenSet(false),
     m_status(ActionExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_inputHasBeenSet(false),
@@ -43,6 +44,7 @@ ActionExecutionDetail::ActionExecutionDetail(JsonView jsonValue) :
     m_actionNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
+    m_updatedByHasBeenSet(false),
     m_status(ActionExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_inputHasBeenSet(false),
@@ -100,6 +102,13 @@ ActionExecutionDetail& ActionExecutionDetail::operator =(JsonView jsonValue)
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
 
     m_lastUpdateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedBy"))
+  {
+    m_updatedBy = jsonValue.GetString("updatedBy");
+
+    m_updatedByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -168,6 +177,12 @@ JsonValue ActionExecutionDetail::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_updatedByHasBeenSet)
+  {
+   payload.WithString("updatedBy", m_updatedBy);
+
   }
 
   if(m_statusHasBeenSet)

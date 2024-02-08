@@ -20,6 +20,8 @@
 #include <aws/es/model/AdvancedSecurityOptionsStatus.h>
 #include <aws/es/model/AutoTuneOptionsStatus.h>
 #include <aws/es/model/ChangeProgressDetails.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/es/model/ModifyingProperties.h>
 #include <utility>
 
 namespace Aws
@@ -587,6 +589,55 @@ namespace Model
      */
     inline ElasticsearchDomainConfig& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline const Aws::Vector<ModifyingProperties>& GetModifyingProperties() const{ return m_modifyingProperties; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline bool ModifyingPropertiesHasBeenSet() const { return m_modifyingPropertiesHasBeenSet; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline void SetModifyingProperties(const Aws::Vector<ModifyingProperties>& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties = value; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline void SetModifyingProperties(Aws::Vector<ModifyingProperties>&& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties = std::move(value); }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline ElasticsearchDomainConfig& WithModifyingProperties(const Aws::Vector<ModifyingProperties>& value) { SetModifyingProperties(value); return *this;}
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline ElasticsearchDomainConfig& WithModifyingProperties(Aws::Vector<ModifyingProperties>&& value) { SetModifyingProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline ElasticsearchDomainConfig& AddModifyingProperties(const ModifyingProperties& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline ElasticsearchDomainConfig& AddModifyingProperties(ModifyingProperties&& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(std::move(value)); return *this; }
+
   private:
 
     ElasticsearchVersionStatus m_elasticsearchVersion;
@@ -633,6 +684,9 @@ namespace Model
 
     ChangeProgressDetails m_changeProgressDetails;
     bool m_changeProgressDetailsHasBeenSet = false;
+
+    Aws::Vector<ModifyingProperties> m_modifyingProperties;
+    bool m_modifyingPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

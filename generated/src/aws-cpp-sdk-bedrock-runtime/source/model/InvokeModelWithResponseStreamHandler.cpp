@@ -29,6 +29,12 @@ namespace Model
 
     InvokeModelWithResponseStreamHandler::InvokeModelWithResponseStreamHandler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const InvokeModelWithResponseStreamInitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(INVOKEMODELWITHRESPONSESTREAM_HANDLER_CLASS_TAG,
+                "InvokeModelWithResponseStream initial response received.");
+        };
+
         m_onPayloadPart = [&](const PayloadPart&)
         {
             AWS_LOGSTREAM_TRACE(INVOKEMODELWITHRESPONSESTREAM_HANDLER_CLASS_TAG, "PayloadPart received.");
@@ -88,6 +94,21 @@ namespace Model
         }
         switch (InvokeModelWithResponseStreamEventMapper::GetInvokeModelWithResponseStreamEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+        
+        case InvokeModelWithResponseStreamEventType::INITIAL_RESPONSE: 
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEMODELWITHRESPONSESTREAM_HANDLER_CLASS_TAG, "Unable to generate a proper InvokeModelWithResponseStreamInitialResponse object from the response in JSON format.");
+                break;
+            }
+
+            InvokeModelWithResponseStreamInitialResponse event(json.View());
+            m_onInitialResponse(event);
+            break;
+        }   
+
         case InvokeModelWithResponseStreamEventType::CHUNK:
         {
             PayloadPart event(GetEventPayloadWithOwnership());
@@ -186,12 +207,18 @@ namespace Model
 
 namespace InvokeModelWithResponseStreamEventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int CHUNK_HASH = Aws::Utils::HashingUtils::HashString("chunk");
 
     InvokeModelWithResponseStreamEventType GetInvokeModelWithResponseStreamEventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        if (hashCode == CHUNK_HASH)
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return InvokeModelWithResponseStreamEventType::INITIAL_RESPONSE;
+        }
+        else if (hashCode == CHUNK_HASH)
         {
             return InvokeModelWithResponseStreamEventType::CHUNK;
         }
@@ -202,6 +229,8 @@ namespace InvokeModelWithResponseStreamEventMapper
     {
         switch (value)
         {
+        case InvokeModelWithResponseStreamEventType::INITIAL_RESPONSE:
+            return "initial-response";
         case InvokeModelWithResponseStreamEventType::CHUNK:
             return "chunk";
         default:

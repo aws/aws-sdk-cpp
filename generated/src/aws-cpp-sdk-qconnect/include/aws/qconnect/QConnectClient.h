@@ -605,38 +605,6 @@ namespace QConnect
         }
 
         /**
-         * <p>Retrieves recommendations for the specified session. To avoid retrieving the
-         * same recommendations in subsequent calls, use <a
-         * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>.
-         * This API supports long-polling behavior with the <code>waitTimeSeconds</code>
-         * parameter. Short poll is the default behavior and only returns recommendations
-         * already available. To perform a manual query against an assistant, use <a
-         * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetRecommendations">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetRecommendationsOutcome GetRecommendations(const Model::GetRecommendationsRequest& request) const;
-
-        /**
-         * A Callable wrapper for GetRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename GetRecommendationsRequestT = Model::GetRecommendationsRequest>
-        Model::GetRecommendationsOutcomeCallable GetRecommendationsCallable(const GetRecommendationsRequestT& request) const
-        {
-            return SubmitCallable(&QConnectClient::GetRecommendations, request);
-        }
-
-        /**
-         * An Async wrapper for GetRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename GetRecommendationsRequestT = Model::GetRecommendationsRequest>
-        void GetRecommendationsAsync(const GetRecommendationsRequestT& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&QConnectClient::GetRecommendations, request, handler, context);
-        }
-
-        /**
          * <p>Retrieves information for a specified session.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetSession">AWS
          * API Reference</a></p>
@@ -889,34 +857,6 @@ namespace QConnect
         void PutFeedbackAsync(const PutFeedbackRequestT& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QConnectClient::PutFeedback, request, handler, context);
-        }
-
-        /**
-         * <p>Performs a manual search against the specified assistant. To retrieve
-         * recommendations for an assistant, use <a
-         * href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/QueryAssistant">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::QueryAssistantOutcome QueryAssistant(const Model::QueryAssistantRequest& request) const;
-
-        /**
-         * A Callable wrapper for QueryAssistant that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename QueryAssistantRequestT = Model::QueryAssistantRequest>
-        Model::QueryAssistantOutcomeCallable QueryAssistantCallable(const QueryAssistantRequestT& request) const
-        {
-            return SubmitCallable(&QConnectClient::QueryAssistant, request);
-        }
-
-        /**
-         * An Async wrapper for QueryAssistant that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename QueryAssistantRequestT = Model::QueryAssistantRequest>
-        void QueryAssistantAsync(const QueryAssistantRequestT& request, const QueryAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&QConnectClient::QueryAssistant, request, handler, context);
         }
 
         /**

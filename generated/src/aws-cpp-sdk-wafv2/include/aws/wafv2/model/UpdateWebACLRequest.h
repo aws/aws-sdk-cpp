@@ -774,8 +774,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTokenDomains() const{ return m_tokenDomains; }
 
@@ -788,8 +788,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline bool TokenDomainsHasBeenSet() const { return m_tokenDomainsHasBeenSet; }
 
@@ -802,8 +802,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline void SetTokenDomains(const Aws::Vector<Aws::String>& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = value; }
 
@@ -816,8 +816,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline void SetTokenDomains(Aws::Vector<Aws::String>&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::move(value); }
 
@@ -830,8 +830,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline UpdateWebACLRequest& WithTokenDomains(const Aws::Vector<Aws::String>& value) { SetTokenDomains(value); return *this;}
 
@@ -844,8 +844,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline UpdateWebACLRequest& WithTokenDomains(Aws::Vector<Aws::String>&& value) { SetTokenDomains(std::move(value)); return *this;}
 
@@ -858,8 +858,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline UpdateWebACLRequest& AddTokenDomains(const Aws::String& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
 
@@ -872,8 +872,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline UpdateWebACLRequest& AddTokenDomains(Aws::String&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(std::move(value)); return *this; }
 
@@ -886,8 +886,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline UpdateWebACLRequest& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
 

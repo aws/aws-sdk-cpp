@@ -8,6 +8,7 @@
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -221,6 +222,63 @@ namespace Model
      */
     inline DisassociateServiceActionFromProvisioningArtifactRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests from the same Amazon Web Services account use the same idempotency
+     * token, the same response is returned for each repeated request. </p>
+     */
+    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests from the same Amazon Web Services account use the same idempotency
+     * token, the same response is returned for each repeated request. </p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests from the same Amazon Web Services account use the same idempotency
+     * token, the same response is returned for each repeated request. </p>
+     */
+    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests from the same Amazon Web Services account use the same idempotency
+     * token, the same response is returned for each repeated request. </p>
+     */
+    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests from the same Amazon Web Services account use the same idempotency
+     * token, the same response is returned for each repeated request. </p>
+     */
+    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests from the same Amazon Web Services account use the same idempotency
+     * token, the same response is returned for each repeated request. </p>
+     */
+    inline DisassociateServiceActionFromProvisioningArtifactRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests from the same Amazon Web Services account use the same idempotency
+     * token, the same response is returned for each repeated request. </p>
+     */
+    inline DisassociateServiceActionFromProvisioningArtifactRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests from the same Amazon Web Services account use the same idempotency
+     * token, the same response is returned for each repeated request. </p>
+     */
+    inline DisassociateServiceActionFromProvisioningArtifactRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+
   private:
 
     Aws::String m_productId;
@@ -234,6 +292,9 @@ namespace Model
 
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet = false;
+
+    Aws::String m_idempotencyToken;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

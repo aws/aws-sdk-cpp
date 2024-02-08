@@ -244,32 +244,27 @@ namespace Model
 
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline const HyperParameterTuningJobStatus& GetHyperParameterTuningJobStatus() const{ return m_hyperParameterTuningJobStatus; }
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobStatus(const HyperParameterTuningJobStatus& value) { m_hyperParameterTuningJobStatus = value; }
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobStatus(HyperParameterTuningJobStatus&& value) { m_hyperParameterTuningJobStatus = std::move(value); }
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobStatus(const HyperParameterTuningJobStatus& value) { SetHyperParameterTuningJobStatus(value); return *this;}
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobStatus(HyperParameterTuningJobStatus&& value) { SetHyperParameterTuningJobStatus(std::move(value)); return *this;}
 

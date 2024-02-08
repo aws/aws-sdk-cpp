@@ -27,13 +27,12 @@ namespace Model
   /**
    * <p>Specifies the access method and settings to use when retrieving occurrences
    * of sensitive data reported by findings. If your request specifies an Identity
-   * and Access Management (IAM) role to assume when retrieving the sensitive data,
-   * Amazon Macie verifies that the role exists and the attached policies are
-   * configured correctly. If there's an issue, Macie returns an error. For
-   * information about addressing the issue, see <a
-   * href="https://docs.aws.amazon.com/macie/latest/user/findings-retrieve-sd.html">Retrieving
-   * sensitive data samples with findings</a> in the <i>Amazon Macie User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * and Access Management (IAM) role to assume, Amazon Macie verifies that the role
+   * exists and the attached policies are configured correctly. If there's an issue,
+   * Macie returns an error. For information about addressing the issue, see <a
+   * href="https://docs.aws.amazon.com/macie/latest/user/findings-retrieve-sd-options.html">Configuration
+   * options and requirements for retrieving sensitive data samples</a> in the
+   * <i>Amazon Macie User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRetrievalConfiguration">AWS
    * API Reference</a></p>
    */

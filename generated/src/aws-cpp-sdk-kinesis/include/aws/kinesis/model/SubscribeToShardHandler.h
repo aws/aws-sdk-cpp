@@ -10,6 +10,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/KinesisErrors.h>
 
+#include <aws/kinesis/model/SubscribeToShardInitialResponse.h>
 #include <aws/kinesis/model/SubscribeToShardEvent.h>
 
 namespace Aws
@@ -20,12 +21,14 @@ namespace Model
 {
     enum class SubscribeToShardEventType
     {
+        INITIAL_RESPONSE,
         SUBSCRIBETOSHARDEVENT,
         UNKNOWN
     };
 
     class SubscribeToShardHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const SubscribeToShardInitialResponse&)> SubscribeToShardInitialResponseCallback;
         typedef std::function<void(const SubscribeToShardEvent&)> SubscribeToShardEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<KinesisErrors>& error)> ErrorCallback;
 
@@ -35,6 +38,7 @@ namespace Model
 
         AWS_KINESIS_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const SubscribeToShardInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetSubscribeToShardEventCallback(const SubscribeToShardEventCallback& callback) { m_onSubscribeToShardEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
@@ -43,6 +47,7 @@ namespace Model
         AWS_KINESIS_API void HandleErrorInMessage();
         AWS_KINESIS_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
+        SubscribeToShardInitialResponseCallback m_onInitialResponse;
         SubscribeToShardEventCallback m_onSubscribeToShardEvent;
         ErrorCallback m_onError;
     };

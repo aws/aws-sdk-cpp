@@ -1,7 +1,7 @@
 # Memory Management
 The AWS SDK for C++ provides a way to control memory allocation and deallocation in a library.
 
-Custom memory management is available only if you use a version of the library built using the compile-time constant AWS_CUSTOM_MEMORY_MANAGEMENT defined.
+Custom memory management is available only if you use a version of the library built using the compile-time constant USE_AWS_MEMORY_MANAGEMENT defined.
 
 If you use a version of the library built without the compile-time constant, the global memory system functions such as InitializeAWSMemorySystem will not work and the global new and delete functions will be used instead.
 
@@ -48,7 +48,7 @@ When initialized with a memory manager, the AWS SDK for C++ defers all allocatio
 
 If you use custom STL allocators, you must alter the type signatures for all STL objects to match the allocation policy. Because STL is used prominently in the SDK implementation and interface, a single approach in the SDK would inhibit direct passing of default STL objects into the SDK or control of STL allocation. Alternately, a hybrid approach – using custom allocators internally and allowing standard and custom STL objects on the interface – could potentially cause more difficulty when investigating memory issues.
 
-The solution is to use the memory system’s compile-time constant AWS_CUSTOM_MEMORY_MANAGEMENT to control which STL types the SDK will use.
+The solution is to use the memory system’s compile-time constant USE_AWS_MEMORY_MANAGEMENT to control which STL types the SDK will use.
 
 If the compile-time constant is enabled (on), the types resolve to STL types with a custom allocator connected to the AWS memory system.
 
@@ -57,7 +57,7 @@ If the compile-time constant is disabled (off), all Aws::* types resolve to the 
 Example code from the AWSAllocator.h file in the SDK:
 
 ```cpp
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+#ifdef USE_AWS_MEMORY_MANAGEMENT
 
 template< typename T >
 class AwsAllocator : public std::allocator< T >

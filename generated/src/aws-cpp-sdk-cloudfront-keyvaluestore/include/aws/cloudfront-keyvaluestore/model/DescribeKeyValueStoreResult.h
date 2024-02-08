@@ -199,6 +199,78 @@ namespace Model
     inline DescribeKeyValueStoreResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The current status of the Key Value Store.</p>
+     */
+    inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current status of the Key Value Store.</p>
+     */
+    inline void SetStatus(const Aws::String& value) { m_status = value; }
+
+    /**
+     * <p>The current status of the Key Value Store.</p>
+     */
+    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The current status of the Key Value Store.</p>
+     */
+    inline void SetStatus(const char* value) { m_status.assign(value); }
+
+    /**
+     * <p>The current status of the Key Value Store.</p>
+     */
+    inline DescribeKeyValueStoreResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The current status of the Key Value Store.</p>
+     */
+    inline DescribeKeyValueStoreResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The current status of the Key Value Store.</p>
+     */
+    inline DescribeKeyValueStoreResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+
+
+    /**
+     * <p>The reason for Key Value Store creation failure.</p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>The reason for Key Value Store creation failure.</p>
+     */
+    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
+
+    /**
+     * <p>The reason for Key Value Store creation failure.</p>
+     */
+    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
+
+    /**
+     * <p>The reason for Key Value Store creation failure.</p>
+     */
+    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
+
+    /**
+     * <p>The reason for Key Value Store creation failure.</p>
+     */
+    inline DescribeKeyValueStoreResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p>The reason for Key Value Store creation failure.</p>
+     */
+    inline DescribeKeyValueStoreResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for Key Value Store creation failure.</p>
+     */
+    inline DescribeKeyValueStoreResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -233,6 +305,10 @@ namespace Model
     Aws::String m_eTag;
 
     Aws::Utils::DateTime m_lastModified;
+
+    Aws::String m_status;
+
+    Aws::String m_failureReason;
 
     Aws::String m_requestId;
   };

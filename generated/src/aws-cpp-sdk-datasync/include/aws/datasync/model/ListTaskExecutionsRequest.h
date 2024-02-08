@@ -38,112 +38,120 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution
+     * information about.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution
+     * information about.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution
+     * information about.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution
+     * information about.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution
+     * information about.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution
+     * information about.</p>
      */
     inline ListTaskExecutionsRequest& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution
+     * information about.</p>
      */
     inline ListTaskExecutionsRequest& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution
+     * information about.</p>
      */
     inline ListTaskExecutionsRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
 
     /**
-     * <p>The maximum number of executed tasks to list.</p>
+     * <p>Specifies how many results you want in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of executed tasks to list.</p>
+     * <p>Specifies how many results you want in the response.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of executed tasks to list.</p>
+     * <p>Specifies how many results you want in the response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of executed tasks to list.</p>
+     * <p>Specifies how many results you want in the response.</p>
      */
     inline ListTaskExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of the executed tasks.</p>
+     * <p>Specifies an opaque string that indicates the position at which to begin the
+     * next list of results in the response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of the executed tasks.</p>
+     * <p>Specifies an opaque string that indicates the position at which to begin the
+     * next list of results in the response.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of the executed tasks.</p>
+     * <p>Specifies an opaque string that indicates the position at which to begin the
+     * next list of results in the response.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of the executed tasks.</p>
+     * <p>Specifies an opaque string that indicates the position at which to begin the
+     * next list of results in the response.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of the executed tasks.</p>
+     * <p>Specifies an opaque string that indicates the position at which to begin the
+     * next list of results in the response.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of the executed tasks.</p>
+     * <p>Specifies an opaque string that indicates the position at which to begin the
+     * next list of results in the response.</p>
      */
     inline ListTaskExecutionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of the executed tasks.</p>
+     * <p>Specifies an opaque string that indicates the position at which to begin the
+     * next list of results in the response.</p>
      */
     inline ListTaskExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>An opaque string that indicates the position at which to begin the next list
-     * of the executed tasks.</p>
+     * <p>Specifies an opaque string that indicates the position at which to begin the
+     * next list of results in the response.</p>
      */
     inline ListTaskExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

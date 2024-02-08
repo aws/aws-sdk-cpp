@@ -7,8 +7,8 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/StageExecution.h>
-#include <aws/codepipeline/model/TransitionState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codepipeline/model/TransitionState.h>
 #include <aws/codepipeline/model/ActionState.h>
 #include <utility>
 
@@ -100,6 +100,47 @@ namespace Model
 
     
     inline StageState& WithInboundExecution(StageExecution&& value) { SetInboundExecution(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The inbound executions for a stage.</p>
+     */
+    inline const Aws::Vector<StageExecution>& GetInboundExecutions() const{ return m_inboundExecutions; }
+
+    /**
+     * <p>The inbound executions for a stage.</p>
+     */
+    inline bool InboundExecutionsHasBeenSet() const { return m_inboundExecutionsHasBeenSet; }
+
+    /**
+     * <p>The inbound executions for a stage.</p>
+     */
+    inline void SetInboundExecutions(const Aws::Vector<StageExecution>& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions = value; }
+
+    /**
+     * <p>The inbound executions for a stage.</p>
+     */
+    inline void SetInboundExecutions(Aws::Vector<StageExecution>&& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions = std::move(value); }
+
+    /**
+     * <p>The inbound executions for a stage.</p>
+     */
+    inline StageState& WithInboundExecutions(const Aws::Vector<StageExecution>& value) { SetInboundExecutions(value); return *this;}
+
+    /**
+     * <p>The inbound executions for a stage.</p>
+     */
+    inline StageState& WithInboundExecutions(Aws::Vector<StageExecution>&& value) { SetInboundExecutions(std::move(value)); return *this;}
+
+    /**
+     * <p>The inbound executions for a stage.</p>
+     */
+    inline StageState& AddInboundExecutions(const StageExecution& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions.push_back(value); return *this; }
+
+    /**
+     * <p>The inbound executions for a stage.</p>
+     */
+    inline StageState& AddInboundExecutions(StageExecution&& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -217,6 +258,9 @@ namespace Model
 
     StageExecution m_inboundExecution;
     bool m_inboundExecutionHasBeenSet = false;
+
+    Aws::Vector<StageExecution> m_inboundExecutions;
+    bool m_inboundExecutionsHasBeenSet = false;
 
     TransitionState m_inboundTransitionState;
     bool m_inboundTransitionStateHasBeenSet = false;

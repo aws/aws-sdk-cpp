@@ -2720,6 +2720,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConflictException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"UnsupportedUserEditionException"},
         {"shape":"InternalFailureException"}
       ],
       "documentation":"<p>Updates the linked analyses on a dashboard.</p>"
@@ -5436,6 +5437,10 @@
         "ContributionAnalysisDefaults":{
           "shape":"ContributionAnalysisDefaultList",
           "documentation":"<p>The contribution analysis (anomaly configuration) setup of the visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a <code>BarChartVisual</code>.</p>"
@@ -5709,6 +5714,10 @@
         "VisualPalette":{
           "shape":"VisualPalette",
           "documentation":"<p>The palette (chart color) display setup of the visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a <code>BoxPlotVisual</code>.</p>"
@@ -6687,6 +6696,10 @@
         "VisualPalette":{
           "shape":"VisualPalette",
           "documentation":"<p>The palette (chart color) display setup of the visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a <code>ComboChartVisual</code>.</p>"
@@ -7035,6 +7048,16 @@
         "RANGE",
         "COLLECTIVE"
       ]
+    },
+    "ContextMenuOption":{
+      "type":"structure",
+      "members":{
+        "AvailabilityStatus":{
+          "shape":"DashboardBehavior",
+          "documentation":"<p>The availability status of the context menu options. If the value of this property is set to <code>ENABLED</code>, dashboard readers can interact with the context menu.</p>"
+        }
+      },
+      "documentation":"<p>The context menu options for a visual's interactions.</p>"
     },
     "ContributionAnalysisDefault":{
       "type":"structure",
@@ -8742,6 +8765,10 @@
         "ImageScaling":{
           "shape":"CustomContentImageScalingConfiguration",
           "documentation":"<p>The sizing options for the size of the custom content visual. This structure is required when the <code>ContentType</code> of the visual is <code>'IMAGE'</code>.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a <code>CustomContentVisual</code>.</p>"
@@ -14936,6 +14963,10 @@
         "MapStyleOptions":{
           "shape":"GeospatialMapStyleOptions",
           "documentation":"<p>The map style options of the filled map visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration for a <code>FilledMapVisual</code>.</p>"
@@ -16032,6 +16063,10 @@
         "VisualPalette":{
           "shape":"VisualPalette",
           "documentation":"<p>The visual palette configuration of a <code>FunnelChartVisual</code>.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a <code>FunnelChartVisual</code>.</p>"
@@ -16206,6 +16241,10 @@
         "VisualPalette":{
           "shape":"VisualPalette",
           "documentation":"<p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a <code>GaugeChartVisual</code>.</p>"
@@ -16567,7 +16606,11 @@
           "shape":"GeospatialPointStyleOptions",
           "documentation":"<p>The point style options of the geospatial map.</p>"
         },
-        "VisualPalette":{"shape":"VisualPalette"}
+        "VisualPalette":{"shape":"VisualPalette"},
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
+        }
       },
       "documentation":"<p>The configuration of a <code>GeospatialMapVisual</code>.</p>"
     },
@@ -17170,6 +17213,10 @@
         "Tooltip":{
           "shape":"TooltipOptions",
           "documentation":"<p>The tooltip display setup of the visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a heat map.</p>"
@@ -17334,6 +17381,10 @@
         "VisualPalette":{
           "shape":"VisualPalette",
           "documentation":"<p>The visual palette configuration of a histogram.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration for a <code>HistogramVisual</code>.</p>"
@@ -17746,6 +17797,10 @@
         "CustomNarrative":{
           "shape":"CustomNarrativeOptions",
           "documentation":"<p>The custom narrative of the insight visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of an insight visual.</p>"
@@ -18145,6 +18200,10 @@
         "KPIOptions":{
           "shape":"KPIOptions",
           "documentation":"<p>The options that determine the presentation of a KPI visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a KPI visual.</p>"
@@ -18564,6 +18623,10 @@
         "VisualPalette":{
           "shape":"VisualPalette",
           "documentation":"<p>The visual palette configuration of a line chart.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a line chart.</p>"
@@ -18763,7 +18826,7 @@
       "type":"string",
       "max":1024,
       "min":1,
-      "pattern":"^arn:aws:quicksight:[\\w\\-]+:\\d+:analysis/[\\w\\-]{1,512}"
+      "pattern":"^arn:aws[\\w\\-]*:quicksight:[\\w\\-]+:\\d+:analysis/[\\w\\-]{1,512}"
     },
     "LinkEntityArnList":{
       "type":"list",
@@ -22142,6 +22205,10 @@
         "ContributionAnalysisDefaults":{
           "shape":"ContributionAnalysisDefaultList",
           "documentation":"<p>The contribution analysis (anomaly configuration) setup of the visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a pie chart.</p>"
@@ -22352,6 +22419,10 @@
         "PaginatedReportOptions":{
           "shape":"PivotTablePaginatedReportOptions",
           "documentation":"<p>The paginated report options for a pivot table visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration for a <code>PivotTableVisual</code>.</p>"
@@ -23094,6 +23165,10 @@
         "AxesRangeScale":{
           "shape":"RadarChartAxesRangeScale",
           "documentation":"<p>The axis behavior options of a radar chart.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a <code>RadarChartVisual</code>.</p>"
@@ -24374,6 +24449,10 @@
         "DataLabels":{
           "shape":"DataLabelOptions",
           "documentation":"<p>The data label configuration of a sankey diagram.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a sankey diagram.</p>"
@@ -24501,6 +24580,10 @@
         "VisualPalette":{
           "shape":"VisualPalette",
           "documentation":"<p>The palette (chart color) display setup of the visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a scatter plot.</p>"
@@ -26837,6 +26920,10 @@
         "TableInlineVisualizations":{
           "shape":"TableInlineVisualizationList",
           "documentation":"<p>A collection of inline visualizations to display within a chart.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration for a <code>TableVisual</code>.</p>"
@@ -28534,6 +28621,10 @@
           "shape":"LimitedString",
           "documentation":"<p>The description of the topic.</p>"
         },
+        "UserExperienceVersion":{
+          "shape":"TopicUserExperienceVersion",
+          "documentation":"<p>The user experience version of a topic.</p>"
+        },
         "DataSets":{
           "shape":"Datasets",
           "documentation":"<p>The data sets that the topic is associated with.</p>"
@@ -28864,6 +28955,13 @@
         "YEAR"
       ]
     },
+    "TopicUserExperienceVersion":{
+      "type":"string",
+      "enum":[
+        "LEGACY",
+        "NEW_READER_EXPERIENCE"
+      ]
+    },
     "TotalAggregationComputation":{
       "type":"structure",
       "required":["ComputationId"],
@@ -29040,6 +29138,10 @@
         "Tooltip":{
           "shape":"TooltipOptions",
           "documentation":"<p>The tooltip display setup of the visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a tree map.</p>"
@@ -30159,11 +30261,11 @@
         },
         "GrantPermissions":{
           "shape":"ResourcePermissionList",
-          "documentation":"<p>The permissions that you want to grant on a resource.</p>"
+          "documentation":"<p>The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>"
         },
         "RevokePermissions":{
           "shape":"ResourcePermissionList",
-          "documentation":"<p>The permissions that you want to revoke from a resource.</p>"
+          "documentation":"<p>The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>"
         }
       }
     },
@@ -31740,6 +31842,20 @@
         "DATA_POINT_MENU"
       ]
     },
+    "VisualInteractionOptions":{
+      "type":"structure",
+      "members":{
+        "VisualMenuOption":{
+          "shape":"VisualMenuOption",
+          "documentation":"<p>The on-visual menu options for a visual.</p>"
+        },
+        "ContextMenuOption":{
+          "shape":"ContextMenuOption",
+          "documentation":"<p>The context menu options for a visual.</p>"
+        }
+      },
+      "documentation":"<p>The general visual interactions setup for visual publish options</p>"
+    },
     "VisualList":{
       "type":"list",
       "member":{"shape":"Visual"},
@@ -31830,6 +31946,16 @@
       },
       "documentation":"<p>The field well configuration of a waterfall visual.</p>"
     },
+    "WaterfallChartColorConfiguration":{
+      "type":"structure",
+      "members":{
+        "GroupColorConfiguration":{
+          "shape":"WaterfallChartGroupColorConfiguration",
+          "documentation":"<p>The color configuration for individual groups within a waterfall visual.</p>"
+        }
+      },
+      "documentation":"<p>The color configuration of a waterfall visual.</p>"
+    },
     "WaterfallChartConfiguration":{
       "type":"structure",
       "members":{
@@ -31872,6 +31998,14 @@
         "VisualPalette":{
           "shape":"VisualPalette",
           "documentation":"<p>The visual palette configuration of a waterfall visual.</p>"
+        },
+        "ColorConfiguration":{
+          "shape":"WaterfallChartColorConfiguration",
+          "documentation":"<p>The color configuration of a waterfall visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration for a waterfall visual.</p>"
@@ -31885,6 +32019,24 @@
         }
       },
       "documentation":"<p>The field well configuration of a waterfall visual.</p>"
+    },
+    "WaterfallChartGroupColorConfiguration":{
+      "type":"structure",
+      "members":{
+        "PositiveBarColor":{
+          "shape":"HexColor",
+          "documentation":"<p>Defines the color for the positive bars of a waterfall chart.</p>"
+        },
+        "NegativeBarColor":{
+          "shape":"HexColor",
+          "documentation":"<p>Defines the color for the negative bars of a waterfall chart.</p>"
+        },
+        "TotalBarColor":{
+          "shape":"HexColor",
+          "documentation":"<p>Defines the color for the total bars of a waterfall chart.</p>"
+        }
+      },
+      "documentation":"<p>The color configuration for individual groups within a waterfall visual.</p>"
     },
     "WaterfallChartOptions":{
       "type":"structure",
@@ -32021,6 +32173,10 @@
         "WordCloudOptions":{
           "shape":"WordCloudOptions",
           "documentation":"<p>The options for a word cloud visual.</p>"
+        },
+        "Interactions":{
+          "shape":"VisualInteractionOptions",
+          "documentation":"<p>The general visual interactions setup for a visual.</p>"
         }
       },
       "documentation":"<p>The configuration of a word cloud visual.</p>"

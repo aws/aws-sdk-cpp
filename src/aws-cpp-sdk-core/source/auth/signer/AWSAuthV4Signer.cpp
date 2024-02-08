@@ -233,12 +233,26 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
         payloadHash = ComputePayloadHash(request);
         if (payloadHash.empty())
         {
+            // this indicates a hashing error occurred, which was logged
             return false;
         }
-        if (request.GetRequestHash().second != nullptr)
+
+        Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+        const auto headers = request.GetHeaders();
+        if (request.GetRequestHash().second != nullptr && !request.HasHeader(checksumHeaderKey.c_str()))
         {
-            Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
-            Aws::String checksumHeaderValue = HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate(*(request.GetContentBody())).GetResult());
+            Aws::String checksumHeaderValue;
+            if (request.GetRequestHash().first == "sha256") {
+                // we already calculated the payload hash so just reverse the hex string to
+                // a ByteBuffer and Base64Encode it - otherwise we're re-hashing the content
+                checksumHeaderValue = HashingUtils::Base64Encode(HashingUtils::HexDecode(payloadHash));
+            } else {
+                // if it is one of the other hashes, we must be careful if there is no content body
+                const auto& body = request.GetContentBody();
+                checksumHeaderValue = (body)
+                    ? HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate(*body).GetResult())
+                    : HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate({}).GetResult());
+            }
             request.SetHeaderValue(checksumHeaderKey, checksumHeaderValue);
             request.SetRequestHash("", nullptr);
         }
@@ -250,12 +264,15 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
         if (request.GetRequestHash().second != nullptr)
         {
             payloadHash = STREAMING_UNSIGNED_PAYLOAD_TRAILER;
-            Aws::String trailerHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
-            request.SetHeaderValue(Http::AWS_TRAILER_HEADER, trailerHeaderValue);
+            Aws::String checksumHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+            request.DeleteHeader(checksumHeaderValue.c_str());
+            request.SetHeaderValue(Http::AWS_TRAILER_HEADER, checksumHeaderValue);
             request.SetTransferEncoding(CHUNKED_VALUE);
             request.SetHeaderValue(Http::CONTENT_ENCODING_HEADER, Http::AWS_CHUNKED_VALUE);
-            request.SetHeaderValue(Http::DECODED_CONTENT_LENGTH_HEADER, request.GetHeaderValue(Http::CONTENT_LENGTH_HEADER));
-            request.DeleteHeader(Http::CONTENT_LENGTH_HEADER);
+            if (request.HasHeader(Http::CONTENT_LENGTH_HEADER)) {
+                request.SetHeaderValue(Http::DECODED_CONTENT_LENGTH_HEADER, request.GetHeaderValue(Http::CONTENT_LENGTH_HEADER));
+                request.DeleteHeader(Http::CONTENT_LENGTH_HEADER);
+            }
         }
     }
 
@@ -509,20 +526,17 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const Aws::String& stringToSign, 
 
 Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request) const
 {
-    if (!request.GetContentBody())
+    const std::shared_ptr<Aws::IOStream>& body = request.GetContentBody();
+    if (!body)
     {
         AWS_LOGSTREAM_DEBUG(v4LogTag, "Using cached empty string sha256 " << EMPTY_STRING_SHA256 << " because payload is empty.");
         return EMPTY_STRING_SHA256;
     }
 
-    //compute hash on payload if it exists.
-    auto hashResult =  m_hash->Calculate(*request.GetContentBody());
-
-    if(request.GetContentBody())
-    {
-        request.GetContentBody()->clear();
-        request.GetContentBody()->seekg(0);
-    }
+    // compute hash on payload if it exists
+    auto hashResult =  m_hash->Calculate(*body);
+    body->clear();      // clears ios_flags
+    body->seekg(0);
 
     if (!hashResult.IsSuccess())
     {
@@ -531,7 +545,6 @@ Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request)
     }
 
     auto sha256Digest = hashResult.GetResult();
-
     Aws::String payloadHash(HashingUtils::HexEncode(sha256Digest));
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Calculated sha256 " << payloadHash << " for payload.");
     return payloadHash;

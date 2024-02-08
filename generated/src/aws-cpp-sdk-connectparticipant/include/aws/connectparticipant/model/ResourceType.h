@@ -22,7 +22,8 @@ namespace Model
     PARTICIPANT,
     HIERARCHY_LEVEL,
     HIERARCHY_GROUP,
-    USER
+    USER,
+    PHONE_NUMBER
   };
 
 namespace ResourceTypeMapper

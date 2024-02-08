@@ -610,6 +610,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline const Aws::String& GetWorkspaceName() const{ return m_workspaceName; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(const Aws::String& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = value; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(Aws::String&& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = std::move(value); }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(const char* value) { m_workspaceNameHasBeenSet = true; m_workspaceName.assign(value); }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline Workspace& WithWorkspaceName(const Aws::String& value) { SetWorkspaceName(value); return *this;}
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline Workspace& WithWorkspaceName(Aws::String&& value) { SetWorkspaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline Workspace& WithWorkspaceName(const char* value) { SetWorkspaceName(value); return *this;}
+
+
+    /**
      * <p>The properties of the WorkSpace.</p>
      */
     inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
@@ -841,6 +882,9 @@ namespace Model
 
     bool m_rootVolumeEncryptionEnabled;
     bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
+
+    Aws::String m_workspaceName;
+    bool m_workspaceNameHasBeenSet = false;
 
     WorkspaceProperties m_workspaceProperties;
     bool m_workspacePropertiesHasBeenSet = false;

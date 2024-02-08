@@ -278,6 +278,63 @@ namespace Model
 
 
     /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline const Aws::String& GetPlaybackRestrictionPolicyArn() const{ return m_playbackRestrictionPolicyArn; }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline bool PlaybackRestrictionPolicyArnHasBeenSet() const { return m_playbackRestrictionPolicyArnHasBeenSet; }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline void SetPlaybackRestrictionPolicyArn(const Aws::String& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = value; }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline void SetPlaybackRestrictionPolicyArn(Aws::String&& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = std::move(value); }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline void SetPlaybackRestrictionPolicyArn(const char* value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn.assign(value); }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline Channel& WithPlaybackRestrictionPolicyArn(const Aws::String& value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline Channel& WithPlaybackRestrictionPolicyArn(Aws::String&& value) { SetPlaybackRestrictionPolicyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline Channel& WithPlaybackRestrictionPolicyArn(const char* value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
+
+
+    /**
      * <p>Channel playback URL.</p>
      */
     inline const Aws::String& GetPlaybackUrl() const{ return m_playbackUrl; }
@@ -380,58 +437,50 @@ namespace Model
 
 
     /**
-     * <p>Recording-configuration ARN. A value other than an empty string indicates
-     * that recording is enabled. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline const Aws::String& GetRecordingConfigurationArn() const{ return m_recordingConfigurationArn; }
 
     /**
-     * <p>Recording-configuration ARN. A value other than an empty string indicates
-     * that recording is enabled. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline bool RecordingConfigurationArnHasBeenSet() const { return m_recordingConfigurationArnHasBeenSet; }
 
     /**
-     * <p>Recording-configuration ARN. A value other than an empty string indicates
-     * that recording is enabled. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline void SetRecordingConfigurationArn(const Aws::String& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = value; }
 
     /**
-     * <p>Recording-configuration ARN. A value other than an empty string indicates
-     * that recording is enabled. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline void SetRecordingConfigurationArn(Aws::String&& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = std::move(value); }
 
     /**
-     * <p>Recording-configuration ARN. A value other than an empty string indicates
-     * that recording is enabled. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline void SetRecordingConfigurationArn(const char* value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn.assign(value); }
 
     /**
-     * <p>Recording-configuration ARN. A value other than an empty string indicates
-     * that recording is enabled. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline Channel& WithRecordingConfigurationArn(const Aws::String& value) { SetRecordingConfigurationArn(value); return *this;}
 
     /**
-     * <p>Recording-configuration ARN. A value other than an empty string indicates
-     * that recording is enabled. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline Channel& WithRecordingConfigurationArn(Aws::String&& value) { SetRecordingConfigurationArn(std::move(value)); return *this;}
 
     /**
-     * <p>Recording-configuration ARN. A value other than an empty string indicates
-     * that recording is enabled. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline Channel& WithRecordingConfigurationArn(const char* value) { SetRecordingConfigurationArn(value); return *this;}
 
@@ -640,6 +689,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_playbackRestrictionPolicyArn;
+    bool m_playbackRestrictionPolicyArnHasBeenSet = false;
 
     Aws::String m_playbackUrl;
     bool m_playbackUrlHasBeenSet = false;

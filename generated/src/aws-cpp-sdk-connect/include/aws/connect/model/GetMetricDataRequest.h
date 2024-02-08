@@ -208,7 +208,9 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p> 
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>RoutingStepExpression is not a valid filter for GetMetricData and we
+     * recommend switching to GetMetricDataV2 for more up-to-date features.</p> 
      * <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the
      * queue.</p> 
      */
@@ -218,7 +220,9 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p> 
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>RoutingStepExpression is not a valid filter for GetMetricData and we
+     * recommend switching to GetMetricDataV2 for more up-to-date features.</p> 
      * <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the
      * queue.</p> 
      */
@@ -228,7 +232,9 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p> 
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>RoutingStepExpression is not a valid filter for GetMetricData and we
+     * recommend switching to GetMetricDataV2 for more up-to-date features.</p> 
      * <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the
      * queue.</p> 
      */
@@ -238,7 +244,9 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p> 
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>RoutingStepExpression is not a valid filter for GetMetricData and we
+     * recommend switching to GetMetricDataV2 for more up-to-date features.</p> 
      * <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the
      * queue.</p> 
      */
@@ -248,7 +256,9 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p> 
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>RoutingStepExpression is not a valid filter for GetMetricData and we
+     * recommend switching to GetMetricDataV2 for more up-to-date features.</p> 
      * <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the
      * queue.</p> 
      */
@@ -258,7 +268,9 @@ namespace Model
      * <p>The queues, up to 100, or channels, to use to filter the metrics returned.
      * Metric data is retrieved only for the resources associated with the queues or
      * channels included in the filter. You can include both queue IDs and queue ARNs
-     * in the same request. VOICE, CHAT, and TASK channels are supported.</p> 
+     * in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     * <p>RoutingStepExpression is not a valid filter for GetMetricData and we
+     * recommend switching to GetMetricDataV2 for more up-to-date features.</p> 
      * <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the
      * queue.</p> 
      */
@@ -270,7 +282,8 @@ namespace Model
      * grouped by queue, the metrics returned are grouped by queue. The values returned
      * apply to the metrics for each queue rather than aggregated for all queues.</p>
      * <p>If no grouping is specified, a summary of metrics for all queues is
-     * returned.</p>
+     * returned.</p> <p>RoutingStepExpression is not a valid filter for GetMetricData
+     * and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
      */
     inline const Aws::Vector<Grouping>& GetGroupings() const{ return m_groupings; }
 
@@ -279,7 +292,8 @@ namespace Model
      * grouped by queue, the metrics returned are grouped by queue. The values returned
      * apply to the metrics for each queue rather than aggregated for all queues.</p>
      * <p>If no grouping is specified, a summary of metrics for all queues is
-     * returned.</p>
+     * returned.</p> <p>RoutingStepExpression is not a valid filter for GetMetricData
+     * and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
      */
     inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
 
@@ -288,7 +302,8 @@ namespace Model
      * grouped by queue, the metrics returned are grouped by queue. The values returned
      * apply to the metrics for each queue rather than aggregated for all queues.</p>
      * <p>If no grouping is specified, a summary of metrics for all queues is
-     * returned.</p>
+     * returned.</p> <p>RoutingStepExpression is not a valid filter for GetMetricData
+     * and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
      */
     inline void SetGroupings(const Aws::Vector<Grouping>& value) { m_groupingsHasBeenSet = true; m_groupings = value; }
 
@@ -297,7 +312,8 @@ namespace Model
      * grouped by queue, the metrics returned are grouped by queue. The values returned
      * apply to the metrics for each queue rather than aggregated for all queues.</p>
      * <p>If no grouping is specified, a summary of metrics for all queues is
-     * returned.</p>
+     * returned.</p> <p>RoutingStepExpression is not a valid filter for GetMetricData
+     * and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
      */
     inline void SetGroupings(Aws::Vector<Grouping>&& value) { m_groupingsHasBeenSet = true; m_groupings = std::move(value); }
 
@@ -306,7 +322,8 @@ namespace Model
      * grouped by queue, the metrics returned are grouped by queue. The values returned
      * apply to the metrics for each queue rather than aggregated for all queues.</p>
      * <p>If no grouping is specified, a summary of metrics for all queues is
-     * returned.</p>
+     * returned.</p> <p>RoutingStepExpression is not a valid filter for GetMetricData
+     * and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
      */
     inline GetMetricDataRequest& WithGroupings(const Aws::Vector<Grouping>& value) { SetGroupings(value); return *this;}
 
@@ -315,7 +332,8 @@ namespace Model
      * grouped by queue, the metrics returned are grouped by queue. The values returned
      * apply to the metrics for each queue rather than aggregated for all queues.</p>
      * <p>If no grouping is specified, a summary of metrics for all queues is
-     * returned.</p>
+     * returned.</p> <p>RoutingStepExpression is not a valid filter for GetMetricData
+     * and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
      */
     inline GetMetricDataRequest& WithGroupings(Aws::Vector<Grouping>&& value) { SetGroupings(std::move(value)); return *this;}
 
@@ -324,7 +342,8 @@ namespace Model
      * grouped by queue, the metrics returned are grouped by queue. The values returned
      * apply to the metrics for each queue rather than aggregated for all queues.</p>
      * <p>If no grouping is specified, a summary of metrics for all queues is
-     * returned.</p>
+     * returned.</p> <p>RoutingStepExpression is not a valid filter for GetMetricData
+     * and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
      */
     inline GetMetricDataRequest& AddGroupings(const Grouping& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
 
@@ -333,7 +352,8 @@ namespace Model
      * grouped by queue, the metrics returned are grouped by queue. The values returned
      * apply to the metrics for each queue rather than aggregated for all queues.</p>
      * <p>If no grouping is specified, a summary of metrics for all queues is
-     * returned.</p>
+     * returned.</p> <p>RoutingStepExpression is not a valid filter for GetMetricData
+     * and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
      */
     inline GetMetricDataRequest& AddGroupings(Grouping&& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(std::move(value)); return *this; }
 

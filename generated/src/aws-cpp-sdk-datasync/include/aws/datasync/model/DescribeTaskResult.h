@@ -11,6 +11,7 @@
 #include <aws/datasync/model/Options.h>
 #include <aws/datasync/model/TaskSchedule.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/datasync/model/ManifestConfig.h>
 #include <aws/datasync/model/TaskReportConfig.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <utility>
@@ -765,35 +766,81 @@ namespace Model
 
 
     /**
-     * <p>The configuration of your task report. For more information, see <a
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline const ManifestConfig& GetManifestConfig() const{ return m_manifestConfig; }
+
+    /**
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline void SetManifestConfig(const ManifestConfig& value) { m_manifestConfig = value; }
+
+    /**
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline void SetManifestConfig(ManifestConfig&& value) { m_manifestConfig = std::move(value); }
+
+    /**
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline DescribeTaskResult& WithManifestConfig(const ManifestConfig& value) { SetManifestConfig(value); return *this;}
+
+    /**
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline DescribeTaskResult& WithManifestConfig(ManifestConfig&& value) { SetManifestConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration of your task report, which provides detailed information
+     * about for your DataSync transfer. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
      * a task report</a>.</p>
      */
     inline const TaskReportConfig& GetTaskReportConfig() const{ return m_taskReportConfig; }
 
     /**
-     * <p>The configuration of your task report. For more information, see <a
+     * <p>The configuration of your task report, which provides detailed information
+     * about for your DataSync transfer. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
      * a task report</a>.</p>
      */
     inline void SetTaskReportConfig(const TaskReportConfig& value) { m_taskReportConfig = value; }
 
     /**
-     * <p>The configuration of your task report. For more information, see <a
+     * <p>The configuration of your task report, which provides detailed information
+     * about for your DataSync transfer. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
      * a task report</a>.</p>
      */
     inline void SetTaskReportConfig(TaskReportConfig&& value) { m_taskReportConfig = std::move(value); }
 
     /**
-     * <p>The configuration of your task report. For more information, see <a
+     * <p>The configuration of your task report, which provides detailed information
+     * about for your DataSync transfer. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
      * a task report</a>.</p>
      */
     inline DescribeTaskResult& WithTaskReportConfig(const TaskReportConfig& value) { SetTaskReportConfig(value); return *this;}
 
     /**
-     * <p>The configuration of your task report. For more information, see <a
+     * <p>The configuration of your task report, which provides detailed information
+     * about for your DataSync transfer. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
      * a task report</a>.</p>
      */
@@ -854,6 +901,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Vector<FilterRule> m_includes;
+
+    ManifestConfig m_manifestConfig;
 
     TaskReportConfig m_taskReportConfig;
 

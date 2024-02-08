@@ -972,6 +972,33 @@ namespace Aws
         }
 
         /**
+         * <p>Creates a new DB shard group for Aurora Limitless Database. You must enable
+         * Aurora Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora
+         * DB clusters only</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBShardGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDBShardGroupOutcome CreateDBShardGroup(const Model::CreateDBShardGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDBShardGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDBShardGroupRequestT = Model::CreateDBShardGroupRequest>
+        Model::CreateDBShardGroupOutcomeCallable CreateDBShardGroupCallable(const CreateDBShardGroupRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::CreateDBShardGroup, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDBShardGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDBShardGroupRequestT = Model::CreateDBShardGroupRequest>
+        void CreateDBShardGroupAsync(const CreateDBShardGroupRequestT& request, const CreateDBShardGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::CreateDBShardGroup, request, handler, context);
+        }
+
+        /**
          * <p>Creates a snapshot of a DB instance. The source DB instance must be in the
          * <code>available</code> or <code>storage-optimization</code> state.</p><p><h3>See
          * Also:</h3>   <a
@@ -1605,6 +1632,32 @@ namespace Aws
         void DeleteDBSecurityGroupAsync(const DeleteDBSecurityGroupRequestT& request, const DeleteDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DeleteDBSecurityGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Aurora Limitless Database DB shard group.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBShardGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDBShardGroupOutcome DeleteDBShardGroup(const Model::DeleteDBShardGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDBShardGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDBShardGroupRequestT = Model::DeleteDBShardGroupRequest>
+        Model::DeleteDBShardGroupOutcomeCallable DeleteDBShardGroupCallable(const DeleteDBShardGroupRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DeleteDBShardGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDBShardGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDBShardGroupRequestT = Model::DeleteDBShardGroupRequest>
+        void DeleteDBShardGroupAsync(const DeleteDBShardGroupRequestT& request, const DeleteDBShardGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DeleteDBShardGroup, request, handler, context);
         }
 
         /**
@@ -2431,6 +2484,32 @@ namespace Aws
         }
 
         /**
+         * <p>Describes the recommendations to resolve the issues for your DB instances, DB
+         * clusters, and DB parameter groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBRecommendationsOutcome DescribeDBRecommendations(const Model::DescribeDBRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDBRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDBRecommendationsRequestT = Model::DescribeDBRecommendationsRequest>
+        Model::DescribeDBRecommendationsOutcomeCallable DescribeDBRecommendationsCallable(const DescribeDBRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeDBRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDBRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDBRecommendationsRequestT = Model::DescribeDBRecommendationsRequest>
+        void DescribeDBRecommendationsAsync(const DescribeDBRecommendationsRequestT& request, const DescribeDBRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeDBRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of <code>DBSecurityGroup</code> descriptions. If a
          * <code>DBSecurityGroupName</code> is specified, the list will contain only the
          * descriptions of the specified DB security group.</p>  <p>EC2-Classic was
@@ -2464,6 +2543,32 @@ namespace Aws
         void DescribeDBSecurityGroupsAsync(const DescribeDBSecurityGroupsRequestT& request, const DescribeDBSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DescribeDBSecurityGroups, request, handler, context);
+        }
+
+        /**
+         * <p>Describes existing Aurora Limitless Database DB shard groups.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBShardGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBShardGroupsOutcome DescribeDBShardGroups(const Model::DescribeDBShardGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDBShardGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDBShardGroupsRequestT = Model::DescribeDBShardGroupsRequest>
+        Model::DescribeDBShardGroupsOutcomeCallable DescribeDBShardGroupsCallable(const DescribeDBShardGroupsRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeDBShardGroups, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDBShardGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDBShardGroupsRequestT = Model::DescribeDBShardGroupsRequest>
+        void DescribeDBShardGroupsAsync(const DescribeDBShardGroupsRequestT& request, const DescribeDBShardGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeDBShardGroups, request, handler, context);
         }
 
         /**
@@ -3065,6 +3170,38 @@ namespace Aws
         }
 
         /**
+         * <p>Disables the HTTP endpoint for the specified DB cluster. Disabling this
+         * endpoint disables RDS Data API.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+         * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+         * operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+         * clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use
+         * the <code>EnableHttpEndpoint</code> parameter of the
+         * <code>ModifyDBCluster</code> operation.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DisableHttpEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableHttpEndpointOutcome DisableHttpEndpoint(const Model::DisableHttpEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableHttpEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableHttpEndpointRequestT = Model::DisableHttpEndpointRequest>
+        Model::DisableHttpEndpointOutcomeCallable DisableHttpEndpointCallable(const DisableHttpEndpointRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DisableHttpEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for DisableHttpEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableHttpEndpointRequestT = Model::DisableHttpEndpointRequest>
+        void DisableHttpEndpointAsync(const DisableHttpEndpointRequestT& request, const DisableHttpEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DisableHttpEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
          * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
@@ -3091,20 +3228,56 @@ namespace Aws
         }
 
         /**
+         * <p>Enables the HTTP endpoint for the DB cluster. By default, the HTTP endpoint
+         * isn't enabled.</p> <p>When enabled, this endpoint provides a connectionless web
+         * service API (RDS Data API) for running SQL queries on the Aurora DB cluster. You
+         * can also query your database from inside the RDS console with the RDS query
+         * editor.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+         * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+         * operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
+         * clusters. To enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use
+         * the <code>EnableHttpEndpoint</code> parameter of the
+         * <code>ModifyDBCluster</code> operation.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EnableHttpEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableHttpEndpointOutcome EnableHttpEndpoint(const Model::EnableHttpEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableHttpEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableHttpEndpointRequestT = Model::EnableHttpEndpointRequest>
+        Model::EnableHttpEndpointOutcomeCallable EnableHttpEndpointCallable(const EnableHttpEndpointRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::EnableHttpEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for EnableHttpEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableHttpEndpointRequestT = Model::EnableHttpEndpointRequest>
+        void EnableHttpEndpointAsync(const EnableHttpEndpointRequestT& request, const EnableHttpEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::EnableHttpEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>Forces a failover for a DB cluster.</p> <p>For an Aurora DB cluster, failover
          * for a DB cluster promotes one of the Aurora Replicas (read-only instances) in
          * the DB cluster to be the primary DB instance (the cluster writer).</p> <p>For a
-         * Multi-AZ DB cluster, failover for a DB cluster promotes one of the readable
-         * standby DB instances (read-only instances) in the DB cluster to be the primary
-         * DB instance (the cluster writer).</p> <p>An Amazon Aurora DB cluster
-         * automatically fails over to an Aurora Replica, if one exists, when the primary
-         * DB instance fails. A Multi-AZ DB cluster automatically fails over to a readable
-         * standby DB instance when the primary DB instance fails.</p> <p>To simulate a
-         * failure of a primary instance for testing, you can force a failover. Because
-         * each instance in a DB cluster has its own endpoint address, make sure to clean
-         * up and re-establish any existing connections that use those endpoint addresses
-         * when the failover is complete.</p> <p>For more information on Amazon Aurora DB
-         * clusters, see <a
+         * Multi-AZ DB cluster, after RDS terminates the primary DB instance, the internal
+         * monitoring system detects that the primary DB instance is unhealthy and promotes
+         * a readable standby (read-only instances) in the DB cluster to be the primary DB
+         * instance (the cluster writer). Failover times are typically less than 35
+         * seconds.</p> <p>An Amazon Aurora DB cluster automatically fails over to an
+         * Aurora Replica, if one exists, when the primary DB instance fails. A Multi-AZ DB
+         * cluster automatically fails over to a readable standby DB instance when the
+         * primary DB instance fails.</p> <p>To simulate a failure of a primary instance
+         * for testing, you can force a failover. Because each instance in a DB cluster has
+         * its own endpoint address, make sure to clean up and re-establish any existing
+         * connections that use those endpoint addresses when the failover is complete.</p>
+         * <p>For more information on Amazon Aurora DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a
@@ -3678,6 +3851,59 @@ namespace Aws
         }
 
         /**
+         * <p>Updates the recommendation status and recommended action status for the
+         * specified recommendation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyDBRecommendationOutcome ModifyDBRecommendation(const Model::ModifyDBRecommendationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyDBRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyDBRecommendationRequestT = Model::ModifyDBRecommendationRequest>
+        Model::ModifyDBRecommendationOutcomeCallable ModifyDBRecommendationCallable(const ModifyDBRecommendationRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::ModifyDBRecommendation, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyDBRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyDBRecommendationRequestT = Model::ModifyDBRecommendationRequest>
+        void ModifyDBRecommendationAsync(const ModifyDBRecommendationRequestT& request, const ModifyDBRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::ModifyDBRecommendation, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the settings of an Aurora Limitless Database DB shard group. You can
+         * change one or more settings by specifying these parameters and the new values in
+         * the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyDBShardGroupOutcome ModifyDBShardGroup(const Model::ModifyDBShardGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyDBShardGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyDBShardGroupRequestT = Model::ModifyDBShardGroupRequest>
+        Model::ModifyDBShardGroupOutcomeCallable ModifyDBShardGroupCallable(const ModifyDBShardGroupRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::ModifyDBShardGroup, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyDBShardGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyDBShardGroupRequestT = Model::ModifyDBShardGroupRequest>
+        void ModifyDBShardGroupAsync(const ModifyDBShardGroupRequestT& request, const ModifyDBShardGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::ModifyDBShardGroup, request, handler, context);
+        }
+
+        /**
          * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
          * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
          * upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This operation doesn't
@@ -4046,6 +4272,34 @@ namespace Aws
         void RebootDBInstanceAsync(const RebootDBInstanceRequestT& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::RebootDBInstance, request, handler, context);
+        }
+
+        /**
+         * <p>You might need to reboot your DB shard group, usually for maintenance
+         * reasons. For example, if you make certain modifications, reboot the DB shard
+         * group for the changes to take effect.</p> <p>This operation applies only to
+         * Aurora Limitless Database DBb shard groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBShardGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RebootDBShardGroupOutcome RebootDBShardGroup(const Model::RebootDBShardGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for RebootDBShardGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RebootDBShardGroupRequestT = Model::RebootDBShardGroupRequest>
+        Model::RebootDBShardGroupOutcomeCallable RebootDBShardGroupCallable(const RebootDBShardGroupRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::RebootDBShardGroup, request);
+        }
+
+        /**
+         * An Async wrapper for RebootDBShardGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RebootDBShardGroupRequestT = Model::RebootDBShardGroupRequest>
+        void RebootDBShardGroupAsync(const RebootDBShardGroupRequestT& request, const RebootDBShardGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::RebootDBShardGroup, request, handler, context);
         }
 
         /**

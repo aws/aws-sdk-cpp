@@ -7,7 +7,7 @@
 #include <aws/s3-crt/S3ExpressSignerProvider.h>
 #include <aws/s3-crt/S3ExpressSigner.h>
 
-const char *CLASS_TAG = "S3ExpressSignerProvider";
+static const char *CLASS_TAG = "S3ExpressSignerProvider";
 
 Aws::Auth::S3ExpressSignerProvider::S3ExpressSignerProvider(
     const std::shared_ptr<AWSCredentialsProvider> &credentialsProvider,

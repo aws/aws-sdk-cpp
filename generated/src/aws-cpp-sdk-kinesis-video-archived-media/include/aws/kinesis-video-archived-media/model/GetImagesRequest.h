@@ -274,41 +274,37 @@ namespace Model
 
     /**
      * <p>The time interval in milliseconds (ms) at which the images need to be
-     * generated from the stream, with a default of 3000 ms. The minimum value that can
-     * be provided is 200 ms. If the timestamp range is less than the sampling
-     * interval, the Image from the <code>startTimestamp</code> will be returned if
-     * available. </p>  <p>The minimum value of 200 ms is a hard limit.</p>
-     * 
+     * generated from the stream. The minimum value that can be provided is 200 ms (5
+     * images per second). If the timestamp range is less than the sampling interval,
+     * the image from the <code>startTimestamp</code> will be returned if available.
+     * </p>
      */
     inline int GetSamplingInterval() const{ return m_samplingInterval; }
 
     /**
      * <p>The time interval in milliseconds (ms) at which the images need to be
-     * generated from the stream, with a default of 3000 ms. The minimum value that can
-     * be provided is 200 ms. If the timestamp range is less than the sampling
-     * interval, the Image from the <code>startTimestamp</code> will be returned if
-     * available. </p>  <p>The minimum value of 200 ms is a hard limit.</p>
-     * 
+     * generated from the stream. The minimum value that can be provided is 200 ms (5
+     * images per second). If the timestamp range is less than the sampling interval,
+     * the image from the <code>startTimestamp</code> will be returned if available.
+     * </p>
      */
     inline bool SamplingIntervalHasBeenSet() const { return m_samplingIntervalHasBeenSet; }
 
     /**
      * <p>The time interval in milliseconds (ms) at which the images need to be
-     * generated from the stream, with a default of 3000 ms. The minimum value that can
-     * be provided is 200 ms. If the timestamp range is less than the sampling
-     * interval, the Image from the <code>startTimestamp</code> will be returned if
-     * available. </p>  <p>The minimum value of 200 ms is a hard limit.</p>
-     * 
+     * generated from the stream. The minimum value that can be provided is 200 ms (5
+     * images per second). If the timestamp range is less than the sampling interval,
+     * the image from the <code>startTimestamp</code> will be returned if available.
+     * </p>
      */
     inline void SetSamplingInterval(int value) { m_samplingIntervalHasBeenSet = true; m_samplingInterval = value; }
 
     /**
      * <p>The time interval in milliseconds (ms) at which the images need to be
-     * generated from the stream, with a default of 3000 ms. The minimum value that can
-     * be provided is 200 ms. If the timestamp range is less than the sampling
-     * interval, the Image from the <code>startTimestamp</code> will be returned if
-     * available. </p>  <p>The minimum value of 200 ms is a hard limit.</p>
-     * 
+     * generated from the stream. The minimum value that can be provided is 200 ms (5
+     * images per second). If the timestamp range is less than the sampling interval,
+     * the image from the <code>startTimestamp</code> will be returned if available.
+     * </p>
      */
     inline GetImagesRequest& WithSamplingInterval(int value) { SetSamplingInterval(value); return *this;}
 

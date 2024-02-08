@@ -28,7 +28,9 @@ GatewayInfo::GatewayInfo() :
     m_ec2InstanceRegionHasBeenSet(false),
     m_hostEnvironment(HostEnvironment::NOT_SET),
     m_hostEnvironmentHasBeenSet(false),
-    m_hostEnvironmentIdHasBeenSet(false)
+    m_hostEnvironmentIdHasBeenSet(false),
+    m_deprecationDateHasBeenSet(false),
+    m_softwareVersionHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ GatewayInfo::GatewayInfo(JsonView jsonValue) :
     m_ec2InstanceRegionHasBeenSet(false),
     m_hostEnvironment(HostEnvironment::NOT_SET),
     m_hostEnvironmentHasBeenSet(false),
-    m_hostEnvironmentIdHasBeenSet(false)
+    m_hostEnvironmentIdHasBeenSet(false),
+    m_deprecationDateHasBeenSet(false),
+    m_softwareVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +116,20 @@ GatewayInfo& GatewayInfo::operator =(JsonView jsonValue)
     m_hostEnvironmentIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeprecationDate"))
+  {
+    m_deprecationDate = jsonValue.GetString("DeprecationDate");
+
+    m_deprecationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SoftwareVersion"))
+  {
+    m_softwareVersion = jsonValue.GetString("SoftwareVersion");
+
+    m_softwareVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -169,6 +187,18 @@ JsonValue GatewayInfo::Jsonize() const
   if(m_hostEnvironmentIdHasBeenSet)
   {
    payload.WithString("HostEnvironmentId", m_hostEnvironmentId);
+
+  }
+
+  if(m_deprecationDateHasBeenSet)
+  {
+   payload.WithString("DeprecationDate", m_deprecationDate);
+
+  }
+
+  if(m_softwareVersionHasBeenSet)
+  {
+   payload.WithString("SoftwareVersion", m_softwareVersion);
 
   }
 

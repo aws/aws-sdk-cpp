@@ -9,10 +9,11 @@
 #include <aws/codepipeline/model/ArtifactStore.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codepipeline/model/ExecutionMode.h>
 #include <aws/codepipeline/model/PipelineType.h>
 #include <aws/codepipeline/model/StageDeclaration.h>
-#include <aws/codepipeline/model/PipelineTriggerDeclaration.h>
 #include <aws/codepipeline/model/PipelineVariableDeclaration.h>
+#include <aws/codepipeline/model/PipelineTriggerDeclaration.h>
 #include <utility>
 
 namespace Aws
@@ -386,6 +387,43 @@ namespace Model
 
 
     /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline const ExecutionMode& GetExecutionMode() const{ return m_executionMode; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline bool ExecutionModeHasBeenSet() const { return m_executionModeHasBeenSet; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline void SetExecutionMode(const ExecutionMode& value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline void SetExecutionMode(ExecutionMode&& value) { m_executionModeHasBeenSet = true; m_executionMode = std::move(value); }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline PipelineDeclaration& WithExecutionMode(const ExecutionMode& value) { SetExecutionMode(value); return *this;}
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline PipelineDeclaration& WithExecutionMode(ExecutionMode&& value) { SetExecutionMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>CodePipeline provides the following pipeline types, which differ in
      * characteristics and price, so that you can tailor your pipeline features and
      * cost to the needs of your applications.</p> <ul> <li> <p>V1 type pipelines have
@@ -396,15 +434,10 @@ namespace Model
      * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
      * will result in the pipeline having the V2 type of pipeline and the associated
      * costs.</p>  <p>For information about pricing for CodePipeline, see
-     * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
-     * with triggers on Git tags and pipeline-level variables, are not currently
-     * supported for CloudFormation and CDK resources in CodePipeline. For more
-     * information about V2 type pipelines, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
+     * type of pipeline is right for me?</a>.</p>
      */
     inline const PipelineType& GetPipelineType() const{ return m_pipelineType; }
 
@@ -419,15 +452,10 @@ namespace Model
      * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
      * will result in the pipeline having the V2 type of pipeline and the associated
      * costs.</p>  <p>For information about pricing for CodePipeline, see
-     * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
-     * with triggers on Git tags and pipeline-level variables, are not currently
-     * supported for CloudFormation and CDK resources in CodePipeline. For more
-     * information about V2 type pipelines, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
+     * type of pipeline is right for me?</a>.</p>
      */
     inline bool PipelineTypeHasBeenSet() const { return m_pipelineTypeHasBeenSet; }
 
@@ -442,15 +470,10 @@ namespace Model
      * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
      * will result in the pipeline having the V2 type of pipeline and the associated
      * costs.</p>  <p>For information about pricing for CodePipeline, see
-     * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
-     * with triggers on Git tags and pipeline-level variables, are not currently
-     * supported for CloudFormation and CDK resources in CodePipeline. For more
-     * information about V2 type pipelines, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
+     * type of pipeline is right for me?</a>.</p>
      */
     inline void SetPipelineType(const PipelineType& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = value; }
 
@@ -465,15 +488,10 @@ namespace Model
      * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
      * will result in the pipeline having the V2 type of pipeline and the associated
      * costs.</p>  <p>For information about pricing for CodePipeline, see
-     * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
-     * with triggers on Git tags and pipeline-level variables, are not currently
-     * supported for CloudFormation and CDK resources in CodePipeline. For more
-     * information about V2 type pipelines, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
+     * type of pipeline is right for me?</a>.</p>
      */
     inline void SetPipelineType(PipelineType&& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = std::move(value); }
 
@@ -488,15 +506,10 @@ namespace Model
      * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
      * will result in the pipeline having the V2 type of pipeline and the associated
      * costs.</p>  <p>For information about pricing for CodePipeline, see
-     * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
-     * with triggers on Git tags and pipeline-level variables, are not currently
-     * supported for CloudFormation and CDK resources in CodePipeline. For more
-     * information about V2 type pipelines, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
+     * type of pipeline is right for me?</a>.</p>
      */
     inline PipelineDeclaration& WithPipelineType(const PipelineType& value) { SetPipelineType(value); return *this;}
 
@@ -511,17 +524,69 @@ namespace Model
      * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
      * will result in the pipeline having the V2 type of pipeline and the associated
      * costs.</p>  <p>For information about pricing for CodePipeline, see
-     * <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
      * information about which type of pipeline to choose, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
-     * type of pipeline is right for me?</a>.</p>  <p>V2 type pipelines, along
-     * with triggers on Git tags and pipeline-level variables, are not currently
-     * supported for CloudFormation and CDK resources in CodePipeline. For more
-     * information about V2 type pipelines, see <a
-     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-     * types</a> in the <i>CodePipeline User Guide</i>.</p> 
+     * type of pipeline is right for me?</a>.</p>
      */
     inline PipelineDeclaration& WithPipelineType(PipelineType&& value) { SetPipelineType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
+     * names can have alphanumeric and underscore characters, and the values must match
+     * <code>[A-Za-z0-9@\-_]+</code>.</p>
+     */
+    inline const Aws::Vector<PipelineVariableDeclaration>& GetVariables() const{ return m_variables; }
+
+    /**
+     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
+     * names can have alphanumeric and underscore characters, and the values must match
+     * <code>[A-Za-z0-9@\-_]+</code>.</p>
+     */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
+
+    /**
+     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
+     * names can have alphanumeric and underscore characters, and the values must match
+     * <code>[A-Za-z0-9@\-_]+</code>.</p>
+     */
+    inline void SetVariables(const Aws::Vector<PipelineVariableDeclaration>& value) { m_variablesHasBeenSet = true; m_variables = value; }
+
+    /**
+     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
+     * names can have alphanumeric and underscore characters, and the values must match
+     * <code>[A-Za-z0-9@\-_]+</code>.</p>
+     */
+    inline void SetVariables(Aws::Vector<PipelineVariableDeclaration>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
+
+    /**
+     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
+     * names can have alphanumeric and underscore characters, and the values must match
+     * <code>[A-Za-z0-9@\-_]+</code>.</p>
+     */
+    inline PipelineDeclaration& WithVariables(const Aws::Vector<PipelineVariableDeclaration>& value) { SetVariables(value); return *this;}
+
+    /**
+     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
+     * names can have alphanumeric and underscore characters, and the values must match
+     * <code>[A-Za-z0-9@\-_]+</code>.</p>
+     */
+    inline PipelineDeclaration& WithVariables(Aws::Vector<PipelineVariableDeclaration>&& value) { SetVariables(std::move(value)); return *this;}
+
+    /**
+     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
+     * names can have alphanumeric and underscore characters, and the values must match
+     * <code>[A-Za-z0-9@\-_]+</code>.</p>
+     */
+    inline PipelineDeclaration& AddVariables(const PipelineVariableDeclaration& value) { m_variablesHasBeenSet = true; m_variables.push_back(value); return *this; }
+
+    /**
+     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
+     * names can have alphanumeric and underscore characters, and the values must match
+     * <code>[A-Za-z0-9@\-_]+</code>.</p>
+     */
+    inline PipelineDeclaration& AddVariables(PipelineVariableDeclaration&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -588,63 +653,6 @@ namespace Model
      */
     inline PipelineDeclaration& AddTriggers(PipelineTriggerDeclaration&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
-     * names can have alphanumeric and underscore characters, and the values must match
-     * <code>[A-Za-z0-9@\-_]+</code>.</p>
-     */
-    inline const Aws::Vector<PipelineVariableDeclaration>& GetVariables() const{ return m_variables; }
-
-    /**
-     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
-     * names can have alphanumeric and underscore characters, and the values must match
-     * <code>[A-Za-z0-9@\-_]+</code>.</p>
-     */
-    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-
-    /**
-     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
-     * names can have alphanumeric and underscore characters, and the values must match
-     * <code>[A-Za-z0-9@\-_]+</code>.</p>
-     */
-    inline void SetVariables(const Aws::Vector<PipelineVariableDeclaration>& value) { m_variablesHasBeenSet = true; m_variables = value; }
-
-    /**
-     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
-     * names can have alphanumeric and underscore characters, and the values must match
-     * <code>[A-Za-z0-9@\-_]+</code>.</p>
-     */
-    inline void SetVariables(Aws::Vector<PipelineVariableDeclaration>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-
-    /**
-     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
-     * names can have alphanumeric and underscore characters, and the values must match
-     * <code>[A-Za-z0-9@\-_]+</code>.</p>
-     */
-    inline PipelineDeclaration& WithVariables(const Aws::Vector<PipelineVariableDeclaration>& value) { SetVariables(value); return *this;}
-
-    /**
-     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
-     * names can have alphanumeric and underscore characters, and the values must match
-     * <code>[A-Za-z0-9@\-_]+</code>.</p>
-     */
-    inline PipelineDeclaration& WithVariables(Aws::Vector<PipelineVariableDeclaration>&& value) { SetVariables(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
-     * names can have alphanumeric and underscore characters, and the values must match
-     * <code>[A-Za-z0-9@\-_]+</code>.</p>
-     */
-    inline PipelineDeclaration& AddVariables(const PipelineVariableDeclaration& value) { m_variablesHasBeenSet = true; m_variables.push_back(value); return *this; }
-
-    /**
-     * <p>A list that defines the pipeline variables for a pipeline resource. Variable
-     * names can have alphanumeric and underscore characters, and the values must match
-     * <code>[A-Za-z0-9@\-_]+</code>.</p>
-     */
-    inline PipelineDeclaration& AddVariables(PipelineVariableDeclaration&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
-
   private:
 
     Aws::String m_name;
@@ -665,14 +673,17 @@ namespace Model
     int m_version;
     bool m_versionHasBeenSet = false;
 
+    ExecutionMode m_executionMode;
+    bool m_executionModeHasBeenSet = false;
+
     PipelineType m_pipelineType;
     bool m_pipelineTypeHasBeenSet = false;
 
-    Aws::Vector<PipelineTriggerDeclaration> m_triggers;
-    bool m_triggersHasBeenSet = false;
-
     Aws::Vector<PipelineVariableDeclaration> m_variables;
     bool m_variablesHasBeenSet = false;
+
+    Aws::Vector<PipelineTriggerDeclaration> m_triggers;
+    bool m_triggersHasBeenSet = false;
   };
 
 } // namespace Model

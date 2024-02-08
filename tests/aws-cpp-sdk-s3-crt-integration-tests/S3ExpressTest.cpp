@@ -6,6 +6,7 @@
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/platform/Environment.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/s3-crt/S3CrtClient.h>
 #include <aws/s3-crt/model/DeleteBucketRequest.h>
 #include <aws/s3-crt/model/CreateBucketRequest.h>
@@ -42,14 +43,15 @@
 
 using namespace Aws;
 using namespace Aws::Client;
+using namespace Aws::Http;
 using namespace Aws::S3Crt;
 using namespace Aws::S3Crt::Model;
 using namespace Aws::Utils;
 
 
 namespace {
-  static const char* ALLOCATION_TAG = "S3CrtClientS3ExpressTest";
-  static const char* S3_EXPRESS_SUFFIX = "--use1-az6--x-s3";
+  const char* ALLOCATION_TAG = "S3CrtClientS3ExpressTest";
+  const char* S3_EXPRESS_SUFFIX = "--use1-az6--x-s3";
 
   class S3ExpressTest : public ::testing::Test {
   public:
@@ -66,7 +68,8 @@ namespace {
             .WithDataRedundancy(DataRedundancy::SingleAvailabilityZone))));
 
       if (!outcome.IsSuccess() && outcome.GetError().GetResponseCode() == Aws::Http::HttpResponseCode::CONFLICT &&
-                                  outcome.GetError().GetExceptionName() == "BucketAlreadyOwnedByYou") {
+                                  (outcome.GetError().GetExceptionName() == "BucketAlreadyOwnedByYou" ||
+                                   outcome.GetError().GetExceptionName() == "OperationAborted")) {
         return CreateBucketOutcome(CreateBucketResult());
       }
 
@@ -308,8 +311,10 @@ namespace {
       return StringUtils::ToLower(Aws::String(UUID::RandomUUID()).c_str());
     }
 
-  private:
+  protected:
     std::shared_ptr<S3CrtClient> client;
+
+  private:
     Aws::Vector<Aws::String> bucketsToCleanup;
   };
 
@@ -378,5 +383,99 @@ namespace {
     auto abortMPUOutcome = AbortMultipartUpload(bucketName, randomString() + S3_EXPRESS_SUFFIX);
     AWS_EXPECT_SUCCESS(abortMPUOutcome);
     EmptyBucketUtil({bucketName});
+  }
+
+  TEST_F(S3ExpressTest, PutObjectChecksum) {
+    struct ChecksumTestCase {
+      std::function<PutObjectRequest(PutObjectRequest)> chucksumRequestMutator;
+      HttpResponseCode responseCode;
+      String body;
+    };
+
+    auto bucketName = Testing::GetAwsResourcePrefix() + randomString() + S3_EXPRESS_SUFFIX;
+    auto createOutcome = CreateBucket(bucketName);
+    AWS_EXPECT_SUCCESS(createOutcome);
+
+    Vector<ChecksumTestCase> testCases{
+      {
+        [](PutObjectRequest request) -> PutObjectRequest {
+          return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32).WithChecksumCRC32("Just runnin' scared each place we go");
+        },
+        HttpResponseCode::BAD_REQUEST,
+        "Just runnin' scared each place we go"
+      },
+      {
+        [](PutObjectRequest request) -> PutObjectRequest {
+          return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1).WithChecksumSHA1("So afraid that he might show");
+        },
+        HttpResponseCode::BAD_REQUEST,
+        "So afraid that he might show"
+      },
+      {
+        [](PutObjectRequest request) -> PutObjectRequest {
+          return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256).WithChecksumSHA256("Yeah, runnin' scared, what would I do");
+        },
+        HttpResponseCode::BAD_REQUEST,
+        "Yeah, runnin' scared, what would I do"
+      },
+      {
+        [](PutObjectRequest request) -> PutObjectRequest {
+          return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C).WithChecksumCRC32C("If he came back and wanted you?");
+        },
+        HttpResponseCode::BAD_REQUEST,
+        "If he came back and wanted you?"
+      },
+      {
+        [](PutObjectRequest request) -> PutObjectRequest {
+          return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32)
+              .WithChecksumCRC32(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32("Runnin' scared, you love him so")));
+        },
+        HttpResponseCode::OK,
+        "Runnin' scared, you love him so"
+      },
+      {
+        [](PutObjectRequest request) -> PutObjectRequest {
+          return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1)
+              .WithChecksumSHA1(HashingUtils::Base64Encode(HashingUtils::CalculateSHA1("Just runnin' scared, afraid to lose")));
+        },
+        HttpResponseCode::OK,
+        "Just runnin' scared, afraid to lose"
+      },
+      {
+        [](PutObjectRequest request) -> PutObjectRequest {
+          return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256)
+              .WithChecksumSHA256(
+                HashingUtils::Base64Encode(HashingUtils::CalculateSHA256("If he came back, which one would you choose?")));
+        },
+        HttpResponseCode::OK,
+        "If he came back, which one would you choose?"
+      },
+      {
+        [](PutObjectRequest request) -> PutObjectRequest {
+          return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C)
+              .WithChecksumCRC32C(HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C("Then all at once he was standing there")));
+        },
+        HttpResponseCode::OK,
+        "Then all at once he was standing there"
+      }
+    };
+
+    for (const auto&testCase: testCases) {
+      auto request = testCase.chucksumRequestMutator(PutObjectRequest()
+        .WithBucket(bucketName)
+        .WithKey("RunningScared"));
+      std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG,
+        testCase.body,
+        std::ios_base::in | std::ios_base::binary);
+      request.SetBody(body);
+      const auto response = client->PutObject(request);
+      if (!response.IsSuccess()) {
+        EXPECT_EQ(testCase.responseCode, response.GetError().GetResponseCode());
+      }
+      else {
+        EXPECT_EQ(testCase.responseCode, HttpResponseCode::OK);
+        EXPECT_TRUE(response.IsSuccess());
+      }
+    }
   }
 }

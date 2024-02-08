@@ -24,7 +24,8 @@ CanvasAppSettings::CanvasAppSettings() :
     m_workspaceSettingsHasBeenSet(false),
     m_identityProviderOAuthSettingsHasBeenSet(false),
     m_directDeploySettingsHasBeenSet(false),
-    m_kendraSettingsHasBeenSet(false)
+    m_kendraSettingsHasBeenSet(false),
+    m_generativeAiSettingsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ CanvasAppSettings::CanvasAppSettings(JsonView jsonValue) :
     m_workspaceSettingsHasBeenSet(false),
     m_identityProviderOAuthSettingsHasBeenSet(false),
     m_directDeploySettingsHasBeenSet(false),
-    m_kendraSettingsHasBeenSet(false)
+    m_kendraSettingsHasBeenSet(false),
+    m_generativeAiSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ CanvasAppSettings& CanvasAppSettings::operator =(JsonView jsonValue)
     m_kendraSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GenerativeAiSettings"))
+  {
+    m_generativeAiSettings = jsonValue.GetObject("GenerativeAiSettings");
+
+    m_generativeAiSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +140,12 @@ JsonValue CanvasAppSettings::Jsonize() const
   if(m_kendraSettingsHasBeenSet)
   {
    payload.WithObject("KendraSettings", m_kendraSettings.Jsonize());
+
+  }
+
+  if(m_generativeAiSettingsHasBeenSet)
+  {
+   payload.WithObject("GenerativeAiSettings", m_generativeAiSettings.Jsonize());
 
   }
 

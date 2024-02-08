@@ -24,7 +24,8 @@ FilledMapConfiguration::FilledMapConfiguration() :
     m_legendHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_windowOptionsHasBeenSet(false),
-    m_mapStyleOptionsHasBeenSet(false)
+    m_mapStyleOptionsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ FilledMapConfiguration::FilledMapConfiguration(JsonView jsonValue) :
     m_legendHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_windowOptionsHasBeenSet(false),
-    m_mapStyleOptionsHasBeenSet(false)
+    m_mapStyleOptionsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ FilledMapConfiguration& FilledMapConfiguration::operator =(JsonView jsonValue)
     m_mapStyleOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +132,12 @@ JsonValue FilledMapConfiguration::Jsonize() const
   if(m_mapStyleOptionsHasBeenSet)
   {
    payload.WithObject("MapStyleOptions", m_mapStyleOptions.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

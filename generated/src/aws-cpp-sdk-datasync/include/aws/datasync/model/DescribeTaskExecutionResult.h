@@ -9,6 +9,7 @@
 #include <aws/datasync/model/TaskExecutionStatus.h>
 #include <aws/datasync/model/Options.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/ManifestConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/datasync/model/TaskExecutionResultDetail.h>
 #include <aws/datasync/model/TaskReportConfig.h>
@@ -287,6 +288,47 @@ namespace Model
 
 
     /**
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline const ManifestConfig& GetManifestConfig() const{ return m_manifestConfig; }
+
+    /**
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline void SetManifestConfig(const ManifestConfig& value) { m_manifestConfig = value; }
+
+    /**
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline void SetManifestConfig(ManifestConfig&& value) { m_manifestConfig = std::move(value); }
+
+    /**
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline DescribeTaskExecutionResult& WithManifestConfig(const ManifestConfig& value) { SetManifestConfig(value); return *this;}
+
+    /**
+     * <p>The configuration of the manifest that lists the files or objects to
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     * what DataSync transfers by using a manifest</a>.</p>
+     */
+    inline DescribeTaskExecutionResult& WithManifestConfig(ManifestConfig&& value) { SetManifestConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The time when the task execution started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -435,6 +477,28 @@ namespace Model
 
 
     /**
+     * <p>The physical number of bytes transferred over the network after compression
+     * was applied. In most cases, this number is less than
+     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
+     */
+    inline long long GetBytesCompressed() const{ return m_bytesCompressed; }
+
+    /**
+     * <p>The physical number of bytes transferred over the network after compression
+     * was applied. In most cases, this number is less than
+     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
+     */
+    inline void SetBytesCompressed(long long value) { m_bytesCompressed = value; }
+
+    /**
+     * <p>The physical number of bytes transferred over the network after compression
+     * was applied. In most cases, this number is less than
+     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
+     */
+    inline DescribeTaskExecutionResult& WithBytesCompressed(long long value) { SetBytesCompressed(value); return *this;}
+
+
+    /**
      * <p>The result of the task execution.</p>
      */
     inline const TaskExecutionResultDetail& GetResult() const{ return m_result; }
@@ -461,54 +525,42 @@ namespace Model
 
 
     /**
-     * <p>The physical number of bytes transferred over the network after compression
-     * was applied. In most cases, this number is less than
-     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
-     */
-    inline long long GetBytesCompressed() const{ return m_bytesCompressed; }
-
-    /**
-     * <p>The physical number of bytes transferred over the network after compression
-     * was applied. In most cases, this number is less than
-     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
-     */
-    inline void SetBytesCompressed(long long value) { m_bytesCompressed = value; }
-
-    /**
-     * <p>The physical number of bytes transferred over the network after compression
-     * was applied. In most cases, this number is less than
-     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
-     */
-    inline DescribeTaskExecutionResult& WithBytesCompressed(long long value) { SetBytesCompressed(value); return *this;}
-
-
-    /**
      * <p>The configuration of your task report, which provides detailed information
-     * about for your DataSync transfer.</p>
+     * about for your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
      */
     inline const TaskReportConfig& GetTaskReportConfig() const{ return m_taskReportConfig; }
 
     /**
      * <p>The configuration of your task report, which provides detailed information
-     * about for your DataSync transfer.</p>
+     * about for your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
      */
     inline void SetTaskReportConfig(const TaskReportConfig& value) { m_taskReportConfig = value; }
 
     /**
      * <p>The configuration of your task report, which provides detailed information
-     * about for your DataSync transfer.</p>
+     * about for your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
      */
     inline void SetTaskReportConfig(TaskReportConfig&& value) { m_taskReportConfig = std::move(value); }
 
     /**
      * <p>The configuration of your task report, which provides detailed information
-     * about for your DataSync transfer.</p>
+     * about for your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
      */
     inline DescribeTaskExecutionResult& WithTaskReportConfig(const TaskReportConfig& value) { SetTaskReportConfig(value); return *this;}
 
     /**
      * <p>The configuration of your task report, which provides detailed information
-     * about for your DataSync transfer.</p>
+     * about for your DataSync transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+     * a task report</a>.</p>
      */
     inline DescribeTaskExecutionResult& WithTaskReportConfig(TaskReportConfig&& value) { SetTaskReportConfig(std::move(value)); return *this;}
 
@@ -685,6 +737,8 @@ namespace Model
 
     Aws::Vector<FilterRule> m_includes;
 
+    ManifestConfig m_manifestConfig;
+
     Aws::Utils::DateTime m_startTime;
 
     long long m_estimatedFilesToTransfer;
@@ -697,9 +751,9 @@ namespace Model
 
     long long m_bytesTransferred;
 
-    TaskExecutionResultDetail m_result;
-
     long long m_bytesCompressed;
+
+    TaskExecutionResultDetail m_result;
 
     TaskReportConfig m_taskReportConfig;
 

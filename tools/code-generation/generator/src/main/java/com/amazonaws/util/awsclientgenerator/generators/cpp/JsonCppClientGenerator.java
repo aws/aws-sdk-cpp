@@ -14,9 +14,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.Cpp
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
@@ -26,8 +24,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
-import java.util.Set;;
+import java.util.Set;
 
 public class JsonCppClientGenerator extends CppClientGenerator {
 

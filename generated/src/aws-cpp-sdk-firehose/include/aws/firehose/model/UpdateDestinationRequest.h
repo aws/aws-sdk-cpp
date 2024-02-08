@@ -14,6 +14,7 @@
 #include <aws/firehose/model/SplunkDestinationUpdate.h>
 #include <aws/firehose/model/HttpEndpointDestinationUpdate.h>
 #include <aws/firehose/model/AmazonOpenSearchServerlessDestinationUpdate.h>
+#include <aws/firehose/model/SnowflakeDestinationUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -426,6 +427,37 @@ namespace Model
      */
     inline UpdateDestinationRequest& WithAmazonOpenSearchServerlessDestinationUpdate(AmazonOpenSearchServerlessDestinationUpdate&& value) { SetAmazonOpenSearchServerlessDestinationUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Update to the Snowflake destination condiguration settings</p>
+     */
+    inline const SnowflakeDestinationUpdate& GetSnowflakeDestinationUpdate() const{ return m_snowflakeDestinationUpdate; }
+
+    /**
+     * <p>Update to the Snowflake destination condiguration settings</p>
+     */
+    inline bool SnowflakeDestinationUpdateHasBeenSet() const { return m_snowflakeDestinationUpdateHasBeenSet; }
+
+    /**
+     * <p>Update to the Snowflake destination condiguration settings</p>
+     */
+    inline void SetSnowflakeDestinationUpdate(const SnowflakeDestinationUpdate& value) { m_snowflakeDestinationUpdateHasBeenSet = true; m_snowflakeDestinationUpdate = value; }
+
+    /**
+     * <p>Update to the Snowflake destination condiguration settings</p>
+     */
+    inline void SetSnowflakeDestinationUpdate(SnowflakeDestinationUpdate&& value) { m_snowflakeDestinationUpdateHasBeenSet = true; m_snowflakeDestinationUpdate = std::move(value); }
+
+    /**
+     * <p>Update to the Snowflake destination condiguration settings</p>
+     */
+    inline UpdateDestinationRequest& WithSnowflakeDestinationUpdate(const SnowflakeDestinationUpdate& value) { SetSnowflakeDestinationUpdate(value); return *this;}
+
+    /**
+     * <p>Update to the Snowflake destination condiguration settings</p>
+     */
+    inline UpdateDestinationRequest& WithSnowflakeDestinationUpdate(SnowflakeDestinationUpdate&& value) { SetSnowflakeDestinationUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deliveryStreamName;
@@ -457,6 +489,9 @@ namespace Model
 
     AmazonOpenSearchServerlessDestinationUpdate m_amazonOpenSearchServerlessDestinationUpdate;
     bool m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet = false;
+
+    SnowflakeDestinationUpdate m_snowflakeDestinationUpdate;
+    bool m_snowflakeDestinationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

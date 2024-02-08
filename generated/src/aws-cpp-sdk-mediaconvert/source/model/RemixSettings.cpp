@@ -19,6 +19,10 @@ namespace Model
 {
 
 RemixSettings::RemixSettings() : 
+    m_audioDescriptionAudioChannel(0),
+    m_audioDescriptionAudioChannelHasBeenSet(false),
+    m_audioDescriptionDataChannel(0),
+    m_audioDescriptionDataChannelHasBeenSet(false),
     m_channelMappingHasBeenSet(false),
     m_channelsIn(0),
     m_channelsInHasBeenSet(false),
@@ -28,6 +32,10 @@ RemixSettings::RemixSettings() :
 }
 
 RemixSettings::RemixSettings(JsonView jsonValue) : 
+    m_audioDescriptionAudioChannel(0),
+    m_audioDescriptionAudioChannelHasBeenSet(false),
+    m_audioDescriptionDataChannel(0),
+    m_audioDescriptionDataChannelHasBeenSet(false),
     m_channelMappingHasBeenSet(false),
     m_channelsIn(0),
     m_channelsInHasBeenSet(false),
@@ -39,6 +47,20 @@ RemixSettings::RemixSettings(JsonView jsonValue) :
 
 RemixSettings& RemixSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDescriptionAudioChannel"))
+  {
+    m_audioDescriptionAudioChannel = jsonValue.GetInteger("audioDescriptionAudioChannel");
+
+    m_audioDescriptionAudioChannelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioDescriptionDataChannel"))
+  {
+    m_audioDescriptionDataChannel = jsonValue.GetInteger("audioDescriptionDataChannel");
+
+    m_audioDescriptionDataChannelHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("channelMapping"))
   {
     m_channelMapping = jsonValue.GetObject("channelMapping");
@@ -66,6 +88,18 @@ RemixSettings& RemixSettings::operator =(JsonView jsonValue)
 JsonValue RemixSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioDescriptionAudioChannelHasBeenSet)
+  {
+   payload.WithInteger("audioDescriptionAudioChannel", m_audioDescriptionAudioChannel);
+
+  }
+
+  if(m_audioDescriptionDataChannelHasBeenSet)
+  {
+   payload.WithInteger("audioDescriptionDataChannel", m_audioDescriptionDataChannel);
+
+  }
 
   if(m_channelMappingHasBeenSet)
   {

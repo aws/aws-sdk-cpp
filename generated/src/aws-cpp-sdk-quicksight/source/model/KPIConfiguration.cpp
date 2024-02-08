@@ -21,14 +21,16 @@ namespace Model
 KPIConfiguration::KPIConfiguration() : 
     m_fieldWellsHasBeenSet(false),
     m_sortConfigurationHasBeenSet(false),
-    m_kPIOptionsHasBeenSet(false)
+    m_kPIOptionsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
 KPIConfiguration::KPIConfiguration(JsonView jsonValue) : 
     m_fieldWellsHasBeenSet(false),
     m_sortConfigurationHasBeenSet(false),
-    m_kPIOptionsHasBeenSet(false)
+    m_kPIOptionsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ KPIConfiguration& KPIConfiguration::operator =(JsonView jsonValue)
     m_kPIOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue KPIConfiguration::Jsonize() const
   if(m_kPIOptionsHasBeenSet)
   {
    payload.WithObject("KPIOptions", m_kPIOptions.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

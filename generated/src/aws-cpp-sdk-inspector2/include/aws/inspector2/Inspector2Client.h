@@ -321,6 +321,31 @@ namespace Inspector2
         }
 
         /**
+         * <p>Creates a CIS scan configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCisScanConfigurationOutcome CreateCisScanConfiguration(const Model::CreateCisScanConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCisScanConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCisScanConfigurationRequestT = Model::CreateCisScanConfigurationRequest>
+        Model::CreateCisScanConfigurationOutcomeCallable CreateCisScanConfigurationCallable(const CreateCisScanConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::CreateCisScanConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCisScanConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCisScanConfigurationRequestT = Model::CreateCisScanConfigurationRequest>
+        void CreateCisScanConfigurationAsync(const CreateCisScanConfigurationRequestT& request, const CreateCisScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::CreateCisScanConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Creates a filter resource using specified filter criteria. When the filter
          * action is set to <code>SUPPRESS</code> this action creates a suppression
          * rule.</p><p><h3>See Also:</h3>   <a
@@ -399,6 +424,31 @@ namespace Inspector2
         void CreateSbomExportAsync(const CreateSbomExportRequestT& request, const CreateSbomExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::CreateSbomExport, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a CIS scan configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCisScanConfigurationOutcome DeleteCisScanConfiguration(const Model::DeleteCisScanConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCisScanConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCisScanConfigurationRequestT = Model::DeleteCisScanConfigurationRequest>
+        Model::DeleteCisScanConfigurationOutcomeCallable DeleteCisScanConfigurationCallable(const DeleteCisScanConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::DeleteCisScanConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCisScanConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCisScanConfigurationRequestT = Model::DeleteCisScanConfigurationRequest>
+        void DeleteCisScanConfigurationAsync(const DeleteCisScanConfigurationRequestT& request, const DeleteCisScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::DeleteCisScanConfiguration, request, handler, context);
         }
 
         /**
@@ -581,6 +631,56 @@ namespace Inspector2
         void EnableDelegatedAdminAccountAsync(const EnableDelegatedAdminAccountRequestT& request, const EnableDelegatedAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::EnableDelegatedAdminAccount, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a CIS scan report.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCisScanReportOutcome GetCisScanReport(const Model::GetCisScanReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCisScanReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCisScanReportRequestT = Model::GetCisScanReportRequest>
+        Model::GetCisScanReportOutcomeCallable GetCisScanReportCallable(const GetCisScanReportRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::GetCisScanReport, request);
+        }
+
+        /**
+         * An Async wrapper for GetCisScanReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCisScanReportRequestT = Model::GetCisScanReportRequest>
+        void GetCisScanReportAsync(const GetCisScanReportRequestT& request, const GetCisScanReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::GetCisScanReport, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves CIS scan result details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCisScanResultDetailsOutcome GetCisScanResultDetails(const Model::GetCisScanResultDetailsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCisScanResultDetails that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCisScanResultDetailsRequestT = Model::GetCisScanResultDetailsRequest>
+        Model::GetCisScanResultDetailsOutcomeCallable GetCisScanResultDetailsCallable(const GetCisScanResultDetailsRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::GetCisScanResultDetails, request);
+        }
+
+        /**
+         * An Async wrapper for GetCisScanResultDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCisScanResultDetailsRequestT = Model::GetCisScanResultDetailsRequest>
+        void GetCisScanResultDetailsAsync(const GetCisScanResultDetailsRequestT& request, const GetCisScanResultDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::GetCisScanResultDetails, request, handler, context);
         }
 
         /**
@@ -786,6 +886,107 @@ namespace Inspector2
         void ListAccountPermissionsAsync(const ListAccountPermissionsRequestT& request, const ListAccountPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::ListAccountPermissions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists CIS scan configurations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCisScanConfigurationsOutcome ListCisScanConfigurations(const Model::ListCisScanConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCisScanConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCisScanConfigurationsRequestT = Model::ListCisScanConfigurationsRequest>
+        Model::ListCisScanConfigurationsOutcomeCallable ListCisScanConfigurationsCallable(const ListCisScanConfigurationsRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::ListCisScanConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListCisScanConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCisScanConfigurationsRequestT = Model::ListCisScanConfigurationsRequest>
+        void ListCisScanConfigurationsAsync(const ListCisScanConfigurationsRequestT& request, const ListCisScanConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::ListCisScanConfigurations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists scan results aggregated by checks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCisScanResultsAggregatedByChecksOutcome ListCisScanResultsAggregatedByChecks(const Model::ListCisScanResultsAggregatedByChecksRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCisScanResultsAggregatedByChecks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCisScanResultsAggregatedByChecksRequestT = Model::ListCisScanResultsAggregatedByChecksRequest>
+        Model::ListCisScanResultsAggregatedByChecksOutcomeCallable ListCisScanResultsAggregatedByChecksCallable(const ListCisScanResultsAggregatedByChecksRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::ListCisScanResultsAggregatedByChecks, request);
+        }
+
+        /**
+         * An Async wrapper for ListCisScanResultsAggregatedByChecks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCisScanResultsAggregatedByChecksRequestT = Model::ListCisScanResultsAggregatedByChecksRequest>
+        void ListCisScanResultsAggregatedByChecksAsync(const ListCisScanResultsAggregatedByChecksRequestT& request, const ListCisScanResultsAggregatedByChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::ListCisScanResultsAggregatedByChecks, request, handler, context);
+        }
+
+        /**
+         * <p>Lists scan results aggregated by a target resource.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCisScanResultsAggregatedByTargetResourceOutcome ListCisScanResultsAggregatedByTargetResource(const Model::ListCisScanResultsAggregatedByTargetResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCisScanResultsAggregatedByTargetResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCisScanResultsAggregatedByTargetResourceRequestT = Model::ListCisScanResultsAggregatedByTargetResourceRequest>
+        Model::ListCisScanResultsAggregatedByTargetResourceOutcomeCallable ListCisScanResultsAggregatedByTargetResourceCallable(const ListCisScanResultsAggregatedByTargetResourceRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::ListCisScanResultsAggregatedByTargetResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListCisScanResultsAggregatedByTargetResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCisScanResultsAggregatedByTargetResourceRequestT = Model::ListCisScanResultsAggregatedByTargetResourceRequest>
+        void ListCisScanResultsAggregatedByTargetResourceAsync(const ListCisScanResultsAggregatedByTargetResourceRequestT& request, const ListCisScanResultsAggregatedByTargetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::ListCisScanResultsAggregatedByTargetResource, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a CIS scan list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCisScansOutcome ListCisScans(const Model::ListCisScansRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCisScans that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCisScansRequestT = Model::ListCisScansRequest>
+        Model::ListCisScansOutcomeCallable ListCisScansCallable(const ListCisScansRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::ListCisScans, request);
+        }
+
+        /**
+         * An Async wrapper for ListCisScans that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCisScansRequestT = Model::ListCisScansRequest>
+        void ListCisScansAsync(const ListCisScansRequestT& request, const ListCisScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::ListCisScans, request, handler, context);
         }
 
         /**
@@ -1071,6 +1272,118 @@ namespace Inspector2
         }
 
         /**
+         * <p> Sends a CIS session health. This API is used by the Amazon Inspector SSM
+         * plugin to communicate with the Amazon Inspector service. The Amazon Inspector
+         * SSM plugin calls this API to start a CIS scan session for the scan ID supplied
+         * by the service. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendCisSessionHealthOutcome SendCisSessionHealth(const Model::SendCisSessionHealthRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendCisSessionHealth that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SendCisSessionHealthRequestT = Model::SendCisSessionHealthRequest>
+        Model::SendCisSessionHealthOutcomeCallable SendCisSessionHealthCallable(const SendCisSessionHealthRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::SendCisSessionHealth, request);
+        }
+
+        /**
+         * An Async wrapper for SendCisSessionHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SendCisSessionHealthRequestT = Model::SendCisSessionHealthRequest>
+        void SendCisSessionHealthAsync(const SendCisSessionHealthRequestT& request, const SendCisSessionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::SendCisSessionHealth, request, handler, context);
+        }
+
+        /**
+         * <p> Sends a CIS session telemetry. This API is used by the Amazon Inspector SSM
+         * plugin to communicate with the Amazon Inspector service. The Amazon Inspector
+         * SSM plugin calls this API to start a CIS scan session for the scan ID supplied
+         * by the service. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendCisSessionTelemetryOutcome SendCisSessionTelemetry(const Model::SendCisSessionTelemetryRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendCisSessionTelemetry that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SendCisSessionTelemetryRequestT = Model::SendCisSessionTelemetryRequest>
+        Model::SendCisSessionTelemetryOutcomeCallable SendCisSessionTelemetryCallable(const SendCisSessionTelemetryRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::SendCisSessionTelemetry, request);
+        }
+
+        /**
+         * An Async wrapper for SendCisSessionTelemetry that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SendCisSessionTelemetryRequestT = Model::SendCisSessionTelemetryRequest>
+        void SendCisSessionTelemetryAsync(const SendCisSessionTelemetryRequestT& request, const SendCisSessionTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::SendCisSessionTelemetry, request, handler, context);
+        }
+
+        /**
+         * <p> Starts a CIS session. This API is used by the Amazon Inspector SSM plugin to
+         * communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin
+         * calls this API to start a CIS scan session for the scan ID supplied by the
+         * service. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCisSessionOutcome StartCisSession(const Model::StartCisSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCisSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartCisSessionRequestT = Model::StartCisSessionRequest>
+        Model::StartCisSessionOutcomeCallable StartCisSessionCallable(const StartCisSessionRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::StartCisSession, request);
+        }
+
+        /**
+         * An Async wrapper for StartCisSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartCisSessionRequestT = Model::StartCisSessionRequest>
+        void StartCisSessionAsync(const StartCisSessionRequestT& request, const StartCisSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::StartCisSession, request, handler, context);
+        }
+
+        /**
+         * <p> Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to
+         * communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin
+         * calls this API to start a CIS scan session for the scan ID supplied by the
+         * service. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopCisSessionOutcome StopCisSession(const Model::StopCisSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopCisSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopCisSessionRequestT = Model::StopCisSessionRequest>
+        Model::StopCisSessionOutcomeCallable StopCisSessionCallable(const StopCisSessionRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::StopCisSession, request);
+        }
+
+        /**
+         * An Async wrapper for StopCisSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopCisSessionRequestT = Model::StopCisSessionRequest>
+        void StopCisSessionAsync(const StopCisSessionRequestT& request, const StopCisSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::StopCisSession, request, handler, context);
+        }
+
+        /**
          * <p>Adds tags to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/TagResource">AWS
          * API Reference</a></p>
@@ -1118,6 +1431,31 @@ namespace Inspector2
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a CIS scan configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCisScanConfigurationOutcome UpdateCisScanConfiguration(const Model::UpdateCisScanConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCisScanConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCisScanConfigurationRequestT = Model::UpdateCisScanConfigurationRequest>
+        Model::UpdateCisScanConfigurationOutcomeCallable UpdateCisScanConfigurationCallable(const UpdateCisScanConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::UpdateCisScanConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCisScanConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCisScanConfigurationRequestT = Model::UpdateCisScanConfigurationRequest>
+        void UpdateCisScanConfigurationAsync(const UpdateCisScanConfigurationRequestT& request, const UpdateCisScanConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::UpdateCisScanConfiguration, request, handler, context);
         }
 
         /**
@@ -1176,8 +1514,8 @@ namespace Inspector2
 
         /**
          * <p>Updates an encryption key. A <code>ResourceNotFoundException</code> means
-         * that an AWS owned key is being used for encryption.</p><p><h3>See Also:</h3>  
-         * <a
+         * that an Amazon Web Services owned key is being used for
+         * encryption.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey">AWS
          * API Reference</a></p>
          */

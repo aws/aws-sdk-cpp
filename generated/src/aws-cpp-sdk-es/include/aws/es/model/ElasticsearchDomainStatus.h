@@ -19,8 +19,11 @@
 #include <aws/es/model/AdvancedSecurityOptions.h>
 #include <aws/es/model/AutoTuneOptionsOutput.h>
 #include <aws/es/model/ChangeProgressDetails.h>
+#include <aws/es/model/DomainProcessingStatusType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
+#include <aws/es/model/ModifyingProperties.h>
 #include <utility>
 
 namespace Aws
@@ -1092,6 +1095,86 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline const DomainProcessingStatusType& GetDomainProcessingStatus() const{ return m_domainProcessingStatus; }
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline bool DomainProcessingStatusHasBeenSet() const { return m_domainProcessingStatusHasBeenSet; }
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline void SetDomainProcessingStatus(const DomainProcessingStatusType& value) { m_domainProcessingStatusHasBeenSet = true; m_domainProcessingStatus = value; }
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline void SetDomainProcessingStatus(DomainProcessingStatusType&& value) { m_domainProcessingStatusHasBeenSet = true; m_domainProcessingStatus = std::move(value); }
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline ElasticsearchDomainStatus& WithDomainProcessingStatus(const DomainProcessingStatusType& value) { SetDomainProcessingStatus(value); return *this;}
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline ElasticsearchDomainStatus& WithDomainProcessingStatus(DomainProcessingStatusType&& value) { SetDomainProcessingStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline const Aws::Vector<ModifyingProperties>& GetModifyingProperties() const{ return m_modifyingProperties; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline bool ModifyingPropertiesHasBeenSet() const { return m_modifyingPropertiesHasBeenSet; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline void SetModifyingProperties(const Aws::Vector<ModifyingProperties>& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties = value; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline void SetModifyingProperties(Aws::Vector<ModifyingProperties>&& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties = std::move(value); }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline ElasticsearchDomainStatus& WithModifyingProperties(const Aws::Vector<ModifyingProperties>& value) { SetModifyingProperties(value); return *this;}
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline ElasticsearchDomainStatus& WithModifyingProperties(Aws::Vector<ModifyingProperties>&& value) { SetModifyingProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline ElasticsearchDomainStatus& AddModifyingProperties(const ModifyingProperties& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline ElasticsearchDomainStatus& AddModifyingProperties(ModifyingProperties&& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domainId;
@@ -1168,6 +1251,12 @@ namespace Model
 
     ChangeProgressDetails m_changeProgressDetails;
     bool m_changeProgressDetailsHasBeenSet = false;
+
+    DomainProcessingStatusType m_domainProcessingStatus;
+    bool m_domainProcessingStatusHasBeenSet = false;
+
+    Aws::Vector<ModifyingProperties> m_modifyingProperties;
+    bool m_modifyingPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

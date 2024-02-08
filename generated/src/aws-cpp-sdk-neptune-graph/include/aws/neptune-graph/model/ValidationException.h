@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A resource could not be validated</p><p><h3>See Also:</h3>   <a
+   * <p>A resource could not be validated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ValidationException">AWS
    * API Reference</a></p>
    */

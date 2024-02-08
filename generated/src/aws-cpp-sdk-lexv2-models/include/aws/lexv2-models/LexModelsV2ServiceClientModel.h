@@ -25,6 +25,7 @@
 #include <aws/lexv2-models/model/CreateBotResult.h>
 #include <aws/lexv2-models/model/CreateBotAliasResult.h>
 #include <aws/lexv2-models/model/CreateBotLocaleResult.h>
+#include <aws/lexv2-models/model/CreateBotReplicaResult.h>
 #include <aws/lexv2-models/model/CreateBotVersionResult.h>
 #include <aws/lexv2-models/model/CreateExportResult.h>
 #include <aws/lexv2-models/model/CreateIntentResult.h>
@@ -37,6 +38,7 @@
 #include <aws/lexv2-models/model/DeleteBotResult.h>
 #include <aws/lexv2-models/model/DeleteBotAliasResult.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleResult.h>
+#include <aws/lexv2-models/model/DeleteBotReplicaResult.h>
 #include <aws/lexv2-models/model/DeleteBotVersionResult.h>
 #include <aws/lexv2-models/model/DeleteCustomVocabularyResult.h>
 #include <aws/lexv2-models/model/DeleteExportResult.h>
@@ -48,6 +50,7 @@
 #include <aws/lexv2-models/model/DescribeBotAliasResult.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleResult.h>
 #include <aws/lexv2-models/model/DescribeBotRecommendationResult.h>
+#include <aws/lexv2-models/model/DescribeBotReplicaResult.h>
 #include <aws/lexv2-models/model/DescribeBotResourceGenerationResult.h>
 #include <aws/lexv2-models/model/DescribeBotVersionResult.h>
 #include <aws/lexv2-models/model/DescribeCustomVocabularyMetadataResult.h>
@@ -64,10 +67,13 @@
 #include <aws/lexv2-models/model/GenerateBotElementResult.h>
 #include <aws/lexv2-models/model/GetTestExecutionArtifactsUrlResult.h>
 #include <aws/lexv2-models/model/ListAggregatedUtterancesResult.h>
+#include <aws/lexv2-models/model/ListBotAliasReplicasResult.h>
 #include <aws/lexv2-models/model/ListBotAliasesResult.h>
 #include <aws/lexv2-models/model/ListBotLocalesResult.h>
 #include <aws/lexv2-models/model/ListBotRecommendationsResult.h>
+#include <aws/lexv2-models/model/ListBotReplicasResult.h>
 #include <aws/lexv2-models/model/ListBotResourceGenerationsResult.h>
+#include <aws/lexv2-models/model/ListBotVersionReplicasResult.h>
 #include <aws/lexv2-models/model/ListBotVersionsResult.h>
 #include <aws/lexv2-models/model/ListBotsResult.h>
 #include <aws/lexv2-models/model/ListBuiltInIntentsResult.h>
@@ -158,6 +164,7 @@ namespace Aws
       class CreateBotRequest;
       class CreateBotAliasRequest;
       class CreateBotLocaleRequest;
+      class CreateBotReplicaRequest;
       class CreateBotVersionRequest;
       class CreateExportRequest;
       class CreateIntentRequest;
@@ -170,6 +177,7 @@ namespace Aws
       class DeleteBotRequest;
       class DeleteBotAliasRequest;
       class DeleteBotLocaleRequest;
+      class DeleteBotReplicaRequest;
       class DeleteBotVersionRequest;
       class DeleteCustomVocabularyRequest;
       class DeleteExportRequest;
@@ -185,6 +193,7 @@ namespace Aws
       class DescribeBotAliasRequest;
       class DescribeBotLocaleRequest;
       class DescribeBotRecommendationRequest;
+      class DescribeBotReplicaRequest;
       class DescribeBotResourceGenerationRequest;
       class DescribeBotVersionRequest;
       class DescribeCustomVocabularyMetadataRequest;
@@ -201,10 +210,13 @@ namespace Aws
       class GenerateBotElementRequest;
       class GetTestExecutionArtifactsUrlRequest;
       class ListAggregatedUtterancesRequest;
+      class ListBotAliasReplicasRequest;
       class ListBotAliasesRequest;
       class ListBotLocalesRequest;
       class ListBotRecommendationsRequest;
+      class ListBotReplicasRequest;
       class ListBotResourceGenerationsRequest;
+      class ListBotVersionReplicasRequest;
       class ListBotVersionsRequest;
       class ListBotsRequest;
       class ListBuiltInIntentsRequest;
@@ -257,6 +269,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateBotResult, LexModelsV2Error> CreateBotOutcome;
       typedef Aws::Utils::Outcome<CreateBotAliasResult, LexModelsV2Error> CreateBotAliasOutcome;
       typedef Aws::Utils::Outcome<CreateBotLocaleResult, LexModelsV2Error> CreateBotLocaleOutcome;
+      typedef Aws::Utils::Outcome<CreateBotReplicaResult, LexModelsV2Error> CreateBotReplicaOutcome;
       typedef Aws::Utils::Outcome<CreateBotVersionResult, LexModelsV2Error> CreateBotVersionOutcome;
       typedef Aws::Utils::Outcome<CreateExportResult, LexModelsV2Error> CreateExportOutcome;
       typedef Aws::Utils::Outcome<CreateIntentResult, LexModelsV2Error> CreateIntentOutcome;
@@ -269,6 +282,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteBotResult, LexModelsV2Error> DeleteBotOutcome;
       typedef Aws::Utils::Outcome<DeleteBotAliasResult, LexModelsV2Error> DeleteBotAliasOutcome;
       typedef Aws::Utils::Outcome<DeleteBotLocaleResult, LexModelsV2Error> DeleteBotLocaleOutcome;
+      typedef Aws::Utils::Outcome<DeleteBotReplicaResult, LexModelsV2Error> DeleteBotReplicaOutcome;
       typedef Aws::Utils::Outcome<DeleteBotVersionResult, LexModelsV2Error> DeleteBotVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteCustomVocabularyResult, LexModelsV2Error> DeleteCustomVocabularyOutcome;
       typedef Aws::Utils::Outcome<DeleteExportResult, LexModelsV2Error> DeleteExportOutcome;
@@ -284,6 +298,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeBotAliasResult, LexModelsV2Error> DescribeBotAliasOutcome;
       typedef Aws::Utils::Outcome<DescribeBotLocaleResult, LexModelsV2Error> DescribeBotLocaleOutcome;
       typedef Aws::Utils::Outcome<DescribeBotRecommendationResult, LexModelsV2Error> DescribeBotRecommendationOutcome;
+      typedef Aws::Utils::Outcome<DescribeBotReplicaResult, LexModelsV2Error> DescribeBotReplicaOutcome;
       typedef Aws::Utils::Outcome<DescribeBotResourceGenerationResult, LexModelsV2Error> DescribeBotResourceGenerationOutcome;
       typedef Aws::Utils::Outcome<DescribeBotVersionResult, LexModelsV2Error> DescribeBotVersionOutcome;
       typedef Aws::Utils::Outcome<DescribeCustomVocabularyMetadataResult, LexModelsV2Error> DescribeCustomVocabularyMetadataOutcome;
@@ -300,10 +315,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<GenerateBotElementResult, LexModelsV2Error> GenerateBotElementOutcome;
       typedef Aws::Utils::Outcome<GetTestExecutionArtifactsUrlResult, LexModelsV2Error> GetTestExecutionArtifactsUrlOutcome;
       typedef Aws::Utils::Outcome<ListAggregatedUtterancesResult, LexModelsV2Error> ListAggregatedUtterancesOutcome;
+      typedef Aws::Utils::Outcome<ListBotAliasReplicasResult, LexModelsV2Error> ListBotAliasReplicasOutcome;
       typedef Aws::Utils::Outcome<ListBotAliasesResult, LexModelsV2Error> ListBotAliasesOutcome;
       typedef Aws::Utils::Outcome<ListBotLocalesResult, LexModelsV2Error> ListBotLocalesOutcome;
       typedef Aws::Utils::Outcome<ListBotRecommendationsResult, LexModelsV2Error> ListBotRecommendationsOutcome;
+      typedef Aws::Utils::Outcome<ListBotReplicasResult, LexModelsV2Error> ListBotReplicasOutcome;
       typedef Aws::Utils::Outcome<ListBotResourceGenerationsResult, LexModelsV2Error> ListBotResourceGenerationsOutcome;
+      typedef Aws::Utils::Outcome<ListBotVersionReplicasResult, LexModelsV2Error> ListBotVersionReplicasOutcome;
       typedef Aws::Utils::Outcome<ListBotVersionsResult, LexModelsV2Error> ListBotVersionsOutcome;
       typedef Aws::Utils::Outcome<ListBotsResult, LexModelsV2Error> ListBotsOutcome;
       typedef Aws::Utils::Outcome<ListBuiltInIntentsResult, LexModelsV2Error> ListBuiltInIntentsOutcome;
@@ -356,6 +374,7 @@ namespace Aws
       typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
       typedef std::future<CreateBotAliasOutcome> CreateBotAliasOutcomeCallable;
       typedef std::future<CreateBotLocaleOutcome> CreateBotLocaleOutcomeCallable;
+      typedef std::future<CreateBotReplicaOutcome> CreateBotReplicaOutcomeCallable;
       typedef std::future<CreateBotVersionOutcome> CreateBotVersionOutcomeCallable;
       typedef std::future<CreateExportOutcome> CreateExportOutcomeCallable;
       typedef std::future<CreateIntentOutcome> CreateIntentOutcomeCallable;
@@ -368,6 +387,7 @@ namespace Aws
       typedef std::future<DeleteBotOutcome> DeleteBotOutcomeCallable;
       typedef std::future<DeleteBotAliasOutcome> DeleteBotAliasOutcomeCallable;
       typedef std::future<DeleteBotLocaleOutcome> DeleteBotLocaleOutcomeCallable;
+      typedef std::future<DeleteBotReplicaOutcome> DeleteBotReplicaOutcomeCallable;
       typedef std::future<DeleteBotVersionOutcome> DeleteBotVersionOutcomeCallable;
       typedef std::future<DeleteCustomVocabularyOutcome> DeleteCustomVocabularyOutcomeCallable;
       typedef std::future<DeleteExportOutcome> DeleteExportOutcomeCallable;
@@ -383,6 +403,7 @@ namespace Aws
       typedef std::future<DescribeBotAliasOutcome> DescribeBotAliasOutcomeCallable;
       typedef std::future<DescribeBotLocaleOutcome> DescribeBotLocaleOutcomeCallable;
       typedef std::future<DescribeBotRecommendationOutcome> DescribeBotRecommendationOutcomeCallable;
+      typedef std::future<DescribeBotReplicaOutcome> DescribeBotReplicaOutcomeCallable;
       typedef std::future<DescribeBotResourceGenerationOutcome> DescribeBotResourceGenerationOutcomeCallable;
       typedef std::future<DescribeBotVersionOutcome> DescribeBotVersionOutcomeCallable;
       typedef std::future<DescribeCustomVocabularyMetadataOutcome> DescribeCustomVocabularyMetadataOutcomeCallable;
@@ -399,10 +420,13 @@ namespace Aws
       typedef std::future<GenerateBotElementOutcome> GenerateBotElementOutcomeCallable;
       typedef std::future<GetTestExecutionArtifactsUrlOutcome> GetTestExecutionArtifactsUrlOutcomeCallable;
       typedef std::future<ListAggregatedUtterancesOutcome> ListAggregatedUtterancesOutcomeCallable;
+      typedef std::future<ListBotAliasReplicasOutcome> ListBotAliasReplicasOutcomeCallable;
       typedef std::future<ListBotAliasesOutcome> ListBotAliasesOutcomeCallable;
       typedef std::future<ListBotLocalesOutcome> ListBotLocalesOutcomeCallable;
       typedef std::future<ListBotRecommendationsOutcome> ListBotRecommendationsOutcomeCallable;
+      typedef std::future<ListBotReplicasOutcome> ListBotReplicasOutcomeCallable;
       typedef std::future<ListBotResourceGenerationsOutcome> ListBotResourceGenerationsOutcomeCallable;
+      typedef std::future<ListBotVersionReplicasOutcome> ListBotVersionReplicasOutcomeCallable;
       typedef std::future<ListBotVersionsOutcome> ListBotVersionsOutcomeCallable;
       typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
       typedef std::future<ListBuiltInIntentsOutcome> ListBuiltInIntentsOutcomeCallable;
@@ -458,6 +482,7 @@ namespace Aws
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotRequest&, const Model::CreateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotAliasRequest&, const Model::CreateBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotLocaleRequest&, const Model::CreateBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotLocaleResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotReplicaRequest&, const Model::CreateBotReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotReplicaResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotVersionRequest&, const Model::CreateBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotVersionResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateExportRequest&, const Model::CreateExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateIntentRequest&, const Model::CreateIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntentResponseReceivedHandler;
@@ -470,6 +495,7 @@ namespace Aws
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotRequest&, const Model::DeleteBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotAliasRequest&, const Model::DeleteBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotLocaleRequest&, const Model::DeleteBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotLocaleResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotReplicaRequest&, const Model::DeleteBotReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotReplicaResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotVersionRequest&, const Model::DeleteBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotVersionResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteCustomVocabularyRequest&, const Model::DeleteCustomVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomVocabularyResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteExportRequest&, const Model::DeleteExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExportResponseReceivedHandler;
@@ -485,6 +511,7 @@ namespace Aws
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotAliasRequest&, const Model::DescribeBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotLocaleRequest&, const Model::DescribeBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotLocaleResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotRecommendationRequest&, const Model::DescribeBotRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotRecommendationResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotReplicaRequest&, const Model::DescribeBotReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotReplicaResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotResourceGenerationRequest&, const Model::DescribeBotResourceGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotResourceGenerationResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotVersionRequest&, const Model::DescribeBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotVersionResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeCustomVocabularyMetadataRequest&, const Model::DescribeCustomVocabularyMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomVocabularyMetadataResponseReceivedHandler;
@@ -501,10 +528,13 @@ namespace Aws
     typedef std::function<void(const LexModelsV2Client*, const Model::GenerateBotElementRequest&, const Model::GenerateBotElementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateBotElementResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::GetTestExecutionArtifactsUrlRequest&, const Model::GetTestExecutionArtifactsUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTestExecutionArtifactsUrlResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListAggregatedUtterancesRequest&, const Model::ListAggregatedUtterancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregatedUtterancesResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListBotAliasReplicasRequest&, const Model::ListBotAliasReplicasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotAliasReplicasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotAliasesRequest&, const Model::ListBotAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotAliasesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotLocalesRequest&, const Model::ListBotLocalesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotLocalesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotRecommendationsRequest&, const Model::ListBotRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotRecommendationsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListBotReplicasRequest&, const Model::ListBotReplicasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotReplicasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotResourceGenerationsRequest&, const Model::ListBotResourceGenerationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotResourceGenerationsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListBotVersionReplicasRequest&, const Model::ListBotVersionReplicasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotVersionReplicasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotVersionsRequest&, const Model::ListBotVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotVersionsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBuiltInIntentsRequest&, const Model::ListBuiltInIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuiltInIntentsResponseReceivedHandler;

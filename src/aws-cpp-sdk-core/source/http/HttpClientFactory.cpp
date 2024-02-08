@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/internal/AWSHttpResourceClient.h>
 
 #if AWS_SDK_USE_CRT_HTTP
 #include <aws/core/http/crt/CRTHttpClient.h>
@@ -49,16 +50,8 @@ namespace Aws
         static const char* HTTP_CLIENT_FACTORY_ALLOCATION_TAG = "HttpClientFactory";
 
 #if ENABLE_CURL_CLIENT && !defined(_WIN32)
-        static void LogAndSwallowHandler(int signal)
+        static void LogAndSwallowHandler(int)
         {
-            switch(signal)
-            {
-                case SIGPIPE:
-                    AWS_LOGSTREAM_ERROR(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Received a SIGPIPE error");
-                    break;
-                default:
-                    AWS_LOGSTREAM_ERROR(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Unhandled system SIGNAL error"  << signal);
-            }
         }
 #endif
 
@@ -181,6 +174,9 @@ namespace Aws
         {
             if(GetHttpClientFactory())
             {
+                // EC2 metadata client uses http client from a factory, it will be invalidated
+                Aws::Internal::CleanupEC2MetadataClient();
+
                 GetHttpClientFactory()->CleanupStaticState();
                 GetHttpClientFactory() = nullptr;
             }
@@ -188,8 +184,14 @@ namespace Aws
 
         void SetHttpClientFactory(const std::shared_ptr<HttpClientFactory>& factory)
         {
+            bool recreateEC2Client = Aws::Internal::GetEC2MetadataClient() ? true : false;
             CleanupHttp();
             GetHttpClientFactory() = factory;
+
+            if (recreateEC2Client)
+            {
+                Aws::Internal::InitEC2MetadataClient();
+            }
         }
 
         std::shared_ptr<HttpClient> CreateHttpClient(const Aws::Client::ClientConfiguration& clientConfiguration)

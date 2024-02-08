@@ -14,7 +14,8 @@ AdvertiseByoipCidrRequest::AdvertiseByoipCidrRequest() :
     m_cidrHasBeenSet(false),
     m_asnHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_networkBorderGroupHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,11 @@ Aws::String AdvertiseByoipCidrRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_networkBorderGroupHasBeenSet)
+  {
+    ss << "NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

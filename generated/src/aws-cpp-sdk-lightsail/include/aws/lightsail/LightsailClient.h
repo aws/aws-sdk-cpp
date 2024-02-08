@@ -622,9 +622,9 @@ namespace Lightsail
 
         /**
          * <p>Creates a block storage disk that can be attached to an Amazon Lightsail
-         * instance in the same Availability Zone (e.g., <code>us-east-2a</code>).</p>
-         * <p>The <code>create disk</code> operation supports tag-based access control via
-         * request tags. For more information, see the <a
+         * instance in the same Availability Zone (<code>us-east-2a</code>).</p> <p>The
+         * <code>create disk</code> operation supports tag-based access control via request
+         * tags. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">AWS
@@ -653,9 +653,9 @@ namespace Lightsail
         /**
          * <p>Creates a block storage disk from a manual or automatic snapshot of a disk.
          * The resulting disk can be attached to an Amazon Lightsail instance in the same
-         * Availability Zone (e.g., <code>us-east-2a</code>).</p> <p>The <code>create disk
-         * from snapshot</code> operation supports tag-based access control via request
-         * tags and resource tags applied to the resource identified by <code>disk snapshot
+         * Availability Zone (<code>us-east-2a</code>).</p> <p>The <code>create disk from
+         * snapshot</code> operation supports tag-based access control via request tags and
+         * resource tags applied to the resource identified by <code>disk snapshot
          * name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -760,9 +760,9 @@ namespace Lightsail
         }
 
         /**
-         * <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
-         * <p>The <code>create domain</code> operation supports tag-based access control
-         * via request tags. For more information, see the <a
+         * <p>Creates a domain resource for the specified domain (example.com).</p> <p>The
+         * <code>create domain</code> operation supports tag-based access control via
+         * request tags. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
          * Lightsail Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">AWS
@@ -3360,7 +3360,7 @@ namespace Lightsail
         }
 
         /**
-         * <p>Gets operations for a specific resource (e.g., an instance or a static
+         * <p>Gets operations for a specific resource (an instance or a static
          * IP).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">AWS
          * API Reference</a></p>
@@ -3736,6 +3736,33 @@ namespace Lightsail
         void GetRelationalDatabasesAsync(const GetRelationalDatabasesRequestT& request, const GetRelationalDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LightsailClient::GetRelationalDatabases, request, handler, context);
+        }
+
+        /**
+         * <p>Returns detailed information for five of the most recent
+         * <code>SetupInstanceHttps</code> requests that were ran on the target
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetSetupHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSetupHistoryOutcome GetSetupHistory(const Model::GetSetupHistoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSetupHistory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSetupHistoryRequestT = Model::GetSetupHistoryRequest>
+        Model::GetSetupHistoryOutcomeCallable GetSetupHistoryCallable(const GetSetupHistoryRequestT& request) const
+        {
+            return SubmitCallable(&LightsailClient::GetSetupHistory, request);
+        }
+
+        /**
+         * An Async wrapper for GetSetupHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSetupHistoryRequestT = Model::GetSetupHistoryRequest>
+        void GetSetupHistoryAsync(const GetSetupHistoryRequestT& request, const GetSetupHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LightsailClient::GetSetupHistory, request, handler, context);
         }
 
         /**
@@ -4207,6 +4234,35 @@ namespace Lightsail
         void SetResourceAccessForBucketAsync(const SetResourceAccessForBucketRequestT& request, const SetResourceAccessForBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LightsailClient::SetResourceAccessForBucket, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an SSL/TLS certificate that secures traffic for your website. After
+         * the certificate is created, it is installed on the specified Lightsail
+         * instance.</p> <p>If you provide more than one domain name in the request, at
+         * least one name must be less than or equal to 63 characters in
+         * length.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetupInstanceHttps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetupInstanceHttpsOutcome SetupInstanceHttps(const Model::SetupInstanceHttpsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SetupInstanceHttps that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SetupInstanceHttpsRequestT = Model::SetupInstanceHttpsRequest>
+        Model::SetupInstanceHttpsOutcomeCallable SetupInstanceHttpsCallable(const SetupInstanceHttpsRequestT& request) const
+        {
+            return SubmitCallable(&LightsailClient::SetupInstanceHttps, request);
+        }
+
+        /**
+         * An Async wrapper for SetupInstanceHttps that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SetupInstanceHttpsRequestT = Model::SetupInstanceHttpsRequest>
+        void SetupInstanceHttpsAsync(const SetupInstanceHttpsRequestT& request, const SetupInstanceHttpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LightsailClient::SetupInstanceHttps, request, handler, context);
         }
 
         /**

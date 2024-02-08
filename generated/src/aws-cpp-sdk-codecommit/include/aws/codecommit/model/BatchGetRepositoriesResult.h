@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codecommit/model/RepositoryMetadata.h>
+#include <aws/codecommit/model/BatchGetRepositoriesError.h>
 #include <utility>
 
 namespace Aws
@@ -125,6 +126,49 @@ namespace Model
     inline BatchGetRepositoriesResult& AddRepositoriesNotFound(const char* value) { m_repositoriesNotFound.push_back(value); return *this; }
 
 
+    /**
+     * <p>Returns information about any errors returned when attempting to retrieve
+     * information about the repositories.</p>
+     */
+    inline const Aws::Vector<BatchGetRepositoriesError>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>Returns information about any errors returned when attempting to retrieve
+     * information about the repositories.</p>
+     */
+    inline void SetErrors(const Aws::Vector<BatchGetRepositoriesError>& value) { m_errors = value; }
+
+    /**
+     * <p>Returns information about any errors returned when attempting to retrieve
+     * information about the repositories.</p>
+     */
+    inline void SetErrors(Aws::Vector<BatchGetRepositoriesError>&& value) { m_errors = std::move(value); }
+
+    /**
+     * <p>Returns information about any errors returned when attempting to retrieve
+     * information about the repositories.</p>
+     */
+    inline BatchGetRepositoriesResult& WithErrors(const Aws::Vector<BatchGetRepositoriesError>& value) { SetErrors(value); return *this;}
+
+    /**
+     * <p>Returns information about any errors returned when attempting to retrieve
+     * information about the repositories.</p>
+     */
+    inline BatchGetRepositoriesResult& WithErrors(Aws::Vector<BatchGetRepositoriesError>&& value) { SetErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns information about any errors returned when attempting to retrieve
+     * information about the repositories.</p>
+     */
+    inline BatchGetRepositoriesResult& AddErrors(const BatchGetRepositoriesError& value) { m_errors.push_back(value); return *this; }
+
+    /**
+     * <p>Returns information about any errors returned when attempting to retrieve
+     * information about the repositories.</p>
+     */
+    inline BatchGetRepositoriesResult& AddErrors(BatchGetRepositoriesError&& value) { m_errors.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -151,6 +195,8 @@ namespace Model
     Aws::Vector<RepositoryMetadata> m_repositories;
 
     Aws::Vector<Aws::String> m_repositoriesNotFound;
+
+    Aws::Vector<BatchGetRepositoriesError> m_errors;
 
     Aws::String m_requestId;
   };

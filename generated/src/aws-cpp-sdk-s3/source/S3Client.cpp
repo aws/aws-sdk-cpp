@@ -134,13 +134,21 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 using namespace Aws::Utils;
 
 
-const char* S3Client::SERVICE_NAME = "s3";
-const char* S3Client::ALLOCATION_TAG = "S3Client";
+namespace Aws
+{
+  namespace S3
+  {
+    const char SERVICE_NAME[] = "s3";
+    const char ALLOCATION_TAG[] = "S3Client";
+  }
+}
+const char* S3Client::GetServiceName() {return SERVICE_NAME;}
+const char* S3Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 S3Client::S3Client(const S3Client &rhs) :
     BASECLASS(rhs.m_clientConfiguration,
         Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
-            Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+            rhs.GetCredentialsProvider(),
             rhs.m_clientConfiguration.identityProviderSupplier(*this),
             SERVICE_NAME,
             Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
@@ -153,11 +161,54 @@ S3Client::S3Client(const S3Client &rhs) :
     m_endpointProvider(rhs.m_endpointProvider) {}
 
 S3Client& S3Client::operator=(const S3Client &rhs) {
+    if (&rhs == this) {
+      return *this;
+    }
+    m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+          rhs.GetCredentialsProvider(),
+          rhs.m_clientConfiguration.identityProviderSupplier(*this),
+          SERVICE_NAME,
+          Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+          rhs.m_clientConfiguration.payloadSigningPolicy,
+          /*doubleEncodeValue*/ false);
     m_clientConfiguration = rhs.m_clientConfiguration;
     m_executor = rhs.m_executor;
     m_endpointProvider = rhs.m_endpointProvider;
     init(m_clientConfiguration);
     return *this;
+}
+
+S3Client::S3Client(S3Client &&rhs) :
+    BASECLASS(rhs.m_clientConfiguration,
+        Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+            rhs.GetCredentialsProvider(),
+            rhs.m_clientConfiguration.identityProviderSupplier(*this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+            rhs.m_clientConfiguration.payloadSigningPolicy,
+            /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::Client::ClientWithAsyncTemplateMethods<S3Client>(),
+    m_clientConfiguration(std::move(rhs.m_clientConfiguration)),
+    m_executor(std::move(rhs.m_clientConfiguration.executor)),
+    m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
+
+S3Client& S3Client::operator=(S3Client &&rhs) {
+  if (&rhs == this) {
+    return *this;
+  }
+  m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+        rhs.GetCredentialsProvider(),
+        rhs.m_clientConfiguration.identityProviderSupplier(*this),
+        SERVICE_NAME,
+        Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+        rhs.m_clientConfiguration.payloadSigningPolicy,
+        /*doubleEncodeValue*/ false);
+  m_clientConfiguration = std::move(rhs.m_clientConfiguration);
+  m_executor = std::move(rhs.m_executor);
+  m_endpointProvider = std::move(rhs.m_endpointProvider);
+  init(m_clientConfiguration);
+  return *this;
 }
 
 S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
@@ -173,7 +224,7 @@ S3Client::S3Client(const S3::S3ClientConfiguration& clientConfiguration,
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -192,7 +243,7 @@ S3Client::S3Client(const AWSCredentials& credentials,
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -211,7 +262,7 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
             Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

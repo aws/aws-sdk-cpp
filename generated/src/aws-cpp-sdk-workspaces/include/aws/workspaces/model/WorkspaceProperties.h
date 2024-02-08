@@ -44,90 +44,66 @@ namespace Model
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>  <ul> <li> <p>The <code>MANUAL</code>
-     * value is only supported by Amazon WorkSpaces Core. Contact your account team to
-     * be allow-listed to use this value. For more information, see <a
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
      * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
-     * </li> <li> <p>Ensure you review your running mode to ensure you are using a
-     * running mode that is optimal for your needs and budget. For more information on
-     * switching running modes, see <a
-     * href="https://aws.amazon.com/workspaces/faqs/#:~:text=Q%3A%20Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%3F">
-     * Can I switch between hourly and monthly billing?</a> </p> </li> </ul> 
+     * 
      */
     inline const RunningMode& GetRunningMode() const{ return m_runningMode; }
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>  <ul> <li> <p>The <code>MANUAL</code>
-     * value is only supported by Amazon WorkSpaces Core. Contact your account team to
-     * be allow-listed to use this value. For more information, see <a
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
      * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
-     * </li> <li> <p>Ensure you review your running mode to ensure you are using a
-     * running mode that is optimal for your needs and budget. For more information on
-     * switching running modes, see <a
-     * href="https://aws.amazon.com/workspaces/faqs/#:~:text=Q%3A%20Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%3F">
-     * Can I switch between hourly and monthly billing?</a> </p> </li> </ul> 
+     * 
      */
     inline bool RunningModeHasBeenSet() const { return m_runningModeHasBeenSet; }
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>  <ul> <li> <p>The <code>MANUAL</code>
-     * value is only supported by Amazon WorkSpaces Core. Contact your account team to
-     * be allow-listed to use this value. For more information, see <a
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
      * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
-     * </li> <li> <p>Ensure you review your running mode to ensure you are using a
-     * running mode that is optimal for your needs and budget. For more information on
-     * switching running modes, see <a
-     * href="https://aws.amazon.com/workspaces/faqs/#:~:text=Q%3A%20Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%3F">
-     * Can I switch between hourly and monthly billing?</a> </p> </li> </ul> 
+     * 
      */
     inline void SetRunningMode(const RunningMode& value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>  <ul> <li> <p>The <code>MANUAL</code>
-     * value is only supported by Amazon WorkSpaces Core. Contact your account team to
-     * be allow-listed to use this value. For more information, see <a
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
      * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
-     * </li> <li> <p>Ensure you review your running mode to ensure you are using a
-     * running mode that is optimal for your needs and budget. For more information on
-     * switching running modes, see <a
-     * href="https://aws.amazon.com/workspaces/faqs/#:~:text=Q%3A%20Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%3F">
-     * Can I switch between hourly and monthly billing?</a> </p> </li> </ul> 
+     * 
      */
     inline void SetRunningMode(RunningMode&& value) { m_runningModeHasBeenSet = true; m_runningMode = std::move(value); }
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>  <ul> <li> <p>The <code>MANUAL</code>
-     * value is only supported by Amazon WorkSpaces Core. Contact your account team to
-     * be allow-listed to use this value. For more information, see <a
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
      * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
-     * </li> <li> <p>Ensure you review your running mode to ensure you are using a
-     * running mode that is optimal for your needs and budget. For more information on
-     * switching running modes, see <a
-     * href="https://aws.amazon.com/workspaces/faqs/#:~:text=Q%3A%20Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%3F">
-     * Can I switch between hourly and monthly billing?</a> </p> </li> </ul> 
+     * 
      */
     inline WorkspaceProperties& WithRunningMode(const RunningMode& value) { SetRunningMode(value); return *this;}
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>  <ul> <li> <p>The <code>MANUAL</code>
-     * value is only supported by Amazon WorkSpaces Core. Contact your account team to
-     * be allow-listed to use this value. For more information, see <a
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
      * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
-     * </li> <li> <p>Ensure you review your running mode to ensure you are using a
-     * running mode that is optimal for your needs and budget. For more information on
-     * switching running modes, see <a
-     * href="https://aws.amazon.com/workspaces/faqs/#:~:text=Q%3A%20Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%3F">
-     * Can I switch between hourly and monthly billing?</a> </p> </li> </ul> 
+     * 
      */
     inline WorkspaceProperties& WithRunningMode(RunningMode&& value) { SetRunningMode(std::move(value)); return *this;}
 

@@ -17,6 +17,7 @@
 #include <aws/quicksight/model/DataLabelOptions.h>
 #include <aws/quicksight/model/TooltipOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/VisualInteractionOptions.h>
 #include <aws/quicksight/model/ReferenceLine.h>
 #include <aws/quicksight/model/ContributionAnalysisDefault.h>
 #include <utility>
@@ -638,6 +639,37 @@ namespace Model
      */
     inline BarChartConfiguration& AddContributionAnalysisDefaults(ContributionAnalysisDefault&& value) { m_contributionAnalysisDefaultsHasBeenSet = true; m_contributionAnalysisDefaults.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline BarChartConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline BarChartConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+
   private:
 
     BarChartFieldWells m_fieldWells;
@@ -687,6 +719,9 @@ namespace Model
 
     Aws::Vector<ContributionAnalysisDefault> m_contributionAnalysisDefaults;
     bool m_contributionAnalysisDefaultsHasBeenSet = false;
+
+    VisualInteractionOptions m_interactions;
+    bool m_interactionsHasBeenSet = false;
   };
 
 } // namespace Model

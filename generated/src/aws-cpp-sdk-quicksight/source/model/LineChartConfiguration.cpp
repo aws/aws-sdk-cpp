@@ -39,7 +39,8 @@ LineChartConfiguration::LineChartConfiguration() :
     m_referenceLinesHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_contributionAnalysisDefaultsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ LineChartConfiguration::LineChartConfiguration(JsonView jsonValue) :
     m_referenceLinesHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_contributionAnalysisDefaultsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -223,6 +225,13 @@ LineChartConfiguration& LineChartConfiguration::operator =(JsonView jsonValue)
     m_visualPaletteHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -366,6 +375,12 @@ JsonValue LineChartConfiguration::Jsonize() const
   if(m_visualPaletteHasBeenSet)
   {
    payload.WithObject("VisualPalette", m_visualPalette.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

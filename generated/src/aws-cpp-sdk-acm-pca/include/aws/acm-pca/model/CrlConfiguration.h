@@ -7,6 +7,7 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/acm-pca/model/S3ObjectAcl.h>
+#include <aws/acm-pca/model/CrlDistributionPointExtensionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -31,9 +32,11 @@ namespace Model
    * the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs
    * to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can
    * hide the name of your bucket by specifying a value for the <b>CustomCname</b>
-   * parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL
-   * Distribution Points</b> extension of each certificate it issues. Your S3 bucket
-   * policy must give write permission to Amazon Web Services Private CA. </p>
+   * parameter. Your private CA by default copies the CNAME or the S3 bucket name to
+   * the <b>CRL Distribution Points</b> extension of each certificate it issues. If
+   * you want to configure this default behavior to be something different, you can
+   * set the <b>CrlDistributionPointExtensionConfiguration</b> parameter. Your S3
+   * bucket policy must give write permission to Amazon Web Services Private CA. </p>
    * <p>Amazon Web Services Private CA assets that are stored in Amazon S3 can be
    * protected with encryption. For more information, see <a
    * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
@@ -476,6 +479,55 @@ namespace Model
      */
     inline CrlConfiguration& WithS3ObjectAcl(S3ObjectAcl&& value) { SetS3ObjectAcl(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configures the behavior of the CRL Distribution Point extension for
+     * certificates issued by your certificate authority. If this field is not
+     * provided, then the CRl Distribution Point Extension will be present and contain
+     * the default CRL URL.</p>
+     */
+    inline const CrlDistributionPointExtensionConfiguration& GetCrlDistributionPointExtensionConfiguration() const{ return m_crlDistributionPointExtensionConfiguration; }
+
+    /**
+     * <p>Configures the behavior of the CRL Distribution Point extension for
+     * certificates issued by your certificate authority. If this field is not
+     * provided, then the CRl Distribution Point Extension will be present and contain
+     * the default CRL URL.</p>
+     */
+    inline bool CrlDistributionPointExtensionConfigurationHasBeenSet() const { return m_crlDistributionPointExtensionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configures the behavior of the CRL Distribution Point extension for
+     * certificates issued by your certificate authority. If this field is not
+     * provided, then the CRl Distribution Point Extension will be present and contain
+     * the default CRL URL.</p>
+     */
+    inline void SetCrlDistributionPointExtensionConfiguration(const CrlDistributionPointExtensionConfiguration& value) { m_crlDistributionPointExtensionConfigurationHasBeenSet = true; m_crlDistributionPointExtensionConfiguration = value; }
+
+    /**
+     * <p>Configures the behavior of the CRL Distribution Point extension for
+     * certificates issued by your certificate authority. If this field is not
+     * provided, then the CRl Distribution Point Extension will be present and contain
+     * the default CRL URL.</p>
+     */
+    inline void SetCrlDistributionPointExtensionConfiguration(CrlDistributionPointExtensionConfiguration&& value) { m_crlDistributionPointExtensionConfigurationHasBeenSet = true; m_crlDistributionPointExtensionConfiguration = std::move(value); }
+
+    /**
+     * <p>Configures the behavior of the CRL Distribution Point extension for
+     * certificates issued by your certificate authority. If this field is not
+     * provided, then the CRl Distribution Point Extension will be present and contain
+     * the default CRL URL.</p>
+     */
+    inline CrlConfiguration& WithCrlDistributionPointExtensionConfiguration(const CrlDistributionPointExtensionConfiguration& value) { SetCrlDistributionPointExtensionConfiguration(value); return *this;}
+
+    /**
+     * <p>Configures the behavior of the CRL Distribution Point extension for
+     * certificates issued by your certificate authority. If this field is not
+     * provided, then the CRl Distribution Point Extension will be present and contain
+     * the default CRL URL.</p>
+     */
+    inline CrlConfiguration& WithCrlDistributionPointExtensionConfiguration(CrlDistributionPointExtensionConfiguration&& value) { SetCrlDistributionPointExtensionConfiguration(std::move(value)); return *this;}
+
   private:
 
     bool m_enabled;
@@ -492,6 +544,9 @@ namespace Model
 
     S3ObjectAcl m_s3ObjectAcl;
     bool m_s3ObjectAclHasBeenSet = false;
+
+    CrlDistributionPointExtensionConfiguration m_crlDistributionPointExtensionConfiguration;
+    bool m_crlDistributionPointExtensionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

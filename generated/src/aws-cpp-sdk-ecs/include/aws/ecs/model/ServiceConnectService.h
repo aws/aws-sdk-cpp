@@ -7,6 +7,8 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/TimeoutConfiguration.h>
+#include <aws/ecs/model/ServiceConnectTlsConfiguration.h>
 #include <aws/ecs/model/ServiceConnectClientAlias.h>
 #include <utility>
 
@@ -334,6 +336,80 @@ namespace Model
      */
     inline ServiceConnectService& WithIngressPortOverride(int value) { SetIngressPortOverride(value); return *this;}
 
+
+    /**
+     * <p>A reference to an object that represents the configured timeouts for Service
+     * Connect.</p>
+     */
+    inline const TimeoutConfiguration& GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>A reference to an object that represents the configured timeouts for Service
+     * Connect.</p>
+     */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents the configured timeouts for Service
+     * Connect.</p>
+     */
+    inline void SetTimeout(const TimeoutConfiguration& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    /**
+     * <p>A reference to an object that represents the configured timeouts for Service
+     * Connect.</p>
+     */
+    inline void SetTimeout(TimeoutConfiguration&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents the configured timeouts for Service
+     * Connect.</p>
+     */
+    inline ServiceConnectService& WithTimeout(const TimeoutConfiguration& value) { SetTimeout(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents the configured timeouts for Service
+     * Connect.</p>
+     */
+    inline ServiceConnectService& WithTimeout(TimeoutConfiguration&& value) { SetTimeout(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
+    inline const ServiceConnectTlsConfiguration& GetTls() const{ return m_tls; }
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
+    inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
+    inline void SetTls(const ServiceConnectTlsConfiguration& value) { m_tlsHasBeenSet = true; m_tls = value; }
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
+    inline void SetTls(ServiceConnectTlsConfiguration&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
+    inline ServiceConnectService& WithTls(const ServiceConnectTlsConfiguration& value) { SetTls(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * configuration.</p>
+     */
+    inline ServiceConnectService& WithTls(ServiceConnectTlsConfiguration&& value) { SetTls(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_portName;
@@ -347,6 +423,12 @@ namespace Model
 
     int m_ingressPortOverride;
     bool m_ingressPortOverrideHasBeenSet = false;
+
+    TimeoutConfiguration m_timeout;
+    bool m_timeoutHasBeenSet = false;
+
+    ServiceConnectTlsConfiguration m_tls;
+    bool m_tlsHasBeenSet = false;
   };
 
 } // namespace Model

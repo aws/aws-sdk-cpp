@@ -29,6 +29,12 @@ namespace Model
 
     StartCallAnalyticsStreamTranscriptionHandler::StartCallAnalyticsStreamTranscriptionHandler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const StartCallAnalyticsStreamTranscriptionInitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(STARTCALLANALYTICSSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG,
+                "StartCallAnalyticsStreamTranscription initial response received.");
+        };
+
         m_onUtteranceEvent = [&](const UtteranceEvent&)
         {
             AWS_LOGSTREAM_TRACE(STARTCALLANALYTICSSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG, "UtteranceEvent received.");
@@ -93,6 +99,21 @@ namespace Model
         }
         switch (StartCallAnalyticsStreamTranscriptionEventMapper::GetStartCallAnalyticsStreamTranscriptionEventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+        
+        case StartCallAnalyticsStreamTranscriptionEventType::INITIAL_RESPONSE: 
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(STARTCALLANALYTICSSTREAMTRANSCRIPTION_HANDLER_CLASS_TAG, "Unable to generate a proper StartCallAnalyticsStreamTranscriptionInitialResponse object from the response in JSON format.");
+                break;
+            }
+
+            StartCallAnalyticsStreamTranscriptionInitialResponse event(json.View());
+            m_onInitialResponse(event);
+            break;
+        }   
+
         case StartCallAnalyticsStreamTranscriptionEventType::UTTERANCEEVENT:
         {
             JsonValue json(GetEventPayloadAsString());
@@ -209,13 +230,19 @@ namespace Model
 
 namespace StartCallAnalyticsStreamTranscriptionEventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int UTTERANCEEVENT_HASH = Aws::Utils::HashingUtils::HashString("UtteranceEvent");
     static const int CATEGORYEVENT_HASH = Aws::Utils::HashingUtils::HashString("CategoryEvent");
 
     StartCallAnalyticsStreamTranscriptionEventType GetStartCallAnalyticsStreamTranscriptionEventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        if (hashCode == UTTERANCEEVENT_HASH)
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return StartCallAnalyticsStreamTranscriptionEventType::INITIAL_RESPONSE;
+        }
+        else if (hashCode == UTTERANCEEVENT_HASH)
         {
             return StartCallAnalyticsStreamTranscriptionEventType::UTTERANCEEVENT;
         }
@@ -230,6 +257,8 @@ namespace StartCallAnalyticsStreamTranscriptionEventMapper
     {
         switch (value)
         {
+        case StartCallAnalyticsStreamTranscriptionEventType::INITIAL_RESPONSE:
+            return "initial-response";
         case StartCallAnalyticsStreamTranscriptionEventType::UTTERANCEEVENT:
             return "UtteranceEvent";
         case StartCallAnalyticsStreamTranscriptionEventType::CATEGORYEVENT:

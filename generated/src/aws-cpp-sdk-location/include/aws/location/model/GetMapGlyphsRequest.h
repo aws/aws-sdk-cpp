@@ -53,7 +53,8 @@ namespace Model
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
      * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
-     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS
+     * Bold</code> | <code>Arial Unicode MS Regular</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
@@ -102,7 +103,8 @@ namespace Model
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
      * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
-     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS
+     * Bold</code> | <code>Arial Unicode MS Regular</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
@@ -151,7 +153,8 @@ namespace Model
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
      * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
-     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS
+     * Bold</code> | <code>Arial Unicode MS Regular</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
@@ -200,7 +203,8 @@ namespace Model
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
      * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
-     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS
+     * Bold</code> | <code>Arial Unicode MS Regular</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
@@ -249,7 +253,8 @@ namespace Model
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
      * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
-     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS
+     * Bold</code> | <code>Arial Unicode MS Regular</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
@@ -298,7 +303,8 @@ namespace Model
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
      * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
-     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS
+     * Bold</code> | <code>Arial Unicode MS Regular</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
@@ -347,7 +353,8 @@ namespace Model
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
      * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
-     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS
+     * Bold</code> | <code>Arial Unicode MS Regular</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO
@@ -396,7 +403,8 @@ namespace Model
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
      * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
-     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS
+     * Bold</code> | <code>Arial Unicode MS Regular</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO

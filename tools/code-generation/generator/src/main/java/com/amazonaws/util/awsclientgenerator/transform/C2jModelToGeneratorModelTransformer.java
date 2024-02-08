@@ -648,8 +648,8 @@ public class C2jModelToGeneratorModelTransformer {
         }
 
         //RequestCompression
-        if (c2jOperation.getRequestCompression() != null) {
-            C2jRequestCompression c2jRequestCompression = c2jOperation.getRequestCompression();
+        if (c2jOperation.getRequestcompression() != null) {
+            C2jRequestCompression c2jRequestCompression = c2jOperation.getRequestcompression();
             // Supporting only Gzip for now.
             if (c2jRequestCompression.getEncodings().isEmpty()) {
                 throw new RuntimeException("When Request Compression is requested, at least 1 algorithm needs to be declared");

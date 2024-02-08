@@ -24,6 +24,7 @@ namespace Aws
         static const int AES256_HASH = HashingUtils::HashString("AES256");
         static const int aws_kms_HASH = HashingUtils::HashString("aws:kms");
         static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static const int aws_kms_dsse_HASH = HashingUtils::HashString("aws:kms:dsse");
 
 
         EncryptionType GetEncryptionTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == UNKNOWN_HASH)
           {
             return EncryptionType::UNKNOWN;
+          }
+          else if (hashCode == aws_kms_dsse_HASH)
+          {
+            return EncryptionType::aws_kms_dsse;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "aws:kms";
           case EncryptionType::UNKNOWN:
             return "UNKNOWN";
+          case EncryptionType::aws_kms_dsse:
+            return "aws:kms:dsse";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

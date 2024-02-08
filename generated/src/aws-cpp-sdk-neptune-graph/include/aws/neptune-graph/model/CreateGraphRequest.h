@@ -296,22 +296,22 @@ namespace Model
 
 
     /**
-     * <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+     * <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
      */
     inline int GetReplicaCount() const{ return m_replicaCount; }
 
     /**
-     * <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+     * <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
      */
     inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
 
     /**
-     * <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+     * <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
      */
     inline void SetReplicaCount(int value) { m_replicaCountHasBeenSet = true; m_replicaCount = value; }
 
     /**
-     * <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+     * <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
      */
     inline CreateGraphRequest& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
 

@@ -10,6 +10,7 @@
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
 #include <aws/lexv2-runtime/LexRuntimeV2Errors.h>
 
+#include <aws/lexv2-runtime/model/StartConversationInitialResponse.h>
 #include <aws/lexv2-runtime/model/PlaybackInterruptionEvent.h>
 #include <aws/lexv2-runtime/model/TranscriptEvent.h>
 #include <aws/lexv2-runtime/model/IntentResultEvent.h>
@@ -25,6 +26,7 @@ namespace Model
 {
     enum class StartConversationEventType
     {
+        INITIAL_RESPONSE,
         PLAYBACKINTERRUPTIONEVENT,
         TRANSCRIPTEVENT,
         INTENTRESULTEVENT,
@@ -36,6 +38,7 @@ namespace Model
 
     class StartConversationHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const StartConversationInitialResponse&)> StartConversationInitialResponseCallback;
         typedef std::function<void(const PlaybackInterruptionEvent&)> PlaybackInterruptionEventCallback;
         typedef std::function<void(const TranscriptEvent&)> TranscriptEventCallback;
         typedef std::function<void(const IntentResultEvent&)> IntentResultEventCallback;
@@ -50,6 +53,7 @@ namespace Model
 
         AWS_LEXRUNTIMEV2_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const StartConversationInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetPlaybackInterruptionEventCallback(const PlaybackInterruptionEventCallback& callback) { m_onPlaybackInterruptionEvent = callback; }
         inline void SetTranscriptEventCallback(const TranscriptEventCallback& callback) { m_onTranscriptEvent = callback; }
         inline void SetIntentResultEventCallback(const IntentResultEventCallback& callback) { m_onIntentResultEvent = callback; }
@@ -63,6 +67,7 @@ namespace Model
         AWS_LEXRUNTIMEV2_API void HandleErrorInMessage();
         AWS_LEXRUNTIMEV2_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
+        StartConversationInitialResponseCallback m_onInitialResponse;
         PlaybackInterruptionEventCallback m_onPlaybackInterruptionEvent;
         TranscriptEventCallback m_onTranscriptEvent;
         IntentResultEventCallback m_onIntentResultEvent;

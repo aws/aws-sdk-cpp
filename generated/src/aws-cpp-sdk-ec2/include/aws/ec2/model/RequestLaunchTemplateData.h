@@ -928,155 +928,107 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline const Aws::Vector<LaunchTemplateTagSpecificationRequest>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecificationRequest>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<LaunchTemplateTagSpecificationRequest>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& WithTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecificationRequest>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& WithTagSpecifications(Aws::Vector<LaunchTemplateTagSpecificationRequest>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& AddTagSpecifications(const LaunchTemplateTagSpecificationRequest& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the resources that are created during instance
-     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
-     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
-     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
-     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-     *  <p>To tag the launch template itself, you must use the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a>
-     * parameter.</p> 
+     * <p>The tags to apply to the resources that are created during instance launch.
+     * These tags are not applied to the launch template.</p>
      */
     inline RequestLaunchTemplateData& AddTagSpecifications(LaunchTemplateTagSpecificationRequest&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecifications() const{ return m_elasticGpuSpecifications; }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline bool ElasticGpuSpecificationsHasBeenSet() const { return m_elasticGpuSpecificationsHasBeenSet; }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline void SetElasticGpuSpecifications(const Aws::Vector<ElasticGpuSpecification>& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications = value; }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline void SetElasticGpuSpecifications(Aws::Vector<ElasticGpuSpecification>&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications = std::move(value); }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RequestLaunchTemplateData& WithElasticGpuSpecifications(const Aws::Vector<ElasticGpuSpecification>& value) { SetElasticGpuSpecifications(value); return *this;}
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RequestLaunchTemplateData& WithElasticGpuSpecifications(Aws::Vector<ElasticGpuSpecification>&& value) { SetElasticGpuSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RequestLaunchTemplateData& AddElasticGpuSpecifications(const ElasticGpuSpecification& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>An elastic GPU to associate with the instance.</p>
+     * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
+     * January 8, 2024. For workloads that require graphics acceleration, we recommend
+     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
      */
     inline RequestLaunchTemplateData& AddElasticGpuSpecifications(ElasticGpuSpecification&& value) { m_elasticGpuSpecificationsHasBeenSet = true; m_elasticGpuSpecifications.push_back(std::move(value)); return *this; }
 

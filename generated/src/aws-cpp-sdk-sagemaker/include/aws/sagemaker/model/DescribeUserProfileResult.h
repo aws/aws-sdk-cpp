@@ -144,44 +144,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
-     * volume.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
      */
     inline const Aws::String& GetHomeEfsFileSystemUid() const{ return m_homeEfsFileSystemUid; }
 
     /**
-     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
-     * volume.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
      */
     inline void SetHomeEfsFileSystemUid(const Aws::String& value) { m_homeEfsFileSystemUid = value; }
 
     /**
-     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
-     * volume.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
      */
     inline void SetHomeEfsFileSystemUid(Aws::String&& value) { m_homeEfsFileSystemUid = std::move(value); }
 
     /**
-     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
-     * volume.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
      */
     inline void SetHomeEfsFileSystemUid(const char* value) { m_homeEfsFileSystemUid.assign(value); }
 
     /**
-     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
-     * volume.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
      */
     inline DescribeUserProfileResult& WithHomeEfsFileSystemUid(const Aws::String& value) { SetHomeEfsFileSystemUid(value); return *this;}
 
     /**
-     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
-     * volume.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
      */
     inline DescribeUserProfileResult& WithHomeEfsFileSystemUid(Aws::String&& value) { SetHomeEfsFileSystemUid(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the user's profile in the Amazon Elastic File System (EFS)
-     * volume.</p>
+     * <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
      */
     inline DescribeUserProfileResult& WithHomeEfsFileSystemUid(const char* value) { SetHomeEfsFileSystemUid(value); return *this;}
 

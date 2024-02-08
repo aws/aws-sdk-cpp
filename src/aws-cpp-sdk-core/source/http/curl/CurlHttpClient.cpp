@@ -16,6 +16,7 @@
 #include <aws/core/monitoring/HttpClientMetrics.h>
 #include <cassert>
 #include <algorithm>
+#include <thread>
 
 
 using namespace Aws::Client;
@@ -25,7 +26,7 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 using namespace Aws::Monitoring;
 
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+#ifdef USE_AWS_MEMORY_MANAGEMENT
 
 static const char* MemTag = "libcurl";
 static size_t offset = sizeof(size_t);
@@ -296,9 +297,14 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
 
     if (ioStream != nullptr && amountToRead > 0)
     {
+        size_t amountRead = 0;
         if (isStreaming)
         {
-            if (ioStream->readsome(ptr, amountToRead) == 0 && !ioStream->eof())
+            if (!ioStream->eof() && ioStream->peek() != EOF)
+            {
+              amountRead = ioStream->readsome(ptr, amountToRead);
+            }
+            if (amountRead == 0 && !ioStream->eof())
             {
                 return CURL_READFUNC_PAUSE;
             }
@@ -306,8 +312,8 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
         else
         {
             ioStream->read(ptr, amountToRead);
+            amountRead = static_cast<size_t>(ioStream->gcount());
         }
-        size_t amountRead = static_cast<size_t>(ioStream->gcount());
 
         if (isAwsChunked)
         {
@@ -331,8 +337,11 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
                 chunkedTrailer << "0\r\n";
                 if (request->GetRequestHash().second != nullptr)
                 {
-                    chunkedTrailer << "x-amz-checksum-" << request->GetRequestHash().first << ":"
-                        << HashingUtils::Base64Encode(request->GetRequestHash().second->GetHash().GetResult()) << "\r\n";
+                    chunkedTrailer << "x-amz-checksum-"
+                        << request->GetRequestHash().first
+                        << ":"
+                        << HashingUtils::Base64Encode(request->GetRequestHash().second->GetHash().GetResult())
+                        << "\r\n";
                 }
                 chunkedTrailer << "\r\n";
                 amountRead = chunkedTrailer.str().size();
@@ -421,16 +430,16 @@ static int CurlProgressCallback(void *userdata, double, double, double, double)
         curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
         return 0;
     }
-    char output[1];
-    if (ioStream->readsome(output, 1) > 0)
-    {
-        ioStream->unget();
-        if (!ioStream->good())
-        {
-            AWS_LOGSTREAM_WARN(CURL_HTTP_CLIENT_TAG, "Input stream failed to perform unget().");
-        }
-        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
-    }
+    // forcing "underflow" on the IOStream with ConcurrentStreamBuf to move data from back buffer to put area
+    int peekVal = ioStream->peek();
+    AWS_UNREFERENCED_PARAM(peekVal);
+
+    // forcing curl to try to ReadBody again (~to poll body IOStream for HTTP2)
+    // This is a spin pause-unpause in case of no data provided by a customer callback
+    // But otherwise curl will slow down the transfer and start calling as at frequency of 1s
+    //   see https://curl.se/mail/lib-2020-07/0046.html
+    // we should use multi handle or another HTTP client in the future to avoid this
+    curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
 
     return 0;
 }
@@ -505,11 +514,16 @@ void CurlHttpClient::InitGlobalState()
         AWS_LOGSTREAM_INFO(CURL_HTTP_CLIENT_TAG, "Initializing Curl library with version: " << curlVersionData->version
             << ", ssl version: " << curlVersionData->ssl_version);
         isInit = true;
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
-        curl_global_init_mem(CURL_GLOBAL_ALL, &malloc_callback, &free_callback, &realloc_callback, &strdup_callback, &calloc_callback);
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+        CURLcode curlResponseCode = curl_global_init_mem(CURL_GLOBAL_ALL, &malloc_callback, &free_callback, &realloc_callback, &strdup_callback, &calloc_callback);
 #else
-        curl_global_init(CURL_GLOBAL_ALL);
+        CURLcode curlResponseCode = curl_global_init(CURL_GLOBAL_ALL);
 #endif
+        if (curlResponseCode != CURLE_OK)
+        {
+            AWS_LOGSTREAM_FATAL(CURL_HTTP_CLIENT_TAG, "Failed to init curl, return code " << curlResponseCode);
+            isInit = false;
+        }
     }
 }
 
@@ -517,6 +531,7 @@ void CurlHttpClient::InitGlobalState()
 void CurlHttpClient::CleanupGlobalState()
 {
     curl_global_cleanup();
+    isInit = false;
 }
 
 Aws::String CurlInfoTypeToString(curl_infotype type)

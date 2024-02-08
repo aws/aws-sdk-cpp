@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The details that define a findings aggregation based on AWS Lambda
-   * functions.</p><p><h3>See Also:</h3>   <a
+   * <p>The details that define a findings aggregation based on Amazon Web Services
+   * Lambda functions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/LambdaFunctionAggregation">AWS
    * API Reference</a></p>
    */
@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Lambda function names to include in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names to include in the aggregation
+     * results.</p>
      */
     inline const Aws::Vector<StringFilter>& GetFunctionNames() const{ return m_functionNames; }
 
     /**
-     * <p>The AWS Lambda function names to include in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names to include in the aggregation
+     * results.</p>
      */
     inline bool FunctionNamesHasBeenSet() const { return m_functionNamesHasBeenSet; }
 
     /**
-     * <p>The AWS Lambda function names to include in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names to include in the aggregation
+     * results.</p>
      */
     inline void SetFunctionNames(const Aws::Vector<StringFilter>& value) { m_functionNamesHasBeenSet = true; m_functionNames = value; }
 
     /**
-     * <p>The AWS Lambda function names to include in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names to include in the aggregation
+     * results.</p>
      */
     inline void SetFunctionNames(Aws::Vector<StringFilter>&& value) { m_functionNamesHasBeenSet = true; m_functionNames = std::move(value); }
 
     /**
-     * <p>The AWS Lambda function names to include in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names to include in the aggregation
+     * results.</p>
      */
     inline LambdaFunctionAggregation& WithFunctionNames(const Aws::Vector<StringFilter>& value) { SetFunctionNames(value); return *this;}
 
     /**
-     * <p>The AWS Lambda function names to include in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names to include in the aggregation
+     * results.</p>
      */
     inline LambdaFunctionAggregation& WithFunctionNames(Aws::Vector<StringFilter>&& value) { SetFunctionNames(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Lambda function names to include in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names to include in the aggregation
+     * results.</p>
      */
     inline LambdaFunctionAggregation& AddFunctionNames(const StringFilter& value) { m_functionNamesHasBeenSet = true; m_functionNames.push_back(value); return *this; }
 
     /**
-     * <p>The AWS Lambda function names to include in the aggregation results.</p>
+     * <p>The Amazon Web Services Lambda function names to include in the aggregation
+     * results.</p>
      */
     inline LambdaFunctionAggregation& AddFunctionNames(StringFilter&& value) { m_functionNamesHasBeenSet = true; m_functionNames.push_back(std::move(value)); return *this; }
 
@@ -166,42 +174,50 @@ namespace Model
 
 
     /**
-     * <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
+     * <p>Returns findings aggregated by Amazon Web Services Lambda function runtime
+     * environments.</p>
      */
     inline const Aws::Vector<StringFilter>& GetRuntimes() const{ return m_runtimes; }
 
     /**
-     * <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
+     * <p>Returns findings aggregated by Amazon Web Services Lambda function runtime
+     * environments.</p>
      */
     inline bool RuntimesHasBeenSet() const { return m_runtimesHasBeenSet; }
 
     /**
-     * <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
+     * <p>Returns findings aggregated by Amazon Web Services Lambda function runtime
+     * environments.</p>
      */
     inline void SetRuntimes(const Aws::Vector<StringFilter>& value) { m_runtimesHasBeenSet = true; m_runtimes = value; }
 
     /**
-     * <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
+     * <p>Returns findings aggregated by Amazon Web Services Lambda function runtime
+     * environments.</p>
      */
     inline void SetRuntimes(Aws::Vector<StringFilter>&& value) { m_runtimesHasBeenSet = true; m_runtimes = std::move(value); }
 
     /**
-     * <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
+     * <p>Returns findings aggregated by Amazon Web Services Lambda function runtime
+     * environments.</p>
      */
     inline LambdaFunctionAggregation& WithRuntimes(const Aws::Vector<StringFilter>& value) { SetRuntimes(value); return *this;}
 
     /**
-     * <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
+     * <p>Returns findings aggregated by Amazon Web Services Lambda function runtime
+     * environments.</p>
      */
     inline LambdaFunctionAggregation& WithRuntimes(Aws::Vector<StringFilter>&& value) { SetRuntimes(std::move(value)); return *this;}
 
     /**
-     * <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
+     * <p>Returns findings aggregated by Amazon Web Services Lambda function runtime
+     * environments.</p>
      */
     inline LambdaFunctionAggregation& AddRuntimes(const StringFilter& value) { m_runtimesHasBeenSet = true; m_runtimes.push_back(value); return *this; }
 
     /**
-     * <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
+     * <p>Returns findings aggregated by Amazon Web Services Lambda function runtime
+     * environments.</p>
      */
     inline LambdaFunctionAggregation& AddRuntimes(StringFilter&& value) { m_runtimesHasBeenSet = true; m_runtimes.push_back(std::move(value)); return *this; }
 

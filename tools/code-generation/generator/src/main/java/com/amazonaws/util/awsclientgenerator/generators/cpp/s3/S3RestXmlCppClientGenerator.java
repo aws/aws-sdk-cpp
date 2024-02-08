@@ -37,7 +37,6 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
     private static Set<String> opsThatDoNotSupportVirtualAddressing = new HashSet<>();
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
     private static Set<String> s3CrtEnabledOps = new HashSet<>(); // All other ops are in fact regular SDK calls
-    private static Set<String> opsThatDoNotSupportFutureInS3CRT = new HashSet<>();
     private static Set<String> bucketLocationConstraints = new HashSet<>();
     private Set<String> functionsWithEmbeddedErrors = ImmutableSet.of(
             "CompleteMultipartUploadRequest",

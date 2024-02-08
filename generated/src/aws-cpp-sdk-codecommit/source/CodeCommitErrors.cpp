@@ -74,6 +74,7 @@ static const int ENCRYPTION_KEY_DISABLED_HASH = HashingUtils::HashString("Encryp
 static const int APPROVAL_RULE_TEMPLATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ApprovalRuleTemplateDoesNotExistException");
 static const int INVALID_APPROVAL_STATE_HASH = HashingUtils::HashString("InvalidApprovalStateException");
 static const int TITLE_REQUIRED_HASH = HashingUtils::HashString("TitleRequiredException");
+static const int ENCRYPTION_KEY_INVALID_ID_HASH = HashingUtils::HashString("EncryptionKeyInvalidIdException");
 static const int MAXIMUM_RULE_TEMPLATES_ASSOCIATED_WITH_REPOSITORY_HASH = HashingUtils::HashString("MaximumRuleTemplatesAssociatedWithRepositoryException");
 static const int TARGETS_REQUIRED_HASH = HashingUtils::HashString("TargetsRequiredException");
 static const int COMMENT_NOT_CREATED_BY_CALLER_HASH = HashingUtils::HashString("CommentNotCreatedByCallerException");
@@ -100,6 +101,7 @@ static const int SAME_PATH_REQUEST_HASH = HashingUtils::HashString("SamePathRequ
 static const int INVALID_DESCRIPTION_HASH = HashingUtils::HashString("InvalidDescriptionException");
 static const int INVALID_REPLACEMENT_TYPE_HASH = HashingUtils::HashString("InvalidReplacementTypeException");
 static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("EncryptionKeyAccessDeniedException");
+static const int ENCRYPTION_KEY_INVALID_USAGE_HASH = HashingUtils::HashString("EncryptionKeyInvalidUsageException");
 static const int INVALID_RESOURCE_ARN_HASH = HashingUtils::HashString("InvalidResourceArnException");
 static const int INVALID_APPROVAL_RULE_CONTENT_HASH = HashingUtils::HashString("InvalidApprovalRuleContentException");
 static const int INVALID_CONFLICT_RESOLUTION_HASH = HashingUtils::HashString("InvalidConflictResolutionException");
@@ -203,6 +205,7 @@ static const int CONCURRENT_REFERENCE_UPDATE_HASH = HashingUtils::HashString("Co
 static const int BEFORE_COMMIT_ID_AND_AFTER_COMMIT_ID_ARE_SAME_HASH = HashingUtils::HashString("BeforeCommitIdAndAfterCommitIdAreSameException");
 static const int APPROVAL_RULE_TEMPLATE_IN_USE_HASH = HashingUtils::HashString("ApprovalRuleTemplateInUseException");
 static const int SAME_FILE_CONTENT_HASH = HashingUtils::HashString("SameFileContentException");
+static const int ENCRYPTION_KEY_REQUIRED_HASH = HashingUtils::HashString("EncryptionKeyRequiredException");
 
 
 /*
@@ -493,6 +496,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TITLE_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
+  else if (hashCode == ENCRYPTION_KEY_INVALID_ID_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_INVALID_ID), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
   else if (hashCode == MAXIMUM_RULE_TEMPLATES_ASSOCIATED_WITH_REPOSITORY_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_RULE_TEMPLATES_ASSOCIATED_WITH_REPOSITORY), RetryableType::NOT_RETRYABLE);
@@ -621,6 +629,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == ENCRYPTION_KEY_ACCESS_DENIED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == ENCRYPTION_KEY_INVALID_USAGE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_INVALID_USAGE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RESOURCE_ARN_HASH)
@@ -813,7 +826,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MERGE_OPTION), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == COMMENT_ID_REQUIRED_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == COMMENT_ID_REQUIRED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_ID_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
@@ -823,12 +841,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_NOT_ASSOCIATED_WITH_PULL_REQUEST), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == INVALID_SOURCE_COMMIT_SPECIFIER_HASH)
+  else if (hashCode == INVALID_SOURCE_COMMIT_SPECIFIER_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SOURCE_COMMIT_SPECIFIER), RetryableType::NOT_RETRYABLE);
     return true;
@@ -1141,6 +1154,11 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == SAME_FILE_CONTENT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SAME_FILE_CONTENT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == ENCRYPTION_KEY_REQUIRED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_REQUIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;

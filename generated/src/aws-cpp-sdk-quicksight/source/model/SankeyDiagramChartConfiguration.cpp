@@ -21,14 +21,16 @@ namespace Model
 SankeyDiagramChartConfiguration::SankeyDiagramChartConfiguration() : 
     m_fieldWellsHasBeenSet(false),
     m_sortConfigurationHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false)
+    m_dataLabelsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
 SankeyDiagramChartConfiguration::SankeyDiagramChartConfiguration(JsonView jsonValue) : 
     m_fieldWellsHasBeenSet(false),
     m_sortConfigurationHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false)
+    m_dataLabelsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ SankeyDiagramChartConfiguration& SankeyDiagramChartConfiguration::operator =(Jso
     m_dataLabelsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue SankeyDiagramChartConfiguration::Jsonize() const
   if(m_dataLabelsHasBeenSet)
   {
    payload.WithObject("DataLabels", m_dataLabels.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

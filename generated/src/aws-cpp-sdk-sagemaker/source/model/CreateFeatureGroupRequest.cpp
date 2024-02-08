@@ -19,6 +19,7 @@ CreateFeatureGroupRequest::CreateFeatureGroupRequest() :
     m_featureDefinitionsHasBeenSet(false),
     m_onlineStoreConfigHasBeenSet(false),
     m_offlineStoreConfigHasBeenSet(false),
+    m_throughputConfigHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -67,6 +68,12 @@ Aws::String CreateFeatureGroupRequest::SerializePayload() const
   if(m_offlineStoreConfigHasBeenSet)
   {
    payload.WithObject("OfflineStoreConfig", m_offlineStoreConfig.Jsonize());
+
+  }
+
+  if(m_throughputConfigHasBeenSet)
+  {
+   payload.WithObject("ThroughputConfig", m_throughputConfig.Jsonize());
 
   }
 

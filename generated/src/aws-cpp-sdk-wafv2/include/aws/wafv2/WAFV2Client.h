@@ -370,6 +370,33 @@ namespace WAFV2
         }
 
         /**
+         * <p>Deletes the specified API key. </p> <p>After you delete a key, it can take up
+         * to 24 hours for WAF to disallow use of the key in all regions. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteAPIKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAPIKeyOutcome DeleteAPIKey(const Model::DeleteAPIKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAPIKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAPIKeyRequestT = Model::DeleteAPIKeyRequest>
+        Model::DeleteAPIKeyOutcomeCallable DeleteAPIKeyCallable(const DeleteAPIKeyRequestT& request) const
+        {
+            return SubmitCallable(&WAFV2Client::DeleteAPIKey, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAPIKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAPIKeyRequestT = Model::DeleteAPIKeyRequest>
+        void DeleteAPIKeyAsync(const DeleteAPIKeyRequestT& request, const DeleteAPIKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WAFV2Client::DeleteAPIKey, request, handler, context);
+        }
+
+        /**
          * <p>Deletes all rule groups that are managed by Firewall Manager for the
          * specified web ACL. </p> <p>You can only use this if
          * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.

@@ -24,6 +24,7 @@ namespace Aws
         static const int information_HASH = HashingUtils::HashString("information");
         static const int impaired_HASH = HashingUtils::HashString("impaired");
         static const int unavailable_HASH = HashingUtils::HashString("unavailable");
+        static const int constrained_HASH = HashingUtils::HashString("constrained");
 
 
         AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == unavailable_HASH)
           {
             return AvailabilityZoneState::unavailable;
+          }
+          else if (hashCode == constrained_HASH)
+          {
+            return AvailabilityZoneState::constrained;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "impaired";
           case AvailabilityZoneState::unavailable:
             return "unavailable";
+          case AvailabilityZoneState::constrained:
+            return "constrained";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/firehose/model/AmazonOpenSearchServerlessDestinationConfiguration.h>
 #include <aws/firehose/model/MSKSourceConfiguration.h>
+#include <aws/firehose/model/SnowflakeDestinationConfiguration.h>
 #include <aws/firehose/model/Tag.h>
 #include <utility>
 
@@ -605,6 +606,37 @@ namespace Model
     
     inline CreateDeliveryStreamRequest& WithMSKSourceConfiguration(MSKSourceConfiguration&& value) { SetMSKSourceConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configure Snowflake destination</p>
+     */
+    inline const SnowflakeDestinationConfiguration& GetSnowflakeDestinationConfiguration() const{ return m_snowflakeDestinationConfiguration; }
+
+    /**
+     * <p>Configure Snowflake destination</p>
+     */
+    inline bool SnowflakeDestinationConfigurationHasBeenSet() const { return m_snowflakeDestinationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configure Snowflake destination</p>
+     */
+    inline void SetSnowflakeDestinationConfiguration(const SnowflakeDestinationConfiguration& value) { m_snowflakeDestinationConfigurationHasBeenSet = true; m_snowflakeDestinationConfiguration = value; }
+
+    /**
+     * <p>Configure Snowflake destination</p>
+     */
+    inline void SetSnowflakeDestinationConfiguration(SnowflakeDestinationConfiguration&& value) { m_snowflakeDestinationConfigurationHasBeenSet = true; m_snowflakeDestinationConfiguration = std::move(value); }
+
+    /**
+     * <p>Configure Snowflake destination</p>
+     */
+    inline CreateDeliveryStreamRequest& WithSnowflakeDestinationConfiguration(const SnowflakeDestinationConfiguration& value) { SetSnowflakeDestinationConfiguration(value); return *this;}
+
+    /**
+     * <p>Configure Snowflake destination</p>
+     */
+    inline CreateDeliveryStreamRequest& WithSnowflakeDestinationConfiguration(SnowflakeDestinationConfiguration&& value) { SetSnowflakeDestinationConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deliveryStreamName;
@@ -645,6 +677,9 @@ namespace Model
 
     MSKSourceConfiguration m_mSKSourceConfiguration;
     bool m_mSKSourceConfigurationHasBeenSet = false;
+
+    SnowflakeDestinationConfiguration m_snowflakeDestinationConfiguration;
+    bool m_snowflakeDestinationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

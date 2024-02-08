@@ -21,6 +21,7 @@ namespace AppIntegrationsServiceErrorMapper
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
 static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateResourceException");
 static const int RESOURCE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ResourceQuotaExceededException");
+static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
@@ -39,6 +40,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_QUOTA_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppIntegrationsServiceErrors::RESOURCE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppIntegrationsServiceErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

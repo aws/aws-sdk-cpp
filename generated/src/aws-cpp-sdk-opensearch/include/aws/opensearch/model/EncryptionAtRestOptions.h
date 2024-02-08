@@ -25,8 +25,10 @@ namespace Model
 
   /**
    * <p>Specifies whether the domain should encrypt data at rest, and if so, the Key
-   * Management Service (KMS) key to use. Can be used only to create a new domain,
-   * not update an existing one.</p><p><h3>See Also:</h3>   <a
+   * Management Service (KMS) key to use. Can only be used when creating a new domain
+   * or enabling encryption at rest for the first time on an existing domain. You
+   * can't modify this parameter after it's already been specified.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/EncryptionAtRestOptions">AWS
    * API Reference</a></p>
    */

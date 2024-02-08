@@ -125,83 +125,99 @@ namespace Model
 
 
     /**
-     * <p>The permissions that you want to grant on a resource.</p>
+     * <p>The permissions that you want to grant on a resource. Namespace ARNs are not
+     * supported <code>Principal</code> values for folder permissions.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetGrantPermissions() const{ return m_grantPermissions; }
 
     /**
-     * <p>The permissions that you want to grant on a resource.</p>
+     * <p>The permissions that you want to grant on a resource. Namespace ARNs are not
+     * supported <code>Principal</code> values for folder permissions.</p>
      */
     inline bool GrantPermissionsHasBeenSet() const { return m_grantPermissionsHasBeenSet; }
 
     /**
-     * <p>The permissions that you want to grant on a resource.</p>
+     * <p>The permissions that you want to grant on a resource. Namespace ARNs are not
+     * supported <code>Principal</code> values for folder permissions.</p>
      */
     inline void SetGrantPermissions(const Aws::Vector<ResourcePermission>& value) { m_grantPermissionsHasBeenSet = true; m_grantPermissions = value; }
 
     /**
-     * <p>The permissions that you want to grant on a resource.</p>
+     * <p>The permissions that you want to grant on a resource. Namespace ARNs are not
+     * supported <code>Principal</code> values for folder permissions.</p>
      */
     inline void SetGrantPermissions(Aws::Vector<ResourcePermission>&& value) { m_grantPermissionsHasBeenSet = true; m_grantPermissions = std::move(value); }
 
     /**
-     * <p>The permissions that you want to grant on a resource.</p>
+     * <p>The permissions that you want to grant on a resource. Namespace ARNs are not
+     * supported <code>Principal</code> values for folder permissions.</p>
      */
     inline UpdateFolderPermissionsRequest& WithGrantPermissions(const Aws::Vector<ResourcePermission>& value) { SetGrantPermissions(value); return *this;}
 
     /**
-     * <p>The permissions that you want to grant on a resource.</p>
+     * <p>The permissions that you want to grant on a resource. Namespace ARNs are not
+     * supported <code>Principal</code> values for folder permissions.</p>
      */
     inline UpdateFolderPermissionsRequest& WithGrantPermissions(Aws::Vector<ResourcePermission>&& value) { SetGrantPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>The permissions that you want to grant on a resource.</p>
+     * <p>The permissions that you want to grant on a resource. Namespace ARNs are not
+     * supported <code>Principal</code> values for folder permissions.</p>
      */
     inline UpdateFolderPermissionsRequest& AddGrantPermissions(const ResourcePermission& value) { m_grantPermissionsHasBeenSet = true; m_grantPermissions.push_back(value); return *this; }
 
     /**
-     * <p>The permissions that you want to grant on a resource.</p>
+     * <p>The permissions that you want to grant on a resource. Namespace ARNs are not
+     * supported <code>Principal</code> values for folder permissions.</p>
      */
     inline UpdateFolderPermissionsRequest& AddGrantPermissions(ResourcePermission&& value) { m_grantPermissionsHasBeenSet = true; m_grantPermissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The permissions that you want to revoke from a resource.</p>
+     * <p>The permissions that you want to revoke from a resource. Namespace ARNs are
+     * not supported <code>Principal</code> values for folder permissions.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetRevokePermissions() const{ return m_revokePermissions; }
 
     /**
-     * <p>The permissions that you want to revoke from a resource.</p>
+     * <p>The permissions that you want to revoke from a resource. Namespace ARNs are
+     * not supported <code>Principal</code> values for folder permissions.</p>
      */
     inline bool RevokePermissionsHasBeenSet() const { return m_revokePermissionsHasBeenSet; }
 
     /**
-     * <p>The permissions that you want to revoke from a resource.</p>
+     * <p>The permissions that you want to revoke from a resource. Namespace ARNs are
+     * not supported <code>Principal</code> values for folder permissions.</p>
      */
     inline void SetRevokePermissions(const Aws::Vector<ResourcePermission>& value) { m_revokePermissionsHasBeenSet = true; m_revokePermissions = value; }
 
     /**
-     * <p>The permissions that you want to revoke from a resource.</p>
+     * <p>The permissions that you want to revoke from a resource. Namespace ARNs are
+     * not supported <code>Principal</code> values for folder permissions.</p>
      */
     inline void SetRevokePermissions(Aws::Vector<ResourcePermission>&& value) { m_revokePermissionsHasBeenSet = true; m_revokePermissions = std::move(value); }
 
     /**
-     * <p>The permissions that you want to revoke from a resource.</p>
+     * <p>The permissions that you want to revoke from a resource. Namespace ARNs are
+     * not supported <code>Principal</code> values for folder permissions.</p>
      */
     inline UpdateFolderPermissionsRequest& WithRevokePermissions(const Aws::Vector<ResourcePermission>& value) { SetRevokePermissions(value); return *this;}
 
     /**
-     * <p>The permissions that you want to revoke from a resource.</p>
+     * <p>The permissions that you want to revoke from a resource. Namespace ARNs are
+     * not supported <code>Principal</code> values for folder permissions.</p>
      */
     inline UpdateFolderPermissionsRequest& WithRevokePermissions(Aws::Vector<ResourcePermission>&& value) { SetRevokePermissions(std::move(value)); return *this;}
 
     /**
-     * <p>The permissions that you want to revoke from a resource.</p>
+     * <p>The permissions that you want to revoke from a resource. Namespace ARNs are
+     * not supported <code>Principal</code> values for folder permissions.</p>
      */
     inline UpdateFolderPermissionsRequest& AddRevokePermissions(const ResourcePermission& value) { m_revokePermissionsHasBeenSet = true; m_revokePermissions.push_back(value); return *this; }
 
     /**
-     * <p>The permissions that you want to revoke from a resource.</p>
+     * <p>The permissions that you want to revoke from a resource. Namespace ARNs are
+     * not supported <code>Principal</code> values for folder permissions.</p>
      */
     inline UpdateFolderPermissionsRequest& AddRevokePermissions(ResourcePermission&& value) { m_revokePermissionsHasBeenSet = true; m_revokePermissions.push_back(std::move(value)); return *this; }
 

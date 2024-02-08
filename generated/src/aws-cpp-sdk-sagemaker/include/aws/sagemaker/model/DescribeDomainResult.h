@@ -150,37 +150,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+     * <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
      */
     inline const Aws::String& GetHomeEfsFileSystemId() const{ return m_homeEfsFileSystemId; }
 
     /**
-     * <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+     * <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
      */
     inline void SetHomeEfsFileSystemId(const Aws::String& value) { m_homeEfsFileSystemId = value; }
 
     /**
-     * <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+     * <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
      */
     inline void SetHomeEfsFileSystemId(Aws::String&& value) { m_homeEfsFileSystemId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+     * <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
      */
     inline void SetHomeEfsFileSystemId(const char* value) { m_homeEfsFileSystemId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+     * <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
      */
     inline DescribeDomainResult& WithHomeEfsFileSystemId(const Aws::String& value) { SetHomeEfsFileSystemId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+     * <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
      */
     inline DescribeDomainResult& WithHomeEfsFileSystemId(Aws::String&& value) { SetHomeEfsFileSystemId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+     * <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
      */
     inline DescribeDomainResult& WithHomeEfsFileSystemId(const char* value) { SetHomeEfsFileSystemId(value); return *this;}
 

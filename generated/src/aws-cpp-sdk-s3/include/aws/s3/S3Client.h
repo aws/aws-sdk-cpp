@@ -43,8 +43,8 @@ namespace Aws
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
-        static const char* SERVICE_NAME;
-        static const char* ALLOCATION_TAG;
+        static const char* GetServiceName();
+        static const char* GetAllocationTag();
 
       typedef S3ClientConfiguration ClientConfigurationType;
       typedef S3EndpointProvider EndpointProviderType;
@@ -63,19 +63,34 @@ namespace Aws
          * @return the copied client.
          */
         S3Client& operator=(const S3Client &rhs);
+
+        /**
+         * Copy move constructor for a S3Client. Copies all members that do not reference self.
+         * Recreates member that reference self.
+         * @param rhs the source object of the copy.
+         */
+        S3Client(S3Client &&rhs);
+
+        /**
+         * Assignment move operator for a S3Client. Copies all members that do not reference self.
+         * Recreates member that reference self.
+         * @param rhs the source object of the copy.
+         * @return the copied client.
+         */
+        S3Client& operator=(S3Client &&rhs);
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         S3Client(const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration(),
-                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG));
+                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         S3Client(const Aws::Auth::AWSCredentials& credentials,
-                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
+                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = nullptr,
                  const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration());
 
        /**
@@ -83,7 +98,7 @@ namespace Aws
         * the default http client factory will be used
         */
         S3Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG),
+                 std::shared_ptr<S3EndpointProviderBase> endpointProvider = nullptr,
                  const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration());
 
 

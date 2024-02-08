@@ -168,6 +168,32 @@ namespace AppIntegrationsService
         }
 
         /**
+         * <p>Deletes the Application. Only Applications that don't have any Application
+         * Associations can be deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteApplicationRequestT = Model::DeleteApplicationRequest>
+        Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const DeleteApplicationRequestT& request) const
+        {
+            return SubmitCallable(&AppIntegrationsServiceClient::DeleteApplication, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteApplicationRequestT = Model::DeleteApplicationRequest>
+        void DeleteApplicationAsync(const DeleteApplicationRequestT& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppIntegrationsServiceClient::DeleteApplication, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the DataIntegration. Only DataIntegrations that don't have any
          * DataIntegrationAssociations can be deleted. Deleting a DataIntegration also
          * deletes the underlying Amazon AppFlow flow and service linked role. </p> 
@@ -305,6 +331,32 @@ namespace AppIntegrationsService
         void GetEventIntegrationAsync(const GetEventIntegrationRequestT& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppIntegrationsServiceClient::GetEventIntegration, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a paginated list of application associations for an
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplicationAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationAssociationsOutcome ListApplicationAssociations(const Model::ListApplicationAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListApplicationAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListApplicationAssociationsRequestT = Model::ListApplicationAssociationsRequest>
+        Model::ListApplicationAssociationsOutcomeCallable ListApplicationAssociationsCallable(const ListApplicationAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&AppIntegrationsServiceClient::ListApplicationAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListApplicationAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListApplicationAssociationsRequestT = Model::ListApplicationAssociationsRequest>
+        void ListApplicationAssociationsAsync(const ListApplicationAssociationsRequestT& request, const ListApplicationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppIntegrationsServiceClient::ListApplicationAssociations, request, handler, context);
         }
 
         /**

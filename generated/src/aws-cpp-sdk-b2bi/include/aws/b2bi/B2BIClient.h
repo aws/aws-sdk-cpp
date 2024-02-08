@@ -664,8 +664,8 @@ namespace B2BI
         }
 
         /**
-         * <p>Parses the input EDI (electronic data interchange) file.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Parses the input EDI (electronic data interchange) file. The input file has a
+         * file size limit of 250 KB.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestParsing">AWS
          * API Reference</a></p>
          */

@@ -17,6 +17,7 @@
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
+#include <aws/ecs/model/ServiceVolumeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -1415,6 +1416,95 @@ namespace Model
      */
     inline UpdateServiceRequest& WithServiceConnectConfiguration(ServiceConnectConfiguration&& value) { SetServiceConnectConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition. If set to null, no new deployment is triggered. Otherwise, if
+     * this configuration differs from the existing one, it triggers a new
+     * deployment.</p>
+     */
+    inline const Aws::Vector<ServiceVolumeConfiguration>& GetVolumeConfigurations() const{ return m_volumeConfigurations; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition. If set to null, no new deployment is triggered. Otherwise, if
+     * this configuration differs from the existing one, it triggers a new
+     * deployment.</p>
+     */
+    inline bool VolumeConfigurationsHasBeenSet() const { return m_volumeConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition. If set to null, no new deployment is triggered. Otherwise, if
+     * this configuration differs from the existing one, it triggers a new
+     * deployment.</p>
+     */
+    inline void SetVolumeConfigurations(const Aws::Vector<ServiceVolumeConfiguration>& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition. If set to null, no new deployment is triggered. Otherwise, if
+     * this configuration differs from the existing one, it triggers a new
+     * deployment.</p>
+     */
+    inline void SetVolumeConfigurations(Aws::Vector<ServiceVolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = std::move(value); }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition. If set to null, no new deployment is triggered. Otherwise, if
+     * this configuration differs from the existing one, it triggers a new
+     * deployment.</p>
+     */
+    inline UpdateServiceRequest& WithVolumeConfigurations(const Aws::Vector<ServiceVolumeConfiguration>& value) { SetVolumeConfigurations(value); return *this;}
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition. If set to null, no new deployment is triggered. Otherwise, if
+     * this configuration differs from the existing one, it triggers a new
+     * deployment.</p>
+     */
+    inline UpdateServiceRequest& WithVolumeConfigurations(Aws::Vector<ServiceVolumeConfiguration>&& value) { SetVolumeConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition. If set to null, no new deployment is triggered. Otherwise, if
+     * this configuration differs from the existing one, it triggers a new
+     * deployment.</p>
+     */
+    inline UpdateServiceRequest& AddVolumeConfigurations(const ServiceVolumeConfiguration& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition. If set to null, no new deployment is triggered. Otherwise, if
+     * this configuration differs from the existing one, it triggers a new
+     * deployment.</p>
+     */
+    inline UpdateServiceRequest& AddVolumeConfigurations(ServiceVolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cluster;
@@ -1470,6 +1560,9 @@ namespace Model
 
     ServiceConnectConfiguration m_serviceConnectConfiguration;
     bool m_serviceConnectConfigurationHasBeenSet = false;
+
+    Aws::Vector<ServiceVolumeConfiguration> m_volumeConfigurations;
+    bool m_volumeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

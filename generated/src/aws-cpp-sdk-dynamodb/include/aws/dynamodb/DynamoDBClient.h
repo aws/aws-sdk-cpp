@@ -37,8 +37,8 @@ namespace DynamoDB
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DynamoDBClientConfiguration ClientConfigurationType;
       typedef DynamoDBEndpointProvider EndpointProviderType;
@@ -48,14 +48,14 @@ namespace DynamoDB
         * is not specified, it will be initialized to default values.
         */
         DynamoDBClient(const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration(),
-                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DynamoDBClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration());
 
        /**
@@ -63,7 +63,7 @@ namespace DynamoDB
         * the default http client factory will be used
         */
         DynamoDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration());
 
 
@@ -1520,11 +1520,11 @@ namespace DynamoDB
          * <p>Restores the specified table to the specified point in time within
          * <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. You can restore your table to any point
-         * in time during the last 35 days. Any number of users can execute up to 4
-         * concurrent restores (any type of restore) in a given account. </p> <p> When you
+         * in time during the last 35 days. Any number of users can execute up to 50
+         * concurrent restores (any type of restore) in a given account. </p> <p>When you
          * restore using point in time recovery, DynamoDB restores your table data to the
          * state based on the selected date and time (day:hour:minute:second) to a new
-         * table. </p> <p> Along with data, the following are also included on the new
+         * table. </p> <p>Along with data, the following are also included on the new
          * restored table using point in time recovery: </p> <ul> <li> <p>Global secondary
          * indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li>
          * <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p>
@@ -1977,6 +1977,32 @@ namespace DynamoDB
         void UpdateItemAsync(const UpdateItemRequestT& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DynamoDBClient::UpdateItem, request, handler, context);
+        }
+
+        /**
+         * <p>The command to update the Kinesis stream destination.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKinesisStreamingDestinationOutcome UpdateKinesisStreamingDestination(const Model::UpdateKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKinesisStreamingDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKinesisStreamingDestinationRequestT = Model::UpdateKinesisStreamingDestinationRequest>
+        Model::UpdateKinesisStreamingDestinationOutcomeCallable UpdateKinesisStreamingDestinationCallable(const UpdateKinesisStreamingDestinationRequestT& request) const
+        {
+            return SubmitCallable(&DynamoDBClient::UpdateKinesisStreamingDestination, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKinesisStreamingDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKinesisStreamingDestinationRequestT = Model::UpdateKinesisStreamingDestinationRequest>
+        void UpdateKinesisStreamingDestinationAsync(const UpdateKinesisStreamingDestinationRequestT& request, const UpdateKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DynamoDBClient::UpdateKinesisStreamingDestination, request, handler, context);
         }
 
         /**

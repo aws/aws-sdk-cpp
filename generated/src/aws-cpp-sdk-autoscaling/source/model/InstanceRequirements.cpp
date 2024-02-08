@@ -29,6 +29,8 @@ InstanceRequirements::InstanceRequirements() :
     m_instanceGenerationsHasBeenSet(false),
     m_spotMaxPricePercentageOverLowestPrice(0),
     m_spotMaxPricePercentageOverLowestPriceHasBeenSet(false),
+    m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice(0),
+    m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet(false),
     m_onDemandMaxPricePercentageOverLowestPrice(0),
     m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet(false),
     m_bareMetal(BareMetal::NOT_SET),
@@ -62,6 +64,8 @@ InstanceRequirements::InstanceRequirements(const XmlNode& xmlNode) :
     m_instanceGenerationsHasBeenSet(false),
     m_spotMaxPricePercentageOverLowestPrice(0),
     m_spotMaxPricePercentageOverLowestPriceHasBeenSet(false),
+    m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice(0),
+    m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet(false),
     m_onDemandMaxPricePercentageOverLowestPrice(0),
     m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet(false),
     m_bareMetal(BareMetal::NOT_SET),
@@ -152,6 +156,12 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
     {
       m_spotMaxPricePercentageOverLowestPrice = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotMaxPricePercentageOverLowestPriceNode.GetText()).c_str()).c_str());
       m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true;
+    }
+    XmlNode maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode = resultNode.FirstChild("MaxSpotPriceAsPercentageOfOptimalOnDemandPrice");
+    if(!maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode.IsNull())
+    {
+      m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode.GetText()).c_str()).c_str());
+      m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = true;
     }
     XmlNode onDemandMaxPricePercentageOverLowestPriceNode = resultNode.FirstChild("OnDemandMaxPricePercentageOverLowestPrice");
     if(!onDemandMaxPricePercentageOverLowestPriceNode.IsNull())
@@ -339,6 +349,11 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".SpotMaxPricePercentageOverLowestPrice=" << m_spotMaxPricePercentageOverLowestPrice << "&";
   }
 
+  if(m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxSpotPriceAsPercentageOfOptimalOnDemandPrice=" << m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice << "&";
+  }
+
   if(m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet)
   {
       oStream << location << index << locationValue << ".OnDemandMaxPricePercentageOverLowestPrice=" << m_onDemandMaxPricePercentageOverLowestPrice << "&";
@@ -500,6 +515,10 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_spotMaxPricePercentageOverLowestPriceHasBeenSet)
   {
       oStream << location << ".SpotMaxPricePercentageOverLowestPrice=" << m_spotMaxPricePercentageOverLowestPrice << "&";
+  }
+  if(m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet)
+  {
+      oStream << location << ".MaxSpotPriceAsPercentageOfOptimalOnDemandPrice=" << m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice << "&";
   }
   if(m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet)
   {

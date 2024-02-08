@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/OnlineStoreConfig.h>
 #include <aws/sagemaker/model/OfflineStoreConfig.h>
+#include <aws/sagemaker/model/ThroughputConfigDescription.h>
 #include <aws/sagemaker/model/FeatureGroupStatus.h>
 #include <aws/sagemaker/model/OfflineStoreStatus.h>
 #include <aws/sagemaker/model/LastUpdateStatus.h>
@@ -403,6 +404,22 @@ namespace Model
     inline DescribeFeatureGroupResult& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}
 
 
+    
+    inline const ThroughputConfigDescription& GetThroughputConfig() const{ return m_throughputConfig; }
+
+    
+    inline void SetThroughputConfig(const ThroughputConfigDescription& value) { m_throughputConfig = value; }
+
+    
+    inline void SetThroughputConfig(ThroughputConfigDescription&& value) { m_throughputConfig = std::move(value); }
+
+    
+    inline DescribeFeatureGroupResult& WithThroughputConfig(const ThroughputConfigDescription& value) { SetThroughputConfig(value); return *this;}
+
+    
+    inline DescribeFeatureGroupResult& WithThroughputConfig(ThroughputConfigDescription&& value) { SetThroughputConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
      * into the OfflineStore if an OfflineStoreConfig is provided.</p>
@@ -738,6 +755,8 @@ namespace Model
     OnlineStoreConfig m_onlineStoreConfig;
 
     OfflineStoreConfig m_offlineStoreConfig;
+
+    ThroughputConfigDescription m_throughputConfig;
 
     Aws::String m_roleArn;
 

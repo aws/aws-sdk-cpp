@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateProjectResult::UpdateProjectResult()
+UpdateProjectResult::UpdateProjectResult() : 
+    m_projectStatus(ProjectStatus::NOT_SET)
 {
 }
 
-UpdateProjectResult::UpdateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UpdateProjectResult::UpdateProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_projectStatus(ProjectStatus::NOT_SET)
 {
   *this = result;
 }
@@ -53,6 +55,15 @@ UpdateProjectResult& UpdateProjectResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("failureReasons"))
+  {
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
+    {
+      m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("glossaryTerms"))
   {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
@@ -77,6 +88,12 @@ UpdateProjectResult& UpdateProjectResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("projectStatus"))
+  {
+    m_projectStatus = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("projectStatus"));
 
   }
 

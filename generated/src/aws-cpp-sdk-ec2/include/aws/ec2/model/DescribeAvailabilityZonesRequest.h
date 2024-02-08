@@ -47,9 +47,9 @@ namespace Model
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
+     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zoneName</code> - The ID of the zone that handles
+     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
      * some of the Local Zone and Wavelength Zone control plane operations, such as API
      * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
      * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
@@ -76,9 +76,9 @@ namespace Model
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
+     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zoneName</code> - The ID of the zone that handles
+     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
      * some of the Local Zone and Wavelength Zone control plane operations, such as API
      * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
      * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
@@ -105,9 +105,9 @@ namespace Model
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
+     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zoneName</code> - The ID of the zone that handles
+     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
      * some of the Local Zone and Wavelength Zone control plane operations, such as API
      * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
      * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
@@ -134,9 +134,9 @@ namespace Model
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
+     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zoneName</code> - The ID of the zone that handles
+     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
      * some of the Local Zone and Wavelength Zone control plane operations, such as API
      * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
      * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
@@ -163,9 +163,9 @@ namespace Model
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
+     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zoneName</code> - The ID of the zone that handles
+     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
      * some of the Local Zone and Wavelength Zone control plane operations, such as API
      * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
      * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
@@ -192,9 +192,9 @@ namespace Model
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
+     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zoneName</code> - The ID of the zone that handles
+     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
      * some of the Local Zone and Wavelength Zone control plane operations, such as API
      * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
      * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
@@ -221,9 +221,9 @@ namespace Model
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
+     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zoneName</code> - The ID of the zone that handles
+     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
      * some of the Local Zone and Wavelength Zone control plane operations, such as API
      * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
      * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
@@ -250,9 +250,9 @@ namespace Model
      * <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zoneID</code> - The ID of the zone that handles some of the
+     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
      * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zoneName</code> - The ID of the zone that handles
+     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
      * some of the Local Zone and Wavelength Zone control plane operations, such as API
      * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
      * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>

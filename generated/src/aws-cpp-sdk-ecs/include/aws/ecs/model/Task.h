@@ -1637,13 +1637,8 @@ namespace Model
      * <p>The stop code indicating why a task was stopped. The
      * <code>stoppedReason</code> might contain additional details. </p> <p>For more
      * information about stop code, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
-     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
-     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
-     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
-     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
-     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
-     * <code>SpotInterruption</code> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline const TaskStopCode& GetStopCode() const{ return m_stopCode; }
 
@@ -1651,13 +1646,8 @@ namespace Model
      * <p>The stop code indicating why a task was stopped. The
      * <code>stoppedReason</code> might contain additional details. </p> <p>For more
      * information about stop code, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
-     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
-     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
-     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
-     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
-     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
-     * <code>SpotInterruption</code> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline bool StopCodeHasBeenSet() const { return m_stopCodeHasBeenSet; }
 
@@ -1665,13 +1655,8 @@ namespace Model
      * <p>The stop code indicating why a task was stopped. The
      * <code>stoppedReason</code> might contain additional details. </p> <p>For more
      * information about stop code, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
-     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
-     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
-     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
-     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
-     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
-     * <code>SpotInterruption</code> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetStopCode(const TaskStopCode& value) { m_stopCodeHasBeenSet = true; m_stopCode = value; }
 
@@ -1679,13 +1664,8 @@ namespace Model
      * <p>The stop code indicating why a task was stopped. The
      * <code>stoppedReason</code> might contain additional details. </p> <p>For more
      * information about stop code, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
-     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
-     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
-     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
-     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
-     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
-     * <code>SpotInterruption</code> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetStopCode(TaskStopCode&& value) { m_stopCodeHasBeenSet = true; m_stopCode = std::move(value); }
 
@@ -1693,13 +1673,8 @@ namespace Model
      * <p>The stop code indicating why a task was stopped. The
      * <code>stoppedReason</code> might contain additional details. </p> <p>For more
      * information about stop code, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
-     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
-     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
-     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
-     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
-     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
-     * <code>SpotInterruption</code> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline Task& WithStopCode(const TaskStopCode& value) { SetStopCode(value); return *this;}
 
@@ -1707,13 +1682,8 @@ namespace Model
      * <p>The stop code indicating why a task was stopped. The
      * <code>stoppedReason</code> might contain additional details. </p> <p>For more
      * information about stop code, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
-     * tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p> <p>The following
-     * are valid values:</p> <ul> <li> <p> <code>TaskFailedToStart</code> </p> </li>
-     * <li> <p> <code>EssentialContainerExited</code> </p> </li> <li> <p>
-     * <code>UserInitiated</code> </p> </li> <li> <p> <code>TerminationNotice</code>
-     * </p> </li> <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li> <li> <p>
-     * <code>SpotInterruption</code> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stopped-task-error-codes.html">Stopped
+     * tasks error codes</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline Task& WithStopCode(TaskStopCode&& value) { SetStopCode(std::move(value)); return *this;}
 

@@ -1172,6 +1172,88 @@ namespace Model
      */
     inline DBInstance& WithCertificateDetails(CertificateDetails&& value) { SetCertificateDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for
+     * the DB instance, and otherwise <code>false</code>.</p>
+     */
+    inline bool GetPerformanceInsightsEnabled() const{ return m_performanceInsightsEnabled; }
+
+    /**
+     * <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for
+     * the DB instance, and otherwise <code>false</code>.</p>
+     */
+    inline bool PerformanceInsightsEnabledHasBeenSet() const { return m_performanceInsightsEnabledHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for
+     * the DB instance, and otherwise <code>false</code>.</p>
+     */
+    inline void SetPerformanceInsightsEnabled(bool value) { m_performanceInsightsEnabledHasBeenSet = true; m_performanceInsightsEnabled = value; }
+
+    /**
+     * <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for
+     * the DB instance, and otherwise <code>false</code>.</p>
+     */
+    inline DBInstance& WithPerformanceInsightsEnabled(bool value) { SetPerformanceInsightsEnabled(value); return *this;}
+
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline DBInstance& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline DBInstance& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline DBInstance& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -1257,6 +1339,12 @@ namespace Model
 
     CertificateDetails m_certificateDetails;
     bool m_certificateDetailsHasBeenSet = false;
+
+    bool m_performanceInsightsEnabled;
+    bool m_performanceInsightsEnabledHasBeenSet = false;
+
+    Aws::String m_performanceInsightsKMSKeyId;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -111,6 +111,15 @@ GetTableResult& GetTableResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("replicaSpecifications"))
+  {
+    Aws::Utils::Array<JsonView> replicaSpecificationsJsonList = jsonValue.GetArray("replicaSpecifications");
+    for(unsigned replicaSpecificationsIndex = 0; replicaSpecificationsIndex < replicaSpecificationsJsonList.GetLength(); ++replicaSpecificationsIndex)
+    {
+      m_replicaSpecifications.push_back(replicaSpecificationsJsonList[replicaSpecificationsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

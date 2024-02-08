@@ -31,6 +31,8 @@ Association::Association() :
     m_associationNameHasBeenSet(false),
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
+    m_duration(0),
+    m_durationHasBeenSet(false),
     m_targetMapsHasBeenSet(false)
 {
 }
@@ -48,6 +50,8 @@ Association::Association(JsonView jsonValue) :
     m_associationNameHasBeenSet(false),
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
+    m_duration(0),
+    m_durationHasBeenSet(false),
     m_targetMapsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -133,6 +137,13 @@ Association& Association::operator =(JsonView jsonValue)
     m_scheduleOffset = jsonValue.GetInteger("ScheduleOffset");
 
     m_scheduleOffsetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Duration"))
+  {
+    m_duration = jsonValue.GetInteger("Duration");
+
+    m_durationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TargetMaps"))
@@ -232,6 +243,12 @@ JsonValue Association::Jsonize() const
   if(m_scheduleOffsetHasBeenSet)
   {
    payload.WithInteger("ScheduleOffset", m_scheduleOffset);
+
+  }
+
+  if(m_durationHasBeenSet)
+  {
+   payload.WithInteger("Duration", m_duration);
 
   }
 

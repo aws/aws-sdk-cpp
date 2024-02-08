@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/DestinationStatus.h>
+#include <aws/dynamodb/model/EnableKinesisStreamingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,37 @@ namespace Model
     inline DisableKinesisStreamingDestinationResult& WithDestinationStatus(DestinationStatus&& value) { SetDestinationStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The destination for the Kinesis streaming information that is being
+     * enabled.</p>
+     */
+    inline const EnableKinesisStreamingConfiguration& GetEnableKinesisStreamingConfiguration() const{ return m_enableKinesisStreamingConfiguration; }
+
+    /**
+     * <p>The destination for the Kinesis streaming information that is being
+     * enabled.</p>
+     */
+    inline void SetEnableKinesisStreamingConfiguration(const EnableKinesisStreamingConfiguration& value) { m_enableKinesisStreamingConfiguration = value; }
+
+    /**
+     * <p>The destination for the Kinesis streaming information that is being
+     * enabled.</p>
+     */
+    inline void SetEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfiguration&& value) { m_enableKinesisStreamingConfiguration = std::move(value); }
+
+    /**
+     * <p>The destination for the Kinesis streaming information that is being
+     * enabled.</p>
+     */
+    inline DisableKinesisStreamingDestinationResult& WithEnableKinesisStreamingConfiguration(const EnableKinesisStreamingConfiguration& value) { SetEnableKinesisStreamingConfiguration(value); return *this;}
+
+    /**
+     * <p>The destination for the Kinesis streaming information that is being
+     * enabled.</p>
+     */
+    inline DisableKinesisStreamingDestinationResult& WithEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfiguration&& value) { SetEnableKinesisStreamingConfiguration(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -159,6 +191,8 @@ namespace Model
     Aws::String m_streamArn;
 
     DestinationStatus m_destinationStatus;
+
+    EnableKinesisStreamingConfiguration m_enableKinesisStreamingConfiguration;
 
     Aws::String m_requestId;
   };

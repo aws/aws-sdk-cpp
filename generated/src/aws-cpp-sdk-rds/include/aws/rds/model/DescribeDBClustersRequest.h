@@ -263,7 +263,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -271,7 +271,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -279,7 +279,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -287,7 +287,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100</p>
      */
     inline DescribeDBClustersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

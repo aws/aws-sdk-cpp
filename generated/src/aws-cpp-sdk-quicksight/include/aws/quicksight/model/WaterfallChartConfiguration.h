@@ -13,6 +13,8 @@
 #include <aws/quicksight/model/LegendOptions.h>
 #include <aws/quicksight/model/DataLabelOptions.h>
 #include <aws/quicksight/model/VisualPalette.h>
+#include <aws/quicksight/model/WaterfallChartColorConfiguration.h>
+#include <aws/quicksight/model/VisualInteractionOptions.h>
 #include <utility>
 
 namespace Aws
@@ -353,6 +355,68 @@ namespace Model
      */
     inline WaterfallChartConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The color configuration of a waterfall visual.</p>
+     */
+    inline const WaterfallChartColorConfiguration& GetColorConfiguration() const{ return m_colorConfiguration; }
+
+    /**
+     * <p>The color configuration of a waterfall visual.</p>
+     */
+    inline bool ColorConfigurationHasBeenSet() const { return m_colorConfigurationHasBeenSet; }
+
+    /**
+     * <p>The color configuration of a waterfall visual.</p>
+     */
+    inline void SetColorConfiguration(const WaterfallChartColorConfiguration& value) { m_colorConfigurationHasBeenSet = true; m_colorConfiguration = value; }
+
+    /**
+     * <p>The color configuration of a waterfall visual.</p>
+     */
+    inline void SetColorConfiguration(WaterfallChartColorConfiguration&& value) { m_colorConfigurationHasBeenSet = true; m_colorConfiguration = std::move(value); }
+
+    /**
+     * <p>The color configuration of a waterfall visual.</p>
+     */
+    inline WaterfallChartConfiguration& WithColorConfiguration(const WaterfallChartColorConfiguration& value) { SetColorConfiguration(value); return *this;}
+
+    /**
+     * <p>The color configuration of a waterfall visual.</p>
+     */
+    inline WaterfallChartConfiguration& WithColorConfiguration(WaterfallChartColorConfiguration&& value) { SetColorConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline WaterfallChartConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline WaterfallChartConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+
   private:
 
     WaterfallChartFieldWells m_fieldWells;
@@ -384,6 +448,12 @@ namespace Model
 
     VisualPalette m_visualPalette;
     bool m_visualPaletteHasBeenSet = false;
+
+    WaterfallChartColorConfiguration m_colorConfiguration;
+    bool m_colorConfigurationHasBeenSet = false;
+
+    VisualInteractionOptions m_interactions;
+    bool m_interactionsHasBeenSet = false;
   };
 
 } // namespace Model

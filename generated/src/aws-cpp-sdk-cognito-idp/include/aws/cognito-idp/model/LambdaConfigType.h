@@ -451,6 +451,47 @@ namespace Model
 
 
     /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline const Aws::String& GetUserMigration() const{ return m_userMigration; }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline bool UserMigrationHasBeenSet() const { return m_userMigrationHasBeenSet; }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline void SetUserMigration(const Aws::String& value) { m_userMigrationHasBeenSet = true; m_userMigration = value; }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline void SetUserMigration(Aws::String&& value) { m_userMigrationHasBeenSet = true; m_userMigration = std::move(value); }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline void SetUserMigration(const char* value) { m_userMigrationHasBeenSet = true; m_userMigration.assign(value); }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline LambdaConfigType& WithUserMigration(const Aws::String& value) { SetUserMigration(value); return *this;}
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline LambdaConfigType& WithUserMigration(Aws::String&& value) { SetUserMigration(std::move(value)); return *this;}
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline LambdaConfigType& WithUserMigration(const char* value) { SetUserMigration(value); return *this;}
+
+
+    /**
      * <p>The detailed configuration of a pre token generation trigger. If you also set
      * an ARN in <code>PreTokenGeneration</code>, its value must be identical to
      * <code>PreTokenGenerationConfig</code>.</p>
@@ -491,47 +532,6 @@ namespace Model
      * <code>PreTokenGenerationConfig</code>.</p>
      */
     inline LambdaConfigType& WithPreTokenGenerationConfig(PreTokenGenerationVersionConfigType&& value) { SetPreTokenGenerationConfig(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The user migration Lambda config type.</p>
-     */
-    inline const Aws::String& GetUserMigration() const{ return m_userMigration; }
-
-    /**
-     * <p>The user migration Lambda config type.</p>
-     */
-    inline bool UserMigrationHasBeenSet() const { return m_userMigrationHasBeenSet; }
-
-    /**
-     * <p>The user migration Lambda config type.</p>
-     */
-    inline void SetUserMigration(const Aws::String& value) { m_userMigrationHasBeenSet = true; m_userMigration = value; }
-
-    /**
-     * <p>The user migration Lambda config type.</p>
-     */
-    inline void SetUserMigration(Aws::String&& value) { m_userMigrationHasBeenSet = true; m_userMigration = std::move(value); }
-
-    /**
-     * <p>The user migration Lambda config type.</p>
-     */
-    inline void SetUserMigration(const char* value) { m_userMigrationHasBeenSet = true; m_userMigration.assign(value); }
-
-    /**
-     * <p>The user migration Lambda config type.</p>
-     */
-    inline LambdaConfigType& WithUserMigration(const Aws::String& value) { SetUserMigration(value); return *this;}
-
-    /**
-     * <p>The user migration Lambda config type.</p>
-     */
-    inline LambdaConfigType& WithUserMigration(Aws::String&& value) { SetUserMigration(std::move(value)); return *this;}
-
-    /**
-     * <p>The user migration Lambda config type.</p>
-     */
-    inline LambdaConfigType& WithUserMigration(const char* value) { SetUserMigration(value); return *this;}
 
 
     /**
@@ -689,11 +689,11 @@ namespace Model
     Aws::String m_preTokenGeneration;
     bool m_preTokenGenerationHasBeenSet = false;
 
-    PreTokenGenerationVersionConfigType m_preTokenGenerationConfig;
-    bool m_preTokenGenerationConfigHasBeenSet = false;
-
     Aws::String m_userMigration;
     bool m_userMigrationHasBeenSet = false;
+
+    PreTokenGenerationVersionConfigType m_preTokenGenerationConfig;
+    bool m_preTokenGenerationConfigHasBeenSet = false;
 
     CustomSMSLambdaVersionConfigType m_customSMSSender;
     bool m_customSMSSenderHasBeenSet = false;

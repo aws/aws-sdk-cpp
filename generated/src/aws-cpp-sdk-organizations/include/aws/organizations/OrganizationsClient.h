@@ -265,17 +265,18 @@ namespace Organizations
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
          * and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p>
          * </li> </ul>  <ul> <li> <p>You can close only 10% of member accounts,
-         * between 10 and 200, within a rolling 30 day period. This quota is not bound by a
-         * calendar month, but starts when you close an account. After you reach this
+         * between 10 and 1000, within a rolling 30 day period. This quota is not bound by
+         * a calendar month, but starts when you close an account. After you reach this
          * limit, you can close additional accounts. For more information, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
-         * a member account in your organization</a> in the <i>Organizations User
-         * Guide</i>. </p> </li> <li> <p>To reinstate a closed account, contact Amazon Web
-         * Services Support within the 90-day grace period while the account is in
-         * SUSPENDED status. </p> </li> <li> <p>If the Amazon Web Services account you
-         * attempt to close is linked to an Amazon Web Services GovCloud (US) account, the
-         * <code>CloseAccount</code> request will close both accounts. To learn important
-         * pre-closure details, see <a
+         * a member account in your organization</a> and <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
+         * for Organizations</a>in the <i>Organizations User Guide</i>. </p> </li> <li>
+         * <p>To reinstate a closed account, contact Amazon Web Services Support within the
+         * 90-day grace period while the account is in SUSPENDED status. </p> </li> <li>
+         * <p>If the Amazon Web Services account you attempt to close is linked to an
+         * Amazon Web Services GovCloud (US) account, the <code>CloseAccount</code> request
+         * will close both accounts. To learn important pre-closure details, see <a
          * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/Closing-govcloud-account.html">
          * Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web
          * Services GovCloud User Guide</i>.</p> </li> </ul> <p><h3>See Also:</h3>  

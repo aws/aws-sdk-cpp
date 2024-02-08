@@ -54,8 +54,8 @@ namespace Aws
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
-        static const char* SERVICE_NAME;
-        static const char* ALLOCATION_TAG;
+        static const char* GetServiceName();
+        static const char* GetAllocationTag();
 
       typedef S3CrtClientConfiguration ClientConfigurationType;
       typedef S3CrtEndpointProvider EndpointProviderType;
@@ -74,6 +74,21 @@ namespace Aws
          * @return the copied client.
          */
         S3CrtClient& operator=(const S3CrtClient &rhs);
+
+        /**
+         * Copy move constructor for a S3Client. Copies all members that do not reference self.
+         * Recreates member that reference self.
+         * @param rhs the source object of the copy.
+         */
+        S3CrtClient(S3CrtClient &&rhs);
+
+        /**
+         * Assignment move operator for a S3Client. Copies all members that do not reference self.
+         * Recreates member that reference self.
+         * @param rhs the source object of the copy.
+         * @return the copied client.
+         */
+        S3CrtClient& operator=(S3CrtClient &&rhs);
 
         /* Legacy constructors due deprecation */
        /**

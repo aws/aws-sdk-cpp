@@ -23,6 +23,20 @@ void Semaphore::WaitOne()
     --m_count;
 }
 
+bool Semaphore::WaitOneFor(size_t timeoutMs)
+{
+    std::unique_lock<std::mutex> locker(m_mutex);
+    if(0 == m_count)
+    {
+        if(!m_syncPoint.wait_for(locker, std::chrono::milliseconds(timeoutMs), [this] { return m_count > 0; }))
+        {
+            return false; // timeout was reached
+        }
+    }
+    --m_count;
+    return true;
+}
+
 void Semaphore::Release()
 {
     std::lock_guard<std::mutex> locker(m_mutex);

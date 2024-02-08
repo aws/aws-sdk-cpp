@@ -8,6 +8,7 @@
 #include <aws/connectcases/ConnectCasesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/connectcases/model/UserUnion.h>
 #include <aws/connectcases/model/FieldValue.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -198,6 +199,25 @@ namespace Model
     inline CreateCaseRequest& AddFields(FieldValue&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const UserUnion& GetPerformedBy() const{ return m_performedBy; }
+
+    
+    inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
+
+    
+    inline void SetPerformedBy(const UserUnion& value) { m_performedByHasBeenSet = true; m_performedBy = value; }
+
+    
+    inline void SetPerformedBy(UserUnion&& value) { m_performedByHasBeenSet = true; m_performedBy = std::move(value); }
+
+    
+    inline CreateCaseRequest& WithPerformedBy(const UserUnion& value) { SetPerformedBy(value); return *this;}
+
+    
+    inline CreateCaseRequest& WithPerformedBy(UserUnion&& value) { SetPerformedBy(std::move(value)); return *this;}
+
+
     /**
      * <p>A unique identifier of a template.</p>
      */
@@ -248,6 +268,9 @@ namespace Model
 
     Aws::Vector<FieldValue> m_fields;
     bool m_fieldsHasBeenSet = false;
+
+    UserUnion m_performedBy;
+    bool m_performedByHasBeenSet = false;
 
     Aws::String m_templateId;
     bool m_templateIdHasBeenSet = false;

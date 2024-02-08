@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Policy_Min_TLS_1_0_2019_07,
-    Policy_Min_TLS_1_2_2019_07
+    Policy_Min_TLS_1_2_2019_07,
+    Policy_Min_TLS_1_2_PFS_2023_10
   };
 
 namespace TLSSecurityPolicyMapper

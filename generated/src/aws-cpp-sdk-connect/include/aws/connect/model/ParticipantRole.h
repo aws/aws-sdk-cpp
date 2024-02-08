@@ -19,7 +19,8 @@ namespace Model
     AGENT,
     CUSTOMER,
     SYSTEM,
-    CUSTOM_BOT
+    CUSTOM_BOT,
+    SUPERVISOR
   };
 
 namespace ParticipantRoleMapper

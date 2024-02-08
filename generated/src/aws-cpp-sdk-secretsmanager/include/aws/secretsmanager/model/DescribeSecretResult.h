@@ -311,31 +311,36 @@ namespace Model
 
     /**
      * <p>The last date and time that Secrets Manager rotated the secret. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRotatedDate() const{ return m_lastRotatedDate; }
 
     /**
      * <p>The last date and time that Secrets Manager rotated the secret. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline void SetLastRotatedDate(const Aws::Utils::DateTime& value) { m_lastRotatedDate = value; }
 
     /**
      * <p>The last date and time that Secrets Manager rotated the secret. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline void SetLastRotatedDate(Aws::Utils::DateTime&& value) { m_lastRotatedDate = std::move(value); }
 
     /**
      * <p>The last date and time that Secrets Manager rotated the secret. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline DescribeSecretResult& WithLastRotatedDate(const Aws::Utils::DateTime& value) { SetLastRotatedDate(value); return *this;}
 
     /**
      * <p>The last date and time that Secrets Manager rotated the secret. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline DescribeSecretResult& WithLastRotatedDate(Aws::Utils::DateTime&& value) { SetLastRotatedDate(std::move(value)); return *this;}
 
@@ -455,31 +460,36 @@ namespace Model
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline const Aws::Utils::DateTime& GetNextRotationDate() const{ return m_nextRotationDate; }
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline void SetNextRotationDate(const Aws::Utils::DateTime& value) { m_nextRotationDate = value; }
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline void SetNextRotationDate(Aws::Utils::DateTime&& value) { m_nextRotationDate = std::move(value); }
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline DescribeSecretResult& WithNextRotationDate(const Aws::Utils::DateTime& value) { SetNextRotationDate(value); return *this;}
 
     /**
      * <p>The next rotation is scheduled to occur on or before this date. If the secret
-     * isn't configured for rotation, Secrets Manager returns null.</p>
+     * isn't configured for rotation or rotation has been disabled, Secrets Manager
+     * returns null.</p>
      */
     inline DescribeSecretResult& WithNextRotationDate(Aws::Utils::DateTime&& value) { SetNextRotationDate(std::move(value)); return *this;}
 

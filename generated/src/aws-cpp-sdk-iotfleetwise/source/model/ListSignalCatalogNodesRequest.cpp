@@ -16,7 +16,9 @@ ListSignalCatalogNodesRequest::ListSignalCatalogNodesRequest() :
     m_nameHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_signalNodeType(SignalNodeType::NOT_SET),
+    m_signalNodeTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,11 @@ Aws::String ListSignalCatalogNodesRequest::SerializePayload() const
   {
    payload.WithInteger("maxResults", m_maxResults);
 
+  }
+
+  if(m_signalNodeTypeHasBeenSet)
+  {
+   payload.WithString("signalNodeType", SignalNodeTypeMapper::GetNameForSignalNodeType(m_signalNodeType));
   }
 
   return payload.View().WriteReadable();

@@ -2557,54 +2557,62 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline bool GetEnableHttpEndpoint() const{ return m_enableHttpEndpoint; }
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline bool EnableHttpEndpointHasBeenSet() const { return m_enableHttpEndpointHasBeenSet; }
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline void SetEnableHttpEndpoint(bool value) { m_enableHttpEndpointHasBeenSet = true; m_enableHttpEndpoint = value; }
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithEnableHttpEndpoint(bool value) { SetEnableHttpEndpoint(value); return *this;}
 
@@ -3660,6 +3668,35 @@ namespace Model
     inline CreateDBClusterRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
 
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool GetEnableLimitlessDatabase() const{ return m_enableLimitlessDatabase; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool EnableLimitlessDatabaseHasBeenSet() const { return m_enableLimitlessDatabaseHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline void SetEnableLimitlessDatabase(bool value) { m_enableLimitlessDatabaseHasBeenSet = true; m_enableLimitlessDatabase = value; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline CreateDBClusterRequest& WithEnableLimitlessDatabase(bool value) { SetEnableLimitlessDatabase(value); return *this;}
+
+
     
     inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
 
@@ -4236,6 +4273,9 @@ namespace Model
 
     int m_performanceInsightsRetentionPeriod;
     bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
+
+    bool m_enableLimitlessDatabase;
+    bool m_enableLimitlessDatabaseHasBeenSet = false;
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
     bool m_serverlessV2ScalingConfigurationHasBeenSet = false;

@@ -12,6 +12,7 @@
 #include <cassert>
 #include <iostream>
 #include <cstring>
+#include <iomanip>
 
 static const char* CLASS_TAG = "DateTime";
 static const char* RFC822_DATE_FORMAT_STR_MINUS_Z = "%a, %d %b %Y %H:%M:%S";
@@ -1262,6 +1263,22 @@ Aws::String DateTime::ToGmtString(const char* formatStr) const
     char formattedString[100];
     std::strftime(formattedString, sizeof(formattedString), formatStr, &gmtTimeStamp);
     return formattedString;
+}
+
+Aws::String DateTime::ToGmtStringWithMs() const
+{
+    struct tm gmtTimeStamp = ConvertTimestampToGmtStruct();
+
+    char formattedString[100];
+    std::strftime(formattedString, sizeof(formattedString), "%Y-%m-%dT%H:%M:%S", &gmtTimeStamp);
+    Aws::String formattedStringStr = formattedString;
+
+    Aws::StringStream msSs;
+    msSs << "." << std::setfill('0') << std::setw(3) <<
+        std::chrono::duration_cast<std::chrono::milliseconds>(m_time.time_since_epoch()).count() % 1000;
+
+    formattedStringStr += msSs.str();
+    return formattedStringStr;
 }
 
 double DateTime::SecondsWithMSPrecision() const

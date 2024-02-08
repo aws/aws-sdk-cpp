@@ -22,6 +22,7 @@
 #include <aws/opensearch/model/AddDataSourceResult.h>
 #include <aws/opensearch/model/AssociatePackageResult.h>
 #include <aws/opensearch/model/AuthorizeVpcEndpointAccessResult.h>
+#include <aws/opensearch/model/CancelDomainConfigChangeResult.h>
 #include <aws/opensearch/model/CancelServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/CreateDomainResult.h>
 #include <aws/opensearch/model/CreateOutboundConnectionResult.h>
@@ -124,6 +125,7 @@ namespace Aws
       class AddTagsRequest;
       class AssociatePackageRequest;
       class AuthorizeVpcEndpointAccessRequest;
+      class CancelDomainConfigChangeRequest;
       class CancelServiceSoftwareUpdateRequest;
       class CreateDomainRequest;
       class CreateOutboundConnectionRequest;
@@ -189,6 +191,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, OpenSearchServiceError> AddTagsOutcome;
       typedef Aws::Utils::Outcome<AssociatePackageResult, OpenSearchServiceError> AssociatePackageOutcome;
       typedef Aws::Utils::Outcome<AuthorizeVpcEndpointAccessResult, OpenSearchServiceError> AuthorizeVpcEndpointAccessOutcome;
+      typedef Aws::Utils::Outcome<CancelDomainConfigChangeResult, OpenSearchServiceError> CancelDomainConfigChangeOutcome;
       typedef Aws::Utils::Outcome<CancelServiceSoftwareUpdateResult, OpenSearchServiceError> CancelServiceSoftwareUpdateOutcome;
       typedef Aws::Utils::Outcome<CreateDomainResult, OpenSearchServiceError> CreateDomainOutcome;
       typedef Aws::Utils::Outcome<CreateOutboundConnectionResult, OpenSearchServiceError> CreateOutboundConnectionOutcome;
@@ -254,6 +257,7 @@ namespace Aws
       typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
       typedef std::future<AssociatePackageOutcome> AssociatePackageOutcomeCallable;
       typedef std::future<AuthorizeVpcEndpointAccessOutcome> AuthorizeVpcEndpointAccessOutcomeCallable;
+      typedef std::future<CancelDomainConfigChangeOutcome> CancelDomainConfigChangeOutcomeCallable;
       typedef std::future<CancelServiceSoftwareUpdateOutcome> CancelServiceSoftwareUpdateOutcomeCallable;
       typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
       typedef std::future<CreateOutboundConnectionOutcome> CreateOutboundConnectionOutcomeCallable;
@@ -322,6 +326,7 @@ namespace Aws
     typedef std::function<void(const OpenSearchServiceClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::AssociatePackageRequest&, const Model::AssociatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePackageResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::AuthorizeVpcEndpointAccessRequest&, const Model::AuthorizeVpcEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeVpcEndpointAccessResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServiceClient*, const Model::CancelDomainConfigChangeRequest&, const Model::CancelDomainConfigChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDomainConfigChangeResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::CancelServiceSoftwareUpdateRequest&, const Model::CancelServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelServiceSoftwareUpdateResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::CreateOutboundConnectionRequest&, const Model::CreateOutboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOutboundConnectionResponseReceivedHandler;

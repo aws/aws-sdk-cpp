@@ -51,6 +51,9 @@ namespace Aws
         static const int CONNECTOR_TYPE_HASH = HashingUtils::HashString("CONNECTOR_TYPE");
         static const int CONNECTOR_CLASS_NAME_HASH = HashingUtils::HashString("CONNECTOR_CLASS_NAME");
         static const int KAFKA_SASL_MECHANISM_HASH = HashingUtils::HashString("KAFKA_SASL_MECHANISM");
+        static const int KAFKA_SASL_PLAIN_USERNAME_HASH = HashingUtils::HashString("KAFKA_SASL_PLAIN_USERNAME");
+        static const int KAFKA_SASL_PLAIN_PASSWORD_HASH = HashingUtils::HashString("KAFKA_SASL_PLAIN_PASSWORD");
+        static const int ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD");
         static const int KAFKA_SASL_SCRAM_USERNAME_HASH = HashingUtils::HashString("KAFKA_SASL_SCRAM_USERNAME");
         static const int KAFKA_SASL_SCRAM_PASSWORD_HASH = HashingUtils::HashString("KAFKA_SASL_SCRAM_PASSWORD");
         static const int KAFKA_SASL_SCRAM_SECRETS_ARN_HASH = HashingUtils::HashString("KAFKA_SASL_SCRAM_SECRETS_ARN");
@@ -188,6 +191,18 @@ namespace Aws
           {
             return ConnectionPropertyKey::KAFKA_SASL_MECHANISM;
           }
+          else if (hashCode == KAFKA_SASL_PLAIN_USERNAME_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_SASL_PLAIN_USERNAME;
+          }
+          else if (hashCode == KAFKA_SASL_PLAIN_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_SASL_PLAIN_PASSWORD;
+          }
+          else if (hashCode == ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD;
+          }
           else if (hashCode == KAFKA_SASL_SCRAM_USERNAME_HASH)
           {
             return ConnectionPropertyKey::KAFKA_SASL_SCRAM_USERNAME;
@@ -298,6 +313,12 @@ namespace Aws
             return "CONNECTOR_CLASS_NAME";
           case ConnectionPropertyKey::KAFKA_SASL_MECHANISM:
             return "KAFKA_SASL_MECHANISM";
+          case ConnectionPropertyKey::KAFKA_SASL_PLAIN_USERNAME:
+            return "KAFKA_SASL_PLAIN_USERNAME";
+          case ConnectionPropertyKey::KAFKA_SASL_PLAIN_PASSWORD:
+            return "KAFKA_SASL_PLAIN_PASSWORD";
+          case ConnectionPropertyKey::ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD:
+            return "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD";
           case ConnectionPropertyKey::KAFKA_SASL_SCRAM_USERNAME:
             return "KAFKA_SASL_SCRAM_USERNAME";
           case ConnectionPropertyKey::KAFKA_SASL_SCRAM_PASSWORD:

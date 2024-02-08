@@ -27,7 +27,8 @@ InputDeviceConfigurableSettings::InputDeviceConfigurableSettings() :
     m_latencyMsHasBeenSet(false),
     m_codec(InputDeviceCodec::NOT_SET),
     m_codecHasBeenSet(false),
-    m_mediaconnectSettingsHasBeenSet(false)
+    m_mediaconnectSettingsHasBeenSet(false),
+    m_audioChannelPairsHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ InputDeviceConfigurableSettings::InputDeviceConfigurableSettings(JsonView jsonVa
     m_latencyMsHasBeenSet(false),
     m_codec(InputDeviceCodec::NOT_SET),
     m_codecHasBeenSet(false),
-    m_mediaconnectSettingsHasBeenSet(false)
+    m_mediaconnectSettingsHasBeenSet(false),
+    m_audioChannelPairsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +84,16 @@ InputDeviceConfigurableSettings& InputDeviceConfigurableSettings::operator =(Jso
     m_mediaconnectSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("audioChannelPairs"))
+  {
+    Aws::Utils::Array<JsonView> audioChannelPairsJsonList = jsonValue.GetArray("audioChannelPairs");
+    for(unsigned audioChannelPairsIndex = 0; audioChannelPairsIndex < audioChannelPairsJsonList.GetLength(); ++audioChannelPairsIndex)
+    {
+      m_audioChannelPairs.push_back(audioChannelPairsJsonList[audioChannelPairsIndex].AsObject());
+    }
+    m_audioChannelPairsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -114,6 +126,17 @@ JsonValue InputDeviceConfigurableSettings::Jsonize() const
   if(m_mediaconnectSettingsHasBeenSet)
   {
    payload.WithObject("mediaconnectSettings", m_mediaconnectSettings.Jsonize());
+
+  }
+
+  if(m_audioChannelPairsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> audioChannelPairsJsonList(m_audioChannelPairs.size());
+   for(unsigned audioChannelPairsIndex = 0; audioChannelPairsIndex < audioChannelPairsJsonList.GetLength(); ++audioChannelPairsIndex)
+   {
+     audioChannelPairsJsonList[audioChannelPairsIndex].AsObject(m_audioChannelPairs[audioChannelPairsIndex].Jsonize());
+   }
+   payload.WithArray("audioChannelPairs", std::move(audioChannelPairsJsonList));
 
   }
 

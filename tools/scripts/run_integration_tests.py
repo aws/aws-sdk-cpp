@@ -1,4 +1,6 @@
-﻿# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿#!/usr/bin/env python3
+
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: Apache-2.0.
 #
 import argparse
@@ -34,7 +36,7 @@ def main():
     exe_extension = ".exe" if platform.system() == "Windows" else ""
 
     test_list = [
-        # "aws-cpp-sdk-transcribestreaming-integration-tests", # Temporarily disabled while investigated
+        "aws-cpp-sdk-transcribestreaming-integ-tests",
         "aws-cpp-sdk-dynamodb-integration-tests",
         "aws-cpp-sdk-sqs-integration-tests",
         "aws-cpp-sdk-s3-integration-tests",
@@ -66,7 +68,7 @@ def main():
         print("prefix = " + prefix)
         gtest_brief = "--gtest_brief=1"
         add_executable_bit(test_exe)
-        subprocess.check_call([test_exe, prefix, gtest_brief])
+        subprocess.check_call([test_exe, prefix, gtest_brief], timeout=20*60)
 
 
 # Run from powershell; make sure msbuild is in PATH environment variable

@@ -38,43 +38,37 @@ namespace Model
 
     /**
      * <p>Use this parameter to limit the returned policies to only the policies that
-     * match the policy type that you specify. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * match the policy type that you specify.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
      * <p>Use this parameter to limit the returned policies to only the policies that
-     * match the policy type that you specify. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * match the policy type that you specify.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
      * <p>Use this parameter to limit the returned policies to only the policies that
-     * match the policy type that you specify. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * match the policy type that you specify.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
      * <p>Use this parameter to limit the returned policies to only the policies that
-     * match the policy type that you specify. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * match the policy type that you specify.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
      * <p>Use this parameter to limit the returned policies to only the policies that
-     * match the policy type that you specify. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * match the policy type that you specify.</p>
      */
     inline DescribeAccountPoliciesRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
      * <p>Use this parameter to limit the returned policies to only the policies that
-     * match the policy type that you specify. Currently, the only valid value is
-     * <code>DATA_PROTECTION_POLICY</code>.</p>
+     * match the policy type that you specify.</p>
      */
     inline DescribeAccountPoliciesRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 

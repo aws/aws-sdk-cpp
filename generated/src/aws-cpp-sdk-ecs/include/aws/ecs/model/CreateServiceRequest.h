@@ -21,6 +21,7 @@
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <aws/ecs/model/Tag.h>
+#include <aws/ecs/model/ServiceVolumeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -827,7 +828,7 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
@@ -846,7 +847,7 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
@@ -865,7 +866,7 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
@@ -884,7 +885,7 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
@@ -903,7 +904,7 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
@@ -922,7 +923,7 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
@@ -2154,6 +2155,63 @@ namespace Model
      */
     inline CreateServiceRequest& WithServiceConnectConfiguration(ServiceConnectConfiguration&& value) { SetServiceConnectConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline const Aws::Vector<ServiceVolumeConfiguration>& GetVolumeConfigurations() const{ return m_volumeConfigurations; }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline bool VolumeConfigurationsHasBeenSet() const { return m_volumeConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline void SetVolumeConfigurations(const Aws::Vector<ServiceVolumeConfiguration>& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline void SetVolumeConfigurations(Aws::Vector<ServiceVolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = std::move(value); }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline CreateServiceRequest& WithVolumeConfigurations(const Aws::Vector<ServiceVolumeConfiguration>& value) { SetVolumeConfigurations(value); return *this;}
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline CreateServiceRequest& WithVolumeConfigurations(Aws::Vector<ServiceVolumeConfiguration>&& value) { SetVolumeConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline CreateServiceRequest& AddVolumeConfigurations(const ServiceVolumeConfiguration& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The configuration for a volume specified in the task definition as a volume
+     * that is configured at launch time. Currently, the only supported volume type is
+     * an Amazon EBS volume.</p>
+     */
+    inline CreateServiceRequest& AddVolumeConfigurations(ServiceVolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cluster;
@@ -2224,6 +2282,9 @@ namespace Model
 
     ServiceConnectConfiguration m_serviceConnectConfiguration;
     bool m_serviceConnectConfigurationHasBeenSet = false;
+
+    Aws::Vector<ServiceVolumeConfiguration> m_volumeConfigurations;
+    bool m_volumeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

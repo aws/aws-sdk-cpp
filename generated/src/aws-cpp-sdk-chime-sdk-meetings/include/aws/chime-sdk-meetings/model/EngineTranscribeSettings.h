@@ -321,8 +321,8 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region in which to use Amazon Transcribe.</p> <p>If you don't specify
-     * a Region, then the <a
+     * <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p> <p>If
+     * you don't specify a Region, then the <a
      * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a>
      * of the meeting is used. However, if Amazon Transcribe is not available in the
      * <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is
@@ -334,8 +334,8 @@ namespace Model
     inline const TranscribeRegion& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region in which to use Amazon Transcribe.</p> <p>If you don't specify
-     * a Region, then the <a
+     * <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p> <p>If
+     * you don't specify a Region, then the <a
      * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a>
      * of the meeting is used. However, if Amazon Transcribe is not available in the
      * <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is
@@ -347,8 +347,8 @@ namespace Model
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region in which to use Amazon Transcribe.</p> <p>If you don't specify
-     * a Region, then the <a
+     * <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p> <p>If
+     * you don't specify a Region, then the <a
      * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a>
      * of the meeting is used. However, if Amazon Transcribe is not available in the
      * <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is
@@ -360,8 +360,8 @@ namespace Model
     inline void SetRegion(const TranscribeRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region in which to use Amazon Transcribe.</p> <p>If you don't specify
-     * a Region, then the <a
+     * <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p> <p>If
+     * you don't specify a Region, then the <a
      * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a>
      * of the meeting is used. However, if Amazon Transcribe is not available in the
      * <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is
@@ -373,8 +373,8 @@ namespace Model
     inline void SetRegion(TranscribeRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region in which to use Amazon Transcribe.</p> <p>If you don't specify
-     * a Region, then the <a
+     * <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p> <p>If
+     * you don't specify a Region, then the <a
      * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a>
      * of the meeting is used. However, if Amazon Transcribe is not available in the
      * <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is
@@ -386,8 +386,8 @@ namespace Model
     inline EngineTranscribeSettings& WithRegion(const TranscribeRegion& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region in which to use Amazon Transcribe.</p> <p>If you don't specify
-     * a Region, then the <a
+     * <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p> <p>If
+     * you don't specify a Region, then the <a
      * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a>
      * of the meeting is used. However, if Amazon Transcribe is not available in the
      * <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is

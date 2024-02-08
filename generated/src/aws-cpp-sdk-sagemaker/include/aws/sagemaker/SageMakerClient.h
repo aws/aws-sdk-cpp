@@ -303,9 +303,8 @@ namespace SageMaker
 
         /**
          * <p>Creates a configuration for running a SageMaker image as a KernelGateway app.
-         * The configuration specifies the Amazon Elastic File System (EFS) storage volume
-         * on the image, and a list of the kernels in the image.</p><p><h3>See Also:</h3>  
-         * <a
+         * The configuration specifies the Amazon Elastic File System storage volume on the
+         * image, and a list of the kernels in the image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">AWS
          * API Reference</a></p>
          */
@@ -640,7 +639,7 @@ namespace SageMaker
 
         /**
          * <p>Creates a <code>Domain</code>. A domain consists of an associated Amazon
-         * Elastic File System (EFS) volume, a list of authorized users, and a variety of
+         * Elastic File System volume, a list of authorized users, and a variety of
          * security, application, policy, and Amazon Virtual Private Cloud (VPC)
          * configurations. Users within a domain can share notebook files and other
          * artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a domain is
@@ -653,8 +652,8 @@ namespace SageMaker
          * <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
-         * traffic between the domain and the EFS volume is through the specified VPC and
-         * subnets. For other traffic, you can specify the
+         * traffic between the domain and the Amazon EFS volume is through the specified
+         * VPC and subnets. For other traffic, you can specify the
          * <code>AppNetworkAccessType</code> parameter. <code>AppNetworkAccessType</code>
          * corresponds to the network access type that you choose when you onboard to the
          * domain. The following options are available:</p> <ul> <li> <p>
@@ -1127,8 +1126,8 @@ namespace SageMaker
 
         /**
          * <p>Creates a custom SageMaker image. A SageMaker image is a set of image
-         * versions. Each image version represents a container image stored in Amazon
-         * Elastic Container Registry (ECR). For more information, see <a
+         * versions. Each image version represents a container image stored in Amazon ECR.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
          * your own SageMaker image</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">AWS
@@ -1156,8 +1155,8 @@ namespace SageMaker
 
         /**
          * <p>Creates a version of the SageMaker image specified by <code>ImageName</code>.
-         * The version represents the Amazon Elastic Container Registry (ECR) container
-         * image specified by <code>BaseImage</code>.</p><p><h3>See Also:</h3>   <a
+         * The version represents the Amazon ECR container image specified by
+         * <code>BaseImage</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">AWS
          * API Reference</a></p>
          */
@@ -1661,8 +1660,8 @@ namespace SageMaker
          * run when you create or start a notebook instance.</p> <p>Each lifecycle
          * configuration script has a limit of 16384 characters.</p> <p>The value of the
          * <code>$PATH</code> environment variable that is available to both scripts is
-         * <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View CloudWatch Logs for
-         * notebook instance lifecycle configurations in log group
+         * <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View Amazon CloudWatch Logs
+         * for notebook instance lifecycle configurations in log group
          * <code>/aws/sagemaker/NotebookInstances</code> in log stream
          * <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p> <p>Lifecycle
          * configuration scripts cannot run for longer than 5 minutes. If a script runs for
@@ -1724,14 +1723,14 @@ namespace SageMaker
          * <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web
          * browser, the user will be automatically signed in to the domain, and granted
          * access to all of the Apps and files associated with the Domain's Amazon Elastic
-         * File System (EFS) volume. This operation can only be called when the
-         * authentication mode equals IAM. </p> <p>The IAM role or user passed to this API
-         * defines the permissions to access the app. Once the presigned URL is created, no
-         * additional permission is required to access this URL. IAM authorization policies
-         * for this API are also enforced for every HTTP request and WebSocket frame that
-         * attempts to connect to the app.</p> <p>You can restrict access to this API and
-         * to the URL that it returns to a list of IP addresses, Amazon VPCs or Amazon VPC
-         * Endpoints that you specify. For more information, see <a
+         * File System volume. This operation can only be called when the authentication
+         * mode equals IAM. </p> <p>The IAM role or user passed to this API defines the
+         * permissions to access the app. Once the presigned URL is created, no additional
+         * permission is required to access this URL. IAM authorization policies for this
+         * API are also enforced for every HTTP request and WebSocket frame that attempts
+         * to connect to the app.</p> <p>You can restrict access to this API and to the URL
+         * that it returns to a list of IP addresses, Amazon VPCs or Amazon VPC Endpoints
+         * that you specify. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
          * to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .</p> 
          * <p>The URL that you get from a call to <code>CreatePresignedDomainUrl</code> has
@@ -1860,7 +1859,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a space used for real time collaboration in a Domain.</p><p><h3>See
+         * <p>Creates a space used for real time collaboration in a domain.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace">AWS
          * API Reference</a></p>
@@ -2103,7 +2102,7 @@ namespace SageMaker
          * onboards to a domain. If an administrator invites a person by email or imports
          * them from IAM Identity Center, a user profile is automatically created. A user
          * profile is the primary holder of settings for an individual user and has a
-         * reference to the user's private Amazon Elastic File System (EFS) home directory.
+         * reference to the user's private Amazon Elastic File System home directory.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile">AWS
          * API Reference</a></p>
@@ -2827,6 +2826,36 @@ namespace SageMaker
         void DeleteHumanTaskUiAsync(const DeleteHumanTaskUiRequestT& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::DeleteHumanTaskUi, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a hyperparameter tuning job. The
+         * <code>DeleteHyperParameterTuningJob</code> API deletes only the tuning job entry
+         * that was created in SageMaker when you called the
+         * <code>CreateHyperParameterTuningJob</code> API. It does not delete training
+         * jobs, artifacts, or the IAM role that you specified when creating the
+         * model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHyperParameterTuningJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHyperParameterTuningJobOutcome DeleteHyperParameterTuningJob(const Model::DeleteHyperParameterTuningJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteHyperParameterTuningJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteHyperParameterTuningJobRequestT = Model::DeleteHyperParameterTuningJobRequest>
+        Model::DeleteHyperParameterTuningJobOutcomeCallable DeleteHyperParameterTuningJobCallable(const DeleteHyperParameterTuningJobRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DeleteHyperParameterTuningJob, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteHyperParameterTuningJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteHyperParameterTuningJobRequestT = Model::DeleteHyperParameterTuningJobRequest>
+        void DeleteHyperParameterTuningJobAsync(const DeleteHyperParameterTuningJobRequestT& request, const DeleteHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DeleteHyperParameterTuningJob, request, handler, context);
         }
 
         /**
@@ -8356,13 +8385,16 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deploys the new <code>EndpointConfig</code> specified in the request,
-         * switches to using newly created endpoint, and then deletes resources provisioned
-         * for the endpoint using the previous <code>EndpointConfig</code> (there is no
-         * availability loss). </p> <p>When SageMaker receives the request, it sets the
-         * endpoint status to <code>Updating</code>. After updating the endpoint, it sets
-         * the status to <code>InService</code>. To check the status of an endpoint, use
-         * the <a
+         * <p>Deploys the <code>EndpointConfig</code> specified in the request to a new
+         * fleet of instances. SageMaker shifts endpoint traffic to the new instances with
+         * the updated endpoint configuration and then deletes the old instances using the
+         * previous <code>EndpointConfig</code> (there is no availability loss). For more
+         * information about how to control the update and traffic shifting process, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails.html">
+         * Update models in production</a>.</p> <p>When SageMaker receives the request, it
+         * sets the endpoint status to <code>Updating</code>. After updating the endpoint,
+         * it sets the status to <code>InService</code>. To check the status of an
+         * endpoint, use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API. </p>  <p>You must not delete an <code>EndpointConfig</code> in use by
          * an endpoint that is live or while the <code>UpdateEndpoint</code> or

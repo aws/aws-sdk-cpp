@@ -100,6 +100,63 @@ namespace Model
      */
     inline UserSetting& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the number of characters that can be copied by end users from the
+     * local device to the remote session, and to the local device from the remote
+     * session.</p> <p>This can be specified only for the
+     * <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and
+     * <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p> <p>This defaults to
+     * 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>.
+     * This can't be specified when the permission is <code>DISABLED</code>. </p>
+     * <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is
+     * not supported on Elastic fleets.</p> <p>The value can be between 1 and
+     * 20,971,520 (20 MB).</p>
+     */
+    inline int GetMaximumLength() const{ return m_maximumLength; }
+
+    /**
+     * <p>Specifies the number of characters that can be copied by end users from the
+     * local device to the remote session, and to the local device from the remote
+     * session.</p> <p>This can be specified only for the
+     * <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and
+     * <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p> <p>This defaults to
+     * 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>.
+     * This can't be specified when the permission is <code>DISABLED</code>. </p>
+     * <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is
+     * not supported on Elastic fleets.</p> <p>The value can be between 1 and
+     * 20,971,520 (20 MB).</p>
+     */
+    inline bool MaximumLengthHasBeenSet() const { return m_maximumLengthHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of characters that can be copied by end users from the
+     * local device to the remote session, and to the local device from the remote
+     * session.</p> <p>This can be specified only for the
+     * <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and
+     * <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p> <p>This defaults to
+     * 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>.
+     * This can't be specified when the permission is <code>DISABLED</code>. </p>
+     * <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is
+     * not supported on Elastic fleets.</p> <p>The value can be between 1 and
+     * 20,971,520 (20 MB).</p>
+     */
+    inline void SetMaximumLength(int value) { m_maximumLengthHasBeenSet = true; m_maximumLength = value; }
+
+    /**
+     * <p>Specifies the number of characters that can be copied by end users from the
+     * local device to the remote session, and to the local device from the remote
+     * session.</p> <p>This can be specified only for the
+     * <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and
+     * <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p> <p>This defaults to
+     * 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>.
+     * This can't be specified when the permission is <code>DISABLED</code>. </p>
+     * <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is
+     * not supported on Elastic fleets.</p> <p>The value can be between 1 and
+     * 20,971,520 (20 MB).</p>
+     */
+    inline UserSetting& WithMaximumLength(int value) { SetMaximumLength(value); return *this;}
+
   private:
 
     Action m_action;
@@ -107,6 +164,9 @@ namespace Model
 
     Permission m_permission;
     bool m_permissionHasBeenSet = false;
+
+    int m_maximumLength;
+    bool m_maximumLengthHasBeenSet = false;
   };
 
 } // namespace Model

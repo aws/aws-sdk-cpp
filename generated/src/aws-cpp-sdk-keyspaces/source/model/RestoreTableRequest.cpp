@@ -21,7 +21,9 @@ RestoreTableRequest::RestoreTableRequest() :
     m_capacitySpecificationOverrideHasBeenSet(false),
     m_encryptionSpecificationOverrideHasBeenSet(false),
     m_pointInTimeRecoveryOverrideHasBeenSet(false),
-    m_tagsOverrideHasBeenSet(false)
+    m_tagsOverrideHasBeenSet(false),
+    m_autoScalingSpecificationHasBeenSet(false),
+    m_replicaSpecificationsHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,23 @@ Aws::String RestoreTableRequest::SerializePayload() const
      tagsOverrideJsonList[tagsOverrideIndex].AsObject(m_tagsOverride[tagsOverrideIndex].Jsonize());
    }
    payload.WithArray("tagsOverride", std::move(tagsOverrideJsonList));
+
+  }
+
+  if(m_autoScalingSpecificationHasBeenSet)
+  {
+   payload.WithObject("autoScalingSpecification", m_autoScalingSpecification.Jsonize());
+
+  }
+
+  if(m_replicaSpecificationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> replicaSpecificationsJsonList(m_replicaSpecifications.size());
+   for(unsigned replicaSpecificationsIndex = 0; replicaSpecificationsIndex < replicaSpecificationsJsonList.GetLength(); ++replicaSpecificationsIndex)
+   {
+     replicaSpecificationsJsonList[replicaSpecificationsIndex].AsObject(m_replicaSpecifications[replicaSpecificationsIndex].Jsonize());
+   }
+   payload.WithArray("replicaSpecifications", std::move(replicaSpecificationsJsonList));
 
   }
 

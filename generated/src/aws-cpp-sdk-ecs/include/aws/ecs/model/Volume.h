@@ -28,16 +28,17 @@ namespace Model
 {
 
   /**
-   * <p>A data volume that's used in a task definition. For tasks that use the Amazon
-   * Elastic File System (Amazon EFS), specify an
-   * <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for
-   * Windows File Server file system, specify a
-   * <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a
-   * Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that
-   * use a bind mount host volume, specify a <code>host</code> and optional
-   * <code>sourcePath</code>. For more information, see <a
+   * <p>The data volume configuration for tasks launched using this task definition.
+   * Specifying a volume configuration in a task definition is optional. The volume
+   * configuration may contain multiple volumes but only one volume configured at
+   * launch is supported. Each volume defined in the volume configuration may only
+   * specify a <code>name</code> and one of either <code>configuredAtLaunch</code>,
+   * <code>dockerVolumeConfiguration</code>, <code>efsVolumeConfiguration</code>,
+   * <code>fsxWindowsFileServerVolumeConfiguration</code>, or <code>host</code>. If
+   * an empty volume configuration is specified, by default Amazon ECS uses a host
+   * volume. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
-   * Data Volumes in Tasks</a>.</p><p><h3>See Also:</h3>   <a
+   * data volumes in tasks</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume">AWS API
    * Reference</a></p>
    */
@@ -52,73 +53,105 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
-     * volume.</p>
+     * underscores, and hyphens are allowed.</p> <p>When using a volume configured at
+     * launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or
+     * <code>TaskVolumeConfiguration</code> parameter when creating your service or
+     * standalone task.</p> <p>For all other types of volumes, this name is referenced
+     * in the <code>sourceVolume</code> parameter of the <code>mountPoints</code>
+     * object in the container definition.</p> <p>When a volume is using the
+     * <code>efsVolumeConfiguration</code>, the name is required.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
-     * volume.</p>
+     * underscores, and hyphens are allowed.</p> <p>When using a volume configured at
+     * launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or
+     * <code>TaskVolumeConfiguration</code> parameter when creating your service or
+     * standalone task.</p> <p>For all other types of volumes, this name is referenced
+     * in the <code>sourceVolume</code> parameter of the <code>mountPoints</code>
+     * object in the container definition.</p> <p>When a volume is using the
+     * <code>efsVolumeConfiguration</code>, the name is required.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
-     * volume.</p>
+     * underscores, and hyphens are allowed.</p> <p>When using a volume configured at
+     * launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or
+     * <code>TaskVolumeConfiguration</code> parameter when creating your service or
+     * standalone task.</p> <p>For all other types of volumes, this name is referenced
+     * in the <code>sourceVolume</code> parameter of the <code>mountPoints</code>
+     * object in the container definition.</p> <p>When a volume is using the
+     * <code>efsVolumeConfiguration</code>, the name is required.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
-     * volume.</p>
+     * underscores, and hyphens are allowed.</p> <p>When using a volume configured at
+     * launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or
+     * <code>TaskVolumeConfiguration</code> parameter when creating your service or
+     * standalone task.</p> <p>For all other types of volumes, this name is referenced
+     * in the <code>sourceVolume</code> parameter of the <code>mountPoints</code>
+     * object in the container definition.</p> <p>When a volume is using the
+     * <code>efsVolumeConfiguration</code>, the name is required.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
-     * volume.</p>
+     * underscores, and hyphens are allowed.</p> <p>When using a volume configured at
+     * launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or
+     * <code>TaskVolumeConfiguration</code> parameter when creating your service or
+     * standalone task.</p> <p>For all other types of volumes, this name is referenced
+     * in the <code>sourceVolume</code> parameter of the <code>mountPoints</code>
+     * object in the container definition.</p> <p>When a volume is using the
+     * <code>efsVolumeConfiguration</code>, the name is required.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
-     * volume.</p>
+     * underscores, and hyphens are allowed.</p> <p>When using a volume configured at
+     * launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or
+     * <code>TaskVolumeConfiguration</code> parameter when creating your service or
+     * standalone task.</p> <p>For all other types of volumes, this name is referenced
+     * in the <code>sourceVolume</code> parameter of the <code>mountPoints</code>
+     * object in the container definition.</p> <p>When a volume is using the
+     * <code>efsVolumeConfiguration</code>, the name is required.</p>
      */
     inline Volume& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
-     * volume.</p>
+     * underscores, and hyphens are allowed.</p> <p>When using a volume configured at
+     * launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or
+     * <code>TaskVolumeConfiguration</code> parameter when creating your service or
+     * standalone task.</p> <p>For all other types of volumes, this name is referenced
+     * in the <code>sourceVolume</code> parameter of the <code>mountPoints</code>
+     * object in the container definition.</p> <p>When a volume is using the
+     * <code>efsVolumeConfiguration</code>, the name is required.</p>
      */
     inline Volume& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
-     * volume.</p>
+     * underscores, and hyphens are allowed.</p> <p>When using a volume configured at
+     * launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or
+     * <code>TaskVolumeConfiguration</code> parameter when creating your service or
+     * standalone task.</p> <p>For all other types of volumes, this name is referenced
+     * in the <code>sourceVolume</code> parameter of the <code>mountPoints</code>
+     * object in the container definition.</p> <p>When a volume is using the
+     * <code>efsVolumeConfiguration</code>, the name is required.</p>
      */
     inline Volume& WithName(const char* value) { SetName(value); return *this;}
 
@@ -336,6 +369,55 @@ namespace Model
      */
     inline Volume& WithFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration&& value) { SetFsxWindowsFileServerVolumeConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the volume should be configured at launch time. This is
+     * used to create Amazon EBS volumes for standalone tasks or tasks created as part
+     * of a service. Each task definition revision may only have one volume configured
+     * at launch in the volume configuration.</p> <p>To configure a volume at launch
+     * time, use this task definition revision and specify a
+     * <code>volumeConfigurations</code> object when calling the
+     * <code>CreateService</code>, <code>UpdateService</code>, <code>RunTask</code> or
+     * <code>StartTask</code> APIs.</p>
+     */
+    inline bool GetConfiguredAtLaunch() const{ return m_configuredAtLaunch; }
+
+    /**
+     * <p>Indicates whether the volume should be configured at launch time. This is
+     * used to create Amazon EBS volumes for standalone tasks or tasks created as part
+     * of a service. Each task definition revision may only have one volume configured
+     * at launch in the volume configuration.</p> <p>To configure a volume at launch
+     * time, use this task definition revision and specify a
+     * <code>volumeConfigurations</code> object when calling the
+     * <code>CreateService</code>, <code>UpdateService</code>, <code>RunTask</code> or
+     * <code>StartTask</code> APIs.</p>
+     */
+    inline bool ConfiguredAtLaunchHasBeenSet() const { return m_configuredAtLaunchHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the volume should be configured at launch time. This is
+     * used to create Amazon EBS volumes for standalone tasks or tasks created as part
+     * of a service. Each task definition revision may only have one volume configured
+     * at launch in the volume configuration.</p> <p>To configure a volume at launch
+     * time, use this task definition revision and specify a
+     * <code>volumeConfigurations</code> object when calling the
+     * <code>CreateService</code>, <code>UpdateService</code>, <code>RunTask</code> or
+     * <code>StartTask</code> APIs.</p>
+     */
+    inline void SetConfiguredAtLaunch(bool value) { m_configuredAtLaunchHasBeenSet = true; m_configuredAtLaunch = value; }
+
+    /**
+     * <p>Indicates whether the volume should be configured at launch time. This is
+     * used to create Amazon EBS volumes for standalone tasks or tasks created as part
+     * of a service. Each task definition revision may only have one volume configured
+     * at launch in the volume configuration.</p> <p>To configure a volume at launch
+     * time, use this task definition revision and specify a
+     * <code>volumeConfigurations</code> object when calling the
+     * <code>CreateService</code>, <code>UpdateService</code>, <code>RunTask</code> or
+     * <code>StartTask</code> APIs.</p>
+     */
+    inline Volume& WithConfiguredAtLaunch(bool value) { SetConfiguredAtLaunch(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -352,6 +434,9 @@ namespace Model
 
     FSxWindowsFileServerVolumeConfiguration m_fsxWindowsFileServerVolumeConfiguration;
     bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = false;
+
+    bool m_configuredAtLaunch;
+    bool m_configuredAtLaunchHasBeenSet = false;
   };
 
 } // namespace Model

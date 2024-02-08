@@ -21,7 +21,8 @@ namespace Model
     Boolean,
     DateTime,
     SingleSelect,
-    Url
+    Url,
+    User
   };
 
 namespace FieldTypeMapper

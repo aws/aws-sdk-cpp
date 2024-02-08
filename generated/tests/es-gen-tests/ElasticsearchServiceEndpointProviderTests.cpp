@@ -303,7 +303,7 @@ static const Aws::Vector<ElasticsearchServiceEndpointProviderEndpointTestCase> T
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://es.us-east-1.api.aws",
+    {{/*epUrl*/"https://aos.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -348,7 +348,7 @@ static const Aws::Vector<ElasticsearchServiceEndpointProviderEndpointTestCase> T
   {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://es.cn-north-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://aos.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
@@ -402,7 +402,7 @@ static const Aws::Vector<ElasticsearchServiceEndpointProviderEndpointTestCase> T
   {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://es.us-gov-east-1.api.aws",
+    {{/*epUrl*/"https://aos.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

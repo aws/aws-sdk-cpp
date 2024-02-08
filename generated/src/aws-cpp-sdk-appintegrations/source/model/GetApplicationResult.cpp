@@ -65,24 +65,6 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("Subscriptions"))
-  {
-    Aws::Utils::Array<JsonView> subscriptionsJsonList = jsonValue.GetArray("Subscriptions");
-    for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
-    {
-      m_subscriptions.push_back(subscriptionsJsonList[subscriptionsIndex].AsObject());
-    }
-  }
-
-  if(jsonValue.ValueExists("Publications"))
-  {
-    Aws::Utils::Array<JsonView> publicationsJsonList = jsonValue.GetArray("Publications");
-    for(unsigned publicationsIndex = 0; publicationsIndex < publicationsJsonList.GetLength(); ++publicationsIndex)
-    {
-      m_publications.push_back(publicationsJsonList[publicationsIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
@@ -101,6 +83,15 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("Permissions"))
+  {
+    Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
+    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
+    {
+      m_permissions.push_back(permissionsJsonList[permissionsIndex].AsString());
     }
   }
 

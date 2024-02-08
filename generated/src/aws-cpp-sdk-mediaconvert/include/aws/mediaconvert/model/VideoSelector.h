@@ -459,6 +459,31 @@ namespace Model
 
 
     /**
+     * Specify the maximum mastering display luminance. Enter an integer from 0 to
+     * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+     */
+    inline int GetMaxLuminance() const{ return m_maxLuminance; }
+
+    /**
+     * Specify the maximum mastering display luminance. Enter an integer from 0 to
+     * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+     */
+    inline bool MaxLuminanceHasBeenSet() const { return m_maxLuminanceHasBeenSet; }
+
+    /**
+     * Specify the maximum mastering display luminance. Enter an integer from 0 to
+     * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+     */
+    inline void SetMaxLuminance(int value) { m_maxLuminanceHasBeenSet = true; m_maxLuminance = value; }
+
+    /**
+     * Specify the maximum mastering display luminance. Enter an integer from 0 to
+     * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+     */
+    inline VideoSelector& WithMaxLuminance(int value) { SetMaxLuminance(value); return *this;}
+
+
+    /**
      * Use this setting if your input has video and audio durations that don't align,
      * and your output or player has strict alignment requirements. Examples: Input
      * audio track has a delayed start. Input video track ends before audio ends. When
@@ -750,6 +775,9 @@ namespace Model
 
     Hdr10Metadata m_hdr10Metadata;
     bool m_hdr10MetadataHasBeenSet = false;
+
+    int m_maxLuminance;
+    bool m_maxLuminanceHasBeenSet = false;
 
     PadVideo m_padVideo;
     bool m_padVideoHasBeenSet = false;

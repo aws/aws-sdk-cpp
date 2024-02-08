@@ -28,12 +28,10 @@ namespace Model
   class StructValue;
 
   /**
-   * <p>Contains the value of a column.</p> <pre><code> &lt;note&gt; &lt;p&gt;This
-   * data structure is only used with the deprecated
-   * &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the
-   * &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or
-   * &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt;
-   * &lt;/note&gt; </code></pre><p><h3>See Also:</h3>   <a
+   * <p>Contains the value of a column.</p>  <p>This data structure is only
+   * used with the deprecated <code>ExecuteSql</code> operation. Use the
+   * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation
+   * instead.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Value">AWS API
    * Reference</a></p>
    */

@@ -3005,6 +3005,33 @@ namespace Redshift
         }
 
         /**
+         * <p>List the Amazon Redshift Advisor recommendations for one or multiple Amazon
+         * Redshift clusters in an Amazon Web Services account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ListRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRecommendationsOutcome ListRecommendations(const Model::ListRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRecommendationsRequestT = Model::ListRecommendationsRequest>
+        Model::ListRecommendationsOutcomeCallable ListRecommendationsCallable(const ListRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::ListRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for ListRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRecommendationsRequestT = Model::ListRecommendationsRequest>
+        void ListRecommendationsAsync(const ListRecommendationsRequestT& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::ListRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>This operation is retired. Calling this operation does not change AQUA
          * configuration. Amazon Redshift automatically determines whether to use AQUA
          * (Advanced Query Accelerator). </p><p><h3>See Also:</h3>   <a

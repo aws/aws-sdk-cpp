@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int S3Object_HASH = HashingUtils::HashString("S3Object");
+        static const int S3Prefix_HASH = HashingUtils::HashString("S3Prefix");
 
 
         AdditionalS3DataSourceDataType GetAdditionalS3DataSourceDataTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == S3Object_HASH)
           {
             return AdditionalS3DataSourceDataType::S3Object;
+          }
+          else if (hashCode == S3Prefix_HASH)
+          {
+            return AdditionalS3DataSourceDataType::S3Prefix;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case AdditionalS3DataSourceDataType::S3Object:
             return "S3Object";
+          case AdditionalS3DataSourceDataType::S3Prefix:
+            return "S3Prefix";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

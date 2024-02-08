@@ -652,24 +652,27 @@ namespace Model
      * <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      * <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS,
-     * Route 53 then checks the health of the endpoint.</p>  <p>If you don't
-     * specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send
-     * health checks to the endpoint. If there's no resource record set with a type of
-     * A for the name that you specify for <code>FullyQualifiedDomainName</code>, the
-     * health check fails with a "DNS resolution failed" error.</p>  <p>If you
-     * want to check the health of weighted, latency, or failover resource record sets
-     * and you choose to specify the endpoint only by
-     * <code>FullyQualifiedDomainName</code>, we recommend that you create a separate
-     * health check for each endpoint. For example, create a health check for each HTTP
-     * server that is serving content for www.example.com. For the value of
-     * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
-     * record sets (www.example.com).</p>  <p>In this configuration, if the
-     * value of <code>FullyQualifiedDomainName</code> matches the name of the resource
-     * record sets and you then associate the health check with those resource record
-     * sets, health check results will be unpredictable.</p>  <p>In
-     * addition, if the value of <code>Type</code> is <code>HTTP</code>,
-     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * Route 53 then checks the health of the endpoint.</p> <p>If you don't specify a
+     * value for <code>IPAddress</code>, you can’t update the health check to remove
+     * the <code>FullyQualifiedDomainName</code>; if you don’t specify a value for
+     * <code>IPAddress</code> on creation, a <code>FullyQualifiedDomainName</code> is
+     * required.</p>  <p>If you don't specify a value for <code>IPAddress</code>,
+     * Route 53 uses only IPv4 to send health checks to the endpoint. If there's no
+     * resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
+     * resolution failed" error.</p>  <p>If you want to check the health of
+     * weighted, latency, or failover resource record sets and you choose to specify
+     * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
+     * you create a separate health check for each endpoint. For example, create a
+     * health check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
+     * of the server (such as <code>us-east-2-www.example.com</code>), not the name of
+     * the resource record sets (www.example.com).</p>  <p>In this
+     * configuration, if the value of <code>FullyQualifiedDomainName</code> matches the
+     * name of the resource record sets and you then associate the health check with
+     * those resource record sets, health check results will be unpredictable.</p>
+     *  <p>In addition, if the value of <code>Type</code> is
+     * <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
      * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it
      * does when you specify a value for <code>IPAddress</code>. If the value of
@@ -708,24 +711,27 @@ namespace Model
      * <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      * <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS,
-     * Route 53 then checks the health of the endpoint.</p>  <p>If you don't
-     * specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send
-     * health checks to the endpoint. If there's no resource record set with a type of
-     * A for the name that you specify for <code>FullyQualifiedDomainName</code>, the
-     * health check fails with a "DNS resolution failed" error.</p>  <p>If you
-     * want to check the health of weighted, latency, or failover resource record sets
-     * and you choose to specify the endpoint only by
-     * <code>FullyQualifiedDomainName</code>, we recommend that you create a separate
-     * health check for each endpoint. For example, create a health check for each HTTP
-     * server that is serving content for www.example.com. For the value of
-     * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
-     * record sets (www.example.com).</p>  <p>In this configuration, if the
-     * value of <code>FullyQualifiedDomainName</code> matches the name of the resource
-     * record sets and you then associate the health check with those resource record
-     * sets, health check results will be unpredictable.</p>  <p>In
-     * addition, if the value of <code>Type</code> is <code>HTTP</code>,
-     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * Route 53 then checks the health of the endpoint.</p> <p>If you don't specify a
+     * value for <code>IPAddress</code>, you can’t update the health check to remove
+     * the <code>FullyQualifiedDomainName</code>; if you don’t specify a value for
+     * <code>IPAddress</code> on creation, a <code>FullyQualifiedDomainName</code> is
+     * required.</p>  <p>If you don't specify a value for <code>IPAddress</code>,
+     * Route 53 uses only IPv4 to send health checks to the endpoint. If there's no
+     * resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
+     * resolution failed" error.</p>  <p>If you want to check the health of
+     * weighted, latency, or failover resource record sets and you choose to specify
+     * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
+     * you create a separate health check for each endpoint. For example, create a
+     * health check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
+     * of the server (such as <code>us-east-2-www.example.com</code>), not the name of
+     * the resource record sets (www.example.com).</p>  <p>In this
+     * configuration, if the value of <code>FullyQualifiedDomainName</code> matches the
+     * name of the resource record sets and you then associate the health check with
+     * those resource record sets, health check results will be unpredictable.</p>
+     *  <p>In addition, if the value of <code>Type</code> is
+     * <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
      * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it
      * does when you specify a value for <code>IPAddress</code>. If the value of
@@ -764,24 +770,27 @@ namespace Model
      * <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      * <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS,
-     * Route 53 then checks the health of the endpoint.</p>  <p>If you don't
-     * specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send
-     * health checks to the endpoint. If there's no resource record set with a type of
-     * A for the name that you specify for <code>FullyQualifiedDomainName</code>, the
-     * health check fails with a "DNS resolution failed" error.</p>  <p>If you
-     * want to check the health of weighted, latency, or failover resource record sets
-     * and you choose to specify the endpoint only by
-     * <code>FullyQualifiedDomainName</code>, we recommend that you create a separate
-     * health check for each endpoint. For example, create a health check for each HTTP
-     * server that is serving content for www.example.com. For the value of
-     * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
-     * record sets (www.example.com).</p>  <p>In this configuration, if the
-     * value of <code>FullyQualifiedDomainName</code> matches the name of the resource
-     * record sets and you then associate the health check with those resource record
-     * sets, health check results will be unpredictable.</p>  <p>In
-     * addition, if the value of <code>Type</code> is <code>HTTP</code>,
-     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * Route 53 then checks the health of the endpoint.</p> <p>If you don't specify a
+     * value for <code>IPAddress</code>, you can’t update the health check to remove
+     * the <code>FullyQualifiedDomainName</code>; if you don’t specify a value for
+     * <code>IPAddress</code> on creation, a <code>FullyQualifiedDomainName</code> is
+     * required.</p>  <p>If you don't specify a value for <code>IPAddress</code>,
+     * Route 53 uses only IPv4 to send health checks to the endpoint. If there's no
+     * resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
+     * resolution failed" error.</p>  <p>If you want to check the health of
+     * weighted, latency, or failover resource record sets and you choose to specify
+     * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
+     * you create a separate health check for each endpoint. For example, create a
+     * health check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
+     * of the server (such as <code>us-east-2-www.example.com</code>), not the name of
+     * the resource record sets (www.example.com).</p>  <p>In this
+     * configuration, if the value of <code>FullyQualifiedDomainName</code> matches the
+     * name of the resource record sets and you then associate the health check with
+     * those resource record sets, health check results will be unpredictable.</p>
+     *  <p>In addition, if the value of <code>Type</code> is
+     * <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
      * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it
      * does when you specify a value for <code>IPAddress</code>. If the value of
@@ -820,24 +829,27 @@ namespace Model
      * <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      * <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS,
-     * Route 53 then checks the health of the endpoint.</p>  <p>If you don't
-     * specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send
-     * health checks to the endpoint. If there's no resource record set with a type of
-     * A for the name that you specify for <code>FullyQualifiedDomainName</code>, the
-     * health check fails with a "DNS resolution failed" error.</p>  <p>If you
-     * want to check the health of weighted, latency, or failover resource record sets
-     * and you choose to specify the endpoint only by
-     * <code>FullyQualifiedDomainName</code>, we recommend that you create a separate
-     * health check for each endpoint. For example, create a health check for each HTTP
-     * server that is serving content for www.example.com. For the value of
-     * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
-     * record sets (www.example.com).</p>  <p>In this configuration, if the
-     * value of <code>FullyQualifiedDomainName</code> matches the name of the resource
-     * record sets and you then associate the health check with those resource record
-     * sets, health check results will be unpredictable.</p>  <p>In
-     * addition, if the value of <code>Type</code> is <code>HTTP</code>,
-     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * Route 53 then checks the health of the endpoint.</p> <p>If you don't specify a
+     * value for <code>IPAddress</code>, you can’t update the health check to remove
+     * the <code>FullyQualifiedDomainName</code>; if you don’t specify a value for
+     * <code>IPAddress</code> on creation, a <code>FullyQualifiedDomainName</code> is
+     * required.</p>  <p>If you don't specify a value for <code>IPAddress</code>,
+     * Route 53 uses only IPv4 to send health checks to the endpoint. If there's no
+     * resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
+     * resolution failed" error.</p>  <p>If you want to check the health of
+     * weighted, latency, or failover resource record sets and you choose to specify
+     * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
+     * you create a separate health check for each endpoint. For example, create a
+     * health check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
+     * of the server (such as <code>us-east-2-www.example.com</code>), not the name of
+     * the resource record sets (www.example.com).</p>  <p>In this
+     * configuration, if the value of <code>FullyQualifiedDomainName</code> matches the
+     * name of the resource record sets and you then associate the health check with
+     * those resource record sets, health check results will be unpredictable.</p>
+     *  <p>In addition, if the value of <code>Type</code> is
+     * <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
      * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it
      * does when you specify a value for <code>IPAddress</code>. If the value of
@@ -876,24 +888,27 @@ namespace Model
      * <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      * <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS,
-     * Route 53 then checks the health of the endpoint.</p>  <p>If you don't
-     * specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send
-     * health checks to the endpoint. If there's no resource record set with a type of
-     * A for the name that you specify for <code>FullyQualifiedDomainName</code>, the
-     * health check fails with a "DNS resolution failed" error.</p>  <p>If you
-     * want to check the health of weighted, latency, or failover resource record sets
-     * and you choose to specify the endpoint only by
-     * <code>FullyQualifiedDomainName</code>, we recommend that you create a separate
-     * health check for each endpoint. For example, create a health check for each HTTP
-     * server that is serving content for www.example.com. For the value of
-     * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
-     * record sets (www.example.com).</p>  <p>In this configuration, if the
-     * value of <code>FullyQualifiedDomainName</code> matches the name of the resource
-     * record sets and you then associate the health check with those resource record
-     * sets, health check results will be unpredictable.</p>  <p>In
-     * addition, if the value of <code>Type</code> is <code>HTTP</code>,
-     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * Route 53 then checks the health of the endpoint.</p> <p>If you don't specify a
+     * value for <code>IPAddress</code>, you can’t update the health check to remove
+     * the <code>FullyQualifiedDomainName</code>; if you don’t specify a value for
+     * <code>IPAddress</code> on creation, a <code>FullyQualifiedDomainName</code> is
+     * required.</p>  <p>If you don't specify a value for <code>IPAddress</code>,
+     * Route 53 uses only IPv4 to send health checks to the endpoint. If there's no
+     * resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
+     * resolution failed" error.</p>  <p>If you want to check the health of
+     * weighted, latency, or failover resource record sets and you choose to specify
+     * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
+     * you create a separate health check for each endpoint. For example, create a
+     * health check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
+     * of the server (such as <code>us-east-2-www.example.com</code>), not the name of
+     * the resource record sets (www.example.com).</p>  <p>In this
+     * configuration, if the value of <code>FullyQualifiedDomainName</code> matches the
+     * name of the resource record sets and you then associate the health check with
+     * those resource record sets, health check results will be unpredictable.</p>
+     *  <p>In addition, if the value of <code>Type</code> is
+     * <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
      * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it
      * does when you specify a value for <code>IPAddress</code>. If the value of
@@ -932,24 +947,27 @@ namespace Model
      * <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      * <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS,
-     * Route 53 then checks the health of the endpoint.</p>  <p>If you don't
-     * specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send
-     * health checks to the endpoint. If there's no resource record set with a type of
-     * A for the name that you specify for <code>FullyQualifiedDomainName</code>, the
-     * health check fails with a "DNS resolution failed" error.</p>  <p>If you
-     * want to check the health of weighted, latency, or failover resource record sets
-     * and you choose to specify the endpoint only by
-     * <code>FullyQualifiedDomainName</code>, we recommend that you create a separate
-     * health check for each endpoint. For example, create a health check for each HTTP
-     * server that is serving content for www.example.com. For the value of
-     * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
-     * record sets (www.example.com).</p>  <p>In this configuration, if the
-     * value of <code>FullyQualifiedDomainName</code> matches the name of the resource
-     * record sets and you then associate the health check with those resource record
-     * sets, health check results will be unpredictable.</p>  <p>In
-     * addition, if the value of <code>Type</code> is <code>HTTP</code>,
-     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * Route 53 then checks the health of the endpoint.</p> <p>If you don't specify a
+     * value for <code>IPAddress</code>, you can’t update the health check to remove
+     * the <code>FullyQualifiedDomainName</code>; if you don’t specify a value for
+     * <code>IPAddress</code> on creation, a <code>FullyQualifiedDomainName</code> is
+     * required.</p>  <p>If you don't specify a value for <code>IPAddress</code>,
+     * Route 53 uses only IPv4 to send health checks to the endpoint. If there's no
+     * resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
+     * resolution failed" error.</p>  <p>If you want to check the health of
+     * weighted, latency, or failover resource record sets and you choose to specify
+     * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
+     * you create a separate health check for each endpoint. For example, create a
+     * health check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
+     * of the server (such as <code>us-east-2-www.example.com</code>), not the name of
+     * the resource record sets (www.example.com).</p>  <p>In this
+     * configuration, if the value of <code>FullyQualifiedDomainName</code> matches the
+     * name of the resource record sets and you then associate the health check with
+     * those resource record sets, health check results will be unpredictable.</p>
+     *  <p>In addition, if the value of <code>Type</code> is
+     * <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
      * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it
      * does when you specify a value for <code>IPAddress</code>. If the value of
@@ -988,24 +1006,27 @@ namespace Model
      * <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      * <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS,
-     * Route 53 then checks the health of the endpoint.</p>  <p>If you don't
-     * specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send
-     * health checks to the endpoint. If there's no resource record set with a type of
-     * A for the name that you specify for <code>FullyQualifiedDomainName</code>, the
-     * health check fails with a "DNS resolution failed" error.</p>  <p>If you
-     * want to check the health of weighted, latency, or failover resource record sets
-     * and you choose to specify the endpoint only by
-     * <code>FullyQualifiedDomainName</code>, we recommend that you create a separate
-     * health check for each endpoint. For example, create a health check for each HTTP
-     * server that is serving content for www.example.com. For the value of
-     * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
-     * record sets (www.example.com).</p>  <p>In this configuration, if the
-     * value of <code>FullyQualifiedDomainName</code> matches the name of the resource
-     * record sets and you then associate the health check with those resource record
-     * sets, health check results will be unpredictable.</p>  <p>In
-     * addition, if the value of <code>Type</code> is <code>HTTP</code>,
-     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * Route 53 then checks the health of the endpoint.</p> <p>If you don't specify a
+     * value for <code>IPAddress</code>, you can’t update the health check to remove
+     * the <code>FullyQualifiedDomainName</code>; if you don’t specify a value for
+     * <code>IPAddress</code> on creation, a <code>FullyQualifiedDomainName</code> is
+     * required.</p>  <p>If you don't specify a value for <code>IPAddress</code>,
+     * Route 53 uses only IPv4 to send health checks to the endpoint. If there's no
+     * resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
+     * resolution failed" error.</p>  <p>If you want to check the health of
+     * weighted, latency, or failover resource record sets and you choose to specify
+     * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
+     * you create a separate health check for each endpoint. For example, create a
+     * health check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
+     * of the server (such as <code>us-east-2-www.example.com</code>), not the name of
+     * the resource record sets (www.example.com).</p>  <p>In this
+     * configuration, if the value of <code>FullyQualifiedDomainName</code> matches the
+     * name of the resource record sets and you then associate the health check with
+     * those resource record sets, health check results will be unpredictable.</p>
+     *  <p>In addition, if the value of <code>Type</code> is
+     * <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
      * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it
      * does when you specify a value for <code>IPAddress</code>. If the value of
@@ -1044,24 +1065,27 @@ namespace Model
      * <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      * <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS,
-     * Route 53 then checks the health of the endpoint.</p>  <p>If you don't
-     * specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send
-     * health checks to the endpoint. If there's no resource record set with a type of
-     * A for the name that you specify for <code>FullyQualifiedDomainName</code>, the
-     * health check fails with a "DNS resolution failed" error.</p>  <p>If you
-     * want to check the health of weighted, latency, or failover resource record sets
-     * and you choose to specify the endpoint only by
-     * <code>FullyQualifiedDomainName</code>, we recommend that you create a separate
-     * health check for each endpoint. For example, create a health check for each HTTP
-     * server that is serving content for www.example.com. For the value of
-     * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
-     * record sets (www.example.com).</p>  <p>In this configuration, if the
-     * value of <code>FullyQualifiedDomainName</code> matches the name of the resource
-     * record sets and you then associate the health check with those resource record
-     * sets, health check results will be unpredictable.</p>  <p>In
-     * addition, if the value of <code>Type</code> is <code>HTTP</code>,
-     * <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
+     * Route 53 then checks the health of the endpoint.</p> <p>If you don't specify a
+     * value for <code>IPAddress</code>, you can’t update the health check to remove
+     * the <code>FullyQualifiedDomainName</code>; if you don’t specify a value for
+     * <code>IPAddress</code> on creation, a <code>FullyQualifiedDomainName</code> is
+     * required.</p>  <p>If you don't specify a value for <code>IPAddress</code>,
+     * Route 53 uses only IPv4 to send health checks to the endpoint. If there's no
+     * resource record set with a type of A for the name that you specify for
+     * <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS
+     * resolution failed" error.</p>  <p>If you want to check the health of
+     * weighted, latency, or failover resource record sets and you choose to specify
+     * the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that
+     * you create a separate health check for each endpoint. For example, create a
+     * health check for each HTTP server that is serving content for www.example.com.
+     * For the value of <code>FullyQualifiedDomainName</code>, specify the domain name
+     * of the server (such as <code>us-east-2-www.example.com</code>), not the name of
+     * the resource record sets (www.example.com).</p>  <p>In this
+     * configuration, if the value of <code>FullyQualifiedDomainName</code> matches the
+     * name of the resource record sets and you then associate the health check with
+     * those resource record sets, health check results will be unpredictable.</p>
+     *  <p>In addition, if the value of <code>Type</code> is
+     * <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
      * <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of
      * <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it
      * does when you specify a value for <code>IPAddress</code>. If the value of

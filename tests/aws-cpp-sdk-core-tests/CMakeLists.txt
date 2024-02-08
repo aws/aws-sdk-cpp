@@ -107,10 +107,6 @@ endif()
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS} ${CLIENT_LIBS})
 
-if(ENABLE_FUNCTIONAL_TESTING)
-    target_link_libraries(${PROJECT_NAME} aws-cpp-sdk-document-test)
-endif()
-
 add_custom_command(TARGET aws-cpp-sdk-core-tests PRE_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
                    ${CMAKE_CURRENT_SOURCE_DIR}/resources ${CMAKE_CURRENT_BINARY_DIR})

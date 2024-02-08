@@ -25,6 +25,7 @@
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ProfilingStatus.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
+#include <aws/sagemaker/model/RemoteDebugConfig.h>
 #include <aws/sagemaker/model/InfraCheckConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
@@ -1672,6 +1673,52 @@ namespace Model
 
 
     /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline const RemoteDebugConfig& GetRemoteDebugConfig() const{ return m_remoteDebugConfig; }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline void SetRemoteDebugConfig(const RemoteDebugConfig& value) { m_remoteDebugConfig = value; }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline void SetRemoteDebugConfig(RemoteDebugConfig&& value) { m_remoteDebugConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline DescribeTrainingJobResult& WithRemoteDebugConfig(const RemoteDebugConfig& value) { SetRemoteDebugConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for remote debugging. To learn more about the remote debugging
+     * functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline DescribeTrainingJobResult& WithRemoteDebugConfig(RemoteDebugConfig&& value) { SetRemoteDebugConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Contains information about the infrastructure health check configuration for
      * the training job.</p>
      */
@@ -1806,6 +1853,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_environment;
 
     RetryStrategy m_retryStrategy;
+
+    RemoteDebugConfig m_remoteDebugConfig;
 
     InfraCheckConfig m_infraCheckConfig;
 

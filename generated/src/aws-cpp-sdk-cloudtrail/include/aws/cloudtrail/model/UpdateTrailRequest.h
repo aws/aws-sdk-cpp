@@ -464,9 +464,7 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
-     * management account can configure a CloudWatch Logs log group for an organization
-     * trail. </p> 
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
      */
     inline const Aws::String& GetCloudWatchLogsLogGroupArn() const{ return m_cloudWatchLogsLogGroupArn; }
 
@@ -474,9 +472,7 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
-     * management account can configure a CloudWatch Logs log group for an organization
-     * trail. </p> 
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
      */
     inline bool CloudWatchLogsLogGroupArnHasBeenSet() const { return m_cloudWatchLogsLogGroupArnHasBeenSet; }
 
@@ -484,9 +480,7 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
-     * management account can configure a CloudWatch Logs log group for an organization
-     * trail. </p> 
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
      */
     inline void SetCloudWatchLogsLogGroupArn(const Aws::String& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = value; }
 
@@ -494,9 +488,7 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
-     * management account can configure a CloudWatch Logs log group for an organization
-     * trail. </p> 
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
      */
     inline void SetCloudWatchLogsLogGroupArn(Aws::String&& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = std::move(value); }
 
@@ -504,9 +496,7 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
-     * management account can configure a CloudWatch Logs log group for an organization
-     * trail. </p> 
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
      */
     inline void SetCloudWatchLogsLogGroupArn(const char* value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn.assign(value); }
 
@@ -514,9 +504,7 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
-     * management account can configure a CloudWatch Logs log group for an organization
-     * trail. </p> 
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
      */
     inline UpdateTrailRequest& WithCloudWatchLogsLogGroupArn(const Aws::String& value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
 
@@ -524,9 +512,7 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
-     * management account can configure a CloudWatch Logs log group for an organization
-     * trail. </p> 
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
      */
     inline UpdateTrailRequest& WithCloudWatchLogsLogGroupArn(Aws::String&& value) { SetCloudWatchLogsLogGroupArn(std::move(value)); return *this;}
 
@@ -534,9 +520,7 @@ namespace Model
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
      * identifier that represents the log group to which CloudTrail logs are delivered.
      * You must use a log group that exists in your account.</p> <p>Not required unless
-     * you specify <code>CloudWatchLogsRoleArn</code>.</p>  <p>Only the
-     * management account can configure a CloudWatch Logs log group for an organization
-     * trail. </p> 
+     * you specify <code>CloudWatchLogsRoleArn</code>.</p>
      */
     inline UpdateTrailRequest& WithCloudWatchLogsLogGroupArn(const char* value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
 

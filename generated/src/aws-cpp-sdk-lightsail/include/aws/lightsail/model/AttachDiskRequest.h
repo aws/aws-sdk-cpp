@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline const Aws::String& GetDiskName() const{ return m_diskName; }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline void SetDiskName(Aws::String&& value) { m_diskNameHasBeenSet = true; m_diskName = std::move(value); }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline void SetDiskName(const char* value) { m_diskNameHasBeenSet = true; m_diskName.assign(value); }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline AttachDiskRequest& WithDiskName(const Aws::String& value) { SetDiskName(value); return *this;}
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline AttachDiskRequest& WithDiskName(Aws::String&& value) { SetDiskName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline AttachDiskRequest& WithDiskName(const char* value) { SetDiskName(value); return *this;}
 
@@ -125,42 +125,42 @@ namespace Model
 
 
     /**
-     * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
      */
     inline const Aws::String& GetDiskPath() const{ return m_diskPath; }
 
     /**
-     * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
      */
     inline bool DiskPathHasBeenSet() const { return m_diskPathHasBeenSet; }
 
     /**
-     * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
      */
     inline void SetDiskPath(const Aws::String& value) { m_diskPathHasBeenSet = true; m_diskPath = value; }
 
     /**
-     * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
      */
     inline void SetDiskPath(Aws::String&& value) { m_diskPathHasBeenSet = true; m_diskPath = std::move(value); }
 
     /**
-     * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
      */
     inline void SetDiskPath(const char* value) { m_diskPathHasBeenSet = true; m_diskPath.assign(value); }
 
     /**
-     * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
      */
     inline AttachDiskRequest& WithDiskPath(const Aws::String& value) { SetDiskPath(value); return *this;}
 
     /**
-     * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
      */
     inline AttachDiskRequest& WithDiskPath(Aws::String&& value) { SetDiskPath(std::move(value)); return *this;}
 
     /**
-     * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
      */
     inline AttachDiskRequest& WithDiskPath(const char* value) { SetDiskPath(value); return *this;}
 

@@ -669,50 +669,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline Environment& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline Environment& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline Environment& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
 
@@ -1702,12 +1694,16 @@ namespace Model
      * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates the request to delete the environment is complete, and the environment
      * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
-     * request failed, but the environment was unable to rollback and is not in a
-     * stable state.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
-     * request to update the environment failed, and the environment has rolled back
-     * successfully and is ready to use.</p> </li> </ul> <p>We recommend reviewing our
-     * troubleshooting guide for a list of common errors and their solutions. For more
-     * information, see <a
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
@@ -1737,12 +1733,16 @@ namespace Model
      * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates the request to delete the environment is complete, and the environment
      * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
-     * request failed, but the environment was unable to rollback and is not in a
-     * stable state.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
-     * request to update the environment failed, and the environment has rolled back
-     * successfully and is ready to use.</p> </li> </ul> <p>We recommend reviewing our
-     * troubleshooting guide for a list of common errors and their solutions. For more
-     * information, see <a
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
@@ -1772,12 +1772,16 @@ namespace Model
      * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates the request to delete the environment is complete, and the environment
      * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
-     * request failed, but the environment was unable to rollback and is not in a
-     * stable state.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
-     * request to update the environment failed, and the environment has rolled back
-     * successfully and is ready to use.</p> </li> </ul> <p>We recommend reviewing our
-     * troubleshooting guide for a list of common errors and their solutions. For more
-     * information, see <a
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
@@ -1807,12 +1811,16 @@ namespace Model
      * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates the request to delete the environment is complete, and the environment
      * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
-     * request failed, but the environment was unable to rollback and is not in a
-     * stable state.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
-     * request to update the environment failed, and the environment has rolled back
-     * successfully and is ready to use.</p> </li> </ul> <p>We recommend reviewing our
-     * troubleshooting guide for a list of common errors and their solutions. For more
-     * information, see <a
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
@@ -1842,12 +1850,16 @@ namespace Model
      * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates the request to delete the environment is complete, and the environment
      * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
-     * request failed, but the environment was unable to rollback and is not in a
-     * stable state.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
-     * request to update the environment failed, and the environment has rolled back
-     * successfully and is ready to use.</p> </li> </ul> <p>We recommend reviewing our
-     * troubleshooting guide for a list of common errors and their solutions. For more
-     * information, see <a
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
@@ -1877,12 +1889,16 @@ namespace Model
      * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
      * Indicates the request to delete the environment is complete, and the environment
      * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
-     * request failed, but the environment was unable to rollback and is not in a
-     * stable state.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
-     * request to update the environment failed, and the environment has rolled back
-     * successfully and is ready to use.</p> </li> </ul> <p>We recommend reviewing our
-     * troubleshooting guide for a list of common errors and their solutions. For more
-     * information, see <a
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
@@ -2044,7 +2060,7 @@ namespace Model
 
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -2052,7 +2068,7 @@ namespace Model
     inline const Aws::String& GetWebserverUrl() const{ return m_webserverUrl; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -2060,7 +2076,7 @@ namespace Model
     inline bool WebserverUrlHasBeenSet() const { return m_webserverUrlHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -2068,7 +2084,7 @@ namespace Model
     inline void SetWebserverUrl(const Aws::String& value) { m_webserverUrlHasBeenSet = true; m_webserverUrl = value; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -2076,7 +2092,7 @@ namespace Model
     inline void SetWebserverUrl(Aws::String&& value) { m_webserverUrlHasBeenSet = true; m_webserverUrl = std::move(value); }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -2084,7 +2100,7 @@ namespace Model
     inline void SetWebserverUrl(const char* value) { m_webserverUrlHasBeenSet = true; m_webserverUrl.assign(value); }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -2092,7 +2108,7 @@ namespace Model
     inline Environment& WithWebserverUrl(const Aws::String& value) { SetWebserverUrl(value); return *this;}
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -2100,7 +2116,7 @@ namespace Model
     inline Environment& WithWebserverUrl(Aws::String&& value) { SetWebserverUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>

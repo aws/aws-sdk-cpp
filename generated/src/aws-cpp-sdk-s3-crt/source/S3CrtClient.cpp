@@ -148,14 +148,22 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* S3CrtClient::SERVICE_NAME = "s3";
-const char* S3CrtClient::ALLOCATION_TAG = "S3CrtClient";
+namespace Aws
+{
+  namespace S3Crt
+  {
+    const char SERVICE_NAME[] = "s3";
+    const char ALLOCATION_TAG[] = "S3CrtClient";
+  }
+}
+const char* S3CrtClient::GetServiceName() {return SERVICE_NAME;}
+const char* S3CrtClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 S3CrtClient::S3CrtClient(const S3CrtClient &rhs) :
     BASECLASS(rhs.m_clientConfiguration,
         Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
-            Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-            Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this),
+            rhs.GetCredentialsProvider(),
+            rhs.m_clientConfiguration.identityProviderSupplier(*this),
             SERVICE_NAME,
             Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
             rhs.m_clientConfiguration.payloadSigningPolicy,
@@ -168,11 +176,51 @@ S3CrtClient::S3CrtClient(const S3CrtClient &rhs) :
     m_identityProvider(rhs.m_identityProvider){}
 
 S3CrtClient& S3CrtClient::operator=(const S3CrtClient &rhs) {
+    m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+          rhs.GetCredentialsProvider(),
+          rhs.m_clientConfiguration.identityProviderSupplier(*this),
+          SERVICE_NAME,
+          Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+          rhs.m_clientConfiguration.payloadSigningPolicy,
+          /*doubleEncodeValue*/ false);
     m_clientConfiguration = rhs.m_clientConfiguration;
     m_executor = rhs.m_executor;
     m_endpointProvider = rhs.m_endpointProvider;
     init(m_clientConfiguration, m_credProvider);
     return *this;
+}
+
+S3CrtClient::S3CrtClient(S3CrtClient &&rhs) :
+    BASECLASS(rhs.m_clientConfiguration,
+        Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+            rhs.GetCredentialsProvider(),
+            rhs.m_clientConfiguration.identityProviderSupplier(*this),
+            SERVICE_NAME,
+            Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+            rhs.m_clientConfiguration.payloadSigningPolicy,
+            /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
+    Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>(),
+    m_clientConfiguration(std::move(rhs.m_clientConfiguration)),
+    m_executor(std::move(rhs.m_clientConfiguration.executor)),
+    m_endpointProvider(std::move(rhs.m_endpointProvider)) {}
+
+S3CrtClient& S3CrtClient::operator=(S3CrtClient &&rhs) {
+  if (&rhs == this) {
+    return *this;
+  }
+  m_signerProvider = Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,
+        rhs.GetCredentialsProvider(),
+        rhs.m_clientConfiguration.identityProviderSupplier(*this),
+        SERVICE_NAME,
+        Aws::Region::ComputeSignerRegion(rhs.m_clientConfiguration.region),
+        rhs.m_clientConfiguration.payloadSigningPolicy,
+        /*doubleEncodeValue*/ false);
+  m_clientConfiguration = std::move(rhs.m_clientConfiguration);
+  m_executor = std::move(rhs.m_executor);
+  m_endpointProvider = std::move(rhs.m_endpointProvider);
+  init(m_clientConfiguration, m_credProvider);
+  return *this;
 }
 
 S3CrtClient::S3CrtClient(const S3Crt::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption, const Aws::Auth::DefaultAWSCredentialsProviderChain& credentialsProvider) :
@@ -492,7 +540,7 @@ static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request,
   {
       receivedHandler(userData->request.get(), userData->response.get(), static_cast<long long>(body->len));
   }
-  AWS_LOGSTREAM_TRACE(S3CrtClient::ALLOCATION_TAG, body->len << " bytes written to response.");
+  AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, body->len << " bytes written to response.");
 
   return AWS_OP_SUCCESS;
 }

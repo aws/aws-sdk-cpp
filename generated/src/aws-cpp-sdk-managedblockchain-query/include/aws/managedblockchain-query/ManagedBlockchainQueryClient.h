@@ -87,8 +87,8 @@ namespace ManagedBlockchainQuery
         /**
          * <p>Gets the token balance for a batch of tokens by using the
          * <code>BatchGetTokenBalance</code> action for every token in the request.</p>
-         *  <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155
-         * token standards are supported.</p> <p><h3>See Also:</h3>   <a
+         *  <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC
+         * 1155 token standards are supported.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/BatchGetTokenBalance">AWS
          * API Reference</a></p>
          */
@@ -145,7 +145,7 @@ namespace ManagedBlockchainQuery
         /**
          * <p>Gets the balance of a specific token, including native tokens, for a given
          * address (wallet or contract) on the blockchain.</p>  <p>Only the native
-         * tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are
+         * tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are
          * supported.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetTokenBalance">AWS
          * API Reference</a></p>
@@ -171,7 +171,11 @@ namespace ManagedBlockchainQuery
         }
 
         /**
-         * <p>Get the details of a transaction.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the details of a transaction.</p>  <p>This action will return
+         * transaction details for all transactions that are <i>confirmed</i> on the
+         * blockchain, even if they have not reached <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetTransaction">AWS
          * API Reference</a></p>
          */
@@ -255,7 +259,11 @@ namespace ManagedBlockchainQuery
 
         /**
          * <p>An array of <code>TransactionEvent</code> objects. Each object contains
-         * details about the transaction event.</p><p><h3>See Also:</h3>   <a
+         * details about the transaction event.</p>  <p>This action will return
+         * transaction details for all transactions that are <i>confirmed</i> on the
+         * blockchain, even if they have not reached <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTransactionEvents">AWS
          * API Reference</a></p>
          */

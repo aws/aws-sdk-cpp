@@ -18,6 +18,7 @@
 #include <aws/rds/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/LocalWriteForwardingStatus.h>
+#include <aws/rds/model/LimitlessDatabase.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterStatusInfo.h>
 #include <aws/rds/model/DBClusterMember.h>
@@ -2079,50 +2080,46 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is
-     * enabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless v1 DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information, see <a
+     * <p>Indicates whether the HTTP endpoint is enabled for an Aurora DB cluster.</p>
+     * <p>When enabled, the HTTP endpoint provides a connectionless web service API
+     * (RDS Data API) for running SQL queries on the DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool GetHttpEndpointEnabled() const{ return m_httpEndpointEnabled; }
 
     /**
-     * <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is
-     * enabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless v1 DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information, see <a
+     * <p>Indicates whether the HTTP endpoint is enabled for an Aurora DB cluster.</p>
+     * <p>When enabled, the HTTP endpoint provides a connectionless web service API
+     * (RDS Data API) for running SQL queries on the DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool HttpEndpointEnabledHasBeenSet() const { return m_httpEndpointEnabledHasBeenSet; }
 
     /**
-     * <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is
-     * enabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless v1 DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information, see <a
+     * <p>Indicates whether the HTTP endpoint is enabled for an Aurora DB cluster.</p>
+     * <p>When enabled, the HTTP endpoint provides a connectionless web service API
+     * (RDS Data API) for running SQL queries on the DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetHttpEndpointEnabled(bool value) { m_httpEndpointEnabledHasBeenSet = true; m_httpEndpointEnabled = value; }
 
     /**
-     * <p>Indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster is
-     * enabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless v1 DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information, see <a
+     * <p>Indicates whether the HTTP endpoint is enabled for an Aurora DB cluster.</p>
+     * <p>When enabled, the HTTP endpoint provides a connectionless web service API
+     * (RDS Data API) for running SQL queries on the DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline DBCluster& WithHttpEndpointEnabled(bool value) { SetHttpEndpointEnabled(value); return *this;}
 
@@ -3316,6 +3313,37 @@ namespace Model
      */
     inline DBCluster& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
 
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline const LimitlessDatabase& GetLimitlessDatabase() const{ return m_limitlessDatabase; }
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline bool LimitlessDatabaseHasBeenSet() const { return m_limitlessDatabaseHasBeenSet; }
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline void SetLimitlessDatabase(const LimitlessDatabase& value) { m_limitlessDatabaseHasBeenSet = true; m_limitlessDatabase = value; }
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline void SetLimitlessDatabase(LimitlessDatabase&& value) { m_limitlessDatabaseHasBeenSet = true; m_limitlessDatabase = std::move(value); }
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline DBCluster& WithLimitlessDatabase(const LimitlessDatabase& value) { SetLimitlessDatabase(value); return *this;}
+
+    /**
+     * <p>The details for Aurora Limitless Database.</p>
+     */
+    inline DBCluster& WithLimitlessDatabase(LimitlessDatabase&& value) { SetLimitlessDatabase(std::move(value)); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -3545,6 +3573,9 @@ namespace Model
 
     Aws::String m_awsBackupRecoveryPointArn;
     bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+
+    LimitlessDatabase m_limitlessDatabase;
+    bool m_limitlessDatabaseHasBeenSet = false;
   };
 
 } // namespace Model

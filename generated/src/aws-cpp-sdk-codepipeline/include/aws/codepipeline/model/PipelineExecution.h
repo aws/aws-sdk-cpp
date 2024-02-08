@@ -9,6 +9,7 @@
 #include <aws/codepipeline/model/PipelineExecutionStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/ExecutionTrigger.h>
+#include <aws/codepipeline/model/ExecutionMode.h>
 #include <aws/codepipeline/model/ArtifactRevision.h>
 #include <aws/codepipeline/model/ResolvedPipelineVariable.h>
 #include <utility>
@@ -375,25 +376,6 @@ namespace Model
     inline PipelineExecution& AddArtifactRevisions(ArtifactRevision&& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions.push_back(std::move(value)); return *this; }
 
 
-    
-    inline const ExecutionTrigger& GetTrigger() const{ return m_trigger; }
-
-    
-    inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
-
-    
-    inline void SetTrigger(const ExecutionTrigger& value) { m_triggerHasBeenSet = true; m_trigger = value; }
-
-    
-    inline void SetTrigger(ExecutionTrigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
-
-    
-    inline PipelineExecution& WithTrigger(const ExecutionTrigger& value) { SetTrigger(value); return *this;}
-
-    
-    inline PipelineExecution& WithTrigger(ExecutionTrigger&& value) { SetTrigger(std::move(value)); return *this;}
-
-
     /**
      * <p>A list of pipeline variables used for the pipeline execution.</p>
      */
@@ -434,6 +416,62 @@ namespace Model
      */
     inline PipelineExecution& AddVariables(ResolvedPipelineVariable&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const ExecutionTrigger& GetTrigger() const{ return m_trigger; }
+
+    
+    inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
+
+    
+    inline void SetTrigger(const ExecutionTrigger& value) { m_triggerHasBeenSet = true; m_trigger = value; }
+
+    
+    inline void SetTrigger(ExecutionTrigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
+
+    
+    inline PipelineExecution& WithTrigger(const ExecutionTrigger& value) { SetTrigger(value); return *this;}
+
+    
+    inline PipelineExecution& WithTrigger(ExecutionTrigger&& value) { SetTrigger(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline const ExecutionMode& GetExecutionMode() const{ return m_executionMode; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline bool ExecutionModeHasBeenSet() const { return m_executionModeHasBeenSet; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline void SetExecutionMode(const ExecutionMode& value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline void SetExecutionMode(ExecutionMode&& value) { m_executionModeHasBeenSet = true; m_executionMode = std::move(value); }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline PipelineExecution& WithExecutionMode(const ExecutionMode& value) { SetExecutionMode(value); return *this;}
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline PipelineExecution& WithExecutionMode(ExecutionMode&& value) { SetExecutionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineName;
@@ -454,11 +492,14 @@ namespace Model
     Aws::Vector<ArtifactRevision> m_artifactRevisions;
     bool m_artifactRevisionsHasBeenSet = false;
 
+    Aws::Vector<ResolvedPipelineVariable> m_variables;
+    bool m_variablesHasBeenSet = false;
+
     ExecutionTrigger m_trigger;
     bool m_triggerHasBeenSet = false;
 
-    Aws::Vector<ResolvedPipelineVariable> m_variables;
-    bool m_variablesHasBeenSet = false;
+    ExecutionMode m_executionMode;
+    bool m_executionModeHasBeenSet = false;
   };
 
 } // namespace Model

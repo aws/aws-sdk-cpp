@@ -177,9 +177,9 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for a Microsoft Azure Blob Storage container that
-         * DataSync can use as a transfer source or destination.</p> <p>Before you begin,
-         * make sure you know <a
+         * <p>Creates a transfer <i>location</i> for a Microsoft Azure Blob Storage
+         * container. DataSync can use this location as a transfer source or
+         * destination.</p> <p>Before you begin, make sure you know <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
          * DataSync accesses Azure Blob Storage</a> and works with <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
@@ -212,10 +212,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an Amazon EFS file system that DataSync can access
-         * for a transfer. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating
-         * a location for Amazon EFS</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a transfer <i>location</i> for an Amazon EFS file system. DataSync
+         * can use this location as a source or destination for transferring data.</p>
+         * <p>Before you begin, make sure that you understand how DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-access">accesses
+         * Amazon EFS file systems</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationEfs">AWS
          * API Reference</a></p>
          */
@@ -240,8 +241,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an Amazon FSx for Lustre file system.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a transfer <i>location</i> for an Amazon FSx for Lustre file system.
+         * DataSync can use this location as a source or destination for transferring
+         * data.</p> <p>Before you begin, make sure that you understand how DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-lustre-location.html#create-lustre-location-access">accesses
+         * FSx for Lustre file systems</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxLustre">AWS
          * API Reference</a></p>
          */
@@ -266,11 +270,12 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that
-         * DataSync can use for a data transfer.</p> <p>Before you begin, make sure that
-         * you understand how DataSync <a
+         * <p>Creates a transfer <i>location</i> for an Amazon FSx for NetApp ONTAP file
+         * system. DataSync can use this location as a source or destination for
+         * transferring data.</p> <p>Before you begin, make sure that you understand how
+         * DataSync <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">accesses
-         * an FSx for ONTAP file system</a>.</p><p><h3>See Also:</h3>   <a
+         * FSx for ONTAP file systems</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">AWS
          * API Reference</a></p>
          */
@@ -295,10 +300,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an Amazon FSx for OpenZFS file system that DataSync
-         * can access for a transfer. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Creating
-         * a location for FSx for OpenZFS</a>.</p>  <p>Request parameters related to
+         * <p>Creates a transfer <i>location</i> for an Amazon FSx for OpenZFS file system.
+         * DataSync can use this location as a source or destination for transferring
+         * data.</p> <p>Before you begin, make sure that you understand how DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html#create-openzfs-access">accesses
+         * FSx for OpenZFS file systems</a>.</p>  <p>Request parameters related to
          * <code>SMB</code> aren't supported with the <code>CreateLocationFsxOpenZfs</code>
          * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOpenZfs">AWS
@@ -325,11 +331,12 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an Amazon FSx for Windows File Server file system
-         * that DataSync can use for a data transfer.</p> <p>Before you begin, make sure
-         * that you understand how DataSync <a
+         * <p>Creates a transfer <i>location</i> for an Amazon FSx for Windows File Server
+         * file system. DataSync can use this location as a source or destination for
+         * transferring data.</p> <p>Before you begin, make sure that you understand how
+         * DataSync <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-location-access">accesses
-         * an FSx for Windows File Server</a>.</p><p><h3>See Also:</h3>   <a
+         * FSx for Windows File Server file systems</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows">AWS
          * API Reference</a></p>
          */
@@ -354,8 +361,12 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for a Hadoop Distributed File System (HDFS).
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a transfer <i>location</i> for a Hadoop Distributed File System
+         * (HDFS). DataSync can use this location as a source or destination for
+         * transferring data.</p> <p>Before you begin, make sure that you understand how
+         * DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-hdfs-location.html#accessing-hdfs">accesses
+         * HDFS clusters</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationHdfs">AWS
          * API Reference</a></p>
          */
@@ -380,13 +391,14 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for a Network File System (NFS) file server that DataSync
-         * can use for a data transfer.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
-         * transfers to or from an NFS file server</a>.</p>  <p>If you're copying
-         * data to or from an Snowcone device, you can also use
-         * <code>CreateLocationNfs</code> to create your transfer location. For more
-         * information, see <a
+         * <p>Creates a transfer <i>location</i> for a Network File System (NFS) file
+         * server. DataSync can use this location as a source or destination for
+         * transferring data.</p> <p>Before you begin, make sure that you understand how
+         * DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">accesses
+         * NFS file servers</a>.</p>  <p>If you're copying data to or from an
+         * Snowcone device, you can also use <code>CreateLocationNfs</code> to create your
+         * transfer location. For more information, see <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring
          * transfers with Snowcone</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
@@ -413,10 +425,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for an object storage system that DataSync can access for
-         * a transfer. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a transfer <i>location</i> for an object storage system. DataSync can
+         * use this location as a source or destination for transferring data.</p>
+         * <p>Before you begin, make sure that you understand the <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html#create-object-location-prerequisites">prerequisites</a>
+         * for DataSync to work with object storage systems.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">AWS
          * API Reference</a></p>
          */
@@ -441,17 +454,17 @@ namespace DataSync
         }
 
         /**
-         * <p>A <i>location</i> is an endpoint for an Amazon S3 bucket. DataSync can use
-         * the location as a source or destination for copying data.</p> 
-         * <p>Before you create your location, make sure that you read the following
-         * sections:</p> <ul> <li> <p> <a
+         * <p>Creates a transfer <i>location</i> for an Amazon S3 bucket. DataSync can use
+         * this location as a source or destination for transferring data.</p> 
+         * <p>Before you begin, make sure that you read the following topics:</p> <ul> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
          * class considerations with Amazon S3 locations</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">Evaluating
          * S3 request costs when using DataSync</a> </p> </li> </ul>  <p> For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Creating
-         * an Amazon S3 location</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html">Configuring
+         * transfers with Amazon S3</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          */
@@ -476,11 +489,12 @@ namespace DataSync
         }
 
         /**
-         * <p>Creates an endpoint for a Server Message Block (SMB) file server that
-         * DataSync can use for a data transfer.</p> <p>Before you begin, make sure that
-         * you understand how DataSync <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses
-         * an SMB file server</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a transfer <i>location</i> for a Server Message Block (SMB) file
+         * server. DataSync can use this location as a source or destination for
+         * transferring data.</p> <p>Before you begin, make sure that you understand how
+         * DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb">accesses
+         * SMB file servers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          */
@@ -569,8 +583,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Deletes the configuration of a location used by DataSync. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a transfer location resource from DataSync. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteLocation">AWS
          * API Reference</a></p>
          */
@@ -595,7 +609,7 @@ namespace DataSync
         }
 
         /**
-         * <p>Deletes an DataSync transfer task.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a transfer task resource from DataSync.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteTask">AWS
          * API Reference</a></p>
          */
@@ -698,8 +712,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata about your DataSync location for an Amazon EFS file
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for an Amazon EFS
+         * file system is configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationEfs">AWS
          * API Reference</a></p>
          */
@@ -724,8 +738,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Provides details about how an DataSync location for an Amazon FSx for Lustre
-         * file system is configured.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for an Amazon FSx
+         * for Lustre file system is configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">AWS
          * API Reference</a></p>
          */
@@ -750,10 +764,10 @@ namespace DataSync
         }
 
         /**
-         * <p>Provides details about how an DataSync location for an Amazon FSx for NetApp
-         * ONTAP file system is configured.</p>  <p>If your location uses SMB, the
-         * <code>DescribeLocationFsxOntap</code> operation doesn't actually return a
-         * <code>Password</code>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for an Amazon FSx
+         * for NetApp ONTAP file system is configured.</p>  <p>If your location uses
+         * SMB, the <code>DescribeLocationFsxOntap</code> operation doesn't actually return
+         * a <code>Password</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOntap">AWS
          * API Reference</a></p>
          */
@@ -778,9 +792,9 @@ namespace DataSync
         }
 
         /**
-         * <p>Provides details about how an DataSync location for an Amazon FSx for OpenZFS
-         * file system is configured.</p>  <p>Response elements related to
-         * <code>SMB</code> aren't supported with the
+         * <p>Provides details about how an DataSync transfer location for an Amazon FSx
+         * for OpenZFS file system is configured.</p>  <p>Response elements related
+         * to <code>SMB</code> aren't supported with the
          * <code>DescribeLocationFsxOpenZfs</code> operation.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOpenZfs">AWS
@@ -807,8 +821,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata about an Amazon FSx for Windows File Server location, such
-         * as information about its path.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for an Amazon FSx
+         * for Windows File Server file system is configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">AWS
          * API Reference</a></p>
          */
@@ -833,8 +847,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata, such as the authentication information about the Hadoop
-         * Distributed File System (HDFS) location. </p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for a Hadoop
+         * Distributed File System (HDFS) is configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationHdfs">AWS
          * API Reference</a></p>
          */
@@ -885,8 +899,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata about your DataSync location for an object storage
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for an object
+         * storage system is configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">AWS
          * API Reference</a></p>
          */
@@ -911,8 +925,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata, such as bucket name, about an Amazon S3 bucket
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for an S3 bucket is
+         * configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationS3">AWS
          * API Reference</a></p>
          */
@@ -937,8 +951,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata, such as the path and user information about an SMB
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about how an DataSync transfer location for a Server Message
+         * Block (SMB) file server is configured.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb">AWS
          * API Reference</a></p>
          */
@@ -1274,7 +1288,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns a list of executed tasks.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of executions for an DataSync transfer task.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListTaskExecutions">AWS
          * API Reference</a></p>
          */
@@ -1710,7 +1725,7 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates the configuration of a DataSync transfer task.</p><p><h3>See
+         * <p>Updates the configuration of an DataSync transfer task.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">AWS
          * API Reference</a></p>
