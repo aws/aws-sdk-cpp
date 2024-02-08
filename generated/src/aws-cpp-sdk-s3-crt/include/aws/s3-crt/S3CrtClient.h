@@ -54,8 +54,8 @@ namespace Aws
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
-        static const char* SERVICE_NAME;
-        static const char* ALLOCATION_TAG;
+        static const char* GetServiceName();
+        static const char* GetAllocationTag();
 
       typedef S3CrtClientConfiguration ClientConfigurationType;
       typedef S3CrtEndpointProvider EndpointProviderType;

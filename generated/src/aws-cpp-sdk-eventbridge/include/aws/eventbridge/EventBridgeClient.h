@@ -35,8 +35,8 @@ namespace EventBridge
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef EventBridgeClientConfiguration ClientConfigurationType;
       typedef EventBridgeEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace EventBridge
         * is not specified, it will be initialized to default values.
         */
         EventBridgeClient(const Aws::EventBridge::EventBridgeClientConfiguration& clientConfiguration = Aws::EventBridge::EventBridgeClientConfiguration(),
-                          std::shared_ptr<EventBridgeEndpointProviderBase> endpointProvider = Aws::MakeShared<EventBridgeEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<EventBridgeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EventBridgeClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<EventBridgeEndpointProviderBase> endpointProvider = Aws::MakeShared<EventBridgeEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<EventBridgeEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::EventBridge::EventBridgeClientConfiguration& clientConfiguration = Aws::EventBridge::EventBridgeClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace EventBridge
         * the default http client factory will be used
         */
         EventBridgeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<EventBridgeEndpointProviderBase> endpointProvider = Aws::MakeShared<EventBridgeEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<EventBridgeEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::EventBridge::EventBridgeClientConfiguration& clientConfiguration = Aws::EventBridge::EventBridgeClientConfiguration());
 
 

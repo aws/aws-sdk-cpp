@@ -31,8 +31,8 @@ namespace TranscribeService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef TranscribeServiceClientConfiguration ClientConfigurationType;
       typedef TranscribeServiceEndpointProvider EndpointProviderType;
@@ -42,14 +42,14 @@ namespace TranscribeService
         * is not specified, it will be initialized to default values.
         */
         TranscribeServiceClient(const Aws::TranscribeService::TranscribeServiceClientConfiguration& clientConfiguration = Aws::TranscribeService::TranscribeServiceClientConfiguration(),
-                                std::shared_ptr<TranscribeServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<TranscribeServiceEndpointProvider>(ALLOCATION_TAG));
+                                std::shared_ptr<TranscribeServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         TranscribeServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                std::shared_ptr<TranscribeServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<TranscribeServiceEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<TranscribeServiceEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::TranscribeService::TranscribeServiceClientConfiguration& clientConfiguration = Aws::TranscribeService::TranscribeServiceClientConfiguration());
 
        /**
@@ -57,7 +57,7 @@ namespace TranscribeService
         * the default http client factory will be used
         */
         TranscribeServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                std::shared_ptr<TranscribeServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<TranscribeServiceEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<TranscribeServiceEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::TranscribeService::TranscribeServiceClientConfiguration& clientConfiguration = Aws::TranscribeService::TranscribeServiceClientConfiguration());
 
 

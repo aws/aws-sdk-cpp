@@ -31,8 +31,8 @@ namespace TranscribeStreamingService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef TranscribeStreamingServiceClientConfiguration ClientConfigurationType;
       typedef TranscribeStreamingServiceEndpointProvider EndpointProviderType;
@@ -42,14 +42,14 @@ namespace TranscribeStreamingService
         * is not specified, it will be initialized to default values.
         */
         TranscribeStreamingServiceClient(const Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration& clientConfiguration = Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration(),
-                                         std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG));
+                                         std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         TranscribeStreamingServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                         std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG),
+                                         std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider = nullptr,
                                          const Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration& clientConfiguration = Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration());
 
        /**
@@ -57,7 +57,7 @@ namespace TranscribeStreamingService
         * the default http client factory will be used
         */
         TranscribeStreamingServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                         std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG),
+                                         std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> endpointProvider = nullptr,
                                          const Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration& clientConfiguration = Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration());
 
 
