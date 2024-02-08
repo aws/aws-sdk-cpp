@@ -24,12 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A pipeline-level variable used for a pipeline execution.</p>  <p>V2
-   * type pipelines, along with triggers on Git tags and pipeline-level variables,
-   * are not currently supported for CloudFormation and CDK resources in
-   * CodePipeline. For more information about V2 type pipelines, see <a
-   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-   * types</a> in the <i>CodePipeline User Guide</i>.</p> <p><h3>See
+   * <p>A pipeline-level variable used for a pipeline execution.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineVariable">AWS
    * API Reference</a></p>

@@ -21,6 +21,7 @@ namespace Model
 StageState::StageState() : 
     m_stageNameHasBeenSet(false),
     m_inboundExecutionHasBeenSet(false),
+    m_inboundExecutionsHasBeenSet(false),
     m_inboundTransitionStateHasBeenSet(false),
     m_actionStatesHasBeenSet(false),
     m_latestExecutionHasBeenSet(false)
@@ -30,6 +31,7 @@ StageState::StageState() :
 StageState::StageState(JsonView jsonValue) : 
     m_stageNameHasBeenSet(false),
     m_inboundExecutionHasBeenSet(false),
+    m_inboundExecutionsHasBeenSet(false),
     m_inboundTransitionStateHasBeenSet(false),
     m_actionStatesHasBeenSet(false),
     m_latestExecutionHasBeenSet(false)
@@ -51,6 +53,16 @@ StageState& StageState::operator =(JsonView jsonValue)
     m_inboundExecution = jsonValue.GetObject("inboundExecution");
 
     m_inboundExecutionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inboundExecutions"))
+  {
+    Aws::Utils::Array<JsonView> inboundExecutionsJsonList = jsonValue.GetArray("inboundExecutions");
+    for(unsigned inboundExecutionsIndex = 0; inboundExecutionsIndex < inboundExecutionsJsonList.GetLength(); ++inboundExecutionsIndex)
+    {
+      m_inboundExecutions.push_back(inboundExecutionsJsonList[inboundExecutionsIndex].AsObject());
+    }
+    m_inboundExecutionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inboundTransitionState"))
@@ -93,6 +105,17 @@ JsonValue StageState::Jsonize() const
   if(m_inboundExecutionHasBeenSet)
   {
    payload.WithObject("inboundExecution", m_inboundExecution.Jsonize());
+
+  }
+
+  if(m_inboundExecutionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> inboundExecutionsJsonList(m_inboundExecutions.size());
+   for(unsigned inboundExecutionsIndex = 0; inboundExecutionsIndex < inboundExecutionsJsonList.GetLength(); ++inboundExecutionsIndex)
+   {
+     inboundExecutionsJsonList[inboundExecutionsIndex].AsObject(m_inboundExecutions[inboundExecutionsIndex].Jsonize());
+   }
+   payload.WithArray("inboundExecutions", std::move(inboundExecutionsJsonList));
 
   }
 

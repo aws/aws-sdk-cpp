@@ -20,13 +20,15 @@ namespace Model
 
 GitConfiguration::GitConfiguration() : 
     m_sourceActionNameHasBeenSet(false),
-    m_pushHasBeenSet(false)
+    m_pushHasBeenSet(false),
+    m_pullRequestHasBeenSet(false)
 {
 }
 
 GitConfiguration::GitConfiguration(JsonView jsonValue) : 
     m_sourceActionNameHasBeenSet(false),
-    m_pushHasBeenSet(false)
+    m_pushHasBeenSet(false),
+    m_pullRequestHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,16 @@ GitConfiguration& GitConfiguration::operator =(JsonView jsonValue)
     m_pushHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pullRequest"))
+  {
+    Aws::Utils::Array<JsonView> pullRequestJsonList = jsonValue.GetArray("pullRequest");
+    for(unsigned pullRequestIndex = 0; pullRequestIndex < pullRequestJsonList.GetLength(); ++pullRequestIndex)
+    {
+      m_pullRequest.push_back(pullRequestJsonList[pullRequestIndex].AsObject());
+    }
+    m_pullRequestHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +83,17 @@ JsonValue GitConfiguration::Jsonize() const
      pushJsonList[pushIndex].AsObject(m_push[pushIndex].Jsonize());
    }
    payload.WithArray("push", std::move(pushJsonList));
+
+  }
+
+  if(m_pullRequestHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> pullRequestJsonList(m_pullRequest.size());
+   for(unsigned pullRequestIndex = 0; pullRequestIndex < pullRequestJsonList.GetLength(); ++pullRequestIndex)
+   {
+     pullRequestJsonList[pullRequestIndex].AsObject(m_pullRequest[pullRequestIndex].Jsonize());
+   }
+   payload.WithArray("pullRequest", std::move(pullRequestJsonList));
 
   }
 

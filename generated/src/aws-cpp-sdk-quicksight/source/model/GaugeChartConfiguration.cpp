@@ -23,7 +23,8 @@ GaugeChartConfiguration::GaugeChartConfiguration() :
     m_gaugeChartOptionsHasBeenSet(false),
     m_dataLabelsHasBeenSet(false),
     m_tooltipOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ GaugeChartConfiguration::GaugeChartConfiguration(JsonView jsonValue) :
     m_gaugeChartOptionsHasBeenSet(false),
     m_dataLabelsHasBeenSet(false),
     m_tooltipOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ GaugeChartConfiguration& GaugeChartConfiguration::operator =(JsonView jsonValue)
     m_visualPaletteHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue GaugeChartConfiguration::Jsonize() const
   if(m_visualPaletteHasBeenSet)
   {
    payload.WithObject("VisualPalette", m_visualPalette.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

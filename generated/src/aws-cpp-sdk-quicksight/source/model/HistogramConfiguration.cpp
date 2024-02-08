@@ -26,7 +26,8 @@ HistogramConfiguration::HistogramConfiguration() :
     m_binOptionsHasBeenSet(false),
     m_dataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ HistogramConfiguration::HistogramConfiguration(JsonView jsonValue) :
     m_binOptionsHasBeenSet(false),
     m_dataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ HistogramConfiguration& HistogramConfiguration::operator =(JsonView jsonValue)
     m_visualPaletteHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue HistogramConfiguration::Jsonize() const
   if(m_visualPaletteHasBeenSet)
   {
    payload.WithObject("VisualPalette", m_visualPalette.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

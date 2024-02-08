@@ -24,6 +24,8 @@ PipelineSummary::PipelineSummary() :
     m_versionHasBeenSet(false),
     m_pipelineType(PipelineType::NOT_SET),
     m_pipelineTypeHasBeenSet(false),
+    m_executionMode(ExecutionMode::NOT_SET),
+    m_executionModeHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_updatedHasBeenSet(false)
 {
@@ -35,6 +37,8 @@ PipelineSummary::PipelineSummary(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_pipelineType(PipelineType::NOT_SET),
     m_pipelineTypeHasBeenSet(false),
+    m_executionMode(ExecutionMode::NOT_SET),
+    m_executionModeHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_updatedHasBeenSet(false)
 {
@@ -62,6 +66,13 @@ PipelineSummary& PipelineSummary::operator =(JsonView jsonValue)
     m_pipelineType = PipelineTypeMapper::GetPipelineTypeForName(jsonValue.GetString("pipelineType"));
 
     m_pipelineTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("executionMode"))
+  {
+    m_executionMode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("executionMode"));
+
+    m_executionModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("created"))
@@ -100,6 +111,11 @@ JsonValue PipelineSummary::Jsonize() const
   if(m_pipelineTypeHasBeenSet)
   {
    payload.WithString("pipelineType", PipelineTypeMapper::GetNameForPipelineType(m_pipelineType));
+  }
+
+  if(m_executionModeHasBeenSet)
+  {
+   payload.WithString("executionMode", ExecutionModeMapper::GetNameForExecutionMode(m_executionMode));
   }
 
   if(m_createdHasBeenSet)

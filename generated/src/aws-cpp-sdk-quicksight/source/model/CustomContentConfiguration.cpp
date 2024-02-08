@@ -23,7 +23,8 @@ CustomContentConfiguration::CustomContentConfiguration() :
     m_contentType(CustomContentType::NOT_SET),
     m_contentTypeHasBeenSet(false),
     m_imageScaling(CustomContentImageScalingConfiguration::NOT_SET),
-    m_imageScalingHasBeenSet(false)
+    m_imageScalingHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ CustomContentConfiguration::CustomContentConfiguration(JsonView jsonValue) :
     m_contentType(CustomContentType::NOT_SET),
     m_contentTypeHasBeenSet(false),
     m_imageScaling(CustomContentImageScalingConfiguration::NOT_SET),
-    m_imageScalingHasBeenSet(false)
+    m_imageScalingHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ CustomContentConfiguration& CustomContentConfiguration::operator =(JsonView json
     m_imageScalingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +90,12 @@ JsonValue CustomContentConfiguration::Jsonize() const
   if(m_imageScalingHasBeenSet)
   {
    payload.WithString("ImageScaling", CustomContentImageScalingConfigurationMapper::GetNameForCustomContentImageScalingConfiguration(m_imageScaling));
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
+
   }
 
   return payload;

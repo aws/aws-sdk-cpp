@@ -36,7 +36,8 @@ ComboChartConfiguration::ComboChartConfiguration() :
     m_lineDataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_referenceLinesHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ ComboChartConfiguration::ComboChartConfiguration(JsonView jsonValue) :
     m_lineDataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_referenceLinesHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -187,6 +189,13 @@ ComboChartConfiguration& ComboChartConfiguration::operator =(JsonView jsonValue)
     m_visualPaletteHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -297,6 +306,12 @@ JsonValue ComboChartConfiguration::Jsonize() const
   if(m_visualPaletteHasBeenSet)
   {
    payload.WithObject("VisualPalette", m_visualPalette.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

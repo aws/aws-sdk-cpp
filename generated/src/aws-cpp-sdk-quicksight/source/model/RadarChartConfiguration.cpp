@@ -37,7 +37,8 @@ RadarChartConfiguration::RadarChartConfiguration() :
     m_colorLabelOptionsHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_axesRangeScale(RadarChartAxesRangeScale::NOT_SET),
-    m_axesRangeScaleHasBeenSet(false)
+    m_axesRangeScaleHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ RadarChartConfiguration::RadarChartConfiguration(JsonView jsonValue) :
     m_colorLabelOptionsHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_axesRangeScale(RadarChartAxesRangeScale::NOT_SET),
-    m_axesRangeScaleHasBeenSet(false)
+    m_axesRangeScaleHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -172,6 +174,13 @@ RadarChartConfiguration& RadarChartConfiguration::operator =(JsonView jsonValue)
     m_axesRangeScaleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -264,6 +273,12 @@ JsonValue RadarChartConfiguration::Jsonize() const
   if(m_axesRangeScaleHasBeenSet)
   {
    payload.WithString("AxesRangeScale", RadarChartAxesRangeScaleMapper::GetNameForRadarChartAxesRangeScale(m_axesRangeScale));
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
+
   }
 
   return payload;

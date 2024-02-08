@@ -291,6 +291,47 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the user who changed the pipeline execution details.</p>
+     */
+    inline const Aws::String& GetUpdatedBy() const{ return m_updatedBy; }
+
+    /**
+     * <p>The ARN of the user who changed the pipeline execution details.</p>
+     */
+    inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
+
+    /**
+     * <p>The ARN of the user who changed the pipeline execution details.</p>
+     */
+    inline void SetUpdatedBy(const Aws::String& value) { m_updatedByHasBeenSet = true; m_updatedBy = value; }
+
+    /**
+     * <p>The ARN of the user who changed the pipeline execution details.</p>
+     */
+    inline void SetUpdatedBy(Aws::String&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::move(value); }
+
+    /**
+     * <p>The ARN of the user who changed the pipeline execution details.</p>
+     */
+    inline void SetUpdatedBy(const char* value) { m_updatedByHasBeenSet = true; m_updatedBy.assign(value); }
+
+    /**
+     * <p>The ARN of the user who changed the pipeline execution details.</p>
+     */
+    inline ActionExecutionDetail& WithUpdatedBy(const Aws::String& value) { SetUpdatedBy(value); return *this;}
+
+    /**
+     * <p>The ARN of the user who changed the pipeline execution details.</p>
+     */
+    inline ActionExecutionDetail& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the user who changed the pipeline execution details.</p>
+     */
+    inline ActionExecutionDetail& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
+
+
+    /**
      * <p> The status of the action execution. Status categories are
      * <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
      */
@@ -422,6 +463,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet = false;
+
+    Aws::String m_updatedBy;
+    bool m_updatedByHasBeenSet = false;
 
     ActionExecutionStatus m_status;
     bool m_statusHasBeenSet = false;
