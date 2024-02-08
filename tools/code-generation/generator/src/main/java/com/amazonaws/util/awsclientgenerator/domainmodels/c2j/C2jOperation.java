@@ -32,5 +32,5 @@ public class C2jOperation {
     // For Cellular Request Routing
     private boolean endpointoperation; // endpointoperation trait
     private C2jEndpointDiscovery endpointdiscovery; //endpointdiscovery trait
-    private C2jRequestCompression requestCompression;
+    private C2jRequestCompression requestcompression;
 }
