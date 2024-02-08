@@ -349,6 +349,47 @@ namespace Model
      */
     inline DescribeWorkspacesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline const Aws::String& GetWorkspaceName() const{ return m_workspaceName; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(const Aws::String& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = value; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(Aws::String&& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = std::move(value); }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(const char* value) { m_workspaceNameHasBeenSet = true; m_workspaceName.assign(value); }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline DescribeWorkspacesRequest& WithWorkspaceName(const Aws::String& value) { SetWorkspaceName(value); return *this;}
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline DescribeWorkspacesRequest& WithWorkspaceName(Aws::String&& value) { SetWorkspaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline DescribeWorkspacesRequest& WithWorkspaceName(const char* value) { SetWorkspaceName(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_workspaceIds;
@@ -368,6 +409,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_workspaceName;
+    bool m_workspaceNameHasBeenSet = false;
   };
 
 } // namespace Model

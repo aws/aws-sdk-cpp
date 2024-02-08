@@ -35,6 +35,7 @@ Workspace::Workspace() :
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_workspaceNameHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
     m_modificationStatesHasBeenSet(false),
     m_relatedWorkspacesHasBeenSet(false),
@@ -60,6 +61,7 @@ Workspace::Workspace(JsonView jsonValue) :
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_workspaceNameHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
     m_modificationStatesHasBeenSet(false),
     m_relatedWorkspacesHasBeenSet(false),
@@ -160,6 +162,13 @@ Workspace& Workspace::operator =(JsonView jsonValue)
     m_rootVolumeEncryptionEnabled = jsonValue.GetBool("RootVolumeEncryptionEnabled");
 
     m_rootVolumeEncryptionEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkspaceName"))
+  {
+    m_workspaceName = jsonValue.GetString("WorkspaceName");
+
+    m_workspaceNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("WorkspaceProperties"))
@@ -287,6 +296,12 @@ JsonValue Workspace::Jsonize() const
   if(m_rootVolumeEncryptionEnabledHasBeenSet)
   {
    payload.WithBool("RootVolumeEncryptionEnabled", m_rootVolumeEncryptionEnabled);
+
+  }
+
+  if(m_workspaceNameHasBeenSet)
+  {
+   payload.WithString("WorkspaceName", m_workspaceName);
 
   }
 

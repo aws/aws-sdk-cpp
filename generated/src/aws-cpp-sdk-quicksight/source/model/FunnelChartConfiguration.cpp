@@ -25,7 +25,8 @@ FunnelChartConfiguration::FunnelChartConfiguration() :
     m_valueLabelOptionsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_dataLabelOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ FunnelChartConfiguration::FunnelChartConfiguration(JsonView jsonValue) :
     m_valueLabelOptionsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_dataLabelOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ FunnelChartConfiguration& FunnelChartConfiguration::operator =(JsonView jsonValu
     m_visualPaletteHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue FunnelChartConfiguration::Jsonize() const
   if(m_visualPaletteHasBeenSet)
   {
    payload.WithObject("VisualPalette", m_visualPalette.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

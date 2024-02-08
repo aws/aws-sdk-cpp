@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/GeospatialMapStyleOptions.h>
 #include <aws/quicksight/model/GeospatialPointStyleOptions.h>
 #include <aws/quicksight/model/VisualPalette.h>
+#include <aws/quicksight/model/VisualInteractionOptions.h>
 #include <utility>
 
 namespace Aws
@@ -248,6 +249,37 @@ namespace Model
     
     inline GeospatialMapConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline GeospatialMapConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline GeospatialMapConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+
   private:
 
     GeospatialMapFieldWells m_fieldWells;
@@ -270,6 +302,9 @@ namespace Model
 
     VisualPalette m_visualPalette;
     bool m_visualPaletteHasBeenSet = false;
+
+    VisualInteractionOptions m_interactions;
+    bool m_interactionsHasBeenSet = false;
   };
 
 } // namespace Model

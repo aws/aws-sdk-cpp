@@ -209,32 +209,11 @@ namespace Model
 
 
     /**
-     * <p>The operational state of the WorkSpace.</p> <ul> <li> <p>
-     * <code>PENDING</code> – The WorkSpace is in a waiting state (for example, the
-     * WorkSpace is being created).</p> </li> <li> <p> <code>AVAILABLE</code> – The
-     * WorkSpace is running and has passed the health checks.</p> </li> <li> <p>
-     * <code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The WorkSpace is not responding to health
-     * checks.</p> </li> <li> <p> <code>REBOOTING</code> – The WorkSpace is being
-     * rebooted (restarted).</p> </li> <li> <p> <code>STARTING</code> – The WorkSpace
-     * is starting up and health checks are being run.</p> </li> <li> <p>
-     * <code>REBUILDING</code> – The WorkSpace is being rebuilt.</p> </li> <li> <p>
-     * <code>RESTORING</code> – The WorkSpace is being restored.</p> </li> <li> <p>
-     * <code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by
-     * Amazon Web Services.</p> </li> <li> <p> <code>ADMIN_MAINTENANCE</code> – The
-     * WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p> </li>
-     * <li> <p> <code>TERMINATING</code> – The WorkSpace is being deleted.</p> </li>
-     * <li> <p> <code>TERMINATED</code> – The WorkSpace has been deleted.</p> </li>
-     * <li> <p> <code>SUSPENDED</code> – The WorkSpace has been suspended for image
-     * creation.</p> </li> <li> <p> <code>UPDATING</code> – The WorkSpace is undergoing
-     * an update.</p> </li> <li> <p> <code>STOPPING</code> – The WorkSpace is being
-     * stopped.</p> </li> <li> <p> <code>STOPPED</code> – The WorkSpace has been
-     * stopped.</p> </li> <li> <p> <code>ERROR </code> – The WorkSpace is an error
-     * state (for example, an error occurred during startup).</p> </li> </ul> 
-     * <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is
-     * returned only briefly before the WorkSpace directory metadata is cleaned up, so
-     * this state is rarely returned. To confirm that a WorkSpace is terminated, check
-     * for the WorkSpace ID by using <a
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
      * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
      * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
      * has been successfully terminated.</p> 
@@ -242,32 +221,11 @@ namespace Model
     inline const WorkspaceState& GetState() const{ return m_state; }
 
     /**
-     * <p>The operational state of the WorkSpace.</p> <ul> <li> <p>
-     * <code>PENDING</code> – The WorkSpace is in a waiting state (for example, the
-     * WorkSpace is being created).</p> </li> <li> <p> <code>AVAILABLE</code> – The
-     * WorkSpace is running and has passed the health checks.</p> </li> <li> <p>
-     * <code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The WorkSpace is not responding to health
-     * checks.</p> </li> <li> <p> <code>REBOOTING</code> – The WorkSpace is being
-     * rebooted (restarted).</p> </li> <li> <p> <code>STARTING</code> – The WorkSpace
-     * is starting up and health checks are being run.</p> </li> <li> <p>
-     * <code>REBUILDING</code> – The WorkSpace is being rebuilt.</p> </li> <li> <p>
-     * <code>RESTORING</code> – The WorkSpace is being restored.</p> </li> <li> <p>
-     * <code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by
-     * Amazon Web Services.</p> </li> <li> <p> <code>ADMIN_MAINTENANCE</code> – The
-     * WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p> </li>
-     * <li> <p> <code>TERMINATING</code> – The WorkSpace is being deleted.</p> </li>
-     * <li> <p> <code>TERMINATED</code> – The WorkSpace has been deleted.</p> </li>
-     * <li> <p> <code>SUSPENDED</code> – The WorkSpace has been suspended for image
-     * creation.</p> </li> <li> <p> <code>UPDATING</code> – The WorkSpace is undergoing
-     * an update.</p> </li> <li> <p> <code>STOPPING</code> – The WorkSpace is being
-     * stopped.</p> </li> <li> <p> <code>STOPPED</code> – The WorkSpace has been
-     * stopped.</p> </li> <li> <p> <code>ERROR </code> – The WorkSpace is an error
-     * state (for example, an error occurred during startup).</p> </li> </ul> 
-     * <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is
-     * returned only briefly before the WorkSpace directory metadata is cleaned up, so
-     * this state is rarely returned. To confirm that a WorkSpace is terminated, check
-     * for the WorkSpace ID by using <a
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
      * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
      * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
      * has been successfully terminated.</p> 
@@ -275,32 +233,11 @@ namespace Model
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The operational state of the WorkSpace.</p> <ul> <li> <p>
-     * <code>PENDING</code> – The WorkSpace is in a waiting state (for example, the
-     * WorkSpace is being created).</p> </li> <li> <p> <code>AVAILABLE</code> – The
-     * WorkSpace is running and has passed the health checks.</p> </li> <li> <p>
-     * <code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The WorkSpace is not responding to health
-     * checks.</p> </li> <li> <p> <code>REBOOTING</code> – The WorkSpace is being
-     * rebooted (restarted).</p> </li> <li> <p> <code>STARTING</code> – The WorkSpace
-     * is starting up and health checks are being run.</p> </li> <li> <p>
-     * <code>REBUILDING</code> – The WorkSpace is being rebuilt.</p> </li> <li> <p>
-     * <code>RESTORING</code> – The WorkSpace is being restored.</p> </li> <li> <p>
-     * <code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by
-     * Amazon Web Services.</p> </li> <li> <p> <code>ADMIN_MAINTENANCE</code> – The
-     * WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p> </li>
-     * <li> <p> <code>TERMINATING</code> – The WorkSpace is being deleted.</p> </li>
-     * <li> <p> <code>TERMINATED</code> – The WorkSpace has been deleted.</p> </li>
-     * <li> <p> <code>SUSPENDED</code> – The WorkSpace has been suspended for image
-     * creation.</p> </li> <li> <p> <code>UPDATING</code> – The WorkSpace is undergoing
-     * an update.</p> </li> <li> <p> <code>STOPPING</code> – The WorkSpace is being
-     * stopped.</p> </li> <li> <p> <code>STOPPED</code> – The WorkSpace has been
-     * stopped.</p> </li> <li> <p> <code>ERROR </code> – The WorkSpace is an error
-     * state (for example, an error occurred during startup).</p> </li> </ul> 
-     * <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is
-     * returned only briefly before the WorkSpace directory metadata is cleaned up, so
-     * this state is rarely returned. To confirm that a WorkSpace is terminated, check
-     * for the WorkSpace ID by using <a
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
      * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
      * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
      * has been successfully terminated.</p> 
@@ -308,32 +245,11 @@ namespace Model
     inline void SetState(const WorkspaceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The operational state of the WorkSpace.</p> <ul> <li> <p>
-     * <code>PENDING</code> – The WorkSpace is in a waiting state (for example, the
-     * WorkSpace is being created).</p> </li> <li> <p> <code>AVAILABLE</code> – The
-     * WorkSpace is running and has passed the health checks.</p> </li> <li> <p>
-     * <code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The WorkSpace is not responding to health
-     * checks.</p> </li> <li> <p> <code>REBOOTING</code> – The WorkSpace is being
-     * rebooted (restarted).</p> </li> <li> <p> <code>STARTING</code> – The WorkSpace
-     * is starting up and health checks are being run.</p> </li> <li> <p>
-     * <code>REBUILDING</code> – The WorkSpace is being rebuilt.</p> </li> <li> <p>
-     * <code>RESTORING</code> – The WorkSpace is being restored.</p> </li> <li> <p>
-     * <code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by
-     * Amazon Web Services.</p> </li> <li> <p> <code>ADMIN_MAINTENANCE</code> – The
-     * WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p> </li>
-     * <li> <p> <code>TERMINATING</code> – The WorkSpace is being deleted.</p> </li>
-     * <li> <p> <code>TERMINATED</code> – The WorkSpace has been deleted.</p> </li>
-     * <li> <p> <code>SUSPENDED</code> – The WorkSpace has been suspended for image
-     * creation.</p> </li> <li> <p> <code>UPDATING</code> – The WorkSpace is undergoing
-     * an update.</p> </li> <li> <p> <code>STOPPING</code> – The WorkSpace is being
-     * stopped.</p> </li> <li> <p> <code>STOPPED</code> – The WorkSpace has been
-     * stopped.</p> </li> <li> <p> <code>ERROR </code> – The WorkSpace is an error
-     * state (for example, an error occurred during startup).</p> </li> </ul> 
-     * <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is
-     * returned only briefly before the WorkSpace directory metadata is cleaned up, so
-     * this state is rarely returned. To confirm that a WorkSpace is terminated, check
-     * for the WorkSpace ID by using <a
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
      * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
      * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
      * has been successfully terminated.</p> 
@@ -341,32 +257,11 @@ namespace Model
     inline void SetState(WorkspaceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The operational state of the WorkSpace.</p> <ul> <li> <p>
-     * <code>PENDING</code> – The WorkSpace is in a waiting state (for example, the
-     * WorkSpace is being created).</p> </li> <li> <p> <code>AVAILABLE</code> – The
-     * WorkSpace is running and has passed the health checks.</p> </li> <li> <p>
-     * <code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The WorkSpace is not responding to health
-     * checks.</p> </li> <li> <p> <code>REBOOTING</code> – The WorkSpace is being
-     * rebooted (restarted).</p> </li> <li> <p> <code>STARTING</code> – The WorkSpace
-     * is starting up and health checks are being run.</p> </li> <li> <p>
-     * <code>REBUILDING</code> – The WorkSpace is being rebuilt.</p> </li> <li> <p>
-     * <code>RESTORING</code> – The WorkSpace is being restored.</p> </li> <li> <p>
-     * <code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by
-     * Amazon Web Services.</p> </li> <li> <p> <code>ADMIN_MAINTENANCE</code> – The
-     * WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p> </li>
-     * <li> <p> <code>TERMINATING</code> – The WorkSpace is being deleted.</p> </li>
-     * <li> <p> <code>TERMINATED</code> – The WorkSpace has been deleted.</p> </li>
-     * <li> <p> <code>SUSPENDED</code> – The WorkSpace has been suspended for image
-     * creation.</p> </li> <li> <p> <code>UPDATING</code> – The WorkSpace is undergoing
-     * an update.</p> </li> <li> <p> <code>STOPPING</code> – The WorkSpace is being
-     * stopped.</p> </li> <li> <p> <code>STOPPED</code> – The WorkSpace has been
-     * stopped.</p> </li> <li> <p> <code>ERROR </code> – The WorkSpace is an error
-     * state (for example, an error occurred during startup).</p> </li> </ul> 
-     * <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is
-     * returned only briefly before the WorkSpace directory metadata is cleaned up, so
-     * this state is rarely returned. To confirm that a WorkSpace is terminated, check
-     * for the WorkSpace ID by using <a
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
      * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
      * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
      * has been successfully terminated.</p> 
@@ -374,32 +269,11 @@ namespace Model
     inline Workspace& WithState(const WorkspaceState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The operational state of the WorkSpace.</p> <ul> <li> <p>
-     * <code>PENDING</code> – The WorkSpace is in a waiting state (for example, the
-     * WorkSpace is being created).</p> </li> <li> <p> <code>AVAILABLE</code> – The
-     * WorkSpace is running and has passed the health checks.</p> </li> <li> <p>
-     * <code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The WorkSpace is not responding to health
-     * checks.</p> </li> <li> <p> <code>REBOOTING</code> – The WorkSpace is being
-     * rebooted (restarted).</p> </li> <li> <p> <code>STARTING</code> – The WorkSpace
-     * is starting up and health checks are being run.</p> </li> <li> <p>
-     * <code>REBUILDING</code> – The WorkSpace is being rebuilt.</p> </li> <li> <p>
-     * <code>RESTORING</code> – The WorkSpace is being restored.</p> </li> <li> <p>
-     * <code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by
-     * Amazon Web Services.</p> </li> <li> <p> <code>ADMIN_MAINTENANCE</code> – The
-     * WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p> </li>
-     * <li> <p> <code>TERMINATING</code> – The WorkSpace is being deleted.</p> </li>
-     * <li> <p> <code>TERMINATED</code> – The WorkSpace has been deleted.</p> </li>
-     * <li> <p> <code>SUSPENDED</code> – The WorkSpace has been suspended for image
-     * creation.</p> </li> <li> <p> <code>UPDATING</code> – The WorkSpace is undergoing
-     * an update.</p> </li> <li> <p> <code>STOPPING</code> – The WorkSpace is being
-     * stopped.</p> </li> <li> <p> <code>STOPPED</code> – The WorkSpace has been
-     * stopped.</p> </li> <li> <p> <code>ERROR </code> – The WorkSpace is an error
-     * state (for example, an error occurred during startup).</p> </li> </ul> 
-     * <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is
-     * returned only briefly before the WorkSpace directory metadata is cleaned up, so
-     * this state is rarely returned. To confirm that a WorkSpace is terminated, check
-     * for the WorkSpace ID by using <a
+     * <p>The operational state of the WorkSpace.</p>  <p>After a WorkSpace is
+     * terminated, the <code>TERMINATED</code> state is returned only briefly before
+     * the WorkSpace directory metadata is cleaned up, so this state is rarely
+     * returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID
+     * by using <a
      * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
      * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
      * has been successfully terminated.</p> 
@@ -736,6 +610,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline const Aws::String& GetWorkspaceName() const{ return m_workspaceName; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(const Aws::String& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = value; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(Aws::String&& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = std::move(value); }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(const char* value) { m_workspaceNameHasBeenSet = true; m_workspaceName.assign(value); }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline Workspace& WithWorkspaceName(const Aws::String& value) { SetWorkspaceName(value); return *this;}
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline Workspace& WithWorkspaceName(Aws::String&& value) { SetWorkspaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline Workspace& WithWorkspaceName(const char* value) { SetWorkspaceName(value); return *this;}
+
+
+    /**
      * <p>The properties of the WorkSpace.</p>
      */
     inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
@@ -967,6 +882,9 @@ namespace Model
 
     bool m_rootVolumeEncryptionEnabled;
     bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
+
+    Aws::String m_workspaceName;
+    bool m_workspaceNameHasBeenSet = false;
 
     WorkspaceProperties m_workspaceProperties;
     bool m_workspacePropertiesHasBeenSet = false;

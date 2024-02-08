@@ -26,10 +26,12 @@ PipelineDeclaration::PipelineDeclaration() :
     m_stagesHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
+    m_executionMode(ExecutionMode::NOT_SET),
+    m_executionModeHasBeenSet(false),
     m_pipelineType(PipelineType::NOT_SET),
     m_pipelineTypeHasBeenSet(false),
-    m_triggersHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+    m_variablesHasBeenSet(false),
+    m_triggersHasBeenSet(false)
 {
 }
 
@@ -41,10 +43,12 @@ PipelineDeclaration::PipelineDeclaration(JsonView jsonValue) :
     m_stagesHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
+    m_executionMode(ExecutionMode::NOT_SET),
+    m_executionModeHasBeenSet(false),
     m_pipelineType(PipelineType::NOT_SET),
     m_pipelineTypeHasBeenSet(false),
-    m_triggersHasBeenSet(false),
-    m_variablesHasBeenSet(false)
+    m_variablesHasBeenSet(false),
+    m_triggersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,21 +103,18 @@ PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("executionMode"))
+  {
+    m_executionMode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("executionMode"));
+
+    m_executionModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("pipelineType"))
   {
     m_pipelineType = PipelineTypeMapper::GetPipelineTypeForName(jsonValue.GetString("pipelineType"));
 
     m_pipelineTypeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("triggers"))
-  {
-    Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
-    for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
-    {
-      m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());
-    }
-    m_triggersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("variables"))
@@ -124,6 +125,16 @@ PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
       m_variables.push_back(variablesJsonList[variablesIndex].AsObject());
     }
     m_variablesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("triggers"))
+  {
+    Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
+    for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
+    {
+      m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());
+    }
+    m_triggersHasBeenSet = true;
   }
 
   return *this;
@@ -179,20 +190,14 @@ JsonValue PipelineDeclaration::Jsonize() const
 
   }
 
+  if(m_executionModeHasBeenSet)
+  {
+   payload.WithString("executionMode", ExecutionModeMapper::GetNameForExecutionMode(m_executionMode));
+  }
+
   if(m_pipelineTypeHasBeenSet)
   {
    payload.WithString("pipelineType", PipelineTypeMapper::GetNameForPipelineType(m_pipelineType));
-  }
-
-  if(m_triggersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> triggersJsonList(m_triggers.size());
-   for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
-   {
-     triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
-   }
-   payload.WithArray("triggers", std::move(triggersJsonList));
-
   }
 
   if(m_variablesHasBeenSet)
@@ -203,6 +208,17 @@ JsonValue PipelineDeclaration::Jsonize() const
      variablesJsonList[variablesIndex].AsObject(m_variables[variablesIndex].Jsonize());
    }
    payload.WithArray("variables", std::move(variablesJsonList));
+
+  }
+
+  if(m_triggersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> triggersJsonList(m_triggers.size());
+   for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
+   {
+     triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
+   }
+   payload.WithArray("triggers", std::move(triggersJsonList));
 
   }
 

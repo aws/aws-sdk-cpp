@@ -92,49 +92,57 @@ namespace Model
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p> <p>The reserved keyword,
+     * <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p> <p>The reserved keyword,
+     * <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p> <p>The reserved keyword,
+     * <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p> <p>The reserved keyword,
+     * <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p> <p>The reserved keyword,
+     * <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p> <p>The reserved keyword,
+     * <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
      */
     inline WorkspaceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p> <p>The reserved keyword,
+     * <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
      */
     inline WorkspaceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p> <p>The reserved keyword,
+     * <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
      */
     inline WorkspaceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -350,6 +358,47 @@ namespace Model
      */
     inline WorkspaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline const Aws::String& GetWorkspaceName() const{ return m_workspaceName; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline bool WorkspaceNameHasBeenSet() const { return m_workspaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(const Aws::String& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = value; }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(Aws::String&& value) { m_workspaceNameHasBeenSet = true; m_workspaceName = std::move(value); }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline void SetWorkspaceName(const char* value) { m_workspaceNameHasBeenSet = true; m_workspaceName.assign(value); }
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline WorkspaceRequest& WithWorkspaceName(const Aws::String& value) { SetWorkspaceName(value); return *this;}
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline WorkspaceRequest& WithWorkspaceName(Aws::String&& value) { SetWorkspaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the user-decoupled WorkSpace.</p>
+     */
+    inline WorkspaceRequest& WithWorkspaceName(const char* value) { SetWorkspaceName(value); return *this;}
+
   private:
 
     Aws::String m_directoryId;
@@ -375,6 +424,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_workspaceName;
+    bool m_workspaceNameHasBeenSet = false;
   };
 
 } // namespace Model

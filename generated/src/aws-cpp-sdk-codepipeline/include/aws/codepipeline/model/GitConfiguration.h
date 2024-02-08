@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/GitPushFilter.h>
+#include <aws/codepipeline/model/GitPullRequestFilter.h>
 #include <utility>
 
 namespace Aws
@@ -29,12 +30,7 @@ namespace Model
    * <p>A type of trigger configuration for Git-based source actions.</p> 
    * <p>You can specify the Git configuration trigger type for all third-party
    * Git-based source actions that are supported by the
-   * <code>CodeStarSourceConnection</code> action type.</p>   <p>V2 type
-   * pipelines, along with triggers on Git tags and pipeline-level variables, are not
-   * currently supported for CloudFormation and CDK resources in CodePipeline. For
-   * more information about V2 type pipelines, see <a
-   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-   * types</a> in the <i>CodePipeline User Guide</i>.</p> <p><h3>See
+   * <code>CodeStarSourceConnection</code> action type.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GitConfiguration">AWS
    * API Reference</a></p>
@@ -115,59 +111,100 @@ namespace Model
 
     /**
      * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>  <p>Git tags is the only
-     * supported event type.</p> 
+     * pushing Git tags, is specified with details.</p>
      */
     inline const Aws::Vector<GitPushFilter>& GetPush() const{ return m_push; }
 
     /**
      * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>  <p>Git tags is the only
-     * supported event type.</p> 
+     * pushing Git tags, is specified with details.</p>
      */
     inline bool PushHasBeenSet() const { return m_pushHasBeenSet; }
 
     /**
      * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>  <p>Git tags is the only
-     * supported event type.</p> 
+     * pushing Git tags, is specified with details.</p>
      */
     inline void SetPush(const Aws::Vector<GitPushFilter>& value) { m_pushHasBeenSet = true; m_push = value; }
 
     /**
      * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>  <p>Git tags is the only
-     * supported event type.</p> 
+     * pushing Git tags, is specified with details.</p>
      */
     inline void SetPush(Aws::Vector<GitPushFilter>&& value) { m_pushHasBeenSet = true; m_push = std::move(value); }
 
     /**
      * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>  <p>Git tags is the only
-     * supported event type.</p> 
+     * pushing Git tags, is specified with details.</p>
      */
     inline GitConfiguration& WithPush(const Aws::Vector<GitPushFilter>& value) { SetPush(value); return *this;}
 
     /**
      * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>  <p>Git tags is the only
-     * supported event type.</p> 
+     * pushing Git tags, is specified with details.</p>
      */
     inline GitConfiguration& WithPush(Aws::Vector<GitPushFilter>&& value) { SetPush(std::move(value)); return *this;}
 
     /**
      * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>  <p>Git tags is the only
-     * supported event type.</p> 
+     * pushing Git tags, is specified with details.</p>
      */
     inline GitConfiguration& AddPush(const GitPushFilter& value) { m_pushHasBeenSet = true; m_push.push_back(value); return *this; }
 
     /**
      * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>  <p>Git tags is the only
-     * supported event type.</p> 
+     * pushing Git tags, is specified with details.</p>
      */
     inline GitConfiguration& AddPush(GitPushFilter&& value) { m_pushHasBeenSet = true; m_push.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The field where the repository event that will start the pipeline is
+     * specified as pull requests.</p>
+     */
+    inline const Aws::Vector<GitPullRequestFilter>& GetPullRequest() const{ return m_pullRequest; }
+
+    /**
+     * <p>The field where the repository event that will start the pipeline is
+     * specified as pull requests.</p>
+     */
+    inline bool PullRequestHasBeenSet() const { return m_pullRequestHasBeenSet; }
+
+    /**
+     * <p>The field where the repository event that will start the pipeline is
+     * specified as pull requests.</p>
+     */
+    inline void SetPullRequest(const Aws::Vector<GitPullRequestFilter>& value) { m_pullRequestHasBeenSet = true; m_pullRequest = value; }
+
+    /**
+     * <p>The field where the repository event that will start the pipeline is
+     * specified as pull requests.</p>
+     */
+    inline void SetPullRequest(Aws::Vector<GitPullRequestFilter>&& value) { m_pullRequestHasBeenSet = true; m_pullRequest = std::move(value); }
+
+    /**
+     * <p>The field where the repository event that will start the pipeline is
+     * specified as pull requests.</p>
+     */
+    inline GitConfiguration& WithPullRequest(const Aws::Vector<GitPullRequestFilter>& value) { SetPullRequest(value); return *this;}
+
+    /**
+     * <p>The field where the repository event that will start the pipeline is
+     * specified as pull requests.</p>
+     */
+    inline GitConfiguration& WithPullRequest(Aws::Vector<GitPullRequestFilter>&& value) { SetPullRequest(std::move(value)); return *this;}
+
+    /**
+     * <p>The field where the repository event that will start the pipeline is
+     * specified as pull requests.</p>
+     */
+    inline GitConfiguration& AddPullRequest(const GitPullRequestFilter& value) { m_pullRequestHasBeenSet = true; m_pullRequest.push_back(value); return *this; }
+
+    /**
+     * <p>The field where the repository event that will start the pipeline is
+     * specified as pull requests.</p>
+     */
+    inline GitConfiguration& AddPullRequest(GitPullRequestFilter&& value) { m_pullRequestHasBeenSet = true; m_pullRequest.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -176,6 +213,9 @@ namespace Model
 
     Aws::Vector<GitPushFilter> m_push;
     bool m_pushHasBeenSet = false;
+
+    Aws::Vector<GitPullRequestFilter> m_pullRequest;
+    bool m_pullRequestHasBeenSet = false;
   };
 
 } // namespace Model

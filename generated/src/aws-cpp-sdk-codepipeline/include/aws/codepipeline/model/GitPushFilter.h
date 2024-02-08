@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/GitTagFilterCriteria.h>
+#include <aws/codepipeline/model/GitBranchFilterCriteria.h>
+#include <aws/codepipeline/model/GitFilePathFilterCriteria.h>
 #include <utility>
 
 namespace Aws
@@ -75,10 +77,90 @@ namespace Model
      */
     inline GitPushFilter& WithTags(GitTagFilterCriteria&& value) { SetTags(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The field that specifies to filter on branches for the push trigger
+     * configuration.</p>
+     */
+    inline const GitBranchFilterCriteria& GetBranches() const{ return m_branches; }
+
+    /**
+     * <p>The field that specifies to filter on branches for the push trigger
+     * configuration.</p>
+     */
+    inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
+
+    /**
+     * <p>The field that specifies to filter on branches for the push trigger
+     * configuration.</p>
+     */
+    inline void SetBranches(const GitBranchFilterCriteria& value) { m_branchesHasBeenSet = true; m_branches = value; }
+
+    /**
+     * <p>The field that specifies to filter on branches for the push trigger
+     * configuration.</p>
+     */
+    inline void SetBranches(GitBranchFilterCriteria&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
+
+    /**
+     * <p>The field that specifies to filter on branches for the push trigger
+     * configuration.</p>
+     */
+    inline GitPushFilter& WithBranches(const GitBranchFilterCriteria& value) { SetBranches(value); return *this;}
+
+    /**
+     * <p>The field that specifies to filter on branches for the push trigger
+     * configuration.</p>
+     */
+    inline GitPushFilter& WithBranches(GitBranchFilterCriteria&& value) { SetBranches(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The field that specifies to filter on file paths for the push trigger
+     * configuration.</p>
+     */
+    inline const GitFilePathFilterCriteria& GetFilePaths() const{ return m_filePaths; }
+
+    /**
+     * <p>The field that specifies to filter on file paths for the push trigger
+     * configuration.</p>
+     */
+    inline bool FilePathsHasBeenSet() const { return m_filePathsHasBeenSet; }
+
+    /**
+     * <p>The field that specifies to filter on file paths for the push trigger
+     * configuration.</p>
+     */
+    inline void SetFilePaths(const GitFilePathFilterCriteria& value) { m_filePathsHasBeenSet = true; m_filePaths = value; }
+
+    /**
+     * <p>The field that specifies to filter on file paths for the push trigger
+     * configuration.</p>
+     */
+    inline void SetFilePaths(GitFilePathFilterCriteria&& value) { m_filePathsHasBeenSet = true; m_filePaths = std::move(value); }
+
+    /**
+     * <p>The field that specifies to filter on file paths for the push trigger
+     * configuration.</p>
+     */
+    inline GitPushFilter& WithFilePaths(const GitFilePathFilterCriteria& value) { SetFilePaths(value); return *this;}
+
+    /**
+     * <p>The field that specifies to filter on file paths for the push trigger
+     * configuration.</p>
+     */
+    inline GitPushFilter& WithFilePaths(GitFilePathFilterCriteria&& value) { SetFilePaths(std::move(value)); return *this;}
+
   private:
 
     GitTagFilterCriteria m_tags;
     bool m_tagsHasBeenSet = false;
+
+    GitBranchFilterCriteria m_branches;
+    bool m_branchesHasBeenSet = false;
+
+    GitFilePathFilterCriteria m_filePaths;
+    bool m_filePathsHasBeenSet = false;
   };
 
 } // namespace Model

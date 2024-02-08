@@ -19,7 +19,8 @@ DescribeWorkspacesRequest::DescribeWorkspacesRequest() :
     m_bundleIdHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_workspaceNameHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String DescribeWorkspacesRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_workspaceNameHasBeenSet)
+  {
+   payload.WithString("WorkspaceName", m_workspaceName);
 
   }
 

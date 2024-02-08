@@ -28,7 +28,9 @@ WaterfallChartConfiguration::WaterfallChartConfiguration() :
     m_primaryYAxisDisplayOptionsHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_dataLabelsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_colorConfigurationHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ WaterfallChartConfiguration::WaterfallChartConfiguration(JsonView jsonValue) :
     m_primaryYAxisDisplayOptionsHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_dataLabelsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_colorConfigurationHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +123,20 @@ WaterfallChartConfiguration& WaterfallChartConfiguration::operator =(JsonView js
     m_visualPaletteHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ColorConfiguration"))
+  {
+    m_colorConfiguration = jsonValue.GetObject("ColorConfiguration");
+
+    m_colorConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +201,18 @@ JsonValue WaterfallChartConfiguration::Jsonize() const
   if(m_visualPaletteHasBeenSet)
   {
    payload.WithObject("VisualPalette", m_visualPalette.Jsonize());
+
+  }
+
+  if(m_colorConfigurationHasBeenSet)
+  {
+   payload.WithObject("ColorConfiguration", m_colorConfiguration.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 
