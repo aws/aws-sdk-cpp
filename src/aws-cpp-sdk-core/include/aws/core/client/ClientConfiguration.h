@@ -62,7 +62,7 @@ namespace Aws
           size_t requestMinCompressionSizeBytes = 10240;
         };
          /**
-         * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
+          * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
           * - disableIMDS
          */
         struct ClientConfigurationInitValues {
@@ -99,9 +99,9 @@ namespace Aws
              */
             explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
-	    /**
-	     * Add virtual method to allow use of dynamic_cast under inheritance.
-	     */
+	        /**
+	         * Add virtual method to allow use of dynamic_cast under inheritance.
+	         */
             virtual ~ClientConfiguration() = default;
 
             /**
@@ -242,8 +242,10 @@ namespace Aws
              */
             Aws::String caPath;
             /**
-             * Same as caPath, but useful if you have users going through a proxy.
-             * Used to set CURLOPT_PROXY_CAPATH in libcurl.
+             * Same as caPath, but used when verifying an HTTPS proxy. 
+             * Used to set CURLOPT_PROXY_CAPATH in libcurl and proxy tls
+             * settings in crt HTTP client.
+             * Does nothing on windows.
              */
             Aws::String proxyCaPath;
             /**
@@ -253,8 +255,10 @@ namespace Aws
              */
              Aws::String caFile;
             /**
-             * Same as caFile, but useful if you have users going through a proxy.
-             * Used to set CURLOPT_PROXY_CAINFO in libcurl.
+             * Same as caFile, but used when verifying an HTTPS proxy. 
+             * Used to set CURLOPT_PROXY_CAINFO in libcurl and proxy tls
+             * settings in crt HTTP client.
+             * Does nothing on windows.
              */
             Aws::String proxyCaFile;
             /**
