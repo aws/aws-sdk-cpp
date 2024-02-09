@@ -33,8 +33,8 @@ namespace ManagedBlockchain
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ManagedBlockchainClientConfiguration ClientConfigurationType;
       typedef ManagedBlockchainEndpointProvider EndpointProviderType;
@@ -44,14 +44,14 @@ namespace ManagedBlockchain
         * is not specified, it will be initialized to default values.
         */
         ManagedBlockchainClient(const Aws::ManagedBlockchain::ManagedBlockchainClientConfiguration& clientConfiguration = Aws::ManagedBlockchain::ManagedBlockchainClientConfiguration(),
-                                std::shared_ptr<ManagedBlockchainEndpointProviderBase> endpointProvider = Aws::MakeShared<ManagedBlockchainEndpointProvider>(ALLOCATION_TAG));
+                                std::shared_ptr<ManagedBlockchainEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ManagedBlockchainClient(const Aws::Auth::AWSCredentials& credentials,
-                                std::shared_ptr<ManagedBlockchainEndpointProviderBase> endpointProvider = Aws::MakeShared<ManagedBlockchainEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<ManagedBlockchainEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::ManagedBlockchain::ManagedBlockchainClientConfiguration& clientConfiguration = Aws::ManagedBlockchain::ManagedBlockchainClientConfiguration());
 
        /**
@@ -59,7 +59,7 @@ namespace ManagedBlockchain
         * the default http client factory will be used
         */
         ManagedBlockchainClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                std::shared_ptr<ManagedBlockchainEndpointProviderBase> endpointProvider = Aws::MakeShared<ManagedBlockchainEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<ManagedBlockchainEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::ManagedBlockchain::ManagedBlockchainClientConfiguration& clientConfiguration = Aws::ManagedBlockchain::ManagedBlockchainClientConfiguration());
 
 

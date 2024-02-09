@@ -31,8 +31,8 @@ namespace EFS
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef EFSClientConfiguration ClientConfigurationType;
       typedef EFSEndpointProvider EndpointProviderType;
@@ -42,14 +42,14 @@ namespace EFS
         * is not specified, it will be initialized to default values.
         */
         EFSClient(const Aws::EFS::EFSClientConfiguration& clientConfiguration = Aws::EFS::EFSClientConfiguration(),
-                  std::shared_ptr<EFSEndpointProviderBase> endpointProvider = Aws::MakeShared<EFSEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<EFSEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EFSClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<EFSEndpointProviderBase> endpointProvider = Aws::MakeShared<EFSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<EFSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::EFS::EFSClientConfiguration& clientConfiguration = Aws::EFS::EFSClientConfiguration());
 
        /**
@@ -57,7 +57,7 @@ namespace EFS
         * the default http client factory will be used
         */
         EFSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<EFSEndpointProviderBase> endpointProvider = Aws::MakeShared<EFSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<EFSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::EFS::EFSClientConfiguration& clientConfiguration = Aws::EFS::EFSClientConfiguration());
 
 

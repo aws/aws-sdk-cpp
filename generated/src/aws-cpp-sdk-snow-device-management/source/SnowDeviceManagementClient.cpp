@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SnowDeviceManagementClient::SERVICE_NAME = "snow-device-management";
-const char* SnowDeviceManagementClient::ALLOCATION_TAG = "SnowDeviceManagementClient";
+namespace Aws
+{
+  namespace SnowDeviceManagement
+  {
+    const char SERVICE_NAME[] = "snow-device-management";
+    const char ALLOCATION_TAG[] = "SnowDeviceManagementClient";
+  }
+}
+const char* SnowDeviceManagementClient::GetServiceName() {return SERVICE_NAME;}
+const char* SnowDeviceManagementClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SnowDeviceManagementClient::SnowDeviceManagementClient(const SnowDeviceManagement::SnowDeviceManagementClientConfiguration& clientConfiguration,
                                                        std::shared_ptr<SnowDeviceManagementEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ SnowDeviceManagementClient::SnowDeviceManagementClient(const SnowDeviceManagemen
             Aws::MakeShared<SnowDeviceManagementErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SnowDeviceManagementEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ SnowDeviceManagementClient::SnowDeviceManagementClient(const AWSCredentials& cre
             Aws::MakeShared<SnowDeviceManagementErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SnowDeviceManagementEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ SnowDeviceManagementClient::SnowDeviceManagementClient(const std::shared_ptr<AWS
             Aws::MakeShared<SnowDeviceManagementErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SnowDeviceManagementEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

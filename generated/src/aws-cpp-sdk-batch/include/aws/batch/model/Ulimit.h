@@ -24,9 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>The <code>ulimit</code> settings to pass to the container.</p>  <p>This
-   * object isn't applicable to jobs that are running on Fargate resources.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <p>The <code>ulimit</code> settings to pass to the container. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Ulimit.html">Ulimit</a>.</p>
+   *  <p>This object isn't applicable to jobs that are running on Fargate
+   * resources.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ulimit">AWS API
    * Reference</a></p>
    */
@@ -40,63 +42,103 @@ namespace Model
 
 
     /**
-     * <p>The hard limit for the <code>ulimit</code> type.</p>
+     * <p>The hard limit for the <code>ulimit</code> type. </p>
      */
     inline int GetHardLimit() const{ return m_hardLimit; }
 
     /**
-     * <p>The hard limit for the <code>ulimit</code> type.</p>
+     * <p>The hard limit for the <code>ulimit</code> type. </p>
      */
     inline bool HardLimitHasBeenSet() const { return m_hardLimitHasBeenSet; }
 
     /**
-     * <p>The hard limit for the <code>ulimit</code> type.</p>
+     * <p>The hard limit for the <code>ulimit</code> type. </p>
      */
     inline void SetHardLimit(int value) { m_hardLimitHasBeenSet = true; m_hardLimit = value; }
 
     /**
-     * <p>The hard limit for the <code>ulimit</code> type.</p>
+     * <p>The hard limit for the <code>ulimit</code> type. </p>
      */
     inline Ulimit& WithHardLimit(int value) { SetHardLimit(value); return *this;}
 
 
     /**
-     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     * <p>The <code>type</code> of the <code>ulimit</code>. Valid values are:
+     * <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> |
+     * <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code>
+     * | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> |
+     * <code>stack</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     * <p>The <code>type</code> of the <code>ulimit</code>. Valid values are:
+     * <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> |
+     * <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code>
+     * | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> |
+     * <code>stack</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     * <p>The <code>type</code> of the <code>ulimit</code>. Valid values are:
+     * <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> |
+     * <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code>
+     * | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> |
+     * <code>stack</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     * <p>The <code>type</code> of the <code>ulimit</code>. Valid values are:
+     * <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> |
+     * <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code>
+     * | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> |
+     * <code>stack</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     * <p>The <code>type</code> of the <code>ulimit</code>. Valid values are:
+     * <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> |
+     * <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code>
+     * | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> |
+     * <code>stack</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     * <p>The <code>type</code> of the <code>ulimit</code>. Valid values are:
+     * <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> |
+     * <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code>
+     * | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> |
+     * <code>stack</code>.</p>
      */
     inline Ulimit& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     * <p>The <code>type</code> of the <code>ulimit</code>. Valid values are:
+     * <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> |
+     * <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code>
+     * | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> |
+     * <code>stack</code>.</p>
      */
     inline Ulimit& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     * <p>The <code>type</code> of the <code>ulimit</code>. Valid values are:
+     * <code>core</code> | <code>cpu</code> | <code>data</code> | <code>fsize</code> |
+     * <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code>
+     * | <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> |
+     * <code>stack</code>.</p>
      */
     inline Ulimit& WithName(const char* value) { SetName(value); return *this;}
 

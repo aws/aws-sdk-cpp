@@ -137,8 +137,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LexModelsV2Client::SERVICE_NAME = "lex";
-const char* LexModelsV2Client::ALLOCATION_TAG = "LexModelsV2Client";
+namespace Aws
+{
+  namespace LexModelsV2
+  {
+    const char SERVICE_NAME[] = "lex";
+    const char ALLOCATION_TAG[] = "LexModelsV2Client";
+  }
+}
+const char* LexModelsV2Client::GetServiceName() {return SERVICE_NAME;}
+const char* LexModelsV2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LexModelsV2Client::LexModelsV2Client(const LexModelsV2::LexModelsV2ClientConfiguration& clientConfiguration,
                                      std::shared_ptr<LexModelsV2EndpointProviderBase> endpointProvider) :
@@ -150,7 +158,7 @@ LexModelsV2Client::LexModelsV2Client(const LexModelsV2::LexModelsV2ClientConfigu
             Aws::MakeShared<LexModelsV2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelsV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -166,7 +174,7 @@ LexModelsV2Client::LexModelsV2Client(const AWSCredentials& credentials,
             Aws::MakeShared<LexModelsV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelsV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -182,7 +190,7 @@ LexModelsV2Client::LexModelsV2Client(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<LexModelsV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelsV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

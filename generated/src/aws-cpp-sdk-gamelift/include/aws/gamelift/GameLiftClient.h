@@ -57,8 +57,8 @@ namespace GameLift
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef GameLiftClientConfiguration ClientConfigurationType;
       typedef GameLiftEndpointProvider EndpointProviderType;
@@ -68,14 +68,14 @@ namespace GameLift
         * is not specified, it will be initialized to default values.
         */
         GameLiftClient(const Aws::GameLift::GameLiftClientConfiguration& clientConfiguration = Aws::GameLift::GameLiftClientConfiguration(),
-                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = Aws::MakeShared<GameLiftEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         GameLiftClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = Aws::MakeShared<GameLiftEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::GameLift::GameLiftClientConfiguration& clientConfiguration = Aws::GameLift::GameLiftClientConfiguration());
 
        /**
@@ -83,7 +83,7 @@ namespace GameLift
         * the default http client factory will be used
         */
         GameLiftClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = Aws::MakeShared<GameLiftEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::GameLift::GameLiftClientConfiguration& clientConfiguration = Aws::GameLift::GameLiftClientConfiguration());
 
 

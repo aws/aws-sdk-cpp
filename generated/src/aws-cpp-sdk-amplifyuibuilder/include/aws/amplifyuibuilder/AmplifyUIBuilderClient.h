@@ -35,8 +35,8 @@ namespace AmplifyUIBuilder
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AmplifyUIBuilderClientConfiguration ClientConfigurationType;
       typedef AmplifyUIBuilderEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace AmplifyUIBuilder
         * is not specified, it will be initialized to default values.
         */
         AmplifyUIBuilderClient(const Aws::AmplifyUIBuilder::AmplifyUIBuilderClientConfiguration& clientConfiguration = Aws::AmplifyUIBuilder::AmplifyUIBuilderClientConfiguration(),
-                               std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> endpointProvider = Aws::MakeShared<AmplifyUIBuilderEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AmplifyUIBuilderClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> endpointProvider = Aws::MakeShared<AmplifyUIBuilderEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::AmplifyUIBuilder::AmplifyUIBuilderClientConfiguration& clientConfiguration = Aws::AmplifyUIBuilder::AmplifyUIBuilderClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace AmplifyUIBuilder
         * the default http client factory will be used
         */
         AmplifyUIBuilderClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> endpointProvider = Aws::MakeShared<AmplifyUIBuilderEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::AmplifyUIBuilder::AmplifyUIBuilderClientConfiguration& clientConfiguration = Aws::AmplifyUIBuilder::AmplifyUIBuilderClientConfiguration());
 
 

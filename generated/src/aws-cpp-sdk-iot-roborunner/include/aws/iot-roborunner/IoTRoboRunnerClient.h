@@ -23,8 +23,8 @@ namespace IoTRoboRunner
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoTRoboRunnerClientConfiguration ClientConfigurationType;
       typedef IoTRoboRunnerEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace IoTRoboRunner
         * is not specified, it will be initialized to default values.
         */
         IoTRoboRunnerClient(const Aws::IoTRoboRunner::IoTRoboRunnerClientConfiguration& clientConfiguration = Aws::IoTRoboRunner::IoTRoboRunnerClientConfiguration(),
-                            std::shared_ptr<IoTRoboRunnerEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTRoboRunnerEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<IoTRoboRunnerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoTRoboRunnerClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<IoTRoboRunnerEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTRoboRunnerEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<IoTRoboRunnerEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::IoTRoboRunner::IoTRoboRunnerClientConfiguration& clientConfiguration = Aws::IoTRoboRunner::IoTRoboRunnerClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace IoTRoboRunner
         * the default http client factory will be used
         */
         IoTRoboRunnerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<IoTRoboRunnerEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTRoboRunnerEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<IoTRoboRunnerEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::IoTRoboRunner::IoTRoboRunnerClientConfiguration& clientConfiguration = Aws::IoTRoboRunner::IoTRoboRunnerClientConfiguration());
 
 

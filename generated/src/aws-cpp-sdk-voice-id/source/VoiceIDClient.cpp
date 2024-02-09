@@ -64,8 +64,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* VoiceIDClient::SERVICE_NAME = "voiceid";
-const char* VoiceIDClient::ALLOCATION_TAG = "VoiceIDClient";
+namespace Aws
+{
+  namespace VoiceID
+  {
+    const char SERVICE_NAME[] = "voiceid";
+    const char ALLOCATION_TAG[] = "VoiceIDClient";
+  }
+}
+const char* VoiceIDClient::GetServiceName() {return SERVICE_NAME;}
+const char* VoiceIDClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 VoiceIDClient::VoiceIDClient(const VoiceID::VoiceIDClientConfiguration& clientConfiguration,
                              std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider) :
@@ -77,7 +85,7 @@ VoiceIDClient::VoiceIDClient(const VoiceID::VoiceIDClientConfiguration& clientCo
             Aws::MakeShared<VoiceIDErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<VoiceIDEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ VoiceIDClient::VoiceIDClient(const AWSCredentials& credentials,
             Aws::MakeShared<VoiceIDErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<VoiceIDEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -109,7 +117,7 @@ VoiceIDClient::VoiceIDClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<VoiceIDErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<VoiceIDEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

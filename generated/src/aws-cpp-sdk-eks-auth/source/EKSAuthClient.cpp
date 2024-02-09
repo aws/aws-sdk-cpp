@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* EKSAuthClient::SERVICE_NAME = "eks-auth";
-const char* EKSAuthClient::ALLOCATION_TAG = "EKSAuthClient";
+namespace Aws
+{
+  namespace EKSAuth
+  {
+    const char SERVICE_NAME[] = "eks-auth";
+    const char ALLOCATION_TAG[] = "EKSAuthClient";
+  }
+}
+const char* EKSAuthClient::GetServiceName() {return SERVICE_NAME;}
+const char* EKSAuthClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 EKSAuthClient::EKSAuthClient(const EKSAuth::EKSAuthClientConfiguration& clientConfiguration,
                              std::shared_ptr<EKSAuthEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ EKSAuthClient::EKSAuthClient(const EKSAuth::EKSAuthClientConfiguration& clientCo
             Aws::MakeShared<EKSAuthErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EKSAuthEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ EKSAuthClient::EKSAuthClient(const AWSCredentials& credentials,
             Aws::MakeShared<EKSAuthErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EKSAuthEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ EKSAuthClient::EKSAuthClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<EKSAuthErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EKSAuthEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

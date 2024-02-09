@@ -44,8 +44,8 @@ namespace Redshift
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef RedshiftClientConfiguration ClientConfigurationType;
       typedef RedshiftEndpointProvider EndpointProviderType;
@@ -55,14 +55,14 @@ namespace Redshift
         * is not specified, it will be initialized to default values.
         */
         RedshiftClient(const Aws::Redshift::RedshiftClientConfiguration& clientConfiguration = Aws::Redshift::RedshiftClientConfiguration(),
-                       std::shared_ptr<RedshiftEndpointProviderBase> endpointProvider = Aws::MakeShared<RedshiftEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<RedshiftEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RedshiftClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<RedshiftEndpointProviderBase> endpointProvider = Aws::MakeShared<RedshiftEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<RedshiftEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Redshift::RedshiftClientConfiguration& clientConfiguration = Aws::Redshift::RedshiftClientConfiguration());
 
        /**
@@ -70,7 +70,7 @@ namespace Redshift
         * the default http client factory will be used
         */
         RedshiftClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<RedshiftEndpointProviderBase> endpointProvider = Aws::MakeShared<RedshiftEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<RedshiftEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Redshift::RedshiftClientConfiguration& clientConfiguration = Aws::Redshift::RedshiftClientConfiguration());
 
 

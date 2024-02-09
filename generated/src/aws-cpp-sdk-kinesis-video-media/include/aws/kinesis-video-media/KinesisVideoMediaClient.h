@@ -22,8 +22,8 @@ namespace KinesisVideoMedia
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef KinesisVideoMediaClientConfiguration ClientConfigurationType;
       typedef KinesisVideoMediaEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace KinesisVideoMedia
         * is not specified, it will be initialized to default values.
         */
         KinesisVideoMediaClient(const Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration& clientConfiguration = Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration(),
-                                std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoMediaEndpointProvider>(ALLOCATION_TAG));
+                                std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         KinesisVideoMediaClient(const Aws::Auth::AWSCredentials& credentials,
-                                std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoMediaEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration& clientConfiguration = Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace KinesisVideoMedia
         * the default http client factory will be used
         */
         KinesisVideoMediaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoMediaEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration& clientConfiguration = Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration());
 
 

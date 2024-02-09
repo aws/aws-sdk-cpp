@@ -22,8 +22,8 @@ namespace Pinpoint
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PinpointClientConfiguration ClientConfigurationType;
       typedef PinpointEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace Pinpoint
         * is not specified, it will be initialized to default values.
         */
         PinpointClient(const Aws::Pinpoint::PinpointClientConfiguration& clientConfiguration = Aws::Pinpoint::PinpointClientConfiguration(),
-                       std::shared_ptr<PinpointEndpointProviderBase> endpointProvider = Aws::MakeShared<PinpointEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<PinpointEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PinpointClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<PinpointEndpointProviderBase> endpointProvider = Aws::MakeShared<PinpointEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<PinpointEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Pinpoint::PinpointClientConfiguration& clientConfiguration = Aws::Pinpoint::PinpointClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace Pinpoint
         * the default http client factory will be used
         */
         PinpointClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<PinpointEndpointProviderBase> endpointProvider = Aws::MakeShared<PinpointEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<PinpointEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Pinpoint::PinpointClientConfiguration& clientConfiguration = Aws::Pinpoint::PinpointClientConfiguration());
 
 

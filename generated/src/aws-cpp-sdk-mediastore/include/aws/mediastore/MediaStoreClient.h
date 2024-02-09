@@ -23,8 +23,8 @@ namespace MediaStore
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MediaStoreClientConfiguration ClientConfigurationType;
       typedef MediaStoreEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace MediaStore
         * is not specified, it will be initialized to default values.
         */
         MediaStoreClient(const Aws::MediaStore::MediaStoreClientConfiguration& clientConfiguration = Aws::MediaStore::MediaStoreClientConfiguration(),
-                         std::shared_ptr<MediaStoreEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaStoreEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<MediaStoreEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MediaStoreClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<MediaStoreEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaStoreEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<MediaStoreEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::MediaStore::MediaStoreClientConfiguration& clientConfiguration = Aws::MediaStore::MediaStoreClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace MediaStore
         * the default http client factory will be used
         */
         MediaStoreClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<MediaStoreEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaStoreEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<MediaStoreEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::MediaStore::MediaStoreClientConfiguration& clientConfiguration = Aws::MediaStore::MediaStoreClientConfiguration());
 
 

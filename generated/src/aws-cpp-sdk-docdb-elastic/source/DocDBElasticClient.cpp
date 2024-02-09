@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DocDBElasticClient::SERVICE_NAME = "docdb-elastic";
-const char* DocDBElasticClient::ALLOCATION_TAG = "DocDBElasticClient";
+namespace Aws
+{
+  namespace DocDBElastic
+  {
+    const char SERVICE_NAME[] = "docdb-elastic";
+    const char ALLOCATION_TAG[] = "DocDBElasticClient";
+  }
+}
+const char* DocDBElasticClient::GetServiceName() {return SERVICE_NAME;}
+const char* DocDBElasticClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DocDBElasticClient::DocDBElasticClient(const DocDBElastic::DocDBElasticClientConfiguration& clientConfiguration,
                                        std::shared_ptr<DocDBElasticEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ DocDBElasticClient::DocDBElasticClient(const DocDBElastic::DocDBElasticClientCon
             Aws::MakeShared<DocDBElasticErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DocDBElasticEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ DocDBElasticClient::DocDBElasticClient(const AWSCredentials& credentials,
             Aws::MakeShared<DocDBElasticErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DocDBElasticEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ DocDBElasticClient::DocDBElasticClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<DocDBElasticErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DocDBElasticEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

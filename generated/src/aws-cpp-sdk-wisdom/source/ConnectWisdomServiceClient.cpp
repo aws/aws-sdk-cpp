@@ -74,8 +74,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ConnectWisdomServiceClient::SERVICE_NAME = "wisdom";
-const char* ConnectWisdomServiceClient::ALLOCATION_TAG = "ConnectWisdomServiceClient";
+namespace Aws
+{
+  namespace ConnectWisdomService
+  {
+    const char SERVICE_NAME[] = "wisdom";
+    const char ALLOCATION_TAG[] = "ConnectWisdomServiceClient";
+  }
+}
+const char* ConnectWisdomServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* ConnectWisdomServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ConnectWisdomServiceClient::ConnectWisdomServiceClient(const ConnectWisdomService::ConnectWisdomServiceClientConfiguration& clientConfiguration,
                                                        std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> endpointProvider) :
@@ -87,7 +95,7 @@ ConnectWisdomServiceClient::ConnectWisdomServiceClient(const ConnectWisdomServic
             Aws::MakeShared<ConnectWisdomServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectWisdomServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ ConnectWisdomServiceClient::ConnectWisdomServiceClient(const AWSCredentials& cre
             Aws::MakeShared<ConnectWisdomServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectWisdomServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -119,7 +127,7 @@ ConnectWisdomServiceClient::ConnectWisdomServiceClient(const std::shared_ptr<AWS
             Aws::MakeShared<ConnectWisdomServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectWisdomServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

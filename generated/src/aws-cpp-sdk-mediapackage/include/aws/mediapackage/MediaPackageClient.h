@@ -22,8 +22,8 @@ namespace MediaPackage
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MediaPackageClientConfiguration ClientConfigurationType;
       typedef MediaPackageEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace MediaPackage
         * is not specified, it will be initialized to default values.
         */
         MediaPackageClient(const Aws::MediaPackage::MediaPackageClientConfiguration& clientConfiguration = Aws::MediaPackage::MediaPackageClientConfiguration(),
-                           std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaPackageEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MediaPackageClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaPackageEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::MediaPackage::MediaPackageClientConfiguration& clientConfiguration = Aws::MediaPackage::MediaPackageClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace MediaPackage
         * the default http client factory will be used
         */
         MediaPackageClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaPackageEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::MediaPackage::MediaPackageClientConfiguration& clientConfiguration = Aws::MediaPackage::MediaPackageClientConfiguration());
 
 

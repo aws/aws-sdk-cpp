@@ -37,8 +37,8 @@ namespace RolesAnywhere
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef RolesAnywhereClientConfiguration ClientConfigurationType;
       typedef RolesAnywhereEndpointProvider EndpointProviderType;
@@ -48,14 +48,14 @@ namespace RolesAnywhere
         * is not specified, it will be initialized to default values.
         */
         RolesAnywhereClient(const Aws::RolesAnywhere::RolesAnywhereClientConfiguration& clientConfiguration = Aws::RolesAnywhere::RolesAnywhereClientConfiguration(),
-                            std::shared_ptr<RolesAnywhereEndpointProviderBase> endpointProvider = Aws::MakeShared<RolesAnywhereEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<RolesAnywhereEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RolesAnywhereClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<RolesAnywhereEndpointProviderBase> endpointProvider = Aws::MakeShared<RolesAnywhereEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<RolesAnywhereEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::RolesAnywhere::RolesAnywhereClientConfiguration& clientConfiguration = Aws::RolesAnywhere::RolesAnywhereClientConfiguration());
 
        /**
@@ -63,7 +63,7 @@ namespace RolesAnywhere
         * the default http client factory will be used
         */
         RolesAnywhereClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<RolesAnywhereEndpointProviderBase> endpointProvider = Aws::MakeShared<RolesAnywhereEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<RolesAnywhereEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::RolesAnywhere::RolesAnywhereClientConfiguration& clientConfiguration = Aws::RolesAnywhere::RolesAnywhereClientConfiguration());
 
 

@@ -30,8 +30,8 @@ namespace ManagedBlockchainQuery
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ManagedBlockchainQueryClientConfiguration ClientConfigurationType;
       typedef ManagedBlockchainQueryEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace ManagedBlockchainQuery
         * is not specified, it will be initialized to default values.
         */
         ManagedBlockchainQueryClient(const Aws::ManagedBlockchainQuery::ManagedBlockchainQueryClientConfiguration& clientConfiguration = Aws::ManagedBlockchainQuery::ManagedBlockchainQueryClientConfiguration(),
-                                     std::shared_ptr<ManagedBlockchainQueryEndpointProviderBase> endpointProvider = Aws::MakeShared<ManagedBlockchainQueryEndpointProvider>(ALLOCATION_TAG));
+                                     std::shared_ptr<ManagedBlockchainQueryEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ManagedBlockchainQueryClient(const Aws::Auth::AWSCredentials& credentials,
-                                     std::shared_ptr<ManagedBlockchainQueryEndpointProviderBase> endpointProvider = Aws::MakeShared<ManagedBlockchainQueryEndpointProvider>(ALLOCATION_TAG),
+                                     std::shared_ptr<ManagedBlockchainQueryEndpointProviderBase> endpointProvider = nullptr,
                                      const Aws::ManagedBlockchainQuery::ManagedBlockchainQueryClientConfiguration& clientConfiguration = Aws::ManagedBlockchainQuery::ManagedBlockchainQueryClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace ManagedBlockchainQuery
         * the default http client factory will be used
         */
         ManagedBlockchainQueryClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                     std::shared_ptr<ManagedBlockchainQueryEndpointProviderBase> endpointProvider = Aws::MakeShared<ManagedBlockchainQueryEndpointProvider>(ALLOCATION_TAG),
+                                     std::shared_ptr<ManagedBlockchainQueryEndpointProviderBase> endpointProvider = nullptr,
                                      const Aws::ManagedBlockchainQuery::ManagedBlockchainQueryClientConfiguration& clientConfiguration = Aws::ManagedBlockchainQuery::ManagedBlockchainQueryClientConfiguration());
 
 

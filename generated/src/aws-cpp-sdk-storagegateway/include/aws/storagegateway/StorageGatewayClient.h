@@ -65,8 +65,8 @@ namespace StorageGateway
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef StorageGatewayClientConfiguration ClientConfigurationType;
       typedef StorageGatewayEndpointProvider EndpointProviderType;
@@ -76,14 +76,14 @@ namespace StorageGateway
         * is not specified, it will be initialized to default values.
         */
         StorageGatewayClient(const Aws::StorageGateway::StorageGatewayClientConfiguration& clientConfiguration = Aws::StorageGateway::StorageGatewayClientConfiguration(),
-                             std::shared_ptr<StorageGatewayEndpointProviderBase> endpointProvider = Aws::MakeShared<StorageGatewayEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<StorageGatewayEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         StorageGatewayClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<StorageGatewayEndpointProviderBase> endpointProvider = Aws::MakeShared<StorageGatewayEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<StorageGatewayEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::StorageGateway::StorageGatewayClientConfiguration& clientConfiguration = Aws::StorageGateway::StorageGatewayClientConfiguration());
 
        /**
@@ -91,7 +91,7 @@ namespace StorageGateway
         * the default http client factory will be used
         */
         StorageGatewayClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<StorageGatewayEndpointProviderBase> endpointProvider = Aws::MakeShared<StorageGatewayEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<StorageGatewayEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::StorageGateway::StorageGatewayClientConfiguration& clientConfiguration = Aws::StorageGateway::StorageGatewayClientConfiguration());
 
 

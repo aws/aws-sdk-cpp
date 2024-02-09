@@ -62,8 +62,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* EntityResolutionClient::SERVICE_NAME = "entityresolution";
-const char* EntityResolutionClient::ALLOCATION_TAG = "EntityResolutionClient";
+namespace Aws
+{
+  namespace EntityResolution
+  {
+    const char SERVICE_NAME[] = "entityresolution";
+    const char ALLOCATION_TAG[] = "EntityResolutionClient";
+  }
+}
+const char* EntityResolutionClient::GetServiceName() {return SERVICE_NAME;}
+const char* EntityResolutionClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 EntityResolutionClient::EntityResolutionClient(const EntityResolution::EntityResolutionClientConfiguration& clientConfiguration,
                                                std::shared_ptr<EntityResolutionEndpointProviderBase> endpointProvider) :
@@ -75,7 +83,7 @@ EntityResolutionClient::EntityResolutionClient(const EntityResolution::EntityRes
             Aws::MakeShared<EntityResolutionErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EntityResolutionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ EntityResolutionClient::EntityResolutionClient(const AWSCredentials& credentials
             Aws::MakeShared<EntityResolutionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EntityResolutionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ EntityResolutionClient::EntityResolutionClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<EntityResolutionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EntityResolutionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

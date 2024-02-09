@@ -72,8 +72,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* OpenSearchServerlessClient::SERVICE_NAME = "aoss";
-const char* OpenSearchServerlessClient::ALLOCATION_TAG = "OpenSearchServerlessClient";
+namespace Aws
+{
+  namespace OpenSearchServerless
+  {
+    const char SERVICE_NAME[] = "aoss";
+    const char ALLOCATION_TAG[] = "OpenSearchServerlessClient";
+  }
+}
+const char* OpenSearchServerlessClient::GetServiceName() {return SERVICE_NAME;}
+const char* OpenSearchServerlessClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 OpenSearchServerlessClient::OpenSearchServerlessClient(const OpenSearchServerless::OpenSearchServerlessClientConfiguration& clientConfiguration,
                                                        std::shared_ptr<OpenSearchServerlessEndpointProviderBase> endpointProvider) :
@@ -85,7 +93,7 @@ OpenSearchServerlessClient::OpenSearchServerlessClient(const OpenSearchServerles
             Aws::MakeShared<OpenSearchServerlessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OpenSearchServerlessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -101,7 +109,7 @@ OpenSearchServerlessClient::OpenSearchServerlessClient(const AWSCredentials& cre
             Aws::MakeShared<OpenSearchServerlessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OpenSearchServerlessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -117,7 +125,7 @@ OpenSearchServerlessClient::OpenSearchServerlessClient(const std::shared_ptr<AWS
             Aws::MakeShared<OpenSearchServerlessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OpenSearchServerlessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

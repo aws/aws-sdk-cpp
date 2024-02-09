@@ -35,8 +35,8 @@ namespace Athena
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AthenaClientConfiguration ClientConfigurationType;
       typedef AthenaEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace Athena
         * is not specified, it will be initialized to default values.
         */
         AthenaClient(const Aws::Athena::AthenaClientConfiguration& clientConfiguration = Aws::Athena::AthenaClientConfiguration(),
-                     std::shared_ptr<AthenaEndpointProviderBase> endpointProvider = Aws::MakeShared<AthenaEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<AthenaEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AthenaClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<AthenaEndpointProviderBase> endpointProvider = Aws::MakeShared<AthenaEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<AthenaEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Athena::AthenaClientConfiguration& clientConfiguration = Aws::Athena::AthenaClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace Athena
         * the default http client factory will be used
         */
         AthenaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<AthenaEndpointProviderBase> endpointProvider = Aws::MakeShared<AthenaEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<AthenaEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Athena::AthenaClientConfiguration& clientConfiguration = Aws::Athena::AthenaClientConfiguration());
 
 

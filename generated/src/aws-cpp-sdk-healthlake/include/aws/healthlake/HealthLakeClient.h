@@ -24,8 +24,8 @@ namespace HealthLake
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef HealthLakeClientConfiguration ClientConfigurationType;
       typedef HealthLakeEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace HealthLake
         * is not specified, it will be initialized to default values.
         */
         HealthLakeClient(const Aws::HealthLake::HealthLakeClientConfiguration& clientConfiguration = Aws::HealthLake::HealthLakeClientConfiguration(),
-                         std::shared_ptr<HealthLakeEndpointProviderBase> endpointProvider = Aws::MakeShared<HealthLakeEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<HealthLakeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         HealthLakeClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<HealthLakeEndpointProviderBase> endpointProvider = Aws::MakeShared<HealthLakeEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<HealthLakeEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::HealthLake::HealthLakeClientConfiguration& clientConfiguration = Aws::HealthLake::HealthLakeClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace HealthLake
         * the default http client factory will be used
         */
         HealthLakeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<HealthLakeEndpointProviderBase> endpointProvider = Aws::MakeShared<HealthLakeEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<HealthLakeEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::HealthLake::HealthLakeClientConfiguration& clientConfiguration = Aws::HealthLake::HealthLakeClientConfiguration());
 
 

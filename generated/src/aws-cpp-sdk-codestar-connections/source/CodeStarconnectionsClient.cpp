@@ -62,8 +62,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodeStarconnectionsClient::SERVICE_NAME = "codestar-connections";
-const char* CodeStarconnectionsClient::ALLOCATION_TAG = "CodeStarconnectionsClient";
+namespace Aws
+{
+  namespace CodeStarconnections
+  {
+    const char SERVICE_NAME[] = "codestar-connections";
+    const char ALLOCATION_TAG[] = "CodeStarconnectionsClient";
+  }
+}
+const char* CodeStarconnectionsClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodeStarconnectionsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CodeStarconnectionsClient::CodeStarconnectionsClient(const CodeStarconnections::CodeStarconnectionsClientConfiguration& clientConfiguration,
                                                      std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider) :
@@ -75,7 +83,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const CodeStarconnections::
             Aws::MakeShared<CodeStarconnectionsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarconnectionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const AWSCredentials& crede
             Aws::MakeShared<CodeStarconnectionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarconnectionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const std::shared_ptr<AWSCr
             Aws::MakeShared<CodeStarconnectionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarconnectionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

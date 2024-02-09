@@ -26,8 +26,8 @@ namespace BCMDataExports
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef BCMDataExportsClientConfiguration ClientConfigurationType;
       typedef BCMDataExportsEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace BCMDataExports
         * is not specified, it will be initialized to default values.
         */
         BCMDataExportsClient(const Aws::BCMDataExports::BCMDataExportsClientConfiguration& clientConfiguration = Aws::BCMDataExports::BCMDataExportsClientConfiguration(),
-                             std::shared_ptr<BCMDataExportsEndpointProviderBase> endpointProvider = Aws::MakeShared<BCMDataExportsEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<BCMDataExportsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BCMDataExportsClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<BCMDataExportsEndpointProviderBase> endpointProvider = Aws::MakeShared<BCMDataExportsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<BCMDataExportsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::BCMDataExports::BCMDataExportsClientConfiguration& clientConfiguration = Aws::BCMDataExports::BCMDataExportsClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace BCMDataExports
         * the default http client factory will be used
         */
         BCMDataExportsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<BCMDataExportsEndpointProviderBase> endpointProvider = Aws::MakeShared<BCMDataExportsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<BCMDataExportsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::BCMDataExports::BCMDataExportsClientConfiguration& clientConfiguration = Aws::BCMDataExports::BCMDataExportsClientConfiguration());
 
 

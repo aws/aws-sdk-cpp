@@ -52,8 +52,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudWatchRUMClient::SERVICE_NAME = "rum";
-const char* CloudWatchRUMClient::ALLOCATION_TAG = "CloudWatchRUMClient";
+namespace Aws
+{
+  namespace CloudWatchRUM
+  {
+    const char SERVICE_NAME[] = "rum";
+    const char ALLOCATION_TAG[] = "CloudWatchRUMClient";
+  }
+}
+const char* CloudWatchRUMClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudWatchRUMClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudWatchRUMClient::CloudWatchRUMClient(const CloudWatchRUM::CloudWatchRUMClientConfiguration& clientConfiguration,
                                          std::shared_ptr<CloudWatchRUMEndpointProviderBase> endpointProvider) :
@@ -65,7 +73,7 @@ CloudWatchRUMClient::CloudWatchRUMClient(const CloudWatchRUM::CloudWatchRUMClien
             Aws::MakeShared<CloudWatchRUMErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchRUMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ CloudWatchRUMClient::CloudWatchRUMClient(const AWSCredentials& credentials,
             Aws::MakeShared<CloudWatchRUMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchRUMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -97,7 +105,7 @@ CloudWatchRUMClient::CloudWatchRUMClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<CloudWatchRUMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchRUMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

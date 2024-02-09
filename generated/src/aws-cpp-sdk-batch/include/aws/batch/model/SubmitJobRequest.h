@@ -220,8 +220,9 @@ namespace Model
      * <p>The scheduling priority for the job. This only affects jobs in job queues
      * with a fair share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
-     * priority in the job definition.</p> <p>The minimum supported value is 0 and the
-     * maximum supported value is 9999.</p>
+     * priority in the job definition and works only within a single share
+     * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
      */
     inline int GetSchedulingPriorityOverride() const{ return m_schedulingPriorityOverride; }
 
@@ -229,8 +230,9 @@ namespace Model
      * <p>The scheduling priority for the job. This only affects jobs in job queues
      * with a fair share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
-     * priority in the job definition.</p> <p>The minimum supported value is 0 and the
-     * maximum supported value is 9999.</p>
+     * priority in the job definition and works only within a single share
+     * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
      */
     inline bool SchedulingPriorityOverrideHasBeenSet() const { return m_schedulingPriorityOverrideHasBeenSet; }
 
@@ -238,8 +240,9 @@ namespace Model
      * <p>The scheduling priority for the job. This only affects jobs in job queues
      * with a fair share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
-     * priority in the job definition.</p> <p>The minimum supported value is 0 and the
-     * maximum supported value is 9999.</p>
+     * priority in the job definition and works only within a single share
+     * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
      */
     inline void SetSchedulingPriorityOverride(int value) { m_schedulingPriorityOverrideHasBeenSet = true; m_schedulingPriorityOverride = value; }
 
@@ -247,8 +250,9 @@ namespace Model
      * <p>The scheduling priority for the job. This only affects jobs in job queues
      * with a fair share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
-     * priority in the job definition.</p> <p>The minimum supported value is 0 and the
-     * maximum supported value is 9999.</p>
+     * priority in the job definition and works only within a single share
+     * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
      */
     inline SubmitJobRequest& WithSchedulingPriorityOverride(int value) { SetSchedulingPriorityOverride(value); return *this;}
 

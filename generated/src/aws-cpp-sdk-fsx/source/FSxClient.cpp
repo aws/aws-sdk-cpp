@@ -80,8 +80,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* FSxClient::SERVICE_NAME = "fsx";
-const char* FSxClient::ALLOCATION_TAG = "FSxClient";
+namespace Aws
+{
+  namespace FSx
+  {
+    const char SERVICE_NAME[] = "fsx";
+    const char ALLOCATION_TAG[] = "FSxClient";
+  }
+}
+const char* FSxClient::GetServiceName() {return SERVICE_NAME;}
+const char* FSxClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 FSxClient::FSxClient(const FSx::FSxClientConfiguration& clientConfiguration,
                      std::shared_ptr<FSxEndpointProviderBase> endpointProvider) :
@@ -93,7 +101,7 @@ FSxClient::FSxClient(const FSx::FSxClientConfiguration& clientConfiguration,
             Aws::MakeShared<FSxErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FSxEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -109,7 +117,7 @@ FSxClient::FSxClient(const AWSCredentials& credentials,
             Aws::MakeShared<FSxErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FSxEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -125,7 +133,7 @@ FSxClient::FSxClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<FSxErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FSxEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

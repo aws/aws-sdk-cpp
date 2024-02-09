@@ -49,8 +49,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* TimestreamQueryClient::SERVICE_NAME = "timestream";
-const char* TimestreamQueryClient::ALLOCATION_TAG = "TimestreamQueryClient";
+namespace Aws
+{
+  namespace TimestreamQuery
+  {
+    const char SERVICE_NAME[] = "timestream";
+    const char ALLOCATION_TAG[] = "TimestreamQueryClient";
+  }
+}
+const char* TimestreamQueryClient::GetServiceName() {return SERVICE_NAME;}
+const char* TimestreamQueryClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 TimestreamQueryClient::TimestreamQueryClient(const TimestreamQuery::TimestreamQueryClientConfiguration& clientConfiguration,
                                              std::shared_ptr<TimestreamQueryEndpointProviderBase> endpointProvider) :
@@ -62,7 +70,7 @@ TimestreamQueryClient::TimestreamQueryClient(const TimestreamQuery::TimestreamQu
             Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TimestreamQueryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -78,7 +86,7 @@ TimestreamQueryClient::TimestreamQueryClient(const AWSCredentials& credentials,
             Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TimestreamQueryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ TimestreamQueryClient::TimestreamQueryClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TimestreamQueryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

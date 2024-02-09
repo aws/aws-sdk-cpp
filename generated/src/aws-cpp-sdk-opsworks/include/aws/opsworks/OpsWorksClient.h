@@ -75,8 +75,8 @@ namespace OpsWorks
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef OpsWorksClientConfiguration ClientConfigurationType;
       typedef OpsWorksEndpointProvider EndpointProviderType;
@@ -86,14 +86,14 @@ namespace OpsWorks
         * is not specified, it will be initialized to default values.
         */
         OpsWorksClient(const Aws::OpsWorks::OpsWorksClientConfiguration& clientConfiguration = Aws::OpsWorks::OpsWorksClientConfiguration(),
-                       std::shared_ptr<OpsWorksEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<OpsWorksEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         OpsWorksClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<OpsWorksEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<OpsWorksEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::OpsWorks::OpsWorksClientConfiguration& clientConfiguration = Aws::OpsWorks::OpsWorksClientConfiguration());
 
        /**
@@ -101,7 +101,7 @@ namespace OpsWorks
         * the default http client factory will be used
         */
         OpsWorksClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<OpsWorksEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<OpsWorksEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::OpsWorks::OpsWorksClientConfiguration& clientConfiguration = Aws::OpsWorks::OpsWorksClientConfiguration());
 
 

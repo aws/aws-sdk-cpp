@@ -13,6 +13,7 @@
 #include <aws/iot/model/DomainType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/TlsConfig.h>
+#include <aws/iot/model/ServerCertificateConfig.h>
 #include <aws/iot/model/ServerCertificateSummary.h>
 #include <utility>
 
@@ -352,6 +353,32 @@ namespace Model
     inline DescribeDomainConfigurationResult& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline const ServerCertificateConfig& GetServerCertificateConfig() const{ return m_serverCertificateConfig; }
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline void SetServerCertificateConfig(const ServerCertificateConfig& value) { m_serverCertificateConfig = value; }
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline void SetServerCertificateConfig(ServerCertificateConfig&& value) { m_serverCertificateConfig = std::move(value); }
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline DescribeDomainConfigurationResult& WithServerCertificateConfig(const ServerCertificateConfig& value) { SetServerCertificateConfig(value); return *this;}
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline DescribeDomainConfigurationResult& WithServerCertificateConfig(ServerCertificateConfig&& value) { SetServerCertificateConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -394,6 +421,8 @@ namespace Model
     Aws::Utils::DateTime m_lastStatusChangeDate;
 
     TlsConfig m_tlsConfig;
+
+    ServerCertificateConfig m_serverCertificateConfig;
 
     Aws::String m_requestId;
   };

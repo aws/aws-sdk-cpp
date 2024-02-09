@@ -31,8 +31,8 @@ namespace repostspace
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef RepostspaceClientConfiguration ClientConfigurationType;
       typedef RepostspaceEndpointProvider EndpointProviderType;
@@ -42,14 +42,14 @@ namespace repostspace
         * is not specified, it will be initialized to default values.
         */
         RepostspaceClient(const Aws::repostspace::RepostspaceClientConfiguration& clientConfiguration = Aws::repostspace::RepostspaceClientConfiguration(),
-                          std::shared_ptr<RepostspaceEndpointProviderBase> endpointProvider = Aws::MakeShared<RepostspaceEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<RepostspaceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RepostspaceClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<RepostspaceEndpointProviderBase> endpointProvider = Aws::MakeShared<RepostspaceEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<RepostspaceEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::repostspace::RepostspaceClientConfiguration& clientConfiguration = Aws::repostspace::RepostspaceClientConfiguration());
 
        /**
@@ -57,7 +57,7 @@ namespace repostspace
         * the default http client factory will be used
         */
         RepostspaceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<RepostspaceEndpointProviderBase> endpointProvider = Aws::MakeShared<RepostspaceEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<RepostspaceEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::repostspace::RepostspaceClientConfiguration& clientConfiguration = Aws::repostspace::RepostspaceClientConfiguration());
 
 

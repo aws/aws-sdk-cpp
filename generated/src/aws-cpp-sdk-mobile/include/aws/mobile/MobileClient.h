@@ -25,8 +25,8 @@ namespace Mobile
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MobileClientConfiguration ClientConfigurationType;
       typedef MobileEndpointProvider EndpointProviderType;
@@ -36,14 +36,14 @@ namespace Mobile
         * is not specified, it will be initialized to default values.
         */
         MobileClient(const Aws::Mobile::MobileClientConfiguration& clientConfiguration = Aws::Mobile::MobileClientConfiguration(),
-                     std::shared_ptr<MobileEndpointProviderBase> endpointProvider = Aws::MakeShared<MobileEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<MobileEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MobileClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<MobileEndpointProviderBase> endpointProvider = Aws::MakeShared<MobileEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<MobileEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Mobile::MobileClientConfiguration& clientConfiguration = Aws::Mobile::MobileClientConfiguration());
 
        /**
@@ -51,7 +51,7 @@ namespace Mobile
         * the default http client factory will be used
         */
         MobileClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<MobileEndpointProviderBase> endpointProvider = Aws::MakeShared<MobileEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<MobileEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Mobile::MobileClientConfiguration& clientConfiguration = Aws::Mobile::MobileClientConfiguration());
 
 

@@ -59,8 +59,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BatchClient::SERVICE_NAME = "batch";
-const char* BatchClient::ALLOCATION_TAG = "BatchClient";
+namespace Aws
+{
+  namespace Batch
+  {
+    const char SERVICE_NAME[] = "batch";
+    const char ALLOCATION_TAG[] = "BatchClient";
+  }
+}
+const char* BatchClient::GetServiceName() {return SERVICE_NAME;}
+const char* BatchClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BatchClient::BatchClient(const Batch::BatchClientConfiguration& clientConfiguration,
                          std::shared_ptr<BatchEndpointProviderBase> endpointProvider) :
@@ -72,7 +80,7 @@ BatchClient::BatchClient(const Batch::BatchClientConfiguration& clientConfigurat
             Aws::MakeShared<BatchErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ BatchClient::BatchClient(const AWSCredentials& credentials,
             Aws::MakeShared<BatchErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -104,7 +112,7 @@ BatchClient::BatchClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             Aws::MakeShared<BatchErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

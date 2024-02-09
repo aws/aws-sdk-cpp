@@ -30,8 +30,8 @@ namespace SupplyChain
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SupplyChainClientConfiguration ClientConfigurationType;
       typedef SupplyChainEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace SupplyChain
         * is not specified, it will be initialized to default values.
         */
         SupplyChainClient(const Aws::SupplyChain::SupplyChainClientConfiguration& clientConfiguration = Aws::SupplyChain::SupplyChainClientConfiguration(),
-                          std::shared_ptr<SupplyChainEndpointProviderBase> endpointProvider = Aws::MakeShared<SupplyChainEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<SupplyChainEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SupplyChainClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<SupplyChainEndpointProviderBase> endpointProvider = Aws::MakeShared<SupplyChainEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<SupplyChainEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::SupplyChain::SupplyChainClientConfiguration& clientConfiguration = Aws::SupplyChain::SupplyChainClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace SupplyChain
         * the default http client factory will be used
         */
         SupplyChainClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<SupplyChainEndpointProviderBase> endpointProvider = Aws::MakeShared<SupplyChainEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<SupplyChainEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::SupplyChain::SupplyChainClientConfiguration& clientConfiguration = Aws::SupplyChain::SupplyChainClientConfiguration());
 
 

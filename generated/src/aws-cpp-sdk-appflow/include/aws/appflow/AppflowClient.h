@@ -48,8 +48,8 @@ namespace Appflow
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AppflowClientConfiguration ClientConfigurationType;
       typedef AppflowEndpointProvider EndpointProviderType;
@@ -59,14 +59,14 @@ namespace Appflow
         * is not specified, it will be initialized to default values.
         */
         AppflowClient(const Aws::Appflow::AppflowClientConfiguration& clientConfiguration = Aws::Appflow::AppflowClientConfiguration(),
-                      std::shared_ptr<AppflowEndpointProviderBase> endpointProvider = Aws::MakeShared<AppflowEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<AppflowEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AppflowClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<AppflowEndpointProviderBase> endpointProvider = Aws::MakeShared<AppflowEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<AppflowEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Appflow::AppflowClientConfiguration& clientConfiguration = Aws::Appflow::AppflowClientConfiguration());
 
        /**
@@ -74,7 +74,7 @@ namespace Appflow
         * the default http client factory will be used
         */
         AppflowClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<AppflowEndpointProviderBase> endpointProvider = Aws::MakeShared<AppflowEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<AppflowEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Appflow::AppflowClientConfiguration& clientConfiguration = Aws::Appflow::AppflowClientConfiguration());
 
 

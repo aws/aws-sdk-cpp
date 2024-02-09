@@ -32,8 +32,8 @@ namespace CostandUsageReportService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CostandUsageReportServiceClientConfiguration ClientConfigurationType;
       typedef CostandUsageReportServiceEndpointProvider EndpointProviderType;
@@ -43,14 +43,14 @@ namespace CostandUsageReportService
         * is not specified, it will be initialized to default values.
         */
         CostandUsageReportServiceClient(const Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration& clientConfiguration = Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration(),
-                                        std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<CostandUsageReportServiceEndpointProvider>(ALLOCATION_TAG));
+                                        std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CostandUsageReportServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                        std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<CostandUsageReportServiceEndpointProvider>(ALLOCATION_TAG),
+                                        std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider = nullptr,
                                         const Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration& clientConfiguration = Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration());
 
        /**
@@ -58,7 +58,7 @@ namespace CostandUsageReportService
         * the default http client factory will be used
         */
         CostandUsageReportServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                        std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<CostandUsageReportServiceEndpointProvider>(ALLOCATION_TAG),
+                                        std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider = nullptr,
                                         const Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration& clientConfiguration = Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration());
 
 

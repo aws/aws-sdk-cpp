@@ -28,8 +28,8 @@ namespace ConnectCases
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ConnectCasesClientConfiguration ClientConfigurationType;
       typedef ConnectCasesEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace ConnectCases
         * is not specified, it will be initialized to default values.
         */
         ConnectCasesClient(const Aws::ConnectCases::ConnectCasesClientConfiguration& clientConfiguration = Aws::ConnectCases::ConnectCasesClientConfiguration(),
-                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ConnectCasesClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ConnectCases::ConnectCasesClientConfiguration& clientConfiguration = Aws::ConnectCases::ConnectCasesClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace ConnectCases
         * the default http client factory will be used
         */
         ConnectCasesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ConnectCases::ConnectCasesClientConfiguration& clientConfiguration = Aws::ConnectCases::ConnectCasesClientConfiguration());
 
 

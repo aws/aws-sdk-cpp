@@ -22,8 +22,8 @@ namespace MTurk
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MTurkClientConfiguration ClientConfigurationType;
       typedef MTurkEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace MTurk
         * is not specified, it will be initialized to default values.
         */
         MTurkClient(const Aws::MTurk::MTurkClientConfiguration& clientConfiguration = Aws::MTurk::MTurkClientConfiguration(),
-                    std::shared_ptr<MTurkEndpointProviderBase> endpointProvider = Aws::MakeShared<MTurkEndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<MTurkEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MTurkClient(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<MTurkEndpointProviderBase> endpointProvider = Aws::MakeShared<MTurkEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<MTurkEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::MTurk::MTurkClientConfiguration& clientConfiguration = Aws::MTurk::MTurkClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace MTurk
         * the default http client factory will be used
         */
         MTurkClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<MTurkEndpointProviderBase> endpointProvider = Aws::MakeShared<MTurkEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<MTurkEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::MTurk::MTurkClientConfiguration& clientConfiguration = Aws::MTurk::MTurkClientConfiguration());
 
 

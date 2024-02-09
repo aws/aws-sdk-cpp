@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the status of a scraper.</p><p><h3>See Also:</h3>   <a
+   * <p>The <code>ScraperStatus</code> structure contains status information about
+   * the scraper.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ScraperStatus">AWS
    * API Reference</a></p>
    */
@@ -38,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>Status code of this scraper.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline const ScraperStatusCode& GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * <p>Status code of this scraper.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
-     * <p>Status code of this scraper.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline void SetStatusCode(const ScraperStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * <p>Status code of this scraper.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline void SetStatusCode(ScraperStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
-     * <p>Status code of this scraper.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline ScraperStatus& WithStatusCode(const ScraperStatusCode& value) { SetStatusCode(value); return *this;}
 
     /**
-     * <p>Status code of this scraper.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline ScraperStatus& WithStatusCode(ScraperStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 

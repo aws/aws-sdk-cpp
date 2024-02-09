@@ -25,8 +25,8 @@ namespace LaunchWizard
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef LaunchWizardClientConfiguration ClientConfigurationType;
       typedef LaunchWizardEndpointProvider EndpointProviderType;
@@ -36,14 +36,14 @@ namespace LaunchWizard
         * is not specified, it will be initialized to default values.
         */
         LaunchWizardClient(const Aws::LaunchWizard::LaunchWizardClientConfiguration& clientConfiguration = Aws::LaunchWizard::LaunchWizardClientConfiguration(),
-                           std::shared_ptr<LaunchWizardEndpointProviderBase> endpointProvider = Aws::MakeShared<LaunchWizardEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<LaunchWizardEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LaunchWizardClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<LaunchWizardEndpointProviderBase> endpointProvider = Aws::MakeShared<LaunchWizardEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<LaunchWizardEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::LaunchWizard::LaunchWizardClientConfiguration& clientConfiguration = Aws::LaunchWizard::LaunchWizardClientConfiguration());
 
        /**
@@ -51,7 +51,7 @@ namespace LaunchWizard
         * the default http client factory will be used
         */
         LaunchWizardClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<LaunchWizardEndpointProviderBase> endpointProvider = Aws::MakeShared<LaunchWizardEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<LaunchWizardEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::LaunchWizard::LaunchWizardClientConfiguration& clientConfiguration = Aws::LaunchWizard::LaunchWizardClientConfiguration());
 
 

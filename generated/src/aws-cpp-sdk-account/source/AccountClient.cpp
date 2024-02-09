@@ -44,8 +44,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AccountClient::SERVICE_NAME = "account";
-const char* AccountClient::ALLOCATION_TAG = "AccountClient";
+namespace Aws
+{
+  namespace Account
+  {
+    const char SERVICE_NAME[] = "account";
+    const char ALLOCATION_TAG[] = "AccountClient";
+  }
+}
+const char* AccountClient::GetServiceName() {return SERVICE_NAME;}
+const char* AccountClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AccountClient::AccountClient(const Account::AccountClientConfiguration& clientConfiguration,
                              std::shared_ptr<AccountEndpointProviderBase> endpointProvider) :
@@ -57,7 +65,7 @@ AccountClient::AccountClient(const Account::AccountClientConfiguration& clientCo
             Aws::MakeShared<AccountErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AccountEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -73,7 +81,7 @@ AccountClient::AccountClient(const AWSCredentials& credentials,
             Aws::MakeShared<AccountErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AccountEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ AccountClient::AccountClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<AccountErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AccountEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

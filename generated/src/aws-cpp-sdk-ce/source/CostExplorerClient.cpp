@@ -73,8 +73,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CostExplorerClient::SERVICE_NAME = "ce";
-const char* CostExplorerClient::ALLOCATION_TAG = "CostExplorerClient";
+namespace Aws
+{
+  namespace CostExplorer
+  {
+    const char SERVICE_NAME[] = "ce";
+    const char ALLOCATION_TAG[] = "CostExplorerClient";
+  }
+}
+const char* CostExplorerClient::GetServiceName() {return SERVICE_NAME;}
+const char* CostExplorerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CostExplorerClient::CostExplorerClient(const CostExplorer::CostExplorerClientConfiguration& clientConfiguration,
                                        std::shared_ptr<CostExplorerEndpointProviderBase> endpointProvider) :
@@ -86,7 +94,7 @@ CostExplorerClient::CostExplorerClient(const CostExplorer::CostExplorerClientCon
             Aws::MakeShared<CostExplorerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CostExplorerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -102,7 +110,7 @@ CostExplorerClient::CostExplorerClient(const AWSCredentials& credentials,
             Aws::MakeShared<CostExplorerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CostExplorerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -118,7 +126,7 @@ CostExplorerClient::CostExplorerClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<CostExplorerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CostExplorerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

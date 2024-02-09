@@ -93,8 +93,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LocationServiceClient::SERVICE_NAME = "geo";
-const char* LocationServiceClient::ALLOCATION_TAG = "LocationServiceClient";
+namespace Aws
+{
+  namespace LocationService
+  {
+    const char SERVICE_NAME[] = "geo";
+    const char ALLOCATION_TAG[] = "LocationServiceClient";
+  }
+}
+const char* LocationServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* LocationServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LocationServiceClient::LocationServiceClient(const LocationService::LocationServiceClientConfiguration& clientConfiguration,
                                              std::shared_ptr<LocationServiceEndpointProviderBase> endpointProvider) :
@@ -106,7 +114,7 @@ LocationServiceClient::LocationServiceClient(const LocationService::LocationServ
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -122,7 +130,7 @@ LocationServiceClient::LocationServiceClient(const AWSCredentials& credentials,
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -138,7 +146,7 @@ LocationServiceClient::LocationServiceClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

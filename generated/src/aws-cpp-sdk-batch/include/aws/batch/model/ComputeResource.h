@@ -156,11 +156,11 @@ namespace Model
      * interrupted and have the lowest possible price. This allocation strategy is only
      * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
      * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
-     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
-     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance.</p>
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p>
      */
     inline const CRAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
@@ -201,11 +201,11 @@ namespace Model
      * interrupted and have the lowest possible price. This allocation strategy is only
      * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
      * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
-     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
-     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance.</p>
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
@@ -246,11 +246,11 @@ namespace Model
      * interrupted and have the lowest possible price. This allocation strategy is only
      * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
      * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
-     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
-     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance.</p>
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p>
      */
     inline void SetAllocationStrategy(const CRAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
@@ -291,11 +291,11 @@ namespace Model
      * interrupted and have the lowest possible price. This allocation strategy is only
      * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
      * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
-     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
-     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance.</p>
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p>
      */
     inline void SetAllocationStrategy(CRAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
@@ -336,11 +336,11 @@ namespace Model
      * interrupted and have the lowest possible price. This allocation strategy is only
      * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
      * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
-     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
-     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance.</p>
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p>
      */
     inline ComputeResource& WithAllocationStrategy(const CRAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
@@ -381,11 +381,11 @@ namespace Model
      * interrupted and have the lowest possible price. This allocation strategy is only
      * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
      * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
-     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
-     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance.</p>
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p>
      */
     inline ComputeResource& WithAllocationStrategy(CRAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 
@@ -425,53 +425,49 @@ namespace Model
 
     /**
      * <p>The maximum number of vCPUs that a compute environment can support.</p>
-     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
-     * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
-     * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
-     * than a single instance. For example, no more than a single instance from among
-     * those specified in your compute environment is allocated.</p> 
+     *  <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p> 
      */
     inline int GetMaxvCpus() const{ return m_maxvCpus; }
 
     /**
      * <p>The maximum number of vCPUs that a compute environment can support.</p>
-     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
-     * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
-     * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
-     * than a single instance. For example, no more than a single instance from among
-     * those specified in your compute environment is allocated.</p> 
+     *  <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p> 
      */
     inline bool MaxvCpusHasBeenSet() const { return m_maxvCpusHasBeenSet; }
 
     /**
      * <p>The maximum number of vCPUs that a compute environment can support.</p>
-     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
-     * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
-     * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
-     * than a single instance. For example, no more than a single instance from among
-     * those specified in your compute environment is allocated.</p> 
+     *  <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p> 
      */
     inline void SetMaxvCpus(int value) { m_maxvCpusHasBeenSet = true; m_maxvCpus = value; }
 
     /**
      * <p>The maximum number of vCPUs that a compute environment can support.</p>
-     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> and
-     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
-     * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
-     * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
-     * than a single instance. For example, no more than a single instance from among
-     * those specified in your compute environment is allocated.</p> 
+     *  <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using
+     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
+     * Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+     * capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+     * by more than a single instance.</p> 
      */
     inline ComputeResource& WithMaxvCpus(int value) { SetMaxvCpus(value); return *this;}
 
@@ -1029,8 +1025,9 @@ namespace Model
 
     /**
      * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
-     * environment. You can specify the short name or full Amazon Resource Name (ARN)
-     * of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
+     * environment. This parameter is required for Amazon EC2 instances types. You can
+     * specify the short name or full Amazon Resource Name (ARN) of an instance
+     * profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
@@ -1042,8 +1039,9 @@ namespace Model
 
     /**
      * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
-     * environment. You can specify the short name or full Amazon Resource Name (ARN)
-     * of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
+     * environment. This parameter is required for Amazon EC2 instances types. You can
+     * specify the short name or full Amazon Resource Name (ARN) of an instance
+     * profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
@@ -1055,8 +1053,9 @@ namespace Model
 
     /**
      * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
-     * environment. You can specify the short name or full Amazon Resource Name (ARN)
-     * of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
+     * environment. This parameter is required for Amazon EC2 instances types. You can
+     * specify the short name or full Amazon Resource Name (ARN) of an instance
+     * profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
@@ -1068,8 +1067,9 @@ namespace Model
 
     /**
      * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
-     * environment. You can specify the short name or full Amazon Resource Name (ARN)
-     * of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
+     * environment. This parameter is required for Amazon EC2 instances types. You can
+     * specify the short name or full Amazon Resource Name (ARN) of an instance
+     * profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
@@ -1081,8 +1081,9 @@ namespace Model
 
     /**
      * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
-     * environment. You can specify the short name or full Amazon Resource Name (ARN)
-     * of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
+     * environment. This parameter is required for Amazon EC2 instances types. You can
+     * specify the short name or full Amazon Resource Name (ARN) of an instance
+     * profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
@@ -1094,8 +1095,9 @@ namespace Model
 
     /**
      * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
-     * environment. You can specify the short name or full Amazon Resource Name (ARN)
-     * of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
+     * environment. This parameter is required for Amazon EC2 instances types. You can
+     * specify the short name or full Amazon Resource Name (ARN) of an instance
+     * profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
@@ -1107,8 +1109,9 @@ namespace Model
 
     /**
      * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
-     * environment. You can specify the short name or full Amazon Resource Name (ARN)
-     * of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
+     * environment. This parameter is required for Amazon EC2 instances types. You can
+     * specify the short name or full Amazon Resource Name (ARN) of an instance
+     * profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
@@ -1120,8 +1123,9 @@ namespace Model
 
     /**
      * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
-     * environment. You can specify the short name or full Amazon Resource Name (ARN)
-     * of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
+     * environment. This parameter is required for Amazon EC2 instances types. You can
+     * specify the short name or full Amazon Resource Name (ARN) of an instance
+     * profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
      * </code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon

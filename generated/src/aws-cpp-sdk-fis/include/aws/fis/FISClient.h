@@ -26,8 +26,8 @@ namespace FIS
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef FISClientConfiguration ClientConfigurationType;
       typedef FISEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace FIS
         * is not specified, it will be initialized to default values.
         */
         FISClient(const Aws::FIS::FISClientConfiguration& clientConfiguration = Aws::FIS::FISClientConfiguration(),
-                  std::shared_ptr<FISEndpointProviderBase> endpointProvider = Aws::MakeShared<FISEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<FISEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         FISClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<FISEndpointProviderBase> endpointProvider = Aws::MakeShared<FISEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<FISEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::FIS::FISClientConfiguration& clientConfiguration = Aws::FIS::FISClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace FIS
         * the default http client factory will be used
         */
         FISClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<FISEndpointProviderBase> endpointProvider = Aws::MakeShared<FISEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<FISEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::FIS::FISClientConfiguration& clientConfiguration = Aws::FIS::FISClientConfiguration());
 
 

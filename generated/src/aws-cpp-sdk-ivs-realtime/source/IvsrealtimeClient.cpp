@@ -62,8 +62,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IvsrealtimeClient::SERVICE_NAME = "ivs";
-const char* IvsrealtimeClient::ALLOCATION_TAG = "IvsrealtimeClient";
+namespace Aws
+{
+  namespace ivsrealtime
+  {
+    const char SERVICE_NAME[] = "ivs";
+    const char ALLOCATION_TAG[] = "IvsrealtimeClient";
+  }
+}
+const char* IvsrealtimeClient::GetServiceName() {return SERVICE_NAME;}
+const char* IvsrealtimeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IvsrealtimeClient::IvsrealtimeClient(const ivsrealtime::IvsrealtimeClientConfiguration& clientConfiguration,
                                      std::shared_ptr<IvsrealtimeEndpointProviderBase> endpointProvider) :
@@ -75,7 +83,7 @@ IvsrealtimeClient::IvsrealtimeClient(const ivsrealtime::IvsrealtimeClientConfigu
             Aws::MakeShared<IvsrealtimeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IvsrealtimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ IvsrealtimeClient::IvsrealtimeClient(const AWSCredentials& credentials,
             Aws::MakeShared<IvsrealtimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IvsrealtimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ IvsrealtimeClient::IvsrealtimeClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<IvsrealtimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IvsrealtimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

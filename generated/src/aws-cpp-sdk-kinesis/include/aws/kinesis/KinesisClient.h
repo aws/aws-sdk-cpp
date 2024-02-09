@@ -24,8 +24,8 @@ namespace Kinesis
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef KinesisClientConfiguration ClientConfigurationType;
       typedef KinesisEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace Kinesis
         * is not specified, it will be initialized to default values.
         */
         KinesisClient(const Aws::Kinesis::KinesisClientConfiguration& clientConfiguration = Aws::Kinesis::KinesisClientConfiguration(),
-                      std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         KinesisClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Kinesis::KinesisClientConfiguration& clientConfiguration = Aws::Kinesis::KinesisClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace Kinesis
         * the default http client factory will be used
         */
         KinesisClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Kinesis::KinesisClientConfiguration& clientConfiguration = Aws::Kinesis::KinesisClientConfiguration());
 
 

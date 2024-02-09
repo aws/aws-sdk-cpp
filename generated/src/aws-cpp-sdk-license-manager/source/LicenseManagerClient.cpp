@@ -85,8 +85,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LicenseManagerClient::SERVICE_NAME = "license-manager";
-const char* LicenseManagerClient::ALLOCATION_TAG = "LicenseManagerClient";
+namespace Aws
+{
+  namespace LicenseManager
+  {
+    const char SERVICE_NAME[] = "license-manager";
+    const char ALLOCATION_TAG[] = "LicenseManagerClient";
+  }
+}
+const char* LicenseManagerClient::GetServiceName() {return SERVICE_NAME;}
+const char* LicenseManagerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LicenseManagerClient::LicenseManagerClient(const LicenseManager::LicenseManagerClientConfiguration& clientConfiguration,
                                            std::shared_ptr<LicenseManagerEndpointProviderBase> endpointProvider) :
@@ -98,7 +106,7 @@ LicenseManagerClient::LicenseManagerClient(const LicenseManager::LicenseManagerC
             Aws::MakeShared<LicenseManagerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LicenseManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -114,7 +122,7 @@ LicenseManagerClient::LicenseManagerClient(const AWSCredentials& credentials,
             Aws::MakeShared<LicenseManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LicenseManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -130,7 +138,7 @@ LicenseManagerClient::LicenseManagerClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<LicenseManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LicenseManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -135,8 +135,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTClient::SERVICE_NAME = "iot";
-const char* IoTClient::ALLOCATION_TAG = "IoTClient";
+namespace Aws
+{
+  namespace IoT
+  {
+    const char SERVICE_NAME[] = "iot";
+    const char ALLOCATION_TAG[] = "IoTClient";
+  }
+}
+const char* IoTClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTClient::IoTClient(const IoT::IoTClientConfiguration& clientConfiguration,
                      std::shared_ptr<IoTEndpointProviderBase> endpointProvider) :
@@ -148,7 +156,7 @@ IoTClient::IoTClient(const IoT::IoTClientConfiguration& clientConfiguration,
             Aws::MakeShared<IoTErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -164,7 +172,7 @@ IoTClient::IoTClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -180,7 +188,7 @@ IoTClient::IoTClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<IoTErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

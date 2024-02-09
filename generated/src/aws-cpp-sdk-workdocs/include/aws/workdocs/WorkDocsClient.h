@@ -53,8 +53,8 @@ namespace WorkDocs
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef WorkDocsClientConfiguration ClientConfigurationType;
       typedef WorkDocsEndpointProvider EndpointProviderType;
@@ -64,14 +64,14 @@ namespace WorkDocs
         * is not specified, it will be initialized to default values.
         */
         WorkDocsClient(const Aws::WorkDocs::WorkDocsClientConfiguration& clientConfiguration = Aws::WorkDocs::WorkDocsClientConfiguration(),
-                       std::shared_ptr<WorkDocsEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkDocsEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<WorkDocsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WorkDocsClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<WorkDocsEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkDocsEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<WorkDocsEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::WorkDocs::WorkDocsClientConfiguration& clientConfiguration = Aws::WorkDocs::WorkDocsClientConfiguration());
 
        /**
@@ -79,7 +79,7 @@ namespace WorkDocs
         * the default http client factory will be used
         */
         WorkDocsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<WorkDocsEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkDocsEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<WorkDocsEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::WorkDocs::WorkDocsClientConfiguration& clientConfiguration = Aws::WorkDocs::WorkDocsClientConfiguration());
 
 

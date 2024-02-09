@@ -26,7 +26,7 @@ namespace PrometheusService
 namespace Model
 {
   /**
-   * <p>Represents the output of a DescribeRuleGroupsNamespace
+   * <p>Represents the output of a <code>DescribeRuleGroupsNamespace</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespaceResponse">AWS
    * API Reference</a></p>
@@ -40,27 +40,27 @@ namespace Model
 
 
     /**
-     * <p>The selected rule groups namespace.</p>
+     * <p>The information about the rule groups namespace.</p>
      */
     inline const RuleGroupsNamespaceDescription& GetRuleGroupsNamespace() const{ return m_ruleGroupsNamespace; }
 
     /**
-     * <p>The selected rule groups namespace.</p>
+     * <p>The information about the rule groups namespace.</p>
      */
     inline void SetRuleGroupsNamespace(const RuleGroupsNamespaceDescription& value) { m_ruleGroupsNamespace = value; }
 
     /**
-     * <p>The selected rule groups namespace.</p>
+     * <p>The information about the rule groups namespace.</p>
      */
     inline void SetRuleGroupsNamespace(RuleGroupsNamespaceDescription&& value) { m_ruleGroupsNamespace = std::move(value); }
 
     /**
-     * <p>The selected rule groups namespace.</p>
+     * <p>The information about the rule groups namespace.</p>
      */
     inline DescribeRuleGroupsNamespaceResult& WithRuleGroupsNamespace(const RuleGroupsNamespaceDescription& value) { SetRuleGroupsNamespace(value); return *this;}
 
     /**
-     * <p>The selected rule groups namespace.</p>
+     * <p>The information about the rule groups namespace.</p>
      */
     inline DescribeRuleGroupsNamespaceResult& WithRuleGroupsNamespace(RuleGroupsNamespaceDescription&& value) { SetRuleGroupsNamespace(std::move(value)); return *this;}
 

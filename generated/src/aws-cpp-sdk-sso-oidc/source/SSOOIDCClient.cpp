@@ -39,8 +39,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SSOOIDCClient::SERVICE_NAME = "sso-oauth";
-const char* SSOOIDCClient::ALLOCATION_TAG = "SSOOIDCClient";
+namespace Aws
+{
+  namespace SSOOIDC
+  {
+    const char SERVICE_NAME[] = "sso-oauth";
+    const char ALLOCATION_TAG[] = "SSOOIDCClient";
+  }
+}
+const char* SSOOIDCClient::GetServiceName() {return SERVICE_NAME;}
+const char* SSOOIDCClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SSOOIDCClient::SSOOIDCClient(const SSOOIDC::SSOOIDCClientConfiguration& clientConfiguration,
                              std::shared_ptr<SSOOIDCEndpointProviderBase> endpointProvider) :
@@ -52,7 +60,7 @@ SSOOIDCClient::SSOOIDCClient(const SSOOIDC::SSOOIDCClientConfiguration& clientCo
             Aws::MakeShared<SSOOIDCErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSOOIDCEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -68,7 +76,7 @@ SSOOIDCClient::SSOOIDCClient(const AWSCredentials& credentials,
             Aws::MakeShared<SSOOIDCErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSOOIDCEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ SSOOIDCClient::SSOOIDCClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<SSOOIDCErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSOOIDCEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

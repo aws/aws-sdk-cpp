@@ -73,8 +73,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodeArtifactClient::SERVICE_NAME = "codeartifact";
-const char* CodeArtifactClient::ALLOCATION_TAG = "CodeArtifactClient";
+namespace Aws
+{
+  namespace CodeArtifact
+  {
+    const char SERVICE_NAME[] = "codeartifact";
+    const char ALLOCATION_TAG[] = "CodeArtifactClient";
+  }
+}
+const char* CodeArtifactClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodeArtifactClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CodeArtifactClient::CodeArtifactClient(const CodeArtifact::CodeArtifactClientConfiguration& clientConfiguration,
                                        std::shared_ptr<CodeArtifactEndpointProviderBase> endpointProvider) :
@@ -86,7 +94,7 @@ CodeArtifactClient::CodeArtifactClient(const CodeArtifact::CodeArtifactClientCon
             Aws::MakeShared<CodeArtifactErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeArtifactEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -102,7 +110,7 @@ CodeArtifactClient::CodeArtifactClient(const AWSCredentials& credentials,
             Aws::MakeShared<CodeArtifactErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeArtifactEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -118,7 +126,7 @@ CodeArtifactClient::CodeArtifactClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<CodeArtifactErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeArtifactEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -105,8 +105,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* WellArchitectedClient::SERVICE_NAME = "wellarchitected";
-const char* WellArchitectedClient::ALLOCATION_TAG = "WellArchitectedClient";
+namespace Aws
+{
+  namespace WellArchitected
+  {
+    const char SERVICE_NAME[] = "wellarchitected";
+    const char ALLOCATION_TAG[] = "WellArchitectedClient";
+  }
+}
+const char* WellArchitectedClient::GetServiceName() {return SERVICE_NAME;}
+const char* WellArchitectedClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 WellArchitectedClient::WellArchitectedClient(const WellArchitected::WellArchitectedClientConfiguration& clientConfiguration,
                                              std::shared_ptr<WellArchitectedEndpointProviderBase> endpointProvider) :
@@ -118,7 +126,7 @@ WellArchitectedClient::WellArchitectedClient(const WellArchitected::WellArchitec
             Aws::MakeShared<WellArchitectedErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WellArchitectedEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -134,7 +142,7 @@ WellArchitectedClient::WellArchitectedClient(const AWSCredentials& credentials,
             Aws::MakeShared<WellArchitectedErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WellArchitectedEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -150,7 +158,7 @@ WellArchitectedClient::WellArchitectedClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<WellArchitectedErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WellArchitectedEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

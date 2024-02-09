@@ -50,8 +50,8 @@ namespace Route53Resolver
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef Route53ResolverClientConfiguration ClientConfigurationType;
       typedef Route53ResolverEndpointProvider EndpointProviderType;
@@ -61,14 +61,14 @@ namespace Route53Resolver
         * is not specified, it will be initialized to default values.
         */
         Route53ResolverClient(const Aws::Route53Resolver::Route53ResolverClientConfiguration& clientConfiguration = Aws::Route53Resolver::Route53ResolverClientConfiguration(),
-                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG));
+                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         Route53ResolverClient(const Aws::Auth::AWSCredentials& credentials,
-                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::Route53Resolver::Route53ResolverClientConfiguration& clientConfiguration = Aws::Route53Resolver::Route53ResolverClientConfiguration());
 
        /**
@@ -76,7 +76,7 @@ namespace Route53Resolver
         * the default http client factory will be used
         */
         Route53ResolverClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::Route53Resolver::Route53ResolverClientConfiguration& clientConfiguration = Aws::Route53Resolver::Route53ResolverClientConfiguration());
 
 

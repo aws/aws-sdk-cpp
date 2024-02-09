@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateLoggingConfigurationRequest::UpdateLoggingConfigurationRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_logGroupArnHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false)
 {
 }
 
@@ -24,15 +24,15 @@ Aws::String UpdateLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_logGroupArnHasBeenSet)
-  {
-   payload.WithString("logGroupArn", m_logGroupArn);
-
-  }
-
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_logGroupArnHasBeenSet)
+  {
+   payload.WithString("logGroupArn", m_logGroupArn);
 
   }
 

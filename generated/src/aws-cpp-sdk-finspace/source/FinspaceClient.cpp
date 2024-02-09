@@ -79,8 +79,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* FinspaceClient::SERVICE_NAME = "finspace";
-const char* FinspaceClient::ALLOCATION_TAG = "FinspaceClient";
+namespace Aws
+{
+  namespace finspace
+  {
+    const char SERVICE_NAME[] = "finspace";
+    const char ALLOCATION_TAG[] = "FinspaceClient";
+  }
+}
+const char* FinspaceClient::GetServiceName() {return SERVICE_NAME;}
+const char* FinspaceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 FinspaceClient::FinspaceClient(const finspace::FinspaceClientConfiguration& clientConfiguration,
                                std::shared_ptr<FinspaceEndpointProviderBase> endpointProvider) :
@@ -92,7 +100,7 @@ FinspaceClient::FinspaceClient(const finspace::FinspaceClientConfiguration& clie
             Aws::MakeShared<FinspaceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FinspaceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -108,7 +116,7 @@ FinspaceClient::FinspaceClient(const AWSCredentials& credentials,
             Aws::MakeShared<FinspaceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FinspaceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -124,7 +132,7 @@ FinspaceClient::FinspaceClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<FinspaceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FinspaceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

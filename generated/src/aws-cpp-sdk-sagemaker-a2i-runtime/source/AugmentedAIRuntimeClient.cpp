@@ -40,8 +40,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AugmentedAIRuntimeClient::SERVICE_NAME = "sagemaker";
-const char* AugmentedAIRuntimeClient::ALLOCATION_TAG = "AugmentedAIRuntimeClient";
+namespace Aws
+{
+  namespace AugmentedAIRuntime
+  {
+    const char SERVICE_NAME[] = "sagemaker";
+    const char ALLOCATION_TAG[] = "AugmentedAIRuntimeClient";
+  }
+}
+const char* AugmentedAIRuntimeClient::GetServiceName() {return SERVICE_NAME;}
+const char* AugmentedAIRuntimeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider) :
@@ -53,7 +61,7 @@ AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const AugmentedAIRuntime::Aug
             Aws::MakeShared<AugmentedAIRuntimeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AugmentedAIRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -69,7 +77,7 @@ AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const AWSCredentials& credent
             Aws::MakeShared<AugmentedAIRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AugmentedAIRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -85,7 +93,7 @@ AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<AugmentedAIRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AugmentedAIRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

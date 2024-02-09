@@ -22,8 +22,8 @@ namespace Route53RecoveryReadiness
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef Route53RecoveryReadinessClientConfiguration ClientConfigurationType;
       typedef Route53RecoveryReadinessEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace Route53RecoveryReadiness
         * is not specified, it will be initialized to default values.
         */
         Route53RecoveryReadinessClient(const Aws::Route53RecoveryReadiness::Route53RecoveryReadinessClientConfiguration& clientConfiguration = Aws::Route53RecoveryReadiness::Route53RecoveryReadinessClientConfiguration(),
-                                       std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryReadinessEndpointProvider>(ALLOCATION_TAG));
+                                       std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         Route53RecoveryReadinessClient(const Aws::Auth::AWSCredentials& credentials,
-                                       std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryReadinessEndpointProvider>(ALLOCATION_TAG),
+                                       std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase> endpointProvider = nullptr,
                                        const Aws::Route53RecoveryReadiness::Route53RecoveryReadinessClientConfiguration& clientConfiguration = Aws::Route53RecoveryReadiness::Route53RecoveryReadinessClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace Route53RecoveryReadiness
         * the default http client factory will be used
         */
         Route53RecoveryReadinessClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                       std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryReadinessEndpointProvider>(ALLOCATION_TAG),
+                                       std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase> endpointProvider = nullptr,
                                        const Aws::Route53RecoveryReadiness::Route53RecoveryReadinessClientConfiguration& clientConfiguration = Aws::Route53RecoveryReadiness::Route53RecoveryReadinessClientConfiguration());
 
 

@@ -86,8 +86,8 @@ namespace ControlTower
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ControlTowerClientConfiguration ClientConfigurationType;
       typedef ControlTowerEndpointProvider EndpointProviderType;
@@ -97,14 +97,14 @@ namespace ControlTower
         * is not specified, it will be initialized to default values.
         */
         ControlTowerClient(const Aws::ControlTower::ControlTowerClientConfiguration& clientConfiguration = Aws::ControlTower::ControlTowerClientConfiguration(),
-                           std::shared_ptr<ControlTowerEndpointProviderBase> endpointProvider = Aws::MakeShared<ControlTowerEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<ControlTowerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ControlTowerClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<ControlTowerEndpointProviderBase> endpointProvider = Aws::MakeShared<ControlTowerEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ControlTowerEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ControlTower::ControlTowerClientConfiguration& clientConfiguration = Aws::ControlTower::ControlTowerClientConfiguration());
 
        /**
@@ -112,7 +112,7 @@ namespace ControlTower
         * the default http client factory will be used
         */
         ControlTowerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<ControlTowerEndpointProviderBase> endpointProvider = Aws::MakeShared<ControlTowerEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ControlTowerEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ControlTower::ControlTowerClientConfiguration& clientConfiguration = Aws::ControlTower::ControlTowerClientConfiguration());
 
 

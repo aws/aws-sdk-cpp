@@ -34,8 +34,8 @@ namespace SMS
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SMSClientConfiguration ClientConfigurationType;
       typedef SMSEndpointProvider EndpointProviderType;
@@ -45,14 +45,14 @@ namespace SMS
         * is not specified, it will be initialized to default values.
         */
         SMSClient(const Aws::SMS::SMSClientConfiguration& clientConfiguration = Aws::SMS::SMSClientConfiguration(),
-                  std::shared_ptr<SMSEndpointProviderBase> endpointProvider = Aws::MakeShared<SMSEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<SMSEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SMSClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<SMSEndpointProviderBase> endpointProvider = Aws::MakeShared<SMSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<SMSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::SMS::SMSClientConfiguration& clientConfiguration = Aws::SMS::SMSClientConfiguration());
 
        /**
@@ -60,7 +60,7 @@ namespace SMS
         * the default http client factory will be used
         */
         SMSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<SMSEndpointProviderBase> endpointProvider = Aws::MakeShared<SMSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<SMSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::SMS::SMSClientConfiguration& clientConfiguration = Aws::SMS::SMSClientConfiguration());
 
 

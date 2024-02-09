@@ -23,8 +23,8 @@ namespace finspace
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef FinspaceClientConfiguration ClientConfigurationType;
       typedef FinspaceEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace finspace
         * is not specified, it will be initialized to default values.
         */
         FinspaceClient(const Aws::finspace::FinspaceClientConfiguration& clientConfiguration = Aws::finspace::FinspaceClientConfiguration(),
-                       std::shared_ptr<FinspaceEndpointProviderBase> endpointProvider = Aws::MakeShared<FinspaceEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<FinspaceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         FinspaceClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<FinspaceEndpointProviderBase> endpointProvider = Aws::MakeShared<FinspaceEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<FinspaceEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::finspace::FinspaceClientConfiguration& clientConfiguration = Aws::finspace::FinspaceClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace finspace
         * the default http client factory will be used
         */
         FinspaceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<FinspaceEndpointProviderBase> endpointProvider = Aws::MakeShared<FinspaceEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<FinspaceEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::finspace::FinspaceClientConfiguration& clientConfiguration = Aws::finspace::FinspaceClientConfiguration());
 
 

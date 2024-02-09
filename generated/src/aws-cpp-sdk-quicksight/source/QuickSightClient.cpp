@@ -206,8 +206,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* QuickSightClient::SERVICE_NAME = "quicksight";
-const char* QuickSightClient::ALLOCATION_TAG = "QuickSightClient";
+namespace Aws
+{
+  namespace QuickSight
+  {
+    const char SERVICE_NAME[] = "quicksight";
+    const char ALLOCATION_TAG[] = "QuickSightClient";
+  }
+}
+const char* QuickSightClient::GetServiceName() {return SERVICE_NAME;}
+const char* QuickSightClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 QuickSightClient::QuickSightClient(const QuickSight::QuickSightClientConfiguration& clientConfiguration,
                                    std::shared_ptr<QuickSightEndpointProviderBase> endpointProvider) :
@@ -219,7 +227,7 @@ QuickSightClient::QuickSightClient(const QuickSight::QuickSightClientConfigurati
             Aws::MakeShared<QuickSightErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QuickSightEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -235,7 +243,7 @@ QuickSightClient::QuickSightClient(const AWSCredentials& credentials,
             Aws::MakeShared<QuickSightErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QuickSightEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -251,7 +259,7 @@ QuickSightClient::QuickSightClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<QuickSightErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QuickSightEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

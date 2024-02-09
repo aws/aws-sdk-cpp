@@ -22,8 +22,8 @@ namespace Macie2
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef Macie2ClientConfiguration ClientConfigurationType;
       typedef Macie2EndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace Macie2
         * is not specified, it will be initialized to default values.
         */
         Macie2Client(const Aws::Macie2::Macie2ClientConfiguration& clientConfiguration = Aws::Macie2::Macie2ClientConfiguration(),
-                     std::shared_ptr<Macie2EndpointProviderBase> endpointProvider = Aws::MakeShared<Macie2EndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<Macie2EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         Macie2Client(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<Macie2EndpointProviderBase> endpointProvider = Aws::MakeShared<Macie2EndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<Macie2EndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Macie2::Macie2ClientConfiguration& clientConfiguration = Aws::Macie2::Macie2ClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace Macie2
         * the default http client factory will be used
         */
         Macie2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<Macie2EndpointProviderBase> endpointProvider = Aws::MakeShared<Macie2EndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<Macie2EndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Macie2::Macie2ClientConfiguration& clientConfiguration = Aws::Macie2::Macie2ClientConfiguration());
 
 

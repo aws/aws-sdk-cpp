@@ -58,8 +58,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ECRPublicClient::SERVICE_NAME = "ecr-public";
-const char* ECRPublicClient::ALLOCATION_TAG = "ECRPublicClient";
+namespace Aws
+{
+  namespace ECRPublic
+  {
+    const char SERVICE_NAME[] = "ecr-public";
+    const char ALLOCATION_TAG[] = "ECRPublicClient";
+  }
+}
+const char* ECRPublicClient::GetServiceName() {return SERVICE_NAME;}
+const char* ECRPublicClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ECRPublicClient::ECRPublicClient(const ECRPublic::ECRPublicClientConfiguration& clientConfiguration,
                                  std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider) :
@@ -71,7 +79,7 @@ ECRPublicClient::ECRPublicClient(const ECRPublic::ECRPublicClientConfiguration& 
             Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ECRPublicEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ ECRPublicClient::ECRPublicClient(const AWSCredentials& credentials,
             Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ECRPublicEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ ECRPublicClient::ECRPublicClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ECRPublicEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -68,8 +68,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KinesisClient::SERVICE_NAME = "kinesis";
-const char* KinesisClient::ALLOCATION_TAG = "KinesisClient";
+namespace Aws
+{
+  namespace Kinesis
+  {
+    const char SERVICE_NAME[] = "kinesis";
+    const char ALLOCATION_TAG[] = "KinesisClient";
+  }
+}
+const char* KinesisClient::GetServiceName() {return SERVICE_NAME;}
+const char* KinesisClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KinesisClient::KinesisClient(const Kinesis::KinesisClientConfiguration& clientConfiguration,
                              std::shared_ptr<KinesisEndpointProviderBase> endpointProvider) :
@@ -81,7 +89,7 @@ KinesisClient::KinesisClient(const Kinesis::KinesisClientConfiguration& clientCo
             Aws::MakeShared<KinesisErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -97,7 +105,7 @@ KinesisClient::KinesisClient(const AWSCredentials& credentials,
             Aws::MakeShared<KinesisErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -113,7 +121,7 @@ KinesisClient::KinesisClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<KinesisErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

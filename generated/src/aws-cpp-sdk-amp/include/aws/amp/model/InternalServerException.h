@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Unexpected error during processing of request.</p><p><h3>See Also:</h3>   <a
+   * <p>An unexpected error occurred during the processing of the
+   * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/InternalServerException">AWS
    * API Reference</a></p>
    */

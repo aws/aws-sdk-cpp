@@ -23,8 +23,8 @@ namespace SagemakerEdgeManager
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SagemakerEdgeManagerClientConfiguration ClientConfigurationType;
       typedef SagemakerEdgeManagerEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace SagemakerEdgeManager
         * is not specified, it will be initialized to default values.
         */
         SagemakerEdgeManagerClient(const Aws::SagemakerEdgeManager::SagemakerEdgeManagerClientConfiguration& clientConfiguration = Aws::SagemakerEdgeManager::SagemakerEdgeManagerClientConfiguration(),
-                                   std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<SagemakerEdgeManagerEndpointProvider>(ALLOCATION_TAG));
+                                   std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SagemakerEdgeManagerClient(const Aws::Auth::AWSCredentials& credentials,
-                                   std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<SagemakerEdgeManagerEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::SagemakerEdgeManager::SagemakerEdgeManagerClientConfiguration& clientConfiguration = Aws::SagemakerEdgeManager::SagemakerEdgeManagerClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace SagemakerEdgeManager
         * the default http client factory will be used
         */
         SagemakerEdgeManagerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                   std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<SagemakerEdgeManagerEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::SagemakerEdgeManager::SagemakerEdgeManagerClientConfiguration& clientConfiguration = Aws::SagemakerEdgeManager::SagemakerEdgeManagerClientConfiguration());
 
 

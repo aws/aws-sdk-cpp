@@ -38,8 +38,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PersonalizeRuntimeClient::SERVICE_NAME = "personalize";
-const char* PersonalizeRuntimeClient::ALLOCATION_TAG = "PersonalizeRuntimeClient";
+namespace Aws
+{
+  namespace PersonalizeRuntime
+  {
+    const char SERVICE_NAME[] = "personalize";
+    const char ALLOCATION_TAG[] = "PersonalizeRuntimeClient";
+  }
+}
+const char* PersonalizeRuntimeClient::GetServiceName() {return SERVICE_NAME;}
+const char* PersonalizeRuntimeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PersonalizeRuntimeClient::PersonalizeRuntimeClient(const PersonalizeRuntime::PersonalizeRuntimeClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> endpointProvider) :
@@ -51,7 +59,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const PersonalizeRuntime::Per
             Aws::MakeShared<PersonalizeRuntimeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PersonalizeRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -67,7 +75,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const AWSCredentials& credent
             Aws::MakeShared<PersonalizeRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PersonalizeRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<PersonalizeRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PersonalizeRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

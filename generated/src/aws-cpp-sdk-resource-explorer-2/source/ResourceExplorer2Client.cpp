@@ -56,8 +56,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ResourceExplorer2Client::SERVICE_NAME = "resource-explorer-2";
-const char* ResourceExplorer2Client::ALLOCATION_TAG = "ResourceExplorer2Client";
+namespace Aws
+{
+  namespace ResourceExplorer2
+  {
+    const char SERVICE_NAME[] = "resource-explorer-2";
+    const char ALLOCATION_TAG[] = "ResourceExplorer2Client";
+  }
+}
+const char* ResourceExplorer2Client::GetServiceName() {return SERVICE_NAME;}
+const char* ResourceExplorer2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ResourceExplorer2Client::ResourceExplorer2Client(const ResourceExplorer2::ResourceExplorer2ClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<ResourceExplorer2EndpointProviderBase> endpointProvider) :
@@ -69,7 +77,7 @@ ResourceExplorer2Client::ResourceExplorer2Client(const ResourceExplorer2::Resour
             Aws::MakeShared<ResourceExplorer2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResourceExplorer2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -85,7 +93,7 @@ ResourceExplorer2Client::ResourceExplorer2Client(const AWSCredentials& credentia
             Aws::MakeShared<ResourceExplorer2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResourceExplorer2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -101,7 +109,7 @@ ResourceExplorer2Client::ResourceExplorer2Client(const std::shared_ptr<AWSCreden
             Aws::MakeShared<ResourceExplorer2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResourceExplorer2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

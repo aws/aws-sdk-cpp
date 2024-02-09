@@ -49,8 +49,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* OSISClient::SERVICE_NAME = "osis";
-const char* OSISClient::ALLOCATION_TAG = "OSISClient";
+namespace Aws
+{
+  namespace OSIS
+  {
+    const char SERVICE_NAME[] = "osis";
+    const char ALLOCATION_TAG[] = "OSISClient";
+  }
+}
+const char* OSISClient::GetServiceName() {return SERVICE_NAME;}
+const char* OSISClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 OSISClient::OSISClient(const OSIS::OSISClientConfiguration& clientConfiguration,
                        std::shared_ptr<OSISEndpointProviderBase> endpointProvider) :
@@ -62,7 +70,7 @@ OSISClient::OSISClient(const OSIS::OSISClientConfiguration& clientConfiguration,
             Aws::MakeShared<OSISErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OSISEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -78,7 +86,7 @@ OSISClient::OSISClient(const AWSCredentials& credentials,
             Aws::MakeShared<OSISErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OSISEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ OSISClient::OSISClient(const std::shared_ptr<AWSCredentialsProvider>& credential
             Aws::MakeShared<OSISErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OSISEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

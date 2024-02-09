@@ -117,8 +117,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* CloudFormationClient::SERVICE_NAME = "cloudformation";
-const char* CloudFormationClient::ALLOCATION_TAG = "CloudFormationClient";
+namespace Aws
+{
+  namespace CloudFormation
+  {
+    const char SERVICE_NAME[] = "cloudformation";
+    const char ALLOCATION_TAG[] = "CloudFormationClient";
+  }
+}
+const char* CloudFormationClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudFormationClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudFormationClient::CloudFormationClient(const CloudFormation::CloudFormationClientConfiguration& clientConfiguration,
                                            std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider) :
@@ -130,7 +138,7 @@ CloudFormationClient::CloudFormationClient(const CloudFormation::CloudFormationC
             Aws::MakeShared<CloudFormationErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudFormationEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -146,7 +154,7 @@ CloudFormationClient::CloudFormationClient(const AWSCredentials& credentials,
             Aws::MakeShared<CloudFormationErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudFormationEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -162,7 +170,7 @@ CloudFormationClient::CloudFormationClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<CloudFormationErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudFormationEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

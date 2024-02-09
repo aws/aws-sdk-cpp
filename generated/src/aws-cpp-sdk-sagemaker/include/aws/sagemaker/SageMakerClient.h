@@ -27,8 +27,8 @@ namespace SageMaker
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SageMakerClientConfiguration ClientConfigurationType;
       typedef SageMakerEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace SageMaker
         * is not specified, it will be initialized to default values.
         */
         SageMakerClient(const Aws::SageMaker::SageMakerClientConfiguration& clientConfiguration = Aws::SageMaker::SageMakerClientConfiguration(),
-                        std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SageMakerClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::SageMaker::SageMakerClientConfiguration& clientConfiguration = Aws::SageMaker::SageMakerClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace SageMaker
         * the default http client factory will be used
         */
         SageMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<SageMakerEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::SageMaker::SageMakerClientConfiguration& clientConfiguration = Aws::SageMaker::SageMakerClientConfiguration());
 
 

@@ -24,8 +24,8 @@ namespace LookoutEquipment
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef LookoutEquipmentClientConfiguration ClientConfigurationType;
       typedef LookoutEquipmentEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace LookoutEquipment
         * is not specified, it will be initialized to default values.
         */
         LookoutEquipmentClient(const Aws::LookoutEquipment::LookoutEquipmentClientConfiguration& clientConfiguration = Aws::LookoutEquipment::LookoutEquipmentClientConfiguration(),
-                               std::shared_ptr<LookoutEquipmentEndpointProviderBase> endpointProvider = Aws::MakeShared<LookoutEquipmentEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<LookoutEquipmentEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LookoutEquipmentClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<LookoutEquipmentEndpointProviderBase> endpointProvider = Aws::MakeShared<LookoutEquipmentEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<LookoutEquipmentEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::LookoutEquipment::LookoutEquipmentClientConfiguration& clientConfiguration = Aws::LookoutEquipment::LookoutEquipmentClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace LookoutEquipment
         * the default http client factory will be used
         */
         LookoutEquipmentClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<LookoutEquipmentEndpointProviderBase> endpointProvider = Aws::MakeShared<LookoutEquipmentEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<LookoutEquipmentEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::LookoutEquipment::LookoutEquipmentClientConfiguration& clientConfiguration = Aws::LookoutEquipment::LookoutEquipmentClientConfiguration());
 
 

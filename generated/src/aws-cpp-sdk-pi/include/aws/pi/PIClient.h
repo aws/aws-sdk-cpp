@@ -44,8 +44,8 @@ namespace PI
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PIClientConfiguration ClientConfigurationType;
       typedef PIEndpointProvider EndpointProviderType;
@@ -55,14 +55,14 @@ namespace PI
         * is not specified, it will be initialized to default values.
         */
         PIClient(const Aws::PI::PIClientConfiguration& clientConfiguration = Aws::PI::PIClientConfiguration(),
-                 std::shared_ptr<PIEndpointProviderBase> endpointProvider = Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG));
+                 std::shared_ptr<PIEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PIClient(const Aws::Auth::AWSCredentials& credentials,
-                 std::shared_ptr<PIEndpointProviderBase> endpointProvider = Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG),
+                 std::shared_ptr<PIEndpointProviderBase> endpointProvider = nullptr,
                  const Aws::PI::PIClientConfiguration& clientConfiguration = Aws::PI::PIClientConfiguration());
 
        /**
@@ -70,7 +70,7 @@ namespace PI
         * the default http client factory will be used
         */
         PIClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                 std::shared_ptr<PIEndpointProviderBase> endpointProvider = Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG),
+                 std::shared_ptr<PIEndpointProviderBase> endpointProvider = nullptr,
                  const Aws::PI::PIClientConfiguration& clientConfiguration = Aws::PI::PIClientConfiguration());
 
 

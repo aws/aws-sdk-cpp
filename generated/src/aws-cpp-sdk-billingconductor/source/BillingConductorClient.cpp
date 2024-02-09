@@ -67,8 +67,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BillingConductorClient::SERVICE_NAME = "billingconductor";
-const char* BillingConductorClient::ALLOCATION_TAG = "BillingConductorClient";
+namespace Aws
+{
+  namespace BillingConductor
+  {
+    const char SERVICE_NAME[] = "billingconductor";
+    const char ALLOCATION_TAG[] = "BillingConductorClient";
+  }
+}
+const char* BillingConductorClient::GetServiceName() {return SERVICE_NAME;}
+const char* BillingConductorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BillingConductorClient::BillingConductorClient(const BillingConductor::BillingConductorClientConfiguration& clientConfiguration,
                                                std::shared_ptr<BillingConductorEndpointProviderBase> endpointProvider) :
@@ -80,7 +88,7 @@ BillingConductorClient::BillingConductorClient(const BillingConductor::BillingCo
             Aws::MakeShared<BillingConductorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BillingConductorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -96,7 +104,7 @@ BillingConductorClient::BillingConductorClient(const AWSCredentials& credentials
             Aws::MakeShared<BillingConductorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BillingConductorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -112,7 +120,7 @@ BillingConductorClient::BillingConductorClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<BillingConductorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BillingConductorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -38,8 +38,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AgreementServiceClient::SERVICE_NAME = "aws-marketplace";
-const char* AgreementServiceClient::ALLOCATION_TAG = "AgreementServiceClient";
+namespace Aws
+{
+  namespace AgreementService
+  {
+    const char SERVICE_NAME[] = "aws-marketplace";
+    const char ALLOCATION_TAG[] = "AgreementServiceClient";
+  }
+}
+const char* AgreementServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* AgreementServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AgreementServiceClient::AgreementServiceClient(const AgreementService::AgreementServiceClientConfiguration& clientConfiguration,
                                                std::shared_ptr<AgreementServiceEndpointProviderBase> endpointProvider) :
@@ -51,7 +59,7 @@ AgreementServiceClient::AgreementServiceClient(const AgreementService::Agreement
             Aws::MakeShared<AgreementServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AgreementServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -67,7 +75,7 @@ AgreementServiceClient::AgreementServiceClient(const AWSCredentials& credentials
             Aws::MakeShared<AgreementServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AgreementServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ AgreementServiceClient::AgreementServiceClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<AgreementServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AgreementServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

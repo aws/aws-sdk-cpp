@@ -24,8 +24,8 @@ namespace Textract
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef TextractClientConfiguration ClientConfigurationType;
       typedef TextractEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace Textract
         * is not specified, it will be initialized to default values.
         */
         TextractClient(const Aws::Textract::TextractClientConfiguration& clientConfiguration = Aws::Textract::TextractClientConfiguration(),
-                       std::shared_ptr<TextractEndpointProviderBase> endpointProvider = Aws::MakeShared<TextractEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<TextractEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         TextractClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<TextractEndpointProviderBase> endpointProvider = Aws::MakeShared<TextractEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<TextractEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Textract::TextractClientConfiguration& clientConfiguration = Aws::Textract::TextractClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace Textract
         * the default http client factory will be used
         */
         TextractClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<TextractEndpointProviderBase> endpointProvider = Aws::MakeShared<TextractEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<TextractEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Textract::TextractClientConfiguration& clientConfiguration = Aws::Textract::TextractClientConfiguration());
 
 

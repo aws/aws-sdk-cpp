@@ -58,8 +58,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SecretsManagerClient::SERVICE_NAME = "secretsmanager";
-const char* SecretsManagerClient::ALLOCATION_TAG = "SecretsManagerClient";
+namespace Aws
+{
+  namespace SecretsManager
+  {
+    const char SERVICE_NAME[] = "secretsmanager";
+    const char ALLOCATION_TAG[] = "SecretsManagerClient";
+  }
+}
+const char* SecretsManagerClient::GetServiceName() {return SERVICE_NAME;}
+const char* SecretsManagerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SecretsManagerClient::SecretsManagerClient(const SecretsManager::SecretsManagerClientConfiguration& clientConfiguration,
                                            std::shared_ptr<SecretsManagerEndpointProviderBase> endpointProvider) :
@@ -71,7 +79,7 @@ SecretsManagerClient::SecretsManagerClient(const SecretsManager::SecretsManagerC
             Aws::MakeShared<SecretsManagerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecretsManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ SecretsManagerClient::SecretsManagerClient(const AWSCredentials& credentials,
             Aws::MakeShared<SecretsManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecretsManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ SecretsManagerClient::SecretsManagerClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<SecretsManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecretsManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

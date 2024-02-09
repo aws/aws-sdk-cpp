@@ -135,8 +135,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* GlueClient::SERVICE_NAME = "glue";
-const char* GlueClient::ALLOCATION_TAG = "GlueClient";
+namespace Aws
+{
+  namespace Glue
+  {
+    const char SERVICE_NAME[] = "glue";
+    const char ALLOCATION_TAG[] = "GlueClient";
+  }
+}
+const char* GlueClient::GetServiceName() {return SERVICE_NAME;}
+const char* GlueClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 GlueClient::GlueClient(const Glue::GlueClientConfiguration& clientConfiguration,
                        std::shared_ptr<GlueEndpointProviderBase> endpointProvider) :
@@ -148,7 +156,7 @@ GlueClient::GlueClient(const Glue::GlueClientConfiguration& clientConfiguration,
             Aws::MakeShared<GlueErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlueEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -164,7 +172,7 @@ GlueClient::GlueClient(const AWSCredentials& credentials,
             Aws::MakeShared<GlueErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlueEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -180,7 +188,7 @@ GlueClient::GlueClient(const std::shared_ptr<AWSCredentialsProvider>& credential
             Aws::MakeShared<GlueErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlueEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

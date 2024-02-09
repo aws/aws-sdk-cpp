@@ -47,8 +47,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BCMDataExportsClient::SERVICE_NAME = "bcm-data-exports";
-const char* BCMDataExportsClient::ALLOCATION_TAG = "BCMDataExportsClient";
+namespace Aws
+{
+  namespace BCMDataExports
+  {
+    const char SERVICE_NAME[] = "bcm-data-exports";
+    const char ALLOCATION_TAG[] = "BCMDataExportsClient";
+  }
+}
+const char* BCMDataExportsClient::GetServiceName() {return SERVICE_NAME;}
+const char* BCMDataExportsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BCMDataExportsClient::BCMDataExportsClient(const BCMDataExports::BCMDataExportsClientConfiguration& clientConfiguration,
                                            std::shared_ptr<BCMDataExportsEndpointProviderBase> endpointProvider) :
@@ -60,7 +68,7 @@ BCMDataExportsClient::BCMDataExportsClient(const BCMDataExports::BCMDataExportsC
             Aws::MakeShared<BCMDataExportsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BCMDataExportsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -76,7 +84,7 @@ BCMDataExportsClient::BCMDataExportsClient(const AWSCredentials& credentials,
             Aws::MakeShared<BCMDataExportsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BCMDataExportsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -92,7 +100,7 @@ BCMDataExportsClient::BCMDataExportsClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<BCMDataExportsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BCMDataExportsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

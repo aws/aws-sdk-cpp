@@ -38,8 +38,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SagemakerEdgeManagerClient::SERVICE_NAME = "sagemaker";
-const char* SagemakerEdgeManagerClient::ALLOCATION_TAG = "SagemakerEdgeManagerClient";
+namespace Aws
+{
+  namespace SagemakerEdgeManager
+  {
+    const char SERVICE_NAME[] = "sagemaker";
+    const char ALLOCATION_TAG[] = "SagemakerEdgeManagerClient";
+  }
+}
+const char* SagemakerEdgeManagerClient::GetServiceName() {return SERVICE_NAME;}
+const char* SagemakerEdgeManagerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SagemakerEdgeManagerClient::SagemakerEdgeManagerClient(const SagemakerEdgeManager::SagemakerEdgeManagerClientConfiguration& clientConfiguration,
                                                        std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> endpointProvider) :
@@ -51,7 +59,7 @@ SagemakerEdgeManagerClient::SagemakerEdgeManagerClient(const SagemakerEdgeManage
             Aws::MakeShared<SagemakerEdgeManagerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SagemakerEdgeManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -67,7 +75,7 @@ SagemakerEdgeManagerClient::SagemakerEdgeManagerClient(const AWSCredentials& cre
             Aws::MakeShared<SagemakerEdgeManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SagemakerEdgeManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ SagemakerEdgeManagerClient::SagemakerEdgeManagerClient(const std::shared_ptr<AWS
             Aws::MakeShared<SagemakerEdgeManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SagemakerEdgeManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

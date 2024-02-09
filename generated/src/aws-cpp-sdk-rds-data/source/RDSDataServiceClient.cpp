@@ -40,8 +40,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* RDSDataServiceClient::SERVICE_NAME = "rds-data";
-const char* RDSDataServiceClient::ALLOCATION_TAG = "RDSDataServiceClient";
+namespace Aws
+{
+  namespace RDSDataService
+  {
+    const char SERVICE_NAME[] = "rds-data";
+    const char ALLOCATION_TAG[] = "RDSDataServiceClient";
+  }
+}
+const char* RDSDataServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* RDSDataServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 RDSDataServiceClient::RDSDataServiceClient(const RDSDataService::RDSDataServiceClientConfiguration& clientConfiguration,
                                            std::shared_ptr<RDSDataServiceEndpointProviderBase> endpointProvider) :
@@ -53,7 +61,7 @@ RDSDataServiceClient::RDSDataServiceClient(const RDSDataService::RDSDataServiceC
             Aws::MakeShared<RDSDataServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RDSDataServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -69,7 +77,7 @@ RDSDataServiceClient::RDSDataServiceClient(const AWSCredentials& credentials,
             Aws::MakeShared<RDSDataServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RDSDataServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -85,7 +93,7 @@ RDSDataServiceClient::RDSDataServiceClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<RDSDataServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RDSDataServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

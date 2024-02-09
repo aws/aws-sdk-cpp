@@ -62,8 +62,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ServiceDiscoveryClient::SERVICE_NAME = "servicediscovery";
-const char* ServiceDiscoveryClient::ALLOCATION_TAG = "ServiceDiscoveryClient";
+namespace Aws
+{
+  namespace ServiceDiscovery
+  {
+    const char SERVICE_NAME[] = "servicediscovery";
+    const char ALLOCATION_TAG[] = "ServiceDiscoveryClient";
+  }
+}
+const char* ServiceDiscoveryClient::GetServiceName() {return SERVICE_NAME;}
+const char* ServiceDiscoveryClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ServiceDiscoveryClient::ServiceDiscoveryClient(const ServiceDiscovery::ServiceDiscoveryClientConfiguration& clientConfiguration,
                                                std::shared_ptr<ServiceDiscoveryEndpointProviderBase> endpointProvider) :
@@ -75,7 +83,7 @@ ServiceDiscoveryClient::ServiceDiscoveryClient(const ServiceDiscovery::ServiceDi
             Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ServiceDiscoveryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ ServiceDiscoveryClient::ServiceDiscoveryClient(const AWSCredentials& credentials
             Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ServiceDiscoveryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ ServiceDiscoveryClient::ServiceDiscoveryClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ServiceDiscoveryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

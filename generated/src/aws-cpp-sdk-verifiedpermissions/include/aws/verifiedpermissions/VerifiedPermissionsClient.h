@@ -69,8 +69,8 @@ namespace VerifiedPermissions
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef VerifiedPermissionsClientConfiguration ClientConfigurationType;
       typedef VerifiedPermissionsEndpointProvider EndpointProviderType;
@@ -80,14 +80,14 @@ namespace VerifiedPermissions
         * is not specified, it will be initialized to default values.
         */
         VerifiedPermissionsClient(const Aws::VerifiedPermissions::VerifiedPermissionsClientConfiguration& clientConfiguration = Aws::VerifiedPermissions::VerifiedPermissionsClientConfiguration(),
-                                  std::shared_ptr<VerifiedPermissionsEndpointProviderBase> endpointProvider = Aws::MakeShared<VerifiedPermissionsEndpointProvider>(ALLOCATION_TAG));
+                                  std::shared_ptr<VerifiedPermissionsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         VerifiedPermissionsClient(const Aws::Auth::AWSCredentials& credentials,
-                                  std::shared_ptr<VerifiedPermissionsEndpointProviderBase> endpointProvider = Aws::MakeShared<VerifiedPermissionsEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<VerifiedPermissionsEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::VerifiedPermissions::VerifiedPermissionsClientConfiguration& clientConfiguration = Aws::VerifiedPermissions::VerifiedPermissionsClientConfiguration());
 
        /**
@@ -95,7 +95,7 @@ namespace VerifiedPermissions
         * the default http client factory will be used
         */
         VerifiedPermissionsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                  std::shared_ptr<VerifiedPermissionsEndpointProviderBase> endpointProvider = Aws::MakeShared<VerifiedPermissionsEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<VerifiedPermissionsEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::VerifiedPermissions::VerifiedPermissionsClientConfiguration& clientConfiguration = Aws::VerifiedPermissions::VerifiedPermissionsClientConfiguration());
 
 

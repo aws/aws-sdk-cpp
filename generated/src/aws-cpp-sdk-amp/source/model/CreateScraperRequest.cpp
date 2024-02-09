@@ -14,11 +14,11 @@ using namespace Aws::Utils;
 
 CreateScraperRequest::CreateScraperRequest() : 
     m_aliasHasBeenSet(false),
-    m_scrapeConfigurationHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_destinationHasBeenSet(false),
+    m_scrapeConfigurationHasBeenSet(false),
+    m_sourceHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -33,15 +33,9 @@ Aws::String CreateScraperRequest::SerializePayload() const
 
   }
 
-  if(m_scrapeConfigurationHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithObject("scrapeConfiguration", m_scrapeConfiguration.Jsonize());
-
-  }
-
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithObject("source", m_source.Jsonize());
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
@@ -51,9 +45,15 @@ Aws::String CreateScraperRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
+  if(m_scrapeConfigurationHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithObject("scrapeConfiguration", m_scrapeConfiguration.Jsonize());
+
+  }
+
+  if(m_sourceHasBeenSet)
+  {
+   payload.WithObject("source", m_source.Jsonize());
 
   }
 

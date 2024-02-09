@@ -45,8 +45,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PipesClient::SERVICE_NAME = "pipes";
-const char* PipesClient::ALLOCATION_TAG = "PipesClient";
+namespace Aws
+{
+  namespace Pipes
+  {
+    const char SERVICE_NAME[] = "pipes";
+    const char ALLOCATION_TAG[] = "PipesClient";
+  }
+}
+const char* PipesClient::GetServiceName() {return SERVICE_NAME;}
+const char* PipesClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PipesClient::PipesClient(const Pipes::PipesClientConfiguration& clientConfiguration,
                          std::shared_ptr<PipesEndpointProviderBase> endpointProvider) :
@@ -58,7 +66,7 @@ PipesClient::PipesClient(const Pipes::PipesClientConfiguration& clientConfigurat
             Aws::MakeShared<PipesErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PipesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -74,7 +82,7 @@ PipesClient::PipesClient(const AWSCredentials& credentials,
             Aws::MakeShared<PipesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PipesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ PipesClient::PipesClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             Aws::MakeShared<PipesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PipesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

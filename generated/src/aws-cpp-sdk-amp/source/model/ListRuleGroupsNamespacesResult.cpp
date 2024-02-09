@@ -29,6 +29,12 @@ ListRuleGroupsNamespacesResult::ListRuleGroupsNamespacesResult(const Aws::Amazon
 ListRuleGroupsNamespacesResult& ListRuleGroupsNamespacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("ruleGroupsNamespaces"))
   {
     Aws::Utils::Array<JsonView> ruleGroupsNamespacesJsonList = jsonValue.GetArray("ruleGroupsNamespaces");
@@ -36,12 +42,6 @@ ListRuleGroupsNamespacesResult& ListRuleGroupsNamespacesResult::operator =(const
     {
       m_ruleGroupsNamespaces.push_back(ruleGroupsNamespacesJsonList[ruleGroupsNamespacesIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

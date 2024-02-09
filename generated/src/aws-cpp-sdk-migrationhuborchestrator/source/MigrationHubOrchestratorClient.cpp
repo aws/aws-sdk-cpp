@@ -63,8 +63,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MigrationHubOrchestratorClient::SERVICE_NAME = "migrationhub-orchestrator";
-const char* MigrationHubOrchestratorClient::ALLOCATION_TAG = "MigrationHubOrchestratorClient";
+namespace Aws
+{
+  namespace MigrationHubOrchestrator
+  {
+    const char SERVICE_NAME[] = "migrationhub-orchestrator";
+    const char ALLOCATION_TAG[] = "MigrationHubOrchestratorClient";
+  }
+}
+const char* MigrationHubOrchestratorClient::GetServiceName() {return SERVICE_NAME;}
+const char* MigrationHubOrchestratorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const MigrationHubOrchestrator::MigrationHubOrchestratorClientConfiguration& clientConfiguration,
                                                                std::shared_ptr<MigrationHubOrchestratorEndpointProviderBase> endpointProvider) :
@@ -76,7 +84,7 @@ MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const MigrationHu
             Aws::MakeShared<MigrationHubOrchestratorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubOrchestratorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -92,7 +100,7 @@ MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const AWSCredenti
             Aws::MakeShared<MigrationHubOrchestratorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubOrchestratorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -108,7 +116,7 @@ MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const std::shared
             Aws::MakeShared<MigrationHubOrchestratorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubOrchestratorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

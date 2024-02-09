@@ -119,8 +119,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* WorkMailClient::SERVICE_NAME = "workmail";
-const char* WorkMailClient::ALLOCATION_TAG = "WorkMailClient";
+namespace Aws
+{
+  namespace WorkMail
+  {
+    const char SERVICE_NAME[] = "workmail";
+    const char ALLOCATION_TAG[] = "WorkMailClient";
+  }
+}
+const char* WorkMailClient::GetServiceName() {return SERVICE_NAME;}
+const char* WorkMailClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 WorkMailClient::WorkMailClient(const WorkMail::WorkMailClientConfiguration& clientConfiguration,
                                std::shared_ptr<WorkMailEndpointProviderBase> endpointProvider) :
@@ -132,7 +140,7 @@ WorkMailClient::WorkMailClient(const WorkMail::WorkMailClientConfiguration& clie
             Aws::MakeShared<WorkMailErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkMailEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -148,7 +156,7 @@ WorkMailClient::WorkMailClient(const AWSCredentials& credentials,
             Aws::MakeShared<WorkMailErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkMailEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -164,7 +172,7 @@ WorkMailClient::WorkMailClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<WorkMailErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkMailEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

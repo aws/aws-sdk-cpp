@@ -108,8 +108,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ImagebuilderClient::SERVICE_NAME = "imagebuilder";
-const char* ImagebuilderClient::ALLOCATION_TAG = "ImagebuilderClient";
+namespace Aws
+{
+  namespace imagebuilder
+  {
+    const char SERVICE_NAME[] = "imagebuilder";
+    const char ALLOCATION_TAG[] = "ImagebuilderClient";
+  }
+}
+const char* ImagebuilderClient::GetServiceName() {return SERVICE_NAME;}
+const char* ImagebuilderClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ImagebuilderClient::ImagebuilderClient(const imagebuilder::ImagebuilderClientConfiguration& clientConfiguration,
                                        std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider) :
@@ -121,7 +129,7 @@ ImagebuilderClient::ImagebuilderClient(const imagebuilder::ImagebuilderClientCon
             Aws::MakeShared<ImagebuilderErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ImagebuilderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -137,7 +145,7 @@ ImagebuilderClient::ImagebuilderClient(const AWSCredentials& credentials,
             Aws::MakeShared<ImagebuilderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ImagebuilderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -153,7 +161,7 @@ ImagebuilderClient::ImagebuilderClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<ImagebuilderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ImagebuilderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

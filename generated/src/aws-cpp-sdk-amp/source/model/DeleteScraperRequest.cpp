@@ -16,9 +16,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 DeleteScraperRequest::DeleteScraperRequest() : 
-    m_scraperIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_scraperIdHasBeenSet(false)
 {
 }
 

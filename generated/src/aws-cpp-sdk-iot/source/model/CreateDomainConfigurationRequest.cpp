@@ -21,7 +21,8 @@ CreateDomainConfigurationRequest::CreateDomainConfigurationRequest() :
     m_serviceType(ServiceType::NOT_SET),
     m_serviceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_tlsConfigHasBeenSet(false)
+    m_tlsConfigHasBeenSet(false),
+    m_serverCertificateConfigHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,12 @@ Aws::String CreateDomainConfigurationRequest::SerializePayload() const
   if(m_tlsConfigHasBeenSet)
   {
    payload.WithObject("tlsConfig", m_tlsConfig.Jsonize());
+
+  }
+
+  if(m_serverCertificateConfigHasBeenSet)
+  {
+   payload.WithObject("serverCertificateConfig", m_serverCertificateConfig.Jsonize());
 
   }
 

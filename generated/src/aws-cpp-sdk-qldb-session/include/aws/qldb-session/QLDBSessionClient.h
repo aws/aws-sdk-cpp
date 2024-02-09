@@ -35,8 +35,8 @@ namespace QLDBSession
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef QLDBSessionClientConfiguration ClientConfigurationType;
       typedef QLDBSessionEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace QLDBSession
         * is not specified, it will be initialized to default values.
         */
         QLDBSessionClient(const Aws::QLDBSession::QLDBSessionClientConfiguration& clientConfiguration = Aws::QLDBSession::QLDBSessionClientConfiguration(),
-                          std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider = Aws::MakeShared<QLDBSessionEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         QLDBSessionClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider = Aws::MakeShared<QLDBSessionEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::QLDBSession::QLDBSessionClientConfiguration& clientConfiguration = Aws::QLDBSession::QLDBSessionClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace QLDBSession
         * the default http client factory will be used
         */
         QLDBSessionClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider = Aws::MakeShared<QLDBSessionEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::QLDBSession::QLDBSessionClientConfiguration& clientConfiguration = Aws::QLDBSession::QLDBSessionClientConfiguration());
 
 

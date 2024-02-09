@@ -28,8 +28,8 @@ namespace Outposts
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef OutpostsClientConfiguration ClientConfigurationType;
       typedef OutpostsEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace Outposts
         * is not specified, it will be initialized to default values.
         */
         OutpostsClient(const Aws::Outposts::OutpostsClientConfiguration& clientConfiguration = Aws::Outposts::OutpostsClientConfiguration(),
-                       std::shared_ptr<OutpostsEndpointProviderBase> endpointProvider = Aws::MakeShared<OutpostsEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<OutpostsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         OutpostsClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<OutpostsEndpointProviderBase> endpointProvider = Aws::MakeShared<OutpostsEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<OutpostsEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Outposts::OutpostsClientConfiguration& clientConfiguration = Aws::Outposts::OutpostsClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace Outposts
         * the default http client factory will be used
         */
         OutpostsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<OutpostsEndpointProviderBase> endpointProvider = Aws::MakeShared<OutpostsEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<OutpostsEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Outposts::OutpostsClientConfiguration& clientConfiguration = Aws::Outposts::OutpostsClientConfiguration());
 
 

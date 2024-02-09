@@ -66,8 +66,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ChimeSDKMediaPipelinesClient::SERVICE_NAME = "chime";
-const char* ChimeSDKMediaPipelinesClient::ALLOCATION_TAG = "ChimeSDKMediaPipelinesClient";
+namespace Aws
+{
+  namespace ChimeSDKMediaPipelines
+  {
+    const char SERVICE_NAME[] = "chime";
+    const char ALLOCATION_TAG[] = "ChimeSDKMediaPipelinesClient";
+  }
+}
+const char* ChimeSDKMediaPipelinesClient::GetServiceName() {return SERVICE_NAME;}
+const char* ChimeSDKMediaPipelinesClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const ChimeSDKMediaPipelines::ChimeSDKMediaPipelinesClientConfiguration& clientConfiguration,
                                                            std::shared_ptr<ChimeSDKMediaPipelinesEndpointProviderBase> endpointProvider) :
@@ -79,7 +87,7 @@ ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const ChimeSDKMediaPi
             Aws::MakeShared<ChimeSDKMediaPipelinesErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKMediaPipelinesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -95,7 +103,7 @@ ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const AWSCredentials&
             Aws::MakeShared<ChimeSDKMediaPipelinesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKMediaPipelinesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -111,7 +119,7 @@ ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const std::shared_ptr
             Aws::MakeShared<ChimeSDKMediaPipelinesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKMediaPipelinesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

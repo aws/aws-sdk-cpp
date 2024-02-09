@@ -40,8 +40,8 @@ namespace QConnect
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef QConnectClientConfiguration ClientConfigurationType;
       typedef QConnectEndpointProvider EndpointProviderType;
@@ -51,14 +51,14 @@ namespace QConnect
         * is not specified, it will be initialized to default values.
         */
         QConnectClient(const Aws::QConnect::QConnectClientConfiguration& clientConfiguration = Aws::QConnect::QConnectClientConfiguration(),
-                       std::shared_ptr<QConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<QConnectEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<QConnectEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         QConnectClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<QConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<QConnectEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<QConnectEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::QConnect::QConnectClientConfiguration& clientConfiguration = Aws::QConnect::QConnectClientConfiguration());
 
        /**
@@ -66,7 +66,7 @@ namespace QConnect
         * the default http client factory will be used
         */
         QConnectClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<QConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<QConnectEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<QConnectEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::QConnect::QConnectClientConfiguration& clientConfiguration = Aws::QConnect::QConnectClientConfiguration());
 
 

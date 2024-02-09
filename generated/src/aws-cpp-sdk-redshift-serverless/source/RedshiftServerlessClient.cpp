@@ -90,8 +90,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* RedshiftServerlessClient::SERVICE_NAME = "redshift-serverless";
-const char* RedshiftServerlessClient::ALLOCATION_TAG = "RedshiftServerlessClient";
+namespace Aws
+{
+  namespace RedshiftServerless
+  {
+    const char SERVICE_NAME[] = "redshift-serverless";
+    const char ALLOCATION_TAG[] = "RedshiftServerlessClient";
+  }
+}
+const char* RedshiftServerlessClient::GetServiceName() {return SERVICE_NAME;}
+const char* RedshiftServerlessClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 RedshiftServerlessClient::RedshiftServerlessClient(const RedshiftServerless::RedshiftServerlessClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<RedshiftServerlessEndpointProviderBase> endpointProvider) :
@@ -103,7 +111,7 @@ RedshiftServerlessClient::RedshiftServerlessClient(const RedshiftServerless::Red
             Aws::MakeShared<RedshiftServerlessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RedshiftServerlessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -119,7 +127,7 @@ RedshiftServerlessClient::RedshiftServerlessClient(const AWSCredentials& credent
             Aws::MakeShared<RedshiftServerlessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RedshiftServerlessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -135,7 +143,7 @@ RedshiftServerlessClient::RedshiftServerlessClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<RedshiftServerlessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RedshiftServerlessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -97,8 +97,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AuditManagerClient::SERVICE_NAME = "auditmanager";
-const char* AuditManagerClient::ALLOCATION_TAG = "AuditManagerClient";
+namespace Aws
+{
+  namespace AuditManager
+  {
+    const char SERVICE_NAME[] = "auditmanager";
+    const char ALLOCATION_TAG[] = "AuditManagerClient";
+  }
+}
+const char* AuditManagerClient::GetServiceName() {return SERVICE_NAME;}
+const char* AuditManagerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AuditManagerClient::AuditManagerClient(const AuditManager::AuditManagerClientConfiguration& clientConfiguration,
                                        std::shared_ptr<AuditManagerEndpointProviderBase> endpointProvider) :
@@ -110,7 +118,7 @@ AuditManagerClient::AuditManagerClient(const AuditManager::AuditManagerClientCon
             Aws::MakeShared<AuditManagerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AuditManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -126,7 +134,7 @@ AuditManagerClient::AuditManagerClient(const AWSCredentials& credentials,
             Aws::MakeShared<AuditManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AuditManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -142,7 +150,7 @@ AuditManagerClient::AuditManagerClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<AuditManagerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AuditManagerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

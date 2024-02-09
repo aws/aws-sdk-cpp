@@ -49,8 +49,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* InternetMonitorClient::SERVICE_NAME = "internetmonitor";
-const char* InternetMonitorClient::ALLOCATION_TAG = "InternetMonitorClient";
+namespace Aws
+{
+  namespace InternetMonitor
+  {
+    const char SERVICE_NAME[] = "internetmonitor";
+    const char ALLOCATION_TAG[] = "InternetMonitorClient";
+  }
+}
+const char* InternetMonitorClient::GetServiceName() {return SERVICE_NAME;}
+const char* InternetMonitorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 InternetMonitorClient::InternetMonitorClient(const InternetMonitor::InternetMonitorClientConfiguration& clientConfiguration,
                                              std::shared_ptr<InternetMonitorEndpointProviderBase> endpointProvider) :
@@ -62,7 +70,7 @@ InternetMonitorClient::InternetMonitorClient(const InternetMonitor::InternetMoni
             Aws::MakeShared<InternetMonitorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<InternetMonitorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -78,7 +86,7 @@ InternetMonitorClient::InternetMonitorClient(const AWSCredentials& credentials,
             Aws::MakeShared<InternetMonitorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<InternetMonitorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ InternetMonitorClient::InternetMonitorClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<InternetMonitorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<InternetMonitorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

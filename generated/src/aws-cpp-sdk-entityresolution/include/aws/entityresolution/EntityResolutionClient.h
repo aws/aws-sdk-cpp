@@ -34,8 +34,8 @@ namespace EntityResolution
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef EntityResolutionClientConfiguration ClientConfigurationType;
       typedef EntityResolutionEndpointProvider EndpointProviderType;
@@ -45,14 +45,14 @@ namespace EntityResolution
         * is not specified, it will be initialized to default values.
         */
         EntityResolutionClient(const Aws::EntityResolution::EntityResolutionClientConfiguration& clientConfiguration = Aws::EntityResolution::EntityResolutionClientConfiguration(),
-                               std::shared_ptr<EntityResolutionEndpointProviderBase> endpointProvider = Aws::MakeShared<EntityResolutionEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<EntityResolutionEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EntityResolutionClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<EntityResolutionEndpointProviderBase> endpointProvider = Aws::MakeShared<EntityResolutionEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<EntityResolutionEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::EntityResolution::EntityResolutionClientConfiguration& clientConfiguration = Aws::EntityResolution::EntityResolutionClientConfiguration());
 
        /**
@@ -60,7 +60,7 @@ namespace EntityResolution
         * the default http client factory will be used
         */
         EntityResolutionClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<EntityResolutionEndpointProviderBase> endpointProvider = Aws::MakeShared<EntityResolutionEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<EntityResolutionEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::EntityResolution::EntityResolutionClientConfiguration& clientConfiguration = Aws::EntityResolution::EntityResolutionClientConfiguration());
 
 

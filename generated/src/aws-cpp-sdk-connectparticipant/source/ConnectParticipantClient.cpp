@@ -44,8 +44,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ConnectParticipantClient::SERVICE_NAME = "execute-api";
-const char* ConnectParticipantClient::ALLOCATION_TAG = "ConnectParticipantClient";
+namespace Aws
+{
+  namespace ConnectParticipant
+  {
+    const char SERVICE_NAME[] = "execute-api";
+    const char ALLOCATION_TAG[] = "ConnectParticipantClient";
+  }
+}
+const char* ConnectParticipantClient::GetServiceName() {return SERVICE_NAME;}
+const char* ConnectParticipantClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ConnectParticipantClient::ConnectParticipantClient(const ConnectParticipant::ConnectParticipantClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<ConnectParticipantEndpointProviderBase> endpointProvider) :
@@ -57,7 +65,7 @@ ConnectParticipantClient::ConnectParticipantClient(const ConnectParticipant::Con
             Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -73,7 +81,7 @@ ConnectParticipantClient::ConnectParticipantClient(const AWSCredentials& credent
             Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ ConnectParticipantClient::ConnectParticipantClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectParticipantEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

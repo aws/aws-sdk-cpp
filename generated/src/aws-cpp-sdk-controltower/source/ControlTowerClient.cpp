@@ -51,8 +51,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ControlTowerClient::SERVICE_NAME = "controltower";
-const char* ControlTowerClient::ALLOCATION_TAG = "ControlTowerClient";
+namespace Aws
+{
+  namespace ControlTower
+  {
+    const char SERVICE_NAME[] = "controltower";
+    const char ALLOCATION_TAG[] = "ControlTowerClient";
+  }
+}
+const char* ControlTowerClient::GetServiceName() {return SERVICE_NAME;}
+const char* ControlTowerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ControlTowerClient::ControlTowerClient(const ControlTower::ControlTowerClientConfiguration& clientConfiguration,
                                        std::shared_ptr<ControlTowerEndpointProviderBase> endpointProvider) :
@@ -64,7 +72,7 @@ ControlTowerClient::ControlTowerClient(const ControlTower::ControlTowerClientCon
             Aws::MakeShared<ControlTowerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ControlTowerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -80,7 +88,7 @@ ControlTowerClient::ControlTowerClient(const AWSCredentials& credentials,
             Aws::MakeShared<ControlTowerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ControlTowerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -96,7 +104,7 @@ ControlTowerClient::ControlTowerClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<ControlTowerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ControlTowerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

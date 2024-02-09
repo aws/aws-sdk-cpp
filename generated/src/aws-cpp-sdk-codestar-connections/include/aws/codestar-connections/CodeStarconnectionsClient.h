@@ -62,8 +62,8 @@ namespace CodeStarconnections
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CodeStarconnectionsClientConfiguration ClientConfigurationType;
       typedef CodeStarconnectionsEndpointProvider EndpointProviderType;
@@ -73,14 +73,14 @@ namespace CodeStarconnections
         * is not specified, it will be initialized to default values.
         */
         CodeStarconnectionsClient(const Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration& clientConfiguration = Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration(),
-                                  std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarconnectionsEndpointProvider>(ALLOCATION_TAG));
+                                  std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CodeStarconnectionsClient(const Aws::Auth::AWSCredentials& credentials,
-                                  std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarconnectionsEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration& clientConfiguration = Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration());
 
        /**
@@ -88,7 +88,7 @@ namespace CodeStarconnections
         * the default http client factory will be used
         */
         CodeStarconnectionsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                  std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarconnectionsEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<CodeStarconnectionsEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration& clientConfiguration = Aws::CodeStarconnections::CodeStarconnectionsClientConfiguration());
 
 

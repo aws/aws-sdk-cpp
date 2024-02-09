@@ -183,8 +183,8 @@ namespace IVS
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IVSClientConfiguration ClientConfigurationType;
       typedef IVSEndpointProvider EndpointProviderType;
@@ -194,14 +194,14 @@ namespace IVS
         * is not specified, it will be initialized to default values.
         */
         IVSClient(const Aws::IVS::IVSClientConfiguration& clientConfiguration = Aws::IVS::IVSClientConfiguration(),
-                  std::shared_ptr<IVSEndpointProviderBase> endpointProvider = Aws::MakeShared<IVSEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<IVSEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IVSClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<IVSEndpointProviderBase> endpointProvider = Aws::MakeShared<IVSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<IVSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::IVS::IVSClientConfiguration& clientConfiguration = Aws::IVS::IVSClientConfiguration());
 
        /**
@@ -209,7 +209,7 @@ namespace IVS
         * the default http client factory will be used
         */
         IVSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<IVSEndpointProviderBase> endpointProvider = Aws::MakeShared<IVSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<IVSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::IVS::IVSClientConfiguration& clientConfiguration = Aws::IVS::IVSClientConfiguration());
 
 

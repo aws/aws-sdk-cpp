@@ -103,8 +103,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AthenaClient::SERVICE_NAME = "athena";
-const char* AthenaClient::ALLOCATION_TAG = "AthenaClient";
+namespace Aws
+{
+  namespace Athena
+  {
+    const char SERVICE_NAME[] = "athena";
+    const char ALLOCATION_TAG[] = "AthenaClient";
+  }
+}
+const char* AthenaClient::GetServiceName() {return SERVICE_NAME;}
+const char* AthenaClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AthenaClient::AthenaClient(const Athena::AthenaClientConfiguration& clientConfiguration,
                            std::shared_ptr<AthenaEndpointProviderBase> endpointProvider) :
@@ -116,7 +124,7 @@ AthenaClient::AthenaClient(const Athena::AthenaClientConfiguration& clientConfig
             Aws::MakeShared<AthenaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AthenaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -132,7 +140,7 @@ AthenaClient::AthenaClient(const AWSCredentials& credentials,
             Aws::MakeShared<AthenaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AthenaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -148,7 +156,7 @@ AthenaClient::AthenaClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<AthenaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AthenaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

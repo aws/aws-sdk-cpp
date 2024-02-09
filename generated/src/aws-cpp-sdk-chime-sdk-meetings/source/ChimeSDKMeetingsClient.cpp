@@ -51,8 +51,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ChimeSDKMeetingsClient::SERVICE_NAME = "chime";
-const char* ChimeSDKMeetingsClient::ALLOCATION_TAG = "ChimeSDKMeetingsClient";
+namespace Aws
+{
+  namespace ChimeSDKMeetings
+  {
+    const char SERVICE_NAME[] = "chime";
+    const char ALLOCATION_TAG[] = "ChimeSDKMeetingsClient";
+  }
+}
+const char* ChimeSDKMeetingsClient::GetServiceName() {return SERVICE_NAME;}
+const char* ChimeSDKMeetingsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const ChimeSDKMeetings::ChimeSDKMeetingsClientConfiguration& clientConfiguration,
                                                std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> endpointProvider) :
@@ -64,7 +72,7 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const ChimeSDKMeetings::ChimeSDKM
             Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -80,7 +88,7 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const AWSCredentials& credentials
             Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -96,7 +104,7 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<ChimeSDKMeetingsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKMeetingsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

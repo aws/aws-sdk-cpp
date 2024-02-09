@@ -77,8 +77,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PinpointEmailClient::SERVICE_NAME = "ses";
-const char* PinpointEmailClient::ALLOCATION_TAG = "PinpointEmailClient";
+namespace Aws
+{
+  namespace PinpointEmail
+  {
+    const char SERVICE_NAME[] = "ses";
+    const char ALLOCATION_TAG[] = "PinpointEmailClient";
+  }
+}
+const char* PinpointEmailClient::GetServiceName() {return SERVICE_NAME;}
+const char* PinpointEmailClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PinpointEmailClient::PinpointEmailClient(const PinpointEmail::PinpointEmailClientConfiguration& clientConfiguration,
                                          std::shared_ptr<PinpointEmailEndpointProviderBase> endpointProvider) :
@@ -90,7 +98,7 @@ PinpointEmailClient::PinpointEmailClient(const PinpointEmail::PinpointEmailClien
             Aws::MakeShared<PinpointEmailErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PinpointEmailEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ PinpointEmailClient::PinpointEmailClient(const AWSCredentials& credentials,
             Aws::MakeShared<PinpointEmailErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PinpointEmailEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -122,7 +130,7 @@ PinpointEmailClient::PinpointEmailClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<PinpointEmailErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PinpointEmailEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

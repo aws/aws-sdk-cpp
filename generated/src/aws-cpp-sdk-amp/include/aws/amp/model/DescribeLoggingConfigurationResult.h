@@ -26,7 +26,7 @@ namespace PrometheusService
 namespace Model
 {
   /**
-   * <p>Represents the output of a DescribeLoggingConfiguration
+   * <p>Represents the output of a <code>DescribeLoggingConfiguration</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfigurationResponse">AWS
    * API Reference</a></p>
@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>Metadata object containing information about the logging configuration of a
-     * workspace.</p>
+     * <p>A structure that displays the information about the logging
+     * configuration.</p>
      */
     inline const LoggingConfigurationMetadata& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
     /**
-     * <p>Metadata object containing information about the logging configuration of a
-     * workspace.</p>
+     * <p>A structure that displays the information about the logging
+     * configuration.</p>
      */
     inline void SetLoggingConfiguration(const LoggingConfigurationMetadata& value) { m_loggingConfiguration = value; }
 
     /**
-     * <p>Metadata object containing information about the logging configuration of a
-     * workspace.</p>
+     * <p>A structure that displays the information about the logging
+     * configuration.</p>
      */
     inline void SetLoggingConfiguration(LoggingConfigurationMetadata&& value) { m_loggingConfiguration = std::move(value); }
 
     /**
-     * <p>Metadata object containing information about the logging configuration of a
-     * workspace.</p>
+     * <p>A structure that displays the information about the logging
+     * configuration.</p>
      */
     inline DescribeLoggingConfigurationResult& WithLoggingConfiguration(const LoggingConfigurationMetadata& value) { SetLoggingConfiguration(value); return *this;}
 
     /**
-     * <p>Metadata object containing information about the logging configuration of a
-     * workspace.</p>
+     * <p>A structure that displays the information about the logging
+     * configuration.</p>
      */
     inline DescribeLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfigurationMetadata&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 

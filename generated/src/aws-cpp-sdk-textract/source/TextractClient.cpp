@@ -60,8 +60,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* TextractClient::SERVICE_NAME = "textract";
-const char* TextractClient::ALLOCATION_TAG = "TextractClient";
+namespace Aws
+{
+  namespace Textract
+  {
+    const char SERVICE_NAME[] = "textract";
+    const char ALLOCATION_TAG[] = "TextractClient";
+  }
+}
+const char* TextractClient::GetServiceName() {return SERVICE_NAME;}
+const char* TextractClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 TextractClient::TextractClient(const Textract::TextractClientConfiguration& clientConfiguration,
                                std::shared_ptr<TextractEndpointProviderBase> endpointProvider) :
@@ -73,7 +81,7 @@ TextractClient::TextractClient(const Textract::TextractClientConfiguration& clie
             Aws::MakeShared<TextractErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TextractEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ TextractClient::TextractClient(const AWSCredentials& credentials,
             Aws::MakeShared<TextractErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TextractEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -105,7 +113,7 @@ TextractClient::TextractClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<TextractErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TextractEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

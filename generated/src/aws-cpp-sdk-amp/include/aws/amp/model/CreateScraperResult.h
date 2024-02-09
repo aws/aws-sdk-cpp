@@ -27,8 +27,8 @@ namespace PrometheusService
 namespace Model
 {
   /**
-   * <p>Represents the output of a CreateScraper operation.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Represents the output of a <code>CreateScraper</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraperResponse">AWS
    * API Reference</a></p>
    */
@@ -41,160 +41,160 @@ namespace Model
 
 
     /**
-     * <p>The generated ID of the scraper that was just created.</p>
-     */
-    inline const Aws::String& GetScraperId() const{ return m_scraperId; }
-
-    /**
-     * <p>The generated ID of the scraper that was just created.</p>
-     */
-    inline void SetScraperId(const Aws::String& value) { m_scraperId = value; }
-
-    /**
-     * <p>The generated ID of the scraper that was just created.</p>
-     */
-    inline void SetScraperId(Aws::String&& value) { m_scraperId = std::move(value); }
-
-    /**
-     * <p>The generated ID of the scraper that was just created.</p>
-     */
-    inline void SetScraperId(const char* value) { m_scraperId.assign(value); }
-
-    /**
-     * <p>The generated ID of the scraper that was just created.</p>
-     */
-    inline CreateScraperResult& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
-
-    /**
-     * <p>The generated ID of the scraper that was just created.</p>
-     */
-    inline CreateScraperResult& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
-
-    /**
-     * <p>The generated ID of the scraper that was just created.</p>
-     */
-    inline CreateScraperResult& WithScraperId(const char* value) { SetScraperId(value); return *this;}
-
-
-    /**
-     * <p>The ARN of the scraper that was just created.</p>
+     * <p>The Amazon Resource Name (ARN) of the new scraper.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the scraper that was just created.</p>
+     * <p>The Amazon Resource Name (ARN) of the new scraper.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN of the scraper that was just created.</p>
+     * <p>The Amazon Resource Name (ARN) of the new scraper.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the scraper that was just created.</p>
+     * <p>The Amazon Resource Name (ARN) of the new scraper.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the scraper that was just created.</p>
+     * <p>The Amazon Resource Name (ARN) of the new scraper.</p>
      */
     inline CreateScraperResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the scraper that was just created.</p>
+     * <p>The Amazon Resource Name (ARN) of the new scraper.</p>
      */
     inline CreateScraperResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the scraper that was just created.</p>
+     * <p>The Amazon Resource Name (ARN) of the new scraper.</p>
      */
     inline CreateScraperResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The status of the scraper that was just created (usually CREATING).</p>
+     * <p>The ID of the new scraper.</p>
+     */
+    inline const Aws::String& GetScraperId() const{ return m_scraperId; }
+
+    /**
+     * <p>The ID of the new scraper.</p>
+     */
+    inline void SetScraperId(const Aws::String& value) { m_scraperId = value; }
+
+    /**
+     * <p>The ID of the new scraper.</p>
+     */
+    inline void SetScraperId(Aws::String&& value) { m_scraperId = std::move(value); }
+
+    /**
+     * <p>The ID of the new scraper.</p>
+     */
+    inline void SetScraperId(const char* value) { m_scraperId.assign(value); }
+
+    /**
+     * <p>The ID of the new scraper.</p>
+     */
+    inline CreateScraperResult& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
+
+    /**
+     * <p>The ID of the new scraper.</p>
+     */
+    inline CreateScraperResult& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the new scraper.</p>
+     */
+    inline CreateScraperResult& WithScraperId(const char* value) { SetScraperId(value); return *this;}
+
+
+    /**
+     * <p>A structure that displays the current status of the scraper.</p>
      */
     inline const ScraperStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the scraper that was just created (usually CREATING).</p>
+     * <p>A structure that displays the current status of the scraper.</p>
      */
     inline void SetStatus(const ScraperStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the scraper that was just created (usually CREATING).</p>
+     * <p>A structure that displays the current status of the scraper.</p>
      */
     inline void SetStatus(ScraperStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the scraper that was just created (usually CREATING).</p>
+     * <p>A structure that displays the current status of the scraper.</p>
      */
     inline CreateScraperResult& WithStatus(const ScraperStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the scraper that was just created (usually CREATING).</p>
+     * <p>A structure that displays the current status of the scraper.</p>
      */
     inline CreateScraperResult& WithStatus(ScraperStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline CreateScraperResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline CreateScraperResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline CreateScraperResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline CreateScraperResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline CreateScraperResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline CreateScraperResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline CreateScraperResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline CreateScraperResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags of this scraper.</p>
+     * <p>The list of tag keys and values that are associated with the scraper.</p>
      */
     inline CreateScraperResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
@@ -222,9 +222,9 @@ namespace Model
 
   private:
 
-    Aws::String m_scraperId;
-
     Aws::String m_arn;
+
+    Aws::String m_scraperId;
 
     ScraperStatus m_status;
 

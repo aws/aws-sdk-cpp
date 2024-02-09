@@ -38,8 +38,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudSearchDomainClient::SERVICE_NAME = "cloudsearch";
-const char* CloudSearchDomainClient::ALLOCATION_TAG = "CloudSearchDomainClient";
+namespace Aws
+{
+  namespace CloudSearchDomain
+  {
+    const char SERVICE_NAME[] = "cloudsearch";
+    const char ALLOCATION_TAG[] = "CloudSearchDomainClient";
+  }
+}
+const char* CloudSearchDomainClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudSearchDomainClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudSearchDomainClient::CloudSearchDomainClient(const CloudSearchDomain::CloudSearchDomainClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<CloudSearchDomainEndpointProviderBase> endpointProvider) :
@@ -51,7 +59,7 @@ CloudSearchDomainClient::CloudSearchDomainClient(const CloudSearchDomain::CloudS
             Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -67,7 +75,7 @@ CloudSearchDomainClient::CloudSearchDomainClient(const AWSCredentials& credentia
             Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCreden
             Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -175,8 +175,8 @@ namespace Rekognition
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef RekognitionClientConfiguration ClientConfigurationType;
       typedef RekognitionEndpointProvider EndpointProviderType;
@@ -186,14 +186,14 @@ namespace Rekognition
         * is not specified, it will be initialized to default values.
         */
         RekognitionClient(const Aws::Rekognition::RekognitionClientConfiguration& clientConfiguration = Aws::Rekognition::RekognitionClientConfiguration(),
-                          std::shared_ptr<RekognitionEndpointProviderBase> endpointProvider = Aws::MakeShared<RekognitionEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<RekognitionEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RekognitionClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<RekognitionEndpointProviderBase> endpointProvider = Aws::MakeShared<RekognitionEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<RekognitionEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::Rekognition::RekognitionClientConfiguration& clientConfiguration = Aws::Rekognition::RekognitionClientConfiguration());
 
        /**
@@ -201,7 +201,7 @@ namespace Rekognition
         * the default http client factory will be used
         */
         RekognitionClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<RekognitionEndpointProviderBase> endpointProvider = Aws::MakeShared<RekognitionEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<RekognitionEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::Rekognition::RekognitionClientConfiguration& clientConfiguration = Aws::Rekognition::RekognitionClientConfiguration());
 
 

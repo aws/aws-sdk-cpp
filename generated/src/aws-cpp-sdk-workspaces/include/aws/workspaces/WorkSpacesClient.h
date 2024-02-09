@@ -44,8 +44,8 @@ namespace WorkSpaces
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef WorkSpacesClientConfiguration ClientConfigurationType;
       typedef WorkSpacesEndpointProvider EndpointProviderType;
@@ -55,14 +55,14 @@ namespace WorkSpaces
         * is not specified, it will be initialized to default values.
         */
         WorkSpacesClient(const Aws::WorkSpaces::WorkSpacesClientConfiguration& clientConfiguration = Aws::WorkSpaces::WorkSpacesClientConfiguration(),
-                         std::shared_ptr<WorkSpacesEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<WorkSpacesEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WorkSpacesClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<WorkSpacesEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<WorkSpacesEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::WorkSpaces::WorkSpacesClientConfiguration& clientConfiguration = Aws::WorkSpaces::WorkSpacesClientConfiguration());
 
        /**
@@ -70,7 +70,7 @@ namespace WorkSpaces
         * the default http client factory will be used
         */
         WorkSpacesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<WorkSpacesEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<WorkSpacesEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::WorkSpaces::WorkSpacesClientConfiguration& clientConfiguration = Aws::WorkSpaces::WorkSpacesClientConfiguration());
 
 

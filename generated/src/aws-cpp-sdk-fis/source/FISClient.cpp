@@ -59,8 +59,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* FISClient::SERVICE_NAME = "fis";
-const char* FISClient::ALLOCATION_TAG = "FISClient";
+namespace Aws
+{
+  namespace FIS
+  {
+    const char SERVICE_NAME[] = "fis";
+    const char ALLOCATION_TAG[] = "FISClient";
+  }
+}
+const char* FISClient::GetServiceName() {return SERVICE_NAME;}
+const char* FISClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 FISClient::FISClient(const FIS::FISClientConfiguration& clientConfiguration,
                      std::shared_ptr<FISEndpointProviderBase> endpointProvider) :
@@ -72,7 +80,7 @@ FISClient::FISClient(const FIS::FISClientConfiguration& clientConfiguration,
             Aws::MakeShared<FISErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FISEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ FISClient::FISClient(const AWSCredentials& credentials,
             Aws::MakeShared<FISErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FISEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -104,7 +112,7 @@ FISClient::FISClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<FISErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FISEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

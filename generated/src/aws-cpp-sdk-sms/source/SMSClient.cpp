@@ -70,8 +70,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SMSClient::SERVICE_NAME = "sms";
-const char* SMSClient::ALLOCATION_TAG = "SMSClient";
+namespace Aws
+{
+  namespace SMS
+  {
+    const char SERVICE_NAME[] = "sms";
+    const char ALLOCATION_TAG[] = "SMSClient";
+  }
+}
+const char* SMSClient::GetServiceName() {return SERVICE_NAME;}
+const char* SMSClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SMSClient::SMSClient(const SMS::SMSClientConfiguration& clientConfiguration,
                      std::shared_ptr<SMSEndpointProviderBase> endpointProvider) :
@@ -83,7 +91,7 @@ SMSClient::SMSClient(const SMS::SMSClientConfiguration& clientConfiguration,
             Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SMSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -99,7 +107,7 @@ SMSClient::SMSClient(const AWSCredentials& credentials,
             Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SMSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -115,7 +123,7 @@ SMSClient::SMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SMSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

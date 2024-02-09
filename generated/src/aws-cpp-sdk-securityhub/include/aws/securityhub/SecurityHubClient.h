@@ -89,8 +89,8 @@ namespace SecurityHub
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SecurityHubClientConfiguration ClientConfigurationType;
       typedef SecurityHubEndpointProvider EndpointProviderType;
@@ -100,14 +100,14 @@ namespace SecurityHub
         * is not specified, it will be initialized to default values.
         */
         SecurityHubClient(const Aws::SecurityHub::SecurityHubClientConfiguration& clientConfiguration = Aws::SecurityHub::SecurityHubClientConfiguration(),
-                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = Aws::MakeShared<SecurityHubEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SecurityHubClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = Aws::MakeShared<SecurityHubEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::SecurityHub::SecurityHubClientConfiguration& clientConfiguration = Aws::SecurityHub::SecurityHubClientConfiguration());
 
        /**
@@ -115,7 +115,7 @@ namespace SecurityHub
         * the default http client factory will be used
         */
         SecurityHubClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = Aws::MakeShared<SecurityHubEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::SecurityHub::SecurityHubClientConfiguration& clientConfiguration = Aws::SecurityHub::SecurityHubClientConfiguration());
 
 

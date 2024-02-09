@@ -41,8 +41,8 @@ namespace Pricing
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PricingClientConfiguration ClientConfigurationType;
       typedef PricingEndpointProvider EndpointProviderType;
@@ -52,14 +52,14 @@ namespace Pricing
         * is not specified, it will be initialized to default values.
         */
         PricingClient(const Aws::Pricing::PricingClientConfiguration& clientConfiguration = Aws::Pricing::PricingClientConfiguration(),
-                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = Aws::MakeShared<PricingEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PricingClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = Aws::MakeShared<PricingEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Pricing::PricingClientConfiguration& clientConfiguration = Aws::Pricing::PricingClientConfiguration());
 
        /**
@@ -67,7 +67,7 @@ namespace Pricing
         * the default http client factory will be used
         */
         PricingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = Aws::MakeShared<PricingEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Pricing::PricingClientConfiguration& clientConfiguration = Aws::Pricing::PricingClientConfiguration());
 
 

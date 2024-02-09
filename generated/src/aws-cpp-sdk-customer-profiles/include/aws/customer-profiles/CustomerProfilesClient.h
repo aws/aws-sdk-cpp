@@ -30,8 +30,8 @@ namespace CustomerProfiles
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CustomerProfilesClientConfiguration ClientConfigurationType;
       typedef CustomerProfilesEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace CustomerProfiles
         * is not specified, it will be initialized to default values.
         */
         CustomerProfilesClient(const Aws::CustomerProfiles::CustomerProfilesClientConfiguration& clientConfiguration = Aws::CustomerProfiles::CustomerProfilesClientConfiguration(),
-                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CustomerProfilesClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::CustomerProfiles::CustomerProfilesClientConfiguration& clientConfiguration = Aws::CustomerProfiles::CustomerProfilesClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace CustomerProfiles
         * the default http client factory will be used
         */
         CustomerProfilesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::CustomerProfiles::CustomerProfilesClientConfiguration& clientConfiguration = Aws::CustomerProfiles::CustomerProfilesClientConfiguration());
 
 

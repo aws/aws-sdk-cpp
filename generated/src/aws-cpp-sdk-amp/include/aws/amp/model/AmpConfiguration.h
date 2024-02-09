@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A representation of an AMP destination.</p><p><h3>See Also:</h3>   <a
+   * <p>The <code>AmpConfiguration</code> structure defines the Amazon Managed
+   * Service for Prometheus instance a scraper should send metrics to.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/AmpConfiguration">AWS
    * API Reference</a></p>
    */
@@ -38,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an AMP workspace.</p>
+     * <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
      */
     inline const Aws::String& GetWorkspaceArn() const{ return m_workspaceArn; }
 
     /**
-     * <p>The ARN of an AMP workspace.</p>
+     * <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
      */
     inline bool WorkspaceArnHasBeenSet() const { return m_workspaceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of an AMP workspace.</p>
+     * <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
      */
     inline void SetWorkspaceArn(const Aws::String& value) { m_workspaceArnHasBeenSet = true; m_workspaceArn = value; }
 
     /**
-     * <p>The ARN of an AMP workspace.</p>
+     * <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
      */
     inline void SetWorkspaceArn(Aws::String&& value) { m_workspaceArnHasBeenSet = true; m_workspaceArn = std::move(value); }
 
     /**
-     * <p>The ARN of an AMP workspace.</p>
+     * <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
      */
     inline void SetWorkspaceArn(const char* value) { m_workspaceArnHasBeenSet = true; m_workspaceArn.assign(value); }
 
     /**
-     * <p>The ARN of an AMP workspace.</p>
+     * <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
      */
     inline AmpConfiguration& WithWorkspaceArn(const Aws::String& value) { SetWorkspaceArn(value); return *this;}
 
     /**
-     * <p>The ARN of an AMP workspace.</p>
+     * <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
      */
     inline AmpConfiguration& WithWorkspaceArn(Aws::String&& value) { SetWorkspaceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an AMP workspace.</p>
+     * <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
      */
     inline AmpConfiguration& WithWorkspaceArn(const char* value) { SetWorkspaceArn(value); return *this;}
 

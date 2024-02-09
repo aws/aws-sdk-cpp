@@ -74,8 +74,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodePipelineClient::SERVICE_NAME = "codepipeline";
-const char* CodePipelineClient::ALLOCATION_TAG = "CodePipelineClient";
+namespace Aws
+{
+  namespace CodePipeline
+  {
+    const char SERVICE_NAME[] = "codepipeline";
+    const char ALLOCATION_TAG[] = "CodePipelineClient";
+  }
+}
+const char* CodePipelineClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodePipelineClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CodePipelineClient::CodePipelineClient(const CodePipeline::CodePipelineClientConfiguration& clientConfiguration,
                                        std::shared_ptr<CodePipelineEndpointProviderBase> endpointProvider) :
@@ -87,7 +95,7 @@ CodePipelineClient::CodePipelineClient(const CodePipeline::CodePipelineClientCon
             Aws::MakeShared<CodePipelineErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodePipelineEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ CodePipelineClient::CodePipelineClient(const AWSCredentials& credentials,
             Aws::MakeShared<CodePipelineErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodePipelineEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -119,7 +127,7 @@ CodePipelineClient::CodePipelineClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<CodePipelineErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodePipelineEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

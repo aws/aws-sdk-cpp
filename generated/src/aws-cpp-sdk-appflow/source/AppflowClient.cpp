@@ -60,8 +60,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AppflowClient::SERVICE_NAME = "appflow";
-const char* AppflowClient::ALLOCATION_TAG = "AppflowClient";
+namespace Aws
+{
+  namespace Appflow
+  {
+    const char SERVICE_NAME[] = "appflow";
+    const char ALLOCATION_TAG[] = "AppflowClient";
+  }
+}
+const char* AppflowClient::GetServiceName() {return SERVICE_NAME;}
+const char* AppflowClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AppflowClient::AppflowClient(const Appflow::AppflowClientConfiguration& clientConfiguration,
                              std::shared_ptr<AppflowEndpointProviderBase> endpointProvider) :
@@ -73,7 +81,7 @@ AppflowClient::AppflowClient(const Appflow::AppflowClientConfiguration& clientCo
             Aws::MakeShared<AppflowErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppflowEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ AppflowClient::AppflowClient(const AWSCredentials& credentials,
             Aws::MakeShared<AppflowErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppflowEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -105,7 +113,7 @@ AppflowClient::AppflowClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<AppflowErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppflowEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -39,8 +39,8 @@ namespace CloudFormation
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CloudFormationClientConfiguration ClientConfigurationType;
       typedef CloudFormationEndpointProvider EndpointProviderType;
@@ -50,14 +50,14 @@ namespace CloudFormation
         * is not specified, it will be initialized to default values.
         */
         CloudFormationClient(const Aws::CloudFormation::CloudFormationClientConfiguration& clientConfiguration = Aws::CloudFormation::CloudFormationClientConfiguration(),
-                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudFormationEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudFormationClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudFormationEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::CloudFormation::CloudFormationClientConfiguration& clientConfiguration = Aws::CloudFormation::CloudFormationClientConfiguration());
 
        /**
@@ -65,7 +65,7 @@ namespace CloudFormation
         * the default http client factory will be used
         */
         CloudFormationClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudFormationEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::CloudFormation::CloudFormationClientConfiguration& clientConfiguration = Aws::CloudFormation::CloudFormationClientConfiguration());
 
 

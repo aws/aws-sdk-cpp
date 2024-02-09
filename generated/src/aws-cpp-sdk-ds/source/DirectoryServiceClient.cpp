@@ -102,8 +102,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DirectoryServiceClient::SERVICE_NAME = "ds";
-const char* DirectoryServiceClient::ALLOCATION_TAG = "DirectoryServiceClient";
+namespace Aws
+{
+  namespace DirectoryService
+  {
+    const char SERVICE_NAME[] = "ds";
+    const char ALLOCATION_TAG[] = "DirectoryServiceClient";
+  }
+}
+const char* DirectoryServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* DirectoryServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DirectoryServiceClient::DirectoryServiceClient(const DirectoryService::DirectoryServiceClientConfiguration& clientConfiguration,
                                                std::shared_ptr<DirectoryServiceEndpointProviderBase> endpointProvider) :
@@ -115,7 +123,7 @@ DirectoryServiceClient::DirectoryServiceClient(const DirectoryService::Directory
             Aws::MakeShared<DirectoryServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DirectoryServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -131,7 +139,7 @@ DirectoryServiceClient::DirectoryServiceClient(const AWSCredentials& credentials
             Aws::MakeShared<DirectoryServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DirectoryServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -147,7 +155,7 @@ DirectoryServiceClient::DirectoryServiceClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<DirectoryServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DirectoryServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

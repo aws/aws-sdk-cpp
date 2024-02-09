@@ -26,8 +26,8 @@ namespace PrometheusService
 namespace Model
 {
   /**
-   * <p>Represents the output of a DeleteScraper operation.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Represents the output of a <code>DeleteScraper</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperResponse">AWS
    * API Reference</a></p>
    */
@@ -40,63 +40,63 @@ namespace Model
 
 
     /**
-     * <p>The ID of the scraper that was deleted.</p>
+     * <p>The ID of the scraper to delete.</p>
      */
     inline const Aws::String& GetScraperId() const{ return m_scraperId; }
 
     /**
-     * <p>The ID of the scraper that was deleted.</p>
+     * <p>The ID of the scraper to delete.</p>
      */
     inline void SetScraperId(const Aws::String& value) { m_scraperId = value; }
 
     /**
-     * <p>The ID of the scraper that was deleted.</p>
+     * <p>The ID of the scraper to delete.</p>
      */
     inline void SetScraperId(Aws::String&& value) { m_scraperId = std::move(value); }
 
     /**
-     * <p>The ID of the scraper that was deleted.</p>
+     * <p>The ID of the scraper to delete.</p>
      */
     inline void SetScraperId(const char* value) { m_scraperId.assign(value); }
 
     /**
-     * <p>The ID of the scraper that was deleted.</p>
+     * <p>The ID of the scraper to delete.</p>
      */
     inline DeleteScraperResult& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
 
     /**
-     * <p>The ID of the scraper that was deleted.</p>
+     * <p>The ID of the scraper to delete.</p>
      */
     inline DeleteScraperResult& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the scraper that was deleted.</p>
+     * <p>The ID of the scraper to delete.</p>
      */
     inline DeleteScraperResult& WithScraperId(const char* value) { SetScraperId(value); return *this;}
 
 
     /**
-     * <p>The status of the scraper that is being deleted.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline const ScraperStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the scraper that is being deleted.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline void SetStatus(const ScraperStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the scraper that is being deleted.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline void SetStatus(ScraperStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the scraper that is being deleted.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline DeleteScraperResult& WithStatus(const ScraperStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the scraper that is being deleted.</p>
+     * <p>The current status of the scraper.</p>
      */
     inline DeleteScraperResult& WithStatus(ScraperStatus&& value) { SetStatus(std::move(value)); return *this;}
 

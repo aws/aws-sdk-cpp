@@ -53,8 +53,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ResourceGroupsClient::SERVICE_NAME = "resource-groups";
-const char* ResourceGroupsClient::ALLOCATION_TAG = "ResourceGroupsClient";
+namespace Aws
+{
+  namespace ResourceGroups
+  {
+    const char SERVICE_NAME[] = "resource-groups";
+    const char ALLOCATION_TAG[] = "ResourceGroupsClient";
+  }
+}
+const char* ResourceGroupsClient::GetServiceName() {return SERVICE_NAME;}
+const char* ResourceGroupsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ResourceGroupsClient::ResourceGroupsClient(const ResourceGroups::ResourceGroupsClientConfiguration& clientConfiguration,
                                            std::shared_ptr<ResourceGroupsEndpointProviderBase> endpointProvider) :
@@ -66,7 +74,7 @@ ResourceGroupsClient::ResourceGroupsClient(const ResourceGroups::ResourceGroupsC
             Aws::MakeShared<ResourceGroupsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResourceGroupsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ ResourceGroupsClient::ResourceGroupsClient(const AWSCredentials& credentials,
             Aws::MakeShared<ResourceGroupsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResourceGroupsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -98,7 +106,7 @@ ResourceGroupsClient::ResourceGroupsClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<ResourceGroupsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResourceGroupsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

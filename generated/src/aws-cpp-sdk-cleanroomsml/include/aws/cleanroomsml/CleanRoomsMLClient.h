@@ -35,8 +35,8 @@ namespace CleanRoomsML
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CleanRoomsMLClientConfiguration ClientConfigurationType;
       typedef CleanRoomsMLEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace CleanRoomsML
         * is not specified, it will be initialized to default values.
         */
         CleanRoomsMLClient(const Aws::CleanRoomsML::CleanRoomsMLClientConfiguration& clientConfiguration = Aws::CleanRoomsML::CleanRoomsMLClientConfiguration(),
-                           std::shared_ptr<CleanRoomsMLEndpointProviderBase> endpointProvider = Aws::MakeShared<CleanRoomsMLEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<CleanRoomsMLEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CleanRoomsMLClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<CleanRoomsMLEndpointProviderBase> endpointProvider = Aws::MakeShared<CleanRoomsMLEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<CleanRoomsMLEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::CleanRoomsML::CleanRoomsMLClientConfiguration& clientConfiguration = Aws::CleanRoomsML::CleanRoomsMLClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace CleanRoomsML
         * the default http client factory will be used
         */
         CleanRoomsMLClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<CleanRoomsMLEndpointProviderBase> endpointProvider = Aws::MakeShared<CleanRoomsMLEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<CleanRoomsMLEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::CleanRoomsML::CleanRoomsMLClientConfiguration& clientConfiguration = Aws::CleanRoomsML::CleanRoomsMLClientConfiguration());
 
 

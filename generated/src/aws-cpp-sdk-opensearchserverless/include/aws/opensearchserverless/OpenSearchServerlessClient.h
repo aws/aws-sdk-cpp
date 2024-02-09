@@ -31,8 +31,8 @@ namespace OpenSearchServerless
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef OpenSearchServerlessClientConfiguration ClientConfigurationType;
       typedef OpenSearchServerlessEndpointProvider EndpointProviderType;
@@ -42,14 +42,14 @@ namespace OpenSearchServerless
         * is not specified, it will be initialized to default values.
         */
         OpenSearchServerlessClient(const Aws::OpenSearchServerless::OpenSearchServerlessClientConfiguration& clientConfiguration = Aws::OpenSearchServerless::OpenSearchServerlessClientConfiguration(),
-                                   std::shared_ptr<OpenSearchServerlessEndpointProviderBase> endpointProvider = Aws::MakeShared<OpenSearchServerlessEndpointProvider>(ALLOCATION_TAG));
+                                   std::shared_ptr<OpenSearchServerlessEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         OpenSearchServerlessClient(const Aws::Auth::AWSCredentials& credentials,
-                                   std::shared_ptr<OpenSearchServerlessEndpointProviderBase> endpointProvider = Aws::MakeShared<OpenSearchServerlessEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<OpenSearchServerlessEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::OpenSearchServerless::OpenSearchServerlessClientConfiguration& clientConfiguration = Aws::OpenSearchServerless::OpenSearchServerlessClientConfiguration());
 
        /**
@@ -57,7 +57,7 @@ namespace OpenSearchServerless
         * the default http client factory will be used
         */
         OpenSearchServerlessClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                   std::shared_ptr<OpenSearchServerlessEndpointProviderBase> endpointProvider = Aws::MakeShared<OpenSearchServerlessEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<OpenSearchServerlessEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::OpenSearchServerless::OpenSearchServerlessClientConfiguration& clientConfiguration = Aws::OpenSearchServerless::OpenSearchServerlessClientConfiguration());
 
 

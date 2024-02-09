@@ -29,8 +29,8 @@ namespace DataSync
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DataSyncClientConfiguration ClientConfigurationType;
       typedef DataSyncEndpointProvider EndpointProviderType;
@@ -40,14 +40,14 @@ namespace DataSync
         * is not specified, it will be initialized to default values.
         */
         DataSyncClient(const Aws::DataSync::DataSyncClientConfiguration& clientConfiguration = Aws::DataSync::DataSyncClientConfiguration(),
-                       std::shared_ptr<DataSyncEndpointProviderBase> endpointProvider = Aws::MakeShared<DataSyncEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<DataSyncEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DataSyncClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<DataSyncEndpointProviderBase> endpointProvider = Aws::MakeShared<DataSyncEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DataSyncEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DataSync::DataSyncClientConfiguration& clientConfiguration = Aws::DataSync::DataSyncClientConfiguration());
 
        /**
@@ -55,7 +55,7 @@ namespace DataSync
         * the default http client factory will be used
         */
         DataSyncClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<DataSyncEndpointProviderBase> endpointProvider = Aws::MakeShared<DataSyncEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DataSyncEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DataSync::DataSyncClientConfiguration& clientConfiguration = Aws::DataSync::DataSyncClientConfiguration());
 
 

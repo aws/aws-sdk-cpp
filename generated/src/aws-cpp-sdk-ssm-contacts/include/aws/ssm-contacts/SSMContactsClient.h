@@ -30,8 +30,8 @@ namespace SSMContacts
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SSMContactsClientConfiguration ClientConfigurationType;
       typedef SSMContactsEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace SSMContacts
         * is not specified, it will be initialized to default values.
         */
         SSMContactsClient(const Aws::SSMContacts::SSMContactsClientConfiguration& clientConfiguration = Aws::SSMContacts::SSMContactsClientConfiguration(),
-                          std::shared_ptr<SSMContactsEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMContactsEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<SSMContactsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SSMContactsClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<SSMContactsEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMContactsEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<SSMContactsEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::SSMContacts::SSMContactsClientConfiguration& clientConfiguration = Aws::SSMContacts::SSMContactsClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace SSMContacts
         * the default http client factory will be used
         */
         SSMContactsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<SSMContactsEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMContactsEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<SSMContactsEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::SSMContacts::SSMContactsClientConfiguration& clientConfiguration = Aws::SSMContacts::SSMContactsClientConfiguration());
 
 

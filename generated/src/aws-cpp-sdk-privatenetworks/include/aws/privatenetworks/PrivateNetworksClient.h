@@ -27,8 +27,8 @@ namespace PrivateNetworks
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PrivateNetworksClientConfiguration ClientConfigurationType;
       typedef PrivateNetworksEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace PrivateNetworks
         * is not specified, it will be initialized to default values.
         */
         PrivateNetworksClient(const Aws::PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration = Aws::PrivateNetworks::PrivateNetworksClientConfiguration(),
-                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider = Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG));
+                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PrivateNetworksClient(const Aws::Auth::AWSCredentials& credentials,
-                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider = Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration = Aws::PrivateNetworks::PrivateNetworksClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace PrivateNetworks
         * the default http client factory will be used
         */
         PrivateNetworksClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider = Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration = Aws::PrivateNetworks::PrivateNetworksClientConfiguration());
 
 

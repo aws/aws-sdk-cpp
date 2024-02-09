@@ -84,8 +84,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* NimbleStudioClient::SERVICE_NAME = "nimble";
-const char* NimbleStudioClient::ALLOCATION_TAG = "NimbleStudioClient";
+namespace Aws
+{
+  namespace NimbleStudio
+  {
+    const char SERVICE_NAME[] = "nimble";
+    const char ALLOCATION_TAG[] = "NimbleStudioClient";
+  }
+}
+const char* NimbleStudioClient::GetServiceName() {return SERVICE_NAME;}
+const char* NimbleStudioClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 NimbleStudioClient::NimbleStudioClient(const NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration,
                                        std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider) :
@@ -97,7 +105,7 @@ NimbleStudioClient::NimbleStudioClient(const NimbleStudio::NimbleStudioClientCon
             Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -113,7 +121,7 @@ NimbleStudioClient::NimbleStudioClient(const AWSCredentials& credentials,
             Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -129,7 +137,7 @@ NimbleStudioClient::NimbleStudioClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

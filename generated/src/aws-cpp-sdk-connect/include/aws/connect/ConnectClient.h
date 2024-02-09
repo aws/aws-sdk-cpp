@@ -35,8 +35,8 @@ namespace Connect
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ConnectClientConfiguration ClientConfigurationType;
       typedef ConnectEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace Connect
         * is not specified, it will be initialized to default values.
         */
         ConnectClient(const Aws::Connect::ConnectClientConfiguration& clientConfiguration = Aws::Connect::ConnectClientConfiguration(),
-                      std::shared_ptr<ConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<ConnectEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ConnectClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<ConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<ConnectEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Connect::ConnectClientConfiguration& clientConfiguration = Aws::Connect::ConnectClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace Connect
         * the default http client factory will be used
         */
         ConnectClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<ConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<ConnectEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Connect::ConnectClientConfiguration& clientConfiguration = Aws::Connect::ConnectClientConfiguration());
 
 

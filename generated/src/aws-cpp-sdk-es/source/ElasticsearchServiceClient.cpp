@@ -86,8 +86,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ElasticsearchServiceClient::SERVICE_NAME = "es";
-const char* ElasticsearchServiceClient::ALLOCATION_TAG = "ElasticsearchServiceClient";
+namespace Aws
+{
+  namespace ElasticsearchService
+  {
+    const char SERVICE_NAME[] = "es";
+    const char ALLOCATION_TAG[] = "ElasticsearchServiceClient";
+  }
+}
+const char* ElasticsearchServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* ElasticsearchServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ElasticsearchServiceClient::ElasticsearchServiceClient(const ElasticsearchService::ElasticsearchServiceClientConfiguration& clientConfiguration,
                                                        std::shared_ptr<ElasticsearchServiceEndpointProviderBase> endpointProvider) :
@@ -99,7 +107,7 @@ ElasticsearchServiceClient::ElasticsearchServiceClient(const ElasticsearchServic
             Aws::MakeShared<ElasticsearchServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticsearchServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -115,7 +123,7 @@ ElasticsearchServiceClient::ElasticsearchServiceClient(const AWSCredentials& cre
             Aws::MakeShared<ElasticsearchServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticsearchServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -131,7 +139,7 @@ ElasticsearchServiceClient::ElasticsearchServiceClient(const std::shared_ptr<AWS
             Aws::MakeShared<ElasticsearchServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticsearchServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

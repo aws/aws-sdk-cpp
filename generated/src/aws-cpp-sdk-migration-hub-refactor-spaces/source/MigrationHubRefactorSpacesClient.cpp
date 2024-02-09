@@ -59,8 +59,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MigrationHubRefactorSpacesClient::SERVICE_NAME = "refactor-spaces";
-const char* MigrationHubRefactorSpacesClient::ALLOCATION_TAG = "MigrationHubRefactorSpacesClient";
+namespace Aws
+{
+  namespace MigrationHubRefactorSpaces
+  {
+    const char SERVICE_NAME[] = "refactor-spaces";
+    const char ALLOCATION_TAG[] = "MigrationHubRefactorSpacesClient";
+  }
+}
+const char* MigrationHubRefactorSpacesClient::GetServiceName() {return SERVICE_NAME;}
+const char* MigrationHubRefactorSpacesClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration& clientConfiguration,
                                                                    std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider) :
@@ -72,7 +80,7 @@ MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const Migrati
             Aws::MakeShared<MigrationHubRefactorSpacesErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubRefactorSpacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const AWSCred
             Aws::MakeShared<MigrationHubRefactorSpacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubRefactorSpacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -104,7 +112,7 @@ MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const std::sh
             Aws::MakeShared<MigrationHubRefactorSpacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubRefactorSpacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

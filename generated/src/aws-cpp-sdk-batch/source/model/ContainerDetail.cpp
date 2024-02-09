@@ -51,7 +51,8 @@ ContainerDetail::ContainerDetail() :
     m_networkConfigurationHasBeenSet(false),
     m_fargatePlatformConfigurationHasBeenSet(false),
     m_ephemeralStorageHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false)
+    m_runtimePlatformHasBeenSet(false),
+    m_repositoryCredentialsHasBeenSet(false)
 {
 }
 
@@ -88,7 +89,8 @@ ContainerDetail::ContainerDetail(JsonView jsonValue) :
     m_networkConfigurationHasBeenSet(false),
     m_fargatePlatformConfigurationHasBeenSet(false),
     m_ephemeralStorageHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false)
+    m_runtimePlatformHasBeenSet(false),
+    m_repositoryCredentialsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -315,6 +317,13 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     m_runtimePlatformHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("repositoryCredentials"))
+  {
+    m_repositoryCredentials = jsonValue.GetObject("repositoryCredentials");
+
+    m_repositoryCredentialsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -527,6 +536,12 @@ JsonValue ContainerDetail::Jsonize() const
   if(m_runtimePlatformHasBeenSet)
   {
    payload.WithObject("runtimePlatform", m_runtimePlatform.Jsonize());
+
+  }
+
+  if(m_repositoryCredentialsHasBeenSet)
+  {
+   payload.WithObject("repositoryCredentials", m_repositoryCredentials.Jsonize());
 
   }
 

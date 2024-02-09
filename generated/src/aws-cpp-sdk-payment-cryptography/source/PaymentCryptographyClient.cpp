@@ -55,8 +55,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PaymentCryptographyClient::SERVICE_NAME = "payment-cryptography";
-const char* PaymentCryptographyClient::ALLOCATION_TAG = "PaymentCryptographyClient";
+namespace Aws
+{
+  namespace PaymentCryptography
+  {
+    const char SERVICE_NAME[] = "payment-cryptography";
+    const char ALLOCATION_TAG[] = "PaymentCryptographyClient";
+  }
+}
+const char* PaymentCryptographyClient::GetServiceName() {return SERVICE_NAME;}
+const char* PaymentCryptographyClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PaymentCryptographyClient::PaymentCryptographyClient(const PaymentCryptography::PaymentCryptographyClientConfiguration& clientConfiguration,
                                                      std::shared_ptr<PaymentCryptographyEndpointProviderBase> endpointProvider) :
@@ -68,7 +76,7 @@ PaymentCryptographyClient::PaymentCryptographyClient(const PaymentCryptography::
             Aws::MakeShared<PaymentCryptographyErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PaymentCryptographyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ PaymentCryptographyClient::PaymentCryptographyClient(const AWSCredentials& crede
             Aws::MakeShared<PaymentCryptographyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PaymentCryptographyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -100,7 +108,7 @@ PaymentCryptographyClient::PaymentCryptographyClient(const std::shared_ptr<AWSCr
             Aws::MakeShared<PaymentCryptographyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PaymentCryptographyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

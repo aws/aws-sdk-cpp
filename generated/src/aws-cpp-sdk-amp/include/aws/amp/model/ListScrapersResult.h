@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amp/model/ScraperSummary.h>
 #include <utility>
 
@@ -27,8 +27,8 @@ namespace PrometheusService
 namespace Model
 {
   /**
-   * <p>Represents the output of a ListScrapers operation.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Represents the output of a <code>ListScrapers</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapersResponse">AWS
    * API Reference</a></p>
    */
@@ -41,82 +41,96 @@ namespace Model
 
 
     /**
-     * <p>The list of scrapers, filtered down if a set of filters was provided in the
-     * request.</p>
-     */
-    inline const Aws::Vector<ScraperSummary>& GetScrapers() const{ return m_scrapers; }
-
-    /**
-     * <p>The list of scrapers, filtered down if a set of filters was provided in the
-     * request.</p>
-     */
-    inline void SetScrapers(const Aws::Vector<ScraperSummary>& value) { m_scrapers = value; }
-
-    /**
-     * <p>The list of scrapers, filtered down if a set of filters was provided in the
-     * request.</p>
-     */
-    inline void SetScrapers(Aws::Vector<ScraperSummary>&& value) { m_scrapers = std::move(value); }
-
-    /**
-     * <p>The list of scrapers, filtered down if a set of filters was provided in the
-     * request.</p>
-     */
-    inline ListScrapersResult& WithScrapers(const Aws::Vector<ScraperSummary>& value) { SetScrapers(value); return *this;}
-
-    /**
-     * <p>The list of scrapers, filtered down if a set of filters was provided in the
-     * request.</p>
-     */
-    inline ListScrapersResult& WithScrapers(Aws::Vector<ScraperSummary>&& value) { SetScrapers(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of scrapers, filtered down if a set of filters was provided in the
-     * request.</p>
-     */
-    inline ListScrapersResult& AddScrapers(const ScraperSummary& value) { m_scrapers.push_back(value); return *this; }
-
-    /**
-     * <p>The list of scrapers, filtered down if a set of filters was provided in the
-     * request.</p>
-     */
-    inline ListScrapersResult& AddScrapers(ScraperSummary&& value) { m_scrapers.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
+     * <p>A token indicating that there are more results to retrieve. You can use this
+     * token as part of your next <code>ListScrapers</code> operation to retrieve those
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
+     * <p>A token indicating that there are more results to retrieve. You can use this
+     * token as part of your next <code>ListScrapers</code> operation to retrieve those
+     * results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
+     * <p>A token indicating that there are more results to retrieve. You can use this
+     * token as part of your next <code>ListScrapers</code> operation to retrieve those
+     * results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
+     * <p>A token indicating that there are more results to retrieve. You can use this
+     * token as part of your next <code>ListScrapers</code> operation to retrieve those
+     * results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
+     * <p>A token indicating that there are more results to retrieve. You can use this
+     * token as part of your next <code>ListScrapers</code> operation to retrieve those
+     * results.</p>
      */
     inline ListScrapersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
+     * <p>A token indicating that there are more results to retrieve. You can use this
+     * token as part of your next <code>ListScrapers</code> operation to retrieve those
+     * results.</p>
      */
     inline ListScrapersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination token to use when requesting the next page in this list.</p>
+     * <p>A token indicating that there are more results to retrieve. You can use this
+     * token as part of your next <code>ListScrapers</code> operation to retrieve those
+     * results.</p>
      */
     inline ListScrapersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>A list of <code>ScraperSummary</code> structures giving information about
+     * scrapers in the account that match the filters provided.</p>
+     */
+    inline const Aws::Vector<ScraperSummary>& GetScrapers() const{ return m_scrapers; }
+
+    /**
+     * <p>A list of <code>ScraperSummary</code> structures giving information about
+     * scrapers in the account that match the filters provided.</p>
+     */
+    inline void SetScrapers(const Aws::Vector<ScraperSummary>& value) { m_scrapers = value; }
+
+    /**
+     * <p>A list of <code>ScraperSummary</code> structures giving information about
+     * scrapers in the account that match the filters provided.</p>
+     */
+    inline void SetScrapers(Aws::Vector<ScraperSummary>&& value) { m_scrapers = std::move(value); }
+
+    /**
+     * <p>A list of <code>ScraperSummary</code> structures giving information about
+     * scrapers in the account that match the filters provided.</p>
+     */
+    inline ListScrapersResult& WithScrapers(const Aws::Vector<ScraperSummary>& value) { SetScrapers(value); return *this;}
+
+    /**
+     * <p>A list of <code>ScraperSummary</code> structures giving information about
+     * scrapers in the account that match the filters provided.</p>
+     */
+    inline ListScrapersResult& WithScrapers(Aws::Vector<ScraperSummary>&& value) { SetScrapers(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>ScraperSummary</code> structures giving information about
+     * scrapers in the account that match the filters provided.</p>
+     */
+    inline ListScrapersResult& AddScrapers(const ScraperSummary& value) { m_scrapers.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>ScraperSummary</code> structures giving information about
+     * scrapers in the account that match the filters provided.</p>
+     */
+    inline ListScrapersResult& AddScrapers(ScraperSummary&& value) { m_scrapers.push_back(std::move(value)); return *this; }
 
 
     
@@ -142,9 +156,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<ScraperSummary> m_scrapers;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<ScraperSummary> m_scrapers;
 
     Aws::String m_requestId;
   };

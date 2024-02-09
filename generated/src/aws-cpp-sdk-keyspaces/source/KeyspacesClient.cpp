@@ -49,8 +49,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KeyspacesClient::SERVICE_NAME = "cassandra";
-const char* KeyspacesClient::ALLOCATION_TAG = "KeyspacesClient";
+namespace Aws
+{
+  namespace Keyspaces
+  {
+    const char SERVICE_NAME[] = "cassandra";
+    const char ALLOCATION_TAG[] = "KeyspacesClient";
+  }
+}
+const char* KeyspacesClient::GetServiceName() {return SERVICE_NAME;}
+const char* KeyspacesClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KeyspacesClient::KeyspacesClient(const Keyspaces::KeyspacesClientConfiguration& clientConfiguration,
                                  std::shared_ptr<KeyspacesEndpointProviderBase> endpointProvider) :
@@ -62,7 +70,7 @@ KeyspacesClient::KeyspacesClient(const Keyspaces::KeyspacesClientConfiguration& 
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -78,7 +86,7 @@ KeyspacesClient::KeyspacesClient(const AWSCredentials& credentials,
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ KeyspacesClient::KeyspacesClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -35,8 +35,8 @@ namespace AgreementService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AgreementServiceClientConfiguration ClientConfigurationType;
       typedef AgreementServiceEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace AgreementService
         * is not specified, it will be initialized to default values.
         */
         AgreementServiceClient(const Aws::AgreementService::AgreementServiceClientConfiguration& clientConfiguration = Aws::AgreementService::AgreementServiceClientConfiguration(),
-                               std::shared_ptr<AgreementServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<AgreementServiceEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<AgreementServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AgreementServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<AgreementServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<AgreementServiceEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<AgreementServiceEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::AgreementService::AgreementServiceClientConfiguration& clientConfiguration = Aws::AgreementService::AgreementServiceClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace AgreementService
         * the default http client factory will be used
         */
         AgreementServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<AgreementServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<AgreementServiceEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<AgreementServiceEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::AgreementService::AgreementServiceClientConfiguration& clientConfiguration = Aws::AgreementService::AgreementServiceClientConfiguration());
 
 

@@ -52,8 +52,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CognitoSyncClient::SERVICE_NAME = "cognito-sync";
-const char* CognitoSyncClient::ALLOCATION_TAG = "CognitoSyncClient";
+namespace Aws
+{
+  namespace CognitoSync
+  {
+    const char SERVICE_NAME[] = "cognito-sync";
+    const char ALLOCATION_TAG[] = "CognitoSyncClient";
+  }
+}
+const char* CognitoSyncClient::GetServiceName() {return SERVICE_NAME;}
+const char* CognitoSyncClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CognitoSyncClient::CognitoSyncClient(const CognitoSync::CognitoSyncClientConfiguration& clientConfiguration,
                                      std::shared_ptr<CognitoSyncEndpointProviderBase> endpointProvider) :
@@ -65,7 +73,7 @@ CognitoSyncClient::CognitoSyncClient(const CognitoSync::CognitoSyncClientConfigu
             Aws::MakeShared<CognitoSyncErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CognitoSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ CognitoSyncClient::CognitoSyncClient(const AWSCredentials& credentials,
             Aws::MakeShared<CognitoSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CognitoSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -97,7 +105,7 @@ CognitoSyncClient::CognitoSyncClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<CognitoSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CognitoSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -62,8 +62,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ManagedBlockchainClient::SERVICE_NAME = "managedblockchain";
-const char* ManagedBlockchainClient::ALLOCATION_TAG = "ManagedBlockchainClient";
+namespace Aws
+{
+  namespace ManagedBlockchain
+  {
+    const char SERVICE_NAME[] = "managedblockchain";
+    const char ALLOCATION_TAG[] = "ManagedBlockchainClient";
+  }
+}
+const char* ManagedBlockchainClient::GetServiceName() {return SERVICE_NAME;}
+const char* ManagedBlockchainClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ManagedBlockchainClient::ManagedBlockchainClient(const ManagedBlockchain::ManagedBlockchainClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<ManagedBlockchainEndpointProviderBase> endpointProvider) :
@@ -75,7 +83,7 @@ ManagedBlockchainClient::ManagedBlockchainClient(const ManagedBlockchain::Manage
             Aws::MakeShared<ManagedBlockchainErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ManagedBlockchainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ ManagedBlockchainClient::ManagedBlockchainClient(const AWSCredentials& credentia
             Aws::MakeShared<ManagedBlockchainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ManagedBlockchainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ ManagedBlockchainClient::ManagedBlockchainClient(const std::shared_ptr<AWSCreden
             Aws::MakeShared<ManagedBlockchainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ManagedBlockchainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

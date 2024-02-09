@@ -43,8 +43,8 @@ namespace EC2
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef EC2ClientConfiguration ClientConfigurationType;
       typedef EC2EndpointProvider EndpointProviderType;
@@ -54,14 +54,14 @@ namespace EC2
         * is not specified, it will be initialized to default values.
         */
         EC2Client(const Aws::EC2::EC2ClientConfiguration& clientConfiguration = Aws::EC2::EC2ClientConfiguration(),
-                  std::shared_ptr<EC2EndpointProviderBase> endpointProvider = Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<EC2EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EC2Client(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<EC2EndpointProviderBase> endpointProvider = Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<EC2EndpointProviderBase> endpointProvider = nullptr,
                   const Aws::EC2::EC2ClientConfiguration& clientConfiguration = Aws::EC2::EC2ClientConfiguration());
 
        /**
@@ -69,7 +69,7 @@ namespace EC2
         * the default http client factory will be used
         */
         EC2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<EC2EndpointProviderBase> endpointProvider = Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<EC2EndpointProviderBase> endpointProvider = nullptr,
                   const Aws::EC2::EC2ClientConfiguration& clientConfiguration = Aws::EC2::EC2ClientConfiguration());
 
 

@@ -16,14 +16,29 @@ namespace Aws
 namespace PrometheusService
 {
   /**
-   * <p>Amazon Managed Service for Prometheus</p>
+   * <p>Amazon Managed Service for Prometheus is a serverless, Prometheus-compatible
+   * monitoring service for container metrics that makes it easier to securely
+   * monitor container environments at scale. With Amazon Managed Service for
+   * Prometheus, you can use the same open-source Prometheus data model and query
+   * language that you use today to monitor the performance of your containerized
+   * workloads, and also enjoy improved scalability, availability, and security
+   * without having to manage the underlying infrastructure.</p> <p>For more
+   * information about Amazon Managed Service for Prometheus, see the <a
+   * href="https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html">Amazon
+   * Managed Service for Prometheus</a> User Guide.</p> <p>Amazon Managed Service for
+   * Prometheus includes two APIs.</p> <ul> <li> <p>Use the Amazon Web Services API
+   * described in this guide to manage Amazon Managed Service for Prometheus
+   * resources, such as workspaces, rule groups, and alert managers.</p> </li> <li>
+   * <p>Use the <a
+   * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-Prometheus-Compatible-Apis">Prometheus-compatible
+   * API</a> to work within your Prometheus workspace.</p> </li> </ul>
    */
   class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PrometheusServiceClientConfiguration ClientConfigurationType;
       typedef PrometheusServiceEndpointProvider EndpointProviderType;
@@ -33,14 +48,14 @@ namespace PrometheusService
         * is not specified, it will be initialized to default values.
         */
         PrometheusServiceClient(const Aws::PrometheusService::PrometheusServiceClientConfiguration& clientConfiguration = Aws::PrometheusService::PrometheusServiceClientConfiguration(),
-                                std::shared_ptr<PrometheusServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<PrometheusServiceEndpointProvider>(ALLOCATION_TAG));
+                                std::shared_ptr<PrometheusServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PrometheusServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                std::shared_ptr<PrometheusServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<PrometheusServiceEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<PrometheusServiceEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::PrometheusService::PrometheusServiceClientConfiguration& clientConfiguration = Aws::PrometheusService::PrometheusServiceClientConfiguration());
 
        /**
@@ -48,7 +63,7 @@ namespace PrometheusService
         * the default http client factory will be used
         */
         PrometheusServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                std::shared_ptr<PrometheusServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<PrometheusServiceEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<PrometheusServiceEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::PrometheusService::PrometheusServiceClientConfiguration& clientConfiguration = Aws::PrometheusService::PrometheusServiceClientConfiguration());
 
 
@@ -77,7 +92,10 @@ namespace PrometheusService
         virtual ~PrometheusServiceClient();
 
         /**
-         * <p>Create an alert manager definition.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>CreateAlertManagerDefinition</code> operation creates the alert
+         * manager definition in a workspace. If a workspace already has an alert manager
+         * definition, don't use this operation to update it. Instead, use
+         * <code>PutAlertManagerDefinition</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition">AWS
          * API Reference</a></p>
          */
@@ -102,7 +120,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Create logging configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>CreateLoggingConfiguration</code> operation creates a logging
+         * configuration for the workspace. Use this operation to set the CloudWatch log
+         * group to which the logs will be published to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -127,7 +147,12 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Create a rule group namespace.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>CreateRuleGroupsNamespace</code> operation creates a rule groups
+         * namespace within a workspace. A rule groups namespace is associated with exactly
+         * one rules file. A workspace can have multiple rule groups namespaces.</p> <p>Use
+         * this operation only to create new rule groups namespaces. To update an existing
+         * rule groups namespace, use <code>PutRuleGroupsNamespace</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">AWS
          * API Reference</a></p>
          */
@@ -152,7 +177,25 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Create a scraper.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>CreateScraper</code> operation creates a scraper to collect
+         * metrics. A scraper pulls metrics from Prometheus-compatible sources within an
+         * Amazon EKS cluster, and sends them to your Amazon Managed Service for Prometheus
+         * workspace. You can configure the scraper to control what metrics are collected,
+         * and what transformations are applied prior to sending them to your
+         * workspace.</p> <p>If needed, an IAM role will be created for you that gives
+         * Amazon Managed Service for Prometheus access to the metrics in your cluster. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/prometheus/latest/userguide/using-service-linked-roles.html#using-service-linked-roles-prom-scraper">Using
+         * roles for scraping metrics from EKS</a> in the <i>Amazon Managed Service for
+         * Prometheus User Guide</i>.</p> <p>You cannot update a scraper. If you want to
+         * change the configuration of the scraper, create a new scraper and delete the old
+         * one.</p> <p>The <code>scrapeConfiguration</code> parameter contains the
+         * base64-encoded version of the YAML configuration file.</p>  <p>For more
+         * information about collectors, including what metrics are collected, and how to
+         * configure the scraper, see <a
+         * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector.html">Amazon
+         * Web Services managed collectors</a> in the <i>Amazon Managed Service for
+         * Prometheus User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraper">AWS
          * API Reference</a></p>
          */
@@ -177,7 +220,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Creates a new AMP workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Prometheus workspace. A workspace is a logical space dedicated to
+         * the storage and querying of Prometheus metrics. You can have one or more
+         * workspaces in each Region in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace">AWS
          * API Reference</a></p>
          */
@@ -202,7 +247,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Deletes an alert manager definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the alert manager definition from a workspace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">AWS
          * API Reference</a></p>
          */
@@ -227,7 +273,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Delete logging configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the logging configuration for a workspace.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -252,7 +299,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Delete a rule groups namespace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one rule groups namespace and its associated rule groups
+         * definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">AWS
          * API Reference</a></p>
          */
@@ -277,7 +325,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Deletes a scraper.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>DeleteScraper</code> operation deletes one scraper, and stops any
+         * metrics collection that the scraper performs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">AWS
          * API Reference</a></p>
          */
@@ -302,7 +351,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Deletes an AMP workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing workspace. </p>  <p>When you delete a workspace,
+         * the data that has been ingested into it is not immediately deleted. It will be
+         * permanently deleted within one month.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteWorkspace">AWS
          * API Reference</a></p>
          */
@@ -327,7 +378,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Describes an alert manager definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the full information about the alert manager definition for a
+         * workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition">AWS
          * API Reference</a></p>
          */
@@ -352,7 +404,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Describes logging configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns complete information about the current logging configuration of the
+         * workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -377,7 +430,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Describe a rule groups namespace.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns complete information about one rule groups namespace. To retrieve a
+         * list of rule groups namespaces, use
+         * <code>ListRuleGroupsNamespaces</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace">AWS
          * API Reference</a></p>
          */
@@ -402,7 +457,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Describe an existing scraper.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>DescribeScraper</code> operation displays information about an
+         * existing scraper.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">AWS
          * API Reference</a></p>
          */
@@ -427,7 +483,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Describes an existing AMP workspace.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about an existing workspace. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspace">AWS
          * API Reference</a></p>
          */
@@ -452,7 +509,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Gets a default configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>GetDefaultScraperConfiguration</code> operation returns the default
+         * scraper configuration used when Amazon EKS creates a scraper for
+         * you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">AWS
          * API Reference</a></p>
          */
@@ -477,7 +536,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Lists rule groups namespaces.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of rule groups namespaces in a workspace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">AWS
          * API Reference</a></p>
          */
@@ -502,9 +562,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Lists all scrapers in a customer account, including scrapers being created or
-         * deleted. You may provide filters to return a more specific list of
-         * results.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>ListScrapers</code> operation lists all of the scrapers in your
+         * account. This includes scrapers being created or deleted. You can optionally
+         * filter the returned list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">AWS
          * API Reference</a></p>
          */
@@ -529,8 +589,10 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Lists the tags you have assigned to the resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>The <code>ListTagsForResource</code> operation returns the tags that are
+         * associated with an Amazon Managed Service for Prometheus resource. Currently,
+         * the only resources that can be tagged are workspaces and rule groups namespaces.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -555,8 +617,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Lists all AMP workspaces, including workspaces being created or
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the Amazon Managed Service for Prometheus workspaces in your
+         * account. This includes workspaces being created or deleted. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspaces">AWS
          * API Reference</a></p>
          */
@@ -581,7 +644,10 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Update an alert manager definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing alert manager definition in a workspace. If the workspace
+         * does not already have an alert manager definition, don't use this operation to
+         * create it. Instead, use <code>CreateAlertManagerDefinition</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">AWS
          * API Reference</a></p>
          */
@@ -606,7 +672,13 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Update a rule groups namespace.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing rule groups namespace within a workspace. A rule groups
+         * namespace is associated with exactly one rules file. A workspace can have
+         * multiple rule groups namespaces.</p> <p>Use this operation only to update
+         * existing rule groups namespaces. To create a new rule groups namespace, use
+         * <code>CreateRuleGroupsNamespace</code>.</p> <p>You can't use this operation to
+         * add tags to an existing rule groups namespace. Instead, use
+         * <code>TagResource</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace">AWS
          * API Reference</a></p>
          */
@@ -631,7 +703,13 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Creates tags for the specified resource.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>TagResource</code> operation associates tags with an Amazon Managed
+         * Service for Prometheus resource. The only resources that can be tagged are
+         * workspaces and rule groups namespaces. </p> <p>If you specify a new tag key for
+         * the resource, this tag is appended to the list of tags associated with the
+         * resource. If you specify a tag key that is already associated with the resource,
+         * the new tag value that you specify replaces the previous value for that
+         * tag.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/TagResource">AWS API
          * Reference</a></p>
          */
@@ -656,7 +734,9 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Deletes tags from the specified resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from an Amazon Managed Service for Prometheus
+         * resource. The only resources that can be tagged are workspaces and rule groups
+         * namespaces. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -681,7 +761,8 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Update logging configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the log group ARN or the workspace ID of the current logging
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -706,7 +787,7 @@ namespace PrometheusService
         }
 
         /**
-         * <p>Updates an AMP workspace alias.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the alias of an existing workspace. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceAlias">AWS
          * API Reference</a></p>
          */

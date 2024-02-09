@@ -26,8 +26,8 @@ namespace PersonalizeEvents
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PersonalizeEventsClientConfiguration ClientConfigurationType;
       typedef PersonalizeEventsEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace PersonalizeEvents
         * is not specified, it will be initialized to default values.
         */
         PersonalizeEventsClient(const Aws::PersonalizeEvents::PersonalizeEventsClientConfiguration& clientConfiguration = Aws::PersonalizeEvents::PersonalizeEventsClientConfiguration(),
-                                std::shared_ptr<PersonalizeEventsEndpointProviderBase> endpointProvider = Aws::MakeShared<PersonalizeEventsEndpointProvider>(ALLOCATION_TAG));
+                                std::shared_ptr<PersonalizeEventsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PersonalizeEventsClient(const Aws::Auth::AWSCredentials& credentials,
-                                std::shared_ptr<PersonalizeEventsEndpointProviderBase> endpointProvider = Aws::MakeShared<PersonalizeEventsEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<PersonalizeEventsEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::PersonalizeEvents::PersonalizeEventsClientConfiguration& clientConfiguration = Aws::PersonalizeEvents::PersonalizeEventsClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace PersonalizeEvents
         * the default http client factory will be used
         */
         PersonalizeEventsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                std::shared_ptr<PersonalizeEventsEndpointProviderBase> endpointProvider = Aws::MakeShared<PersonalizeEventsEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<PersonalizeEventsEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::PersonalizeEvents::PersonalizeEventsClientConfiguration& clientConfiguration = Aws::PersonalizeEvents::PersonalizeEventsClientConfiguration());
 
 

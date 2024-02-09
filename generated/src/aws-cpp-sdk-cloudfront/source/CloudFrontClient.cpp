@@ -147,8 +147,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* CloudFrontClient::SERVICE_NAME = "cloudfront";
-const char* CloudFrontClient::ALLOCATION_TAG = "CloudFrontClient";
+namespace Aws
+{
+  namespace CloudFront
+  {
+    const char SERVICE_NAME[] = "cloudfront";
+    const char ALLOCATION_TAG[] = "CloudFrontClient";
+  }
+}
+const char* CloudFrontClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudFrontClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudFrontClient::CloudFrontClient(const CloudFront::CloudFrontClientConfiguration& clientConfiguration,
                                    std::shared_ptr<CloudFrontEndpointProviderBase> endpointProvider) :
@@ -160,7 +168,7 @@ CloudFrontClient::CloudFrontClient(const CloudFront::CloudFrontClientConfigurati
             Aws::MakeShared<CloudFrontErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudFrontEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -176,7 +184,7 @@ CloudFrontClient::CloudFrontClient(const AWSCredentials& credentials,
             Aws::MakeShared<CloudFrontErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudFrontEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -192,7 +200,7 @@ CloudFrontClient::CloudFrontClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<CloudFrontErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudFrontEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

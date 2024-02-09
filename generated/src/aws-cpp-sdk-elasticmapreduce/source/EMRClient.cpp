@@ -89,8 +89,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* EMRClient::SERVICE_NAME = "elasticmapreduce";
-const char* EMRClient::ALLOCATION_TAG = "EMRClient";
+namespace Aws
+{
+  namespace EMR
+  {
+    const char SERVICE_NAME[] = "elasticmapreduce";
+    const char ALLOCATION_TAG[] = "EMRClient";
+  }
+}
+const char* EMRClient::GetServiceName() {return SERVICE_NAME;}
+const char* EMRClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 EMRClient::EMRClient(const EMR::EMRClientConfiguration& clientConfiguration,
                      std::shared_ptr<EMREndpointProviderBase> endpointProvider) :
@@ -102,7 +110,7 @@ EMRClient::EMRClient(const EMR::EMRClientConfiguration& clientConfiguration,
             Aws::MakeShared<EMRErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMREndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -118,7 +126,7 @@ EMRClient::EMRClient(const AWSCredentials& credentials,
             Aws::MakeShared<EMRErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMREndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -134,7 +142,7 @@ EMRClient::EMRClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<EMRErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMREndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -509,32 +509,28 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started. More
      * specifically, it's when the job transitioned from the <code>STARTING</code>
-     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
-     * jobs of array jobs or multi-node parallel jobs.</p>
+     * state to the <code>RUNNING</code> state. </p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started. More
      * specifically, it's when the job transitioned from the <code>STARTING</code>
-     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
-     * jobs of array jobs or multi-node parallel jobs.</p>
+     * state to the <code>RUNNING</code> state. </p>
      */
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started. More
      * specifically, it's when the job transitioned from the <code>STARTING</code>
-     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
-     * jobs of array jobs or multi-node parallel jobs.</p>
+     * state to the <code>RUNNING</code> state. </p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started. More
      * specifically, it's when the job transitioned from the <code>STARTING</code>
-     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
-     * jobs of array jobs or multi-node parallel jobs.</p>
+     * state to the <code>RUNNING</code> state. </p>
      */
     inline JobDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 

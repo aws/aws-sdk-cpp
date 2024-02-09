@@ -43,8 +43,8 @@ namespace ACMPCA
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ACMPCAClientConfiguration ClientConfigurationType;
       typedef ACMPCAEndpointProvider EndpointProviderType;
@@ -54,14 +54,14 @@ namespace ACMPCA
         * is not specified, it will be initialized to default values.
         */
         ACMPCAClient(const Aws::ACMPCA::ACMPCAClientConfiguration& clientConfiguration = Aws::ACMPCA::ACMPCAClientConfiguration(),
-                     std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMPCAEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ACMPCAClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMPCAEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::ACMPCA::ACMPCAClientConfiguration& clientConfiguration = Aws::ACMPCA::ACMPCAClientConfiguration());
 
        /**
@@ -69,7 +69,7 @@ namespace ACMPCA
         * the default http client factory will be used
         */
         ACMPCAClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMPCAEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::ACMPCA::ACMPCAClientConfiguration& clientConfiguration = Aws::ACMPCA::ACMPCAClientConfiguration());
 
 

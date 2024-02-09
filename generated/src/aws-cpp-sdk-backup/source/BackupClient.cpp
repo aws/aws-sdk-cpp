@@ -126,8 +126,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BackupClient::SERVICE_NAME = "backup";
-const char* BackupClient::ALLOCATION_TAG = "BackupClient";
+namespace Aws
+{
+  namespace Backup
+  {
+    const char SERVICE_NAME[] = "backup";
+    const char ALLOCATION_TAG[] = "BackupClient";
+  }
+}
+const char* BackupClient::GetServiceName() {return SERVICE_NAME;}
+const char* BackupClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BackupClient::BackupClient(const Backup::BackupClientConfiguration& clientConfiguration,
                            std::shared_ptr<BackupEndpointProviderBase> endpointProvider) :
@@ -139,7 +147,7 @@ BackupClient::BackupClient(const Backup::BackupClientConfiguration& clientConfig
             Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -155,7 +163,7 @@ BackupClient::BackupClient(const AWSCredentials& credentials,
             Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -171,7 +179,7 @@ BackupClient::BackupClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

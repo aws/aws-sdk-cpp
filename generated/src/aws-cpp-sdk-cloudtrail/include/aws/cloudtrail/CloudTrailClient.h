@@ -40,8 +40,8 @@ namespace CloudTrail
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CloudTrailClientConfiguration ClientConfigurationType;
       typedef CloudTrailEndpointProvider EndpointProviderType;
@@ -51,14 +51,14 @@ namespace CloudTrail
         * is not specified, it will be initialized to default values.
         */
         CloudTrailClient(const Aws::CloudTrail::CloudTrailClientConfiguration& clientConfiguration = Aws::CloudTrail::CloudTrailClientConfiguration(),
-                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudTrailEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudTrailClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudTrailEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::CloudTrail::CloudTrailClientConfiguration& clientConfiguration = Aws::CloudTrail::CloudTrailClientConfiguration());
 
        /**
@@ -66,7 +66,7 @@ namespace CloudTrail
         * the default http client factory will be used
         */
         CloudTrailClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudTrailEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::CloudTrail::CloudTrailClientConfiguration& clientConfiguration = Aws::CloudTrail::CloudTrailClientConfiguration());
 
 

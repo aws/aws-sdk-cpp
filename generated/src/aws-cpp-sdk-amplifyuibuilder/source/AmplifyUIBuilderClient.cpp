@@ -60,8 +60,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AmplifyUIBuilderClient::SERVICE_NAME = "amplifyuibuilder";
-const char* AmplifyUIBuilderClient::ALLOCATION_TAG = "AmplifyUIBuilderClient";
+namespace Aws
+{
+  namespace AmplifyUIBuilder
+  {
+    const char SERVICE_NAME[] = "amplifyuibuilder";
+    const char ALLOCATION_TAG[] = "AmplifyUIBuilderClient";
+  }
+}
+const char* AmplifyUIBuilderClient::GetServiceName() {return SERVICE_NAME;}
+const char* AmplifyUIBuilderClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AmplifyUIBuilder::AmplifyUIBuilderClientConfiguration& clientConfiguration,
                                                std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> endpointProvider) :
@@ -73,7 +81,7 @@ AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AmplifyUIBuilder::AmplifyUI
             Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AmplifyUIBuilderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AWSCredentials& credentials
             Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AmplifyUIBuilderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -105,7 +113,7 @@ AmplifyUIBuilderClient::AmplifyUIBuilderClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AmplifyUIBuilderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

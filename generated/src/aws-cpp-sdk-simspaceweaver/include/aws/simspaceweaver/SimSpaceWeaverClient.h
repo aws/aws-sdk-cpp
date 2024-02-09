@@ -33,8 +33,8 @@ namespace SimSpaceWeaver
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SimSpaceWeaverClientConfiguration ClientConfigurationType;
       typedef SimSpaceWeaverEndpointProvider EndpointProviderType;
@@ -44,14 +44,14 @@ namespace SimSpaceWeaver
         * is not specified, it will be initialized to default values.
         */
         SimSpaceWeaverClient(const Aws::SimSpaceWeaver::SimSpaceWeaverClientConfiguration& clientConfiguration = Aws::SimSpaceWeaver::SimSpaceWeaverClientConfiguration(),
-                             std::shared_ptr<SimSpaceWeaverEndpointProviderBase> endpointProvider = Aws::MakeShared<SimSpaceWeaverEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<SimSpaceWeaverEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SimSpaceWeaverClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<SimSpaceWeaverEndpointProviderBase> endpointProvider = Aws::MakeShared<SimSpaceWeaverEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<SimSpaceWeaverEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::SimSpaceWeaver::SimSpaceWeaverClientConfiguration& clientConfiguration = Aws::SimSpaceWeaver::SimSpaceWeaverClientConfiguration());
 
        /**
@@ -59,7 +59,7 @@ namespace SimSpaceWeaver
         * the default http client factory will be used
         */
         SimSpaceWeaverClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<SimSpaceWeaverEndpointProviderBase> endpointProvider = Aws::MakeShared<SimSpaceWeaverEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<SimSpaceWeaverEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::SimSpaceWeaver::SimSpaceWeaverClientConfiguration& clientConfiguration = Aws::SimSpaceWeaver::SimSpaceWeaverClientConfiguration());
 
 

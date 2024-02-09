@@ -134,8 +134,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DataZoneClient::SERVICE_NAME = "datazone";
-const char* DataZoneClient::ALLOCATION_TAG = "DataZoneClient";
+namespace Aws
+{
+  namespace DataZone
+  {
+    const char SERVICE_NAME[] = "datazone";
+    const char ALLOCATION_TAG[] = "DataZoneClient";
+  }
+}
+const char* DataZoneClient::GetServiceName() {return SERVICE_NAME;}
+const char* DataZoneClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DataZoneClient::DataZoneClient(const DataZone::DataZoneClientConfiguration& clientConfiguration,
                                std::shared_ptr<DataZoneEndpointProviderBase> endpointProvider) :
@@ -147,7 +155,7 @@ DataZoneClient::DataZoneClient(const DataZone::DataZoneClientConfiguration& clie
             Aws::MakeShared<DataZoneErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataZoneEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -163,7 +171,7 @@ DataZoneClient::DataZoneClient(const AWSCredentials& credentials,
             Aws::MakeShared<DataZoneErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataZoneEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -179,7 +187,7 @@ DataZoneClient::DataZoneClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<DataZoneErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataZoneEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

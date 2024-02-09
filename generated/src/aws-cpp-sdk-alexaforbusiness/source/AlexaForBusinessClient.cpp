@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AlexaForBusinessClient::SERVICE_NAME = "a4b";
-const char* AlexaForBusinessClient::ALLOCATION_TAG = "AlexaForBusinessClient";
+namespace Aws
+{
+  namespace AlexaForBusiness
+  {
+    const char SERVICE_NAME[] = "a4b";
+    const char ALLOCATION_TAG[] = "AlexaForBusinessClient";
+  }
+}
+const char* AlexaForBusinessClient::GetServiceName() {return SERVICE_NAME;}
+const char* AlexaForBusinessClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AlexaForBusinessClient::AlexaForBusinessClient(const AlexaForBusiness::AlexaForBusinessClientConfiguration& clientConfiguration,
                                                std::shared_ptr<AlexaForBusinessEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ AlexaForBusinessClient::AlexaForBusinessClient(const AlexaForBusiness::AlexaForB
             Aws::MakeShared<AlexaForBusinessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AlexaForBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ AlexaForBusinessClient::AlexaForBusinessClient(const AWSCredentials& credentials
             Aws::MakeShared<AlexaForBusinessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AlexaForBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ AlexaForBusinessClient::AlexaForBusinessClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<AlexaForBusinessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AlexaForBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

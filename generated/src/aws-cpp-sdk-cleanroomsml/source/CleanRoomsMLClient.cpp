@@ -60,8 +60,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CleanRoomsMLClient::SERVICE_NAME = "cleanrooms-ml";
-const char* CleanRoomsMLClient::ALLOCATION_TAG = "CleanRoomsMLClient";
+namespace Aws
+{
+  namespace CleanRoomsML
+  {
+    const char SERVICE_NAME[] = "cleanrooms-ml";
+    const char ALLOCATION_TAG[] = "CleanRoomsMLClient";
+  }
+}
+const char* CleanRoomsMLClient::GetServiceName() {return SERVICE_NAME;}
+const char* CleanRoomsMLClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CleanRoomsMLClient::CleanRoomsMLClient(const CleanRoomsML::CleanRoomsMLClientConfiguration& clientConfiguration,
                                        std::shared_ptr<CleanRoomsMLEndpointProviderBase> endpointProvider) :
@@ -73,7 +81,7 @@ CleanRoomsMLClient::CleanRoomsMLClient(const CleanRoomsML::CleanRoomsMLClientCon
             Aws::MakeShared<CleanRoomsMLErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CleanRoomsMLEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ CleanRoomsMLClient::CleanRoomsMLClient(const AWSCredentials& credentials,
             Aws::MakeShared<CleanRoomsMLErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CleanRoomsMLEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -105,7 +113,7 @@ CleanRoomsMLClient::CleanRoomsMLClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<CleanRoomsMLErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CleanRoomsMLEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

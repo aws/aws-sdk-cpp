@@ -183,8 +183,8 @@ namespace CodeCommit
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CodeCommitClientConfiguration ClientConfigurationType;
       typedef CodeCommitEndpointProvider EndpointProviderType;
@@ -194,14 +194,14 @@ namespace CodeCommit
         * is not specified, it will be initialized to default values.
         */
         CodeCommitClient(const Aws::CodeCommit::CodeCommitClientConfiguration& clientConfiguration = Aws::CodeCommit::CodeCommitClientConfiguration(),
-                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCommitEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CodeCommitClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCommitEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::CodeCommit::CodeCommitClientConfiguration& clientConfiguration = Aws::CodeCommit::CodeCommitClientConfiguration());
 
        /**
@@ -209,7 +209,7 @@ namespace CodeCommit
         * the default http client factory will be used
         */
         CodeCommitClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCommitEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::CodeCommit::CodeCommitClientConfiguration& clientConfiguration = Aws::CodeCommit::CodeCommitClientConfiguration());
 
 

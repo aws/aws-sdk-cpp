@@ -13,6 +13,7 @@
 #include <aws/batch/model/FargatePlatformConfiguration.h>
 #include <aws/batch/model/EphemeralStorage.h>
 #include <aws/batch/model/RuntimePlatform.h>
+#include <aws/batch/model/RepositoryCredentials.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
@@ -1596,23 +1597,72 @@ namespace Model
     inline ContainerDetail& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline ContainerDetail& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline ContainerDetail& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline const RepositoryCredentials& GetRepositoryCredentials() const{ return m_repositoryCredentials; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline bool RepositoryCredentialsHasBeenSet() const { return m_repositoryCredentialsHasBeenSet; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(const RepositoryCredentials& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = value; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(RepositoryCredentials&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::move(value); }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerDetail& WithRepositoryCredentials(const RepositoryCredentials& value) { SetRepositoryCredentials(value); return *this;}
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerDetail& WithRepositoryCredentials(RepositoryCredentials&& value) { SetRepositoryCredentials(std::move(value)); return *this;}
 
   private:
 
@@ -1699,6 +1749,9 @@ namespace Model
 
     RuntimePlatform m_runtimePlatform;
     bool m_runtimePlatformHasBeenSet = false;
+
+    RepositoryCredentials m_repositoryCredentials;
+    bool m_repositoryCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

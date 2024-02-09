@@ -22,8 +22,8 @@ namespace ForecastService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ForecastServiceClientConfiguration ClientConfigurationType;
       typedef ForecastServiceEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace ForecastService
         * is not specified, it will be initialized to default values.
         */
         ForecastServiceClient(const Aws::ForecastService::ForecastServiceClientConfiguration& clientConfiguration = Aws::ForecastService::ForecastServiceClientConfiguration(),
-                              std::shared_ptr<ForecastServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ForecastServiceEndpointProvider>(ALLOCATION_TAG));
+                              std::shared_ptr<ForecastServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ForecastServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                              std::shared_ptr<ForecastServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ForecastServiceEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<ForecastServiceEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::ForecastService::ForecastServiceClientConfiguration& clientConfiguration = Aws::ForecastService::ForecastServiceClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace ForecastService
         * the default http client factory will be used
         */
         ForecastServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              std::shared_ptr<ForecastServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ForecastServiceEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<ForecastServiceEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::ForecastService::ForecastServiceClientConfiguration& clientConfiguration = Aws::ForecastService::ForecastServiceClientConfiguration());
 
 

@@ -25,8 +25,8 @@ namespace NeptuneGraph
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef NeptuneGraphClientConfiguration ClientConfigurationType;
       typedef NeptuneGraphEndpointProvider EndpointProviderType;
@@ -36,14 +36,14 @@ namespace NeptuneGraph
         * is not specified, it will be initialized to default values.
         */
         NeptuneGraphClient(const Aws::NeptuneGraph::NeptuneGraphClientConfiguration& clientConfiguration = Aws::NeptuneGraph::NeptuneGraphClientConfiguration(),
-                           std::shared_ptr<NeptuneGraphEndpointProviderBase> endpointProvider = Aws::MakeShared<NeptuneGraphEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<NeptuneGraphEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         NeptuneGraphClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<NeptuneGraphEndpointProviderBase> endpointProvider = Aws::MakeShared<NeptuneGraphEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<NeptuneGraphEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::NeptuneGraph::NeptuneGraphClientConfiguration& clientConfiguration = Aws::NeptuneGraph::NeptuneGraphClientConfiguration());
 
        /**
@@ -51,7 +51,7 @@ namespace NeptuneGraph
         * the default http client factory will be used
         */
         NeptuneGraphClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<NeptuneGraphEndpointProviderBase> endpointProvider = Aws::MakeShared<NeptuneGraphEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<NeptuneGraphEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::NeptuneGraph::NeptuneGraphClientConfiguration& clientConfiguration = Aws::NeptuneGraph::NeptuneGraphClientConfiguration());
 
 

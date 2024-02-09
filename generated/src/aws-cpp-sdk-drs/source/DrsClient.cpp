@@ -84,8 +84,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DrsClient::SERVICE_NAME = "drs";
-const char* DrsClient::ALLOCATION_TAG = "DrsClient";
+namespace Aws
+{
+  namespace drs
+  {
+    const char SERVICE_NAME[] = "drs";
+    const char ALLOCATION_TAG[] = "DrsClient";
+  }
+}
+const char* DrsClient::GetServiceName() {return SERVICE_NAME;}
+const char* DrsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DrsClient::DrsClient(const drs::DrsClientConfiguration& clientConfiguration,
                      std::shared_ptr<DrsEndpointProviderBase> endpointProvider) :
@@ -97,7 +105,7 @@ DrsClient::DrsClient(const drs::DrsClientConfiguration& clientConfiguration,
             Aws::MakeShared<DrsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DrsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -113,7 +121,7 @@ DrsClient::DrsClient(const AWSCredentials& credentials,
             Aws::MakeShared<DrsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DrsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -129,7 +137,7 @@ DrsClient::DrsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<DrsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DrsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

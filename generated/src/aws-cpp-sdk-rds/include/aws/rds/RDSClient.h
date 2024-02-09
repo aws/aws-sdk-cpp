@@ -58,9 +58,9 @@ namespace Aws
                 class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>
     {
     public:
-    typedef Aws::Client::AWSXMLClient BASECLASS;
-    static const char* SERVICE_NAME;
-    static const char* ALLOCATION_TAG;
+        typedef Aws::Client::AWSXMLClient BASECLASS;
+        static const char* GetServiceName();
+        static const char* GetAllocationTag();
 
       typedef RDSClientConfiguration ClientConfigurationType;
       typedef RDSEndpointProvider EndpointProviderType;
@@ -70,14 +70,14 @@ namespace Aws
         * is not specified, it will be initialized to default values.
         */
         RDSClient(const Aws::RDS::RDSClientConfiguration& clientConfiguration = Aws::RDS::RDSClientConfiguration(),
-                  std::shared_ptr<RDSEndpointProviderBase> endpointProvider = Aws::MakeShared<RDSEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<RDSEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RDSClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<RDSEndpointProviderBase> endpointProvider = Aws::MakeShared<RDSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<RDSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::RDS::RDSClientConfiguration& clientConfiguration = Aws::RDS::RDSClientConfiguration());
 
        /**
@@ -85,7 +85,7 @@ namespace Aws
         * the default http client factory will be used
         */
         RDSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<RDSEndpointProviderBase> endpointProvider = Aws::MakeShared<RDSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<RDSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::RDS::RDSClientConfiguration& clientConfiguration = Aws::RDS::RDSClientConfiguration());
 
 

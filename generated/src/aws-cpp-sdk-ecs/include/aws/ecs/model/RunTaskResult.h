@@ -79,37 +79,79 @@ namespace Model
 
 
     /**
-     * <p>Any failures associated with the call.</p>
+     * <p>Any failures associated with the call.</p> <p>For information about how to
+     * address failures, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service
+     * event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+     * failure reasons</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
 
     /**
-     * <p>Any failures associated with the call.</p>
+     * <p>Any failures associated with the call.</p> <p>For information about how to
+     * address failures, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service
+     * event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+     * failure reasons</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
     /**
-     * <p>Any failures associated with the call.</p>
+     * <p>Any failures associated with the call.</p> <p>For information about how to
+     * address failures, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service
+     * event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+     * failure reasons</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
 
     /**
-     * <p>Any failures associated with the call.</p>
+     * <p>Any failures associated with the call.</p> <p>For information about how to
+     * address failures, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service
+     * event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+     * failure reasons</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
 
     /**
-     * <p>Any failures associated with the call.</p>
+     * <p>Any failures associated with the call.</p> <p>For information about how to
+     * address failures, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service
+     * event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+     * failure reasons</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
 
     /**
-     * <p>Any failures associated with the call.</p>
+     * <p>Any failures associated with the call.</p> <p>For information about how to
+     * address failures, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service
+     * event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+     * failure reasons</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
 
     /**
-     * <p>Any failures associated with the call.</p>
+     * <p>Any failures associated with the call.</p> <p>For information about how to
+     * address failures, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service
+     * event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+     * failure reasons</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 

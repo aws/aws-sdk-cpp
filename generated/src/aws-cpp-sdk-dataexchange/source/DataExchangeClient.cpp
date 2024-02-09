@@ -65,8 +65,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DataExchangeClient::SERVICE_NAME = "dataexchange";
-const char* DataExchangeClient::ALLOCATION_TAG = "DataExchangeClient";
+namespace Aws
+{
+  namespace DataExchange
+  {
+    const char SERVICE_NAME[] = "dataexchange";
+    const char ALLOCATION_TAG[] = "DataExchangeClient";
+  }
+}
+const char* DataExchangeClient::GetServiceName() {return SERVICE_NAME;}
+const char* DataExchangeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DataExchangeClient::DataExchangeClient(const DataExchange::DataExchangeClientConfiguration& clientConfiguration,
                                        std::shared_ptr<DataExchangeEndpointProviderBase> endpointProvider) :
@@ -78,7 +86,7 @@ DataExchangeClient::DataExchangeClient(const DataExchange::DataExchangeClientCon
             Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataExchangeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ DataExchangeClient::DataExchangeClient(const AWSCredentials& credentials,
             Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataExchangeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -110,7 +118,7 @@ DataExchangeClient::DataExchangeClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataExchangeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

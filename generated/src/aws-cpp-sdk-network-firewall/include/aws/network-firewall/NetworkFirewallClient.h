@@ -72,8 +72,8 @@ namespace NetworkFirewall
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef NetworkFirewallClientConfiguration ClientConfigurationType;
       typedef NetworkFirewallEndpointProvider EndpointProviderType;
@@ -83,14 +83,14 @@ namespace NetworkFirewall
         * is not specified, it will be initialized to default values.
         */
         NetworkFirewallClient(const Aws::NetworkFirewall::NetworkFirewallClientConfiguration& clientConfiguration = Aws::NetworkFirewall::NetworkFirewallClientConfiguration(),
-                              std::shared_ptr<NetworkFirewallEndpointProviderBase> endpointProvider = Aws::MakeShared<NetworkFirewallEndpointProvider>(ALLOCATION_TAG));
+                              std::shared_ptr<NetworkFirewallEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         NetworkFirewallClient(const Aws::Auth::AWSCredentials& credentials,
-                              std::shared_ptr<NetworkFirewallEndpointProviderBase> endpointProvider = Aws::MakeShared<NetworkFirewallEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<NetworkFirewallEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::NetworkFirewall::NetworkFirewallClientConfiguration& clientConfiguration = Aws::NetworkFirewall::NetworkFirewallClientConfiguration());
 
        /**
@@ -98,7 +98,7 @@ namespace NetworkFirewall
         * the default http client factory will be used
         */
         NetworkFirewallClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              std::shared_ptr<NetworkFirewallEndpointProviderBase> endpointProvider = Aws::MakeShared<NetworkFirewallEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<NetworkFirewallEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::NetworkFirewall::NetworkFirewallClientConfiguration& clientConfiguration = Aws::NetworkFirewall::NetworkFirewallClientConfiguration());
 
 

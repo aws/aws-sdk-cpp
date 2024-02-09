@@ -23,8 +23,8 @@ namespace Personalize
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PersonalizeClientConfiguration ClientConfigurationType;
       typedef PersonalizeEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace Personalize
         * is not specified, it will be initialized to default values.
         */
         PersonalizeClient(const Aws::Personalize::PersonalizeClientConfiguration& clientConfiguration = Aws::Personalize::PersonalizeClientConfiguration(),
-                          std::shared_ptr<PersonalizeEndpointProviderBase> endpointProvider = Aws::MakeShared<PersonalizeEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<PersonalizeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PersonalizeClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<PersonalizeEndpointProviderBase> endpointProvider = Aws::MakeShared<PersonalizeEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<PersonalizeEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::Personalize::PersonalizeClientConfiguration& clientConfiguration = Aws::Personalize::PersonalizeClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace Personalize
         * the default http client factory will be used
         */
         PersonalizeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<PersonalizeEndpointProviderBase> endpointProvider = Aws::MakeShared<PersonalizeEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<PersonalizeEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::Personalize::PersonalizeClientConfiguration& clientConfiguration = Aws::Personalize::PersonalizeClientConfiguration());
 
 

@@ -68,8 +68,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MainframeModernizationClient::SERVICE_NAME = "m2";
-const char* MainframeModernizationClient::ALLOCATION_TAG = "MainframeModernizationClient";
+namespace Aws
+{
+  namespace MainframeModernization
+  {
+    const char SERVICE_NAME[] = "m2";
+    const char ALLOCATION_TAG[] = "MainframeModernizationClient";
+  }
+}
+const char* MainframeModernizationClient::GetServiceName() {return SERVICE_NAME;}
+const char* MainframeModernizationClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MainframeModernizationClient::MainframeModernizationClient(const MainframeModernization::MainframeModernizationClientConfiguration& clientConfiguration,
                                                            std::shared_ptr<MainframeModernizationEndpointProviderBase> endpointProvider) :
@@ -81,7 +89,7 @@ MainframeModernizationClient::MainframeModernizationClient(const MainframeModern
             Aws::MakeShared<MainframeModernizationErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MainframeModernizationEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -97,7 +105,7 @@ MainframeModernizationClient::MainframeModernizationClient(const AWSCredentials&
             Aws::MakeShared<MainframeModernizationErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MainframeModernizationEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -113,7 +121,7 @@ MainframeModernizationClient::MainframeModernizationClient(const std::shared_ptr
             Aws::MakeShared<MainframeModernizationErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MainframeModernizationEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

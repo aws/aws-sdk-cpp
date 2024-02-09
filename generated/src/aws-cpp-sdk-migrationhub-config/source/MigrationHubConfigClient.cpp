@@ -39,8 +39,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MigrationHubConfigClient::SERVICE_NAME = "mgh";
-const char* MigrationHubConfigClient::ALLOCATION_TAG = "MigrationHubConfigClient";
+namespace Aws
+{
+  namespace MigrationHubConfig
+  {
+    const char SERVICE_NAME[] = "mgh";
+    const char ALLOCATION_TAG[] = "MigrationHubConfigClient";
+  }
+}
+const char* MigrationHubConfigClient::GetServiceName() {return SERVICE_NAME;}
+const char* MigrationHubConfigClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MigrationHubConfigClient::MigrationHubConfigClient(const MigrationHubConfig::MigrationHubConfigClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<MigrationHubConfigEndpointProviderBase> endpointProvider) :
@@ -52,7 +60,7 @@ MigrationHubConfigClient::MigrationHubConfigClient(const MigrationHubConfig::Mig
             Aws::MakeShared<MigrationHubConfigErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -68,7 +76,7 @@ MigrationHubConfigClient::MigrationHubConfigClient(const AWSCredentials& credent
             Aws::MakeShared<MigrationHubConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ MigrationHubConfigClient::MigrationHubConfigClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<MigrationHubConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
