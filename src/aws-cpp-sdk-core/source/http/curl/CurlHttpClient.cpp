@@ -751,6 +751,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             ss << m_proxyScheme << "://" << m_proxyHost;
             curl_easy_setopt(connectionHandle, CURLOPT_PROXY, ss.str().c_str());
             curl_easy_setopt(connectionHandle, CURLOPT_PROXYPORT, (long) m_proxyPort);
+#if LIBCURL_VERSION_NUM >= 0x073400 // 7.52.0
             if(!m_proxyCaPath.empty())
             {
                 curl_easy_setopt(connectionHandle, CURLOPT_PROXY_CAPATH, m_proxyCaPath.c_str());
@@ -759,6 +760,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             {
                 curl_easy_setopt(connectionHandle, CURLOPT_PROXY_CAINFO, m_proxyCaFile.c_str());
             }
+#endif
             if (!m_proxyUserName.empty() || !m_proxyPassword.empty())
             {
                 curl_easy_setopt(connectionHandle, CURLOPT_PROXYUSERNAME, m_proxyUserName.c_str());
