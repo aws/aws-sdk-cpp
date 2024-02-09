@@ -38,8 +38,8 @@ namespace WorkSpacesThinClient
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef WorkSpacesThinClientClientConfiguration ClientConfigurationType;
       typedef WorkSpacesThinClientEndpointProvider EndpointProviderType;
@@ -49,14 +49,14 @@ namespace WorkSpacesThinClient
         * is not specified, it will be initialized to default values.
         */
         WorkSpacesThinClientClient(const Aws::WorkSpacesThinClient::WorkSpacesThinClientClientConfiguration& clientConfiguration = Aws::WorkSpacesThinClient::WorkSpacesThinClientClientConfiguration(),
-                                   std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesThinClientEndpointProvider>(ALLOCATION_TAG));
+                                   std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WorkSpacesThinClientClient(const Aws::Auth::AWSCredentials& credentials,
-                                   std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesThinClientEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::WorkSpacesThinClient::WorkSpacesThinClientClientConfiguration& clientConfiguration = Aws::WorkSpacesThinClient::WorkSpacesThinClientClientConfiguration());
 
        /**
@@ -64,7 +64,7 @@ namespace WorkSpacesThinClient
         * the default http client factory will be used
         */
         WorkSpacesThinClientClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                   std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkSpacesThinClientEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::WorkSpacesThinClient::WorkSpacesThinClientClientConfiguration& clientConfiguration = Aws::WorkSpacesThinClient::WorkSpacesThinClientClientConfiguration());
 
 

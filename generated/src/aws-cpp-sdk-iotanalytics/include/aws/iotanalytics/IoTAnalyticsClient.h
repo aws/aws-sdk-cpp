@@ -42,8 +42,8 @@ namespace IoTAnalytics
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoTAnalyticsClientConfiguration ClientConfigurationType;
       typedef IoTAnalyticsEndpointProvider EndpointProviderType;
@@ -53,14 +53,14 @@ namespace IoTAnalytics
         * is not specified, it will be initialized to default values.
         */
         IoTAnalyticsClient(const Aws::IoTAnalytics::IoTAnalyticsClientConfiguration& clientConfiguration = Aws::IoTAnalytics::IoTAnalyticsClientConfiguration(),
-                           std::shared_ptr<IoTAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTAnalyticsEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<IoTAnalyticsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoTAnalyticsClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<IoTAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTAnalyticsEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<IoTAnalyticsEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::IoTAnalytics::IoTAnalyticsClientConfiguration& clientConfiguration = Aws::IoTAnalytics::IoTAnalyticsClientConfiguration());
 
        /**
@@ -68,7 +68,7 @@ namespace IoTAnalytics
         * the default http client factory will be used
         */
         IoTAnalyticsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<IoTAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTAnalyticsEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<IoTAnalyticsEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::IoTAnalytics::IoTAnalyticsClientConfiguration& clientConfiguration = Aws::IoTAnalytics::IoTAnalyticsClientConfiguration());
 
 

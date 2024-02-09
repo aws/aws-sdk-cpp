@@ -107,8 +107,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudWatchLogsClient::SERVICE_NAME = "logs";
-const char* CloudWatchLogsClient::ALLOCATION_TAG = "CloudWatchLogsClient";
+namespace Aws
+{
+  namespace CloudWatchLogs
+  {
+    const char SERVICE_NAME[] = "logs";
+    const char ALLOCATION_TAG[] = "CloudWatchLogsClient";
+  }
+}
+const char* CloudWatchLogsClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudWatchLogsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudWatchLogsClient::CloudWatchLogsClient(const CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration,
                                            std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider) :
@@ -120,7 +128,7 @@ CloudWatchLogsClient::CloudWatchLogsClient(const CloudWatchLogs::CloudWatchLogsC
             Aws::MakeShared<CloudWatchLogsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -136,7 +144,7 @@ CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials,
             Aws::MakeShared<CloudWatchLogsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -152,7 +160,7 @@ CloudWatchLogsClient::CloudWatchLogsClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<CloudWatchLogsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

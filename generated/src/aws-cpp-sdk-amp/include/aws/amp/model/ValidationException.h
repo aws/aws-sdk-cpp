@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amp/model/ValidationExceptionReason.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amp/model/ValidationExceptionField.h>
 #include <utility>
 
@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The input fails to satisfy the constraints specified by an AWS
-   * service.</p><p><h3>See Also:</h3>   <a
+   * <p>The input fails to satisfy the constraints specified by an Amazon Web
+   * Services service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ValidationException">AWS
    * API Reference</a></p>
    */
@@ -39,6 +39,47 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The field that caused the error, if applicable.</p>
+     */
+    inline const Aws::Vector<ValidationExceptionField>& GetFieldList() const{ return m_fieldList; }
+
+    /**
+     * <p>The field that caused the error, if applicable.</p>
+     */
+    inline bool FieldListHasBeenSet() const { return m_fieldListHasBeenSet; }
+
+    /**
+     * <p>The field that caused the error, if applicable.</p>
+     */
+    inline void SetFieldList(const Aws::Vector<ValidationExceptionField>& value) { m_fieldListHasBeenSet = true; m_fieldList = value; }
+
+    /**
+     * <p>The field that caused the error, if applicable.</p>
+     */
+    inline void SetFieldList(Aws::Vector<ValidationExceptionField>&& value) { m_fieldListHasBeenSet = true; m_fieldList = std::move(value); }
+
+    /**
+     * <p>The field that caused the error, if applicable.</p>
+     */
+    inline ValidationException& WithFieldList(const Aws::Vector<ValidationExceptionField>& value) { SetFieldList(value); return *this;}
+
+    /**
+     * <p>The field that caused the error, if applicable.</p>
+     */
+    inline ValidationException& WithFieldList(Aws::Vector<ValidationExceptionField>&& value) { SetFieldList(std::move(value)); return *this;}
+
+    /**
+     * <p>The field that caused the error, if applicable.</p>
+     */
+    inline ValidationException& AddFieldList(const ValidationExceptionField& value) { m_fieldListHasBeenSet = true; m_fieldList.push_back(value); return *this; }
+
+    /**
+     * <p>The field that caused the error, if applicable.</p>
+     */
+    inline ValidationException& AddFieldList(ValidationExceptionField&& value) { m_fieldListHasBeenSet = true; m_fieldList.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -112,65 +153,16 @@ namespace Model
      */
     inline ValidationException& WithReason(ValidationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The field that caused the error, if applicable. If more than one field caused
-     * the error, pick one and elaborate in the message.</p>
-     */
-    inline const Aws::Vector<ValidationExceptionField>& GetFieldList() const{ return m_fieldList; }
-
-    /**
-     * <p>The field that caused the error, if applicable. If more than one field caused
-     * the error, pick one and elaborate in the message.</p>
-     */
-    inline bool FieldListHasBeenSet() const { return m_fieldListHasBeenSet; }
-
-    /**
-     * <p>The field that caused the error, if applicable. If more than one field caused
-     * the error, pick one and elaborate in the message.</p>
-     */
-    inline void SetFieldList(const Aws::Vector<ValidationExceptionField>& value) { m_fieldListHasBeenSet = true; m_fieldList = value; }
-
-    /**
-     * <p>The field that caused the error, if applicable. If more than one field caused
-     * the error, pick one and elaborate in the message.</p>
-     */
-    inline void SetFieldList(Aws::Vector<ValidationExceptionField>&& value) { m_fieldListHasBeenSet = true; m_fieldList = std::move(value); }
-
-    /**
-     * <p>The field that caused the error, if applicable. If more than one field caused
-     * the error, pick one and elaborate in the message.</p>
-     */
-    inline ValidationException& WithFieldList(const Aws::Vector<ValidationExceptionField>& value) { SetFieldList(value); return *this;}
-
-    /**
-     * <p>The field that caused the error, if applicable. If more than one field caused
-     * the error, pick one and elaborate in the message.</p>
-     */
-    inline ValidationException& WithFieldList(Aws::Vector<ValidationExceptionField>&& value) { SetFieldList(std::move(value)); return *this;}
-
-    /**
-     * <p>The field that caused the error, if applicable. If more than one field caused
-     * the error, pick one and elaborate in the message.</p>
-     */
-    inline ValidationException& AddFieldList(const ValidationExceptionField& value) { m_fieldListHasBeenSet = true; m_fieldList.push_back(value); return *this; }
-
-    /**
-     * <p>The field that caused the error, if applicable. If more than one field caused
-     * the error, pick one and elaborate in the message.</p>
-     */
-    inline ValidationException& AddFieldList(ValidationExceptionField&& value) { m_fieldListHasBeenSet = true; m_fieldList.push_back(std::move(value)); return *this; }
-
   private:
+
+    Aws::Vector<ValidationExceptionField> m_fieldList;
+    bool m_fieldListHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
     ValidationExceptionReason m_reason;
     bool m_reasonHasBeenSet = false;
-
-    Aws::Vector<ValidationExceptionField> m_fieldList;
-    bool m_fieldListHasBeenSet = false;
   };
 
 } // namespace Model

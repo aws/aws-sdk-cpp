@@ -58,8 +58,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BudgetsClient::SERVICE_NAME = "budgets";
-const char* BudgetsClient::ALLOCATION_TAG = "BudgetsClient";
+namespace Aws
+{
+  namespace Budgets
+  {
+    const char SERVICE_NAME[] = "budgets";
+    const char ALLOCATION_TAG[] = "BudgetsClient";
+  }
+}
+const char* BudgetsClient::GetServiceName() {return SERVICE_NAME;}
+const char* BudgetsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BudgetsClient::BudgetsClient(const Budgets::BudgetsClientConfiguration& clientConfiguration,
                              std::shared_ptr<BudgetsEndpointProviderBase> endpointProvider) :
@@ -71,7 +79,7 @@ BudgetsClient::BudgetsClient(const Budgets::BudgetsClientConfiguration& clientCo
             Aws::MakeShared<BudgetsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BudgetsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ BudgetsClient::BudgetsClient(const AWSCredentials& credentials,
             Aws::MakeShared<BudgetsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BudgetsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ BudgetsClient::BudgetsClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<BudgetsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BudgetsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

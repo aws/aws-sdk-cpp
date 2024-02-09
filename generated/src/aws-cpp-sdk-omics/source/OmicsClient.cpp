@@ -117,8 +117,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* OmicsClient::SERVICE_NAME = "omics";
-const char* OmicsClient::ALLOCATION_TAG = "OmicsClient";
+namespace Aws
+{
+  namespace Omics
+  {
+    const char SERVICE_NAME[] = "omics";
+    const char ALLOCATION_TAG[] = "OmicsClient";
+  }
+}
+const char* OmicsClient::GetServiceName() {return SERVICE_NAME;}
+const char* OmicsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 OmicsClient::OmicsClient(const Omics::OmicsClientConfiguration& clientConfiguration,
                          std::shared_ptr<OmicsEndpointProviderBase> endpointProvider) :
@@ -130,7 +138,7 @@ OmicsClient::OmicsClient(const Omics::OmicsClientConfiguration& clientConfigurat
             Aws::MakeShared<OmicsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -146,7 +154,7 @@ OmicsClient::OmicsClient(const AWSCredentials& credentials,
             Aws::MakeShared<OmicsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -162,7 +170,7 @@ OmicsClient::OmicsClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             Aws::MakeShared<OmicsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

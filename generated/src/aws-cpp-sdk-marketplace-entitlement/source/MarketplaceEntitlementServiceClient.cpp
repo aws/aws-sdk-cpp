@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MarketplaceEntitlementServiceClient::SERVICE_NAME = "aws-marketplace";
-const char* MarketplaceEntitlementServiceClient::ALLOCATION_TAG = "MarketplaceEntitlementServiceClient";
+namespace Aws
+{
+  namespace MarketplaceEntitlementService
+  {
+    const char SERVICE_NAME[] = "aws-marketplace";
+    const char ALLOCATION_TAG[] = "MarketplaceEntitlementServiceClient";
+  }
+}
+const char* MarketplaceEntitlementServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* MarketplaceEntitlementServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const MarketplaceEntitlementService::MarketplaceEntitlementServiceClientConfiguration& clientConfiguration,
                                                                          std::shared_ptr<MarketplaceEntitlementServiceEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const M
             Aws::MakeShared<MarketplaceEntitlementServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceEntitlementServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const A
             Aws::MakeShared<MarketplaceEntitlementServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceEntitlementServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const s
             Aws::MakeShared<MarketplaceEntitlementServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceEntitlementServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

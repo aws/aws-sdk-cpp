@@ -22,8 +22,8 @@ namespace MarketplaceCommerceAnalytics
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MarketplaceCommerceAnalyticsClientConfiguration ClientConfigurationType;
       typedef MarketplaceCommerceAnalyticsEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace MarketplaceCommerceAnalytics
         * is not specified, it will be initialized to default values.
         */
         MarketplaceCommerceAnalyticsClient(const Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsClientConfiguration& clientConfiguration = Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsClientConfiguration(),
-                                           std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceCommerceAnalyticsEndpointProvider>(ALLOCATION_TAG));
+                                           std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MarketplaceCommerceAnalyticsClient(const Aws::Auth::AWSCredentials& credentials,
-                                           std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceCommerceAnalyticsEndpointProvider>(ALLOCATION_TAG),
+                                           std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> endpointProvider = nullptr,
                                            const Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsClientConfiguration& clientConfiguration = Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace MarketplaceCommerceAnalytics
         * the default http client factory will be used
         */
         MarketplaceCommerceAnalyticsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                           std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceCommerceAnalyticsEndpointProvider>(ALLOCATION_TAG),
+                                           std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> endpointProvider = nullptr,
                                            const Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsClientConfiguration& clientConfiguration = Aws::MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsClientConfiguration());
 
 

@@ -24,8 +24,8 @@ namespace NetworkManager
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef NetworkManagerClientConfiguration ClientConfigurationType;
       typedef NetworkManagerEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace NetworkManager
         * is not specified, it will be initialized to default values.
         */
         NetworkManagerClient(const Aws::NetworkManager::NetworkManagerClientConfiguration& clientConfiguration = Aws::NetworkManager::NetworkManagerClientConfiguration(),
-                             std::shared_ptr<NetworkManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<NetworkManagerEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<NetworkManagerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         NetworkManagerClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<NetworkManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<NetworkManagerEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<NetworkManagerEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::NetworkManager::NetworkManagerClientConfiguration& clientConfiguration = Aws::NetworkManager::NetworkManagerClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace NetworkManager
         * the default http client factory will be used
         */
         NetworkManagerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<NetworkManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<NetworkManagerEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<NetworkManagerEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::NetworkManager::NetworkManagerClientConfiguration& clientConfiguration = Aws::NetworkManager::NetworkManagerClientConfiguration());
 
 

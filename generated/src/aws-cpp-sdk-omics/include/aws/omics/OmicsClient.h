@@ -24,8 +24,8 @@ namespace Omics
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef OmicsClientConfiguration ClientConfigurationType;
       typedef OmicsEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace Omics
         * is not specified, it will be initialized to default values.
         */
         OmicsClient(const Aws::Omics::OmicsClientConfiguration& clientConfiguration = Aws::Omics::OmicsClientConfiguration(),
-                    std::shared_ptr<OmicsEndpointProviderBase> endpointProvider = Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<OmicsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         OmicsClient(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<OmicsEndpointProviderBase> endpointProvider = Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<OmicsEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Omics::OmicsClientConfiguration& clientConfiguration = Aws::Omics::OmicsClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace Omics
         * the default http client factory will be used
         */
         OmicsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<OmicsEndpointProviderBase> endpointProvider = Aws::MakeShared<OmicsEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<OmicsEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Omics::OmicsClientConfiguration& clientConfiguration = Aws::Omics::OmicsClientConfiguration());
 
 

@@ -75,8 +75,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTTwinMakerClient::SERVICE_NAME = "iottwinmaker";
-const char* IoTTwinMakerClient::ALLOCATION_TAG = "IoTTwinMakerClient";
+namespace Aws
+{
+  namespace IoTTwinMaker
+  {
+    const char SERVICE_NAME[] = "iottwinmaker";
+    const char ALLOCATION_TAG[] = "IoTTwinMakerClient";
+  }
+}
+const char* IoTTwinMakerClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTTwinMakerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTTwinMakerClient::IoTTwinMakerClient(const IoTTwinMaker::IoTTwinMakerClientConfiguration& clientConfiguration,
                                        std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider) :
@@ -88,7 +96,7 @@ IoTTwinMakerClient::IoTTwinMakerClient(const IoTTwinMaker::IoTTwinMakerClientCon
             Aws::MakeShared<IoTTwinMakerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTTwinMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -104,7 +112,7 @@ IoTTwinMakerClient::IoTTwinMakerClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTTwinMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTTwinMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -120,7 +128,7 @@ IoTTwinMakerClient::IoTTwinMakerClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<IoTTwinMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTTwinMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

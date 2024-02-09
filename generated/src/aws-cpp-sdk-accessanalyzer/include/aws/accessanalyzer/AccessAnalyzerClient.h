@@ -46,8 +46,8 @@ namespace AccessAnalyzer
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AccessAnalyzerClientConfiguration ClientConfigurationType;
       typedef AccessAnalyzerEndpointProvider EndpointProviderType;
@@ -57,14 +57,14 @@ namespace AccessAnalyzer
         * is not specified, it will be initialized to default values.
         */
         AccessAnalyzerClient(const Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration& clientConfiguration = Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration(),
-                             std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider = Aws::MakeShared<AccessAnalyzerEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AccessAnalyzerClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider = Aws::MakeShared<AccessAnalyzerEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration& clientConfiguration = Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration());
 
        /**
@@ -72,7 +72,7 @@ namespace AccessAnalyzer
         * the default http client factory will be used
         */
         AccessAnalyzerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider = Aws::MakeShared<AccessAnalyzerEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration& clientConfiguration = Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration());
 
 

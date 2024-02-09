@@ -78,8 +78,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* NeptunedataClient::SERVICE_NAME = "neptune-db";
-const char* NeptunedataClient::ALLOCATION_TAG = "NeptunedataClient";
+namespace Aws
+{
+  namespace neptunedata
+  {
+    const char SERVICE_NAME[] = "neptune-db";
+    const char ALLOCATION_TAG[] = "NeptunedataClient";
+  }
+}
+const char* NeptunedataClient::GetServiceName() {return SERVICE_NAME;}
+const char* NeptunedataClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 NeptunedataClient::NeptunedataClient(const neptunedata::NeptunedataClientConfiguration& clientConfiguration,
                                      std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider) :
@@ -91,7 +99,7 @@ NeptunedataClient::NeptunedataClient(const neptunedata::NeptunedataClientConfigu
             Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ NeptunedataClient::NeptunedataClient(const AWSCredentials& credentials,
             Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -123,7 +131,7 @@ NeptunedataClient::NeptunedataClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<NeptunedataErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

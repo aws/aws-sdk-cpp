@@ -38,8 +38,8 @@ namespace AppStream
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AppStreamClientConfiguration ClientConfigurationType;
       typedef AppStreamEndpointProvider EndpointProviderType;
@@ -49,14 +49,14 @@ namespace AppStream
         * is not specified, it will be initialized to default values.
         */
         AppStreamClient(const Aws::AppStream::AppStreamClientConfiguration& clientConfiguration = Aws::AppStream::AppStreamClientConfiguration(),
-                        std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider = Aws::MakeShared<AppStreamEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AppStreamClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider = Aws::MakeShared<AppStreamEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::AppStream::AppStreamClientConfiguration& clientConfiguration = Aws::AppStream::AppStreamClientConfiguration());
 
        /**
@@ -64,7 +64,7 @@ namespace AppStream
         * the default http client factory will be used
         */
         AppStreamClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider = Aws::MakeShared<AppStreamEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::AppStream::AppStreamClientConfiguration& clientConfiguration = Aws::AppStream::AppStreamClientConfiguration());
 
 

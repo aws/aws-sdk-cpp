@@ -36,8 +36,8 @@ namespace ComputeOptimizer
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ComputeOptimizerClientConfiguration ClientConfigurationType;
       typedef ComputeOptimizerEndpointProvider EndpointProviderType;
@@ -47,14 +47,14 @@ namespace ComputeOptimizer
         * is not specified, it will be initialized to default values.
         */
         ComputeOptimizerClient(const Aws::ComputeOptimizer::ComputeOptimizerClientConfiguration& clientConfiguration = Aws::ComputeOptimizer::ComputeOptimizerClientConfiguration(),
-                               std::shared_ptr<ComputeOptimizerEndpointProviderBase> endpointProvider = Aws::MakeShared<ComputeOptimizerEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<ComputeOptimizerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ComputeOptimizerClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<ComputeOptimizerEndpointProviderBase> endpointProvider = Aws::MakeShared<ComputeOptimizerEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<ComputeOptimizerEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::ComputeOptimizer::ComputeOptimizerClientConfiguration& clientConfiguration = Aws::ComputeOptimizer::ComputeOptimizerClientConfiguration());
 
        /**
@@ -62,7 +62,7 @@ namespace ComputeOptimizer
         * the default http client factory will be used
         */
         ComputeOptimizerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<ComputeOptimizerEndpointProviderBase> endpointProvider = Aws::MakeShared<ComputeOptimizerEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<ComputeOptimizerEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::ComputeOptimizer::ComputeOptimizerClientConfiguration& clientConfiguration = Aws::ComputeOptimizer::ComputeOptimizerClientConfiguration());
 
 

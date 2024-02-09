@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A representation of a source that a scraper can discover and collect metrics
-   * from.</p><p><h3>See Also:</h3>   <a
+   * <p>The source of collected metrics for a scraper.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/Source">AWS API
    * Reference</a></p>
    */
@@ -39,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>A representation of an EKS source.</p>
+     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
      */
     inline const EksConfiguration& GetEksConfiguration() const{ return m_eksConfiguration; }
 
     /**
-     * <p>A representation of an EKS source.</p>
+     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
      */
     inline bool EksConfigurationHasBeenSet() const { return m_eksConfigurationHasBeenSet; }
 
     /**
-     * <p>A representation of an EKS source.</p>
+     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
      */
     inline void SetEksConfiguration(const EksConfiguration& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = value; }
 
     /**
-     * <p>A representation of an EKS source.</p>
+     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
      */
     inline void SetEksConfiguration(EksConfiguration&& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = std::move(value); }
 
     /**
-     * <p>A representation of an EKS source.</p>
+     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
      */
     inline Source& WithEksConfiguration(const EksConfiguration& value) { SetEksConfiguration(value); return *this;}
 
     /**
-     * <p>A representation of an EKS source.</p>
+     * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
      */
     inline Source& WithEksConfiguration(EksConfiguration&& value) { SetEksConfiguration(std::move(value)); return *this;}
 

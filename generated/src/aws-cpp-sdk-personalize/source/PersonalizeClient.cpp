@@ -102,8 +102,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PersonalizeClient::SERVICE_NAME = "personalize";
-const char* PersonalizeClient::ALLOCATION_TAG = "PersonalizeClient";
+namespace Aws
+{
+  namespace Personalize
+  {
+    const char SERVICE_NAME[] = "personalize";
+    const char ALLOCATION_TAG[] = "PersonalizeClient";
+  }
+}
+const char* PersonalizeClient::GetServiceName() {return SERVICE_NAME;}
+const char* PersonalizeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PersonalizeClient::PersonalizeClient(const Personalize::PersonalizeClientConfiguration& clientConfiguration,
                                      std::shared_ptr<PersonalizeEndpointProviderBase> endpointProvider) :
@@ -115,7 +123,7 @@ PersonalizeClient::PersonalizeClient(const Personalize::PersonalizeClientConfigu
             Aws::MakeShared<PersonalizeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PersonalizeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -131,7 +139,7 @@ PersonalizeClient::PersonalizeClient(const AWSCredentials& credentials,
             Aws::MakeShared<PersonalizeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PersonalizeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -147,7 +155,7 @@ PersonalizeClient::PersonalizeClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<PersonalizeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PersonalizeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

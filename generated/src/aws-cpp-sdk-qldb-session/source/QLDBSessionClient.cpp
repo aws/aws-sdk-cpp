@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* QLDBSessionClient::SERVICE_NAME = "qldb";
-const char* QLDBSessionClient::ALLOCATION_TAG = "QLDBSessionClient";
+namespace Aws
+{
+  namespace QLDBSession
+  {
+    const char SERVICE_NAME[] = "qldb";
+    const char ALLOCATION_TAG[] = "QLDBSessionClient";
+  }
+}
+const char* QLDBSessionClient::GetServiceName() {return SERVICE_NAME;}
+const char* QLDBSessionClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 QLDBSessionClient::QLDBSessionClient(const QLDBSession::QLDBSessionClientConfiguration& clientConfiguration,
                                      std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ QLDBSessionClient::QLDBSessionClient(const QLDBSession::QLDBSessionClientConfigu
             Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QLDBSessionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ QLDBSessionClient::QLDBSessionClient(const AWSCredentials& credentials,
             Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QLDBSessionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ QLDBSessionClient::QLDBSessionClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QLDBSessionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -22,8 +22,8 @@ namespace BedrockRuntime
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef BedrockRuntimeClientConfiguration ClientConfigurationType;
       typedef BedrockRuntimeEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace BedrockRuntime
         * is not specified, it will be initialized to default values.
         */
         BedrockRuntimeClient(const Aws::BedrockRuntime::BedrockRuntimeClientConfiguration& clientConfiguration = Aws::BedrockRuntime::BedrockRuntimeClientConfiguration(),
-                             std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BedrockRuntimeClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::BedrockRuntime::BedrockRuntimeClientConfiguration& clientConfiguration = Aws::BedrockRuntime::BedrockRuntimeClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace BedrockRuntime
         * the default http client factory will be used
         */
         BedrockRuntimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::BedrockRuntime::BedrockRuntimeClientConfiguration& clientConfiguration = Aws::BedrockRuntime::BedrockRuntimeClientConfiguration());
 
 

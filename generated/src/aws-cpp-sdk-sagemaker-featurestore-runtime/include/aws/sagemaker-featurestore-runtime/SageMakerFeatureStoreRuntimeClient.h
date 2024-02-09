@@ -34,8 +34,8 @@ namespace SageMakerFeatureStoreRuntime
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SageMakerFeatureStoreRuntimeClientConfiguration ClientConfigurationType;
       typedef SageMakerFeatureStoreRuntimeEndpointProvider EndpointProviderType;
@@ -45,14 +45,14 @@ namespace SageMakerFeatureStoreRuntime
         * is not specified, it will be initialized to default values.
         */
         SageMakerFeatureStoreRuntimeClient(const Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeClientConfiguration& clientConfiguration = Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeClientConfiguration(),
-                                           std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerFeatureStoreRuntimeEndpointProvider>(ALLOCATION_TAG));
+                                           std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SageMakerFeatureStoreRuntimeClient(const Aws::Auth::AWSCredentials& credentials,
-                                           std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerFeatureStoreRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                           std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                            const Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeClientConfiguration& clientConfiguration = Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeClientConfiguration());
 
        /**
@@ -60,7 +60,7 @@ namespace SageMakerFeatureStoreRuntime
         * the default http client factory will be used
         */
         SageMakerFeatureStoreRuntimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                           std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerFeatureStoreRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                           std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                            const Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeClientConfiguration& clientConfiguration = Aws::SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeClientConfiguration());
 
 

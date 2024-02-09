@@ -22,8 +22,8 @@ namespace ApiGatewayV2
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ApiGatewayV2ClientConfiguration ClientConfigurationType;
       typedef ApiGatewayV2EndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace ApiGatewayV2
         * is not specified, it will be initialized to default values.
         */
         ApiGatewayV2Client(const Aws::ApiGatewayV2::ApiGatewayV2ClientConfiguration& clientConfiguration = Aws::ApiGatewayV2::ApiGatewayV2ClientConfiguration(),
-                           std::shared_ptr<ApiGatewayV2EndpointProviderBase> endpointProvider = Aws::MakeShared<ApiGatewayV2EndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<ApiGatewayV2EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ApiGatewayV2Client(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<ApiGatewayV2EndpointProviderBase> endpointProvider = Aws::MakeShared<ApiGatewayV2EndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ApiGatewayV2EndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ApiGatewayV2::ApiGatewayV2ClientConfiguration& clientConfiguration = Aws::ApiGatewayV2::ApiGatewayV2ClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace ApiGatewayV2
         * the default http client factory will be used
         */
         ApiGatewayV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<ApiGatewayV2EndpointProviderBase> endpointProvider = Aws::MakeShared<ApiGatewayV2EndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ApiGatewayV2EndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ApiGatewayV2::ApiGatewayV2ClientConfiguration& clientConfiguration = Aws::ApiGatewayV2::ApiGatewayV2ClientConfiguration());
 
 

@@ -27,8 +27,8 @@ namespace DataZone
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DataZoneClientConfiguration ClientConfigurationType;
       typedef DataZoneEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace DataZone
         * is not specified, it will be initialized to default values.
         */
         DataZoneClient(const Aws::DataZone::DataZoneClientConfiguration& clientConfiguration = Aws::DataZone::DataZoneClientConfiguration(),
-                       std::shared_ptr<DataZoneEndpointProviderBase> endpointProvider = Aws::MakeShared<DataZoneEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<DataZoneEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DataZoneClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<DataZoneEndpointProviderBase> endpointProvider = Aws::MakeShared<DataZoneEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DataZoneEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DataZone::DataZoneClientConfiguration& clientConfiguration = Aws::DataZone::DataZoneClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace DataZone
         * the default http client factory will be used
         */
         DataZoneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<DataZoneEndpointProviderBase> endpointProvider = Aws::MakeShared<DataZoneEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DataZoneEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DataZone::DataZoneClientConfiguration& clientConfiguration = Aws::DataZone::DataZoneClientConfiguration());
 
 

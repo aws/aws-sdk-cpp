@@ -58,8 +58,14 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SERVICE_NAME = "sqs";
-const char* ALLOCATION_TAG = "SQSClient";
+namespace Aws
+{
+  namespace SQS
+  {
+    const char SERVICE_NAME[] = "sqs";
+    const char ALLOCATION_TAG[] = "SQSClient";
+  }
+}
 const char* SQSClient::GetServiceName() {return SERVICE_NAME;}
 const char* SQSClient::GetAllocationTag() {return ALLOCATION_TAG;}
 

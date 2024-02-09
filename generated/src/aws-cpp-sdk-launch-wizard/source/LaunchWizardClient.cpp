@@ -43,8 +43,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LaunchWizardClient::SERVICE_NAME = "launchwizard";
-const char* LaunchWizardClient::ALLOCATION_TAG = "LaunchWizardClient";
+namespace Aws
+{
+  namespace LaunchWizard
+  {
+    const char SERVICE_NAME[] = "launchwizard";
+    const char ALLOCATION_TAG[] = "LaunchWizardClient";
+  }
+}
+const char* LaunchWizardClient::GetServiceName() {return SERVICE_NAME;}
+const char* LaunchWizardClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LaunchWizardClient::LaunchWizardClient(const LaunchWizard::LaunchWizardClientConfiguration& clientConfiguration,
                                        std::shared_ptr<LaunchWizardEndpointProviderBase> endpointProvider) :
@@ -56,7 +64,7 @@ LaunchWizardClient::LaunchWizardClient(const LaunchWizard::LaunchWizardClientCon
             Aws::MakeShared<LaunchWizardErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LaunchWizardEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -72,7 +80,7 @@ LaunchWizardClient::LaunchWizardClient(const AWSCredentials& credentials,
             Aws::MakeShared<LaunchWizardErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LaunchWizardEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ LaunchWizardClient::LaunchWizardClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<LaunchWizardErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LaunchWizardEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

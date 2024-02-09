@@ -66,8 +66,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SchemasClient::SERVICE_NAME = "schemas";
-const char* SchemasClient::ALLOCATION_TAG = "SchemasClient";
+namespace Aws
+{
+  namespace Schemas
+  {
+    const char SERVICE_NAME[] = "schemas";
+    const char ALLOCATION_TAG[] = "SchemasClient";
+  }
+}
+const char* SchemasClient::GetServiceName() {return SERVICE_NAME;}
+const char* SchemasClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SchemasClient::SchemasClient(const Schemas::SchemasClientConfiguration& clientConfiguration,
                              std::shared_ptr<SchemasEndpointProviderBase> endpointProvider) :
@@ -79,7 +87,7 @@ SchemasClient::SchemasClient(const Schemas::SchemasClientConfiguration& clientCo
             Aws::MakeShared<SchemasErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SchemasEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -95,7 +103,7 @@ SchemasClient::SchemasClient(const AWSCredentials& credentials,
             Aws::MakeShared<SchemasErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SchemasEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -111,7 +119,7 @@ SchemasClient::SchemasClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<SchemasErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SchemasEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

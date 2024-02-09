@@ -37,8 +37,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SupplyChainClient::SERVICE_NAME = "scn";
-const char* SupplyChainClient::ALLOCATION_TAG = "SupplyChainClient";
+namespace Aws
+{
+  namespace SupplyChain
+  {
+    const char SERVICE_NAME[] = "scn";
+    const char ALLOCATION_TAG[] = "SupplyChainClient";
+  }
+}
+const char* SupplyChainClient::GetServiceName() {return SERVICE_NAME;}
+const char* SupplyChainClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SupplyChainClient::SupplyChainClient(const SupplyChain::SupplyChainClientConfiguration& clientConfiguration,
                                      std::shared_ptr<SupplyChainEndpointProviderBase> endpointProvider) :
@@ -50,7 +58,7 @@ SupplyChainClient::SupplyChainClient(const SupplyChain::SupplyChainClientConfigu
             Aws::MakeShared<SupplyChainErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SupplyChainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -66,7 +74,7 @@ SupplyChainClient::SupplyChainClient(const AWSCredentials& credentials,
             Aws::MakeShared<SupplyChainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SupplyChainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ SupplyChainClient::SupplyChainClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<SupplyChainErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SupplyChainEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -44,8 +44,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BackupStorageClient::SERVICE_NAME = "backup-storage";
-const char* BackupStorageClient::ALLOCATION_TAG = "BackupStorageClient";
+namespace Aws
+{
+  namespace BackupStorage
+  {
+    const char SERVICE_NAME[] = "backup-storage";
+    const char ALLOCATION_TAG[] = "BackupStorageClient";
+  }
+}
+const char* BackupStorageClient::GetServiceName() {return SERVICE_NAME;}
+const char* BackupStorageClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BackupStorageClient::BackupStorageClient(const BackupStorage::BackupStorageClientConfiguration& clientConfiguration,
                                          std::shared_ptr<BackupStorageEndpointProviderBase> endpointProvider) :
@@ -57,7 +65,7 @@ BackupStorageClient::BackupStorageClient(const BackupStorage::BackupStorageClien
             Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -73,7 +81,7 @@ BackupStorageClient::BackupStorageClient(const AWSCredentials& credentials,
             Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ BackupStorageClient::BackupStorageClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<BackupStorageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

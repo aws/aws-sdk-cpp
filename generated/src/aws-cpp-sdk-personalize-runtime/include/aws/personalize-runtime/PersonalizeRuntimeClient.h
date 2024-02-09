@@ -22,8 +22,8 @@ namespace PersonalizeRuntime
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PersonalizeRuntimeClientConfiguration ClientConfigurationType;
       typedef PersonalizeRuntimeEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace PersonalizeRuntime
         * is not specified, it will be initialized to default values.
         */
         PersonalizeRuntimeClient(const Aws::PersonalizeRuntime::PersonalizeRuntimeClientConfiguration& clientConfiguration = Aws::PersonalizeRuntime::PersonalizeRuntimeClientConfiguration(),
-                                 std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<PersonalizeRuntimeEndpointProvider>(ALLOCATION_TAG));
+                                 std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PersonalizeRuntimeClient(const Aws::Auth::AWSCredentials& credentials,
-                                 std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<PersonalizeRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::PersonalizeRuntime::PersonalizeRuntimeClientConfiguration& clientConfiguration = Aws::PersonalizeRuntime::PersonalizeRuntimeClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace PersonalizeRuntime
         * the default http client factory will be used
         */
         PersonalizeRuntimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                 std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<PersonalizeRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::PersonalizeRuntime::PersonalizeRuntimeClientConfiguration& clientConfiguration = Aws::PersonalizeRuntime::PersonalizeRuntimeClientConfiguration());
 
 

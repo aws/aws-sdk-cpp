@@ -23,8 +23,8 @@ namespace LicenseManagerUserSubscriptions
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef LicenseManagerUserSubscriptionsClientConfiguration ClientConfigurationType;
       typedef LicenseManagerUserSubscriptionsEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace LicenseManagerUserSubscriptions
         * is not specified, it will be initialized to default values.
         */
         LicenseManagerUserSubscriptionsClient(const Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration = Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration(),
-                                              std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> endpointProvider = Aws::MakeShared<LicenseManagerUserSubscriptionsEndpointProvider>(ALLOCATION_TAG));
+                                              std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LicenseManagerUserSubscriptionsClient(const Aws::Auth::AWSCredentials& credentials,
-                                              std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> endpointProvider = Aws::MakeShared<LicenseManagerUserSubscriptionsEndpointProvider>(ALLOCATION_TAG),
+                                              std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> endpointProvider = nullptr,
                                               const Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration = Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace LicenseManagerUserSubscriptions
         * the default http client factory will be used
         */
         LicenseManagerUserSubscriptionsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                              std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> endpointProvider = Aws::MakeShared<LicenseManagerUserSubscriptionsEndpointProvider>(ALLOCATION_TAG),
+                                              std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase> endpointProvider = nullptr,
                                               const Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration = Aws::LicenseManagerUserSubscriptions::LicenseManagerUserSubscriptionsClientConfiguration());
 
 

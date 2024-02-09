@@ -46,8 +46,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ARCZonalShiftClient::SERVICE_NAME = "arc-zonal-shift";
-const char* ARCZonalShiftClient::ALLOCATION_TAG = "ARCZonalShiftClient";
+namespace Aws
+{
+  namespace ARCZonalShift
+  {
+    const char SERVICE_NAME[] = "arc-zonal-shift";
+    const char ALLOCATION_TAG[] = "ARCZonalShiftClient";
+  }
+}
+const char* ARCZonalShiftClient::GetServiceName() {return SERVICE_NAME;}
+const char* ARCZonalShiftClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ARCZonalShiftClient::ARCZonalShiftClient(const ARCZonalShift::ARCZonalShiftClientConfiguration& clientConfiguration,
                                          std::shared_ptr<ARCZonalShiftEndpointProviderBase> endpointProvider) :
@@ -59,7 +67,7 @@ ARCZonalShiftClient::ARCZonalShiftClient(const ARCZonalShift::ARCZonalShiftClien
             Aws::MakeShared<ARCZonalShiftErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ARCZonalShiftEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -75,7 +83,7 @@ ARCZonalShiftClient::ARCZonalShiftClient(const AWSCredentials& credentials,
             Aws::MakeShared<ARCZonalShiftErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ARCZonalShiftEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ ARCZonalShiftClient::ARCZonalShiftClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<ARCZonalShiftErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ARCZonalShiftEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

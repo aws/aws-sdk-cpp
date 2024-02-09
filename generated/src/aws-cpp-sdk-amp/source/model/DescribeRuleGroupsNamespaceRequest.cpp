@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeRuleGroupsNamespaceRequest::DescribeRuleGroupsNamespaceRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false)
 {
 }
 

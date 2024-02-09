@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodeStarNotificationsClient::SERVICE_NAME = "codestar-notifications";
-const char* CodeStarNotificationsClient::ALLOCATION_TAG = "CodeStarNotificationsClient";
+namespace Aws
+{
+  namespace CodeStarNotifications
+  {
+    const char SERVICE_NAME[] = "codestar-notifications";
+    const char ALLOCATION_TAG[] = "CodeStarNotificationsClient";
+  }
+}
+const char* CodeStarNotificationsClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodeStarNotificationsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CodeStarNotificationsClient::CodeStarNotificationsClient(const CodeStarNotifications::CodeStarNotificationsClientConfiguration& clientConfiguration,
                                                          std::shared_ptr<CodeStarNotificationsEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const CodeStarNotificat
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const AWSCredentials& c
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const std::shared_ptr<A
             Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

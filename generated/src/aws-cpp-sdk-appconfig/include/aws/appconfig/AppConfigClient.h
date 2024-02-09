@@ -52,8 +52,8 @@ namespace AppConfig
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AppConfigClientConfiguration ClientConfigurationType;
       typedef AppConfigEndpointProvider EndpointProviderType;
@@ -63,14 +63,14 @@ namespace AppConfig
         * is not specified, it will be initialized to default values.
         */
         AppConfigClient(const Aws::AppConfig::AppConfigClientConfiguration& clientConfiguration = Aws::AppConfig::AppConfigClientConfiguration(),
-                        std::shared_ptr<AppConfigEndpointProviderBase> endpointProvider = Aws::MakeShared<AppConfigEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<AppConfigEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AppConfigClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<AppConfigEndpointProviderBase> endpointProvider = Aws::MakeShared<AppConfigEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<AppConfigEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::AppConfig::AppConfigClientConfiguration& clientConfiguration = Aws::AppConfig::AppConfigClientConfiguration());
 
        /**
@@ -78,7 +78,7 @@ namespace AppConfig
         * the default http client factory will be used
         */
         AppConfigClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<AppConfigEndpointProviderBase> endpointProvider = Aws::MakeShared<AppConfigEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<AppConfigEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::AppConfig::AppConfigClientConfiguration& clientConfiguration = Aws::AppConfig::AppConfigClientConfiguration());
 
 

@@ -42,8 +42,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CostOptimizationHubClient::SERVICE_NAME = "cost-optimization-hub";
-const char* CostOptimizationHubClient::ALLOCATION_TAG = "CostOptimizationHubClient";
+namespace Aws
+{
+  namespace CostOptimizationHub
+  {
+    const char SERVICE_NAME[] = "cost-optimization-hub";
+    const char ALLOCATION_TAG[] = "CostOptimizationHubClient";
+  }
+}
+const char* CostOptimizationHubClient::GetServiceName() {return SERVICE_NAME;}
+const char* CostOptimizationHubClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CostOptimizationHubClient::CostOptimizationHubClient(const CostOptimizationHub::CostOptimizationHubClientConfiguration& clientConfiguration,
                                                      std::shared_ptr<CostOptimizationHubEndpointProviderBase> endpointProvider) :
@@ -55,7 +63,7 @@ CostOptimizationHubClient::CostOptimizationHubClient(const CostOptimizationHub::
             Aws::MakeShared<CostOptimizationHubErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CostOptimizationHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -71,7 +79,7 @@ CostOptimizationHubClient::CostOptimizationHubClient(const AWSCredentials& crede
             Aws::MakeShared<CostOptimizationHubErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CostOptimizationHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ CostOptimizationHubClient::CostOptimizationHubClient(const std::shared_ptr<AWSCr
             Aws::MakeShared<CostOptimizationHubErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CostOptimizationHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

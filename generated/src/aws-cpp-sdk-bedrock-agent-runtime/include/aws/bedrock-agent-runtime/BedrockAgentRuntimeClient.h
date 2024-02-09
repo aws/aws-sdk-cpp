@@ -22,8 +22,8 @@ namespace BedrockAgentRuntime
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef BedrockAgentRuntimeClientConfiguration ClientConfigurationType;
       typedef BedrockAgentRuntimeEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace BedrockAgentRuntime
         * is not specified, it will be initialized to default values.
         */
         BedrockAgentRuntimeClient(const Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration& clientConfiguration = Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration(),
-                                  std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockAgentRuntimeEndpointProvider>(ALLOCATION_TAG));
+                                  std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BedrockAgentRuntimeClient(const Aws::Auth::AWSCredentials& credentials,
-                                  std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockAgentRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration& clientConfiguration = Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace BedrockAgentRuntime
         * the default http client factory will be used
         */
         BedrockAgentRuntimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                  std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockAgentRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<BedrockAgentRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration& clientConfiguration = Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration());
 
 

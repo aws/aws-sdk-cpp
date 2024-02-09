@@ -94,8 +94,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* Inspector2Client::SERVICE_NAME = "inspector2";
-const char* Inspector2Client::ALLOCATION_TAG = "Inspector2Client";
+namespace Aws
+{
+  namespace Inspector2
+  {
+    const char SERVICE_NAME[] = "inspector2";
+    const char ALLOCATION_TAG[] = "Inspector2Client";
+  }
+}
+const char* Inspector2Client::GetServiceName() {return SERVICE_NAME;}
+const char* Inspector2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 Inspector2Client::Inspector2Client(const Inspector2::Inspector2ClientConfiguration& clientConfiguration,
                                    std::shared_ptr<Inspector2EndpointProviderBase> endpointProvider) :
@@ -107,7 +115,7 @@ Inspector2Client::Inspector2Client(const Inspector2::Inspector2ClientConfigurati
             Aws::MakeShared<Inspector2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Inspector2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -123,7 +131,7 @@ Inspector2Client::Inspector2Client(const AWSCredentials& credentials,
             Aws::MakeShared<Inspector2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Inspector2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -139,7 +147,7 @@ Inspector2Client::Inspector2Client(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<Inspector2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Inspector2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

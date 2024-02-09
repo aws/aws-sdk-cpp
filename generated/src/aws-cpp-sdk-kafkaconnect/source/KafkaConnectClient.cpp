@@ -47,8 +47,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KafkaConnectClient::SERVICE_NAME = "kafkaconnect";
-const char* KafkaConnectClient::ALLOCATION_TAG = "KafkaConnectClient";
+namespace Aws
+{
+  namespace KafkaConnect
+  {
+    const char SERVICE_NAME[] = "kafkaconnect";
+    const char ALLOCATION_TAG[] = "KafkaConnectClient";
+  }
+}
+const char* KafkaConnectClient::GetServiceName() {return SERVICE_NAME;}
+const char* KafkaConnectClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KafkaConnectClient::KafkaConnectClient(const KafkaConnect::KafkaConnectClientConfiguration& clientConfiguration,
                                        std::shared_ptr<KafkaConnectEndpointProviderBase> endpointProvider) :
@@ -60,7 +68,7 @@ KafkaConnectClient::KafkaConnectClient(const KafkaConnect::KafkaConnectClientCon
             Aws::MakeShared<KafkaConnectErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KafkaConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -76,7 +84,7 @@ KafkaConnectClient::KafkaConnectClient(const AWSCredentials& credentials,
             Aws::MakeShared<KafkaConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KafkaConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -92,7 +100,7 @@ KafkaConnectClient::KafkaConnectClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<KafkaConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KafkaConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

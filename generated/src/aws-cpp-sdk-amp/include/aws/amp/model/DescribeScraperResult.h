@@ -26,8 +26,8 @@ namespace PrometheusService
 namespace Model
 {
   /**
-   * <p>Represents the output of a DescribeScraper operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the output of a <code>DescribeScraper</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperResponse">AWS
    * API Reference</a></p>
    */
@@ -40,27 +40,27 @@ namespace Model
 
 
     /**
-     * <p>The properties of the selected scrapers.</p>
+     * <p>Contains details about the scraper.</p>
      */
     inline const ScraperDescription& GetScraper() const{ return m_scraper; }
 
     /**
-     * <p>The properties of the selected scrapers.</p>
+     * <p>Contains details about the scraper.</p>
      */
     inline void SetScraper(const ScraperDescription& value) { m_scraper = value; }
 
     /**
-     * <p>The properties of the selected scrapers.</p>
+     * <p>Contains details about the scraper.</p>
      */
     inline void SetScraper(ScraperDescription&& value) { m_scraper = std::move(value); }
 
     /**
-     * <p>The properties of the selected scrapers.</p>
+     * <p>Contains details about the scraper.</p>
      */
     inline DescribeScraperResult& WithScraper(const ScraperDescription& value) { SetScraper(value); return *this;}
 
     /**
-     * <p>The properties of the selected scrapers.</p>
+     * <p>Contains details about the scraper.</p>
      */
     inline DescribeScraperResult& WithScraper(ScraperDescription&& value) { SetScraper(std::move(value)); return *this;}
 

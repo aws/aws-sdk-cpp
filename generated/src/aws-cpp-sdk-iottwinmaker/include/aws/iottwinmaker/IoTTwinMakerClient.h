@@ -27,8 +27,8 @@ namespace IoTTwinMaker
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoTTwinMakerClientConfiguration ClientConfigurationType;
       typedef IoTTwinMakerEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace IoTTwinMaker
         * is not specified, it will be initialized to default values.
         */
         IoTTwinMakerClient(const Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration& clientConfiguration = Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration(),
-                           std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTTwinMakerEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoTTwinMakerClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTTwinMakerEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration& clientConfiguration = Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace IoTTwinMaker
         * the default http client factory will be used
         */
         IoTTwinMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTTwinMakerEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration& clientConfiguration = Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration());
 
 

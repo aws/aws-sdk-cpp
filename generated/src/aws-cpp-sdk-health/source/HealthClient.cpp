@@ -49,8 +49,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* HealthClient::SERVICE_NAME = "health";
-const char* HealthClient::ALLOCATION_TAG = "HealthClient";
+namespace Aws
+{
+  namespace Health
+  {
+    const char SERVICE_NAME[] = "health";
+    const char ALLOCATION_TAG[] = "HealthClient";
+  }
+}
+const char* HealthClient::GetServiceName() {return SERVICE_NAME;}
+const char* HealthClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 HealthClient::HealthClient(const Health::HealthClientConfiguration& clientConfiguration,
                            std::shared_ptr<HealthEndpointProviderBase> endpointProvider) :
@@ -62,7 +70,7 @@ HealthClient::HealthClient(const Health::HealthClientConfiguration& clientConfig
             Aws::MakeShared<HealthErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<HealthEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -78,7 +86,7 @@ HealthClient::HealthClient(const AWSCredentials& credentials,
             Aws::MakeShared<HealthErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<HealthEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ HealthClient::HealthClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<HealthErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<HealthEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

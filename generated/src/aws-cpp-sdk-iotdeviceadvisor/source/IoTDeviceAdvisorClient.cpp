@@ -49,8 +49,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTDeviceAdvisorClient::SERVICE_NAME = "iotdeviceadvisor";
-const char* IoTDeviceAdvisorClient::ALLOCATION_TAG = "IoTDeviceAdvisorClient";
+namespace Aws
+{
+  namespace IoTDeviceAdvisor
+  {
+    const char SERVICE_NAME[] = "iotdeviceadvisor";
+    const char ALLOCATION_TAG[] = "IoTDeviceAdvisorClient";
+  }
+}
+const char* IoTDeviceAdvisorClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTDeviceAdvisorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTDeviceAdvisorClient::IoTDeviceAdvisorClient(const IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration& clientConfiguration,
                                                std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider) :
@@ -62,7 +70,7 @@ IoTDeviceAdvisorClient::IoTDeviceAdvisorClient(const IoTDeviceAdvisor::IoTDevice
             Aws::MakeShared<IoTDeviceAdvisorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTDeviceAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -78,7 +86,7 @@ IoTDeviceAdvisorClient::IoTDeviceAdvisorClient(const AWSCredentials& credentials
             Aws::MakeShared<IoTDeviceAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTDeviceAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ IoTDeviceAdvisorClient::IoTDeviceAdvisorClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<IoTDeviceAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTDeviceAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

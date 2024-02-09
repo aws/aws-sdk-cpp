@@ -49,8 +49,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ServerlessApplicationRepositoryClient::SERVICE_NAME = "serverlessrepo";
-const char* ServerlessApplicationRepositoryClient::ALLOCATION_TAG = "ServerlessApplicationRepositoryClient";
+namespace Aws
+{
+  namespace ServerlessApplicationRepository
+  {
+    const char SERVICE_NAME[] = "serverlessrepo";
+    const char ALLOCATION_TAG[] = "ServerlessApplicationRepositoryClient";
+  }
+}
+const char* ServerlessApplicationRepositoryClient::GetServiceName() {return SERVICE_NAME;}
+const char* ServerlessApplicationRepositoryClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(const ServerlessApplicationRepository::ServerlessApplicationRepositoryClientConfiguration& clientConfiguration,
                                                                              std::shared_ptr<ServerlessApplicationRepositoryEndpointProviderBase> endpointProvider) :
@@ -62,7 +70,7 @@ ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(con
             Aws::MakeShared<ServerlessApplicationRepositoryErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ServerlessApplicationRepositoryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -78,7 +86,7 @@ ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(con
             Aws::MakeShared<ServerlessApplicationRepositoryErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ServerlessApplicationRepositoryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(con
             Aws::MakeShared<ServerlessApplicationRepositoryErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ServerlessApplicationRepositoryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

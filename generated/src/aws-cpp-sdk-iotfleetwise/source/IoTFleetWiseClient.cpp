@@ -87,8 +87,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTFleetWiseClient::SERVICE_NAME = "iotfleetwise";
-const char* IoTFleetWiseClient::ALLOCATION_TAG = "IoTFleetWiseClient";
+namespace Aws
+{
+  namespace IoTFleetWise
+  {
+    const char SERVICE_NAME[] = "iotfleetwise";
+    const char ALLOCATION_TAG[] = "IoTFleetWiseClient";
+  }
+}
+const char* IoTFleetWiseClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTFleetWiseClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTFleetWiseClient::IoTFleetWiseClient(const IoTFleetWise::IoTFleetWiseClientConfiguration& clientConfiguration,
                                        std::shared_ptr<IoTFleetWiseEndpointProviderBase> endpointProvider) :
@@ -100,7 +108,7 @@ IoTFleetWiseClient::IoTFleetWiseClient(const IoTFleetWise::IoTFleetWiseClientCon
             Aws::MakeShared<IoTFleetWiseErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTFleetWiseEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -116,7 +124,7 @@ IoTFleetWiseClient::IoTFleetWiseClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTFleetWiseErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTFleetWiseEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -132,7 +140,7 @@ IoTFleetWiseClient::IoTFleetWiseClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<IoTFleetWiseErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTFleetWiseEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

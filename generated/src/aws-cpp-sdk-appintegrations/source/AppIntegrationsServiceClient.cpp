@@ -56,8 +56,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AppIntegrationsServiceClient::SERVICE_NAME = "app-integrations";
-const char* AppIntegrationsServiceClient::ALLOCATION_TAG = "AppIntegrationsServiceClient";
+namespace Aws
+{
+  namespace AppIntegrationsService
+  {
+    const char SERVICE_NAME[] = "app-integrations";
+    const char ALLOCATION_TAG[] = "AppIntegrationsServiceClient";
+  }
+}
+const char* AppIntegrationsServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* AppIntegrationsServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AppIntegrationsServiceClient::AppIntegrationsServiceClient(const AppIntegrationsService::AppIntegrationsServiceClientConfiguration& clientConfiguration,
                                                            std::shared_ptr<AppIntegrationsServiceEndpointProviderBase> endpointProvider) :
@@ -69,7 +77,7 @@ AppIntegrationsServiceClient::AppIntegrationsServiceClient(const AppIntegrations
             Aws::MakeShared<AppIntegrationsServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppIntegrationsServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -85,7 +93,7 @@ AppIntegrationsServiceClient::AppIntegrationsServiceClient(const AWSCredentials&
             Aws::MakeShared<AppIntegrationsServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppIntegrationsServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -101,7 +109,7 @@ AppIntegrationsServiceClient::AppIntegrationsServiceClient(const std::shared_ptr
             Aws::MakeShared<AppIntegrationsServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppIntegrationsServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

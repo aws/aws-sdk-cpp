@@ -71,8 +71,8 @@ namespace WAFV2
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef WAFV2ClientConfiguration ClientConfigurationType;
       typedef WAFV2EndpointProvider EndpointProviderType;
@@ -82,14 +82,14 @@ namespace WAFV2
         * is not specified, it will be initialized to default values.
         */
         WAFV2Client(const Aws::WAFV2::WAFV2ClientConfiguration& clientConfiguration = Aws::WAFV2::WAFV2ClientConfiguration(),
-                    std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider = Aws::MakeShared<WAFV2EndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WAFV2Client(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider = Aws::MakeShared<WAFV2EndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider = nullptr,
                     const Aws::WAFV2::WAFV2ClientConfiguration& clientConfiguration = Aws::WAFV2::WAFV2ClientConfiguration());
 
        /**
@@ -97,7 +97,7 @@ namespace WAFV2
         * the default http client factory will be used
         */
         WAFV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider = Aws::MakeShared<WAFV2EndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<WAFV2EndpointProviderBase> endpointProvider = nullptr,
                     const Aws::WAFV2::WAFV2ClientConfiguration& clientConfiguration = Aws::WAFV2::WAFV2ClientConfiguration());
 
 

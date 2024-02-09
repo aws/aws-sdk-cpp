@@ -29,8 +29,8 @@ namespace ChimeSDKVoice
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ChimeSDKVoiceClientConfiguration ClientConfigurationType;
       typedef ChimeSDKVoiceEndpointProvider EndpointProviderType;
@@ -40,14 +40,14 @@ namespace ChimeSDKVoice
         * is not specified, it will be initialized to default values.
         */
         ChimeSDKVoiceClient(const Aws::ChimeSDKVoice::ChimeSDKVoiceClientConfiguration& clientConfiguration = Aws::ChimeSDKVoice::ChimeSDKVoiceClientConfiguration(),
-                            std::shared_ptr<ChimeSDKVoiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeSDKVoiceEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<ChimeSDKVoiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ChimeSDKVoiceClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<ChimeSDKVoiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeSDKVoiceEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<ChimeSDKVoiceEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::ChimeSDKVoice::ChimeSDKVoiceClientConfiguration& clientConfiguration = Aws::ChimeSDKVoice::ChimeSDKVoiceClientConfiguration());
 
        /**
@@ -55,7 +55,7 @@ namespace ChimeSDKVoice
         * the default http client factory will be used
         */
         ChimeSDKVoiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<ChimeSDKVoiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeSDKVoiceEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<ChimeSDKVoiceEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::ChimeSDKVoice::ChimeSDKVoiceClientConfiguration& clientConfiguration = Aws::ChimeSDKVoice::ChimeSDKVoiceClientConfiguration());
 
 

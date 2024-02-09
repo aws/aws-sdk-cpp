@@ -87,8 +87,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KafkaClient::SERVICE_NAME = "kafka";
-const char* KafkaClient::ALLOCATION_TAG = "KafkaClient";
+namespace Aws
+{
+  namespace Kafka
+  {
+    const char SERVICE_NAME[] = "kafka";
+    const char ALLOCATION_TAG[] = "KafkaClient";
+  }
+}
+const char* KafkaClient::GetServiceName() {return SERVICE_NAME;}
+const char* KafkaClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KafkaClient::KafkaClient(const Kafka::KafkaClientConfiguration& clientConfiguration,
                          std::shared_ptr<KafkaEndpointProviderBase> endpointProvider) :
@@ -100,7 +108,7 @@ KafkaClient::KafkaClient(const Kafka::KafkaClientConfiguration& clientConfigurat
             Aws::MakeShared<KafkaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KafkaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -116,7 +124,7 @@ KafkaClient::KafkaClient(const AWSCredentials& credentials,
             Aws::MakeShared<KafkaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KafkaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -132,7 +140,7 @@ KafkaClient::KafkaClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             Aws::MakeShared<KafkaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KafkaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

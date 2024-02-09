@@ -40,8 +40,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MediaStoreDataClient::SERVICE_NAME = "mediastore";
-const char* MediaStoreDataClient::ALLOCATION_TAG = "MediaStoreDataClient";
+namespace Aws
+{
+  namespace MediaStoreData
+  {
+    const char SERVICE_NAME[] = "mediastore";
+    const char ALLOCATION_TAG[] = "MediaStoreDataClient";
+  }
+}
+const char* MediaStoreDataClient::GetServiceName() {return SERVICE_NAME;}
+const char* MediaStoreDataClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MediaStoreDataClient::MediaStoreDataClient(const MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration,
                                            std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider) :
@@ -53,7 +61,7 @@ MediaStoreDataClient::MediaStoreDataClient(const MediaStoreData::MediaStoreDataC
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -69,7 +77,7 @@ MediaStoreDataClient::MediaStoreDataClient(const AWSCredentials& credentials,
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -85,7 +93,7 @@ MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

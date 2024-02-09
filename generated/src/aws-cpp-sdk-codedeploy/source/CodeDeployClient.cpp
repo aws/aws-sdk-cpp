@@ -78,8 +78,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodeDeployClient::SERVICE_NAME = "codedeploy";
-const char* CodeDeployClient::ALLOCATION_TAG = "CodeDeployClient";
+namespace Aws
+{
+  namespace CodeDeploy
+  {
+    const char SERVICE_NAME[] = "codedeploy";
+    const char ALLOCATION_TAG[] = "CodeDeployClient";
+  }
+}
+const char* CodeDeployClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodeDeployClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CodeDeployClient::CodeDeployClient(const CodeDeploy::CodeDeployClientConfiguration& clientConfiguration,
                                    std::shared_ptr<CodeDeployEndpointProviderBase> endpointProvider) :
@@ -91,7 +99,7 @@ CodeDeployClient::CodeDeployClient(const CodeDeploy::CodeDeployClientConfigurati
             Aws::MakeShared<CodeDeployErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeDeployEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ CodeDeployClient::CodeDeployClient(const AWSCredentials& credentials,
             Aws::MakeShared<CodeDeployErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeDeployEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -123,7 +131,7 @@ CodeDeployClient::CodeDeployClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<CodeDeployErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeDeployEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

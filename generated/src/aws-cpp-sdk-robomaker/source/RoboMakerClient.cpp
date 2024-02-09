@@ -77,8 +77,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* RoboMakerClient::SERVICE_NAME = "robomaker";
-const char* RoboMakerClient::ALLOCATION_TAG = "RoboMakerClient";
+namespace Aws
+{
+  namespace RoboMaker
+  {
+    const char SERVICE_NAME[] = "robomaker";
+    const char ALLOCATION_TAG[] = "RoboMakerClient";
+  }
+}
+const char* RoboMakerClient::GetServiceName() {return SERVICE_NAME;}
+const char* RoboMakerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 RoboMakerClient::RoboMakerClient(const RoboMaker::RoboMakerClientConfiguration& clientConfiguration,
                                  std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider) :
@@ -90,7 +98,7 @@ RoboMakerClient::RoboMakerClient(const RoboMaker::RoboMakerClientConfiguration& 
             Aws::MakeShared<RoboMakerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ RoboMakerClient::RoboMakerClient(const AWSCredentials& credentials,
             Aws::MakeShared<RoboMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -122,7 +130,7 @@ RoboMakerClient::RoboMakerClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<RoboMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

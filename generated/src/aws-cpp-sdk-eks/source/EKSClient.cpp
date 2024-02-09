@@ -91,8 +91,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* EKSClient::SERVICE_NAME = "eks";
-const char* EKSClient::ALLOCATION_TAG = "EKSClient";
+namespace Aws
+{
+  namespace EKS
+  {
+    const char SERVICE_NAME[] = "eks";
+    const char ALLOCATION_TAG[] = "EKSClient";
+  }
+}
+const char* EKSClient::GetServiceName() {return SERVICE_NAME;}
+const char* EKSClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 EKSClient::EKSClient(const EKS::EKSClientConfiguration& clientConfiguration,
                      std::shared_ptr<EKSEndpointProviderBase> endpointProvider) :
@@ -104,7 +112,7 @@ EKSClient::EKSClient(const EKS::EKSClientConfiguration& clientConfiguration,
             Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EKSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -120,7 +128,7 @@ EKSClient::EKSClient(const AWSCredentials& credentials,
             Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EKSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -136,7 +144,7 @@ EKSClient::EKSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EKSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

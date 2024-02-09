@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MarketplaceCommerceAnalyticsClient::SERVICE_NAME = "marketplacecommerceanalytics";
-const char* MarketplaceCommerceAnalyticsClient::ALLOCATION_TAG = "MarketplaceCommerceAnalyticsClient";
+namespace Aws
+{
+  namespace MarketplaceCommerceAnalytics
+  {
+    const char SERVICE_NAME[] = "marketplacecommerceanalytics";
+    const char ALLOCATION_TAG[] = "MarketplaceCommerceAnalyticsClient";
+  }
+}
+const char* MarketplaceCommerceAnalyticsClient::GetServiceName() {return SERVICE_NAME;}
+const char* MarketplaceCommerceAnalyticsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const MarketplaceCommerceAnalytics::MarketplaceCommerceAnalyticsClientConfiguration& clientConfiguration,
                                                                        std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const Mar
             Aws::MakeShared<MarketplaceCommerceAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceCommerceAnalyticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const AWS
             Aws::MakeShared<MarketplaceCommerceAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceCommerceAnalyticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const std
             Aws::MakeShared<MarketplaceCommerceAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceCommerceAnalyticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

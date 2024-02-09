@@ -26,8 +26,8 @@ namespace Braket
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef BraketClientConfiguration ClientConfigurationType;
       typedef BraketEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace Braket
         * is not specified, it will be initialized to default values.
         */
         BraketClient(const Aws::Braket::BraketClientConfiguration& clientConfiguration = Aws::Braket::BraketClientConfiguration(),
-                     std::shared_ptr<BraketEndpointProviderBase> endpointProvider = Aws::MakeShared<BraketEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<BraketEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BraketClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<BraketEndpointProviderBase> endpointProvider = Aws::MakeShared<BraketEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<BraketEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Braket::BraketClientConfiguration& clientConfiguration = Aws::Braket::BraketClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace Braket
         * the default http client factory will be used
         */
         BraketClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<BraketEndpointProviderBase> endpointProvider = Aws::MakeShared<BraketEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<BraketEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Braket::BraketClientConfiguration& clientConfiguration = Aws::Braket::BraketClientConfiguration());
 
 

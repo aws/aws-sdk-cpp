@@ -77,8 +77,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AppConfigClient::SERVICE_NAME = "appconfig";
-const char* AppConfigClient::ALLOCATION_TAG = "AppConfigClient";
+namespace Aws
+{
+  namespace AppConfig
+  {
+    const char SERVICE_NAME[] = "appconfig";
+    const char ALLOCATION_TAG[] = "AppConfigClient";
+  }
+}
+const char* AppConfigClient::GetServiceName() {return SERVICE_NAME;}
+const char* AppConfigClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AppConfigClient::AppConfigClient(const AppConfig::AppConfigClientConfiguration& clientConfiguration,
                                  std::shared_ptr<AppConfigEndpointProviderBase> endpointProvider) :
@@ -90,7 +98,7 @@ AppConfigClient::AppConfigClient(const AppConfig::AppConfigClientConfiguration& 
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ AppConfigClient::AppConfigClient(const AWSCredentials& credentials,
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -122,7 +130,7 @@ AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

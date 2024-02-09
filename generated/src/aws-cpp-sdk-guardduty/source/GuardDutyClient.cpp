@@ -101,8 +101,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* GuardDutyClient::SERVICE_NAME = "guardduty";
-const char* GuardDutyClient::ALLOCATION_TAG = "GuardDutyClient";
+namespace Aws
+{
+  namespace GuardDuty
+  {
+    const char SERVICE_NAME[] = "guardduty";
+    const char ALLOCATION_TAG[] = "GuardDutyClient";
+  }
+}
+const char* GuardDutyClient::GetServiceName() {return SERVICE_NAME;}
+const char* GuardDutyClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 GuardDutyClient::GuardDutyClient(const GuardDuty::GuardDutyClientConfiguration& clientConfiguration,
                                  std::shared_ptr<GuardDutyEndpointProviderBase> endpointProvider) :
@@ -114,7 +122,7 @@ GuardDutyClient::GuardDutyClient(const GuardDuty::GuardDutyClientConfiguration& 
             Aws::MakeShared<GuardDutyErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GuardDutyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -130,7 +138,7 @@ GuardDutyClient::GuardDutyClient(const AWSCredentials& credentials,
             Aws::MakeShared<GuardDutyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GuardDutyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -146,7 +154,7 @@ GuardDutyClient::GuardDutyClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<GuardDutyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GuardDutyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -114,8 +114,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* Macie2Client::SERVICE_NAME = "macie2";
-const char* Macie2Client::ALLOCATION_TAG = "Macie2Client";
+namespace Aws
+{
+  namespace Macie2
+  {
+    const char SERVICE_NAME[] = "macie2";
+    const char ALLOCATION_TAG[] = "Macie2Client";
+  }
+}
+const char* Macie2Client::GetServiceName() {return SERVICE_NAME;}
+const char* Macie2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 Macie2Client::Macie2Client(const Macie2::Macie2ClientConfiguration& clientConfiguration,
                            std::shared_ptr<Macie2EndpointProviderBase> endpointProvider) :
@@ -127,7 +135,7 @@ Macie2Client::Macie2Client(const Macie2::Macie2ClientConfiguration& clientConfig
             Aws::MakeShared<Macie2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Macie2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -143,7 +151,7 @@ Macie2Client::Macie2Client(const AWSCredentials& credentials,
             Aws::MakeShared<Macie2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Macie2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -159,7 +167,7 @@ Macie2Client::Macie2Client(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<Macie2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Macie2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

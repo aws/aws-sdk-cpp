@@ -108,8 +108,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SSOAdminClient::SERVICE_NAME = "sso";
-const char* SSOAdminClient::ALLOCATION_TAG = "SSOAdminClient";
+namespace Aws
+{
+  namespace SSOAdmin
+  {
+    const char SERVICE_NAME[] = "sso";
+    const char ALLOCATION_TAG[] = "SSOAdminClient";
+  }
+}
+const char* SSOAdminClient::GetServiceName() {return SERVICE_NAME;}
+const char* SSOAdminClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SSOAdminClient::SSOAdminClient(const SSOAdmin::SSOAdminClientConfiguration& clientConfiguration,
                                std::shared_ptr<SSOAdminEndpointProviderBase> endpointProvider) :
@@ -121,7 +129,7 @@ SSOAdminClient::SSOAdminClient(const SSOAdmin::SSOAdminClientConfiguration& clie
             Aws::MakeShared<SSOAdminErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSOAdminEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -137,7 +145,7 @@ SSOAdminClient::SSOAdminClient(const AWSCredentials& credentials,
             Aws::MakeShared<SSOAdminErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSOAdminEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -153,7 +161,7 @@ SSOAdminClient::SSOAdminClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<SSOAdminErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSOAdminEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

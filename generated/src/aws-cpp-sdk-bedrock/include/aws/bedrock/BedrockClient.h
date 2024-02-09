@@ -23,8 +23,8 @@ namespace Bedrock
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef BedrockClientConfiguration ClientConfigurationType;
       typedef BedrockEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace Bedrock
         * is not specified, it will be initialized to default values.
         */
         BedrockClient(const Aws::Bedrock::BedrockClientConfiguration& clientConfiguration = Aws::Bedrock::BedrockClientConfiguration(),
-                      std::shared_ptr<BedrockEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<BedrockEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BedrockClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<BedrockEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<BedrockEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Bedrock::BedrockClientConfiguration& clientConfiguration = Aws::Bedrock::BedrockClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace Bedrock
         * the default http client factory will be used
         */
         BedrockClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<BedrockEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<BedrockEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Bedrock::BedrockClientConfiguration& clientConfiguration = Aws::Bedrock::BedrockClientConfiguration());
 
 

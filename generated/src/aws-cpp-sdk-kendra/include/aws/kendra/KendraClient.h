@@ -22,8 +22,8 @@ namespace kendra
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef KendraClientConfiguration ClientConfigurationType;
       typedef KendraEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace kendra
         * is not specified, it will be initialized to default values.
         */
         KendraClient(const Aws::kendra::KendraClientConfiguration& clientConfiguration = Aws::kendra::KendraClientConfiguration(),
-                     std::shared_ptr<KendraEndpointProviderBase> endpointProvider = Aws::MakeShared<KendraEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<KendraEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         KendraClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<KendraEndpointProviderBase> endpointProvider = Aws::MakeShared<KendraEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<KendraEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::kendra::KendraClientConfiguration& clientConfiguration = Aws::kendra::KendraClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace kendra
         * the default http client factory will be used
         */
         KendraClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<KendraEndpointProviderBase> endpointProvider = Aws::MakeShared<KendraEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<KendraEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::kendra::KendraClientConfiguration& clientConfiguration = Aws::kendra::KendraClientConfiguration());
 
 

@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the status of a namespace.</p><p><h3>See Also:</h3>   <a
+   * <p>The status information about a rule groups namespace. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/RuleGroupsNamespaceStatus">AWS
    * API Reference</a></p>
    */
@@ -39,73 +40,73 @@ namespace Model
 
 
     /**
-     * <p>Status code of this namespace.</p>
+     * <p>The current status of the namespace.</p>
      */
     inline const RuleGroupsNamespaceStatusCode& GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * <p>Status code of this namespace.</p>
+     * <p>The current status of the namespace.</p>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
-     * <p>Status code of this namespace.</p>
+     * <p>The current status of the namespace.</p>
      */
     inline void SetStatusCode(const RuleGroupsNamespaceStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * <p>Status code of this namespace.</p>
+     * <p>The current status of the namespace.</p>
      */
     inline void SetStatusCode(RuleGroupsNamespaceStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
-     * <p>Status code of this namespace.</p>
+     * <p>The current status of the namespace.</p>
      */
     inline RuleGroupsNamespaceStatus& WithStatusCode(const RuleGroupsNamespaceStatusCode& value) { SetStatusCode(value); return *this;}
 
     /**
-     * <p>Status code of this namespace.</p>
+     * <p>The current status of the namespace.</p>
      */
     inline RuleGroupsNamespaceStatus& WithStatusCode(RuleGroupsNamespaceStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The reason for failure if any.</p>
+     * <p>The reason for the failure, if any.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
-     * <p>The reason for failure if any.</p>
+     * <p>The reason for the failure, if any.</p>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
-     * <p>The reason for failure if any.</p>
+     * <p>The reason for the failure, if any.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
-     * <p>The reason for failure if any.</p>
+     * <p>The reason for the failure, if any.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
-     * <p>The reason for failure if any.</p>
+     * <p>The reason for the failure, if any.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
-     * <p>The reason for failure if any.</p>
+     * <p>The reason for the failure, if any.</p>
      */
     inline RuleGroupsNamespaceStatus& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
-     * <p>The reason for failure if any.</p>
+     * <p>The reason for the failure, if any.</p>
      */
     inline RuleGroupsNamespaceStatus& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason for failure if any.</p>
+     * <p>The reason for the failure, if any.</p>
      */
     inline RuleGroupsNamespaceStatus& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 

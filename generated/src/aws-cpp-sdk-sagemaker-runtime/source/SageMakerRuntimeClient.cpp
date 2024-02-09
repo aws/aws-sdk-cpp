@@ -39,8 +39,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SageMakerRuntimeClient::SERVICE_NAME = "sagemaker";
-const char* SageMakerRuntimeClient::ALLOCATION_TAG = "SageMakerRuntimeClient";
+namespace Aws
+{
+  namespace SageMakerRuntime
+  {
+    const char SERVICE_NAME[] = "sagemaker";
+    const char ALLOCATION_TAG[] = "SageMakerRuntimeClient";
+  }
+}
+const char* SageMakerRuntimeClient::GetServiceName() {return SERVICE_NAME;}
+const char* SageMakerRuntimeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SageMakerRuntimeClient::SageMakerRuntimeClient(const SageMakerRuntime::SageMakerRuntimeClientConfiguration& clientConfiguration,
                                                std::shared_ptr<SageMakerRuntimeEndpointProviderBase> endpointProvider) :
@@ -52,7 +60,7 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const SageMakerRuntime::SageMaker
             Aws::MakeShared<SageMakerRuntimeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -68,7 +76,7 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const AWSCredentials& credentials
             Aws::MakeShared<SageMakerRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<SageMakerRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

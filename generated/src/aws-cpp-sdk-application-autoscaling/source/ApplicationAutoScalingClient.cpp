@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ApplicationAutoScalingClient::SERVICE_NAME = "application-autoscaling";
-const char* ApplicationAutoScalingClient::ALLOCATION_TAG = "ApplicationAutoScalingClient";
+namespace Aws
+{
+  namespace ApplicationAutoScaling
+  {
+    const char SERVICE_NAME[] = "application-autoscaling";
+    const char ALLOCATION_TAG[] = "ApplicationAutoScalingClient";
+  }
+}
+const char* ApplicationAutoScalingClient::GetServiceName() {return SERVICE_NAME;}
+const char* ApplicationAutoScalingClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ApplicationAutoScalingClient::ApplicationAutoScalingClient(const ApplicationAutoScaling::ApplicationAutoScalingClientConfiguration& clientConfiguration,
                                                            std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ ApplicationAutoScalingClient::ApplicationAutoScalingClient(const ApplicationAuto
             Aws::MakeShared<ApplicationAutoScalingErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationAutoScalingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ ApplicationAutoScalingClient::ApplicationAutoScalingClient(const AWSCredentials&
             Aws::MakeShared<ApplicationAutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationAutoScalingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ ApplicationAutoScalingClient::ApplicationAutoScalingClient(const std::shared_ptr
             Aws::MakeShared<ApplicationAutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationAutoScalingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -47,8 +47,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* FirehoseClient::SERVICE_NAME = "firehose";
-const char* FirehoseClient::ALLOCATION_TAG = "FirehoseClient";
+namespace Aws
+{
+  namespace Firehose
+  {
+    const char SERVICE_NAME[] = "firehose";
+    const char ALLOCATION_TAG[] = "FirehoseClient";
+  }
+}
+const char* FirehoseClient::GetServiceName() {return SERVICE_NAME;}
+const char* FirehoseClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 FirehoseClient::FirehoseClient(const Firehose::FirehoseClientConfiguration& clientConfiguration,
                                std::shared_ptr<FirehoseEndpointProviderBase> endpointProvider) :
@@ -60,7 +68,7 @@ FirehoseClient::FirehoseClient(const Firehose::FirehoseClientConfiguration& clie
             Aws::MakeShared<FirehoseErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FirehoseEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -76,7 +84,7 @@ FirehoseClient::FirehoseClient(const AWSCredentials& credentials,
             Aws::MakeShared<FirehoseErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FirehoseEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -92,7 +100,7 @@ FirehoseClient::FirehoseClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<FirehoseErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FirehoseEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

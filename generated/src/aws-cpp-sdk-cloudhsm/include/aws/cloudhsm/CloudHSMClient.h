@@ -35,8 +35,8 @@ namespace CloudHSM
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CloudHSMClientConfiguration ClientConfigurationType;
       typedef CloudHSMEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace CloudHSM
         * is not specified, it will be initialized to default values.
         */
         CloudHSMClient(const Aws::CloudHSM::CloudHSMClientConfiguration& clientConfiguration = Aws::CloudHSM::CloudHSMClientConfiguration(),
-                       std::shared_ptr<CloudHSMEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudHSMEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<CloudHSMEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudHSMClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<CloudHSMEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudHSMEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<CloudHSMEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::CloudHSM::CloudHSMClientConfiguration& clientConfiguration = Aws::CloudHSM::CloudHSMClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace CloudHSM
         * the default http client factory will be used
         */
         CloudHSMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<CloudHSMEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudHSMEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<CloudHSMEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::CloudHSM::CloudHSMClientConfiguration& clientConfiguration = Aws::CloudHSM::CloudHSMClientConfiguration());
 
 

@@ -105,8 +105,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* NeptuneClient::SERVICE_NAME = "rds";
-const char* NeptuneClient::ALLOCATION_TAG = "NeptuneClient";
+namespace Aws
+{
+  namespace Neptune
+  {
+    const char SERVICE_NAME[] = "rds";
+    const char ALLOCATION_TAG[] = "NeptuneClient";
+  }
+}
+const char* NeptuneClient::GetServiceName() {return SERVICE_NAME;}
+const char* NeptuneClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 NeptuneClient::NeptuneClient(const Neptune::NeptuneClientConfiguration& clientConfiguration,
                              std::shared_ptr<NeptuneEndpointProviderBase> endpointProvider) :
@@ -118,7 +126,7 @@ NeptuneClient::NeptuneClient(const Neptune::NeptuneClientConfiguration& clientCo
             Aws::MakeShared<NeptuneErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptuneEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -134,7 +142,7 @@ NeptuneClient::NeptuneClient(const AWSCredentials& credentials,
             Aws::MakeShared<NeptuneErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptuneEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -150,7 +158,7 @@ NeptuneClient::NeptuneClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<NeptuneErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptuneEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

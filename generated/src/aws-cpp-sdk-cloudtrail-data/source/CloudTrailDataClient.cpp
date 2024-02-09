@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudTrailDataClient::SERVICE_NAME = "cloudtrail-data";
-const char* CloudTrailDataClient::ALLOCATION_TAG = "CloudTrailDataClient";
+namespace Aws
+{
+  namespace CloudTrailData
+  {
+    const char SERVICE_NAME[] = "cloudtrail-data";
+    const char ALLOCATION_TAG[] = "CloudTrailDataClient";
+  }
+}
+const char* CloudTrailDataClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudTrailDataClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudTrailDataClient::CloudTrailDataClient(const CloudTrailData::CloudTrailDataClientConfiguration& clientConfiguration,
                                            std::shared_ptr<CloudTrailDataEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ CloudTrailDataClient::CloudTrailDataClient(const CloudTrailData::CloudTrailDataC
             Aws::MakeShared<CloudTrailDataErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudTrailDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ CloudTrailDataClient::CloudTrailDataClient(const AWSCredentials& credentials,
             Aws::MakeShared<CloudTrailDataErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudTrailDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ CloudTrailDataClient::CloudTrailDataClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<CloudTrailDataErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudTrailDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

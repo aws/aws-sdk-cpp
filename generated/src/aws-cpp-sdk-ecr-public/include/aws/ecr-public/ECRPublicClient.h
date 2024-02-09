@@ -31,8 +31,8 @@ namespace ECRPublic
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ECRPublicClientConfiguration ClientConfigurationType;
       typedef ECRPublicEndpointProvider EndpointProviderType;
@@ -42,14 +42,14 @@ namespace ECRPublic
         * is not specified, it will be initialized to default values.
         */
         ECRPublicClient(const Aws::ECRPublic::ECRPublicClientConfiguration& clientConfiguration = Aws::ECRPublic::ECRPublicClientConfiguration(),
-                        std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider = Aws::MakeShared<ECRPublicEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ECRPublicClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider = Aws::MakeShared<ECRPublicEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::ECRPublic::ECRPublicClientConfiguration& clientConfiguration = Aws::ECRPublic::ECRPublicClientConfiguration());
 
        /**
@@ -57,7 +57,7 @@ namespace ECRPublic
         * the default http client factory will be used
         */
         ECRPublicClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider = Aws::MakeShared<ECRPublicEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<ECRPublicEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::ECRPublic::ECRPublicClientConfiguration& clientConfiguration = Aws::ECRPublic::ECRPublicClientConfiguration());
 
 

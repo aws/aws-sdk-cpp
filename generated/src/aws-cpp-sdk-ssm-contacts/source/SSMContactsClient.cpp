@@ -74,8 +74,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SSMContactsClient::SERVICE_NAME = "ssm-contacts";
-const char* SSMContactsClient::ALLOCATION_TAG = "SSMContactsClient";
+namespace Aws
+{
+  namespace SSMContacts
+  {
+    const char SERVICE_NAME[] = "ssm-contacts";
+    const char ALLOCATION_TAG[] = "SSMContactsClient";
+  }
+}
+const char* SSMContactsClient::GetServiceName() {return SERVICE_NAME;}
+const char* SSMContactsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SSMContactsClient::SSMContactsClient(const SSMContacts::SSMContactsClientConfiguration& clientConfiguration,
                                      std::shared_ptr<SSMContactsEndpointProviderBase> endpointProvider) :
@@ -87,7 +95,7 @@ SSMContactsClient::SSMContactsClient(const SSMContacts::SSMContactsClientConfigu
             Aws::MakeShared<SSMContactsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMContactsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ SSMContactsClient::SSMContactsClient(const AWSCredentials& credentials,
             Aws::MakeShared<SSMContactsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMContactsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -119,7 +127,7 @@ SSMContactsClient::SSMContactsClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<SSMContactsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMContactsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

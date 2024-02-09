@@ -23,8 +23,8 @@ namespace LicenseManagerLinuxSubscriptions
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef LicenseManagerLinuxSubscriptionsClientConfiguration ClientConfigurationType;
       typedef LicenseManagerLinuxSubscriptionsEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace LicenseManagerLinuxSubscriptions
         * is not specified, it will be initialized to default values.
         */
         LicenseManagerLinuxSubscriptionsClient(const Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsClientConfiguration& clientConfiguration = Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsClientConfiguration(),
-                                               std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase> endpointProvider = Aws::MakeShared<LicenseManagerLinuxSubscriptionsEndpointProvider>(ALLOCATION_TAG));
+                                               std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LicenseManagerLinuxSubscriptionsClient(const Aws::Auth::AWSCredentials& credentials,
-                                               std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase> endpointProvider = Aws::MakeShared<LicenseManagerLinuxSubscriptionsEndpointProvider>(ALLOCATION_TAG),
+                                               std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase> endpointProvider = nullptr,
                                                const Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsClientConfiguration& clientConfiguration = Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace LicenseManagerLinuxSubscriptions
         * the default http client factory will be used
         */
         LicenseManagerLinuxSubscriptionsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                               std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase> endpointProvider = Aws::MakeShared<LicenseManagerLinuxSubscriptionsEndpointProvider>(ALLOCATION_TAG),
+                                               std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase> endpointProvider = nullptr,
                                                const Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsClientConfiguration& clientConfiguration = Aws::LicenseManagerLinuxSubscriptions::LicenseManagerLinuxSubscriptionsClientConfiguration());
 
 

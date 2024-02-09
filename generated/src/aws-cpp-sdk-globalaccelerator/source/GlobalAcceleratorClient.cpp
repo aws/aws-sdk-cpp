@@ -91,8 +91,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* GlobalAcceleratorClient::SERVICE_NAME = "globalaccelerator";
-const char* GlobalAcceleratorClient::ALLOCATION_TAG = "GlobalAcceleratorClient";
+namespace Aws
+{
+  namespace GlobalAccelerator
+  {
+    const char SERVICE_NAME[] = "globalaccelerator";
+    const char ALLOCATION_TAG[] = "GlobalAcceleratorClient";
+  }
+}
+const char* GlobalAcceleratorClient::GetServiceName() {return SERVICE_NAME;}
+const char* GlobalAcceleratorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 GlobalAcceleratorClient::GlobalAcceleratorClient(const GlobalAccelerator::GlobalAcceleratorClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<GlobalAcceleratorEndpointProviderBase> endpointProvider) :
@@ -104,7 +112,7 @@ GlobalAcceleratorClient::GlobalAcceleratorClient(const GlobalAccelerator::Global
             Aws::MakeShared<GlobalAcceleratorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlobalAcceleratorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -120,7 +128,7 @@ GlobalAcceleratorClient::GlobalAcceleratorClient(const AWSCredentials& credentia
             Aws::MakeShared<GlobalAcceleratorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlobalAcceleratorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -136,7 +144,7 @@ GlobalAcceleratorClient::GlobalAcceleratorClient(const std::shared_ptr<AWSCreden
             Aws::MakeShared<GlobalAcceleratorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlobalAcceleratorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

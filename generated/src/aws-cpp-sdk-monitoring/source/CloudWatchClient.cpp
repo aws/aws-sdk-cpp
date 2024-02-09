@@ -74,8 +74,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* CloudWatchClient::SERVICE_NAME = "monitoring";
-const char* CloudWatchClient::ALLOCATION_TAG = "CloudWatchClient";
+namespace Aws
+{
+  namespace CloudWatch
+  {
+    const char SERVICE_NAME[] = "monitoring";
+    const char ALLOCATION_TAG[] = "CloudWatchClient";
+  }
+}
+const char* CloudWatchClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudWatchClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudWatchClient::CloudWatchClient(const CloudWatch::CloudWatchClientConfiguration& clientConfiguration,
                                    std::shared_ptr<CloudWatchEndpointProviderBase> endpointProvider) :
@@ -87,7 +95,7 @@ CloudWatchClient::CloudWatchClient(const CloudWatch::CloudWatchClientConfigurati
             Aws::MakeShared<CloudWatchErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ CloudWatchClient::CloudWatchClient(const AWSCredentials& credentials,
             Aws::MakeShared<CloudWatchErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -119,7 +127,7 @@ CloudWatchClient::CloudWatchClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<CloudWatchErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

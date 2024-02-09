@@ -26,8 +26,8 @@ namespace Firehose
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef FirehoseClientConfiguration ClientConfigurationType;
       typedef FirehoseEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace Firehose
         * is not specified, it will be initialized to default values.
         */
         FirehoseClient(const Aws::Firehose::FirehoseClientConfiguration& clientConfiguration = Aws::Firehose::FirehoseClientConfiguration(),
-                       std::shared_ptr<FirehoseEndpointProviderBase> endpointProvider = Aws::MakeShared<FirehoseEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<FirehoseEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         FirehoseClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<FirehoseEndpointProviderBase> endpointProvider = Aws::MakeShared<FirehoseEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<FirehoseEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Firehose::FirehoseClientConfiguration& clientConfiguration = Aws::Firehose::FirehoseClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace Firehose
         * the default http client factory will be used
         */
         FirehoseClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<FirehoseEndpointProviderBase> endpointProvider = Aws::MakeShared<FirehoseEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<FirehoseEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Firehose::FirehoseClientConfiguration& clientConfiguration = Aws::Firehose::FirehoseClientConfiguration());
 
 

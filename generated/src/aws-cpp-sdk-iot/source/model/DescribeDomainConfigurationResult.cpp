@@ -98,6 +98,12 @@ DescribeDomainConfigurationResult& DescribeDomainConfigurationResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("serverCertificateConfig"))
+  {
+    m_serverCertificateConfig = jsonValue.GetObject("serverCertificateConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

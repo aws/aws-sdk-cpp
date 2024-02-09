@@ -51,8 +51,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* WorkSpacesThinClientClient::SERVICE_NAME = "thinclient";
-const char* WorkSpacesThinClientClient::ALLOCATION_TAG = "WorkSpacesThinClientClient";
+namespace Aws
+{
+  namespace WorkSpacesThinClient
+  {
+    const char SERVICE_NAME[] = "thinclient";
+    const char ALLOCATION_TAG[] = "WorkSpacesThinClientClient";
+  }
+}
+const char* WorkSpacesThinClientClient::GetServiceName() {return SERVICE_NAME;}
+const char* WorkSpacesThinClientClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 WorkSpacesThinClientClient::WorkSpacesThinClientClient(const WorkSpacesThinClient::WorkSpacesThinClientClientConfiguration& clientConfiguration,
                                                        std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> endpointProvider) :
@@ -64,7 +72,7 @@ WorkSpacesThinClientClient::WorkSpacesThinClientClient(const WorkSpacesThinClien
             Aws::MakeShared<WorkSpacesThinClientErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkSpacesThinClientEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -80,7 +88,7 @@ WorkSpacesThinClientClient::WorkSpacesThinClientClient(const AWSCredentials& cre
             Aws::MakeShared<WorkSpacesThinClientErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkSpacesThinClientEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -96,7 +104,7 @@ WorkSpacesThinClientClient::WorkSpacesThinClientClient(const std::shared_ptr<AWS
             Aws::MakeShared<WorkSpacesThinClientErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkSpacesThinClientEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

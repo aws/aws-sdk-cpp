@@ -46,8 +46,8 @@ namespace CloudWatchLogs
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CloudWatchLogsClientConfiguration ClientConfigurationType;
       typedef CloudWatchLogsEndpointProvider EndpointProviderType;
@@ -57,14 +57,14 @@ namespace CloudWatchLogs
         * is not specified, it will be initialized to default values.
         */
         CloudWatchLogsClient(const Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration = Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration(),
-                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudWatchLogsClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration = Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration());
 
        /**
@@ -72,7 +72,7 @@ namespace CloudWatchLogs
         * the default http client factory will be used
         */
         CloudWatchLogsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration = Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration());
 
 

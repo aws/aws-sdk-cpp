@@ -60,8 +60,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* VerifiedPermissionsClient::SERVICE_NAME = "verifiedpermissions";
-const char* VerifiedPermissionsClient::ALLOCATION_TAG = "VerifiedPermissionsClient";
+namespace Aws
+{
+  namespace VerifiedPermissions
+  {
+    const char SERVICE_NAME[] = "verifiedpermissions";
+    const char ALLOCATION_TAG[] = "VerifiedPermissionsClient";
+  }
+}
+const char* VerifiedPermissionsClient::GetServiceName() {return SERVICE_NAME;}
+const char* VerifiedPermissionsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 VerifiedPermissionsClient::VerifiedPermissionsClient(const VerifiedPermissions::VerifiedPermissionsClientConfiguration& clientConfiguration,
                                                      std::shared_ptr<VerifiedPermissionsEndpointProviderBase> endpointProvider) :
@@ -73,7 +81,7 @@ VerifiedPermissionsClient::VerifiedPermissionsClient(const VerifiedPermissions::
             Aws::MakeShared<VerifiedPermissionsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<VerifiedPermissionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ VerifiedPermissionsClient::VerifiedPermissionsClient(const AWSCredentials& crede
             Aws::MakeShared<VerifiedPermissionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<VerifiedPermissionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -105,7 +113,7 @@ VerifiedPermissionsClient::VerifiedPermissionsClient(const std::shared_ptr<AWSCr
             Aws::MakeShared<VerifiedPermissionsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<VerifiedPermissionsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -37,8 +37,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* WorkMailMessageFlowClient::SERVICE_NAME = "workmailmessageflow";
-const char* WorkMailMessageFlowClient::ALLOCATION_TAG = "WorkMailMessageFlowClient";
+namespace Aws
+{
+  namespace WorkMailMessageFlow
+  {
+    const char SERVICE_NAME[] = "workmailmessageflow";
+    const char ALLOCATION_TAG[] = "WorkMailMessageFlowClient";
+  }
+}
+const char* WorkMailMessageFlowClient::GetServiceName() {return SERVICE_NAME;}
+const char* WorkMailMessageFlowClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 WorkMailMessageFlowClient::WorkMailMessageFlowClient(const WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration& clientConfiguration,
                                                      std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider) :
@@ -50,7 +58,7 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const WorkMailMessageFlow::
             Aws::MakeShared<WorkMailMessageFlowErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -66,7 +74,7 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const AWSCredentials& crede
             Aws::MakeShared<WorkMailMessageFlowErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const std::shared_ptr<AWSCr
             Aws::MakeShared<WorkMailMessageFlowErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

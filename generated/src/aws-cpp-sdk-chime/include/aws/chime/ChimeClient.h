@@ -65,8 +65,8 @@ namespace Chime
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ChimeClientConfiguration ClientConfigurationType;
       typedef ChimeEndpointProvider EndpointProviderType;
@@ -76,14 +76,14 @@ namespace Chime
         * is not specified, it will be initialized to default values.
         */
         ChimeClient(const Aws::Chime::ChimeClientConfiguration& clientConfiguration = Aws::Chime::ChimeClientConfiguration(),
-                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeEndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ChimeClient(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Chime::ChimeClientConfiguration& clientConfiguration = Aws::Chime::ChimeClientConfiguration());
 
        /**
@@ -91,7 +91,7 @@ namespace Chime
         * the default http client factory will be used
         */
         ChimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Chime::ChimeClientConfiguration& clientConfiguration = Aws::Chime::ChimeClientConfiguration());
 
 

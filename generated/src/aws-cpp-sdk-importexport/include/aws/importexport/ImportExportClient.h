@@ -28,8 +28,8 @@ namespace ImportExport
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ImportExportClientConfiguration ClientConfigurationType;
       typedef ImportExportEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace ImportExport
         * is not specified, it will be initialized to default values.
         */
         ImportExportClient(const Aws::ImportExport::ImportExportClientConfiguration& clientConfiguration = Aws::ImportExport::ImportExportClientConfiguration(),
-                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ImportExportClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ImportExport::ImportExportClientConfiguration& clientConfiguration = Aws::ImportExport::ImportExportClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace ImportExport
         * the default http client factory will be used
         */
         ImportExportClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ImportExport::ImportExportClientConfiguration& clientConfiguration = Aws::ImportExport::ImportExportClientConfiguration());
 
 

@@ -29,8 +29,8 @@ namespace MigrationHubStrategyRecommendations
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MigrationHubStrategyRecommendationsClientConfiguration ClientConfigurationType;
       typedef MigrationHubStrategyRecommendationsEndpointProvider EndpointProviderType;
@@ -40,14 +40,14 @@ namespace MigrationHubStrategyRecommendations
         * is not specified, it will be initialized to default values.
         */
         MigrationHubStrategyRecommendationsClient(const Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration = Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration(),
-                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG));
+                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MigrationHubStrategyRecommendationsClient(const Aws::Auth::AWSCredentials& credentials,
-                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG),
+                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = nullptr,
                                                   const Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration = Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration());
 
        /**
@@ -55,7 +55,7 @@ namespace MigrationHubStrategyRecommendations
         * the default http client factory will be used
         */
         MigrationHubStrategyRecommendationsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG),
+                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = nullptr,
                                                   const Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration = Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration());
 
 

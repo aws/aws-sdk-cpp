@@ -22,8 +22,8 @@ namespace KinesisVideoWebRTCStorage
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef KinesisVideoWebRTCStorageClientConfiguration ClientConfigurationType;
       typedef KinesisVideoWebRTCStorageEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace KinesisVideoWebRTCStorage
         * is not specified, it will be initialized to default values.
         */
         KinesisVideoWebRTCStorageClient(const Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageClientConfiguration& clientConfiguration = Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageClientConfiguration(),
-                                        std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG));
+                                        std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         KinesisVideoWebRTCStorageClient(const Aws::Auth::AWSCredentials& credentials,
-                                        std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG),
+                                        std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> endpointProvider = nullptr,
                                         const Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageClientConfiguration& clientConfiguration = Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace KinesisVideoWebRTCStorage
         * the default http client factory will be used
         */
         KinesisVideoWebRTCStorageClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                        std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG),
+                                        std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> endpointProvider = nullptr,
                                         const Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageClientConfiguration& clientConfiguration = Aws::KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageClientConfiguration());
 
 

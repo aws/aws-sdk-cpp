@@ -55,8 +55,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* TimestreamWriteClient::SERVICE_NAME = "timestream";
-const char* TimestreamWriteClient::ALLOCATION_TAG = "TimestreamWriteClient";
+namespace Aws
+{
+  namespace TimestreamWrite
+  {
+    const char SERVICE_NAME[] = "timestream";
+    const char ALLOCATION_TAG[] = "TimestreamWriteClient";
+  }
+}
+const char* TimestreamWriteClient::GetServiceName() {return SERVICE_NAME;}
+const char* TimestreamWriteClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 TimestreamWriteClient::TimestreamWriteClient(const TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration,
                                              std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider) :
@@ -68,7 +76,7 @@ TimestreamWriteClient::TimestreamWriteClient(const TimestreamWrite::TimestreamWr
             Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ TimestreamWriteClient::TimestreamWriteClient(const AWSCredentials& credentials,
             Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -100,7 +108,7 @@ TimestreamWriteClient::TimestreamWriteClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<TimestreamWriteErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

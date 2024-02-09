@@ -39,8 +39,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SageMakerFeatureStoreRuntimeClient::SERVICE_NAME = "sagemaker";
-const char* SageMakerFeatureStoreRuntimeClient::ALLOCATION_TAG = "SageMakerFeatureStoreRuntimeClient";
+namespace Aws
+{
+  namespace SageMakerFeatureStoreRuntime
+  {
+    const char SERVICE_NAME[] = "sagemaker";
+    const char ALLOCATION_TAG[] = "SageMakerFeatureStoreRuntimeClient";
+  }
+}
+const char* SageMakerFeatureStoreRuntimeClient::GetServiceName() {return SERVICE_NAME;}
+const char* SageMakerFeatureStoreRuntimeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const SageMakerFeatureStoreRuntime::SageMakerFeatureStoreRuntimeClientConfiguration& clientConfiguration,
                                                                        std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase> endpointProvider) :
@@ -52,7 +60,7 @@ SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const Sag
             Aws::MakeShared<SageMakerFeatureStoreRuntimeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerFeatureStoreRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -68,7 +76,7 @@ SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const AWS
             Aws::MakeShared<SageMakerFeatureStoreRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerFeatureStoreRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const std
             Aws::MakeShared<SageMakerFeatureStoreRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SageMakerFeatureStoreRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

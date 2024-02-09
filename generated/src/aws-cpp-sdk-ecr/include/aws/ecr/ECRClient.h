@@ -32,8 +32,8 @@ namespace ECR
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ECRClientConfiguration ClientConfigurationType;
       typedef ECREndpointProvider EndpointProviderType;
@@ -43,14 +43,14 @@ namespace ECR
         * is not specified, it will be initialized to default values.
         */
         ECRClient(const Aws::ECR::ECRClientConfiguration& clientConfiguration = Aws::ECR::ECRClientConfiguration(),
-                  std::shared_ptr<ECREndpointProviderBase> endpointProvider = Aws::MakeShared<ECREndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<ECREndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ECRClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<ECREndpointProviderBase> endpointProvider = Aws::MakeShared<ECREndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<ECREndpointProviderBase> endpointProvider = nullptr,
                   const Aws::ECR::ECRClientConfiguration& clientConfiguration = Aws::ECR::ECRClientConfiguration());
 
        /**
@@ -58,7 +58,7 @@ namespace ECR
         * the default http client factory will be used
         */
         ECRClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<ECREndpointProviderBase> endpointProvider = Aws::MakeShared<ECREndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<ECREndpointProviderBase> endpointProvider = nullptr,
                   const Aws::ECR::ECRClientConfiguration& clientConfiguration = Aws::ECR::ECRClientConfiguration());
 
 

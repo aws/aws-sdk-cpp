@@ -556,22 +556,58 @@ namespace Model
     inline EksPodPropertiesDetail& WithNodeName(const char* value) { SetNodeName(value); return *this;}
 
 
-    
+    /**
+     * <p>Describes and uniquely identifies Kubernetes resources. For example, the
+     * compute environment that a pod runs in or the <code>jobID</code> for a job
+     * running in the pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline const EksMetadata& GetMetadata() const{ return m_metadata; }
 
-    
+    /**
+     * <p>Describes and uniquely identifies Kubernetes resources. For example, the
+     * compute environment that a pod runs in or the <code>jobID</code> for a job
+     * running in the pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
-    
+    /**
+     * <p>Describes and uniquely identifies Kubernetes resources. For example, the
+     * compute environment that a pod runs in or the <code>jobID</code> for a job
+     * running in the pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline void SetMetadata(const EksMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
-    
+    /**
+     * <p>Describes and uniquely identifies Kubernetes resources. For example, the
+     * compute environment that a pod runs in or the <code>jobID</code> for a job
+     * running in the pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline void SetMetadata(EksMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
-    
+    /**
+     * <p>Describes and uniquely identifies Kubernetes resources. For example, the
+     * compute environment that a pod runs in or the <code>jobID</code> for a job
+     * running in the pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline EksPodPropertiesDetail& WithMetadata(const EksMetadata& value) { SetMetadata(value); return *this;}
 
-    
+    /**
+     * <p>Describes and uniquely identifies Kubernetes resources. For example, the
+     * compute environment that a pod runs in or the <code>jobID</code> for a job
+     * running in the pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline EksPodPropertiesDetail& WithMetadata(EksMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
   private:

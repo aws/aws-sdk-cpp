@@ -40,8 +40,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PricingClient::SERVICE_NAME = "pricing";
-const char* PricingClient::ALLOCATION_TAG = "PricingClient";
+namespace Aws
+{
+  namespace Pricing
+  {
+    const char SERVICE_NAME[] = "pricing";
+    const char ALLOCATION_TAG[] = "PricingClient";
+  }
+}
+const char* PricingClient::GetServiceName() {return SERVICE_NAME;}
+const char* PricingClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PricingClient::PricingClient(const Pricing::PricingClientConfiguration& clientConfiguration,
                              std::shared_ptr<PricingEndpointProviderBase> endpointProvider) :
@@ -53,7 +61,7 @@ PricingClient::PricingClient(const Pricing::PricingClientConfiguration& clientCo
             Aws::MakeShared<PricingErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PricingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -69,7 +77,7 @@ PricingClient::PricingClient(const AWSCredentials& credentials,
             Aws::MakeShared<PricingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PricingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -85,7 +93,7 @@ PricingClient::PricingClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<PricingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PricingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

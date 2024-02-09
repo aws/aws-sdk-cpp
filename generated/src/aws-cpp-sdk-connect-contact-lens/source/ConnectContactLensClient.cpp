@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ConnectContactLensClient::SERVICE_NAME = "connect";
-const char* ConnectContactLensClient::ALLOCATION_TAG = "ConnectContactLensClient";
+namespace Aws
+{
+  namespace ConnectContactLens
+  {
+    const char SERVICE_NAME[] = "connect";
+    const char ALLOCATION_TAG[] = "ConnectContactLensClient";
+  }
+}
+const char* ConnectContactLensClient::GetServiceName() {return SERVICE_NAME;}
+const char* ConnectContactLensClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ConnectContactLensClient::ConnectContactLensClient(const ConnectContactLens::ConnectContactLensClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<ConnectContactLensEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ ConnectContactLensClient::ConnectContactLensClient(const ConnectContactLens::Con
             Aws::MakeShared<ConnectContactLensErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectContactLensEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ ConnectContactLensClient::ConnectContactLensClient(const AWSCredentials& credent
             Aws::MakeShared<ConnectContactLensErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectContactLensEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ ConnectContactLensClient::ConnectContactLensClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<ConnectContactLensErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectContactLensEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

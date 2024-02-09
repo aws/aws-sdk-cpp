@@ -41,8 +41,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudFrontKeyValueStoreClient::SERVICE_NAME = "cloudfront-keyvaluestore";
-const char* CloudFrontKeyValueStoreClient::ALLOCATION_TAG = "CloudFrontKeyValueStoreClient";
+namespace Aws
+{
+  namespace CloudFrontKeyValueStore
+  {
+    const char SERVICE_NAME[] = "cloudfront-keyvaluestore";
+    const char ALLOCATION_TAG[] = "CloudFrontKeyValueStoreClient";
+  }
+}
+const char* CloudFrontKeyValueStoreClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudFrontKeyValueStoreClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const CloudFrontKeyValueStore::CloudFrontKeyValueStoreClientConfiguration& clientConfiguration,
                                                              std::shared_ptr<CloudFrontKeyValueStoreEndpointProviderBase> endpointProvider) :
@@ -54,7 +62,7 @@ CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const CloudFrontKey
             Aws::MakeShared<CloudFrontKeyValueStoreErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudFrontKeyValueStoreEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -70,7 +78,7 @@ CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const AWSCredential
             Aws::MakeShared<CloudFrontKeyValueStoreErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudFrontKeyValueStoreEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -86,7 +94,7 @@ CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const std::shared_p
             Aws::MakeShared<CloudFrontKeyValueStoreErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudFrontKeyValueStoreEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

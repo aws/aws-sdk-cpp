@@ -63,8 +63,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* RolesAnywhereClient::SERVICE_NAME = "rolesanywhere";
-const char* RolesAnywhereClient::ALLOCATION_TAG = "RolesAnywhereClient";
+namespace Aws
+{
+  namespace RolesAnywhere
+  {
+    const char SERVICE_NAME[] = "rolesanywhere";
+    const char ALLOCATION_TAG[] = "RolesAnywhereClient";
+  }
+}
+const char* RolesAnywhereClient::GetServiceName() {return SERVICE_NAME;}
+const char* RolesAnywhereClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 RolesAnywhereClient::RolesAnywhereClient(const RolesAnywhere::RolesAnywhereClientConfiguration& clientConfiguration,
                                          std::shared_ptr<RolesAnywhereEndpointProviderBase> endpointProvider) :
@@ -76,7 +84,7 @@ RolesAnywhereClient::RolesAnywhereClient(const RolesAnywhere::RolesAnywhereClien
             Aws::MakeShared<RolesAnywhereErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RolesAnywhereEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -92,7 +100,7 @@ RolesAnywhereClient::RolesAnywhereClient(const AWSCredentials& credentials,
             Aws::MakeShared<RolesAnywhereErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RolesAnywhereEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -108,7 +116,7 @@ RolesAnywhereClient::RolesAnywhereClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<RolesAnywhereErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RolesAnywhereEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

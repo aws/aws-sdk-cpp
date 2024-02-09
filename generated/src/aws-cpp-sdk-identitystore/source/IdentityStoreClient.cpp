@@ -54,8 +54,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IdentityStoreClient::SERVICE_NAME = "identitystore";
-const char* IdentityStoreClient::ALLOCATION_TAG = "IdentityStoreClient";
+namespace Aws
+{
+  namespace IdentityStore
+  {
+    const char SERVICE_NAME[] = "identitystore";
+    const char ALLOCATION_TAG[] = "IdentityStoreClient";
+  }
+}
+const char* IdentityStoreClient::GetServiceName() {return SERVICE_NAME;}
+const char* IdentityStoreClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IdentityStoreClient::IdentityStoreClient(const IdentityStore::IdentityStoreClientConfiguration& clientConfiguration,
                                          std::shared_ptr<IdentityStoreEndpointProviderBase> endpointProvider) :
@@ -67,7 +75,7 @@ IdentityStoreClient::IdentityStoreClient(const IdentityStore::IdentityStoreClien
             Aws::MakeShared<IdentityStoreErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IdentityStoreEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ IdentityStoreClient::IdentityStoreClient(const AWSCredentials& credentials,
             Aws::MakeShared<IdentityStoreErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IdentityStoreEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -99,7 +107,7 @@ IdentityStoreClient::IdentityStoreClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<IdentityStoreErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IdentityStoreEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

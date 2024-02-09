@@ -50,8 +50,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* EMRServerlessClient::SERVICE_NAME = "emr-serverless";
-const char* EMRServerlessClient::ALLOCATION_TAG = "EMRServerlessClient";
+namespace Aws
+{
+  namespace EMRServerless
+  {
+    const char SERVICE_NAME[] = "emr-serverless";
+    const char ALLOCATION_TAG[] = "EMRServerlessClient";
+  }
+}
+const char* EMRServerlessClient::GetServiceName() {return SERVICE_NAME;}
+const char* EMRServerlessClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 EMRServerlessClient::EMRServerlessClient(const EMRServerless::EMRServerlessClientConfiguration& clientConfiguration,
                                          std::shared_ptr<EMRServerlessEndpointProviderBase> endpointProvider) :
@@ -63,7 +71,7 @@ EMRServerlessClient::EMRServerlessClient(const EMRServerless::EMRServerlessClien
             Aws::MakeShared<EMRServerlessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMRServerlessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -79,7 +87,7 @@ EMRServerlessClient::EMRServerlessClient(const AWSCredentials& credentials,
             Aws::MakeShared<EMRServerlessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMRServerlessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -95,7 +103,7 @@ EMRServerlessClient::EMRServerlessClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<EMRServerlessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMRServerlessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

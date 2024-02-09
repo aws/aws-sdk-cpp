@@ -103,8 +103,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* Route53ResolverClient::SERVICE_NAME = "route53resolver";
-const char* Route53ResolverClient::ALLOCATION_TAG = "Route53ResolverClient";
+namespace Aws
+{
+  namespace Route53Resolver
+  {
+    const char SERVICE_NAME[] = "route53resolver";
+    const char ALLOCATION_TAG[] = "Route53ResolverClient";
+  }
+}
+const char* Route53ResolverClient::GetServiceName() {return SERVICE_NAME;}
+const char* Route53ResolverClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 Route53ResolverClient::Route53ResolverClient(const Route53Resolver::Route53ResolverClientConfiguration& clientConfiguration,
                                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider) :
@@ -116,7 +124,7 @@ Route53ResolverClient::Route53ResolverClient(const Route53Resolver::Route53Resol
             Aws::MakeShared<Route53ResolverErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -132,7 +140,7 @@ Route53ResolverClient::Route53ResolverClient(const AWSCredentials& credentials,
             Aws::MakeShared<Route53ResolverErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -148,7 +156,7 @@ Route53ResolverClient::Route53ResolverClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<Route53ResolverErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -24,8 +24,8 @@ namespace EC2InstanceConnect
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef EC2InstanceConnectClientConfiguration ClientConfigurationType;
       typedef EC2InstanceConnectEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace EC2InstanceConnect
         * is not specified, it will be initialized to default values.
         */
         EC2InstanceConnectClient(const Aws::EC2InstanceConnect::EC2InstanceConnectClientConfiguration& clientConfiguration = Aws::EC2InstanceConnect::EC2InstanceConnectClientConfiguration(),
-                                 std::shared_ptr<EC2InstanceConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG));
+                                 std::shared_ptr<EC2InstanceConnectEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EC2InstanceConnectClient(const Aws::Auth::AWSCredentials& credentials,
-                                 std::shared_ptr<EC2InstanceConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<EC2InstanceConnectEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::EC2InstanceConnect::EC2InstanceConnectClientConfiguration& clientConfiguration = Aws::EC2InstanceConnect::EC2InstanceConnectClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace EC2InstanceConnect
         * the default http client factory will be used
         */
         EC2InstanceConnectClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                 std::shared_ptr<EC2InstanceConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<EC2InstanceConnectEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::EC2InstanceConnect::EC2InstanceConnectClientConfiguration& clientConfiguration = Aws::EC2InstanceConnect::EC2InstanceConnectClientConfiguration());
 
 

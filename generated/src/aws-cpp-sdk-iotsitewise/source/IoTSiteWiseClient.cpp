@@ -119,8 +119,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTSiteWiseClient::SERVICE_NAME = "iotsitewise";
-const char* IoTSiteWiseClient::ALLOCATION_TAG = "IoTSiteWiseClient";
+namespace Aws
+{
+  namespace IoTSiteWise
+  {
+    const char SERVICE_NAME[] = "iotsitewise";
+    const char ALLOCATION_TAG[] = "IoTSiteWiseClient";
+  }
+}
+const char* IoTSiteWiseClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTSiteWiseClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTSiteWiseClient::IoTSiteWiseClient(const IoTSiteWise::IoTSiteWiseClientConfiguration& clientConfiguration,
                                      std::shared_ptr<IoTSiteWiseEndpointProviderBase> endpointProvider) :
@@ -132,7 +140,7 @@ IoTSiteWiseClient::IoTSiteWiseClient(const IoTSiteWise::IoTSiteWiseClientConfigu
             Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTSiteWiseEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -148,7 +156,7 @@ IoTSiteWiseClient::IoTSiteWiseClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTSiteWiseEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -164,7 +172,7 @@ IoTSiteWiseClient::IoTSiteWiseClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTSiteWiseEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

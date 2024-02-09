@@ -33,8 +33,8 @@ namespace Route53
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef Route53ClientConfiguration ClientConfigurationType;
       typedef Route53EndpointProvider EndpointProviderType;
@@ -44,14 +44,14 @@ namespace Route53
         * is not specified, it will be initialized to default values.
         */
         Route53Client(const Aws::Route53::Route53ClientConfiguration& clientConfiguration = Aws::Route53::Route53ClientConfiguration(),
-                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = Aws::MakeShared<Route53EndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         Route53Client(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = Aws::MakeShared<Route53EndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Route53::Route53ClientConfiguration& clientConfiguration = Aws::Route53::Route53ClientConfiguration());
 
        /**
@@ -59,7 +59,7 @@ namespace Route53
         * the default http client factory will be used
         */
         Route53Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = Aws::MakeShared<Route53EndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Route53::Route53ClientConfiguration& clientConfiguration = Aws::Route53::Route53ClientConfiguration());
 
 

@@ -136,8 +136,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* EC2Client::SERVICE_NAME = "ec2";
-const char* EC2Client::ALLOCATION_TAG = "EC2Client";
+namespace Aws
+{
+  namespace EC2
+  {
+    const char SERVICE_NAME[] = "ec2";
+    const char ALLOCATION_TAG[] = "EC2Client";
+  }
+}
+const char* EC2Client::GetServiceName() {return SERVICE_NAME;}
+const char* EC2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 EC2Client::EC2Client(const EC2::EC2ClientConfiguration& clientConfiguration,
                      std::shared_ptr<EC2EndpointProviderBase> endpointProvider) :
@@ -149,7 +157,7 @@ EC2Client::EC2Client(const EC2::EC2ClientConfiguration& clientConfiguration,
             Aws::MakeShared<EC2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -165,7 +173,7 @@ EC2Client::EC2Client(const AWSCredentials& credentials,
             Aws::MakeShared<EC2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -181,7 +189,7 @@ EC2Client::EC2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<EC2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

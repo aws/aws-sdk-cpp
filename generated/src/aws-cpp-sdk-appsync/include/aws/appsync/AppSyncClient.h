@@ -23,8 +23,8 @@ namespace AppSync
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AppSyncClientConfiguration ClientConfigurationType;
       typedef AppSyncEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace AppSync
         * is not specified, it will be initialized to default values.
         */
         AppSyncClient(const Aws::AppSync::AppSyncClientConfiguration& clientConfiguration = Aws::AppSync::AppSyncClientConfiguration(),
-                      std::shared_ptr<AppSyncEndpointProviderBase> endpointProvider = Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<AppSyncEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AppSyncClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<AppSyncEndpointProviderBase> endpointProvider = Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<AppSyncEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::AppSync::AppSyncClientConfiguration& clientConfiguration = Aws::AppSync::AppSyncClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace AppSync
         * the default http client factory will be used
         */
         AppSyncClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<AppSyncEndpointProviderBase> endpointProvider = Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<AppSyncEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::AppSync::AppSyncClientConfiguration& clientConfiguration = Aws::AppSync::AppSyncClientConfiguration());
 
 

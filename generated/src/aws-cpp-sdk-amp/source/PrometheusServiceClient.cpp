@@ -61,8 +61,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PrometheusServiceClient::SERVICE_NAME = "aps";
-const char* PrometheusServiceClient::ALLOCATION_TAG = "PrometheusServiceClient";
+namespace Aws
+{
+  namespace PrometheusService
+  {
+    const char SERVICE_NAME[] = "aps";
+    const char ALLOCATION_TAG[] = "PrometheusServiceClient";
+  }
+}
+const char* PrometheusServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* PrometheusServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PrometheusServiceClient::PrometheusServiceClient(const PrometheusService::PrometheusServiceClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<PrometheusServiceEndpointProviderBase> endpointProvider) :
@@ -74,7 +82,7 @@ PrometheusServiceClient::PrometheusServiceClient(const PrometheusService::Promet
             Aws::MakeShared<PrometheusServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PrometheusServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ PrometheusServiceClient::PrometheusServiceClient(const AWSCredentials& credentia
             Aws::MakeShared<PrometheusServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PrometheusServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ PrometheusServiceClient::PrometheusServiceClient(const std::shared_ptr<AWSCreden
             Aws::MakeShared<PrometheusServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PrometheusServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -408,15 +416,15 @@ DeleteRuleGroupsNamespaceOutcome PrometheusServiceClient::DeleteRuleGroupsNamesp
 {
   AWS_OPERATION_GUARD(DeleteRuleGroupsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRuleGroupsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.WorkspaceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteRuleGroupsNamespace", "Required field: WorkspaceId, is not set");
-    return DeleteRuleGroupsNamespaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
-  }
   if (!request.NameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteRuleGroupsNamespace", "Required field: Name, is not set");
     return DeleteRuleGroupsNamespaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRuleGroupsNamespace", "Required field: WorkspaceId, is not set");
+    return DeleteRuleGroupsNamespaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteRuleGroupsNamespace, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -582,15 +590,15 @@ DescribeRuleGroupsNamespaceOutcome PrometheusServiceClient::DescribeRuleGroupsNa
 {
   AWS_OPERATION_GUARD(DescribeRuleGroupsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRuleGroupsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.WorkspaceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeRuleGroupsNamespace", "Required field: WorkspaceId, is not set");
-    return DescribeRuleGroupsNamespaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
-  }
   if (!request.NameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeRuleGroupsNamespace", "Required field: Name, is not set");
     return DescribeRuleGroupsNamespaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRuleGroupsNamespace", "Required field: WorkspaceId, is not set");
+    return DescribeRuleGroupsNamespaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeRuleGroupsNamespace, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -870,15 +878,15 @@ PutRuleGroupsNamespaceOutcome PrometheusServiceClient::PutRuleGroupsNamespace(co
 {
   AWS_OPERATION_GUARD(PutRuleGroupsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRuleGroupsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.WorkspaceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("PutRuleGroupsNamespace", "Required field: WorkspaceId, is not set");
-    return PutRuleGroupsNamespaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
-  }
   if (!request.NameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutRuleGroupsNamespace", "Required field: Name, is not set");
     return PutRuleGroupsNamespaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutRuleGroupsNamespace", "Required field: WorkspaceId, is not set");
+    return PutRuleGroupsNamespaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutRuleGroupsNamespace, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

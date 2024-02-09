@@ -62,8 +62,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* NeptuneGraphClient::SERVICE_NAME = "neptune-graph";
-const char* NeptuneGraphClient::ALLOCATION_TAG = "NeptuneGraphClient";
+namespace Aws
+{
+  namespace NeptuneGraph
+  {
+    const char SERVICE_NAME[] = "neptune-graph";
+    const char ALLOCATION_TAG[] = "NeptuneGraphClient";
+  }
+}
+const char* NeptuneGraphClient::GetServiceName() {return SERVICE_NAME;}
+const char* NeptuneGraphClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 NeptuneGraphClient::NeptuneGraphClient(const NeptuneGraph::NeptuneGraphClientConfiguration& clientConfiguration,
                                        std::shared_ptr<NeptuneGraphEndpointProviderBase> endpointProvider) :
@@ -75,7 +83,7 @@ NeptuneGraphClient::NeptuneGraphClient(const NeptuneGraph::NeptuneGraphClientCon
             Aws::MakeShared<NeptuneGraphErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptuneGraphEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ NeptuneGraphClient::NeptuneGraphClient(const AWSCredentials& credentials,
             Aws::MakeShared<NeptuneGraphErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptuneGraphEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ NeptuneGraphClient::NeptuneGraphClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<NeptuneGraphErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NeptuneGraphEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

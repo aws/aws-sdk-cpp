@@ -57,8 +57,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ConnectCampaignsClient::SERVICE_NAME = "connect-campaigns";
-const char* ConnectCampaignsClient::ALLOCATION_TAG = "ConnectCampaignsClient";
+namespace Aws
+{
+  namespace ConnectCampaigns
+  {
+    const char SERVICE_NAME[] = "connect-campaigns";
+    const char ALLOCATION_TAG[] = "ConnectCampaignsClient";
+  }
+}
+const char* ConnectCampaignsClient::GetServiceName() {return SERVICE_NAME;}
+const char* ConnectCampaignsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ConnectCampaignsClient::ConnectCampaignsClient(const ConnectCampaigns::ConnectCampaignsClientConfiguration& clientConfiguration,
                                                std::shared_ptr<ConnectCampaignsEndpointProviderBase> endpointProvider) :
@@ -70,7 +78,7 @@ ConnectCampaignsClient::ConnectCampaignsClient(const ConnectCampaigns::ConnectCa
             Aws::MakeShared<ConnectCampaignsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectCampaignsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -86,7 +94,7 @@ ConnectCampaignsClient::ConnectCampaignsClient(const AWSCredentials& credentials
             Aws::MakeShared<ConnectCampaignsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectCampaignsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -102,7 +110,7 @@ ConnectCampaignsClient::ConnectCampaignsClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<ConnectCampaignsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectCampaignsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

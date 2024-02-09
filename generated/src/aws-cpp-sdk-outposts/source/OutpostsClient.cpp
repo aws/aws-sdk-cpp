@@ -61,8 +61,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* OutpostsClient::SERVICE_NAME = "outposts";
-const char* OutpostsClient::ALLOCATION_TAG = "OutpostsClient";
+namespace Aws
+{
+  namespace Outposts
+  {
+    const char SERVICE_NAME[] = "outposts";
+    const char ALLOCATION_TAG[] = "OutpostsClient";
+  }
+}
+const char* OutpostsClient::GetServiceName() {return SERVICE_NAME;}
+const char* OutpostsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 OutpostsClient::OutpostsClient(const Outposts::OutpostsClientConfiguration& clientConfiguration,
                                std::shared_ptr<OutpostsEndpointProviderBase> endpointProvider) :
@@ -74,7 +82,7 @@ OutpostsClient::OutpostsClient(const Outposts::OutpostsClientConfiguration& clie
             Aws::MakeShared<OutpostsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OutpostsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ OutpostsClient::OutpostsClient(const AWSCredentials& credentials,
             Aws::MakeShared<OutpostsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OutpostsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ OutpostsClient::OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<OutpostsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OutpostsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

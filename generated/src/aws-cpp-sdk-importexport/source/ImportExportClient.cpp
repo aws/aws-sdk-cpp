@@ -42,8 +42,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* ImportExportClient::SERVICE_NAME = "importexport";
-const char* ImportExportClient::ALLOCATION_TAG = "ImportExportClient";
+namespace Aws
+{
+  namespace ImportExport
+  {
+    const char SERVICE_NAME[] = "importexport";
+    const char ALLOCATION_TAG[] = "ImportExportClient";
+  }
+}
+const char* ImportExportClient::GetServiceName() {return SERVICE_NAME;}
+const char* ImportExportClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ImportExportClient::ImportExportClient(const ImportExport::ImportExportClientConfiguration& clientConfiguration,
                                        std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider) :
@@ -55,7 +63,7 @@ ImportExportClient::ImportExportClient(const ImportExport::ImportExportClientCon
             Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -71,7 +79,7 @@ ImportExportClient::ImportExportClient(const AWSCredentials& credentials,
             Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ ImportExportClient::ImportExportClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

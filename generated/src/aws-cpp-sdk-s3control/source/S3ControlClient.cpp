@@ -129,8 +129,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* S3ControlClient::SERVICE_NAME = "s3";
-const char* S3ControlClient::ALLOCATION_TAG = "S3ControlClient";
+namespace Aws
+{
+  namespace S3Control
+  {
+    const char SERVICE_NAME[] = "s3";
+    const char ALLOCATION_TAG[] = "S3ControlClient";
+  }
+}
+const char* S3ControlClient::GetServiceName() {return SERVICE_NAME;}
+const char* S3ControlClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 S3ControlClient::S3ControlClient(const S3Control::S3ControlClientConfiguration& clientConfiguration,
                                  std::shared_ptr<S3ControlEndpointProviderBase> endpointProvider) :
@@ -144,7 +152,7 @@ S3ControlClient::S3ControlClient(const S3Control::S3ControlClientConfiguration& 
             Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -162,7 +170,7 @@ S3ControlClient::S3ControlClient(const AWSCredentials& credentials,
             Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -180,7 +188,7 @@ S3ControlClient::S3ControlClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3ControlEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

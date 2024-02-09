@@ -25,8 +25,8 @@ namespace LookoutMetrics
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef LookoutMetricsClientConfiguration ClientConfigurationType;
       typedef LookoutMetricsEndpointProvider EndpointProviderType;
@@ -36,14 +36,14 @@ namespace LookoutMetrics
         * is not specified, it will be initialized to default values.
         */
         LookoutMetricsClient(const Aws::LookoutMetrics::LookoutMetricsClientConfiguration& clientConfiguration = Aws::LookoutMetrics::LookoutMetricsClientConfiguration(),
-                             std::shared_ptr<LookoutMetricsEndpointProviderBase> endpointProvider = Aws::MakeShared<LookoutMetricsEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<LookoutMetricsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LookoutMetricsClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<LookoutMetricsEndpointProviderBase> endpointProvider = Aws::MakeShared<LookoutMetricsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<LookoutMetricsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::LookoutMetrics::LookoutMetricsClientConfiguration& clientConfiguration = Aws::LookoutMetrics::LookoutMetricsClientConfiguration());
 
        /**
@@ -51,7 +51,7 @@ namespace LookoutMetrics
         * the default http client factory will be used
         */
         LookoutMetricsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<LookoutMetricsEndpointProviderBase> endpointProvider = Aws::MakeShared<LookoutMetricsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<LookoutMetricsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::LookoutMetrics::LookoutMetricsClientConfiguration& clientConfiguration = Aws::LookoutMetrics::LookoutMetricsClientConfiguration());
 
 

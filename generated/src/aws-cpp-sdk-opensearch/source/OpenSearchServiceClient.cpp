@@ -98,8 +98,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* OpenSearchServiceClient::SERVICE_NAME = "es";
-const char* OpenSearchServiceClient::ALLOCATION_TAG = "OpenSearchServiceClient";
+namespace Aws
+{
+  namespace OpenSearchService
+  {
+    const char SERVICE_NAME[] = "es";
+    const char ALLOCATION_TAG[] = "OpenSearchServiceClient";
+  }
+}
+const char* OpenSearchServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* OpenSearchServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 OpenSearchServiceClient::OpenSearchServiceClient(const OpenSearchService::OpenSearchServiceClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<OpenSearchServiceEndpointProviderBase> endpointProvider) :
@@ -111,7 +119,7 @@ OpenSearchServiceClient::OpenSearchServiceClient(const OpenSearchService::OpenSe
             Aws::MakeShared<OpenSearchServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OpenSearchServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -127,7 +135,7 @@ OpenSearchServiceClient::OpenSearchServiceClient(const AWSCredentials& credentia
             Aws::MakeShared<OpenSearchServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OpenSearchServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -143,7 +151,7 @@ OpenSearchServiceClient::OpenSearchServiceClient(const std::shared_ptr<AWSCreden
             Aws::MakeShared<OpenSearchServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OpenSearchServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

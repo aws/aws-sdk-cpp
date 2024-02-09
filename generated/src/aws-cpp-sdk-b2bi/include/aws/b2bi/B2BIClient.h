@@ -34,8 +34,8 @@ namespace B2BI
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef B2BIClientConfiguration ClientConfigurationType;
       typedef B2BIEndpointProvider EndpointProviderType;
@@ -45,14 +45,14 @@ namespace B2BI
         * is not specified, it will be initialized to default values.
         */
         B2BIClient(const Aws::B2BI::B2BIClientConfiguration& clientConfiguration = Aws::B2BI::B2BIClientConfiguration(),
-                   std::shared_ptr<B2BIEndpointProviderBase> endpointProvider = Aws::MakeShared<B2BIEndpointProvider>(ALLOCATION_TAG));
+                   std::shared_ptr<B2BIEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         B2BIClient(const Aws::Auth::AWSCredentials& credentials,
-                   std::shared_ptr<B2BIEndpointProviderBase> endpointProvider = Aws::MakeShared<B2BIEndpointProvider>(ALLOCATION_TAG),
+                   std::shared_ptr<B2BIEndpointProviderBase> endpointProvider = nullptr,
                    const Aws::B2BI::B2BIClientConfiguration& clientConfiguration = Aws::B2BI::B2BIClientConfiguration());
 
        /**
@@ -60,7 +60,7 @@ namespace B2BI
         * the default http client factory will be used
         */
         B2BIClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                   std::shared_ptr<B2BIEndpointProviderBase> endpointProvider = Aws::MakeShared<B2BIEndpointProvider>(ALLOCATION_TAG),
+                   std::shared_ptr<B2BIEndpointProviderBase> endpointProvider = nullptr,
                    const Aws::B2BI::B2BIClientConfiguration& clientConfiguration = Aws::B2BI::B2BIClientConfiguration());
 
 

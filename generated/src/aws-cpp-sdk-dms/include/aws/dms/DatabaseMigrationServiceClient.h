@@ -33,8 +33,8 @@ namespace DatabaseMigrationService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DatabaseMigrationServiceClientConfiguration ClientConfigurationType;
       typedef DatabaseMigrationServiceEndpointProvider EndpointProviderType;
@@ -44,14 +44,14 @@ namespace DatabaseMigrationService
         * is not specified, it will be initialized to default values.
         */
         DatabaseMigrationServiceClient(const Aws::DatabaseMigrationService::DatabaseMigrationServiceClientConfiguration& clientConfiguration = Aws::DatabaseMigrationService::DatabaseMigrationServiceClientConfiguration(),
-                                       std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<DatabaseMigrationServiceEndpointProvider>(ALLOCATION_TAG));
+                                       std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DatabaseMigrationServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                       std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<DatabaseMigrationServiceEndpointProvider>(ALLOCATION_TAG),
+                                       std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> endpointProvider = nullptr,
                                        const Aws::DatabaseMigrationService::DatabaseMigrationServiceClientConfiguration& clientConfiguration = Aws::DatabaseMigrationService::DatabaseMigrationServiceClientConfiguration());
 
        /**
@@ -59,7 +59,7 @@ namespace DatabaseMigrationService
         * the default http client factory will be used
         */
         DatabaseMigrationServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                       std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<DatabaseMigrationServiceEndpointProvider>(ALLOCATION_TAG),
+                                       std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> endpointProvider = nullptr,
                                        const Aws::DatabaseMigrationService::DatabaseMigrationServiceClientConfiguration& clientConfiguration = Aws::DatabaseMigrationService::DatabaseMigrationServiceClientConfiguration());
 
 

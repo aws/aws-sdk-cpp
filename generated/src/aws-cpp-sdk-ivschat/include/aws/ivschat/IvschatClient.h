@@ -131,8 +131,8 @@ namespace ivschat
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IvschatClientConfiguration ClientConfigurationType;
       typedef IvschatEndpointProvider EndpointProviderType;
@@ -142,14 +142,14 @@ namespace ivschat
         * is not specified, it will be initialized to default values.
         */
         IvschatClient(const Aws::ivschat::IvschatClientConfiguration& clientConfiguration = Aws::ivschat::IvschatClientConfiguration(),
-                      std::shared_ptr<IvschatEndpointProviderBase> endpointProvider = Aws::MakeShared<IvschatEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<IvschatEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IvschatClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<IvschatEndpointProviderBase> endpointProvider = Aws::MakeShared<IvschatEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<IvschatEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::ivschat::IvschatClientConfiguration& clientConfiguration = Aws::ivschat::IvschatClientConfiguration());
 
        /**
@@ -157,7 +157,7 @@ namespace ivschat
         * the default http client factory will be used
         */
         IvschatClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<IvschatEndpointProviderBase> endpointProvider = Aws::MakeShared<IvschatEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<IvschatEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::ivschat::IvschatClientConfiguration& clientConfiguration = Aws::ivschat::IvschatClientConfiguration());
 
 

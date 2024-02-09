@@ -28,8 +28,8 @@ namespace MarketplaceDeployment
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MarketplaceDeploymentClientConfiguration ClientConfigurationType;
       typedef MarketplaceDeploymentEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace MarketplaceDeployment
         * is not specified, it will be initialized to default values.
         */
         MarketplaceDeploymentClient(const Aws::MarketplaceDeployment::MarketplaceDeploymentClientConfiguration& clientConfiguration = Aws::MarketplaceDeployment::MarketplaceDeploymentClientConfiguration(),
-                                    std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceDeploymentEndpointProvider>(ALLOCATION_TAG));
+                                    std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MarketplaceDeploymentClient(const Aws::Auth::AWSCredentials& credentials,
-                                    std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceDeploymentEndpointProvider>(ALLOCATION_TAG),
+                                    std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> endpointProvider = nullptr,
                                     const Aws::MarketplaceDeployment::MarketplaceDeploymentClientConfiguration& clientConfiguration = Aws::MarketplaceDeployment::MarketplaceDeploymentClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace MarketplaceDeployment
         * the default http client factory will be used
         */
         MarketplaceDeploymentClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                    std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceDeploymentEndpointProvider>(ALLOCATION_TAG),
+                                    std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> endpointProvider = nullptr,
                                     const Aws::MarketplaceDeployment::MarketplaceDeploymentClientConfiguration& clientConfiguration = Aws::MarketplaceDeployment::MarketplaceDeploymentClientConfiguration());
 
 

@@ -25,8 +25,8 @@ namespace imagebuilder
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ImagebuilderClientConfiguration ClientConfigurationType;
       typedef ImagebuilderEndpointProvider EndpointProviderType;
@@ -36,14 +36,14 @@ namespace imagebuilder
         * is not specified, it will be initialized to default values.
         */
         ImagebuilderClient(const Aws::imagebuilder::ImagebuilderClientConfiguration& clientConfiguration = Aws::imagebuilder::ImagebuilderClientConfiguration(),
-                           std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider = Aws::MakeShared<ImagebuilderEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ImagebuilderClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider = Aws::MakeShared<ImagebuilderEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::imagebuilder::ImagebuilderClientConfiguration& clientConfiguration = Aws::imagebuilder::ImagebuilderClientConfiguration());
 
        /**
@@ -51,7 +51,7 @@ namespace imagebuilder
         * the default http client factory will be used
         */
         ImagebuilderClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider = Aws::MakeShared<ImagebuilderEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::imagebuilder::ImagebuilderClientConfiguration& clientConfiguration = Aws::imagebuilder::ImagebuilderClientConfiguration());
 
 

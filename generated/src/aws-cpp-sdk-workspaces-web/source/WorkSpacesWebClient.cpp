@@ -93,8 +93,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* WorkSpacesWebClient::SERVICE_NAME = "workspaces-web";
-const char* WorkSpacesWebClient::ALLOCATION_TAG = "WorkSpacesWebClient";
+namespace Aws
+{
+  namespace WorkSpacesWeb
+  {
+    const char SERVICE_NAME[] = "workspaces-web";
+    const char ALLOCATION_TAG[] = "WorkSpacesWebClient";
+  }
+}
+const char* WorkSpacesWebClient::GetServiceName() {return SERVICE_NAME;}
+const char* WorkSpacesWebClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 WorkSpacesWebClient::WorkSpacesWebClient(const WorkSpacesWeb::WorkSpacesWebClientConfiguration& clientConfiguration,
                                          std::shared_ptr<WorkSpacesWebEndpointProviderBase> endpointProvider) :
@@ -106,7 +114,7 @@ WorkSpacesWebClient::WorkSpacesWebClient(const WorkSpacesWeb::WorkSpacesWebClien
             Aws::MakeShared<WorkSpacesWebErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkSpacesWebEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -122,7 +130,7 @@ WorkSpacesWebClient::WorkSpacesWebClient(const AWSCredentials& credentials,
             Aws::MakeShared<WorkSpacesWebErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkSpacesWebEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -138,7 +146,7 @@ WorkSpacesWebClient::WorkSpacesWebClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<WorkSpacesWebErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkSpacesWebEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

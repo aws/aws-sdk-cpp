@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BraketClient::SERVICE_NAME = "braket";
-const char* BraketClient::ALLOCATION_TAG = "BraketClient";
+namespace Aws
+{
+  namespace Braket
+  {
+    const char SERVICE_NAME[] = "braket";
+    const char ALLOCATION_TAG[] = "BraketClient";
+  }
+}
+const char* BraketClient::GetServiceName() {return SERVICE_NAME;}
+const char* BraketClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BraketClient::BraketClient(const Braket::BraketClientConfiguration& clientConfiguration,
                            std::shared_ptr<BraketEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ BraketClient::BraketClient(const Braket::BraketClientConfiguration& clientConfig
             Aws::MakeShared<BraketErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BraketEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ BraketClient::BraketClient(const AWSCredentials& credentials,
             Aws::MakeShared<BraketErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BraketEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ BraketClient::BraketClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<BraketErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BraketEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -67,8 +67,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AccessAnalyzerClient::SERVICE_NAME = "access-analyzer";
-const char* AccessAnalyzerClient::ALLOCATION_TAG = "AccessAnalyzerClient";
+namespace Aws
+{
+  namespace AccessAnalyzer
+  {
+    const char SERVICE_NAME[] = "access-analyzer";
+    const char ALLOCATION_TAG[] = "AccessAnalyzerClient";
+  }
+}
+const char* AccessAnalyzerClient::GetServiceName() {return SERVICE_NAME;}
+const char* AccessAnalyzerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AccessAnalyzerClient::AccessAnalyzerClient(const AccessAnalyzer::AccessAnalyzerClientConfiguration& clientConfiguration,
                                            std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider) :
@@ -80,7 +88,7 @@ AccessAnalyzerClient::AccessAnalyzerClient(const AccessAnalyzer::AccessAnalyzerC
             Aws::MakeShared<AccessAnalyzerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AccessAnalyzerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -96,7 +104,7 @@ AccessAnalyzerClient::AccessAnalyzerClient(const AWSCredentials& credentials,
             Aws::MakeShared<AccessAnalyzerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AccessAnalyzerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -112,7 +120,7 @@ AccessAnalyzerClient::AccessAnalyzerClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<AccessAnalyzerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AccessAnalyzerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

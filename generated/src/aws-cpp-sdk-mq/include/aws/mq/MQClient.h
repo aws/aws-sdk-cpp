@@ -26,8 +26,8 @@ namespace MQ
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MQClientConfiguration ClientConfigurationType;
       typedef MQEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace MQ
         * is not specified, it will be initialized to default values.
         */
         MQClient(const Aws::MQ::MQClientConfiguration& clientConfiguration = Aws::MQ::MQClientConfiguration(),
-                 std::shared_ptr<MQEndpointProviderBase> endpointProvider = Aws::MakeShared<MQEndpointProvider>(ALLOCATION_TAG));
+                 std::shared_ptr<MQEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MQClient(const Aws::Auth::AWSCredentials& credentials,
-                 std::shared_ptr<MQEndpointProviderBase> endpointProvider = Aws::MakeShared<MQEndpointProvider>(ALLOCATION_TAG),
+                 std::shared_ptr<MQEndpointProviderBase> endpointProvider = nullptr,
                  const Aws::MQ::MQClientConfiguration& clientConfiguration = Aws::MQ::MQClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace MQ
         * the default http client factory will be used
         */
         MQClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                 std::shared_ptr<MQEndpointProviderBase> endpointProvider = Aws::MakeShared<MQEndpointProvider>(ALLOCATION_TAG),
+                 std::shared_ptr<MQEndpointProviderBase> endpointProvider = nullptr,
                  const Aws::MQ::MQClientConfiguration& clientConfiguration = Aws::MQ::MQClientConfiguration());
 
 

@@ -45,8 +45,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MWAAClient::SERVICE_NAME = "airflow";
-const char* MWAAClient::ALLOCATION_TAG = "MWAAClient";
+namespace Aws
+{
+  namespace MWAA
+  {
+    const char SERVICE_NAME[] = "airflow";
+    const char ALLOCATION_TAG[] = "MWAAClient";
+  }
+}
+const char* MWAAClient::GetServiceName() {return SERVICE_NAME;}
+const char* MWAAClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MWAAClient::MWAAClient(const MWAA::MWAAClientConfiguration& clientConfiguration,
                        std::shared_ptr<MWAAEndpointProviderBase> endpointProvider) :
@@ -58,7 +66,7 @@ MWAAClient::MWAAClient(const MWAA::MWAAClientConfiguration& clientConfiguration,
             Aws::MakeShared<MWAAErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MWAAEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -74,7 +82,7 @@ MWAAClient::MWAAClient(const AWSCredentials& credentials,
             Aws::MakeShared<MWAAErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MWAAEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ MWAAClient::MWAAClient(const std::shared_ptr<AWSCredentialsProvider>& credential
             Aws::MakeShared<MWAAErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MWAAEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A representation of an EKS source.</p><p><h3>See Also:</h3>   <a
+   * <p>The <code>EksConfiguration</code> structure describes the connection to the
+   * Amazon EKS cluster from which a scraper collects metrics.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/EksConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,134 +41,143 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an EKS cluster.</p>
+     * <p>ARN of the Amazon EKS cluster.</p>
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
 
     /**
-     * <p>The ARN of an EKS cluster.</p>
+     * <p>ARN of the Amazon EKS cluster.</p>
      */
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
 
     /**
-     * <p>The ARN of an EKS cluster.</p>
+     * <p>ARN of the Amazon EKS cluster.</p>
      */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
 
     /**
-     * <p>The ARN of an EKS cluster.</p>
+     * <p>ARN of the Amazon EKS cluster.</p>
      */
     inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
 
     /**
-     * <p>The ARN of an EKS cluster.</p>
+     * <p>ARN of the Amazon EKS cluster.</p>
      */
     inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
 
     /**
-     * <p>The ARN of an EKS cluster.</p>
+     * <p>ARN of the Amazon EKS cluster.</p>
      */
     inline EksConfiguration& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
 
     /**
-     * <p>The ARN of an EKS cluster.</p>
+     * <p>ARN of the Amazon EKS cluster.</p>
      */
     inline EksConfiguration& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an EKS cluster.</p>
+     * <p>ARN of the Amazon EKS cluster.</p>
      */
     inline EksConfiguration& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
 
 
     /**
-     * <p>A list of security group IDs specified for VPC configuration.</p>
+     * <p>A list of the security group IDs for the Amazon EKS cluster VPC
+     * configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>A list of security group IDs specified for VPC configuration.</p>
+     * <p>A list of the security group IDs for the Amazon EKS cluster VPC
+     * configuration.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>A list of security group IDs specified for VPC configuration.</p>
+     * <p>A list of the security group IDs for the Amazon EKS cluster VPC
+     * configuration.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>A list of security group IDs specified for VPC configuration.</p>
+     * <p>A list of the security group IDs for the Amazon EKS cluster VPC
+     * configuration.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>A list of security group IDs specified for VPC configuration.</p>
+     * <p>A list of the security group IDs for the Amazon EKS cluster VPC
+     * configuration.</p>
      */
     inline EksConfiguration& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A list of security group IDs specified for VPC configuration.</p>
+     * <p>A list of the security group IDs for the Amazon EKS cluster VPC
+     * configuration.</p>
      */
     inline EksConfiguration& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of security group IDs specified for VPC configuration.</p>
+     * <p>A list of the security group IDs for the Amazon EKS cluster VPC
+     * configuration.</p>
      */
     inline EksConfiguration& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of security group IDs specified for VPC configuration.</p>
+     * <p>A list of the security group IDs for the Amazon EKS cluster VPC
+     * configuration.</p>
      */
     inline EksConfiguration& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of security group IDs specified for VPC configuration.</p>
+     * <p>A list of the security group IDs for the Amazon EKS cluster VPC
+     * configuration.</p>
      */
     inline EksConfiguration& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of subnet IDs specified for VPC configuration.</p>
+     * <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>A list of subnet IDs specified for VPC configuration.</p>
+     * <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>A list of subnet IDs specified for VPC configuration.</p>
+     * <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>A list of subnet IDs specified for VPC configuration.</p>
+     * <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>A list of subnet IDs specified for VPC configuration.</p>
+     * <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
      */
     inline EksConfiguration& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>A list of subnet IDs specified for VPC configuration.</p>
+     * <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
      */
     inline EksConfiguration& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of subnet IDs specified for VPC configuration.</p>
+     * <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
      */
     inline EksConfiguration& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of subnet IDs specified for VPC configuration.</p>
+     * <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
      */
     inline EksConfiguration& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of subnet IDs specified for VPC configuration.</p>
+     * <p>A list of subnet IDs for the Amazon EKS cluster VPC configuration.</p>
      */
     inline EksConfiguration& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

@@ -110,8 +110,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* RekognitionClient::SERVICE_NAME = "rekognition";
-const char* RekognitionClient::ALLOCATION_TAG = "RekognitionClient";
+namespace Aws
+{
+  namespace Rekognition
+  {
+    const char SERVICE_NAME[] = "rekognition";
+    const char ALLOCATION_TAG[] = "RekognitionClient";
+  }
+}
+const char* RekognitionClient::GetServiceName() {return SERVICE_NAME;}
+const char* RekognitionClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 RekognitionClient::RekognitionClient(const Rekognition::RekognitionClientConfiguration& clientConfiguration,
                                      std::shared_ptr<RekognitionEndpointProviderBase> endpointProvider) :
@@ -123,7 +131,7 @@ RekognitionClient::RekognitionClient(const Rekognition::RekognitionClientConfigu
             Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RekognitionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -139,7 +147,7 @@ RekognitionClient::RekognitionClient(const AWSCredentials& credentials,
             Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RekognitionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -155,7 +163,7 @@ RekognitionClient::RekognitionClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RekognitionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

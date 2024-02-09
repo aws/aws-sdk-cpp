@@ -29,15 +29,15 @@ CreateScraperResult::CreateScraperResult(const Aws::AmazonWebServiceResult<JsonV
 CreateScraperResult& CreateScraperResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("scraperId"))
-  {
-    m_scraperId = jsonValue.GetString("scraperId");
-
-  }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
+
+  }
+
+  if(jsonValue.ValueExists("scraperId"))
+  {
+    m_scraperId = jsonValue.GetString("scraperId");
 
   }
 

@@ -53,8 +53,8 @@ namespace SecretsManager
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SecretsManagerClientConfiguration ClientConfigurationType;
       typedef SecretsManagerEndpointProvider EndpointProviderType;
@@ -64,14 +64,14 @@ namespace SecretsManager
         * is not specified, it will be initialized to default values.
         */
         SecretsManagerClient(const Aws::SecretsManager::SecretsManagerClientConfiguration& clientConfiguration = Aws::SecretsManager::SecretsManagerClientConfiguration(),
-                             std::shared_ptr<SecretsManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<SecretsManagerEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<SecretsManagerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SecretsManagerClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<SecretsManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<SecretsManagerEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<SecretsManagerEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::SecretsManager::SecretsManagerClientConfiguration& clientConfiguration = Aws::SecretsManager::SecretsManagerClientConfiguration());
 
        /**
@@ -79,7 +79,7 @@ namespace SecretsManager
         * the default http client factory will be used
         */
         SecretsManagerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<SecretsManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<SecretsManagerEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<SecretsManagerEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::SecretsManager::SecretsManagerClientConfiguration& clientConfiguration = Aws::SecretsManager::SecretsManagerClientConfiguration());
 
 

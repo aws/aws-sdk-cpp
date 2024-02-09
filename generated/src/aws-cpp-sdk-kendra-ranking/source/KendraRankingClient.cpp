@@ -44,8 +44,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KendraRankingClient::SERVICE_NAME = "kendra-ranking";
-const char* KendraRankingClient::ALLOCATION_TAG = "KendraRankingClient";
+namespace Aws
+{
+  namespace KendraRanking
+  {
+    const char SERVICE_NAME[] = "kendra-ranking";
+    const char ALLOCATION_TAG[] = "KendraRankingClient";
+  }
+}
+const char* KendraRankingClient::GetServiceName() {return SERVICE_NAME;}
+const char* KendraRankingClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KendraRankingClient::KendraRankingClient(const KendraRanking::KendraRankingClientConfiguration& clientConfiguration,
                                          std::shared_ptr<KendraRankingEndpointProviderBase> endpointProvider) :
@@ -57,7 +65,7 @@ KendraRankingClient::KendraRankingClient(const KendraRanking::KendraRankingClien
             Aws::MakeShared<KendraRankingErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KendraRankingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -73,7 +81,7 @@ KendraRankingClient::KendraRankingClient(const AWSCredentials& credentials,
             Aws::MakeShared<KendraRankingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KendraRankingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ KendraRankingClient::KendraRankingClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<KendraRankingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KendraRankingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

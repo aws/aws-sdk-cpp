@@ -66,8 +66,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ConnectCasesClient::SERVICE_NAME = "cases";
-const char* ConnectCasesClient::ALLOCATION_TAG = "ConnectCasesClient";
+namespace Aws
+{
+  namespace ConnectCases
+  {
+    const char SERVICE_NAME[] = "cases";
+    const char ALLOCATION_TAG[] = "ConnectCasesClient";
+  }
+}
+const char* ConnectCasesClient::GetServiceName() {return SERVICE_NAME;}
+const char* ConnectCasesClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ConnectCasesClient::ConnectCasesClient(const ConnectCases::ConnectCasesClientConfiguration& clientConfiguration,
                                        std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider) :
@@ -79,7 +87,7 @@ ConnectCasesClient::ConnectCasesClient(const ConnectCases::ConnectCasesClientCon
             Aws::MakeShared<ConnectCasesErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -95,7 +103,7 @@ ConnectCasesClient::ConnectCasesClient(const AWSCredentials& credentials,
             Aws::MakeShared<ConnectCasesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -111,7 +119,7 @@ ConnectCasesClient::ConnectCasesClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<ConnectCasesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

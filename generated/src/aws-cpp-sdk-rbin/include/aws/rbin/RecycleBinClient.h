@@ -35,8 +35,8 @@ namespace RecycleBin
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef RecycleBinClientConfiguration ClientConfigurationType;
       typedef RecycleBinEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace RecycleBin
         * is not specified, it will be initialized to default values.
         */
         RecycleBinClient(const Aws::RecycleBin::RecycleBinClientConfiguration& clientConfiguration = Aws::RecycleBin::RecycleBinClientConfiguration(),
-                         std::shared_ptr<RecycleBinEndpointProviderBase> endpointProvider = Aws::MakeShared<RecycleBinEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<RecycleBinEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RecycleBinClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<RecycleBinEndpointProviderBase> endpointProvider = Aws::MakeShared<RecycleBinEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<RecycleBinEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::RecycleBin::RecycleBinClientConfiguration& clientConfiguration = Aws::RecycleBin::RecycleBinClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace RecycleBin
         * the default http client factory will be used
         */
         RecycleBinClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<RecycleBinEndpointProviderBase> endpointProvider = Aws::MakeShared<RecycleBinEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<RecycleBinEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::RecycleBin::RecycleBinClientConfiguration& clientConfiguration = Aws::RecycleBin::RecycleBinClientConfiguration());
 
 

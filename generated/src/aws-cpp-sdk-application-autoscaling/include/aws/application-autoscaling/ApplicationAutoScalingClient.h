@@ -53,8 +53,8 @@ namespace ApplicationAutoScaling
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ApplicationAutoScalingClientConfiguration ClientConfigurationType;
       typedef ApplicationAutoScalingEndpointProvider EndpointProviderType;
@@ -64,14 +64,14 @@ namespace ApplicationAutoScaling
         * is not specified, it will be initialized to default values.
         */
         ApplicationAutoScalingClient(const Aws::ApplicationAutoScaling::ApplicationAutoScalingClientConfiguration& clientConfiguration = Aws::ApplicationAutoScaling::ApplicationAutoScalingClientConfiguration(),
-                                     std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationAutoScalingEndpointProvider>(ALLOCATION_TAG));
+                                     std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ApplicationAutoScalingClient(const Aws::Auth::AWSCredentials& credentials,
-                                     std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationAutoScalingEndpointProvider>(ALLOCATION_TAG),
+                                     std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> endpointProvider = nullptr,
                                      const Aws::ApplicationAutoScaling::ApplicationAutoScalingClientConfiguration& clientConfiguration = Aws::ApplicationAutoScaling::ApplicationAutoScalingClientConfiguration());
 
        /**
@@ -79,7 +79,7 @@ namespace ApplicationAutoScaling
         * the default http client factory will be used
         */
         ApplicationAutoScalingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                     std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationAutoScalingEndpointProvider>(ALLOCATION_TAG),
+                                     std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> endpointProvider = nullptr,
                                      const Aws::ApplicationAutoScaling::ApplicationAutoScalingClientConfiguration& clientConfiguration = Aws::ApplicationAutoScaling::ApplicationAutoScalingClientConfiguration());
 
 

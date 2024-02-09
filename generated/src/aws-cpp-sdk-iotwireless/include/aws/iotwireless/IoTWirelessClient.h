@@ -34,8 +34,8 @@ namespace IoTWireless
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoTWirelessClientConfiguration ClientConfigurationType;
       typedef IoTWirelessEndpointProvider EndpointProviderType;
@@ -45,14 +45,14 @@ namespace IoTWireless
         * is not specified, it will be initialized to default values.
         */
         IoTWirelessClient(const Aws::IoTWireless::IoTWirelessClientConfiguration& clientConfiguration = Aws::IoTWireless::IoTWirelessClientConfiguration(),
-                          std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoTWirelessClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::IoTWireless::IoTWirelessClientConfiguration& clientConfiguration = Aws::IoTWireless::IoTWirelessClientConfiguration());
 
        /**
@@ -60,7 +60,7 @@ namespace IoTWireless
         * the default http client factory will be used
         */
         IoTWirelessClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::IoTWireless::IoTWirelessClientConfiguration& clientConfiguration = Aws::IoTWireless::IoTWirelessClientConfiguration());
 
 

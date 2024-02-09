@@ -35,8 +35,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* WorkLinkClient::SERVICE_NAME = "worklink";
-const char* WorkLinkClient::ALLOCATION_TAG = "WorkLinkClient";
+namespace Aws
+{
+  namespace WorkLink
+  {
+    const char SERVICE_NAME[] = "worklink";
+    const char ALLOCATION_TAG[] = "WorkLinkClient";
+  }
+}
+const char* WorkLinkClient::GetServiceName() {return SERVICE_NAME;}
+const char* WorkLinkClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 WorkLinkClient::WorkLinkClient(const WorkLink::WorkLinkClientConfiguration& clientConfiguration,
                                std::shared_ptr<WorkLinkEndpointProviderBase> endpointProvider) :
@@ -48,7 +56,7 @@ WorkLinkClient::WorkLinkClient(const WorkLink::WorkLinkClientConfiguration& clie
             Aws::MakeShared<WorkLinkErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkLinkEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -64,7 +72,7 @@ WorkLinkClient::WorkLinkClient(const AWSCredentials& credentials,
             Aws::MakeShared<WorkLinkErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkLinkEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -80,7 +88,7 @@ WorkLinkClient::WorkLinkClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<WorkLinkErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<WorkLinkEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

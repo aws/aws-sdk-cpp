@@ -42,8 +42,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CostandUsageReportServiceClient::SERVICE_NAME = "cur";
-const char* CostandUsageReportServiceClient::ALLOCATION_TAG = "CostandUsageReportServiceClient";
+namespace Aws
+{
+  namespace CostandUsageReportService
+  {
+    const char SERVICE_NAME[] = "cur";
+    const char ALLOCATION_TAG[] = "CostandUsageReportServiceClient";
+  }
+}
+const char* CostandUsageReportServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* CostandUsageReportServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CostandUsageReportServiceClient::CostandUsageReportServiceClient(const CostandUsageReportService::CostandUsageReportServiceClientConfiguration& clientConfiguration,
                                                                  std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider) :
@@ -55,7 +63,7 @@ CostandUsageReportServiceClient::CostandUsageReportServiceClient(const CostandUs
             Aws::MakeShared<CostandUsageReportServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CostandUsageReportServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -71,7 +79,7 @@ CostandUsageReportServiceClient::CostandUsageReportServiceClient(const AWSCreden
             Aws::MakeShared<CostandUsageReportServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CostandUsageReportServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ CostandUsageReportServiceClient::CostandUsageReportServiceClient(const std::shar
             Aws::MakeShared<CostandUsageReportServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CostandUsageReportServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

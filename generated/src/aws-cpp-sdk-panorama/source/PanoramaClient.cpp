@@ -69,8 +69,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PanoramaClient::SERVICE_NAME = "panorama";
-const char* PanoramaClient::ALLOCATION_TAG = "PanoramaClient";
+namespace Aws
+{
+  namespace Panorama
+  {
+    const char SERVICE_NAME[] = "panorama";
+    const char ALLOCATION_TAG[] = "PanoramaClient";
+  }
+}
+const char* PanoramaClient::GetServiceName() {return SERVICE_NAME;}
+const char* PanoramaClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PanoramaClient::PanoramaClient(const Panorama::PanoramaClientConfiguration& clientConfiguration,
                                std::shared_ptr<PanoramaEndpointProviderBase> endpointProvider) :
@@ -82,7 +90,7 @@ PanoramaClient::PanoramaClient(const Panorama::PanoramaClientConfiguration& clie
             Aws::MakeShared<PanoramaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PanoramaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -98,7 +106,7 @@ PanoramaClient::PanoramaClient(const AWSCredentials& credentials,
             Aws::MakeShared<PanoramaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PanoramaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -114,7 +122,7 @@ PanoramaClient::PanoramaClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<PanoramaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PanoramaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

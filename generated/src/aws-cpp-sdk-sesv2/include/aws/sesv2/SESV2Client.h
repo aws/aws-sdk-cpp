@@ -29,8 +29,8 @@ namespace SESV2
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SESV2ClientConfiguration ClientConfigurationType;
       typedef SESV2EndpointProvider EndpointProviderType;
@@ -40,14 +40,14 @@ namespace SESV2
         * is not specified, it will be initialized to default values.
         */
         SESV2Client(const Aws::SESV2::SESV2ClientConfiguration& clientConfiguration = Aws::SESV2::SESV2ClientConfiguration(),
-                    std::shared_ptr<SESV2EndpointProviderBase> endpointProvider = Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<SESV2EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SESV2Client(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<SESV2EndpointProviderBase> endpointProvider = Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<SESV2EndpointProviderBase> endpointProvider = nullptr,
                     const Aws::SESV2::SESV2ClientConfiguration& clientConfiguration = Aws::SESV2::SESV2ClientConfiguration());
 
        /**
@@ -55,7 +55,7 @@ namespace SESV2
         * the default http client factory will be used
         */
         SESV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<SESV2EndpointProviderBase> endpointProvider = Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<SESV2EndpointProviderBase> endpointProvider = nullptr,
                     const Aws::SESV2::SESV2ClientConfiguration& clientConfiguration = Aws::SESV2::SESV2ClientConfiguration());
 
 

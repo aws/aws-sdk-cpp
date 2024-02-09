@@ -196,8 +196,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LightsailClient::SERVICE_NAME = "lightsail";
-const char* LightsailClient::ALLOCATION_TAG = "LightsailClient";
+namespace Aws
+{
+  namespace Lightsail
+  {
+    const char SERVICE_NAME[] = "lightsail";
+    const char ALLOCATION_TAG[] = "LightsailClient";
+  }
+}
+const char* LightsailClient::GetServiceName() {return SERVICE_NAME;}
+const char* LightsailClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LightsailClient::LightsailClient(const Lightsail::LightsailClientConfiguration& clientConfiguration,
                                  std::shared_ptr<LightsailEndpointProviderBase> endpointProvider) :
@@ -209,7 +217,7 @@ LightsailClient::LightsailClient(const Lightsail::LightsailClientConfiguration& 
             Aws::MakeShared<LightsailErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LightsailEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -225,7 +233,7 @@ LightsailClient::LightsailClient(const AWSCredentials& credentials,
             Aws::MakeShared<LightsailErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LightsailEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -241,7 +249,7 @@ LightsailClient::LightsailClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<LightsailErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LightsailEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

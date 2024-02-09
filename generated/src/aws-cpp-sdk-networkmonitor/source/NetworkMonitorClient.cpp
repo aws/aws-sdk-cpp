@@ -47,8 +47,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* NetworkMonitorClient::SERVICE_NAME = "networkmonitor";
-const char* NetworkMonitorClient::ALLOCATION_TAG = "NetworkMonitorClient";
+namespace Aws
+{
+  namespace NetworkMonitor
+  {
+    const char SERVICE_NAME[] = "networkmonitor";
+    const char ALLOCATION_TAG[] = "NetworkMonitorClient";
+  }
+}
+const char* NetworkMonitorClient::GetServiceName() {return SERVICE_NAME;}
+const char* NetworkMonitorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 NetworkMonitorClient::NetworkMonitorClient(const NetworkMonitor::NetworkMonitorClientConfiguration& clientConfiguration,
                                            std::shared_ptr<NetworkMonitorEndpointProviderBase> endpointProvider) :
@@ -60,7 +68,7 @@ NetworkMonitorClient::NetworkMonitorClient(const NetworkMonitor::NetworkMonitorC
             Aws::MakeShared<NetworkMonitorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NetworkMonitorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -76,7 +84,7 @@ NetworkMonitorClient::NetworkMonitorClient(const AWSCredentials& credentials,
             Aws::MakeShared<NetworkMonitorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NetworkMonitorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -92,7 +100,7 @@ NetworkMonitorClient::NetworkMonitorClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<NetworkMonitorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NetworkMonitorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -26,8 +26,8 @@ namespace IoT1ClickDevicesService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoT1ClickDevicesServiceClientConfiguration ClientConfigurationType;
       typedef IoT1ClickDevicesServiceEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace IoT1ClickDevicesService
         * is not specified, it will be initialized to default values.
         */
         IoT1ClickDevicesServiceClient(const Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration& clientConfiguration = Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration(),
-                                      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<IoT1ClickDevicesServiceEndpointProvider>(ALLOCATION_TAG));
+                                      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoT1ClickDevicesServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<IoT1ClickDevicesServiceEndpointProvider>(ALLOCATION_TAG),
+                                      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider = nullptr,
                                       const Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration& clientConfiguration = Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace IoT1ClickDevicesService
         * the default http client factory will be used
         */
         IoT1ClickDevicesServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<IoT1ClickDevicesServiceEndpointProvider>(ALLOCATION_TAG),
+                                      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider = nullptr,
                                       const Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration& clientConfiguration = Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration());
 
 

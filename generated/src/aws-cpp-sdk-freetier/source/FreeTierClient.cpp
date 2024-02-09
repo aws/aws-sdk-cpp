@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* FreeTierClient::SERVICE_NAME = "freetier";
-const char* FreeTierClient::ALLOCATION_TAG = "FreeTierClient";
+namespace Aws
+{
+  namespace FreeTier
+  {
+    const char SERVICE_NAME[] = "freetier";
+    const char ALLOCATION_TAG[] = "FreeTierClient";
+  }
+}
+const char* FreeTierClient::GetServiceName() {return SERVICE_NAME;}
+const char* FreeTierClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 FreeTierClient::FreeTierClient(const FreeTier::FreeTierClientConfiguration& clientConfiguration,
                                std::shared_ptr<FreeTierEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ FreeTierClient::FreeTierClient(const FreeTier::FreeTierClientConfiguration& clie
             Aws::MakeShared<FreeTierErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FreeTierEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ FreeTierClient::FreeTierClient(const AWSCredentials& credentials,
             Aws::MakeShared<FreeTierErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FreeTierEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ FreeTierClient::FreeTierClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<FreeTierErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FreeTierEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

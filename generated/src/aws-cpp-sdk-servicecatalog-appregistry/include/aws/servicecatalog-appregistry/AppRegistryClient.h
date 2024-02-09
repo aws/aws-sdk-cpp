@@ -26,8 +26,8 @@ namespace AppRegistry
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AppRegistryClientConfiguration ClientConfigurationType;
       typedef AppRegistryEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace AppRegistry
         * is not specified, it will be initialized to default values.
         */
         AppRegistryClient(const Aws::AppRegistry::AppRegistryClientConfiguration& clientConfiguration = Aws::AppRegistry::AppRegistryClientConfiguration(),
-                          std::shared_ptr<AppRegistryEndpointProviderBase> endpointProvider = Aws::MakeShared<AppRegistryEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<AppRegistryEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AppRegistryClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<AppRegistryEndpointProviderBase> endpointProvider = Aws::MakeShared<AppRegistryEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<AppRegistryEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::AppRegistry::AppRegistryClientConfiguration& clientConfiguration = Aws::AppRegistry::AppRegistryClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace AppRegistry
         * the default http client factory will be used
         */
         AppRegistryClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<AppRegistryEndpointProviderBase> endpointProvider = Aws::MakeShared<AppRegistryEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<AppRegistryEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::AppRegistry::AppRegistryClientConfiguration& clientConfiguration = Aws::AppRegistry::AppRegistryClientConfiguration());
 
 

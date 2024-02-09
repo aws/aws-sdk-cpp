@@ -54,8 +54,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ManagedGrafanaClient::SERVICE_NAME = "grafana";
-const char* ManagedGrafanaClient::ALLOCATION_TAG = "ManagedGrafanaClient";
+namespace Aws
+{
+  namespace ManagedGrafana
+  {
+    const char SERVICE_NAME[] = "grafana";
+    const char ALLOCATION_TAG[] = "ManagedGrafanaClient";
+  }
+}
+const char* ManagedGrafanaClient::GetServiceName() {return SERVICE_NAME;}
+const char* ManagedGrafanaClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ManagedGrafanaClient::ManagedGrafanaClient(const ManagedGrafana::ManagedGrafanaClientConfiguration& clientConfiguration,
                                            std::shared_ptr<ManagedGrafanaEndpointProviderBase> endpointProvider) :
@@ -67,7 +75,7 @@ ManagedGrafanaClient::ManagedGrafanaClient(const ManagedGrafana::ManagedGrafanaC
             Aws::MakeShared<ManagedGrafanaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ManagedGrafanaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ ManagedGrafanaClient::ManagedGrafanaClient(const AWSCredentials& credentials,
             Aws::MakeShared<ManagedGrafanaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ManagedGrafanaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -99,7 +107,7 @@ ManagedGrafanaClient::ManagedGrafanaClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<ManagedGrafanaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ManagedGrafanaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

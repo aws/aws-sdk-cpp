@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the status of a workspace.</p><p><h3>See Also:</h3>   <a
+   * <p>The status of the workspace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/WorkspaceStatus">AWS
    * API Reference</a></p>
    */
@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>Status code of this workspace.</p>
+     * <p>The current status of the workspace.</p>
      */
     inline const WorkspaceStatusCode& GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * <p>Status code of this workspace.</p>
+     * <p>The current status of the workspace.</p>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
-     * <p>Status code of this workspace.</p>
+     * <p>The current status of the workspace.</p>
      */
     inline void SetStatusCode(const WorkspaceStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * <p>Status code of this workspace.</p>
+     * <p>The current status of the workspace.</p>
      */
     inline void SetStatusCode(WorkspaceStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
-     * <p>Status code of this workspace.</p>
+     * <p>The current status of the workspace.</p>
      */
     inline WorkspaceStatus& WithStatusCode(const WorkspaceStatusCode& value) { SetStatusCode(value); return *this;}
 
     /**
-     * <p>Status code of this workspace.</p>
+     * <p>The current status of the workspace.</p>
      */
     inline WorkspaceStatus& WithStatusCode(WorkspaceStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 

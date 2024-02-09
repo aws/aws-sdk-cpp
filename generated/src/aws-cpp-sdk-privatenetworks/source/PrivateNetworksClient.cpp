@@ -61,8 +61,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PrivateNetworksClient::SERVICE_NAME = "private-networks";
-const char* PrivateNetworksClient::ALLOCATION_TAG = "PrivateNetworksClient";
+namespace Aws
+{
+  namespace PrivateNetworks
+  {
+    const char SERVICE_NAME[] = "private-networks";
+    const char ALLOCATION_TAG[] = "PrivateNetworksClient";
+  }
+}
+const char* PrivateNetworksClient::GetServiceName() {return SERVICE_NAME;}
+const char* PrivateNetworksClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PrivateNetworksClient::PrivateNetworksClient(const PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration,
                                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider) :
@@ -74,7 +82,7 @@ PrivateNetworksClient::PrivateNetworksClient(const PrivateNetworks::PrivateNetwo
             Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ PrivateNetworksClient::PrivateNetworksClient(const AWSCredentials& credentials,
             Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ PrivateNetworksClient::PrivateNetworksClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<PrivateNetworksErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -41,8 +41,8 @@ namespace IoT
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoTClientConfiguration ClientConfigurationType;
       typedef IoTEndpointProvider EndpointProviderType;
@@ -52,14 +52,14 @@ namespace IoT
         * is not specified, it will be initialized to default values.
         */
         IoTClient(const Aws::IoT::IoTClientConfiguration& clientConfiguration = Aws::IoT::IoTClientConfiguration(),
-                  std::shared_ptr<IoTEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<IoTEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoTClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<IoTEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<IoTEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::IoT::IoTClientConfiguration& clientConfiguration = Aws::IoT::IoTClientConfiguration());
 
        /**
@@ -67,7 +67,7 @@ namespace IoT
         * the default http client factory will be used
         */
         IoTClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<IoTEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<IoTEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::IoT::IoTClientConfiguration& clientConfiguration = Aws::IoT::IoTClientConfiguration());
 
 
@@ -2879,8 +2879,11 @@ namespace IoT
         }
 
         /**
-         * <p>Returns a unique endpoint specific to the Amazon Web Services account making
-         * the call.</p> <p>Requires permission to access the <a
+         * <p>Returns or creates a unique endpoint specific to the Amazon Web Services
+         * account making the call.</p>  <p>The first time
+         * <code>DescribeEndpoint</code> is called, an endpoint is created. All subsequent
+         * calls to <code>DescribeEndpoint</code> return the same endpoint.</p> 
+         * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">AWS
@@ -3941,6 +3944,9 @@ namespace IoT
 
         /**
          * <p>Gets a registration code used to register a CA certificate with IoT.</p>
+         * <p>IoT will create a registration code as part of this API call if the
+         * registration code doesn't exist or has been deleted. If you already have a
+         * registration code, this API call will return the same registration code.</p>
          * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a>
          * action.</p><p><h3>See Also:</h3>   <a

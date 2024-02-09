@@ -111,8 +111,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SecurityHubClient::SERVICE_NAME = "securityhub";
-const char* SecurityHubClient::ALLOCATION_TAG = "SecurityHubClient";
+namespace Aws
+{
+  namespace SecurityHub
+  {
+    const char SERVICE_NAME[] = "securityhub";
+    const char ALLOCATION_TAG[] = "SecurityHubClient";
+  }
+}
+const char* SecurityHubClient::GetServiceName() {return SERVICE_NAME;}
+const char* SecurityHubClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SecurityHubClient::SecurityHubClient(const SecurityHub::SecurityHubClientConfiguration& clientConfiguration,
                                      std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider) :
@@ -124,7 +132,7 @@ SecurityHubClient::SecurityHubClient(const SecurityHub::SecurityHubClientConfigu
             Aws::MakeShared<SecurityHubErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecurityHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -140,7 +148,7 @@ SecurityHubClient::SecurityHubClient(const AWSCredentials& credentials,
             Aws::MakeShared<SecurityHubErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecurityHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -156,7 +164,7 @@ SecurityHubClient::SecurityHubClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<SecurityHubErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecurityHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

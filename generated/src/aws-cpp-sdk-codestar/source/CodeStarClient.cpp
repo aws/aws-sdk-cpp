@@ -53,8 +53,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodeStarClient::SERVICE_NAME = "codestar";
-const char* CodeStarClient::ALLOCATION_TAG = "CodeStarClient";
+namespace Aws
+{
+  namespace CodeStar
+  {
+    const char SERVICE_NAME[] = "codestar";
+    const char ALLOCATION_TAG[] = "CodeStarClient";
+  }
+}
+const char* CodeStarClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodeStarClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CodeStarClient::CodeStarClient(const CodeStar::CodeStarClientConfiguration& clientConfiguration,
                                std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider) :
@@ -66,7 +74,7 @@ CodeStarClient::CodeStarClient(const CodeStar::CodeStarClientConfiguration& clie
             Aws::MakeShared<CodeStarErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ CodeStarClient::CodeStarClient(const AWSCredentials& credentials,
             Aws::MakeShared<CodeStarErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -98,7 +106,7 @@ CodeStarClient::CodeStarClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<CodeStarErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeStarEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

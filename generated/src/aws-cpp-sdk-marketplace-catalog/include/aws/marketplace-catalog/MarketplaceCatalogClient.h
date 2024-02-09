@@ -27,8 +27,8 @@ namespace MarketplaceCatalog
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MarketplaceCatalogClientConfiguration ClientConfigurationType;
       typedef MarketplaceCatalogEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace MarketplaceCatalog
         * is not specified, it will be initialized to default values.
         */
         MarketplaceCatalogClient(const Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration& clientConfiguration = Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration(),
-                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG));
+                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MarketplaceCatalogClient(const Aws::Auth::AWSCredentials& credentials,
-                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration& clientConfiguration = Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace MarketplaceCatalog
         * the default http client factory will be used
         */
         MarketplaceCatalogClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration& clientConfiguration = Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration());
 
 

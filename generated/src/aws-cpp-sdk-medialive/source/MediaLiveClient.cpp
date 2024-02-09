@@ -99,8 +99,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MediaLiveClient::SERVICE_NAME = "medialive";
-const char* MediaLiveClient::ALLOCATION_TAG = "MediaLiveClient";
+namespace Aws
+{
+  namespace MediaLive
+  {
+    const char SERVICE_NAME[] = "medialive";
+    const char ALLOCATION_TAG[] = "MediaLiveClient";
+  }
+}
+const char* MediaLiveClient::GetServiceName() {return SERVICE_NAME;}
+const char* MediaLiveClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MediaLiveClient::MediaLiveClient(const MediaLive::MediaLiveClientConfiguration& clientConfiguration,
                                  std::shared_ptr<MediaLiveEndpointProviderBase> endpointProvider) :
@@ -112,7 +120,7 @@ MediaLiveClient::MediaLiveClient(const MediaLive::MediaLiveClientConfiguration& 
             Aws::MakeShared<MediaLiveErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaLiveEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -128,7 +136,7 @@ MediaLiveClient::MediaLiveClient(const AWSCredentials& credentials,
             Aws::MakeShared<MediaLiveErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaLiveEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -144,7 +152,7 @@ MediaLiveClient::MediaLiveClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<MediaLiveErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaLiveEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -61,8 +61,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ApplicationDiscoveryServiceClient::SERVICE_NAME = "discovery";
-const char* ApplicationDiscoveryServiceClient::ALLOCATION_TAG = "ApplicationDiscoveryServiceClient";
+namespace Aws
+{
+  namespace ApplicationDiscoveryService
+  {
+    const char SERVICE_NAME[] = "discovery";
+    const char ALLOCATION_TAG[] = "ApplicationDiscoveryServiceClient";
+  }
+}
+const char* ApplicationDiscoveryServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* ApplicationDiscoveryServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration,
                                                                      std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider) :
@@ -74,7 +82,7 @@ ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const Appli
             Aws::MakeShared<ApplicationDiscoveryServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const AWSCr
             Aws::MakeShared<ApplicationDiscoveryServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const std::
             Aws::MakeShared<ApplicationDiscoveryServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

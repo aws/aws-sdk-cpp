@@ -23,8 +23,8 @@ namespace BedrockAgent
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef BedrockAgentClientConfiguration ClientConfigurationType;
       typedef BedrockAgentEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace BedrockAgent
         * is not specified, it will be initialized to default values.
         */
         BedrockAgentClient(const Aws::BedrockAgent::BedrockAgentClientConfiguration& clientConfiguration = Aws::BedrockAgent::BedrockAgentClientConfiguration(),
-                           std::shared_ptr<BedrockAgentEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<BedrockAgentEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BedrockAgentClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<BedrockAgentEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<BedrockAgentEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::BedrockAgent::BedrockAgentClientConfiguration& clientConfiguration = Aws::BedrockAgent::BedrockAgentClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace BedrockAgent
         * the default http client factory will be used
         */
         BedrockAgentClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<BedrockAgentEndpointProviderBase> endpointProvider = Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<BedrockAgentEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::BedrockAgent::BedrockAgentClientConfiguration& clientConfiguration = Aws::BedrockAgent::BedrockAgentClientConfiguration());
 
 

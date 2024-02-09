@@ -66,8 +66,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SSMIncidentsClient::SERVICE_NAME = "ssm-incidents";
-const char* SSMIncidentsClient::ALLOCATION_TAG = "SSMIncidentsClient";
+namespace Aws
+{
+  namespace SSMIncidents
+  {
+    const char SERVICE_NAME[] = "ssm-incidents";
+    const char ALLOCATION_TAG[] = "SSMIncidentsClient";
+  }
+}
+const char* SSMIncidentsClient::GetServiceName() {return SERVICE_NAME;}
+const char* SSMIncidentsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SSMIncidentsClient::SSMIncidentsClient(const SSMIncidents::SSMIncidentsClientConfiguration& clientConfiguration,
                                        std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider) :
@@ -79,7 +87,7 @@ SSMIncidentsClient::SSMIncidentsClient(const SSMIncidents::SSMIncidentsClientCon
             Aws::MakeShared<SSMIncidentsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMIncidentsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -95,7 +103,7 @@ SSMIncidentsClient::SSMIncidentsClient(const AWSCredentials& credentials,
             Aws::MakeShared<SSMIncidentsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMIncidentsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -111,7 +119,7 @@ SSMIncidentsClient::SSMIncidentsClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<SSMIncidentsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMIncidentsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

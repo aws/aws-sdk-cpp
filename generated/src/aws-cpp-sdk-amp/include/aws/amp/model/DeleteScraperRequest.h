@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a DeleteScraper operation.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Represents the input of a <code>DeleteScraper</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperRequest">AWS
    * API Reference</a></p>
    */
@@ -41,6 +41,55 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::String SerializePayload() const override;
 
     AWS_PROMETHEUSSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
+     * the idempotency of the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
+     * the idempotency of the request.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
+     * the idempotency of the request.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
+     * the idempotency of the request.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
+     * the idempotency of the request.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
+     * the idempotency of the request.</p>
+     */
+    inline DeleteScraperRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
+     * the idempotency of the request.</p>
+     */
+    inline DeleteScraperRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
+     * the idempotency of the request.</p>
+     */
+    inline DeleteScraperRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -83,62 +132,13 @@ namespace Model
      */
     inline DeleteScraperRequest& WithScraperId(const char* value) { SetScraperId(value); return *this;}
 
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline DeleteScraperRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline DeleteScraperRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline DeleteScraperRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
   private:
-
-    Aws::String m_scraperId;
-    bool m_scraperIdHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_scraperId;
+    bool m_scraperIdHasBeenSet = false;
   };
 
 } // namespace Model

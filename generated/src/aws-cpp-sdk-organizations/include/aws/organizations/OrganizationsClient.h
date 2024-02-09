@@ -72,8 +72,8 @@ namespace Organizations
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef OrganizationsClientConfiguration ClientConfigurationType;
       typedef OrganizationsEndpointProvider EndpointProviderType;
@@ -83,14 +83,14 @@ namespace Organizations
         * is not specified, it will be initialized to default values.
         */
         OrganizationsClient(const Aws::Organizations::OrganizationsClientConfiguration& clientConfiguration = Aws::Organizations::OrganizationsClientConfiguration(),
-                            std::shared_ptr<OrganizationsEndpointProviderBase> endpointProvider = Aws::MakeShared<OrganizationsEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<OrganizationsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         OrganizationsClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<OrganizationsEndpointProviderBase> endpointProvider = Aws::MakeShared<OrganizationsEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<OrganizationsEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::Organizations::OrganizationsClientConfiguration& clientConfiguration = Aws::Organizations::OrganizationsClientConfiguration());
 
        /**
@@ -98,7 +98,7 @@ namespace Organizations
         * the default http client factory will be used
         */
         OrganizationsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<OrganizationsEndpointProviderBase> endpointProvider = Aws::MakeShared<OrganizationsEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<OrganizationsEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::Organizations::OrganizationsClientConfiguration& clientConfiguration = Aws::Organizations::OrganizationsClientConfiguration());
 
 

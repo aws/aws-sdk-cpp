@@ -174,8 +174,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SSMClient::SERVICE_NAME = "ssm";
-const char* SSMClient::ALLOCATION_TAG = "SSMClient";
+namespace Aws
+{
+  namespace SSM
+  {
+    const char SERVICE_NAME[] = "ssm";
+    const char ALLOCATION_TAG[] = "SSMClient";
+  }
+}
+const char* SSMClient::GetServiceName() {return SERVICE_NAME;}
+const char* SSMClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SSMClient::SSMClient(const SSM::SSMClientConfiguration& clientConfiguration,
                      std::shared_ptr<SSMEndpointProviderBase> endpointProvider) :
@@ -187,7 +195,7 @@ SSMClient::SSMClient(const SSM::SSMClientConfiguration& clientConfiguration,
             Aws::MakeShared<SSMErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -203,7 +211,7 @@ SSMClient::SSMClient(const AWSCredentials& credentials,
             Aws::MakeShared<SSMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -219,7 +227,7 @@ SSMClient::SSMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<SSMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

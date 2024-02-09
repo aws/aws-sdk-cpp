@@ -34,8 +34,8 @@ namespace NetworkMonitor
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef NetworkMonitorClientConfiguration ClientConfigurationType;
       typedef NetworkMonitorEndpointProvider EndpointProviderType;
@@ -45,14 +45,14 @@ namespace NetworkMonitor
         * is not specified, it will be initialized to default values.
         */
         NetworkMonitorClient(const Aws::NetworkMonitor::NetworkMonitorClientConfiguration& clientConfiguration = Aws::NetworkMonitor::NetworkMonitorClientConfiguration(),
-                             std::shared_ptr<NetworkMonitorEndpointProviderBase> endpointProvider = Aws::MakeShared<NetworkMonitorEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<NetworkMonitorEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         NetworkMonitorClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<NetworkMonitorEndpointProviderBase> endpointProvider = Aws::MakeShared<NetworkMonitorEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<NetworkMonitorEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::NetworkMonitor::NetworkMonitorClientConfiguration& clientConfiguration = Aws::NetworkMonitor::NetworkMonitorClientConfiguration());
 
        /**
@@ -60,7 +60,7 @@ namespace NetworkMonitor
         * the default http client factory will be used
         */
         NetworkMonitorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<NetworkMonitorEndpointProviderBase> endpointProvider = Aws::MakeShared<NetworkMonitorEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<NetworkMonitorEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::NetworkMonitor::NetworkMonitorClientConfiguration& clientConfiguration = Aws::NetworkMonitor::NetworkMonitorClientConfiguration());
 
 

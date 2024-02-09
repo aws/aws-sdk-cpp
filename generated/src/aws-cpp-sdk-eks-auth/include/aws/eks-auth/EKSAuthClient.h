@@ -23,8 +23,8 @@ namespace EKSAuth
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef EKSAuthClientConfiguration ClientConfigurationType;
       typedef EKSAuthEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace EKSAuth
         * is not specified, it will be initialized to default values.
         */
         EKSAuthClient(const Aws::EKSAuth::EKSAuthClientConfiguration& clientConfiguration = Aws::EKSAuth::EKSAuthClientConfiguration(),
-                      std::shared_ptr<EKSAuthEndpointProviderBase> endpointProvider = Aws::MakeShared<EKSAuthEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<EKSAuthEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EKSAuthClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<EKSAuthEndpointProviderBase> endpointProvider = Aws::MakeShared<EKSAuthEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<EKSAuthEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::EKSAuth::EKSAuthClientConfiguration& clientConfiguration = Aws::EKSAuth::EKSAuthClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace EKSAuth
         * the default http client factory will be used
         */
         EKSAuthClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<EKSAuthEndpointProviderBase> endpointProvider = Aws::MakeShared<EKSAuthEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<EKSAuthEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::EKSAuth::EKSAuthClientConfiguration& clientConfiguration = Aws::EKSAuth::EKSAuthClientConfiguration());
 
 

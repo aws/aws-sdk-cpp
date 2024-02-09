@@ -107,8 +107,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ApiGatewayV2Client::SERVICE_NAME = "apigateway";
-const char* ApiGatewayV2Client::ALLOCATION_TAG = "ApiGatewayV2Client";
+namespace Aws
+{
+  namespace ApiGatewayV2
+  {
+    const char SERVICE_NAME[] = "apigateway";
+    const char ALLOCATION_TAG[] = "ApiGatewayV2Client";
+  }
+}
+const char* ApiGatewayV2Client::GetServiceName() {return SERVICE_NAME;}
+const char* ApiGatewayV2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ApiGatewayV2Client::ApiGatewayV2Client(const ApiGatewayV2::ApiGatewayV2ClientConfiguration& clientConfiguration,
                                        std::shared_ptr<ApiGatewayV2EndpointProviderBase> endpointProvider) :
@@ -120,7 +128,7 @@ ApiGatewayV2Client::ApiGatewayV2Client(const ApiGatewayV2::ApiGatewayV2ClientCon
             Aws::MakeShared<ApiGatewayV2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApiGatewayV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -136,7 +144,7 @@ ApiGatewayV2Client::ApiGatewayV2Client(const AWSCredentials& credentials,
             Aws::MakeShared<ApiGatewayV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApiGatewayV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -152,7 +160,7 @@ ApiGatewayV2Client::ApiGatewayV2Client(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<ApiGatewayV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApiGatewayV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

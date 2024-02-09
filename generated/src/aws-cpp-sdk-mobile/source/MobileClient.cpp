@@ -44,8 +44,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MobileClient::SERVICE_NAME = "AWSMobileHubService";
-const char* MobileClient::ALLOCATION_TAG = "MobileClient";
+namespace Aws
+{
+  namespace Mobile
+  {
+    const char SERVICE_NAME[] = "AWSMobileHubService";
+    const char ALLOCATION_TAG[] = "MobileClient";
+  }
+}
+const char* MobileClient::GetServiceName() {return SERVICE_NAME;}
+const char* MobileClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MobileClient::MobileClient(const Mobile::MobileClientConfiguration& clientConfiguration,
                            std::shared_ptr<MobileEndpointProviderBase> endpointProvider) :
@@ -57,7 +65,7 @@ MobileClient::MobileClient(const Mobile::MobileClientConfiguration& clientConfig
             Aws::MakeShared<MobileErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MobileEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -73,7 +81,7 @@ MobileClient::MobileClient(const AWSCredentials& credentials,
             Aws::MakeShared<MobileErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MobileEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ MobileClient::MobileClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<MobileErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MobileEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

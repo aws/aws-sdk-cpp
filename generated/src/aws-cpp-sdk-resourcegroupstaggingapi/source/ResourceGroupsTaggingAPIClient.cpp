@@ -43,8 +43,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ResourceGroupsTaggingAPIClient::SERVICE_NAME = "tagging";
-const char* ResourceGroupsTaggingAPIClient::ALLOCATION_TAG = "ResourceGroupsTaggingAPIClient";
+namespace Aws
+{
+  namespace ResourceGroupsTaggingAPI
+  {
+    const char SERVICE_NAME[] = "tagging";
+    const char ALLOCATION_TAG[] = "ResourceGroupsTaggingAPIClient";
+  }
+}
+const char* ResourceGroupsTaggingAPIClient::GetServiceName() {return SERVICE_NAME;}
+const char* ResourceGroupsTaggingAPIClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const ResourceGroupsTaggingAPI::ResourceGroupsTaggingAPIClientConfiguration& clientConfiguration,
                                                                std::shared_ptr<ResourceGroupsTaggingAPIEndpointProviderBase> endpointProvider) :
@@ -56,7 +64,7 @@ ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const ResourceGro
             Aws::MakeShared<ResourceGroupsTaggingAPIErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResourceGroupsTaggingAPIEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -72,7 +80,7 @@ ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const AWSCredenti
             Aws::MakeShared<ResourceGroupsTaggingAPIErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResourceGroupsTaggingAPIEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const std::shared
             Aws::MakeShared<ResourceGroupsTaggingAPIErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResourceGroupsTaggingAPIEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

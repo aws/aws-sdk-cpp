@@ -27,8 +27,8 @@ namespace Scheduler
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SchedulerClientConfiguration ClientConfigurationType;
       typedef SchedulerEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace Scheduler
         * is not specified, it will be initialized to default values.
         */
         SchedulerClient(const Aws::Scheduler::SchedulerClientConfiguration& clientConfiguration = Aws::Scheduler::SchedulerClientConfiguration(),
-                        std::shared_ptr<SchedulerEndpointProviderBase> endpointProvider = Aws::MakeShared<SchedulerEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<SchedulerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SchedulerClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<SchedulerEndpointProviderBase> endpointProvider = Aws::MakeShared<SchedulerEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<SchedulerEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::Scheduler::SchedulerClientConfiguration& clientConfiguration = Aws::Scheduler::SchedulerClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace Scheduler
         * the default http client factory will be used
         */
         SchedulerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<SchedulerEndpointProviderBase> endpointProvider = Aws::MakeShared<SchedulerEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<SchedulerEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::Scheduler::SchedulerClientConfiguration& clientConfiguration = Aws::Scheduler::SchedulerClientConfiguration());
 
 

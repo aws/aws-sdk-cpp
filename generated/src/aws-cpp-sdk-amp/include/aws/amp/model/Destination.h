@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A representation of a destination that a scraper can produce metrics
-   * to.</p><p><h3>See Also:</h3>   <a
+   * <p>Where to send the metrics from a scraper.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/Destination">AWS API
    * Reference</a></p>
    */
@@ -39,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>A representation of an AMP destination.</p>
+     * <p>The Amazon Managed Service for Prometheusworkspace to send metrics to.</p>
      */
     inline const AmpConfiguration& GetAmpConfiguration() const{ return m_ampConfiguration; }
 
     /**
-     * <p>A representation of an AMP destination.</p>
+     * <p>The Amazon Managed Service for Prometheusworkspace to send metrics to.</p>
      */
     inline bool AmpConfigurationHasBeenSet() const { return m_ampConfigurationHasBeenSet; }
 
     /**
-     * <p>A representation of an AMP destination.</p>
+     * <p>The Amazon Managed Service for Prometheusworkspace to send metrics to.</p>
      */
     inline void SetAmpConfiguration(const AmpConfiguration& value) { m_ampConfigurationHasBeenSet = true; m_ampConfiguration = value; }
 
     /**
-     * <p>A representation of an AMP destination.</p>
+     * <p>The Amazon Managed Service for Prometheusworkspace to send metrics to.</p>
      */
     inline void SetAmpConfiguration(AmpConfiguration&& value) { m_ampConfigurationHasBeenSet = true; m_ampConfiguration = std::move(value); }
 
     /**
-     * <p>A representation of an AMP destination.</p>
+     * <p>The Amazon Managed Service for Prometheusworkspace to send metrics to.</p>
      */
     inline Destination& WithAmpConfiguration(const AmpConfiguration& value) { SetAmpConfiguration(value); return *this;}
 
     /**
-     * <p>A representation of an AMP destination.</p>
+     * <p>The Amazon Managed Service for Prometheusworkspace to send metrics to.</p>
      */
     inline Destination& WithAmpConfiguration(AmpConfiguration&& value) { SetAmpConfiguration(std::move(value)); return *this;}
 

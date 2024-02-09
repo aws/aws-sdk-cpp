@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Request was denied due to request throttling.</p><p><h3>See Also:</h3>   <a
+   * <p>The request was denied due to request throttling.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ThrottlingException">AWS
    * API Reference</a></p>
    */
@@ -79,83 +80,42 @@ namespace Model
 
 
     /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
-
-
-    /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
+     * <p>Service quotas code for the originating quota.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
 
     /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
+     * <p>Service quotas code for the originating quota.</p>
      */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
 
     /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
+     * <p>Service quotas code for the originating quota.</p>
      */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
 
     /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
+     * <p>Service quotas code for the originating quota.</p>
      */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
 
     /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
+     * <p>Service quotas code for the originating quota.</p>
      */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
 
     /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
+     * <p>Service quotas code for the originating quota.</p>
      */
     inline ThrottlingException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
 
     /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
+     * <p>Service quotas code for the originating quota.</p>
      */
     inline ThrottlingException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
 
     /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
+     * <p>Service quotas code for the originating quota.</p>
      */
     inline ThrottlingException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
 
@@ -180,19 +140,60 @@ namespace Model
      */
     inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
 
+
+    /**
+     * <p>Service quotas code for the originating service.</p>
+     */
+    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+
+    /**
+     * <p>Service quotas code for the originating service.</p>
+     */
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+
+    /**
+     * <p>Service quotas code for the originating service.</p>
+     */
+    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
+
+    /**
+     * <p>Service quotas code for the originating service.</p>
+     */
+    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
+
+    /**
+     * <p>Service quotas code for the originating service.</p>
+     */
+    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
+
+    /**
+     * <p>Service quotas code for the originating service.</p>
+     */
+    inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
+
+    /**
+     * <p>Service quotas code for the originating service.</p>
+     */
+    inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
+
+    /**
+     * <p>Service quotas code for the originating service.</p>
+     */
+    inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
-
-    Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_quotaCode;
     bool m_quotaCodeHasBeenSet = false;
 
     int m_retryAfterSeconds;
     bool m_retryAfterSecondsHasBeenSet = false;
+
+    Aws::String m_serviceCode;
+    bool m_serviceCodeHasBeenSet = false;
   };
 
 } // namespace Model

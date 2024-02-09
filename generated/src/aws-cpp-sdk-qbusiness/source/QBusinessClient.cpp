@@ -90,8 +90,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* QBusinessClient::SERVICE_NAME = "qbusiness";
-const char* QBusinessClient::ALLOCATION_TAG = "QBusinessClient";
+namespace Aws
+{
+  namespace QBusiness
+  {
+    const char SERVICE_NAME[] = "qbusiness";
+    const char ALLOCATION_TAG[] = "QBusinessClient";
+  }
+}
+const char* QBusinessClient::GetServiceName() {return SERVICE_NAME;}
+const char* QBusinessClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 QBusinessClient::QBusinessClient(const QBusiness::QBusinessClientConfiguration& clientConfiguration,
                                  std::shared_ptr<QBusinessEndpointProviderBase> endpointProvider) :
@@ -103,7 +111,7 @@ QBusinessClient::QBusinessClient(const QBusiness::QBusinessClientConfiguration& 
             Aws::MakeShared<QBusinessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -119,7 +127,7 @@ QBusinessClient::QBusinessClient(const AWSCredentials& credentials,
             Aws::MakeShared<QBusinessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -135,7 +143,7 @@ QBusinessClient::QBusinessClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<QBusinessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QBusinessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

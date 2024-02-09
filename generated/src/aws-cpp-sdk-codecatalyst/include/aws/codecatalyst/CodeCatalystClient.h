@@ -89,8 +89,8 @@ namespace CodeCatalyst
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CodeCatalystClientConfiguration ClientConfigurationType;
       typedef CodeCatalystEndpointProvider EndpointProviderType;
@@ -99,7 +99,7 @@ namespace CodeCatalyst
         * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
         */
         CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-                           std::shared_ptr<CodeCatalystEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<CodeCatalystEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::CodeCatalyst::CodeCatalystClientConfiguration& clientConfiguration = Aws::CodeCatalyst::CodeCatalystClientConfiguration());
 
 

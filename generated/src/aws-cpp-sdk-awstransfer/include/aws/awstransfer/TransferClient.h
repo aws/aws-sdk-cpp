@@ -33,8 +33,8 @@ namespace Transfer
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef TransferClientConfiguration ClientConfigurationType;
       typedef TransferEndpointProvider EndpointProviderType;
@@ -44,14 +44,14 @@ namespace Transfer
         * is not specified, it will be initialized to default values.
         */
         TransferClient(const Aws::Transfer::TransferClientConfiguration& clientConfiguration = Aws::Transfer::TransferClientConfiguration(),
-                       std::shared_ptr<TransferEndpointProviderBase> endpointProvider = Aws::MakeShared<TransferEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<TransferEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         TransferClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<TransferEndpointProviderBase> endpointProvider = Aws::MakeShared<TransferEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<TransferEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Transfer::TransferClientConfiguration& clientConfiguration = Aws::Transfer::TransferClientConfiguration());
 
        /**
@@ -59,7 +59,7 @@ namespace Transfer
         * the default http client factory will be used
         */
         TransferClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<TransferEndpointProviderBase> endpointProvider = Aws::MakeShared<TransferEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<TransferEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Transfer::TransferClientConfiguration& clientConfiguration = Aws::Transfer::TransferClientConfiguration());
 
 

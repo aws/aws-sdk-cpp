@@ -64,8 +64,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DetectiveClient::SERVICE_NAME = "detective";
-const char* DetectiveClient::ALLOCATION_TAG = "DetectiveClient";
+namespace Aws
+{
+  namespace Detective
+  {
+    const char SERVICE_NAME[] = "detective";
+    const char ALLOCATION_TAG[] = "DetectiveClient";
+  }
+}
+const char* DetectiveClient::GetServiceName() {return SERVICE_NAME;}
+const char* DetectiveClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DetectiveClient::DetectiveClient(const Detective::DetectiveClientConfiguration& clientConfiguration,
                                  std::shared_ptr<DetectiveEndpointProviderBase> endpointProvider) :
@@ -77,7 +85,7 @@ DetectiveClient::DetectiveClient(const Detective::DetectiveClientConfiguration& 
             Aws::MakeShared<DetectiveErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DetectiveEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ DetectiveClient::DetectiveClient(const AWSCredentials& credentials,
             Aws::MakeShared<DetectiveErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DetectiveEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -109,7 +117,7 @@ DetectiveClient::DetectiveClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<DetectiveErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DetectiveEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

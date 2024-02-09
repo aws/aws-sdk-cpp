@@ -39,8 +39,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MarketplaceMeteringClient::SERVICE_NAME = "aws-marketplace";
-const char* MarketplaceMeteringClient::ALLOCATION_TAG = "MarketplaceMeteringClient";
+namespace Aws
+{
+  namespace MarketplaceMetering
+  {
+    const char SERVICE_NAME[] = "aws-marketplace";
+    const char ALLOCATION_TAG[] = "MarketplaceMeteringClient";
+  }
+}
+const char* MarketplaceMeteringClient::GetServiceName() {return SERVICE_NAME;}
+const char* MarketplaceMeteringClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MarketplaceMeteringClient::MarketplaceMeteringClient(const MarketplaceMetering::MarketplaceMeteringClientConfiguration& clientConfiguration,
                                                      std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider) :
@@ -52,7 +60,7 @@ MarketplaceMeteringClient::MarketplaceMeteringClient(const MarketplaceMetering::
             Aws::MakeShared<MarketplaceMeteringErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceMeteringEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -68,7 +76,7 @@ MarketplaceMeteringClient::MarketplaceMeteringClient(const AWSCredentials& crede
             Aws::MakeShared<MarketplaceMeteringErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceMeteringEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ MarketplaceMeteringClient::MarketplaceMeteringClient(const std::shared_ptr<AWSCr
             Aws::MakeShared<MarketplaceMeteringErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceMeteringEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

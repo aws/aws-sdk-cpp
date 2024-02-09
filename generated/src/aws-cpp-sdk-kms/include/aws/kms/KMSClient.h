@@ -83,8 +83,8 @@ namespace KMS
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef KMSClientConfiguration ClientConfigurationType;
       typedef KMSEndpointProvider EndpointProviderType;
@@ -94,14 +94,14 @@ namespace KMS
         * is not specified, it will be initialized to default values.
         */
         KMSClient(const Aws::KMS::KMSClientConfiguration& clientConfiguration = Aws::KMS::KMSClientConfiguration(),
-                  std::shared_ptr<KMSEndpointProviderBase> endpointProvider = Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<KMSEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         KMSClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<KMSEndpointProviderBase> endpointProvider = Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<KMSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::KMS::KMSClientConfiguration& clientConfiguration = Aws::KMS::KMSClientConfiguration());
 
        /**
@@ -109,7 +109,7 @@ namespace KMS
         * the default http client factory will be used
         */
         KMSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<KMSEndpointProviderBase> endpointProvider = Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<KMSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::KMS::KMSClientConfiguration& clientConfiguration = Aws::KMS::KMSClientConfiguration());
 
 

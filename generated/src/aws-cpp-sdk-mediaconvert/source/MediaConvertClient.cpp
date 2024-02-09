@@ -62,8 +62,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MediaConvertClient::SERVICE_NAME = "mediaconvert";
-const char* MediaConvertClient::ALLOCATION_TAG = "MediaConvertClient";
+namespace Aws
+{
+  namespace MediaConvert
+  {
+    const char SERVICE_NAME[] = "mediaconvert";
+    const char ALLOCATION_TAG[] = "MediaConvertClient";
+  }
+}
+const char* MediaConvertClient::GetServiceName() {return SERVICE_NAME;}
+const char* MediaConvertClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MediaConvertClient::MediaConvertClient(const MediaConvert::MediaConvertClientConfiguration& clientConfiguration,
                                        std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider) :
@@ -75,7 +83,7 @@ MediaConvertClient::MediaConvertClient(const MediaConvert::MediaConvertClientCon
             Aws::MakeShared<MediaConvertErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaConvertEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ MediaConvertClient::MediaConvertClient(const AWSCredentials& credentials,
             Aws::MakeShared<MediaConvertErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaConvertEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ MediaConvertClient::MediaConvertClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<MediaConvertErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaConvertEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

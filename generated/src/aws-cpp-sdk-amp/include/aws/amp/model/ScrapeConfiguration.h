@@ -24,8 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>A representation of a Prometheus configuration file.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>A scrape configuration for a scraper, base 64 encoded. For more information,
+   * see <a
+   * href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
+   * configuration</a> in the <i>Amazon Managed Service for Prometheus User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ScrapeConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,32 +42,32 @@ namespace Model
 
 
     /**
-     * <p>Binary data representing a Prometheus configuration file.</p>
+     * <p>The base 64 encoded scrape configuration file.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetConfigurationBlob() const{ return m_configurationBlob; }
 
     /**
-     * <p>Binary data representing a Prometheus configuration file.</p>
+     * <p>The base 64 encoded scrape configuration file.</p>
      */
     inline bool ConfigurationBlobHasBeenSet() const { return m_configurationBlobHasBeenSet; }
 
     /**
-     * <p>Binary data representing a Prometheus configuration file.</p>
+     * <p>The base 64 encoded scrape configuration file.</p>
      */
     inline void SetConfigurationBlob(const Aws::Utils::ByteBuffer& value) { m_configurationBlobHasBeenSet = true; m_configurationBlob = value; }
 
     /**
-     * <p>Binary data representing a Prometheus configuration file.</p>
+     * <p>The base 64 encoded scrape configuration file.</p>
      */
     inline void SetConfigurationBlob(Aws::Utils::ByteBuffer&& value) { m_configurationBlobHasBeenSet = true; m_configurationBlob = std::move(value); }
 
     /**
-     * <p>Binary data representing a Prometheus configuration file.</p>
+     * <p>The base 64 encoded scrape configuration file.</p>
      */
     inline ScrapeConfiguration& WithConfigurationBlob(const Aws::Utils::ByteBuffer& value) { SetConfigurationBlob(value); return *this;}
 
     /**
-     * <p>Binary data representing a Prometheus configuration file.</p>
+     * <p>The base 64 encoded scrape configuration file.</p>
      */
     inline ScrapeConfiguration& WithConfigurationBlob(Aws::Utils::ByteBuffer&& value) { SetConfigurationBlob(std::move(value)); return *this;}
 

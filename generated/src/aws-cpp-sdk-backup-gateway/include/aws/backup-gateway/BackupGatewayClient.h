@@ -32,8 +32,8 @@ namespace BackupGateway
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef BackupGatewayClientConfiguration ClientConfigurationType;
       typedef BackupGatewayEndpointProvider EndpointProviderType;
@@ -43,14 +43,14 @@ namespace BackupGateway
         * is not specified, it will be initialized to default values.
         */
         BackupGatewayClient(const Aws::BackupGateway::BackupGatewayClientConfiguration& clientConfiguration = Aws::BackupGateway::BackupGatewayClientConfiguration(),
-                            std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider = Aws::MakeShared<BackupGatewayEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BackupGatewayClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider = Aws::MakeShared<BackupGatewayEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::BackupGateway::BackupGatewayClientConfiguration& clientConfiguration = Aws::BackupGateway::BackupGatewayClientConfiguration());
 
        /**
@@ -58,7 +58,7 @@ namespace BackupGateway
         * the default http client factory will be used
         */
         BackupGatewayClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider = Aws::MakeShared<BackupGatewayEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::BackupGateway::BackupGatewayClientConfiguration& clientConfiguration = Aws::BackupGateway::BackupGatewayClientConfiguration());
 
 

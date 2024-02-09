@@ -99,8 +99,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AppSyncClient::SERVICE_NAME = "appsync";
-const char* AppSyncClient::ALLOCATION_TAG = "AppSyncClient";
+namespace Aws
+{
+  namespace AppSync
+  {
+    const char SERVICE_NAME[] = "appsync";
+    const char ALLOCATION_TAG[] = "AppSyncClient";
+  }
+}
+const char* AppSyncClient::GetServiceName() {return SERVICE_NAME;}
+const char* AppSyncClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AppSyncClient::AppSyncClient(const AppSync::AppSyncClientConfiguration& clientConfiguration,
                              std::shared_ptr<AppSyncEndpointProviderBase> endpointProvider) :
@@ -112,7 +120,7 @@ AppSyncClient::AppSyncClient(const AppSync::AppSyncClientConfiguration& clientCo
             Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -128,7 +136,7 @@ AppSyncClient::AppSyncClient(const AWSCredentials& credentials,
             Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -144,7 +152,7 @@ AppSyncClient::AppSyncClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -49,8 +49,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodeGuruReviewerClient::SERVICE_NAME = "codeguru-reviewer";
-const char* CodeGuruReviewerClient::ALLOCATION_TAG = "CodeGuruReviewerClient";
+namespace Aws
+{
+  namespace CodeGuruReviewer
+  {
+    const char SERVICE_NAME[] = "codeguru-reviewer";
+    const char ALLOCATION_TAG[] = "CodeGuruReviewerClient";
+  }
+}
+const char* CodeGuruReviewerClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodeGuruReviewerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CodeGuruReviewerClient::CodeGuruReviewerClient(const CodeGuruReviewer::CodeGuruReviewerClientConfiguration& clientConfiguration,
                                                std::shared_ptr<CodeGuruReviewerEndpointProviderBase> endpointProvider) :
@@ -62,7 +70,7 @@ CodeGuruReviewerClient::CodeGuruReviewerClient(const CodeGuruReviewer::CodeGuruR
             Aws::MakeShared<CodeGuruReviewerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeGuruReviewerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -78,7 +86,7 @@ CodeGuruReviewerClient::CodeGuruReviewerClient(const AWSCredentials& credentials
             Aws::MakeShared<CodeGuruReviewerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeGuruReviewerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ CodeGuruReviewerClient::CodeGuruReviewerClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<CodeGuruReviewerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeGuruReviewerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

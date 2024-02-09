@@ -15,7 +15,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a GetDefaultScraperConfiguration
+   * <p>Represents the input of a <code>GetDefaultScraperConfiguration</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfigurationRequest">AWS
    * API Reference</a></p>

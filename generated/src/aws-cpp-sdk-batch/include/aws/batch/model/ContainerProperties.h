@@ -13,6 +13,7 @@
 #include <aws/batch/model/FargatePlatformConfiguration.h>
 #include <aws/batch/model/EphemeralStorage.h>
 #include <aws/batch/model/RuntimePlatform.h>
+#include <aws/batch/model/RepositoryCredentials.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
@@ -53,9 +54,9 @@ namespace Model
 
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -85,9 +86,9 @@ namespace Model
     inline const Aws::String& GetImage() const{ return m_image; }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -117,9 +118,9 @@ namespace Model
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -149,9 +150,9 @@ namespace Model
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -181,9 +182,9 @@ namespace Model
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -213,9 +214,9 @@ namespace Model
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -245,9 +246,9 @@ namespace Model
     inline ContainerProperties& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -277,9 +278,9 @@ namespace Model
     inline ContainerProperties& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -1652,23 +1653,72 @@ namespace Model
     inline ContainerProperties& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline ContainerProperties& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline ContainerProperties& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline const RepositoryCredentials& GetRepositoryCredentials() const{ return m_repositoryCredentials; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline bool RepositoryCredentialsHasBeenSet() const { return m_repositoryCredentialsHasBeenSet; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(const RepositoryCredentials& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = value; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(RepositoryCredentials&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::move(value); }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerProperties& WithRepositoryCredentials(const RepositoryCredentials& value) { SetRepositoryCredentials(value); return *this;}
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerProperties& WithRepositoryCredentials(RepositoryCredentials&& value) { SetRepositoryCredentials(std::move(value)); return *this;}
 
   private:
 
@@ -1731,6 +1781,9 @@ namespace Model
 
     RuntimePlatform m_runtimePlatform;
     bool m_runtimePlatformHasBeenSet = false;
+
+    RepositoryCredentials m_repositoryCredentials;
+    bool m_repositoryCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

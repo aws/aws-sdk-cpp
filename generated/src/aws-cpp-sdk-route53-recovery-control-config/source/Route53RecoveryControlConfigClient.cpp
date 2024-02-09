@@ -59,8 +59,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* Route53RecoveryControlConfigClient::SERVICE_NAME = "route53-recovery-control-config";
-const char* Route53RecoveryControlConfigClient::ALLOCATION_TAG = "Route53RecoveryControlConfigClient";
+namespace Aws
+{
+  namespace Route53RecoveryControlConfig
+  {
+    const char SERVICE_NAME[] = "route53-recovery-control-config";
+    const char ALLOCATION_TAG[] = "Route53RecoveryControlConfigClient";
+  }
+}
+const char* Route53RecoveryControlConfigClient::GetServiceName() {return SERVICE_NAME;}
+const char* Route53RecoveryControlConfigClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(const Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration& clientConfiguration,
                                                                        std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider) :
@@ -72,7 +80,7 @@ Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(const Rou
             Aws::MakeShared<Route53RecoveryControlConfigErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(const AWS
             Aws::MakeShared<Route53RecoveryControlConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -104,7 +112,7 @@ Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(const std
             Aws::MakeShared<Route53RecoveryControlConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

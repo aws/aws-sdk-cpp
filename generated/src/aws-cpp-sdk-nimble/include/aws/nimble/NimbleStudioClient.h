@@ -26,8 +26,8 @@ namespace NimbleStudio
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef NimbleStudioClientConfiguration ClientConfigurationType;
       typedef NimbleStudioEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace NimbleStudio
         * is not specified, it will be initialized to default values.
         */
         NimbleStudioClient(const Aws::NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration = Aws::NimbleStudio::NimbleStudioClientConfiguration(),
-                           std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider = Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         NimbleStudioClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider = Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration = Aws::NimbleStudio::NimbleStudioClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace NimbleStudio
         * the default http client factory will be used
         */
         NimbleStudioClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider = Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration = Aws::NimbleStudio::NimbleStudioClientConfiguration());
 
 

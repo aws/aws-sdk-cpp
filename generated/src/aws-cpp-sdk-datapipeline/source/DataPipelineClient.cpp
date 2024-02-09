@@ -54,8 +54,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DataPipelineClient::SERVICE_NAME = "datapipeline";
-const char* DataPipelineClient::ALLOCATION_TAG = "DataPipelineClient";
+namespace Aws
+{
+  namespace DataPipeline
+  {
+    const char SERVICE_NAME[] = "datapipeline";
+    const char ALLOCATION_TAG[] = "DataPipelineClient";
+  }
+}
+const char* DataPipelineClient::GetServiceName() {return SERVICE_NAME;}
+const char* DataPipelineClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DataPipelineClient::DataPipelineClient(const DataPipeline::DataPipelineClientConfiguration& clientConfiguration,
                                        std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider) :
@@ -67,7 +75,7 @@ DataPipelineClient::DataPipelineClient(const DataPipeline::DataPipelineClientCon
             Aws::MakeShared<DataPipelineErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataPipelineEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ DataPipelineClient::DataPipelineClient(const AWSCredentials& credentials,
             Aws::MakeShared<DataPipelineErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataPipelineEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -99,7 +107,7 @@ DataPipelineClient::DataPipelineClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<DataPipelineErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataPipelineEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

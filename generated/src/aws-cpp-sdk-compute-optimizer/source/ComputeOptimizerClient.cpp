@@ -58,8 +58,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ComputeOptimizerClient::SERVICE_NAME = "compute-optimizer";
-const char* ComputeOptimizerClient::ALLOCATION_TAG = "ComputeOptimizerClient";
+namespace Aws
+{
+  namespace ComputeOptimizer
+  {
+    const char SERVICE_NAME[] = "compute-optimizer";
+    const char ALLOCATION_TAG[] = "ComputeOptimizerClient";
+  }
+}
+const char* ComputeOptimizerClient::GetServiceName() {return SERVICE_NAME;}
+const char* ComputeOptimizerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ComputeOptimizerClient::ComputeOptimizerClient(const ComputeOptimizer::ComputeOptimizerClientConfiguration& clientConfiguration,
                                                std::shared_ptr<ComputeOptimizerEndpointProviderBase> endpointProvider) :
@@ -71,7 +79,7 @@ ComputeOptimizerClient::ComputeOptimizerClient(const ComputeOptimizer::ComputeOp
             Aws::MakeShared<ComputeOptimizerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ComputeOptimizerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ ComputeOptimizerClient::ComputeOptimizerClient(const AWSCredentials& credentials
             Aws::MakeShared<ComputeOptimizerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ComputeOptimizerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ ComputeOptimizerClient::ComputeOptimizerClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<ComputeOptimizerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ComputeOptimizerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

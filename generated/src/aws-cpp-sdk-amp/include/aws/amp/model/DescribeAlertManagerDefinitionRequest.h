@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a DescribeAlertManagerDefinition
+   * <p>Represents the input of a <code>DescribeAlertManagerDefinition</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinitionRequest">AWS
    * API Reference</a></p>
@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the workspace to describe.</p>
+     * <p>The ID of the workspace to retrieve the alert manager definition from.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
 
     /**
-     * <p>The ID of the workspace to describe.</p>
+     * <p>The ID of the workspace to retrieve the alert manager definition from.</p>
      */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the workspace to describe.</p>
+     * <p>The ID of the workspace to retrieve the alert manager definition from.</p>
      */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
-     * <p>The ID of the workspace to describe.</p>
+     * <p>The ID of the workspace to retrieve the alert manager definition from.</p>
      */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
-     * <p>The ID of the workspace to describe.</p>
+     * <p>The ID of the workspace to retrieve the alert manager definition from.</p>
      */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
 
     /**
-     * <p>The ID of the workspace to describe.</p>
+     * <p>The ID of the workspace to retrieve the alert manager definition from.</p>
      */
     inline DescribeAlertManagerDefinitionRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
 
     /**
-     * <p>The ID of the workspace to describe.</p>
+     * <p>The ID of the workspace to retrieve the alert manager definition from.</p>
      */
     inline DescribeAlertManagerDefinitionRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the workspace to describe.</p>
+     * <p>The ID of the workspace to retrieve the alert manager definition from.</p>
      */
     inline DescribeAlertManagerDefinitionRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 

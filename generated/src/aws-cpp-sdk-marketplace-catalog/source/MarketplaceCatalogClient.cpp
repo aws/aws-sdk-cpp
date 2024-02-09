@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MarketplaceCatalogClient::SERVICE_NAME = "aws-marketplace";
-const char* MarketplaceCatalogClient::ALLOCATION_TAG = "MarketplaceCatalogClient";
+namespace Aws
+{
+  namespace MarketplaceCatalog
+  {
+    const char SERVICE_NAME[] = "aws-marketplace";
+    const char ALLOCATION_TAG[] = "MarketplaceCatalogClient";
+  }
+}
+const char* MarketplaceCatalogClient::GetServiceName() {return SERVICE_NAME;}
+const char* MarketplaceCatalogClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MarketplaceCatalogClient::MarketplaceCatalogClient(const MarketplaceCatalog::MarketplaceCatalogClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const MarketplaceCatalog::Mar
             Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const AWSCredentials& credent
             Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

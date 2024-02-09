@@ -30,8 +30,8 @@ namespace FreeTier
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef FreeTierClientConfiguration ClientConfigurationType;
       typedef FreeTierEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace FreeTier
         * is not specified, it will be initialized to default values.
         */
         FreeTierClient(const Aws::FreeTier::FreeTierClientConfiguration& clientConfiguration = Aws::FreeTier::FreeTierClientConfiguration(),
-                       std::shared_ptr<FreeTierEndpointProviderBase> endpointProvider = Aws::MakeShared<FreeTierEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<FreeTierEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         FreeTierClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<FreeTierEndpointProviderBase> endpointProvider = Aws::MakeShared<FreeTierEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<FreeTierEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::FreeTier::FreeTierClientConfiguration& clientConfiguration = Aws::FreeTier::FreeTierClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace FreeTier
         * the default http client factory will be used
         */
         FreeTierClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<FreeTierEndpointProviderBase> endpointProvider = Aws::MakeShared<FreeTierEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<FreeTierEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::FreeTier::FreeTierClientConfiguration& clientConfiguration = Aws::FreeTier::FreeTierClientConfiguration());
 
 

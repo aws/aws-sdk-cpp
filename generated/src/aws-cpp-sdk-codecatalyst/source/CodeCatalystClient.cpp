@@ -74,8 +74,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodeCatalystClient::SERVICE_NAME = "codecatalyst";
-const char* CodeCatalystClient::ALLOCATION_TAG = "CodeCatalystClient";
+namespace Aws
+{
+  namespace CodeCatalyst
+  {
+    const char SERVICE_NAME[] = "codecatalyst";
+    const char ALLOCATION_TAG[] = "CodeCatalystClient";
+  }
+}
+const char* CodeCatalystClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodeCatalystClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
     CodeCatalystClient::CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
                                            std::shared_ptr<CodeCatalystEndpointProviderBase> endpointProvider,
@@ -83,7 +91,7 @@ const char* CodeCatalystClient::ALLOCATION_TAG = "CodeCatalystClient";
             Aws::MakeShared<Aws::Auth::BearerTokenAuthSignerProvider>(ALLOCATION_TAG, bearerTokenProvider),
             Aws::MakeShared<CodeCatalystErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
-  m_executor(clientConfiguration.executor),  m_endpointProvider(std::move(endpointProvider)){
+  m_executor(clientConfiguration.executor),  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG)){
   init(m_clientConfiguration);
 }
 

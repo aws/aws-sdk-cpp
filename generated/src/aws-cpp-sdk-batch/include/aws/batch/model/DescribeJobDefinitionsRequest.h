@@ -41,8 +41,8 @@ namespace Model
      * <p>A list of up to 100 job definitions. Each entry in the list can either be an
      * ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     * or a short version using the form
-     * <code>${JobDefinitionName}:${Revision}</code>.</p>
+     * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * This parameter can't be used with other parameters.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJobDefinitions() const{ return m_jobDefinitions; }
 
@@ -50,8 +50,8 @@ namespace Model
      * <p>A list of up to 100 job definitions. Each entry in the list can either be an
      * ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     * or a short version using the form
-     * <code>${JobDefinitionName}:${Revision}</code>.</p>
+     * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * This parameter can't be used with other parameters.</p>
      */
     inline bool JobDefinitionsHasBeenSet() const { return m_jobDefinitionsHasBeenSet; }
 
@@ -59,8 +59,8 @@ namespace Model
      * <p>A list of up to 100 job definitions. Each entry in the list can either be an
      * ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     * or a short version using the form
-     * <code>${JobDefinitionName}:${Revision}</code>.</p>
+     * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * This parameter can't be used with other parameters.</p>
      */
     inline void SetJobDefinitions(const Aws::Vector<Aws::String>& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions = value; }
 
@@ -68,8 +68,8 @@ namespace Model
      * <p>A list of up to 100 job definitions. Each entry in the list can either be an
      * ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     * or a short version using the form
-     * <code>${JobDefinitionName}:${Revision}</code>.</p>
+     * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * This parameter can't be used with other parameters.</p>
      */
     inline void SetJobDefinitions(Aws::Vector<Aws::String>&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions = std::move(value); }
 
@@ -77,8 +77,8 @@ namespace Model
      * <p>A list of up to 100 job definitions. Each entry in the list can either be an
      * ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     * or a short version using the form
-     * <code>${JobDefinitionName}:${Revision}</code>.</p>
+     * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * This parameter can't be used with other parameters.</p>
      */
     inline DescribeJobDefinitionsRequest& WithJobDefinitions(const Aws::Vector<Aws::String>& value) { SetJobDefinitions(value); return *this;}
 
@@ -86,8 +86,8 @@ namespace Model
      * <p>A list of up to 100 job definitions. Each entry in the list can either be an
      * ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     * or a short version using the form
-     * <code>${JobDefinitionName}:${Revision}</code>.</p>
+     * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * This parameter can't be used with other parameters.</p>
      */
     inline DescribeJobDefinitionsRequest& WithJobDefinitions(Aws::Vector<Aws::String>&& value) { SetJobDefinitions(std::move(value)); return *this;}
 
@@ -95,8 +95,8 @@ namespace Model
      * <p>A list of up to 100 job definitions. Each entry in the list can either be an
      * ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     * or a short version using the form
-     * <code>${JobDefinitionName}:${Revision}</code>.</p>
+     * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * This parameter can't be used with other parameters.</p>
      */
     inline DescribeJobDefinitionsRequest& AddJobDefinitions(const Aws::String& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(value); return *this; }
 
@@ -104,8 +104,8 @@ namespace Model
      * <p>A list of up to 100 job definitions. Each entry in the list can either be an
      * ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     * or a short version using the form
-     * <code>${JobDefinitionName}:${Revision}</code>.</p>
+     * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * This parameter can't be used with other parameters.</p>
      */
     inline DescribeJobDefinitionsRequest& AddJobDefinitions(Aws::String&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(std::move(value)); return *this; }
 
@@ -113,8 +113,8 @@ namespace Model
      * <p>A list of up to 100 job definitions. Each entry in the list can either be an
      * ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-     * or a short version using the form
-     * <code>${JobDefinitionName}:${Revision}</code>.</p>
+     * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * This parameter can't be used with other parameters.</p>
      */
     inline DescribeJobDefinitionsRequest& AddJobDefinitions(const char* value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(value); return *this; }
 

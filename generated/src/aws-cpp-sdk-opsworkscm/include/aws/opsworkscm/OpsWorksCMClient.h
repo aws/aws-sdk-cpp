@@ -63,8 +63,8 @@ namespace OpsWorksCM
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef OpsWorksCMClientConfiguration ClientConfigurationType;
       typedef OpsWorksCMEndpointProvider EndpointProviderType;
@@ -74,14 +74,14 @@ namespace OpsWorksCM
         * is not specified, it will be initialized to default values.
         */
         OpsWorksCMClient(const Aws::OpsWorksCM::OpsWorksCMClientConfiguration& clientConfiguration = Aws::OpsWorksCM::OpsWorksCMClientConfiguration(),
-                         std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksCMEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         OpsWorksCMClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksCMEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::OpsWorksCM::OpsWorksCMClientConfiguration& clientConfiguration = Aws::OpsWorksCM::OpsWorksCMClientConfiguration());
 
        /**
@@ -89,7 +89,7 @@ namespace OpsWorksCM
         * the default http client factory will be used
         */
         OpsWorksCMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksCMEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::OpsWorksCM::OpsWorksCMClientConfiguration& clientConfiguration = Aws::OpsWorksCM::OpsWorksCMClientConfiguration());
 
 

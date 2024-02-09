@@ -26,8 +26,8 @@ namespace ConnectWisdomService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ConnectWisdomServiceClientConfiguration ClientConfigurationType;
       typedef ConnectWisdomServiceEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace ConnectWisdomService
         * is not specified, it will be initialized to default values.
         */
         ConnectWisdomServiceClient(const Aws::ConnectWisdomService::ConnectWisdomServiceClientConfiguration& clientConfiguration = Aws::ConnectWisdomService::ConnectWisdomServiceClientConfiguration(),
-                                   std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectWisdomServiceEndpointProvider>(ALLOCATION_TAG));
+                                   std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ConnectWisdomServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                   std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectWisdomServiceEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::ConnectWisdomService::ConnectWisdomServiceClientConfiguration& clientConfiguration = Aws::ConnectWisdomService::ConnectWisdomServiceClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace ConnectWisdomService
         * the default http client factory will be used
         */
         ConnectWisdomServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                   std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectWisdomServiceEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::ConnectWisdomService::ConnectWisdomServiceClientConfiguration& clientConfiguration = Aws::ConnectWisdomService::ConnectWisdomServiceClientConfiguration());
 
 

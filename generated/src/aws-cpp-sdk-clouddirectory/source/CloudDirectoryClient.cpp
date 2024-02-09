@@ -101,8 +101,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudDirectoryClient::SERVICE_NAME = "clouddirectory";
-const char* CloudDirectoryClient::ALLOCATION_TAG = "CloudDirectoryClient";
+namespace Aws
+{
+  namespace CloudDirectory
+  {
+    const char SERVICE_NAME[] = "clouddirectory";
+    const char ALLOCATION_TAG[] = "CloudDirectoryClient";
+  }
+}
+const char* CloudDirectoryClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudDirectoryClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudDirectoryClient::CloudDirectoryClient(const CloudDirectory::CloudDirectoryClientConfiguration& clientConfiguration,
                                            std::shared_ptr<CloudDirectoryEndpointProviderBase> endpointProvider) :
@@ -114,7 +122,7 @@ CloudDirectoryClient::CloudDirectoryClient(const CloudDirectory::CloudDirectoryC
             Aws::MakeShared<CloudDirectoryErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudDirectoryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -130,7 +138,7 @@ CloudDirectoryClient::CloudDirectoryClient(const AWSCredentials& credentials,
             Aws::MakeShared<CloudDirectoryErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudDirectoryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -146,7 +154,7 @@ CloudDirectoryClient::CloudDirectoryClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<CloudDirectoryErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudDirectoryEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

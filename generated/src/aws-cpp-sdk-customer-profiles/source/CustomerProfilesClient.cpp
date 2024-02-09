@@ -87,8 +87,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CustomerProfilesClient::SERVICE_NAME = "profile";
-const char* CustomerProfilesClient::ALLOCATION_TAG = "CustomerProfilesClient";
+namespace Aws
+{
+  namespace CustomerProfiles
+  {
+    const char SERVICE_NAME[] = "profile";
+    const char ALLOCATION_TAG[] = "CustomerProfilesClient";
+  }
+}
+const char* CustomerProfilesClient::GetServiceName() {return SERVICE_NAME;}
+const char* CustomerProfilesClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CustomerProfilesClient::CustomerProfilesClient(const CustomerProfiles::CustomerProfilesClientConfiguration& clientConfiguration,
                                                std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider) :
@@ -100,7 +108,7 @@ CustomerProfilesClient::CustomerProfilesClient(const CustomerProfiles::CustomerP
             Aws::MakeShared<CustomerProfilesErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -116,7 +124,7 @@ CustomerProfilesClient::CustomerProfilesClient(const AWSCredentials& credentials
             Aws::MakeShared<CustomerProfilesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -132,7 +140,7 @@ CustomerProfilesClient::CustomerProfilesClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<CustomerProfilesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -47,8 +47,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SchedulerClient::SERVICE_NAME = "scheduler";
-const char* SchedulerClient::ALLOCATION_TAG = "SchedulerClient";
+namespace Aws
+{
+  namespace Scheduler
+  {
+    const char SERVICE_NAME[] = "scheduler";
+    const char ALLOCATION_TAG[] = "SchedulerClient";
+  }
+}
+const char* SchedulerClient::GetServiceName() {return SERVICE_NAME;}
+const char* SchedulerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SchedulerClient::SchedulerClient(const Scheduler::SchedulerClientConfiguration& clientConfiguration,
                                  std::shared_ptr<SchedulerEndpointProviderBase> endpointProvider) :
@@ -60,7 +68,7 @@ SchedulerClient::SchedulerClient(const Scheduler::SchedulerClientConfiguration& 
             Aws::MakeShared<SchedulerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SchedulerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -76,7 +84,7 @@ SchedulerClient::SchedulerClient(const AWSCredentials& credentials,
             Aws::MakeShared<SchedulerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SchedulerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -92,7 +100,7 @@ SchedulerClient::SchedulerClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<SchedulerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SchedulerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

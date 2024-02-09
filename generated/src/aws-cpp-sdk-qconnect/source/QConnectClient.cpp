@@ -75,8 +75,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* QConnectClient::SERVICE_NAME = "wisdom";
-const char* QConnectClient::ALLOCATION_TAG = "QConnectClient";
+namespace Aws
+{
+  namespace QConnect
+  {
+    const char SERVICE_NAME[] = "wisdom";
+    const char ALLOCATION_TAG[] = "QConnectClient";
+  }
+}
+const char* QConnectClient::GetServiceName() {return SERVICE_NAME;}
+const char* QConnectClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 QConnectClient::QConnectClient(const QConnect::QConnectClientConfiguration& clientConfiguration,
                                std::shared_ptr<QConnectEndpointProviderBase> endpointProvider) :
@@ -88,7 +96,7 @@ QConnectClient::QConnectClient(const QConnect::QConnectClientConfiguration& clie
             Aws::MakeShared<QConnectErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -104,7 +112,7 @@ QConnectClient::QConnectClient(const AWSCredentials& credentials,
             Aws::MakeShared<QConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -120,7 +128,7 @@ QConnectClient::QConnectClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<QConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

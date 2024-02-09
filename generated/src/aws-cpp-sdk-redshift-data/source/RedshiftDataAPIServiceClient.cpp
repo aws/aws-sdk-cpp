@@ -45,8 +45,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* RedshiftDataAPIServiceClient::SERVICE_NAME = "redshift-data";
-const char* RedshiftDataAPIServiceClient::ALLOCATION_TAG = "RedshiftDataAPIServiceClient";
+namespace Aws
+{
+  namespace RedshiftDataAPIService
+  {
+    const char SERVICE_NAME[] = "redshift-data";
+    const char ALLOCATION_TAG[] = "RedshiftDataAPIServiceClient";
+  }
+}
+const char* RedshiftDataAPIServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* RedshiftDataAPIServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const RedshiftDataAPIService::RedshiftDataAPIServiceClientConfiguration& clientConfiguration,
                                                            std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> endpointProvider) :
@@ -58,7 +66,7 @@ RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const RedshiftDataAPI
             Aws::MakeShared<RedshiftDataAPIServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RedshiftDataAPIServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -74,7 +82,7 @@ RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const AWSCredentials&
             Aws::MakeShared<RedshiftDataAPIServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RedshiftDataAPIServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const std::shared_ptr
             Aws::MakeShared<RedshiftDataAPIServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RedshiftDataAPIServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -23,8 +23,8 @@ namespace inspectorscan
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef InspectorscanClientConfiguration ClientConfigurationType;
       typedef InspectorscanEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace inspectorscan
         * is not specified, it will be initialized to default values.
         */
         InspectorscanClient(const Aws::inspectorscan::InspectorscanClientConfiguration& clientConfiguration = Aws::inspectorscan::InspectorscanClientConfiguration(),
-                            std::shared_ptr<InspectorscanEndpointProviderBase> endpointProvider = Aws::MakeShared<InspectorscanEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<InspectorscanEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         InspectorscanClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<InspectorscanEndpointProviderBase> endpointProvider = Aws::MakeShared<InspectorscanEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<InspectorscanEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::inspectorscan::InspectorscanClientConfiguration& clientConfiguration = Aws::inspectorscan::InspectorscanClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace inspectorscan
         * the default http client factory will be used
         */
         InspectorscanClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<InspectorscanEndpointProviderBase> endpointProvider = Aws::MakeShared<InspectorscanEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<InspectorscanEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::inspectorscan::InspectorscanClientConfiguration& clientConfiguration = Aws::inspectorscan::InspectorscanClientConfiguration());
 
 

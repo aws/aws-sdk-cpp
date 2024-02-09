@@ -45,8 +45,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* TrustedAdvisorClient::SERVICE_NAME = "trustedadvisor";
-const char* TrustedAdvisorClient::ALLOCATION_TAG = "TrustedAdvisorClient";
+namespace Aws
+{
+  namespace TrustedAdvisor
+  {
+    const char SERVICE_NAME[] = "trustedadvisor";
+    const char ALLOCATION_TAG[] = "TrustedAdvisorClient";
+  }
+}
+const char* TrustedAdvisorClient::GetServiceName() {return SERVICE_NAME;}
+const char* TrustedAdvisorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 TrustedAdvisorClient::TrustedAdvisorClient(const TrustedAdvisor::TrustedAdvisorClientConfiguration& clientConfiguration,
                                            std::shared_ptr<TrustedAdvisorEndpointProviderBase> endpointProvider) :
@@ -58,7 +66,7 @@ TrustedAdvisorClient::TrustedAdvisorClient(const TrustedAdvisor::TrustedAdvisorC
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TrustedAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -74,7 +82,7 @@ TrustedAdvisorClient::TrustedAdvisorClient(const AWSCredentials& credentials,
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TrustedAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ TrustedAdvisorClient::TrustedAdvisorClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<TrustedAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TrustedAdvisorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

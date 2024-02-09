@@ -55,8 +55,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KinesisAnalyticsClient::SERVICE_NAME = "kinesisanalytics";
-const char* KinesisAnalyticsClient::ALLOCATION_TAG = "KinesisAnalyticsClient";
+namespace Aws
+{
+  namespace KinesisAnalytics
+  {
+    const char SERVICE_NAME[] = "kinesisanalytics";
+    const char ALLOCATION_TAG[] = "KinesisAnalyticsClient";
+  }
+}
+const char* KinesisAnalyticsClient::GetServiceName() {return SERVICE_NAME;}
+const char* KinesisAnalyticsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KinesisAnalyticsClient::KinesisAnalyticsClient(const KinesisAnalytics::KinesisAnalyticsClientConfiguration& clientConfiguration,
                                                std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider) :
@@ -68,7 +76,7 @@ KinesisAnalyticsClient::KinesisAnalyticsClient(const KinesisAnalytics::KinesisAn
             Aws::MakeShared<KinesisAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisAnalyticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ KinesisAnalyticsClient::KinesisAnalyticsClient(const AWSCredentials& credentials
             Aws::MakeShared<KinesisAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisAnalyticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -100,7 +108,7 @@ KinesisAnalyticsClient::KinesisAnalyticsClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<KinesisAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisAnalyticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

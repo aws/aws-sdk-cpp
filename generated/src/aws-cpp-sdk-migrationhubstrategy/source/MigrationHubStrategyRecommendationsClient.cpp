@@ -57,8 +57,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MigrationHubStrategyRecommendationsClient::SERVICE_NAME = "migrationhub-strategy";
-const char* MigrationHubStrategyRecommendationsClient::ALLOCATION_TAG = "MigrationHubStrategyRecommendationsClient";
+namespace Aws
+{
+  namespace MigrationHubStrategyRecommendations
+  {
+    const char SERVICE_NAME[] = "migrationhub-strategy";
+    const char ALLOCATION_TAG[] = "MigrationHubStrategyRecommendationsClient";
+  }
+}
+const char* MigrationHubStrategyRecommendationsClient::GetServiceName() {return SERVICE_NAME;}
+const char* MigrationHubStrategyRecommendationsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsClient(const MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration,
                                                                                      std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider) :
@@ -70,7 +78,7 @@ MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsCl
             Aws::MakeShared<MigrationHubStrategyRecommendationsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -86,7 +94,7 @@ MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsCl
             Aws::MakeShared<MigrationHubStrategyRecommendationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -102,7 +110,7 @@ MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsCl
             Aws::MakeShared<MigrationHubStrategyRecommendationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -39,8 +39,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SSOClient::SERVICE_NAME = "awsssoportal";
-const char* SSOClient::ALLOCATION_TAG = "SSOClient";
+namespace Aws
+{
+  namespace SSO
+  {
+    const char SERVICE_NAME[] = "awsssoportal";
+    const char ALLOCATION_TAG[] = "SSOClient";
+  }
+}
+const char* SSOClient::GetServiceName() {return SERVICE_NAME;}
+const char* SSOClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SSOClient::SSOClient(const SSO::SSOClientConfiguration& clientConfiguration,
                      std::shared_ptr<SSOEndpointProviderBase> endpointProvider) :
@@ -52,7 +60,7 @@ SSOClient::SSOClient(const SSO::SSOClientConfiguration& clientConfiguration,
             Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSOEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -68,7 +76,7 @@ SSOClient::SSOClient(const AWSCredentials& credentials,
             Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSOEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ SSOClient::SSOClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SSOEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

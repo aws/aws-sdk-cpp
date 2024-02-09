@@ -68,8 +68,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* GlacierClient::SERVICE_NAME = "glacier";
-const char* GlacierClient::ALLOCATION_TAG = "GlacierClient";
+namespace Aws
+{
+  namespace Glacier
+  {
+    const char SERVICE_NAME[] = "glacier";
+    const char ALLOCATION_TAG[] = "GlacierClient";
+  }
+}
+const char* GlacierClient::GetServiceName() {return SERVICE_NAME;}
+const char* GlacierClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 GlacierClient::GlacierClient(const Glacier::GlacierClientConfiguration& clientConfiguration,
                              std::shared_ptr<GlacierEndpointProviderBase> endpointProvider) :
@@ -81,7 +89,7 @@ GlacierClient::GlacierClient(const Glacier::GlacierClientConfiguration& clientCo
             Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlacierEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -97,7 +105,7 @@ GlacierClient::GlacierClient(const AWSCredentials& credentials,
             Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlacierEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -113,7 +121,7 @@ GlacierClient::GlacierClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlacierEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -65,8 +65,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LookoutMetricsClient::SERVICE_NAME = "lookoutmetrics";
-const char* LookoutMetricsClient::ALLOCATION_TAG = "LookoutMetricsClient";
+namespace Aws
+{
+  namespace LookoutMetrics
+  {
+    const char SERVICE_NAME[] = "lookoutmetrics";
+    const char ALLOCATION_TAG[] = "LookoutMetricsClient";
+  }
+}
+const char* LookoutMetricsClient::GetServiceName() {return SERVICE_NAME;}
+const char* LookoutMetricsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LookoutMetricsClient::LookoutMetricsClient(const LookoutMetrics::LookoutMetricsClientConfiguration& clientConfiguration,
                                            std::shared_ptr<LookoutMetricsEndpointProviderBase> endpointProvider) :
@@ -78,7 +86,7 @@ LookoutMetricsClient::LookoutMetricsClient(const LookoutMetrics::LookoutMetricsC
             Aws::MakeShared<LookoutMetricsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LookoutMetricsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ LookoutMetricsClient::LookoutMetricsClient(const AWSCredentials& credentials,
             Aws::MakeShared<LookoutMetricsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LookoutMetricsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -110,7 +118,7 @@ LookoutMetricsClient::LookoutMetricsClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<LookoutMetricsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LookoutMetricsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

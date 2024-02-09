@@ -50,8 +50,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* HoneycodeClient::SERVICE_NAME = "honeycode";
-const char* HoneycodeClient::ALLOCATION_TAG = "HoneycodeClient";
+namespace Aws
+{
+  namespace Honeycode
+  {
+    const char SERVICE_NAME[] = "honeycode";
+    const char ALLOCATION_TAG[] = "HoneycodeClient";
+  }
+}
+const char* HoneycodeClient::GetServiceName() {return SERVICE_NAME;}
+const char* HoneycodeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 HoneycodeClient::HoneycodeClient(const Honeycode::HoneycodeClientConfiguration& clientConfiguration,
                                  std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider) :
@@ -63,7 +71,7 @@ HoneycodeClient::HoneycodeClient(const Honeycode::HoneycodeClientConfiguration& 
             Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<HoneycodeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -79,7 +87,7 @@ HoneycodeClient::HoneycodeClient(const AWSCredentials& credentials,
             Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<HoneycodeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -95,7 +103,7 @@ HoneycodeClient::HoneycodeClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<HoneycodeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

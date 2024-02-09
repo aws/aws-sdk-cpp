@@ -28,8 +28,8 @@ namespace ServiceCatalog
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ServiceCatalogClientConfiguration ClientConfigurationType;
       typedef ServiceCatalogEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace ServiceCatalog
         * is not specified, it will be initialized to default values.
         */
         ServiceCatalogClient(const Aws::ServiceCatalog::ServiceCatalogClientConfiguration& clientConfiguration = Aws::ServiceCatalog::ServiceCatalogClientConfiguration(),
-                             std::shared_ptr<ServiceCatalogEndpointProviderBase> endpointProvider = Aws::MakeShared<ServiceCatalogEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<ServiceCatalogEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ServiceCatalogClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<ServiceCatalogEndpointProviderBase> endpointProvider = Aws::MakeShared<ServiceCatalogEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<ServiceCatalogEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::ServiceCatalog::ServiceCatalogClientConfiguration& clientConfiguration = Aws::ServiceCatalog::ServiceCatalogClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace ServiceCatalog
         * the default http client factory will be used
         */
         ServiceCatalogClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<ServiceCatalogEndpointProviderBase> endpointProvider = Aws::MakeShared<ServiceCatalogEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<ServiceCatalogEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::ServiceCatalog::ServiceCatalogClientConfiguration& clientConfiguration = Aws::ServiceCatalog::ServiceCatalogClientConfiguration());
 
 

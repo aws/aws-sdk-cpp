@@ -122,8 +122,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ProtonClient::SERVICE_NAME = "proton";
-const char* ProtonClient::ALLOCATION_TAG = "ProtonClient";
+namespace Aws
+{
+  namespace Proton
+  {
+    const char SERVICE_NAME[] = "proton";
+    const char ALLOCATION_TAG[] = "ProtonClient";
+  }
+}
+const char* ProtonClient::GetServiceName() {return SERVICE_NAME;}
+const char* ProtonClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ProtonClient::ProtonClient(const Proton::ProtonClientConfiguration& clientConfiguration,
                            std::shared_ptr<ProtonEndpointProviderBase> endpointProvider) :
@@ -135,7 +143,7 @@ ProtonClient::ProtonClient(const Proton::ProtonClientConfiguration& clientConfig
             Aws::MakeShared<ProtonErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ProtonEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -151,7 +159,7 @@ ProtonClient::ProtonClient(const AWSCredentials& credentials,
             Aws::MakeShared<ProtonErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ProtonEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -167,7 +175,7 @@ ProtonClient::ProtonClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<ProtonErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ProtonEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

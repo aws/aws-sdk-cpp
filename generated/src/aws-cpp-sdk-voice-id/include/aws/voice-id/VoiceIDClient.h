@@ -24,8 +24,8 @@ namespace VoiceID
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef VoiceIDClientConfiguration ClientConfigurationType;
       typedef VoiceIDEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace VoiceID
         * is not specified, it will be initialized to default values.
         */
         VoiceIDClient(const Aws::VoiceID::VoiceIDClientConfiguration& clientConfiguration = Aws::VoiceID::VoiceIDClientConfiguration(),
-                      std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider = Aws::MakeShared<VoiceIDEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         VoiceIDClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider = Aws::MakeShared<VoiceIDEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::VoiceID::VoiceIDClientConfiguration& clientConfiguration = Aws::VoiceID::VoiceIDClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace VoiceID
         * the default http client factory will be used
         */
         VoiceIDClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider = Aws::MakeShared<VoiceIDEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::VoiceID::VoiceIDClientConfiguration& clientConfiguration = Aws::VoiceID::VoiceIDClientConfiguration());
 
 

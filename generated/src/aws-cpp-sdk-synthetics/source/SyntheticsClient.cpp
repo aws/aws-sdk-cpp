@@ -56,8 +56,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SyntheticsClient::SERVICE_NAME = "synthetics";
-const char* SyntheticsClient::ALLOCATION_TAG = "SyntheticsClient";
+namespace Aws
+{
+  namespace Synthetics
+  {
+    const char SERVICE_NAME[] = "synthetics";
+    const char ALLOCATION_TAG[] = "SyntheticsClient";
+  }
+}
+const char* SyntheticsClient::GetServiceName() {return SERVICE_NAME;}
+const char* SyntheticsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SyntheticsClient::SyntheticsClient(const Synthetics::SyntheticsClientConfiguration& clientConfiguration,
                                    std::shared_ptr<SyntheticsEndpointProviderBase> endpointProvider) :
@@ -69,7 +77,7 @@ SyntheticsClient::SyntheticsClient(const Synthetics::SyntheticsClientConfigurati
             Aws::MakeShared<SyntheticsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SyntheticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -85,7 +93,7 @@ SyntheticsClient::SyntheticsClient(const AWSCredentials& credentials,
             Aws::MakeShared<SyntheticsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SyntheticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -101,7 +109,7 @@ SyntheticsClient::SyntheticsClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<SyntheticsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SyntheticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

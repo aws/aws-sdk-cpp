@@ -55,8 +55,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BedrockClient::SERVICE_NAME = "bedrock";
-const char* BedrockClient::ALLOCATION_TAG = "BedrockClient";
+namespace Aws
+{
+  namespace Bedrock
+  {
+    const char SERVICE_NAME[] = "bedrock";
+    const char ALLOCATION_TAG[] = "BedrockClient";
+  }
+}
+const char* BedrockClient::GetServiceName() {return SERVICE_NAME;}
+const char* BedrockClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BedrockClient::BedrockClient(const Bedrock::BedrockClientConfiguration& clientConfiguration,
                              std::shared_ptr<BedrockEndpointProviderBase> endpointProvider) :
@@ -68,7 +76,7 @@ BedrockClient::BedrockClient(const Bedrock::BedrockClientConfiguration& clientCo
             Aws::MakeShared<BedrockErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ BedrockClient::BedrockClient(const AWSCredentials& credentials,
             Aws::MakeShared<BedrockErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -100,7 +108,7 @@ BedrockClient::BedrockClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<BedrockErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

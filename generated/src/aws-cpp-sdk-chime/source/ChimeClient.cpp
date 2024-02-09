@@ -97,8 +97,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ChimeClient::SERVICE_NAME = "chime";
-const char* ChimeClient::ALLOCATION_TAG = "ChimeClient";
+namespace Aws
+{
+  namespace Chime
+  {
+    const char SERVICE_NAME[] = "chime";
+    const char ALLOCATION_TAG[] = "ChimeClient";
+  }
+}
+const char* ChimeClient::GetServiceName() {return SERVICE_NAME;}
+const char* ChimeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ChimeClient::ChimeClient(const Chime::ChimeClientConfiguration& clientConfiguration,
                          std::shared_ptr<ChimeEndpointProviderBase> endpointProvider) :
@@ -110,7 +118,7 @@ ChimeClient::ChimeClient(const Chime::ChimeClientConfiguration& clientConfigurat
             Aws::MakeShared<ChimeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -126,7 +134,7 @@ ChimeClient::ChimeClient(const AWSCredentials& credentials,
             Aws::MakeShared<ChimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -142,7 +150,7 @@ ChimeClient::ChimeClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             Aws::MakeShared<ChimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

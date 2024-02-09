@@ -30,8 +30,8 @@ namespace SSMIncidents
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SSMIncidentsClientConfiguration ClientConfigurationType;
       typedef SSMIncidentsEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace SSMIncidents
         * is not specified, it will be initialized to default values.
         */
         SSMIncidentsClient(const Aws::SSMIncidents::SSMIncidentsClientConfiguration& clientConfiguration = Aws::SSMIncidents::SSMIncidentsClientConfiguration(),
-                           std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMIncidentsEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SSMIncidentsClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMIncidentsEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::SSMIncidents::SSMIncidentsClientConfiguration& clientConfiguration = Aws::SSMIncidents::SSMIncidentsClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace SSMIncidents
         * the default http client factory will be used
         */
         SSMIncidentsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMIncidentsEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::SSMIncidents::SSMIncidentsClientConfiguration& clientConfiguration = Aws::SSMIncidents::SSMIncidentsClientConfiguration());
 
 

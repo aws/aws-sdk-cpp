@@ -30,8 +30,8 @@ namespace ManagedGrafana
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ManagedGrafanaClientConfiguration ClientConfigurationType;
       typedef ManagedGrafanaEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace ManagedGrafana
         * is not specified, it will be initialized to default values.
         */
         ManagedGrafanaClient(const Aws::ManagedGrafana::ManagedGrafanaClientConfiguration& clientConfiguration = Aws::ManagedGrafana::ManagedGrafanaClientConfiguration(),
-                             std::shared_ptr<ManagedGrafanaEndpointProviderBase> endpointProvider = Aws::MakeShared<ManagedGrafanaEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<ManagedGrafanaEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ManagedGrafanaClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<ManagedGrafanaEndpointProviderBase> endpointProvider = Aws::MakeShared<ManagedGrafanaEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<ManagedGrafanaEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::ManagedGrafana::ManagedGrafanaClientConfiguration& clientConfiguration = Aws::ManagedGrafana::ManagedGrafanaClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace ManagedGrafana
         * the default http client factory will be used
         */
         ManagedGrafanaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<ManagedGrafanaEndpointProviderBase> endpointProvider = Aws::MakeShared<ManagedGrafanaEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<ManagedGrafanaEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::ManagedGrafana::ManagedGrafanaClientConfiguration& clientConfiguration = Aws::ManagedGrafana::ManagedGrafanaClientConfiguration());
 
 
