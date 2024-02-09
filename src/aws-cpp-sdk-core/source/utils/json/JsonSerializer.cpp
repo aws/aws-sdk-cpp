@@ -441,7 +441,7 @@ bool JsonView::GetBool(const Aws::String& key) const
     assert(m_value);
     auto item = cJSON_AS4CPP_GetObjectItemCaseSensitive(m_value, key.c_str());
     assert(item);
-    return item->valueint != 0;
+    return cJSON_AS4CPP_IsTrue(item) != 0;
 }
 
 bool JsonView::AsBool() const
