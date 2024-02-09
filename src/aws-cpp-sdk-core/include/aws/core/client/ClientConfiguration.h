@@ -99,9 +99,9 @@ namespace Aws
              */
             explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
-	        /**
-	         * Add virtual method to allow use of dynamic_cast under inheritance.
-	         */
+            /**
+             * Add virtual method to allow use of dynamic_cast under inheritance.
+             */
             virtual ~ClientConfiguration() = default;
 
             /**
